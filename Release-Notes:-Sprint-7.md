@@ -12,6 +12,7 @@ Known issues in Sprint 7
 ------------------------
 
 * Pasting text multiple times adds an extra blank line each time after the first.
+* The Brackets native shell sometimes crashes while running unit tests.
 * The scroll position isn't kept for files that aren't in the working set,
   so if you browse around in the file tree, you'll always start at the top
   of the file.
