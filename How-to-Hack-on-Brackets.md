@@ -8,14 +8,15 @@ substantial, please start a discussion on the [brackets-dev Google group](http:/
 or the [#brackets IRC channel on freenode](http://freenode.net) to get
 feedback.
 
-Submitting changes
-------------------
+What's the process?
+-------------------
 
-You can submit changes as pull requests from your own fork of Brackets. 
-For small pull requests, we'll try to review them quickly. For larger
-submissions, we'll add them to our public backlog and schedule them to be
-reviewed and merged in an upcoming sprint. Our sprints are currently
-2.5 weeks long, so the delay shouldn't be too bad.
+Just submit changes as pull requests from your own fork of brackets or
+brackets-app. The core dev team works in 2.5-week sprints (weird length,
+but it works for us). We'll try to review small pull requests quickly
+in the current sprint. For larger submissions, we'll add them to our 
+public backlog **link TBD** and schedule them to be reviewed and merged 
+in an upcoming sprint. 
 
 Folder organization
 -------------------
@@ -54,8 +55,35 @@ when working with submodules.
 To test if everything is working, run bin/mac/Brackets.app or bin/win/Brackets.exe. 
 You should see the brackets interface. 
 
-Here are instructions for modifying the app shell on Mac (Win instructions coming
-soon):
+By default, Brackets opens its own source folder (which is in the "brackets" 
+subfolder/submodule repo). So hack away!
+
+Useful tools
+------------
+
+If you use Brackets to edit Brackets, you can quickly reload the app itself by 
+choosing *Debug > Refresh Window* from in-app menu. (If your Brackets gets really
+hosed, you can try *View > Refresh* from the native menu.) You can also bring up 
+the Chrome developer tools on the Brackets window using *Debug > Show Developer Tools*.
+
+You can open a second Brackets window from *Debug > New Window*. This is nice 
+because it means you can use a stable Brackets in one window to edit your code, 
+and then reload the app in the second window to see if your changes worked. You 
+can bring up the developer tools on the second window, too. Note that 
+this can be flaky; if you find that the dev tools aren't showing scripts, just 
+close the second window and reopen it, then open the dev tools window again.
+
+You can use *Debug > Run Tests* to run our unit test suite, and *Debug >
+Show Perf Data* to show some rudimentary performance info. We plan to beef
+this up in upcoming sprints.
+
+Modifying the app shell
+-----------------------
+
+For most of your work on Brackets, you should only need to edit the HTML/JS/CSS
+code in the brackets repo. But if you need to do work on the native app shell
+in brackets-app, here's how. (These instructions are for Mac; Win instructions
+are coming soon.)
 
 To modify the application shell code, load src/mac/Brackets.xcodeproj into 
 XCode 4.1 (or newer). 
@@ -84,27 +112,4 @@ when you quit Xcode.
 **IMPORTANT:** If you make changes to the application shell, you **MUST** build 
 the Brackets Archive target. This will ensure a updated Release build is checked 
 in to /bin/mac.
-
-Useful tools
-------------
-
-Because Brackets is built in HTML/JS/CSS, we've actually started using Brackets
-itself to edit its own source code. It's pretty fun!
-
-If you use Brackets to edit Brackets, you can quickly reload the app itself by 
-choosing *View > Refresh* from the native menu (not the in-Brackets menu).
-You can also bring up the Chrome developer tools on the Brackets window using
-*View > Show Developer Tools*.
-
-You can open a second Brackets window from the *Debug > New Window* item in
-the in-Brackets menu (not the native menu). This is nice because it means you
-can use a stable Brackets in one window to edit your code, and then reload the
-app in the second window to see if your changes worked. You can bring up the
-developer tools on the second window, too. (However, note that this can be
-flaky; if you find that the dev tools aren't showing scripts, just close the
-second window and reopen it, then open the dev tools window again.)
-
-You can use *Debug > Run Tests* to run our unit test suite, and *Debug >
-Show Perf Data* to show some rudimentary performance info. We plan to beef
-this up in upcoming sprints.
 
