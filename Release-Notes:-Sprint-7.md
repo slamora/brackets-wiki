@@ -6,11 +6,15 @@ Most of the work we did in Sprint 7 was to implement the new visual design for B
 * All existing Brackets functionality has been added to the in-app menus. (We'll move these out to the native menus eventually in the desktop version.)
 * To better match the dark background, the scrollbars in the sidebar have been made "unobtrusive", meaning that they appear only on mouseover, and are styled to match the background. This implementation isn't ideal yet, and we plan to replace it with a better implementation eventually.
 
-And, of course, we went open source! Yay!
+And, of course, we're now open source! Yay!
 
 Known issues in Sprint 7
 ------------------------
 
+* Sometimes CEF's browser cache gets corrupted. If you're getting crashes or find
+  that it's not remembering the last folder you opened in the sidebar, you can delete
+  the cache folder at ~/Library/Application Support/com.adobe.Brackets.cefCache (Mac) or 
+ ...\<username>\AppData\Roaming\Brackets\cefCache (Win).
 * Pasting text multiple times adds an extra blank line each time after the first.
 * The Brackets native shell sometimes crashes while running unit tests.
 * The scroll position isn't kept for files that aren't in the working set,
