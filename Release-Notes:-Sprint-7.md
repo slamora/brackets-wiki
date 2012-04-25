@@ -2,7 +2,7 @@ What's new in Sprint 7
 ----------------------
 
 Most of the work we did in Sprint 7 was to implement the new visual design for Brackets from our XD team. Overall, this should be self-explanatory :), but here are some notes:
-* The "Go Live" button is now a lightning bolt icon on the right side of the title bar.
+* The "Go Live" button (which starts live development) is now a lightning bolt icon on the right side of the title bar.
 * All existing Brackets functionality has been added to the in-app menus. (We'll move these out to the native menus eventually in the desktop version.)
 * To better match the dark background, the scrollbars in the sidebar have been made "unobtrusive", meaning that they appear only on mouseover, and are styled to match the background. This implementation isn't ideal yet, and we plan to replace it with a better implementation eventually.
 
