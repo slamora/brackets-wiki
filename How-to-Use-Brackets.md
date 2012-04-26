@@ -1,10 +1,14 @@
-Although Brackets is built in HTML/CSS/JS, it currently runs as a desktop
-application in a thin native shell, so that it can access your local files.
-
 Basic usage
 -----------
 
-Launch Brackets from the bin/win or bin/mac folder.
+Although Brackets is built in HTML/CSS/JS, it currently runs as a desktop
+application in a thin native shell, so that it can access your local files.
+If you downloaded the ZIP file, the shell app is included in the archive.
+If you're pulling the repo directly, make sure to pull adobe/brackets-app
+as your top level repo instead of adobe/brackets (which is included in
+brackets-app as a submodule).
+
+In either case, launch Brackets from the bin/win or bin/mac folder.
 
 Currently, most of the functionality in Brackets is available from the in-window
 menus (not the standard native menus). These will be moved out to the native
