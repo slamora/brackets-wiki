@@ -1,9 +1,9 @@
 What should I hack on?
 ----------------------
 
-Whatever you want, of course! But you might want to check with us first. We
-have a public backlog **link TBD** that might give you ideas for things we
-think are important to do soon. Also, if you're planning to do something
+Whatever you want, of course! But you might want to check the public
+Brackets backlog first (**link TBD**) to get ideas for things that are 
+important to add soon. Also, if you're planning to do something
 substantial, please start a discussion on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev)
 or the [#brackets IRC channel on freenode](http://freenode.net) to get
 feedback.
@@ -14,8 +14,8 @@ What's the process?
 Just submit changes as pull requests from your own fork of brackets or
 brackets-app. The core dev team works in 2.5-week sprints (weird length,
 but it works for us). We'll try to review small pull requests quickly
-in the current sprint. For larger submissions, we'll add them to our 
-public backlog **link TBD** and schedule them to be reviewed and merged 
+in the current sprint. Larger submissions will be added to the public
+Brackets backlog (**link TBD**) and scheduled to be reviewed and merged 
 in an upcoming sprint. 
 
 Folder organization
@@ -39,10 +39,9 @@ Brackets is currently hosted in two github repos: the
 [brackets-app repo](http://github.com/adobe/brackets-app), which contains
 the thin native app shell, and the [brackets repo](http://github.com/adobe/brackets), 
 which contains the main HTML/JS/CSS code. The brackets-app repo contains the brackets
-repo as a submodule. We also have our 
-[own fork of CodeMirror](http://github.com/adobe/CodeMirror2); we're working with
-Marijn Haverbeke, the owner of CodeMirror, to get our changes merged into the main
-repo. **TODO: link to info on this**
+repo as a submodule. There's also a [Brackets-specific fork of CodeMirror](http://github.com/adobe/CodeMirror2); 
+we're working with Marijn Haverbeke, the owner of CodeMirror, to get our changes 
+merged into the main repo. (**TODO: link to info on this**)
 
 In addition to pulling brackets-app from github, you'll need to also grab submodule
 references. To do so, run the following command in the root of your brackets-app repo:
@@ -112,4 +111,3 @@ when you quit Xcode.
 **IMPORTANT:** If you make changes to the application shell, you **MUST** build 
 the Brackets Archive target. This will ensure a updated Release build is checked 
 in to /bin/mac.
-
