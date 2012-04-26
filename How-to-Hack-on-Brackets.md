@@ -1,10 +1,11 @@
 What should I hack on?
 ----------------------
 
-Whatever you want, of course! But you might want to check the public
-Brackets backlog first (**link TBD**) to get ideas for things that are 
-important to add soon. Also, if you're planning to do something
-substantial, please start a discussion on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev)
+Whatever you want, of course! But you might want to check the 
+[public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88) 
+to get ideas for things that are important to add soon. Also, if you're 
+planning to do something substantial, please start a discussion on the 
+[brackets-dev Google group](http://groups.google.com/group/brackets-dev)
 or the [#brackets IRC channel on freenode](http://freenode.net) to get
 feedback.
 
@@ -14,9 +15,9 @@ What's the process?
 Just submit changes as pull requests from your own fork of brackets or
 brackets-app. The core dev team works in 2.5-week sprints (weird length,
 but it works for us). We'll try to review small pull requests quickly
-in the current sprint. Larger submissions will be added to the public
-Brackets backlog (**link TBD**) and scheduled to be reviewed and merged 
-in an upcoming sprint. 
+in the current sprint. Larger submissions will be added to the 
+[public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88)
+and scheduled to be reviewed and merged in an upcoming sprint. 
 
 Folder organization
 -------------------
