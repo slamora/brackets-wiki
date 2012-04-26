@@ -7,7 +7,7 @@ Basic usage
 Launch Brackets from the bin/win or bin/mac folder.
 
 Currently, most of the functionality in Brackets is available from the in-window
-menus (not the standard native menus). We'll be moving these out to the native
+menus (not the standard native menus). These will be moved out to the native
 menus in the desktop app eventually.
 
 You can open a file from *File > Open* (Ctrl/Cmd-O) in the in-window Brackets 
@@ -31,7 +31,7 @@ Quick edit
 One of the goals of Brackets is to make it easy to make quick edits to
 different bits of code without having to jump around between files.
 
-Currently, we have an early implementation of this. If you're in an HTML
+Currently, Brackets has an early implementation of this. If you're in an HTML
 file, and you put the cursor inside a class or id attribute or a tag name,
 you can hit Ctrl/Cmd-E (for "edit"). Brackets will search the CSS files in the 
 file tree for relevant rules, then open up an inline editor embedded in the HTML
@@ -51,9 +51,9 @@ Some things to note about this feature:
 * Brackets doesn't check to see which CSS files are linked into the current HTML 
   file--it searches all files in the file tree.
   
-Eventually we'd like to leverage inline editing for lots of other kinds of
-things--in addition to showing relevant JS code, we'd like to add visual tools
-like gradient and shadow editors for the selected CSS rule.
+Eventually Brackets could leverage inline editing for lots of other kinds of
+things--in addition to showing relevant JS code, you could imagine adding
+inline visual tools like gradient and shadow editors for the selected CSS rule.
 
 Live development
 ----------------
@@ -65,17 +65,17 @@ CSS properties in order to fix layout issues. Once they're done, they then have
 to remember what they did and then go back to their editor to fix the problems
 in the source code.
 
-With Live Development, we want to tie Brackets more closely to the browser, so
-that you can make changes and debug from Brackets itself, and see the results
+With Live Development, the idea is to tie Brackets more closely to the browser, 
+so that you can make changes and debug from Brackets itself, and see the results
 instantly in the browser.
 
-Our initial implementation of this is for CSS editing. If you open an HTML
-file, and then click the "lightning bolt" icon on the right side of the toolbar, 
+The initial implementation of this in Brackets is for CSS editing. If you open an 
+HTML file, and then click the "lightning bolt" icon on the right side of the toolbar, 
 Brackets will open the HTML file in Chrome. If you then make edits to CSS files 
 used by that HTML file (either in an inline editor or just by opening up the CSS 
 file), your edits will be instantly reflected in Chrome as you type.
 
-Some limitations of our current implementation:
+Some limitations of the current implementation:
 
 * It only works with Chrome as the target browser.
 * It relies on the remote debugging features in Chrome, which are enabled by
@@ -83,10 +83,10 @@ Some limitations of our current implementation:
   button, Brackets will ask if you want to restart Chrome with remote debugging
   enabled, and if you say yes, it will go ahead and do it for you.
 * Only one HTML file can have a live connection to the browser at a time--if you
-  switch to a different HTML file, we'll close the original preview and open one
-  for the new file.
+  switch to a different HTML file, Brackets will close the original preview and open 
+  one for the new file.
   
-As with quick edit, we have lots of ideas for how to extend this, including
+As with quick edit, there are lots of ideas for how to extend this, including
 highlighting DOM nodes in the browser from Brackets, clicking on an item in
 the browser to jump back to its source code in Brackets, and setting JS breakpoints 
 from Brackets.
