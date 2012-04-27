@@ -4,3 +4,4 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
 * [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets)
 * [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
+* [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
