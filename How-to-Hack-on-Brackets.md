@@ -42,8 +42,8 @@ the thin native app shell, and the [brackets repo](http://github.com/adobe/brack
 which contains the main HTML/JS/CSS code. The brackets-app repo contains the brackets
 repo as a submodule. There's also a [Brackets-specific fork of CodeMirror](http://github.com/adobe/CodeMirror2); 
 see [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
-for info on the changes we've made in this fork--we're working on getting them pushed
-into the main CodeMirror repo.
+for info on the changes we've made in this fork--we're working with the owner of
+CodeMirror to get them pulled into the main CodeMirror repo.
 
 In addition to pulling brackets-app from github, you'll need to also grab submodule
 references. To do so, run the following command in the root of your brackets-app repo:
