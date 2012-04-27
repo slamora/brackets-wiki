@@ -1,4 +1,4 @@
-Basic usage
+Getting Brackets
 -----------
 
 Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. It is not in a state to be used a general purpose editor just yet, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
@@ -15,6 +15,9 @@ Here are the commands:
 Note, you may be asked for your ssh authentication / passphrase a number of times while pulling the submodule. Make sure that you enter it each time (and it does not time out), or else the pull may fail.
 
 Once you have downloaded the code, launch Brackets from the bin/win or bin/mac folder.
+
+Basic usage
+-----------
 
 Currently, most of the functionality in Brackets is available from the in-window
 menus (not the standard native menus). These will be moved out to the native
