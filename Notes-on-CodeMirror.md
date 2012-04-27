@@ -5,6 +5,8 @@ Merged features
 
 * **Block selection.** Originally, if you selected multiple lines in CodeMirror, the right edge of the selection highlight was "ragged", following the right edge of each selected line. We submitted a [pull request](https://github.com/marijnh/CodeMirror2/pull/322) that makes block selection extend all the way to the right edge of the editor window as in other code editors, and it was merged into master (thanks Marijn!).
 
+We've also had a few smaller bug fixes merged in.
+
 Upcoming features
 =================
 
