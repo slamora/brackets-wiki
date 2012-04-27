@@ -14,7 +14,7 @@ Here are the commands:
 
 Note, you may be asked for your ssh authentication / passphrase a number of times while pulling the submodule. Make sure that you enter it each time (and it does not time out), or else the pull may fail.
 
-Once you have downloaded the code, launch Brackets from the bin/win or bin/mac folder.
+Once you have downloaded the code, launch Brackets from the _bin/win_ or _bin/mac_ folder.
 
 Basic usage
 -----------
@@ -98,6 +98,7 @@ Some limitations of the current implementation:
 * Only one HTML file can have a live connection to the browser at a time--if you
   switch to a different HTML file, Brackets will close the original preview and open 
   one for the new file.
+* You cannot specify a URL to load the file from.
   
 As with quick edit, there are lots of ideas for how to extend this, including
 highlighting DOM nodes in the browser from Brackets, clicking on an item in
