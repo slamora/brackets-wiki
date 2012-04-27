@@ -76,38 +76,9 @@ You can use *Debug > Run Tests* to run our unit test suite, and *Debug >
 Show Perf Data* to show some rudimentary performance info. We plan to beef
 this up in upcoming sprints.
 
-Modifying the app shell
+Modifying the App Shell
 -----------------------
-
 For most of your work on Brackets, you should only need to edit the HTML/JS/CSS
 code in the brackets repo. But if you need to do work on the native app shell
-in brackets-app, here's how. (These instructions are for Mac; Win instructions
-are coming soon.)
-
-To modify the application shell code, load src/mac/Brackets.xcodeproj into 
-XCode 4.1 (or newer). 
-
-There are three main build targets: 
-
-1. Brackets CEF Debug - this is a full debug build and is **really** slow. 
-   This target should only be used if you need breakpoint debugging.
-2. Brackets Development - this is a "release development" build. It's much 
-   faster, but you can't set breakpoints.
-3. Brackets Archive - this target does a full release build and copies the 
-   build to the bin/mac directory. This target MUST be built before checking in any changes to the shell application.
-
-**NOTE:** Before you build anything, you need to make a couple changes to the 
-build schemes. This only needs to be done once since these settings will persist 
-when you quit Xcode.
-
-1. Click the combobox at the top that says "Brackets Archive".
-2. Select "Edit Scheme..." from the dropdown.
-3. In the window that opens, select "Run Brackets.app" on the left hand list
-4. In the right pane, select "Release" for Build Configuration
-5. Click OK to close the window
-6. Select "Brackets Development" from the dropdown
-7. Repeat steps 1-5 for the Brackets Development scheme
-
-**IMPORTANT:** If you make changes to the application shell, you **MUST** build 
-the Brackets Archive target. This will ensure a updated Release build is checked 
-in to /bin/mac.
+in brackets-app, you can find instructions on the [brackets-app wiki]
+(https://github.com/adobe/brackets-app/wiki).
