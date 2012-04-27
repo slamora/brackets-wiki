@@ -51,6 +51,12 @@ references. To do so, run the following command in the root of your brackets-app
 See [Pro Git section 6.6](http://progit.org/book/ch6-6.html) for some caveats 
 when working with submodules.
 
+**Note:** We don't update the brackets submodule SHA in brackets-app very often. So,
+to make sure you're getting the latest brackets core code, once your submodules are
+set up, make sure to do a `git pull` on master in the brackets subfolder. In general,
+you should keep up to date with the brackets core by pulling it directly instead of
+relying on `git submodule update` in brackets-app.
+
 To test if everything is working, run bin/mac/Brackets.app or bin/win/Brackets.exe. 
 You should see the brackets interface. 
 
