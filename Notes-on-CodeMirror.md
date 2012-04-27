@@ -1,4 +1,4 @@
-The Brackets fork of CodeMirror has a number of fixes and features that we've added in order to support Brackets. We're working with Marijn Haverbeke to get these into the [main CodeMirror master](http://github.com/marijnh/CodeMirror2). 
+The [Brackets fork of CodeMirror](http://github.com/adobe/CodeMirror2) has a number of fixes and features that we've added in order to support Brackets. We're working with Marijn Haverbeke to get these into the [main CodeMirror master](http://github.com/marijnh/CodeMirror2). 
 
 Merged features
 ===============
