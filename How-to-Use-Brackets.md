@@ -1,14 +1,20 @@
 Basic usage
 -----------
 
-Although Brackets is built in HTML/CSS/JS, it currently runs as a desktop
-application in a thin native shell, so that it can access your local files.
-If you downloaded the ZIP file, the shell app is included in the archive.
-If you're pulling the repo directly, make sure to pull adobe/brackets-app
-as your top level repo instead of adobe/brackets (which is included in
-brackets-app as a submodule).
+Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. It is not in a state to be used a general purpose editor just yet, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
 
-In either case, launch Brackets from the bin/win or bin/mac folder.
+The latest "stable" builds can be downloaded from the [tagged releases page](https://github.com/adobe/brackets/tags).
+If you want to download and run the absolutely latest version of the code, you will have to pull it directly from GitHub. There are two steps to this. First you must clone the adobe/brackets-app repository, and then pull brackets-app as a submodule.
+
+Here are the commands:
+
+    git clone git@github.com:adobe/brackets-app.git
+    cd brackets-app
+    git submodule update --init --recursive
+
+Note, you may be asked for your ssh authentication / passphrase a number of times while pulling the submodule. Make sure that you enter it each time (and it does not time out), or else the pull may fail.
+
+Once you have downloaded the code, launch Brackets from the bin/win or bin/mac folder.
 
 Currently, most of the functionality in Brackets is available from the in-window
 menus (not the standard native menus). These will be moved out to the native
