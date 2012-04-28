@@ -13,7 +13,7 @@ Here are the commands:
 
 Note, you may be asked for your ssh authentication / passphrase a number of times while pulling the submodule. Make sure that you enter it each time (and it does not time out), or else the pull may fail.
 
-**Note:** We don't update the brackets submodule SHA in brackets-app very often. So, to make sure you're getting the latest brackets core code, once your submodules are set up, make sure to do a `git pull` on master in the brackets subfolder. In general, you should keep up to date with the brackets core by pulling it directly instead of relying on `git submodule update` in brackets-app.
+**Note:** The brackets submodule SHA in brackets-app is not updated very often. So, to make sure you're getting the latest brackets core code, once your submodules are set up, make sure to do a `git pull` on master in the brackets subfolder. In general, you should keep up to date with the brackets core by pulling it directly instead of relying on `git submodule update` in brackets-app.
 
 Once you have downloaded the code, launch Brackets from the _bin/win_ or _bin/mac_ folder.
 
