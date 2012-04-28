@@ -3,8 +3,7 @@ Getting Brackets
 
 Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. It is not in a state to be used a general purpose editor just yet, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
 
-The latest "stable" builds can be downloaded from the [tagged releases page](https://github.com/adobe/brackets/tags).
-If you want to download and run the absolutely latest version of the code, you will have to pull it directly from GitHub. There are two steps to this. First you must clone the [adobe/brackets-app](https://github.com/adobe/brackets-app/) repository, and then pull [brackets-app](https://github.com/adobe/brackets/) as a submodule.
+Currently, to get Brackets running you'll need to pull it directly from GitHub. There are two steps to this. First you must clone the [adobe/brackets-app](https://github.com/adobe/brackets-app/) repository, and then pull [brackets-app](https://github.com/adobe/brackets/) as a submodule.
 
 Here are the commands:
 
@@ -13,6 +12,8 @@ Here are the commands:
     git submodule update --init --recursive
 
 Note, you may be asked for your ssh authentication / passphrase a number of times while pulling the submodule. Make sure that you enter it each time (and it does not time out), or else the pull may fail.
+
+**Note:** We don't update the brackets submodule SHA in brackets-app very often. So, to make sure you're getting the latest brackets core code, once your submodules are set up, make sure to do a `git pull` on master in the brackets subfolder. In general, you should keep up to date with the brackets core by pulling it directly instead of relying on `git submodule update` in brackets-app.
 
 Once you have downloaded the code, launch Brackets from the _bin/win_ or _bin/mac_ folder.
 
