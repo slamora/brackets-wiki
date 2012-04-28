@@ -62,9 +62,10 @@ Start by creating a new branch so that you can always be sure master doesn't get
 
 ```
 git branch mynewfeature
+git checkout mynewfeature
 ```
 
-That creates a new branch called mynewfeature. Any changes you make now will be linked to that branch. Go ahead and modify some code, make your fix, and be sure that it works in your copy of Brackets. Once you're happy with the fix, it's time to commit those changes and get ready to send it back to the team. If you're adding new files you'll have to run <code>git add</code> but if you're just modifiying existing files you can run
+That creates a new branch called mynewfeature and sets it as your working branch. Any changes you make now will be linked to that branch. Go ahead and modify some code, make your fix, and be sure that it works in your copy of Brackets. Once you're happy with the fix, it's time to commit those changes and get ready to send it back to the team. If you're adding new files you'll have to run <code>git add</code> but if you're just modifiying existing files you can run
 
 ```
 git commit -a
