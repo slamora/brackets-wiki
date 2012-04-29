@@ -19,9 +19,15 @@ You understand that the decision to include the Contribution in any product or s
 If you become aware of any facts or circumstances related to the representation above that would make these representations inaccurate or untrue, you agree to notify Adobe promptly with any details.
 
 Name:    _______________________________
+
 Email:   _______________________________
+
 Address: _______________________________
+
 City:    _______________________________
+
 State:   _______________________________
+
 Zip:     _______________________________
+
 Country  _______________________________
