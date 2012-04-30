@@ -1,7 +1,21 @@
 Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [Main README](https://github.com/adobe/brackets/blob/master/README.md) -- please read this first.
-* [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
+
+## Development
+
+* [Brackets Contributor License Agreement](https://github.com/adobe/brackets/wiki/Brackets-Contributor-License-Agreement) You must agree to and submit this before you can contribute to Brackets.
+* [License](https://github.com/adobe/brackets/blob/master/LICENSE)
 * [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets)
-* [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
+* [Contributing to Brackets](https://github.com/adobe/brackets/wiki/Contributing-to-Brackets)
 * [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
+
+## Usage
+
+* [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
+* [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
+
+## Releases
+
+* [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
+ * [Sprint 7](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-7)
