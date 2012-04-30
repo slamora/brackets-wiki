@@ -2,7 +2,7 @@ How to Get Started
 ---------------------
 The first step is to find something to fix. [How to Hack on Brackets] (wiki/How-to-Hack-on-Brackets) has some good pointers for finding issues and getting your head around how to get up to speed with Brackets. 
 
-The first step is to fork the projects so you can start making changes in your local repository. Fork both brackets-app and brackets. 
+The nextstep is to fork the projects so you can start making changes in your local repository. Fork both brackets-app and brackets. 
 
 Next pull both of those repositories down to your local machine. Your folder structure should have the brackets project within brackets-app.
 
@@ -12,17 +12,17 @@ cd brackets-app
 git clone git@github.com:<your username>/brackets.git
 ```
 
-Because Brackets relies on CodeMirror you want to make sure you have the latest version of CodeMirror. Brackets uses submodules to help track both CodeMirror and the Brackets project from Brackets app. To make sure everything is up to date go back to your brackets-app folder and run.
+Because Brackets relies on [CodeMirror](http://codemirror.net/) you want to make sure you have the latest version of CodeMirror. Brackets uses submodules to help track both CodeMirror and the Brackets project from Brackets app. To make sure everything is up to date go back to your brackets-app folder and run.
 
 ```
 git submodule update --init --recursive
 ```
 
-That should both get the latest version of CodeMirror and sync your fork of Brackets with brackets-app. If you run bin/mac/Brackets.app or bin/win/Brackets.exe you'll have your just-forked version of Brackets up and running.
+That should both get the latest version of CodeMirror and sync your fork of Brackets with brackets-app. If you run _bin/mac/Brackets.app_ or _bin/win/Brackets.exe_ you'll have your just-forked version of Brackets up and running.
 
 Tracking Changes
 -----------------------
-Brackets development moves pretty quickly so I've found that it's really handy to be able to always track the changes from the main branch and pull them down to my local fork. To link your local fork of brackets-app with the main project, in your brackets-app directory type
+Brackets development moves pretty quickly so it is really handy to be able to always track the changes from the main branch and pull them down to your local fork. To link your local fork of brackets-app with the main project, in your brackets-app directory type:
 
 ```
 git remote add --track master upstream git@github.com:adobe/brackets-app.git
@@ -56,7 +56,7 @@ again in the brackets-app directory to get any changes from CodeMirror.
 
 Making Changes
 ---------------------
-So you've got an issue you want to fix. Start off by creating a new branch in your local directory. This assumes you're working in the brackets directory, but the same thing would apply for the brackets-app project as well. 
+So you have found an issue that you want to fix. Start off by creating a new branch in your local directory. This assumes you are working in the brackets directory, but the same thing would apply for the brackets-app project as well. 
 
 Start by creating a new branch so that you can always be sure master doesn't get messed up.
 
@@ -65,13 +65,15 @@ git branch mynewfeature
 git checkout mynewfeature
 ```
 
+> Note, that if you are fixing a particular issue, it can be useful to include the issue number in the branch name, for example _fix_issue_68_.
+
 That creates a new branch called mynewfeature and sets it as your working branch. Any changes you make now will be linked to that branch. Go ahead and modify some code, make your fix, and be sure that it works in your copy of Brackets. Once you're happy with the fix, it's time to commit those changes and get ready to send it back to the team. If you're adding new files you'll have to run <code>git add</code> but if you're just modifiying existing files you can run
 
 ```
-git commit -a
+git commit -m "COMMIT MESSAGE"
 ```
 
-That will bring up a vi terminal where you should provide a description for what changes you just made. Once that's done the next step is to push those changes to your Github account using git push.
+Replace COMMIT MESSAGE with a detail message describing the changes. Once that's done the next step is to push those changes to your Github account using git push.
 
 ```
 git push origin mynewfeature
