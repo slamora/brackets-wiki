@@ -57,13 +57,13 @@ again in the brackets-app directory to get any changes from CodeMirror.
 Making Changes
 ---------------------
 So you have found an issue that you want to fix. Start off by creating a new branch in your local directory. This assumes you are working in the brackets directory, but the same thing would apply for the brackets-app project as well. 
-
+---------------------
 ### Coding Conventions ###
 Brackets uses a few coding conventions that are important to keep in mind before you commit.
 
 * Must pass [JSLint] (http://www.jslint.com/)
 * Use double quotes (") in JavaScript instead of single quotes
-
+---------------------
 Start by creating a new branch so that you can always be sure master doesn't get messed up.
 
 ```
