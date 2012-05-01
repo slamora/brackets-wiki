@@ -7,6 +7,8 @@ CONTRIBUTOR LICENSE AND DISTRIBUTION AGREEMENT (“AGREEMENT”)
 
 PLEASE READ THIS AGREEMENT CAREFULLY.  BY SUBMITTING YOUR CONTRIBUTIONS (DEFINED BELOW) AND CLICKING {“ACCEPT”}, YOU ARE AGREEING TO BE BOUND BY ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT. 
 
+This license is for your protection as well as the protection of Brackets and its licensees; it does not change your rights to use your own Contributions for any other purpose.
+
 Adobe Systems Incorporated (“Adobe”) appreciates your willingness to grant permission to use your software code checked directly into a source control system made available by GitHub Inc for the brackets and brackets-app project.  (“Contributions”) in conjunction with BRACKETS. By clicking “ACCEPT” (“you” or “You”) hereby grant to Adobe and to recipients of software distributed through BRACKETS a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable license to use, make, have made, offer to sell, sell, import, reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute Your Contributions and such derivative works as part of Brackets.
 
 Just as we are respectful of your rights in the Contributions, we want to insure that we will not need to seek additional permission to use the Contributions from any third party. 
