@@ -1,7 +1,6 @@
 Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [Main README](https://github.com/adobe/brackets/blob/master/README.md) -- please read this first.
-* [Screenshots](https://github.com/adobe/brackets/wiki/Brackets-Screenshots)
 
 ## Development
 
@@ -15,6 +14,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
 * [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
+* [Brackets Screenshots](https://github.com/adobe/brackets/wiki/Brackets-Screenshots)
 
 ## Releases
 
