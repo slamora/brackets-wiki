@@ -38,15 +38,15 @@ TODO
 
 Areas covered
 =============
-Project tree
-Working set - selection appearance
-File tree - scrolling and selection appearance
-Title bar - resize
-Inline editor - open CSS
-Inline editor - resize/scroll behavior
-Inline editor - rule list
-Live development - launch
-Live development - edit CSS
-Find/Replace - appearance/behavior of semimodal dialog
-Find in Files - appearance/behavior of semimodal dialog, panel
-Quick Open - appearance/behavior of semimodal dialog, popup
+* Project tree
+* Working set - selection appearance
+* File tree - scrolling and selection appearance
+* Title bar - resize
+* Inline editor - open CSS
+* Inline editor - resize/scroll behavior
+* Inline editor - rule list
+* Live development - launch
+* Live development - edit CSS
+* Find/Replace - appearance/behavior of semimodal dialog
+* Find in Files - appearance/behavior of semimodal dialog, panel
+* Quick Open - appearance/behavior of semimodal dialog, popup
