@@ -13,7 +13,7 @@ Core functionality
 1. Launch Brackets. Verify that the brackets "src" folder is visible in the project panel.
 2. Expand some folders in the brackets project, enough that it has to scroll.
 3. Scroll around in the folder area. Verify that the shadows look right and there are no visual glitches.
-4. File > Open Folder and browse to the `brackets/test/smokes/citrus completed` folder (note that there's a space in the name; this is intentional). Verify that its contents look correct, and expand some folders to look inside them.
+4. File > Open Folder and browse to the `brackets/test/smokes/citrus completed` folder (note that there's a space in the name; this is intentional). Verify that it contains a "css" folder and an "index.html" file.
 5. Click on index.html. Verify that the selection in the project panel draws properly.
 6. Double-click on index.html. Verify that it's added to the working set and the selection draws properly.
 7. Resize the window. Verify that the editor resizes properly and the title bar wraps appropriately.
