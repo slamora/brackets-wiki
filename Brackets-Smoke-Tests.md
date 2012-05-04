@@ -20,8 +20,8 @@ Core functionality
 8. Look through the in-Brackets menus. Verify that they look okay and that they properly pop on top of other UI in the app.
 9. Set the cursor in the `<body>` tag.
 10. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
-11. Click the lightning bolt in the upper right. You should see the page load in Chrome. On the Mac, after a few seconds you should get a dialog saying you need to relaunch Chrome.
-12. (Mac only) Click "Relaunch". Chrome should relaunch and open the page.
+11. Click the lightning bolt in the upper right. You should see the page load in Chrome. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome.
+12. Mac only: Click "Relaunch". Chrome should relaunch and open the page.
 13. Back in Brackets, edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
 14. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
 15. Put the cursor immediately after the `<a` in one of the `<a>` tags in the navbar.
