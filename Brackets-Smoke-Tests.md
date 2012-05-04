@@ -38,10 +38,11 @@ TODO
 
 Areas covered
 =============
-* Project tree
+* Project tree - appearance, handling of folders with spaces
 * Working set - selection appearance
 * File tree - scrolling and selection appearance
 * Title bar - resize
+* In-browser menu - appearance, Z-order
 * Inline editor - open CSS
 * Inline editor - resize/scroll behavior
 * Inline editor - rule list
@@ -50,3 +51,4 @@ Areas covered
 * Find/Replace - appearance/behavior of semimodal dialog
 * Find in Files - appearance/behavior of semimodal dialog, panel
 * Quick Open - appearance/behavior of semimodal dialog, popup
+* Quit the app and restart - project properly restored
