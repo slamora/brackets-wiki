@@ -1,5 +1,3 @@
-**EARLY DRAFT--not ready for review yet**
-
 Brackets has a pretty good unit test suite that you can run from Debug > Run Unit Tests, but that doesn't always cover issues with the overall UI and integrated functionality, or visual/layout issues that are only obvious if you're actually looking at the product. This is a set of manual tests intended to make sure we haven't broken the basic overall workflows of the product. The intention is to keep it quick--if it takes more than 5 minutes on a given platform it's too long :)
 
 Setup
@@ -34,14 +32,6 @@ Core functionality
 20. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
 21. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
 
-Unofficial features
-===================
-TODO
-
-1. Edit > Find...
-2. Edit > Find in Files...
-3. Navigate > Quick Open...
-
 Areas covered
 =============
 * Project tree - appearance, handling of folders with spaces
@@ -60,3 +50,4 @@ Areas covered
 * Quit the app and restart - project properly restored
 
 **TODO:** Should we add basic file operations (e.g. Save)? Those are obviously key workflows, but we do have unit tests for them.
+**TODO:** Should we add smoke tests for unofficial features (find/replace, find in files, quick open), or wait till they become official?
