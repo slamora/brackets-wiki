@@ -2,7 +2,7 @@ What should I hack on?
 ----------------------
 
 Whatever you want, of course! But you might want to check the 
-[public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88) 
+[public Brackets backlog](http://bit.ly/BracketsBacklog) 
 to get ideas for things that are important to add soon. Also, if you're 
 planning to do something substantial, please start a discussion on the 
 [brackets-dev Google group](http://groups.google.com/group/brackets-dev)
