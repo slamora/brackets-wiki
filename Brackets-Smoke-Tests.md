@@ -45,9 +45,14 @@ Areas covered
 * Live development - launch
 * Live development - edit CSS
 * Find/Replace - appearance/behavior of semimodal dialog
+
+Not yet covered
+===============
+
 * Find in Files - appearance/behavior of semimodal dialog, panel
 * Quick Open - appearance/behavior of semimodal dialog, popup
 * Quit the app and restart - project properly restored
 
 **TODO:** Should we add basic file operations (e.g. Save)? Those are obviously key workflows, but we do have unit tests for them.
+
 **TODO:** Should we add smoke tests for unofficial features (find/replace, find in files, quick open), or wait till they become official?
