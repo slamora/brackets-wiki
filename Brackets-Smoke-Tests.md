@@ -18,14 +18,14 @@ Core functionality
 6. Double-click on index.html. Verify that it's added to the working set and the selection draws properly.
 7. Resize the window. Verify that the editor resizes properly and the title bar wraps appropriately.
 8. Look through the in-Brackets menus. Verify that they look okay and that they properly pop on top of other UI in the app.
-9. Set the cursor in the <body> tag.
-10. Hit Cmd-E. Verify that it shows a single body rule and that everything is laid out properly.
+9. Set the cursor in the `<body>` tag.
+10. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
 11. Click the lightning bolt in the upper right. You should get the dialog saying you need to relaunch Chrome.
 12. Click "Relaunch". Chrome should relaunch and open the page.
 13. Back in Brackets, edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
-14. Hit Cmd-E. Verify that the inline editor closes.
-15. Put the cursor immediately after the "<a" in one of the <a> tags in the navbar.
-16. Hit Cmd-E. Verify that the inline editor opens and that you see a number of rules in the list on the right.
+14. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
+15. Put the cursor immediately after the `<a` in one of the `<a>` tags in the navbar.
+16. Hit Cmd/Ctrl-E. Verify that the inline editor opens and that you see a number of rules in the list on the right.
 17. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
 18. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
 19. Click on a list in the rule list. Verify that the editor shows the correct rule.
