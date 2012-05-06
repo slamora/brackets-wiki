@@ -8,8 +8,8 @@ Brackets uses some specific coding conventions. All of the pull requests that co
 * 4-space indents (soft tabs)
 * use of Array.forEach() instead of $.each()
 * classes and id's in HTML use dashes (-) not camelCase
-* semicolons where normally used
-* se single quotes, except for writing JSON
+* use semicolons
+* use single quotes, except for writing JSON
 
 ## Comments ##
 * All comments should be C++ single line style //comment.
