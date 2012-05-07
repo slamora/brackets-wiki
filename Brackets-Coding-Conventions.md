@@ -1,15 +1,20 @@
 Brackets uses some specific coding conventions. All of the pull requests that come in should adhere to the following rules:
-
+## Basics ##
 * Line length is 80
 * Must pass JSLint
+
+## Naming and Syntax ##
 * variable and function names must use camelCase (not under_scores)
 * use $ prefixes on variables referring to jQuery objects
 * use _ prefixes on private variables/methods
-* 4-space indents (soft tabs)
-* use of Array.forEach() instead of $.each()
-* classes and id's in HTML use dashes (-) not camelCase
+* classes and id's in HTML use dashes (-) not camelCase or under_scores
 * use semicolons
 * use single quotes, except for writing JSON
+
+## Code Structure ##
+* Closure vars should go at the top of the code block they're scoped to
+* use of Array.forEach() instead of $.each()
+* 4-space indents (soft tabs)
 
 ## Comments ##
 * All comments should be C++ single line style //comment.
