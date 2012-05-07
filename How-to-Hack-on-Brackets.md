@@ -1,18 +1,28 @@
+tl;dr
+-----
+1. Post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) about what you're thinking of working on.
+2. When coding, make sure to follow our [coding conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions).
+3. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
+
 What should I hack on?
 ----------------------
 
 Whatever you want, of course! But you might want to check the 
 [public Brackets backlog](http://bit.ly/BracketsBacklog) 
 to get ideas for things that are important to add soon. Also, if you're 
-planning to do something substantial, please start a discussion on the 
-[brackets-dev Google group](http://groups.google.com/group/brackets-dev)
+planning to do something other than a small bugfix, please start a discussion 
+on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev)
 or the [#brackets IRC channel on freenode](http://freenode.net) to get
-feedback.
+feedback. There might already be some prior thinking on what you're working on,
+or some reason that it hasn't already been done.
 
 What's the process?
 -------------------
 
-Just submit changes as pull requests from your own fork of brackets or
+First, [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html). 
+This is for your protection as well as that of the Brackets project.
+
+Then, just submit changes as pull requests from your own fork of brackets or
 brackets-app. The core dev team works in 2.5-week sprints (weird length,
 but it works for us). We'll try to review small pull requests quickly
 in the current sprint. Larger submissions will be added to the 
