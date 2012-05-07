@@ -60,10 +60,7 @@ So you have found an issue that you want to fix. Start off by creating a new bra
 
 ***
 ### Coding Conventions ###
-Brackets uses a few coding conventions that are important to keep in mind before you commit.
-
-* Must pass [JSLint] (http://www.jslint.com/)
-* Use double quotes (") in JavaScript instead of single quotes
+Brackets uses a few coding conventions that are important to keep in mind before you commit. You can view them on the [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions) page. Please read and follow these before committing any changes.
 
 ***
 
