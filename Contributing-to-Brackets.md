@@ -42,6 +42,8 @@ Because Brackets relies on [CodeMirror](http://codemirror.net/) you want to make
 git submodule update --init --recursive
 ```
 
+> Because CodeMirror will update fairly often, you'll often find as you're switching between branches or merging that your CodeMirror files are showing up as modified when you run `git status`. Something like `M	src/thirdparty/CodeMirror2`. Running the command above brings everything in sync.
+
 That should both get the latest version of CodeMirror and sync your fork of Brackets with brackets-app. If you run _bin/mac/Brackets.app_ or _bin/win/Brackets.exe_ you'll have your just-forked version of Brackets up and running.
 
 ### Tracking Changes from the Main Repository ###
