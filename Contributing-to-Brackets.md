@@ -103,6 +103,8 @@ git push origin mynewfeature
 
 That command creates a branch on your Github-hosted fork of Brackets and commits all of the changes. Until now everything we did was local. Now Github knows about our branch as well as our changes.
 
+> Before you submit a pull request you should make sure everything passes JSLint. This is easy because Brackets will show you anywhere in your file that JSLint sees an error. You also need to make sure that the unit tests pass without any errors. You can run the Brackets unit tests by going to Debug > Run Unit Tests in Brackets. The tests require Chrome and you should quit Chrome before running the tests for the most accurate results. 
+
 ### Submitting a Pull Request ###
 Now you're ready to submit a pull request. Go to the Github page for your fork of Brackets. In order to submit a pull request, you need to be looking at the branch you created, which we called `newfeature`. Github has a pulldown that lets you select branches in your fork of the repository. Click that, find the branch you were working on, and select it. Now you're looking at the code for that branch. 
 
