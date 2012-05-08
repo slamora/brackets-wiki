@@ -9,6 +9,18 @@
 4. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
 
 ## How to Get Started ##
+
+### What should I hack on? ###
+Whatever you want, of course! But you might want to check the 
+[public Brackets backlog](http://bit.ly/BracketsBacklog) 
+to get ideas for things that are important to add soon. Also, if you're 
+planning to do something other than a small bugfix, please start a discussion 
+on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev)
+or the [#brackets IRC channel on freenode](http://freenode.net) to get
+feedback. There might already be some prior thinking on what you're working on,
+or some reason that it hasn't already been done.
+
+### Getting a Copy of the Code ###
 The first step is to find something to fix. [How to Hack on Brackets] (wiki/How-to-Hack-on-Brackets) has some good pointers for finding issues and getting your head around how to get up to speed with Brackets. 
 
 The nextstep is to fork the projects so you can start making changes in your local repository. Fork both brackets-app and brackets. 
