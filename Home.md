@@ -10,8 +10,9 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Contributing to Brackets](https://github.com/adobe/brackets/wiki/Contributing-to-Brackets)
 * [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions)
 * [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
+* [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
 
-###Explorations
+### Explorations
 
 * [Extension Experiments](https://github.com/adobe/brackets/wiki/Extension-Experiments)
 
