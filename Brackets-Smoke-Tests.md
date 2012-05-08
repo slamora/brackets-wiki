@@ -9,8 +9,8 @@ Setup
 2. If you've run the smokes previously, revert any changes you might have made in `brackets/test/smokes/citrus completed`.
 3. Delete your cache folder (~/Library/ApplicationSupport/com.adobe.Brackets.cefCache on Mac, ...\AppData\Roaming\Brackets on Win).
 
-Core functionality
-==================
+Smoke test steps
+================
 
 1. Launch Brackets. Verify that the brackets "src" folder is visible in the project panel.
 2. Expand some folders in the brackets project, enough that it has to scroll.
