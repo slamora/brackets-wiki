@@ -125,3 +125,32 @@ A couple of notes on unofficial features:
   matches. You can also type ":" followed by a number in the field to go to 
   that line in the current file.
 * You can run the Brackets unit test suite from the Debug menu.
+
+Keyboard Shortcut Cheat Sheet
+-----------------------------
+There aren't a lot of keyboard shortcuts available in Brackets yet, but there are a few that are worth knowing, and there will be more as features are added.
+
+<table>
+<tbody>
+<tr>
+<td>Ctrl/Cmd-E</td>
+<td>Open/close the inline editor.</td>
+</tr>
+<tr>
+<td>Alt-Up/Down Arrow</td>
+<td>Switch between rules in the inline editor.</td>
+</tr>
+<tr>
+<td>Ctrl/Cmd-Shift-O</td>
+<td>Bring up the Quick Open prompt.</td>
+</tr>
+<tr>
+<td>Ctrl/Cmd-Shift-H</td>
+<td>Show/hide the sidebar.</td>
+</tr>
+<tr>
+<td>Ctrl/Cmd-Alt-P</td>
+<td>Live file preview.</td>
+</tr>
+</tbody>
+</table>
