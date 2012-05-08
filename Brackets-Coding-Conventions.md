@@ -9,7 +9,7 @@ Brackets uses some specific coding conventions. All of the pull requests that co
 * use _ prefixes on private variables/methods
 * classes and id's in HTML use dashes (-) not camelCase or under_scores
 * use semicolons
-* use single quotes, except for writing JSON
+* use double quotes in JavaScript
 
 ## Code Structure ##
 * Closure vars should go at the top of the code block they're scoped to
