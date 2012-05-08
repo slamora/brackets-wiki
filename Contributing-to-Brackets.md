@@ -21,9 +21,7 @@ feedback. There might already be some prior thinking on what you're working on,
 or some reason that it hasn't already been done.
 
 ### Getting a Copy of the Code ###
-The first step is to find something to fix. [How to Hack on Brackets] (wiki/How-to-Hack-on-Brackets) has some good pointers for finding issues and getting your head around how to get up to speed with Brackets. 
-
-The nextstep is to fork the projects so you can start making changes in your local repository. Fork both brackets-app and brackets. 
+The first step is to fork the projects so you can start making changes in your local repository. Fork both brackets-app and brackets. 
 
 Next pull both of those repositories down to your local machine. Your folder structure should have the brackets project within brackets-app.
 
@@ -41,51 +39,50 @@ git submodule update --init --recursive
 
 That should both get the latest version of CodeMirror and sync your fork of Brackets with brackets-app. If you run _bin/mac/Brackets.app_ or _bin/win/Brackets.exe_ you'll have your just-forked version of Brackets up and running.
 
-Tracking Changes
------------------------
-Brackets development moves pretty quickly so it is really handy to be able to always track the changes from the main branch and pull them down to your local fork. To link your local fork of brackets-app with the main project, in your brackets-app directory type:
+### Getting a Copy of the Code ###
+It's important to be working off of the latest build and the easiest way to do that is to make sure that your local copy of Brackets is tracking the main repository. This involves using the `git remote` command which lets you link your local version to a different remote repository (by default, it's linked to your github fork). To link your local repository to the main Brackets repository, use this command:
 
 ```
 git remote add --track master upstream git@github.com:adobe/brackets-app.git
 ```
 
-Then do the same for the Brackets project
+This will create a link from your local Brackets repository to the main one called `upstream`. `upstream` will be how you reference the main Brackets repository. 
+
+Do the same for the Brackets project
 ```
 cd brackets
 git remote add --track master upstream git@github.com:adobe/brackets.git
 ```
 
-Any time you want to get the latest changes from the main repo you can use
+It's very important to always have the latest code from the main repository. That way you can make sure your pull requests will be clean merges and that you're always working with the most stable code. Any time you want to grab the master branch from the Brackets repository simply use the fetch command with the remote destination we created earlier:
 
 ```
 git fetch upstream master
 ```
 
+The fetch command won't merge the changes, but it does bring them down so that you can merge them manually. 
 That won't merge changes, but it will grab them. You can merge the changes into your local fork with
 
 ```
 git merge upstream/master
 ```
 
-You'll have to do this for both the brackets-app project and the brackets project. I also find it helpful to run 
+Those two commands will grab and merge any changes from the main Brackets repository for your current branch. 
+
+If there have been CodeMirror changes you will also want to bring those in. You can do that by re-running the git submodule command.
 
 ```
 git submodule update --init --recursive
 ```
 
-again in the brackets-app directory to get any changes from CodeMirror.
+## Contributing Code ##
 
-Making Changes
----------------------
+### Modifying the Code ###
 So you have found an issue that you want to fix. Start off by creating a new branch in your local directory. This assumes you are working in the brackets directory, but the same thing would apply for the brackets-app project as well. 
 
-***
-### Coding Conventions ###
-Brackets uses a few coding conventions that are important to keep in mind before you commit. You can view them on the [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions) page. Please read and follow these before committing any changes.
+> Make sure to follow the [coding conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions) for Brackets so that your code matches the rest of the project.
 
-***
-
-Start by creating a new branch so that you can always be sure master doesn't get messed up.
+Start by creating a new branch for the feature you want to work on. This makes sure that your master branch can stay in sync with the main Brackets repository and if the feature doesn't work or breaks something, you can always start fresh with your local master branch. It also makes updating your pull request much easier as you can see below.
 
 ```
 git branch mynewfeature
@@ -94,25 +91,34 @@ git checkout mynewfeature
 
 > Note, that if you are fixing a particular issue, it can be useful to include the issue number in the branch name, for example _fix_issue_68_.
 
-That creates a new branch called mynewfeature and sets it as your working branch. Any changes you make now will be linked to that branch. Go ahead and modify some code, make your fix, and be sure that it works in your copy of Brackets. Once you're happy with the fix, it's time to commit those changes and get ready to send it back to the team. If you're adding new files you'll have to run <code>git add</code> but if you're just modifiying existing files you can run
+That creates a new branch called `mynewfeature` and sets it as your working branch. Any changes you make now will be linked to that branch. If you're working on a big feature that may take some time, remember that you can always use the git upstream commands above to merge the latest version of the main Brackets repository into your current working branch. Dealing with merges incrementally like this can be better than trying to reconcile everything once you're finished with your feature. 
 
-```
-git commit -m "COMMIT MESSAGE"
-```
+Go ahead and modify some code, make your fix, and be sure that it works in your copy of Brackets. Once you're happy with the fix, it's time to commit those changes and get ready to send it back to the team. You can use `git add <filename>` to add any files you've changed to the commit you want to make and then use `git commit -m "COMMIT MESSAGE"` to commit those changes. You can also use `git commit -a` to commit all of the current changes. Be sure to replace COMMIT MESSAGE with a detailed message that describes the changes you're making for that specific commit. 
 
-Replace COMMIT MESSAGE with a detail message describing the changes. Once that's done the next step is to push those changes to your Github account using git push.
+Once that's done the next step is to push those changes to your Github account using git push. This is where it's important to understand branches, origins, and remotes. You've made all of these changes (and committed them) to your local copy of the Brackets repository. And hopefully you've been pulling down new versions from the linked, remote branch of Brackets, and merging them as you go. What you need to do now is tell Github about your branch and the commits it contains. Github repositories use `origin` to reference your Github-hosted fork. So to push your changes use.
 
 ```
 git push origin mynewfeature
 ```
 
-That sends the branch (and the commits) to your Github-hosted fork of the project. Until now everything we did was local. Now Github knows about our branch as well as our changes.
+That command creates a branch on your Github-hosted fork of Brackets and commits all of the changes. Until now everything we did was local. Now Github knows about our branch as well as our changes.
 
-Submitting a Pull Request
-----------------------------
-Now you're ready to submit a pull request. Go to the Github page for your fork of Brackets. If everything is working correctly, Github will actually detect that you pushed a branch and will show you a Pull request button. Click that button and you'll be brought to the pull request page where you can see the commits, look at the file differences, and add some comments. Use the comment box to explain in more detail your changes, why you made them, and any specific issues you're fixing. Then send it to the team.
+### Submitting a Pull Request ###
+Now you're ready to submit a pull request. Go to the Github page for your fork of Brackets. In order to submit a pull request, you need to be looking at the branch you created, which we called `newfeature`. Github has a pulldown that lets you select branches in your fork of the repository. Click that, find the branch you were working on, and select it. Now you're looking at the code for that branch. 
+
+Click the pull request button in the top left and you'll be brought to a page that describes the pull request. You want to make sure that you're submitting your pull request to the `adobe/brackets` repository and that the pull request is coming from the branch you've been working on. 
+
+You'll be able to take a look at all of the commits associated with this pull request and all the files that you've modified. Make sure this is all correct and then in the description provide a detailed description of what your pull request does.
 
 Now you've got your first pull request in! Check back for comments the team might have for the pull request. If it's set, they'll merge it in and you're officially a Brackets contributor. Sometimes they'll ask you to make changes.
 
-Making Changes to an Existing Pull Request
------------------------------------------------
+## Making Changes to an Existing Pull Request ##
+In a lot of cases you may have to make changes to your pull request. If you're working off a branch, Github makes this very easy. After you've gotten comments on the pull request and know what changes you need to make, go into your code and make sure you're working on your branch.
+
+```
+git checkout mynewfeature
+```
+
+Then go through the steps above to modify your code and make any changes based on comments from the pull request. Commit all of those changes with `git commit` and then push the changes to your Github-hosted fork with `git push origin mynewfeature`.
+
+As soon as you push those changes to the origin, the pull request you submitted will automatically be updated with the new code. If you go look at the pull request, you'll see a new comment entry with the commits that you added to the branch. Sometimes it helps to add another comment right after that commit describing some of the changes you made in more detail. 
