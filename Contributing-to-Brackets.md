@@ -10,15 +10,20 @@
 
 ## How to Get Started ##
 
+### How Brackets is Organized ###
+Brackets is primarily built in HTML/JS/CSS, but it currently runs as a desktop
+app inside a thin native app shell, currently based on [CEF](http://code.google.com/p/chromiumembedded/),
+that lets it access local files. (It doesn't run in the browser yet, and in
+fact will look amazingly terrible if you try to open it in Chrome from your local
+filesystem. We're planning to work on the in-browser version soon.)
+
+If you pull the repos as described below, or look in the contents of the ZIP
+file, you'll see that the main app binaries are in the bin/ folder, but the
+actual HTML/JS/CSS files that implement the main app are in the brackets/
+subfolder. The src/ folder is just the source for the native app shell.
+
 ### What should I hack on? ###
-Whatever you want, of course! But you might want to check the 
-[public Brackets backlog](http://bit.ly/BracketsBacklog) 
-to get ideas for things that are important to add soon. Also, if you're 
-planning to do something other than a small bugfix, please start a discussion 
-on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev)
-or the [#brackets IRC channel on freenode](http://freenode.net) to get
-feedback. There might already be some prior thinking on what you're working on,
-or some reason that it hasn't already been done.
+Whatever you want, of course! But you might want to check the [public Brackets backlog](http://bit.ly/BracketsBacklog) to get ideas for things that are important to add soon. Also, if you're planning to do something other than a small bugfix, please start a discussion on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) to get feedback. There might already be some prior thinking on what you're working on, or some reason that it hasn't already been done.
 
 ### Getting a Copy of the Code ###
 The first step is to fork the projects so you can start making changes in your local repository. Fork both brackets-app and brackets. 
@@ -77,6 +82,14 @@ git submodule update --init --recursive
 
 ## Contributing Code ##
 
+## Useful Tools for Development ##
+
+If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Refresh Window* from in-app menu. (If your Brackets gets really hosed, you can try *View > Refresh* from the native menu.) You can also bring up the Chrome developer tools on the Brackets window using *Debug > Show Developer Tools*.
+
+You can open a second Brackets window from *Debug > New Window*. This is nice because it means you can use a stable Brackets in one window to edit your code, and then reload the app in the second window to see if your changes worked. You can bring up the developer tools on the second window, too. Note that this can be flaky; if you find that the dev tools aren't showing scripts, just close the second window and reopen it, then open the dev tools window again.
+
+You can use *Debug > Run Tests* to run our unit test suite, and *Debug >Show Perf Data* to show some rudimentary performance info. We plan to beef this up in upcoming sprints.
+
 ### Modifying the Code ###
 So you have found an issue that you want to fix. Start off by creating a new branch in your local directory. This assumes you are working in the brackets directory, but the same thing would apply for the brackets-app project as well. 
 
@@ -103,7 +116,7 @@ git push origin mynewfeature
 
 That command creates a branch on your Github-hosted fork of Brackets and commits all of the changes. Until now everything we did was local. Now Github knows about our branch as well as our changes.
 
-> Before you submit a pull request you should make sure everything passes JSLint. This is easy because Brackets will show you anywhere in your file that JSLint sees an error. You also need to make sure that the unit tests pass without any errors. You can run the Brackets unit tests by going to Debug > Run Unit Tests in Brackets. The tests require Chrome and you should quit Chrome before running the tests for the most accurate results. 
+> Before you submit a pull request you should make sure everything passes JSLint. This is easy because Brackets will show you anywhere in your file that JSLint sees an error. You also need to make sure that the unit tests pass without any errors. You can run the Brackets unit tests by going to *Debug > Run Unit Tests* in Brackets. The tests require Chrome and you should quit Chrome before running the tests for the most accurate results. 
 
 ### Submitting a Pull Request ###
 Now you're ready to submit a pull request. Go to the Github page for your fork of Brackets. In order to submit a pull request, you need to be looking at the branch you created, which we called `newfeature`. Github has a pulldown that lets you select branches in your fork of the repository. Click that, find the branch you were working on, and select it. Now you're looking at the code for that branch. 
