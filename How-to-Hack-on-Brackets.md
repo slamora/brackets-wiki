@@ -2,7 +2,12 @@ tl;dr
 -----
 1. Before you get started, post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) about what you're thinking of working on, so you can get early feedback.
 2. When coding, make sure to follow our [coding conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions).
-3. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
+3. Before submitting any pull request, make sure to:
+    1. merge from adobe/brackets master
+    2. re-test your code after the merge
+    3. run the unit tests with Debug > Run Tests -- everything should pass
+    4. if your change is nontrivial or might have affected the UI, run through the [Brackets smoke tests](https://github/adobe/brackets/wiki/Brackets-Smoke-Tests).
+4. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
 
 What should I hack on?
 ----------------------
@@ -27,7 +32,9 @@ brackets-app. The core dev team works in 2.5-week sprints (weird length,
 but it works for us). We'll try to review small pull requests quickly
 in the current sprint. Larger submissions will be added to the 
 [public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88)
-and scheduled to be reviewed and merged in an upcoming sprint. 
+and scheduled to be reviewed and merged in an upcoming sprint.
+
+Before you submit your pull request, please make sure it's merged with master and fully tested as described in the tl;dr section above. 
 
 Folder organization
 -------------------
