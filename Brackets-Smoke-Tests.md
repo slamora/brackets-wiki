@@ -33,24 +33,3 @@ Smoke test steps
 19. Click on a list in the rule list. Verify that the editor shows the correct rule.
 20. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
 21. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
-
-Areas covered
-=============
-* Project tree - appearance, handling of folders with spaces
-* Working set - selection appearance
-* File tree - scrolling and selection appearance
-* Title bar - resize
-* In-browser menu - appearance, Z-order
-* Inline editor - open CSS
-* Inline editor - resize/scroll behavior
-* Inline editor - rule list
-* Live development - launch
-* Live development - edit CSS
-* Find/Replace - appearance/behavior of semimodal dialog
-
-Not yet covered
-===============
-
-* Find in Files - appearance/behavior of semimodal dialog, panel
-* Quick Open - appearance/behavior of semimodal dialog, popup
-* Quit the app and restart - project properly restored
