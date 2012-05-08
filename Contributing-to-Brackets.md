@@ -62,7 +62,7 @@ git remote add --track master upstream git@github.com:adobe/brackets.git
 It's very important to always have the latest code from the main repository. That way you can make sure your pull requests will be clean merges and that you're always working with the most stable code. Any time you want to grab the master branch from the Brackets repository simply use the fetch command with the remote destination we created earlier:
 
 ```
-git fetch upstream master
+git fetch upstream
 ```
 
 The fetch command won't merge the changes, but it does bring them down so that you can merge them manually. 
