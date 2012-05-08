@@ -6,7 +6,7 @@ tl;dr
     1. merge from adobe/brackets master
     2. re-test your code after the merge
     3. run the unit tests with Debug > Run Tests -- everything should pass
-    4. if your change is nontrivial or might have affected the UI, run through the [Brackets smoke tests](https://github/adobe/brackets/wiki/Brackets-Smoke-Tests).
+    4. if your change is nontrivial or might have affected the UI, run through the [Brackets smoke tests](https://github.com/adobe/brackets/wiki/Brackets-Smoke-Tests).
 4. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
 
 What should I hack on?
