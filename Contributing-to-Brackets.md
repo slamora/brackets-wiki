@@ -1,5 +1,4 @@
 ## tl;dr ##
------
 1. Before you get started, post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) about what you're thinking of working on, so you can get early feedback.
 2. When coding, make sure to follow our [coding conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions).
 3. Before submitting any pull request, make sure to:
@@ -10,7 +9,6 @@
 4. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
 
 ## How to Get Started ##
----------------------
 The first step is to find something to fix. [How to Hack on Brackets] (wiki/How-to-Hack-on-Brackets) has some good pointers for finding issues and getting your head around how to get up to speed with Brackets. 
 
 The nextstep is to fork the projects so you can start making changes in your local repository. Fork both brackets-app and brackets. 
