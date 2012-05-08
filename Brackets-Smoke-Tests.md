@@ -1,4 +1,4 @@
-Brackets has a pretty good unit test suite that you can run from Debug > Run Unit Tests, but that doesn't always cover issues with the overall UI and integrated functionality, or visual/layout issues that are only obvious if you're actually looking at the product. This is a set of manual tests intended to make sure we haven't broken the basic overall workflows of the product. The intention is to keep it quick--if it takes more than 5 minutes on a given platform it's too long :)
+Brackets has a pretty good unit test suite that you can run from Debug > Run Unit Tests, but that doesn't always cover issues with the overall UI and integrated functionality, or visual/layout issues that are only obvious if you're actually looking at the product. This is a set of manual tests intended to make sure we haven't broken the basic overall workflows of the product. The intention is to keep it quick--if it takes more than 5 minutes on a given platform it's too long.
 
 Setup
 =====
@@ -52,7 +52,3 @@ Not yet covered
 * Find in Files - appearance/behavior of semimodal dialog, panel
 * Quick Open - appearance/behavior of semimodal dialog, popup
 * Quit the app and restart - project properly restored
-
-**TODO:** Should we add basic file operations (e.g. Save)? Those are obviously key workflows, but we do have unit tests for them.
-
-**TODO:** Should we add smoke tests for unofficial features (find/replace, find in files, quick open), or wait till they become official?
