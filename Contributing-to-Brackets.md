@@ -44,7 +44,7 @@ git submodule update --init --recursive
 
 That should both get the latest version of CodeMirror and sync your fork of Brackets with brackets-app. If you run _bin/mac/Brackets.app_ or _bin/win/Brackets.exe_ you'll have your just-forked version of Brackets up and running.
 
-### Getting a Copy of the Code ###
+### Tracking Changes from the Main Repository ###
 It's important to be working off of the latest build and the easiest way to do that is to make sure that your local copy of Brackets is tracking the main repository. This involves using the `git remote` command which lets you link your local version to a different remote repository (by default, it's linked to your github fork). To link your local repository to the main Brackets repository, use this command:
 
 ```
@@ -82,8 +82,7 @@ git submodule update --init --recursive
 
 ## Contributing Code ##
 
-## Useful Tools for Development ##
-
+### Useful Tools for Development ###
 If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Refresh Window* from in-app menu. (If your Brackets gets really hosed, you can try *View > Refresh* from the native menu.) You can also bring up the Chrome developer tools on the Brackets window using *Debug > Show Developer Tools*.
 
 You can open a second Brackets window from *Debug > New Window*. This is nice because it means you can use a stable Brackets in one window to edit your code, and then reload the app in the second window to see if your changes worked. You can bring up the developer tools on the second window, too. Note that this can be flaky; if you find that the dev tools aren't showing scripts, just close the second window and reopen it, then open the dev tools window again.
