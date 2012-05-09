@@ -1,3 +1,6 @@
-# Typing Speed
-
-WIP (jason-sanjose)
+## Typing Speed (WIP)
+### CodeMirror Event Handling
+### Measurement
+#### Automation
+#### Alternatives and Trade-Offs
+### Test Suite Outlines
