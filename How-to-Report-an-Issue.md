@@ -1,4 +1,4 @@
-Brackets bugs are tracked in [the Github issue tracker](https://github.com/adobe/brackets/issues). 
+Brackets bugs are tracked in [the GitHub issue tracker](https://github.com/adobe/brackets/issues). 
 When filing a new bug, please remember to include:
 
 * Brackets version/sprint number (or commit SHA if you're pulling directly from the repo (see below)).
