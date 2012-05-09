@@ -1,6 +1,15 @@
 ## Typing Speed (WIP)
 ### CodeMirror Event Handling
+CodeMirror's approach to keyboard event handling uses a hidden textarea for text input <http://codemirror.net/doc/internals.html>. 
 ### Measurement
+Here are the tools we have for measuring typing speed in CodeMirror. Note that the tools I'm considering are suitable for automated performance tests.
+1. CodeMirror onKeyEvent - DOM keydown/keypress events
+2. DOM input event - triggered by CodeMirror's hidden textarea
+3. CodeMirror onUpdate event - triggered when all DOM updates are complete. This is more than just line patching to display characters, this includes scrolling, updating inlines, etc.
+4. webkitRequestAnimationFrame - triggered before each repaint
+5. DOM mutation events - triggered by DOM changes. Note that these events are now deprecated.
+Measurement can also be done manually through Web Inspector.
+
 #### Automation
 #### Alternatives and Trade-Offs
 ### Testing
