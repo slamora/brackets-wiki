@@ -16,13 +16,9 @@ Our current approach to measurement relies on the following:
 2. webkitRequestAnimationFrame - Triggered before each repaint. Since this can vary based on the application structure (e.g. CSS style rules, re-layout, etc.), we record significant repaints relative to CodeMirror's event handling: (1) first repaint after _input_, (2) last repaint before CodeMirror's _onChange_ event and (3) first repaint after CodeMirror's _onChange_ event.
 3. CodeMirror onChange event - Triggered when all DOM updates are complete. This is more than just line patching to display characters, this includes scrolling, updating inlines, etc.
 
-#### Automation
-
 #### Alternatives and Trade-Offs
 1. Instrumenting CodeMirror internals - To keep Adobe's fork of CodeMirror as close as possible to mainline, we've decided against instrumenting CodeMirror. While this detailed level of instrumentation may be helpful, we are more concerned with the bigger picture, response time between keystrokes. The measurements mentioned above give us that data without any changes to CodeMirror.
-2. console.profile() - Again, this is more information than we need. Also, profiling significantly degrades performance. Out event handling and requestAnimationFrame approach has a negligible impact on performance.
-
-### Testing
+2. console.profile() - Again, this is more information than we need. Also, profiling significantly degrades performance. Our event handling and requestAnimationFrame approach has a negligible impact on performance.
 
 #### Conditions That Affect Typing Speed
 * Native OS keyboard settings: repeat rate and delay until repeat
@@ -41,6 +37,14 @@ Our current approach to measurement relies on the following:
 * Electric chars
 * Auto indenting
 * If you are [NJ](https://github.com/njx)
+
+### Manual Testing
+See [Typing Speed Logger Extension].
+
+### Automated Testing
+Automated tests will be written as Jasmine specs. We don't currently have build automation of any sort. For now, we intend to manually run these tests on dedicated performance machines.
+
+#### Test Case Outline
 
 ### References
 * Typing speed thread: <https://groups.google.com/d/topic/brackets-dev/tXQ0FkHge0s/discussion>
