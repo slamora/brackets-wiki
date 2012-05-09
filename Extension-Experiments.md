@@ -6,7 +6,7 @@ The original goal was to write a single extension: an inline editor for JavaScri
 
 Additional notes were added via a thought experiment: analyzing what it would take to recast specific baked-in features as separate extensions.
 
-##Inline Editor for JavaScript functions
+## <a id='inline-js'/>Inline Editor for JavaScript functions
 
 When in a JavaScript file, put the cursor (or selection) on a function name and press Cmd/Ctrl-E. If the function can be found it is displayed in an inline editor. If multiple functions with the same name are found, they can be navigated in the same way that multiple CSS rules can be navigated.
 
@@ -30,7 +30,7 @@ This extension was possible without any changes to core Brackets code. It is che
 * Per-file information was cached on the FileIndexManager fileInfo structure, which is really handy. We should document best practices around this (each plugin should store all of its data on a single object and make sure it has a unique name).
 
 
-##Inline Image Viewer
+## <a id='inline-image'/>Inline Image Viewer
 
 If the cursor (or selection) is in a string that is an image filename (basically any string that ends with .jpg, .jpeg, .png, .gif or .svg), the image is displayed in an inline widget.
 
@@ -42,7 +42,7 @@ This extension was possible without any changes to core Brackets code. It is che
 
 * This inline editor has a file header section that should match the appearance of the file header in MultiRangeInlineEditor. There wasn't a common base class, so I had to duplicate some code. I'm not sure how much abstraction we can really get here since I only wanted the file name, but MultiRangeInlineEditor also has line number. I recommend not doing anything here for now, but let's keep an eye on it to see if more inline editors are running into the same issue.
 
-##Ambiance Theme for Code Editor
+## <a id='code-theme'/>Ambiance Theme for Code Editor
 
 This extension adds a menu item to the "Experimental:" section of the Debug menu. When selected, a dark theme is applied to the main code editor and the menu item is checked. 
 
@@ -61,7 +61,7 @@ We probably want theme support built into our core Editor classes. If not, we ne
 
 Built-in theme support added to backlog: https://trello.com/c/y5ed9WKY
 
-##Comment/Uncomment Command
+## <a id='comment-uncomment'/>Comment/Uncomment Command
 
 Not written as an extension - but this analysis considers what it would take to do so. Comment/Uncomment adds or removes "//"-style comments on the currently selected code.
 
@@ -75,7 +75,7 @@ Not written as an extension - but this analysis considers what it would take to 
     * Require extensions that add a new language/mode to implement a specific interface, which provides either (a) a language-specific comment/uncomment handler, or (b) info on which tokens (if any) are used for line comments, so that we could have a single language-agnostic implementation of the command.
 * Is this _specific_ feature something we'd actually want to package as an extension? We've talked about trying to make as many Brackets features be separable extensions as possible. But there are lots of little text-edit gestures like this that come standard with most editors. How much overhead would there be if the core Brackets install relied on dozens of plugins for its basic functionality? Do plugins load slower than other modules? Do many small modules load slower than a few big modules?
  
-##General Extensibility Issues
+## <a id='general'/>General Extensibility Issues
 
 * We currently load the "main.js" module for all extensions. We should support package.json files ([http://requirejs.org/docs/api.html#packages](details)) for defining extension loading points -- so that extensions don't all contain identically-named files. When working with multiple extensions, the monotonous file names are hard to distinguish in the working set, Quick Open, etc. Added to backlog: https://trello.com/c/cyKQeDzd
 * How do we unit-test extensions? Presumably extensions we ship with the default install of Brackets should have unit test coverage just like our other standard features.
