@@ -30,6 +30,6 @@ Smoke test steps
 16. Hit Cmd/Ctrl-E. Verify that the inline editor opens and that you see a number of rules in the list on the right.
 17. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
 18. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
-19. Click on a list in the rule list. Verify that the editor shows the correct rule.
+19. Click on a rule in the rule list. Verify that the editor shows the correct rule.
 20. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
 21. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
