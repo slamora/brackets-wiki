@@ -36,13 +36,15 @@ cd brackets-app
 git clone git@github.com:<your username>/brackets.git
 ```
 
-Because Brackets relies on [CodeMirror](http://codemirror.net/) you want to make sure you have the latest version of CodeMirror. Brackets uses submodules to help track both CodeMirror and the Brackets project from Brackets app. To make sure everything is up to date go back to your brackets-app folder and run.
+Because Brackets relies on [CodeMirror](http://codemirror.net/) you want to make sure you have the latest version of CodeMirror. Brackets uses submodules to track third-party repos referenced by Brackets. To get these set up, you need to run this command from within the `brackets` folder:
 
 ```
-git submodule update --init --recursive
+git submodule update --init
 ```
 
 > Because CodeMirror will update fairly often, you'll often find as you're switching between branches or merging that your CodeMirror files are showing up as modified when you run `git status`. Something like `M	src/thirdparty/CodeMirror2`. Running the command above brings everything in sync.
+
+> Note that brackets is also a submodule of brackets-app. However, the brackets-app reference to brackets is not updated very often, so you should generally not do `git submodule update` from the brackets-app folder, as it will switch your brackets fork to an older version. Instead, to keep the brackets repo up to date, just do `git pull` on master within the brackets folder.
 
 That should both get the latest version of CodeMirror and sync your fork of Brackets with brackets-app. If you run _bin/mac/Brackets.app_ or _bin/win/Brackets.exe_ you'll have your just-forked version of Brackets up and running.
 
