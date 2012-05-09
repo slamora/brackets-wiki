@@ -7,7 +7,7 @@ Setup
 
 1. Quit and relaunch Chrome if it's open (so it's *not* in remote debugger mode).
 2. If you've run the smokes previously, revert any changes you might have made in `brackets/test/smokes/citrus completed`.
-3. Delete your cache folder (~/Library/ApplicationSupport/com.adobe.Brackets.cefCache on Mac, ...\AppData\Roaming\Brackets on Win).
+3. Delete your [cache folder](Cache-Folder) (Mac: ```~/Library/Application Support/com.adobe.Brackets.cefCache```, Win: ```%appdata%\Brackets\cefCache```).
 
 Smoke test steps
 ================
