@@ -1,6 +1,8 @@
 ## Typing Speed Mini-Spec (WIP)
+
 ### CodeMirror Event Handling
 CodeMirror's approach to keyboard event handling uses a hidden textarea for text input <http://codemirror.net/doc/internals.html>. For typing performance, the most significant point to observe is that CodeMirror uses a short polling interval to detect changes to the textarea once the input event has fired.
+
 ### Profiling with Web Inspector
 Measuring typing performance manually is straightforward with Web Inspector's Timeline panel. The _input_ event appears nested under the _keypress_ event. This _input_ event marks the starting time.
 
@@ -15,10 +17,13 @@ Our current approach to measurement relies on the following:
 3. CodeMirror onChange event - Triggered when all DOM updates are complete. This is more than just line patching to display characters, this includes scrolling, updating inlines, etc.
 
 #### Automation
+
 #### Alternatives and Trade-Offs
 1. Instrumenting CodeMirror internals - To keep Adobe's fork of CodeMirror as close as possible to mainline, we've decided against instrumenting CodeMirror. While this detailed level of instrumentation may be helpful, we are more concerned with the bigger picture, response time between keystrokes. The measurements mentioned above give us that data without any changes to CodeMirror.
 2. console.profile() - Again, this is more information than we need. Also, profiling significantly degrades performance. Out event handling and requestAnimationFrame approach has a negligible impact on performance.
+
 ### Testing
+
 #### Conditions That Affect Typing Speed
 * Native OS keyboard settings: repeat rate and delay until repeat
 * Size of document
