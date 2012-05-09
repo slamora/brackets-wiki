@@ -1,5 +1,3 @@
-## Typing Speed Mini-Spec (WIP)
-
 ### CodeMirror Event Handling
 CodeMirror's approach to keyboard event handling uses a hidden textarea for text input <http://codemirror.net/doc/internals.html>. For typing performance, the most significant point to observe is that CodeMirror uses a short polling interval to detect changes to the textarea once the input event has fired.
 
