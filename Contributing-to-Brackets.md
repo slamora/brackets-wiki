@@ -49,13 +49,13 @@ git submodule update --init
 That should both get the latest version of CodeMirror and sync your fork of Brackets with brackets-app. From the brackets-app folder, if you run `open bin/mac/Brackets.app` or `bin/win/Brackets.exe` (or open them from Finder/Explorer) you'll have your just-forked version of Brackets up and running.
 
 ### Tracking Changes from the Main Repository ###
-It's important to be working off of the latest build and the easiest way to do that is to make sure that your local copy of Brackets is tracking the main repository. This involves using the `git remote` command which lets you link your local version to a different remote repository (by default, it's linked to your github fork). To link your local repository to the main Brackets repository, use this command:
+It's important to be working off of the latest build and the easiest way to do that is to make sure that your local copy of Brackets is tracking the main repository. This involves using the `git remote` command which lets you link your local version to a different remote repository (by default, it's linked to your github fork). To link your local repository to the main Brackets-app repository, use this command from the _brackets-app_ directory:
 
 ```
 git remote add --track master upstream git@github.com:adobe/brackets-app.git
 ```
 
-This will create a link from your local Brackets repository to the main one called `upstream`. `upstream` will be how you reference the main Brackets repository. 
+This will create a link from your local Brackets-app repository to the main one called `upstream`. `upstream` will be how you reference the main Brackets-app repository. 
 
 Do the same for the Brackets project
 ```
