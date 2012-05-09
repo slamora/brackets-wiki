@@ -42,9 +42,15 @@ Our current approach to measurement relies on the following:
 See [Typing Speed Logger Extension].
 
 ### Automated Testing
-Automated tests will be written as Jasmine specs. We don't currently have build automation of any sort. For now, we intend to manually run these tests on dedicated performance machines.
+Automated tests will be written as Jasmine specs. We don't currently have build automation of any sort. For now, we intend to manually run these tests on dedicated test machines.
+
+To simulate typing, we rely on setTimer() to change the hidden textarea value, which fires input events for CodeMirror.
 
 #### Test Case Outline
 
+_Note: We'll likely add test cases in phases based on the conditions above. The outline below_
+
 ### References
-* Typing speed thread: <https://groups.google.com/d/topic/brackets-dev/tXQ0FkHge0s/discussion>
+* Brackets typing speed thread <https://groups.google.com/d/topic/brackets-dev/tXQ0FkHge0s/discussion>
+* How JavaScript Timers Work <http://ejohn.org/blog/how-javascript-timers-work/>
+* Why I Consider setInterval to be Harmful <http://zetafleet.com/blog/why-i-consider-setinterval-harmful>
