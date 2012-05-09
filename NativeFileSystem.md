@@ -26,3 +26,10 @@ This includes:
 * ERR_UNSUPPORTED_ENCODING
 
 If you run into a FileError.SECURITY_ERR while working with the API, you should debug as if it is a security error, or one of the errors listed above.
+
+### Additional Resources
+
+* [Exploring the FileSystem APIs](http://www.html5rocks.com/en/tutorials/file/filesystem/)
+* [W3C FileAPI Draft Specification](http://www.w3.org/TR/file-system-api/)
+* [HTML5 Rocks FileSystem Articles](http://updates.html5rocks.com/tag/filesystem)
+* [IANA Official Names of Character Sets on the Internet](http://www.iana.org/assignments/character-sets) These should be used to specify encodings, although, as noted before, they are not always correct.
