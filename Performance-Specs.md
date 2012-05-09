@@ -52,10 +52,10 @@ To simulate typing, we rely on setTimer() to change the hidden textarea value, w
 _Note: We'll likely add test cases in phases based on the permutations of the conditions above. The outline below serves as an initial set of test cases include general tests as well as known scenarios that we wish to investigate as of Sprint 8. Test media will be located in TBD._
 
 * General Tests for both full editors and inline CSS editors
-** Typing a single char
-** Typing a sequence of 80 chars (WPM from 20 to 80)
-** Deleting a single char
-** Deleting a sequence of 80 chars (WPM from 20 to 80)
+    * Typing a single char
+    * Typing a sequence of 80 chars (WPM from 20 to 80)
+    * Deleting a single char
+    * Deleting a sequence of 80 chars (WPM from 20 to 80)
 
 ### References
 * Brackets typing speed thread <https://groups.google.com/d/topic/brackets-dev/tXQ0FkHge0s/discussion>
