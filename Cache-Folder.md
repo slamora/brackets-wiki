@@ -2,6 +2,6 @@ Brackets stores some data in a cache folder managed by CEF -- roughly equivalent
 
 ## Cache location:
 
-* Mac: ```~/library/Application Support/com.adobe.Brackets.cefCache```
-* Win XP: ```Documents and Settings\<username>\Application Data\Brackets\cefCache``` – (aka ```%appdata\Brackets\cefCache```)
-* Win Vista/7: ```Users\<username>\AppData\Roaming\Brackets\cefCache``` – (aka ```%appdata\Brackets\cefCache``` ?)
+* Mac: ```~/Library/Application Support/com.adobe.Brackets.cefCache```
+* Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets\cefCache``` -- (aka ```%appdata%\Brackets\cefCache```)
+* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets\cefCache``` -- (aka ```%appdata%\Brackets\cefCache```)
