@@ -16,7 +16,7 @@ Smoke test steps
 2. Expand some folders in the brackets project, enough that it has to scroll.
 3. Scroll around in the folder area. Verify that the shadows look right (appears at top when not scrolled all the way to the top) and there are no visual glitches.
 4. File > Open Folder and browse to the `brackets/test/smokes/citrus completed` folder (note that there's a space in the name; this is intentional). Verify that it contains "css" and "images" folders and an "index.html" file.
-5. Select index.html and click Open. Verify that the selection in the project panel draws properly.
+5. Click on index.html. Verify that the selection in the project panel draws properly.
 6. Double-click on index.html. Verify that it's added to the working set and the selection draws properly.
 7. Resize the window. Verify that the editor resizes properly and the title bar wraps appropriately.
 8. Look through the in-Brackets menus. Verify that they look okay and that they properly pop on top of other UI in the app.
