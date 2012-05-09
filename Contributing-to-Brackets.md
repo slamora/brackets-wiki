@@ -78,11 +78,13 @@ git merge upstream/master
 
 Those two commands will grab and merge any changes from the main Brackets repository for your current branch. 
 
-If there have been CodeMirror changes you will also want to bring those in. You can do that by re-running the git submodule command.
+If there have been CodeMirror changes you will also want to bring those in. You can do that by re-running the git submodule command from within the brackets folder.
 
 ```
-git submodule update --init --recursive
+git submodule update
 ```
+
+If new submodules are added to Brackets, you'll need to run `git submodule update --init` to get them as well.
 
 ## Contributing Code ##
 
