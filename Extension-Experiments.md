@@ -2,7 +2,9 @@
 
 The goal of this exercise was to write a feature as an extension, without modifying core Brackets code, and document the issues and pain points. The extension needs to be functional, but not necessarily "release ready". The main objective was to hit on all of the extensibility points required to write a robust, full-featured extension.
 
-The original goal was to write a single extension: an inline editor for JavaScript functions. In the end, three extensions were written. 
+The original goal was to write a single extension: an inline editor for JavaScript functions. In the end, three extensions were written.
+
+Additional notes were added via a thought experiment: analyzing what it would take to recast specific baked-in features as separate extensions.
 
 ##Inline Editor for JavaScript functions
 
@@ -58,7 +60,23 @@ We probably want theme support built into our core Editor classes. If not, we ne
 * Need access to all editor instances (there is a private `_instances` var, but no public access)
 
 Built-in theme support added to backlog: https://trello.com/c/y5ed9WKY
+
+##Comment/Uncomment Command
+
+Not written as an extension - but this analysis considers what it would take to do so. Comment/Uncomment adds or removes "//"-style comments on the currently selected code.
+
+###Issues:
+
+* Need API to add menu item, command, and key binding. Adding a menu/shortcut without modifying core Brackets files requires fragile hacks (which probably get even more fragile if used by more than one extension).
+* Need public APIs equivalent to CodeMirror.replaceRange() and CodeMirror.operation(). This will be an issue for any extensions that makes text edits.
+* This feature's behavior varies depending on language/mode. Need a way to add support for new languages to this command. There are multiple ways we might achieve this:
+    * Way for this extension to expose its own extension point in turn, where sub-extensions can add support for new languages.
+    * Way to add language-scoped command handlers (sort of analogous to how we allow OS-scoped key bindings). But then we'd need to offer some language-agnostic utility methods so that the various handlers didn't have tons of code duplication.
+    * Require extensions that add a new language/mode to implement a specific interface, which provides either (a) a language-specific comment/uncomment handler, or (b) info on which tokens (if any) are used for line comments, so that we could have a single language-agnostic implementation of the command.
+* Is this _specific_ feature something we'd actually want to package as an extension? We've talked about trying to make as many Brackets features be separable extensions as possible. But there are lots of little text-edit gestures like this that come standard with most editors. How much overhead would there be if the core Brackets install relied on dozens of plugins for its basic functionality? Do plugins load slower than other modules? Do many small modules load slower than a few big modules?
  
 ##General Extensibility Issues
 
-We currently load the "main" module for all extensions. We should support package.json files for defining extension loading points. See http://requirejs.org/docs/api.html#packages for details. Added to backlog: https://trello.com/c/cyKQeDzd
+* We currently load the "main.js" module for all extensions. We should support package.json files ([http://requirejs.org/docs/api.html#packages](details)) for defining extension loading points -- so that extensions don't all contain identically-named files. When working with multiple extensions, the monotonous file names are hard to distinguish in the working set, Quick Open, etc. Added to backlog: https://trello.com/c/cyKQeDzd
+* How do we unit-test extensions? Presumably extensions we ship with the default install of Brackets should have unit test coverage just like our other standard features.
+* What if extensions want to share code? How would one extension refer to another's module(s)? What happens if the required dependency extension isn't present? What about optional dependencies? (e.g. extension A says, _if_ extension B is present I'll plug into it to provide enhanced functionality, but if it's not present that's fine too).
