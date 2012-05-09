@@ -26,7 +26,7 @@ subfolder. The src/ folder is just the source for the native app shell.
 Whatever you want, of course! But you might want to check the [public Brackets backlog](http://bit.ly/BracketsBacklog) to get ideas for things that are important to add soon. Also, if you're planning to do something other than a small bugfix, please start a discussion on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) to get feedback. There might already be some prior thinking on what you're working on, or some reason that it hasn't already been done.
 
 ### Getting a Copy of the Code ###
-The first step is to fork the projects on GitHub so you can start making changes in your local repository. If you only plan to hack on the HTML/JS/CSS portions of the app, you only need to fork brackets. If you want to work on the native code as well, you can fork brackets-app too.
+The first step is to fork the projects on GitHub so you can start making changes in your local repository. If you only plan to hack on the HTML/JS/CSS portions of the app, you only need to fork the [brackets repo](https://github.com/adobe/brackets). If you want to work on the native code as well, you can fork the [brackets-app repo](https://github.com/adobe/brackets-app) too. To fork one or both of the repos, simply click the "Fork" button at the top of the page while browsing the repo.
 
 Next pull both of those repositories down to your local machine. Your folder structure should have the brackets project within brackets-app. If you didn't fork brackets-app, use "adobe" instead of your username when cloning brackets-app.
 
