@@ -40,12 +40,12 @@ Our current approach to measurement relies on the following:
 * If you are [NJ](https://github.com/njx)
 
 ### Manual Testing
-See [Typing Speed Logger Extension].
+See https://groups.google.com/d/topic/brackets-dev/hagQVKGGuPM/discussion.
 
 ### Automated Testing
 Automated tests will be written as Jasmine specs. We don't currently have build automation of any sort. For now, we intend to manually run these tests on dedicated test machines.
 
-To simulate typing, we rely on setTimer() to change the hidden textarea value, which fires input events for CodeMirror.
+To reliably simulate typing, we use setTimer() at an appropriate WPM interval to change the hidden textarea value. This triggers input events for CodeMirror.
 
 #### Test Case Outline
 
