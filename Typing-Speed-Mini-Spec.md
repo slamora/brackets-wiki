@@ -34,7 +34,7 @@ Our current approach to measurement relies on the following:
 * Number of inline widgets
 * Number of keyboard shortcuts
 * Electric chars (auto indenting matching braces)
-* Auto indenting
+* Auto indenting (smartIndent setting)
 * If you are [NJ](https://github.com/njx)
 
 ### Manual Testing
