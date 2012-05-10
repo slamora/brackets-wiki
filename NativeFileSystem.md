@@ -15,6 +15,8 @@ The NativeFileSystem module provides an API for accessing and working with files
 
 When specifying UTF file encodings, you should use _utf8_ as opposed to _utf-8_.
 
+Currently, the only encoding supported is UTF-8 (_utf8_)
+
 ### Security Errors
 
 Currently, any errors that occur which do not map to standard FileError errors, will be mapped to FileError.SECURITY_ERR (as [specified by the File API draft](http://www.w3.org/TR/file-system-api/#definitions)).
