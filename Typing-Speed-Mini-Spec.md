@@ -19,7 +19,7 @@ Our current approach to measurement relies on the following:
 2. console.profile() - Again, this is more information than we need. Also, profiling significantly degrades performance. Our event handling and requestAnimationFrame approach has a negligible impact on performance.
 
 #### Conditions That Affect Typing Speed
-* Words per minute (WPM) ranging from 20 to 80.
+* Words per minute (WPM) ranging from 20 to 80 (1 word = 5 characters)
 * Native OS keyboard settings: repeat rate and delay until repeat
 * Size of document
     * Gutter changes to add/remove line numbers
@@ -33,7 +33,7 @@ Our current approach to measurement relies on the following:
 * CodeMirror pollingInterval
 * Number of inline widgets
 * Number of keyboard shortcuts
-* Electric chars
+* Electric chars (auto indenting matching braces)
 * Auto indenting
 * If you are [NJ](https://github.com/njx)
 
