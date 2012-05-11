@@ -19,7 +19,7 @@ Our current approach to measurement relies on the following:
 2. console.profile() - Again, this is more information than we need. Also, profiling significantly degrades performance. Our event handling and requestAnimationFrame approach has a negligible impact on performance.
 
 #### Conditions That Affect Typing Speed
-* Words per minute (WPM) ranging from 20 to 80 (1 word = 5 characters)
+* Keyboard Event intervals
 * Native OS keyboard settings: repeat rate and delay until repeat
 * Size of document
     * Gutter changes to add/remove line numbers
@@ -28,6 +28,9 @@ Our current approach to measurement relies on the following:
     * Window/Editor size
 * Line wrapping
 * Syntax highlighting
+    * CodeMirror mode (some languages might have more expensive syntax highlighting than others)
+    * What type of token you're in (e.g. is typing text within a comment cheaper than typing within a variable name?)
+    * What character you typed (e.g. typing "." starts a new token instead of appending to previous; or typing the "/" and the end of a block comment triggers many syntax highlighting updates)
     * Well-formed documents
     * Mixed content
 * CodeMirror pollingInterval
@@ -35,6 +38,7 @@ Our current approach to measurement relies on the following:
 * Number of keyboard shortcuts
 * Electric chars (auto indenting matching braces)
 * Auto indenting (smartIndent setting)
+* Typing carriage return (presumably more expensive than a letter key) 
 * If you are [NJ](https://github.com/njx)
 
 ### Manual Testing
@@ -51,9 +55,9 @@ _Note: We'll likely add test cases in phases based on the permutations of the co
 
 * General Tests for both full editors and inline CSS editors
     * Typing a single char
-    * Typing a sequence of 80 chars (WPM from 20 to 80)
+    * Typing a sequence of 80 chars (15ms, 30ms and 100ms intervals)
     * Deleting a single char
-    * Deleting a sequence of 80 chars (WPM from 20 to 80)
+    * Deleting a sequence of 80 chars (15ms, 30ms and 100ms intervals)
 
 ### Performance Investigation Notes
 
