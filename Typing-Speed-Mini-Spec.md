@@ -55,9 +55,9 @@ _Note: We'll likely add test cases in phases based on the permutations of the co
 
 * General Tests for both full editors and inline CSS editors
     * Typing a single char
-    * Typing a sequence of 80 chars (15ms, 30ms and 100ms intervals)
+    * Typing a sequence of 80 chars - 19 WPM (average composition), 80 WPM (fast pro typist), 15ms (mac) and 30ms (win) keyboard repeat intervals
     * Deleting a single char
-    * Deleting a sequence of 80 chars (15ms, 30ms and 100ms intervals)
+    * Deleting a sequence of 80 chars - 15ms (mac) and 30ms (win) repeat intervals
 
 ### Performance Investigation Notes
 
