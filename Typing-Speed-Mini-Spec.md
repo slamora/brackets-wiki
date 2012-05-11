@@ -55,6 +55,12 @@ _Note: We'll likely add test cases in phases based on the permutations of the co
     * Deleting a single char
     * Deleting a sequence of 80 chars (WPM from 20 to 80)
 
+### Performance Investigation Notes
+
+* The standalone CodeMirror demos do not show the typing speed lag that we see in Brackets.
+* Timeline profile comparisons between Brackets on CodeMirror show major differences in repaint regions. CodeMirror standalone data shows repaint regions isolated to the edited line. Bracket's repaint regions show extra repaints of the entire browser surface.
+* Press-and-hold tests are also snappy in CodeMirror standalone. There's a 1:1 correspondence between characters typed and onChange events. In Brackets, that ratio is approximately 6:1 on my current generation MacBook Air. input events are getting batched due to the longer layout/repaint times. 
+
 ### References
 * Brackets typing speed thread <https://groups.google.com/d/topic/brackets-dev/tXQ0FkHge0s/discussion>
 * How JavaScript Timers Work <http://ejohn.org/blog/how-javascript-timers-work/>
