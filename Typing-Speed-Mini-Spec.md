@@ -19,7 +19,7 @@ Our current approach to measurement relies on the following:
 2. console.profile() - Again, this is more information than we need. Also, profiling significantly degrades performance. Our event handling and requestAnimationFrame approach has a negligible impact on performance.
 
 #### Conditions That Affect Typing Speed
-* Keyboard Event intervals
+* Keyboard Event intervals (Words Per Minute range 20 to 80 <http://en.wikipedia.org/wiki/Words_per_minute>)
 * Native OS keyboard settings: repeat rate and delay until repeat
 * Size of document
     * Gutter changes to add/remove line numbers
