@@ -12,7 +12,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
 * [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
 
-### Explorations
+### Experiments
 
 * [Extension Experiments](https://github.com/adobe/brackets/wiki/Extension-Experiments)
 
