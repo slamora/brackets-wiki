@@ -9,10 +9,10 @@ We didn't add major new user-visible features in Sprint 8. Our main goals for th
     * Typing speed <https://github.com/adobe/brackets/wiki/Typing-Speed-Mini-Spec>
 
 In addition, we began accepting contributions from the open source community as well as other people outside the original Brackets team. Here are a few of the more notable ones:
-* @ryanstewart made the sidebar resizable
-* @jhatwich fixed the "dirty" indicator so it properly disappears when you undo back to your last saved state
-* @conradz made the menus more usable by making it so once a menu is open, other menus open on hover instead of having to click again
-* @jrowny started working on a prototype code snippets/templates extension: [brackets-snippets](http://github.com/jrowny/brackets-snippets)
+* [ryanstewart](http://github.com/ryanstewart) made the sidebar resizable
+* [jhatwich](http://github.com/jhatwich) fixed the "dirty" indicator so it properly disappears when you undo back to your last saved state
+* [conradz](http://github.com/conradz) made the menus more usable by making it so once a menu is open, other menus open on hover instead of having to click again
+* [jrowny](http://github.com/jrowny) started working on a prototype code snippets/templates extension: [brackets-snippets](http://github.com/jrowny/brackets-snippets)
 
 Bugs fixed in Sprint 8
 ----------------------
