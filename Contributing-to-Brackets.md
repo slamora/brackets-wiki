@@ -25,6 +25,19 @@ subfolder. The src/ folder is just the source for the native app shell.
 ### What should I hack on? ###
 Whatever you want, of course! But you might want to check the [public Brackets backlog](http://bit.ly/BracketsBacklog) to get ideas for things that are important to add soon. Also, if you're planning to do something other than a small bugfix, please start a discussion on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) to get feedback. There might already be some prior thinking on what you're working on, or some reason that it hasn't already been done.
 
+### What's the process? ###
+First, [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html). 
+This is for your protection as well as that of the Brackets project.
+
+Then, just submit changes as pull requests from your own fork of brackets or
+brackets-app. The core dev team works in 2.5-week sprints (weird length,
+but it works for us). We'll try to review small pull requests quickly
+in the current sprint. Larger submissions will be added to the 
+[public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88)
+and scheduled to be reviewed and merged in an upcoming sprint.
+
+Before you submit your pull request, please make sure it's merged with master and fully tested as described in the tl;dr section above. 
+
 ### Getting a Copy of the Code ###
 The first step is to fork the projects on GitHub so you can start making changes in your local repository. If you only plan to hack on the HTML/JS/CSS portions of the app, you only need to fork the [brackets repo](https://github.com/adobe/brackets). If you want to work on the native code as well, you can fork the [brackets-app repo](https://github.com/adobe/brackets-app) too. To fork one or both of the repos, simply click the "Fork" button at the top of the page while browsing the repo.
 
@@ -145,3 +158,9 @@ git checkout mynewfeature
 Then go through the steps above to modify your code and make any changes based on comments from the pull request. Commit all of those changes with `git commit` and then push the changes to your Github-hosted fork with `git push origin mynewfeature`.
 
 As soon as you push those changes to the origin, the pull request you submitted will automatically be updated with the new code. If you go look at the pull request, you'll see a new comment entry with the commits that you added to the branch. Sometimes it helps to add another comment right after that commit describing some of the changes you made in more detail. 
+
+### Modifying the App Shell ###
+For most of your work on Brackets, you should only need to edit the HTML/JS/CSS
+code in the brackets repo. But if you need to do work on the native app shell
+in brackets-app, you can find instructions on the [brackets-app wiki]
+(https://github.com/adobe/brackets-app/wiki).
