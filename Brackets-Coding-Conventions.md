@@ -7,7 +7,7 @@ Brackets uses some specific coding conventions. All of the pull requests that co
 * variable and function names must use camelCase (not under_scores)
 * use $ prefixes on variables referring to jQuery objects
 * use _ prefixes on private variables/methods
-* classes and id's in HTML use dashes (-) not camelCase or under_scores
+* classes and id's in HTML use all lower-case with dashes (-), not camelCase or under_scores
 * use semicolons
 * use double quotes in JavaScript
 
