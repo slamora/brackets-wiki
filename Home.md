@@ -9,10 +9,10 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets)
 * [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions)
 * [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
+
+### Extensions
+* [How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)
 * [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
-
-### Experiments
-
 * [Extension Experiments](https://github.com/adobe/brackets/wiki/Extension-Experiments)
 * [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
 
