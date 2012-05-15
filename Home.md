@@ -14,7 +14,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 ### Experiments
 
 * [Extension Experiments](https://github.com/adobe/brackets/wiki/Extension-Experiments)
-* [Simple "Hello World" experiment](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
+* [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
 
 ## Usage
 
