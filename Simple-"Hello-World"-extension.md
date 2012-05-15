@@ -10,7 +10,7 @@ define(function (require, exports, module) {
     
     var $item = $("<li></li>");
     $("<a href='#' id='hello-world'>Hello World</a>")
-        .click(function() {
+        .click(function () {
             alert("Hello Document: " + DocumentManager.getCurrentDocument().file.fullPath);
         })
         .appendTo($item);
