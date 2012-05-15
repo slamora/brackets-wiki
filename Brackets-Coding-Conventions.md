@@ -1,5 +1,7 @@
 Brackets uses some specific coding conventions. All of the pull requests that come in should adhere to the following rules:
 ## Basics ##
+* Use 4 space indents (spaces, not tabs)
+
 * All JavaScript files have a single module definition using the following format:
 
 ```javascript
@@ -120,9 +122,33 @@ Use double quotes in JavaScript:
 > ```
 
 ## Code Structure ##
-* Closure vars should go at the top of the code block they're scoped to
-* use of Array.forEach() instead of $.each()
-* 4-space indents (soft tabs)
+<br/>
+Use of Array.forEach() instead of a for loop or $.each():
+> Do this:
+>
+> ```
+> var anArray = [1, 2, 3, 4];
+> anArray.forEach(function (value, index) {
+>     // ...
+> });
+> ```
+>
+> Not this:
+> ```
+> var anArray = [1, 2, 3, 4];
+> for (var i = 0; i < anArray.length; i++) {  // Use Array.forEach()
+>     // ...
+> }
+> ```
+>
+> Or this:
+> ```
+> var anArray = [1, 2, 3, 4];
+> $.each(anArray, function (index, value) {  // Use Array.forEach()
+>     // ...
+> })
+> ```
+
 
 ## Comments ##
 * All comments should be C++ single line style //comment.
