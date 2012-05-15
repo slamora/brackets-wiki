@@ -62,7 +62,7 @@ _Note: We'll likely add test cases in phases based on the permutations of the co
 ### Performance Investigation Notes
 
 * The standalone CodeMirror demos do not show the typing speed lag that we see in Brackets.
-* Timeline profile comparisons between Brackets on CodeMirror show major differences in repaint regions. CodeMirror standalone data shows repaint regions isolated to the edited line. Bracket's repaint regions show extra repaints of the entire browser surface.
+* Timeline profile comparisons between Brackets on CodeMirror show major differences in repaint regions. CodeMirror standalone data shows repaint regions isolated to the edited line. Bracket's repaint regions show extra repaints of the entire browser surface. _Update 5/14: It appears the difference is due to the flex box layout used in Brackets. I confirmed in Brackets, Chrome and Firefox that the entire #main-view repaints for each DOM change in CodeMirror._
 * Press-and-hold tests are also snappy in CodeMirror standalone. There's a 1:1 correspondence between characters typed and onChange events. In Brackets, that ratio is approximately 6:1 on my current generation MacBook Air. input events are getting batched due to the longer layout/repaint times. 
 
 ### References
