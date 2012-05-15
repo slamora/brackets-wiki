@@ -15,36 +15,109 @@ define(function (require, exports, module) {
     // Export public APIs
     exports.someFunction = someFunction;
 }
-````
+```
 
 * Must pass JSLint. The default settings for JSLint are:
 
-````
+```
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
 /*global define */
-````
+```
 
 ## Naming and Syntax ##
-* variable and function names use camelCase (not under_scores)
+<br/>
+Variable and function names use camelCase (not under_scores):
+> Do this:
+>
+> ```
+> var editorHolder; 
+> function getText();
+> ```
+>
+> Not this:
+>
+> ```
+> var editor_holder; // Don't use underscore!
+> function get_text(); // Don't use underscore!
+> ```
 
-<table width="100%">
-  <tr>
-    <td style="background: #afa">
-      Good: var 
-    </td>
-  </tr>
-  <tr>
-    <td style="background: #faa">
-      Bad: var 
-    </td>
-  </tr>
-</table>
+<br/>
+Use $ prefixes on variables referring to jQuery objects:
+> Do this:
+>
+> ```
+> var $sidebar = $("#sidebar");
+> ```
+>
+> Not this:
+>
+> ```
+> var sidebar = $("#sidebar"); // Use '$' to prefix variables referring to jQuery objects
+> ```
 
-* use $ prefixes on variables referring to jQuery objects
-* use _ prefixes on private variables/methods
-* classes and id's in HTML use all lower-case with dashes (-), not camelCase or under_scores
-* use semicolons
-* use double quotes in JavaScript
+<br/>
+Use _ prefixes on private variables/methods:
+> Do this:
+>
+> ```
+> var _privateVar = 42;
+> function _privateFunction() 
+> ```
+>
+> Not this:
+>
+> ```
+> var privateVar = 42; // Private vars should start with _
+> function privateFunction() // Private functions should start with _
+> ```
+
+<br/>
+Classes and id's in HTML use all lower-case with dashes (-), not camelCase or under_scores:
+> Do this:
+>
+> ```
+> <div id="search-results">
+> <span class="title-wrapper">
+> ```
+>
+> Not this:
+>
+> ```
+> <div id="searchResults">  // Don't use camel-case for ids
+> <span class="title_wrapper"> // Don't use underscore
+> ```
+
+<br/>
+Use semicolons:
+> Do this:
+>
+> ```
+> var someVar;
+> someVar = 2 + 2;
+> ```
+>
+> Not this:
+>
+> ```
+> var someVar   // Missing semicolon!
+> someVar = 2 + 2   // Missing semicolon!
+> ```
+
+<br/>
+Use double quotes in JavaScript:
+> Do this:
+>
+> ```
+> var aString = "Hello";
+> someFunction("This is awesome!");
+> ```
+>
+> Not this:
+>
+> ```
+> var aString = 'Hello'; // Use double quotes!
+> someFunction("This is awesome!"); // Use double quotes!
+> ```
 
 ## Code Structure ##
 * Closure vars should go at the top of the code block they're scoped to
