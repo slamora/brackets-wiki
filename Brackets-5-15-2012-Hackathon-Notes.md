@@ -6,7 +6,7 @@
     * CodeMirror: just editing,
     * Brackets: file management, server APIs (github), extensions+inline
 
-* **How does the editor work? **
+* **How does the editor work?**
     * CodeMirror, pushing changes back into CodeMirror.
 **Are there apps for iPad/Android?**
     * Not now, will wrap in PhoneGap in the future
