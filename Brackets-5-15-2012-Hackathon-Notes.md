@@ -8,7 +8,7 @@
 
 * **How does the editor work?**
     * CodeMirror, pushing changes back into CodeMirror.
-**Are there apps for iPad/Android?**
+* **Are there apps for iPad/Android?**
     * Not now, will wrap in PhoneGap in the future
 * **Is it at all possible to run it on web right now, or has noone written that?**
     * They tried it once a while ago. Tricky because dependent on Chromium version, might not work with other browsers or look good. Also file API.
