@@ -46,21 +46,16 @@
     * Edit CodeMirror, no UI for it yet.
     * (But if you do it, change white:true for your own code)
 
-``this._codeMirror = new CodeMirror(container, {``
-
-``electricChars: false,   // we use our own impl of this to avoid CodeMirror bugs; see _checkElectricChars()``
-
-``indentUnit: 2,``
-
-``indentWithTabs: false,``
-
-``lineNumbers: true,``
-
-``matchBrackets: true,``
-
-``extraKeys: codeMirrorKeyMap``
-
-``});``
+```js
+this._codeMirror = new CodeMirror(container, {
+    electricChars: false,   // we use our own impl of this to avoid CodeMirror bugs; see _checkElectricChars()
+    indentUnit: 2,
+    indentWithTabs: false,
+    lineNumbers: true,
+    matchBrackets: true,
+    extraKeys: codeMirrorKeyMap
+});
+```
 
 ## Feedback while making extensions:
 
