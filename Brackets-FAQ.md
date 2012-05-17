@@ -1,5 +1,4 @@
 ## General Questions
-
 * **What would be the difference between embedding Brackets and embedding CodeMirror?**
     * CodeMirror: just editing,
     * Brackets: file management, server APIs (github), extensions+inline
@@ -12,4 +11,28 @@
 * **Is there a video that shows the cool demo’d features (inline CSS/HTML/JS)?** 
     * Not yet.
 * **Are there any plans to use right-click/context menu?**
-    * Eventually.
+    * Yes. We hope to add context-menu support by Sprint 11.
+* **Q: How to save as?**
+    * Not yet.
+* **Q: Can you drag+drop files around? (how to put file in other folder?)**
+    * Not yet.
+
+## Customizing Brackets
+* **Q: How do you change indenting/spacing?** 
+    * Edit CodeMirror, no UI for it yet.
+    * (But if you do it, change white:true for your own code)
+
+```js
+this._codeMirror = new CodeMirror(container, {
+    electricChars: false,   // we use our own impl of this to avoid CodeMirror bugs; see _checkElectricChars()
+    indentUnit: 2,
+    indentWithTabs: false,
+    lineNumbers: true,
+    matchBrackets: true,
+    extraKeys: codeMirrorKeyMap
+});
+```
+* **Q: What library is $ from?**
+    * jQuery
+* **Q: Where do you put a new HTML file when you’re testing brackets changes?**
+    * Make a new window, new folder, reload
