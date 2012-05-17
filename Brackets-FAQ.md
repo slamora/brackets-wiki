@@ -1,5 +1,5 @@
 ## General Questions
-* **What would be the difference between embedding Brackets and embedding CodeMirror?**
+* **What would be the difference between embedding Brackets and embedding CodeMirror into a web application?**
     * CodeMirror: just editing,
     * Brackets: file management, server APIs (github), extensions+inline
 * **How does the editor work?**
