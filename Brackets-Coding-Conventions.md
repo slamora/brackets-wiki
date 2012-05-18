@@ -118,7 +118,7 @@ Use double quotes in JavaScript:
 >
 > ```
 > var aString = 'Hello'; // Use double quotes!
-> someFunction("This is awesome!"); // Use double quotes!
+> someFunction('This is awesome!'); // Use double quotes!
 > ```
 
 ## Code Structure ##
