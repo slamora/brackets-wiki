@@ -7,7 +7,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Brackets Contributor License Agreement](http://brackets.io/brackets-contributor-license-agreement.html) You must agree to and submit this before you can contribute to Brackets.
 * [License](https://github.com/adobe/brackets/blob/master/LICENSE)
 * [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets)
-* [Resources / Tutorials / Videos]
+* [Resources / Tutorials / Videos](https://github.com/adobe/brackets/wiki/Resources)
 * [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions)
 * [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
 
