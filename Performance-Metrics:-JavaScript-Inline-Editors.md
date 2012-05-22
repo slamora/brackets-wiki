@@ -15,6 +15,7 @@ Metrics
 * Time to close an inline editor
     * Start: Close Inline Editor command is invoked
     * End: Inline editor is removed, host editor is fully updated
+* All of the above tests on a second inline editor opened at the same time as the first one (i.e., without closing the first)
 
 Note: "cold start" means a clean start of Brackets after a reboot. This is to get a timing that's unaffected by OS caching&mdash;not so much to focus on the use case where people are truly cold-starting Brackets, but rather to get a true timing for the first time the user accesses a given set of files, or if files they've already accessed have been flushed from the OS cache.
 
