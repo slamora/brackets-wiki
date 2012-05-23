@@ -148,6 +148,17 @@ You'll be able to take a look at all of the commits associated with this pull re
 
 Now you've got your first pull request in! Check back for comments the team might have for the pull request. If it's set, they'll merge it in and you're officially a Brackets contributor. Sometimes they'll ask you to make changes.
 
+### Fixing a Bug ###
+
+If you are working on a specific bug, here are the steps to follow:
+
+1. Create a new branch and use the issue number as the branch name. Be sure you have the latest code from the main repository before branching to make merging as easy as possible (instructions above).
+1. Fix the bug.
+1. Commit and push your changes according to the instructions above.
+1. Submit a pull request. Make sure the text "issue #123" (use your specific issue number) is in the pull request in order to create a link to the issue.
+
+That's it! You've just made Brackets even better.
+
 ## Making Changes to an Existing Pull Request ##
 In a lot of cases you may have to make changes to your pull request. If you're working off a branch, Github makes this very easy. After you've gotten comments on the pull request and know what changes you need to make, go into your code and make sure you're working on your branch.
 
