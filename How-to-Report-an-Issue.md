@@ -167,6 +167,7 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
   </tr>
 </table>
 
+<h3>Feature requests</h3>
 For feature requests, please file them in the issue tracker; they'll be converted
 to user stories on the [public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88).
 
