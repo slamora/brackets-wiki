@@ -33,7 +33,7 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
     <th width=60% scope="col">usage</th>
   </tr>
   <tr>
-    <td rowspan="7">Process </td>
+    <td rowspan="8">Process </td>
     <td>fix in progress</td>
     <td>Bug has been assigned and assignee has started to make improvements</td>
   </tr>
@@ -56,6 +56,10 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
   <tr>
     <td>starter bug</td>
     <td>This issue doesn’t require deep knowledge of the architecture and is the recommended level for new contributors</td>
+  </tr>
+  <tr>
+    <td>won't fix</td>
+    <td>This is a low priority issue we close without a fix - please refer to the explanation below.</td>
   </tr>
   <tr>
     <td>documentation</td>
@@ -127,6 +131,41 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
 <p>Before you fix a bug, post to the <a href="http://groups.google.com/group/brackets-dev">brackets-dev Google group</a> or the <a href="http://freenode.net/">#brackets IRC channel on freenode</a> about what you're thinking of working on, so you can get early feedback. If you start to contribute code to Brackets please also considder reading some of our <a href="https://github.com/adobe/brackets/wiki/">wiki documents</a> like <a href="https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets">How to Hack on Brackets</a> and <a href="https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions">Coding Conventions</a>.</p>
 <p>The Brackets team needs to assign or label bugs, therefore we ask you to document the progress to trigger necessary changes along the bug lifecycle.</p>
 <p>Once you start to adress a bug please let us know and add a note to set it to <strong>'<em>fix in progress</em>'</strong>, this helps to avoid multiplied efforts. Once an issue is fixed a the contributor opens a <em><strong>'pull request'</strong></em> to inform the core team to get the bug fix reviewed. After potential adjustments according to the review feedback have been added we will <em><strong>'merge</strong></em><strong>'</strong> the bug fix into master. At this point the status of the bug will be set to <strong>'<em>fixed but not closed</em>'</strong> and the filer will  <strong>'<em>close</em>'</strong> the issue (or notify the team) once he verified the fix.</p>
+
+<h3>Issues we won't fix</h3>
+<p>The consensus is that closing some of the low priority issues would only feel appropriate under specific criteria/circumstances, we don't want to end up burying issues which are affecting the quality of Brackets or are otherwise important to the community. We encourage feedback and contributors actually may review and request to re-open issues in case they feel strongly about them. Marking the issue with a label enables us to search for and to review issues at any point in time.</p>
+<table width="90%" border="1">
+  <tr>
+    <th scope="col">Category</th>
+    <th scope="col">Description</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Feature not supported</td>
+    <td>Feature is 'as designed' and the request is not an enhancement.</td>
+  </tr>
+  <tr>
+    <td>Feature removed or beyond scope of Brackets</td>
+  </tr>
+  <tr>
+    <td>Not this product</td>
+    <td>Feature or issue is not in our product and we have no reasonable way to influence the fix being made</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Not worth effort</td>
+    <td>High risk / low impact</td>
+  </tr>
+  <tr>
+    <td>High effort / low impact</td>
+  </tr>
+  <tr>
+    <td>Underlaying code or architecture is changing / will change soon</td>
+  </tr>
+  <tr>
+    <td>Intermittent or not reproducible</td>
+    <td>basically a flavor of high effort / low impact <br />
+( at times we may need additional information to reproduce a bug, those cases don't fall into this category if we're able to gather the information necessary with reasonable effort )</td>
+  </tr>
+</table>
 
 For feature requests, please file them in the issue tracker; they'll be converted
 to user stories on the [public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88).
