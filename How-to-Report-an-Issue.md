@@ -43,11 +43,11 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
   </tr>
   <tr>
     <td height="40">last reviewed</td>
-    <td>maker for last reviewd bug</td>
+    <td>maker for last reviewd bug, see below for explanation of the review process</td>
   </tr>
   <tr>
     <td>move to backlog</td>
-    <td>enhancement  marker - to be put  on the backlog</td>
+    <td>enhancement  marker - to be put  on the <a href="https://trello.com/b/Slx4ibBw" target="_blank">backlog</a></td>
   </tr>
   <tr>
     <td>sprintN</td>
@@ -96,8 +96,12 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
     <td> issue is being tracked for example due to dependencies not yet resolved</td>
   </tr>
   <tr>
-    <td rowspan="5">Architecturally-focused</td>
-    <td>Architecture</td>
+    <td rowspan="6">Architecturally-focused</td>
+    <td>Win only / Mac only</td>
+    <td>platform specific issue</td>
+  </tr>
+  <tr>
+    <td>architecture</td>
     <td>To fix this issue significant architectural change is required or desired</td>
   </tr>
   <tr>
@@ -106,7 +110,7 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
   </tr>
   <tr>
     <td height="35">code cleanup</td>
-    <td>provides an opportunity to do code cleanup</td>
+    <td>provides an opportunity to do code cleanup, basically, it's a tag that means small, opportunistic refactorings that don't require major cross-cutting changes</td>
   </tr>
   <tr>
     <td>performance</td>
