@@ -74,9 +74,20 @@ Not written as an extension - but this analysis considers what it would take to 
     * Way to add language-scoped command handlers (sort of analogous to how we allow OS-scoped key bindings). But then we'd need to offer some language-agnostic utility methods so that the various handlers didn't have tons of code duplication.
     * Require extensions that add a new language/mode to implement a specific interface, which provides either (a) a language-specific comment/uncomment handler, or (b) info on which tokens (if any) are used for line comments, so that we could have a single language-agnostic implementation of the command.
 * Is this _specific_ feature something we'd actually want to package as an extension? We've talked about trying to make as many Brackets features be separable extensions as possible. But there are lots of little text-edit gestures like this that come standard with most editors. How much overhead would there be if the core Brackets install relied on dozens of plugins for its basic functionality? Do plugins load slower than other modules? Do many small modules load slower than a few big modules?
- 
+
+## <a id='unittests'/>Unit Test Issues
+
+In Sprint 9, we started looking at how to run Unit Tests on Extensions. Here's the initial proposal:
+
+* Define a Unit Test file to be run from SpecRunner.html. For now, we are loading "unittests.js" from the main extension folder. When package.json support is added, the Unit Test loading point can be defined by extension author. 
+
+* Unit Tests are optional. Obviously, these are not required.
+
+* Need to provide a convenient way to lookup path to extension root folder for specifying test files, etc. ([Issue #831](https://github.com/adobe/brackets/issues/831)).
+
 ## <a id='general'/>General Extensibility Issues
 
 * We currently load the "main.js" module for all extensions. We should support package.json files ([http://requirejs.org/docs/api.html#packages](details)) for defining extension loading points -- so that extensions don't all contain identically-named files. When working with multiple extensions, the monotonous file names are hard to distinguish in the working set, Quick Open, etc. Added to backlog: https://trello.com/c/cyKQeDzd
 * How do we unit-test extensions? Presumably extensions we ship with the default install of Brackets should have unit test coverage just like our other standard features.
 * What if extensions want to share code? How would one extension refer to another's module(s)? What happens if the required dependency extension isn't present? What about optional dependencies? (e.g. extension A says, _if_ extension B is present I'll plug into it to provide enhanced functionality, but if it's not present that's fine too).
+* User should be allowed to specify sub-folders in the extensions folder structure to allow for some organization of extensions. Currently, Brackets only scans the first level of folders.
