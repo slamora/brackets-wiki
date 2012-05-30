@@ -1,4 +1,4 @@
-Getting Brackets
+<a id="howtoget"></a> Getting Brackets
 -----------
 
 Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. It is not in a state to be used a general purpose editor just yet, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
