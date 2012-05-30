@@ -1,12 +1,13 @@
 ## tl;dr ##
 1. Before you get started, post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) about what you're thinking of working on, so you can get early feedback.
-2. When coding, make sure to follow our [coding conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions).
-3. Before submitting any pull request, make sure to:
+2. This page is mainly about modifying core Brackets code. If you're adding a new feature, consider [writing an extension](How to write extensions) instead.
+3. When coding, make sure to follow our [coding conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions).
+4. Before submitting any pull request, make sure to:
     1. merge from adobe/brackets master
     2. re-test your code after the merge
     3. run the unit tests with Debug > Run Tests -- everything should pass
     4. if your change is nontrivial or might have affected the UI, run through the [Brackets smoke tests](https://github.com/adobe/brackets/wiki/Brackets-Smoke-Tests).
-4. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
+5. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
 
 ## How to Get Started ##
 
