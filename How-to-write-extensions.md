@@ -14,8 +14,23 @@
 
 Your extension consists of a main.js (your main module) and any other JS files (other modules). When you use Require in your main module to import your own modules, you get a private copy of modules, so they dont conflict with other modules. To access core modules, use bracket.getModules().
 
-You often want an extension to integrate with the UI somehow, to respond to user interaction. 
+You often want an extension to integrate with the UI somehow. If your extension is doing something new from scratch, you can add new menu items or keyboard shortcuts for your new behavior -- see next section for how. Certain existing Brackets features are extensible in their own right; those features typically provide UI already that you plug into via a more "headless" API -- see the section after next.
 
-To create an extension that responds on CTRL+E (like the inline image viewer), use EditorManager.registerInlineEditProvider(). That manager works by iterating through all the possible inline edit providers on CTRL+E and finding which ones actually respond - it has no notion of priority now, so if your extension competes with another or with built-in providers, you may be SOL. 
+### Extending the UI generically
 
-To interface with the quick open (file open/jump to) interface, use QuickOpen.addQuickOpenPlugin(). 
+See [[Simple "Hello World" extension]] for a code sample.
+
+For any new behavior, first register a Command that implements your behavior, via ```CommandManager.register()```. This just maps a Command id (string) to your handler function.
+
+**Add a menu item:** Get a top-level menu by calling ```Menus.getMenu()``` with one of the ```AppMenuBar``` constants.  Then add a menu item via ```theMenu.addMenuItem()```, linking it to your Command id. The menu item's label will be the string name you gave the Command when it was created.
+
+As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut for your Command at the same time.
+
+**Add a keyboard shortcut:** To add a keyboard shortcut without any related menu item, call ```KeyBindingManager.addBinding()``` directly, linking a shortcut to your Command id.
+
+
+### Extending specific Brackets functionality
+
+**Quick Edit:** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. That manager works by iterating through all the possible inline edit providers on CTRL+E and finding which ones actually respond - it has no notion of priority now, so if your extension wants to respond in the same scenario as some other provider, you'll be out of luck. 
+
+**Quick Open:** To interface with the quick open (file open/jump to) interface, use ```QuickOpen.addQuickOpenPlugin()```.
