@@ -1,9 +1,11 @@
 <a id="howtoget"></a> Getting Brackets
 -----------
 
-Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. It is not in a state to be used a general purpose editor just yet, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
+Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. **Brackets isn't ready for general use yet**, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
 
-The latest "stable" builds can be downloaded from the [downloads page](https://github.com/adobe/brackets/downloads). If you want to download and run the absolutely latest version of the code, you will have to pull it directly from GitHub. There are two steps to this. First you must clone the [adobe/brackets-app](https://github.com/adobe/brackets-app/) repository, and then pull [brackets](https://github.com/adobe/brackets/) as a submodule.
+The latest "stable" builds can be downloaded from the [downloads page](https://github.com/adobe/brackets/downloads). **Use the "brackets-sprint-N.zip" links** -- the generic download button at the top will not work!
+
+If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. There are two steps to this. First you must clone the [adobe/brackets-app](https://github.com/adobe/brackets-app/) repository, and then pull [brackets](https://github.com/adobe/brackets/) as a submodule.
 
 Here are the commands:
 
