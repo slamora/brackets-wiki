@@ -19,7 +19,9 @@ define(function (require, exports, module) {
     // First, register a command - a UI-less object associating an id to a handler
     var MY_COMMAND_ID = "helloworld.sayhello";
     CommandManager.register("Hello World", MY_COMMAND_ID, handleHelloWorld);
-    
+
+    // You can also change the menu item name in the future by setting the command's name
+    //CommandManager.get(MY_COMMAND_ID).setName("Goodbye!");    
     
     // Then create a menu item bound to the command
     // The label of the menu item is the name we gave the command (see above)
@@ -29,6 +31,7 @@ define(function (require, exports, module) {
     // We could also add a key binding at the same time:
     //menu.addMenuItem("menu-helloworld-sayhello", MY_COMMAND_ID, "Ctrl-Alt-H");
     // Note: on a Mac, Brackets will automatically change "Ctrl" to "Cmd".
+
     
 });
 ```
