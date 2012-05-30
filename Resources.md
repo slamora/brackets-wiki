@@ -1,3 +1,7 @@
+### Getting started
+* [[How to Hack on Brackets]]
+* [[How to write extensions]]
+
 ## Videos
 
 * [Brackets YouTube Channel](http://www.youtube.com/user/CodeBrackets) Official YouTube channel for the project.
