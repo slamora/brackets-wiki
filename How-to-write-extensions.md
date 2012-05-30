@@ -1,20 +1,23 @@
-# Development Workflow:
 * Download Brackets per [Main Wiki](https://github.com/adobe/brackets/wiki)
-* Create a new folder in extensions/user with yourExtensionName, and a main.js file for your extension code. (You may want to copy an existing extension like InlineImageViewer - whatever is most similar to what you want to do.)
+* Create a new folder in extensions/user with yourExtensionName, and a main.js file for your extension code.
+* For a quick start, you may want to read the [[Simple "Hello World" extension]] or refer to an existing extension (like InlineImageViewer) that is similar to what you want to do.
+
+## Development Workflow:
+
 * Open up Brackets, and if it's not already opened, open the brackets/ folder.
-* Open a new window (Debug->Experimental->New Window), which opens a new Brackets instance. You'll use this window for testing your extension. You generally don't want to use the same window, as you may end up breaking Brackets itself. (But you can if you want)
-* In window #2, open a folder on your file system and create a new file for testing your extension (test.html). Write whatever code will help you test the extension.
+* Open a second window (Debug->New Window), which opens a new Brackets instance. You'll use this window for testing your extension. You generally don't want to use the same window, as you may end up breaking Brackets itself. (But you can if you want)
+* In window #2, you can open a different folder on your file system to access whatever content you need for testing your extension (e.g. test.html).
 * The development workflow is like this:
  * In window #1, edit your extension code.
  * In window #2, reload window (Ctrl/Command-R) to get extension changes and test.
- * To debug problems, open the developer tools for window #2. You can use console.log from the extension code, set breakpoints, etc. (If you set a breakpoint, clear it before you close dev tools, otherwise Bracket will die. Bug)
+ * To debug problems, open the developer tools for window #2 (Debug->Show Developer Tools). You can use console.log() from the extension code, set breakpoints, etc. (If you set a breakpoint, clear it before you close dev tools, otherwise Bracket will die. Bug)
   * Repeat. 
 
 ## Extension Architecture:
 
-Your extension consists of a main.js (your main module) and any other JS files (other modules). When you use Require in your main module to import your own modules, you get a private copy of modules, so they dont conflict with other modules. To access core modules, use bracket.getModules().
+Your extension consists of a main.js (your main module) and any other JS files (other modules). When you use Require in your main module to import your own modules, you get a private copy of modules, so they dont conflict with other modules. To access core modules, use ```bracket.getModule()```.
 
-You often want an extension to integrate with the UI somehow. If your extension is doing something new from scratch, you can add new menu items or keyboard shortcuts for your new behavior -- see next section for how. Certain existing Brackets features are extensible in their own right; those features typically provide UI already that you plug into via a more "headless" API -- see the section after next.
+You often want an extension to integrate with the UI somehow. If your extension is doing something new from scratch, you can add new menu items or keyboard shortcuts for your new behavior -- see next section. Some Brackets features that already provide a UI are also extensible via a more abstract "headless" API -- see the section after next.
 
 ### Extending the UI generically
 
