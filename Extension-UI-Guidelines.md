@@ -20,7 +20,7 @@ These are not implemented in Brackets yet.
 
 1. **Only show items that are relevant to the current context.** Unlike application menus, you should generally show/hide items in the context menu rather than simply disabling them. However, if an item would ordinarily be applicable to the current context, but the specific selection doesn't allow it, then disable it rather than hiding it. For example, if you want to add an item to the context menu for a particular file type, but it only works for writable files and the file is read-only, then disable it rather than hiding it.
 2. **Context menu commands should also be available from the main menu.** Context menus are not always discoverable, so it's important to have an alternative entry point.
-3. **Only put the most important functionality in the context menu.** Use the main application menu for functions that are not as commonly used.
+3. **Only put the most commonly-used functionality in the context menu.** Use the main application menu for other functions.
 
 ### Label style
 
