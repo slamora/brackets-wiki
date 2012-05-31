@@ -13,9 +13,9 @@ The NativeFileSystem module provides an API for accessing and working with files
 
 ### Encodings
 
-When specifying UTF file encodings, you should use _utf8_ as opposed to _utf-8_.
+Currently, the only encoding supported is UTF-8 (_utf-8_), which can be accessed via the following constant:
 
-Currently, the only encoding supported is UTF-8 (_utf8_)
+    NativeFileSystem.Encodings.UTF8
 
 ### Security Errors
 
