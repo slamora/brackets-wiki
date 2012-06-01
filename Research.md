@@ -1,1 +1,1 @@
-[Node.JS Integration][Research: Node.JS Integration]
+- [Node.JS Integration](https://github.com/adobe/brackets/wiki/Research:-Node.JS-Integration)
