@@ -6,8 +6,7 @@ We didn't add major new user-visible features in Sprint 9. Our main goals for th
 
      * CEF3 vs. Chromium Content Shell research  (Glenn) 
      * Node vs V8 for bridging into native  (Glenn, Joel, Raymond) 
-`_Note:_ *"This is research in a very early stage, however a prototype implementation is checked into the *node-proxy*   
- branches in adobe/brackets and adobe/brackets-app repos"*.`
+`Note: "This is research in a very early stage, however a prototype implementation is checked into the ` `node-proxy branches in adobe/brackets and adobe/brackets-app repos".`
 
 * **Extensibility:**
 ***
