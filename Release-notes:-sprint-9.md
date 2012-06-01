@@ -12,8 +12,8 @@ We didn't add major new user-visible features in Sprint 9. Our main goals for th
 ***
 
     * [Menus and Keyboard Shortcuts] (https://groups.google.com/forum/?fromgroups#!searchin/brackets-dev/Menus$20and$20Keyboard$20Shortcuts/brackets-dev/-PfnGtF2npI/_JnDV43y4nMJ) *As an extension developer, I want to be able to add custom menus and keyboard shortcuts when my extension is enabled.* (Ty, Peter, Randy, Raymond, Jason)
-        * Add a menu item: Get a top-level menu by calling `Menus.getMenu()` with one of the AppMenuBar constants. Then add a menu item using `theMenu.addMenuItem()`, linking it to your Command id. The menu item's label will be the string name you gave the Command when it was created. Please refer to the [Simple "Hello World" extension] (https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension) for a code sample.
-        * As a convenience, `addMenuItem()` also lets you create a keyboard shortcut for your Command at the same time.
+        * **Add a menu item:** Get a top-level menu by calling `Menus.getMenu()` with one of the AppMenuBar constants. Then add a menu item using `theMenu.addMenuItem()`, linking it to your Command id. The menu item's label will be the string name you gave the Command when it was created. Please refer to the [Simple "Hello World" extension] (https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension) for a code sample.   
+        As a convenience, `addMenuItem()` also lets you create a keyboard shortcut for your Command at the same time.
         * **Add a keyboard shortcut:** To add a keyboard shortcut without any related menu item, call `KeyBindingManager.addBinding()` directly, linking a shortcut to your Command id.
 
     * Enable [Unit Tests] (https://github.com/adobe/brackets/wiki/Extension-Experiments#wiki-unittests) in extensions (Randy, Jason, Peter, NJ):
