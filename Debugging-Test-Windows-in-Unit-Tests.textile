@@ -6,7 +6,7 @@ One problem with testing in this way is that you can't step into the code in the
 
 &nbsp;&nbsp;&nbsp;&nbsp;<code>testWindow.brackets.app.showDeveloperTools();</code>
 
-I put it in the <code>SpecRunnerUtils.createTestWindowAndRun()</code> callback, but it can go anywhere.
+I put it in the callback passed to <code>SpecRunnerUtils.createTestWindowAndRun()</code>, but it can go anywhere.
 
 2. Restart Brackets (because sometimes Reload doesn't reload everything...)
 
