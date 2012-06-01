@@ -23,6 +23,12 @@ We didn't add major new user-visible features in Sprint 9. Our main goals for th
         * We search all extensions in "default" and "user" folders for unittest.js file, which is optional
         * We made some changes to ExtensionLoader module for loading timing.
 
+    * Where Can Extensions Add UI?    
+    
+The main area where there is still discussion are the guidelines for the application menus, having a large list of every sub menu available makes finding contextually relevant functionality tricky.  On the other hand, hiding and showing menu items depending on filetype hides extensions (and can be jarring if it changes from file to file).
+        * *Presentation:* [UI Proposal]  (http://articles.garthdb.com/Presentations/extension_ui/) 
+        * *Recent discussion:* [Brackets-Dev] (https://groups.google.com/forum/?fromgroups#!topic/brackets-dev/dL_2u3lx8Po)
+
 External contributions:
 -----------------------
 * [ryanstewart](http://github.com/ryanstewart) made improvements to the Performance of Sidebar
