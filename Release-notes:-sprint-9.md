@@ -1,12 +1,13 @@
 What's new in Sprint 9
 ----------------------
-We didn't add major new user-visible features in Sprint 9. Our main goals for the sprint were similar to the previous sprint - research, basic architecture and extensibility API:
-* Architecture / Research
+We didn't add major new user-visible features in Sprint 9. Our main goals for the sprint were similar to the previous sprint - Continue to make progress on the extensibility architecture of Brackets: *research, basic architecture and extensibility API*:
+* *Architecture / Research*
+     * CEF3 vs. Chromium Content Shell research  (Glenn) 
+     * Node vs V8 for bridging into native  (Glenn, Joel, Raymond)
+         * A prototype implementation is checked into the *node-proxy* branches in adobe/brackets and adobe/brackets-app repos.
 
-    * Continue to make progress on the extensibility architecture of Brackets
-        * CEF3 vs. Chromium Content Shell research  (Glenn) 
-        * Node vs V8 for bridging into native  (Glenn, Joel, Raymond)
-            * A prototype implementation is checked into the *node-proxy* branches in adobe/brackets and adobe/brackets-app repos.
+* *Extensibility:*
+    * Enable [Unit Tests] (https://github.com/adobe/brackets/wiki/Extension-Experiments#wiki-unittests) in extensions (Randy, Jason, Peter, NJ): 
 
 External contributions:
 -----------------------
