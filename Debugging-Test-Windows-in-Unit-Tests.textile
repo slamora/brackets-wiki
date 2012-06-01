@@ -1,0 +1,25 @@
+When creating Unit Tests, it's often helpful to create a new Brackets window. The <code>createTestWindowAndRun()</code> and <code>closeTestWindow()</code> functions in SpecRunnerUtils makes this easy to do.
+
+One problem with testing in this way is that you can't step into the code in the debugger because it's in a separate window which is created and closed too quickly to be able to manually open the Dev Tools. Here's a technique to allow you to use the debugger in Test Windows:
+
+1. At some point after the test window has been created, add this temporary line of code:
+
+&nbsp;&nbsp;&nbsp;&nbsp;<code>testWindow.brackets.app.showDeveloperTools();</code>
+
+I put it in the <code>SpecRunnerUtils.createTestWindowAndRun()</code> callback, but it can go anywhere.
+
+2. Restart Brackets (because sometimes Reload doesn't reload everything...)
+
+3. Open SpecRunner: Debug > Run Tests
+
+4. From SpecRunner: View > Show Developer Tools
+
+5. Set breakpoint(s) in unit test code before you start tests. The line numbers in the Dev Tools windows sometimes (usually?) stop tracking the file, and, once this happens, you can't set any more breakpoints.
+
+6. Leave SpecRunner Dev Tools Window open. I wasn't hitting my breakpoint when I closed it.
+
+7. Run your unit test
+
+You should hit your breakpoint(s) and be able to step into code. Note that this slows down tests, so you may want to comment out some tests while debugging.
+
+If this is helpful to enough people, we could build it in to the createTestWindowAndRun() function and control it by a parameter or global flag.
