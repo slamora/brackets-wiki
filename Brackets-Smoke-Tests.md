@@ -5,9 +5,10 @@ If you have trouble running through it or something is unclear, please post to t
 Setup
 =====
 
-1. Quit and relaunch Chrome if it's open (so it's *not* in remote debugger mode).
-2. If you've run the smokes previously, revert any changes you might have made in `brackets/test/smokes/citrus completed`.
-3. Delete your [cache folder](Cache-Folder) (Mac: ```~/Library/Application Support/com.adobe.Brackets.cefCache```, Win: ```%appdata%\Brackets\cefCache```).
+1. Make sure your ```git status``` is clean **and** your ```brackets/src/extensions/user``` folder is empty (git status will _not_ tell you about that folder).
+2. Quit and relaunch Chrome if it's open (so it's *not* in remote debugger mode).
+3. If you've run the smokes previously, revert any changes you might have made in `brackets/test/smokes/citrus completed`.
+4. Delete your [cache folder](Cache-Folder) (Mac: ```~/Library/Application Support/com.adobe.Brackets.cefCache```, Win: ```%appdata%\Brackets\cefCache```).
 
 Smoke test steps
 ================
