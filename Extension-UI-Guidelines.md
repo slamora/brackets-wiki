@@ -4,7 +4,7 @@ Since the our extensible UI functionality is still incomplete in Brackets, some 
 
 ## Menus
 
-In general, our menu guidelines follow the standard UI practices for application menus on popular platforms.
+In general, our menu guidelines follow the standard UI practices for application menus.
 
 ### Application menu organization
 
