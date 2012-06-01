@@ -24,6 +24,6 @@ These are not implemented in Brackets yet.
 
 ### Label style
 
-1. **Use title capitalization for menu commands.** Capitalize the first letter of each word, except for prepositions and conjunctions like "and," "in," or "to" (e.g., "Find in Files"). Always capitalize the last word (e.g., "Save As...").
+1. **Use title capitalization for menu commands.** Capitalize the first letter of each word, except for prepositions and conjunctions like "and," "in," or "to" (e.g., "Find in Files"). Exception: always capitalize the last word, even if it's a preposition or conjunction (e.g., "Save As...").
 2. **Add an ellipsis to commands that require further input to complete.** In general, this applies to commands that pop up a modal dialog--e.g., "Save As...". However, commands that merely pop up informational dialogs (e.g. "About") should not have an ellipsis.
 3. **Prefer checkmarks to changing menu item names.** For example, if you have a command to show or hide a panel called Results, make the menu item be "View > Results" and check or uncheck it depending on whether it's visible, instead of making the menu item switch between "Show Results" and "Hide Results". 
