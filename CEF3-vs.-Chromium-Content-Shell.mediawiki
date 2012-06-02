@@ -2,6 +2,8 @@
 
 This document discusses findings on the differences between CEF3 and the Chrome Content Shell, and proposes a plan for moving Brackets from CEF1 to CEF3. 
 
+The research was done for this user story: https://trello.com/c/0J52L2bp
+
 == Research Spike Questions ==
 
 === What does CEF provide over content shell? ===
