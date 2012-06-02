@@ -31,7 +31,7 @@ Major external contributions
 * [cantrell](http://github.com/cantrell) added Increase/Decrease Font Size (Cmd-=/-)
 * [jrowny](http://github.com/jrowny) upgraded LESS to 1.3.0 and investigated migrating to Bootstrap 2
 * [idflood](http://github.com/idflood) enabled syntax coloring for a bunch of different file types
-* [conradz](http://github.com/conradz) made it so you can open multiple files from the Open dialog
+* [cantrell](http://github.com/cantrell) remember sidebar view width
 * bugfixes from [timkim](http://github.com/timkim) and [amritayan](http://github.com/amritayan)
 
 Bugs fixed in Sprint 9
