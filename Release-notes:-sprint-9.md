@@ -31,7 +31,7 @@ The main area where there is still discussion are the guidelines for the applica
 External contributions:
 -----------------------
 * [ryanstewart](http://github.com/ryanstewart) made improvements to the Performance of Sidebar
-* [conradz](http://github.com/conradz) improved Line and Block Commenting 
+* [conradz](http://github.com/conradz) implemented Multiple File Open and improved Line and Block Commenting 
 
 
 Bugs fixed in Sprint 9
