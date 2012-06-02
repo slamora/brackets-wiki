@@ -34,6 +34,7 @@ Major external contributions:
 * [ryanstewart](http://github.com/ryanstewart) made improvements to the performance of sidebar resizing
 * [cantrell](http://github.com/cantrell) added Increase/Decrease Font Size (Cmd-=/-)
 * [idflood](http://github.com/idflood) enabled syntax coloring for a bunch of different file types
+* [conradz](http://github.com/conradz) made it so you can open multiple files from the Open dialog
 * bugfixes from [timkim](http://github.com/timkim) and [amritayan](http://github.com/amritayan)
 
 Bugs fixed in Sprint 9
