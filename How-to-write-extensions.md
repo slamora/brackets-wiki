@@ -20,7 +20,7 @@ Your extension consists of a main.js (your main module) and any other JS files (
 
 You often want an extension to integrate with the UI somehow. If your extension is doing something new from scratch, you can add new menu items or keyboard shortcuts for your new behavior -- see next section. Some Brackets features that already provide a UI are also extensible via a more abstract "headless" API -- see the section after next.
 
-### Extending the UI generically
+### <a name="uihooks"></a>Extending the UI generically
 
 See [[Simple "Hello World" extension]] for a code sample.
 
@@ -33,7 +33,7 @@ As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut f
 **Add a keyboard shortcut:** To add a keyboard shortcut without any related menu item, call ```KeyBindingManager.addBinding()``` directly, linking a shortcut to your Command id.
 
 
-### Extending specific Brackets functionality
+### <a name="featurehooks"></a>Extending specific Brackets functionality
 
 **Quick Edit:** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. That manager works by iterating through all the possible inline edit providers on CTRL+E and finding which ones actually respond - it has no notion of priority now, so if your extension wants to respond in the same scenario as some other provider, you'll be out of luck. 
 
