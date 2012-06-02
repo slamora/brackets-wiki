@@ -2,8 +2,10 @@ What's new in Sprint 9
 ----------------------
 We didn't add major new user-visible features in Sprint 9. Our main goals for the sprint were similar to the previous sprint - Continue to make progress on the extensibility architecture of Brackets: *research, basic architecture and extensibility API*:
 * **Architecture / Research**
-     * CEF3 vs. Chromium Content Shell research  (Glenn) 
-     * Node vs V8 for bridging into native  (Glenn, Joel, Raymond) 
+     * CEF3 vs. Chromium Content Shell research  (Glenn)    
+The main question to research was "_What does CEF provide over content shell?_". [This document] (https://github.com/adobe/brackets/wiki/CEF3-vs.-Chromium-Content-Shell) discusses findings on the differences between CEF3 and the Chrome Content Shell, and proposes a plan for moving Brackets from CEF1 to CEF3. 
+     * Node vs V8 for bridging into native  (Glenn, Joel, Raymond)   
+The main architectural idea is to implement the Brackets desktop application as a client/server application to leverage existing Node code for cross-platform native features. [This document] (https://github.com/adobe/brackets/wiki/Research:-Node.JS-Integration) discusses the findings to understand the benefits and tradeoffs of using Node.JS instead of V8 native extensions (our current solution). 
 `Note: "This is research in a very early stage, however a prototype implementation is checked into the ` `node-proxy branches in adobe/brackets and adobe/brackets-app repos".`
 
 * **Extensibility:**
