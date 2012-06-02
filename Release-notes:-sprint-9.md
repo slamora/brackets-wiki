@@ -16,7 +16,7 @@ We didn't add major new user-visible features in Sprint 9. Our main goals for th
         As a convenience, `addMenuItem()` also lets you create a keyboard shortcut for your Command at the same time.
         * **Add a keyboard shortcut:** To add a keyboard shortcut without any related menu item, call `KeyBindingManager.addBinding()` directly, linking a shortcut to your Command id.
 
-    * Enable [Unit Tests] (https://github.com/adobe/brackets/wiki/Extension-Experiments#wiki-unittests) in extensions (Randy, Jason, Peter, NJ):
+    * Enable [Unit Tests] (https://github.com/adobe/brackets/wiki/Extension-Experiments#wiki-unittests) in extensions (Randy, Jason, Peter):
         * We're now able to run unit tests in extensions
         * We implemented Unit Tests in the JS Quick Edit extension
         * We also added an API call to fix [https://github.com/adobe/brackets/issues/831](https://github.com/adobe/brackets/issues/831) *FileUtils.getNativeModuleDirectoryPath()*. Take a look at src/extensions/disabled/JavaScriptInlineEditor/unittests.js for an example.
@@ -25,14 +25,16 @@ We didn't add major new user-visible features in Sprint 9. Our main goals for th
 
     * Where Can Extensions Add UI?          
 The main area where there is still discussion are the guidelines for the application menus, having a large list of every sub menu available makes finding contextually relevant functionality tricky.  On the other hand, hiding and showing menu items depending on filetype hides extensions (and can be jarring if it changes from file to file).    
-        * *Presentation:* [UI Proposal]  (http://articles.garthdb.com/Presentations/extension_ui/) 
-        * *Recent discussion:* [Brackets-Dev] (https://groups.google.com/forum/?fromgroups#!topic/brackets-dev/dL_2u3lx8Po)
+        * [Draft presentation on overall guidelines](http://articles.garthdb.com/Presentations/extension_ui/)
+        * [Draft of extension menu guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines)
+        * [Discussion on Brackets-Dev](https://groups.google.com/forum/?fromgroups#!topic/brackets-dev/dL_2u3lx8Po)
 
-External contributions:
------------------------
-* [ryanstewart](http://github.com/ryanstewart) made improvements to the Performance of Sidebar
-* [conradz](http://github.com/conradz) implemented Multiple File Open and improved Line and Block Commenting 
-
+Major external contributions:
+-----------------------------
+* [ryanstewart](http://github.com/ryanstewart) made improvements to the performance of sidebar resizing
+* [cantrell](http://github.com/cantrell) added Increase/Decrease Font Size (Cmd-=/-)
+* [idflood](http://github.com/idflood) enabled syntax coloring for a bunch of different file types
+* bugfixes from [timkim](http://github.com/timkim) and [amritayan](http://github.com/amritayan)
 
 Bugs fixed in Sprint 9
 ----------------------
