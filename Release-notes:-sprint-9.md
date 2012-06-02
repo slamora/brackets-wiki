@@ -25,8 +25,8 @@ The main area where there is still discussion are the guidelines for the applica
         * [Draft of extension menu guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines)
         * [Discussion on Brackets-Dev](https://groups.google.com/forum/?fromgroups#!topic/brackets-dev/dL_2u3lx8Po)
 
-Major external contributions:
------------------------------
+Major external contributions
+----------------------------
 * [ryanstewart](http://github.com/ryanstewart) made improvements to the performance of sidebar resizing
 * [cantrell](http://github.com/cantrell) added Increase/Decrease Font Size (Cmd-=/-)
 * [jrowny](http://github.com/jrowny) upgraded LESS to 1.3.0 and investigated migrating to Bootstrap 2
