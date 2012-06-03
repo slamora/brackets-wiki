@@ -28,3 +28,4 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
  * [Sprint 7](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-7)
  * [Sprint 8](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-8)
+ * [Sprint 9](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-9)
