@@ -36,6 +36,18 @@ I recommend using a dynamic library as a long term solution. This removes the ne
 
 With a dynamic library solution, native functions (e.g. to create menus or show file dialogs) can be called directly from the Node extension code, rather than having to write a bridge that shuttles all arguments as strings.
 
+### Where should native UI code go?
+
+There are two approaches here: using Node, and using V8 extensions. Native UI code (e.g. showing an "open" dialog) typically needs to run in a specific UI thread (e.g. the "main" thread in Mac Cocoa). This poses some interesting challenges.
+
+In CEF3 / Chrome Content Shell, the V8 engine runs in a separate process from the main app. So, IPC is needed to drive native UI. However, CEF3 provides a wrapper for doing this IPC. If we go with a separate process Node solution (discussed above), we'll need IPC for this as well. But, we'll have to write that IPC solution ourselves.
+
+If we a.) decide to go with a separate process Node solution, and b.) if we can be certain that Node code will never need to reach into the main process (e.g. Node code won't ever do UI stuff), then we may be able to avoid writing complicated IPC code for Node. Instead, we can use V8 extensions in CEF3 (and CEF3s IPC solution) to do our native UI work.
+
+However, if we go with an in-process library version of Node  (my current recommendation), we could do all of our UI stuff in Node. This would allow us to avoid using IPC on the V8 side. And, this would have the added architectural benefit that _all_ native stuff (UI and otherwise) would go through the same channel. (This may be a small benefit, though.)
+
+Ultimately, it isn't yet clear what the best solution is. We need to decide whether we'll use an in-process library version of Node or a separate-process executable version of Node.
+
 ### How does code architecture and the programming model change?
 
 We built a client <-> server websocket proxy that abstracts the communication layer into regular function calls on both ends. So, if existing functionality is already (correctly) written to work asynchronously, the architecture change is minimal or non-existant.
