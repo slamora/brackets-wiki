@@ -10,7 +10,7 @@ The node server would be embedded in the desktop application (either as an execu
 
 * Leverage existing Node code for cross-platform native features. For example, Node has cross-platform file and directory watchers.
 * Require us to architect our code in a client/server manner (and deal with asynchronicity) so that a browser version of brackets is easier.
-* Create an "in-between" solution for optimizing code. For example, Node's file i/o is faster than our V8 extension for file i/o. So, we can make "find in files" faster by moving the existing [JavaScript] code to the Node side. This requires much less work than implementing "find in files" completely in C+\+ as a V8 extension (which would be the fastest reasonable implementation).
+* Create an "in-between" solution for optimizing code. For example, Node's file i/o is faster than our V8 extension for file i/o. So, we can make "find in files" faster by moving the existing JavaScript code to the Node side. This requires much less work than implementing "find in files" completely in C+\+ as a V8 extension (which would be the fastest reasonable implementation).
 * Would give us an approach for third parties to write extensions that require native code (e.g. an ssh/sftp-based file system), because Node already has a mechanism for loading dynamic libraries.
 
 ## Possible Drawbacks
@@ -52,7 +52,7 @@ Ultimately, it isn't yet clear what the best solution is. We need to decide whet
 
 We built a client <-> server websocket proxy that abstracts the communication layer into regular function calls on both ends. So, if existing functionality is already (correctly) written to work asynchronously, the architecture change is minimal or non-existant.
 
-For example, to switch file i/o from V8 extensions to Node, we simply swapped out the implementation of {{brackets.fs}}. The higher-level FS operations (in [NativeFileSystem]) did not have to change _at all_.
+For example, to switch file i/o from V8 extensions to Node, we simply swapped out the implementation of ```brackets.fs```. The higher-level FS operations (in NativeFileSystem) did not have to change _at all_.
 
 For things that are not currently implemented as asynchronous calls, there will need to be a change. However, it seems likely that everything that would be implemented on the Node side _should_ be implemented asynchronously even if we don't use Node.
 
@@ -62,7 +62,7 @@ The main change to the programming model is that we'll need to decide _where_ to
 
 The main change is that there will be two JS engines. These will need to be debugged separately.
 
-Node provides debugging tools -- called [node inspector|https://github.com/dannycoates/node-inspector] -- modeled after the [JavaScript] portion of [WebInspector]. These work well with both the separate process version and the dynamic library version of Node.
+Node provides debugging tools -- called [node inspector](https://github.com/dannycoates/node-inspector) -- modeled after the JavaScript portion of WebInspector. These work well with both the separate process version and the dynamic library version of Node.
 
 ### Performance
 
@@ -70,11 +70,11 @@ The two main areas of performance concern are _startup time_ (because spinning u
 
 #### Test hardware
 
-All of the performance numbers below were generated on a 2010 [MacBook] Air with SSD.
+All of the performance numbers below were generated on a 2010 MacBook Air with SSD.
 
 #### Startup time
 
-It appears that most of the startup time will be governed by the web component (e.g. CEF) startup time. A warm launching of a simple Cocoa application with Node and a [WebKit] [WebView] component takes **250ms**. This time includes starting Node and redirecting the [WebView] to a webpage served by Node. The timing measurement goes from the first line of {{main()}} to the webpage calling back to Node over a websocket.
+It appears that most of the startup time will be governed by the web component (e.g. CEF) startup time. A warm launching of a simple Cocoa application with Node and a WebKit WebView component takes **250ms**. This time includes starting Node and redirecting the WebView to a webpage served by Node. The timing measurement goes from the first line of ```main()``` to the webpage calling back to Node over a websocket.
 
 Actual startup time measurements will need to be determined after we've decided on a web component solution.
 
@@ -82,7 +82,7 @@ Actual startup time measurements will need to be determined after we've decided 
 
 The most intensive file i/o Brackets is likely to do is a "find in files" command over a large codebase.
 
-To test this, we created a test codebase that consisted of all the js files in the brackets repo (located in the same directory structure). This test set consists of 89743 lines of code at a size of 3.8MB. We performed a search for the regular expression {{/brackets/gi}} which returned \~600 results in \~95 files.
+To test this, we created a test codebase that consisted of all the js files in the brackets repo (located in the same directory structure). This test set consists of 89743 lines of code at a size of 3.8MB. We performed a search for the regular expression ```/brackets/gi``` which returned \~600 results in \~95 files.
 
 * Existing app shell using V8 extension: **475ms**
 * Pulling all files into Brackets client code from Node over websocket: **882ms**
@@ -122,8 +122,8 @@ To run this code prototype:
 1. Check out both branches
 2.  Install node.js
 3.  As a temporary hack, edit brackets/src/project/ProjectManager.js line 540 to point to a path that exists on your machine
-4.  in brackets-app/src/node, run {{npm install}}
-5.  in the same directory, run {{node webserver}}
+4.  in brackets-app/src/node, run ```npm install```
+5.  in the same directory, run ```node webserver```
 6.  in your browser, go to [http://localhost:3000](http://localhost:3000)
 
 Shell prototypes (with native ui implementation) are currently checked in to the [joelrbrandt/node-shell](https://github.com/joelrbrandt/node-shell) repo. (However, the code is a bit messy and there isn't any documentation beyond comments in the source.)
