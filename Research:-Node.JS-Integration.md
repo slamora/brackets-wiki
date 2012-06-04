@@ -126,4 +126,4 @@ To run this code prototype:
 5.  in the same directory, run {{node webserver}}
 6.  in your browser, go to [http://localhost:3000](http://localhost:3000)
 
-Shell prototypes (with native ui implementation) are currently checked in to private joelrbrandt/node-shell repo. (Code isn't ready for public consumption. There is no good way to give Adobe access unless we move it to a private Adobe repo).
+Shell prototypes (with native ui implementation) are currently checked in to the [joelrbrandt/node-shell](https://github.com/joelrbrandt/node-shell) repo. (However, the code is a bit messy and there isn't any documentation beyond comments in the source.)
