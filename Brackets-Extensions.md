@@ -1,5 +1,7 @@
 Brackets doesn't yet have functionality for discovering and installing extensions. In the meantime, here's a list of extensions that people have built. You can copy them into the `brackets/src/extensions/user` folder, then reload or restart Brackets.
 
+If you've written an extension (even just as an experiment), please feel free to edit this page directly and add it (with some indication of what state it's in). Thanks!
+
 * [Snippets](https://github.com/jrowny/brackets-snippets)
 * [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core.
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
