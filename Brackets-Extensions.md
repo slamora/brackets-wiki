@@ -10,3 +10,4 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
 * [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
+* [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Prototype for an extension manager. Static database for now (featuring the extensions on this page) and you need to start a seperate node server to make it work.
