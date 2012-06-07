@@ -24,7 +24,9 @@ actual HTML/JS/CSS files that implement the main app are in the brackets/
 subfolder. The src/ folder is just the source for the native app shell.
 
 ### What should I hack on? ###
-Whatever you want, of course! But you might want to check the [public Brackets backlog](http://bit.ly/BracketsBacklog) to get ideas for things that are important to add soon. Also, if you're planning to do something other than a small bugfix, please start a discussion on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) to get feedback. There might already be some prior thinking on what you're working on, or some reason that it hasn't already been done.
+Whatever you want, of course! But you might want to check the [public Brackets backlog](http://bit.ly/BracketsBacklog) to get ideas for things that are important to add soon. If you're new to Brackets, we've also tagged some good "starter features" ([backlog](http://bit.ly/BracketsBacklog) > Search and Filter Cards > Starter Feature) and "[starter bugs](https://github.com/adobe/brackets/issues?labels=starter+bug&page=1&state=open)" that should be easy to work on while you're still learning the code.
+
+If you're planning to do something other than a small bugfix, please start a discussion on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) to get feedback. There might already be some prior thinking on what you're working on, or some reason that it hasn't already been done.
 
 ### What's the process? ###
 First, [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html). 
