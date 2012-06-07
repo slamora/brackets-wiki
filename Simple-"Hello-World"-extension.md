@@ -1,3 +1,5 @@
+Save this file as ```brackets/src/extensions/user/HelloWorld/main.js``` to see it running in Brackets.
+
 ```javascript
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
 /*global define, $, brackets, window */
@@ -31,8 +33,10 @@ define(function (require, exports, module) {
     //KeyBindingManager.addBinding(MY_COMMAND_ID, "Ctrl-Alt-H");
     // (Note: "Ctrl" is automatically mapped to "Cmd" on Mac)
 
-    // For dynamic menu item labels, you can change the command name like this:
+    // For dynamic menu item labels, you can change the command name at any time:
     //CommandManager.get(MY_COMMAND_ID).setName("Goodbye!");    
     
 });
 ```
+
+**Looking for more detailed information?** Check out [[How to write extensions]], or look up the above APIs in the Brackets source code for complete docs.
