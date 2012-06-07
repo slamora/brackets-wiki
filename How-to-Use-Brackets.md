@@ -5,7 +5,7 @@ Brackets is built with HTML, CSS and JS, and currently runs as a desktop applica
 
 The latest "stable" builds can be downloaded from the [downloads page](https://github.com/adobe/brackets/downloads). **Use the "brackets-sprint-N.zip" links** -- the generic download button at the top will not work!
 
-If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. There are two steps to this. First you must clone the [adobe/brackets-app](https://github.com/adobe/brackets-app/) repository, and then pull [brackets](https://github.com/adobe/brackets/) as a submodule.
+If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. There are two steps to this. First you must clone the [adobe/brackets-app](https://github.com/adobe/brackets-app/) repository and [brackets](https://github.com/adobe/brackets/) repository. Then, pull all third-party repos that Brackets referenced as submodules.
 
 Here are the commands:
 
