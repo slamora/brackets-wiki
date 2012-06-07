@@ -12,6 +12,7 @@ Here are the commands:
     git clone git@github.com:adobe/brackets-app.git
     cd brackets-app
     git clone git@github.com:adobe/brackets.git
+    cd brackets
     git submodule update --init --recursive
 
 Note, you may be asked for your ssh authentication / passphrase a number of times while pulling the submodule. Make sure that you enter it each time (and it does not time out), or else the pull may fail.
