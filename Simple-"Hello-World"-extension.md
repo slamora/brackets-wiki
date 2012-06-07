@@ -27,7 +27,9 @@ define(function (require, exports, module) {
     
     // We could also add a key binding at the same time:
     //menu.addMenuItem("menu-helloworld-sayhello", MY_COMMAND_ID, "Ctrl-Alt-H");
-    // Note: on a Mac, Brackets will automatically change "Ctrl" to "Cmd".
+    // Or you can add a key binding without having to create a menu item:
+    //KeyBindingManager.addBinding(MY_COMMAND_ID, "Ctrl-Alt-H");
+    // (Note: "Ctrl" is automatically mapped to "Cmd" on Mac)
 
     // For dynamic menu item labels, you can change the command name like this:
     //CommandManager.get(MY_COMMAND_ID).setName("Goodbye!");    
