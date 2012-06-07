@@ -151,7 +151,18 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
     <td>Feature or issue is not in our product and we have no reasonable way to influence the fix being made</td>
   </tr>
   <tr>
-    <td rowspan="3">Not worth effort</td>
+    <td>Intermittent or not reproducible</td>
+    <td>basically a flavor of high effort / low impact <br />
+( at times we may need additional information to reproduce a bug, those cases don't fall into this category if we're able to gather the information necessary with reasonable effort )</td>
+  </tr>
+</table>
+
+<h4>No priority</h4>
+
+Items we keep open but will not work on soon.
+<table width="90%" border="1">
+<tr>
+    <td rowspan="3">No Priority</td>
     <td>High risk / low impact</td>
   </tr>
   <tr>
@@ -160,13 +171,7 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
   <tr>
     <td>Underlaying code or architecture is changing / will change soon</td>
   </tr>
-  <tr>
-    <td>Intermittent or not reproducible</td>
-    <td>basically a flavor of high effort / low impact <br />
-( at times we may need additional information to reproduce a bug, those cases don't fall into this category if we're able to gather the information necessary with reasonable effort )</td>
-  </tr>
 </table>
-
 <h3>Feature requests</h3>
 For feature requests, please file them in the issue tracker; they'll be converted
 to user stories on the [public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88).
