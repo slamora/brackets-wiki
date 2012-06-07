@@ -9,4 +9,4 @@ If you've written an extension (even just as an experiment), please feel free to
 * [ToGist](https://github.com/davidderaedt/togist): Create a gist from current selection.
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
-
+* [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
