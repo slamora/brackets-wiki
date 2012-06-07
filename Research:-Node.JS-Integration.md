@@ -26,7 +26,7 @@ The node server would be embedded in the desktop application (either as an execu
 
 Yes. Using a pre-built Node executable works on both Mac and Windows. Node is run as a separate process and communication happens over pipes.
 
-We are also able to build dynamic library (dylib/dll) versions of Node for both Mac and Windows. Doing this requires a 1-line change to the GYP build files (changing the build type from "application" to "shared_library". Build environments are easy to set up for both Mac (install xcode) and Windows (install latest Visual Studio Express and Python). These dynamic libraries would only need to be built once (and we've already built them).
+We are also able to build dynamic library (dylib/dll) versions of Node for both Mac and Windows. Doing this requires a 1-line change to the GYP build files (changing the build type from "executable" to "shared_library". Build environments are easy to set up for both Mac (install xcode) and Windows (install latest Visual Studio Express and Python). These dynamic libraries would only need to be built once (and we've already built them).
 
 Everything should work equivalently on Linux (Node works on Linux) but because we don't have any app shell solution for Linux, this is difficult to verify. It is likely that using Node will make our Linux story simpler.
 
