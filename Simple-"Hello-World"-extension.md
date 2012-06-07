@@ -20,9 +20,6 @@ define(function (require, exports, module) {
     var MY_COMMAND_ID = "helloworld.sayhello";
     CommandManager.register("Hello World", MY_COMMAND_ID, handleHelloWorld);
 
-    // You can also change the menu item name in the future by setting the command's name
-    //CommandManager.get(MY_COMMAND_ID).setName("Goodbye!");    
-    
     // Then create a menu item bound to the command
     // The label of the menu item is the name we gave the command (see above)
     var menu = Menus.getMenu(Menus.AppMenuBar.FILE_MENU);
@@ -32,6 +29,8 @@ define(function (require, exports, module) {
     //menu.addMenuItem("menu-helloworld-sayhello", MY_COMMAND_ID, "Ctrl-Alt-H");
     // Note: on a Mac, Brackets will automatically change "Ctrl" to "Cmd".
 
+    // For dynamic menu item labels, you can change the command name like this:
+    //CommandManager.get(MY_COMMAND_ID).setName("Goodbye!");    
     
 });
 ```
