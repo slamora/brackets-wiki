@@ -17,13 +17,12 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
     <li>Link to test files (you can create a gist on gist.github.com if that's convenient).</li>
 </ul>
       <h3>Determine the priority</h3>
-      <p>We differentiate three priorities for issues, we use labels on GitHub to set the priority:
-    
-      </h3>
+      <p>We differentiate three priorities for issues, we use labels on GitHub to set the priority:</p>
   <ul>
   <li><em>High</em>: crashes/data loss unless they're very unlikely edge cases</li>
     <li><em>Medium</em>: functional/ui issues that are at least somewhat severe and that a significant number of users will hit</li>
     <li><em>Low</em>: issues that have low severity and/or low frequency</li>
+    <li><em>No Priority</em>: issues will remain open but the Brackets development team is not planning to fix (see more about No Priority issues below)</li>
 </ul> </p>
 <h3>Use of lables for issues found in Brackets</h3>
 <table width=90% border="5" cellpadding="1" bordercolor="#000033">
@@ -33,7 +32,7 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
     <th width=60% scope="col">usage</th>
   </tr>
   <tr>
-    <td rowspan="8">Process </td>
+    <td rowspan="7">Process </td>
     <td>fix in progress</td>
     <td>Bug has been assigned and assignee has started to make improvements</td>
   </tr>
@@ -58,25 +57,25 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
     <td>This issue doesn’t require deep knowledge of the architecture and is the recommended level for new contributors</td>
   </tr>
   <tr>
-    <td>won't fix</td>
-    <td>This is a low priority issue we close without a fix - please refer to the explanation below.</td>
-  </tr>
-  <tr>
     <td>documentation</td>
     <td>insufficient documentation</td>
   </tr>
   <tr>
-    <td rowspan="3">Priority</td>
+    <td rowspan="4">Priority</td>
     <td>high priority</td>
     <td>crashes/data loss unless they're very unlikely edge cases</td>
+  </tr>
+  <tr>
+    <td>medium priority</td>
+    <td>functional/ui or performance issues that are at least somewhat severe and that a significant number of users will hit</td>
   </tr>
   <tr>
     <td>low priority</td>
     <td>issues that have low severity and/or low frequency, cosmetic issues</td>
   </tr>
   <tr>
-    <td>medium priority</td>
-    <td>functional/ui or performance issues that are at least somewhat severe and that a significant number of users will hit</td>
+    <td>no priority</td>
+    <td>This is a low priority issue we will leave open but do not intent to fix - please refer to the explanation below.</td>
   </tr>
   <tr>
     <td rowspan="5">External tracking</td>
