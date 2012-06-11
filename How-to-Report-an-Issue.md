@@ -125,6 +125,18 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
   </tr>
 </table>
 
+<h3>Feature requests</h3>
+
+For feature requests, please file them in the issue tracker; they'll be converted
+to user stories on the [public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88).
+
+## Retrieving SHA for current commit
+
+You can retrieve the SHA hash for the current commit that you are using by running the following command:
+
+    git rev-parse HEAD
+
+
 <h2>What happens to the issues I filed?</h2>
 <p>We're reviewing the new issues regularily the <strong>'<em>last reviewed</em>'</strong> label is being used to indicate the last bug which has been reviewed. During the review we make sure the appropiate lables are used for the bug. If an issue is related to the work of the current sprint we tag it with the current sprint tag. If it feels rather like an enhancement request we will tag it as <strong>'<em>move to backlog</em>'</strong>. In addition we identify starter issues <strong>'<em>starter bug</em>'</strong> for individuals who want to start to contribute. </p>
 <p>Before you fix a bug, post to the <a href="http://groups.google.com/group/brackets-dev">brackets-dev Google group</a> or the <a href="http://freenode.net/">#brackets IRC channel on freenode</a> about what you're thinking of working on, so you can get early feedback. If you start to contribute code to Brackets please also considder reading some of our <a href="https://github.com/adobe/brackets/wiki/">wiki documents</a> like <a href="https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets">How to Hack on Brackets</a> and <a href="https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions">Coding Conventions</a>.</p>
@@ -132,7 +144,25 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
 <p>Once you start to adress a bug please let us know and add a note to set it to <strong>'<em>fix in progress</em>'</strong>, this helps to avoid multiplied efforts. Once an issue is fixed a the contributor opens a <em><strong>'pull request'</strong></em> to inform the core team to get the bug fix reviewed. After potential adjustments according to the review feedback have been added we will <em><strong>'merge</strong></em><strong>'</strong> the bug fix into master. At this point the status of the bug will be set to <strong>'<em>fixed but not closed</em>'</strong> and the filer will  <strong>'<em>close</em>'</strong> the issue (or notify the team) once he verified the fix.</p>
 
 <h3>Issues we won't fix</h3>
-<p>The consensus is that closing some of the low priority issues would only feel appropriate under specific criteria/circumstances, we don't want to end up burying issues which are affecting the quality of Brackets or are otherwise important to the community. We encourage feedback and contributors actually may review and request to re-open issues in case they feel strongly about them. Marking the issue with a label enables us to search for and to review issues at any point in time.</p>
+<p>The consensus is that closing some of the low priority issues would only feel appropriate under specific criteria/circumstances, we don't want to end up burying issues which are affecting the quality of Brackets or are otherwise important to the community. We encourage feedback and contributors actually may review and request to re-open issues in case they feel strongly about them.</p>
+<h4>No priority</h4>
+
+Items we keep open but will not work on soon. 
+<table width="90%" border="1">
+<tr>
+    <td rowspan="3">No Priority</td>
+    <td>High risk / low impact</td>
+  </tr>
+  <tr>
+    <td>High effort / low impact</td>
+  </tr>
+  <tr>
+    <td>Underlaying code or architecture is changing / will change soon</td>
+  </tr>
+</table>
+
+<h4>Issues we close</h4>
+
 <table width="90%" border="1">
   <tr>
     <th scope="col">Category</th>
@@ -155,30 +185,5 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
 ( at times we may need additional information to reproduce a bug, those cases don't fall into this category if we're able to gather the information necessary with reasonable effort )</td>
   </tr>
 </table>
-
-<h4>No priority</h4>
-
-Items we keep open but will not work on soon.
-<table width="90%" border="1">
-<tr>
-    <td rowspan="3">No Priority</td>
-    <td>High risk / low impact</td>
-  </tr>
-  <tr>
-    <td>High effort / low impact</td>
-  </tr>
-  <tr>
-    <td>Underlaying code or architecture is changing / will change soon</td>
-  </tr>
-</table>
-<h3>Feature requests</h3>
-For feature requests, please file them in the issue tracker; they'll be converted
-to user stories on the [public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88).
-
-## Retrieving SHA for current commit
-
-You can retrieve the SHA hash for the current commit that you are using by running the following command:
-
-    git rev-parse HEAD
 
 <p>Thanks a ton for your support and contributions to Brackets!</p>
