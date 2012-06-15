@@ -12,3 +12,5 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Prototype for an extension manager. Static database for now (featuring the extensions on this page) and you need to start a seperate node server to make it work.
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
+* [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): A very simple extension to convert tabs to spaces (and vice versa)
+* [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions
