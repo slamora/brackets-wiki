@@ -6,19 +6,19 @@
 ## Development Workflow:
 
 * Open up Brackets, and if it's not already opened, open the brackets/ folder.
-* Open a second window (Debug->New Window), which opens a new Brackets instance. You'll use this window for testing your extension. You generally don't want to use the same window, as you may end up breaking Brackets itself. (But you can if you want)
-* In window #2, you can open a different folder on your file system to access whatever content you need for testing your extension (e.g. test.html).
+* Open a second window (Debug->New Window), which opens a new Brackets instance. You'll use this window for testing your extension. (This is optional: you can use just one window, but it's nice to have separate stable & testing windows in case you end up breaking Brackets in the process of developing your extension).
+* In window #2, you can open a different folder on your file system to access other content for testing your extension (e.g. test.html).
 * The development workflow is like this:
  * In window #1, edit your extension code.
- * In window #2, reload window (Ctrl/Command-R) to get extension changes and test.
- * To debug problems, open the developer tools for window #2 (Debug->Show Developer Tools). You can use console.log() from the extension code, set breakpoints, etc. (If you set a breakpoint, clear it before you close dev tools, otherwise Bracket will die. Bug)
+ * In window #2, reload window (F5/Command-R) to get extension changes and test.
+ * To debug problems, open the developer tools for window #2 (Debug->Show Developer Tools). You can use console.log() from the extension code, set breakpoints, etc.
   * Repeat. 
 
 ## Extension Architecture:
 
-Your extension consists of a main.js (your main module) and any other JS files (other modules). When you use Require in your main module to import your own modules, you get a private copy of modules, so they dont conflict with other modules. To access core modules, use ```bracket.getModule()```.
+An extension consists of a main.js (your main module) and any other JS files (other modules). When you use Require in your main module to import your own modules, you get a private copy of modules, so they dont conflict with other modules. To access core Brackets modules, use ```brackets.getModule()```.
 
-You often want an extension to integrate with the UI somehow. If your extension is doing something new from scratch, you can add new menu items or keyboard shortcuts for your new behavior -- see next section. Some Brackets features that already provide a UI are also extensible via a more abstract "headless" API -- see the section after next.
+You often want an extension to integrate with the UI somehow. If your extension is doing something new from scratch, you can add new menu items or keyboard shortcuts for your new behavior -- see next section. Some Brackets features that already provide a UI are also extensible via feature-specific APIs -- see the section after next.
 
 ### <a name="uihooks"></a>Extending the UI generically
 
@@ -38,3 +38,10 @@ As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut f
 **Quick Edit:** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. That manager works by iterating through all the possible inline edit providers on CTRL+E and finding which ones actually respond - it has no notion of priority now, so if your extension wants to respond in the same scenario as some other provider, you'll be out of luck. 
 
 **Quick Open:** To interface with the quick open (file open/jump to) interface, use ```QuickOpen.addQuickOpenPlugin()```.
+
+
+### Further reading
+
+For more detail on Brackets internals, see [[Brackets Development How Tos]].
+
+If you're interested in contributing to the core Brackets codebase, see [[How to Hack on Brackets]].
