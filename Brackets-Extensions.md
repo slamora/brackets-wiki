@@ -14,3 +14,6 @@ If you've written an extension (even just as an experiment), please feel free to
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): A very simple extension to convert tabs to spaces (and vice versa)
 * [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions
+* [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
+* [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
+
