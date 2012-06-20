@@ -16,4 +16,4 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
 * [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
-
+* [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
