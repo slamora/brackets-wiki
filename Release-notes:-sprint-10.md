@@ -1,4 +1,9 @@
-Sprint 10 in progress
+**Sprint 10 is still in progress.** These are **draft** notes.
+
+UI Changes
+----------
+* "Debug > Enable JSLint" has moved to "View > Enable JSLint"
+* "Debug > Use Tab Characters" has moved to "Edit > Use Tab Characters"
 
 Menu API Changes
 ----------------
