@@ -19,7 +19,7 @@ define(function (require, exports, module) {
     
     
     // First, register a command - a UI-less object associating an id to a handler
-    var MY_COMMAND_ID = "helloworld.sayhello";
+    var MY_COMMAND_ID = "helloworld.sayhello";   // package-style naming to avoid collisions
     CommandManager.register("Hello World", MY_COMMAND_ID, handleHelloWorld);
 
     // Then create a menu item bound to the command
