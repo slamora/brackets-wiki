@@ -14,6 +14,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 ### Extensions
 * [How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)
 * [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
+* [Extension UI Guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines)
 * [Extension Experiments](https://github.com/adobe/brackets/wiki/Extension-Experiments)
 * [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
 
