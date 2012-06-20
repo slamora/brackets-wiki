@@ -119,11 +119,10 @@ A prototype implementation is checked into the `node-proxy` branches in [adobe/b
 
 To run this code prototype:
 
-1. Check out both branches
-2.  Install node.js
-3.  As a temporary hack, edit brackets/src/project/ProjectManager.js line 540 to point to a path that exists on your machine
-4.  in brackets-app/src/node, run ```npm install```
-5.  in the same directory, run ```node webserver```
-6.  in your browser, go to [http://localhost:3000](http://localhost:3000)
+1. Install node.js (version 0.6.19 is known to work)
+2. Check out the ```node-proxy``` branch in both repos (brackets and brackets-app)
+3. in the ```brackets-app/src/node``` directory, run ```npm install```
+4. in the same directory, run ```node webserver```
+5. in your browser, go to [http://localhost:3000](http://localhost:3000)
 
 Shell prototypes (with native ui implementation) are currently checked in to the [joelrbrandt/node-shell](https://github.com/joelrbrandt/node-shell) repo. (However, the code is a bit messy and there isn't any documentation beyond comments in the source.)
