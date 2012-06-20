@@ -35,7 +35,7 @@ These are not implemented in Brackets yet.
 
 ## General implementation guidelines
 
-1. **Namespace your CSS rules.** Extensions should generally not alter the styling of existing UI elements in Brackets. To avoid accidentally doing so, set a CSS class on the root element of any UI you add, and make your other CSS rules contextual to that element.
+1. **Namespace your CSS rules.** Extensions should generally not alter the styling of existing UI elements in Brackets. To avoid accidentally doing so, set a CSS class on the root element of any DOM structures you add, and make your other CSS rules contextual to that class. Also, create a reasonably unique prefix for any class names or IDs you add.
 2. **Be careful about modifying existing DOM structures in Brackets.** Where possible, either use public Brackets APIs to build extensions or add entirely new DOM elements that you own, rather than directly modifying the existing DOM. That said, we recognize that our extensibility mechanisms are still evolving, and we want to encourage experimentation. So, if you do need to modify the DOM, here are some suggestions:
     * Add DOM nodes; don't delete or move nodes created by Brackets.
     * If you need to depend on a Brackets-created node, refer to one with an ID rather than relying on indices, etc.
