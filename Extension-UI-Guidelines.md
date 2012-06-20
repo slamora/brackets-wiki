@@ -40,4 +40,4 @@ These are not implemented in Brackets yet.
     * Add DOM nodes; don't delete or move nodes created by Brackets.
     * If you need to depend on a Brackets-created node, refer to one with an ID rather than relying on indices, etc.
     * Be prepared to update your extension for new Brackets drops. We'll do our best to document significant changes we make to the structure of the DOM, especially nodes with IDs.
-    * If you find yourself having to do something fragile or gross, let us know on the Google Group so we can think about how to add a more formal API to help you do what you want.
+    * If you find yourself having to do something fragile or gross, let us know on the [brackets-dev Google Group](http://groups.google.com/group/brackets-dev) so we can think about how to add a more formal API to help you do what you want.
