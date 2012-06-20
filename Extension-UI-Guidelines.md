@@ -32,3 +32,12 @@ These are not implemented in Brackets yet.
 
 1. **Reserve simple shortcuts for common functionality.** Try to avoid using simple shortcuts (Ctrl/Cmd plus a single letter) unless you're implementing something very common (on the order of Save or Find), as we will likely want to use them for core functionality in the future. Ctrl-Shift-(key) or Ctrl-Alt-(key) (which map to Cmd-Shift-(key) and Cmd-Option-(key) on Mac) are generally good choices.
 2. **Follow platform conventions where appropriate.** For most functions, just specifying a single cross-platform keyboard shortcut is good enough; Brackets will automatically map Ctrl to Cmd on Mac. However, if you're implementing a function that's traditionally had different shortcuts on Mac and Windows&mdash;for example, "Find Next" (historically F3 on Windows and Cmd-G on Mac)&mdash;make sure to specify both.
+
+## General implementation guidelines
+
+1. **Namespace your CSS rules.** Extensions should generally not alter the styling of existing UI elements in Brackets. To avoid accidentally doing so, set a CSS class on the root element of any UI you add, and make your other CSS rules contextual to that element.
+2. **Be careful about modifying existing DOM structures in Brackets.** Where possible, either use public Brackets APIs to build extensions or add entirely new DOM elements that you own, rather than directly modifying the existing DOM. That said, we recognize that our extensibility mechanisms are still evolving, and we want to encourage experimentation. So, if you do need to modify the DOM, here are some suggestions:
+    * Add DOM nodes; don't delete or move nodes created by Brackets.
+    * If you need to depend on a Brackets-created node, refer to one with an ID rather than relying on indices, etc.
+    * Be prepared to update your extension for new Brackets drops. We'll do our best to document significant changes we make to the structure of the DOM, especially nodes with IDs.
+    * If you find yourself having to do something fragile or gross, let us know on the Google Group so we can think about how to add a more formal API to help you do what you want.
