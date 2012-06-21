@@ -1,5 +1,5 @@
 ### A Living Document.
-This is an initial draft of the Extension UI Guidelines.  They are designed to meet the current understood needs of purposed extensions.  The Brackets team is open to any suggestions on feautures that may have been overlooked.
+This is an initial draft of the Extension UI Guidelines.  They are designed to meet the current understood needs of purposed extensions.  The Brackets team is open to any suggestions on features that may have been overlooked.
 
 To help illustrate correct user interface implementation, design compositions have been included with a fictional CoffeeScript extension.  Some guidelines rely on features not yet included in Brackets; these have been noted and serve as a projection of current plans.  
 
@@ -41,8 +41,8 @@ In general, our menu guidelines follow the standard UI practices for application
 
 ![toolbar example][toolbar]
 
-1. **Minimal design.** The current default ui of Brackets relies on minimal design; new icons on the toolbar should be compatible with the current look and feel.
-2. **An extension should only use a single icon.** If an additional command needs to be represented in the toolbar it is recommended to use a submenu to keep the ui compact.
+1. **Minimal design.** The current default interface of Brackets relies on minimal design; new icons on the toolbar should be compatible with the current look and feel.
+2. **An extension should only use a single icon.** If an additional command needs to be represented in the toolbar it is recommended to use a submenu to keep the interface compact.
 3. **Icons should have appropriate states.** At a minimum, icons should have disabled, enabled, and hover states, but should also include any other states needed to indicate status to the user. See **stateful indicator** below.
 4. **The toolbar is designed to be user configurable.** Ensure functionality is duplicated in the application menu and anywhere else that is contextually relevant.  The toolbar will be designed to be user configurable; if the icon is removed from the user's toolbar, the extension's functionality needs to be available elsewhere.
 
@@ -57,7 +57,7 @@ Recommended usage:
 
 ![panel example][panel]
 
-1. **Use wisely.** In an effort to preseve an uncluttered interface, it is recommended that panels be used sparingly.  Multiple stacked or nested panels can quickly distract from the code editing area.
+1. **Use wisely.** In an effort to preserve an uncluttered interface, it is recommended that panels be used sparingly.  Multiple stacked or nested panels can quickly distract from the code editing area.
 2. **Panels anchored to the top should be easily hidden.** For example, quick search could be anchored to the top when needed, but should hide easily when the user has finished using it.
 3. **Other panels should be designed anchored to the left or bottom edges.** The right edge should be reserved for the project panel.
 
@@ -66,7 +66,7 @@ Recommended usage:
 
 ![Status bar example][status_bar]
 
-1. **Use for temporary status chanages.** That's why it's called a status bar.
+1. **Use for temporary status changes.** That's why it's called a status bar.
 2. **Duplicate functionality.** The status bar may not always be visible so functionality should be duplicated in the menus and/or toolbar.
 
 
