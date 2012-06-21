@@ -24,7 +24,7 @@ The [Story](https://trello.com/c/8Vuom2dA) indicates work in progress, for examp
 
 Major external contributions
 ----------------------------
-* [cantrell](http://github.com/cantrell) added Restore Default Font Size (CMD 0/CTRL-0)
+* [cantrell](http://github.com/cantrell) added Restore Default Font Size (CMD+0/CTRL+0)
 
 UI Changes
 ----------
@@ -63,7 +63,7 @@ New Utility APIs
 ----------------
 * Unit testing: waitsForDone() function for using Promise/Deferred ([see forum post](https://groups.google.com/forum/?fromgroups#!topic/brackets-dev/Y2RrDLv5DPI))
 * Unit testing: SpecRunnerUtils.deleteFile()
-* JSUtils: _TODO_
+* JSUtils: ``JSUtils.findMatchingFunctions(functionName, fileInfos)`` For a set of files, returns function offsets for function declarations with a matching name.
 
 Bugs fixed in Sprint 10
 ----------------------
