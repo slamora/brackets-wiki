@@ -35,7 +35,7 @@ Menu API Changes
 ----------------
 The following functions no longer take an ID parameter:
 
-* Menus.addMenuItem()
+* Menu.addMenuItem()
 
 Also, the relativeID parameter has changed. Previously this parameter specified the id of another MenuItem. Now it references the id of a Command that exists in the parent menu to specify a location. The net result is that MenuItems no longer have externally exposed ID’s.
 
