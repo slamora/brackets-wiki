@@ -2,7 +2,9 @@
 
 What's new in Sprint 10
 ----------------------
-We didn't add major new user-visible features in Sprint 9. Our main goals for the sprint were similar to the previous sprint - Continue to make progress on the extensibility architecture of Brackets: *research, basic architecture and extensibility API*:
+JavaScript Quick Edit is now an official extension. Within HTML or JavaScript files, CMD+E/CTRL+E on a function name will open all function definitions with that name in an inline editor.
+
+Our main goals for the sprint were similar to the previous sprint - Continue to make progress on the extensibility architecture of Brackets: *research, basic architecture and extensibility API*:
 * **Architecture / Contributions**
      * CodeMirror contributions (NJ)     
 This [Story](https://trello.com/c/XxKi7w8x) is about submitting scrolling enhancements to CodeMirror, there were a number of pull requests related to fix flickering during vertical scrolling in CodeMirror, further details can be found here:
@@ -13,16 +15,16 @@ This [Story](https://trello.com/c/XxKi7w8x) is about submitting scrolling enhanc
 The [Story](https://trello.com/c/8Vuom2dA) indicates work in progress, for example there hasn't been a lot of scenario testing yet. The changes are manifesting in the performance improvements and better responsiveness running in the multi-process modes.     
 
 * **Extensibility Epic**     
-      * The [JavaScript Quick Edit] (https://trello.com/c/8d7sdB54) story (NJ, Jason, Randy, Peter, Joel) allows you to quickly access and edit JavaScript function bodies from the calling function within HTML and JavaScript files.Some nice work went into performance instrumentation and building [Unit Tests](https://github.com/adobe/brackets/wiki/Extension-Experiments#wiki-unittests).    
+      * The [JavaScript Quick Edit] (https://trello.com/c/8d7sdB54) story (NJ, Jason, Randy, Peter, Joel) allows you to quickly access and edit JavaScript function definitions from a function reference within HTML and JavaScript files. Performance instrumentation was added to help the team optimize the JavaScript file parsing. Performance test reporting can now display metrics as a hierarchy to show how individual metrics roll-up. [Unit Tests](https://github.com/adobe/brackets/wiki/Extension-Experiments#wiki-unittests).    
       * The second extensibility [Story - Extension support for require.js text plugin](https://trello.com/c/BKQnEDRa) (Jason) in Sprint 10 enables extension developer to use the [require.js text plugin] (https://github.com/requirejs/text) without having to include it for each extension.    
       * We now support [HTML Context Menus](https://trello.com/c/Um2Nlhh9) (Ty, Randy, Peter) in Brackets - please also refer to the Menu API changes mentioned below.
       * We started working on [basic guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines) for Extensions UI ([User Story])(https://trello.com/c/tDdqua2R) (Garth)
-      * Last not least [Extension Stylesheets](https://trello.com/c/ltSP2dcY) (Jason) you can now specify css stylesheets to style and define the UI for any extension.
+      * [Extension Stylesheets](https://trello.com/c/ltSP2dcY) (Jason) Extensions may optionally specify CSS stylesheets to load ``ExtensionUtils.loadStyleSheet()``. See [Extension UI Guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines) for best practices.
 
 
 Major external contributions
 ----------------------------
-* no major additions this sprint
+* [cantrell](http://github.com/cantrell) added Restore Default Font Size (CMD 0/CTRL-0)
 
 UI Changes
 ----------
@@ -52,11 +54,16 @@ Project API Changes
 -------------------
 The events dispatched by ProjectManager have changed. Instead of dispatching `initializeComplete` and `projectRootChanged`, we now dispatch `projectOpen` and `beforeProjectClose` events. `beforeProjectClose` is dispatched before the project root is about to change, and `projectOpen` is dispatched afterwards. Also, `projectOpen` is dispatched after the initial project is opened when Brackets first launches.
 
+Extensibility API Changes
+-------------------------
+* Extension style sheet loading: ``ExtensionUtils.loadStyleSheet(module, path)`` to load a style sheet relative to the extension's module
+* RequireJS text plugin: Load content from a text file ``require("text!path/to/file")``
+
 New Utility APIs
 ----------------
 * Unit testing: waitsForDone() function for using Promise/Deferred ([see forum post](https://groups.google.com/forum/?fromgroups#!topic/brackets-dev/Y2RrDLv5DPI))
 * Unit testing: SpecRunnerUtils.deleteFile()
-
+* JSUtils: _TODO_
 
 Bugs fixed in Sprint 10
 ----------------------
