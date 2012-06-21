@@ -79,8 +79,8 @@ Recommended usage:
     * Be prepared to update your extension for new Brackets drops. We'll do our best to document significant changes we make to the structure of the DOM, especially nodes with IDs.
     * If you find yourself having to do something fragile or gross, let us know on the [brackets-dev Google Group](http://groups.google.com/group/brackets-dev) so we can think about how to add a more formal API to help you do what you want.
 
-[context_menu]: https://img.skitch.com/20120621-1fetjpqcf7dhhcimfkhsx9astc.png
-[toolbar]: https://img.skitch.com/20120621-mrx5tsdt6uhrdwbce4nfi499yt.png
-[stateful_toolbar]: https://img.skitch.com/20120621-74532u3ce4bjpc5ng85a496b6.png
-[panel]: https://img.skitch.com/20120621-kdjfiqs3k92bmh1cbyq5k9xkud.png
-[status_bar]: https://img.skitch.com/20120621-8dg9w9jdyjy85mgw5qdbxhcfh1.png
+[context_menu]: screenshots/ui_guidelines/context_menus.png
+[toolbar]: screenshots/ui_guidelines/toolbar.png
+[stateful_toolbar]: screenshots/ui_guidelines/stateful_toolbar.png
+[panel]: screenshots/ui_guidelines/bottom_panel.png
+[status_bar]: screenshots/ui_guidelines/status_bar.png
