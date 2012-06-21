@@ -1,4 +1,5 @@
-**Sprint 10 is still in progress.** These are **draft** notes.    
+**Sprint 10 is still in progress.** These are _**draft**_ notes.
+
 What's new in Sprint 10
 ----------------------
 We didn't add major new user-visible features in Sprint 9. Our main goals for the sprint were similar to the previous sprint - Continue to make progress on the extensibility architecture of Brackets: *research, basic architecture and extensibility API*:
@@ -21,7 +22,7 @@ The [Story](https://trello.com/c/8Vuom2dA) indicates work in progress, for examp
 
 Major external contributions
 ----------------------------
-* no mayor additions this sprint
+* no major additions this sprint
 
 UI Changes
 ----------
@@ -41,11 +42,11 @@ These changes simplify the API, but will break existing extensions that add menu
 
 Document/Editor API Changes
 ---------------------------
-Mutator APIs have been added to Document. Text-editing commands should use these Document APIs to modify the text, instead of going through Editor or CodeMirror. For more details on Document usage, see "Working with Documents" in the [[Brackets Development How Tos]].
+Mutator APIs have been added to Document. To modify text, use these Document APIs instead of going through Editor or CodeMirror. For details on Document usage, see "Working with Documents" in the [[Brackets Development How Tos]].
 
 * Added to Document: replaceRange(), getRange(), getLine(), batchOperation().
 * Changed Document.getText() so it always returns \n line endings (like the above new APIs) unless a special flag is passed.
-* Remove Editor.getLineText() -- superseded by Document.getLine()
+* Removed Editor.getLineText() -- replaced by Document.getLine()
 
 Project API Changes
 -------------------
