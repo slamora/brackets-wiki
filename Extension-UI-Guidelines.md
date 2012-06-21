@@ -1,4 +1,4 @@
-##A Living Document.
+### A Living Document.
 This is an initial draft of the Extension UI Guidelines.  They are designed to meet the current understood needs of purposed extensions.  The Brackets team is open to any suggestions on feautures that may have been overlooked.
 
 To help illustrate correct user interface implementation, design compositions have been included with a fictional CoffeeScript extension.  Some guidelines rely on features not yet included in Brackets; these have been noted and serve as a projection of current plans.  
@@ -61,6 +61,13 @@ Recommended usage:
 2. **Panels anchored to the top should be easily hidden.** For example, quick search could be anchored to the top when needed, but should hide easily when the user has finished using it.
 3. **Other panels should be designed anchored to the left or bottom edges.** The right edge should be reserved for the project panel.
 
+##Status Bar
+*This feature is not fully implemented in Brackets.*
+
+![Status bar example][status_bar]
+
+1. **Use for temporary status chanages.** That's why it's called a status bar.
+2. **Duplicate functionality.** The status bar may not always be visible so functionality should be duplicated in the menus and/or toolbar.
 
 
 ## General implementation guidelines
@@ -76,3 +83,4 @@ Recommended usage:
 [toolbar]: https://img.skitch.com/20120621-mrx5tsdt6uhrdwbce4nfi499yt.png
 [stateful_toolbar]: https://img.skitch.com/20120621-74532u3ce4bjpc5ng85a496b6.png
 [panel]: https://img.skitch.com/20120621-kdjfiqs3k92bmh1cbyq5k9xkud.png
+[status_bar]: https://img.skitch.com/20120621-8dg9w9jdyjy85mgw5qdbxhcfh1.png
