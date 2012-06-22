@@ -17,8 +17,6 @@ In general, our menu guidelines follow the standard UI practices for application
 
 ### Context menus
 
-*These are not implemented in Brackets yet.*
-
 ![Context menu screen][context_menu]
 
 1. **Only show items that are relevant to the current context.** Unlike application menus, you should generally show/hide items in the context menu rather than simply disabling them. However, if an item would ordinarily be applicable to the current context, but the specific selection doesn't allow it, then disable it rather than hiding it. For example, if you want to add an item to the context menu for a particular file type, but it only works for writable files and the file is read-only, then disable it rather than hiding it.
