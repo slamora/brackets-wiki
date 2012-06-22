@@ -2,18 +2,33 @@ Brackets doesn't yet have functionality for discovering and installing extension
 
 If you've written an extension (even just as an experiment), please feel free to edit this page directly and add it (with some indication of what state it's in). Thanks!
 
+**Code/text editing**
 * [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
-* [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core.
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
-* [Recent projects](https://github.com/njx/brackets-recent-projects): Makes it so you can click on the project name in the sidebar to get a dropdown that shows a list of recent project folders.
-* [ToGist](https://github.com/davidderaedt/togist): Create a gist from current selection.
-* [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
-* [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
-* [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
-* [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Prototype for an extension manager. Static database for now (featuring the extensions on this page) and you need to start a seperate node server to make it work.
-* [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): A very simple extension to convert tabs to spaces (and vice versa)
+* [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
+
+**Code generation**
+* [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
 * [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions
+
+**General functionality**
+* [Recent Projects](https://github.com/njx/brackets-recent-projects): Makes it so you can click on the project name in the sidebar to get a dropdown that shows a list of recent project folders.
+* [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Prototype for an extension manager. Static database for now (featuring the extensions on this page) and you need to start a seperate node server to make it work.
+
+**Live development**
+* [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
+* [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
+
+**External tools**
+* [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
+* [ToGist](https://github.com/davidderaedt/togist): Create a gist from current selection.
+* (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
+
+**Documentation**
+* [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core.
+
+**Linting & warnings**
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
 * [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
-* [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
+* (See also [App Cache Buddy](https://github.com/davidderaedt/appcache-gen) above).
