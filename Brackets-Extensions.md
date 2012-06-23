@@ -14,7 +14,7 @@ If you've written an extension (even just as an experiment), please feel free to
 
 **General functionality**
 * [Recent Projects](https://github.com/njx/brackets-recent-projects): Makes it so you can click on the project name in the sidebar to get a dropdown that shows a list of recent project folders.
-* [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Prototype for an extension manager. Static database for now (featuring the extensions on this page) and you need to start a seperate node server to make it work.
+* [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node).
 
 **Live development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
