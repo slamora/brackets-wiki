@@ -1,4 +1,4 @@
-**Sprint 11 is in progress.** These are _**draft**_ notes.
+**Sprint 11 is in progress** until 7/20. These are _**draft**_ notes.
 
 UI Changes
 ----------
