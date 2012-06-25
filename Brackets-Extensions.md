@@ -31,4 +31,5 @@ If you've written an extension (even just as an experiment), please feel free to
 **Linting & warnings**
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
 * [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
+* [W3CValidator](https://github.com/cfjedimaster/brackets-w3cvalidation): Run the W3C Validator on your HTML.
 * (See also [App Cache Buddy](https://github.com/davidderaedt/appcache-gen) above).
