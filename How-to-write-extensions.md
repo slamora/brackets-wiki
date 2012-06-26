@@ -39,13 +39,13 @@ As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut f
 
 **Quick Open:** To interface with the quick open (file open/jump to) interface, use ```QuickOpen.addQuickOpenPlugin()```.
 
-### <a name="geturl"></a>Accessing resources (e.g. images) in your extension
+### <a name="tourl"></a>Accessing resources (e.g. images) in your extension
 
 Extensions can get installed at (semi-)arbitrary paths. For example, you might develop your extension in the ```brackets/src/extensions/user/foo``` directory, but a user might install it in ```brackets/src/extensions/default/bar```.
 
-Thankfully, the ```require``` context that's passed in to your extension's ```main.js``` file can help you resolve paths. Just call ```require.getUrl``` with the relative (to your module) path you'd like to make relative to the site root. **IMPORTANT:** Make sure you're using the ```require``` object that was passed to your module, _not_ the global ```require``` object.
+Thankfully, the ```require``` context that's passed in to your extension's ```main.js``` file can help you resolve paths. Just call ```require.toUrl``` with the relative (to your module) path you'd like to make relative to the site root. **IMPORTANT:** Make sure you're using the ```require``` object that was passed to your module, _not_ the global ```require``` object.
 
-For example, if you have ```awesome.jpg``` in your extension's top-level ```foo``` folder, you can do ```require.getUrl('./awesome.jpg')```, and it will return something like ```/extensions/user/foo/awesome.jpg``` when you call it and ```/extensions/default/bar/awesome.jpg``` when your user calls it. The path you give ```getUrl``` should be relative to your extension's top-level folder (yes, subdirectories work), and the URL you get back will be relative to the site root (i.e. it will begin with "/").
+For example, if you have ```awesome.jpg``` in your extension's top-level ```foo``` folder, you can do ```require.toUrl('./awesome.jpg')```, and it will return something like ```/extensions/user/foo/awesome.jpg``` when you call it and ```/extensions/default/bar/awesome.jpg``` when your user calls it. The path you give ```toUrl``` should be relative to your extension's top-level folder (yes, subdirectories work), and the URL you get back will be relative to the site root (i.e. it will begin with "/").
 
 ### Further reading
 
