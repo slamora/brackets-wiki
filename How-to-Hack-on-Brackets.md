@@ -31,7 +31,7 @@ Whatever you want, of course! But you might want to check the [public Brackets b
 If you're planning to do something other than a small bugfix, please start a discussion on the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) to get feedback. There might already be some prior thinking on what you're working on, or some reason that it hasn't already been done.
 
 ### What's the process? ###
-First, [sign the Brackets Contributor License Agreement (CLA)](http://brackets.io/brackets-contributor-license-agreement.html). 
+First, [sign the Brackets Contributor License Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html). 
 This is for your protection as well as that of the Brackets project.
 
 Then, just submit changes as pull requests from your own fork of brackets or
