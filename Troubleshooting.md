@@ -1,6 +1,10 @@
 Brackets not working for you? Consider the following tips.
 
-##Permissions
+## System Requirements
+
+Mac requires OSX 10.6 or newer. Win requires XP Service Pack 2 or newer. You should have at least 2 GB of RAM to do Live Development.
+
+## Permissions
 
 If Brackets won't launch, check the permissions of the main executable files (e.g. using `ls -l`). On Mac:
 * `bin/mac/Brackets.app` should be `drwxr-xr-x`
