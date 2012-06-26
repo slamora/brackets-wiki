@@ -43,7 +43,7 @@ in the file tree.
 Brackets currently has color-coding for HTML, JS, CSS, and LESS files. It
 doesn't do any code hinting yet.
 
-Quick edit
+<a id="inlines"></a>Quick edit
 ----------
 
 One of the goals of Brackets is to make it easy to make quick edits to
@@ -73,7 +73,7 @@ Eventually Brackets could leverage inline editing for lots of other kinds of
 things--in addition to showing relevant JS code, you could imagine adding
 inline visual tools like gradient and shadow editors for the selected CSS rule.
 
-Live development
+<a id="livedev"></a>Live development
 ----------------
 
 Another goal of Brackets is to bridge the gap between code editing and in-browser
@@ -132,7 +132,7 @@ A couple of notes on unofficial features:
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
-There aren't a lot of keyboard shortcuts available in Brackets yet, but there are a few that are worth knowing, and there will be more as features are added.
+Here are some keyboard shortcuts that are worth knowing. There will be more as features are added.
 
 <table>
 <tbody>
