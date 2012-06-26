@@ -5,7 +5,6 @@ If you've written an extension (even just as an experiment), please feel free to
 **Code/text editing**
 * [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
-* [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): A very simple extension to convert tabs to spaces (and vice versa)
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
 
 **Code generation**
