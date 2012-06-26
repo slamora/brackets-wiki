@@ -1,6 +1,6 @@
 * [Download Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-howtoget)
 * Create a new folder in extensions/user with yourExtensionName, and a main.js file for your extension code.
-* For a quick start, you may want to read the [[Simple "Hello World" extension]] or refer to an existing extension (like InlineImageViewer) that is similar to what you want to do.
+* For a quick start, you may want to read the [[Simple "Hello World" extension]] or refer to an [existing extension](https://github.com/adobe/brackets/wiki/Brackets-Extensions) (like InlineImageViewer) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
 
 ## Development Workflow:
