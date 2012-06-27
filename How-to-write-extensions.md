@@ -32,6 +32,9 @@ As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut f
 
 **Add a context menu item:** Get a context menu by calling ```Menus.getContextMenu()``` with one of the ```ContextMenuIds``` constants (currently ```project-context-menu``` or ```editor-context-menu```).  Then add a menu item via ```theContextMenu.addMenuItem()```, linking it to your Command id exactly like a top level menu item. 
 
+**Add a menu divider** Get a top level or context menu as explained above.  Then add a menu dividers via ```theMenu.addMenuDivider()```. It will default to the last position currently in the menu.  You have the option of placing it with the position parameter ```first``` and ```last```, which will place the divider accordingly. Additionally, you can set position parameter to ```before``` and ```after```, pass in a Command ID, and place the divider accordingly.  
+
+
 **Add a keyboard shortcut:** To add a keyboard shortcut without any related menu item, call ```KeyBindingManager.addBinding()``` directly, linking a shortcut to your Command id.
 
 
