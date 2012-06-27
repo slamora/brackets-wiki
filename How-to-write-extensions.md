@@ -30,6 +30,8 @@ For any new behavior, first register a Command that implements your behavior, vi
 
 As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut for your Command at the same time.
 
+**Add a context menu item:** Get a context menu by calling ```Menus.getContextMenu()``` with one of the ```ContextMenuIds``` constants (currently ```project-context-menu``` or ```editor-context-menu```).  Then add a menu item via ```theContextMenu.addMenuItem()```, linking it to your Command id exactly like a top level menu item. 
+
 **Add a keyboard shortcut:** To add a keyboard shortcut without any related menu item, call ```KeyBindingManager.addBinding()``` directly, linking a shortcut to your Command id.
 
 
