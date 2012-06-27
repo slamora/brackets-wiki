@@ -106,12 +106,14 @@ Use semicolons:
 > ```
 
 <br/>
-Use double quotes in JavaScript:
+Use double quotes in JavaScript. If a JavaScript string literal _contains_ code within it, use single quotes within the string to avoid escaping.
 > Do this:
 >
 > ```
 > var aString = "Hello";
 > someFunction("This is awesome!");
+>
+> var htmlCode = "<div id='some-id' class='some-class'></div>";
 > ```
 >
 > Not this:
@@ -119,7 +121,11 @@ Use double quotes in JavaScript:
 > ```
 > var aString = 'Hello'; // Use double quotes!
 > someFunction('This is awesome!'); // Use double quotes!
+>
+> var htmlCode = '<div id="some-id" class="some-class"></div>'; // Use double quotes!
+> var htmlCode = "<div id=\"some-id\" class=\"some-class\"></div>"; // Within string, use single quotes!
 > ```
+
 
 ## Code Structure ##
 <br/>
