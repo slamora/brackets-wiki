@@ -4,7 +4,7 @@ Many operations in Brackets return their results asynchronously -- for example, 
 
 For working with a sequence of asynchronous operations (in parallel or in serial), the Async utils module may be helpful.
 
-## Working with Documents ##
+## <a name="doc"></a>Working with Documents ##
 
 ```Document``` is an object that represents a file on disk. Documents perform several important functions: they are the backing model for Editors; they provide APIs for reading and modifying the text content; and they emit events whenever the text is edited.
 
