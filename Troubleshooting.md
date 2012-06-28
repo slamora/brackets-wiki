@@ -4,6 +4,10 @@ Brackets not working for you? Consider the following tips.
 
 Mac requires OSX 10.6 or newer. Win requires XP Service Pack 2 or newer. You should have at least 2 GB of RAM to do Live Development.
 
+## Download
+
+Make sure you download one of the "brackets-sprint-XX.zip" links from the [Downloads page](https://github.com/adobe/brackets/downloads). The "Download as zip" button will **not** work.
+
 ## Permissions
 
 If Brackets won't launch, check the permissions of the main executable files (e.g. using `ls -l`). On Mac:
