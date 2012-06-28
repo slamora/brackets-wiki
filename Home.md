@@ -1,6 +1,7 @@
 Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [Main README](https://github.com/adobe/brackets/blob/master/README.md) -- please read this first.
+* [Troubleshooting](https://github.com/adobe/brackets/wiki/Troubleshooting) -- read this if you're having trouble running Brackets.
 
 ## Development
 
@@ -10,7 +11,6 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Resources / Tutorials / Videos](https://github.com/adobe/brackets/wiki/Resources)
 * [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions)
 * [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
-* [Troubleshooting](https://github.com/adobe/brackets/wiki/Troubleshooting)
 
 ### Extensions
 * [How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)
