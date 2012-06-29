@@ -19,3 +19,11 @@ Future features
 ===============
 
 One other major feature we'd like to see in CodeMirror is a separation between the model and the view. In Brackets, we can't easily separate our document and editor architectures because the two are unified in the CodeMirror editor; being able to create a text model without view instantiation would be very helpful.
+
+
+Resources
+===============
+
+- [Substance Surface](http://github.com/substance/surface)
+  A similar project inspired by CodeMirror but dedicated to prose instead of code.
+  Emphasis on separation of concerns (input, carret, positioning, state/events, rendering) as described in this document.
