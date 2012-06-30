@@ -19,6 +19,7 @@ If you've written an extension (even just as an experiment), please feel free to
 
 **Live development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
+* [Everyscrub](https://github.com/peterflynn/everyscrub): Everything's a scrubber! Cmd/Ctrl + drag on any number or hex color to scrub its value and update the browser in real time.
 * [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
 
 **External tools**
