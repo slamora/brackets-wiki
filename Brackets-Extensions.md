@@ -26,7 +26,7 @@ If you've written an extension (even just as an experiment), please feel free to
 
 **External tools**
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
-* [ToGist](https://github.com/davidderaedt/togist): Create a gist from current selection.
+* [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 * [PhoneGap Build](https://github.com/tpryan/brackets-phonegapbuild): Eventual goal is to be able to send a project to PhoneGap Build from Brackets. Still in early stages. 
 
