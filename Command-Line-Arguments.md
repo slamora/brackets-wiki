@@ -1,7 +1,4 @@
-**Note: We don't use the GitHub wiki for creating feature specifications. Please start a thread on our Mailing List (https://groups.google.com/forum/#!forum/brackets-dev) or comment directly on the feature in the product backlog (https://trello.com/c/dRNqhd2L). **
-
-***
-#brackets-app Command line argument processing
+#Brackets-App Command Line Argument Processing
 
 ## Overview
 Currently, all interaction within the Brackets application must be performed interactively by the user.  This includes the act of opening files and folder trees for editing.  While this might be acceptable for most cases, it is desirable for the brackets shell application to be configurable at launch time via arguments specified at launch.
