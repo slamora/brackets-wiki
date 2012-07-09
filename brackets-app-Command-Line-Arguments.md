@@ -1,3 +1,6 @@
+**Note: We don't use the GitHub wiki for creating feature specifications. Please start a thread on our Mailing List (https://groups.google.com/forum/#!forum/brackets-dev) or comment directly on the feature in the product backlog (https://trello.com/c/dRNqhd2L). **
+
+***
 #brackets-app Command line argument processing
 
 ## Overview
@@ -19,5 +22,4 @@ Currently, all interaction within the Brackets application must be performed int
 ## Implementation Notes
 
 ### Boost program.options?
-
 
