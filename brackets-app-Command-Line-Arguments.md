@@ -10,6 +10,8 @@ Currently, all interaction within the Brackets application must be performed int
 
 ### File Association
 
+### Interaction with Extensions
+
 ## Implementation Notes
 
 ### Boost program.options?
