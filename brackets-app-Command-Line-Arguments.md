@@ -6,6 +6,10 @@ Currently, all interaction within the Brackets application must be performed int
 ## Scope
 ### Arguments on Launch
 
+   Specifying a path to a file that can be edited by Brackets should open that file for editing immediately after launch.  This path can be a fully qualified filesystem path or a relative path.  The behavior is analogous to executing the File->Open... menu item and selecting a file for edit.
+
+   Specifying a path to a folder on the filesystem will open the folder as a node in the sidebar.  This folder will be added to the sidebar immediately after launch.  This path can be a fully qualified filesystem path or a relative path.  The behavior is analogous to executing the File->Open Folder... menu item and selecting a folder from the resulting dialog.
+
 ### Communicating with a running Application
 
 ### File Association
