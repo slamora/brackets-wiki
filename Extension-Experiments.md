@@ -1,3 +1,5 @@
+## THIS PAGE IS OUT OF DATE AND KEPT FOR HISTORICAL REASONS ONLY
+
 ##Goal
 
 The goal of this exercise was to write a feature as an extension, without modifying core Brackets code, and document the issues and pain points. The extension needs to be functional, but not necessarily "release ready". The main objective was to hit on all of the extensibility points required to write a robust, full-featured extension.
