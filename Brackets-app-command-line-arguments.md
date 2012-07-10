@@ -15,6 +15,9 @@ Specifying a File Path
 
 ### Scope
 
+   Note that File extension/shell integration is enabled by this feature.  However, this entails work that is above and beyond the initial command line handling.  For example, once the file argument was implemented it would be possible to register with the Win32 registry keys that would allow Brackets to open double clicked HTML/JS/CSS files.
+ 
+
 ## Implementation Notes
 
 ## Questions
