@@ -2,7 +2,10 @@ Brackets not working for you? Consider the following tips.
 
 ## System Requirements
 
-Mac requires OSX 10.6 or newer. Win requires XP Service Pack 2 or newer. You should have at least 2 GB of RAM to do Live Development.
+* Mac OSX 10.6 or newer.
+* Windows Vista/7.
+* WinXP w/ Service Pack 2.
+* You should have at least 2 GB of RAM to do Live Development.
 
 ## Download
 
