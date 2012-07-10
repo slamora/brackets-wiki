@@ -13,10 +13,17 @@ Specifying a File Path
 
    Note that the file path specified can be relative to the current working directory.  Finally, any paths that are specified which do not exist on the filesystem will be ignored.
 
-### Communication with existing Brackets Process
 
 ### Scope
 
 ## Implementation Notes
 
 ### Extension Concerns
+
+## Questions
+
+### Communication with existing Brackets Process
+
+Note that on Windows, it is possible to launch multiple instances of an EXE.  Logic can be added to the Win32 startup sequence that would allow the application to use inter-process communication.  Do we want Brackets to follow the model where there can be multiple concurrent processes running.  Or do we want to add logic that would use the newly launched Brackets process to pass data to the running instance.  
+
+For example, if Brackets is already running and the user attempted to start another one and passed a file to open, we could make it so that the file information is passed to the other brackets process and the newly launched one would terminate once the message has been handled.
