@@ -1,2 +1,3 @@
 - [Node.JS Integration](https://github.com/adobe/brackets/wiki/Research:-Node.JS-Integration)
 - [CEF3 vs. Chromium Content Shell](https://github.com/adobe/brackets/wiki/CEF3-vs.-Chromium-Content-Shell)
+- [brackets-app Commandline Arguments](https://github.com/adobe/brackets/wiki/Brackets-app-command-line-arguments)
