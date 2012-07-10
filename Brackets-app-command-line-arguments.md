@@ -11,6 +11,8 @@ Specifying a File Path
 
    A single file path can be included as a Brackets command line argument.  If the path is to a File that is supported by the application then it will be opened for editing, in the same way it would have been had the user selected it in the dialog for the File->Open command.  If the path is to a directory on the filesystem, the folder will be displayed in the side bar.  This is analogous to having selected the folder interactively via the File->Open Folder command.
 
+   Note that the file path specified can be relative to the current working directory.  Finally, any paths that are specified which do not exist on the filesystem will be ignored.
+
 ### Communication with existing Brackets Process
 
 ### Scope
