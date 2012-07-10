@@ -7,7 +7,8 @@ This spec describes an initial set of arguments that Brackets supports, with a g
 
 ###  General Description
 
-1. Specifying a File Path
+Specifying a File Path
+
    A single file path can be included as a Brackets command line argument.  If the path is to a File that is supported by the application then it will be opened for editing, in the same way it would have been had the user selected it in the dialog for the File->Open command.  If the path is to a directory on the filesystem, the folder will be displayed in the side bar.  This is analogous to having selected the folder interactively via the File->Open Folder command.
 
 ### Communication with existing Brackets Process
