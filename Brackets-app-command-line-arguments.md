@@ -20,7 +20,7 @@ Specifying a File Path
 
 ## Implementation Notes
 
-CEF has a utility class named [CefCommandLine](http://magpcss.org/ceforum/apidocs3/projects/%28default%29/CefCommandLine.html) that we believe  will be sufficient for our purposes.  If it isn't, there are alternatives available.  One of these is the **Boost** [program.options](http://www.boost.org/libs/program_options/) library.
+CEF has a utility class named [CefCommandLine](http://magpcss.org/ceforum/apidocs3/projects/%28default%29/CefCommandLine.html) that we believe  will be sufficient for our purposes.  If it isn't, there are open source alternatives available.  One of these is the **Boost** [program.options](http://www.boost.org/libs/program_options/) library.
 
 ## Questions
 
