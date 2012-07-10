@@ -2,5 +2,12 @@
 
 ## Overview
 
+###  General Description
 
-## Implementation Concerns
+### Communication with existing Brackets Process
+
+### Scope
+
+## Implementation Notes
+
+### Extension Concerns
