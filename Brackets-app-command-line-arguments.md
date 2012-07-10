@@ -13,6 +13,15 @@ This spec describes an initial set of arguments that Brackets supports, with a g
 
    Note that the file path specified can be relative to the current working directory.  Finally, any paths that are specified which do not exist on the filesystem will be ignored.
 
+
+**Examples**
+
+`Brackets.exe c:\MySite\index.html`
+
+`./mac/Brackets.app/Contents/MacOS/Brackets ~/website/styles.css` 
+
+`open Brackets.app ./website/scripts` 
+
 ### Scope
 
    Note that File extension/shell integration is enabled by this feature.  However, this entails work that is above and beyond the initial command line handling.  For example, once the file argument was implemented it would be possible to register with the Win32 registry keys that would allow Brackets to open double clicked HTML/JS/CSS files.
