@@ -9,7 +9,7 @@ If you want to download and run the absolutely _latest_ version of the code, you
 
 Here are the commands:
 
-    git clone https://github.com:adobe/brackets-app.git
+    git clone https://github.com/adobe/brackets-app.git
     cd brackets-app
 
     git clone https://github.com/adobe/brackets.git
