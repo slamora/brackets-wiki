@@ -13,14 +13,19 @@ Specifying a File Path
 
    Note that the file path specified can be relative to the current working directory.  Finally, any paths that are specified which do not exist on the filesystem will be ignored.
 
-
 ### Scope
 
 ## Implementation Notes
 
+## Questions
+
 ### Extension Concerns
 
-## Questions
+   It would be beneficial for Extensions to receive notification of the command line options, or perhaps have a mechanism where the arguments could be retrieved.  
+
+   Do we want to have a scheme where extension specific arguments could be specified?  For example, given the HelloWorld extension:
+
+`Brackets.exe -ext:HelloWorld="Some Data for the extension only" c:\temp\foo.html`
 
 ### Communication with existing Brackets Process
 
