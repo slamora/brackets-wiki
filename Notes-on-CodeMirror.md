@@ -27,3 +27,12 @@ Resources
 - [Substance Surface](http://github.com/substance/surface)
   A similar project inspired by CodeMirror but dedicated to prose instead of code.
   Emphasis on separation of concerns (input, carret, positioning, state/events, rendering) as described in this document.
+
+Why CodeMirror
+==============
+
+A common question we get is why we chose to leverage CodeMirror editor over the equally awesome [Ajax Cloud9 Editor (ACE)](http://ace.ajax.org/) for Brackets.
+
+Our original prototype ran completely in the browser and was powered by the ACE editor. ACE editor is great and we even contributed some bug fixes back to the project. However, we wanted to do our due diligence and also researched using CodeMirror.
+
+In the end we choose CodeMirror because it is licensed under MIT and that is the license we ultimately wanted for Brackets. We've been working closely with Marijn, the creator of CodeMirror, and have been submitting pull requests back to the main project. Our fork of CodeMirror is public and we plan to submit all our changes back to the main project (including the Quick Edit functionality).
