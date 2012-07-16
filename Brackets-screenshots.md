@@ -1,1 +1,1 @@
-test brackets
+![Brackets Main Window](http://www.freeimagehosting.net/newuploads/8juhh.png)
