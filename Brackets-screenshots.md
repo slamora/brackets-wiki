@@ -1,1 +1,1 @@
-![Brackets Main Window](http://www.freeimagehosting.net/newuploads/8juhh.png)
+![Brackets Main Window](http://ompldr.org/vZXJneQ/brackets.png)
