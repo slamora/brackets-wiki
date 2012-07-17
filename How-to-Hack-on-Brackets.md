@@ -1,4 +1,3 @@
-
 1. Before you get started, post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) about what you're thinking of working on, so you can get early feedback.
 2. This page is mainly about modifying core Brackets code. If you're adding a new feature, consider [writing an extension](How to write extensions) instead.
 3. When coding, make sure to follow our [coding conventions](Brackets Coding Conventions).
@@ -43,7 +42,7 @@ and scheduled to be reviewed and merged in an upcoming sprint.
 
 Before you submit your pull request, please make sure it's merged with master and fully tested as described in the tl;dr section above. 
 
-### Getting a Copy of the Code ###
+### <a name="getcode"></a> Getting a Copy of the Code ###
 The first step is to fork the projects on GitHub so you can start making changes in your local repository. If you only plan to hack on the HTML/JS/CSS portions of the app, you only need to fork the [brackets repo](https://github.com/adobe/brackets). If you want to work on the native code as well, you can fork the [brackets-app repo](https://github.com/adobe/brackets-app) too. To fork one or both of the repos, simply click the "Fork" button at the top of the page while browsing the repo.
 
 Next pull both of those repositories down to your local machine. Your folder structure should have the brackets project within brackets-app. If you didn't fork brackets-app, use "adobe" instead of your username when cloning brackets-app.
