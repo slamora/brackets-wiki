@@ -13,6 +13,7 @@ Our main goals for the sprint was enhancing the core feature set (i.e. Initial c
     * [Test Scrolling Performance Enhancements](https://trello.com/card/1-evaluate-scrolling-performance-enhancements/4f90a6d98f77505d7940ce88/555)
 
 * **Architecture / Contributions**
+    * _To CodeMirror:_ [Bug fix](https://github.com/marijnh/CodeMirror2/commit/590a1619b7713fd1530c7f2c80e6c2b264514ea0) to prevent selection from being lost when using Ctrl+click to right-click on a Mac.
 
 UI Changes
 ----------
@@ -22,6 +23,11 @@ API Changes
 
 New Extensibility APIs
 ----------------------
+
+Known Issues
+------------
+* [#1283](https://github.com/adobe/brackets/issues/1283): Text selection highlight jitters when horizontally resizing window.
+* [#1267](https://github.com/adobe/brackets/issues/1267): Text selection highlight doesn't extend further to the right if you scroll the editor horizontally.
 
 Bugs fixed in Sprint 11
 -----------------------
