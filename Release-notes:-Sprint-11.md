@@ -21,6 +21,7 @@ UI Changes
 
 API Changes
 -----------
+* ProjectManager - the openProject() method now accepts an optional project path. If no path is specified, then the Folder Chooser dialog is invoked (same behavior as before). If a project path is specified, then the current project is closed, and the new project is opened. The loadProject() method is now private.
 
 New Extensibility APIs
 ----------------------
