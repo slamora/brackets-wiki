@@ -1,7 +1,8 @@
 **Sprint 11 is in progress** until 7/20. These are _**draft**_ notes.
 
 What's New in Sprint 11
------------------------
+----------------------
+Our main goals for the sprint was enhancing the core feature set (i.e. Initial code hinting) and to pay attention to the community feedback, we also did some bug fixing in the CEF3 related code and to pass all Unit Tests for the new App Shell:
 
 * **Code Hinting Epic**
     * [Code Completion for HTML Tags](https://trello.com/card/5-code-complete-html-tags/4f90a6d98f77505d7940ce88/283)
