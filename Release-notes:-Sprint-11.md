@@ -43,8 +43,8 @@ Core code updates (pull requests)
 * [1249](https://github.com/adobe/brackets/pull/1249)
  
 Extensions
-https://github.com/jdiehl/brackets-color-picker
-https://github.com/DennisKehrig/brackets-show-indentations
+* https://github.com/jdiehl/brackets-color-picker
+* https://github.com/DennisKehrig/brackets-show-indentations
 
 Bugs fixed in Sprint 11
 -----------------------
