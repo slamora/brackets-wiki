@@ -34,4 +34,5 @@ Known Issues
 
 Bugs fixed in Sprint 11
 -----------------------
-See [closed sprint 11 bugs](https://github.com/adobe/brackets/issues?labels=sprint+11&page=1&state=closed). A few other bugs might have been fixed that weren't tagged.
+We appreciate an increasing number of bug fixes coming from the community, this as well as the feedback, a fact of the increased usage, is a great success.    
+For details on the bugs addressed, please refer to [closed sprint 11 bugs](https://github.com/adobe/brackets/issues?labels=sprint+11&page=1&state=closed). A few other bugs might have been fixed that weren't tagged.
