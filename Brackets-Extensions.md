@@ -11,7 +11,7 @@ If you've written an extension (even just as an experiment), please feel free to
 
 **Code generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
-* [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions
+* [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions (VERY EARLY IMPLEMENTATION)
 
 **General functionality**
 * [Recent Projects](https://github.com/njx/brackets-recent-projects): Makes it so you can click on the project name in the sidebar to get a dropdown that shows a list of recent project folders.
