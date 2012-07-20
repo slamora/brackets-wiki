@@ -37,14 +37,14 @@ External contributions
 
 Core code updates (pull requests)
 * [1138](https://github.com/adobe/brackets/pull/1138) by [Pete Freitag] (https://github.com/pfreitag)
-* [1166](https://github.com/adobe/brackets/pull/1166)
-* [1230](https://github.com/adobe/brackets/pull/1230)
-* [1232](https://github.com/adobe/brackets/pull/1232)
-* [1249](https://github.com/adobe/brackets/pull/1249)
+* [1166](https://github.com/adobe/brackets/pull/1166) by [junk] (https://github.com/jedverity)
+* [1230](https://github.com/adobe/brackets/pull/1230) by [Moritz Heuser] (https://github.com/mheuser)
+* [1232](https://github.com/adobe/brackets/pull/1232) by [Dennis Kehrig] (https://github.com/DennisKehrig)
+* [1249](https://github.com/adobe/brackets/pull/1249) by [Sebastian Rodriguez] (https://github.com/srodrigu85)
  
 Extensions
-* https://github.com/jdiehl/brackets-color-picker
-* https://github.com/DennisKehrig/brackets-show-indentations
+* https://github.com/jdiehl/brackets-color-picker by [Jonathan Diehl] (https://github.com/jdiehl)
+* https://github.com/DennisKehrig/brackets-show-indentations [Dennis Kehrig] (https://github.com/DennisKehrig)
 
 Bugs fixed in Sprint 11
 -----------------------
