@@ -30,7 +30,21 @@ New Extensibility APIs
 Known Issues
 ------------
 * [#1283](https://github.com/adobe/brackets/issues/1283): Text selection highlight jitters when horizontally resizing window.
-* [#1267](https://github.com/adobe/brackets/issues/1267): Text selection highlight doesn't extend further to the right if you scroll the editor horizontally.
+* [#1267](https://github.com/adobe/brackets/issues/1267): Text selection highlight doesn't extend further to the right if you scroll the editor horizontally.   
+
+External contributions
+----------------------
+
+Core code updates (pull requests)
+[1138](https://github.com/adobe/brackets/pull/1138), by [Pete Freitag] (https://github.com/pfreitag)
+[1166](https://github.com/adobe/brackets/pull/1166),
+[1230](https://github.com/adobe/brackets/pull/1230),
+[1232](https://github.com/adobe/brackets/pull/1232),
+[1249](https://github.com/adobe/brackets/pull/1249)
+ 
+Extensions
+https://github.com/jdiehl/brackets-color-picker
+https://github.com/DennisKehrig/brackets-show-indentations
 
 Bugs fixed in Sprint 11
 -----------------------
