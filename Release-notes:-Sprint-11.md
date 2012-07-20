@@ -36,11 +36,11 @@ External contributions
 ----------------------
 
 Core code updates (pull requests)
-[1138](https://github.com/adobe/brackets/pull/1138), by [Pete Freitag] (https://github.com/pfreitag)
-[1166](https://github.com/adobe/brackets/pull/1166),
-[1230](https://github.com/adobe/brackets/pull/1230),
-[1232](https://github.com/adobe/brackets/pull/1232),
-[1249](https://github.com/adobe/brackets/pull/1249)
+* [1138](https://github.com/adobe/brackets/pull/1138) by [Pete Freitag] (https://github.com/pfreitag)
+* [1166](https://github.com/adobe/brackets/pull/1166)
+* [1230](https://github.com/adobe/brackets/pull/1230)
+* [1232](https://github.com/adobe/brackets/pull/1232)
+* [1249](https://github.com/adobe/brackets/pull/1249)
  
 Extensions
 https://github.com/jdiehl/brackets-color-picker
