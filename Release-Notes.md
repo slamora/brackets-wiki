@@ -2,4 +2,5 @@
 * [Release Notes: Sprint 8](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-8)
 * [Release Notes: Sprint 9](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-9)
 * [Release Notes: Sprint 10](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-10)
-* _[Release Notes: Sprint 11](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-11) (in progress)_
+* [Release Notes: Sprint 11](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-11)
+* _[Release Notes: Sprint 12](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-12) (coming soon)_
