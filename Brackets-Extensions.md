@@ -24,6 +24,9 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
 * [V8/Node Live Development](https://github.com/DennisKehrig/brackets-v8-node-live): Updates scripts running in Node.js as you type
 
+**Visual editing**
+* [Color Picker](https://github.com/jdiehl/brackets-color-picker): Quick Edit on a hex color opens an inline color picker.
+
 **External tools**
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
