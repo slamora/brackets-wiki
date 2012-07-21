@@ -1,5 +1,3 @@
-**Sprint 11 is in progress** until 7/20. These are _**draft**_ notes.
-
 What's New in Sprint 11
 ----------------------
 Our main goals for the sprint were enhancing the core feature set (i.e. Initial code hinting) and to pay attention to the community feedback. We also did some bug fixing in the CEF3 related code and to pass all Unit Tests for the new App Shell.
@@ -19,6 +17,7 @@ We built Code Completion infrastructure, continued App Shell improvements and ap
 
 UI Changes
 ----------
+none
 
 API Changes
 -----------
@@ -28,6 +27,7 @@ API Changes
 
 New Extensibility APIs
 ----------------------
+none
 
 Known Issues
 ------------
@@ -44,9 +44,9 @@ Core code updates (pull requests)
 * [1232](https://github.com/adobe/brackets/pull/1232) by [Dennis Kehrig] (https://github.com/DennisKehrig)
 * [1249](https://github.com/adobe/brackets/pull/1249) by [Sebastian Rodriguez] (https://github.com/srodrigu85)
  
-Extensions
+*Extensions*
 * https://github.com/jdiehl/brackets-color-picker by [Jonathan Diehl] (https://github.com/jdiehl)
-* https://github.com/DennisKehrig/brackets-show-indentations [Dennis Kehrig] (https://github.com/DennisKehrig)
+* https://github.com/DennisKehrig/brackets-show-indentations by [Dennis Kehrig] (https://github.com/DennisKehrig)
 
 Bugs fixed in Sprint 11
 -----------------------
