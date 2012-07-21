@@ -24,6 +24,8 @@ API Changes
 -----------
 * ProjectManager - the openProject() method now accepts an optional project path. If no path is specified, then the Folder Chooser dialog is invoked (same behavior as before). If a project path is specified, then the current project is closed, and the new project is opened. The loadProject() method is now private.
 
+* FileViewController- now dispatches "fileViewFocusChange" when the selection focus changes between the project tree and the working set, but the current document doesn't change
+
 New Extensibility APIs
 ----------------------
 
