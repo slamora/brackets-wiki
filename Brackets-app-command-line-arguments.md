@@ -1,5 +1,7 @@
 # Handling Command Line Arguments
 
+<br>_**Question**: Should this be merged with [[Command Line Arguments]]?_
+
 ## Overview
 Generally, applications are able to process arguments specified by the user upon launch.  These arguments often can be used to configure the application, retrieve information from the application or instruct it to perform various operations upon initialization.
 
