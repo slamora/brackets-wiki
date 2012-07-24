@@ -26,6 +26,8 @@ define(function (require, exports, module) {
 /*global define */
 ```
 
+(With one wrinkle: JSLint warns about lines consisting entirely of whitespace, but we ignore those warnings. The JSLint feature built into Brackets filters out these warnings automatically).
+
 ## Naming and Syntax ##
 <br/>
 Variable and function names use camelCase (not under_scores):
