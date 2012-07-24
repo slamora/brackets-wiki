@@ -4,19 +4,32 @@ Many operations in Brackets return their results asynchronously -- for example, 
 
 For working with a sequence of asynchronous operations (in parallel or in serial), the Async utils module may be helpful.
 
+## Core Classes ##
+
+When dealing with files the user is editing, there are three important classes to understand:
+
+* `Editor` represents the view (it wraps a CodeMirror widget) -- either a full-size editor _or_ an inline editor. An Editor can have focus. Use an Editor object to get/set the cursor position, selection, or scroll position. Every Editor is attached to a Document.
+* `Document` represents the model (the text content of the file). Use the Document object to get or modify the text, or to listen for changes to the text. There may be multiple Editors attached to a single Document (for example, a full-size editor plus an inline editor). Every Document is associated with a file on disk.
+* `FileEntry` represents a file on disk. It's very lightweight, like a URI -- it doesn't actually store the file's contents. FileEntry is based on the W3C ["Directories and System" draft spec](http://www.w3.org/TR/file-system-api/#the-fileentry-interface) (not to be confused with the much more limited ["HTML5 file API" spec](http://www.w3.org/TR/FileAPI/)).
+
 ## <a name="doc"></a>Working with Documents ##
 
 ```Document``` is an object that represents a file on disk. Documents perform several important functions: they are the backing model for Editors; they provide APIs for reading and modifying the text content; and they emit events whenever the text is edited.
 
 ### How to get a Document ###
 
-* If you're operating on an Editor, use ```Editor.document```.  (To get the currently focused Editor, use ```EditorManager.getFocusedEditor()```).
+* If you're operating on an Editor, use ```Editor.document```.
+    * To get the currently focused Editor, use `EditorManager.getFocusedEditor()`. This may return an inline editor.
+    * If you always want the current _full-size_ editor (even if focus actually belongs to an inline editor within it), then use `DocumentManager.getCurrentDocument()` or `EditorManager.getCurrentFullEditor().document`.
 * To get a Document for any file, use ```DocumentManager.getDocumentForPath()```. This returns asynchronously because it may need to read the file's content from disk.
 * If you're sure a file is already open, you can use the synchronous ```DocumentManager.getOpenDocumentForPath()``` instead -- but it will return null if you're wrong.
 
 ### Proper Document usage ###
 
-Documents are globally tracked, and thus must be ref counted under certain circumstances.
+Documents are globally tracked, and thus _**must be ref counted**_ under certain circumstances.
+
+> _Aside: Why is ref counting needed?_ We want all parts of Brackets to have a consistent view of the (potentially unsaved) contents of a file being edited.  Yet we also want to throw out that state when all parts of Brackets stop caring about a file, instead of keeping it in memory forever.  If JavaScript supported weak references they would be an ideal solution to these twin constraints, but alas -- we're stuck with ref counting instead.
+
 
 **If you're only holding onto a Document for the duration of a function call** then you're in the clear and don't have to worry about this.  The text editing commands in EditorCommandHandlers are good examples of this.
 
