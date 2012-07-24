@@ -37,11 +37,13 @@ Contributions from Brackets
 External contributions
 ----------------------
 **Core code updates** (pull requests)
-* [Highlight ColdFusion files as HTML](https://github.com/adobe/brackets/pull/1138) by [Pete Freitag] (https://github.com/pfreitag)
-* [Bug fix for Edit > Duplicate](https://github.com/adobe/brackets/pull/1166) by [junk] (https://github.com/jedverity)
-* [Change submodules to https URLs](https://github.com/adobe/brackets/pull/1230) by [Moritz Heuser] (https://github.com/mheuser)
-* [Improved Live Development error handling](https://github.com/adobe/brackets/pull/1232) by [Dennis Kehrig] (https://github.com/DennisKehrig)
-* [Show file in working set immediately after File > New](https://github.com/adobe/brackets/pull/1249) by [Sebastian Rodriguez] (https://github.com/srodrigu85)
+* [CFML Syntax Highlighting (as HTML)](https://github.com/adobe/brackets/pull/1138) by [Pete Freitag] (https://github.com/pfreitag) -- Peter enable syntax highlighting for CFML files using the existing HTML mode.
+* [Update Submodule Path To Use HTTPS](https://github.com/adobe/brackets/pull/1230) by [Moritz Heuser] (https://github.com/mheuser) -- This one is pretty explanatory, Mortiz helped to make our project structure better.
+* [Improve Console Output For Live Development Errors](https://github.com/adobe/brackets/pull/1232) by [Dennis Kehrig] (https://github.com/DennisKehrig) -- Dennis made it a little easier to see what's going on when building extensions that use Live Development.
+* [FIX 1028: File should be in working set after File > New](https://github.com/adobe/brackets/pull/1249) by [Sebastian Rodriguez] (https://github.com/srodrigu85)
+* [FIX 926: On last line of file, Duplicate clones text within line instead of adding new line](https://github.com/adobe/brackets/pull/1179) by [Junk](https://github.com/jedverity)
+* [FIX 1100: Update Source To Adhere to Quote Style Guide](https://github.com/adobe/brackets/pull/1211) by [Jon Wolfe](https://github.com/JonathanWolfe) -- This fix deserve some attention! Jon went through our entire source code and fixed all the quotes that didn't match the style guide. Thanks so much.
+* [FIX 1133: Update _shouldShowInTree To Only Hide Specified Hidden Files.](https://github.com/adobe/brackets/pull/1165) by [Tucker Whitehouse](https://github.com/TuckerWhitehouse) -- Tucker added a fix that specifies which hidden files to hide. This allows .htaccess to be displayed in the project tree.
  
 **New Extensions**
 * [Color Picker](https://github.com/jdiehl/brackets-color-picker) by [Jonathan Diehl] (https://github.com/jdiehl)
