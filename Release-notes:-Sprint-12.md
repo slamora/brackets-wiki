@@ -24,6 +24,8 @@ New/Improved Extensibility APIs
 
 Live Development has a number of more "experimental" agents that are disabled by default. However, some extensions (e.g. [jdiehl/brackets-debugger](https://github.com/jdiehl/brackets-debugger)) would like to use these agents. So, calling these functions allows enabling/disabling of specific experimental agents. The new agents take effect the next time a live development session starts. Current live development sessions are not affected. 
 
+**Async utilities** - New `doSequentiallyInBackground()` API for slicing up a synchronous task into chunks that run in the background, automatically ensuring some idle time occurs periodically.
+
 Known Issues
 ------------
 
@@ -32,6 +34,7 @@ Contributions from Brackets
 
 External contributions
 ----------------------
+* [Add doSequentiallyInBackground() utility API](https://github.com/adobe/brackets/pull/1009) by [Josh Hatwich](https://github.com/jhatwich)
 
 Bugs fixed in Sprint 12
 -----------------------
