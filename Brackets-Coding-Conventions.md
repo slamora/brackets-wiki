@@ -16,7 +16,7 @@ define(function (require, exports, module) {
 
     // Export public APIs
     exports.someFunction = someFunction;
-}
+});
 ```
 
 * Must pass JSLint. The default settings for JSLint are:
