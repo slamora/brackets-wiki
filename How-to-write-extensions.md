@@ -44,6 +44,15 @@ As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut f
 
 **Quick Open:** To interface with the quick open (file open/jump to) interface, use ```QuickOpen.addQuickOpenPlugin()```.
 
+### <a name="newui"></a>Adding new UI elements
+
+Be sure to follow the [[Extension UI Guidelines]].
+
+**Load a CSS file:** use `ExtensionUtils.loadStyleSheet()`. It returns a Promise you can use to track when the CSS is done loading.
+<br>_To avoid accidentally breaking core Brackets UI_, place a CSS class on the root of your UI and make sure _all_ your CSS rules include a descendant selector. E.g. instead of `li { ... }` use `.myExtension li { ... }`.
+
+**Add UI elements to the DOM:** Official APIs like the Quick Edit provider API above are the only supported way to add new UI elements to Brackets. You _could_ just insert new DOM nodes somewhere, but it may break with future updates to Brackets. 
+
 ### <a name="tourl"></a>Accessing resources (e.g. images) in your extension
 
 Extensions can get installed at (semi-)arbitrary paths. For example, you might develop your extension in the ```brackets/src/extensions/user/foo``` directory, but a user might install it in ```brackets/src/extensions/default/bar```.
