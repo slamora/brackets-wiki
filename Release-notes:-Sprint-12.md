@@ -11,6 +11,8 @@ What's New in Sprint 12
     * [CEF 3 Shell Bug Fixes](https://trello.com/card/2-test-cef3-shell/4f90a6d98f77505d7940ce88/540)
     * [Research Native Installer/Packaging](https://trello.com/card/2-research-brackets-native-installer/4f90a6d98f77505d7940ce88/582)
     * [Research HiDPI (Retina) Support](https://trello.com/card/0-research-hidpi-support/4f90a6d98f77505d7940ce88/585)
+* **Other Enhancements**
+    * [Move Line(s) Up/Down command](https://github.com/adobe/brackets/pull/1282)
 
 UI Changes
 ----------
@@ -35,6 +37,7 @@ Contributions from Brackets
 External contributions
 ----------------------
 * [Add doSequentiallyInBackground() utility API](https://github.com/adobe/brackets/pull/1009) by [Josh Hatwich](https://github.com/jhatwich)
+* [Move Line(s) Up/Down command](https://github.com/adobe/brackets/pull/1282) by [Bruno Filippone](https://github.com/ShadowCloud)
 
 Bugs fixed in Sprint 12
 -----------------------
