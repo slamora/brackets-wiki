@@ -16,7 +16,7 @@ Typing performance in Brackets is bottlenecked mainly by native browser layout a
 
 So, believe it or not... the way we've gotten more accurate data is by recording the computer screen (and keyboard) with a high-speed camera. This is painstaking, but the results are dramatically more reliable.
 
-**Optimization proposals**
+<a name="proposals"></a>**Optimization proposals**
 
 [Alex](https://github.com/chicu123) has proposed three changes to improve typing & scrolling performance:
 * [#1007](https://github.com/adobe/brackets/pull/1007): Hoist the CodeMirror instances out of the layout. Place them near the root of the document and programmatically move/size them as appropriate.
