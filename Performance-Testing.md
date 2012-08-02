@@ -20,7 +20,7 @@ So, believe it or not... the way we've gotten more accurate data is by recording
 
 [Alex](https://github.com/chicu123) has proposed three changes to improve typing & scrolling performance:
 * [#1007](https://github.com/adobe/brackets/pull/1007): Hoist the CodeMirror instances out of the layout. Place them near the root of the document and programmatically move/size them as appropriate.
-    * _Test results:_ Scrolling framerate is roughly doubled -- basically pegged at 60 Hz now. Typing response time is cut by 1/3, putting Brackets roughly on par with most the typical text editor.
+    * _Test results:_ Scrolling framerate is roughly doubled -- basically pegged at 60 Hz now. Typing response time is cut by 1/3, putting Brackets roughly on par with the average text editor.
     * _Risks/downsides:_ The editor reacts to horizontal resizing less smoothly than before.  Noticeable mainly by looking at the vertical scrollbar, or moreso with the inline editor rule list if one is open.  Unusual DOM placement makes CSS selectors and event bubbling a bit counterintuitive.  The patch also has a couple bugs that are presumably fixable (breaks project panel resizing; breaks quick open popup; hides the "[ ]" background).
     * _Next steps:_
         * How much of the gain is from getting CodeMirror closer to the document root, vs. getting CodeMirror out of a flex-box container? We should try leaving the CodeMirror editor in its current place in the DOM, but making its parents not use flex-box. Probably not too hard, since we already have to programmatically kick CodeMirror on vertical resizes -- and it avoids the horizontal resize problem noted above.
@@ -29,7 +29,7 @@ So, believe it or not... the way we've gotten more accurate data is by recording
     * _Test results:_ Scrolling framerate is unchanged (slow scrolling) or slightly worse (fast scrolling: 10-15% lower framerate). Typing response time is 10-30 ms faster.
     * _Risks/downsides:_ The timeout's purpose is unclear; it's been in the CodeMirror source for a very long time, although in early incarnations it seemed to get short-circuited for most key events.  And of course, reducing scrolling performance isn't good.
     * _Next steps:_
-        * How much of the gain/loss is from the rendering change vs. elimination of the timeout?  My guess is the timeout change is the valuable part.  We should ping Marijn to understand more about its purpose.  Is it even needed on modern browsers if they fire "textinput" and/or "keypress" reliably?
+        * How much of the gain/loss is from the rendering change vs. elimination of the timeout?  My guess is the timeout change is the more valuable part.  We should ping Marijn to understand more about its purpose.  Is it even needed on modern browsers if they fire "textinput" and/or "keypress" reliably?
 
 
 Opening files
