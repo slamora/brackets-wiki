@@ -13,6 +13,7 @@ What's New in Sprint 12
     * [Research HiDPI (Retina) Support](https://trello.com/card/0-research-hidpi-support/4f90a6d98f77505d7940ce88/585)
 * **Other Enhancements**
     * [Move Line(s) Up/Down command](https://github.com/adobe/brackets/pull/1282)
+    * [Save All command](https://github.com/adobe/brackets/pull/1208)
 
 UI Changes
 ----------
@@ -38,6 +39,7 @@ Community contributions to Brackets
 -----------------------------------
 * [Add doSequentiallyInBackground() utility API](https://github.com/adobe/brackets/pull/1009) by [Josh Hatwich](https://github.com/jhatwich)
 * [Move Line(s) Up/Down command](https://github.com/adobe/brackets/pull/1282) by [Bruno Filippone](https://github.com/ShadowCloud)
+* [Save All command](https://github.com/adobe/brackets/pull/1208) by [srinarasi](https://github.com/srinarasi)
 * Bug fix: [#143: Input fields don't work in dialogs](https://github.com/adobe/brackets/pull/1325) by [Sebastian Rodriguez](https://github.com/srodrigu85)
 
 Bugs fixed in Sprint 12
