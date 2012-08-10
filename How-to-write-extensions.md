@@ -40,9 +40,11 @@ As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut f
 
 ### <a name="featurehooks"></a>Extending specific Brackets functionality
 
-**Quick Edit:** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. That manager works by iterating through all the possible inline edit providers on CTRL+E and finding which ones actually respond - it has no notion of priority now, so if your extension wants to respond in the same scenario as some other provider, you'll be out of luck. 
+**Quick Edit (inline editors):** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. That manager works by iterating through all the possible inline edit providers on CTRL+E and finding which ones actually respond - it has no notion of priority yet, so if your extension wants to respond in the same situation as some other provider you'll be out of luck. 
 
-**Quick Open:** To interface with the quick open (file open/jump to) interface, use ```QuickOpen.addQuickOpenPlugin()```.
+**Quick Open:** To interface with the quick open (file open/jump to) feature, use ```QuickOpen.addQuickOpenPlugin()```.
+
+**Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Similar to Quick Edit, if your extension wants to respond in the same situation as some other provider you'll be out of luck. 
 
 ### <a name="newui"></a>Adding new UI elements
 
