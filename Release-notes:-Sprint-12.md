@@ -1,6 +1,4 @@
-This is a draft!
-----------------
-_This document will not be finalized until the end of Sprint 12 -- August 10._
+Our main goals in Sprint 12 were to prepare for migration to the new CEF3-based native app shell; prepare for distributing a native installer/DMG; and build on the HTML code hinting functionality that debuted last sprint. We also merged several features contributed by the Brackets community, and made several small improvements to Brackets' extensibility APIs. Read on for details!
 
 What's New in Sprint 12
 -----------------------
