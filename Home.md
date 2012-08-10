@@ -27,9 +27,10 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 ## Releases
 
 * [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
- * [Sprint 7](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-7)
- * [Sprint 8](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-8)
- * [Sprint 9](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-9)
- * [Sprint 10](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-10)
+ * _Sprint 13 (in progress)_
+ * [Sprint 12](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-12)
  * [Sprint 11](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-11)
- * _Sprint 12 (in progress)_
+ * [Sprint 10](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-10)
+ * [Sprint 9](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-9)
+ * [Sprint 8](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-8)
+ * [Sprint 7](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-7)
