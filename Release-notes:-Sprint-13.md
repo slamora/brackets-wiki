@@ -15,7 +15,7 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
-
+**Command infrastructure** - new `CommandManager.getAll()` API: returns all registered commands. Could be used to build a shortcut key assignment UI, etc.
 
 Known Issues
 ------------
@@ -23,7 +23,7 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-
+* [Localization support and basic language switcher UI](https://github.com/adobe/brackets/pull/1358) by [Jonathan Diehl](https://github.com/jdiehl)
 
 Contributions _from_ Brackets
 -----------------------------
