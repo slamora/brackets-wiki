@@ -26,11 +26,11 @@ New/Improved Extensibility APIs
 -------------------------------
 **Code Hinting** - Extensions can add new code hint providers via `CodeHintManager.registerHintProvider()`. However, only one extension's hints are shown at a time (first provider wins) -- similar to current limitations with [inline editor providers](https://groups.google.com/forum/?fromgroups#!topic/brackets-dev/MtxQCIOLMzk%5B1-25%5D).
 
-**LiveDevelopment** - New API functions: ```enableAgent(name)``` and ```disableAgent(name)```.
+**LiveDevelopment** - New API functions: ```LiveDevelopment.enableAgent(name)``` and ```disableAgent(name)```.
 
 Live Development has a number of more "experimental" agents (feature modules) that are disabled by default. This API allows extensions (like [jdiehl/brackets-debugger](https://github.com/jdiehl/brackets-debugger)) to enable these features. The new agents take effect the next time a live development session starts. Current live development sessions are not affected. 
 
-**Async utilities** - New `doSequentiallyInBackground()` API for slicing up a synchronous task into chunks that run in the background, automatically ensuring some idle time occurs periodically.
+**Async utilities** - New `Async.doSequentiallyInBackground()` API for slicing up a synchronous task into chunks that run in the background, automatically ensuring some idle time occurs periodically.
 
 **Menus** - `addMenuItem()` gives better feedback on console if you pass it bad arguments.
 
