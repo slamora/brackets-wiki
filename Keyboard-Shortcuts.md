@@ -42,6 +42,41 @@ Note: Mac shortcuts use CMD instead of CTRL and OPTION instead of ALT unless oth
 
 # Editor (via CodeMirror)
 
+Some of these CodeMirror commands are not documented. Many of these commands aren't explicitly tested by the Brackets team yet.
+
+* selectAll (see Select All)
+* killLine (none, emacs mode only)
+* deleteLine (overridden by Duplicate Line)
+* undo - Ctrl-Z (not in menus due to native text input conflict)
+* redo - Ctrl-Y or Shift-Ctrl-Z
+* goDocStart - Ctrl-Home or Alt-Up (win), Cmd-Up (mac)
+* goDocEnd - Ctrl-End or Ctrl-down (win), Cmd-Down (mac)
+* goLineStart - Alt-Left (win), Cmd-Left (mac)
+* goLineStartSmart - Home 
+* goLineEnd - End (mac/win), Alt-Right (win), Cmd-Right (mac)
+* goLineUp - Up
+* goLineDown - Down
+* goPageUp - Page Up
+* goPageDown - Page Down
+* goCharLeft - Left
+* goCharRight - Right
+* goColumnLeft (none) 
+* goColumnRight (none)
+* goWordLeft - Ctrl-Left (win), Option-Left (mac)
+* goWordRight - Ctrl-Right (win), Option-Right (mac)
+* delCharLeft - Delete
+* delCharRight - Backspace
+* delWordLeft - Ctrl-Backspace (win), Option-Backspace (mac)
+* delWordRight - Ctrl-Delete (win), Option-Delete (mac)
+* indentAuto - (overridden by Brackets)
+* indentMore - Tab
+* indentLess - Shift-Tab
+* insertTab - (none)
+* defaultTab - (none)
+* transposeChars (none, emacs only)
+* newlineAndIndent - Enter
+* toggleOverwrite - Insert
+
 ```
   keyMap.basic = {
     "Left": "goCharLeft", "Right": "goCharRight", "Up": "goLineUp", "Down": "goLineDown",
