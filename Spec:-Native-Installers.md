@@ -25,7 +25,7 @@ This describes the plans for Bracket's _**initial**_ pass at implementing native
 
 ### Win
 
-* Download is an EXE generated with NSIS (Nullsoft Scriptable Install System) (open-source)
+* Download is an MSI generated with [Wix](http://wix.sourceforge.net/) (open-source, XML-driven installer generation technology from Microsoft)
 * Installer shows EULA; no other options required
 * Adds a Start menu shortcut
 * Uninstall via OS Add/Remove Programs dialog.  Removes shortcut and entire install folder.
