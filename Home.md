@@ -23,6 +23,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
 * [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
 * [Brackets Screenshots](https://github.com/adobe/brackets/wiki/Brackets-Screenshots)
+* [Keyboard Shortcuts](https://github.com/adobe/brackets/wiki/Keyboard-Shortcuts)
 
 ## Releases
 
