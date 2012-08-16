@@ -40,7 +40,7 @@ Note: Mac shortcuts use CMD instead of CTRL and OPTION instead of ALT unless oth
   * Show Developer Tools - F12 (win), Cmd-Opt-I (mac)
   * Refresh Brackets - F5 (win), Cmd-R (mac)
 
-# CodeMirror
+# Editor (via CodeMirror)
 
 ```
   keyMap.basic = {
