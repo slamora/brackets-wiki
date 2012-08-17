@@ -39,4 +39,16 @@
 8. Rename ``untitled.js`` to ``index.html``
 9. Confirm error message ``<dialog_error_file_already_exists>``
 
+## Save
+
+1. Open ``index.html``
+2. Make any change
+3. ``File > Close``
+4. Confirm dialog ``<dialog_save_changes>``
+5. Choose "Don't Save"
+6. From the project tree, open ``desktop.css``
+7. Make any change
+8. ``File > Quit``
+9. Confirm dialog ``<dialog_save_changes_multiple_files>``
+
 # Editor
