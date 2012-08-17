@@ -58,3 +58,13 @@
 15. Choose "Reload from Disk"
 
 # Editor
+
+# Live Preview
+
+1. Exit Chrome if it is running.
+2. Open ``index.html``
+3. ``File > Live Preview``
+3. In Brackets, hover over the lightning bold icon
+4. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
+5. Quit Chrome
+6. Start Chrome
