@@ -38,3 +38,5 @@
 7. Select the ``File > New`` menu
 8. Rename ``untitled.js`` to ``index.html``
 9. Confirm error message ``<dialog_error_file_already_exists>``
+
+# Editor
