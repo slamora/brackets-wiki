@@ -5,7 +5,7 @@ Note: Mac shortcuts use CMD instead of CTRL and OPTION instead of ALT unless oth
 *  File
   * New - Ctrl-N
   * Open - Ctrl-O
-  * Open Folder - _N/A_
+  * Open Folder - (none)
   * Close - Ctrl-W
   * Save - Ctrl-S
   * Save All - Ctrl-Alt-S
@@ -44,7 +44,6 @@ Note: Mac shortcuts use CMD instead of CTRL and OPTION instead of ALT unless oth
 
 Some of these CodeMirror commands are not documented. Many of these commands aren't explicitly tested by the Brackets team yet.
 
-* selectAll (see Select All)
 * killLine (none, emacs mode only)
 * deleteLine (overridden by Duplicate Line)
 * undo - Ctrl-Z (not in menus due to native text input conflict)
@@ -73,7 +72,7 @@ Some of these CodeMirror commands are not documented. Many of these commands are
 * indentLess - Shift-Tab
 * insertTab - (none)
 * defaultTab - (none)
-* transposeChars (none, emacs only)
+* transposeChars (none, emacs mode only)
 * newlineAndIndent - Enter
 * toggleOverwrite - Insert
 
