@@ -31,7 +31,7 @@ This describes the plans for Bracket's _**initial**_ pass at implementing native
 * Uninstall via OS Add/Remove Programs dialog.  Removes shortcut and entire install folder.
 * Installed folder structure is similar to today's ZIP distros
 * Users will get a UAC prompt when manually dragging files into the extensions folder, and extension source code will not be editable in situ (due to permissions).
-* Visual assets required: installer .ico; uninstaller .ico (optional); vertical 2-point background gradient for installer UI (optional)
+* Visual assets required: ~493x312 px dialog background for first/last installer pagers (all but the leftmost ~150px must be solid white); and ~493x58 px banner background for intermediate installer pages
 
 ### Out of scope / future
 
