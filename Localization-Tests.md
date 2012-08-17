@@ -44,11 +44,17 @@
 1. Open ``index.html``
 2. Make any change
 3. ``File > Close``
-4. Confirm dialog ``<dialog_save_changes>``
-5. Choose "Don't Save"
+4. Confirm dialog ``<dialog_save_changes_one_file>``
+5. Choose "Cancel"
 6. From the project tree, open ``desktop.css``
 7. Make any change
 8. ``File > Quit``
 9. Confirm dialog ``<dialog_save_changes_multiple_files>``
+10. Choose cancel
+11. Open ``desktop.css`` in a different program.
+12. Dirty the file so that the last modified time updates. Does not necessarily require a change to the file content.
+13. Return to Brackets
+14. Confirm dialog ``<dialog_external_changes>``
+15. Choose "Reload from Disk"
 
 # Editor
