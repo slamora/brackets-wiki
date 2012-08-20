@@ -85,9 +85,18 @@
 
 **Note: These tests assume that Brackets does not update the project tree when files are added and removed. Since these tests require changes to the file system, it is recommended to work with a separate copy of the ``citrus completed`` project and to close and restart Brackets for each test.**
 
-## File Permissions
+## Write Permissions
 
-1. In the operating system, remove permissions from ``index.html``. On mac, use ``chmod 0 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Read" permission. Save permission changes when finished.
+1. In the operating system, remove **write** permissions from ``index.html``. On mac, use ``chmod 444 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
+2. In Brackets, open ``index.html``
+3. Make any edit to the file
+4. Click ``File > Save`` menu
+5. Confirm error saving file dialog ``<dialog_error_opening_file_no_modifications>``
+6. In the operating system, restore the original file permissions to ``index.html``
+
+## Read Permissions
+
+1. In the operating system, remove **read** permissions from ``index.html``. On mac, use ``chmod 0 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Read" permission. Save permission changes when finished.
 2. In Brackets, open ``index.html``
 3. Confirm error opening file dialog ``<dialog_error_opening_file_not_readable>``
 4. In the operating system, restore the original file permissions to ``index.html``
