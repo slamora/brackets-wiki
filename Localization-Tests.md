@@ -27,6 +27,11 @@
 1. Click ``File > Open`` menu
 2. Confirm file open dialog title ``<dialog_file_open>``
 
+## Quick Open
+
+1. Click ``Navigate > Quick Open``
+2. Confirm the quick open UI appears at the top of the editor ``<dialog_quick_open>``
+
 ## Error opening file
 
 1. In the project tree, expand the ``images`` folder.
