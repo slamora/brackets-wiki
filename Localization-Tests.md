@@ -79,6 +79,11 @@
 7. Type any character(s) into the text box, press Enter
 8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
 
+## JSLint
+
+1. Enable ``View > Enable JSLint`` (a checkmark will appear when enabled)
+2. Confirm JSLint panel title ``<panel_jslint>``
+
 # Live Preview
 
 1. Exit Chrome if it is running.
