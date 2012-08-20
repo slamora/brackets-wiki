@@ -59,6 +59,16 @@
 
 # Editor
 
+## Find/Replace
+1. Open ``index.html``
+2. ``Edit > Find``
+3. Confirm find UI appears at the top of the editor ``<dialog_find>``
+4. Press escape
+5. ``Edit > Replace``
+6. Confirm replace UI appears at the top of the editor ``<dialog_replace_1>``
+7. Type any character(s) into the text box, press Enter
+8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
+
 # Live Preview
 
 1. Exit Chrome if it is running.
