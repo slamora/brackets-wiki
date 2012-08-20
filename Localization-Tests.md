@@ -8,12 +8,14 @@
 # General UI
 
 ## Menus
+
+**Note: Debug menu is not tested**
+
 1. Top Level
 2. File
 3. Edit
 4. View
 5. Navigate
-6. Debug (TODO exclude?)
 
 ## Toolbar
 1. Experimental Build
