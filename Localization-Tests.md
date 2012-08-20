@@ -25,7 +25,7 @@
 ## Open
 
 1. Click ``File > Open`` menu
-2. Confirm localized file open dialog title ``<dialog_file_open>``
+2. Confirm file open dialog title ``<dialog_file_open>``
 
 ## Error opening file
 
@@ -36,13 +36,13 @@
 ## Invalid file name
 
 1. Click ``File > New`` menu
-2. ``untitled.js`` will appear editable
+2. Confirm ``untitled.js`` editable file name <project_panel_untitled_file>
 3. Rename ``untitled.js`` to ``foo:js``
 4. Confirm error message ``<dialog_error_invalid_file_name>``
-6. Select ``index.html``
-7. Click ``File > New`` menu
-8. Rename ``untitled.js`` to ``index.html``
-9. Confirm error message ``<dialog_error_file_already_exists>``
+5. Select ``index.html``
+6. Click ``File > New`` menu
+7. Rename ``untitled.js`` to ``index.html``
+8. Confirm error message ``<dialog_error_file_already_exists>``
 
 ## Save
 
