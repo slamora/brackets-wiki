@@ -85,6 +85,15 @@
 
 **Note: These tests assume that Brackets does not update the project tree when files are added and removed. Since these tests require changes to the file system, it is recommended to work with a separate copy of the ``citrus completed`` project and to close and restart Brackets for each test.**
 
+## Directory Permissions
+
+1. In the operating system, remove **write** permissions from the ``css`` directory. On mac, use ``chmod 444 css``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
+2. In Brackets, select the ``css`` directory in the project tree.
+3. Click ``File > New`` menu
+4. Hit Enter to accept the default name
+5. Confirm error creating file dialog ``<dialog_error_creating_file_no_modifications>``
+6. In the operating system, restore the original permissions to the ``css`` directory
+
 ## Write Permissions
 
 1. In the operating system, remove **write** permissions from ``index.html``. On mac, use ``chmod 444 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
