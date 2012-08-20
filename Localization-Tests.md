@@ -24,7 +24,7 @@
 
 ## Open
 
-1. Select the ``File > Open`` menu
+1. Click ``File > Open`` menu
 2. Confirm localized file open dialog title ``<dialog_file_open>``
 
 ## Error opening file
@@ -35,12 +35,12 @@
 
 ## Invalid file name
 
-1. Select the ``File > New`` menu
+1. Click ``File > New`` menu
 2. ``untitled.js`` will appear editable
 3. Rename ``untitled.js`` to ``foo:js``
 4. Confirm error message ``<dialog_error_invalid_file_name>``
 6. Select ``index.html``
-7. Select the ``File > New`` menu
+7. Click ``File > New`` menu
 8. Rename ``untitled.js`` to ``index.html``
 9. Confirm error message ``<dialog_error_file_already_exists>``
 
@@ -48,12 +48,12 @@
 
 1. Open ``index.html``
 2. Make any change
-3. ``File > Close``
+3. Click ``File > Close`` menu
 4. Confirm dialog ``<dialog_save_changes_one_file>``
 5. Choose "Cancel"
 6. From the project tree, open ``desktop.css``
 7. Make any change
-8. ``File > Quit``
+8. Click ``File > Quit`` menu
 9. Confirm dialog ``<dialog_save_changes_multiple_files>``
 10. Choose cancel
 11. Open ``desktop.css`` in a different program.
@@ -66,10 +66,10 @@
 
 ## Find/Replace
 1. Open ``index.html``
-2. ``Edit > Find``
+2. Click ``Edit > Find`` menu
 3. Confirm find UI appears at the top of the editor ``<dialog_find>``
 4. Press escape
-5. ``Edit > Replace``
+5. Click ``Edit > Replace`` menu
 6. Confirm replace UI appears at the top of the editor ``<dialog_replace_1>``
 7. Type any character(s) into the text box, press Enter
 8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
@@ -78,7 +78,7 @@
 
 1. Exit Chrome if it is running.
 2. Open ``index.html``
-3. ``File > Live Preview``
+3. Click ``File > Live Preview`` menu
 3. In Brackets, hover over the lightning bold icon
 4. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
 5. Quit Chrome
