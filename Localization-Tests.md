@@ -89,14 +89,22 @@
 
 # Live Preview
 
+## Connect
+
 1. Exit Chrome if it is running.
 2. Open ``index.html``
 3. Click ``File > Live Preview`` menu
 3. In Brackets, hover over the lightning bold icon
 4. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
 5. Quit Chrome
-6. Start Chrome
-7. Click ``File > Live Preview`` menu
-8. Confirm live development error dialog ``<dialog_live_development_error>``
-9. Click ``Cancel``
-10. Open ``css\desktop.css``
+
+## Connection Error
+1. Start Chrome
+2. Click ``File > Live Preview`` menu
+3. Confirm live development error dialog ``<dialog_live_development_connection_error>``
+4. Click ``Cancel``
+
+## Wrong File Type
+1. Open ``css\desktop.css``
+2. Click ``File > Live Preview`` menu
+3. Confirm live development error dialog ``<dialog_live_developement_file_type_error>``
