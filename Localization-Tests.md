@@ -60,7 +60,7 @@
 4. Confirm dialog ``<dialog_save_changes_one_file>``
 5. Choose "Cancel"
 6. From the project tree, open ``desktop.css``
-7. Make any change
+7. Make any change****
 8. Click ``File > Quit`` menu
 9. Confirm dialog ``<dialog_save_changes_multiple_files>``
 10. Choose cancel
@@ -69,6 +69,28 @@
 13. Return to Brackets
 14. Confirm dialog ``<dialog_external_changes>``
 15. Choose "Reload from Disk"
+
+# File Errors
+
+**Note: These tests assume that Brackets does not update the project tree when files are added and removed**
+
+## File not found
+
+1. In Brackets, close ``index.html`` if open
+2. In the operating system, delete ``index.html``
+3. In Brackets, ``index.html`` is still listed.
+4. Attempt to open ``index.html``
+5. Confirm error opening file dialog ``<dialog_error_opening_file_file_not_found>``
+6. In the operating system, restore ``index.html``
+
+## Directory not found
+
+1. In Brackets, collapse all folders (only ``css``, ``images`` and ``index.html`` should be visible in the tree)
+2. Quit and restart Brackets
+3. In the operating system, delete the ``images`` directory
+4. Attempt to open the ``images`` directory
+5. Confirm error loading project dialog ``<dialog_error_loading_project_directory_contents>``
+6. In the operating system, restore the ``images`` directory
 
 # Editor
 
