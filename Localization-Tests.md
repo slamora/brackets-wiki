@@ -22,6 +22,11 @@
 
 # File Operations
 
+## Open
+
+1. Select the ``File > Open`` menu
+2. Confirm localized file open dialog title ``<dialog_file_open>``
+
 ## Error opening file
 
 1. In the project tree, expand the ``images`` folder.
