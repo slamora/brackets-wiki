@@ -100,7 +100,7 @@
 2. In Brackets, open ``index.html``
 3. Make any edit to the file
 4. Click ``File > Save`` menu
-5. Confirm error saving file dialog ``<dialog_error_opening_file_no_modifications>``
+5. Confirm error saving file dialog ``<dialog_error_saving_file_no_modifications>``
 6. In the operating system, restore the original file permissions to ``index.html``
 
 ## Read Permissions
