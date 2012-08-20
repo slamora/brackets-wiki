@@ -72,7 +72,7 @@
 
 # File Errors
 
-**Note: These tests assume that Brackets does not update the project tree when files are added and removed**
+**Note: These tests assume that Brackets does not update the project tree when files are added and removed. Since these tests require changes to the file system, it is recommended to work with a separate copy of the ``citrus completed`` project and to close and restart Brackets for each test.**
 
 ## File not found
 
