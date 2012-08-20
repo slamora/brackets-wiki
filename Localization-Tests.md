@@ -1,6 +1,9 @@
-* _citrus completed_ test project: https://github.com/adobe/brackets/tree/master/test/smokes/citrus%20completed
-* To setup each test, load the _citrus completed_ project via _File > Open folder..._
-* Placeholders for images are written as ``<image_filename_placeholder>``
+# Notes for testing
+
+* ``citrus completed`` test project: https://github.com/adobe/brackets/tree/master/test/smokes/citrus%20completed
+* To setup each test, load the ``citrus completed`` project via ``File > Open folder...``
+* Placeholders for screenshots are written as ``<image_filename_placeholder>``
+* To open files from the project panel (i.e. to add them to the working set), double-click on the file.
 
 # General UI
 
@@ -93,3 +96,7 @@
 4. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
 5. Quit Chrome
 6. Start Chrome
+7. Click ``File > Live Preview`` menu
+8. Confirm live development error dialog ``<dialog_live_development_error>``
+9. Click ``Cancel``
+10. Open ``css\desktop.css``
