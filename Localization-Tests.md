@@ -23,6 +23,13 @@
 1. On mac, ``Brackets > About Brackets``. On win, ``Help > About``
 2. Confirm about dialog text ``<dialog_about>``
 
+## Sidebar
+
+1. Click ``View > Hide Sidebar`` menu
+2. Open the ``View`` menu again
+3. Confirm the label has changed to ``View > Show Sidebar`` ``<menu_view_show_sidebar>``
+4. Click ``View > Show Sidebar``
+
 # File Operations
 
 ## Open
@@ -60,15 +67,19 @@
 4. Confirm dialog ``<dialog_save_changes_one_file>``
 5. Choose "Cancel"
 6. From the project tree, open ``desktop.css``
-7. Make any change****
+7. Make any change
 8. Click ``File > Quit`` menu
 9. Confirm dialog ``<dialog_save_changes_multiple_files>``
-10. Choose cancel
+10. Choose ``Cancel``
 11. Open ``desktop.css`` in a different program.
-12. Dirty the file so that the last modified time updates. Does not necessarily require a change to the file content.
+12. Dirty the file so that the last modified time metadata is updated
 13. Return to Brackets
-14. Confirm dialog ``<dialog_external_changes>``
+14. Confirm dialog ``<dialog_external_changes_reload>``
 15. Choose "Reload from Disk"
+16. In the operating system, delete ``desktop.css``
+17. Return to Brackets
+18. Confirm the external changes dialog ``<dialog_external_changes_deleted>``
+19. Choose ``Close (Don't Save)``
 
 # File Errors
 
