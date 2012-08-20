@@ -155,6 +155,8 @@
 
 # Live Preview
 
+**Requires Google Chrome to be installed http://www.google.com/chrome**
+
 ## Connect
 
 1. Exit Chrome if it is running.
@@ -174,3 +176,11 @@
 1. Open ``css\desktop.css``
 2. Click ``File > Live Preview`` menu
 3. Confirm live development error dialog ``<dialog_live_developement_file_type_error>``
+
+## Chrome Not Found
+1. Close Chrome if running
+2. Rename the Chrome executable
+3. Open ``index.html``
+4. Click ``File > Live Preview`` menu
+5. Confirm live development error dialog ``<dialog_live_development_chrome_not_found>``
+6. Restore the Chrome executable name
