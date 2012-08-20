@@ -92,6 +92,14 @@
 5. Confirm error loading project dialog ``<dialog_error_loading_project_directory_contents>``
 6. In the operating system, restore the ``images`` directory
 
+## Directory not found at startup
+
+1. With ``citrus completed`` as the current project, quit Brackets
+2. In the operating system, rename the ``citrus completed`` directory to ``foo``
+3. Open Brackets
+4. Confirm the error loading project dialog ``<dialog_error_loading_project_request_nfs>``
+5. In the operating system, restore the original directory name to ``citrus completed``
+
 # Editor
 
 ## Find/Replace
