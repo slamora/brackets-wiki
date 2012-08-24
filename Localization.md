@@ -27,3 +27,7 @@ var html = Mustache.render(templateContent, Strings);
 ### Localizing Extensions
 [Example: Localized Extension](https://github.com/adobe/brackets/tree/master/src/extensions/disabled/LocalizationExample)
 [README.MD](https://github.com/adobe/brackets/tree/master/src/extensions/disabled/LocalizationExample/README.MD)
+
+## Implementation Details
+
+TODO
