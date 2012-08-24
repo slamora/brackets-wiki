@@ -5,36 +5,50 @@ _This document will not be finalized until the end of Sprint 13 -- August 30._
 What's New in Sprint 13
 -----------------------
 * **Localization**
-    * [Prototype French Localization](https://trello.com/card/3-localization-french/4f90a6d98f77505d7940ce88/374)
+    * [French Localization](https://trello.com/card/3-localization-french/4f90a6d98f77505d7940ce88/374): Brackets detects the user's locale setting automatically. There are a few bugs where minor bits of the UI remain in English despite the locale.
+    * Brackets unofficially also supports German in this sprint.
 * **Install/Upgrade Usability**
-    * [Mac Install Experience: DMG with shortcut](https://trello.com/card/2-brackets-installer-osx/4f90a6d98f77505d7940ce88/394)
-    * [Windows Install Experience: EXE installer](https://trello.com/card/3-brackets-installer-win/4f90a6d98f77505d7940ce88/597)
-    * [Update Notification](https://trello.com/card/3-new-version-notification/4f90a6d98f77505d7940ce88/579)
+    * [Update Notification](https://trello.com/card/3-new-version-notification/4f90a6d98f77505d7940ce88/579): Brackets will automatically notify you when a newer build is released. This won't happen until the end of the _following_ sprint, 2-3 weeks from now.
+    * [Mac Install Experience: DMG with shortcut](https://trello.com/card/2-brackets-installer-osx/4f90a6d98f77505d7940ce88/394): Instead of a ZIP file, the distribution for Mac is now a DMG file containing a shortcut to /Applications for easy drag & drop.
+    * [Windows Install Experience: EXE installer](https://trello.com/card/3-brackets-installer-win/4f90a6d98f77505d7940ce88/597): Instead of a ZIP file, the distribution for Windows is now a native MSI installer.
     * [First Launch Readme/Demo Project](https://trello.com/card/2-first-launch-project/4f90a6d98f77505d7940ce88/598)
+    * Quick access to the extensions folder via _Debug > Show Extensions Folder_
+* **Native Shell**
+    * Brackets has officially migrated to the [new CEF3-based native shell](https://github.com/adobe/brackets-shell/)! The installer/DMG distributions above package brackets-shell. This gives Brackets a stronger platform to build on, and offers benefits like slightly faster performance and a newer version of the developer tools for debugging Brackets. A few [issues](https://github.com/adobe/brackets-shell/issues?labels=&page=1&state=open) remain though.
 * **Code Hinting**
-    * [Code Completion for HTML Attribute Values](https://trello.com/card/2-code-complete-html-attribute-values/4f90a6d98f77505d7940ce88/583)
+    * [Code Completion for HTML Attribute Values](https://trello.com/card/2-code-complete-html-attribute-values/4f90a6d98f77505d7940ce88/583): Attributes with enumerated values (such as `<link rel>` or `<input type>`) show hints automatically after completing the attribute name. Hints can also be invoked manually with Ctrl+Space.
 
 UI Changes
 ----------
 
-
 API Changes
 -----------
-* The DOM is no longer completly initialized when require.js loads Brackets modules. Any modules that depend on or modify HTML during load should now listen register a ``htmlContentLoadComplete`` event listener on the ``utils/LoadEvents`` module before touching the DOM, e.g. ``LoadEvents.htmlContentLoadComplete(function () { /* query main Brackets DOM */ })``. Brackets plugins are unaffected since plugins are loaded after the DOM initialization is complete.
+**Initialization & HTML structure** - The HTML DOM is no longer completly initialized when require.js loads Brackets modules. _Brackets extensions are unaffected_ since they are always loaded after the DOM initialization is complete; this only affects core modules that depend on or modify HTML during load.
+* Before touching the DOM, modules should now register a ``htmlContentLoadComplete`` event listener on the ``utils/LoadEvents`` module before touching the DOM. E.g. ``LoadEvents.htmlContentLoadComplete(function () { /* query main Brackets DOM */ })``.
 * The ``brackets.ready`` event handler has been moved to ``LoadEvents.ready``
 * A new ``utils/Global`` module was added to handle the initialization of the ``brackets`` namespace
+* Most of the content of index.html has been moved into the Mustache template htmlContent/main-view.html.
+
+**Live development** - Now uses standard jQuery events, so the code required to add/remove listeners is slightly different and all listeners receive a new first parameter (the event). Event names have also changed. [See pull request for details](https://github.com/adobe/brackets/pull/1396).
 
 New/Improved Extensibility APIs
 -------------------------------
-**Command infrastructure** - new `CommandManager.getAll()` API: returns all registered commands. Could be used to build a shortcut key assignment UI, etc.
+**Command infrastructure** - New `CommandManager.getAll()` API: returns all registered commands. Could be used to build a shortcut key assignment UI, etc.
+
+**Localization** - Brackets now includes the RequireJS i18n plugin and Mustache.
+
 
 Known Issues
 ------------
-
+* _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
+* _Debug > Show Developer Tools_ now opens in a new tab in Chrome, rather than a new windows in Brackets. This is a temporary(ish) change due to CEF3. But on the upside, CEF3's developer tools include many updated features!
+* [#1283](https://github.com/adobe/brackets/issues/1283): Text selection highlight sometimes jiggles when horizontally resizing window.
 
 Community contributions to Brackets
 -----------------------------------
-* [Localization support and basic language switcher UI](https://github.com/adobe/brackets/pull/1358) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Localization infrastructure and basic language switcher UI](https://github.com/adobe/brackets/pull/1358) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Live development code cleanup](https://github.com/adobe/brackets/pull/1396) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Fix #1409: Exception when opening inline editor on blank line](https://github.com/adobe/CodeMirror2/pull/75) by [Tom Lieber](https://github.com/alltom)
 
 Contributions _from_ Brackets
 -----------------------------
@@ -42,4 +56,4 @@ Contributions _from_ Brackets
 
 Bugs fixed in Sprint 13
 -----------------------
-For details on the bugs addressed, please refer to [closed sprint 13 bugs](https://github.com/adobe/brackets/issues?labels=sprint+13&page=1&state=closed). A few of the fixed bugs might not be caught by this search query, however.
+For details on the bugs addressed, please refer to [closed sprint 13 bugs](https://github.com/adobe/brackets/issues?labels=sprint+13&page=1&state=closed) and [closed sprint 13 brackets-shell bugs](https://github.com/adobe/brackets-shell/issues?labels=sprint+13&page=1&state=closed). A few of the fixed bugs might not be caught by this search query, however.
