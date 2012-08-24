@@ -1,5 +1,15 @@
 _Warning: because Brackets is still undergoing a lot of change, many of the APIs and techniques below **will change** in the future. Breaking API changes will be listed in the [release notes](Release Notes)._
 
+## Load Events ##
+
+There are 2 primary events a module should listen to before querying or modifying the DOM. These events are defined in ``utils/LoadEvents``.
+
+``htmlContentLoadComplete`` signals when the initial DOM content of Brackets is loaded. The initial content is a template that must be rendered by Mustache with to include translated strings. Once this event fires, it is safe to query for static DOM elements.
+
+``ready`` signals when the core Brackets modules have initialized and when all extensions have finished loading.
+
+Do not rely on other events such as ``$(document).ready`` or ``window.onload``.
+
 ## Asynchronous APIs ##
 
 Many operations in Brackets return their results asynchronously -- for example, because they involve file I/O. These APIs return a [jQuery Promise](http://api.jquery.com/Types/#Promise) object that you can use to listen for success/failure and retrieve the result.
