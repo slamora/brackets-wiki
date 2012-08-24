@@ -19,7 +19,7 @@ var Strings = require("strings"),
     templateContent = require("text!templateContent.html");
 
 var html = Mustache.render(templateContent, Strings);
-...
+```
 
 ### Creating New Translations
 [Creating new translations](https://github.com/adobe/brackets/blob/master/src/nls/README.md)
