@@ -1,6 +1,6 @@
 _Warning: because Brackets is still undergoing a lot of change, many of the APIs and techniques below **will change** in the future. Breaking API changes will be listed in the [release notes](Release Notes)._
 
-## Load Events ##
+## Load Events
 
 There are 2 primary events a module should listen to before querying or modifying the DOM. These events are defined in ``utils/LoadEvents``.
 
