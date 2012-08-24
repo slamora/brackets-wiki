@@ -2,6 +2,8 @@
 
 ### Using Localized Strings
 
+The snippets below show how to use localized strings in core Brackets code.
+
 In JavaScript
 ```
 var Strings = require("strings"); // load the Strings module
@@ -16,9 +18,9 @@ In an HTML template
 
 /* JavaScript */
 var Strings = require("strings"),
-    templateContent = require("text!templateContent.html");
+    templateContent = require("text!templateContent.html"); // load text content of template file
 
-var html = Mustache.render(templateContent, Strings);
+var html = Mustache.render(templateContent, Strings); // use Mustache to insert translated strings
 ```
 
 ### Creating New Translations
