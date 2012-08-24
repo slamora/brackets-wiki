@@ -20,7 +20,9 @@ UI Changes
 
 API Changes
 -----------
-* The DOM is no longer completly initialized when require.js loads Brackets modules. Any modules that depend on or modify HTML during load should now listen for the "htmlContentLoadComplete" event that is triggered from the brackets global object before touching the dom. Brackets plugins are unaffected since plugins are loaded after the DOM initialization is complete.
+* The DOM is no longer completly initialized when require.js loads Brackets modules. Any modules that depend on or modify HTML during load should now listen register a ``htmlContentLoadComplete`` event listener on the ``utils/LoadEvents`` module before touching the DOM, e.g. ``LoadEvents.htmlContentLoadComplete(function () { /* query main Brackets DOM */ })``. Brackets plugins are unaffected since plugins are loaded after the DOM initialization is complete.
+* The ``brackets.ready`` event handler has been moved to ``LoadEvents.ready``
+* A new ``utils/Global`` module was added to handle the initialization of the ``brackets`` namespace
 
 New/Improved Extensibility APIs
 -------------------------------
