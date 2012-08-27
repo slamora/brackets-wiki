@@ -1,12 +1,12 @@
 _Warning: because Brackets is still undergoing a lot of change, many of the APIs and techniques below **will change** in the future. Breaking API changes will be listed in the [release notes](Release Notes)._
 
-## Load Events
+## Application Init
 
-There are 2 primary events a module should listen to before querying or modifying the DOM. These events are defined in ``utils/LoadEvents``.
+There are 2 primary events a module should listen to before querying or modifying the DOM. These events are defined in ``utils/AppInit``.
 
-``htmlContentLoadComplete`` signals when the initial DOM content of Brackets is loaded. The initial content is a template that must be rendered by Mustache with to include translated strings. Once this event fires, it is safe to query for static DOM elements.
+``htmlReady`` signals when the initial DOM content of Brackets is loaded. The initial content is a template that must be rendered by Mustache with to include translated strings. Once this event fires, it is safe to query for static DOM elements.
 
-``ready`` signals when the core Brackets modules have initialized and when all extensions have finished loading.
+``appReady`` signals when the core Brackets modules have initialized and when all extensions have finished loading.
 
 Do not rely on other events such as ``$(document).ready`` or ``window.onload``.
 
