@@ -24,8 +24,8 @@ UI Changes
 API Changes
 -----------
 **Initialization & HTML structure** - The HTML DOM is no longer completly initialized when require.js loads Brackets modules. _Brackets extensions are unaffected_ since they are always loaded after the DOM initialization is complete; this only affects core modules that depend on or modify HTML during load.
-* Before touching the DOM, modules should now register a ``htmlContentLoadComplete`` event listener on the ``utils/LoadEvents`` module before touching the DOM. E.g. ``LoadEvents.htmlContentLoadComplete(function () { /* query main Brackets DOM */ })``.
-* The ``brackets.ready`` event handler has been moved to ``LoadEvents.ready``
+* Before touching the DOM, modules should now register a ``htmlContentLoadComplete`` event listener on the ``utils/AppInit`` module before touching the DOM. E.g. ``AppInit.htmlReady(function () { /* query main Brackets DOM */ })``.
+* The ``brackets.appReady`` event handler has been moved to ``AppInit.appReady``
 * A new ``utils/Global`` module was added to handle the initialization of the ``brackets`` namespace
 * Most of the content of index.html has been moved into the Mustache template htmlContent/main-view.html.
 
