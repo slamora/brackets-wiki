@@ -190,3 +190,17 @@
 4. Click ``File > Live Preview`` menu
 5. Confirm live development error dialog ``<dialog_live_development_chrome_not_found>``
 6. Restore the Chrome executable name
+
+# Update Notification
+
+## Check for updates when up to date
+1. Click ``Debut > Check for Updates`` menu
+2. Confirm up-to-date information dialog 
+
+## Force update notification display
+1. Click ``Debug > Show Developer Tools`` to open dev tools window
+2. Click the ``Sources`` tab at the top of the dev tools window
+3. If the script console is hidden, press ``esc`` to open the console
+4. In the console window, enter:
+``require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _lastNotifiedBuildNumber: 0})``
+5. Confirm update information dialog appears (_Note: the "You're up to date!" message will appear until the end of Sprint 14. After that time, the update dialog should appear with information for all Brackets updates_)
