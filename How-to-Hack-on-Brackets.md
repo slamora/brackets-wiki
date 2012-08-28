@@ -17,10 +17,7 @@ that lets it access local files. (It doesn't run in the browser yet, and in
 fact will look amazingly terrible if you try to open it in Chrome from your local
 filesystem. We're planning to work on the in-browser version soon.)
 
-If you pull the repos as described below, or look in the contents of the ZIP
-file, you'll see that the main app binaries are in the bin/ folder, but the
-actual HTML/JS/CSS files that implement the main app are in the brackets/
-subfolder. The src/ folder is just the source for the native app shell.
+The Brackets installer packages the HTML/JS/CSS files into Brackets.app (on the mac) or in a `www` directory next to Brackets.exe (on Windows). If you are only changing HTML/JS/CSS files, you can use the installed version of the Brackets application shell and have it point to your local copy of the brackets HTML/JS/CSS files. Hold down the `shift` key while launching Brackets to get a file selector dialog. Select `index.html` from your local clone of the brackets repo.
 
 For details on working with Brackets's architecture and APIs, see [[Brackets Development How-Tos]].
 
@@ -34,7 +31,7 @@ First, [sign the Brackets Contributor License Agreement (CLA)](http://dev.bracke
 This is for your protection as well as that of the Brackets project.
 
 Then, just submit changes as pull requests from your own fork of brackets or
-brackets-app. The core dev team works in 2.5-week sprints (weird length,
+brackets-shell. The core dev team works in 2.5-week sprints (weird length,
 but it works for us). We'll try to review small pull requests quickly
 in the current sprint. Larger submissions will be added to the 
 [public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88)
@@ -43,14 +40,19 @@ and scheduled to be reviewed and merged in an upcoming sprint.
 Before you submit your pull request, please make sure it's merged with master and fully tested as described in the tl;dr section above. 
 
 ### <a name="getcode"></a> Getting a Copy of the Code ###
-The first step is to fork the projects on GitHub so you can start making changes in your local repository. If you only plan to hack on the HTML/JS/CSS portions of the app, you only need to fork the [brackets repo](https://github.com/adobe/brackets). If you want to work on the native code as well, you can fork the [brackets-app repo](https://github.com/adobe/brackets-app) too. To fork one or both of the repos, simply click the "Fork" button at the top of the page while browsing the repo.
+The first step is to fork the projects on GitHub so you can start making changes in your local repository. If you only plan to hack on the HTML/JS/CSS portions of the app, you only need to fork the [brackets repo](https://github.com/adobe/brackets). If you want to work on the native code as well, you can fork the [brackets-shell repo](https://github.com/adobe/brackets-shell) too. To fork one or both of the repos, simply click the "Fork" button at the top of the page while browsing the repo.
 
-Next pull both of those repositories down to your local machine. Your folder structure should have the brackets project within brackets-app. If you didn't fork brackets-app, use "adobe" instead of your username when cloning brackets-app.
+Next pull the repositories down to your local machine. 
+
+The [brackets](https://github.com/adobe/brackets) repo has all of the HTML/JS/CSS files.
+```
+git clone https://github.com/<your username>/brackets.git
+```
+
+The [brackets-shell](https://github.com/adobe/brackets-shell) repo has the code for the native shell. You only need to clone this repo if you plan on making changes to the native shell. 
 
 ```
-git clone git@github.com:<your username>/brackets-app.git
-cd brackets-app
-git clone git@github.com:<your username>/brackets.git
+git clone https://github.com/<your username>/brackets-shell.git
 ```
 
 Because Brackets relies on [CodeMirror](http://codemirror.net/) you want to make sure you have the latest version of CodeMirror. Brackets uses submodules to track third-party repos referenced by Brackets. To get these set up, you need to run this command from within the `brackets` folder:
@@ -61,23 +63,26 @@ git submodule update --init
 
 > Because CodeMirror will update fairly often, you'll often find as you're switching between branches or merging that your CodeMirror files are showing up as modified when you run `git status`. Something like `M	src/thirdparty/CodeMirror2`. Running the command above brings everything in sync.
 
-> Note that brackets is also a submodule of brackets-app. However, the brackets-app reference to brackets is not updated very often, so you should generally not do `git submodule update` from the brackets-app folder, as it will switch your brackets fork to an older version. Instead, to keep the brackets repo up to date, just do `git pull` on master within the brackets folder.
+That should both get the latest version of CodeMirror and all other submodules used by Brackets. 
 
-That should both get the latest version of CodeMirror and sync your fork of Brackets with brackets-app. From the brackets-app folder, if you run `open bin/mac/Brackets.app` or `bin/win/Brackets.exe` (or open them from Finder/Explorer) you'll have your just-forked version of Brackets up and running.
+If you're only hacking on HTML/JS/CSS files, you can run your fork by launching the installed version of Brackets while holding down the shift key. A file dialog will be shown when the app starts up. Select `index.html` from your fork of the brackets repo (it's in the `brackets/src` directory). Once you've selected a new `index.html` file, Brackets will use this file every time it starts.
+
+If you cloned the brackets-shell, see the brackets-shell [readme](https://github.com/adobe/brackets-shell/blob/master/README.md) and [wiki pages](https://github.com/adobe/brackets-shell/wiki) for information on building the project.
 
 ### Tracking Changes from the Main Repository ###
-It's important to be working off of the latest build and the easiest way to do that is to make sure that your local copy of Brackets is tracking the main repository. This involves using the `git remote` command which lets you link your local version to a different remote repository (by default, it's linked to your github fork). To link your local repository to the main brackets-app repository, use this command from the _brackets-app_ directory:
+It's important to be working off of the latest build and the easiest way to do that is to make sure that your local copy of Brackets is tracking the main repository. This involves using the `git remote` command which lets you link your local version to a different remote repository (by default, it's linked to your github fork). To link your local repository to the main brackets repository, use this command from the _brackets_ directory:
 
-```
-git remote add --track master upstream git@github.com:adobe/brackets-app.git
-```
-
-This will create a link from your local brackets-app repository to the main one called `upstream`. `upstream` will be how you reference the main brackets-app repository. 
-
-Do the same for the Brackets project
 ```
 cd brackets
-git remote add --track master upstream git@github.com:adobe/brackets.git
+git remote add --track master upstream https://github.com/adobe/brackets.git
+```
+
+This will create a link from your local brackets repository to the main one called `upstream`. `upstream` will be how you reference the main brackets repository. 
+
+Do the same for the brackets-shell repository (if you forked it).
+```
+cd brackets-shell
+git remote add --track master upstream https://github.com/adobe/brackets-shell.git
 ```
 
 It's very important to always have the latest code from the main repository. That way you can make sure your pull requests will be clean merges and that you're always working with the most stable code. Any time you want to grab the master branch from the Brackets repository, you have to follow a two-step process. First, use the fetch command with the remote destination we created earlier:
@@ -108,9 +113,9 @@ If new submodules are added to Brackets, you'll need to run `git submodule updat
 ## Contributing Code ##
 
 ### Useful Tools for Development ###
-If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Refresh Window* from the in-app menu. (If your Brackets gets really hosed, you can try *View > Refresh* from the native menu.) You can also bring up the Chrome developer tools on the Brackets window using *Debug > Show Developer Tools*.
+If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. (If your Brackets gets really hosed, you may need to restart the application.) You can also bring up the Chrome developer tools on the Brackets window using *Debug > Show Developer Tools*. This will open a new Chrome tab with the developer tools (Unlike previous builds of Brackets that opened up the developer tools in a new Brackets window, the new CEF3-based shell needs to open the developer tools in Chrome. We're hoping to get this fixed soon.).
 
-You can open a second Brackets window from *Debug > New Window*. This is nice because it means you can use a stable Brackets in one window to edit your code, and then reload the app in the second window to see if your changes worked. You can bring up the developer tools on the second window, too. Note that this can be flaky; if you find that the dev tools aren't showing scripts, just close the second window and reopen it, then open the dev tools window again.
+You can open a second Brackets window from *Debug > New Window*. This is nice because it means you can use a stable Brackets in one window to edit your code, and then reload the app in the second window to see if your changes worked. You can bring up the developer tools on the second window, too. 
 
 You can use *Debug > Run Tests* to run our unit test suite, and *Debug >Show Perf Data* to show some rudimentary performance info. We plan to beef this up in upcoming sprints.
 
@@ -177,5 +182,5 @@ As soon as you push those changes to the origin, the pull request you submitted 
 ### Modifying the App Shell ###
 For most of your work on Brackets, you should only need to edit the HTML/JS/CSS
 code in the brackets repo. But if you need to do work on the native app shell
-in brackets-app, you can find instructions on the [brackets-app wiki]
-(https://github.com/adobe/brackets-app/wiki).
+in brackets-shell, you can find instructions on the [brackets-shell wiki]
+(https://github.com/adobe/brackets-shell/wiki).
