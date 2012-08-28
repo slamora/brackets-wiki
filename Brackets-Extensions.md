@@ -14,7 +14,6 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions (VERY EARLY IMPLEMENTATION)
 
 **General functionality**
-* [Recent Projects](https://github.com/njx/brackets-recent-projects): Makes it so you can click on the project name in the sidebar to get a dropdown that shows a list of recent project folders.
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node).
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 * [Open file from url](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
