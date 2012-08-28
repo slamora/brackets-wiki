@@ -23,13 +23,15 @@ var Strings = require("strings"),
 var html = Mustache.render(templateContent, Strings); // use Mustache to insert translated strings
 ```
 
+## Implementation Details
+
+Brackets uses the [i18n plugin for RequireJS](https://github.com/requirejs/i18n) to load translations. The locale is determined by ``brackets.app.language`` (``navigator.language`` isn't used due to a CEF3 bug). Our main ``strings`` module re-exports the root bundle (i.e. ``require("i18n!nls/strings.js")``). Client code should only use the main strings module (i.e. ``require("strings")``).
+
+As of Sprint 13, brackets-shell hardcodes strings for both English and French, primarily for the limited set of native menus. Once [native menus](https://trello.com/c/Zc2LP82u) are implemented, there will be no translated strings in brackets-shell.
+
 ### Creating New Translations
 [Creating new translations](https://github.com/adobe/brackets/blob/master/src/nls/README.md)
 
 ### Localizing Extensions
 [Example: Localized Extension](https://github.com/adobe/brackets/tree/master/src/extensions/disabled/LocalizationExample)
 [README.MD](https://github.com/adobe/brackets/tree/master/src/extensions/disabled/LocalizationExample/README.MD)
-
-## Implementation Details
-
-TODO
