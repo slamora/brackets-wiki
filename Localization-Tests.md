@@ -67,7 +67,7 @@
 2. Make any change
 3. Click ``File > Close`` menu
 4. Confirm dialog ``<dialog_save_changes_one_file>``
-5. Choose "Cancel"
+5. Choose ``Cancel``
 6. From the project tree, open ``desktop.css``
 7. Make any change
 8. Click ``File > Quit`` menu
