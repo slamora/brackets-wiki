@@ -36,8 +36,12 @@
 
 ## Open
 
-1. Click ``File > Open`` menu
-2. Confirm file open dialog title ``<dialog_file_open>``
+1. Click ``File > Open...`` menu
+2. Confirm file open dialog ``<dialog_file_open>``
+3. Choose ``Cancel``
+4. Click ``File > Open Folder...`` menu
+5. Confirm open folder dialog ``<dialog_folder_open>``
+6. Click ``File > Open Folder...`` menu 
 
 ## Quick Open
 
