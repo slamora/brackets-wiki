@@ -5,22 +5,7 @@ Brackets is built with HTML, CSS and JS, and currently runs as a desktop applica
 
 The latest "stable" builds can be downloaded from the [downloads page](https://github.com/adobe/brackets/downloads). **Use the "brackets-sprint-N.zip" links** -- the generic download button at the top will not work!
 
-If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. There are two steps to this. First you must clone the [adobe/brackets-app](https://github.com/adobe/brackets-app/) repository. Then clone the [brackets](https://github.com/adobe/brackets/) repository and pull all third-party repos that Brackets referenced as submodules.
-
-Here are the commands:
-
-    git clone https://github.com/adobe/brackets-app.git
-    cd brackets-app
-
-    git clone https://github.com/adobe/brackets.git
-    cd brackets
-    git submodule update --init --recursive
-
-Note, you may be asked for your ssh authentication / passphrase a number of times while pulling the submodule. Make sure that you enter it each time (and it does not time out), or else the pull may fail.
-
-**Note:** The brackets submodule SHA in brackets-app is not updated very often. So, to make sure you're getting the latest brackets core code, once your submodules are set up, make sure to do a `git pull` on master in the brackets subfolder. In general, you should keep up to date with the brackets core by pulling it directly instead of relying on `git submodule update` in brackets-app.
-
-Once you have downloaded the code, launch Brackets from the _bin/win_ or _bin/mac_ folder.
+If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. See [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) for details on pulling the source.
 
 Basic usage
 -----------
