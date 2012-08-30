@@ -13,7 +13,7 @@ Setup
 Smoke test steps
 ================
 
-1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel.
+1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel and its index.html file is opened automatically.
 2. File > Open Folder and browse to the Brackets source folder.
 3. Expand some folders in the brackets project, enough that it has to scroll.
 4. Scroll around in the folder area. Verify that the shadows look right (appears at top when not scrolled all the way to the top) and there are no visual glitches.
