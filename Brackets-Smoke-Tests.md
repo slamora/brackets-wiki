@@ -22,7 +22,7 @@ Smoke test steps
 7. Double-click on index.html. Verify that it's added to the working set and the selection draws properly.
 8. Resize the window. Verify that the editor resizes properly and the title bar wraps appropriately.
 9. Look through the in-Brackets menus. Verify that they look okay and that they properly pop on top of other UI in the app.
-10. Set the cursor in the `<body>` tag but before the `>`.
+10. Set the cursor in the `<body>` tag immediately before the `>`.
 11. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
 12. Hit Esc key to dismiss the code hints list and set the cursor in `body` tag again.
 13. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
