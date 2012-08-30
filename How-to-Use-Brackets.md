@@ -137,6 +137,10 @@ Here are some keyboard shortcuts that are worth knowing. There will be more as f
 <td>Switch between rules in the inline editor.</td>
 </tr>
 <tr>
+<td>Ctrl-Space</td>
+<td>Bring up code hints, if applicable.</td>
+</tr>
+<tr>
 <td>Ctrl/Cmd-Shift-O</td>
 <td>Bring up the Quick Open prompt.</td>
 </tr>
