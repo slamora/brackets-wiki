@@ -3,7 +3,7 @@
 
 Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. **Brackets isn't ready for general use yet**, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
 
-The latest "stable" builds can be downloaded from the [downloads page](https://github.com/adobe/brackets/downloads). **Use the "brackets-sprint-N.zip" links** -- the generic download button at the top will not work!
+The latest "stable" builds can be downloaded from the [downloads page](https://github.com/adobe/brackets/downloads). **Use the .dmg (Mac) or .msi (Win) links** -- the generic download button at the top will not work!
 
 If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. See [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) for details on pulling the source.
 
@@ -17,7 +17,9 @@ menus in the desktop app eventually.
 You can open a file from *File > Open* (Ctrl/Cmd-O) in the in-window Brackets 
 menu, or open a folder in the file tree on the left using *File > Open Folder*.
 It's a good idea to open the root of whatever project you're working on in the 
-file tree, since other Brackets features search in the current tree.
+file tree, since other Brackets features search in the current tree. You can
+easily get back to previous projects you've worked on by clicking on the project's
+root folder name in the file tree.
 
 Unlike other editors that show open files in tabs, Brackets has a notion of 
 the "working set", which is displayed above the file tree. Just clicking on 
@@ -27,7 +29,10 @@ add a file to the working set, just make an edit in it, or double-click it
 in the file tree.
 
 Brackets currently has color-coding for HTML, JS, CSS, and LESS files. It
-doesn't do any code hinting yet.
+also has some basic code hinting for HTML tags and attribute names and
+values. They'll pop up automatically as you type tags, or you can hit
+Ctrl-Space to bring them up manually. More code hinting will come in future
+sprints.
 
 <a id="inlines"></a>Quick edit
 ----------
@@ -108,13 +113,14 @@ A couple of notes on unofficial features:
   at the bottom. If your file is clean, you'll see a gold star in the upper
   right corner. JSLint is very picky about formatting. JSLint is very picky 
   about a lot of things. If you want to turn it off, uncheck *Debug > Enable
-  JSLint*.
-* Ctrl/Cmd-Shift-O brings up a Quick Open field to let you quickly switch
-  to another file from the keyboard. You can start typing a filename in the 
-  field, then down-arrow or use the mouse to select one of the files that 
-  matches. You can also type ":" followed by a number in the field to go to 
-  that line in the current file.
-* You can run the Brackets unit test suite from the Debug menu.
+  JSLint*. This setting is global and remembered across runs.
+* *Navigate > Quick Open* (Ctrl/Cmd-Shift-O) brings up a Quick Open field to 
+  let you quickly switch to another file from the keyboard. You can start typing 
+  a filename in the field, then down-arrow or use the mouse to select one of the 
+  files that matches. 
+* You can also use Ctrl/Cmd-T to jump to a particular method definition in 
+  the current JS file, or Ctrl/Cmd-L to jump to a line number.
+* You can run the Brackets unit test suite from *Debug > Run Tests*.
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
@@ -133,6 +139,14 @@ Here are some keyboard shortcuts that are worth knowing. There will be more as f
 <tr>
 <td>Ctrl/Cmd-Shift-O</td>
 <td>Bring up the Quick Open prompt.</td>
+</tr>
+<tr>
+<td>Ctrl/Cmd-L</td>
+<td>Go to a line in the current file.</td>
+</tr>
+<tr>
+<td>Ctrl/Cmd-T</td>
+<td>Go to a method in the current file.</td>
 </tr>
 <tr>
 <td>Ctrl/Cmd-Shift-H</td>
