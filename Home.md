@@ -12,6 +12,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions)
 * [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
 * [Localization](https://github.com/adobe/brackets/wiki/Localization)
+* [Performance Tests Results](https://docs.google.com/spreadsheet/ccc?key=0Aras0diokeHxdEc5RGtOeVI0V0xGU3FPUXBuX3ZYTlE)
 
 ### Extensions
 * [How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)
