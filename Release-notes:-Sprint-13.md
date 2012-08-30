@@ -1,25 +1,26 @@
-_This is a draft!_
------------------
-_This document will not be finalized until the end of Sprint 13 -- August 30._
+Sprint 13 focused primarily on a more polished release experience: installers, updates, getting started, and an all new native app shell. We also rounded out HTML code hinting by adding hints for common attribute values, and began a push to localize the Brackets UI.
 
 What's New in Sprint 13
 -----------------------
-* **Localization**
-    * [French Localization](https://trello.com/card/3-localization-french/4f90a6d98f77505d7940ce88/374): Brackets detects the user's locale setting automatically. There are a few bugs where minor bits of the UI remain in English despite the locale.
-    * Brackets unofficially also supports German in this sprint.
 * **Install/Upgrade Usability**
     * [Update Notification](https://trello.com/card/3-new-version-notification/4f90a6d98f77505d7940ce88/579): Brackets will automatically notify you when a newer build is released. This won't happen until the end of the _following_ sprint, 2-3 weeks from now.
     * [Mac Install Experience: DMG with shortcut](https://trello.com/card/2-brackets-installer-osx/4f90a6d98f77505d7940ce88/394): Instead of a ZIP file, the distribution for Mac is now a DMG file containing a shortcut to /Applications for easy drag & drop.
-    * [Windows Install Experience: EXE installer](https://trello.com/card/3-brackets-installer-win/4f90a6d98f77505d7940ce88/597): Instead of a ZIP file, the distribution for Windows is now a native MSI installer.
+    * [Windows Install Experience: MSI installer](https://trello.com/card/3-brackets-installer-win/4f90a6d98f77505d7940ce88/597): Instead of a ZIP file, the distribution for Windows is now a native MSI installer.
     * [First Launch Readme/Demo Project](https://trello.com/card/2-first-launch-project/4f90a6d98f77505d7940ce88/598)
     * Quick access to the extensions folder via _Debug > Show Extensions Folder_
 * **Native Shell**
-    * Brackets has officially migrated to the [new CEF3-based native shell](https://github.com/adobe/brackets-shell/)! The installer/DMG distributions above package brackets-shell. This gives Brackets a stronger platform to build on, and offers benefits like slightly faster performance and a newer version of the developer tools for debugging Brackets. A few [issues](https://github.com/adobe/brackets-shell/issues?labels=&page=1&state=open) remain though.
+    * Brackets has officially migrated to the [new CEF3-based native shell](https://github.com/adobe/brackets-shell/)! The installer/DMG distributions above package the new shell. This gives Brackets a stronger platform to build on, and offers benefits like slightly faster performance and a newer version of the developer tools for debugging Brackets. A few [issues](https://github.com/adobe/brackets-shell/issues?labels=&page=1&state=open) remain, but no blockers.
 * **Code Hinting**
     * [Code Completion for HTML Attribute Values](https://trello.com/card/2-code-complete-html-attribute-values/4f90a6d98f77505d7940ce88/583): Attributes with enumerated values (such as `<link rel>` or `<input type>`) show hints automatically after completing the attribute name. Hints can also be invoked manually with Ctrl+Space.
+* **Localization**
+    * [French Localization](https://trello.com/card/3-localization-french/4f90a6d98f77505d7940ce88/374): Brackets detects the user's locale setting automatically. There are a few bugs where minor bits of the UI remain in English despite the locale.
+    * Brackets unofficially also supports German in this sprint.
+* **Other Enhancements**
+    * [Recent projects dropdown](https://github.com/adobe/brackets/pull/1469): Click the project name in the left-hand to rapidly switch between recently opened project folders.
 
 UI Changes
 ----------
+no major changes to existing UI
 
 API Changes
 -----------
@@ -51,10 +52,6 @@ Community contributions to Brackets
 * [Live development code cleanup](https://github.com/adobe/brackets/pull/1396) by [Jonathan Diehl](https://github.com/jdiehl)
 * [Fix #1409: Exception when opening inline editor on blank line](https://github.com/adobe/CodeMirror2/pull/75) by [Tom Lieber](https://github.com/alltom)
 * [Code cleanup in SVG sprites](https://github.com/adobe/brackets/pull/1453) by [Dmitry Baranovskiy](https://github.com/DmitryBaranovskiy)
-
-Contributions _from_ Brackets
------------------------------
-
 
 Bugs fixed in Sprint 13
 -----------------------
