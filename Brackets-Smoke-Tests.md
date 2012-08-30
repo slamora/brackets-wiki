@@ -24,7 +24,7 @@ Smoke test steps
 9. Look through the in-Brackets menus. Verify that they look okay and that they properly pop on top of other UI in the app.
 10. Set the cursor in the `<body>` tag immediately before the `>`.
 11. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
-12. Hit Esc key to dismiss the code hints list and set the cursor in `body` tag again.
+12. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
 13. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
 14. Click the lightning bolt in the upper right. You should see the page load in Chrome. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome.
 15. Mac only: Click "Relaunch". Chrome should relaunch and open the page.
