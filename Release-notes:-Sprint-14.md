@@ -5,14 +5,18 @@ _This document will not be finalized until the end of Sprint 14 -- September 14.
 What's New in Sprint 14
 -----------------------
 
+
 UI Changes
 ----------
+
 
 API Changes
 -----------
 
+
 New/Improved Extensibility APIs
 -------------------------------
+
 
 Known Issues
 ------------
@@ -20,12 +24,16 @@ Known Issues
 * _Debug > Show Developer Tools_ now opens in a new tab in Chrome, rather than a new windows in Brackets. This is a temporary(ish) change due to CEF3. But on the upside, CEF3's developer tools include many updated features!
 * [#1283](https://github.com/adobe/brackets/issues/1283): Text selection highlight sometimes jiggles when horizontally resizing window.
 * [#1473](https://github.com/adobe/brackets/issues/1473): Uninstalling on Windows sometimes does not remove the Start menu shortcut for Brackets.
+* Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not being digitally signed yet.  To work around this, right click the Brackets app and choose Open.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
+
 
 Community contributions to Brackets
 -----------------------------------
 
+
 Contributions _from_ Brackets
 -----------------------------
+
 
 Bugs fixed in Sprint 14
 -----------------------
