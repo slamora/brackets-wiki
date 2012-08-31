@@ -17,7 +17,9 @@ that lets it access local files. (It doesn't run in the browser yet, and in
 fact will look amazingly terrible if you try to open it in Chrome from your local
 filesystem. We're planning to work on the in-browser version soon.)
 
-The Brackets installer packages the HTML/JS/CSS files into Brackets.app (on the mac) or in a `www` directory next to Brackets.exe (on Windows). If you are only changing HTML/JS/CSS files, you can use the installed version of the Brackets application shell and have it point to your local copy of the brackets HTML/JS/CSS files. Hold down the `shift` key while launching Brackets to get a file selector dialog. Select `index.html` from your local clone of the brackets repo.
+The Brackets installer packages the HTML/JS/CSS files into Brackets.app (on Mac) or in a `www` directory next to Brackets.exe (on Windows). If you are only changing HTML/JS/CSS files, you can use the installed version of the Brackets application shell and have it point to your local copy of the brackets HTML/JS/CSS files. Hold down the `shift` key while launching Brackets to get a file selector dialog. Select `index.html` from your local clone of the brackets repo.
+
+_Note: Once you select a new `index.html` file, this file will be used on subsequent launches of Brackets, even if you install a new build. You can revert back to the "bundled" version of the HTML/CSS/JS files by holding down the Option (Mac) or Control (Win) key while starting Brackets._
 
 For details on working with Brackets's architecture and APIs, see [[Brackets Development How-Tos]].
 
