@@ -8,6 +8,7 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
 * [Show Indentations](https://github.com/DennisKehrig/brackets-show-indentations): Visualizes the characters used for indenting lines
+* [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators(Equal sings)
 
 **Code generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
