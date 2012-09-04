@@ -32,11 +32,14 @@ API Changes
 
 **Live development** - Now uses standard jQuery events, so the code required to add/remove listeners is slightly different and all listeners receive a new first parameter (the event). Event names have also changed. [See pull request for details](https://github.com/adobe/brackets/pull/1396).
 
+
 New/Improved Extensibility APIs
 -------------------------------
 **Command infrastructure** - New `CommandManager.getAll()` API: returns all registered commands. Could be used to build a shortcut key assignment UI, etc.
 
 **Localization** - Brackets now includes the RequireJS i18n plugin and Mustache.
+
+**Launch URLs in browser** - Use `NativeApp.openURLInDefaultBrowser()` to open a URL in the user's web browser.
 
 
 Known Issues
@@ -49,7 +52,7 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-* [Localization infrastructure and basic language switcher UI](https://github.com/adobe/brackets/pull/1358) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Localization infrastructure, basic language switcher UI, and first draft of German translation](https://github.com/adobe/brackets/pull/1358) by [Jonathan Diehl](https://github.com/jdiehl)
 * [Live development code cleanup](https://github.com/adobe/brackets/pull/1396) by [Jonathan Diehl](https://github.com/jdiehl)
 * [Fix #1409: Exception when opening inline editor on blank line](https://github.com/adobe/CodeMirror2/pull/75) by [Tom Lieber](https://github.com/alltom)
 * [Code cleanup in SVG sprites](https://github.com/adobe/brackets/pull/1453) by [Dmitry Baranovskiy](https://github.com/DmitryBaranovskiy)
