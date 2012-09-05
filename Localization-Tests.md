@@ -214,3 +214,6 @@ The following tests configure fake updates for testing ``Help > Check for Update
 5. Confirm update information dialog appears ``<dialog_update_notification_up_to_date>``
 6. In the console window, enter: ``require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _lastNotifiedBuildNumber: 0, _versionInfoURL: "https://raw.github.com/adobe/brackets/master/test/spec/UpdateNotification-test-files/versionInfo.json"})``
 7. Confirm update information dialog appears ``<dialog_update_notification_update_available>``
+8. Press Cancel
+9. Hover over the update icon (a gift box) in the toolbar
+10. Confirm update information tooltip appears ``<tooltip_update_notification>``
