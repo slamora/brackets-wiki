@@ -9,7 +9,7 @@ What's New in Sprint 13
     * [First Launch Readme/Demo Project](https://trello.com/card/2-first-launch-project/4f90a6d98f77505d7940ce88/598)
     * Quick access to the extensions folder via _Debug > Show Extensions Folder_
 * **Native Shell**
-    * Brackets has officially migrated to the [new CEF3-based native shell](https://github.com/adobe/brackets-shell/)! The installer/DMG distributions above package the new shell. This gives Brackets a stronger platform to build on, and offers benefits like slightly faster performance and a newer version of the developer tools for debugging Brackets. A few [issues](https://github.com/adobe/brackets-shell/issues?labels=&page=1&state=open) remain, but no blockers.
+    * Brackets has officially migrated to the [new CEF3-based native shell](https://github.com/adobe/brackets-shell/)! CEF3 offers benefits such as: Retina (HiDPI) support, a newer version of the developer tools for debugging Brackets, slightly faster performance, and a stronger foundation moving forward. The installer/DMG distributions for Sprint 13 package this new shell.
 * **Code Hinting**
     * [Code Completion for HTML Attribute Values](https://trello.com/card/2-code-complete-html-attribute-values/4f90a6d98f77505d7940ce88/583): Attributes with enumerated values (such as `<link rel>` or `<input type>`) show hints automatically after completing the attribute name. Hints can also be invoked manually with Ctrl+Space.
 * **Localization**
