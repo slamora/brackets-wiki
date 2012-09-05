@@ -77,15 +77,11 @@
 8. Click ``File > Quit`` menu
 9. Confirm dialog ``<dialog_save_changes_multiple_files>``
 10. Choose ``Cancel``
-11. Open ``desktop.css`` in a different program.
-12. Dirty the file so that the last modified time metadata is updated
-13. Return to Brackets
-14. Confirm dialog ``<dialog_external_changes_reload>``
-15. Choose "Reload from Disk"
-16. In the operating system, delete ``desktop.css``
-17. Return to Brackets
-18. Confirm the external changes dialog ``<dialog_external_changes_deleted>``
-19. Choose ``Close (Don't Save)``
+11. In the operating system, delete ``desktop.css``
+12. Return to Brackets
+13. Confirm the external changes dialog ``<dialog_external_changes_deleted>``
+14. Choose ``Close (Don't Save)``
+15. In the operating system, restore ``desktop.css``
 
 # File Errors
 
@@ -115,6 +111,20 @@
 2. In Brackets, open ``index.html``
 3. Confirm error opening file dialog ``<dialog_error_opening_file_not_readable>``
 4. In the operating system, restore the original file permissions to ``index.html``
+
+## Read Permissions on Reload
+
+1. In Brackets, open ``index.html``
+2. Make any edit
+3. Open ``index.html`` in a different program.
+4. Dirty the file so that the last modified time metadata is updated
+5. Return to Brackets
+6. Confirm dialog ``<dialog_external_changes_reload>``
+7. In the operating system, remove **read** permissions from ``index.html``. On mac, use ``chmod 0 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Read" permission. Save permission changes when finished.
+8. Return to Brackets
+9. Choose "Reload from Disk"
+10. Confirm dialog ``<dialog_error_reloading_changes_from_disk>``
+11. In the operating system, restore the original file permissions to ``index.html``
 
 ## File not found
 
