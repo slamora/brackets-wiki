@@ -29,7 +29,7 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-
+* [Persist "Use Tab Characters" setting across launches](https://github.com/adobe/brackets/pull/1500) by [Dennis Kehrig](https://github.com/DennisKehrig)
 
 Contributions _from_ Brackets
 -----------------------------
