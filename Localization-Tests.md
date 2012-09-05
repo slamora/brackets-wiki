@@ -193,14 +193,14 @@
 
 # Update Notification
 
-## Check for updates when up to date
-1. Click ``Debut > Check for Updates`` menu
-2. Confirm up-to-date information dialog 
+The following tests configure fake updates for testing ``Help > Check for Updates``. Update information is normally pulled from http://brackets.io.
 
-## Force update notification display
+## Manual Check for Updates
 1. Click ``Debug > Show Developer Tools`` to open dev tools window
 2. Click the ``Sources`` tab at the top of the dev tools window
 3. If the script console is hidden, press ``esc`` to open the console
 4. In the console window, enter:
 ``require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _lastNotifiedBuildNumber: 0})``
-5. Confirm update information dialog appears (_Note: the "You're up to date!" message will appear until the end of Sprint 14. After that time, the update dialog should appear with information for all Brackets updates_)
+5. Confirm update information dialog appears ``<dialog_update_notification_up_to_date>``
+6. In the console window, enter: ``require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _lastNotifiedBuildNumber: 0, _versionInfoURL: "https://raw.github.com/adobe/brackets/master/test/spec/UpdateNotification-test-files/versionInfo.json"})``
+7. Confirm update information dialog appears ``<dialog_update_notification_update_available>``
