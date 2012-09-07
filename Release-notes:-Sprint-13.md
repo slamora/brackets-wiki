@@ -53,6 +53,7 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 * [Localization infrastructure, basic language switcher UI, and first draft of German translation](https://github.com/adobe/brackets/pull/1358) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Improvements to experimental (disabled) live development features](https://github.com/adobe/brackets/pull/1418) by [Jonathan Diehl](https://github.com/jdiehl) & [Dennis Kehrig](https://github.com/DennisKehrig). (Enable the `experimental` flag in LiveDevelopment/main.js to try out HTML and JS live editing!)
 * [Live development code cleanup](https://github.com/adobe/brackets/pull/1396) by [Jonathan Diehl](https://github.com/jdiehl)
 * [Fix #1409: Exception when opening inline editor on blank line](https://github.com/adobe/CodeMirror2/pull/75) by [Tom Lieber](https://github.com/alltom)
 * [Code cleanup in SVG sprites](https://github.com/adobe/brackets/pull/1453) by [Dmitry Baranovskiy](https://github.com/DmitryBaranovskiy)
