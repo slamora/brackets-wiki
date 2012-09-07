@@ -30,6 +30,8 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 * [Persist "Use Tab Characters" setting across launches](https://github.com/adobe/brackets/pull/1500) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Support escaped characters in CSS selectors (bug #391)](https://github.com/adobe/brackets/pull/1509) by [Chema Balsas](https://github.com/jbalsas)
+* [Norwegian translation](https://github.com/adobe/brackets/pull/1448) by [Thomas Andersen](https://github.com/thomasandersen)
 
 Contributions _from_ Brackets
 -----------------------------
