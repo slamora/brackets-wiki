@@ -26,14 +26,15 @@ Smoke test steps
 11. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
 12. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
 13. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
-14. Click the lightning bolt in the upper right. You should see the page load in Chrome. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome.
-15. Mac only: Click "Relaunch". Chrome should relaunch and open the page.
-16. Back in Brackets, edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
-17. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
-18. Put the cursor immediately after the `<a` in one of the `<a>` tags in the navbar.
-19. Hit Cmd/Ctrl-E. Verify that the inline editor opens and that you see a number of rules in the list on the right.
-20. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
-21. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
-22. Click on a rule in the rule list. Verify that the editor shows the correct rule.
-23. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
-24. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
+14. Click the lightning bolt in the upper right. If you trashed prefs, you'll get an info dialog explaining how live preview works. Hit OK.
+15. You should see the page load in Chrome. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome.
+16. Mac only: Click "Relaunch". Chrome should relaunch and open the page.
+17. Back in Brackets, edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
+18. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
+19. Put the cursor immediately after the `<a` in one of the `<a>` tags in the navbar.
+20. Hit Cmd/Ctrl-E. Verify that the inline editor opens and that you see a number of rules in the list on the right.
+21. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
+22. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
+23. Click on a rule in the rule list. Verify that the editor shows the correct rule.
+24. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
+25. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
