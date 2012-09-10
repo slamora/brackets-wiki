@@ -16,6 +16,7 @@
 3. Edit
 4. View
 5. Navigate
+6. Help
 
 ## Toolbar
 1. Experimental Build
