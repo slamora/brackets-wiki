@@ -128,7 +128,7 @@
 11. Choose ``OK`` and confirm the file in Brackets is still dirty
 12. In the operating system, restore the original file permissions to index.html
 
-## File Encoding Error
+## File Encoding Error (mac only)
 
 1. Open ``index.html`` in a text editor that allows saving with a different encoding (e.g. Sublime Text 2)
 2. In the text editor save ``index.html`` with encoding: UTF-16 BE with BOM
