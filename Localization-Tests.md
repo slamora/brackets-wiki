@@ -126,13 +126,14 @@
 9. Choose ``Reload from Disk``
 10. Confirm dialog ``<dialog_error_reloading_changes_from_disk>``
 11. Choose ``OK`` and confirm the file in Brackets is still dirty
-12. Open ``index.html`` in a text editor that allows saving with a different encoding (e.g. Sublime Text 2)
-13. In the text editor save ``index.html`` with encoding: UTF-16 BE with BOM
-14. Return to Brackets
-15. Choose ``Reload from Disk``
-16. Confirm dialog ``<dialog_error_reloading_changes_from_disk_generic_error_code_2>``
-17. Choose ``OK``
-18. In the operating system, restore the original file permissions to ``index.html`` and reset the file encoding to UTF-8.
+12. In the operating system, restore the original file permissions to index.html
+13. Open ``index.html`` in a text editor that allows saving with a different encoding (e.g. Sublime Text 2)
+14. In the text editor save ``index.html`` with encoding: UTF-16 BE with BOM
+15. Return to Brackets
+16. Choose ``Reload from Disk``
+17. Confirm dialog ``<dialog_error_reloading_changes_from_disk_generic_error_code_2>``
+18. Choose ``OK``
+19. In the operating system, restore the original file permissions to ``index.html`` and reset the file encoding to UTF-8.
 
 ## File not found
 
