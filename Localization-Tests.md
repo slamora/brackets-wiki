@@ -20,7 +20,7 @@
 
 ## Toolbar
 1. Experimental Build
-2. Lightning bolt icon tooltip ``Live File Preview``
+2. Lightning bolt icon tooltip ``<tooltip_live_preview>``
 
 ## About
 1. On mac, ``Brackets > About Brackets``. On win, ``Help > About``
