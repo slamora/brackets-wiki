@@ -48,7 +48,7 @@
 1. Click ``Navigate > Quick Open``
 2. Confirm the quick open UI appears at the top of the editor ``<dialog_quick_open>``
 
-## Error opening file
+## Error opening file (mac only)
 
 1. In the project tree, expand the ``images`` folder.
 2. Click on ``events.jpg``
