@@ -42,7 +42,6 @@
 3. Choose ``Cancel``
 4. Click ``File > Open Folder...`` menu
 5. Confirm open folder dialog ``<dialog_folder_open>``
-6. Click ``File > Open Folder...`` menu 
 
 ## Quick Open
 
