@@ -174,6 +174,7 @@
 6. Confirm replace UI appears at the top of the editor ``<dialog_replace_1>``
 7. Type any character(s) into the text box, press Enter
 8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
+9. Press escape
 
 ## JSLint
 
@@ -193,7 +194,7 @@
 4. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
 5. Quit Chrome
 
-## Connection Error
+## Connection Error (mac only)
 1. Start Chrome
 2. Click ``File > Live Preview`` menu
 3. Confirm live development error dialog ``<dialog_live_development_connection_error>``
@@ -217,14 +218,14 @@
 The following tests configure fake updates for testing ``Help > Check for Updates``. Update information is normally pulled from http://brackets.io.
 
 ## Manual Check for Updates
-1. Click ``Debug > Show Developer Tools`` to open dev tools window
+1. Click ``Debug > Show Developer Tools`` to open dev tools window (if Debug is not available, open Chrome, go to http://localhost:9234, then choose the last link)
 2. Click the ``Sources`` tab at the top of the dev tools window
 3. If the script console is hidden, press ``esc`` to open the console
 4. In the console window, enter:
 ``require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _lastNotifiedBuildNumber: 0})``
 5. Confirm update information dialog appears ``<dialog_update_notification_up_to_date>``
 6. In the console window, enter: ``require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _lastNotifiedBuildNumber: 0, _versionInfoURL: "https://raw.github.com/adobe/brackets/master/test/spec/UpdateNotification-test-files/versionInfo.json"})``
-7. Confirm update information dialog appears ``<dialog_update_notification_update_available>``
+7. Confirm update information dialog appears ``<dialog_update_notification_update_available>`` (Note that the actual notes of each release are not translated in this test file)
 8. Press Cancel
 9. Hover over the update icon (a gift box) in the toolbar
 10. Confirm update information tooltip appears ``<tooltip_update_notification>``
