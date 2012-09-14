@@ -18,7 +18,7 @@ What's New in Sprint 14
 
 UI Changes
 ----------
-
+* Editor now uses the open source, monowidth Source Code Pro OpenType font from Adobe.
 
 API Changes
 -----------
@@ -43,6 +43,7 @@ Community contributions to Brackets
 * [Persist "Use Tab Characters" setting across launches](https://github.com/adobe/brackets/pull/1500) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Support escaped characters in CSS selectors (bug #391)](https://github.com/adobe/brackets/pull/1509) by [Chema Balsas](https://github.com/jbalsas)
 * [Norwegian translation](https://github.com/adobe/brackets/pull/1448) by [Thomas Andersen](https://github.com/thomasandersen)
+* [Spanish translation](https://github.com/adobe/brackets/pull/1587) by [Chema Balsas](https://github.com/jbalsas)
 
 Contributions _from_ Brackets
 -----------------------------
