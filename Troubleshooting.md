@@ -3,13 +3,14 @@ Brackets not working for you? Consider the following tips.
 ## System Requirements
 
 * Mac OSX 10.6 or newer.
+** Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not being digitally signed yet.  To work around this, right click the Brackets app and choose Open.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
 * Windows Vista/7.
 * WinXP w/ Service Pack 2.
 * You should have at least 2 GB of RAM to do Live Development.
 
 ## Download
 
-Make sure you download one of the "brackets-sprint-XX.zip" links from the [Downloads page](https://github.com/adobe/brackets/downloads). The "Download as zip" button will **not** work.
+Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](https://github.com/adobe/brackets/downloads). The "Download as zip" button will **not** work.
 
 # Brackets Doesn't Load
 ### 1. Check The File Permissions
