@@ -6,6 +6,7 @@ What's New in Sprint 14
 -----------------------
 * New Help menu ``AppMenuBar.HELP_MENU``
 * Moved "Show Extensions" and "Check for Updates" from Debug to Help menu
+* "Next Document" Ctrl+Tab and "Previous Document" Ctrl+Shift+Tab working set navigation commands are now visible in the Navigate menu.
 
 UI Changes
 ----------
