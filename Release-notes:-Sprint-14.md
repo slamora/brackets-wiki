@@ -4,15 +4,6 @@ _This document will not be finalized until the end of Sprint 14 -- September 14.
 
 What's New in Sprint 14
 -----------------------
-* A new ``src/package.json`` file was introduced to capture metadata in a format compatible with [NPM](https://npmjs.org/doc/json.html).
-    * ``package.json`` data can be accessed at runtime via ``brackets.metadata``
-    * ``name`` field is copied to the ``strings`` module as ``APP_NAME``
-        * ``APP_NAME`` string is substituted throughout the code base
-    * ``package.json`` config object allows forks of Brackets to customize some options including:
-        * ``about_icon`` - Change the ``src`` relative path to the about icon
-        * ``show_debug_menu`` - Show/Hide the "Debug" menu
-        * ``enable_jslint`` - Enable/Disable JSLint by default
-        * ``forum_url`` - Specifies a URL in the Help menu
 * New Help menu ``AppMenuBar.HELP_MENU``
 * Moved "Show Extensions" and "Check for Updates" from Debug to Help menu
 
@@ -26,6 +17,15 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
+* A new ``src/package.json`` file was introduced to capture metadata in a format compatible with [NPM](https://npmjs.org/doc/json.html).
+    * ``package.json`` data can be accessed at runtime via ``brackets.metadata``
+    * ``name`` field is copied to the ``strings`` module as ``APP_NAME``
+        * ``APP_NAME`` string is substituted throughout the code base
+    * ``package.json`` config object allows forks of Brackets to customize some options including:
+        * ``about_icon`` - Change the ``src`` relative path to the about icon
+        * ``show_debug_menu`` - Show/Hide the "Debug" menu
+        * ``enable_jslint`` - Enable/Disable JSLint by default
+        * ``forum_url`` - Specifies a URL in the Help menu
 
 
 Known Issues
