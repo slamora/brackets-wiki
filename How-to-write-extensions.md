@@ -10,7 +10,7 @@
 * In window #2, you can open a different folder on your file system to access other content for testing your extension (e.g. test.html).
 * The development workflow is like this:
  * In window #1, edit your extension code.
- * In window #2, reload window (F5/Command-R) to get extension changes and test.
+ * In window #2, reload window (F5/Command-R) to get extension changes and test. _Note: if your extension is not reloading correctly, [disable caching in the Chrome Dev Tools](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_
  * To debug problems, open the developer tools for window #2 (Debug->Show Developer Tools). You can use console.log() from the extension code, set breakpoints, etc.
   * Repeat. 
 
