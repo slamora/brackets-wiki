@@ -3,16 +3,17 @@ Sprint DoD has a task for logging performance tests results. We have a small set
 1. Confirm you have edit access to [Brackets Performance Tests](https://docs.google.com/spreadsheet/ccc?key=0Aras0diokeHxdEc5RGtOeVI0V0xGU3FPUXBuX3ZYTlE#gid=0) (Google Spreadsheet). If not, ask @jasonsanjose.
 2. Get the performance laptop (get key from @pflynn's desk)
 3. Uninstall any existing Brackets and delete the [[Cache Folder]].
-4. Sync the brackets repo on the machine to match the SHA of the installed build (look in Help > About to find it _before_ you run the next step)
-5. Install Brackets and use ``tools\setup_for_hacking``
-6. Reboot the computer
-7. Run Brackets
-8. Debug > Show Performance Data
-9. Log cold startup time under "Startup > Cold Startup (first run, no prefs)"
-10. Debug > Run Tests, Performance, All
-11. Log "Performance Tests File open performance" under "Cold - Performance Tests File open performance"
-12. Log the first set of "JavaScript Inline Editor Creation" results under "Cold - JSQuickEdit Performance suite should open inline editors."
-13. Log the last set of "JavaScript Inline Editor Creation" results under "Warm - JSQuickEdit Performance suite should open inline editors."
-14. Exit and restart Brackets
-15. Debug > Show Performance Data
-16. Log warm startup time under "Startup > Warm Startup"
+4. Install Brackets
+5. Sync the brackets repo on the machine to match the SHA of the installed build (look for the version field in <path to install>\www\package.json)
+6. Run ``tools\setup_for_hacking``
+7. Reboot the computer
+8. Run Brackets
+9. Debug > Show Performance Data
+10. Log cold startup time under "Startup > Cold Startup (first run, no prefs)"
+11. Debug > Run Tests, Performance, All
+12. Log "Performance Tests File open performance" under "Cold - Performance Tests File open performance"
+13. Log the first set of "JavaScript Inline Editor Creation" results under "Cold - JSQuickEdit Performance site should open inline editors."
+14. Log the last set of "JavaScript Inline Editor Creation" results under "Warm - JSQuickEdit Performance suite should open inline editors."
+15. Exit and restart Brackets
+16. Debug > Show Performance Data
+17. Log warm startup time under "Startup > Warm Startup"
