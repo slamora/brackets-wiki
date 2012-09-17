@@ -3,8 +3,8 @@ Sprint DoD has a task for logging performance tests results. We have a small set
 1. Confirm you have edit access to [Brackets Performance Tests](https://docs.google.com/spreadsheet/ccc?key=0Aras0diokeHxdEc5RGtOeVI0V0xGU3FPUXBuX3ZYTlE#gid=0) (Google Spreadsheet). If not, ask @jasonsanjose.
 2. Get the performance laptop (get key from @pflynn's desk)
 3. Uninstall any existing Brackets and delete the [[Cache Folder]].
-4. Install Brackets and use ``tools\setup_for_hacking``
-5. Sync the brackets repo on the machine to match the SHA of the installed build (look in Help > About to find it)
+4. Sync the brackets repo on the machine to match the SHA of the installed build (look in Help > About to find it _before_ you run the next step)
+5. Install Brackets and use ``tools\setup_for_hacking``
 6. Reboot the computer
 7. Run Brackets
 8. Debug > Show Performance Data
