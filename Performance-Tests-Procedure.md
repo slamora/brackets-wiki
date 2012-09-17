@@ -13,4 +13,5 @@ Sprint DoD has a task for logging performance tests results. We have a small set
 10. Log the last set of "JavaScript Inline Editor Creation" results under "Warm - JSQuickEdit Performance suite should open inline editors."
 11. Exit and restart Brackets
 12. Debug > Show Performance Data
-13. Log cold startup time under Startup > Warm Startup
+13. Log cold startup time under "Startup > Warm Startup"
+14. Done
