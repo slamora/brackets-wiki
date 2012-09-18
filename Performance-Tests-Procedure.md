@@ -1,6 +1,6 @@
 Sprint DoD has a task for logging performance tests results. We have a small set of performance tests that run within the unit test window. Eventually these tests will be automated. For now, here are the instructions for logging the sprint performance results:
 
-1. Confirm you have edit access to [Brackets Performance Tests](https://docs.google.com/spreadsheet/ccc?key=0Aras0diokeHxdEc5RGtOeVI0V0xGU3FPUXBuX3ZYTlE#gid=0) (Google Spreadsheet). If not, ask @jasonsanjose.
+1. Confirm you have edit access to [Brackets Performance Tests (Google Spreadsheet)](https://docs.google.com/spreadsheet/ccc?key=0Aras0diokeHxdEc5RGtOeVI0V0xGU3FPUXBuX3ZYTlE#gid=0). If not, ask @jasonsanjose.
 2. Get the performance laptop (get key from @pflynn's desk)
 3. Uninstall any existing Brackets, and install the new Brackets build
 4. Sync the brackets repo on the machine to match the SHA of the installed build (look for the version field in <path to install>\www\package.json) (note: you may need to open the SSH tunnel to update from GitHub)
