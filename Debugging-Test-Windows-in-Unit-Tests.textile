@@ -12,9 +12,9 @@ I put it in the callback passed to <code>SpecRunnerUtils.createTestWindowAndRun(
 
 3. Open SpecRunner: Debug > Run Tests
 
-4. From SpecRunner: View > Show Developer Tools
+4. From SpecRunner: Show Developer Tools
 
-5. Set breakpoint(s) in unit test code before you start tests. The line numbers in the Dev Tools windows sometimes (usually?) stop tracking the file, and, once this happens, you can't set any more breakpoints.
+5. Set breakpoint(s) in unit test code before you start tests. The line numbers in the Dev Tools windows sometimes stop tracking the file, and, once this happens, you can't set any more breakpoints.
 
 6. Leave SpecRunner Dev Tools Window open. I wasn't hitting my breakpoint when I closed it.
 
