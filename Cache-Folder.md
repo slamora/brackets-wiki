@@ -2,9 +2,9 @@ Brackets stores some data in a cache folder managed by CEF -- roughly equivalent
 
 ## Cache location:
 
-* Mac: ```~/Library/Application Support/Brackets/cef_data```
-* Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets\cef_data``` -- (aka ```%appdata%\Brackets\cef_data```)
-* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets\cef_data``` -- (aka ```%appdata%\Brackets\cef_data```)
+* Mac: ```~/Library/Application Support/Brackets```
+* Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets``` -- (aka ```%appdata%\Brackets```)
+* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets``` -- (aka ```%appdata%\Brackets```)
 
 ## Cache location: (older brackets-app builds prior to sprint 13)
 
