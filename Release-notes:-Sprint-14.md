@@ -31,7 +31,7 @@ New/Improved Extensibility APIs
 
 Known Issues
 ------------
-* Due to bug #1512, if you install Sprint 14 after having run Sprint 13 (and don't delete your prefs), the old Sprint 13 "Getting Started" project will show in your recent projects list (and will open by default if you left it open last time you quit Brackets). This has been fixed for upgrades post-Sprint 14.
+* Due to bug #1512, if you install Sprint 14 after having run Sprint 13 (and don't [delete your prefs](https://github.com/adobe/brackets/wiki/Cache-Folder)), the old Sprint 13 "Getting Started" project will show in your recent projects list (and will open by default if you left it open last time you quit Brackets). This has been fixed for upgrades post-Sprint 14.
 * _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
 * _Debug > Show Developer Tools_ now opens in a new tab in Chrome, rather than a new windows in Brackets. This is a temporary(ish) change due to CEF3. But on the upside, CEF3's developer tools include many updated features!
 * [#1283](https://github.com/adobe/brackets/issues/1283): Text selection highlight sometimes jiggles when horizontally resizing window.
