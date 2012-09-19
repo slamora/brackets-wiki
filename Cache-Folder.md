@@ -1,5 +1,7 @@
 Brackets stores some data in a cache folder managed by CEF -- roughly equivalent to a browser cache, except specific to Brackets. At the moment, this folder stores both throwaway data _and_ user preferences.
 
+If you're having trouble starting Brackets after upgrading from a previous build, try deleting this folder. You'll lose any stored preferences and saved information like the recent folder list.
+
 ## Cache location:
 
 * Mac: ```~/Library/Application Support/Brackets```
