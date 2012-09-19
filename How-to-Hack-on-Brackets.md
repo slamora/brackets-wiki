@@ -17,9 +17,7 @@ that lets it access local files. (It doesn't run in the browser yet, and in
 fact will look amazingly terrible if you try to open it in Chrome from your local
 filesystem. We're planning to work on the in-browser version soon.)
 
-The Brackets installer packages the HTML/JS/CSS files into Brackets.app (on Mac) or in a `www` directory next to Brackets.exe (on Windows). If you are only changing HTML/JS/CSS files, you can use the installed version of the Brackets application shell and have it point to your local copy of the brackets HTML/JS/CSS files. Hold down the `shift` key while launching Brackets to get a file selector dialog. Select `index.html` from your local clone of the brackets repo.
-
-_Note: Once you select a new `index.html` file, this file will be used on subsequent launches of Brackets, even if you install a new build. You can revert back to the "bundled" version of the HTML/CSS/JS files by holding down the Option (Mac) or Control (Win) key while starting Brackets._
+The Brackets installer packages the HTML/JS/CSS files into Brackets.app (on Mac) or in a `www` directory next to Brackets.exe (on Windows). If you're only changing HTML/JS/CSS files, you can use the `tools/setup_for_hacking` script to tell the Brackets application shell use your local copy of the Brackets HTML/JS/CSS files. See [Running Your Copy of the Code](#setup_for_hacking) for more details.
 
 For details on working with Brackets's architecture and APIs, see [[Brackets Development How-Tos]].
 
@@ -67,7 +65,28 @@ git submodule update --init
 
 That should both get the latest version of CodeMirror and all other submodules used by Brackets. 
 
-If you're only hacking on HTML/JS/CSS files, you can run your fork by launching the installed version of Brackets while holding down the shift key. A file dialog will be shown when the app starts up. Select `index.html` from your fork of the brackets repo (it's in the `brackets/src` directory). Once you've selected a new `index.html` file, Brackets will use this file every time it starts.
+### <a name="setup_for_hacking"></a> Running Your Copy of the Code ###
+
+If you're only hacking on HTML/JS/CSS files, you can have the installed version of the Brackets shell run your local copy of the HTML/JS/CSS code by running the `tools/setup_for_hacking` script. Here are the steps.
+
+1. Clone or fork the brackets repo (see [Getting a Copy of the Code](#getcode) for details).
+2. On a Mac: 
+  1. Open a Terminal window
+  2. `cd` to the root of your brackets repo
+  3. run `tools/setup_for_hacking.sh`, passing the full pathname to your installed Brackets.app. For example:
+```
+tools/setup_for_hacking.sh "/Applications/Brackets Sprint 14.app"
+```
+3. On Windows:
+  1. Open a Command Prompt
+  2. `cd` to the root of your brackets repo
+  3. run `tools\setup_for_hacking`, passing the full path of the directory where Brackets.exe is installed. For example:
+```
+tools\setup_for_hacking "C:\Program Files (x86)\Brackets Sprint 14"
+```
+4. Launch Brackets, select _Help > Show Extensions Folder_, and make sure this opens the `extensions` folder in your copy of the code.
+
+(Alternatively, you can hold down the `shift` key while launching Brackets to get a file selector dialog. Select the `src/index.html` file from your copy of the code, and Brackets will run your copy of the HTML/JS/CSS files. _Note: this `index.html` file will only be used for the current Brackets session. Quitting and restarting will revert back to the previous `index.html` file._)
 
 If you cloned the brackets-shell, see the brackets-shell [readme](https://github.com/adobe/brackets-shell/blob/master/README.md) and [wiki pages](https://github.com/adobe/brackets-shell/wiki) for information on building the project.
 
