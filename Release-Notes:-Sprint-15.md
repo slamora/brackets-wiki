@@ -1,6 +1,6 @@
 _This is a draft!_
 -------------------
-_This document will not be finalized until the end of Sprint 15._
+_This document will not be finalized until the end of Sprint 15 -- approximately October 18._
 
 
 What's New in Sprint 15
