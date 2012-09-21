@@ -134,7 +134,9 @@ If new submodules are added to Brackets, you'll need to run `git submodule updat
 ## Contributing Code ##
 
 ### Useful Tools for Development ###
-If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. (If your Brackets gets really hosed, you may need to restart the application.) You can also bring up the Chrome developer tools on the Brackets window using *Debug > Show Developer Tools*. This will open a new Chrome tab with the developer tools (Unlike previous builds of Brackets that opened up the developer tools in a new Brackets window, the new CEF3-based shell needs to open the developer tools in Chrome. We're hoping to get this fixed soon.).
+If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. (If your Brackets gets really hosed, you may need to restart the application).  Note: because of bug [#1551](https://github.com/adobe/brackets/issues/1551), Reload may ignore changes to certain files unless you [disable caching via the Developer Tools](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4).
+
+To bring up the Chrome Developer Tools on the Brackets window, use *Debug > Show Developer Tools*. This will open a new Chrome tab with the developer tools (Unlike previous builds of Brackets that opened up the developer tools in a new Brackets window, the new CEF3-based shell needs to open the developer tools in Chrome. We're hoping to get this fixed soon).
 
 If you need to debug startup code, you can launch Brackets, open the developer tools, set your breakpoints, and then select *Debug > Reload Brackets*. This will re-run all of the startup code and stop at any breakpoints you have set.
 
