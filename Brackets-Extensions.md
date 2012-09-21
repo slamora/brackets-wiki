@@ -6,8 +6,8 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
-* [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
 * [Show Indentations](https://github.com/DennisKehrig/brackets-show-indentations): Visualizes the characters used for indenting lines
+* [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
 * [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators(Equal sings)
 
 **Code generation**
