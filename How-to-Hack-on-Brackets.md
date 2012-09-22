@@ -67,24 +67,28 @@ That should both get the latest version of CodeMirror and all other submodules u
 
 ### <a name="setup_for_hacking"></a> Running Your Copy of the Code ###
 
+**NOTE: This has changed since Sprint 13. If you've been using the old brackets-app repo, or the first version of brackets-shell, please switch to using this method.**
+
 If you're only hacking on HTML/JS/CSS files, you can have the installed version of the Brackets shell run your local copy of the HTML/JS/CSS code by running the `tools/setup_for_hacking` script. Here are the steps.
 
-1. Clone or fork the brackets repo (see [Getting a Copy of the Code](#getcode) for details).
-2. On a Mac: 
+1. If you haven't already, download and install the latest Brackets sprint build from the [Downloads page](https://github.com/adobe/brackets/downloads). **Note:** Make sure you download a Mac .dmg or Windows .msi--the "Download as zip/tar.gz" files at the top **will not work**.
+2. Clone or fork the brackets repo (see [Getting a Copy of the Code](#getcode) for details).
+3. On a Mac: 
   1. Open a Terminal window
   2. `cd` to the root of your brackets repo
   3. run `tools/setup_for_hacking.sh`, passing the full pathname to your installed Brackets.app. For example:
 ```
 tools/setup_for_hacking.sh "/Applications/Brackets Sprint 14.app"
 ```
-3. On Windows:
+4. On Windows:
   1. Open a Command Prompt
   2. `cd` to the root of your brackets repo
   3. run `tools\setup_for_hacking`, passing the full path of the directory where Brackets.exe is installed. For example:
 ```
 tools\setup_for_hacking "C:\Program Files (x86)\Brackets Sprint 14"
 ```
-4. Launch Brackets, select _Help > Show Extensions Folder_, and make sure this opens the `extensions` folder in your copy of the code.
+5. Launch the installed copy of Brackets, select _Help > Show Extensions Folder_, and make sure this opens the `extensions` folder in your copy of the code.
+6. To revert back to using the installed version of the Brackets source, run `tools/restore_installed_build.sh` (Mac) or `tools\restore_installed_build.bat` (Windows) from your Brackets repo.
 
 (Alternatively, you can hold down the `shift` key while launching Brackets to get a file selector dialog. Select the `src/index.html` file from your copy of the code, and Brackets will run your copy of the HTML/JS/CSS files. _Note: this `index.html` file will only be used for the current Brackets session. Quitting and restarting will revert back to the previous `index.html` file._)
 
