@@ -146,7 +146,7 @@ If you need to debug startup code, you can launch Brackets, open the developer t
 
 You can open a second Brackets window from *Debug > New Window*. This is nice because it means you can use a stable Brackets in one window to edit your code, and then reload the app in the second window to see if your changes worked. You can bring up the developer tools on the second window, too. 
 
-You can use *Debug > Run Tests* to run our unit test suite, and *Debug >Show Perf Data* to show some rudimentary performance info. We plan to beef this up in upcoming sprints.
+You can use *Debug > Run Tests* to run our unit test suite, and *Debug > Show Perf Data* to show some rudimentary performance info. We plan to beef this up in upcoming sprints.
 
 ### Modifying the Code ###
 So you have found an issue that you want to fix or a feature you want to implement. Start off by creating a new branch in your local directory. This assumes you are working in the brackets directory, but the same thing would apply for the brackets-app project as well. 
