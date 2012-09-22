@@ -8,7 +8,7 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
 * [Show Indentations](https://github.com/DennisKehrig/brackets-show-indentations): Visualizes the characters used for indenting lines
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
-* [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators(Equal signs)
+* [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators(Equal sings)
 
 **Code generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
@@ -35,7 +35,6 @@ If you've written an extension (even just as an experiment), please feel free to
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
-* [PhoneGap Build](https://github.com/tpryan/brackets-phonegapbuild): Eventual goal is to be able to send a project to PhoneGap Build from Brackets. Still in early stages. 
 
 **Documentation**
 * [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core.
