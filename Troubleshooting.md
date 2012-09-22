@@ -12,7 +12,7 @@ Brackets not working for you? Consider the following tips.
 
 **Note:** Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](https://github.com/adobe/brackets/downloads). The "Download as zip" button will **not** work.
 
-# Brackets Doesn't Load
+## Brackets Doesn't Load
 ### 1. Check The File Permissions
 
 If Brackets won't launch, check the permissions of the main executable files (e.g. using `ls -l`). On Mac:
@@ -29,6 +29,6 @@ If you had previously used Brackets, your cache may have information that is con
 ### 3. Run Brackets From The Command Line
 Next, try running Brackets from the command line. Open up a Terminal (or Command Prompt in Windows), navigate to the executable, and run Brackets. (On Mac, type `open bin/mac/Brackets.app`.). Did an error appear?
 
-# Brackets Is Acting Weird
+## Brackets Is Acting Weird
 ### Debug w/ The Developer Tools
 If Brackets opens, but behaves incorrectly, don't forget you can open the Developer Tools. Under the Debug Menu, select "Show Developer Tools" to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Ensure the Console tab is open and see if any errors show up there.
