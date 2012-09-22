@@ -17,7 +17,7 @@ that lets it access local files. (It doesn't run in the browser yet, and in
 fact will look amazingly terrible if you try to open it in Chrome from your local
 filesystem. We're planning to work on the in-browser version soon.)
 
-The Brackets installer packages the HTML/JS/CSS files into Brackets.app (on Mac) or in a `www` directory next to Brackets.exe (on Windows). If you're only changing HTML/JS/CSS files, you can use the `tools/setup_for_hacking` script to tell the Brackets application shell use your local copy of the Brackets HTML/JS/CSS files. See [Running Your Copy of the Code](#setup_for_hacking) for more details.
+The Brackets installer packages the HTML/JS/CSS files into Brackets.app (on Mac) or in a `www` directory next to Brackets.exe (on Windows). If you're only changing HTML/JS/CSS files, you can use the `tools/setup_for_hacking` script to tell the Brackets application shell to use your local copy of the Brackets HTML/JS/CSS files. See [Running Your Copy of the Code](#setup_for_hacking) for more details.
 
 For details on working with Brackets's architecture and APIs, see [[Brackets Development How-Tos]].
 
