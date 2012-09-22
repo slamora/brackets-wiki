@@ -10,7 +10,7 @@ Brackets not working for you? Consider the following tips.
 
 ## Download
 
-Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](https://github.com/adobe/brackets/downloads). The "Download as zip" button will **not** work.
+**Note:** Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](https://github.com/adobe/brackets/downloads). The "Download as zip" button will **not** work.
 
 # Brackets Doesn't Load
 ### 1. Check The File Permissions
