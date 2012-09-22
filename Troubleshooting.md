@@ -33,6 +33,14 @@ If you had previously used Brackets, your cache may have information that is con
 ### 5. Run Brackets From The Command Line
 Next, try running Brackets from the command line. Open up a Terminal (or Command Prompt in Windows), navigate to the executable, and run Brackets. (On Mac, type `open bin/mac/Brackets.app`.). Did an error appear? If so, file an issue or find us on IRC or the mailing list and we'll try to figure it out.
 
+## Live Development Isn't Working
+
+### Live Development Only Works With CSS Content
+The Live Development feature only works with CSS content at the moment. We will be adding Live Development support for HTML and JavaScript content in the near future.
+
+### Restart Your Computer
+If you keep getting errors when trying to launch Chrome, or if you keep getting prompted to restart Chrome, try rebooting your machine. Rebooting has resolved many odd issues with Live Development. 
+
 ## Brackets Is Acting Weird
 ### Debug w/ The Developer Tools
 If Brackets opens, but behaves incorrectly, don't forget you can open the Developer Tools. Under the Debug Menu, select "Show Developer Tools" to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Ensure the Console tab is open and see if any errors show up there.
