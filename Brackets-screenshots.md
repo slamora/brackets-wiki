@@ -1,1 +1,1 @@
-![Brackets Main Window](http://ompldr.org/vZXJneQ/brackets.png)
+This page is obsolete. Please see [this blog post](http://blog.brackets.io/2012/06/25/brackets-open-source-code-editor/) for general info about Brackets, screenshots, intro videos, and more. Thanks!
