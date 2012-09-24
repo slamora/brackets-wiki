@@ -12,7 +12,7 @@ If you've written an extension (even just as an experiment), please feel free to
 
 **Code generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
-* [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions (VERY EARLY IMPLEMENTATION)
+* [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions
 
 **General functionality**
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node).
