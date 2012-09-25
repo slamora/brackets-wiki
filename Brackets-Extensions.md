@@ -35,6 +35,7 @@ If you've written an extension (even just as an experiment), please feel free to
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
+* [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
 
 **Documentation**
 * [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core.
