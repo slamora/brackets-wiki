@@ -84,7 +84,7 @@ var fileEntry = new NativeFileSystem.FileEntry(localPath);
 var promise = FileUtils.readAsText(fileEntry);  // completes asynchronously
 promise.done(function (text) {
     console.log("The contents of the file are:\n" + text);
-}
+})
 .fail(function (errorCode) {
     console.log("Error #" + errorCode);  // one of the FileError constants
 });
