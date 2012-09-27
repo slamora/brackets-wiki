@@ -46,7 +46,7 @@ Community contributions to Brackets
 * [Add doSequentiallyInBackground() utility API](https://github.com/adobe/brackets/pull/1009) by [Josh Hatwich](https://github.com/jhatwich)
 * [Move Line(s) Up/Down command](https://github.com/adobe/brackets/pull/1282) by [Bruno Filippone](https://github.com/ShadowCloud)
 * [Save All command](https://github.com/adobe/brackets/pull/1208) by [srinarasi](https://github.com/srinarasi)
-* [Fix bug #143: Input fields don't work in dialogs](https://github.com/adobe/brackets/pull/1325) by [Sebastian Rodriguez](https://github.com/srodrigu85)
+* [Fix bug #1243: Input fields don't work in dialogs](https://github.com/adobe/brackets/pull/1325) by [Sebastian Rodriguez](https://github.com/srodrigu85)
 * [Live Development API to enable additional agents](https://github.com/adobe/brackets/pull/1303) (see details above) assisted by [Jonathan Diehl](https://github.com/jdiehl)
 
 Bugs fixed in Sprint 12
