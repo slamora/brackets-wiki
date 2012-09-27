@@ -1,4 +1,4 @@
-Save this file as ```brackets/src/extensions/user/HelloWorld/main.js``` to see it running in Brackets.  (You'll need a Sprint 10 build).
+Save this file as ```brackets/src/extensions/user/HelloWorld/main.js``` to see it running in Brackets.  (You'll need Sprint 10 or later.)
 
 ```javascript
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
@@ -6,7 +6,7 @@ Save this file as ```brackets/src/extensions/user/HelloWorld/main.js``` to see i
 
 /** Simple extension that adds a "File > Hello World" menu item */
 define(function (require, exports, module) {
-    'use strict';
+    "use strict";
 
     var CommandManager = brackets.getModule("command/CommandManager"),
         Menus          = brackets.getModule("command/Menus");
