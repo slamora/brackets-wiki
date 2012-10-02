@@ -30,12 +30,13 @@ If you've written an extension (even just as an experiment), please feel free to
 **Visual editing**
 * [Color Picker](https://github.com/jdiehl/brackets-color-picker): Quick Edit on a hex color opens an inline color picker.
 * [Color Editor](https://github.com/GarthDB/brackets-inline-color-editor): Quick Edit on a hex/rgb/hsl color opens an inline color picker, plus a listing of all colors used in the file.
+* [Edge Web Fonts](https://github.com/adobe/brackets-edge-web-fonts/): Browse free fonts from the Edge Web Fonts collection, with thumbnails. Activated via CSS code hints for font-family.
 
 **External tools**
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
-* (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
+* (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 
 **Documentation**
 * [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core.
