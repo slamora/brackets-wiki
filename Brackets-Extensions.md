@@ -16,6 +16,7 @@ If you've written an extension (even just as an experiment), please feel free to
 
 **General functionality**
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node).
+* [Extension Toolkit](https://github.com/davidderaedt/Brackets-extension-toolkit) An extension to make building Brackets extensions easier.
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 * [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav): shortcuts for switching to next/previous editor (_non_-MRU order), and a version of Quick Open scoped to only open files.
 * [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
