@@ -41,6 +41,22 @@ We've started a test integration of CodeMirror v3 into Brackets. You can get thi
 **Other:**
 * CM has unused undo()/redo() defs in instance (never called?)
 
+## Porting changes from our fork of CodeMirror
+
+The brackets fork of CodeMirror has a bunch of changes that were _not_ integrated into the upstream branch. Most of the changes were dealing with inline widgets, but there were several other small features and performance improvements. 
+
+The inline widget changes need to be re-implemented on top of the new line widget API added to CodeMirror 3. Details  Here are notes on the other changes that were made.
+
+### Performance Improvements that do NOT need to be ported
+
+#### Handle hidden lines in coordsChar() - ([commit 11f204](https://github.com/adobe/CodeMirror2/commit/11f2041529d798f9a916be2f146edf165c2b5434))
+
+This fixed performance problems when the contents of an inline editor were near the top of a very large file. For example, the `body` selector in bootstrap.css. The v3 branch of CodeMirror does not have the same performance problems, so this change doesn't need to be ported.
+
+#### Use document fragments in patchDisplay() - ([commit cf24f7](https://github.com/adobe/CodeMirror2/commit/cf24f7240b3bf7edb63cf9f4a625f5c16dff7620))
+The v3 branch contains a more comprehensive fix for using document fragments, obviating our changes.
+
+
 ## Forking strategy
 
 Currently, the `master` branch in adobe/CodeMirror2 is completely out of sync with the upstream CodeMirror master, because we actually checked all of our changes directly into our master. In hindsight, that wasn't a good idea :)
