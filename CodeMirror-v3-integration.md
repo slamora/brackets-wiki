@@ -10,7 +10,6 @@ We've started a test integration of CodeMirror v3 into Brackets. You can get thi
 * delCharLeft isn't implemented, so delete key doesn't work (maybe the function names for some handlers have changed?)
 
 **Missing functionality:**
-* Don't currently have a way to measure the full visible height of a document (totalHeight()) for inline editor
 * No way to turn off fixed gutter
 
 **Inline editor bugs:**
@@ -47,7 +46,7 @@ The brackets fork of CodeMirror has a bunch of changes that were _not_ integrate
 
 The inline widget changes need to be re-implemented on top of the new line widget API added to CodeMirror 3. Details  Here are notes on the other changes that were made.
 
-### Performance Improvements that do NOT need to be ported
+### Functionality that does NOT need to be ported
 
 #### Handle hidden lines in coordsChar() - ([commit 11f204](https://github.com/adobe/CodeMirror2/commit/11f2041529d798f9a916be2f146edf165c2b5434))
 
@@ -56,6 +55,34 @@ This fixed performance problems when the contents of an inline editor were near 
 #### Use document fragments in patchDisplay() - ([commit cf24f7](https://github.com/adobe/CodeMirror2/commit/cf24f7240b3bf7edb63cf9f4a625f5c16dff7620))
 The v3 branch contains a more comprehensive fix for using document fragments, obviating our changes.
 
+#### Mouse handling for drag selecting and autoscrolling across inline editors
+The v3 branch seems to handle this pretty well.
+
+#### Changes to updateGutter()
+These are no longer necessary with the new inline editor implementation. They were only required because we were injecting dummy nodes into the gutter.
+
+### Functionality that needs to be ported
+
+#### Dirty bit handling (`isDirty()`, `markClean()`)
+This has already been ported in our branch of v3 ([commit b0df09](https://github.com/adobe/CodeMirror2/commit/b0df0929bb0e150390012e1de346730af9a5d9bb)). This will need to be submitted upstream.
+
+#### Exposing CodeMirror methods
+We exposed the CodeMirror methods `selectWordAt()` and `scrollIntoView()` for use in Brackets. We'll need to check with Marijn to see if he's okay with exposing these in master.
+
+#### `totalHeight()`
+We added this function in order to determine how tall an inline editor should be to show all of its content. We might be able to just get this by letting CodeMirror lay itself out and then measuring its height, but I believe there were reasons why that didn't work before. If we can't get that to work, then we'll need to port this, which should be easy.
+
+#### `preserveScrollPosOnSelChange`
+This makes it so that when you do Cmd/Ctrl-A to select all, the editor doesn't scroll. This should be easy to port.
+
+#### Right-click fix to `onMouseDown()`
+This needs to be ported, as it prevents our context menus from working.
+
+#### Checking `isInWidget()` in various cases and returning early
+We will likely need to port these so that CodeMirror doesn't handle things like context menus or double-click in widgets.
+
+### Changes to htmlmixed mode
+If we encounter a `<script>` tag in HTML that seems to be a Mustache template, we treat it as HTML, and if we don't recognize it, we leave it uncolored instead of attempting to color it as javascript. We should submit this upstream.
 
 ## Forking strategy
 
