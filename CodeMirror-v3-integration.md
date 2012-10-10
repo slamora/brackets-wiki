@@ -2,6 +2,8 @@ We've started a test integration of CodeMirror v3 into Brackets. You can get thi
 
 ## Known issues with the integration
 
+Issues in **bold** are ones we'd like to investigate further to see where the problem is.
+
 **General bugs:**
 * Flickery throw scrolling - fixed with patch from issue #810
 * Stuttery throw scrolling - this seems much worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch)
