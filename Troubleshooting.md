@@ -39,7 +39,9 @@ Next, try running Brackets from the command line. Open up a Terminal (or Command
 The Live Development feature only works with CSS content at the moment. We will be adding Live Development support for HTML and JavaScript content in the near future.
 
 ### Restart Your Computer
-If you keep getting errors when trying to launch Chrome, or if you keep getting prompted to restart Chrome, try rebooting your machine. Rebooting has resolved many odd issues with Live Development. 
+If you keep getting errors when trying to launch Chrome, or if you keep getting prompted to restart Chrome, try rebooting your machine. Rebooting has resolved many odd issues with Live Development.
+
+Also, if you keep getting prompted to restart Chrome when switching between HTML files, make sure that you have another tab open in Chrome. This prevents Chrome from shutting down and restarting between each file, so it's much faster and smoother.
 
 ## Brackets Is Acting Weird
 ### Debug w/ The Developer Tools
