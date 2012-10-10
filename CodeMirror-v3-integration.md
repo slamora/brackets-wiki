@@ -51,16 +51,18 @@ Our proposal is to hard reset our master to the upstream CodeMirror master at th
 
 Here's the proposal in more detail:
 
-Before v3 is merged into upstream master:
+### Before v3 is merged into upstream master
+
 1. We will pull the `v3` branch from upstream into adobe/CodeMirror2 and keep it in sync with upstream.
 2. We will have a separate branch in adobe/CodeMirror2 that contains any local changes we need for now as we're investigating the integration. (Currently, this branch is `nj/cmv3-brackets`).
 3. If we finish our integration before v3 officially gets merged into upstream master, we'll keep this separate branch in adobe/CodeMirror2, and point the main Brackets submodule SHA at this branch.
 
-Once v3 is merged into upstream master:
+### After v3 is merged into upstream master
+
 1. We will rename adobe/CodeMirror2 to adobe/CodeMirror (and update the submodule info in Brackets) to stay in sync with Marijn's repo name.
 2. On our master, we'll create a `brackets-old` branch based on the current state of our master.
 3. We'll then do `git reset --hard upstream/master` in order to point our master back at upstream. We will never commit directly to our master after this.
 4. Anyone else who has actually made unsubmitted changes in their fork of adobe/CodeMirror2 will similarly need to reset their master branch to ours, and deal with merging any changes they have into a branch based on the new master.
 5. Since there will be some functionality in our old CodeMirror branch that will need to be ported over to v3, we'll create a separate `brackets` branch in adobe/CodeMirror to hold this ported functionality, and point the Brackets submodule at that branch.
 6. We'll keep the `brackets` branch as clean as possible, rebasing as necessary to make it so each commit can be submitted directly to CodeMirror upstream as a pull request.
-6. Over time, we will aim to get everything from the `brackets` branch into CodeMirror upstream, and then just point Brackets at the master branch of adobe/CodeMirror.
+7. Over time, we will aim to get everything from the `brackets` branch into CodeMirror upstream, and then just point Brackets at the master branch of adobe/CodeMirror.
