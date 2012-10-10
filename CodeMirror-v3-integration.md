@@ -3,7 +3,8 @@ We've started a test integration of CodeMirror v3 into Brackets. You can get thi
 ## Known issues with the integration
 
 **General bugs:**
-* Flickery throw scrolling - fixed with patch from issue #810Stuttery throw scrolling - this seems much worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch)
+* Flickery throw scrolling - fixed with patch from issue #810
+* Stuttery throw scrolling - this seems much worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch)
 * Horizontal position of gutter is different -- possibly due to the way we set padding?
 * Can't horizontally scroll all the way to the right (last few characters are cut off) -- ditto?
 * Fixed gutter moves around while scrolling horizontally (seems to be true only in Brackets, and only for trackpad scrolling; worse when inline editor is open)
@@ -44,7 +45,9 @@ We've started a test integration of CodeMirror v3 into Brackets. You can get thi
 
 The brackets fork of CodeMirror has a bunch of changes that were _not_ integrated into the upstream branch. Most of the changes were dealing with inline widgets, but there were several other small features and performance improvements. 
 
-The inline widget changes need to be re-implemented on top of the new line widget API added to CodeMirror 3. Details  Here are notes on the other changes that were made.
+The inline widget changes need to be re-implemented on top of the new line widget API added to CodeMirror 3. A first pass at this has been done in the `nj/cmv3` branch, but it has the issues noted above.
+
+Here are notes on the other changes that were made.
 
 ### Functionality that does NOT need to be ported
 
