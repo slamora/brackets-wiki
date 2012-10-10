@@ -27,9 +27,6 @@ We've started a test integration of CodeMirror v3 into Brackets. You can get thi
 * Motion of rule list when horizontally resizing window lags
 * Widget loses focus when scrolled off (probably gets removed from display list)
 
-**Stuff that seems to work:**
-* Drag auto-scrolling across an inline editor seems to be pretty good
-
 **Stuff to test:**
 * Middle mouse button
 
