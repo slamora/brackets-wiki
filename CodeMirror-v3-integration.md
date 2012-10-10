@@ -5,7 +5,7 @@ We've started a test integration of CodeMirror v3 into Brackets. You can get thi
 Issues in **bold** are ones we'd like to investigate further to see where the problem is.
 
 **General bugs:**
-* Flickery throw scrolling - fixed with patch from issue #810
+* Flickery throw scrolling - there's a potential patch for this listed in https://github.com/marijnh/CodeMirror/issues/810, but it breaks horizontal scrolling
 * Stuttery throw scrolling - this seems much worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch)
 * **Horizontal position of gutter is different -- possibly due to the way we set padding?**
 * **Can't horizontally scroll all the way to the right (last few characters are cut off) -- ditto?**
