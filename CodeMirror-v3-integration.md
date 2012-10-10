@@ -63,6 +63,8 @@ These are no longer necessary with the new inline editor implementation. They we
 
 ### Functionality that needs to be ported
 
+Most of these changes should be trivial to port, as long as Marijn is okay accepting them upstream.
+
 #### Dirty bit handling (`isDirty()`, `markClean()`)
 This has already been ported in our branch of v3 ([commit b0df09](https://github.com/adobe/CodeMirror2/commit/b0df0929bb0e150390012e1de346730af9a5d9bb)). This will need to be submitted upstream.
 
