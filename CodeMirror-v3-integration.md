@@ -7,8 +7,8 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 **General bugs:**
 * Flickery throw scrolling - there's a potential patch for this listed in https://github.com/marijnh/CodeMirror/issues/810, but it breaks horizontal scrolling
 * Stuttery throw scrolling - this seems worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch), but it's noticeable in vanilla CodeMirror too
-* Horizontal position of gutter is different. Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
-* Can't horizontally scroll all the way to the right (last few characters are cut off). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
+* -Horizontal position of gutter is different.- Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
+* -Can't horizontally scroll all the way to the right (last few characters are cut off).- Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
 * **Fixed gutter moves around while scrolling horizontally (seems to be true only in Brackets, and only for trackpad scrolling; worse when inline editor is open)** 
     * This _does_ happen in the CodeMirror demos, but it is much harder to reproduce. Should narrow down to specific test case (may require a large CodeMirror area) and file with Marijn.
 * delCharLeft isn't implemented, so delete key doesn't work (maybe the function names for some handlers have changed?)
@@ -20,7 +20,7 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * After opening one editor, opening another one on a different line doesn't open, or opens one on a line other than the one the cursor is in--eventually works after fiddling around
     * This appears to be a bug in CodeMirror: immediately after opening the inline editor, selections made below it are out of sync, probably because they aren't taking the height of the editor into account. At some point they get back into sync. Need to isolate and file this.
 * Cmd-E from within an inline editor (to close it) doesn't work
-* Inline editor doesn't align properly with parent editor (line numbers). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
+* -Inline editor doesn't align properly with parent editor (line numbers).- Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
 * **Typing in inline editor is very very slow (not as bad when merged with no-flex-box branch)**
 * Code in inline editor overlaps on top of rule list
