@@ -7,9 +7,9 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 **General bugs:**
 * Flickery throw scrolling - there's a potential patch for this listed in https://github.com/marijnh/CodeMirror/issues/810, but it breaks horizontal scrolling
 * Stuttery throw scrolling - this seems much worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch)
-* **Horizontal position of gutter is different -- possibly due to the way we set padding?**
-* **Can't horizontally scroll all the way to the right (last few characters are cut off) -- ditto?**
-* **Fixed gutter moves around while scrolling horizontally (seems to be true only in Brackets, and only for trackpad scrolling; worse when inline editor is open)**
+* Horizontal position of gutter is different. Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
+* Can't horizontally scroll all the way to the right (last few characters are cut off). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
+* **Fixed gutter moves around while scrolling horizontally (seems to be true only in Brackets, and only for trackpad scrolling; worse when inline editor is open)** This _does_ happen in the CodeMirror demos, but it is much harder to reproduce. Should narrow down to specific test case (may require a large CodeMirror area) and file with Marijn.
 * delCharLeft isn't implemented, so delete key doesn't work (maybe the function names for some handlers have changed?)
 
 **Missing functionality:**
