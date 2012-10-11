@@ -22,7 +22,6 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
     * I put in code to handle the "delete" event on the line, but it doesn't seem to be working. Not clear if this is our bug or a CodeMirror bug.
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
 * **Typing in inline editor is very very slow (not as bad when merged with no-flex-box branch)**
-* Code in inline editor overlaps on top of rule list
 * Horizontal scroll area is huge when inline editor is open
     * We were setting the min-width of the inline editor to match the overall width of CodeMirror's linespace, but this doesn't work anymore because the inline editor is actually inside the linespace (and the total width of the editor is wider than the min-width, since we set padding to account for the rule list width). We need to rethink how we're managing the width of the inline editor.
 * Scrolling past the right edge of the inline editor with cursor movement doesn't scroll the whole doc (because scrollIntoView() isn't exposed--could we write our own using scrollTo and getScrollInfo?)
@@ -49,6 +48,7 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * Can't horizontally scroll all the way to the right (last few characters are cut off). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
 * Inline editor doesn't align properly with parent editor (line numbers). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
 * After opening one editor, opening another one on a different line doesn't open, or opens one on a line other than the one the cursor is in. Fixed in [05e8aa](https://github.com/adobe/brackets/commit/05e8aa684fb54947fbba74ffe8918dde6444662d)
+* Code in inline editor overlaps on top of rule list. Fixed in [3d908d](https://github.com/adobe/brackets/commit/3d908d644d1ba56e8bb492ea4a54bd6303ed9b9b)
 
 ## Porting changes from our fork of CodeMirror
 
