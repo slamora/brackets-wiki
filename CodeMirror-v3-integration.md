@@ -17,8 +17,6 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * No way to turn off fixed gutter
 
 **Inline editor bugs:**
-* After opening one editor, opening another one on a different line doesn't open, or opens one on a line other than the one the cursor is in--eventually works after fiddling around
-    * This appears to be a bug in CodeMirror: immediately after opening the inline editor, selections made below it are out of sync, probably because they aren't taking the height of the editor into account. At some point they get back into sync. Need to isolate and file this.
 * Cmd-E from within an inline editor (to close it) doesn't work
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
 * **Typing in inline editor is very very slow (not as bad when merged with no-flex-box branch)**
@@ -47,6 +45,7 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * Horizontal position of gutter is different. Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
 * Can't horizontally scroll all the way to the right (last few characters are cut off). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
 * Inline editor doesn't align properly with parent editor (line numbers). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
+* After opening one editor, opening another one on a different line doesn't open, or opens one on a line other than the one the cursor is in. Fixed in [05e8aa](https://github.com/adobe/brackets/commit/05e8aa684fb54947fbba74ffe8918dde6444662d)
 
 ## Porting changes from our fork of CodeMirror
 
