@@ -16,7 +16,7 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * No way to turn off fixed gutter
 
 **Inline editor bugs:**
-* **After opening one editor, opening another one on a different line doesn't open, or opens one on a line other than the one the cursor is in--eventually works after fiddling around**
+* **After opening one editor, opening another one on a different line doesn't open, or opens one on a line other than the one the cursor is in--eventually works after fiddling around** -- this appears to be a bug in CodeMirror: immediately after opening the inline editor, selections made below it are out of sync, probably because they aren't taking the height of the editor into account. At some point they get back into sync. Need to isolate and file this.
 * Cmd-E from within an inline editor (to close it) doesn't work
 * Inline editor doesn't align properly with parent editor (line numbers) -- ditto?
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
