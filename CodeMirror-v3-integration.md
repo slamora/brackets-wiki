@@ -9,7 +9,7 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
     * There's a potential patch for this listed in https://github.com/marijnh/CodeMirror/issues/810, but it breaks horizontal scrolling
 * Stuttery throw scrolling
     * This seems worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch), but it's noticeable in vanilla CodeMirror too.
-* **Fixed gutter moves around while scrolling horizontally (seems to be true only in Brackets, and only for trackpad scrolling; worse when inline editor is open)** 
+* Fixed gutter moves around while scrolling horizontally (seems to be true only in Brackets, and only for trackpad scrolling; worse when inline editor is open)
     * This _does_ happen in the CodeMirror demos, but it is much harder to reproduce. Should narrow down to specific test case (may require a large CodeMirror area) and file with Marijn.
 * delCharLeft isn't implemented, so delete key doesn't work (maybe the function names for some handlers have changed?)
 
@@ -21,7 +21,6 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * Deleting a line doesn't close its attached inline editor
     * I put in code to handle the "delete" event on the line, but it doesn't seem to be working. Not clear if this is our bug or a CodeMirror bug.
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
-* **Typing in inline editor is very very slow (not as bad when merged with no-flex-box branch)**
 * Horizontal scroll area is huge when inline editor is open
     * We were setting the min-width of the inline editor to match the overall width of CodeMirror's linespace, but this doesn't work anymore because the inline editor is actually inside the linespace (and the total width of the editor is wider than the min-width, since we set padding to account for the rule list width). We need to rethink how we're managing the width of the inline editor.
 * Scrolling past the right edge of the inline editor with cursor movement doesn't scroll the whole doc (because scrollIntoView() isn't exposed--could we write our own using scrollTo and getScrollInfo?)
