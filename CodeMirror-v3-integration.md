@@ -12,6 +12,7 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * Fixed gutter moves around while scrolling horizontally (seems to be true only in Brackets, and only for trackpad scrolling; worse when inline editor is open)
     * This _does_ happen in the CodeMirror demos, but it is much harder to reproduce. Should narrow down to specific test case (may require a large CodeMirror area) and file with Marijn.
 * delCharLeft isn't implemented, so delete key doesn't work (maybe the function names for some handlers have changed?)
+* After a Quick Open or Find, hitting Enter in the dialog also deletes the content from the editor
 
 **Missing functionality:**
 * No way to turn off fixed gutter
