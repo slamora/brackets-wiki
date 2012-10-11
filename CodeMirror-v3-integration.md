@@ -25,9 +25,8 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
     * We were setting the min-width of the inline editor to match the overall width of CodeMirror's linespace, but this doesn't work anymore because the inline editor is actually inside the linespace (and the total width of the editor is wider than the min-width, since we set padding to account for the rule list width). We need to rethink how we're managing the width of the inline editor.
 * Scrolling past the right edge of the inline editor with cursor movement doesn't scroll the whole doc (because scrollIntoView() isn't exposed--could we write our own using scrollTo and getScrollInfo?)
 * addLineWidget() doesn't have scrollIntoView property
-* **Scrolling of rule list lags behind widget**
-    * Not sure why this has changed. Scroll events are being sent synchronously from CodeMirror, so it's not clear why this should lag.
-    * The lag is less noticeable on a faster machine (Retina MacBook), so it might simply be a performance issue. (It is noticeable if you expand the Brackets window to a large size.) Perhaps it's related to the extra stuttering in scrolling in v3.
+* Scrolling of rule list lags behind widget
+    * The issue is that the browser is now handling scrolling itself, so the display will always update immediately, while the rule list is moving asynchronously on the scroll event. (In our old flicker fix scheme, both the display update and the rule list moving happened on the scroll event.) I'm not sure of a good way to fix this; we can't just make the rule list be a child of the scroller, because we want it to stay stuck to the right edge of the editor window (which is why it's position: fixed, and we reposition it in JS).
 * Motion of rule list when horizontally resizing window lags
 * Widget loses focus when scrolled far off the screen
     * The CodeMirror implementation appears to remove widgets from the display list when they scroll off the screen. We'll need to ask Marijn if he'd be willing to add an option to leave certain widgets on the display list (maybe turning off their visibility). If not, we could conceivably live with this since it's kind of an edge case.
