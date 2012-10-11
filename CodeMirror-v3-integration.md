@@ -28,6 +28,7 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * Scrolling past the right edge of the inline editor with cursor movement doesn't scroll the whole doc (because scrollIntoView() isn't exposed--could we write our own using scrollTo and getScrollInfo?)
 * addLineWidget() doesn't have scrollIntoView property
 * **Scrolling of rule list lags behind widget**
+    * Not sure why this has changed. Scroll events are being sent synchronously from CodeMirror, so it's not clear why this should lag.
 * Motion of rule list when horizontally resizing window lags
 * **Widget loses focus when scrolled off (probably gets removed from display list)**
 
