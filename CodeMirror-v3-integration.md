@@ -24,7 +24,8 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
 * **Typing in inline editor is very very slow (not as bad when merged with no-flex-box branch)**
 * Code in inline editor overlaps on top of rule list
-* **Horizontal scroll area is huge when inline editor is open**
+* Horizontal scroll area is huge when inline editor is open
+    * We were setting the min-width of the inline editor to match the overall width of CodeMirror's linespace, but this doesn't work anymore because the inline editor is actually inside the linespace (and the total width of the editor is wider than the min-width, since we set padding to account for the rule list width). We need to rethink how we're managing the width of the inline editor.
 * Scrolling past the right edge of the inline editor with cursor movement doesn't scroll the whole doc (because scrollIntoView() isn't exposed--could we write our own using scrollTo and getScrollInfo?)
 * addLineWidget() doesn't have scrollIntoView property
 * **Scrolling of rule list lags behind widget**
