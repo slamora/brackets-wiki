@@ -30,7 +30,8 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * **Scrolling of rule list lags behind widget**
     * Not sure why this has changed. Scroll events are being sent synchronously from CodeMirror, so it's not clear why this should lag.
 * Motion of rule list when horizontally resizing window lags
-* **Widget loses focus when scrolled off (probably gets removed from display list)**
+* Widget loses focus when scrolled far off the screen
+    * The CodeMirror implementation appears to remove widgets from the display list when they scroll off the screen. We'll need to ask Marijn if he'd be willing to add an option to leave certain widgets on the display list (maybe turning off their visibility). If not, we could conceivably live with this since it's kind of an edge case.
 
 **Stuff to test:**
 * Middle mouse button
