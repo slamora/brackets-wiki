@@ -27,7 +27,7 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * addLineWidget() doesn't have scrollIntoView property
 * **Scrolling of rule list lags behind widget**
     * Not sure why this has changed. Scroll events are being sent synchronously from CodeMirror, so it's not clear why this should lag.
-    * The lag is less noticeable on a faster machine (Retina MacBook), so it might simply be a performance issue. Perhaps it's related to the extra stuttering in scrolling in v3.
+    * The lag is less noticeable on a faster machine (Retina MacBook), so it might simply be a performance issue. (It is noticeable if you expand the Brackets window to a large size.) Perhaps it's related to the extra stuttering in scrolling in v3.
 * Motion of rule list when horizontally resizing window lags
 * Widget loses focus when scrolled far off the screen
     * The CodeMirror implementation appears to remove widgets from the display list when they scroll off the screen. We'll need to ask Marijn if he'd be willing to add an option to leave certain widgets on the display list (maybe turning off their visibility). If not, we could conceivably live with this since it's kind of an edge case.
