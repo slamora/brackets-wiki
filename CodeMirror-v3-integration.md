@@ -18,6 +18,8 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 
 **Inline editor bugs:**
 * Cmd-E from within an inline editor (to close it) doesn't work
+* Deleting a line doesn't close its attached inline editor
+    * I put in code to handle the "delete" event on the line, but it doesn't seem to be working. Not clear if this is our bug or a CodeMirror bug.
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
 * **Typing in inline editor is very very slow (not as bad when merged with no-flex-box branch)**
 * Code in inline editor overlaps on top of rule list
