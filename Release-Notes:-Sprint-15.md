@@ -5,10 +5,19 @@ _This document will not be finalized until the end of Sprint 15 -- approximately
 
 What's New in Sprint 15
 -----------------------
-* **Placeholder**
-    * Placeholder
-* **Placeholder**
-    * Placeholder
+* **TODO: Placeholder**
+    * [Research CodeMirror 3 integration](https://trello.com/card/3-research-codemirror-3-prototype/4f90a6d98f77505d7940ce88/635): ...
+    * [Tab size setting with cleaner UI](https://trello.com/card/3-tabs-vs-spaces-default-configurable-tab-size/4f90a6d98f77505d7940ce88/472): ...
+    * [Auto reload w/ Live Preview](https://trello.com/card/2-auto-reload-w-live-preview/4f90a6d98f77505d7940ce88/636): ...
+    * [Status bar with line/col info, JSLint status & spinner](https://github.com/adobe/brackets/pull/1717)
+    * [Resizable search results & JSLint panel](https://github.com/adobe/brackets/pull/1661)
+    * [Incremental search while typing in the Find bar](https://github.com/adobe/brackets/pull/1781)
+    * [Developer workflow: Don't show update notification when running from GitHub source](https://github.com/adobe/brackets/pull/1784)
+    * [Delete Line(s) command](https://github.com/adobe/brackets/pull/1763)
+    * [Code hinting for HTML href/src attributes](https://github.com/adobe/brackets/pull/1747): Hints for relative URLs based on the files on disk.
+    * [New Folder command](https://github.com/adobe/brackets/pull/1719)
+    * [Rename command](https://github.com/adobe/brackets/pull/1719)
+    * ["Show in File Tree" command](https://github.com/adobe/brackets/pull/1823)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-14...sprint-15#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-14...sprint-15#commits_bucket)
 
@@ -20,6 +29,7 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
+_TODO:_ https://github.com/adobe/brackets/pull/1753
 
 Known Issues
 ------------
