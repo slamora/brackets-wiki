@@ -54,7 +54,12 @@ Community contributions to Brackets
 * [Delete Line(s) command](https://github.com/adobe/brackets/pull/1763) by [Mihai Corlan](https://github.com/mcorlan)
 * [Add connection checkmark to Live Preview menu item](https://github.com/adobe/brackets/pull/1707) by ["ckarande"](https://github.com/ckarande)
 * [Fix #1064: Make URLs line-wrap in various parts of UI](https://github.com/adobe/brackets/pull/1790) by [Jake Stoeffler](https://github.com/JakeStoeffler)
+* [Fix #1256: Don't close entire inline editor when a file _some_ of its results is deleted](https://github.com/adobe/brackets/pull/1769) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Fix #1606: Inline editor layout glitch when switching back to file in certain cases](https://github.com/adobe/brackets/pull/1750) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Fix #510: Middle-click in inline editor's chrome scrolls view & breaks editor](https://github.com/adobe/brackets/pull/1751) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Misc bug fixes](https://github.com/adobe/brackets/pull/1813) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Fix GotoAgent (disabled by default) to work with paths containing spaces](https://github.com/adobe/brackets/pull/1748) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Fix JSLint warning](https://github.com/adobe/brackets/pull/1777) by [Dennis Kehrig](https://github.com/DennisKehrig)
 
 Contributions _from_ Brackets
 ------------------------------
