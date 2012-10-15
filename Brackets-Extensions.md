@@ -11,6 +11,9 @@ If you've written an extension (even just as an experiment), please feel free to
 * [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators(Equal sings)
 * [Editor Shortcuts](https://github.com/aonic/editor-shortcuts): Keyboard shortcut to delete line
 * [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
+* [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
+* [Image Size](https://github.com/talmand/Brackets-Image-Size): Suggests image width/height in img elements as you type.
+* [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
 
 **Code Generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
