@@ -18,6 +18,8 @@ What's New in Sprint 15
     * [New Folder command](https://github.com/adobe/brackets/pull/1719)
     * [Rename command](https://github.com/adobe/brackets/pull/1719)
     * ["Show in File Tree" command](https://github.com/adobe/brackets/pull/1823)
+    * [Italian translation](https://github.com/adobe/brackets/pull/1711)
+    * [Brazilian Portuguese translation](https://github.com/adobe/brackets/pull/1660)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-14...sprint-15#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-14...sprint-15#commits_bucket)
 
@@ -45,7 +47,14 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-
+* [Status bar](https://github.com/adobe/brackets/pull/1717) by [Chema Balsas](https://github.com/jbalsas)
+* [Resizable bottom panels (JSLint & search results)](https://github.com/adobe/brackets/pull/1661) (plus follow-up fixes) by [Chema Balsas](https://github.com/jbalsas)
+* [Italian translations](https://github.com/adobe/brackets/pull/1711) by [Antonello Pasella](https://github.com/antonellopasella)
+* [Brazilian Portuguese translation](https://github.com/adobe/brackets/pull/1660) by [Massimiliano Giroldi](https://github.com/massimiliano-giroldi)
+* [Delete Line(s) command](https://github.com/adobe/brackets/pull/1763) by [Mihai Corlan](https://github.com/mcorlan)
+* [Add connection checkmark to Live Preview menu item](https://github.com/adobe/brackets/pull/1707) by ["ckarande"](https://github.com/ckarande)
+* [Fix #1064: Make URLs line-wrap in various parts of UI](https://github.com/adobe/brackets/pull/1790) by [Jake Stoeffler](https://github.com/JakeStoeffler)
+* [Misc bug fixes](https://github.com/adobe/brackets/pull/1813) by [Jonathan Diehl](https://github.com/jdiehl)
 
 Contributions _from_ Brackets
 ------------------------------
