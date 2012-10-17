@@ -12,6 +12,7 @@ What's New in Sprint 15
     * [Status bar with line/col info, JSLint status & spinner](https://github.com/adobe/brackets/pull/1717)
     * [Resizable search results & JSLint panel](https://github.com/adobe/brackets/pull/1661)
     * [Incremental search while typing in the Find bar](https://github.com/adobe/brackets/pull/1781)
+    * [Major performance improvements in editor scrolling, typing, etc.](https://github.com/adobe/brackets/pull/1847)
     * [Developer workflow: Don't show update notification when running from GitHub source](https://github.com/adobe/brackets/pull/1784)
     * [Delete Line(s) command](https://github.com/adobe/brackets/pull/1763)
     * [Code hinting for HTML href/src attributes](https://github.com/adobe/brackets/pull/1747): Hints for relative URLs based on the files on disk.
@@ -19,7 +20,9 @@ What's New in Sprint 15
     * [Rename command](https://github.com/adobe/brackets/pull/1719)
     * ["Show in File Tree" command](https://github.com/adobe/brackets/pull/1823)
     * [Italian translation](https://github.com/adobe/brackets/pull/1711)
+    * [Spanish translation](https://github.com/adobe/brackets/pull/1839)
     * [Brazilian Portuguese translation](https://github.com/adobe/brackets/pull/1660)
+    * [Button to remove entries from recent projects dropdown](https://github.com/adobe/brackets/pull/1757)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-14...sprint-15#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-14...sprint-15#commits_bucket)
 
@@ -49,8 +52,9 @@ Community contributions to Brackets
 -----------------------------------
 * [Status bar](https://github.com/adobe/brackets/pull/1717) by [Chema Balsas](https://github.com/jbalsas)
 * [Resizable bottom panels (JSLint & search results)](https://github.com/adobe/brackets/pull/1661) (plus follow-up fixes) by [Chema Balsas](https://github.com/jbalsas)
-* [Italian translations](https://github.com/adobe/brackets/pull/1711) by [Antonello Pasella](https://github.com/antonellopasella)
-* [Brazilian Portuguese translation](https://github.com/adobe/brackets/pull/1660) by [Massimiliano Giroldi](https://github.com/massimiliano-giroldi)
+* [Italian translation](https://github.com/adobe/brackets/pull/1711) by [Antonello Pasella](https://github.com/antonellopasella)
+* [Spanish translation](https://github.com/adobe/brackets/pull/1839) by [Chema Balsas](https://github.com/jbalsas)
+* [Brazilian Portuguese translation](https://github.com/adobe/brackets/pull/1660) by [Massimiliano Giroldi](https://github.com/massimiliano-giroldi), with [followup fixes & updates](https://github.com/adobe/brackets/pull/1824) by [Bruno Cardoso](https://github.com/brucardoso2)
 * [Delete Line(s) command](https://github.com/adobe/brackets/pull/1763) by [Mihai Corlan](https://github.com/mcorlan)
 * [Add connection checkmark to Live Preview menu item](https://github.com/adobe/brackets/pull/1707) by ["ckarande"](https://github.com/ckarande)
 * [Fix #1064: Make URLs line-wrap in various parts of UI](https://github.com/adobe/brackets/pull/1790) by [Jake Stoeffler](https://github.com/JakeStoeffler)
@@ -58,6 +62,8 @@ Community contributions to Brackets
 * [Fix #1606: Inline editor layout glitch when switching back to file in certain cases](https://github.com/adobe/brackets/pull/1750) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Fix #510: Middle-click in inline editor's chrome scrolls view & breaks editor](https://github.com/adobe/brackets/pull/1751) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Misc bug fixes](https://github.com/adobe/brackets/pull/1813) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Improved error message in log for key binding conflicts](https://github.com/adobe/brackets/pull/1851) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Fire AppInit.APP_READY after loading extensions, as originally intended](https://github.com/adobe/brackets/pull/1854) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Fix GotoAgent (disabled by default) to work with paths containing spaces](https://github.com/adobe/brackets/pull/1748) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Fix JSLint warning](https://github.com/adobe/brackets/pull/1777) by [Dennis Kehrig](https://github.com/DennisKehrig)
 
