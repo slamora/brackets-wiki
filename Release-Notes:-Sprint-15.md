@@ -5,24 +5,28 @@ _This document will not be finalized until the end of Sprint 15 -- approximately
 
 What's New in Sprint 15
 -----------------------
-* **TODO: Placeholder**
-    * [Research CodeMirror 3 integration](https://trello.com/card/3-research-codemirror-3-prototype/4f90a6d98f77505d7940ce88/635): ...
-    * [Tab size setting with cleaner UI](https://trello.com/card/3-tabs-vs-spaces-default-configurable-tab-size/4f90a6d98f77505d7940ce88/472): ...
+* **Live Development**
     * [Auto reload w/ Live Preview](https://trello.com/card/2-auto-reload-w-live-preview/4f90a6d98f77505d7940ce88/636): ...
+* **Overall UI**
     * [Status bar with line/col info, JSLint status & spinner](https://github.com/adobe/brackets/pull/1717)
     * [Resizable search results & JSLint panel](https://github.com/adobe/brackets/pull/1661)
-    * [Incremental search while typing in the Find bar](https://github.com/adobe/brackets/pull/1781)
+* **Code Editing**
+    * [Tab size setting with cleaner UI](https://trello.com/card/3-tabs-vs-spaces-default-configurable-tab-size/4f90a6d98f77505d7940ce88/472): ...
     * [Major performance improvements in editor scrolling, typing, etc.](https://github.com/adobe/brackets/pull/1847)
-    * [Developer workflow: Don't show update notification when running from GitHub source](https://github.com/adobe/brackets/pull/1784)
+    * [Incremental search while typing in the Find bar](https://github.com/adobe/brackets/pull/1781)
     * [Delete Line(s) command](https://github.com/adobe/brackets/pull/1763)
-    * [Code hinting for HTML href/src attributes](https://github.com/adobe/brackets/pull/1747): Hints for relative URLs based on the files on disk.
+    * [Research CodeMirror 3 integration](https://trello.com/card/3-research-codemirror-3-prototype/4f90a6d98f77505d7940ce88/635): ...
+* **Code Hinting**
+    * [Code hinting for HTML href/src attributes](https://github.com/adobe/brackets/pull/1747): Hints for relative URLs based on files on disk.
+* **Files & Folders**
     * [New Folder command](https://github.com/adobe/brackets/pull/1719)
     * [Rename command](https://github.com/adobe/brackets/pull/1719)
     * ["Show in File Tree" command](https://github.com/adobe/brackets/pull/1823)
+    * [Button to remove entries from recent projects dropdown](https://github.com/adobe/brackets/pull/1757)
+* **Localization**
     * [Italian translation](https://github.com/adobe/brackets/pull/1711)
     * [Spanish translation](https://github.com/adobe/brackets/pull/1839)
     * [Brazilian Portuguese translation](https://github.com/adobe/brackets/pull/1660)
-    * [Button to remove entries from recent projects dropdown](https://github.com/adobe/brackets/pull/1757)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-14...sprint-15#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-14...sprint-15#commits_bucket)
 
