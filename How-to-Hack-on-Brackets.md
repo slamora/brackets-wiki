@@ -81,11 +81,11 @@ If you're only hacking on HTML/JS/CSS files, you can have the installed version 
 tools/setup_for_hacking.sh "/Applications/Brackets Sprint 14.app"
 ```
 4. On Windows:
-  1. Open a Command Prompt
+  1. Open a Command Prompt (you will likely need to "Run as Administrator")
   2. `cd` to the root of your brackets repo
-  3. run `tools\setup_for_hacking`, passing the full path of the directory where Brackets.exe is installed. For example:
+  3. run `tools\setup_for_hacking.bat`, passing the full path of the directory where Brackets.exe is installed. For example:
 ```
-tools\setup_for_hacking "C:\Program Files (x86)\Brackets Sprint 14"
+tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 14"
 ```
 5. Launch the installed copy of Brackets, select _Help > Show Extensions Folder_, and make sure this opens the `extensions` folder in your copy of the code.
 6. To revert back to using the installed version of the Brackets source, run `tools/restore_installed_build.sh` (Mac) or `tools\restore_installed_build.bat` (Windows) from your Brackets repo.
