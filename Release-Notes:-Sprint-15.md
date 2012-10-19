@@ -1,7 +1,7 @@
 What's New in Sprint 15
 -----------------------
 * **Live Development**
-    * [Auto reload w/ Live Preview](https://trello.com/card/2-auto-reload-w-live-preview/4f90a6d98f77505d7940ce88/636): The page is automatically refreshed when you save changes to any file other than .css (CSS changes are reflected instantly - no need to save).
+    * [Auto reload in Live Preview](https://trello.com/card/2-auto-reload-w-live-preview/4f90a6d98f77505d7940ce88/636): The page is automatically refreshed when you save changes to any file other than .css (CSS changes are reflected instantly - no need to save).
 * **Overall UI**
     * [Status bar with line/col info, JSLint status & spinner](https://github.com/adobe/brackets/pull/1717)
     * [Resizable search results & JSLint panel](https://github.com/adobe/brackets/pull/1661)
