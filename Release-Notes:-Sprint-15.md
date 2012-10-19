@@ -10,6 +10,7 @@ What's New in Sprint 15
 * **Overall UI**
     * [Status bar with line/col info, JSLint status & spinner](https://github.com/adobe/brackets/pull/1717)
     * [Resizable search results & JSLint panel](https://github.com/adobe/brackets/pull/1661)
+    * [Remember window size/position from last launch](https://github.com/adobe/brackets-shell/pull/123)
 * **General Code Editing**
     * [Tab size setting with cleaner UI](https://trello.com/card/3-tabs-vs-spaces-default-configurable-tab-size/4f90a6d98f77505d7940ce88/472): ...
     * [Major performance improvements in editor scrolling, typing, etc.](https://github.com/adobe/brackets/pull/1847)
@@ -62,6 +63,7 @@ Community contributions to Brackets
 * [Brazilian Portuguese translation](https://github.com/adobe/brackets/pull/1660) by [Massimiliano Giroldi](https://github.com/massimiliano-giroldi), with [followup fixes & updates](https://github.com/adobe/brackets/pull/1824) by [Bruno Cardoso](https://github.com/brucardoso2)
 * [Delete Line(s) command](https://github.com/adobe/brackets/pull/1763) by [Mihai Corlan](https://github.com/mcorlan)
 * [Add connection checkmark to Live Preview menu item](https://github.com/adobe/brackets/pull/1707) by ["ckarande"](https://github.com/ckarande)
+* [Fix #1147: Top of UI is cut off on some smaller-screen Macs](https://github.com/adobe/brackets-shell/pull/125) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Fix #1064: Make URLs line-wrap in various parts of UI](https://github.com/adobe/brackets/pull/1790) by [Jake Stoeffler](https://github.com/JakeStoeffler)
 * [Fix #1256: Don't close entire inline editor when a file _some_ of its results is deleted](https://github.com/adobe/brackets/pull/1769) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Fix #1606: Inline editor layout glitch when switching back to file in certain cases](https://github.com/adobe/brackets/pull/1750) by [Dennis Kehrig](https://github.com/DennisKehrig)
