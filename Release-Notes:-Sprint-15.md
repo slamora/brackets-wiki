@@ -6,9 +6,10 @@ What's New in Sprint 15
     * [Status bar with line/col info, JSLint status & spinner](https://github.com/adobe/brackets/pull/1717)
     * [Resizable search results & JSLint panel](https://github.com/adobe/brackets/pull/1661)
     * [Remember window size/position from last launch](https://github.com/adobe/brackets-shell/pull/123)
+* **Performance**
+    * [Major editor performance improvements](https://github.com/adobe/brackets/pull/1847): Almost doubles scrolling FPS, cuts 1/3 from keystroke response latency, and fixes freezes in files with very long lines (e.g. minified code).
 * **General Code Editing**
     * [Tab size setting](https://trello.com/card/3-tabs-vs-spaces-default-configurable-tab-size/4f90a6d98f77505d7940ce88/472): Click the number in the lower-right of the status bar to choose tab size. This is currently a global setting, across all files and file types. We may refine this in [future](https://trello.com/card/5-tab-default-per-file/4f90a6d98f77505d7940ce88/289) [stories](https://trello.com/card/5-auto-tab-based-on-file/4f90a6d98f77505d7940ce88/290).
-    * [Major editor performance improvements](https://github.com/adobe/brackets/pull/1847): Almost doubles scrolling FPS, cuts 1/3 from keystroke response latency, and fixes freezes in files with very long lines (e.g. minified code).
     * [Incremental search while typing in the Find bar](https://github.com/adobe/brackets/pull/1781)
     * [Delete Line(s) command](https://github.com/adobe/brackets/pull/1763): Ctrl+Shift+D / Cmd+Shift+D deletes the line the cursor is on (or all lines the selection spans).
     * [Research migration to CodeMirror 3](https://trello.com/card/3-research-codemirror-3-prototype/4f90a6d98f77505d7940ce88/635): See wiki for [notes on the next steps](https://github.com/adobe/brackets/wiki/CodeMirror-v3-integration).
