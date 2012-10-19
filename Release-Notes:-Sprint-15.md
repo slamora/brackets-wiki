@@ -1,7 +1,7 @@
 What's New in Sprint 15
 -----------------------
 * **Live Development**
-    * [Auto reload in Live Preview](https://trello.com/card/2-auto-reload-w-live-preview/4f90a6d98f77505d7940ce88/636): The page is automatically refreshed when you save changes to any file other than .css (CSS changes are reflected instantly - no need to save).
+    * [Auto reload in Live Preview](https://trello.com/card/2-auto-reload-w-live-preview/4f90a6d98f77505d7940ce88/636): The page is automatically refreshed when you save changes to any file other than .css (CSS changes are reflected instantly - no need to save). A dot next to the lightning bolt icon indicates pending changes that will lead to an auto-refresh when you save.
 * **Overall UI**
     * [Status bar with line/col info, JSLint status & spinner](https://github.com/adobe/brackets/pull/1717)
     * [Resizable search results & JSLint panel](https://github.com/adobe/brackets/pull/1661)
@@ -29,7 +29,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-**Status bar** - The JSLint star icon has moved from the upper-right to the lower-right, in the new status bar. A gold star means no errors (as before), while a red star (new) means errors are listed. Change tab settings by clicking the "Spaces" and "4" labels in the lower right (the former is the same as toggling Edit > Use Tab Characters).
+**Status bar** - The JSLint star icon has moved from the upper-right to the lower-right, in the new status bar. A gold star means no errors (as before), while a red star (new) means errors are listed, and a gray star (new) means JSLint is not running on the current file. Change tab settings by clicking the "Spaces" and "4" labels in the lower right (the former is the same as toggling Edit > Use Tab Characters).
 
 API Changes
 -----------
