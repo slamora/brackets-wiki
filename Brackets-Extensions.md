@@ -51,6 +51,7 @@ If you've written an extension (even just as an experiment), please feel free to
 **Documentation**
 * [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core.
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
+* [Display Shortcuts](https://github.com/redmunds/brackets-display-shortcuts): Display Shortcuts defined to Brackets.
 
 **Linting & Warnings**
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
