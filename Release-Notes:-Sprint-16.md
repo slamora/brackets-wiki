@@ -5,9 +5,11 @@ _This document will not be finalized until the end of Sprint 16 -- approximately
 What's New in Sprint 16
 -----------------------
 * **TODO: headings**
-    * TODO: feature 1
-    * TODO: feature 2
-    * TODO: feature 3
+    * [URL mapping for Live Development](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664)
+    * [Move extensions folder outside application root](https://trello.com/card/3-extensions-outside-application-root/4f90a6d98f77505d7940ce88/659)
+    * [Integrate color picker](https://trello.com/card/2-color-selector/4f90a6d98f77505d7940ce88/662)
+    * [CodeMirror 3 migration: Critical editing functionality](https://trello.com/card/2-codemirror-3-critical-editing-functionality/4f90a6d98f77505d7940ce88/660)
+    * [Developer workflow: Automated unit tests](https://trello.com/card/2-automate-unit-tests/4f90a6d98f77505d7940ce88/661)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-15...sprint-16#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-15...sprint-16#commits_bucket)
 
@@ -34,7 +36,9 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-* TODO
+* [Panel resizing: refactor size prefs, add min size support](https://github.com/adobe/brackets/pull/1899) by [Chema Balsas](https://github.com/jbalsas)
+* [Fix #1886: Saving CSS file from inline editor auto-refreshes page](https://github.com/adobe/brackets/pull/1897) by [Jake Stoeffler](https://github.com/JakeStoeffler)
+* [Updated German translation](https://github.com/adobe/brackets/pull/1903) by ["J.M."](https://github.com/mynetx)
 
 Contributions _from_ Brackets
 -----------------------------
