@@ -44,6 +44,8 @@ New/Improved Extensibility APIs
 
 **Code tokens** - New TokenUtils module with APIs for traversing the tokens in a given editor. See [#1753](https://github.com/adobe/brackets/pull/1753).
 
+**Resizable panels** - Call `Resizer.makeResizable()` to allow resizing a UI element by dragging its top/bottom/left/right edge. See makeResizable()'s docs for details. _(Note: if you're adding a panel in the static main-content.html in core Brackets, you can render it resizable simply by adding CSS classes. See the bottom of Resizer.js for details)._
+
 Known Issues
 ------------
 * [#1551](https://github.com/adobe/brackets/issues/1551): Changes within an extension (or a unit test) are not reflected by a simple "Debug > Reload Brackets." Workarounds:
