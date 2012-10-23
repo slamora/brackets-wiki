@@ -4,7 +4,7 @@
 
 Live Preview currently opens the local page directly in (Chrome) browser using the file protocol, as in file:///path/to/index.html. This limits Live Preview to only client-side HTML documents using document-relative (&lt;img src="img/photo.jpg" /&gt;) and absolute URLs (&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" &gt;&lt;/script&gt;).
 
-This proposal will allow Live Preview to open pages under a local server so paths that have to be interpreted by a server such as site-root-relative (&lt;img src="/img/photo.jpg" /&gt;) and protocol-relative URLs (&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" &gt;&lt;/script&gt;). Also, server-side file extensions such as .php and .shtml pages with include files can also be used in Live Preview.
+This proposal will allow Live Preview to open pages under a local server so paths that have to be interpreted by a server such as site-root-relative (&lt;img src="/img/photo.jpg" /&gt;) and protocol-relative URLs (&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" &gt;&lt;/script&gt;) can be used. Also, server-side file extensions such as .php and .shtml pages with include files can also be used in Live Preview.
 
 The backlog entry is [in Trello](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664) and also [brackets/issue #1920](https://github.com/adobe/brackets/issues/1920).
 
