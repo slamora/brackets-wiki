@@ -50,26 +50,13 @@ Two new functions are added to brackets-shell:
      * On the Mac, it's /Users/<user>/Library/Application Support/GROUP_NAME/APP_NAME
      * On Windows, it's C:\Users\\<user>\AppData\Roaming\GROUP_NAME\APP_NAME
      *
-     * If the directory does not exist, it will be created.
+     * Note: this function will *not* create the directory if it doesn't exist. 
      *
-     * @param {function (err)} callback Asynchronous callback function with one argument (the error)
      * @return {string} Full path of the application support directory
      */
      native function GetApplicationSupportDirectory();
-     appshell.app.getApplicationSupportDirectory = function (callback) {
-         return GetApplicationSupportDirectory(callback);
+     appshell.app.getApplicationSupportDirectory = function () {
+         return GetApplicationSupportDirectory();
      }
- 
-    /**
-     * Returns the full path of the user extension directory.
-     *
-     * If the directory does not exist, it will be created.
-     *
-     * @param {function (err)} callback Asynchronous callback function with one argument (the error)
-     * @return {string} Full path of the user extension directory.
-     */
-    native function GetExtensionDirectory();
-    appshell.app.getExtensionDirectory = function (callback) {
-        return GetExtensionDirectory(callback);
-    }
+
 ```
