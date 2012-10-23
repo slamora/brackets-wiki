@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Live Preview currently opens the local page directly in (Chrome) browser using the file protocol, as in file:///path/to/index.html. This limits development to only document-relative (<img src="img/photo.jpg" />) and absolute URLs (<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>) and client-side HTML documents.
+Live Preview currently opens the local page directly in (Chrome) browser using the file protocol, as in file:///path/to/index.html. This limits development to only document-relative (&lt;img src="img/photo.jpg" /&gt;) and absolute URLs (&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"&gt;&lt;/script&gt;) and client-side HTML documents.
 
-This proposal will allow Live Preview to open pages under a local server so paths that have to be interpreted by a server such as site-root-relative (<img src="/img/photo.jpg" />) and protocol-relative URLs (<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>) and server-side file extensions (such as .php) can be used in Live Preview. Also, .shtml pages with include files can also be used in Live Preview.
+This proposal will allow Live Preview to open pages under a local server so paths that have to be interpreted by a server such as site-root-relative (&lt;img src="/img/photo.jpg" /&gt;) and protocol-relative URLs (&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"&gt;&lt;/script&gt;) and server-side file extensions (such as .php) can be used in Live Preview. Also, .shtml pages with include files can also be used in Live Preview.
 
 The backlog entry is [in Trello](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664).
 
