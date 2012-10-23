@@ -48,7 +48,7 @@ Two new functions are added to brackets-shell:
     /**
      * Returns the full path of the application support directory.
      * On the Mac, it's /Users/<user>/Library/Application Support/GROUP_NAME/APP_NAME
-     * On Windows, it's C:\Users\<user>\AppData\Roaming\GROUP_NAME\APP_NAME
+     * On Windows, it's C:\Users\\<user>\AppData\Roaming\GROUP_NAME\APP_NAME
      *
      * If the directory does not exist, it will be created.
      *
