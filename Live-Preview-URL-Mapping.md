@@ -8,42 +8,29 @@ This proposal will allow Live Preview to open pages under a local server so path
 
 The backlog entry is [in Trello](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664).
 
-## Specify Base URL
+## Base URL
 
-A Gear icon will be placed next to Project name (and drop down menu). Clicking this icon opens a preferences dialog.
+Base URL maps to the root folder of the project. It is assumed that server path structure mirrors folder structure on disk.
 
-## Preferences Dialog
+## Preferences
 
-Dialog will have the following fields:
+Preferences are project-specific.
 
-Two radio button options (file URL, custom base URL) and text field (specify base URL)
+A Gear icon will be placed next to Project name (and drop down menu). Clicking this icon opens a preferences dialog. Dialog will have the following fields:
 
-1. Base URL - this maps to base URL on local server
+1. Two radio button options (File URL, Custom Base URL) and text field (specify Base URL). The base URL maps to base URL of the web site on local server (e.g. http://localhost/path/to/site/root/). This field can be left blank to indicate using actual path to file.
 
-default is blank which ...
+[The radio buttons do not seem necessary. If field is blank, the path to file is used. If URL is specified, then it is used plus project-relative path to file. Can someone explain usage of radio buttons?]
 
-   * Validate that local file URL exists
+2. Server-side File Extensions - comma separated list of server-side file extensions to recognize in addition to .htm/.html.
 
-2. File Extensions - comma separated list of server-side file extensions to recognize
+Default set of server-side file extensions is: .sthm,.shtml,.php,.cfm,.cfml
 
+[Is this s reasonable set of defaults? Should we allow wildcards such as .shtm* ?]
 
+## Live Preview
 
-) and text field (specify base URL)
-.shtm/.shtml, .php/.php3/.php4, .cfm/.cfml, .asp/.aspx, .jsp, etc. What is reasonable default list?
+Once base URL specified, Live Development button is clickable while any file extension specified in the Preferences dialog, in addition to .htm/.html.
 
+Message shown if you click Live Development button with file open that has a server-side file extension and a Base URL has not yet been specified.
 
-
-Base URL maps to the root folder of the project
-   * Assume server path structure mirrors folder structure on disk
-
-
-It would be helpful to have an option to make Live Preview open up documents with a custom local domain such as localhost, as in http://localhost/path/to/index.html.
-
-
-
-* Once base URL specified, Live Development button is clickable while any file open (not just .html)
-   * Message shown if you click Live Development button with other file type open suggests defining a base URL for local server
-
-
-
-## 
