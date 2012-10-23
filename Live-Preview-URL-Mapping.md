@@ -6,7 +6,7 @@ Live Preview currently opens the local page directly in (Chrome) browser using t
 
 This proposal will allow Live Preview to open pages under a local server so paths that have to be interpreted by a server such as site-root-relative (&lt;img src="/img/photo.jpg" /&gt;) and protocol-relative URLs (&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" &gt;&lt;/script&gt;) can be used. Also, server-side file extensions such as .php and .shtml pages with include files can also be used in Live Preview.
 
-[Does it have to be a *local* server? Someone could use a remote server and edit files directly on a network drive]
+**[Does it have to be a *local* server? Someone could use a remote server and edit files directly on a network drive]**
 
 The backlog entry is [in Trello](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664) and also [brackets/issue #1920](https://github.com/adobe/brackets/issues/1920).
 
@@ -22,13 +22,13 @@ A gear icon will be placed next to Project name (and drop down menu). Clicking t
 
 * Two radio button options (File URL, Custom Base URL) and text field (specify Base URL). The base URL maps to base URL of the web site on local server (e.g. http://localhost/path/to/site/root/).
 
-[The radio buttons described in backlog item do not seem necessary. If field is blank, the path to file is used. If URL is specified, then it is used plus project-relative path to file. Can someone explain usage of radio buttons?]
+**[The radio buttons described in backlog item do not seem necessary. If field is blank, the path to file is used. If URL is specified, then it is used plus project-relative path to file. Can someone explain usage of radio buttons?]**
 
 * Server-side File Extensions - comma separated list of server-side file extensions to recognize in addition to .htm/.html.
 
 Default set of server-side file extensions is: .sthm,.shtml,.php,.php4,.cfm,.cfml
 
-[Is this s reasonable set of defaults? Should we allow wildcards such as .shtm* ?]
+**[Is this s reasonable set of defaults? Should we allow wildcards such as .shtm* ?]**
 
 ## Live Preview
 
