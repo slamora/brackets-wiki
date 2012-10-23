@@ -41,7 +41,7 @@ Many (most?) extension developers work with a local copy of the Brackets source 
 
 ## API Changes
 
-Two new functions are added to brackets-shell:
+One new function is added to brackets-shell:
 
 ```javascript
  
