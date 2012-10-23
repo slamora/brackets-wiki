@@ -15,12 +15,10 @@ At launch, Brackets will look for extensions in the following locations:
 ### Mac
 
 * `/Users/<user>/Library/Application Support/Brackets/extensions/user` - This is where the user will install extensions
-* `/Users/<user>/Library/Application Support/Brackets/extensions/disabled` - This is where the user will put "disabled" extensions.
 
 ### Win
 
-* `<user folder>\AppData\Roaming\Brackets\extensions\user` (in a standard windows installation, this maps to `C:\Users\<user>\AppData\Roaming\Brackets\extension\user`) - This is where the user will install extensions.
-* `<user folder>\AppData\Roaming\Brackets\extensions\disabled` - This is where the user will put "disabled" extensions.
+* `<user folder>\AppData\Roaming\Brackets\extensions\user` (in a standard windows installation, this maps to `C:\Users\<user>\AppData\Roaming\Brackets\extensions\user`) - This is where the user will install extensions.
 
 ### Both
 
@@ -29,7 +27,7 @@ At launch, Brackets will look for extensions in the following locations:
 
 ## Disabled Extensions
 
-The default extension directory has two sub-directories: `user` and `disabled`. By default, both of these directories are empty. Extensions from the `user` directory will be loaded when Brackets is launched. Extensions in the `disabled` directory are _not_ loaded. Having these two directories side-by-side enables a tool like [Extension Manager] (https://github.com/jdiehl/brackets-extension-manager) to easily enable/disable extensions.
+Next to the `extensions/user` directory is an `extensions/disabled` directory. By default, both of these directories are empty. Extensions from the `user` directory will be loaded when Brackets is launched. Extensions in the `disabled` directory are _not_ loaded. Having these two directories side-by-side enables a tool like [Extension Manager] (https://github.com/jdiehl/brackets-extension-manager) to easily enable/disable extensions.
 
 Extensions checked in to the `src/extensions/disabled` directory will _not_ be copied to the user's `extensions/disabled` directory. We should consider eliminating this directory. 
 
