@@ -18,11 +18,11 @@ Preferences are project-specific.
 
 A Gear icon will be placed next to Project name (and drop down menu). Clicking this icon opens a preferences dialog. Dialog will have the following fields:
 
-1. Two radio button options (File URL, Custom Base URL) and text field (specify Base URL). The base URL maps to base URL of the web site on local server (e.g. http://localhost/path/to/site/root/). This field can be left blank to indicate using actual path to file.
+* Two radio button options (File URL, Custom Base URL) and text field (specify Base URL). The base URL maps to base URL of the web site on local server (e.g. http://localhost/path/to/site/root/). This field can be left blank to indicate using actual path to file.
 
 [The radio buttons do not seem necessary. If field is blank, the path to file is used. If URL is specified, then it is used plus project-relative path to file. Can someone explain usage of radio buttons?]
 
-2. Server-side File Extensions - comma separated list of server-side file extensions to recognize in addition to .htm/.html.
+* Server-side File Extensions - comma separated list of server-side file extensions to recognize in addition to .htm/.html.
 
 Default set of server-side file extensions is: .sthm,.shtml,.php,.cfm,.cfml
 
