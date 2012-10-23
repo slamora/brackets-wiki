@@ -14,13 +14,22 @@ A Gear icon will be placed next to Project name (and drop down menu). Clicking t
 
 ## Preferences Dialog
 
-Dialog wil have 2 fields:
+Dialog will have the following fields:
 
-1. Base URL
+Two radio button options (file URL, custom base URL) and text field (specify base URL)
+
+1. Base URL - this maps to base URL on local server
+
+default is blank which ...
+
+   * Validate that local file URL exists
+
+2. File Extensions - comma separated list of server-side file extensions to recognize
+
+
 
 ) and text field (specify base URL)
-   * Validate that local file URL exists
-   * Add field where user can list supported server-side file extensions? There are too many to hard-code: .shtm/.shtml, .php/.php3/.php4, .cfm/.cfml, .asp/.aspx, .jsp, etc. What is reasonable default list?
+.shtm/.shtml, .php/.php3/.php4, .cfm/.cfml, .asp/.aspx, .jsp, etc. What is reasonable default list?
 
 
 
