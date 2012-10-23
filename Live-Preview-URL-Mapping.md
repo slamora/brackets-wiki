@@ -30,7 +30,8 @@ Default set of server-side file extensions is: .sthm,.shtml,.php,.cfm,.cfml
 
 ## Live Preview
 
+If you click Live Development button with file open that has a server-side file extension and a Base URL has not yet been specified, then preferences dialog is auto-opened.
+
 Once base URL specified, Live Development button is clickable while any file extension specified in the Preferences dialog, in addition to .htm/.html.
 
-Message shown if you click Live Development button with file open that has a server-side file extension and a Base URL has not yet been specified.
-
+When a Base URL is specified and Live Development button is clicked, the path generated is Base URL + project-specific path to file.
