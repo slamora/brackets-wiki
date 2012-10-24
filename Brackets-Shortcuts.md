@@ -7,7 +7,7 @@ This extension displays all shortcuts defined for:
 * CodeMirror (which not overridden by Brackets)
 * Extensions which are currently installed
 
-So, I loaded up all of the extensions currently listed on the [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions) page, started up Brackets, opened the Shortcuts Panel, opened up a new page, and the clicked the "Copy to Current Document" to create the table below.
+So, I loaded up all of the extensions currently listed on the [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions) page, started up Brackets, opened the Shortcuts Panel (via View > Display Shortcuts), opened up a new page, and the clicked the "Copy to Current Document" to create the table below.
 
 So, if you create a new extensions for Brackets, follow the same process and add rows to the table to show which shortcuts you are using.
 
