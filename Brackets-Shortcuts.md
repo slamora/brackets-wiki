@@ -15,11 +15,11 @@ So, if you create a new extensions for Brackets, follow the same process and add
 
 <table>
     <tr class="shortcut-header">
-        <td class="shortcut-base">**Base Key**</td>
-        <td class="shortcut-binding">**Key Binding**</td>
-        <td class="shortcut-cmd-id">**Command ID**</td>
-        <td class="shortcut-cmd-name">**Command Name**</td>
-        <td class="shortcut-orig">**Origin**</td>
+        <td class="shortcut-base"><strong>Base Key</strong></td>
+        <td class="shortcut-binding"><strong>Key Binding</strong></td>
+        <td class="shortcut-cmd-id"><strong>Command ID</strong></td>
+        <td class="shortcut-cmd-name"><strong>Command Name</strong></td>
+        <td class="shortcut-orig"><strong>Origin</strong></td>
     </tr>
     <tr>
         <td class="shortcut-base">,</td>
