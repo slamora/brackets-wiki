@@ -18,22 +18,18 @@ Base URL maps to the root folder of the project. It is assumed that server path 
 
 Preferences are project-specific.
 
-A gear icon will be placed next to Project name (and drop down menu). Clicking this icon opens a preferences dialog. Dialog will have the following fields:
+A gear icon will be placed next to Project name (and drop down menu). Clicking this icon opens a preference dialog. Dialog will have the following field:
 
-* Two radio button options (File URL, Custom Base URL) and text field (specify Base URL). The base URL maps to base URL of the web site on local server (e.g. http://localhost/path/to/site/root/).
+* A text field to specify Base URL. The base URL maps to base URL of the web site on server (e.g. http://localhost/path/to/site/root/). If URL is specified, then it is used plus project-relative path to file.
 
-**[The radio buttons described in backlog item do not seem necessary. If field is blank, the path to file is used. If URL is specified, then it is used plus project-relative path to file. Can someone explain usage of radio buttons?]**
-
-* Server-side File Extensions - comma separated list of server-side file extensions to recognize in addition to .htm/.html.
-
-Default set of server-side file extensions is: .sthm,.shtml,.php,.php4,.cfm,.cfml
-
-**[Is this s reasonable set of defaults? Should we allow wildcards such as .shtm* ?]**
+By default, the field is blank. If field is blank, the path to file is used.
 
 ## Live Preview
 
 If you click Live Development button with file open that has a server-side file extension and a Base URL has not yet been specified, then preferences dialog is auto-opened.
 
-Once base URL specified, Live Development button is clickable while any file extension specified in the Preferences dialog, in addition to .htm/.html.
+Brackets has a list of server-side file extensions that are recognized in addition to .htm/.html. Default set of server-side file extensions is: .sthm,.shtml,.php,.php3,.php4,.cfm,.cfml. These will be defined in package.json, but will not be editable via UI until Brackets gets a Preferences Dialog.
+
+Once base URL specified, Live Development button is clickable while any file server-side file extension, in addition to .htm/.html.
 
 When a Base URL is specified and Live Development button is clicked, the path generated is Base URL + project-specific path to file.
