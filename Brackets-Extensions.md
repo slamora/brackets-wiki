@@ -1,6 +1,8 @@
 Brackets doesn't yet have functionality for discovering and installing extensions. In the meantime, here's a list of extensions that people have built. You can copy them into the `brackets/src/extensions/user` folder, then reload or restart Brackets.
 
-If you've written an extension (even just as an experiment), please feel free to edit this page directly and add it (with some indication of what state it's in). Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts) page to see which shortcuts are available and also to add the shortcuts that you have used. Thanks!
+If you've written an extension (even just as an experiment), please feel free to edit this page directly and add it (with some indication of what state it's in), and post to the [brackets-dev Google Group](groups.google.com/group/brackets-dev) to let the community know about it. 
+
+Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts) page to see which shortcuts are available and also to add the shortcuts that you have used. Thanks!
 
 **Code/Text Editing**
 * [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
