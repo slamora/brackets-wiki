@@ -39,7 +39,7 @@ Next, try running Brackets from the command line. Open up a Terminal (or Command
 The Live Development feature only works with CSS content at the moment. We will be adding Live Development support for HTML and JavaScript content in the near future. For now you have to save the files in order to see your changes in HMTL and JavaScript content. 
 
 ### Install Chrome For Multiple User Accounts (Windows Only)
-If you have multiple user accounts on your Windows, you may get an error when doing live preview. Installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
+If you get this error ``An error occurred when launching the browser. (error 2)`` when doing live preview, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
  
 ### Restart Your Computer
 If you keep getting errors when trying to launch Chrome, or if you keep getting prompted to restart Chrome, try rebooting your machine. Rebooting has resolved many odd issues with Live Development.
