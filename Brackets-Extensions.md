@@ -43,6 +43,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Color Editor](https://github.com/GarthDB/brackets-inline-color-editor): Quick Edit on a hex/rgb/hsl color opens an inline color picker, plus a listing of all colors used in the file.
 * [Edge Web Fonts](https://github.com/adobe/brackets-edge-web-fonts/): Browse free fonts from the Edge Web Fonts collection, with thumbnails. Activated via CSS code hints for font-family.
 * [Hover Preview](https://github.com/gruehle/HoverPreview): Displays a preview when hovering over a color value, gradient, or image filename.
+* [CSS Exclusion Shape Viewer](https://github.com/adobe/brackets-plugin-exclusions): Quick Edit on an exclusion shape definition in CSS displays the shape.
 
 **External Tools**
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
