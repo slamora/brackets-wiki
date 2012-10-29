@@ -36,8 +36,11 @@ Next, try running Brackets from the command line. Open up a Terminal (or Command
 ## <a name="livedev"></a>Live Development Isn't Working
 
 ### Live Development Only Works With CSS Content
-The Live Development feature only works with CSS content at the moment. We will be adding Live Development support for HTML and JavaScript content in the near future.
+The Live Development feature only works with CSS content at the moment. We will be adding Live Development support for HTML and JavaScript content in the near future. For now you have to save the files in order to see your changes in HMTL and JavaScript content. 
 
+### Install Chrome For Multiple User Accounts (Windows Only)
+If you have multiple user accounts on your Windows, you may get an error when doing live preview. Installing Chrome for multiple user accounts may solve the issue.
+ 
 ### Restart Your Computer
 If you keep getting errors when trying to launch Chrome, or if you keep getting prompted to restart Chrome, try rebooting your machine. Rebooting has resolved many odd issues with Live Development.
 
