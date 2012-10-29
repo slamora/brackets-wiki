@@ -33,7 +33,7 @@ If you had previously used Brackets, your cache may have information that is con
 ### 5. Run Brackets From The Command Line
 Next, try running Brackets from the command line. Open up a Terminal (or Command Prompt in Windows), navigate to the executable, and run Brackets. (On Mac, type `open bin/mac/Brackets.app`.). Did an error appear? If so, file an issue or find us on IRC or the mailing list and we'll try to figure it out.
 
-## <a name="livedev">Live Development Isn't Working</a>
+## <a name="livedev"> </a>Live Development Isn't Working
 
 ### Live Development Only Works With CSS Content
 The Live Development feature only works with CSS content at the moment. We will be adding Live Development support for HTML and JavaScript content in the near future. For now you have to save the files in order to see your changes in HMTL and JavaScript content. 
