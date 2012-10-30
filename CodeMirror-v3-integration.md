@@ -1,18 +1,16 @@
-We've started a test integration of CodeMirror v3 into Brackets. You can get this by pulling the `nj/cmv3` branch from Brackets, then doing `git submodule update`, which will switch the CodeMirror2 submodule to use the v3 branch (with some additions).
+We've started the official integration of CodeMirror v3 into Brackets. You can get this by pulling the [`cmv3`](https://github.com/adobe/brackets/tree/cmv3) branch from Brackets, then doing `git submodule update`, which will switch the CodeMirror2 submodule to use the [`v3-brackets`](https://github.com/adobe/CodeMirror2/tree/v3-brackets) branch.
 
-## Known issues with the integration
+We will be submitting various small changes from the `v3-brackets` branch into the upstream CodeMirror repo. We are currently tracking these as separate feature branches in our repo. Currently, the feature branches that have not yet been merged upstream are:
 
-Issues in **bold** are ones we'd like to investigate further to see where the problem is.
+* [`v3-dirty-bit`](https://github.com/adobe/CodeMirror2/tree/v3-dirty-bit) -- adds the ability to track a "dirty state" for a document that can be reset with "markClean()". This enables the presentation of a dirty dot in the UI that works appropriately with respect to save, undo, and redo. 
+
+## Current issues with the integration
 
 **General bugs:**
 * Flickery throw scrolling
-    * There's a potential patch for this listed in https://github.com/marijnh/CodeMirror/issues/810, but it breaks horizontal scrolling
+    * This has been greatly improved. The only remaining issue is that the first time you open a long file, you still see flicker during the first few throw scrolls. After that, the problem seems to go away, even if you reopen the same file or open other long files in the same session of Brackets.
 * Stuttery throw scrolling
     * This seems worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch), but it's noticeable in vanilla CodeMirror too.
-* Fixed gutter moves around while scrolling horizontally (seems to be true only in Brackets, and only for trackpad scrolling; worse when inline editor is open)
-    * This _does_ happen in the CodeMirror demos, but it is much harder to reproduce. Should narrow down to specific test case (may require a large CodeMirror area) and file with Marijn.
-* delCharLeft isn't implemented, so delete key doesn't work (maybe the function names for some handlers have changed?)
-* After a Quick Open or Find, hitting Enter in the dialog also deletes the content from the editor
 
 **Missing functionality:**
 * No way to turn off fixed gutter
@@ -39,16 +37,6 @@ Issues in **bold** are ones we'd like to investigate further to see where the pr
 * setSize() to explicitly set width/height
 * getHistory()/setHistory() to get history info
 * Multiplexing of event listeners no longer necessary for most events (but still needed for onKeyEvent)
-
-**Other:**
-* CM has unused undo()/redo() defs in instance (never called?)
-
-**Fixed bugs**
-* Horizontal position of gutter is different. Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
-* Can't horizontally scroll all the way to the right (last few characters are cut off). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
-* Inline editor doesn't align properly with parent editor (line numbers). Fixed in [add307e5](https://github.com/adobe/brackets/commit/add307e5f9bda545e1863ac50e52711aa897b7f6)
-* After opening one editor, opening another one on a different line doesn't open, or opens one on a line other than the one the cursor is in. Fixed in [05e8aa](https://github.com/adobe/brackets/commit/05e8aa684fb54947fbba74ffe8918dde6444662d)
-* Code in inline editor overlaps on top of rule list. Fixed in [3d908d](https://github.com/adobe/brackets/commit/3d908d644d1ba56e8bb492ea4a54bd6303ed9b9b)
 
 ## Porting changes from our fork of CodeMirror
 
@@ -78,10 +66,10 @@ These are no longer necessary with the new inline editor implementation. They we
 Most of these changes should be trivial to port, as long as Marijn is okay accepting them upstream.
 
 #### Dirty bit handling (`isDirty()`, `markClean()`)
-This has already been ported in our branch of v3 ([commit b0df09](https://github.com/adobe/CodeMirror2/commit/b0df0929bb0e150390012e1de346730af9a5d9bb)). This will need to be submitted upstream.
+This has already been ported in the `v3-dirty-bit` feature branch. This will need to be submitted upstream.
 
 #### Exposing CodeMirror methods
-We exposed the CodeMirror methods `selectWordAt()` and `scrollIntoView()` for use in Brackets. We'll need to check with Marijn to see if he's okay with exposing these in master.
+We exposed the CodeMirror methods `selectWordAt()` and `scrollIntoView()` for use in Brackets. We'll need to check with Marijn to see if he's okay with exposing these in master. (Note that v3 appears to expose `scrollIntoView(pos)`; we'll need to see if we can implement the functionality we need purely using that, or if we need to be able to pass rects as we are today.)
 
 #### `totalHeight()`
 We added this function in order to determine how tall an inline editor should be to show all of its content. We might be able to just get this by letting CodeMirror lay itself out and then measuring its height, but I believe there were reasons why that didn't work before. If we can't get that to work, then we'll need to port this, which should be easy.
