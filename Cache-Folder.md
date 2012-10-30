@@ -4,9 +4,9 @@ If you're having trouble starting Brackets after upgrading from a previous build
 
 ## Cache location:
 
-* Mac: ```~/Library/Application Support/Brackets```
-* Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets``` -- (aka ```%appdata%\Brackets```)
-* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets``` -- (aka ```%appdata%\Brackets```)
+* Mac: ```~/Library/Application Support/Brackets/cefCache```
+* Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets\cefCache``` -- (aka ```%appdata%\Brackets\cefCache```)
+* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets``` -- (aka ```%appdata%\Brackets\cefCache```)
 
 ## Cache location: (older brackets-app builds prior to sprint 13)
 
