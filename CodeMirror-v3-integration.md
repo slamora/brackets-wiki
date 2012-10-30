@@ -16,7 +16,7 @@ We will be submitting various small changes from the `v3-brackets` branch into t
     * Start a selection from the beginning of Editor.prototype.setSelection
     * Drag the cursor down towards the blank line below the end of that function
     * When you hit that blank line, the selection appears to pop down to the end of the document. However, this appears to be purely visual--if you then mouse up and hit delete, only the function is deleted.
-* Clicking to the left of a character at position 0 puts the cursor to the right of the character. Also, if you arrow down from position 0, the cursor moves to position 1 on the next line. Does not reproduce in vanilla theme demo, so it might have to do with the way we're setting padding on the editor.
+* Clicking to the left of a character at position 0 puts the cursor to the right of the character. Also, if you arrow down from position 0, the cursor moves to position 1 on the next line, and there are other funky issues if you start a selection from the area between the gutter and the code. Does not reproduce in vanilla theme demo, so it's probably due to the fact that we're currently setting padding on `.CodeMirror pre`--this might not be a supported use case.
 * Select All on Editor.js selects a lot of blank space below the last line. Reproduces in vanilla CodeMirror, filed as https://github.com/marijnh/CodeMirror/issues/914.
 
 **Missing functionality:**
