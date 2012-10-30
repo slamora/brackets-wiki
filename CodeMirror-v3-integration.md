@@ -11,7 +11,7 @@ We will be submitting various small changes from the `v3-brackets` branch into t
     * This has been greatly improved. The only remaining issue is that the first time you open a long file, you still see flicker during the first few throw scrolls. After that, the problem seems to go away, even if you reopen the same file or open other long files in the same session of Brackets.
 * Stuttery throw scrolling
     * This seems worse in Brackets than in theme demo in chrome (even when merged with no-flex-box branch), but it's noticeable in vanilla CodeMirror too.
-* Selection issue: (reproduces in vanilla CodeMirror, filed as marijnh/CodeMirror#914)
+* Selection issue: (reproduces in vanilla CodeMirror, filed as https://github.com/marijnh/CodeMirror/issues/914)
     * Paste Editor.js into Brackets or the v3 theme demo
     * Start a selection from the beginning of Editor.prototype.setSelection
     * Drag the cursor down towards the blank line below the end of that function
