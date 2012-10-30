@@ -2,7 +2,7 @@ We've started the official integration of CodeMirror v3 into Brackets. You can g
 
 We will be submitting various small changes from the `v3-brackets` branch into the upstream CodeMirror repo. We are currently tracking these as separate feature branches in our repo. Currently, the feature branches that have not yet been merged upstream are:
 
-* [`v3-dirty-bit`](https://github.com/adobe/CodeMirror2/tree/v3-dirty-bit) -- adds the ability to track a "dirty state" for a document that can be reset with "markClean()". This enables the presentation of a dirty dot in the UI that works appropriately with respect to save, undo, and redo. 
+* [`v3-dirty-bit-final`](https://github.com/adobe/CodeMirror2/tree/v3-dirty-bit-final) -- adds the ability to track a "dirty state" for a document that can be reset with "markClean()". This enables the presentation of a dirty dot in the UI that works appropriately with respect to save, undo, and redo. 
 
 ## Current issues with the integration
 
