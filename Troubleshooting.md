@@ -39,6 +39,7 @@ Next, try running Brackets from the command line. Open up a Terminal (or Command
 Currently, Live Development works differently for different types of files:
 * For CSS, your changes are applied in the browser immediately as you type, without reloading the page.
 * For HTML and JavaScript, when you save your changes, the page is reloaded to reflect your changes.
+
 We plan to add as-you-type Live Development support for HTML and JavaScript content in the near future.
 
 ### Install Chrome For Multiple User Accounts (Windows Only)
