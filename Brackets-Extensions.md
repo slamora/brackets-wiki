@@ -16,6 +16,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
+* [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
 
 **Code Generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
