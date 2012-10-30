@@ -10,7 +10,14 @@ We will be submitting various small changes from the `v3-brackets` branch into t
 * Flickery throw scrolling
     * This has been greatly improved. The only remaining issue is that the first time you open a long file, you still see flicker during the first few throw scrolls. After that, the problem seems to go away, even if you reopen the same file or open other long files in the same session of Brackets.
 * Stuttery throw scrolling
-    * This seems worse in brackets than in theme demo in chrome (even when merged with no-flex-box branch), but it's noticeable in vanilla CodeMirror too.
+    * This seems worse in Brackets than in theme demo in chrome (even when merged with no-flex-box branch), but it's noticeable in vanilla CodeMirror too.
+* Selection issue: (reproduces in vanilla CodeMirror)
+    * Paste Editor.js into Brackets or the v3 theme demo
+    * Start a selection from the beginning of Editor.prototype.setSelection
+    * Drag the cursor down towards the blank line below the end of that function
+    * When you hit that blank line, the selection appears to pop down to the end of the document. However, this appears to be purely visual--if you then mouse up and hit delete, only the function is deleted.
+* Clicking to the left of a character at position 0 puts the cursor to the right of the character. Also, if you arrow down from position 0, the cursor moves to position 1 on the next line. Does not reproduce in vanilla theme demo, so it might have to do with the way we're setting padding on the editor.
+* Select All on Editor.js selects a lot of blank space below the last line. Reproduces in vanilla CodeMirror.
 
 **Missing functionality:**
 * No way to turn off fixed gutter
@@ -20,6 +27,7 @@ We will be submitting various small changes from the `v3-brackets` branch into t
 * Deleting a line doesn't close its attached inline editor
     * I put in code to handle the "delete" event on the line, but it doesn't seem to be working. Not clear if this is our bug or a CodeMirror bug.
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
+* With the new markText() API for line hiding, empty lines above and below visible lines are shown
 * Horizontal scroll area is huge when inline editor is open
     * We were setting the min-width of the inline editor to match the overall width of CodeMirror's linespace, but this doesn't work anymore because the inline editor is actually inside the linespace (and the total width of the editor is wider than the min-width, since we set padding to account for the rule list width). We need to rethink how we're managing the width of the inline editor.
 * Scrolling past the right edge of the inline editor with cursor movement doesn't scroll the whole doc (because scrollIntoView() isn't exposed--could we write our own using scrollTo and getScrollInfo?)
