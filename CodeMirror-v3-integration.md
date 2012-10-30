@@ -28,6 +28,7 @@ We will be submitting various small changes from the `v3-brackets` branch into t
     * I put in code to handle the "delete" event on the line, but it doesn't seem to be working. Not clear if this is our bug or a CodeMirror bug.
 * Can get two inline editors on same line (CM doesn't enforce the same rule we did--we'll need to specifically check for this)
 * With the new markText() API for line hiding, empty lines above and below visible lines are shown
+* Touch-scrolling over inline editor doesn't work (I think this worked in earlier v3 versions)
 * Horizontal scroll area is huge when inline editor is open
     * We were setting the min-width of the inline editor to match the overall width of CodeMirror's linespace, but this doesn't work anymore because the inline editor is actually inside the linespace (and the total width of the editor is wider than the min-width, since we set padding to account for the rule list width). We need to rethink how we're managing the width of the inline editor.
 * Scrolling past the right edge of the inline editor with cursor movement doesn't scroll the whole doc (because scrollIntoView() isn't exposed--could we write our own using scrollTo and getScrollInfo?)
