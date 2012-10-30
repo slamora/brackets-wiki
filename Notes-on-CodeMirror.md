@@ -1,3 +1,5 @@
+**Note:** This document is somewhat out of date. It will be updated once we've merged with CodeMirror v3. See [CodeMirror v3 Integration](https://github.com/adobe/brackets/wiki/CodeMirror-v3-integration) for more info.
+
 The [Brackets fork of CodeMirror](http://github.com/adobe/CodeMirror2) has a number of fixes and features that we've added in order to support Brackets. We're working with Marijn Haverbeke to get these into the [main CodeMirror master](http://github.com/marijnh/CodeMirror2). 
 
 Merged features
