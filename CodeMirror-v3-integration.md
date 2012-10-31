@@ -66,10 +66,12 @@ These are no longer necessary with the new inline editor implementation. They we
 Most of these changes should be trivial to port, as long as Marijn is okay accepting them upstream.
 
 #### Dirty bit handling (`isDirty()`, `markClean()`)
-This has already been ported in the `v3-dirty-bit` feature branch. This will need to be submitted upstream.
+This has already been ported and merged upstream. The API was changed to have `isClean()` instead of `isDirty()`.
 
 #### Exposing CodeMirror methods
-We exposed the CodeMirror methods `selectWordAt()` and `scrollIntoView()` for use in Brackets. We'll need to check with Marijn to see if he's okay with exposing these in master. (Note that v3 appears to expose `scrollIntoView(pos)`; we'll need to see if we can implement the functionality we need purely using that, or if we need to be able to pass rects as we are today.)
+We exposed the CodeMirror methods `selectWordAt()` and `scrollIntoView()` for use in Brackets. 
+* For `selectWordAt()`, we decided to pull the implementation into Brackets since we might want to modify it in future, perhaps in a mode-specific way. This has already been merged into Brackets master (not just cmv3).
+* v3 appears to expose `scrollIntoView(pos)`; we'll need to see if we can implement the functionality we need purely using that, or if we need to be able to pass rects as we are today.
 
 #### `totalHeight()`
 We added this function in order to determine how tall an inline editor should be to show all of its content. We might be able to just get this by letting CodeMirror lay itself out and then measuring its height, but I believe there were reasons why that didn't work before. If we can't get that to work, then we'll need to port this, which should be easy.
