@@ -7,7 +7,7 @@ We will be submitting various small changes from the `v3-brackets` branch into t
 ## Current issues with the integration
 
 **General bugs:**
-* Set cursor at position 0 on a line, then hit down arrow. Cursor goes to position 1. (Not yet filed against CodeMirror, probably related to horizontal padding.)
+* [CodeMirror #921](https://github.com/marijnh/CodeMirror/issues/921): Set cursor at position 0 on a line, then hit down arrow. Cursor goes to position 1.
 
 **Missing functionality:**
 * No way to turn off fixed gutter
