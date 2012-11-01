@@ -61,6 +61,9 @@ The v3 branch seems to handle this pretty well.
 #### Changes to updateGutter()
 These are no longer necessary with the new inline editor implementation. They were only required because we were injecting dummy nodes into the gutter.
 
+#### Right-click fix to `onMouseDown()`
+It turns out we didn't need to port this. We've done some testing around our context menus and they seem to work fine without it.
+
 ### Functionality that needs to be ported
 
 Most of these changes should be trivial to port, as long as Marijn is okay accepting them upstream.
@@ -76,14 +79,11 @@ We exposed the CodeMirror methods `selectWordAt()` and `scrollIntoView()` for us
 #### `totalHeight()`
 We added this function in order to determine how tall an inline editor should be to show all of its content. We might be able to just get this by letting CodeMirror lay itself out and then measuring its height, but I believe there were reasons why that didn't work before. If we can't get that to work, then we'll need to port this, which should be easy.
 
-#### `preserveScrollPosOnSelChange`
-This makes it so that when you do Cmd/Ctrl-A to select all, the editor doesn't scroll. This should be easy to port.
-
-#### Right-click fix to `onMouseDown()`
-This needs to be ported, as it prevents our context menus from working.
-
 #### Checking `isInWidget()` in various cases and returning early
 We will likely need to port these so that CodeMirror doesn't handle things like context menus or double-click in widgets.
+
+#### `preserveScrollPosOnSelChange`
+This makes it so that when you do Cmd/Ctrl-A to select all, the editor doesn't scroll. This should be easy to port.
 
 ### Changes to htmlmixed mode
 If we encounter a `<script>` tag in HTML that seems to be a Mustache template, we treat it as HTML, and if we don't recognize it, we leave it uncolored instead of attempting to color it as javascript. We should submit this upstream.
