@@ -1,5 +1,10 @@
 # Handling Command Line Arguments
 
+----
+<font color="red">**Warning:**</font> This is a _proposal_ for future functionality. The command-line arguments described here are _**not** currently implemented in Brackets_.
+
+----
+
 <br>_**Question**: Should this be merged with [[Command Line Arguments]]?_
 
 ## Overview
