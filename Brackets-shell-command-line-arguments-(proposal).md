@@ -1,7 +1,7 @@
 # Handling Command Line Arguments
 
 ----
-<font color="red">**Warning:**</font> This is a _proposal_ for future functionality. The command-line arguments described here are _**not** currently implemented in Brackets_.
+<font color="red">**Note:**</font> This is a _proposal_ for future functionality. The command-line arguments described here are _**not** currently implemented in Brackets_.
 
 ----
 
