@@ -40,6 +40,20 @@ Community contributions to Brackets
 * [Panel resizing: refactor size prefs, add min size support](https://github.com/adobe/brackets/pull/1899) by [Chema Balsas](https://github.com/jbalsas)
 * [Fix #1886: Saving CSS file from inline editor auto-refreshes page](https://github.com/adobe/brackets/pull/1897) by [Jake Stoeffler](https://github.com/JakeStoeffler)
 * [Updated German translation](https://github.com/adobe/brackets/pull/1903) by ["J.M."](https://github.com/mynetx)
+* [Support Linux in brackets.platform](https://github.com/adobe/brackets/pull/1983 by [pritambaral](https://github.com/pritambaral)
+* [Add LIVE_DEVELOPMENT_TROUBLESHOOTING to de locale](https://github.com/adobe/brackets/pull/1989 by ["J.M."](https://github.com/mynetx)
+* [Sort Working Set](https://github.com/adobe/brackets/pull/1999 by [TomMalbran](https://github.com/TomMalbran)
+* [Reorder Working Set by Drag and Drop ](https://github.com/adobe/brackets/pull/1940 by [TomMalbran](https://github.com/TomMalbran)
+* [Fix #1780: Recent project gets dropped from list when cancelling a switch](https://github.com/adobe/brackets/pull/2013 by [Chema Balsas](https://github.com/jbalsas)
+* [Fix #1971: Renaming twice a file in the working set shows wrong name](https://github.com/adobe/brackets/pull/1990 by [Chema Balsas](https://github.com/jbalsas)
+* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
 
 Contributions _from_ Brackets
 -----------------------------
