@@ -18,6 +18,7 @@ UI Changes
 
 API Changes
 -----------
+* [Require 2.1.1](https://github.com/adobe/brackets/pull/1968): For better error handling while loading extensions, we've upgraded from Require 1.0.3 to [2.1.1](https://github.com/jrburke/requirejs/wiki/Upgrading-to-RequireJS-2.1)
 
 New/Improved Extensibility APIs
 -------------------------------
