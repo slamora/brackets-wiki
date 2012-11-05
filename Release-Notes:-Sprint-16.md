@@ -10,6 +10,7 @@ What's New in Sprint 16
     * [Color Picker](https://trello.com/card/2-color-selector/4f90a6d98f77505d7940ce88/662): An inline editor for colors in CSS and HTML files. Supports rgba, hex, and hsla.
     * [Find and Replace](https://github.com/adobe/brackets/pull/1914): Search field turns red when no results are found
     * [CodeMirror 3 migration: Critical editing functionality](https://trello.com/card/2-codemirror-3-critical-editing-functionality/4f90a6d98f77505d7940ce88/660)
+    * [Status Bar Edit Mode Formatting](https://github.com/adobe/brackets/pull/1923): The edit mode is now capitalized correctly.
 * **Files and Folders**
     * [Sort Working Set](https://github.com/adobe/brackets/pull/1999): Sort the working set automatically by type, name or time added.
     * [Reorder Working Set by Drag and Drop ](https://github.com/adobe/brackets/pull/1940): Sort the working set manually by drag and drop.
@@ -29,6 +30,7 @@ UI Changes
 API Changes
 -----------
 * [Require 2.1.1](https://github.com/adobe/brackets/pull/1968): For better error handling while loading extensions, we've upgraded from Require 1.0.3 to [2.1.1](https://github.com/jrburke/requirejs/wiki/Upgrading-to-RequireJS-2.1)
+* focusedEditorChange has been renamed to activeEditorChange
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -60,9 +62,13 @@ Community contributions to Brackets
 * [Fix #389: Inline editor finds false positive animation name](https://github.com/adobe/brackets/pull/1907) by [jeffslofish](https://github.com/jeffslofish)
 * [F2 keyboard shortcut for Rename](https://github.com/adobe/brackets/pull/1922) by [zanqi](https://github.com/zanqi)
 * [Fix #1508: Root folders show nothing in recent projects list after the "-" (no path or drive name)](https://github.com/adobe/brackets/pull/1926) by [jeffslofish](https://github.com/jeffslofish)
-* [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
+* [Fix #1916: Menu name inconsistency: Lines vs. Line(s)](https://github.com/adobe/brackets/pull/1928) by [KraigWalker](https://github.com/KraigWalker)
+* [Japanese Translation](https://github.com/adobe/brackets/pull/1929) by [shumpei](https://github.com/shumpei)
+* [Unit Test for File Rename](https://github.com/adobe/brackets/pull/1939) by [zanqi](https://github.com/zanqi)
+* [Fix #1917:Shift or Ctrl sort-of multi selects in project tree](https://github.com/adobe/brackets/pull/1945) by [TomMalbran](https://github.com/TomMalbran)
+* [Fix #1172: Comment / Uncomment shortcut doesn't work on numpad](https://github.com/adobe/brackets/pull/1946) by [TomMalbran](https://github.com/TomMalbran)
+* [Prepopulate replace input with current editor selection](https://github.com/adobe/brackets/pull/1964) by [Chema Balsas](https://github.com/jbalsas)
+* [Fix #104: Close file icon is not displayed until mouse is moved](https://github.com/adobe/brackets/pull/1969) by [jeffslofish](https://github.com/jeffslofish)
 
 Contributions _from_ Brackets
 -----------------------------
