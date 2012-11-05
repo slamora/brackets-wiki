@@ -4,12 +4,23 @@ _This document will not be finalized until the end of Sprint 16 -- approximately
 
 What's New in Sprint 16
 -----------------------
-* **TODO: headings**
+* **Live Development**
     * [URL mapping for Live Development](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664)
-    * [Move extensions folder outside application root](https://trello.com/card/3-extensions-outside-application-root/4f90a6d98f77505d7940ce88/659)
+* **General Code Editing**
     * [Integrate color picker](https://trello.com/card/2-color-selector/4f90a6d98f77505d7940ce88/662)
+    * [Find and Replace](https://github.com/adobe/brackets/pull/1914): Search field turns red when no results are found
+* **Files and Folders**
+    * [Sort Working Set](https://github.com/adobe/brackets/pull/1999): Sort the working set automatically by type, name or time added.
+    * [Reorder Working Set by Drag and Drop ](https://github.com/adobe/brackets/pull/1940): Sort the working set manually by drag and drop.
+    * [Working Set Rename and Show In Tree](https://github.com/adobe/brackets/pull/1919): Context menu items are now available in the working set for Rename and Show In Tree
+* **Extensions**
+    * [Move extensions folder outside application root](https://trello.com/card/3-extensions-outside-application-root/4f90a6d98f77505d7940ce88/659)
+* **Developer Workflow**
+    * [Automated unit tests](https://trello.com/card/2-automate-unit-tests/4f90a6d98f77505d7940ce88/661)
+* **Localization**
+    * [Japanese Translation](https://github.com/adobe/brackets/pull/1929)
+* **Other**
     * [CodeMirror 3 migration: Critical editing functionality](https://trello.com/card/2-codemirror-3-critical-editing-functionality/4f90a6d98f77505d7940ce88/660)
-    * [Developer workflow: Automated unit tests](https://trello.com/card/2-automate-unit-tests/4f90a6d98f77505d7940ce88/661)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-15...sprint-16#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-15...sprint-16#commits_bucket)
 
@@ -42,18 +53,17 @@ Community contributions to Brackets
 * [Updated German translation](https://github.com/adobe/brackets/pull/1903) by ["J.M."](https://github.com/mynetx)
 * [Support Linux in brackets.platform](https://github.com/adobe/brackets/pull/1983 by [pritambaral](https://github.com/pritambaral)
 * [Add LIVE_DEVELOPMENT_TROUBLESHOOTING to de locale](https://github.com/adobe/brackets/pull/1989 by ["J.M."](https://github.com/mynetx)
-* [Sort Working Set](https://github.com/adobe/brackets/pull/1999 by [TomMalbran](https://github.com/TomMalbran)
-* [Reorder Working Set by Drag and Drop ](https://github.com/adobe/brackets/pull/1940 by [TomMalbran](https://github.com/TomMalbran)
-* [Fix #1780: Recent project gets dropped from list when cancelling a switch](https://github.com/adobe/brackets/pull/2013 by [Chema Balsas](https://github.com/jbalsas)
-* [Fix #1971: Renaming twice a file in the working set shows wrong name](https://github.com/adobe/brackets/pull/1990 by [Chema Balsas](https://github.com/jbalsas)
-* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/0000 by [](https://github.com/)
+* [Sort Working Set](https://github.com/adobe/brackets/pull/1999) by [TomMalbran](https://github.com/TomMalbran)
+* [Reorder Working Set by Drag and Drop ](https://github.com/adobe/brackets/pull/1940) by [TomMalbran](https://github.com/TomMalbran)
+* [Fix #1780: Recent project gets dropped from list when cancelling a switch](https://github.com/adobe/brackets/pull/2013) by [Chema Balsas](https://github.com/jbalsas)
+* [Fix #1971: Renaming twice a file in the working set shows wrong name](https://github.com/adobe/brackets/pull/1990) by [Chema Balsas](https://github.com/jbalsas)
+* [Fix #1548: Resizing sidebar produces strange behavior in projects panel](https://github.com/adobe/brackets/pull/2040) by [Chema Balsas](https://github.com/jbalsas)
+* [Fix #389: Inline editor finds false positive animation name](https://github.com/adobe/brackets/pull/1907) by [jeffslofish](https://github.com/jeffslofish)
+* [F2 keyboard shortcut for Rename](https://github.com/adobe/brackets/pull/1922) by [zanqi](https://github.com/zanqi)
+* [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
 
 Contributions _from_ Brackets
 -----------------------------
