@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 16 -- approximately
 What's New in Sprint 16
 -----------------------
 * **Live Development**
-    * [URL mapping for Live Development](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664)
+    * [URL mapping for Live Development](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664): Users can specify a base URL for the root folder of a project.
 * **General Code Editing**
     * [Color Picker](https://trello.com/card/2-color-selector/4f90a6d98f77505d7940ce88/662): An inline editor for colors in CSS and HTML files. Supports rgba, hex, and hsla.
     * [Find and Replace](https://github.com/adobe/brackets/pull/1914): Search field turns red when no results are found
@@ -16,7 +16,7 @@ What's New in Sprint 16
     * [Reorder Working Set by Drag and Drop ](https://github.com/adobe/brackets/pull/1940): Sort the working set manually by drag and drop.
     * [Working Set Rename and Show In Tree](https://github.com/adobe/brackets/pull/1919): Context menu items are now available in the working set for Rename and Show In Tree
 * **Extensions**
-    * [Move extensions folder outside application root](https://trello.com/card/3-extensions-outside-application-root/4f90a6d98f77505d7940ce88/659)
+    * [Move extensions folder outside application root](https://trello.com/card/3-extensions-outside-application-root/4f90a6d98f77505d7940ce88/659): Extensions are now stored per user instead of in the application bundle. Windows: C:\Users\<user>\AppData\Roaming\Brackets\extensions. Mac: /Users/<user>/Library/Application Support/Brackets/extensions.
 * **Developer Workflow**
     * [Automated unit tests](https://trello.com/card/2-automate-unit-tests/4f90a6d98f77505d7940ce88/661)
 * **Localization**
