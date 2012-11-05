@@ -7,8 +7,9 @@ What's New in Sprint 16
 * **Live Development**
     * [URL mapping for Live Development](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664)
 * **General Code Editing**
-    * [Integrate color picker](https://trello.com/card/2-color-selector/4f90a6d98f77505d7940ce88/662)
+    * [Color Picker](https://trello.com/card/2-color-selector/4f90a6d98f77505d7940ce88/662): An inline editor for colors in CSS and HTML files. Supports rgba, hex, and hsla.
     * [Find and Replace](https://github.com/adobe/brackets/pull/1914): Search field turns red when no results are found
+    * [CodeMirror 3 migration: Critical editing functionality](https://trello.com/card/2-codemirror-3-critical-editing-functionality/4f90a6d98f77505d7940ce88/660)
 * **Files and Folders**
     * [Sort Working Set](https://github.com/adobe/brackets/pull/1999): Sort the working set automatically by type, name or time added.
     * [Reorder Working Set by Drag and Drop ](https://github.com/adobe/brackets/pull/1940): Sort the working set manually by drag and drop.
@@ -19,10 +20,8 @@ What's New in Sprint 16
     * [Automated unit tests](https://trello.com/card/2-automate-unit-tests/4f90a6d98f77505d7940ce88/661)
 * **Localization**
     * [Japanese Translation](https://github.com/adobe/brackets/pull/1929)
-* **Other**
-    * [CodeMirror 3 migration: Critical editing functionality](https://trello.com/card/2-codemirror-3-critical-editing-functionality/4f90a6d98f77505d7940ce88/660)
 
-_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-15...sprint-16#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-15...sprint-16#commits_bucket)
+_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-16...sprint-17#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-16...sprint-17#commits_bucket)
 
 UI Changes
 ----------
@@ -60,7 +59,7 @@ Community contributions to Brackets
 * [Fix #1548: Resizing sidebar produces strange behavior in projects panel](https://github.com/adobe/brackets/pull/2040) by [Chema Balsas](https://github.com/jbalsas)
 * [Fix #389: Inline editor finds false positive animation name](https://github.com/adobe/brackets/pull/1907) by [jeffslofish](https://github.com/jeffslofish)
 * [F2 keyboard shortcut for Rename](https://github.com/adobe/brackets/pull/1922) by [zanqi](https://github.com/zanqi)
-* [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
+* [Fix #1508: Root folders show nothing in recent projects list after the "-" (no path or drive name)](https://github.com/adobe/brackets/pull/1926) by [jeffslofish](https://github.com/jeffslofish)
 * [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
 * [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
 * [](https://github.com/adobe/brackets/pull/0000) by [](https://github.com/)
