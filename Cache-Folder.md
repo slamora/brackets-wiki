@@ -8,6 +8,8 @@ If you're having trouble starting Brackets after upgrading from a previous build
 * Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets\cefCache``` -- (aka ```%appdata%\Brackets\cefCache```)
 * Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets``` -- (aka ```%appdata%\Brackets\cefCache```)
 
+Note: for **Edge Code**, replace `Brackets` in the path with `Adobe/Edge Code`.
+
 ## Cache location: (older brackets-app builds prior to sprint 13)
 
 * Mac: ```~/Library/Application Support/com.adobe.Brackets.cefCache```
