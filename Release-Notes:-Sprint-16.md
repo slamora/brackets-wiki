@@ -27,6 +27,8 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 UI Changes
 ----------
 
+* **Project Settings** - A new gear icon appears next to the project name. Clicking on the icon will display project settings. Currently, the only setting available is the Live Preview Base URL.
+
 API Changes
 -----------
 * [Require 2.1.1](https://github.com/adobe/brackets/pull/1968): For better error handling while loading extensions, we've upgraded from Require 1.0.3 to [2.1.1](https://github.com/jrburke/requirejs/wiki/Upgrading-to-RequireJS-2.1)
