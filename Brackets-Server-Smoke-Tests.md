@@ -7,7 +7,7 @@ Server Setup
 You will need an HTTP server for these tests. Options are:
 * Setup a local wamp or mamp server.
 * Use a remote server on intranet with drive mapped to local machine.
-* _Future:_ Use node server with HTTP plugin
+* _Future:_ Use Brackets built-in node server with HTTP plugin
 
 Setup
 =====
@@ -21,9 +21,9 @@ Server smoke test steps
 1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel and its index.html file is opened automatically.
 2. File > Open Folder... and browse to server root folder.
 
-* page with page relative paths
-* page with site-root relative paths
-* (optional?) server-side page
+* open page with page relative paths
+* open page with site-root relative paths without server
+* open page with site-root relative paths with server
 
 * make sure base url is clear
 * define base url with errors
