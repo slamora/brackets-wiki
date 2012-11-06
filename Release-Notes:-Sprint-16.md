@@ -18,7 +18,7 @@ What's New in Sprint 16
 * **Extensions**
     * [Move extensions folder outside application root](https://trello.com/card/3-extensions-outside-application-root/4f90a6d98f77505d7940ce88/659): Extensions are now stored per user instead of in the application bundle. Windows: C:\Users\<user>\AppData\Roaming\Brackets\extensions. Mac: /Users/<user>/Library/Application Support/Brackets/extensions.
 * **Developer Workflow**
-    * [Automated unit tests](https://trello.com/card/2-automate-unit-tests/4f90a6d98f77505d7940ce88/661)
+    * [Automated unit tests](https://trello.com/card/2-automate-unit-tests/4f90a6d98f77505d7940ce88/661) - Unit tests now run automatically on a Mac build server behind the Adobe firewall.
 * **Localization**
     * [Japanese Translation](https://github.com/adobe/brackets/pull/1929)
 
