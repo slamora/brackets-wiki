@@ -1,5 +1,7 @@
+**IMPORTANT: The extension location [changed] (https://github.com/adobe/brackets/wiki/New%20Extension%20Location) in Sprint 16**
+
 * [Download Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-howtoget)
-* Create a new folder in extensions/user with yourExtensionName, and a main.js file for your extension code.
+* Create a new folder in `src/extensions/dev` with yourExtensionName, and a main.js file for your extension code.
 * For a quick start, you may want to read the [[Simple "Hello World" extension]] or refer to an [existing extension](https://github.com/adobe/brackets/wiki/Brackets-Extensions) (like InlineImageViewer) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
 
@@ -57,11 +59,11 @@ Be sure to follow the [[Extension UI Guidelines]].
 
 ### <a name="tourl"></a>Accessing resources (e.g. images) in your extension
 
-Extensions can get installed at (semi-)arbitrary paths. For example, you might develop your extension in the ```brackets/src/extensions/user/foo``` directory, but a user might install it in ```brackets/src/extensions/default/bar```.
+Extensions can get installed at (semi-)arbitrary paths. For example, you might develop your extension in the ```brackets/src/extensions/dev/foo``` directory, but a user might install it in ```/Users/<user>/Library/Application Settings/Brackets/extensions/user/bar```.
 
 Thankfully, the ```require``` context that's passed in to your extension's ```main.js``` file can help you resolve paths. Just call ```require.toUrl``` with the relative (to your module) path you'd like to make relative to the site root. **IMPORTANT:** Make sure you're using the ```require``` object that was passed to your module, _not_ the global ```require``` object.
 
-For example, if you have ```awesome.jpg``` in your extension's top-level ```foo``` folder, you can do ```require.toUrl('./awesome.jpg')```, and it will return something like ```/extensions/user/foo/awesome.jpg``` when you call it and ```/extensions/default/bar/awesome.jpg``` when your user calls it. The path you give ```toUrl``` should be relative to your extension's top-level folder (yes, subdirectories work), and the URL you get back will be relative to the site root (i.e. it will begin with "/").
+For example, if you have ```awesome.jpg``` in your extension's top-level ```foo``` folder, you can do ```require.toUrl('./awesome.jpg')```, and it will return something like ```/extensions/dev/foo/awesome.jpg``` when you call it and ```/Users/<user>/Library/Application Settings/Brackets/extensions/user/bar/awesome.jpg``` when your user calls it. The path you give ```toUrl``` should be relative to your extension's top-level folder (yes, subdirectories work), and the URL you get back will be relative to the site root (i.e. it will begin with "/").
 
 ### Further reading
 
