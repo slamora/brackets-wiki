@@ -27,7 +27,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 UI Changes
 ----------
 
-* **Project Settings** - A new gear icon appears next to the project name. Clicking on the icon will display project settings. Currently, the only setting available is the Live Preview Base URL.
+* **Project Settings** - Project settings are available in the File menu as well as the drop down menu (recent projects and Open Folder...) in the project tree. Currently, the only setting available is the Live Preview Base URL.
 
 API Changes
 -----------
