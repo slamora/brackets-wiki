@@ -20,14 +20,18 @@ Server smoke test steps
 
 1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel and its index.html file is opened automatically.
 2. File > Open Folder... and browse to server root folder.
+3. Verify that you see (**TBD**) pathRel.html, pathRoot.html, server.shtml, css and images folders.
+4. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
+5. Verify informational text is displayed in empty field. Click OK.
+6. Open pathRel.html, start Live Preview using File > Live Preview, and verify that page renders correctly in browser.
+7. Open File menu, verify Live Preview has a check mark next to it, then click it to toggle off Live Preview.
+8. Open pathRoot.html and click Live Preview (lightning bolt) icon on right side of menu bar.
+9. Verify that page is opened in browser, but with no CSS or images. Click Live Preview icon to disconnect Live Preview.
+10. Open server.shtml and start Live Preview. Verify Project Settings dialog is invoked with warning message indicating a Base URL is required.
+11. Enter the URL that maps to the project on your server (e.g. http://localhost/). Click OK.
+12. Verify that page renders correctly in browser. 
 
-* open page with page relative paths
-* open page with site-root relative paths without server
 * open page with site-root relative paths with server
-
-* make sure base url is clear
-* define base url with errors
-* define final base url
 
 * edit CSS
 * edit HTML, then Save
