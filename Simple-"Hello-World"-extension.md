@@ -1,4 +1,4 @@
-Save this file as ```brackets/src/extensions/user/HelloWorld/main.js``` to see it running in Brackets.  (You'll need Sprint 10 or later.)
+Save this file as ```brackets/src/extensions/dev/HelloWorld/main.js``` to see it running in Brackets.  (You'll need Sprint 10 or later.)
 
 ```javascript
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
