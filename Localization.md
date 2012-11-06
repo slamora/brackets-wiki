@@ -33,5 +33,5 @@ As of Sprint 13, brackets-shell hardcodes strings for both English and French, p
 [Creating new translations](https://github.com/adobe/brackets/blob/master/src/nls/README.md)
 
 ### Localizing Extensions
-[Example: Localized Extension](https://github.com/adobe/brackets/tree/master/src/extensions/disabled/LocalizationExample)
-[README.MD](https://github.com/adobe/brackets/tree/master/src/extensions/disabled/LocalizationExample/README.MD)
+[Example: Localized Extension](https://github.com/adobe/brackets/tree/master/src/extensions/samples/LocalizationExample)
+[README.MD](https://github.com/adobe/brackets/tree/master/src/extensions/samples/LocalizationExample/README.MD)
