@@ -13,14 +13,14 @@ Setup
 =====
 
 1. Follow Setup steps for [main set of Smoke Tests](Brackets-Smoke-Tests).
-2. Copy server-test folder (**TBD**) to server root.
+2. Copy server-test folder **(TBD)** to server root.
 
 Server smoke test steps
 =======================
 
 1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel and its index.html file is opened automatically.
 2. File > Open Folder... and browse to server root folder.
-3. Verify that you see (**TBD**) pathRel.html, pathRoot.html, server.shtml, css and images folders.
+3. Verify that you see **(TBD)** pathRel.html, pathRoot.html, server.shtml, css and images folders.
 4. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
 5. Verify informational text is displayed in empty field. Click OK.
 6. Open pathRel.html, start Live Preview using File > Live Preview.
@@ -38,6 +38,6 @@ Server smoke test steps
 18. Make an edit to some text in HTML page that is visible in browser. Verify that text has not yet changed in browser.
 19. Use Cmd/Ctrl-S to save changes to HTML file. Verify that changes to HTML file are changed in browser and unsaved CSS changes are still shown in browser.
 20. Undo changes in HTML file and save to get back to original state.
-
-
+21. Close all files and discard changes.
+22. Click on recent project dropdown list and use Project Settings... to set Base URL back to blank.
 
