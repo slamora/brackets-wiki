@@ -1,4 +1,4 @@
-Brackets doesn't yet have functionality for discovering and installing extensions. In the meantime, here's a list of extensions that people have built. You can copy them into the `brackets/src/extensions/user` folder, then reload or restart Brackets.
+Brackets doesn't yet have functionality for discovering and installing extensions. In the meantime, here's a list of extensions that people have built. You can copy them into the user extension folder, which can be opened by selecting _Help > Show Extensions Folder_. Brackets needs to be restarted after installing a new extension.
 
 If you've written an extension (even just as an experiment), please feel free to edit this page directly and add it (with some indication of what state it's in), and post to the [brackets-dev Google Group](http://groups.google.com/group/brackets-dev) to let the community know about it. 
 
