@@ -84,6 +84,14 @@ Brackets will open the HTML file in Chrome. If you then make edits to CSS files
 used by that HTML file (either in an inline editor or just by opening up the CSS 
 file), your edits will be instantly reflected in Chrome as you type.
 
+Additionally, if you save an HTML or JS file, it will auto-reload the browser
+preview. We're hoping to work on making these be more like true live development
+in the future.
+
+By default, Brackets previews files using a direct file:// URL. If you want
+to preview off a server, you can use **File > Project Settings...**. In the Base URL
+field, set the URL on the server that corresponds to the root of your project.
+
 Some limitations of the current implementation:
 
 * It only works with Chrome as the target browser.
@@ -94,7 +102,6 @@ Some limitations of the current implementation:
 * Only one HTML file can have a live connection to the browser at a time--if you
   switch to a different HTML file, Brackets will close the original preview and open 
   one for the new file.
-* You cannot specify a URL to load the file from.
   
 As with quick edit, there are lots of ideas for how to extend this, including
 highlighting DOM nodes in the browser from Brackets, clicking on an item in
