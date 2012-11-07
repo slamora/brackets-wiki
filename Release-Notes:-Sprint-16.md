@@ -16,7 +16,7 @@ What's New in Sprint 16
     * [Progress on CodeMirror 3 migration](https://trello.com/card/2-codemirror-3-critical-editing-functionality/4f90a6d98f77505d7940ce88/660): Critical editing functionality is now working on the [cmv3 branch](https://github.com/adobe/brackets/compare/master...cmv3).
     * Syntax highlighting for: YAML, SVG (as XML)
 * **Extensions**
-    * [Move extensions folder outside application root](https://trello.com/card/3-extensions-outside-application-root/4f90a6d98f77505d7940ce88/659): Extensions are now stored per user instead of in the application bundle.
+    * [Move extensions folder outside application root](https://trello.com/card/3-extensions-outside-application-root/4f90a6d98f77505d7940ce88/659): Extensions are now stored per user instead of in the application bundle. As before, you can use Help > Show Extensions Folder to access these locations:
         * Windows: `C:\Users\<user>\AppData\Roaming\Brackets\extensions`
         * Mac: `/Users/<user>/Library/Application Support/Brackets/extensions`
     * Extension developers can still place extensions in the Brackets source location instead, in the new `src/extensions/dev` folder.
@@ -32,6 +32,7 @@ What's New in Sprint 16
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-16...sprint-17#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-16...sprint-17#commits_bucket)
 
+
 UI Changes
 ----------
 **Extensions folder** - The location where you install extensions has changed. See above for details.
@@ -40,18 +41,35 @@ UI Changes
 
 **Code hinting** - Tab and Enter now work exactly the same when accepting a code hint suggestion.
 
+
 API Changes
 -----------
 **Extensions folder** - The `src/extensions/user` folder has been removed. Use `src/extensions/dev` for developing extensions (or the new user-specific folder described above, but note that unit tests will only be read from the dev location).
 
 **Require 2.1.1** - For better error handling while loading extensions, we've [upgraded](https://github.com/adobe/brackets/pull/1968)) from Require 1.0.3 to [2.1.1](https://github.com/jrburke/requirejs/wiki/Upgrading-to-RequireJS-2.1).
 
-**EditorManager focusedEditorChange event** - renamed to activeEditorChange
+**EditorManager focus handling** - The "focusedEditorChange" event was renamed to "activeEditorChange". New `getActiveEditor()` API: similar to `getFocusedEditor()`, but doesn't return null when focus temporarily lies in auxiliary UI like the search bar. `EditorManager.focusEditor()` now focuses whichever Editor last had focus (full-size or inline; previously, it would always focus the full-size editor).
 
-**CodeHintManager** - now requires a code hint provider to return true by default in its handleSelect() function. A code hint provider can return false if it wants to keep the hint list open after inserting a user selection.
+**Code hinting** - Code hint providers can now control whether accepting a suggestion should close the code hint popup or keep it open with updated hints (previously this was controlled by which key the user used, but Enter and Tab no longer behave differently). Return true from `handleSelect()` to close the popup, or false to leave it open if more hints are available after inserting the suggestion. The 4th argument to handleSelect() has been removed.
+
+**Adding panels** - If you add a panel below the editor area, make sure you add it _above_ the new status bar. Use `insertBefore("#status-bar")` or `insertAfter(".bottom-panel:last")`. _(This applies to Sprint 15 as well, but was left out of its release notes)._
+
+**Quick Open** - `QuickOpen.stringMatch()` now supports looser matching, including CamelCase matching. This is transparent to Quick Open providers that use `basicMatchSort()` and the default results formatter. Providers using a custom formatter should use the new `QuickOpen.highlightMatch()` utility to ensure the right chars are bolded in the list item.
+
+**Rename** - `ProjectManager.renameSelectedItem()` has been replaced with `renameItemInline()`, where the item to rename is explicitly passed in. `Commands.FILE_RENAME` now functions if the selection highlight lies in the working set instead of the folder tree.
+
+**Working set** - The order of entries in the working set can now change. DocumentManager dispatches "workingSetReorder" or "workingSetSort" when this occurs. _(Note: these events are likely to change soon: see [#2076](https://github.com/adobe/brackets/issues/2076))._
 
 New/Improved Extensibility APIs
 -------------------------------
+**brackets.app.showOSFolder()** - Displays a folder in the OS shell
+
+**EditorManager.getActiveEditor()** - See above.
+
+**Resizeable panels** - Panels created via `Resizer.makeResizable()` can now be toggled open/shut programmatically via new methods on Resizer, or by the user (via drag or double-click) if true is passed for the new `collapsible` argument. Panel size is remembered across launches, keyed by panel's DOM id. Dispatches new events "panelResizeStart", "panelResizeUpdate", and "panelCollapsed"/"panelExpanded".
+
+**Menus** - Use `Menu.removeMenuItem()` to remove a command from a given menu.
+
 
 Known Issues
 ------------
@@ -74,9 +92,9 @@ Community contributions to Brackets
 * [Select Line command](https://github.com/adobe/brackets/pull/2002) by [Dimitar S.](https://github.com/deemeetar) & [Pritam Baral](https://github.com/pritambaral)
 * [Prepopulate Replace field with current selection](https://github.com/adobe/brackets/pull/1964) by [Chema Balsas](https://github.com/jbalsas)
 * [Japanese translation](https://github.com/adobe/brackets/pull/1929) by [Shumpei Shiraishi](https://github.com/shumpei)
+* [Unify panel resizing code, allow custom min size](https://github.com/adobe/brackets/pull/1908) by [Chema Balsas](https://github.com/jbalsas)
 * [removeMenuItem() API](https://github.com/adobe/brackets/pull/2072) mostly by [Terry Ryan](https://github.com/tpryan)
 * [Support Linux in brackets.platform](https://github.com/adobe/brackets/pull/1983) by [Pritam Baral](https://github.com/pritambaral)
-* [Unify panel resizing code, allow custom min size](https://github.com/adobe/brackets/pull/1908) by [Chema Balsas](https://github.com/jbalsas)
 * [Fix #1886: Saving CSS file from inline editor auto-refreshes page](https://github.com/adobe/brackets/pull/1897) by [Jake Stoeffler](https://github.com/JakeStoeffler)
 * [Fix #1971: Renaming file twice shows wrong name](https://github.com/adobe/brackets/pull/1990) by [Chema Balsas](https://github.com/jbalsas)
 * [Fix #1172: Support numpad symbols for keyboard shortcuts (Comment/Uncomment, font size)](https://github.com/adobe/brackets/pull/1946) by [Tomás Malbrán](https://github.com/TomMalbran)
