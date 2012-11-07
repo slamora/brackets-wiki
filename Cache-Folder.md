@@ -4,9 +4,9 @@ If you're having trouble starting Brackets after upgrading from a previous build
 
 ## Cache location:
 
-* Mac: ```~/Library/Application Support/Brackets/cefCache```
-* Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets\cefCache``` -- (aka ```%appdata%\Brackets\cefCache```)
-* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets``` -- (aka ```%appdata%\Brackets\cefCache```)
+* Mac: ```~/Library/Application Support/Brackets/cef_data```
+* Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets\cef_data``` -- (aka ```%appdata%\Brackets\cef_data```)
+* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets\cef_data``` -- (aka ```%appdata%\Brackets\cef_data```)
 
 Note: for **Edge Code**, replace `Brackets` in the path with `Adobe/Edge Code`.
 
