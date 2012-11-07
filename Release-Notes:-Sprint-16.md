@@ -33,7 +33,7 @@ API Changes
 -----------
 * [Require 2.1.1](https://github.com/adobe/brackets/pull/1968): For better error handling while loading extensions, we've upgraded from Require 1.0.3 to [2.1.1](https://github.com/jrburke/requirejs/wiki/Upgrading-to-RequireJS-2.1)
 * focusedEditorChange has been renamed to activeEditorChange
-* CodeHintManager now requires a code hint provider to return true by default in its handleSelect() function. It can return false if the code hint provider wants to keep the hint list open.
+* CodeHintManager now requires a code hint provider to return true by default in its handleSelect() function. A code hint provider can return false if it wants to keep the hint list open after inserting a user selection.
 
 New/Improved Extensibility APIs
 -------------------------------
