@@ -33,6 +33,7 @@ API Changes
 -----------
 * [Require 2.1.1](https://github.com/adobe/brackets/pull/1968): For better error handling while loading extensions, we've upgraded from Require 1.0.3 to [2.1.1](https://github.com/jrburke/requirejs/wiki/Upgrading-to-RequireJS-2.1)
 * focusedEditorChange has been renamed to activeEditorChange
+* CodeHintManager now requires a code hint provider to return true by default in its handleSelect() function. It can return false if the code hint provider wants to keep the hint list open.
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -63,6 +64,7 @@ Community contributions to Brackets
 * [Fix #1548: Resizing sidebar produces strange behavior in projects panel](https://github.com/adobe/brackets/pull/2040) by [Chema Balsas](https://github.com/jbalsas)
 * [Fix #389: Inline editor finds false positive animation name](https://github.com/adobe/brackets/pull/1907) by [jeffslofish](https://github.com/jeffslofish)
 * [F2 keyboard shortcut for Rename](https://github.com/adobe/brackets/pull/1922) by [zanqi](https://github.com/zanqi)
+* [Unit test for reading a drive](https://github.com/adobe/brackets/pull/2038) by [zanqi](https://github.com/zanqi)
 * [Fix #1508: Root folders show nothing in recent projects list after the "-" (no path or drive name)](https://github.com/adobe/brackets/pull/1926) by [jeffslofish](https://github.com/jeffslofish)
 * [Fix #1916: Menu name inconsistency: Lines vs. Line(s)](https://github.com/adobe/brackets/pull/1928) by [KraigWalker](https://github.com/KraigWalker)
 * [Japanese Translation](https://github.com/adobe/brackets/pull/1929) by [shumpei](https://github.com/shumpei)
