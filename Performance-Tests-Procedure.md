@@ -12,8 +12,8 @@ Sprint DoD has a task for logging performance tests results. We have a small set
 10. Log "Application Startup" time under "Startup > _Cold_ Startup (first run, no prefs)"
 11. Debug > Run Tests, Performance, All
 12. Log "Performance Tests File open performance" under "_Cold_ - Performance Tests File open performance"
-13. Log the first set of "JavaScript Inline Editor Creation" results under "_Cold_ - JSQuickEdit Performance site should open inline editors."
-14. Log the last set of "JavaScript Inline Editor Creation" results under "_Warm_ - JSQuickEdit Performance suite should open inline editors."
+13. Log the _first_ set of "JavaScript Inline Editor Creation" results under "_Cold_ - JSQuickEdit Performance site should open inline editors."
+14. Log the _last_ set of "JavaScript Inline Editor Creation" results under "_Warm_ - JSQuickEdit Performance suite should open inline editors."
 15. Exit and restart Brackets
 16. Debug > Show Performance Data
 17. Log "Application Startup" time under "Startup > _Warm_ Startup"
