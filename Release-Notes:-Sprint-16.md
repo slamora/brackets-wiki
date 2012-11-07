@@ -1,13 +1,8 @@
-_This is a draft!_
--------------------
-_This document will not be finalized until the end of Sprint 16 -- approximately November 9._
-
 What's New in Sprint 16
 -----------------------
 * **Live Development**
     * [URL mapping for Live Preview](https://trello.com/card/3-url-mapping-for-live-development/4f90a6d98f77505d7940ce88/664): Users can specify a base URL for the root folder of a project.
 * **General Code Editing**
-    * [Color Picker](https://trello.com/card/2-color-selector/4f90a6d98f77505d7940ce88/662): An inline editor for colors in CSS and HTML files. Supports rgba, hex, and hsla.
     * [Find and Replace](https://github.com/adobe/brackets/pull/1914): Search field turns red when no results are found
     * [CodeMirror 3 migration: Critical editing functionality](https://trello.com/card/2-codemirror-3-critical-editing-functionality/4f90a6d98f77505d7940ce88/660)
     * [Status Bar Edit Mode Formatting](https://github.com/adobe/brackets/pull/1923): The edit mode is now capitalized correctly.
