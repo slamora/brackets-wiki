@@ -30,7 +30,7 @@ What's New in Sprint 16
 
 
 
-_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-16...sprint-17#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-16...sprint-17#commits_bucket)
+_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-15...sprint-16#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-15...sprint-16#commits_bucket)
 
 
 UI Changes
