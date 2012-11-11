@@ -38,6 +38,8 @@ API Changes
 
 **AppInit.appReady() event** - Now occurs after extensions are done loading, instead of before. See [#1854](https://github.com/adobe/brackets/pull/1854).
 
+**Adding panels** - If you add a panel below the editor area, make sure you add it _above_ the new status bar. Use `insertBefore("#status-bar")` or `insertAfter(".bottom-panel:last")`. _(Added late: this was missing from the release notes when Sprint 15 shipped)._
+
 New/Improved Extensibility APIs
 -------------------------------
 **Code hinting** - Code hint provider's `handleSelect()` is now passed a 4th argument: a boolean indicating whether the user prefers to close code hints or continue showing suggestions for the next piece of code. True indicates hints should remain closed (user pressed Enter or clicked a suggestion); false indicates more hints should be shown after inserting the suggestion (user pressed Tab).
