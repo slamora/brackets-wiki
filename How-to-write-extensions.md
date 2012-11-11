@@ -22,7 +22,7 @@ An extension consists of a main.js (your main module) and any other JS files (ot
 
 You often want an extension to integrate with the UI somehow. If your extension is doing something new from scratch, you can add new menu items or keyboard shortcuts for your new behavior -- see next section. Some Brackets features that already provide a UI are also extensible via feature-specific APIs -- see the section after next.
 
-### <a name="uihooks"></a>Extending the UI generically
+### <a name="uihooks"></a>Adding menu items and keyboard shortcuts
 
 See [[Simple "Hello World" extension]] for a code sample.
 
@@ -40,22 +40,26 @@ As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut f
 **Add a keyboard shortcut:** To add a keyboard shortcut without any related menu item, call ```KeyBindingManager.addBinding()``` directly, linking a shortcut to your Command id. Be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts) page to see which shortcuts are available and to add the shortcuts that you use to the list.
 
 
-### <a name="featurehooks"></a>Extending specific Brackets functionality
+### <a name="newui"></a>Adding new UI elements
+
+Be sure to follow the [[Extension UI Guidelines]].
+
+**Add UI elements to the DOM:** Official APIs like the Quick Edit provider API above are the only officially supported way to add new UI elements to Brackets. You _could_ just insert new DOM nodes somewhere, but it may break with future updates to Brackets. 
+
+**<a name="addpanel"></a>Add a panel below the editor:** There's no official way to do this yet, so you'll have to insert your own DOM elements.  Tips:
+* Be sure you add your panel _above_ the status bar. To ensure this, use `$myPanel.insertBefore("#status-bar")` or better yet `$myPanel.insertAfter(".bottom-panel:last")`.
+* To make your panel resizable, use `Resizer.makeResizable()`: it even takes care of remembering the panels size across launches. See Resizer.js for documentation.
+
+**Load a CSS file:** use `ExtensionUtils.loadStyleSheet()`. It returns a Promise you can use to track when the CSS is done loading.
+<br>_To avoid accidentally breaking core Brackets UI_, place a CSS class on the root of your UI and make sure _all_ your CSS rules include a descendant selector. E.g. instead of `li { ... }` use `.myExtension li { ... }`.
+
+### <a name="featurehooks"></a>Extending specific Brackets features
 
 **Quick Edit (inline editors):** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. That manager works by iterating through all the possible inline edit providers on CTRL+E and finding which ones actually respond - it has no notion of priority yet, so if your extension wants to respond in the same situation as some other provider you'll be out of luck. 
 
 **Quick Open:** To interface with the quick open (file open/jump to) feature, use ```QuickOpen.addQuickOpenPlugin()```.
 
 **Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Similar to Quick Edit, if your extension wants to respond in the same situation as some other provider you'll be out of luck. 
-
-### <a name="newui"></a>Adding new UI elements
-
-Be sure to follow the [[Extension UI Guidelines]].
-
-**Load a CSS file:** use `ExtensionUtils.loadStyleSheet()`. It returns a Promise you can use to track when the CSS is done loading.
-<br>_To avoid accidentally breaking core Brackets UI_, place a CSS class on the root of your UI and make sure _all_ your CSS rules include a descendant selector. E.g. instead of `li { ... }` use `.myExtension li { ... }`.
-
-**Add UI elements to the DOM:** Official APIs like the Quick Edit provider API above are the only supported way to add new UI elements to Brackets. You _could_ just insert new DOM nodes somewhere, but it may break with future updates to Brackets. 
 
 ### <a name="tourl"></a>Accessing resources (e.g. images) in your extension
 
