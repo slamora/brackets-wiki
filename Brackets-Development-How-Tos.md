@@ -30,9 +30,10 @@ When dealing with files the user is editing, there are three important classes t
 
 ### How to get a Document ###
 
-* If you're operating on an Editor, use `Editor.document`.
-    * To get the currently focused Editor, use `EditorManager.getFocusedEditor()`. This may return an inline editor.
-    * If you always want the current _full-size_ editor (even if focus actually belongs to an inline editor within it), then use `DocumentManager.getCurrentDocument()` or `EditorManager.getCurrentFullEditor().document`.
+* If you're operating on an Editor, use `Editor.document`.<br>**How to get an Editor:**
+    * `EditorManager.getFocusedEditor()` returns the editor that has focus; may be an inline editor. Will be null if focus is elsewhere, such as the search bar.
+    * `EditorManager.getActiveEditor()` is similar, but if focus is somewhere other than an editor it returns whichever Editor _last_ had focus (i.e. the Editor that focus will return to when the search bar / dialog / etc. closes).
+    * `EditorManager.getCurrentFullEditor()` returns the currently visible full-size editor (even focus currently lies in an inline editor within it, or if focus lies in other UI such as the search bar). Synonymous with using `DocumentManager.getCurrentDocument()`.
 * To get a Document for any file, use `DocumentManager.getDocumentForPath()`. This returns asynchronously because it may need to read the file's content from disk.
 * If you're sure a file is already open, you can use the synchronous `DocumentManager.getOpenDocumentForPath()` instead -- but it will return null if you're wrong.
 
