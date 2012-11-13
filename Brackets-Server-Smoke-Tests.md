@@ -5,9 +5,9 @@ If you have trouble running through it or something is unclear, please post to t
 Server Setup
 ============
 You will need an HTTP server for these tests. Options are:
-* Setup a local wamp or mamp server.
-* Use a remote server on intranet with drive mapped to local machine.
-* _Future:_ Use Brackets built-in node server with HTTP plugin
+* Setup a local server (e.g. wamp/mamp/lamp).
+* Use a remote server with drive mapped to local machine.
+* _Future:_ Use Brackets built-in node server with HTTP plugin.
 
 Setup
 =====
