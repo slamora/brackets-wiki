@@ -55,7 +55,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 
 **Documentation**
-* [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core.
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
 * [Display Shortcuts](https://github.com/redmunds/brackets-display-shortcuts): Display Shortcuts defined to Brackets.
 
@@ -67,3 +66,4 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 
 **Deprecated Extensions**
 * [Editor Shortcuts](https://github.com/aonic/editor-shortcuts): Keyboard shortcut to delete line. _(This command is built into Brackets as of Sprint 15)._
+* [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core. _(Does not work in current versions of Brackets)._
