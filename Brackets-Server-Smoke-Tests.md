@@ -13,16 +13,16 @@ Setup
 =====
 
 1. Follow Setup steps for [main set of Smoke Tests](Brackets-Smoke-Tests).
-2. Copy brackets/tests/smokes/server-tests folder to server root.
+2. Copy the server-tests folder from brackets/tests/smokes to server root.
 
 Server smoke test steps
 =======================
 
-1. Launch Brackets. Use File > Open Folder... and browse to server root folder.
-2. Verify that you see index.html, pathRoot.html, server.shtml files, and css &amp; images folders.
+1. Launch Brackets. Use File > Open Folder... and browse to the server-tests sub-folder of the server root folder.
+2. Verify that you see pathRel.html, pathRoot.html, server.shtml files, and css &amp; images folders.
 3. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
 4. Verify informational text is displayed in empty input field. Click OK.
-5. Open index.html, start Live Preview using File > Live Preview.
+5. Open pathRel.html, start Live Preview using File > Live Preview.
 6. If you trashed prefs, you'll get an info dialog explaining how Live Preview works. Click OK.
 7. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome. Click "Relaunch". Chrome should relaunch and open the page.
 8. Verify that page renders correctly in browser.
