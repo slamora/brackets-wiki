@@ -25,12 +25,12 @@ Server smoke test steps
 5. Open pathRel.html, start Live Preview using File > Live Preview.
 6. If you trashed prefs, you'll get an info dialog explaining how Live Preview works. Click OK.
 7. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome. Click "Relaunch". Chrome should relaunch and open the page.
-8. Verify that page renders correctly in browser.
+8. Verify that the URL protocol is file: and page renders correctly in browser.
 9. Open File menu, verify Live Preview has a check mark next to it, then click it to toggle off Live Preview.
 10. Open pathRoot.html and click Live Preview (lightning bolt) icon on right side of menu bar.
 11. Verify that page is opened in browser, but with no CSS or images. Click Live Preview icon to disconnect Live Preview.
 12. Open server.shtml and start Live Preview. Verify Project Settings dialog is invoked with warning message indicating a Base URL is required.
-13. Enter the URL that maps to the project on your server (e.g. http://localhost/). Click OK. Verify that page renders correctly in browser.
+13. Enter the URL that maps to the project on your server (e.g. http://localhost/). Click OK. Verify that the URL protocol is http: or https: and page renders correctly in browser.
 14. In Brackets, set the cursor in the `<body>` tag, hit Cmd/Ctrl-E, and verify that it shows a single body rule.
 15. Edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
 16. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
