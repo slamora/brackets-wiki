@@ -19,10 +19,10 @@ Server smoke test steps
 =======================
 
 1. Launch Brackets. Use File > Open Folder... and browse to server root folder.
-2. Verify that you see **(TBD)** pathRel.html, pathRoot.html, server.shtml files, and css &amp; images folders.
+2. Verify that you see index.html, pathRoot.html, server.shtml files, and css &amp; images folders.
 3. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
 4. Verify informational text is displayed in empty input field. Click OK.
-5. Open pathRel.html, start Live Preview using File > Live Preview.
+5. Open index.html, start Live Preview using File > Live Preview.
 6. If you trashed prefs, you'll get an info dialog explaining how Live Preview works. Click OK.
 7. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome. Click "Relaunch". Chrome should relaunch and open the page.
 8. Verify that page renders correctly in browser.
