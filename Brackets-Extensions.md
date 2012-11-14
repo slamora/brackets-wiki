@@ -8,7 +8,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
-* [Show Indentations](https://github.com/DennisKehrig/brackets-show-indentations): Visualizes the characters used for indenting lines
+* [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
 * [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators (equal sings)
 * [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
