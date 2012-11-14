@@ -18,8 +18,8 @@ Setup
 Server smoke test steps
 =======================
 
-1. Launch Brackets. Use File > Open Folder... and browse to the server-tests sub-folder of the server root folder.
-2. Verify that you see pathRel.html, pathRoot.html, server.shtml files, and css &amp; images folders.
+1. Launch Brackets. Use File > Open Folder... and browse to the server root folder.
+2. Open the server-tests folder in the project tree and verify that you see pathRel.html, pathRoot.html, server.shtml files, and css &amp; images folders.
 3. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
 4. Verify informational text is displayed in empty input field. Click OK.
 5. Open pathRel.html, start Live Preview using File > Live Preview.
