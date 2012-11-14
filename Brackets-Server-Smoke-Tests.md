@@ -35,7 +35,7 @@ Server smoke test steps
 15. Edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
 16. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
 17. Make an edit to some text in HTML page that is visible in browser. Verify that text has not yet changed in browser.
-18. Use Cmd/Ctrl-S to save changes to HTML file. Verify that changes to HTML file are changed in browser and unsaved CSS changes are still shown in browser.
+18. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
 19. Undo changes in HTML file and save to get back to original state.
 20. Close all files and discard changes.
 21. Open pathRoot.html again, start Live Preview, and verify that CSS and images are now rendered. Turn off Live Preview and close file.
