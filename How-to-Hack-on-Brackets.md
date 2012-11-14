@@ -5,7 +5,7 @@
     1. merge from adobe/brackets master
     2. re-test your code after the merge
     3. run the unit tests with Debug > Run Tests -- everything should pass
-    4. if your change is nontrivial or might have affected the UI, run through the [Brackets smoke tests](Brackets-Smoke-Tests).
+    4. if your change is nontrivial or might have affected the UI, run through the [Brackets smoke tests](Brackets-Smoke-Tests) and possibly the [Brackets server smoke tests](Brackets-Server-Smoke-Tests).
 5. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
 
 ## How to Get Started ##
