@@ -13,7 +13,7 @@ Setup
 =====
 
 1. Follow Setup steps for [main set of Smoke Tests](Brackets-Smoke-Tests).
-2. Copy server-test folder **(TBD)** to server root.
+2. Copy brackets/tests/smokes/server-tests folder to server root.
 
 Server smoke test steps
 =======================
