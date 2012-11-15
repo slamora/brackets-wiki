@@ -16,7 +16,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
-* [Spell Checker] (https://github.com/couzteau/SpellCheck): based on the spell checker web service After The Deadline - still in Alpha - Checks current text selection, highlights errors, click on error to see suggestions.
+* [Spell Checker] (https://github.com/couzteau/SpellCheck): based on the spell checker web service <i>After The Deadline</i> - now in beta - Checks current text selection, highlights errors, click on error to see suggestions. Supports English, German, French, Spanish and Portuguese 
 
 
 **Code Generation**
