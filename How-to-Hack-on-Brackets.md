@@ -109,7 +109,7 @@ If you want to avoid getting branches other than master, you can add the `--trac
 Do the same for the brackets-shell repository (if you forked it).
 ```
 cd brackets-shell
-git remote add --track master upstream https://github.com/adobe/brackets-shell.git
+git remote add upstream https://github.com/adobe/brackets-shell.git
 ```
 
 It's very important to always have the latest code from the main repository. That way you can make sure your pull requests will be clean merges and that you're always working with the most stable code. Any time you want to grab the master branch from the Brackets repository, you have to follow a two-step process. First, use the fetch command with the remote destination we created earlier:
