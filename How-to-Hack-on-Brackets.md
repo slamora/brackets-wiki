@@ -99,10 +99,12 @@ It's important to be working off of the latest build and the easiest way to do t
 
 ```
 cd brackets
-git remote add --track master upstream https://github.com/adobe/brackets.git
+git remote add upstream https://github.com/adobe/brackets.git
 ```
 
-This will create a link from your local brackets repository to the main one called `upstream`. `upstream` will be how you reference the main brackets repository. 
+This will create a link from your local brackets repository to the main one called `upstream`. `upstream` will be how you reference the main brackets repository.
+
+If you want to avoid getting branches other than master, you can add the `--track master` argument after `add`. However, that will mean that if you need to pull a different branch, you'll need to explicitly fetch it. 
 
 Do the same for the brackets-shell repository (if you forked it).
 ```
