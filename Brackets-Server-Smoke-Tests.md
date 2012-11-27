@@ -13,7 +13,7 @@ Setup
 =====
 
 1. Follow Setup steps for [main set of Smoke Tests](Brackets-Smoke-Tests).
-2. Copy the server-tests folder from brackets/tests/smokes to server root.
+2. Copy the server-tests folder from brackets/tests/smokes to server root, or run setup_server_smokes script to create a symbolic link to the files.
 
 Server smoke test steps
 =======================
