@@ -6,6 +6,7 @@ Server Setup
 ============
 You will need an HTTP server for these tests. Options are:
 * Setup a local server (e.g. wamp/mamp/lamp).
+* Use builtin server on Mac.
 * Use a remote server with drive mapped to local machine.
 * _Future:_ Use Brackets built-in node server with HTTP plugin.
 
@@ -13,12 +14,12 @@ Setup
 =====
 
 1. Follow Setup steps for [main set of Smoke Tests](Brackets-Smoke-Tests).
-2. Copy the server-tests folder from brackets/tests/smokes to server root, or run brackets/tools/setup_server_smokes script to create a symbolic link to the files.
+2. Copy the server-tests folder from brackets/tests/smokes to server root, or run brackets/tools/setup_server_smokes script to create a symbolic link to the files. The server root folder will be something like c:\wamp (on Win) or /Library/Webserver/Documents (on Mac).
 
 Server smoke test steps
 =======================
 
-1. Launch Brackets. Use File > Open Folder... and browse to the server root folder. This will be something like c:\wamp (on Win) or /Library/Webserver/Documents (on Mac).
+1. Launch Brackets. Use File > Open Folder... and browse to the server root folder.
 2. Open the server-tests folder in the project tree and verify that you see pathRel.html, pathRoot.html, server.shtml files, and css &amp; images folders.
 3. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
 4. Verify informational text is displayed in empty input field. Click OK.
