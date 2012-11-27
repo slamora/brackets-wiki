@@ -6,7 +6,11 @@ Server Setup
 ============
 You will need an HTTP server for these tests. Options are:
 * Setup a local server (e.g. wamp/mamp/lamp).
-* Use builtin server on Mac.
+* Use built-in server on Mac:
+** Turn on web server: System Preferences > Sharing > Web Sharing: On
+** Turn on PHP server: Edit /etc/apache2/httpd.conf, uncomment following line:
+** #LoadModule php5_module libexec/apache2/libphp5.so
+** Server root folder: /Library/WebServer/Documents/
 * Use a remote server with drive mapped to local machine.
 * _Future:_ Use Brackets built-in node server with HTTP plugin.
 
