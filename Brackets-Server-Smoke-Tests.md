@@ -7,7 +7,9 @@ Server Setup
 You will need an HTTP server for these tests. Options are:
 * Setup a local server (e.g. wamp/mamp/lamp).
 * Use built-in server on Mac:  
-    a. Turn on web server: System Preferences > Sharing > Web Sharing: On  
+    a. Turn on web server: 
+        * Mac OS 10.7 or earlier: System Preferences > Sharing > Web Sharing: On  
+        * Mac OS 10.8 or later: run "apachectl start" in a terminal window
     b. Turn on PHP server: Edit /etc/apache2/httpd.conf, uncomment following line:  
         #LoadModule php5_module libexec/apache2/libphp5.so  
     c. Server root folder: /Library/WebServer/Documents/  
@@ -18,7 +20,7 @@ Setup
 =====
 
 1. Follow Setup steps for [main set of Smoke Tests](Brackets-Smoke-Tests).
-2. Copy the server-tests folder from brackets/tests/smokes to server root, or run brackets/tools/setup_server_smokes script to create a symbolic link to the files. The server root folder will be something like c:\wamp (on Win) or /Library/Webserver/Documents (on Mac).
+2. Copy the server-tests folder from brackets/tests/smokes to server root, or run brackets/tools/setup_server_smokes script to create a symbolic link to the files. The server root folder will be something like c:\wamp (on Win) or /Library/Webserver/Documents (on Mac). On the Mac, you may need to run the script with "sudo" to have proper permissions.
 
 Server smoke test steps
 =======================
