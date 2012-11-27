@@ -4,7 +4,7 @@ If you have trouble running through it or something is unclear, please post to t
 
 Server Setup
 ============
-You will need an HTTP server for these tests. Options are:
+You will need an HTTP and PHP server for these tests. Options are:
 * Setup a local server (e.g. wamp/mamp/lamp).
 * Use built-in server on Mac:  
     a. (OSX 10.7 and earlier) Turn on web server: System Preferences > Sharing > Web Sharing: On  
