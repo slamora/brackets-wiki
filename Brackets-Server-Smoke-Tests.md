@@ -24,7 +24,7 @@ Server smoke test steps
 =======================
 
 1. Launch Brackets. Use File > Open Folder... and browse to the server root folder.
-2. Open the server-tests folder in the project tree and verify that you see pathRel.html, pathRoot.html, server.shtml files, and css &amp; images folders.
+2. Open the server-tests folder in the project tree and verify that you see pathRel.html, pathRoot.html, server.php files, and css &amp; images folders.
 3. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
 4. Verify informational text is displayed in empty input field. Click OK.
 5. Open pathRel.html, start Live Preview using File > Live Preview.
@@ -34,7 +34,7 @@ Server smoke test steps
 9. Open File menu, verify Live Preview has a check mark next to it, then click it to toggle off Live Preview.
 10. Open pathRoot.html and click Live Preview (lightning bolt) icon on right side of menu bar.
 11. Verify that page is opened in browser, but with no CSS or images. Click Live Preview icon to disconnect Live Preview.
-12. Open server.shtml and start Live Preview. Verify Project Settings dialog is invoked with warning message indicating a Base URL is required.
+12. Open server.php and start Live Preview. Verify Project Settings dialog is invoked with warning message indicating a Base URL is required.
 13. Enter the URL that maps to the project on your server (e.g. http://localhost/). Click OK. Verify that the URL protocol is the same as in your URL Prefix (http: or https:) and page renders correctly in browser.
 14. In Brackets, set the cursor in the `<body>` tag, hit Cmd/Ctrl-E, and verify that it shows a single body rule.
 15. Edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
