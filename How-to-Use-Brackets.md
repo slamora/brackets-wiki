@@ -101,6 +101,11 @@ By default, Brackets previews files using a direct file:// URL. If you want
 to preview off a server, you can use **File > Project Settings...**. In the Base URL
 field, set the URL on the server that corresponds to the root of your project.
 
+The Live Highlight from CSS code feature was added in Sprint 17.
+While Live Preview is open, putting your cursor in a CSS rule
+in Brackets will highlight all matching HTML elements in the browser.
+Use "File > Live Highlight" to toggle this off.
+
 Some limitations of the current implementation:
 
 * It only works with Chrome as the target browser.
