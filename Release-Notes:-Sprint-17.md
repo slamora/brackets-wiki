@@ -44,7 +44,7 @@ Community contributions to Brackets
 * [Visual cue if no quick open results](https://github.com/adobe/brackets/pull/2101) by ["J.M."](https://github.com/mynetx)
 * [Turkish translation](https://github.com/adobe/brackets/pull/2127) by [Ilker Guller](https://github.com/Sly777)
 * [Improve expand/collapse behavior and drag events for resizable panels](https://github.com/adobe/brackets/pull/2092) by [Chema Balsas](https://github.com/jbalsas)
-* [Fix: Undoing certain text operations takes multiple steps](https://github.com/adobe/brackets/pull/2132) by Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix: Undoing certain text operations takes multiple steps](https://github.com/adobe/brackets/pull/2132) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Fix #2182: HTML src/href autocomplete is stale after switching projects](https://github.com/adobe/brackets/pull/2197) by [Chema Balsas](https://github.com/jbalsas)
 * [Fix #2061: No gray JSLint star when Brackets launched with JSLint disabled](https://github.com/adobe/brackets/pull/2099) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Code cleanup of Live Preview's injected JS code](https://github.com/adobe/brackets/pull/1529) by [Jonathan Diehl](https://github.com/jdiehl)
