@@ -60,15 +60,14 @@ Brackets will search the JS files in the file tree for matching functions,
 then open up an inline editor embedded in the HTML file that lets you make
 quick edits to one of the functions.
 
-Eventually Brackets could leverage inline editing for lots of other kinds of
 Some things to note about this feature:
 
 * Brackets doesn't take the cascade, tag context, object type, etc. into account.
 * Brackets doesn't check to see which CSS or JS files are linked into the current HTML 
   file--it searches all files in the file tree.
   
-things--in addition to showing relevant JS code, you could imagine adding
-inline visual tools like gradient and shadow editors for the selected CSS rule.
+Eventually Brackets could leverage inline editing for lots of other kinds of
+things like inline visual tools like gradient and shadow editors for the selected CSS rule.
 
 <a id="livedev"></a>Live development
 ----------------
