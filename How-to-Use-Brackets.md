@@ -7,7 +7,7 @@ The latest "stable" builds can be downloaded from the [downloads page](https://g
 
 If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. See [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) for details on pulling the source.
 
-Basic usage
+Basic Usage
 -----------
 
 Currently, most of the functionality in Brackets is available from the in-window
@@ -34,7 +34,7 @@ values. They'll pop up automatically as you type tags, or you can hit
 Ctrl-Space to bring them up manually. More code hinting will come in future
 sprints.
 
-<a id="inlines"></a>Quick edit
+<a id="inlines"></a>Quick Edit
 ----------
 
 One of the goals of Brackets is to make it easy to make quick edits to
@@ -73,7 +73,7 @@ shortcut swatches for other colors used in the file.
 Eventually Brackets could leverage inline editing for lots of other kinds of
 things like inline visual tools like gradient and shadow editors for the selected CSS rule.
 
-<a id="livedev"></a>Live development
+<a id="livedev"></a>Live Development
 ----------------
 
 Another goal of Brackets is to bridge the gap between code editing and in-browser
@@ -117,7 +117,7 @@ highlighting DOM nodes in the browser from Brackets, clicking on an item in
 the browser to jump back to its source code in Brackets, and setting JS breakpoints 
 from Brackets.
 
-Unofficial features
+Unofficial Features
 -------------------
 A number of features, including Find/Replace, Find in Files, and everything
 in the Debug menu, aren't "official" features yet. They don't have final UI, 
