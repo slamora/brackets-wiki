@@ -134,14 +134,14 @@ A couple of notes on unofficial features:
 * By default, JSLint runs on all JS files and shows its results in a panel
   at the bottom. If your file is clean, you'll see a gold star in the upper
   right corner. JSLint is very picky about formatting. JSLint is very picky 
-  about a lot of things. If you want to turn it off, uncheck *Debug > Enable
+  about a lot of things. If you want to turn it off, uncheck *View > Enable
   JSLint*. This setting is global and remembered across runs.
 * *Navigate > Quick Open* (Ctrl/Cmd-Shift-O) brings up a Quick Open field to 
   let you quickly switch to another file from the keyboard. You can start typing 
   a filename in the field, then down-arrow or use the mouse to select one of the 
   files that matches. 
 * You can also use Ctrl/Cmd-T to jump to a particular method definition in 
-  the current JS file, or Ctrl/Cmd-L to jump to a line number.
+  the current JS file, or Ctrl-G/Cmd-L to jump to a line number.
 * You can run the Brackets unit test suite from *Debug > Run Tests*.
 
 Keyboard Shortcut Cheat Sheet
