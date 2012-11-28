@@ -105,12 +105,13 @@ Some limitations of the current implementation:
 
 * It only works with Chrome as the target browser.
 * It relies on the remote debugging features in Chrome, which are enabled by
-  a command-line flag. If you're already running Chrome when you hit the Go Live
-  button, Brackets will ask if you want to restart Chrome with remote debugging
-  enabled, and if you say yes, it will go ahead and do it for you.
+  a command-line flag. On Mac, if you're already running Chrome when you start
+  Live Preview, Brackets will ask if you want to restart Chrome with remote
+  debugging enabled, and if you say yes, it will go ahead and do it for you.
 * Only one HTML file can have a live connection to the browser at a time--if you
   switch to a different HTML file, Brackets will close the original preview and open 
-  one for the new file.
+  one for the new file. Note that if you have another tab open, Chrome will not
+  shut down and restart between each page.
   
 As with quick edit, there are lots of ideas for how to extend this, including
 highlighting DOM nodes in the browser from Brackets, clicking on an item in
