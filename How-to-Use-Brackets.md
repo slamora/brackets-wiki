@@ -146,7 +146,9 @@ A couple of notes on unofficial features:
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
-Here are some keyboard shortcuts that are worth knowing. There will be more as features are added.
+Here are some keyboard shortcuts that are worth knowing. Also see the
+[Brackets Shortcut wiki page](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts)
+for a more complete list of shortcuts.
 
 <table>
 <tbody>
