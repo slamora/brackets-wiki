@@ -92,6 +92,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Extension</td>
     </tr>
     <tr>
+        <td class="shortcut-base">C</td>
+        <td class="shortcut-binding">Ctrl-Shift-C</td>
+        <td class="shortcut-cmd-id">file.previewHighlight</td>
+        <td class="shortcut-cmd-name">Live Highlight</td>
+        <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
         <td class="shortcut-base">D</td>
         <td class="shortcut-binding">Ctrl-D</td>
         <td class="shortcut-cmd-id">edit.duplicate</td>
@@ -372,10 +379,10 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">CodeMirror</td>
     </tr>
     <tr>
-        <td class="shortcut-base">F12</td>
-        <td class="shortcut-binding">F12</td>
-        <td class="shortcut-cmd-id">debug.showDeveloperTools</td>
-        <td class="shortcut-cmd-name">Show Developer Tools</td>
+        <td class="shortcut-base">F2</td>
+        <td class="shortcut-binding">F2</td>
+        <td class="shortcut-cmd-id">file.rename</td>
+        <td class="shortcut-cmd-name">Rename</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
@@ -400,18 +407,18 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
+        <td class="shortcut-base">F12</td>
+        <td class="shortcut-binding">F12</td>
+        <td class="shortcut-cmd-id">debug.showDeveloperTools</td>
+        <td class="shortcut-cmd-name">Show Developer Tools</td>
+        <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
         <td class="shortcut-base">Home</td>
         <td class="shortcut-binding">Ctrl-Home</td>
         <td class="shortcut-cmd-id">goDocStart</td>
         <td class="shortcut-cmd-name">goDocStart</td>
         <td class="shortcut-orig">CodeMirror</td>
-    </tr>
-    <tr>
-        <td class="shortcut-base">Indent</td>
-        <td class="shortcut-binding">Indent</td>
-        <td class="shortcut-cmd-id">edit.indent</td>
-        <td class="shortcut-cmd-name">Indent</td>
-        <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
         <td class="shortcut-base">Left</td>
@@ -453,13 +460,6 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-binding">Ctrl-Tab</td>
         <td class="shortcut-cmd-id">navigate.nextDoc</td>
         <td class="shortcut-cmd-name">Next Document</td>
-        <td class="shortcut-orig">Brackets</td>
-    </tr>
-    <tr>
-        <td class="shortcut-base">Unindent</td>
-        <td class="shortcut-binding">Unindent</td>
-        <td class="shortcut-cmd-id">edit.unindent</td>
-        <td class="shortcut-cmd-name">Unindent</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
