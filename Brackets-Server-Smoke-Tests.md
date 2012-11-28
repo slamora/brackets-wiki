@@ -40,8 +40,8 @@ Server smoke test steps
 14. In Brackets, set the cursor in the `<body>` tag, hit Cmd/Ctrl-E, and verify that it shows a single body rule.
 15. Edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
 16. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
-17. Make an edit to some text in HTML page that is visible in browser. Verify that text has not yet changed in browser.
-18. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
+17. Make an edit to some text in HTML page that is visible in browser. Note: some text in the page is replaced by logo image via CSS (e.g. first h1 and first h2 tags) so edits will not be visible; try updating text in News section.
+18. Verify that text has not yet changed in browser. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
 19. Disconnect Live Preview. Undo changes in HTML file and save to get back to original state.
 20. Close all files and discard changes.
 21. Open pathRoot.html again, start Live Preview, and verify that CSS and images are now rendered. Turn off Live Preview and close file.
