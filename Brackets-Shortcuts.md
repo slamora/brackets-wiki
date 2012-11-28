@@ -22,6 +22,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig"><strong>Origin</strong></td>
     </tr>
     <tr>
+        <td class="shortcut-base">+</td>
+        <td class="shortcut-binding">Ctrl-+</td>
+        <td class="shortcut-cmd-id">view.increaseFontSize</td>
+        <td class="shortcut-cmd-name">Increase Font Size</td>
+        <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
         <td class="shortcut-base">,</td>
         <td class="shortcut-binding">Ctrl-Shift-,</td>
         <td class="shortcut-cmd-id">com.notwebsafe.select-parent</td>
