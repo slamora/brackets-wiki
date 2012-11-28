@@ -66,6 +66,10 @@ Some things to note about this feature:
 * Brackets doesn't check to see which CSS or JS files are linked into the current HTML 
   file--it searches all files in the file tree.
   
+Starting with Sprint 17, you can use Quick Edit anywhere a hex color, rgb/rgba(), or
+hsl/hsla() appears to invoke the Color Picker to edit it inline. This includes
+shortcut swatches for other colors used in the file.
+
 Eventually Brackets could leverage inline editing for lots of other kinds of
 things like inline visual tools like gradient and shadow editors for the selected CSS rule.
 
