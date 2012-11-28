@@ -54,13 +54,19 @@ You can make changes in the inline editor and save them, then close the editor
 by hitting Cmd-E again. Edits you make in the inline editor will be properly
 applied in Live Development mode (see below).
 
+Brackets also has an early implementation of JavaScript support. If you are in
+some JavaScript code, you put the cursor in a function call, and hit Ctrl/Cmd-E.
+Brackets will search the JS files in the file tree for matching functions,
+then open up an inline editor embedded in the HTML file that lets you make
+quick edits to one of the functions.
+
+Eventually Brackets could leverage inline editing for lots of other kinds of
 Some things to note about this feature:
 
-* Brackets doesn't take the cascade, tag context, etc. into account.
-* Brackets doesn't check to see which CSS files are linked into the current HTML 
+* Brackets doesn't take the cascade, tag context, object type, etc. into account.
+* Brackets doesn't check to see which CSS or JS files are linked into the current HTML 
   file--it searches all files in the file tree.
   
-Eventually Brackets could leverage inline editing for lots of other kinds of
 things--in addition to showing relevant JS code, you could imagine adding
 inline visual tools like gradient and shadow editors for the selected CSS rule.
 
