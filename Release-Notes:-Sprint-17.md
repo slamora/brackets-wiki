@@ -1,11 +1,8 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 17 -- approximately November 29._
-
 What's New in Sprint 17
 -----------------------
 * **Live Preview**
     * ['Live Highlight' from CSS code](https://trello.com/card/3-live-development-highlight-html-elements-in-browser-from-css/4f90a6d98f77505d7940ce88/285): While Live Preview is open, putting your cursor in a CSS rule in Brackets will highlight all matching HTML elements in the browser. Use "File > Live Highlight" to toggle this off.
+    * JSP and ASP files are now recognized as HTML-like for Live Preview's local server support
 * **Visual Editing**
     * [Inline color picker](https://trello.com/card/3-color-selector/4f90a6d98f77505d7940ce88/662): Use Quick Edit anywhere a hex color, rgb() or hsl() appears to edit it inline. Includes shortcut swatches for  other colors used in the file.
 * **Code Editing**
@@ -21,13 +18,15 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-
+No major changes to existing features.
 
 API Changes
 -----------
+**Resizable panels** - Panel resizing and expand/collapse now emit a simpler, clearer set of events. See docs on `Resizer` for details.
 
 New/Improved Extensibility APIs
 -------------------------------
+**InlineWidget** - Inline widgets can provide a `refresh()` function (overriding the empty stub inherited from InlineWidget) to be notified when the code editor font size changes.
 
 Known Issues
 ------------
