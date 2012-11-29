@@ -19,7 +19,7 @@ Setup
 =====
 
 1. Follow Setup steps for [main set of Smoke Tests](Brackets-Smoke-Tests).
-2. Copy the server-tests folder from brackets/tests/smokes to server root, or run brackets/tools/setup_server_smokes script to create a symbolic link to the files. The server root folder will be something like c:\wamp (on Win) or /Library/Webserver/Documents (on Mac). On the Mac, you may need to run the script with "sudo" to have proper permissions.
+2. Copy the server-tests folder from brackets/test/smokes to server root, or run brackets/tools/setup_server_smokes script to create a symbolic link to the files. The server root folder will be something like c:\wamp (on Win) or /Library/Webserver/Documents (on Mac). On the Mac, you may need to run the script with "sudo" to have proper permissions.
 
 Server smoke test steps
 =======================
