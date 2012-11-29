@@ -183,6 +183,16 @@ _On Windows, we have a backlog item to address the lack of an error message http
 1. Enable ``View > Enable JSLint`` (a checkmark will appear when enabled)
 2. Confirm JSLint panel title ``<panel_jslint>``
 
+# Inline Color Editor
+
+1. Open ``desktop.css``
+2. Place the cursor on any hex color, e.g. #000. Press ``CMD+E`` or ``Ctrl+E``
+3. In the saturation/luminosity, select a new contrasting color
+4. Hover over the current color swatch (the new chosen color). Confirm tooltip ``<current_color>``.
+5. Hover over the original color swatch (the original color). Confirm tooltip ``<original_color>``.
+6. Hover over each button in the button bar that contains (RGBa, HEX, HSLa). Confirm tooltips ``<rgba_format>``, ``<hex_format>`` and ``<hsla_format>``.
+7. Hover over one of the colors listed on the right. Confirm tooltop ``<color_used_n_times>``.
+
 # Live Preview
 
 **Requires Google Chrome to be installed http://www.google.com/chrome**
