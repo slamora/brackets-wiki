@@ -50,6 +50,8 @@
 
 ## Error opening file (mac only)
 
+_On Windows, we have a backlog item to address the lack of an error message https://trello.com/c/lSdnZmBc_
+
 1. In the project tree, expand the ``images`` folder.
 2. Click on ``events.jpg``
 3. Confirm error message ``<dialog_error_opening_file>``
