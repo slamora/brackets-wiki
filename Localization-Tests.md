@@ -225,6 +225,9 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Confirm live development error dialog ``<dialog_live_development_chrome_not_found>``
 6. Restore the Chrome executable name
 
+## Base URL
+1. TODO
+
 # Update Notification
 
 The following tests configure fake updates for testing ``Help > Check for Updates``. Update information is normally pulled from http://brackets.io.
