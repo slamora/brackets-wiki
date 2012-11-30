@@ -65,8 +65,8 @@ git submodule update --init
 
 That should both get the latest version of CodeMirror and all other submodules used by Brackets. 
 
-### Building the Code ###
-If you are running the Brackets app from an installer, you can skip this section.
+### Building Native Shell ###
+If you are running the Brackets native shell app from an installer, you can skip this section.
 
 For most of your work on Brackets, you should only need to edit the HTML/JS/CSS code in the
 brackets repo. To work in the latest brackets code, you may need to run the latest native app
