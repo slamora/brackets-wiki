@@ -1,6 +1,8 @@
 # Notes for testing
 
+* Clone the brackets git repository to your local machine. The repo contains test used for these localization tests.
 * ``citrus completed`` test project: https://github.com/adobe/brackets/tree/master/test/smokes/citrus%20completed
+* ``server-smokes`` test project: https://github.com/adobe/brackets/tree/master/test/smokes/server-smokes
 * To setup each test, load the ``citrus completed`` project via ``File > Open folder...``
 * Placeholders for screenshots are written as ``<image_filename_placeholder>``
 * To open files from the project panel (i.e. to add them to the working set), double-click on the file.
@@ -226,7 +228,20 @@ _On Windows, we have a backlog item to address the lack of an error message http
 6. Restore the Chrome executable name
 
 ## Base URL
-1. TODO
+1. Open the ``server-smokes`` project
+2. File > Project Settings...
+3. Confirm project settings dialog ``<project_settings_dialog>>``
+4. Open ``server.php``
+5. File > Live Preview
+6. Confirm project settings dialog appears with warning message ``<project_settings_specify_base_url>``
+7. Enter ``ftp://path/to/foo`` (does not have to be a functioning path)
+8. Confirm error message ``<project_settings_error_invalid_protocol>``
+9. Enter ``http://path/to?foo``
+10. Confirm error message ``<project_settings_error_search_disallowed>``
+11. Enter ``http://path/to#foo``
+12. Confirm error message ``<project_settings_error_hash_disallowed>``
+13. Enter ``http://path to foo``
+14. Confirm error message ``<project_settings_error_invalid_char>``
 
 # Update Notification
 
