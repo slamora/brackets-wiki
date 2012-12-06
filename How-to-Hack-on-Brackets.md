@@ -95,7 +95,7 @@ tools/setup_for_hacking.sh "/Applications/Brackets Sprint 14.app"
 ```
 tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 14"
 ```
-5. Launch the installed copy of Brackets, select _Help > About_, and make sure that the version number says "sprint xx development build". If it says "sprint xx experimental build" instead, you're not properly set up.
+5. Launch the installed copy of Brackets, select _Help > About_, and make sure that the version number says "sprint xx development build" (*not* "experimental build"--if you see that, you're not properly set up).
 6. To revert back to using the installed version of the Brackets source, run `tools/restore_installed_build.sh` (Mac) or `tools\restore_installed_build.bat` (Windows) from your Brackets repo.
 
 (Alternatively, you can hold down the `shift` key while launching Brackets to get a file selector dialog. Select the `src/index.html` file from your copy of the code, and Brackets will run your copy of the HTML/JS/CSS files. _Note: this `index.html` file will only be used for the current Brackets session. Quitting and restarting will revert back to the previous `index.html` file._)
