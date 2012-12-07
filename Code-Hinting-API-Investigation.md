@@ -1,6 +1,6 @@
 **_This is a draft, and is not yet implemented. Comments are appreciated._**
 
-We want an API that supports pluggable providers for code hints for various languages. The goal of this document is to summarize the requirements this API would need to meet so that we could provide "first class" code hinting providers for various languages.
+In Sprint 18, we are planning to improve our existing code hint API. The goal of this document is to summarize the requirements this API would need to meet so that we could provide "first class" code hinting providers for various languages.
 
 Our API for code hints can be separated into two parts:
 
