@@ -24,8 +24,8 @@ We (currently) believe these issues are largely separate. This document focuses 
 ##HTML
 
 * Multiple providers for different "parts" of HTML (e.g. tag names, attribute names, attribute values)
-** Implication: A single keypress could end the use of one provider and start the use of another provider. For example, if the user has typed "<a", they will have "a" and "address" in their list as tag names. When they press "space", the tag name will be decided, they will leave tag hinting, and start attribute hinting.
-** Implication: When in a "not showing hints" state, providers need to be given sufficient context to determine if they can provide suggestions.
+ * Implication: A single keypress could end the use of one provider and start the use of another provider. For example, if the user has typed "<a", they will have "a" and "address" in their list as tag names. When they press "space", the tag name will be decided, they will leave tag hinting, and start attribute hinting.
+ * Implication: When in a "not showing hints" state, providers need to be given sufficient context to determine if they can provide suggestions.
 
 ##CSS
 
