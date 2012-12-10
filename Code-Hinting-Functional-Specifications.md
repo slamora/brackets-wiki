@@ -72,4 +72,17 @@ At any point in time, this document should represent how we currently believe co
 * Code hints should be closed when the user types a character that is NOT a valid part of an identifier/property name. E.g., if ```foo``` is in scope, and the user types "f" (in a place where an identifier is valid), then hints should be automatically displayed and should contain "foo". But, if the user presses space (thus deciding on "f" as an identifier) then the code hint list should be hidden
  * **Open Question:** In the above situation, if the user then presses backspace, should the list reappear?
 * **Open Question:** We should consider how it would work to provide hints for function call parameters for known library functions. For example, what could we offer if the user has ```$.ajax(``` before his IP?
- 
+
+# Feature-specific Code Hinting
+
+In addition to providing the general language support above, extension authors may wish to provide more "targeted" code hinting for a specific part of a language. For example, the user might want to install a code hint plug in that provides color hints in CSS taken from their [Kuler](https://kuler.adobe.com/) profile.  So that we can better define our APIs to enable this, we detail a few functional specs here.
+
+## [Edge Web Fonts](https://github.com/adobe/brackets-edge-web-fonts) Code Hints
+
+* When the user is typing font family values, this provider should override the default CSS hinter to provide Edge-Web-Fonts-specific suggestions.
+ * **Open Question:** Should we merge the results from the specific and general providers? Joel votes "no" -- the specific provider should always win if it offers any suggestions. Ultimately, we could imagine allowing users to specify precedence of providers, but we should probably wait until this becomes a problem to design a solution.
+* At the bottom of the code hint list, there should be a link to browse for additional fonts. This should open up a dialog to select new fonts.
+
+## Other possible needs
+
+* Specific providers may want to put other "types" of items in the list. For example, they may want to put image previews that autocomplete to image paths.
