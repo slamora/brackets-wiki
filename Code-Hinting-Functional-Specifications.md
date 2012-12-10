@@ -71,6 +71,7 @@ At any point in time, this document should represent how we currently believe co
   * Doing this well will be really hard
 * Code hints should be closed when the user types a character that is NOT a valid part of an identifier/property name. E.g., if ```foo``` is in scope, and the user types "f" (in a place where an identifier is valid), then hints should be automatically displayed and should contain "foo". But, if the user presses space (thus deciding on "f" as an identifier) then the code hint list should be hidden
  * **Open Question:** In the above situation, if the user then presses backspace, should the list reappear?
+* Search for identifiers/properties should be "fuzzy", much like quick open. For example, if there is an identifier named ```getValue``` and the user types ```val```, then "getValue" should appear in the list (possibly ranked lower than other literals that start with "val").
 * **Open Question:** We should consider how it would work to provide hints for function call parameters for known library functions. For example, what could we offer if the user has ```$.ajax(``` before his IP?
 
 # Feature-specific Code Hinting
