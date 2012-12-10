@@ -162,5 +162,6 @@ Use of Array.forEach() instead of a for loop or $.each():
 * All comments should be C++ single line style //comment.
 * Even multiline comments should use // at the start of each line
 * Use C style /* comments */ for notices at the top and bottom of the file
+* Use JSDoc tags for annotations with Google's Closure Compiler Type Expressions, see https://developers.google.com/closure/compiler/docs/js-for-compiler
 * Annotations should use the /** annotation */
 * Annotate all functions
