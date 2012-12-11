@@ -7,7 +7,7 @@ In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` t
 The new API will be defined as ``getRuleInfo(editor, cursorPos)``. It takes two arguments -- editor object and cursor position, and returns a rule information object.
 **Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location).
 <br />
-The rule information is defined as follows...
+The rule information object is defined as follows...
 ```
 { 
   selector:                              // Used when tokenType == SELECTOR
@@ -45,15 +45,15 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 ```
 { 
   selector:
-	{ index: -1,
-      values: [] },
+      { index: -1,
+        values: [] },
   prop:
-    { name: "",
-      index: -1,
-      values: [] },
+      { name: "",
+        index: -1,
+        values: [] },
   position:
-    { tokenType: "",
-      offset: 0 } 
+      { tokenType: "",
+        offset: 0 } 
 }
 ```
 <a name="notsupported"> </a>
@@ -66,7 +66,16 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 
 >@namespace "|http://www.w3.org/1999/xhtml";
 >@namespace s|vg "http://www.w3.org/2000/svg";
+>
+>@media sc|reen { ... }
 
+<br />
+
+<a name="invalid"> </a>
+>div { clear |: both; } /* cursor before the colon and after a valid property name */
+>
+>div { clear both; }     /* missing colon after "clear" property name */
+>
 ###Examples of Property Name context###
 PROP_NAME Token Type
 * div {|
