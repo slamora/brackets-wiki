@@ -14,6 +14,7 @@ At any point in time, this document should represent how we currently believe co
 * Users should have a way to globally disable the _implicit_ display of code hints (i.e. turn off all automatic popups so that code hints only appear when the user presses ctrl-space).
  * **Open question:** Do we want this functionality? Joel votes yes! Raymond is less sure it's necessary.
 * The dialog should appear below the user's cursor, and should move with the user's cursor as he types. The list should be filtered / sorted after each character is typed, and there should be an indication of how much the user's typing matches each result (e.g. the matching portion of the string could be made bold).
+ * [Randy] **Preferred** location is below user's cursor, but if there's not enough room then it should go above.
 * There should be a universal (i.e. the same in every mode) key command to accept a code hint. By default, this should be both "tab" and "enter", but should be user configurable.
  * **Open question:** should this be configurable? Raymond votes no. Joel doesn't see it as important. However, some providers might want to make completion happen automatically without the user needing to press tab or enter. For example, text expanders might automatically expand "ASAP" as soon as the user types enough letters to make it the unique completion.
 * If the user types a search string while code hints are being displayed that causes no hints to be available, then the dialog should automatically hide.
