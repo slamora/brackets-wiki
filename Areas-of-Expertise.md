@@ -45,6 +45,11 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>Designer workflow</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
     <td>Live Development</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -80,12 +85,7 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
+    <td>User Experience</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -125,7 +125,6 @@
     <td>&nbsp;</td>
   </tr>
 </table>
-
 
 
 
