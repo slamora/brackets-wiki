@@ -35,7 +35,7 @@ The rule information object is defined as follows...
  * **CHARSET** 
    - may support in the future with some modification to the rule info structure
 
-The value of ```tokenType``` is an empty string for the following context.
+The value of ``tokenType`` is an empty string for the following context.
  * Current cursor position is in a non-css/non-less document 
  * Current cursor position is within a not-yet-supported or unsupported context [examples](#notsupported)
  * Current cursor position is inside an invalid context [examples](#invalid)
@@ -76,29 +76,28 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 
 <a name="invalid"> </a>
 ###Examples of Invalid CSS Context###
->@media screen {| div { ... } }
+>div { clear |: both; }   /* cursor before the colon and after a valid property name */
 >
->div { clear |: both; } /* cursor before the colon and after a valid property name */
+>div { clear both; }      /* missing colon after "clear" property name */
 >
->div { clear both; }     /* missing colon after "clear" property name */
->
+>div { font-family: Arial |, Helvetica; }   /* cursor before the comma separator */
+
+<br />
+
 ###Examples of Property Name context###
 PROP_NAME Token Type
-* div {|
-* ```
-div {
-	|
-```
-* ```
-div {
-	|clip:
-```
-* ```
-div {
-	clip|:
-```
-* ```
+> * div {|
+>
+> * div {
+>	|
+> div {
+>	|clip:
+>
+> * div {
+>	clip|:
+>
 
+<br />
 ###Examples of Invalid CSS Context###
 *div {
 	clip |:
