@@ -89,26 +89,28 @@ PROP_NAME Token Type
 > 1. div {|
 >
 > 2. div {
-><br />	|
+><br />	  |
 >
 > 3. div {
->	|clip:
+><br />	  |clip:
 >
 > 4. div {
->	clip|:
+><br />	   clip|:
 >
 
 <br />
-###Examples of Invalid CSS Context###
-*div {
-	clip |:
-```
-*div {
-	clip |both
-```
 
 ###Examples of Property Value context###
-*
-*
-*
+> 1. div {|
+>
+> 2. div {
+><br />	  |
+>
+> 3. div {
+><br />	  |clip:
+>
+> 4. div {
+><br />	   clip|:
+>
+
 
