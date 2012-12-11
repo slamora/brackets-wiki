@@ -81,6 +81,7 @@ At any point in time, this document should represent how we currently believe co
  * [Ian] Sublime implicitly suggests keywords. This isn't important for program understanding, but it is for programmer efficiency: it's easier to type 'f[tab]' than 'function'.  
 * Code hints should be implicitly (automatically) displayed when:
  * The user types any valid start-of-an-identifier character (e.g. [A-Za-z$_, etc.]) in a place where an identifier is valid. (identifiers should be displayed)
+ * [Ian] The user types "(" in a place where an actual parameter to a function call is valid.  
  * The user types "." or "[" in a place where a property name is valid (property names should be displayed)
  * The user types special sequences of characters, such as ```$("``` that indicate string literals of a specific type will be entered (e.g. CSS selectors)
   * Doing this well will be really hard
