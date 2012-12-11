@@ -52,11 +52,12 @@ At any point in time, this document should represent how we currently believe co
   * **Open Question:** Do we want to provide autocomplete support for pseudo-selectors/pseudo-classes. If so, which ones, and how would it work?
    * Raymond says: Yes, when user types ":", we can show a list of valid pseudo-selector if the cursor is in the right context.
 * Code hints should be implicitly (automatically) displayed:
- * After the user types ": " immediately after a rule name. (rule values should be displayed)
- * After the user autocompletes a rule name (which should automatically insert the ": as well) (rule values should be displayed)
- * After the user types ";[return]" after completing a rule (rule name completions should be displayed)
- * After the user types ", " in a comma-separated list of values (like font families) (rule values should be displayed
- * After the user types a space in a space-separated list of values (e.g. border shorthand) (rule values should be displayed)
+ * After the user types ": " immediately after a <del>rule</del>property name. (<del>rule</del>property values should be displayed)
+    * [Randy] hints need to be displayed after ":". The space is optional whitespace. After user types whitespace, hints should continue to be displayed. Same comment applies for ";" and "," below.
+ * After the user autocompletes a <del>rule</del>property name (which should automatically insert the ":" as well) (<del>rule</del>property values should be displayed)
+ * After the user types ";[return]" after completing a <del>rule</del>property value (<del>rule</del>property name completions should be displayed)
+ * After the user types ", " in a comma-separated list of values (like font families) (<del>rule</del>property values should be displayed
+ * After the user types a space in a space-separated list of values (e.g. border shorthand) (<del>rule</del>property values should be displayed)
  * After the user types a ", " in a comma-separated list of selectors (selectors should be displayed)
   * **Open Question:** Should we do this? If so, should we also implicitly display selector hints after the user types "}[return]"
    * Raymond says: Yes, if we provide selector hints, then this should be part of it.
