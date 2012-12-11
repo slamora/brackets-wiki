@@ -23,7 +23,7 @@ The rule information object is defined as follows...
 }
 ```
 
-`tokenType` is either an empty string or one of the following values that represent the different context in a CSS document.
+`tokenType` is either an empty string or one of the following values that represents the different context in a CSS document.
  * **PROP_NAME** 
    - will implement in sprint 18 for CSS hinting and font hinting
  * **PROP_VALUE** 
@@ -37,11 +37,11 @@ The rule information object is defined as follows...
 
 The value of ``tokenType`` is an empty string for the following context.
  * Current cursor position is in a non-css/non-less document 
- * Current cursor position is within a not-yet-supported or unsupported context [examples](#notsupported)
- * Current cursor position is inside an invalid context [examples](#invalid)
+ * Current cursor position is within a not-yet-supported or unsupported context - ([examples](#notsupported))
+ * Current cursor position is inside an invalid context - ([examples](#invalid))
 
 ###Default values of rule information###
-If the cursor is in a non-css /non-less document, or inside the unsupported context of a css/less document a rule info with the following values is returned.
+If the cursor is in a non-css /non-less document, or inside the unsupported context of a css/less document, a rule info with the following default values is returned.
 ```
 { 
   selector:
