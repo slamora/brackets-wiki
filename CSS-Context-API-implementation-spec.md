@@ -36,9 +36,9 @@ The rule information is defined as follows...
    - may support in the future with some modification to the rule info structure
 
 The value of ```tokenType``` is an empty string for the following context.
- * Current cursor position is in a non-css/non-less document
- * Current cursor position is within a not-yet-supported or unsupported context
- * Current cursor position is within an invalid context
+ * Current cursor position is in a non-css/non-less document 
+ * Current cursor position is within a not-yet-supported or unsupported context [examples](#notsupported)
+ * Current cursor position is inside an invalid context [examples](#invalid)
 
 ###Default values of rule information###
 If the cursor is in a non-css/non-less document, or inside the unsupported context of a css/less document a rule info with the following values is returned.
