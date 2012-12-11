@@ -78,6 +78,7 @@ At any point in time, this document should represent how we currently believe co
  * String literals, when they have structure (such as selectors in a jQuery statement) (when possible)
   * Doing this well will be really really hard. :-)
  * **Open Question:** Do we want to support completion of keywords (e.g. "function")? If so, should we do this only _explicitly_ (e.g. when the user types "fun" and then presses ctrl-space)? Or should we also do it _implicitly_ (e.g. the user types "f" in a place where "function" is a valid keyword, so we automatically show  code hints)
+ * [Ian] Sublime implicitly suggests keywords. This isn't important for program understanding, but it is for programmer efficiency: it's easier to type 'f[tab]' than 'function'.  
 * Code hints should be implicitly (automatically) displayed when:
  * The user types any valid start-of-an-identifier character (e.g. [A-Za-z$_, etc.]) in a place where an identifier is valid. (identifiers should be displayed)
  * The user types "." or "[" in a place where a property name is valid (property names should be displayed)
