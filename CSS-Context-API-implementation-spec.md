@@ -21,7 +21,7 @@ The rule information is defined as follows...
 }
 ```
 
-```tokenType``` is either an empty string or one of the following values.
+`tokenType`` is either an empty string or one of the following values.
  * **PROP_NAME** - will implement in sprint 18 for CSS hinting and font hinting
  * **PROP_VALUE** - will implement in sprint 18 for CSS hinting and font hinting 
  * **SELECTOR** - not plan to implement it in sprint 18
