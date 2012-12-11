@@ -61,10 +61,13 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 >@char|set "UTF-8";
 >
 >@import ur|l("booya.css") print,screen;
+>
 >@import "whatup.css" sc|reen;
+>
 >@import "|wicked.css";
 
 >@namespace "|http://www.w3.org/1999/xhtml";
+>
 >@namespace s|vg "http://www.w3.org/2000/svg";
 >
 >@media sc|reen { ... }
@@ -72,6 +75,9 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 <br />
 
 <a name="invalid"> </a>
+###Examples of Invalid CSS Context###
+>@media screen {| div { ... } }
+>
 >div { clear |: both; } /* cursor before the colon and after a valid property name */
 >
 >div { clear both; }     /* missing colon after "clear" property name */
