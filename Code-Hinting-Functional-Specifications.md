@@ -6,17 +6,20 @@ At any point in time, this document should represent how we currently believe co
 
 #General functionality (all languages)
 
+* The user should be able to enable/disable code hinting entirely on a language-by-language basis.
 * The user should be able to _explicitly_ invoke the code hint dialog at any time using a universal (i.e. the same in every mode) key command. By default, that key command should be Ctrl-Space, but should be configurable.
 * If the user tries to _explicitly_ invoke the dialog and no hints are available, the user should be notified in an unobtrusive way (e.g., a temporary message in the status bar).
-* There should be a universal (i.e. the same in every mode) key command to dismiss the dialog. By default, that key command should be "ESC", but should be configurable.
+* There should be a universal (i.e. the same in every mode) key command to dismiss the dialog: Escape. This is the global key to dismiss all dialogs and is not configurable.
 * Individual code hint providers (e.g. for a specific editing mode) may bring up the dialog _implicitly_ (i.e. without the user explicitly asking for it) when a particular condition is met. For example, in an HTML file, when the user types a "<" character in a location where an HTML tag is valid, code hints for tag names could automatically be displayed.
-* Users should have a way to globally disable the _implicit_ display of code hints.
- * **Open question:** should users be able to override this?
+* Users should have a way to globally disable the _implicit_ display of code hints (i.e. turn off all automatic popups so that code hints only appear when the user presses ctrl-space).
+ * **Open question:** Do we want this functionality? Joel votes yes! Raymond is less sure it's necessary.
 * The dialog should appear below the user's cursor, and should move with the user's cursor as he types. The list should be filtered / sorted after each character is typed, and there should be an indication of how much the user's typing matches each result (e.g. the matching portion of the string could be made bold).
 * There should be a universal (i.e. the same in every mode) key command to accept a code hint. By default, this should be both "tab" and "enter", but should be user configurable.
- * **Open question:** should this be configurable?
+ * **Open question:** should this be configurable? Raymond votes no. Joel doesn't see it as important. However, some providers might want to make completion happen automatically without the user needing to press tab or enter. For example, text expanders might automatically expand "ASAP" as soon as the user types enough letters to make it the unique completion.
 * If the user types a search string while code hints are being displayed that causes no hints to be available, then the dialog should automatically hide.
- * **Open question:** An alternative would be do display "no hints available". This would make it more straightforward for the user to re-bring-up the list in the event of a typo: they would just hit backspace until they had a valid query. Individual providers could still explicitly close the dialog if they chose to (e.g. after the user successfully typed an entire identifier by hand).
+ * **Open question:** An alternative would be do display "no hints available". This would make it more straightforward for the user to re-bring-up the list in the event of a typo: they would just hit backspace until they had a valid query. Individual providers could still explicitly close the dialog if they chose to (e.g. after the user successfully typed an entire identifier by hand). Raymond believes we don't need this. Joel offered it as an easy way to deal with the situation where a user makes a typo and then corrects it. The main question here is whether we leave it up to the _provider_ to close the hints (because then they could do either), or whether we close the hints in the CodeHintManager whenever the list is empty.
+* If the user navigates with his insertion pointer (e.g. presses left or right arrow keys, or clicks with mouse), the code hint should behave as if he typed or deleted those characters between the old and new IP location.
+ * For efficiency, we could simply close hints if the IP changes lines, or if the IP moves to a point before where this round of code hinting began (e.g. the user hits ctrl-a on mac to go to the beginning of the line). 
 
 #HTML
 
@@ -43,6 +46,7 @@ At any point in time, this document should represent how we currently believe co
  * font family names from a generally accepted list of safe fonts. Extensions may extend this list.
  * color values used elsewhere in the file
   * **Open Question:** Do we want to provide autocomplete support for pseudo-selectors/pseudo-classes. If so, which ones, and how would it work?
+   * Raymond says: Yes, when user types ":", we can show a list of valid pseudo-selector if the cursor is in the right context.
 * Code hints should be implicitly (automatically) displayed:
  * After the user types ": " immediately after a rule name. (rule values should be displayed)
  * After the user autocompletes a rule name (which should automatically insert the ": as well) (rule values should be displayed)
@@ -51,16 +55,19 @@ At any point in time, this document should represent how we currently believe co
  * After the user types a space in a space-separated list of values (e.g. border shorthand) (rule values should be displayed)
  * After the user types a ", " in a comma-separated list of selectors (selectors should be displayed)
   * **Open Question:** Should we do this? If so, should we also implicitly display selector hints after the user types "}[return]"
+   * Raymond says: Yes, if we provide selector hints, then this should be part of it.
 * When the user completes strings that require quotes, they should automatically be added exactly as in HTML.
  * If the user's file already contains ```Helvetica``` (without quotes), and they bring up the completion on Helvetica and choose "Helvetica Neue", quotes should automatically be added.
+* We should _not_ append a ";" after completing a rule value. Instead, if the user presses "space" we should bring up the next value completion dialog. 
 * **Open Question:** Do we want to provide any support for media queries? If so, how would it work?
+ * Raymond says: Yes, but low priority — after selector hinting. (e.g. "@media |" or "@media screen and p|")
 
 #JavaScript
 
 * Should support the completion of:
  * Identifiers in scope
  * Globally defined identifiers (when possible)
- * Property names (when possible)
+ * Property names (when possible) (Note: property names includes functions and instance methods, since all classes are objects)
  * String literals, when they have structure (such as selectors in a jQuery statement) (when possible)
   * Doing this well will be really really hard. :-)
  * **Open Question:** Do we want to support completion of keywords (e.g. "function")? If so, should we do this only _explicitly_ (e.g. when the user types "fun" and then presses ctrl-space)? Or should we also do it _implicitly_ (e.g. the user types "f" in a place where "function" is a valid keyword, so we automatically show  code hints)
@@ -71,6 +78,7 @@ At any point in time, this document should represent how we currently believe co
   * Doing this well will be really hard
 * Code hints should be closed when the user types a character that is NOT a valid part of an identifier/property name. E.g., if ```foo``` is in scope, and the user types "f" (in a place where an identifier is valid), then hints should be automatically displayed and should contain "foo". But, if the user presses space (thus deciding on "f" as an identifier) then the code hint list should be hidden
  * **Open Question:** In the above situation, if the user then presses backspace, should the list reappear?
+  * Raymond says" no. Joel says: most autocomplete systems do _not_ seem to do this. Implementing it well could be really hard.
 * Search for identifiers/properties should be "fuzzy", much like quick open. For example, if there is an identifier named ```getValue``` and the user types ```val```, then "getValue" should appear in the list (possibly ranked lower than other literals that start with "val").
 * **Open Question:** We should consider how it would work to provide hints for function call parameters for known library functions. For example, what could we offer if the user has ```$.ajax(``` before his IP?
 
