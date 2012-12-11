@@ -159,30 +159,30 @@ Use of Array.forEach() instead of a for loop or $.each():
 
 Prototypal inheritance pattern:
 > ```
-> function Subclass() { // constructor
->     Superclass.call(this);
+> function ChildClass() { // constructor
+>     ParentClass.call(this);
 >     // ...
 > }
 >
-> Subclass.prototype = Object.create(Superclass.prototype);
-> Subclass.prototype.constructor = Subclass;
-> Subclass.prototype.parentClass = Superclass.prototype;
+> ChildClass.prototype = Object.create(ParentClass.prototype);
+> ChildClass.prototype.constructor = ChildClass;
+> ChildClass.prototype.parentClass = ParentClass.prototype;
 >
 > /**
 >  * Declare instance variables so we can JSDoc them.
 >  * @type {string}
 >  */
-> Subclass.prototype.myVar = null;
+> ChildClass.prototype.myVar = null;
 >
 > /**
 >  * @override
 >  * For override methods, use this pattern for super calls.
 >  */
-> Subclass.prototype.myMethod = function (arg1, arg2) {
+> ChildClass.prototype.myMethod = function (arg1, arg2) {
 >      // don't use this.parentClass -- won't work if hierarchy is more than one deep
 >      // use apply(this, arguments) instead of call(this, arg1, arg2) so we don't have to fix it up
 >      // every time we add a new argument
->      Subclass.prototype.parentClass.myMethod.apply(this, arguments); 
+>      ChildClass.prototype.parentClass.myMethod.apply(this, arguments); 
 > };
 
 ## Comments ##
