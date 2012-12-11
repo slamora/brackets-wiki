@@ -89,22 +89,23 @@ PROP_NAME Token Type
 > 1. div {|
 >
 > 2. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;|
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 >
 > 3. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;|clip:
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|clip:
 >
 > 4. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;clip|:
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip|:
 >
 > 5. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;c|lip:
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c|lip:
 >
+
 <br />
+
 All the above example will return a rule info object with "position.tokenType" assigned to PROP_NAME. "prop.index" and "prop.values" are not used for PROP_NAME token type so they will have default values.
 
 For example 1 and 2  "prop.name" will be an empty string since the cursor is not in any property name. Example 3 to 5 will have "clip" assigned to "prop.name". "position.offset" is the cursor offset in the current token "clip" and it is zero for example 3, 4 for example 4 and 1 for example 5.
-<br />
 
 ###Examples of Property Value context###
 > 1. div {|
