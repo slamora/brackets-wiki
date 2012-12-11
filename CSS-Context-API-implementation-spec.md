@@ -1,19 +1,19 @@
-In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` to provide the context of an HTML tag and is already used by tag hinting and attribute hinting. However, we do not have a similar CSS utility API to provide CSS rule information. So this document specifies the new CSS utility API for the following goals.
+In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` to provide the context of an HTML tag and is already used by tag hinting and attribute hinting. However, we do not have a similar CSS utility API to provide CSS rule information. So this document specifies the new CSS utility API in order to achieve the following goals.
 * To avoid duplicate effort in detecting CSS context by individual extension provider.
 * To avoid inconsistent or incomplete implementation of CSS context detection.
-* To provide a maintainable, scalable implementation of CSS context that has a complete coverage of all possible CSS context.
+* To provide a maintainable, scalable implementation of CSS context API that has a complete coverage of all possible CSS context.
 
 ## getRuleInfo ##
-The new API will be defined as getRuleInfo(editor, cursorPos). It takes two arguments -- editor object and cursor position, and returns a rule infomation object.
-**Open question** - should we call it getCssInfo since some of the context does not apply to a css rule (eg. @charset "u|tf-8").
+The new API will be defined as getRuleInfo(editor, cursorPos). It takes two arguments -- editor object and cursor position, and returns a rule information object.
+**Open question** - should we call it getCssInfo since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where | denotes the cursor location).
 <br />
 The rule information is defined as follows...
 ```
 { 
-  selector:
+  selector:                              // Used when tokenType == SELECTOR
       { index: currentIndexInValues,
         values: [selector1, selector2, ...] },
-  prop:
+  prop:                                  // Used when tokenType == PROP_NAME || tokenType == PROP_VALUE
       { name: propName,
         index: currentIndexInValues,
         values: [propValue1, propValue2, ...] },
@@ -23,12 +23,17 @@ The rule information is defined as follows...
 }
 ```
 
-`tokenType`` is either an empty string or one of the following values.
- * **PROP_NAME** - will implement in sprint 18 for CSS hinting and font hinting
- * **PROP_VALUE** - will implement in sprint 18 for CSS hinting and font hinting 
- * **SELECTOR** - not plan to implement it in sprint 18
- * **MEDIA** - may support in the future with some modification to the rule info structure
- * **CHARSET* - may support in the future with some modification to the rule info structure
+`tokenType` is either an empty string or one of the following values.
+ * **PROP_NAME** 
+   - will implement in sprint 18 for CSS hinting and font hinting
+ * **PROP_VALUE** 
+   - will implement in sprint 18 for CSS hinting and font hinting 
+ * **SELECTOR** 
+   - not plan to implement it in sprint 18, but possibly in sprint 19
+ * **MEDIA** 
+   - may support in the future with some modification to the rule info structure
+ * **CHARSET** 
+   - may support in the future with some modification to the rule info structure
 
 The value of ```tokenType``` is an empty string for the following context.
  * Current cursor position is in a non-css/non-less document
