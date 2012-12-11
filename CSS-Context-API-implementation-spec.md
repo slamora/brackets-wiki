@@ -23,7 +23,7 @@ The rule information is defined as follows...
 }
 ```
 
-`tokenType` is either an empty string or one of the following values.
+`tokenType` is either an empty string or one of the following values that represent the different context in a CSS document.
  * **PROP_NAME** 
    - will implement in sprint 18 for CSS hinting and font hinting
  * **PROP_VALUE** 
@@ -41,7 +41,7 @@ The value of ```tokenType``` is an empty string for the following context.
  * Current cursor position is inside an invalid context [examples](#invalid)
 
 ###Default values of rule information###
-If the cursor is in a non-css/non-less document, or inside the unsupported context of a css/less document a rule info with the following values is returned.
+If the cursor is in a non-css /non-less document, or inside the unsupported context of a css/less document a rule info with the following values is returned.
 ```
 { 
   selector:
@@ -56,16 +56,16 @@ If the cursor is in a non-css/non-less document, or inside the unsupported conte
       offset: 0 } 
 }
 ```
-
+<a name="notsupported"> </a>
 ###Examples of Not-Yet Supported CSS Context###
->@charset "UTF-8";
+>@char|set "UTF-8";
 >
->@import url("booya.css") print,screen;
->@import "whatup.css" screen;
->@import "wicked.css";
+>@import ur|l("booya.css") print,screen;
+>@import "whatup.css" sc|reen;
+>@import "|wicked.css";
 
->@namespace "http://www.w3.org/1999/xhtml";
->@namespace svg "http://www.w3.org/2000/svg";
+>@namespace "|http://www.w3.org/1999/xhtml";
+>@namespace s|vg "http://www.w3.org/2000/svg";
 
 ###Examples of Property Name context###
 PROP_NAME Token Type
