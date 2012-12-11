@@ -40,4 +40,4 @@ Contributions _from_ Brackets
 
 Bugs fixed in Sprint 18
 -----------------------
-For details on the bugs addressed, please refer to [closed sprint 18 bugs](https://github.com/adobe/brackets/issues?labels=sprint+18&state=closed). A few of the fixed bugs might not be caught by this search query, however.
+For details on the bugs addressed, please refer to [closed sprint 18 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=5&state=closed). A few of the fixed bugs might not be caught by this search query, however.
