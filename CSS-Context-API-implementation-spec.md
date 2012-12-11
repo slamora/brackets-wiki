@@ -86,14 +86,15 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 
 ###Examples of Property Name context###
 PROP_NAME Token Type
-> * div {|
+> 1. div {|
 >
-> * div {
+> 2. div {
 >	|
-> div {
+>
+> 3. div {
 >	|clip:
 >
-> * div {
+> 4. div {
 >	clip|:
 >
 
