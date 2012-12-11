@@ -4,8 +4,8 @@ In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` t
 * To provide a maintainable, scalable implementation of CSS context API that has a complete coverage of all possible CSS context.
 
 ## getRuleInfo ##
-The new API will be defined as ``**getRuleInfo(editor, cursorPos)**``. It takes two arguments -- editor object and cursor position, and returns a rule information object.
-**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where ``|` denotes the cursor location).
+The new API will be defined as ``getRuleInfo(editor, cursorPos)``. It takes two arguments -- editor object and cursor position, and returns a rule information object.
+**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location).
 <br />
 The rule information is defined as follows...
 ```
