@@ -5,33 +5,23 @@
     <th scope="col">Notes</th>
   </tr>
   <tr>
-    <td>App Init, App Framework</td>
-    <td>jasonsanjose</td>
+    <td>App Startup</td>
+    <td>Jason, Peter</td>
     <td></td>
   </tr>
   <tr>
-    <td>Asynchronous APIs</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
     <td>Code Hints</td>
-    <td>&nbsp;</td>
+    <td>Raymond</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Documents</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Editor</td>
-    <td>&nbsp;</td>
+    <td>Peter, NJ</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>EditorManager</td>
-    <td>&nbsp;</td>
+    <td>Peter</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -40,58 +30,108 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>File System</td>
-    <td>jasonsanjose</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Designer workflow</td>
-    <td>&nbsp;</td>
+    <td>NativeFileSystem</td>
+    <td>Jason</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Live Development</td>
-    <td>&nbsp;</td>
+    <td>Glenn, Raymond</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Menus & Keyboard Shortcuts</td>
-    <td>jasonsanjose</td>
+    <td>Menus, Keyboard Shortcuts, Commands</td>
+    <td>Jason, Raymond</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Performance</td>
+    <td>Jason (automated tests), Peter (camera tests)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Quick Edit (Inline Editors & TextRange)</td>
+    <td>NJ</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CodeMirror Integration</td>
+    <td>NJ</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Text Editing Commands (EditorCommandHandlers)</td>
+    <td>Peter</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Project Tree</td>
+    <td>Glenn</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Quick Open</td>
+    <td>Peter, Kevin</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Find / Find in Files</td>
+    <td>Glenn, Peter, NJ</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>HTMLUtils</td>
+    <td>Raymond</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CSSUtils</td>
+    <td>Glenn</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Native Shell</td>
+    <td>Glenn, Randy, Raymond</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>UI layout/panels</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Quick Edit</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Shell</td>
-    <td>&nbsp;</td>
+    <td>Localization</td>
+    <td>Jason</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>UI elements & Panels</td>
-    <td>&nbsp;</td>
+    <td>Preferences</td>
+    <td>Jason (Storage), Randy (UI)</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Unit Tests</td>
-    <td>jasonsanjose</td>
+    <td>Jason, NJ</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>User Experience</td>
-    <td>&nbsp;</td>
+    <td>User experience - interaction design</td>
+    <td>NJ, Garth, Peter</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>User experience - visual design</td>
+    <td>Garth, NJ</td>
     <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Designer workflow</td>
+    <td>Garth, NJ</td>
     <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Installer / Builds</td>
+    <td>Peter (Win), Glenn (Mac DMG; native build)</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -125,149 +165,3 @@
     <td>&nbsp;</td>
   </tr>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
