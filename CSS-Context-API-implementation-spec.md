@@ -1,10 +1,12 @@
 In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` to provide the context of an HTML tag and is already used by tag hinting and attribute hinting. However, we do not have a similar CSS utility API to provide CSS rule information. So this document specifies the new CSS utility API for the following goals.
 * To avoid duplicate effort in detecting CSS context by individual extension provider.
 * To avoid inconsistent or incomplete implementation of CSS context detection.
-* To provide a maintainable, scalable implementation of CSS context that has complete coverage of all possible CSS context.
+* To provide a maintainable, scalable implementation of CSS context that has a complete coverage of all possible CSS context.
 
 ## getRuleInfo ##
 The new API will be defined as getRuleInfo(editor, cursorPos). It takes two arguments -- editor object and cursor position, and returns a rule infomation object.
+**Open question** - should we call it getCssInfo since some of the context does not apply to a css rule (eg. @charset "u|tf-8").
+<br />
 The rule information is defined as follows...
 ```
 { 
