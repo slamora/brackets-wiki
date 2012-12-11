@@ -5,7 +5,7 @@ In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` t
 
 ## getRuleInfo ##
 The new API will be defined as ``getRuleInfo(editor, cursorPos)``. It takes two arguments -- editor object and cursor position, and returns a rule information object.
-**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location).
+**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location)?
 <br />
 The rule information object is defined as follows...
 ```
@@ -89,7 +89,7 @@ PROP_NAME Token Type
 > 1. div {|
 >
 > 2. div {
->	|
+><br />	|
 >
 > 3. div {
 >	|clip:
