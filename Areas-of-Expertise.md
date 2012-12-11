@@ -40,7 +40,7 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>FileEntry, FileSystem</td>
+    <td>File System</td>
     <td>jasonsanjose</td>
     <td>&nbsp;</td>
   </tr>
