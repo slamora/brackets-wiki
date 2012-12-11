@@ -180,9 +180,9 @@ Prototypal inheritance pattern:
 >  * For override methods, use this pattern for super calls.
 >  */
 > MyClass.prototype.myMethod = function (arg1, arg2) {
->      // don't use this.parentClass -- won't work if hierarchy is more than one deep
->      // use apply(this, arguments) instead of call(this, arg1, arg2) so we don't have to fix it up
->      // every time we add a new argument
+>      // - don't use this.parentClass -- won't work if hierarchy is more than one deep
+>      // - use apply(this, arguments) instead of call(this, arg1, arg2) so we don't have to fix it up
+>      //   every time we add a new argument
 >      MyClass.prototype.parentClass.myMethod.apply(this, arguments);
 >      // ... 
 > };
