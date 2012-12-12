@@ -1,4 +1,3 @@
-
 ## Refactoring LESS support into an extension
 
 _See branch dk/less-refactoring_
@@ -11,4 +10,5 @@ _See branch dk/less-refactoring_
 - **Task:** Load (language) extensions earlier to support their CodeMirror modes for the file automatically opened at startup (last open file)
 - Added a function that changes the mode of current editors if (after adding the new mode) a different one would be used when re-opening the editor
 - **Task:** Allow extensions to define how to add comments for a specific CodeMirror mode **(in progress)**  
-- Monkey patching not easily possible due to references to internal functions. A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
+- Monkey patching not easily possible due to references to internal functions.
+- **Smell:** A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
