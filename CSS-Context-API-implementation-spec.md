@@ -120,5 +120,7 @@ For example 1 and 2  "prop.name" will be an empty string since the cursor is not
 > 5. div { font-family:| "Helvetica Neue", Helvetica, Arial, sans-serif |; }
 
 <br />
-All the examples above will have PROP_VALUE in "position.tokenType" and "prop.name" will be "font-family". And all of them will have the same array in "prop.values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` Please note that each item in the values array except the last one has a comma and the trailing whitespaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
+All the examples above will have PROP_VALUE in "position.tokenType" and "prop.name" will be "font-family". Also all of them will have the same array in "prop.values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` Please note that each item in the values array except the last one has a comma and the trailing white spaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
+
+Although they all have the same "prop.values" array regardless of the cursor positions, they will have different "prop.index" and "position.offset". Example 1 will have -1 index and zero offset since the cursor is before the very first property value. Index for example 2 is zero and offset will be 16. Index for example 5 is 4 since the cursor is after the last existing property value.
 
