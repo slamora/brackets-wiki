@@ -78,7 +78,7 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 ###Examples of Invalid CSS Context###
 >div { clear |: both; }   /* cursor before the colon and after a valid property name */
 >
->div { clear both; }      /* missing colon after "clear" property name */
+>div { clear b|oth; }      /* missing colon after "clear" property name */
 >
 >div { font-family: Arial |, Helvetica; }   /* cursor before the comma separator */
 
