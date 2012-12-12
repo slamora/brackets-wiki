@@ -23,6 +23,8 @@ The rule information object is defined as follows...
 }
 ```
 
+[Randy] Each item in the array of selector.values (e.g. selector1, selector2, ...), is also a list of simple selectors (e.g. #nav div li > a:hover). Should these also be parsed into an array? Another idea would be to only initially parse into a string (not the array shown above), then have a separate getSelectorInfo() function to parse the selector list deeper only when needed.
+
 `tokenType` is either an empty string or one of the following values that represents the different context in a CSS document.
  * **PROP_NAME** 
    - will implement in sprint 18 for CSS hinting and font hinting
