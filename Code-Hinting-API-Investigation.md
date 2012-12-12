@@ -45,6 +45,7 @@ We (currently) believe these issues are largely separate. This document focuses 
 ##Other thoughts
 * Some autocompletion modes in other editors do a crazy thing: if the user types enough of a token for there to only be one suggestion, then that suggestion is automatically completed (without the user pushing 'tab' or 'enter'). This is only useful in languages that have a particularly rigid syntax (i.e. where the completion engine can be certain that the user wouldn't type anything else). One example of this is text macro expanders for prose. Do we want to support the creation of such providers?
  * Implication: If we want to support this, then we need the provider to be able to be able to cause a completion to occur on any keypress. If we choose not to support it, the provider could probably do this in a hacky way by saying "I'm done offering completions" on a keypress, and then changing the editor. But that may run afoul with the implication in CSS above that the provider needs to have an explicit chance to modify the buffer before the code hint manager re-queries providers for a new round of completion. 
+ * [nj] I mentioned this in the other doc, but I think we should consider this kind of in-place autocompletion to be completely separate from code hinting.
 
 #Proposed Architecture
 
