@@ -1,5 +1,3 @@
-_draft_ implementation spec -- only property name and property value token types are described with some examples, but not selector token type.
-
 In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` to provide the context of an HTML tag and is already used by tag hinting and attribute hinting. However, we do not have a similar CSS utility API to provide CSS rule information. So this document specifies the new CSS utility API in order to achieve the following goals.
 * To avoid duplicate effort in detecting CSS context by individual extension provider.
 * To avoid inconsistent or incomplete implementation of CSS context detection.
