@@ -5,7 +5,7 @@ In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` t
 
 ## getRuleInfo ##
 The new API will be defined as ``getRuleInfo(editor, cursorPos)``. It takes two arguments -- editor object and cursor position, and returns a rule information object.
-**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location)? [Jason: What about ``getOffsetInfo()``? I'm reminded here of APIs we design in Flash Builder for querying our code model: http://livedocs.adobe.com/flex/3/extensibility/CodeModel/com/adobe/flexbuilder/codemodel/tree/ASOffsetInformation.html] 
+**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location)? [Jason: What about ``getOffsetInfo()``? I'm reminded here of APIs we design in Flash Builder for querying our code model: http://livedocs.adobe.com/flex/3/extensibility/CodeModel/com/adobe/flexbuilder/codemodel/tree/ASOffsetInformation.html]  [Glenn]: I like ``getOffsetInfo()`` or even ``getInfoAtPos()``.
 <br />
 The rule information object is defined as follows...
 ```
@@ -36,6 +36,8 @@ The rule information object is defined as follows...
    - may support in the future with some modification to the rule info structure
  * **CHARSET** 
    - may support in the future with some modification to the rule info structure
+
+[Glenn] We may want to simplify this to just use AT_RULE instead of MEDIA and CHARSET. This way hints could be provided for *any* at-rule.
 
 The value of ``tokenType`` is an empty string for the following context.
  * Current cursor position is in a non-css/non-less document 
@@ -127,3 +129,5 @@ For example 1 and 2  "prop.name" will be an empty string since the cursor is not
 All the examples above will have PROP_VALUE in "position.tokenType" and "prop.name" will be "font-family". Also all of them will have the same array in "prop.values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` Please note that each item in the values array except the last one has a comma and the trailing white spaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
 
 Although they all have the same "prop.values" array regardless of the cursor positions, they will have different "prop.index" and "position.offset". Example 1 will have -1 index and zero offset since the cursor is before the very first property value. Index for example 2 is zero and offset will be 16. Index for example 5 is 4 since the cursor is after the last existing property value.
+
+[Glenn] How do you feel about *always* returning the selector info at the current pos? This would eliminate the need for the `findSelectorAtDocumentPos()` function, and it seems like it would be useful information for many types of code hints.
