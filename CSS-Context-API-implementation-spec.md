@@ -44,6 +44,8 @@ The value of ``tokenType`` is an empty string for the following context.
 
 ###Default values of rule information###
 If the cursor is in a non-css /non-less document, or inside the unsupported context of a css/less document, a rule info with the following default values is returned.
+
+[Jason: These empty selector and prop properties seem unnecessary to me. Earlier you mention that selector and prop will only be set if the matching tokenType is specified. Would it make more sense to return only a position property with tokenType=UNKNOWN]
 ```
 { 
   selector:
