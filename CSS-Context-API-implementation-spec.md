@@ -85,20 +85,19 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 <br />
 
 ###Examples of Property Name context###
-PROP_NAME Token Type
 > 1. div {|
 >
 > 2. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 >
 > 3. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|clip:
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|clip:
 >
 > 4. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip|:
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip|:
 >
 > 5. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c|lip:
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c|lip:
 >
 
 <br />
@@ -107,17 +106,19 @@ All the above example will return a rule info object with "position.tokenType" a
 
 For example 1 and 2  "prop.name" will be an empty string since the cursor is not in any property name. Example 3 to 5 will have "clip" assigned to "prop.name". "position.offset" is the cursor offset in the current token "clip" and it is zero for example 3, 4 for example 4 and 1 for example 5.
 
-###Examples of Property Value context###
-> 1. div {|
->
-> 2. div {
-><br />	  |
->
-> 3. div {
-><br />	  |clip:
->
-> 4. div {
-><br />	   clip|:
->
+<br />
 
+###Examples of Property Value context###
+> 1. div { font-family:| "Helvetica Neue", Helvetica, Arial, sans-serif; }
+>
+> 2. div { font-family: "Helvetica Neue"|, Helvetica, Arial, sans-serif; }
+>
+> 3. div { font-family:| "Helvetica Neue", |Helvetica, Arial, sans-serif; }
+>
+> 4. div { font-family:| "Helvetica Neue", Helvetica, Arial,| sans-serif; }
+>
+> 5. div { font-family:| "Helvetica Neue", Helvetica, Arial, sans-serif |; }
+
+<br />
+All the examples above will have PROP_VALUE in "position.tokenType" and "prop.name" will be "font-family". And all of them will have the same array in "prop.values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` Please note that each item in the values array except the last one has a comma and the trailing whitespaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
 
