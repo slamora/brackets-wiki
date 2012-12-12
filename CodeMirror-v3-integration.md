@@ -1,4 +1,4 @@
-We've started the official integration of CodeMirror v3 into Brackets. You can get this by pulling the [`cmv3`](https://github.com/adobe/brackets/tree/cmv3) branch from Brackets, then doing `git submodule update`, which will switch the CodeMirror2 submodule to use the [`v3-brackets`](https://github.com/adobe/CodeMirror2/tree/v3-brackets) branch.
+We've started the official integration of CodeMirror v3 into Brackets. You can get this by pulling the [`cmv3`](https://github.com/adobe/brackets/tree/cmv3) branch from Brackets, then doing `git submodule update`, which will switch the CodeMirror2 submodule to use the [`upstream-master`](https://github.com/adobe/CodeMirror2/tree/upstream-master) branch (now that v3 has been officially merged into CodeMirror's master).
 
 We will be submitting various small changes from the `v3-brackets` branch into the upstream CodeMirror repo. We are currently tracking these as separate feature branches in our repo. Currently, the feature branches are:
 
