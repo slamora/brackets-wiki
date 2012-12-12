@@ -1,4 +1,5 @@
-# Refactoring LESS support into an extension
+
+## Refactoring LESS support into an extension
 
 _See branch dk/less-refactoring_
 
