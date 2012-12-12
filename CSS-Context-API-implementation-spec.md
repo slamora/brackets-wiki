@@ -25,6 +25,20 @@ The rule information object is defined as follows...
 
 [Randy] Each item in the array of selector.values (e.g. selector1, selector2, ...), is also a list of simple selectors (e.g. #nav div li > a:hover). Should these also be parsed into an array? Another idea would be to only initially parse into a string (not the array shown above), then have a separate getSelectorInfo() function to parse the selector list deeper only when needed.
 
+[nj] The format of this object seems a little odd to me--it's not clear to me what the value of the extra levels of structure are, especially since the contents are similar in both cases. Could we just flatten it out like this:
+
+```
+{
+    tokenType: tokenType,
+    offset: offsetInCurrentToken,
+    propName: propName, // only set if tokenType is PROP_NAME or PROP_VALUE
+    index: currentIndexInValues,
+    values: [value1, value2, ...] // selectors or property values
+}
+```
+
+[nj] For naming, I'd suggest `context` instead of `tokenType`.
+
 `tokenType` is either an empty string or one of the following values that represents the different context in a CSS document.
  * **PROP_NAME** 
    - will implement in sprint 18 for CSS hinting and font hinting
