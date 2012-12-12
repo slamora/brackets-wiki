@@ -39,6 +39,8 @@ The rule information object is defined as follows...
 
 [nj] For naming, I'd suggest `context` instead of `tokenType`.
 
+[nj] For PROP_VALUE, I'm assuming the value list is a list of comma-separated values (like font names). I know we're not dealing with shorthands yet, but we should think about what the API should look like when we do. Will all the parsing for shorthands be pushed down into the provider, or should the context API provide some information?
+
 `tokenType` is either an empty string or one of the following values that represents the different context in a CSS document.
  * **PROP_NAME** 
    - will implement in sprint 18 for CSS hinting and font hinting
