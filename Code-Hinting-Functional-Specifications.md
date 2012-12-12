@@ -57,27 +57,27 @@ At any point in time, this document should represent how we currently believe co
  * font family names from a generally accepted list of safe fonts. Extensions may extend this list.
  * color values used elsewhere in the file
   * **Open Question:** Do we want to provide autocomplete support for pseudo-selectors/pseudo-classes. If so, which ones, and how would it work?
-   * Raymond says: Yes, when user types ":", we can show a list of valid pseudo-selector if the cursor is in the right context.
+    * Raymond says: Yes, when user types ":", we can show a list of valid pseudo-selector if the cursor is in the right context.
 * Code hints should be implicitly (automatically) displayed:
- * After the user types ": " immediately after a <del>rule</del>property name. (<del>rule</del>property values should be displayed)
-    * [Randy] hints need to be displayed after ":". The space is optional whitespace. After user types whitespace, hints should continue to be displayed. Same comment applies for ";" and "," below.
-    * [nj] This is an interesting question. If you usually type a space after the ":", you might be annoyed to see hints pop up right away, even though they could logically be applicable. We could finesse this by saying that we don't *auto* pop-up hints until after whitespace, but you could still hit Ctrl-space immediately after the ":" to bring up hints.
-    * [nj] Note that Sublime doesn't seem to bring up hints immediately after whitespace; it waits until you type a non-whitespace character. Should we consider following this model in general?
- * After the user autocompletes a <del>rule</del>property name (which should automatically insert the ":" as well) (<del>rule</del>property values should be displayed)
-   * [nj] By default, I think it should insert ": " (i.e., with a space after the colon).
- * After the user types ";[return]" after completing a <del>rule</del>property value (<del>rule</del>property name completions should be displayed)
-   * [nj] I definitely feel that in this case, we should wait until you hit return, and not pop up the completion list right after the semicolon.
- * After the user types ", " in a comma-separated list of values (like font families) (<del>rule</del>property values should be displayed
-   * [nj] I'm on the fence about this one, but we should probably be consistent with what we do after ":".
- * After the user types a space in a space-separated list of values (e.g. border shorthand) (<del>rule</del>property values should be displayed)
- * After the user types a ", " in a comma-separated list of selectors (selectors should be displayed)
-  * **Open Question:** Should we do this? If so, should we also implicitly display selector hints after the user types "}[return]"
-   * Raymond says: Yes, if we provide selector hints, then this should be part of it.
+    * After the user types ": " immediately after a <del>rule</del>property name. (<del>rule</del>property values should be displayed)
+        * [Randy] hints need to be displayed after ":". The space is optional whitespace. After user types whitespace, hints should continue to be displayed. Same comment applies for ";" and "," below.
+        * [nj] This is an interesting question. If you usually type a space after the ":", you might be annoyed to see hints pop up right away, even though they could logically be applicable. We could finesse this by saying that we don't *auto* pop-up hints until after whitespace, but you could still hit Ctrl-space immediately after the ":" to bring up hints.
+        * [nj] Note that Sublime doesn't seem to bring up hints immediately after whitespace; it waits until you type a non-whitespace character. Should we consider following this model in general?
+    * After the user autocompletes a <del>rule</del>property name (which should automatically insert the ":" as well) (<del>rule</del>property values should be displayed)
+        * [nj] By default, I think it should insert ": " (i.e., with a space after the colon).
+    * After the user types ";[return]" after completing a <del>rule</del>property value (<del>rule</del>property name completions should be displayed)
+        * [nj] I definitely feel that in this case, we should wait until you hit return, and not pop up the completion list right after the semicolon.
+    * After the user types ", " in a comma-separated list of values (like font families) (<del>rule</del>property values should be displayed
+        * [nj] I'm on the fence about this one, but we should probably be consistent with what we do after ":".
+    * After the user types a space in a space-separated list of values (e.g. border shorthand) (<del>rule</del>property values should be displayed)
+    * After the user types a ", " in a comma-separated list of selectors (selectors should be displayed)
+        * **Open Question:** Should we do this? If so, should we also implicitly display selector hints after the user types "}[return]"
+        * Raymond says: Yes, if we provide selector hints, then this should be part of it.
 * When the user completes strings that require quotes, they should automatically be added exactly as in HTML.
- * If the user's file already contains ```Helvetica``` (without quotes), and they bring up the completion on Helvetica and choose "Helvetica Neue", quotes should automatically be added.
+    * If the user's file already contains ```Helvetica``` (without quotes), and they bring up the completion on Helvetica and choose "Helvetica Neue", quotes should automatically be added.
 * We should _not_ append a ";" after completing a rule value. Instead, if the user presses "space" we should bring up the next value completion dialog. 
 * **Open Question:** Do we want to provide any support for media queries? If so, how would it work?
- * Raymond says: Yes, but low priority — after selector hinting. (e.g. "@media |" or "@media screen and p|")
+    * Raymond says: Yes, but low priority — after selector hinting. (e.g. "@media |" or "@media screen and p|")
 
 #JavaScript
 
