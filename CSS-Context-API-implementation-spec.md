@@ -14,6 +14,7 @@ The new API will be defined as <del>``getRuleInfo(editor, cursorPos)``</del> get
 <br />
 
 The rule information object is defined as follows...
+<br />
 **Old Version**
 ```
 { 
