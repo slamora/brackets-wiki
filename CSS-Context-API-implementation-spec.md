@@ -3,8 +3,8 @@ In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` t
 * To avoid inconsistent or incomplete implementation of CSS context detection.
 * To provide a maintainable, scalable implementation of CSS context API that has a complete coverage of all possible CSS context.
 
-## getRuleInfo ##
-The new API will be defined as ``getRuleInfo(editor, cursorPos)``. It takes two arguments -- editor object and cursor position, and returns a rule information object.
+## getInfoAtPos ##
+The new API will be defined as <del>``getRuleInfo(editor, cursorPos)``</del> getInfoAtPos. It takes two arguments -- editor object and cursor position, and returns a rule information object.
 <br />
  * **Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location)? 
  * [Jason: What about ``getOffsetInfo()``? I'm reminded here of APIs we design in Flash Builder for querying our code model: http://livedocs.adobe.com/flex/3/extensibility/CodeModel/com/adobe/flexbuilder/codemodel/tree/ASOffsetInformation.html]
@@ -15,6 +15,8 @@ The new API will be defined as ``getRuleInfo(editor, cursorPos)``. It takes two 
 
 The rule information object is defined as follows...
 ```
+Old Version
+-----------
 { 
   selector:                              // Used when tokenType == SELECTOR
       { index: currentIndexInValues,
@@ -26,6 +28,16 @@ The rule information object is defined as follows...
   position:
       { tokenType: tokenType,
         offset: offsetInCurrentToken } 
+}
+
+New Version
+-----------
+{
+    context: context,
+    offset: offsetInCurrentToken,
+    name: name,                   // only set if context is PROP_NAME or PROP_VALUE for now
+    index: currentIndexInValues,
+    values: [value1, value2, ...] // selectors or property values
 }
 ```
 
