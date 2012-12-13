@@ -60,6 +60,8 @@ If `match` is non-null, then the hints should be strings. If the `match` is null
 
 [Ian] The API description above has been elaborated to cover arbitrary matching and highlighting algorithms. 
 
+[Jason] I feel like I'm always going back to Eclipse APIs. It might be worth looking at ICompletionProposal here for inspiration. http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Feditors_contentassist.htm. Instead of hint being a string, the proposal can provide it's own styled string, additional tooltip info (say JSDoc, MDN, caniuse.com, etc.), trigger characters (e.g. using an open paren to close method call proposals). I found all of these helpful when building code hints in Flash Builder.
+
 ## `CodeHintProvider.insertHint(hint)`
 
 The method by which a provider inserts a hint into the editor context associated with the current session. The provider may assume that the given hint was returned by the provider in some previous call in the current session to `getHints`, but not necessarily the most recent call. After the insertion has been performed, the current hinting session is closed. The provider should return a boolean value to indicate whether or not the end of the session should be immediately followed by a new explicit hinting request, which may result in a new hinting session being opened with some provider, but not necessarily the current one. 
