@@ -28,6 +28,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 ## Releases
 
+* [Downloads](https://github.com/adobe/brackets/downloads)
 * [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
  * [Sprint 17](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-17)
  * [Sprint 16](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-16)
