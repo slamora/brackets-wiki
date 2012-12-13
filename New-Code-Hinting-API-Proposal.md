@@ -70,6 +70,8 @@ Indicates whether the manager should follow hint insertion with an explicit hint
 
 [Glenn] Is this return value needed? It seems like the code hint manager should *always* call `hasHints()` if there are no hints showing, which should allow a single key event to close the existing hints and open new hints.
 
+[Ian] An additional explicit hint request is only desirable in some cases. For example, in HTML it is desirable after attributes with values are auto-completed, but not for attributes without values. It is also not generally desirable, as far as I can tell, after auto-completing most JavaScript identifiers or properties. (In *some* cases it may be useful, like function or method calls for which actual parameters desired.) 
+
 ## `CodeHintManager` Overview: 
 
 The `CodeHintManager` mediates the interaction between the editor and a collection of hint providers. If hints are requested explicitly by the user, then the providers registered for the current mode are queried for their ability to provide hints in order of descending priority by way their `hasHints` methods. Character insertions may also constitute an implicit request for hints; consequently, providers for the current mode are also queried on character insertion for both their ability to provide hints and also for the suitability of providing implicit hints in the given editor context. 
