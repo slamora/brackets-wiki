@@ -195,4 +195,5 @@ Although they all have the same "prop.values" array regardless of the cursor pos
         if (query.queryStr && ruleInfo.offset < query.queryStr.length) {
             query.queryStr = query.queryStr.substring(0, ruleInfo.offset);
         }
+    }
 ```
