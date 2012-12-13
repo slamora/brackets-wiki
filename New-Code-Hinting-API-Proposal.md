@@ -44,7 +44,9 @@ The `getHints` method may be called by the manager repeatedly during a hinting s
 
 ### `@return {(Object + Deferred)<hints: Array<string>, prefix: String, selectInitial: Boolean>}`
 
-Null if the provider wishes to end the hinting session. Otherwise, a response object, possibly deferred, that provides a sorted array of hints, a prefix that partially matches the provided hints, and a boolean that indicates whether the first result, if it exists, should be selected by default in the hint list window.  
+Null if the provider wishes to end the hinting session. Otherwise, a response object, possibly deferred, that provides a sorted array of hints, a prefix that partially matches the provided hints, and a boolean that indicates whether the first result, if it exists, should be selected by default in the hint list window. 
+
+[Glenn] Is a single prefix string sufficient here? Many (most?) code hints will do partial hinting, so for example, I can type "chm" and have CodeHintManager hinted (with **C**, **H**, and **M** bolded). Will that be supported? 
 
 ## `CodeHintProvider.insertHint(hint)`
 
@@ -55,6 +57,8 @@ The hint to be inserted into the editor context for the current session.
 
 ### `@return {Boolean}`
 Indicates whether the manager should follow hint insertion with an explicit hint request. 
+
+[Glenn] Is this return value needed? It seems like the code hint manager should *always* call `hasHints()` if there are no hints showing, which should allow a single key event to close the existing hints and open new hints.
 
 ## `CodeHintManager` Overview: 
 
