@@ -97,17 +97,12 @@ If the cursor is in a non-css /non-less document, or inside the unsupported cont
 ones.
 
 ```
-{ 
-  selector:
-      { index: -1,
-        values: [] },
-  prop:
-      { name: "",
-        index: -1,
-        values: [] },
-  position:
-      { tokenType: "",
-        offset: 0 } 
+{
+    context: "",
+    offset: 0,
+    name: "",
+    index: -1,
+    values: []
 }
 ```
 <a name="notsupported"> </a>
