@@ -6,13 +6,10 @@ In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` t
 ## getRuleInfo ##
 The new API will be defined as ``getRuleInfo(editor, cursorPos)``. It takes two arguments -- editor object and cursor position, and returns a rule information object.
 <br />
-**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location)? 
-<br />
-[Jason: What about ``getOffsetInfo()``? I'm reminded here of APIs we design in Flash Builder for querying our code model: http://livedocs.adobe.com/flex/3/extensibility/CodeModel/com/adobe/flexbuilder/codemodel/tree/ASOffsetInformation.html]
-<br />
-[Glenn]: I like ``getOffsetInfo()`` or even ``getInfoAtPos()``.
-<br />
-[raymond]: I like ``getInfoAtPos()`` since one of the info is the offset for the current token and ``getOffsetInfo()`` may cause confusion.
+ * **Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location)? 
+ * [Jason: What about ``getOffsetInfo()``? I'm reminded here of APIs we design in Flash Builder for querying our code model: http://livedocs.adobe.com/flex/3/extensibility/CodeModel/com/adobe/flexbuilder/codemodel/tree/ASOffsetInformation.html]
+ * [Glenn]: I like ``getOffsetInfo()`` or even ``getInfoAtPos()``.
+ * [raymond]: I like ``getInfoAtPos()`` since one of the info is the offset for the current token and ``getOffsetInfo()`` may cause confusion.
 
 <br />
 
