@@ -21,6 +21,8 @@ The `implicitChar` parameter is used to determine whether the hinting request is
 
 [Ian] Assuming by "IME compositions" you mean character insertions effected by an input-method editor in the sense of http://en.wikipedia.org/wiki/Input_method, then I'm not sure why this would be any different from characters inserted by a more traditional method. The events that result from the insertion may be different, but I would think the manager could detect those events and pass the associated character to hasHints to determine if implicit hints are appropriate. 
 
+[Glenn] IME insertion usually involves multiple characters, which is why I brought it up. In that case there wouldn't be a single character to pass to the hint provider (there is a single `change` event, but it typically has more than 1 character). I chatted with Raymond about this, and he agreed that code hints do not need to show up for IME insertions.
+
 Because calls to `hasHints` imply that a hinting session is about to begin, a provider may wish to clean up cached data from previous sessions in this method. Similarly, if the provider returns true, it may wish to prepare to cache data suitable for the current session. In particular, it should keep a reference to the editor object so that it can access the editor in future calls to `getHints` and `insertHints`.
 
 ### `@param {Editor} editor`
