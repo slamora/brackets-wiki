@@ -178,3 +178,21 @@ Although they all have the same "prop.values" array regardless of the cursor pos
 [Glenn] How do you feel about *always* returning the selector info at the current pos? This would eliminate the need for the `findSelectorAtDocumentPos()` function, and it seems like it would be useful information for many types of code hints.
 <br />
 [raymond] I don't think we want to spend time collecting selector info for all possible cursor positions. And I just make changes to the info structure suggested by nj and we no longer have separate index or values array for selectors. So when we implement info for selector, we will return current selector index and selector array only when the cursor is in selector context.
+
+### Sample code that uses getInfoAtPos API ###
+```
+    CssPropertyHints.prototype.getQueryInfo = function (editor, cursor) {
+        var query       = {queryStr: null},
+            ruleInfo    = CSSUtils.getInfoAtPos(editor, cursor);
+
+        if (ruleInfo.context === CSSUtils.PROP_NAME) {
+            query.queryStr = ruleInfo.name;
+        } else if (ruleInfo.context === CSSUtils.PROP_VALUE) {
+            query.queryStr = (ruleInfo.index !== -1) ? ruleInfo.values[ruleInfo.index] : "";
+            query.propName = ruleInfo.name;
+        }
+
+        if (query.queryStr && ruleInfo.offset < query.queryStr.length) {
+            query.queryStr = query.queryStr.substring(0, ruleInfo.offset);
+        }
+```
