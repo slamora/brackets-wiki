@@ -8,7 +8,7 @@ The hint provider to be registered.
 ### `@param {Array[string]} modes`
 The set of mode names for which the provider is capable of providing hints. If the special mode name "all" is included then the provider may be called upon to provide hints for any mode.
 
-### `@param {number} priority`
+### `@param {Integer} priority`
 A non-negative number used to break ties among hint providers for a particular mode. Providers that register with a higher priority will have the opportunity to provide hints at a given mode before those with a lower priority. Brackets default providers have priority zero.
 
 ## `CodeHintProvider.hasHints(editor, implicitChar)`
@@ -18,6 +18,8 @@ The method by which a provider indicates intent to provide hints for a given edi
 The `implicitChar` parameter is used to determine whether the hinting request is explicit or implicit. If the string is null then hints were explicitly requested and the provider should reply based on whether it is possible to return hints for the given editor context. Otherwise, the string contains just the last character inserted into the editor's document and the request for hints is implicit. In this case, the provider should determine whether it is both possible and appropriate to show hints. Because implicit hints can be triggered by every character insertion, hasHints may be called frequently; consequently, the provider should endeavor to return a value as quickly as possible. 
 
 [Glenn] I assume this means that IME compositions will *never* open code hints. Is that right? If so, it should be called out explicitly here.
+
+[Ian] Assuming by "IME compositions" you mean character insertions effected by an input-method editor in the sense of http://en.wikipedia.org/wiki/Input_method, then I'm not sure why this would be any different from characters inserted by a more traditional method. The events that result from the insertion may be different, but I would think the manager could detect those events and pass the associated character to hasHints to determine if implicit hints are appropriate. 
 
 Because calls to `hasHints` imply that a hinting session is about to begin, a provider may wish to clean up cached data from previous sessions in this method. Similarly, if the provider returns true, it may wish to prepare to cache data suitable for the current session. In particular, it should keep a reference to the editor object so that it can access the editor in future calls to `getHints` and `insertHints`.
 
@@ -33,9 +35,9 @@ Determines whether the current provider is able to provide hints for the given e
 ## `CodeHintProvider.getHints()`
 
 The method by which a provider provides hints for the editor context associated with the current session. The getHints method is called only if the provider asserted its willingness to provide hints in an earlier call to getHints. The provider may return null, which indicates that the manager should end the current hinting session and close the hint list window. Otherwise, the provider should return a response object that contains three properties: 
- 1. `hints`, a sorted array of strings that represent hints that the provider could later insert into the editor; 
- 2. `prefix`, a string representing a hint prefix that the manager may use to style the hint list; and 
- 3.) `selectInitial`, a boolean that indicates whether or not the the first hint in the list should be selected by default. 
+ 1. `hints`, a sorted array hints that the provider could later insert into the editor; 
+ 2. `match`, a string that the manager may use to emphasize substrings of hints in the hint list; and 
+ 3. `selectInitial`, a boolean that indicates whether or not the the first hint in the list should be selected by default. 
 If the array of hints is empty, then the manager will render an empty list, but the hinting session will remain open and the value of the selectInitial property is irrelevant. 
 
 Alternatively, the provider may return a `jQuery.Deferred` object that resolves with an object with the structure described above. In this case, the manager will initially render the hint list window with a throbber and will render the actual list once the deferred object resolves to a response object. If a hint list has already been rendered (from an earlier call to `getHints`), then the old list will continue to be displayed until the new deferred has resolved. 
@@ -44,11 +46,17 @@ Both the manager and the provider can reject the deferred object. The manager wi
 
 The `getHints` method may be called by the manager repeatedly during a hinting session. Providers may wish to cache information for efficiency that may be useful throughout these sessions. The same editor context will be used throughout a session, and will only change during the session as a result of single-character insertions, deletions and cursor navigations. The provider may assume that, throughout the lifetime of the session, the `getHints` method will be called exactly once for each such editor change. Consequently, the provider may also assume that the document will not be changed outside of the editor during a session. 
 
-### `@return {(Object + Deferred)<hints: Array<string>, prefix: String, selectInitial: Boolean>}`
+### `@return {(Object + jQuery.Deferred)<hints: Array<(String + jQuery.Object)>, match: String, selectInitial: Boolean>}`
 
-Null if the provider wishes to end the hinting session. Otherwise, a response object, possibly deferred, that provides a sorted array of hints, a prefix that partially matches the provided hints, and a boolean that indicates whether the first result, if it exists, should be selected by default in the hint list window. 
+Null if the provider wishes to end the hinting session. Otherwise, a response object, possibly deferred, that provides 
+ 1. a sorted array `hints` that consists either of strings or jQuery objects; 
+ 2. a string `match`, possibly null, that is used by the manager to emphasize matching substrings when rendering the hint list; and 
+ 3. a boolean that indicates whether the first result, if one exists, should be selected by default in the hint list window. 
+If `match` is non-null, then the hints should be strings. If the `match` is null, the manager will not attempt to emphasize any parts of the hints when rendering the hint list; instead the provider may return strings or jQuery objects for which emphasis is self-contained. For example, the strings may contain substrings that wrapped in bold tags. In this way, the provider can choose to let the manager handle emphasis for the simple and common case of prefix matching, or can provide its own emphasis if it wishes to use a more sophisticated matching algorithm. 
 
 [Glenn] Is a single prefix string sufficient here? Many (most?) code hints will do partial hinting, so for example, I can type "chm" and have CodeHintManager hinted (with **C**, **H**, and **M** bolded). Will that be supported? 
+
+[Ian] The API description above has been elaborated to cover arbitrary matching and highlighting algorithms. 
 
 ## `CodeHintProvider.insertHint(hint)`
 
