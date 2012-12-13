@@ -167,3 +167,5 @@ All the examples above will have PROP_VALUE in "position.tokenType" and "prop.na
 Although they all have the same "prop.values" array regardless of the cursor positions, they will have different "prop.index" and "position.offset". Example 1 will have -1 index and zero offset since the cursor is before the very first property value. Index for example 2 is zero and offset will be 16. Index for example 5 is 4 since the cursor is after the last existing property value.
 
 [Glenn] How do you feel about *always* returning the selector info at the current pos? This would eliminate the need for the `findSelectorAtDocumentPos()` function, and it seems like it would be useful information for many types of code hints.
+<br />
+[raymond] I don't think we want to spend time collecting selector info for all possible cursor positions. And I just make changes to the info structure suggested by nj and we no longer have separate index or values array for selectors. So when we implement info for selector, we will return current selector index and selector array only when the cursor is in selector context.
