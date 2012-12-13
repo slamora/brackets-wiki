@@ -14,9 +14,9 @@ The new API will be defined as <del>``getRuleInfo(editor, cursorPos)``</del> get
 <br />
 
 The rule information object is defined as follows...
-```
 **Old Version**
 -----------
+```
 { 
   selector:                              // Used when tokenType == SELECTOR
       { index: currentIndexInValues,
@@ -29,9 +29,11 @@ The rule information object is defined as follows...
       { tokenType: tokenType,
         offset: offsetInCurrentToken } 
 }
+```
 
-New Version
+**New Version**
 -----------
+```
 {
     context: context,
     offset: offsetInCurrentToken,
@@ -40,7 +42,6 @@ New Version
     values: [value1, value2, ...] // selectors or property values
 }
 ```
-
 [Randy] Each item in the array of selector.values (e.g. selector1, selector2, ...), is also a list of simple selectors (e.g. #nav div li > a:hover). Should these also be parsed into an array? Another idea would be to only initially parse into a string (not the array shown above), then have a separate getSelectorInfo() function to parse the selector list deeper only when needed.
 
 [nj] The format of this object seems a little odd to me--it's not clear to me what the value of the extra levels of structure are, especially since the contents are similar in both cases. Could we just flatten it out like this:
