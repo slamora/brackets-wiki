@@ -18,7 +18,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
 * [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese.
 * [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor. 
-* [Emmet/Zen Coding](https://github.com/emmetio/emmet): Adds Emmet (Zen Coding) support to Brackets.
+* [Emmet/Zen Coding](https://github.com/emmetio/emmet): Adds Emmet (Zen Coding) support to Brackets ([download here](https://github.com/emmetio/emmet/downloads)).
 * [Quick Markup](https://github.com/redmunds/brackets-quick-markup): fast HTML markup generation as you type.
 * [BracketLESS] (https://github.com/olsgreen/BracketLESS): Compiles LESS files to CSS on save
 
