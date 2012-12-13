@@ -15,7 +15,6 @@ The new API will be defined as <del>``getRuleInfo(editor, cursorPos)``</del> get
 
 The rule information object is defined as follows...
 **Old Version**
------------
 ```
 { 
   selector:                              // Used when tokenType == SELECTOR
@@ -32,7 +31,6 @@ The rule information object is defined as follows...
 ```
 
 **New Version**
------------
 ```
 {
     context: context,
