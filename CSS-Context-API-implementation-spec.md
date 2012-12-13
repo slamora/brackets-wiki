@@ -67,7 +67,7 @@ The rule information object is defined as follows...
 <br />
 [raymond] CodeMirror breaks the property value list into separate tokens based on "," and white spaces. So my plan is to put them together by combining "," and trailing spaces into the prior non-space value token. So the plan works well in most cases except in the case of some functions like ``rgba(0, 0, 0, 0.4)``. Not quite sure that we can add enough logic to combine them. My current implementation is returning separate pieces as ["rgba(0, ", "0, ", "0, ", "0.4)"]. So the caller still needs to figure out the semantic token by inspecting the returned values array. 
 
-`tokenType` is either an empty string or one of the following values that represents the different context in a CSS document.
+<del>`tokenType`</del> `context` is either an empty string or one of the following values that represents the different context in a CSS document.
  * **PROP_NAME** 
    - will implement in sprint 18 for CSS hinting and font hinting
  * **PROP_VALUE** 
@@ -83,7 +83,7 @@ The rule information object is defined as follows...
 <br />
 [raymond] I thought about it also, but besides the first token with ``@`` prefix the subsequent tokens have different formats and may require some distinguishable context. 
 
-The value of ``tokenType`` is an empty string for the following context.
+The value of ``context`` is an empty string for the following context.
  * Current cursor position is in a non-css/non-less document 
  * Current cursor position is within a not-yet-supported or unsupported context - ([examples](#notsupported))
  * Current cursor position is inside an invalid context - ([examples](#invalid))
@@ -156,9 +156,9 @@ ones.
 
 <br />
 
-All the above example will return a rule info object with "position.tokenType" assigned to PROP_NAME. "prop.index" and "prop.values" are not used for PROP_NAME token type so they will have default values.
+All the above examples will return a rule info object with "context" assigned to PROP_NAME. "index" and "values" are not used for PROP_NAME token type so they will have default values.
 
-For example 1 and 2  "prop.name" will be an empty string since the cursor is not in any property name. Example 3 to 5 will have "clip" assigned to "prop.name". "position.offset" is the cursor offset in the current token "clip" and it is zero for example 3, 4 for example 4 and 1 for example 5.
+For example 1 and 2  "name" will be an empty string since the cursor is not in any property name. Example 3 to 5 will have "clip" assigned to "name". "offset" is the cursor offset in the current token "clip" and it is zero for example 3, 4 for example 4 and 1 for example 5.
 
 <br />
 
