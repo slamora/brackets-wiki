@@ -43,6 +43,9 @@ The rule information object is defined as follows...
 ```
 [Randy] Each item in the array of selector.values (e.g. selector1, selector2, ...), is also a list of simple selectors (e.g. #nav div li > a:hover). Should these also be parsed into an array? Another idea would be to only initially parse into a string (not the array shown above), then have a separate getSelectorInfo() function to parse the selector list deeper only when needed.
 
+[raymond] Yes, the idea here is to have them as individual selector stored in the array. The main reason to have them as separate pieces is due to the CodeMirror tokenizer. And another reason is to allow users to insert a new selector between two existing selectors. If we just return a combined string, it will make the caller harder to decide where to show selector hints and what type of selector hints to show. With the individual selector approach, the caller just have to check for the first character to figure out whether it is a class selector, id selector, attribute selector or pseudo selector.
+
+<br />
 [nj] The format of this object seems a little odd to me--it's not clear to me what the value of the extra levels of structure are, especially since the contents are similar in both cases. Could we just flatten it out like this:
 
 ```
