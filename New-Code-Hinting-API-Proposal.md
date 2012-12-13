@@ -17,6 +17,8 @@ The method by which a provider indicates intent to provide hints for a given edi
 
 The `implicitChar` parameter is used to determine whether the hinting request is explicit or implicit. If the string is null then hints were explicitly requested and the provider should reply based on whether it is possible to return hints for the given editor context. Otherwise, the string contains just the last character inserted into the editor's document and the request for hints is implicit. In this case, the provider should determine whether it is both possible and appropriate to show hints. Because implicit hints can be triggered by every character insertion, hasHints may be called frequently; consequently, the provider should endeavor to return a value as quickly as possible. 
 
+[Glenn] I assume this means that IME compositions will *never* open code hints. Is that right? If so, it should be called out explicitly here.
+
 Because calls to `hasHints` imply that a hinting session is about to begin, a provider may wish to clean up cached data from previous sessions in this method. Similarly, if the provider returns true, it may wish to prepare to cache data suitable for the current session. In particular, it should keep a reference to the editor object so that it can access the editor in future calls to `getHints` and `insertHints`.
 
 ### `@param {Editor} editor`
