@@ -5,7 +5,13 @@ In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` t
 
 ## getRuleInfo ##
 The new API will be defined as ``getRuleInfo(editor, cursorPos)``. It takes two arguments -- editor object and cursor position, and returns a rule information object.
-**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location)? [Jason: What about ``getOffsetInfo()``? I'm reminded here of APIs we design in Flash Builder for querying our code model: http://livedocs.adobe.com/flex/3/extensibility/CodeModel/com/adobe/flexbuilder/codemodel/tree/ASOffsetInformation.html]  [Glenn]: I like ``getOffsetInfo()`` or even ``getInfoAtPos()``.
+<br />
+**Open question** - should we call it *getCssInfo* since some of the context do not apply to a css rule (eg. @charset "u|tf-8" where `|` denotes the cursor location)? 
+<br />
+[Jason: What about ``getOffsetInfo()``? I'm reminded here of APIs we design in Flash Builder for querying our code model: http://livedocs.adobe.com/flex/3/extensibility/CodeModel/com/adobe/flexbuilder/codemodel/tree/ASOffsetInformation.html]
+<br />
+[Glenn]: I like ``getOffsetInfo()`` or even ``getInfoAtPos()``.
+<br />
 [raymond]: I like ``getInfoAtPos()`` since one of the info is the offset for the current token and ``getOffsetInfo()`` may cause confusion.
 
 <br />
@@ -46,6 +52,7 @@ The rule information object is defined as follows...
 
 
 [nj] For PROP_VALUE, I'm assuming the value list is a list of comma-separated values (like font names). I know we're not dealing with shorthands yet, but we should think about what the API should look like when we do. Will all the parsing for shorthands be pushed down into the provider, or should the context API provide some information?
+<br />
 [raymond] CodeMirror breaks the property value list into separate tokens based on "," and white spaces. So my plan is to put them together by combining "," and trailing spaces into the prior non-space value token. So the plan works well in most cases except in the case of some functions like ``rgba(0, 0, 0, 0.4)``. Not quite sure that we can add enough logic to combine them. My current implementation is returning separate pieces as ["rgba(0, ", "0, ", "0, ", "0.4)"]. So the caller still needs to figure out the semantic token by inspecting the returned values array. 
 
 `tokenType` is either an empty string or one of the following values that represents the different context in a CSS document.
@@ -61,6 +68,7 @@ The rule information object is defined as follows...
    - may support in the future with some modification to the rule info structure
 
 [Glenn] We may want to simplify this to just use AT_RULE instead of MEDIA and CHARSET. This way hints could be provided for *any* at-rule.
+<br />
 [raymond] I thought about it also, but besides the first token with ``@`` prefix the subsequent tokens have different formats and may require some distinguishable context. 
 
 The value of ``tokenType`` is an empty string for the following context.
@@ -72,6 +80,7 @@ The value of ``tokenType`` is an empty string for the following context.
 If the cursor is in a non-css /non-less document, or inside the unsupported context of a css/less document, a rule info with the following default values is returned.
 
 [Jason: These empty selector and prop properties seem unnecessary to me. Earlier you mention that selector and prop will only be set if the matching tokenType is specified. Would it make more sense to return only a position property with tokenType=UNKNOWN]
+<br />
 [raymond] I agreed with you. nj's suggestion to flatten out the info structure will eliminate the redundant
 ones.
 
