@@ -46,7 +46,7 @@ Both the manager and the provider can reject the deferred object. The manager wi
 
 The `getHints` method may be called by the manager repeatedly during a hinting session. Providers may wish to cache information for efficiency that may be useful throughout these sessions. The same editor context will be used throughout a session, and will only change during the session as a result of single-character insertions, deletions and cursor navigations. The provider may assume that, throughout the lifetime of the session, the `getHints` method will be called exactly once for each such editor change. Consequently, the provider may also assume that the document will not be changed outside of the editor during a session. 
 
-### `@return {(Object + jQuery.Deferred)<hints: Array<(String + jQuery.Object)>, match: String, selectInitial: Boolean>}`
+### `@return {(Object + jQuery.Deferred)<hints: Array<(String + jQuery.Obj)>, match: String, selectInitial: Boolean>}`
 
 Null if the provider wishes to end the hinting session. Otherwise, a response object, possibly deferred, that provides 
  1. a sorted array `hints` that consists either of strings or jQuery objects; 
