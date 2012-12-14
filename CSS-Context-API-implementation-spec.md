@@ -173,6 +173,9 @@ All the examples above will have PROP_VALUE in "context" and "name" will be "fon
 
 The values of "index" and "offset" depend on the cursor position in the existing property value. Example 2 will have 0 for "index" and 16 for "offset". Example 3 will have 0 for "offset" and 1 for "index".
 
+Example 1, 4 and 5 will have a different array. The difference is an extra item in the "values" array that has an empty string. For example 4 the array will be ``[""Helvetica Neue", ", "Helvetica, ", "Arial,", "", "sans-serif"]`` and the "index" will be 3 with "offset" sets to 0, indicating that the current cursor position is not in any existing property values and the user is ready to enter a new value.
+
+
 [Glenn] How do you feel about *always* returning the selector info at the current pos? This would eliminate the need for the `findSelectorAtDocumentPos()` function, and it seems like it would be useful information for many types of code hints.
 <br />
 [raymond] I don't think we want to spend time collecting selector info for all possible cursor positions. And I just make changes to the info structure suggested by nj and we no longer have separate index or values array for selectors. So when we implement info for selector, we will return current selector index and selector array only when the cursor is in selector context.
