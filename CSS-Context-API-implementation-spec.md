@@ -178,6 +178,7 @@ The values of "index" and "offset" depend on the cursor position in the existing
 
 Example 1, 4 and 5 will have a different array. The difference is an extra item in the "values" array that has an empty string. For example 4 the array will be ``[""Helvetica Neue", ", "Helvetica, ", "Arial,", "", "sans-serif"]`` and the "index" will be 3 with "offset" sets to 0, indicating that the current cursor position is not in any existing property values and the user is ready to enter a new value.
 
+[nj] It would be good to explain that the empty string will be at the beginning in example 1 and at the end in example 5. Also, it looks like examples 3-5 have an extra "|" in them.
 
 [Glenn] How do you feel about *always* returning the selector info at the current pos? This would eliminate the need for the `findSelectorAtDocumentPos()` function, and it seems like it would be useful information for many types of code hints.
 <br />
