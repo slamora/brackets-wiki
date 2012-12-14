@@ -143,12 +143,15 @@ ones.
 ><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 >
 > 3. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|clip:
+><br />|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip:
 >
 > 4. div {
-><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip|:
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|clip:
 >
 > 5. div {
+><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip|:
+>
+> 6. div {
 ><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c|lip:
 >
 
@@ -156,7 +159,7 @@ ones.
 
 All the above examples will return a rule info object with "context" assigned to PROP_NAME. "index" and "values" are not used for PROP_NAME token type so they will have default values.
 
-For example 1 and 2  "name" will be an empty string since the cursor is not in any property name. Example 3 to 5 will have "clip" assigned to "name". "offset" is the cursor offset in the current token "clip" and it is zero for example 3, 4 for example 4 and 1 for example 5.
+For example 1, 2 and 3 "name" will be an empty string since the cursor is not in any property name. Example 4 to 5 will have "clip" assigned to "name". "offset" is the cursor offset in the current token "clip" and it is zero for example 3, 4 for example 4 and 1 for example 5.
 
 <br />
 
