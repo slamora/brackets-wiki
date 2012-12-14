@@ -75,9 +75,11 @@ The rule information object is defined as follows...
  * **SELECTOR** 
    - not plan to implement it in sprint 18, but possibly in sprint 19
  * <del>**MEDIA** </del>
-   - may support in the future with some modification to the rule info structure
- * **CHARSET** 
-   - may support in the future with some modification to the rule info structure
+   - <del>may support in the future with some modification to the rule info structure</del>
+ * <del>**CHARSET** </del>
+   - <del>may support in the future with some modification to the rule info structure</del>
+ * **AT_RULE**
+   - may support in the future for all at-rules. We may use "name" for the name of at-rule and "values" array for any strings after the at-rule string.
 
 [Glenn] We may want to simplify this to just use AT_RULE instead of MEDIA and CHARSET. This way hints could be provided for *any* at-rule.
 <br />
