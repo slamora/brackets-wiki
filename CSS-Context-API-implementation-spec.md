@@ -179,7 +179,7 @@ All the examples above will have PROP_VALUE in "context" and "name" will be "fon
 
 The values of "index" and "offset" depend on the cursor position in the existing property value. Example 2 will have 0 for "index" and 16 for "offset". Example 3 will have 0 for "offset" and 1 for "index".
 
-When the cursor is in the property value context and there is a white space immediately after the cursor, then we;re in a location where the user can add a new property value. This is the case for example 1, 4 and 5, so these example will have a different array. The difference is an extra item in the "values" array that has an empty string. For example 4 the array will be ``[""Helvetica Neue", ", "Helvetica, ", "Arial,", "", "sans-serif"]`` and the "index" will be 3 with "offset" sets to 0, indicating that the current cursor position is not in any existing property values and the user is ready to enter a new value.
+When the cursor is in the property value context and there is a white space immediately after the cursor, then we are in a location where the user can add a new property value. This is the case for example 1, 4 and 5, so these example will have a different array. The difference is an extra item in the "values" array that has an empty string. For example 4 the array will be ``[""Helvetica Neue", ", "Helvetica, ", "Arial,", "", "sans-serif"]`` and the "index" will be 3 with "offset" sets to 0, indicating that the current cursor position is not in any existing property values and the user is ready to enter a new value.
 
 [nj] It would be good to explain that the empty string will be at the beginning in example 1 and at the end in example 5. Also, it looks like examples 3-5 have an extra "|" in them.
 
