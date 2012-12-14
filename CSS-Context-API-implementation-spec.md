@@ -88,7 +88,8 @@ The rule information object is defined as follows...
 The value of ``context`` is an empty string for the following context.
  * Current cursor position is in a non-css/non-less document 
  * Current cursor position is within a not-yet-supported or unsupported context - ([examples](#notsupported))
- * Current cursor position is inside an invalid context - ([examples](#invalid))
+ * Current cursor position is inside some of the invalid context - ([examples](#invalid))
+   - We do not have the business logic to distinguish between comma separated values from space separated values. So in the case of a missing comma we may still return PROP_VALUE in "context" and the caller (who has the business logic) needs to check the preceding value to catch the missing comma. See [example 3](#invalid)
 
 ###Default values of rule information###
 If the cursor is in a non-css /non-less document, or inside the unsupported context of a css/less document, a rule info with the following default values is returned.
