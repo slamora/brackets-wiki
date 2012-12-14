@@ -10,7 +10,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
 * [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
-* [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators (equal sings)
+* [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators (equal signs)
 * [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
