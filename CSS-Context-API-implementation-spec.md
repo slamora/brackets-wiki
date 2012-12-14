@@ -128,11 +128,11 @@ ones.
 
 <a name="invalid"> </a>
 ###Examples of Invalid CSS Context###
->div { clear |: both; }   /* cursor before the colon and after a valid property name */
+> 1. div { clear |: both; }   /* cursor before the colon and after a valid property name */
 >
->div { clear b|oth; }      /* missing colon after "clear" property name */
+> 2. div { clear b|oth; }      /* missing colon after "clear" property name */
 >
->div { font-family: Arial |, Helvetica; }   /* cursor before the comma separator */
+> 3. div { font-family: Arial |, Helvetica; }   /* cursor before the comma separator */
 
 <br />
 
