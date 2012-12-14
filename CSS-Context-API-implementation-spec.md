@@ -74,7 +74,7 @@ The rule information object is defined as follows...
    - will implement in sprint 18 for CSS hinting and font hinting 
  * **SELECTOR** 
    - not plan to implement it in sprint 18, but possibly in sprint 19
- * **MEDIA** 
+ <del>* **MEDIA** </del>
    - may support in the future with some modification to the rule info structure
  * **CHARSET** 
    - may support in the future with some modification to the rule info structure
