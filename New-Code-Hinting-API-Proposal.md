@@ -36,7 +36,7 @@ Determines whether the current provider is able to provide hints for the given e
 
 ## `CodeHintProvider.getHints()`
 
-The method by which a provider provides hints for the editor context associated with the current session. The getHints method is called only if the provider asserted its willingness to provide hints in an earlier call to getHints. The provider may return null, which indicates that the manager should end the current hinting session and close the hint list window. Otherwise, the provider should return a response object that contains three properties: 
+The method by which a provider provides hints for the editor context associated with the current session. The getHints method is called only if the provider asserted its willingness to provide hints in an earlier call to getHints. ([raymond] I think you meant "an earlier call to hasHints" here.) The provider may return null, which indicates that the manager should end the current hinting session and close the hint list window. Otherwise, the provider should return a response object that contains three properties: 
  1. `hints`, a sorted array hints that the provider could later insert into the editor; 
  2. `match`, a string that the manager may use to emphasize substrings of hints in the hint list; and 
  3. `selectInitial`, a boolean that indicates whether or not the the first hint in the list should be selected by default. 
