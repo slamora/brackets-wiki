@@ -165,11 +165,11 @@ For example 1 and 2  "name" will be an empty string since the cursor is not in a
 >
 > 2. div { font-family: "Helvetica Neue"|, Helvetica, Arial, sans-serif; }
 >
-> 3. div { font-family:| "Helvetica Neue", |Helvetica, Arial, sans-serif; }
+> 3. div { font-family: "Helvetica Neue", |Helvetica, Arial, sans-serif; }
 >
-> 4. div { font-family:| "Helvetica Neue", Helvetica, Arial,| sans-serif; }
+> 4. div { font-family: "Helvetica Neue", Helvetica, Arial,| sans-serif; }
 >
-> 5. div { font-family:| "Helvetica Neue", Helvetica, Arial, sans-serif |; }
+> 5. div { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif |; }
 
 <br />
 All the examples above will have PROP_VALUE in "context" and "name" will be "font-family". In example 2 and 3 the cursor is inside one of the existing property values. So we will have the same array in "values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` Please note that each item in the values array except the last one has a comma and the trailing white spaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
