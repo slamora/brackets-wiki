@@ -92,6 +92,7 @@ Community contributions to Brackets
 * [Select Line command](https://github.com/adobe/brackets/pull/2002) by [Dimitar S.](https://github.com/deemeetar) & [Pritam Baral](https://github.com/pritambaral)
 * [Prepopulate Replace field with current selection](https://github.com/adobe/brackets/pull/1964) by [Chema Balsas](https://github.com/jbalsas)
 * [Japanese translation](https://github.com/adobe/brackets/pull/1929) by [Shumpei Shiraishi](https://github.com/shumpei)
+* [Enable manual path entry field in Open Folder dialog](https://github.com/adobe/brackets-shell/pull/140) by ["zanqi"](https://github.com/zanqi)
 * [Unify panel resizing code, allow custom min size](https://github.com/adobe/brackets/pull/1908) by [Chema Balsas](https://github.com/jbalsas)
 * [removeMenuItem() API](https://github.com/adobe/brackets/pull/2072) mostly by [Terry Ryan](https://github.com/tpryan)
 * [Support Linux in brackets.platform](https://github.com/adobe/brackets/pull/1983) by [Pritam Baral](https://github.com/pritambaral)
