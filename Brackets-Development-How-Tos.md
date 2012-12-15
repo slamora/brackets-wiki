@@ -75,9 +75,11 @@ The Document and its full text content will be kept in memory until you call `re
 To modify a Document's text content, use `Document.replaceRange()`. If you're going to call it multiple times as the result of a single user action, wrap all your calls in `Document.batchOperation()` to ensure they're all batched into a single Undo/Redo entry.
 
 
-## Menus and Keyboard Shortcuts ##
+## <a name="commands"></a>Menus and Keyboard Shortcuts ##
 
-See [How to write extensions](How to write extensions#wiki-uihooks).
+Every menu item and shortcut invokes a `Command` -- basically just an object containing a handler function,  a label string, and some state such as enabled/disabled. `CommandManager` has a mapping from string "command ID" to Command object. `Menus` has a mapping from menu item to command ID, and `KeyBindingManager` has a mapping from key binding to command ID. All command IDs in core Brackets are listed as constants in `Commands`.
+
+To **add a menu item or keyboard shortcut**, see [How to write extensions](How to write extensions#wiki-uihooks).
 
 ## Writing a New Inline Editor (Quick Edit) ##
 
