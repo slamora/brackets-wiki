@@ -202,7 +202,11 @@ When the cursor is in the property value context and there is a white space imme
         if (ruleInfo.context === CSSUtils.PROP_NAME) {
             query.queryStr = ruleInfo.name;
         } else if (ruleInfo.context === CSSUtils.PROP_VALUE) {
-            query.queryStr = (ruleInfo.index !== -1) ? ruleInfo.values[ruleInfo.index] : "";
+            if (ruleInfo.isNewItem) {
+                query.queryStr = "";
+            } else {
+                query.queryStr = (ruleInfo.index !== -1) ? ruleInfo.values[ruleInfo.index] : "";
+            }
             query.propName = ruleInfo.name;
         }
 
