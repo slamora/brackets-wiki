@@ -185,6 +185,7 @@ When the cursor is in the property value context and there is a white space imme
 
 <del>[nj] It would be good to explain that the empty string will be at the beginning in example 1 and at the end in example 5. Also, it looks like examples 3-5 have an extra "|" in them.</del>
 
+<br />
 <del>[raymond] Added explanation and removed extra "|" from examples 3-5.</del>
 
 [raymond] Introduced "isNewItem" in the info object instead of adding an empty string at the location where a new property can be added. So striking out the above comments that no longer applied to the new version of info object.
