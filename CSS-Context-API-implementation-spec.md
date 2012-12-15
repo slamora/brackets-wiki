@@ -184,7 +184,7 @@ The values of "index" and "offset" depend on the cursor position in the existing
 When the cursor is in the property value context and there is a white space immediately after the cursor, then we are in a location where the user can add a new property value. This is the case for example 1, 4 and 5. "isNewItem" flag will be true and offset will be 0 for these cases. "index" will be 0 for example 1, 3 for example 4 and 4 for example 5.
 
 <del>[nj] It would be good to explain that the empty string will be at the beginning in example 1 and at the end in example 5. Also, it looks like examples 3-5 have an extra "|" in them.</del>
-
+<br />
 <del>[raymond] Added explanation and removed extra "|" from examples 3-5.</del>
 
 [raymond] Introduced "isNewItem" in the info object instead of adding an empty string at the location where a new property can be added. So striking out the above comments that no longer applied to the new version of info object.
