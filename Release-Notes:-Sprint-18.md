@@ -18,6 +18,13 @@ UI Changes
 API Changes
 -----------
 
+**NativeFileSystem**
+- **requestNativeFileSystem successCallback** - https://github.com/adobe/brackets/pull/2158
+The successCallback now returns a FileSystem object with a root:DirectoryEntry property. Previously the callback returned the root:DirectoryEntry itself.
+- **Replace FileError with NativeFileError** (implements DOMError) - https://github.com/adobe/brackets/pull/2318
+The latest w3 spec passes specifies that error callbacks pass a DOMError object instead of FileError. FileError.code is replaced with DOMError.name. The deprecated enumeration for FileError types has been replaced with an enumeration in NativeFileError (module: file/NativeFileError). This pull request also fixes some consistency issues with error callbacks
+- **Check examples and documentation** - https://github.com/adobe/brackets/pull/2063
+
 New/Improved Extensibility APIs
 -------------------------------
 
