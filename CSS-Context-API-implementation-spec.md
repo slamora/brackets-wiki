@@ -177,11 +177,11 @@ For example 1, 2 and 3 "name" will be an empty string since the cursor is not in
 > 5. div { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif |; }
 
 <br />
-All the examples above will have PROP_VALUE in "context" and "name" will be "font-family". All examples will have the same array in "values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` regardless of the location of the cursor. Please note that each item in the values array except the last one has a comma and the trailing white spaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
+All the examples above will have PROP_VALUE in "context" and "name" will be "font-family". Also, all of them will have the same array in "values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` regardless of the location of the cursor. Please note that each item in the values array except the last one has a comma and the trailing white spaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
 
 The values of "index" and "offset" depend on the cursor position in the existing property value. Example 2 will have 0 for "index" and 16 for "offset". Example 3 will have 0 for "offset" and 1 for "index".
 
-When the cursor is in the property value context and there is a white space immediately after the cursor, then we are in a location where the user can add a new property value. This is the case for example 1, 4 and 5, so these example will have a different array. The difference is an extra item in the "values" array that has an empty string. For example 4 the array will be ``[""Helvetica Neue", ", "Helvetica, ", "Arial,", "", "sans-serif"]`` and the "index" will be 3 with "offset" sets to 0, indicating that the current cursor position is not in any existing property values and the user is ready to enter a new value.
+When the cursor is in the property value context and there is a white space immediately after the cursor, then we are in a location where the user can add a new property value. This is the case for example 1, 4 and 5.
 
 [nj] It would be good to explain that the empty string will be at the beginning in example 1 and at the end in example 5. Also, it looks like examples 3-5 have an extra "|" in them.
 
