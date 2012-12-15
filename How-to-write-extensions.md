@@ -1,6 +1,6 @@
 **IMPORTANT: The extension location [changed] (https://github.com/adobe/brackets/wiki/New%20Extension%20Location) in Sprint 16**
 
-* [Download Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-howtoget)
+* [Download Brackets](How to Use Brackets#wiki-howtoget)
 * Create a new folder in `src/extensions/dev` with yourExtensionName, and a main.js file for your extension code.
 * For a quick start, you may want to read the [[Simple "Hello World" extension]] or refer to an [existing extension](https://github.com/adobe/brackets/wiki/Brackets-Extensions) (like InlineImageViewer) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
@@ -24,9 +24,9 @@ You often want an extension to integrate with the UI somehow. If your extension 
 
 ### <a name="uihooks"></a>Adding menu items and keyboard shortcuts
 
-See [[Simple "Hello World" extension]] for a code sample.
+_See [[Simple "Hello World" extension]] for a code sample._
 
-For any new behavior, first register a Command that implements your behavior, via ```CommandManager.register()```. This just maps a Command id (string) to your handler function. Use package-style naming for your Command id (e.g. ```"myorg.myextension.mycommand"```) to avoid collisions with other extensions.
+For any new behavior, first register a Command that implements your behavior, via ```CommandManager.register()```. This just maps a Command id (string) to your handler function. Use package-style naming for your Command id (e.g. ```"myorg.myextension.mycommand"```) to avoid collisions with other extensions. (See also: [higher-level overview of command architecture](Brackets Development How Tos#wiki-commands)).
 
 **Add a menu item:** Get a top-level menu by calling ```Menus.getMenu()``` with one of the ```AppMenuBar``` constants.  Then add a menu item via ```theMenu.addMenuItem()```, linking it to your Command id. The menu item's label will be the string name you gave the Command when it was created.
 
@@ -36,8 +36,9 @@ As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut f
 
 **Add a menu divider** Get a top level or context menu as explained above.  Then add a menu dividers via ```theMenu.addMenuDivider()```. It will default to the last position currently in the menu.  You have the option of placing it with the position parameter ```first``` and ```last```, which will place the divider accordingly. Additionally, you can set position parameter to ```before``` and ```after```, pass in a Command ID, and place the divider accordingly.  
 
-
 **Add a keyboard shortcut:** To add a keyboard shortcut without any related menu item, call ```KeyBindingManager.addBinding()``` directly, linking a shortcut to your Command id. Be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts) page to see which shortcuts are available and to add the shortcuts that you use to the list.
+
+To decline a keyboard event and allow other parts of Brackets to handle it, make your Command handler return a `$.Promise` that is _already_ rejected at the time you return it. (This is useful if you want to override editing keys like Enter only when the cursor lies in certain places, and allow the default behavior in other cases; or always override a key in the code editor but allow default behavior in simpler textfields). _(Note: requires Sprint 18 or later)_
 
 
 ### <a name="newui"></a>Adding new UI elements
