@@ -36,9 +36,10 @@ The rule information object is defined as follows...
 {
     context: context,
     offset: offsetInCurrentToken,
-    name: name,                   // only set if context is PROP_NAME or PROP_VALUE for now
+    name: name,                    // only set if context is PROP_NAME or PROP_VALUE for now
     index: currentIndexInValues,
-    values: [value1, value2, ...] // selectors or property values
+    values: [value1, value2, ...], // selectors or property values
+    isNewItem: true|false         // true if the index refers to a new insertion, false for an existing one
 }
 ```
 [Randy] Each item in the array of selector.values (e.g. selector1, selector2, ...), is also a list of simple selectors (e.g. #nav div li > a:hover). Should these also be parsed into an array? Another idea would be to only initially parse into a string (not the array shown above), then have a separate getSelectorInfo() function to parse the selector list deeper only when needed.
@@ -105,7 +106,8 @@ ones.
     offset: 0,
     name: "",
     index: -1,
-    values: []
+    values: [],
+    isNewItem: false
 }
 ```
 <a name="notsupported"> </a>
@@ -175,7 +177,7 @@ For example 1, 2 and 3 "name" will be an empty string since the cursor is not in
 > 5. div { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif |; }
 
 <br />
-All the examples above will have PROP_VALUE in "context" and "name" will be "font-family". In example 2 and 3 the cursor is inside one of the existing property values. So we will have the same array in "values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` Please note that each item in the values array except the last one has a comma and the trailing white spaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
+All the examples above will have PROP_VALUE in "context" and "name" will be "font-family". All examples will have the same array in "values" ``[""Helvetica Neue", ", "Helvetica, ", "Arial, ", "sans-serif"]`` regardless of the location of the cursor. Please note that each item in the values array except the last one has a comma and the trailing white spaces. We intentionally append the comma and the trailing spaces so that the caller can reconstruct the actual string or can calculate the start or end position of a specific value.
 
 The values of "index" and "offset" depend on the cursor position in the existing property value. Example 2 will have 0 for "index" and 16 for "offset". Example 3 will have 0 for "offset" and 1 for "index".
 
