@@ -13,3 +13,18 @@ _See branch dk/less-refactoring_
 - **Task:** Allow extensions to define how to add comments for a specific CodeMirror mode **(in progress)**  
 - Monkey patching not easily possible due to references to internal functions.
 - **Smell:** A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
+
+## Things to keep in mind
+
+_From the [Extensibility Proposal](https://zerowing.corp.adobe.com/display/brackets/Extensibility+Proposal)_
+
+Features we think should be able to be built as plug-ins:
+
+- Access to code model
+- Quick open / go to symbol
+- Index files/code (background process)
+- Better code hinting for "supported" languages (e.g. for a particular framework)
+- JSLint tools
+- Inline editor providers (e.g. CSS gradient editor)
+- Language-specific search and replace (e.g. HTML tag search and replace)
+- Code cleanup / refactoring tools
