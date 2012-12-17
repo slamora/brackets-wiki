@@ -5,7 +5,7 @@ _See branch dk/less-refactoring_
 - Idea: rename LESS to MORE and add an extension that adds support for MORE - this way we can leave current LESS support intact and freely experiment with API designs
 - Added an extension that just requires the CodeMirror mode  
   Result: Called EditorUtils.js _getModeFromFileExtensions with an unhandled file extension: more (EditorUtils.js:163)
-- **Task:** Add an API to define a language (Name, file extensions, CodeMirror mode name, possibly CodeMirror mode implementation) - [Trello](https://trello.com/card/api-for-extensions-to-add-new-language-syntax-coloring-mode/4f90a6d98f77505d7940ce88/639)
+- **Task:** Add an API to define a language (Name, MIME type(s?), file extensions, CodeMirror mode name, possibly CodeMirror mode implementation) - [Trello](https://trello.com/card/api-for-extensions-to-add-new-language-syntax-coloring-mode/4f90a6d98f77505d7940ce88/639)
 - **Smell:** CodeMirror.defineMode doesn't check if the mode is already defined, so extensions could override existing modes and cause problems for features that rely on specific tokens, like auto complete.
 - Monkey-patched getModeFromFileExtensions to use file extension as mode name if such a mode exists
 - **Task:** Load (language) extensions earlier to support their CodeMirror modes for the file automatically opened at startup (last open file)
