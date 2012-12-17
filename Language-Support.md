@@ -6,6 +6,7 @@ _See branch dk/less-refactoring_
 - Added an extension that just requires the CodeMirror mode  
   Result: Called EditorUtils.js _getModeFromFileExtensions with an unhandled file extension: more (EditorUtils.js:163)
 - **Task:** Add an easy way to map a file extension to a CodeMirror mode
+- **Smell:** CodeMirror.defineMode doesn't check if the mode is already defined, so extensions could override existing modes and cause problems for features that rely on specific tokens, like auto complete.
 - Monkey-patched getModeFromFileExtensions to use file extension as mode name if such a mode exists
 - **Task:** Load (language) extensions earlier to support their CodeMirror modes for the file automatically opened at startup (last open file)
 - Added a function that changes the mode of current editors if (after adding the new mode) a different one would be used when re-opening the editor
