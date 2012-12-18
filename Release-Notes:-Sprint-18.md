@@ -41,7 +41,19 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-* [title](https://github.com/adobe/brackets/issues/0000) by [name](https://github.com/user)
+* [title](https://github.com/adobe/brackets/issues/2390) by [Chema Balsas](https://github.com/jbalsas)
+* [Spanish translation for sprint18 strings](https://github.com/adobe/brackets/issues/2390) by [name](https://github.com/user)
+* [Add pyc files to a list of ignored extensions](https://github.com/adobe/brackets/issues/2366) by ["justinabrahms"](https://github.com/justinabrahms)
+* [Rename on Second Click](https://github.com/adobe/brackets/issues/2356) by ["gabriellcardoso"](https://github.com/gabriellcardoso)
+* [Update 'de' l10n](https://github.com/adobe/brackets/issues/2367) by ["J.M."](https://github.com/mynetx)
+* [Russian sample](https://github.com/adobe/brackets/issues/2320) by ["noway421"](https://github.com/noway421)
+* [Adding python syntax highlighting](https://github.com/adobe/brackets/issues/2355) by ["justinabrahms"](https://github.com/justinabrahms)
+* [Fixing several Block and Line Comment issues](https://github.com/adobe/brackets/issues/2342) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Update 'de' locale](https://github.com/adobe/brackets/issues/2224) by ["J.M."](https://github.com/mynetx)
+* [NativeFileSystem documentation and examples](https://github.com/adobe/brackets/issues/2063) by [Chema Balsas](https://github.com/jbalsas)
+* [Add CONTRIBUTING file](https://github.com/adobe/brackets/issues/2304) by ["J.M."](https://github.com/mynetx)
+* [NativeFileError for error callbacks in NativeFileSystem](https://github.com/adobe/brackets/issues/2318) by [Chema Balsas](https://github.com/jbalsas)
+* [Adding tooltip to JSLint star on start-up with JSLint disabled](https://github.com/adobe/brackets/issues/2280) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Color Editor CSS cleanups](https://github.com/adobe/brackets/issues/2225) by ["J.M."](https://github.com/mynetx)
 * [Go to the most recently visited file when closing a file](https://github.com/adobe/brackets/issues/2122) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [HTML attributes code hinting filter](https://github.com/adobe/brackets/issues/2263) by [Chema Balsas](https://github.com/jbalsas)
