@@ -194,3 +194,11 @@ Prototypal inheritance pattern:
 * Use JSDoc tags for annotations with Google's Closure Compiler Type Expressions, see https://developers.google.com/closure/compiler/docs/js-for-compiler
 * Annotations should use the /** annotation */
 * Annotate all functions
+
+## <a name="error_handling"></a>Exceptions/Asserts/Logging ##
+
+* Use exceptions when encountering an unexpected error and recovery is not possible. In other words, the error means that Brackets will be noticeably broken or data could be corrupted if execution continues.
+* Use `console.error()` or `console.assert()` when encountering an unexpected error that *can* be recovered from. In other words, an error occurred and the current operation may not complete successfully, but the overal integrity of the program is not compromised.
+* Use `console.log()` to note *unexpected* behavior that is not necessarily an error. 
+
+**NOTE** `console.log()` should **not** be used to log general information.
