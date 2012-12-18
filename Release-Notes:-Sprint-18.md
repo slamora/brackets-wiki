@@ -43,6 +43,7 @@ Community contributions to Brackets
 -----------------------------------
 * [Use Windows key bindings on linux](https://github.com/adobe/brackets/issues/2331) and [#2000](https://github.com/adobe/brackets/pull/2000) by [Pritam Baral](https://github.com/pritambaral)
 * [Russsian translation](https://github.com/adobe/brackets/pull/2268) by [noway421](https://github.com/noway421) and reviewed by [TurboTurkey](https://github.com/TurboTurkey) 
+* [Change dialog label for Quick Open based on mode](https://github.com/adobe/brackets/pull/2298) and [#1706](https://github.com/adobe/brackets/pull/1706) by [sagarsane](https://github.com/sagarsane)
 
 Contributions _from_ Brackets
 -----------------------------
