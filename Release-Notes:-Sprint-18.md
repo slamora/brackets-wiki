@@ -41,6 +41,8 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [Use Windows key bindings on linux](https://github.com/adobe/brackets/issues/2331) and [#2000](https://github.com/adobe/brackets/pull/2000) by [Pritam Baral](https://github.com/pritambaral)
+* [Russsian translation](https://github.com/adobe/brackets/pull/2268) by [noway421](https://github.com/noway421) and reviewed by [TurboTurkey](https://github.com/TurboTurkey) 
 
 Contributions _from_ Brackets
 -----------------------------
