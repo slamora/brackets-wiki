@@ -13,7 +13,7 @@ Idea: rename LESS to MORE and add an extension that adds support for MORE - this
 
 **2) Monkey-patched getModeFromFileExtensions to use file extension as mode name if such a mode exists**
 
-**Task:** Load (language) extensions earlier to support their CodeMirror modes for the file automatically opened at startup (last open file)
+**Task:** Load (language) extensions earlier to support their CodeMirror modes for the file automatically opened at startup (last open file) **(done)**
 
 **3) Added a function that changes the mode of current editors if (after adding the new mode) a different one would be used when re-opening the editor**
 
