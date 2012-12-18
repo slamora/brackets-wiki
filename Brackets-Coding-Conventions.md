@@ -217,7 +217,8 @@ function register(name, id, commandFn) {
         console.log("Attempting to register an already-registered command: " + id);
         return null;
     }
-    if (!name || !id || !commandFn) {         throw new Error("Attempting to register a command with a missing name, id, or command function:" + name + " " + id);
+    if (!name || !id || !commandFn) {
+         throw new Error("Attempting to register a command with a missing name, id, or command function:" + name + " " + id);
     }
 
     var command = new Command(name, id, commandFn);
