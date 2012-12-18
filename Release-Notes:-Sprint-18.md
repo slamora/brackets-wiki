@@ -41,9 +41,19 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [title](https://github.com/adobe/brackets/issues/0000) by [name](https://github.com/user)
+* [Color Editor CSS cleanups](https://github.com/adobe/brackets/issues/2225) by ["J.M."](https://github.com/mynetx)
+* [Go to the most recently visited file when closing a file](https://github.com/adobe/brackets/issues/2122) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [HTML attributes code hinting filter](https://github.com/adobe/brackets/issues/2263) by [Chema Balsas](https://github.com/jbalsas)
+* [FileSystem Implementation](https://github.com/adobe/brackets/issues/2158) by [Chema Balsas](https://github.com/jbalsas)
+* [Fix: If first line in selection is a line comment, Block Comment does nothing](https://github.com/adobe/brackets/issues/2121) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Spanish translation Sprint17](https://github.com/adobe/brackets/issues/2273) by [Chema Balsas](https://github.com/jbalsas)
+* [Use \u2026 for ellipsis in menu items](https://github.com/adobe/brackets/issues/2240) by ["J.M."](https://github.com/mynetx)
+* [CSS and HTML Line Comment](https://github.com/adobe/brackets/issues/2133) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Create files on collapsed folders](https://github.com/adobe/brackets/issues/2198) by [Chema Balsas](https://github.com/jbalsas)
 * [Use Windows key bindings on linux](https://github.com/adobe/brackets/issues/2331) and [#2000](https://github.com/adobe/brackets/pull/2000) by [Pritam Baral](https://github.com/pritambaral)
-* [Russsian translation](https://github.com/adobe/brackets/pull/2268) by [noway421](https://github.com/noway421) and reviewed by [TurboTurkey](https://github.com/TurboTurkey) 
-* [Change dialog label for Quick Open based on mode](https://github.com/adobe/brackets/pull/2298) and [#1706](https://github.com/adobe/brackets/pull/1706) by [sagarsane](https://github.com/sagarsane)
+* [Russsian translation](https://github.com/adobe/brackets/pull/2268) by ["noway421"](https://github.com/noway421) and reviewed by ["TurboTurkey"](https://github.com/TurboTurkey) 
+* [Change dialog label for Quick Open based on mode](https://github.com/adobe/brackets/pull/2298) and [#1706](https://github.com/adobe/brackets/pull/1706) by ["sagarsane"](https://github.com/sagarsane)
 
 Contributions _from_ Brackets
 -----------------------------
