@@ -34,9 +34,9 @@ Either null, if the hinting request was explicit, or a single character that rep
 ### `@return {Boolean}`
 Determines whether the current provider is able to provide hints for the given editor context and, in case `implicitChar` is non-null, whether it is appropriate to do so. 
 
-## `CodeHintProvider.getHints()`
+## `CodeHintProvider.getHints(implicitChar)`
 
-The method by which a provider provides hints for the editor context associated with the current session. The getHints method is called only if the provider asserted its willingness to provide hints in an earlier call to getHints. ([raymond] I think you meant "an earlier call to hasHints" here.) The provider may return null, which indicates that the manager should end the current hinting session and close the hint list window. Otherwise, the provider should return a response object that contains three properties: 
+The method by which a provider provides hints for the editor context associated with the current session. The getHints method is called only if the provider asserted its willingness to provide hints in an earlier call to hasHints. The provider may return null, which indicates that the manager should end the current hinting session and close the hint list window. Otherwise, the provider should return a response object that contains three properties: 
  1. `hints`, a sorted array hints that the provider could later insert into the editor; 
  2. `match`, a string that the manager may use to emphasize substrings of hints in the hint list; and 
  3. `selectInitial`, a boolean that indicates whether or not the the first hint in the list should be selected by default. 
@@ -47,6 +47,10 @@ Alternatively, the provider may return a `jQuery.Deferred` object that resolves 
 Both the manager and the provider can reject the deferred object. The manager will reject the deferred if the editor changes state (e.g., the user types a character) or if the hinting session ends (e.g., the user explicitly closes the hints by pressing escape). The provider can use this event to, e.g., abort an expensive computation. Consequently, the provider may assume that `getHints` will not be called again until the deferred object from the current call has resolved or been rejected. If the provider rejects the deferred, the manager will end the hinting session.
 
 The `getHints` method may be called by the manager repeatedly during a hinting session. Providers may wish to cache information for efficiency that may be useful throughout these sessions. The same editor context will be used throughout a session, and will only change during the session as a result of single-character insertions, deletions and cursor navigations. The provider may assume that, throughout the lifetime of the session, the `getHints` method will be called exactly once for each such editor change. Consequently, the provider may also assume that the document will not be changed outside of the editor during a session. 
+
+### `@param {String} implicitChar`
+
+Either null, if the request to update the hint list was a result of navigation, or a single character that represents the last insertion.
 
 ### `@return {(Object + jQuery.Deferred)<hints: Array<(String + jQuery.Obj)>, match: String, selectInitial: Boolean>}`
 
