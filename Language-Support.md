@@ -9,7 +9,7 @@ Idea: rename LESS to MORE and add an extension that adds support for MORE - this
 
 **Task:** Add an API to define a language (Name, MIME type(s?), file extensions, CodeMirror mode name, possibly CodeMirror mode implementation) - [Trello](https://trello.com/card/api-for-extensions-to-add-new-language-syntax-coloring-mode/4f90a6d98f77505d7940ce88/639) **(done)**
 
-**Smell:** CodeMirror.defineMode doesn't check if the mode is already defined, so extensions could override existing modes and cause problems for features that rely on specific tokens, like auto complete.
+**Smell:** CodeMirror.defineMode doesn't check if the mode is already defined, so extensions could override existing modes and cause problems for features that rely on specific tokens, like auto complete. **(monkey-patched)**
 
 **2) Monkey-patched getModeFromFileExtensions to use file extension as mode name if such a mode exists**
 
