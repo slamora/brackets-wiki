@@ -19,7 +19,7 @@ Idea: rename LESS to MORE and add an extension that adds support for MORE - this
 
 **4) Did not find a way to patch in comment styles for a language**
 
-**Task:** Allow extensions to define how to add comments for a specific CodeMirror mode **(done)**
+**Task:** Allow extensions to define how to add comments for a specific CodeMirror mode **(done)**  
 Monkey patching not easily possible due to references to internal functions.
 
 **Smell:** A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
