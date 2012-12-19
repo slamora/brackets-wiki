@@ -203,30 +203,18 @@ Prototypal inheritance pattern:
 
 **NOTE** `console.log()` should **not** be used to log general information.
 
-### Example 1 - `throw` and `console.log()` ###
+### Example 1 - `throw` ###
 
-The `CommandManager.register()` function uses `console.log()` and `throw`.
+The Document constructor throws an error if a document already exists for the current file. Creating a new document that points to the same file could lead to file corruption if both documents are edited.
 
-`console.log()` is used to note an unexpected (but not dangerous) condition -- the specified command id has already been registered. The code can continue safely from here.
-
-An exception is thrown if `name`, `id`, or `commandFn` isn't defined. If the code were to continue, a serious consequence is likely to occur -- a menu item could be blank or inoperative, or the command couldn't be mapped by id.
-
-```JS
-function register(name, id, commandFn) {
-    if (_commands[id]) {
-        console.log("Attempting to register an already-registered command: " + id);
-        return null;
+```
+function Document(file, initialTimestamp, rawText) {
+    ...
+    if (_openDocuments[file.fullPath]) {
+        throw new Error("Creating a document when one already exists, for: " + file);
     }
-    if (!name || !id || !commandFn) {
-         throw new Error("Attempting to register a command with a missing name, id, or command function:" + name + " " + id);
-    }
-
-    var command = new Command(name, id, commandFn);
-    _commands[id] = command;
-
     ...
 }
-
 ```
 
 ### Example 2 - `console.assert()` ###
@@ -239,4 +227,19 @@ CommandManager.execute(Commands.FILE_OPEN, { fullPath: nextFile.fullPath })
         // (Now we're guaranteed that the current document is not the one we're closing)
         console.assert(!(_currentDocument && _currentDocument.file.fullPath === file.fullPath));
     })
+```
+
+### Example 3 - `console.log()` ###
+
+The `CommandManager.register()` function uses `console.log()` to note an unexpected (but not dangerous) condition -- the specified command id has already been registered. The code can continue safely from here.
+
+```JS
+function register(name, id, commandFn) {
+    if (_commands[id]) {
+        console.log("Attempting to register an already-registered command: " + id);
+        return null;
+    }
+    ...
+}
+
 ```
