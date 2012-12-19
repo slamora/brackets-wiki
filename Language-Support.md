@@ -7,7 +7,7 @@ Idea: rename LESS to MORE and add an extension that adds support for MORE - this
 **1) Added an extension that just requires the CodeMirror mode**  
   Result: Called EditorUtils.js _getModeFromFileExtensions with an unhandled file extension: more (EditorUtils.js:163)
 
-**Task:** Add an API to define a language (Name, MIME type(s?), file extensions, CodeMirror mode name, possibly CodeMirror mode implementation) - [Trello](https://trello.com/card/api-for-extensions-to-add-new-language-syntax-coloring-mode/4f90a6d98f77505d7940ce88/639)
+**Task:** Add an API to define a language (Name, MIME type(s?), file extensions, CodeMirror mode name, possibly CodeMirror mode implementation) - [Trello](https://trello.com/card/api-for-extensions-to-add-new-language-syntax-coloring-mode/4f90a6d98f77505d7940ce88/639) **(done)**
 
 **Smell:** CodeMirror.defineMode doesn't check if the mode is already defined, so extensions could override existing modes and cause problems for features that rely on specific tokens, like auto complete.
 
@@ -19,12 +19,11 @@ Idea: rename LESS to MORE and add an extension that adds support for MORE - this
 
 **4) Did not find a way to patch in comment styles for a language**
 
-**Task:** Allow extensions to define how to add comments for a specific CodeMirror mode **(in progress)**  
+**Task:** Allow extensions to define how to add comments for a specific CodeMirror mode **(done)**
 Monkey patching not easily possible due to references to internal functions.
 
 **Smell:** A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
 
-**5) Next up: Extend the Go to Definition command**
 
 ## Things to keep in mind
 
