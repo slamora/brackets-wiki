@@ -31,7 +31,13 @@ The successCallback now returns a FileSystem object with a root:DirectoryEntry p
 The latest w3 spec passes specifies that error callbacks pass a DOMError object instead of FileError. FileError.code is replaced with DOMError.name. The deprecated enumeration for FileError types has been replaced with an enumeration in NativeFileError (module: file/NativeFileError). This pull request also fixes some consistency issues with error callbacks
 - **Check examples and documentation** - https://github.com/adobe/brackets/pull/2063
 
-[TBD - CodeHintManager/CodeHintProvider]
+**CodeHintManager**
+- **registerHintProvider requires mode names and priority** - When registering with the CodeHintManager (CHM), CodeHintProviders now must also specify a list of CodeMirror mode names (e.g., "html" or "css") for which they are capable of providing hints, and also an integer priority that is used to decide the order in which the CHM polls providers for a particular mode. 
+- **CodeHintProvider interface changes** - The interface that CHPs are required to implement has been simplified. There are now three required methods: 
+ 1. ``hasHints``, which is used to indicate whether or not a provider is willing to provide hints in a particular editor context, and begins a new hinting session; 
+ 2. ``getHints``, which returns either a list of hints for the editor context associated with the current hinting session, or a deferred object that will eventually resolve to a list of hints, as well as indication of whether the first hint should be selected by default; and 
+ 3. ``insertHint``, which inserts a hint into the editor context associated with the current session, also indicates whether the CHM should subsequently open another hinting session.
+- Complete API details are available here: https://github.com/adobe/brackets/wiki/New-Code-Hinting-API-Proposal
 
 New/Improved Extensibility APIs
 -------------------------------
