@@ -39,6 +39,9 @@ The latest w3 spec passes specifies that error callbacks pass a DOMError object 
  3. ``insertHint``, which inserts a hint into the editor context associated with the current session, also indicates whether the CHM should subsequently open another hinting session.
 - Complete API details are available here: https://github.com/adobe/brackets/wiki/New-Code-Hinting-API-Proposal
 
+**CSSUtils** - added the ``getInfoAtPos()`` new API call which returns a context info object
+for the given cursor position.
+
 New/Improved Extensibility APIs
 -------------------------------
 
