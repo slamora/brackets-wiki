@@ -69,7 +69,6 @@ Community contributions to Brackets
 -----------------------------------
 * [Spanish translation for sprint18 strings](https://github.com/adobe/brackets/issues/2390) by [Chema Balsas](https://github.com/jbalsas)
 * [Add pyc files to a list of ignored extensions](https://github.com/adobe/brackets/issues/2366) by ["justinabrahms"](https://github.com/justinabrahms)
-* [Rename on Second Click](https://github.com/adobe/brackets/issues/2356) by ["gabriellcardoso"](https://github.com/gabriellcardoso)
 * [Update 'de' l10n](https://github.com/adobe/brackets/issues/2367) by ["J.M."](https://github.com/mynetx)
 * [Russian sample](https://github.com/adobe/brackets/issues/2320) by ["noway421"](https://github.com/noway421)
 * [Adding python syntax highlighting](https://github.com/adobe/brackets/issues/2355) by ["justinabrahms"](https://github.com/justinabrahms)
