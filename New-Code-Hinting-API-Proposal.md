@@ -58,7 +58,7 @@ Null if the provider wishes to end the hinting session. Otherwise, a response ob
  1. a sorted array `hints` that consists either of strings or jQuery objects; 
  2. a string `match`, possibly null, that is used by the manager to emphasize matching substrings when rendering the hint list; and 
  3. a boolean that indicates whether the first result, if one exists, should be selected by default in the hint list window. 
-If `match` is non-null, then the hints should be strings. If the `match` is null, the manager will not attempt to emphasize any parts of the hints when rendering the hint list; instead the provider may return strings or jQuery objects for which emphasis is self-contained. For example, the strings may contain substrings that wrapped in bold tags. In this way, the provider can choose to let the manager handle emphasis for the simple and common case of prefix matching, or can provide its own emphasis if it wishes to use a more sophisticated matching algorithm. 
+If `match` is non-null, then the hints should be strings. If the `match` is null, the manager will not attempt to emphasize any parts of the hints when rendering the hint list; instead the provider may return strings or jQuery objects for which emphasis is self-contained. For example, the strings may contain substrings that wrapped in bold tags. In this way, the provider can choose to let the manager handle emphasis for the simple and common case of prefix matching, or can provide its own emphasis if it wishes to use a more sophisticated matching algorithm. **Note:** the CodeHintManager currently supports only string hints.
 
 [Glenn] Is a single prefix string sufficient here? Many (most?) code hints will do partial hinting, so for example, I can type "chm" and have CodeHintManager hinted (with **C**, **H**, and **M** bolded). Will that be supported? 
 
@@ -70,8 +70,8 @@ If `match` is non-null, then the hints should be strings. If the `match` is null
 
 The method by which a provider inserts a hint into the editor context associated with the current session. The provider may assume that the given hint was returned by the provider in some previous call in the current session to `getHints`, but not necessarily the most recent call. After the insertion has been performed, the current hinting session is closed. The provider should return a boolean value to indicate whether or not the end of the session should be immediately followed by a new explicit hinting request, which may result in a new hinting session being opened with some provider, but not necessarily the current one. 
 
-### `@param {String} hint`
-The hint to be inserted into the editor context for the current session. 
+### `@param {String + jQuery.Object} hint`
+The hint to be inserted into the editor context for the current session. **Note:** the CodeHintManager currently supports only string hints.
 
 ### `@return {Boolean}`
 Indicates whether the manager should follow hint insertion with an explicit hint request. 
