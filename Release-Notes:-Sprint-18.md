@@ -31,8 +31,12 @@ The successCallback now returns a FileSystem object with a root:DirectoryEntry p
 The latest w3 spec passes specifies that error callbacks pass a DOMError object instead of FileError. FileError.code is replaced with DOMError.name. The deprecated enumeration for FileError types has been replaced with an enumeration in NativeFileError (module: file/NativeFileError). This pull request also fixes some consistency issues with error callbacks
 - **Check examples and documentation** - https://github.com/adobe/brackets/pull/2063
 
+[TBD - CodeHintManager/CodeHintProvider]
+
 New/Improved Extensibility APIs
 -------------------------------
+
+[TBD - ExtensionUtils]
 
 Known Issues
 ------------
