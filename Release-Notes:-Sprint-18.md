@@ -2,11 +2,17 @@ _This is a draft!_
 --------------------
 _This document will not be finalized until the end of Sprint 18 -- approximately December 20._
 
+Note: this final sprint of the year was largely focused on architectural work preparing for future sprints, so there are fewer new features than usual.
+
 What's New in Sprint 18
 -----------------------
-* **TODO: category heading**
-    * TODO: feature list
-
+* **Code Hinting**
+    * [Code hint provider API improvements](https://trello.com/card/0-research-code-hint-provider-api/4f90a6d98f77505d7940ce88/723): APIs for all code hints [have been streamlined](https://github.com/adobe/brackets/wiki/New-Code-Hinting-API-Proposal) to support multiple hint providers per language more cleanly, remove bug-prone pitfalls, and do less processing per keystroke. More explanation [here](https://github.com/adobe/brackets/wiki/Code-Hinting-Functional-Specifications) and [here](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/Luf7IN0-iAM).
+    * [Improved CSS utilities](https://trello.com/card/2-css-utilities-api-to-support-code-completion/4f90a6d98f77505d7940ce88/713): A [new CSSUtils API](https://github.com/adobe/brackets/wiki/CSS-Context-API-implementation-spec) is available to support the [ongoing effort to add full CSS code hinting](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/sAdPhV3ffOY) in a future sprint.
+* **Code Editing**
+    * [Progress on CodeMirror 3 migration](https://trello.com/card/2-codemirror-3-inline-editor-open-edit/4f90a6d98f77505d7940ce88/650): Inline editors are now mostly working on the [cmv3 branch](https://github.com/adobe/brackets/compare/master...cmv3), with one major exception: they are not always the correct height.
+* **Extensions**
+    * [Research language extensibility](https://trello.com/card/0-research-language-extensibility/4f90a6d98f77505d7940ce88/712): Planning for for a [future feature](https://trello.com/card/api-for-extensions-to-add-new-language-syntax-coloring-mode/4f90a6d98f77505d7940ce88/639) to allow extensions to add support for new file types. As a guinea pig, we're working on [moving LESS support from core out into an extension](https://trello.com/card/0-less-refactor-into-extension/4f90a6d98f77505d7940ce88/711).
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-17...sprint-18#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-17...sprint-18#commits_bucket)
 
@@ -37,6 +43,7 @@ Known Issues
 * _Debug > Show Developer Tools_ opens in a new tab in Chrome, rather than a new window in Brackets.
 * [#1283](https://github.com/adobe/brackets/issues/1283): Text selection highlight sometimes jiggles when horizontally resizing window.
 * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet.  To work around this, right click the Brackets app and choose Open.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
+* [#2272](https://github.com/adobe/brackets/issues/2272): Windows Vista may not allow the Brackets installer to run since it was downloaded from the Internet (you may not see _any_ error or warning message). To work around this, right-click the installer file, choose Properties, and click the Unblock button.
 
 
 Community contributions to Brackets
