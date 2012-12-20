@@ -1,3 +1,5 @@
+For additional background on the new code hinting API, see the [code hinting functional specifications](https://github.com/adobe/brackets/wiki/Code-Hinting-Functional-Specifications). 
+
 ## `CodeHintManager.registerHintProvider(provider, modes, priority)`
 
 The method by which a `CodeHintProvider` registers its willingness to providing hints for editors in a given mode.
