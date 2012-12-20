@@ -42,7 +42,16 @@ The latest w3 spec passes specifies that error callbacks pass a DOMError object 
 New/Improved Extensibility APIs
 -------------------------------
 
-[TBD - ExtensionUtils]
+**ExtensionUtils** - the following new API calls were added:
+
+* ``addEmbeddedStyleSheet()`` - Appends a &lt;style&gt; tag to the document's head.
+* ``addLinkedStyleSheet()`` - Appends a &lt;link&gt; tag to the document's head.
+* ``parseLessCode()`` - Parses LESS code and returns a promise that resolves with plain CSS code.
+* ``getModulePath()`` - Returns a path to an extension module.
+* ``getModuleUrl()`` - Returns a URL to an extension module.
+* ``loadFile()`` - Performs a GET request using a path relative to an extension module.
+
+Also, ``loadStyleSheet()`` now supports .less files (using the API calls listed above).
 
 Known Issues
 ------------
