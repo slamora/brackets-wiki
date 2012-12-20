@@ -17,7 +17,11 @@ Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sp
 
 The Brackets app is not yet signed, so depending on your security settings, you might get a dialog on Lion or Mountain Lion telling you that you can't run an application from an unknown developer. If so, you'll need to Ctrl-click on the application and choose "Open", then click on the "Open" button in the dialog that comes up.
 
-### 3. Check the File Permissions
+### 3. Windows Vista Installer
+
+Some Windows Vista computers will block installers downloaded from the Internet, so nothing at all happens when you try to run the installer. To work around this: right-click the installer file, choose Properties, and click the Unblock button.
+
+### 4. Check the File Permissions
 
 If Brackets won't launch, check the permissions of the main executable files (e.g. using `ls -l`). On Mac:
 * `bin/mac/Brackets.app` should be `drwxr-xr-x`
@@ -27,11 +31,12 @@ To fix permissions, use a command like `chmod +x bin/mac/Brackets.app/Contents/M
 
 Some archiving programs, such as [Keka](http://www.kekaosx.com/en/) don't appear to preserve file permissions when unarchiving zip files. (More info [here](https://github.com/adobe/brackets/issues/1158)). If you run into this issue on Mac, try to unarchive the zip file by using Finder.
 
-### 4. Clear The Cache
-If you had previously used Brackets, your cache may have information that is conflicting with the most recent version. [Find your cache folder](https://github.com/adobe/brackets/wiki/Cache-Folder) and delete the cache.
+### 5. Clear The Cache
+If you had previously used Brackets, your cache may have information that is conflicting with the most recent version. [Find your cache folder](https://github.com/adobe/brackets/wiki/Cache-Folder) and delete the cache. _Warning: this will reset all of your Brackets preferences._
 
-### 5. Run Brackets From The Command Line
+### 6. Run Brackets From The Command Line
 Next, try running Brackets from the command line. Open up a Terminal (or Command Prompt in Windows), navigate to the executable, and run Brackets. (On Mac, type `open bin/mac/Brackets.app`.). Did an error appear? If so, file an issue or find us on IRC or the mailing list and we'll try to figure it out.
+
 
 ## <a name="livedev"> </a>Live Development Isn't Working
 
