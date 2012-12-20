@@ -1,6 +1,11 @@
-1. Before you get started, make sure you read [CONTRIBUTING.md](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md).
+
+
 1. This page is mainly about modifying core Brackets code. If you're adding a new feature, consider [writing an extension](How to write extensions) instead.
+
+
 1. Before submitting your first pull request, make sure to [sign the Brackets Contributor License Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html), or we can't accept your pull request. You only need to do this once in your lifetime.
+
+[CONTRIBUTING.md](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md) contains a high-level overview of what you may need to consider if you plan to contribute to Brackets.    
 
 ## How to Get Started ##
 
@@ -179,7 +184,9 @@ git push origin mynewfeature
 
 That command creates a branch on your Github-hosted fork of Brackets and commits all of the changes. Until now everything we did was local. Now Github knows about our branch as well as our changes.
 
-> Before you submit a pull request you should make sure everything passes JSLint. This is easy because Brackets will show you anywhere in your file that JSLint sees an error. You also need to make sure that the unit tests pass without any errors. You can run the Brackets unit tests by going to *Debug > Run Unit Tests* in Brackets. The tests require Chrome and you should quit Chrome before running the tests for the most accurate results. 
+> Before you submit a pull request you should make sure everything passes JSLint. This is easy because Brackets will show you anywhere in your file that JSLint sees an error. You also need to make sure that the unit tests pass without any errors. You can run the Brackets unit tests by going to *Debug > Run Unit Tests* in Brackets. The tests require Chrome and you should quit Chrome before running the tests for the most accurate results.
+Please also review the [Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist) for additional guidance.
+ 
 
 ### Submitting a Pull Request ###
 Now you're ready to submit a pull request. Go to the GitHub page for your fork of Brackets. In order to submit a pull request, you need to be looking at the branch you created, which we called `mynewfeature`. GitHub has a pulldown that lets you select branches in your fork of the repository. Click that, find the branch you were working on, and select it. Now you're looking at the code for that branch. 
