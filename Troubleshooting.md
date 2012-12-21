@@ -11,7 +11,7 @@ Brackets not working for you? Consider the following tips.
 ## Brackets Doesn't Load
 ### 1. Download the Right Package
 
-Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](https://github.com/adobe/brackets/downloads). The "Download as zip/tar.gz" buttons will **not** work.
+Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](http://download.brackets.io). 
 
 ### 2. Lion/Mountain Lion Security Dialog
 
