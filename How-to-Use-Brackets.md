@@ -3,7 +3,7 @@
 
 Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. **Brackets isn't ready for general use yet**, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
 
-The latest "stable" builds can be downloaded from the [downloads page](https://github.com/adobe/brackets/downloads). **Use the .dmg (Mac) or .msi (Win) links** -- the generic download button at the top will not work!
+The latest "stable" builds can be downloaded from the [downloads page](http://download.brackets.io). **Use the .dmg (Mac) or .msi (Win) links** -- the generic download button at the top will not work!
 
 If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. See [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) for details on pulling the source.
 
