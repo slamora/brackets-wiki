@@ -1,3 +1,8 @@
+<a id="nettuts_video"></a> Video Tutorial
+-----------
+
+Nettuts+ [did a tutorial video on Brackets](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/) which makes for a helpful video on how to use some of the main features.
+
 <a id="howtoget"></a> Getting Brackets
 -----------
 
