@@ -98,6 +98,8 @@ Contributions _from_ Brackets
 -----------------------------
 * CodeMirror: [Unit tests for line focus restoration](https://github.com/marijnh/CodeMirror/commit/fee2bb7660f914a1a71e695ce0584ed91fe5d73a)
 * CodeMirror: [Ignore certain events when target is inside a line widget](https://github.com/marijnh/CodeMirror/commit/9a076b991545390a0d3034e66434724185f19119)
+* CodeMirror: [track global variables alongside locals in the parser state](https://github.com/marijnh/CodeMirror/commit/1bcc97635b11db2030697e5bb121d547c8c456e4)
+* CodeMirror: [use globals as well as locals in hinting](https://github.com/marijnh/CodeMirror/commit/426a38985a7bef76b190ad3717c9855911b86662)
 
 Bugs fixed in Sprint 18
 -----------------------
