@@ -96,6 +96,8 @@ Community contributions to Brackets
 
 Contributions _from_ Brackets
 -----------------------------
+* CodeMirror: [Unit tests for line focus restoration](https://github.com/marijnh/CodeMirror/commit/fee2bb7660f914a1a71e695ce0584ed91fe5d73a)
+* CodeMirror: [Ignore certain events when target is inside a line widget](https://github.com/marijnh/CodeMirror/commit/9a076b991545390a0d3034e66434724185f19119)
 
 Bugs fixed in Sprint 18
 -----------------------
