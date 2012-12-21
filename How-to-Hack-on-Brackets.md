@@ -1,5 +1,4 @@
 
-
 1. This page is mainly about modifying core Brackets code. If you're adding a new feature, consider [writing an extension](How to write extensions) instead.
 
 
@@ -78,7 +77,7 @@ on the [brackets-shell wiki](https://github.com/adobe/brackets-shell/wiki).
 
 If you're only hacking on HTML/JS/CSS files, you can have the installed version of the Brackets shell run your local copy of the HTML/JS/CSS code by running the `tools/setup_for_hacking` script. Here are the steps.
 
-1. If you haven't already, download and install the latest Brackets sprint build from the [Downloads page](https://github.com/adobe/brackets/downloads). **Note:** Make sure you download a Mac .dmg or Windows .msi--the "Download as zip/tar.gz" files at the top **will not work**.
+1. If you haven't already, download and install the latest Brackets sprint build from the [Downloads page](http://download.brackets.io). **Note:** Make sure you download a Mac .dmg or Windows .msi--the "Download as zip/tar.gz" files at the top **will not work**.
 2. Clone or fork the brackets repo (see [Getting a Copy of the Code](#getcode) for details).
 3. On a Mac: 
   1. Open a Terminal window
