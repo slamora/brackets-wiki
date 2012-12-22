@@ -1,6 +1,8 @@
-_**This page describes features that are not yet implemented (or not fully implemented). Comments are welcome!**_
+_**This page describes features that are not yet implemented, or only partially implemented. Comments are welcome!**_
 
-The purpose of this document is to describe the functional specification of code hints for a number of important languages. We don't plan to implement all of the functionality specified below at the same time (and indeed may never end up implementing some of it). Instead, the goal is to have a document that can evolve over time.
+_Some functionality was [implemented in Sprint 18](New-Code-Hinting-API-Proposal)._
+
+The purpose of this document is to describe the expected functionality of code hints for a number of important languages. We don't plan to implement all the functionality specified below at the same time (and indeed may never end up implementing some of it). Instead, the goal is to have a specification that can evolve over time.
 
 At any point in time, this document should represent how we currently believe code hinting should work from a functional/user-facing perspective. We can then use this to drive the design of APIs to support code hinting, as well as guide the implementation of actual code hint providers.
 
