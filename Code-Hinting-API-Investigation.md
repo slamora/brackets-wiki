@@ -1,4 +1,6 @@
-**_This is a draft, and is not yet implemented. Comments are appreciated._**
+<br>
+### This page has been replaced by _[Code Hinting Functional Specifications](Code Hinting Functional Specifications)_
+<br>
 
 In Sprint 18, we are planning to improve our existing code hint API. The goal of this document is to summarize the requirements this API would need to meet so that we could provide "first class" code hinting providers for various languages.
 
