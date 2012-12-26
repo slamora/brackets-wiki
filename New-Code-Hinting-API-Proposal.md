@@ -32,7 +32,7 @@ Because calls to `hasHints` imply that a hinting session is about to begin, a pr
 A non-null editor object for the active window. 
 
 ### `@param {String} implicitChar`
-Either null, if the hinting request was explicit, or a single character that represents the last insertion and that indicates an implicit hinting request. 
+If the hinting request was explicit then null. Otherwise, if the hinting request was implicit, the character code of the last keypress event, or the empty string if there was no keypress event (e.g., enter, tab, backspace, etc.)
 
 ### `@return {Boolean}`
 Determines whether the current provider is able to provide hints for the given editor context and, in case `implicitChar` is non-null, whether it is appropriate to do so. 
