@@ -16,7 +16,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
-* [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese.
+* [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Not compatible with latest brackets build requires pre sprint 18 build. Will be updated soon_ 
 * [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor. 
 * [Emmet/Zen Coding](https://github.com/emmetio/emmet): Adds Emmet (Zen Coding) support to Brackets ([download here](https://github.com/emmetio/emmet/downloads)).
 * [Quick Markup](https://github.com/redmunds/brackets-quick-markup): fast HTML markup generation as you type.
