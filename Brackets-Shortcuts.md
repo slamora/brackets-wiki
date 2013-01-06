@@ -490,8 +490,12 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-name">Move Line(s) Up</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
+    <tr>
+        <td class="shortcut-base">L</td>
+        <td class="shortcut-binding">Ctrl-Alt-L</td>
+        <td class="shortcut-cmd-id">me.drewh.jsbeautify</td>
+        <td class="shortcut-cmd-name">Beautify Document</td>
+        <td class="shortcut-orig">Extension(Beautify)</td>
+    </tr>
 </table>
-
-
-
 
