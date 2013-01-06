@@ -204,6 +204,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
+    <tr>
+        <td class="shortcut-base">O</td>
+        <td class="shortcut-binding">Ctrl-Alt-O</td>
+        <td class="shortcut-cmd-id">openfolder.containing</td>
+        <td class="shortcut-cmd-name">Open Containing Folder</td>
+        <td class="shortcut-orig">Extension</td>
+    </tr>
         <td class="shortcut-base">O</td>
         <td class="shortcut-binding">Ctrl-Shift-O</td>
         <td class="shortcut-cmd-id">navigate.quickOpen</td>
@@ -484,7 +491,6 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Brackets</td>
     </tr>
 </table>
-
 
 
 
