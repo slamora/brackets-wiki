@@ -414,6 +414,34 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
+        <td class="shortcut-base">F4</td>
+        <td class="shortcut-binding">Cmd-F4</td>
+        <td class="shortcut-cmd-id">ts.bookmarks.toggleBookmark</td>
+        <td class="shortcut-cmd-name">Toggle Bookmark</td>
+        <td class="shortcut-orig">Extension (Bookmarks)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">F4</td>
+        <td class="shortcut-binding">F4</td>
+        <td class="shortcut-cmd-id">ts.bookmarks.nextBookmark</td>
+        <td class="shortcut-cmd-name">Next Bookmark</td>
+        <td class="shortcut-orig">Extension (Bookmarks)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">F4</td>
+        <td class="shortcut-binding">Shift-Cmd-F4</td>
+        <td class="shortcut-cmd-id">ts.bookmarks.clearBookmarks</td>
+        <td class="shortcut-cmd-name">Clear Bookmarks</td>
+        <td class="shortcut-orig">Extension (Bookmarks)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">F4</td>
+        <td class="shortcut-binding">Shift-F4</td>
+        <td class="shortcut-cmd-id">ts.bookmarks.previousBookmark</td>
+        <td class="shortcut-cmd-name">Previous Bookmark</td>
+        <td class="shortcut-orig">Extension (Bookmarks)</td>
+    </tr>
+    <tr>
         <td class="shortcut-base">F5</td>
         <td class="shortcut-binding">F5</td>
         <td class="shortcut-cmd-id">debug.refreshWindow</td>
