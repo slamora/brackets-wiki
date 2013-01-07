@@ -39,6 +39,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Brackets Commands Guide](https://github.com/peterflynn/brackets-commands-guide): Search and execute commands by typing part of their name, similar to Quicksilver (or Sublime's Ctrl+Shift+P or Eclipse's Ctrl+3).
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor.
 * [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
+* [TestQuickly](https://github.com/dangoor/TestQuickly): simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
 
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
