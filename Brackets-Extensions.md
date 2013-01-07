@@ -38,6 +38,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
 * [Brackets Commands Guide](https://github.com/peterflynn/brackets-commands-guide): Search and execute commands by typing part of their name, similar to Quicksilver (or Sublime's Ctrl+Shift+P or Eclipse's Ctrl+3).
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor.
+* [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
 
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
