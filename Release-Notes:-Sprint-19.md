@@ -18,7 +18,7 @@ No major changes to existing features.
 
 API Changes
 -----------
-* ** `offsetTopChanged` event deprecation.** `Editor` currently dispatches an `offsetTopChanged` event on inline (Quick Edit) widgets when an edit happens above them. This used to be necessary for CSS and JS inline editors, which were doing hacky things to position the right-hand-side list. As part of the CodeMirror v3 merge, we will be eliminating those hacks, and plan to remove this event eventually, so as of now the event is deprecated.
+* **Deprecating `offsetTopChanged` event.** `Editor` currently dispatches an `offsetTopChanged` event on inline (Quick Edit) widgets when an edit happens above them. This used to be necessary for CSS and JS inline editors, which were doing hacky things to position the right-hand-side list. As part of the CodeMirror v3 merge, we will be eliminating those hacks, and plan to remove this event eventually, so as of now the event is deprecated. Please let us know if you rely on this event.
 
 New/Improved Extensibility APIs
 -------------------------------
