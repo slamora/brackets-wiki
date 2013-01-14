@@ -10,7 +10,7 @@ The main challenge with a Linux version of Brackets is that Brackets uses the [C
 
 ### Modifying the Brackets Shell
 
-Pritam Baral has a [modified version of the Brackets Shell](http://github.com/pritambaral/brackets-shell) that works on Linux. He has also created instructions for building brackets-shell on Linux which are included below.
+Pritam Baral has a [modified version of the Brackets Shell](https://github.com/pritambaral/brackets-shell/tree/linux) that works on Linux. He has also created instructions for building brackets-shell on Linux which are included below.
 
 ####Prerequisites
 
