@@ -4,8 +4,18 @@ _This document will not be finalized until the end of Sprint 19 -- approximately
 
 What's New in Sprint 19
 -----------------------
-* **TODO: category heading**
-    * TODO: feature list
+* **Overall UI**
+    * [Native menu bar](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88) on Mac and Windows. Menu-related APIs remain unchanged.
+* **Code Editing**
+    * [Code hints for CSS properties & values](https://github.com/adobe/brackets/pull/2492)
+    * Final prep for CodeMirror3 migration: [inline editors](https://trello.com/card/2-codemirror-3-inline-editor-size-vertically/4f90a6d98f77505d7940ce88/651) and [scrolling](https://trello.com/card/3-codemirror-3-scrolling/4f90a6d98f77505d7940ce88/652) now work well on the [cmv3 branch](https://github.com/adobe/brackets/compare/master...cmv3).
+* **Search**
+    * Quick Open / Go to Definition ranks results much better
+    * Go to Definition is more responsive, especially on longer files
+* **Localization**
+    * [Swedish translation](https://github.com/adobe/brackets/pull/2477)
+* **JSLint**
+    * ["Go to First JSLint Error" shortcut](https://github.com/adobe/brackets/pull/2525): F8 on Windows, Cmd+' on Mac
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-18...sprint-19#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-18...sprint-19#commits_bucket)
@@ -13,12 +23,15 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-No major changes to existing features.
+* **Toggle Block Comment** on Mac now uses Cmd+Opt+/ (instead of Cmd+Shift+/)
+* **Cmd+Left arrow** on mac now behaves the same as Fn+Left arrow &ndash; the cursor moves to the first _non-whitespace_ character on the line unless it's already on that char, in which case the cursor moves to the start of the line. (Previously, Cmd+Left always moved to the start of the line regardless of whitespace).
 
 
 API Changes
 -----------
-* **Deprecating `offsetTopChanged` event.** `Editor` currently dispatches an `offsetTopChanged` event on inline (Quick Edit) widgets when something happens that changes their vertical position relative to the page. This used to be necessary for CSS and JS inline editors, which were doing hacky things to position the right-hand-side list. As part of the CodeMirror v3 merge, we will be eliminating those hacks, and plan to remove this event eventually, so as of now the event is deprecated. Please let us know if you rely on this event.
+**Editor `offsetTopChanged` event deprecated** - `Editor` currently dispatches an `offsetTopChanged` event on inline (Quick Edit) widgets when something happens that changes their vertical position relative to the page. This used to be necessary for CSS and JS inline editors, which were doing hacky things to position the right-hand-side list. As part of the CodeMirror v3 merge, we will be eliminating those hacks, and plan to remove this event eventually, so as of now the event is deprecated. Please let us know if you rely on this event.
+
+**Startup order of events** - [TODO](https://github.com/adobe/brackets/pull/2501)
 
 New/Improved Extensibility APIs
 -------------------------------
