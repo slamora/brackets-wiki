@@ -3,23 +3,23 @@ _Warning: because Brackets is still undergoing a lot of change, many of the APIs
 ## Application Init
 
 There are 2 primary events a module should listen to before querying or modifying the DOM. These events are defined in ``utils/AppInit``:
-* ``htmlReady`` signals when the initial DOM content of Brackets is loaded (a template that is rendered by Mustache to include translated strings). Once this event fires, it is safe to query for static DOM elements. _Note:_ extensions do not need to wait for this event; they are always loaded after it.
-* ``appReady`` signals when the core Brackets modules have initialized and when all extensions have finished loading. The initially open project and editors _may or may not_ be loaded by this point.
+* ``htmlReady`` signals when the initial DOM content of Brackets is loaded (a template that is rendered by Mustache to include translated strings). Once this event fires, it is safe to query for static DOM elements. _Note:_ Extensions do not need to wait for this event; they are always loaded after it. Core modules must wait for this event before querying the DOM.
+* ``appReady`` signals when the core Brackets modules have initialized and when all extensions have finished loading. The initially open project and the active editor/document loaded by this point.
 
 Do not rely on other events such as ``$(document).ready`` or ``window.onload``.
 
-The overall Brackets startup sequence unfolds as follows: _(note: this may change due to cleanup bug [#1951](https://github.com/adobe/brackets/issues/1951))_
+The overall Brackets startup sequence unfolds as follows: 
 
 1. Load most third-party libraries (jQuery, LESS, CodeMirror, etc.)
 2. Load core Brackets modules
-3. Main static HTML structure created, then `htmlReady` fires
-4. Key bindings and menus for core commands created
-5. Initial project is loaded, populating folder tree (unless first launch)
-6. _Begin_ restoring working set and last open document (may complete at any later point)
-7. Extensions are loaded
-8. After all extensions loaded, `appReady` fires
+3. Main static HTML structure created
+4. Application-wide DOM event handlers are installed
+5. ``htmlReady`` event fires
+6. Extensions are loaded
+7. Initial project is loaded (file tree is populated, working set is restored then active document is opened)
+8. After the project is fully opened, `appReady` fires
 
-If a new version of Brackets is available, the update notification dialog may appear at any time after step 4.
+If a new version of Brackets is available, the update notification dialog may appear at any time after step 6.
 
 ## Asynchronous APIs ##
 
