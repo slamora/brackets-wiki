@@ -14,6 +14,7 @@ What's New in Sprint 19
     * Go to Definition is more responsive, especially on longer files
 * **Localization**
     * [Swedish translation](https://github.com/adobe/brackets/pull/2477)
+    * [Portugese translation](https://github.com/adobe/brackets/pull/2582)
 * **JSLint**
     * ["Go to First JSLint Error" shortcut](https://github.com/adobe/brackets/pull/2525): F8 on Windows, Cmd+' on Mac
 
@@ -52,9 +53,15 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [Translation to Portuguese language (pt-pt)](https://github.com/adobe/brackets/pull/2582) by [Tiagoliveira](https://github.com/Tiagoliveira)
 
 Contributions _from_ Brackets
 -----------------------------
+**Contributions to [CodeMirror](https://github.com/marijnh/CodeMirror):**
+* [widget.remove() should be widget.clear()](https://github.com/marijnh/CodeMirror/commit/db1b28207d5b8b799d7202cf47bb9ece1c0afb3c)
+* [Make temporary wheel measurement vars per-instance](https://github.com/marijnh/CodeMirror/commit/ece10c7208da8f36001f3ff02a86d0bd6612c0bb)
+**Contributions to [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch):**
+* [Use grunt.file.expand to support exclusions](https://github.com/gruntjs/grunt-contrib-watch/pull/30)
 
 Bugs fixed in Sprint 19
 -----------------------
