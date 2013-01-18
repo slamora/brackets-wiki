@@ -34,7 +34,7 @@ API Changes
 
 **Editor `offsetTopChanged` event deprecated** - `Editor` currently dispatches an `offsetTopChanged` event on inline (Quick Edit) widgets when something happens that changes their vertical position relative to the page. This used to be necessary for CSS and JS inline editors, which were doing hacky things to position the right-hand-side list. As part of the CodeMirror v3 merge, we will be eliminating those hacks, and plan to remove this event eventually, so as of now the event is deprecated. Please let us know if you rely on this event.
 
-**ContextMenu `contextMenuClose` event removed** - This event was not very useful/reliable; in many cases, it was never actually dispatched after a menu closed.
+**ContextMenu `contextMenuClose` event removed** - This event was not very useful/reliable; in many cases, it was never actually dispatched after a menu closed. We will likely reinstate it once we've improved our handling of popups (#1381).
 
 New/Improved Extensibility APIs
 -------------------------------
