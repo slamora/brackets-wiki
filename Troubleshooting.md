@@ -8,20 +8,30 @@ Brackets not working for you? Consider the following tips.
 * WinXP w/ Service Pack 2.
 * You should have at least 2 GB of RAM to do Live Development.
 
-## Brackets Doesn't Load
+## Can't Install Brackets
 ### 1. Download the Right Package
 
 Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](http://download.brackets.io). 
 
-### 2. Lion/Mountain Lion Security Dialog
-
-The Brackets app is not yet signed, so depending on your security settings, you might get a dialog on Lion or Mountain Lion telling you that you can't run an application from an unknown developer. If so, you'll need to Ctrl-click on the application and choose "Open", then click on the "Open" button in the dialog that comes up.
-
-### 3. Windows Vista Installer
+### 2. Windows Vista Installer
 
 Some Windows Vista computers will block installers downloaded from the Internet, so nothing at all happens when you try to run the installer. To work around this: right-click the installer file, choose Properties, and click the Unblock button.
 
-### 4. Check the File Permissions
+### 3. Windows error: "Installation directory must be on a local drive"
+
+This can happen on some Windows machines. To work around this, try executing the installer from an elevated command prompt:
+
+1. Open an elevated command prompt using one of the techniques on this page: http://www.sevenforums.com/tutorials/783-elevated-command-prompt.html
+2. `cd` to the folder containing the installer.
+3. Run the installer using msiexec, e.g.: `msiexec /i "brackets-sprint-xx-WIN.msi"` (where "xx" is the sprint number)
+
+## Can't Run Brackets
+
+### 1. Lion/Mountain Lion Security Dialog
+
+The Brackets app is not yet signed, so depending on your security settings, you might get a dialog on Lion or Mountain Lion telling you that you can't run an application from an unknown developer. If so, you'll need to Ctrl-click on the application and choose "Open", then click on the "Open" button in the dialog that comes up.
+
+### 2. Check the File Permissions
 
 If Brackets won't launch, check the permissions of the main executable files (e.g. using `ls -l`). On Mac:
 * `bin/mac/Brackets.app` should be `drwxr-xr-x`
@@ -31,10 +41,10 @@ To fix permissions, use a command like `chmod +x bin/mac/Brackets.app/Contents/M
 
 Some archiving programs, such as [Keka](http://www.kekaosx.com/en/) don't appear to preserve file permissions when unarchiving zip files. (More info [here](https://github.com/adobe/brackets/issues/1158)). If you run into this issue on Mac, try to unarchive the zip file by using Finder.
 
-### 5. Clear The Cache
+### 3. Clear The Cache
 If you had previously used Brackets, your cache may have information that is conflicting with the most recent version. [Find your cache folder](https://github.com/adobe/brackets/wiki/Cache-Folder) and delete the cache. _Warning: this will reset all of your Brackets preferences._
 
-### 6. Run Brackets From The Command Line
+### 4. Run Brackets From The Command Line
 Next, try running Brackets from the command line. Open up a Terminal (or Command Prompt in Windows), navigate to the executable, and run Brackets. (On Mac, type `open bin/mac/Brackets.app`.). Did an error appear? If so, file an issue or find us on IRC or the mailing list and we'll try to figure it out.
 
 
