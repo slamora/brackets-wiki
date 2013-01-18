@@ -13,7 +13,7 @@ Brackets not working for you? Consider the following tips.
 
 Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](http://download.brackets.io). 
 
-### 2. Windows Vista Installer
+### 2. Windows Vista: Nothing happens when launching installer
 
 Some Windows Vista computers will block installers downloaded from the Internet, so nothing at all happens when you try to run the installer. To work around this: right-click the installer file, choose Properties, and click the Unblock button.
 
