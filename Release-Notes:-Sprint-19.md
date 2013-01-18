@@ -7,7 +7,7 @@ What's New in Sprint 19
 * **Overall UI**
     * [Native menu bar](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88) on Mac and Windows. Menu-related APIs remain unchanged.
 * **Code Editing**
-    * [Code hints for CSS properties & values](https://github.com/adobe/brackets/pull/2492)
+    * [Code hints for CSS properties & values](https://github.com/adobe/brackets/pull/2492) thanks to [zoufahl](https://github.com/zoufahl)!
     * Final prep for CodeMirror3 migration: [inline editors](https://trello.com/card/2-codemirror-3-inline-editor-size-vertically/4f90a6d98f77505d7940ce88/651) and [scrolling](https://trello.com/card/3-codemirror-3-scrolling/4f90a6d98f77505d7940ce88/652) now work well on the [cmv3 branch](https://github.com/adobe/brackets/compare/master...cmv3).
 * **Search**
     * Quick Open / Go to Definition ranks results much better
