@@ -12,8 +12,8 @@ What's New in Sprint 19
     * Quick Open / Go to Definition ranks results much better
     * Go to Definition is more responsive, especially on longer files
 * **Localization**
-    * [Swedish translation](https://github.com/adobe/brackets/pull/2477)
-    * [Portugese translation](https://github.com/adobe/brackets/pull/2582)
+    * [Swedish translation](https://github.com/adobe/brackets/pull/2477) (thanks to [Jack Billström](https://github.com/jackbillstrom))
+    * [Portugese translation](https://github.com/adobe/brackets/pull/2582) (thanks to [Tiago Oliveira](https://github.com/Tiagoliveira))
 * **JSLint**
     * ["Go to First JSLint Error" shortcut](https://github.com/adobe/brackets/pull/2525): F8 on Windows, Cmd+' on Mac
 
@@ -52,7 +52,7 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 * [CSS Code Hinting as new extension for Brackets](https://github.com/adobe/brackets/pull/2498) by [André Zoufahl](https://github.com/zoufahl)
-* [Translation to Portuguese language (pt-pt)](https://github.com/adobe/brackets/pull/2582) by [Tiagoliveira](https://github.com/Tiagoliveira)
+* [Translation to Portuguese language (pt-pt)](https://github.com/adobe/brackets/pull/2582) by [Tiago Oliveira](https://github.com/Tiagoliveira)
 * [Swedish translation](https://github.com/adobe/brackets/pull/2338) by [Jack Billström](https://github.com/jackbillstrom)
 * [findAllMatchingFunctionsInText to iterate over array-like objects (#1390)](https://github.com/adobe/brackets/pull/2317) by [Chema Balsas](https://github.com/jbalsas)
 * [Inform the user about missing libraries](https://github.com/adobe/brackets/pull/2440) by [Jonathan Diehl](https://github.com/jdiehl)
