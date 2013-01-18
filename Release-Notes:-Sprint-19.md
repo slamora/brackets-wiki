@@ -30,7 +30,7 @@ UI Changes
 
 API Changes
 -----------
-**Startup order of events** - [TODO](https://github.com/adobe/brackets/pull/2501)
+**Startup order of events** - Extensions are now loaded prior to project and working set initialization. Modules should continue to use ``AppInit.htmlReady`` for DOM initialization and ``AppInit.appReady()`` for additional initialization such as menus, key bindings, etc.
 
 **Editor `offsetTopChanged` event deprecated** - `Editor` currently dispatches an `offsetTopChanged` event on inline (Quick Edit) widgets when something happens that changes their vertical position relative to the page. This used to be necessary for CSS and JS inline editors, which were doing hacky things to position the right-hand-side list. As part of the CodeMirror v3 merge, we will be eliminating those hacks, and plan to remove this event eventually, so as of now the event is deprecated. Please let us know if you rely on this event.
 
