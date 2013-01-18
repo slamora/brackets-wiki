@@ -84,6 +84,9 @@ Contributions _from_ Brackets
 **New jQuery plugin:**
 * [Balanced text plugin/polyfill](https://github.com/adobe-webplatform/balance-text)
 
+**Contribution to reveal.js:**
+* [Fade transition](https://github.com/hakimel/reveal.js/pull/301)
+
 Bugs fixed in Sprint 19
 -----------------------
 For details on the bugs addressed, please refer to [closed sprint 19 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=6&state=closed). A few of the fixed bugs might not be caught by this search query, however.
