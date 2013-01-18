@@ -1,5 +1,4 @@
-_This is a draft!_
---------------------
+_This is a draft!_--------------------
 _This document will not be finalized until the end of Sprint 19 -- approximately January 18, 2013._
 
 What's New in Sprint 19
@@ -52,7 +51,25 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [CSS Code Hinting as new extension for Brackets](https://github.com/adobe/brackets/pull/2498) by [André Zoufahl](https://github.com/zoufahl)
 * [Translation to Portuguese language (pt-pt)](https://github.com/adobe/brackets/pull/2582) by [Tiagoliveira](https://github.com/Tiagoliveira)
+* [Swedish translation](https://github.com/adobe/brackets/pull/2338) by [Jack Billström](https://github.com/jackbillstrom)
+* [findAllMatchingFunctionsInText to iterate over array-like objects (#1390)](https://github.com/adobe/brackets/pull/2317) by [Chema Balsas](https://github.com/jbalsas)
+* [Inform the user about missing libraries](https://github.com/adobe/brackets/pull/2440) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Add smart "Home" for mac users. Fixes #2432](https://github.com/adobe/brackets/pull/2483) by [Aleksandr Motsjonov](https://github.com/soswow)
+* [Fix for "too many arguments" #2434](https://github.com/adobe/brackets/pull/2484) by [Aleksandr Motsjonov](https://github.com/soswow)
+* [Use default cursor on menu and toolbar items](https://github.com/adobe/brackets/pull/2144) by [J.M.](https://github.com/mynetx)
+* [Fix for issue #2227](https://github.com/adobe/brackets/pull/2446) by [chtennek](https://github.com/chtennek)
+* [Test and fix for #2464](https://github.com/adobe/brackets/pull/2465) by [Chema Balsas](https://github.com/jbalsas)
+* [Fixed #277](https://github.com/adobe/brackets/pull/2553) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Russian translation fixes](https://github.com/adobe/brackets/pull/2437) by [noway421](https://github.com/noway421)
+* [Spanish strings for sprint19](https://github.com/adobe/brackets/pull/2589) by [Chema Balsas](https://github.com/jbalsas)
+* [Update 'de' l10n for vanity site](https://github.com/adobe/brackets/pull/2438) by [J.M.](https://github.com/mynetx)
+* [Typo mistake in Turkish translation](https://github.com/adobe/brackets/pull/2460) by [Mahmut Bulut](https://github.com/vertexclique)
+* [Add support for CakePHP views](https://github.com/adobe/brackets/pull/2430) by [drewhjava](https://github.com/drewhjava)
+* [Added support for .pyw files](https://github.com/adobe/brackets/pull/2461) by [C1D](https://github.com/C1D)
+* [Added support for multiple extensions](https://github.com/adobe/brackets/pull/2466) by [C1D](https://github.com/C1D)
+
 
 Contributions _from_ Brackets
 -----------------------------
