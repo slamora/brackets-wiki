@@ -37,6 +37,7 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
+None in this sprint.
 
 Known Issues
 ------------
