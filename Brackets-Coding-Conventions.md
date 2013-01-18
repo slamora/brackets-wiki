@@ -28,6 +28,10 @@ define(function (require, exports, module) {
 
 (With one wrinkle: JSLint warns about lines consisting entirely of whitespace, but we ignore those warnings. The JSLint feature built into Brackets filters out these warnings automatically).
 
+### Globals ###
+
+Globals should be limited to those defined by thirdparty libraries (e.g. jquery ``$``, RequireJS ``require``, CodeMirror ``CodeMirror``, etc.). Browser globals should be referenced via the ``window`` object, e.g. ``window.setTimeout()`` instead of ``setTimeout()``.
+
 ## Naming and Syntax ##
 <br/>
 Variable and function names use camelCase (not under_scores):
