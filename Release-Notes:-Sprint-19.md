@@ -63,6 +63,9 @@ Contributions _from_ Brackets
 **Contributions to [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch):**
 * [Use grunt.file.expand to support exclusions](https://github.com/gruntjs/grunt-contrib-watch/pull/30)
 
+**New jQuery plugin:**
+* [Balanced text plugin/polyfill](https://github.com/adobe-webplatform/balance-text)
+
 Bugs fixed in Sprint 19
 -----------------------
 For details on the bugs addressed, please refer to [closed sprint 19 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=6&state=closed). A few of the fixed bugs might not be caught by this search query, however.
