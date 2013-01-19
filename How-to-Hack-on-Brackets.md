@@ -1,4 +1,3 @@
-
 1. This page is mainly about modifying core Brackets code. If you're adding a new feature, consider [writing an extension](How to write extensions) instead.
 
 
@@ -47,21 +46,19 @@ The [brackets](https://github.com/adobe/brackets) repo has all of the HTML/JS/CS
 git clone https://github.com/<your username>/brackets.git
 ```
 
-The [brackets-shell](https://github.com/adobe/brackets-shell) repo has the code for the native shell. You only need to clone this repo if you plan on making changes to the native shell. 
-
-```
-git clone https://github.com/<your username>/brackets-shell.git
-```
-
-Because Brackets relies on [CodeMirror](http://codemirror.net/) you want to make sure you have the latest version of CodeMirror. Brackets uses submodules to track third-party repos referenced by Brackets. To get these set up, you need to run this command from within the `brackets` folder:
+_Important:_ Brackets uses submodules to track third-party repos (like [CodeMirror](http://codemirror.net/)) that it depends on. To get these set up, you need to run this command from within the `brackets` folder:
 
 ```
 git submodule update --init
 ```
 
-> Because CodeMirror will update fairly often, you'll often find as you're switching between branches or merging that your CodeMirror files are showing up as modified when you run `git status`. Something like `M	src/thirdparty/CodeMirror2`. Running the command above brings everything in sync.
+> Because CodeMirror will update fairly often, you'll often find as you're switching between branches or merging that your CodeMirror files are showing up as modified when you run `git status`. Something like `M	src/thirdparty/CodeMirror2`. Run the command above to bring submodules back in sync.
 
-That should both get the latest version of CodeMirror and all other submodules used by Brackets. 
+The [brackets-shell](https://github.com/adobe/brackets-shell) repo has the code for the native shell. You _only_ need to clone this repo if you plan on making changes to the native shell. 
+
+```
+git clone https://github.com/<your username>/brackets-shell.git
+```
 
 ### Building Native Shell ###
 If you are running the Brackets native shell app from an installer, you can skip this section.
@@ -72,8 +69,6 @@ shell in brackets-shell, which means you will need to build it. You can find ins
 on the [brackets-shell wiki](https://github.com/adobe/brackets-shell/wiki).
 
 ### <a name="setup_for_hacking"></a> Running Your Copy of the Code ###
-
-**NOTE: This has changed since Sprint 13. If you've been using the old brackets-app repo, or the first version of brackets-shell, please switch to using this method.**
 
 If you're only hacking on HTML/JS/CSS files, you can have the installed version of the Brackets shell run your local copy of the HTML/JS/CSS code by running the `tools/setup_for_hacking` script. Here are the steps.
 
