@@ -1,6 +1,3 @@
-_This is a draft!_--------------------
-_This document will not be finalized until the end of Sprint 19 -- approximately January 18, 2013._
-
 What's New in Sprint 19
 -----------------------
 * **Overall UI**
