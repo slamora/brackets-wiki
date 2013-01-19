@@ -8,19 +8,15 @@ Nettuts+ [did a tutorial video on Brackets](http://net.tutsplus.com/tutorials/to
 
 Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. **Brackets isn't ready for general use yet**, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
 
-The latest "stable" builds can be downloaded from the [downloads page](http://download.brackets.io). **Use the .dmg (Mac) or .msi (Win) links** -- the generic download button at the top will not work!
+The latest "stable" builds can be downloaded from the [downloads page](http://download.brackets.io). 
 
 If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. See [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) for details on pulling the source.
 
 Basic Usage
 -----------
 
-Currently, most of the functionality in Brackets is available from the in-window
-menus (not the standard native menus). These will be moved out to the native
-menus in the desktop app eventually.
-
-You can open a file from *File > Open* (Ctrl/Cmd-O) in the in-window Brackets 
-menu, or open a folder in the file tree on the left using *File > Open Folder*.
+You can open a file from *File > Open* (Ctrl/Cmd-O) , or open a folder in the file tree 
+on the left using *File > Open Folder*.
 It's a good idea to open the root of whatever project you're working on in the 
 file tree, since other Brackets features search in the current tree. You can
 easily get back to previous projects you've worked on by clicking on the project's
