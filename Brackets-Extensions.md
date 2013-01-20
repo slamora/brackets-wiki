@@ -22,7 +22,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Quick Markup](https://github.com/redmunds/brackets-quick-markup): fast HTML markup generation as you type.
 * [BracketLESS] (https://github.com/olsgreen/BracketLESS): Compiles LESS files to CSS on save
 * [Beautify] (https://github.com/drewhjava/brackets-beautify) : Beautify HTML, CSS, and Javascript(uses js-beautify)
-* [minimap](https://github.com/drewhjava/brackets-minimap): Mini map, zoomed-out display and navigation of the current file.
 * [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets.
 * [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
 * [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Removes unnecessary whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
