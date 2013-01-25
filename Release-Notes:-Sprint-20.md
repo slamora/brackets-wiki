@@ -11,7 +11,7 @@ UI Changes
 
 API Changes
 -----------
-
+* **Editor event `offsetTopChanged` removed.** This was deprecated in sprint 19 and has been removed in sprint 20.
 
 New/Improved Extensibility APIs
 -------------------------------
