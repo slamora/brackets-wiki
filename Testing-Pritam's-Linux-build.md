@@ -1,7 +1,7 @@
 # Testing Pritam's Linux build
 
 There has been a lot of interest in the Brackets Community around getting Brackets running on Linux. The 
-[Linux Version thread in the brackets-dev forum](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/29vOJ6tvl8A[101-125-false]) got so large and hard to follow that I created this wiki page to summarize the info so far, and also as a collecting point for more info. The following info was copied from [Pritam Baral](https://github.com/pritambaral).
+[Linux Version thread in the brackets-dev forum](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/29vOJ6tvl8A[101-125-false]) got so large and hard to follow that I created this wiki page to summarize the info so far, and also as a collecting point for more info. The following info was copied from the post by [Pritam Baral](https://github.com/pritambaral) for his Linux build.
 
 ## Setting up Brackets
 
