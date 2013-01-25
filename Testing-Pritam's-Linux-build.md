@@ -21,36 +21,36 @@ Open Brackets **Unit Tests** window using: Debug &gt; Run Tests. Note that Unit 
 
 Also run Brackets **Smoke Tests** for both [Client](https://github.com/adobe/brackets/wiki/Brackets-Smoke-Tests) and [Server, if possible](https://github.com/adobe/brackets/wiki/Brackets-Server-Smoke-Tests).
 
-Please use [pritambaral/brackets/issues](https://github.com/pritambaral/brackets/issues) for logging issues.
-
 To help us get an idea of what testing has been done, please update this table after you have completed some testing:
 
 <table cellspacing="0">
 <tr>
- <th>Contact info</th>
- <th>github id</th>
- <th>OS/version</th>
- <th>Unit Tests pass?</th>
- <th>Smoke tests pass?</th>
- <th>Comments</th>
+  <th>Contact info</th>
+  <th>github id</th>
+  <th>OS/version</th>
+  <th>Unit Tests pass?</th>
+  <th>Smoke tests pass?</th>
+  <th>Comments</th>
 </tr>
 <tr>
- <td><a href="mailto:redmunds@adobe.com">Randy Edmunds</a></td>
- <td>redmunds</td> 
- <td>OpenSUSE 12.1</td>
- <td>Not yet (disabled)</td>
- <td></td>
- <td></td>
+  <td><a href="mailto:redmunds@adobe.com">Randy Edmunds</a></td>
+  <td>redmunds</td> 
+  <td>OpenSUSE 12.1</td>
+  <td>Not yet (disabled)</td>
+  <td></td>
+  <td></td>
 </tr>
 <tr>
- <td><a href="mailto:name@domain.com">[name]</a></td>
- <td></td>
- <td></td> 
- <td></td>
- <td></td>
- <td></td>
+  <td><a href="mailto:name@domain.com">[name]</a></td>
+  <td></td>
+  <td></td> 
+  <td></td>
+  <td></td>
+  <td></td>
 </tr>
 </table>
+
+Use [pritambaral/brackets/issues](https://github.com/pritambaral/brackets/issues) for logging issues.
 
 ## Bug Fixing
 
