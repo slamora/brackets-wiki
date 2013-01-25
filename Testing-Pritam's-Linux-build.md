@@ -25,25 +25,22 @@ To help us get an idea of what testing has been done, please update this table a
 
 <table cellspacing="0">
 <tr>
-  <th>OS/version</th>
-  <th>Name (e-mail)</th>
   <th>Contact info</th>
+  <th>OS/version</th>
   <th>Unit Tests pass?</th>
   <th>Smoke tests pass?</th>
   <th>Comments</th>
 </tr>
 <tr>
+  <td><a href="mailto:redmunds@adobe.com">Randy Edmunds</a>, github.com/redmunds</td> 
   <td>OpenSUSE 12.1</td>
-  <td><a href="mailto:redmunds@adobe.com">Randy Edmunds</a></td>
-  <td>github.com/redmunds</td> 
-  <td>Not yet (disabled)</td>
   <td></td>
   <td></td>
+  <td>In progress...</td>
 </tr>
 <tr>
-  <td></td>
-  <td></td>
   <td></td> 
+  <td></td>
   <td></td>
   <td></td>
   <td></td>
@@ -54,4 +51,5 @@ Use [pritambaral/brackets/issues](https://github.com/pritambaral/brackets/issues
 
 ## Bug Fixing
 
+Grab issues from [pritambaral/brackets/issues](https://github.com/pritambaral/brackets/issues).
 
