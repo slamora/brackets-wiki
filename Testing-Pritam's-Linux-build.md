@@ -25,23 +25,23 @@ To help us get an idea of what testing has been done, please update this table a
 
 <table cellspacing="0">
 <tr>
-  <th>Contact info</th>
-  <th>github id</th>
   <th>OS/version</th>
+  <th>Name</th>
+  <th>Contact info</th>
   <th>Unit Tests pass?</th>
   <th>Smoke tests pass?</th>
   <th>Comments</th>
 </tr>
 <tr>
-  <td><a href="mailto:redmunds@adobe.com">Randy Edmunds</a></td>
-  <td>redmunds</td> 
   <td>OpenSUSE 12.1</td>
+  <td><a href="mailto:">Randy Edmunds</a></td>
+  <td>github.com/redmunds</td> 
   <td>Not yet (disabled)</td>
   <td></td>
   <td></td>
 </tr>
 <tr>
-  <td><a href="mailto:name@domain.com">[name]</a></td>
+  <td></td>
   <td></td>
   <td></td> 
   <td></td>
