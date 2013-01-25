@@ -26,7 +26,7 @@ To help us get an idea of what testing has been done, please update this table a
 <table cellspacing="0">
 <tr>
   <th>OS/version</th>
-  <th>Name</th>
+  <th>Name (e-mail)</th>
   <th>Contact info</th>
   <th>Unit Tests pass?</th>
   <th>Smoke tests pass?</th>
@@ -34,7 +34,7 @@ To help us get an idea of what testing has been done, please update this table a
 </tr>
 <tr>
   <td>OpenSUSE 12.1</td>
-  <td><a href="mailto:">Randy Edmunds</a></td>
+  <td><a href="mailto:redmunds@adobe.com">Randy Edmunds</a></td>
   <td>github.com/redmunds</td> 
   <td>Not yet (disabled)</td>
   <td></td>
