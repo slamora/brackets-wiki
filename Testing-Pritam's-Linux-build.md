@@ -39,6 +39,13 @@ To help us get an idea of what testing has been done, please update this table a
   <td>In progress...</td>
 </tr>
 <tr>
+  <td><a href="mailto:pabloluisbotta@gmail.com">Pablo Botta</a>, github.com/p4bl1t0</td> 
+  <td>LMDE  Up to date</td>
+  <td>Unable to run it {1}</td>
+  <td>In progress</td>
+  <td>Using Pritam 32 bits builds<br />"Show Extension Folder" - Don't open extension folder</td>
+</tr>
+<tr>
   <td></td> 
   <td></td>
   <td></td>
@@ -47,9 +54,10 @@ To help us get an idea of what testing has been done, please update this table a
 </tr>
 </table>
 
+{1} I have copied test folder to the executable's folder and that enabled "Run Tests". But when I click on it and go to the test window nothing happened there. The tests don't run. Maybe I'm missing something.
+
 Use [pritambaral/brackets/issues](https://github.com/pritambaral/brackets/issues) for logging issues.
 
 ## Bug Fixing
 
 Grab issues from [pritambaral/brackets/issues](https://github.com/pritambaral/brackets/issues).
-
