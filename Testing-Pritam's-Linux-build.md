@@ -43,7 +43,7 @@ To help us get an idea of what testing has been done, please update this table a
   <td>LMDE  Up to date</td>
   <td>Unable to run it {1}</td>
   <td>In progress</td>
-  <td>Using Pritam 32 bits builds<br />"Show Extension Folder" - Don't open extension folder</td>
+  <td>Using Pritam's 32 bits builds<br />"Show Extension Folder" - Don't open extension folder</td>
 </tr>
 <tr>
   <td></td> 
