@@ -71,4 +71,16 @@ Pritam's repo?
 
 ## Issues
 
-Where should they report issues?
+#### Getting Live Preview to Work
+
+From Marcus Clearspring [on the mailing list](https://groups.google.com/d/msg/brackets-dev/K26IkouXAq0/L65r-auzNzcJ):
+
+To answer my own question, here's how you get Live Preview working under Linux, courtesy of Pritam. The problem is that the Chrome executables have different names under various Linux distros.
+
+The solution is to symlink the Chrome executable on your system to what Brackets expects, being "google-chrome". On Ubuntu, the executable is called chromium-browser.
+
+Here's the command for Ubuntu. You will need to execute the command as root in most cases, hence sudo on Ubuntu. Adapt to your distro as needed:
+
+`sudo ln -s /usr/bin/chromium-browser /usr/bin/google-chrome`
+
+That should be the last step to getting all Brackets features working on Linux.
