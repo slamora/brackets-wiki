@@ -8,7 +8,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
 * [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor. 
-* [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== sprint 18_ 
+* [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/emmet): Adds Emmet (Zen Coding) support to Brackets ([download here](https://github.com/emmetio/emmet/downloads)).
