@@ -1,5 +1,4 @@
-## Walk through steps
-
+## Walk-through Steps
 
 1. Launch Brackets if it's not already running. You should be in the "citrus completed" project, so the "citrus completed" folder is visible in the Project panel on the left, and you see "css" and "images" folders and an "index.html" file in the project tree.
 2. If the "citrus completed" is not the current project, click on the triangle next to the project name. If the dropdown show the "citrus completed" project, then select it.
