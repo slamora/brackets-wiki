@@ -17,5 +17,26 @@
 15. Hit Cmd/Ctrl-E. In the inline editor, you should see a number of rules in the list on the right. Select different rules on the right to change rules.
 16. Make an edit to some text in HTML page that is visible in browser. Note: some text in the page is replaced by logo image via CSS (e.g. first h1 tag and first h2 tag) so edits will not be visible; try updating text in News section.
 17. Verify that text has not yet changed in browser. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
-18. Disconnect Live Preview. Undo changes in HTML file and save to get back to original state.
-19. Close all files and discard changes.
+18. Undo changes in HTML file and save to get back to original state.
+19. Press shift-cmd-O/shift-ctrl-O (or select Quick Open from the Navigate) menu. You'll see a Quick Open dialog appear at the top of the editor.
+20. Type "d" and you'll see all of the files in the project that contain a "d" listed. The top one is "desktop.css".
+21. Press enter to open that file
+22. Navigate to different rules within the CSS file. You'll see the parts of the page that are affected by the rule highlighted in the web browser. This is called Live Highlighting (if you don't see the highlights, check the File menu and make sure that Live Highlighting has a checkmark next to it)
+23. If you make any changes to the CSS, you'll see those changes reflected immediately in the browser.
+24. Undo any changes you made to the CSS.
+25. Disconnect Live Preview. 
+26. Close all files and discard changes.
+
+## If Brackets is set up for self-development
+
+Follow the steps above, then:
+
+1. Use the project select to choose the brackets project
+2. Use Navigate/QuickOpen to open a file
+3. Type "btd" into the QuickOpen dialog. The top match is "brackets_theme_default.less"
+4. Let's try editing the value for `@background-color-3`. Put the cursor somewhere in the `#f8f8f8` and press cmd/ctrl-E for Quick Edit (or select Quick Edit from the Navigate menu)
+5. You'll see a color picker pop up. Pick something that's not too dark.
+6. Press cmd-S to save
+7. Press cmd/ctrl-R or select Reload from the Debug menu to restart Brackets.
+8. See Brackets restart with the lovely color you chose as the background. Nearly everything in Brackets can be changed this easily.
+9. Navigate back to the `@background-color-3` variable and set the value back to `#f8f8f8`
