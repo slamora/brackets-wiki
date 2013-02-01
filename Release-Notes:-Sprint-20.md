@@ -1,4 +1,4 @@
-**This is a draft!** Release notes for Sprint 20 will be finalized at the end of the sprint, around 2/12/13.
+_**This is a draft!** Release notes for Sprint 20 will be finalized at the end of the sprint, around 2/12/13._
 
 What's New in Sprint 20
 -----------------------
