@@ -31,6 +31,7 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
+**Quick Open providers** - The provider's `search()` method is now passed an additional argument, `stringMatcher`. Using `stringMatcher.match()` instead of `QuickOpen.match()` will yield improved performance through caching. You can also cache your own data by adding properties to this object; see _extensions/default/QuickOpenHTML/main.js_ for sample usage. Use of this argument is optional.
 
 
 Known Issues
