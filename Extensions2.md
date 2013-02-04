@@ -94,3 +94,136 @@ There are technical and project ramifications for each of these choices.
 
 From the prototyping I have done, I have found that it is possible to maintain compatibility with our existing extensions while we migrate to E2. Existing extensions would need to be converted to E2 if they want to be a part of the extension manager and repository.
 
+# Implementation #
+
+See below for sample extensions.
+
+## Non-sandboxed Declarative Style ##
+
+```javascript
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
+/*global define, $, CodeMirror, brackets, window */
+
+define(function (require, exports, module) {
+    "use strict";
+    
+    var ExtensionData = brackets.getModule("utils/ExtensionData");
+    
+    var extensionName;
+    
+    function alerter() {
+        alert("Hi there!");
+    }
+    
+    function removeNewfangled() {
+        ExtensionData.unregister(extensionName);
+    }
+    
+    exports.registering = function (register, metadata) {
+        register("command", "alert", {
+            name: "Alert",
+            exec: alerter
+        });
+        register("menu.item", "alert", {
+            name: "Alert",
+            menu: "DEBUG_MENU",
+            position: "last",
+            keybinding: null
+        });
+        
+        register("command", "reverse", {
+            name: "Reverse",
+            exec: function () {
+                var editor = brackets.world.editor;
+                var text = editor.getSelectedText();
+                text = text.split("").reverse().join("");
+                var selection = editor.getSelection();
+                editor.document.replaceRange(text, selection.start, selection.end);
+            }
+        });
+        
+        register("menu.item", "reverse", {
+            name: "Reverse",
+            menu: "EDIT_MENU",
+            position: "last",
+            keybinding: null
+        });
+        
+        extensionName = metadata.extensionName;
+        register("command", "remove.me", {
+            name: "Remove Newfangled Demo",
+            exec: removeNewfangled
+        });
+        register("menu.item", "remove.me", {
+            name: "Remove Alert",
+            menu: "DEBUG_MENU",
+            position: "last",
+            keybinding: null
+        });
+    };
+});
+```
+
+## Using Orion's Plugin Manager ##
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Reverse Plugin</title>
+
+<script src="plugin.js"></script>
+<script>
+    /*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
+    /*global define, $, CodeMirror, brackets, window, orion */
+    
+    "use strict";
+    
+    window.onload = function () {
+        var provider = new orion.PluginProvider();
+        var serviceImpl = {
+                exec: function () {
+                    alert("Oppa Orionstyle");
+                }
+            };
+        var serviceProperties = { id: "orionalert", name: "Orion Alert" };
+        provider.registerService("brackets.command", serviceImpl, serviceProperties);
+        provider.registerService("brackets.menu.item", {}, {
+            id: "orionalert",
+            name: "Orion Alert",
+            keybinding: null,
+            menu: "DEBUG_MENU",
+            position: "last"
+        });
+        
+        provider.registerService("brackets.command.editor", {
+            exec: function (text) {
+                return text.split("").reverse().join("");
+            }
+        }, {
+            id: "orionreverse",
+            name: "Orion Reverse"
+        });
+        
+        provider.registerService("brackets.menu.item", {}, {
+            id: "orionreverse",
+            name: "Orion Reverse",
+            menu: "EDIT_MENU",
+            position: "last",
+            keybinding: null
+        });
+        
+        provider.connect(
+			function () {
+			},
+			function (e) {
+				throw e;
+			}
+        );
+    };
+</script>
+</head>
+<body></body>
+</html>
+```
