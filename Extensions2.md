@@ -1,5 +1,7 @@
 # Extensions 2 #
 
+**Status** This is a first draft.
+
 Extensions are an important feature for Brackets. They help keep the core small, while allowing developers to easily extend Brackets with the features that they need for their own unique working style.
 
 Brackets has more than 50 extensions now, but that number will grow as:
@@ -96,7 +98,7 @@ From the prototyping I have done, I have found that it is possible to maintain c
 
 # Implementation #
 
-See below for sample extensions.
+There is a very early prototype implementation in the dangoor/extensions branch. See below for sample extensions to get a feel for what I'm talking about.
 
 ## Non-sandboxed Declarative Style ##
 
