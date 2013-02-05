@@ -81,6 +81,10 @@ The Eclipse Orion project uses iframes as sandboxes for its plugins. Simon Kaegi
 
 One further note: we can design the API around a sandbox without actually implementing the sandbox right away.
 
+## Lazy Loading? ##
+
+Bespin had the ability to lazily load plugins, and some of the code became considerably more complex as a result. We should decide how much lazy loading (if any) is important to us.
+
 ## Orion? ##
 
 If we decide that a sandbox is a desirable feature, that opens the door to four possible levels of collaboration with the Eclipse Orion project:
