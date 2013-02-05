@@ -46,11 +46,11 @@ To help us get an idea of what testing has been done, please update this table a
   <td>Using Pritam's 32 bits builds<br />"Show Extension Folder" - Don't open extension folder</td>
 </tr>
 <tr>
-  <td></td> 
+  <td><a href="mailto:ryan@adobe.com">Ryan Stewart</a></td> 
+  <td>Ubuntu 11.10</td>
   <td></td>
   <td></td>
-  <td></td>
-  <td></td>
+  <td>Runs with a few issues.</td>
 </tr>
 </table>
 
