@@ -52,6 +52,13 @@ To help us get an idea of what testing has been done, please update this table a
   <td></td>
   <td>Runs with a few issues.</td>
 </tr>
+<tr>
+  <td><a href="mailto:p.m.g.mendes@gmail.com">Pedro Mendes</a>, <a href="https://twitter.com/pmgmendes">@pmgmendes</a></td> 
+  <td>Linux Mint 14, 64 bit, Cinnamon 1.6.7</td>
+  <td>Unable to run it. Same as {1}</td>
+  <td>Didn't run</td>
+  <td>Using Pritam's 64 bits builds, "Show Extension Folder" doesn't open the extension's folder</td>
+</tr>
 </table>
 
 {1} I have copied test folder to the executable's folder and that enabled "Run Tests". But when I click on it and go to the test window nothing happened there. The tests don't run. Maybe I'm missing something.
