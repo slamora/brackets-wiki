@@ -9,7 +9,7 @@ With reasonable confidence I can say Brackets for Linux is ready for testing. Tw
 
 Both brackets-shell and brackets are packaged up as brackets-shell-[32,64]-bit.tar.bz2 and brackets-sprint-16.tar.bz2 respectively on the downloads page. Download both and extract to the proper directory. The folders www/ and samples/ being in the same folder as the Brackets binary is preferable, but you extract anywhere and manually choose the location of www/index.html on start-up.
 
-_[Note from Randy Edmunds: it wouldn't work for me on OpenSuse 12.1 when I put these folders side-by-side, but it did work when I put the www/ and samples/ being in the same folder as the Brackets executable]_
+_[Note from Randy Edmunds: it wouldn't work for me on OpenSuse 12.1 when I put these folders side-by-side, but it did work when I put the www/ and samples/ being in the same folder as the Brackets executable. Opened [issue #4](https://github.com/pritambaral/brackets/issues/4).]_
 
 Or, if you want to test the building process, the linux branches on both [pritambaral/brackets](https://github.com/pritambaral/brackets) and [pritambaral/brackets-shell](https://github.com/pritambaral/brackets-shell) are the ones to use.
 
@@ -36,7 +36,7 @@ To help us get an idea of what testing has been done, please update this table a
   <td>OpenSUSE 12.1</td>
   <td>Partial success {2}</td>
   <td></td>
-  <td>In progress. Opened [issue #4](https://github.com/pritambaral/brackets/issues/4).</td>
+  <td>In progress...</td>
 </tr>
 <tr>
   <td><a href="mailto:pabloluisbotta@gmail.com">Pablo Botta</a>, github.com/p4bl1t0</td> 
