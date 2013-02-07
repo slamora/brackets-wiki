@@ -72,6 +72,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **Documentation**
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
 * [Display Shortcuts](https://github.com/redmunds/brackets-display-shortcuts): Display Shortcuts defined to Brackets.
+* [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks.
 
 **Linting & Warnings**
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
@@ -83,4 +84,3 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Color Editor](https://github.com/GarthDB/brackets-inline-color-editor): Quick Edit on a hex/rgb/hsl color opens an inline color picker, plus a listing of all colors used in the file. _(Merged into Brackets as of Sprint 17)._
 * [Color Picker](https://github.com/jdiehl/brackets-color-picker): Quick Edit on a hex color opens an inline color picker. _(A color picker is built into Brackets as of Sprint 17)._
 * [Editor Shortcuts](https://github.com/aonic/editor-shortcuts): Keyboard shortcut to delete line. _(This command is built into Brackets as of Sprint 15)._
-* [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks. Requires a slight change to the core. _(Does not work in current versions of Brackets)._
