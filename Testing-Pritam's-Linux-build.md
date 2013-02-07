@@ -34,7 +34,7 @@ To help us get an idea of what testing has been done, please update this table a
 <tr>
   <td><a href="mailto:redmunds@adobe.com">Randy Edmunds</a>, github.com/redmunds</td> 
   <td>OpenSUSE 12.1</td>
-  <td></td>
+  <td>Partial success{2}</td>
   <td></td>
   <td>In progress...</td>
 </tr>
@@ -61,7 +61,8 @@ To help us get an idea of what testing has been done, please update this table a
 </tr>
 </table>
 
-{1} I have copied test folder to the executable's folder and that enabled "Run Tests". But when I click on it and go to the test window nothing happened there. The tests don't run. Maybe I'm missing something.
+{1} I have copied test folder to the executable's folder and that enabled "Run Tests". But when I click on it and go to the test window nothing happened there. The tests don't run. Maybe I'm missing something. [Randy: see {2}]
+{2} I opened [issue #4](https://github.com/pritambaral/brackets/issues/4) about enabling Unit Test window. See note at bottom about a way to hack around it for now.
 
 Use [pritambaral/brackets/issues](https://github.com/pritambaral/brackets/issues) for logging issues.
 
