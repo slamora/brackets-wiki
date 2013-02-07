@@ -332,15 +332,29 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">[</td>
         <td class="shortcut-binding">Ctrl-[</td>
+        <td class="shortcut-cmd-id">edit.unindent</td>
+        <td class="shortcut-cmd-name">Unindent</td>
+        <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">[</td>
+        <td class="shortcut-binding">Ctrl-]</td>
+        <td class="shortcut-cmd-id">edit.indent</td>
+        <td class="shortcut-cmd-name">Indent</td>
+        <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">[</td>
+        <td class="shortcut-binding">Ctrl-[</td>
         <td class="shortcut-cmd-id">pflynn.goWorkingSetPrev</td>
-        <td class="shortcut-cmd-name">Previous Document in List</td>
+        <td class="shortcut-cmd-name">Previous Document in List.</td>
         <td class="shortcut-orig">Extension</td>
     </tr>
     <tr>
         <td class="shortcut-base">]</td>
         <td class="shortcut-binding">Ctrl-]</td>
         <td class="shortcut-cmd-id">pflynn.goWorkingSetNext</td>
-        <td class="shortcut-cmd-name">Next Document in List</td>
+        <td class="shortcut-cmd-name">Next Document in List.</td>
         <td class="shortcut-orig">Extension</td>
     </tr>
     <tr>
