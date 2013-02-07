@@ -34,7 +34,7 @@ To help us get an idea of what testing has been done, please update this table a
 <tr>
   <td><a href="mailto:redmunds@adobe.com">Randy Edmunds</a>, github.com/redmunds</td> 
   <td>OpenSUSE 12.1</td>
-  <td>Partial success{2}</td>
+  <td>Partial success {2}</td>
   <td></td>
   <td>In progress. Opened [issue #4](https://github.com/pritambaral/brackets/issues/4).</td>
 </tr>
