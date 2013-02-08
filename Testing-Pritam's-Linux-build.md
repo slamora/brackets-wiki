@@ -61,11 +61,20 @@ To help us get an idea of what testing has been done, please update this table a
   <td>Didn't run</td>
   <td>Using Pritam's 64 bits builds, "Show Extension Folder" doesn't open the extension's folder</td>
 </tr>
+<tr>
+  <td><a href="mailto:edykstra@VirtualCAD.com">Eric Dykstra</a></td> 
+  <td>Debian Squeeze 6.0.1, 64 bit, Gnome 2.30.2</td>
+  <td>Unable to run. {3}</td>
+  <td>Unable to run. {3}</td>
+  <td>Using Pritam's 64 bit build.</td>
+</tr>
 </table>
 
 {1} I have copied test folder to the executable's folder and that enabled "Run Tests". But when I click on it and go to the test window nothing happened there. The tests don't run. Maybe I'm missing something. [Randy: see {2}]
 
 {2} I opened [issue #4](https://github.com/pritambaral/brackets/issues/4) about enabling Unit Test window. See note at bottom about a way to hack around it for now.
+
+{3} My development servers are remote and I mount via SSHFS to see them locally. This works fine for other editors. However, I am unable to open SSHFS folders using Brackets.
 
 Use [pritambaral/brackets/issues](https://github.com/pritambaral/brackets/issues) for logging issues.
 
