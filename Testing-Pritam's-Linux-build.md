@@ -13,6 +13,8 @@ _[Note from Randy Edmunds: it wouldn't work for me on OpenSuse 12.1 when I put t
 
 Or, if you want to test the building process, the linux branches on both [pritambaral/brackets](https://github.com/pritambaral/brackets) and [pritambaral/brackets-shell](https://github.com/pritambaral/brackets-shell) are the ones to use.
 
+Instructions on how to build Brackets for Linux are [provided](https://github.com/pritambaral/brackets-shell/wiki/Building-brackets-shell)
+
 ## Testing Brackets
 
 We want to get an idea of how complete and stable this build is. Note that this is a **Sprint 16 Build**, so compare behavior against a Mac or Windows Sprint 16 Installer build ([download](http://download.brackets.io)).
