@@ -17,7 +17,7 @@ Instructions on how to build Brackets for Linux are [provided](https://github.co
 
 ## Testing Brackets
 
-We want to get an idea of how complete and stable this build is. Note that this is a **Sprint 16 Build**, so compare behavior against a Mac or Windows Sprint 16 Installer build ([download](http://download.brackets.io)).
+We want to get an idea of how complete and stable this build is. Note that this is a **Sprint 16 Build**, so, if you have access to a Mac 10.6+ or Windows XP+ system, compare behavior against Sprint 16 Installer build ([download](http://download.brackets.io)).
 
 Open Brackets **Unit Tests** window using: Debug &gt; Run Tests. Note that Unit Tests are disabled if you use the www folder download. Run all Unit and Extension tests.
 
