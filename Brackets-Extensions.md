@@ -22,7 +22,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
 * [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
-* [Align Assignments](https://github.com/deemeetar/AlignAssignments): Aligns assignment operators (equal signs)
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
 * [Beautify](https://github.com/drewhjava/brackets-beautify): Beautify HTML, CSS, and Javascript (uses js-beautify)
