@@ -65,6 +65,8 @@ At any point in time, this document should represent how we currently believe co
         * [Randy] hints need to be displayed after ":". The space is optional whitespace. After user types whitespace, hints should continue to be displayed. Same comment applies for ";" and "," below.
         * [nj] This is an interesting question. If you usually type a space after the ":", you might be annoyed to see hints pop up right away, even though they could logically be applicable. We could finesse this by saying that we don't *auto* pop-up hints until after whitespace, but you could still hit Ctrl-space immediately after the ":" to bring up hints.
         * [nj] Note that Sublime doesn't seem to bring up hints immediately after whitespace; it waits until you type a non-whitespace character. Should we consider following this model in general?
+        * [rcs] Coda pops up code hinting after the ":" and keeps it up when a space is typed.
+        * [rcs] Espresso simply automatically adds a space after the user types ":" and shows no code hinting afterwards.
     * After the user autocompletes a <del>rule</del>property name (which should automatically insert the ":" as well) (<del>rule</del>property values should be displayed)
         * [nj] By default, I think it should insert ": " (i.e., with a space after the colon).
     * After the user types ";[return]" after completing a <del>rule</del>property value (<del>rule</del>property name completions should be displayed)
