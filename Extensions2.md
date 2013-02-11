@@ -79,7 +79,9 @@ The downsides of using a sandbox:
 
 The Eclipse Orion project uses iframes as sandboxes for its plugins. Simon Kaegi reports that they are quite happy with this architecture.
 
-One further note: we can design the API around a sandbox without actually implementing the sandbox right away.
+Sublime Text 3 uses a sandbox for its plugins. I have read that all plugins reside in a single plugin process, and it's possible that this works by providing a consistent view of the model to all of the plugins and then synchronizing that view with the main process.
+
+One further note: we can design the API around a sandbox without actually implementing the sandbox right away. However, if we start off with APIs that are not sandbox-style, it will be (almost) impossible to switch later on without breaking all of the extensions.
 
 ## Lazy Loading? ##
 
