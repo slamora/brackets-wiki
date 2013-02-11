@@ -156,6 +156,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
     </tr>
     <tr>
         <td class="shortcut-base">G</td>
+        <td class="shortcut-binding">Ctrl-Alt-G</td>
+        <td class="shortcut-cmd-id">GitHubAccess.init</td>
+        <td class="shortcut-cmd-name">Initialize GitHubAccess</td>
+        <td class="shortcut-orig">Extension (GitHubAccess)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">G</td>
         <td class="shortcut-binding">Shift-Ctrl-G</td>
         <td class="shortcut-cmd-id">findPrev</td>
         <td class="shortcut-cmd-name">findPrev</td>
