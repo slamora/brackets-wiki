@@ -8,7 +8,7 @@ I recently did some testing around integrating these linked documents into Brack
   * The primary user-facing benefit is that undo/redo behave in a much more sane fashion between inline and full editors. 
   * There is also a perceptible performance benefit when creating inline editors that refer to small portions of large files, since we're no longer creating an editor with the entire contents of the file and then hiding most of the lines.
   * Additionally, there are a number of internal architectural benefits, because we can rip out a couple of somewhat fragile hacks that we had previously put in for edit synchronization.
-* However, documents themselves don't raise change events (filed as marijnh/CodeMirror#1238), so we can't eliminate our `_masterEditor` hack. This is probably not a major blocker for migrating to the linked document stuff, because we get other benefits out of it anyway.
+* However, documents themselves don't raise change events (filed as marijnh/CodeMirror#1238), so we can't eliminate our `_masterEditor` hack. This is probably not a major blocker for migrating to the linked document stuff, because we get the benefits above anyway.
 * There are a few serious bugs that need to be isolated and filed upstream: 
   * Undoing changes from a linked subdocument in the main document can lead to corruption.
   * Tokenization in subdocuments seems to be somewhat broken, which breaks code hinting in inline editors.
@@ -23,12 +23,12 @@ I recently did some testing around integrating these linked documents into Brack
 * It was quite easy to replace our current (hacky and occasionally buggy) cross-editor synchronization code with CodeMirror's linked documents. 
   * The shared history feature (which makes undo/redo work properly across linked documents) seems to work well--in my basic manual testing, undo/redo worked across different editors (both inline and full editors) as I would expect, and the dirty bit was properly synchronized.
   * However, the InlineEditorProviders unit tests initially failed due to a stack overflow, probably because of infinite recursion. I spent some time trying to track this down but wasn't able to figure it out, as the debugger doesn't actually seem to break on stack overflow exceptions or return a useful stack.
-  * After changing the code to use subdocuments (as in the next bullet), the infinite recursion problem went away, revealing a number of unit test failures.
+  * After changing the code to use subdocuments (as in the next bullet), the infinite recursion problem went away, revealing a number of unit test failures (see below).
 * It was also easy to replace our current scheme for showing a portion of a document in an inline editor (which relies on CodeMirror's "collapsed spans" feature) with subdocuments. Most things seemed to work properly:
   * Adding lines in a full document above a subdocument's range correctly updated the subdocument's line numbers (both in the subdocument itself and elsewhere in the inline editor, because we separately track text ranges ourselves as well).
   * Deleting the range in a full document corresponding to a subdocument correctly collapsed the inline editor (again because we track the text ranges ourselves).
   * However, I found a data corruption bug in this case: if you type in the subdocument, then go to the main document and undo, you can get duplicate lines in the main document. This needs to be isolated and filed against CodeMirror.
-* After both these changes, I ran the inline editor unit tests. As mentioned above, the infinite recursion problem went away after making both sets of changes (which is a bit scary). At this point there were a fairly large number of failures.
+* After both these changes, I ran the inline editor unit tests. As mentioned above, the infinite recursion problem went away after making both sets of changes (though it's a bit scary that we had that issue to begin with). At this point there were a fairly large number of failures, but many of them were spurious.
   * Most of the failures were due to two assumptions the unit tests were making: that editors were representing visible ranges by line hiding, and that inline editors contained the full text of the main document instead of just the visible portion. Rewriting the tests to fix these assumptions eliminated a lot of failures.
   * There were many exceptions in matchbrackets.js, apparently due to trying to access text that didn't exist. Turning off matchbrackets resolved almost all the remaining unit test failures. This needs further investigation.
   * After those fixes, there were two remaining unit test failures related to undo/redo from inline editors. These seemed consistent with the bug noted above.
