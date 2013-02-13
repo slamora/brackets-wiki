@@ -6,8 +6,10 @@ I recently did some testing around integrating these linked documents into Brack
 
 * Integrating the linked document/subdocument features was very straightforward, and eliminated a number of our current hacks.
 * However, we can't eliminate our `_masterEditor` hack because documents themselves don't raise change events (filed as marijnh/CodeMirror#1238). This is probably not a major blocker for migrating to the linked document stuff, because we get other benefits out of it anyway.
-* There is a serious bug in linked subdocuments relating to undo. This needs to be isolated and filed upstream.
-* There appears to be an exception in matchbrackets related to linked documents which also needs to be isolated and filed upstream.
+* There are a few serious bugs that need to be isolated and filed upstream: 
+  * Undoing changes from a linked subdocument in the main document can lead to corruption.
+  * Tokenization in subdocuments seems to be somewhat broken.
+  * Exception in matchbrackets related to linked documents.
 * There are also a handful of other unit test failures that need investigating, but they don't seem scary overall.
 * Otherwise, most things seem fine.
 
@@ -28,6 +30,7 @@ I recently did some testing around integrating these linked documents into Brack
   * There were many exceptions in matchbrackets.js, apparently due to trying to access text that didn't exist. Turning off matchbrackets resolved almost all the remaining unit test failures. This needs further investigation.
   * After those fixes, there were two remaining unit test failures related to undo/redo from inline editors. These seemed consistent with the bug noted above.
 * I also ran the rest of the unit tests. There was one failure in Document related to cleaning up editors, and a few failures in EditorCommandHandlers related to tests in editors with visible ranges. My guess is that the latter are probably due to similar issues with changed assumptions as in the inline editor failures. Needs more investigation.
+* Finally, I noted that tokenization seems to be somewhat messed up in inline editors in this branch, which affects code hinting as well. For example, if I open an inline CSS editor and hit return after a property, it doesn't indent, and the color-coding of the previous property name changes; and if I try to bring up code hints in that context, they don't come up. However, if I then delete the contents of the editor and type a new rule, code hints work within that rule--but the selector is color-coded as an error. I suspect there's some issue with tokenizers in subdocuments getting confused. This needs isolation and filing upstream.
 
 I also found a bug in master: if you have two inline editors open on the same file, with one referring to a rule earlier in the file than the other, and you add lines to the first editor, the line number in the header of the second editor doesn't update (though its line numbers and text ranges do). This should be easy to fix (and isn't really related to the CodeMirror stuff, but needs to be filed).
 
