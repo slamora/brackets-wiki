@@ -1,6 +1,8 @@
+## Introduction
+Support for languages like HTML, JavaScript and CSS is currently a core part of Brackets. Support on the same level cannot easily be added by extensions. This page documents our efforts to change that.
+
 ## Ongoing work
 - Introduced a new high-level concept "language" and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
-
 
 ## Caveats
 A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
