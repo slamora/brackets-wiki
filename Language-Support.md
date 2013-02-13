@@ -36,6 +36,8 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 ### Module language/CSSUtils
 
 * Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils if it is the current full editor's document. Also searches CSS files as indexed by project/FileIndexManager in the css index, therefore currently indirectly **uses file extensions**
+* Method `extractAllSelectors` extracts CSS selectors from a string. Internally uses CodeMirror's css mode as a parser, but that could be swapped out.
+* Method `findSelectorAtDocumentPos` to find the selector(s) of a CSS block, directly **uses tokens provided by CodeMirror**
 
 ### Module project/FileIndexManager
 
