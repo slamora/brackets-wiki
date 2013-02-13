@@ -26,13 +26,6 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 * Method `getLanguageForMode` to map CodeMirror modes to languages
 * Used by extension "LESSSupport" to add basic support for LESS
 
-### Module search/QuickOpen
-
-* Method `addQuickOpenPlugin`
-* **Uses file extensions**
-* Used by extensions "QuickOpenCSS", "QuickOpenHTML" and "QuickOpenJavaScript"
-* Extension "QuickOpenCSS" uses module language/CSSUtils
-
 ### Module language/CSSUtils
 
 * Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils if it is the current full editor's document. Also searches CSS files as indexed by project/FileIndexManager in the css index, therefore currently indirectly **uses file extensions**
@@ -56,6 +49,14 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 ### Module project/FileIndexManager
 
 * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
+
+### Module search/QuickOpen
+
+* Method `addQuickOpenPlugin`
+* **Uses file extensions**
+* Used by extensions "QuickOpenCSS", "QuickOpenHTML" and "QuickOpenJavaScript"
+* Extension "QuickOpenCSS" uses module language/CSSUtils
+
 
 ## Notes
 
