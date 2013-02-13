@@ -4,7 +4,7 @@ I recently did some testing around integrating these linked documents into Brack
 
 ## tl;dr
 
-* Integrating the new linked document/subdocument features was pretty straightforward. The API seems to have most of what we need, and migrating to linked documents has some benefits:
+* Integrating the new linked document/subdocument features was pretty straightforward. The API seems to be very usable, and migrating to linked documents has some benefits:
   * The primary user-facing benefit is that undo/redo behave in a much more sane fashion between inline and full editors. 
   * There is also a perceptible performance benefit when creating inline editors that refer to small portions of large files, since we're no longer creating an editor with the entire contents of the file and then hiding most of the lines.
   * Additionally, there are a number of internal architectural benefits, because we can rip out a couple of somewhat fragile hacks that we had previously put in for edit synchronization.
