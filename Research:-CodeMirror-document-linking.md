@@ -14,6 +14,7 @@ I recently did some testing around integrating these linked documents into Brack
   * Tokenization in subdocuments seems to be somewhat broken, which breaks code hinting in inline editors.
   * Exception in matchbrackets related to linked documents.
 * There are also a handful of other unit test failures that need investigating, but they don't seem scary overall.
+* We will also need to look for cases where real code might be making the same assumptions unit tests were making, especially about the text in an inline editor. (I *think* this shouldn't be an issue because everyone should be getting text from the underlying (Brackets) Document, which I believe will always still have the full text.)
 * Otherwise, most things seem fine.
 
 ## Detailed notes
