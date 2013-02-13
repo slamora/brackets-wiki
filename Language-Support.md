@@ -26,6 +26,11 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 * Method `getLanguageForMode` to map CodeMirror modes to languages
 * Used by extension "LESSSupport" to add basic support for LESS
 
+### Module search/QuickOpen.js
+
+* Method `addQuickOpenPlugin`
+* **Uses file extensions**
+
 ## Notes
 
 ### Features we think should be able to be built as plug-ins
