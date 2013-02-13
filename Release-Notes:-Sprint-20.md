@@ -66,6 +66,9 @@ Contributions _from_ Brackets
 * [widgetsSeen is no longer an array](https://github.com/marijnh/CodeMirror/commit/7ae4ba63f272cbc989ad10fe31029ff4239a0d22)
 * [Port htmlmixed code](https://github.com/marijnh/CodeMirror/commit/a8b5188296f4254a5216758e41d200db1e6fcdb2)
 
+**Web standards:**
+* The [balanced text jQuery plugin/polyfill](https://github.com/adobe-webplatform/balance-text) is being [discussed as a possible new native CSS `text-wrap` value](http://lists.w3.org/Archives/Public/www-style/2013Jan/0597.html).
+
 
 
 Bugs fixed in Sprint 20
