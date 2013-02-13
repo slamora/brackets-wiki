@@ -50,7 +50,7 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
   </tr>
   <tr>
     <td>sprintN</td>
-    <td>tag for issues to be adressed in sprint N</td>
+    <td>tag for issues to be addressed in sprint N</td>
   </tr>
   <tr>
     <td>starter bug</td>
