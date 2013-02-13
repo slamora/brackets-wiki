@@ -11,7 +11,7 @@ I recently did some testing around integrating these linked documents into Brack
 * However, documents themselves don't raise change events (filed as marijnh/CodeMirror#1238), so we can't eliminate our `_masterEditor` hack. This is probably not a major blocker for migrating to the linked document stuff, because we get other benefits out of it anyway.
 * There are a few serious bugs that need to be isolated and filed upstream: 
   * Undoing changes from a linked subdocument in the main document can lead to corruption.
-  * Tokenization in subdocuments seems to be somewhat broken.
+  * Tokenization in subdocuments seems to be somewhat broken, which breaks code hinting in inline editors.
   * Exception in matchbrackets related to linked documents.
 * There are also a handful of other unit test failures that need investigating, but they don't seem scary overall.
 * Otherwise, most things seem fine.
