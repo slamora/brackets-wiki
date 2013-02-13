@@ -19,16 +19,6 @@ A difficulty when making comments more generic is that we rely on the defined co
 ## Places contributing to current language support
 Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 
-### Module language/Languages
-
-* Defines the "language" concept
-* Loads default languages from `language/languages.json`
-* Method `defineLanguage` to add a new language (see JSDoc)
-* Method `getLanguage` to get an object representing a language by its ID
-* Method `getLanguageForFileExtension` to map file extensions to languages
-* Method `getLanguageForMode` to map CodeMirror modes to languages
-* Used by extension "LESSSupport" to add basic support for LESS
-
 ### Module language/CSSUtils
 
 * Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils if it is the current full editor's document. Also searches CSS files as indexed by project/FileIndexManager in the css index, therefore currently indirectly **uses file extensions**
@@ -39,6 +29,16 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 ### Module language/HTMLUtils
 
 * Method `findStyleBlocks` to gather info about all `<style>` blocks in an HTML document, directly **uses tokens provided by CodeMirror** 
+
+### Module language/Languages
+
+* Defines the "language" concept
+* Loads default languages from `language/languages.json`
+* Method `defineLanguage` to add a new language (see JSDoc)
+* Method `getLanguage` to get an object representing a language by its ID
+* Method `getLanguageForFileExtension` to map file extensions to languages
+* Method `getLanguageForMode` to map CodeMirror modes to languages
+* Used by extension "LESSSupport" to add basic support for LESS
 
 ### Module language/JSLintUtils
 
