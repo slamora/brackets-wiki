@@ -7,18 +7,21 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 ## Caveats
 A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
 
-## APIs surrounding language support
+## The language concept
+
+* A language has an ID (i.e. "cpp", "cs") for computers (variables, object keys, file names, etc.)
+* A language has a name (i.e. "C++", "C#") for humans (displayed in the status bar)
+* A language can have a list of file extensions
+* A language can have a prefix for line comments (i.e. "//")
+* A language can have a prefix and a suffix for block comments (i.e. "/*" and "*/")
+* A language can refer to one main CodeMirror mode and multiple mode aliases
+
+## Places contributing to current language support
 Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 
 ### Module language/Languages
 
 * Defines the "language" concept
-  * A language has an ID (i.e. "cpp", "cs") for computers (variables, object keys, file names, etc.)
-  * A language has a name (i.e. "C++", "C#") for humans (displayed in the status bar)
-  * A language can have a list of file extensions
-  * A language can have a prefix for line comments (i.e. "//")
-  * A language can have a prefix and a suffix for block comments (i.e. "/*" and "*/")
-  * A language can refer to one main CodeMirror mode and multiple mode aliases
 * Loads default languages from `language/languages.json`
 * Method `defineLanguage` to add a new language (see JSDoc)
 * Method `getLanguage` to get an object representing a language by its ID
