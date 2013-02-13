@@ -24,8 +24,7 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 * Method `getLanguage` to get an object representing a language by its ID
 * Method `getLanguageForFileExtension` to map file extensions to languages
 * Method `getLanguageForMode` to map CodeMirror modes to languages
-
-
+* Used by extension "LESSSupport" to add basic support for LESS
 
 ## Notes
 
