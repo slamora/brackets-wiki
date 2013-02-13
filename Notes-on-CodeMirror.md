@@ -1,40 +1,47 @@
-**Note: This document is somewhat out of date. It will be updated once we've merged with CodeMirror v3. See [CodeMirror v3 Integration](https://github.com/adobe/brackets/wiki/CodeMirror-v3-integration) for more info.**
+The core text editor in Brackets is [CodeMirror](http://github.com/marijnh/CodeMirror). The Brackets
+team has submitted or contributed to a number of features and bug fixes in CodeMirror, and has also
+given input into the design of features like line widgets and document/view separation.
 
-The [Brackets fork of CodeMirror](http://github.com/adobe/CodeMirror2) has a number of fixes and features that we've added in order to support Brackets. We're working with Marijn Haverbeke to get these into the [main CodeMirror master](http://github.com/marijnh/CodeMirror2). 
+Currently, Brackets uses a [fork of CodeMirror](http://github.com/adobe/CodeMirror2) as a submodule. 
+Originally, this was because of a number of experimental features that Brackets implemented (including 
+a prototype implementation of inline widgets) that we hadn't yet contributed upstream. Now that the
+upstream CodeMirror repo has versions of these features, we've ported Brackets to use the upstream 
+version.
 
-Merged features
-===============
+As of Sprint 20, where we merged with the latest CodeMirror v3, the 
+[adobe/CodeMirror2](http://github.com/adobe/CodeMirror2) fork's master has been reset to upstream 
+master. Going forward, we will keep our master completely in sync with upstream; we will never add 
+our own commits directly to master, and we'll plan to pull from upstream as often as we can, keeping 
+the Brackets submodule pointing at master. However, in cases where there are last-minute upstream 
+changes that we don't want to pull into a given sprint, and we need other fixes, we might make 
+short-lived sprint branches.
 
-* **Block selection.** Originally, if you selected multiple lines in CodeMirror, the right edge of the selection highlight was "ragged", following the right edge of each selected line. We submitted a [pull request](https://github.com/marijnh/CodeMirror2/pull/322) that makes block selection extend all the way to the right edge of the editor window as in other code editors, and it was merged into master (thanks Marijn!).
-* **Flicker-free scrolling.** CodeMirror has virtualized scrolling, meaning that it only renders the visible portion of the document (plus some amount of buffer above and below). Currently, this scrolling is flickery in some browsers. We've modified it to reduce flicker, and [submitted a pull request](https://github.com/marijnh/CodeMirror2/pull/551) which has been merged into CodeMirror master.
-
-We've also had a few smaller bug fixes merged in.
-
-Upcoming features
-=================
-
-* **Inline widgets.** In order to support the Quick Edit feature in Brackets, we added a way to insert "inline widgets" into a CodeMirror editor. Inline widgets are attached to a particular line, and move/scroll as the document is edited/scrolled. We're planning to submit a pull request for this as soon as the flicker-free scrolling code has been merged.
-
-We've also made a number of smaller bug fixes and changes that we'll submit once inline editors are out of the way. Going forward, we intend to keep in much closer sync with CodeMirror master.
-
-Future features
-===============
-
-One other major feature we'd like to see in CodeMirror is a separation between the model and the view. In Brackets, we can't easily separate our document and editor architectures because the two are unified in the CodeMirror editor; being able to create a text model without view instantiation would be very helpful.
-
-
-Resources
-===============
-
-- [Substance Surface](http://github.com/substance/surface)
-  A similar project inspired by CodeMirror but dedicated to prose instead of code.
-  Emphasis on separation of concerns (input, carret, positioning, state/events, rendering) as described in this document.
-
-Why CodeMirror
+Current status
 ==============
 
-A common question we get is why we chose to leverage CodeMirror editor over the equally awesome [Ajax Cloud9 Editor (ACE)](http://ace.ajax.org/) for Brackets.
+There are currently three branches of note in the [adobe/CodeMirror2](http://github.com/adobe/CodeMirror2) fork:
 
-Our original prototype ran completely in the browser and was powered by the ACE editor. ACE editor is great and we even contributed some bug fixes back to the project. However, we wanted to do our due diligence and also researched using CodeMirror.
+* master - this has now been reset to upstream master, and will always reflect the state of upstream.
+* v2-master - this is the last commit we made in our old (diverged) master. We won't be using this branch
+  going forward, but older versions of Brackets refer to it in their submodule SHAs, so we need to keep
+  it around for archival purposes.
+* brackets-sprint20 - this is a temporary branch that pulls in a couple of fixes we needed from upstream
+  but avoids a couple that seemed potentially destabilizing; the main Brackets source currently points to
+  this branch. In the next sprint we plan to get rid of this branch and point directly at master.
 
-In the end we choose CodeMirror because it is licensed under MIT and that is the license we ultimately wanted for Brackets. We've been working closely with Marijn, the creator of CodeMirror, and have been submitting pull requests back to the main project. Our fork of CodeMirror is public and we plan to submit all our changes back to the main project (including the inline widget functionality used by Brackets's "Quick Edit" feature).
+Going forward, we'll generally submit pull requests directly to the 
+[main CodeMirror repo](http://github.com/marijnh/CodeMirror) rather than making fixes in branches in our fork,
+then pull them down once they've been merged upstream. Similarly, if you have fixes you need in CodeMirror,
+please submit them upstream (you can file an issue with us to let us know that it's important for us to merge
+it soon, or refer to your upstream fix from a dependent pull request). We generally won't accept pull requests
+directly into our CodeMirror fork.
+
+If you have an existing fork or clone of adobe/CodeMirror2 from before Sprint 20, you shouldn't try to pull
+into your master from our master--instead, you'll want to do a direct reset of your master branch to our master 
+(e.g. if you have your `upstream` remote set to adobe/CodeMirror2, then do `git checkout master` and 
+`git reset upstream/master`).
+
+Note that we have not yet renamed the submodule or the repo to reflect the current naming of the upstream
+repo--it's still "CodeMirror2". This renaming is a bit tricky and isn't urgent, so we've put it off until
+later. See [this Google Group thread](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/D_rezwjyXM0)
+for more info.
