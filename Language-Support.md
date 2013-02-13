@@ -44,6 +44,11 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 
 * Method `findStyleBlocks` to gather info about all <style> blocks in an HTML document, directly **uses tokens provided by CodeMirror** 
 
+### Module language/JSUtils
+
+* Method `findAllMatchingFunctionsInText` to find all instances of a function name in a string of code. Internally uses CodeMirror's javascript mode as a parser, but that could be swapped out.
+* Method `findMatchingFunctions` to find all functions with a specified name within a set of files. Only uses files ending with ".js", i.e. **uses file extensions**
+
 ### Module project/FileIndexManager
 
 * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
