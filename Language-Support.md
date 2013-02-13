@@ -40,6 +40,10 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 * Method `findSelectorAtDocumentPos` to find the selector(s) of a CSS block, directly **uses tokens provided by CodeMirror**
 * Method `getInfoAtPos` to provide a context info object for the given cursor position, directly **uses tokens provided by CodeMirror**
 
+### Module language/HTMLUtils
+
+* Method `findStyleBlocks` to gather info about all <style> blocks in an HTML document, directly **uses tokens provided by CodeMirror** 
+
 ### Module project/FileIndexManager
 
 * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
