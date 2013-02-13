@@ -4,10 +4,11 @@ I recently did some testing around integrating these linked documents into Brack
 
 ## tl;dr
 
-* Integrating the linked document/subdocument features was very straightforward, and eliminated a number of our current hacks.
-* However, we can't eliminate our `_masterEditor` hack because documents themselves don't raise change events (filed as marijnh/CodeMirror#1238). This is probably not a major blocker for migrating to the linked document stuff, because we get other benefits out of it anyway.
-  * The primary user-facing benefit is that undo/redo behave in a much more sane fashion between inline and full editors.
-  * There are also a number of internal architectural benefits, because we can rip out a couple of somewhat fragile hacks that we had previously put in for edit synchronization.
+* Integrating the new linked document/subdocument features was pretty straightforward. The API seems to have most of what we need, and migrating to linked documents has some benefits:
+  * The primary user-facing benefit is that undo/redo behave in a much more sane fashion between inline and full editors. 
+  * There is also a perceptible performance benefit when creating inline editors that refer to small portions of large files, since we're no longer creating an editor with the entire contents of the file and then hiding most of the lines.
+  * Additionally, there are a number of internal architectural benefits, because we can rip out a couple of somewhat fragile hacks that we had previously put in for edit synchronization.
+* However, documents themselves don't raise change events (filed as marijnh/CodeMirror#1238), so we can't eliminate our `_masterEditor` hack. This is probably not a major blocker for migrating to the linked document stuff, because we get other benefits out of it anyway.
 * There are a few serious bugs that need to be isolated and filed upstream: 
   * Undoing changes from a linked subdocument in the main document can lead to corruption.
   * Tokenization in subdocuments seems to be somewhat broken.
@@ -36,4 +37,3 @@ I recently did some testing around integrating these linked documents into Brack
   * Despite the above, I was able to verify that (when code hints work) we can remove the hacks due to #1688.
 
 I also found a bug in master: if you have two inline editors open on the same file, with one referring to a rule earlier in the file than the other, and you add lines to the first editor, the line number in the header of the second editor doesn't update (though its line numbers and text ranges do). This should be easy to fix (and isn't really related to the CodeMirror stuff, but needs to be filed).
-
