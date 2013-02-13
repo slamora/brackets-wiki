@@ -35,7 +35,7 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 
 ### Module language/HTMLUtils
 
-* Method `findStyleBlocks` to gather info about all <style> blocks in an HTML document, directly **uses tokens provided by CodeMirror** 
+* Method `findStyleBlocks` to gather info about all `<style>` blocks in an HTML document, directly **uses tokens provided by CodeMirror** 
 
 ### Module language/JSLintUtils
 
