@@ -6,6 +6,8 @@ I recently did some testing around integrating these linked documents into Brack
 
 * Integrating the linked document/subdocument features was very straightforward, and eliminated a number of our current hacks.
 * However, we can't eliminate our `_masterEditor` hack because documents themselves don't raise change events (filed as marijnh/CodeMirror#1238). This is probably not a major blocker for migrating to the linked document stuff, because we get other benefits out of it anyway.
+  * The primary user-facing benefit is that undo/redo behave in a much more sane fashion between inline and full editors.
+  * There are also a number of internal architectural benefits, because we can rip out a couple of somewhat fragile hacks that we had previously put in for edit synchronization.
 * There are a few serious bugs that need to be isolated and filed upstream: 
   * Undoing changes from a linked subdocument in the main document can lead to corruption.
   * Tokenization in subdocuments seems to be somewhat broken.
