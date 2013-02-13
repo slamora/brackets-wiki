@@ -10,7 +10,7 @@ A difficulty when making comments more generic is that we rely on the defined co
 ## APIs surrounding language support
 Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 
-### Module language/Languages.js
+### Module language/Languages
 
 * Defines the "language" concept
   * A language has an ID (i.e. "cpp", "cs") for computers (variables, object keys, file names, etc.)
@@ -26,10 +26,20 @@ Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
 * Method `getLanguageForMode` to map CodeMirror modes to languages
 * Used by extension "LESSSupport" to add basic support for LESS
 
-### Module search/QuickOpen.js
+### Module search/QuickOpen
 
 * Method `addQuickOpenPlugin`
 * **Uses file extensions**
+* Used by extensions "QuickOpenCSS", "QuickOpenHTML" and "QuickOpenJavaScript"
+* Extension "QuickOpenCSS" uses module language/CSSUtils
+
+### Module language/CSSUtils
+
+* Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils if it is the current full editor's document. Also searches CSS files as indexed by project/FileIndexManager in the css index, therefore currently indirectly **uses file extensions**
+
+### Module project/FileIndexManager
+
+* Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
 
 ## Notes
 
