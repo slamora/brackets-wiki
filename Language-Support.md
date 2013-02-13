@@ -5,7 +5,8 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 - Introduced a new high-level concept "language" and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
 
 ## Caveats
-A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
+* A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
+* We should potentially add a central point to extract file extensions for a given file name to support extensions with multiple parts (i.e. ".html.erb"). Then file names wouldn't have just one potential extension, since file names like "1. Introduction.html" (also multiple dots) would also need to be supported.
 
 ## The language concept
 
@@ -18,6 +19,14 @@ A difficulty when making comments more generic is that we rely on the defined co
 
 ## Places contributing to current language support
 Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
+
+### Module document/DocumentCommandHandlers
+
+* Method `_handleNewItemInProject` hardcodes ".js"/"Untitled.js" as the default file extension/name for new files. **Should maybe be a per-project setting.**
+
+### Module document/DocumentManager
+
+* `Document.getLanguage` uses the language API to determine the language based on the file extension.
 
 ### Module language/CSSUtils
 
