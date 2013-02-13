@@ -21,11 +21,11 @@ Current status
 
 There are currently three branches of note in the [adobe/CodeMirror2](http://github.com/adobe/CodeMirror2) fork:
 
-* master - this has now been reset to upstream master, and will always reflect the state of upstream.
-* v2-master - this is the last commit we made in our old (diverged) master. We won't be using this branch
+* `master` - this has now been reset to upstream master, and will always reflect the state of upstream.
+* `v2-master` - this is the last commit we made in our old (diverged) master. We won't be using this branch
   going forward, but older versions of Brackets refer to it in their submodule SHAs, so we need to keep
   it around for archival purposes.
-* brackets-sprint20 - this is a temporary branch that pulls in a couple of fixes we needed from upstream
+* `brackets-sprint20` - this is a temporary branch that pulls in a couple of fixes we needed from upstream
   but avoids a couple that seemed potentially destabilizing; the main Brackets source currently points to
   this branch. In the next sprint we plan to get rid of this branch and point directly at master.
 
