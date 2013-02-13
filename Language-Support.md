@@ -1,36 +1,14 @@
-## Refactoring LESS support into an extension
-
-_See branch dk/less-refactoring_
-
-Idea: rename LESS to MORE and add an extension that adds support for MORE - this way we can leave current LESS support intact and freely experiment with API designs.
-
-**1) Added an extension that just requires the CodeMirror mode**  
-  Result: Called EditorUtils.js _getModeFromFileExtensions with an unhandled file extension: more (EditorUtils.js:163)
-
-**Task:** Add an API to define a language (Name, MIME type(s?), file extensions, CodeMirror mode name, possibly CodeMirror mode implementation) - [Trello](https://trello.com/card/api-for-extensions-to-add-new-language-syntax-coloring-mode/4f90a6d98f77505d7940ce88/639) **(done)**
-
-**Smell:** CodeMirror.defineMode doesn't check if the mode is already defined, so extensions could override existing modes and cause problems for features that rely on specific tokens, like auto complete. **(monkey-patched)**
-
-**2) Monkey-patched getModeFromFileExtensions to use file extension as mode name if such a mode exists**
-
-**Task:** Load (language) extensions earlier to support their CodeMirror modes for the file automatically opened at startup (last open file) **(done)**
-
-**3) Added a function that changes the mode of current editors if (after adding the new mode) a different one would be used when re-opening the editor**
-
-**4) Did not find a way to patch in comment styles for a language**
-
-**Task:** Allow extensions to define how to add comments for a specific CodeMirror mode **(done)**  
-Monkey patching not easily possible due to references to internal functions.
-
-**Smell:** A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
+## Ongoing work
+- Introduced a new high-level concept "language" and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
 
 
-## Things to keep in mind
+## Caveats
+A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
 
+## Notes
+
+### Features we think should be able to be built as plug-ins
 _From the [Extensibility Proposal](https://zerowing.corp.adobe.com/display/brackets/Extensibility+Proposal)_
-
-Features we think should be able to be built as plug-ins:
-
 - Access to code model
 - Quick open / go to symbol
 - Index files/code (background process)
@@ -39,3 +17,21 @@ Features we think should be able to be built as plug-ins:
 - Inline editor providers (e.g. CSS gradient editor)
 - Language-specific search and replace (e.g. HTML tag search and replace)
 - Code cleanup / refactoring tools
+
+### LiveDevelopment considerations
+* What hooks would need to be added where to allow extension-based language support?  
+  _LiveDevelopment.registerDocumentClass(...)_
+* What behavior would need to be configurable by extensions?  
+  _turning off auto-reload for LESS files, configuring CodeMirror_
+* What deployment scenarios do we want to support?  
+  _Dynamic client-side, dynamic server-side, static server-side?_
+* Do we need to integrate with 3rd-party build tools?  
+  _I.e. run ant/cake/... when changing a LESS file to initiate compliation to CSS_
+* Do we need a specification to delegate compilation to an existing server?  
+  _The server might use a compiler written in a language other than JS, or might use a JS compiler with specific options that can't be easily extracted_
+* What can we support without impacting performance too much?  
+  _Running a build tool for every character entered will not work_
+* How should the user configure Brackets to support server-side compilation?  
+  _What file needs to be compiled how when changed - setting for the entire project or a subdirectory? Exceptions for single files?_
+* How do we deal with distributed files?  
+  _LESS supports including other LESS files, so changes to these should trigger compilation of the master file_
