@@ -147,7 +147,8 @@ A couple of notes on unofficial features:
 Extensions
 ----------
 There is a large and growing body of extensions available for Brackets, many
-of which were written by community members. For a list of extensions and
+of which were written by community members, that add all kinds of interesting
+and useful functionality. For a list of extensions and
 information on how to install them, see [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions).
 
 Keyboard Shortcut Cheat Sheet
