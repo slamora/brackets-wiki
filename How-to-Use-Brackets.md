@@ -8,7 +8,7 @@ Nettuts+ [did a tutorial video on Brackets](http://net.tutsplus.com/tutorials/to
 
 Brackets is built with HTML, CSS and JS, and currently runs as a desktop application in a thin native shell so that it can access your local files. **Brackets isn't ready for general use yet**, but if you like living on the bleeding edge, you can find instructions on how to get Brackets running below.
 
-The latest "stable" builds can be downloaded from the [downloads page](http://download.brackets.io). 
+The latest stable builds can be downloaded from the [downloads page](http://download.brackets.io). 
 
 If you want to download and run the absolutely _latest_ version of the code, you will have to pull it directly from GitHub. See [How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) for details on pulling the source.
 
@@ -67,12 +67,12 @@ Some things to note about this feature:
 * Brackets doesn't check to see which CSS or JS files are linked into the current HTML 
   file--it searches all files in the file tree.
   
-Starting with Sprint 17, you can use Quick Edit anywhere a hex color, rgb/rgba(), or
-hsl/hsla() appears to invoke the Color Picker to edit it inline. This includes
-shortcut swatches for other colors used in the file.
+You can also use Quick Edit anywhere a hex color, rgb/rgba(), or hsl/hsla() appears 
+to invoke the Color Picker to edit it inline. This includes shortcut swatches for
+other colors used in the file.
 
 Eventually Brackets could leverage inline editing for lots of other kinds of
-things like inline visual tools like gradient and shadow editors for the selected CSS rule.
+things, like gradient and shadow editors for the selected CSS rule.
 
 <a id="livedev"></a>Live Development
 ----------------
@@ -94,18 +94,17 @@ Brackets will open the HTML file in Chrome. If you then make edits to CSS files
 used by that HTML file (either in an inline editor or just by opening up the CSS 
 file), your edits will be instantly reflected in Chrome as you type.
 
-Additionally, if you save an HTML or JS file, it will auto-reload the browser
-preview. We're hoping to work on making these be more like true live development
+If you save an HTML or JS file, it will auto-reload the browser
+preview. We're hoping to work on making these work more like true live development
 in the future.
+
+While Live Preview is open, putting your cursor in a CSS rule
+in Brackets will highlight all matching HTML elements in the browser.
+Use "File > Live Highlight" to toggle this off.
 
 By default, Brackets previews files using a direct file:// URL. If you want
 to preview off a server, you can use **File > Project Settings...**. In the Base URL
 field, set the URL on the server that corresponds to the root of your project.
-
-The Live Highlight from CSS code feature was added in Sprint 17.
-While Live Preview is open, putting your cursor in a CSS rule
-in Brackets will highlight all matching HTML elements in the browser.
-Use "File > Live Highlight" to toggle this off.
 
 Some limitations of the current implementation:
 
@@ -118,6 +117,7 @@ Some limitations of the current implementation:
   switch to a different HTML file, Brackets will close the original preview and open 
   one for the new file. Note that if you have another tab open, Chrome will not
   shut down and restart between each page.
+* Opening the developer tools in Chrome will close the live development connection.
   
 As with quick edit, there are lots of ideas for how to extend this, including
 highlighting DOM nodes in the browser from Brackets, clicking on an item in
@@ -143,7 +143,12 @@ A couple of notes on unofficial features:
   files that matches. 
 * You can also use Ctrl/Cmd-T to jump to a particular method definition in 
   the current JS file, or Ctrl-G/Cmd-L to jump to a line number.
-* You can run the Brackets unit test suite from *Debug > Run Tests*.
+
+Extensions
+----------
+There is a large and growing body of extensions available for Brackets, many
+of which were written by community members. For a list of extensions and
+information on how to install them, see [Brackets Extensions].
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
