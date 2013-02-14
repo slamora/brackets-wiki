@@ -35,6 +35,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **Language Support**
 * [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets.
 * [PHP](https://github.com/aonic/brackets-QuickOpenPHP): adds PHP function definition support to QuickOpen search
+* [TypeScript Code Intel](https://github.com/tomsdev/brackets-typescript-code-intel): Adds TypeScript support in Brackets (Auto-completion, Quick Edit and more soon).
 
 **General Functionality**
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node).
