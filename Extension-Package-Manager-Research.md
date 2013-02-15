@@ -4,6 +4,20 @@ This is a look at existing extension and package managers to get an idea of the 
 
 The [third-party package manager for Sublime Text](http://wbond.net/sublime_packages/package_control).
 
+Package Control has a minimal user interface:
+
+![Package Control UI](http://wbond.net/sublime_packages/img/package_control/install_package.png)
+
+It leverages Sublime's "Goto Anything" UI to search packages. There are no ratings, reviews or information beyond just the couple of lines that appear there.
+
+No restart is required for any package operations. Packages can include a text file that is displayed in a Sublime buffer when the package is installed or updated (specified in a [messages.json file](https://github.com/wbond/sublime_package_control/blob/master/example-messages.json) in the package repository).
+
+Packages are hosted on GitHub or Bitbucket. In the documentation for [package developers](http://wbond.net/sublime_packages/package_control/package_developers) it is noted that the process for getting a new package in is basically to add your package location to the main repositories json file and issue a pull request.
+
+Package Control automatically creates a version number for packages by looking at the repository update time and it also pulls from the description of the repository on GitHub or Bitbucket. Developers *can* create a custom package.json file with their own version number if they wish (or if their package does not work on all three platforms supported by Sublime).
+
+Packages are automatically upgraded on startup.
+
 ## Eclipse ##
 
 Eclipse is built on a foundation of plugins, so extension management is a core feature.
