@@ -34,6 +34,10 @@ Eclipse is built on a foundation of plugins, so extension management is a core f
 
 A [package system for browser-based components](https://github.com/component).
 
+## bower ##
+
+Another [package system for browser-based components](http://twitter.github.com/bower), similar to component. Uses a `component.json` metadata file that's similar to npm's `package.json`.
+
 ## Firefox Add-ons ##
 
 Firefox's [add-on manager](https://support.mozilla.org/en-US/kb/find-and-install-add-ons-add-features-to-firefox) and [add-ons website](https://addons.mozilla.org/en-US/firefox/) have a long history and a lot of development behind them.
