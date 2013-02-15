@@ -36,7 +36,7 @@ A [package system for browser-based components](https://github.com/component).
 
 ## bower ##
 
-Another [package system for browser-based components](http://twitter.github.com/bower), similar to component. Uses a `component.json` metadata file that's similar to npm's `package.json`.
+Another [package system for browser-based components](http://twitter.github.com/bower), created by Twitter. Somewhat similar to component, but seems simpler. Uses a `component.json` metadata file that's similar to npm's `package.json`.
 
 ## Firefox Add-ons ##
 
