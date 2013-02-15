@@ -10,9 +10,9 @@ I recently did some testing around integrating these linked documents into Brack
   * Additionally, there are a number of internal architectural benefits, because we can rip out a couple of somewhat fragile hacks that we had previously put in for edit synchronization.
 * However, documents themselves don't raise change events (filed as marijnh/CodeMirror#1238), so we can't eliminate our `_masterEditor` hack. This is probably not a major blocker for migrating to the linked document stuff, because we get the benefits above anyway.
 * There are a few serious bugs that need to be isolated and filed upstream: 
-  * Undoing changes from a linked subdocument in the main document can lead to corruption.
-  * Tokenization in subdocuments seems to be somewhat broken, which breaks code hinting in inline editors.
-  * Exception in matchbrackets related to linked documents.
+  * Undoing changes from a linked subdocument in the main document can lead to corruption. (Filed as https://github.com/marijnh/CodeMirror/issues/1252)
+  * Tokenization in subdocuments seems to be somewhat broken, which breaks code hinting in inline editors. (Filed as https://github.com/marijnh/CodeMirror/issues/1253)
+  * Exception in matchbrackets related to linked documents during InlineEditorProviders unit tests. (Might be related to #1252.)
 * There are also a handful of other unit test failures that need investigating, but they don't seem scary overall.
 * We will also need to look for cases where real code might be making the same assumptions unit tests were making, especially about the text in an inline editor. (I *think* this shouldn't be an issue because everyone should be getting text from the underlying (Brackets) Document, which I believe will always still have the full text.)
 * Otherwise, most things seem fine.
