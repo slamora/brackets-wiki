@@ -60,6 +60,7 @@ The [Ubuntu Software Centre](http://www.ubuntu.com/ubuntu/features/find-more-app
 # Conclusions #
 
 ## Desirable Features ##
+[nj] From a UX perspective, I think it would be good to aim for something between the bare-bones feel of Sublime (or npm) and the slick, app-store-like experience of Firefox or Ubuntu. We should expose more functionality that aids discovery than Sublime/npm, but avoid feeling too "marketingy". For example, perhaps we shouldn't have icons for extensions; we wouldn't want developers who create useful extensions to feel penalized in their appearance in the extension manager because they don't happen to have access to someone who can create nice artwork for them. On the other hand, we should have a good search mechanism, perhaps a categorization or keyword tagging scheme, and ultimately ratings and reviews, because those all aid discovery in practical ways.
 
 ## Traits to Avoid ##
 
