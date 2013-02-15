@@ -1,5 +1,9 @@
 This is a look at existing extension and package managers to get an idea of the state of the art and whether there is any reusable infrastructure.
 
+## Brackets Extension Manager Extension ##
+
+[jdiehl and DennisKehrig made a Brackets extension](https://github.com/jdiehl/brackets-extension-manager) for extension management.
+
 ## Package Control ##
 
 The [third-party package manager for Sublime Text](http://wbond.net/sublime_packages/package_control).
