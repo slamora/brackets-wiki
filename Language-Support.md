@@ -59,6 +59,15 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 * Method `findStyleBlocks` to gather info about all `<style>` blocks in an HTML document, directly **uses tokens provided by CodeMirror** 
 
+### Module language/JSLintUtils
+
+* Method `run` to run JSLint on the current document. Checks if the extension is one of .js, .htm or .html, therefore **uses file extensions**. Otherwise uses JSLint internally which could be swapped out.
+
+### Module language/JSUtils
+
+* Method `findAllMatchingFunctionsInText` to find all instances of a function name in a string of code. Internally uses CodeMirror's javascript mode as a parser, but that could be swapped out.
+* Method `findMatchingFunctions` to find all functions with a specified name within a set of files. Only uses files ending with ".js", i.e. **uses file extensions**
+
 ### Module language/Languages
 
 * Defines the "language" concept
@@ -68,15 +77,6 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 * Method `getLanguageForFileExtension` to map file extensions to languages
 * Method `getLanguageForMode` to map CodeMirror modes to languages
 * Used by extension "LESSSupport" to add basic support for LESS
-
-### Module language/JSLintUtils
-
-* Method `run` to run JSLint on the current document. Checks if the extension is one of .js, .htm or .html, therefore **uses file extensions**. Otherwise uses JSLint internally which could be swapped out.
-
-### Module language/JSUtils
-
-* Method `findAllMatchingFunctionsInText` to find all instances of a function name in a string of code. Internally uses CodeMirror's javascript mode as a parser, but that could be swapped out.
-* Method `findMatchingFunctions` to find all functions with a specified name within a set of files. Only uses files ending with ".js", i.e. **uses file extensions**
 
 ### Module project/FileIndexManager
 
