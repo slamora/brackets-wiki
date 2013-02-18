@@ -117,11 +117,19 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 ### Module search/QuickOpen
 
-* Method `addQuickOpenPlugin`
-* **Uses file extensions**
-* Used by extensions "QuickOpenCSS", "QuickOpenHTML" and "QuickOpenJavaScript"
-* Extension "QuickOpenCSS" uses module language/CSSUtils
+* Method `addQuickOpenPlugin` **uses file extensions** to register plugins
 
+### Module utils/ExtensionUtils
+
+* Method `loadStyleSheet` **uses file extensions** to support LESS files. Note that is only relevant for extension developers, but technically this could use a more general architecture that allows to auto-discover compilers to CSS.
+
+### Module utils/StringUtils
+
+* Method `htmlEscape` **escapes characters with special meaning in HTML**, should this at least be refactored to the language object for HTML?
+
+### Module utils/TokenUtils
+
+* Method `getModeAt` **has a hardcoded special case for XML**
 
 ## Notes
 
