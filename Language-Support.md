@@ -28,6 +28,14 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 * `Document.getLanguage` uses the language API to determine the language based on the file extension.
 
+### Module editor/CodeHintManager
+
+* Method `registerHintProvider` **registers hint providers by mode**.
+
+### Module editor/CSSInlineEditor
+
+* Inline editor provider `htmlToCSSProvider` **decides to open based on the editor mode**. In addition it **relies on HTMLUtils and CSSUtils**
+
 ### Module language/CSSUtils
 
 * Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils if it is the current full editor's document. Also searches CSS files as indexed by project/FileIndexManager in the css index, therefore currently indirectly **uses file extensions**
