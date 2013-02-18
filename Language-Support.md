@@ -107,6 +107,10 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 * **Has hardcoded support for HTML and CSS**
 
+### Script LiveDevelopment/Agents/RemoteFunctions
+
+* Function `_typeColor` has **hardcoded distinctions between html, css, js and others**
+
 ### Module project/FileIndexManager
 
 * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
