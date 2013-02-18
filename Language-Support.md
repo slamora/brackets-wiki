@@ -18,7 +18,7 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 * A language can refer to one main CodeMirror mode and multiple mode aliases
 
 ## Places contributing to current language support
-Based on ([LESS Refactoring](https://github.com/adobe/brackets/pull/2844))
+Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 ### Module document/DocumentCommandHandlers
 
