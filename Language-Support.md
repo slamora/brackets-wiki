@@ -91,6 +91,14 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 * Function `_onDocumentSaved` **only reloads the page if the document is not a CSSDocument** (not extensible)
 * Function `_onDirtyFlagChange` **only updates the LiveDevelopment status if the dirty file is not a CSSDocument** (not extensible)
 
+### Module LiveDevelopment/Agents/DOMHelpers
+
+* Contains multiple methods that encapsulate knowledge about HTML, **should potentially be tied to the language object**
+
+### Module LiveDevelopment/Agents/DOMNode
+
+* DOMNode.prototype.toString contains basic knowledge about HTML, **should potentially be tied to the language object**
+
 ### Module project/FileIndexManager
 
 * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
