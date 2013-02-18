@@ -4,9 +4,6 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 ## Ongoing work
 - Introduced a new high-level concept "language" and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
 
-## Caveats
-* We should potentially add a central point to extract file extensions for a given file name to support extensions with multiple parts (i.e. ".html.erb"). Then file names wouldn't have just one potential extension, since file names like "1. Introduction.html" (also multiple dots) would also need to be supported.
-
 ## The language concept
 
 * A language has an ID (i.e. "cpp", "cs") for computers (variables, object keys, file names, etc.)
@@ -137,6 +134,10 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 * Method `getModeAt` **has a hardcoded special case for XML**
 
 ## Notes
+
+### Determining file extensions
+
+We should potentially add a central point to extract file extensions for a given file name to support extensions with multiple parts (i.e. ".html.erb"). Then file names wouldn't have just one potential extension, since file names like "1. Introduction.html" (also multiple dots) would also need to be supported.
 
 ### Features we think should be able to be built as plug-ins
 _From the [Extensibility Proposal](https://zerowing.corp.adobe.com/display/brackets/Extensibility+Proposal)_
