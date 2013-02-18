@@ -78,6 +78,19 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 * Method `getLanguageForMode` to map CodeMirror modes to languages
 * Used by extension "LESSSupport" to add basic support for LESS
 
+### Module LiveDevelopment/LiveDevelopment
+
+* **Requires hardcoded list of special documents**, namely {CSS,HTML,JS}Document
+* Function `_setDocInfo` **determines a root URL biased towards HTML and HTML extensions**
+* Function `_classForDocument` **uses a hardcoded mapping of file extensions to document types**
+* Function `_openDocument` **only loads related CSS documents** (no JavaScript, not extensible)
+* Function `_onLoad` **excludes CSSDocument from being marked as out of sync** (not extensible)
+* Method `open` **reduces LiveDevelopment support to HTML files based on file extensions**
+* Method `showHighlight` **only calls doc.updateHighlight() for CSSDocuments**
+* Function `_onDocumentChange` **closes LiveDevelopment when switching to an HTML file** and **excludes CSSDocument from being marked as out of sync** (not extensible)
+* Function `_onDocumentSaved` **only reloads the page if the document is not a CSSDocument** (not extensible)
+* Function `_onDirtyFlagChange` **only updates the LiveDevelopment status if the dirty file is not a CSSDocument** (not extensible)
+
 ### Module project/FileIndexManager
 
 * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
