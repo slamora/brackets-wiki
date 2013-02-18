@@ -36,6 +36,10 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 * Inline editor provider `htmlToCSSProvider` **decides to open based on the editor mode**. In addition it **relies on HTMLUtils and CSSUtils**
 
+### Module editor/Editor.js
+
+* Method `_checkElectricChars` adjusts indentation when blocks are ended. **The characters to detect block boundaries are hard-coded - `]`, `{`, `}` and `)`**
+
 ### Module language/CSSUtils
 
 * Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils if it is the current full editor's document. Also searches CSS files as indexed by project/FileIndexManager in the css index, therefore currently indirectly **uses file extensions**
