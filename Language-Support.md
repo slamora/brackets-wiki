@@ -19,6 +19,11 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 ## Places contributing to current language support
 Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
+### Module brackets
+
+* Loads a few selected submodules that it doesn't use, including `CSSInlineEditor`, `JSUtils`, and `JSLintUtils`.
+* Function `_initTest` loads a few more
+
 ### Module document/DocumentCommandHandlers
 
 * Method `_handleNewItemInProject` hardcodes ".js"/"Untitled.js" as the default file extension/name for new files. **Should maybe be a per-project setting.**
