@@ -44,6 +44,10 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 * Functions `_findCommentStart`, `_findCommentEnd` and `_findNextBlockComment` **use tokens provided by CodeMirror** to search for comment boundaries. While the strings they search are provided by a language definition, this prevents us from defining "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
 * Methods `blockCommentPrefixSuffix` and `lineCommentPrefixSuffix` have similar constrains as they navigate by tokens instead of characters. In addition they check whether a token's `className` is different from `"comment"`. Therefore they **use tokens provided by CodeMirror**.
 
+### Module file/FileUtils.js
+
+* Methods `isStaticHtmlFileExt` and `isServerHtmlFileExt` **use hardcoded lists of file extensions**
+
 ### Module language/CSSUtils
 
 * Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils if it is the current full editor's document. Also searches CSS files as indexed by project/FileIndexManager in the css index, therefore currently indirectly **uses file extensions**
