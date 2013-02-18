@@ -5,7 +5,6 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 - Introduced a new high-level concept "language" and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
 
 ## Caveats
-* A difficulty when making comments more generic is that we rely on the defined comment symbols to be completely contained in one CodeMirror token. I.e. we cannot define "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
 * We should potentially add a central point to extract file extensions for a given file name to support extensions with multiple parts (i.e. ".html.erb"). Then file names wouldn't have just one potential extension, since file names like "1. Introduction.html" (also multiple dots) would also need to be supported.
 
 ## The language concept
@@ -39,6 +38,11 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 ### Module editor/Editor.js
 
 * Method `_checkElectricChars` adjusts indentation when blocks are ended. **The characters to detect block boundaries are hard-coded - `]`, `{`, `}` and `)`**
+
+### Module editor/EditorCommandHandlers
+
+* Functions `_findCommentStart`, `_findCommentEnd` and `_findNextBlockComment` **use tokens provided by CodeMirror** to search for comment boundaries. While the strings they search are provided by a language definition, this prevents us from defining "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
+* Methods `blockCommentPrefixSuffix` and `lineCommentPrefixSuffix` have similar constrains as they navigate by tokens instead of characters. In addition they check whether a token's `className` is different from `"comment"`. Therefore they **use tokens provided by CodeMirror**.
 
 ### Module language/CSSUtils
 
