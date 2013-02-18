@@ -99,6 +99,14 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 * DOMNode.prototype.toString contains basic knowledge about HTML, **should potentially be tied to the language object**
 
+### Module LiveDevelopment/Agents/GotoAgent
+
+* **Has hardcoded support for HTML, CSS and JavaScript**
+
+### Module LiveDevelopment/Agents/HighlightAgent
+
+* **Has hardcoded support for HTML and CSS**
+
 ### Module project/FileIndexManager
 
 * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
