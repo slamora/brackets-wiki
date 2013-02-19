@@ -24,7 +24,31 @@ Packages are automatically upgraded on startup.
 
 ## Eclipse ##
 
-Eclipse is built on a foundation of plugins, so extension management is a core feature.
+Eclipse is built on a foundation of plugins (packaged together as "solutions" that you can install), so extension management is a core feature. It has been a few years since the last time I used Eclipse regularly, so I decided to install the latest and see how it works today.
+
+On the Mac, at least, plugin management seemed a bit more difficult than I expected for a system that is built around plugins. First of all, I looked all over for how to install a new plugin before discovering that it was in the Help Menu:
+
+![Install New Software from Help menu?](https://www.evernote.com/shard/s24/sh/a2912957-6dfc-4e4a-a4c5-c2facc911ba0/757fa0ec5dec1371347d12e3c8e0e89a/res/ec3611e2-7dd1-451e-a7cb-bda902949b9b/skitch.png?resizeSmall&width=832)
+
+Next, you have to select a software site and then you get a filterable, categorized list of available plugins:
+
+![Eclipse Add New Software](https://www.evernote.com/shard/s24/sh/890f1012-c45d-41f4-94a4-bd23eab17ccc/d13a7390830a61d49a80d91bafeb5926/res/94d69521-e6ca-4f73-8da8-227db09aa896/skitch.png?resizeSmall&width=832)
+
+Installing software pops up a modal installation dialog that can be changed to "run in the background". Installation requires a click through license step. I had to trust the 3rd party certificate for the plugin I was installing (PyDev from Aptana). It also required restarting Eclipse.
+
+Once the plugin is installed, you can see it in the list of installed plugins (which it appears you can only access from the Add New Software dialog):
+
+![Eclipse Plugin Manager](https://www.evernote.com/shard/s24/sh/e4cf32ed-ee3f-4fb6-8f3a-8886028d1614/f640f01d9ef0520c769dc8af36078b4f/res/65ed2b13-3a73-43eb-b750-5728b57a39c1/skitch.png?resizeSmall&width=832)
+
+I could uninstall the PyDev plugin easily from there, requiring a restart again (not surprisingly).
+
+You can get more Eclipse plugins from the Marketplace site:
+
+![Eclipse Marketplace site](https://www.evernote.com/shard/s24/sh/1d6f4442-7f58-455b-91c7-eb8d90fbfc3b/4d0685bc5ed843a749c0e15ca996ad38)
+
+The Marketplace site does not enable one click install of plugins. Instead, it provides you with the "Update Site" URL which you can add to your Eclipse installation via the preferences dialog. The site provides "reviews", but it is actually a threaded comments system. Not surprisingly, the first one listed for the "solution" page I looked at (EGit) was not really a review at all but rather someone having trouble with the plugin. Eventually, that thread led to a call to post bug reports in the proper place.
+
+Seeing this reinforces my belief that it needs to be *very* clear what users should do in the event of things just not working and that reviews should be guided to cover just the functionality that is provided by the extension.
 
 ## npm and its web interfaces ##
 
