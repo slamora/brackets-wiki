@@ -42,7 +42,7 @@ Once the plugin is installed, you can see it in the list of installed plugins (w
 
 I could uninstall the PyDev plugin easily from there, requiring a restart again (not surprisingly).
 
-You can get more Eclipse plugins from the Marketplace site:
+You can get more Eclipse plugins from the [Marketplace site](http://marketplace.eclipse.org):
 
 ![Eclipse Marketplace site](https://www.evernote.com/shard/s24/sh/1d6f4442-7f58-455b-91c7-eb8d90fbfc3b/4d0685bc5ed843a749c0e15ca996ad38)
 
@@ -54,9 +54,17 @@ Seeing this reinforces my belief that it needs to be *very* clear what users sho
 
 [npm](https://npmjs.org/) is the package manager for Node. It's written in JavaScript for Node, so it may be possible to reuse npm bits, especially after [node integration](https://trello.com/card/5-live-development-on-localhost/4f90a6d98f77505d7940ce88/684) lands in Brackets.
 
+npm's web interface provides some basic statistics (downloads for different time periods, number of packages that depend on a given package). There is a "star" feature, which it appears you have to be logged in to use. Starring of packages does not seem very common as the most-starred package has only 98 stars. underscore is relied upon by more than 2,000 other packages, which shows the value of that measure for Node packages.
+
+npm's site relies on Google to power its search.
+
+The work on npm has definitely centered around its command line utility and its power in allowing Node users to factor out small bits of code into reliably reusable libraries. It has been very successful at this, which may have some applicability to Brackets extensions because the code there may be useful... but Brackets extensions are less like libraries and more like end-user features.
+
+I believe (but have not verified) that npm packages are stored on their server and all published versions of a package are maintained (so that people can require specific versions in their dependencies).
+
 ## component ##
 
-A [package system for browser-based components](https://github.com/component).
+A [package system for browser-based components](https://github.com/component/component). The command line tool for Component is written for Node, but Component does not appear to use npm machinery at all. The idea is that it packages up JS and CSS into a bundle that you can install and depend on.
 
 ## bower ##
 
