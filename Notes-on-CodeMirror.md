@@ -37,7 +37,7 @@ directly into our CodeMirror fork.
 If you have an existing fork or clone of adobe/CodeMirror2 from before Sprint 20, you shouldn't try to pull
 into your master from our master--instead, you'll want to do a direct reset of your master branch to our master 
 (e.g. if you have your `upstream` remote set to adobe/CodeMirror2, then do `git checkout master` and 
-`git reset upstream/master`).
+`git reset --hard upstream/master`).
 
 Note that we have not yet renamed the submodule or the repo to reflect the current naming of the upstream
 repo--it's still "CodeMirror2". This renaming is a bit tricky and isn't urgent, so we've put it off until
