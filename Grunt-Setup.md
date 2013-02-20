@@ -1,4 +1,4 @@
-1. Install Node 0.8 http://nodejs.org/download/
+1. Install Node 0.8.x http://nodejs.org/download/
 2. Run ``npm install -g grunt-cli`` to install the GruntJS command line interface
 3. Run ``npm install`` from the root of the brackets git repo
 4. Run ``grunt``
