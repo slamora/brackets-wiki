@@ -66,6 +66,8 @@ The work on npm has definitely centered around its command line utility and its 
 
 I believe (but have not verified) that npm packages are stored on their server and all published versions of a package are maintained (so that people can require specific versions in their dependencies).
 
+Uploading a new package to npm is straightforward using the [npm publish](https://npmjs.org/doc/publish.html) command.
+
 ## component ##
 
 A [package system for browser-based components](https://github.com/component/component). The command line tool for Component is written for Node, but Component does not appear to use npm machinery at all. The idea is that it packages up JS and CSS into a bundle that you can install and depend on.
@@ -79,6 +81,8 @@ Another [package system for browser-based components](http://twitter.github.com/
 There are [more than 1,000 components available for Bower](http://sindresorhus.com/bower-components/). Bower is also used by [Yeoman](http://yeoman.io/).
 
 Seeing all of those packages makes me wonder if some of the extension management UI we create can be reused for managing installed packages for the user's projects.
+
+Registering a new Bower package is done via the `bower register` command, which takes a git endpoint as an argument. There is very little ceremony around this... "Think of it like a URL shortener," according to the Bower documentation.
 
 ## Firefox Add-ons ##
 
@@ -99,13 +103,19 @@ Firefox's [add-on manager](https://support.mozilla.org/en-US/kb/find-and-install
 
 ![addons.mozilla.org](https://www.evernote.com/shard/s24/sh/ec12aba0-1a86-403d-b2be-7bf9fa3a74ca/91b4cfc0605912def4c20178dd86a4b5/res/3757b3c4-63c6-4106-9671-60410cf988f9/skitch.png?resizeSmall&width=832)
 
+Installing an add-on from addons.mozilla.org is as simple as clicking the "Add to Firefox" button. Some add-ons no longer require a restart of the browser and a drop-down message acts as your confirmation that the add-on has been installed. That same drop-down message is used to prompt the user to restart their browser to see the new functionality for add-ons that do require a restart.
+
+There is also a pop-up dialog with a time delay that forces the user to consider the security implications of installing an add-on. Add-ons can be installed from anywhere, as long as they are served with the proper mime type, but there are different security prompts depending on where you install from.
+
+Add-ons from addons.mozilla.org go through a review process (which is run through a combination of Mozilla employees and community members).
+
 Different kinds of add-ons:
 
 * Traditional add-ons: could access any public API in Firefox and use "XUL overlays" (see also "XBL") to augment the user interface in nearly unlimited ways
 * Restartless add-ons: these can do much of what traditional add-ons did, and in the same style of code. However, there are limitations, as [noted by the creator of Adblock Plus](http://adblockplus.org/blog/why-you-should-make-your-next-add-on-restartless). Even so, in that same article, Wladimir says that it is worthwhile to go restartless
 * Add-on SDK (Jetpack): Jetpacks are organized with an extensions-specific API to make extension writing easier. Jetpacks are built on CommonJS modules and are restartless. To date, they have been "statically linked": the SDK itself and any libraries your add-on depends on, are bundled in your package. Having the SDK statically linked has proven troublesome, so they are migrating the SDK into Firefox.
 
-All of these add-ons are basically zipped directories.
+All of these add-ons are basically zipped directories. To register a new add-on, developers use the web interface and upload the zip file (which is hosted at addons.mozilla.org).
 
 The Firefox Add-on Manager makes it easy to disable and remove add-ons and also provides access to an add-ons preferences (which can be displayed in any form the add-on wishes... some use XUL windows, some use HTML windows).
 
@@ -121,7 +131,19 @@ A cursory look leads me to believe that there's nothing especially notable here,
 
 # Conclusions #
 
+The package management systems outlined above have a variety of features covering:
+
+* discovery
+* installation
+* updates
+* removal
+* end user support
+* developer management of packages
+* package review
+* statistics
+
 ## Desirable Features ##
+
 [nj] From a UX perspective, I think it would be good to aim for something between the bare-bones feel of Sublime (or npm) and the slick, app-store-like experience of Firefox or Ubuntu. We should expose more functionality that aids discovery than Sublime/npm, but avoid feeling too "marketingy". For example, perhaps we shouldn't have icons for extensions; we wouldn't want developers who create useful extensions to feel penalized in their appearance in the extension manager because they don't happen to have access to someone who can create nice artwork for them. On the other hand, we should have a good search mechanism, perhaps a categorization or keyword tagging scheme, and ultimately ratings and reviews, because those all aid discovery in practical ways.
 
 ## Traits to Avoid ##
