@@ -171,6 +171,7 @@ Top features:
 
 Next features:
 
+* Crowdsourced control for extensions that are malicious (flag them) or no longer compatible
 * Search, ratings, reviews, categories, tags and popularity all help users find new and useful extensions
 * Ratings and reviews should require the user to authenticate, which reduces gaming of the system
 * A nice-to-have feature would be for an authenticated user's preferences and installed extensions to sync between Brackets installations (possibly even on the web)
