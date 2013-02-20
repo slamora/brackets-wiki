@@ -148,6 +148,8 @@ The package management systems outlined above have a variety of features coverin
 
 ## Desirable Features ##
 
+Top features:
+
 * Ability to install an extension from anywhere, not just our repository
   * this is good for extensions that are not quite "ready"
   * or, more usefully, for extensions that support proprietary workflows
@@ -165,12 +167,16 @@ The package management systems outlined above have a variety of features coverin
 * The extension manager itself should provide a link to get help for an extension that the user has installed and is having trouble with.
 * Update checks should be automatic
 
+Next features:
+
 * Search, ratings, reviews, categories, tags and popularity all help users find new and useful extensions
 * Ratings and reviews should require the user to authenticate, which reduces gaming of the system
 * A nice-to-have feature would be for an authenticated user's preferences and installed extensions to sync between Brackets installations (possibly even on the web)
 * Users will be more likely to rate and review extensions if they can do so from the extension manager.
 * When Brackets has a command line, a Sublime Package Control-like interface for managing extensions would be a great *addition* to a Firefox Add-on Manager-like UI, but does not seem like a good substitute.
 * Collections of extensions can be handy, especially if we're shooting for an extension ecosystem that provides lots of little features that people can pick and choose from. If one click can install a dozen useful features that work well together, that's a win. [The Janus Vim Distribution](https://github.com/carlhuda/janus) is an example of a combination plugins/configuration that helps people get going with a more productive vim setup.
+
+Also interesting:
 
 * Bower helps webapp developers reuse browser-based components. Though not directly related to Brackets extension management, it would be neat to provide similar UI for managing components used in the end-user projects.
 
