@@ -68,6 +68,8 @@ I believe (but have not verified) that npm packages are stored on their server a
 
 Uploading a new package to npm is straightforward using the [npm publish](https://npmjs.org/doc/publish.html) command.
 
+Note that [npm's server infrastructure](https://github.com/isaacs/npmjs.org) is open source and could be reused.
+
 ## component ##
 
 A [package system for browser-based components](https://github.com/component/component). The command line tool for Component is written for Node, but Component does not appear to use npm machinery at all. The idea is that it packages up JS and CSS into a bundle that you can install and depend on.
@@ -123,6 +125,8 @@ The Firefox Add-on Manager makes it easy to disable and remove add-ons and also 
 
 When an add-on is updated, if a restart is required that is noted in the Add-on Manager (with a link that allows for restarting with a single click). Add-ons can display a web page on restart or update.
 
+The Firefox add-on manager has a "Get Add-ons" tab which helps to introduce new add-on users to add-ons, but is also confusing because it shows a few add-ons but does not link in a straightforward way to the addons.mozilla.org site which offers a nicer view of addons. Instead, it offers a direct, in-product stripped down view of add-on information.
+
 ## Ubuntu ##
 
 The [Ubuntu Software Centre](http://www.ubuntu.com/ubuntu/features/find-more-apps) is a desktop "app store". It is notable as a graphical front end to [apt](http://en.wikipedia.org/wiki/Advanced_Packaging_Tool) which is a widely used Linux package manager that needs to be able to wrangle dependencies between lots of packages. The package management needed by Linux applications is likely an extreme case of what we would see in a Brackets extension ecosystem (though the Node community has proven with npm that a good package manager can result in the creation of many inter-related packages).
@@ -144,8 +148,40 @@ The package management systems outlined above have a variety of features coverin
 
 ## Desirable Features ##
 
+* Ability to install an extension from anywhere, not just our repository
+  * this is good for extensions that are not quite "ready"
+  * or, more usefully, for extensions that support proprietary workflows
+* One, easy-to-get-at UI for installing extensions from our repository and managing them after installation
+* a stable repository so that users don't lose extensions that they've come to rely on
+* Straightforward workflow for developers to publish and update their extensions
+* Extensions can provide
+  * description
+  * home page and support links
+  * screenshots (optional)
+  * version
+  * update info (changelog)
+  * additional information to display after installation (either a text file or web page) or update
+* Restartless extensions provide the best workflow for installation, update and removal. Updates are especially smooth when they can be done without interrupting the user.
+* The extension manager itself should provide a link to get help for an extension that the user has installed and is having trouble with.
+* Update checks should be automatic
+
+* Search, ratings, reviews, categories, tags and popularity all help users find new and useful extensions
+* Ratings and reviews should require the user to authenticate, which reduces gaming of the system
+* A nice-to-have feature would be for an authenticated user's preferences and installed extensions to sync between Brackets installations (possibly even on the web)
+* Users will be more likely to rate and review extensions if they can do so from the extension manager.
+* When Brackets has a command line, a Sublime Package Control-like interface for managing extensions would be a great *addition* to a Firefox Add-on Manager-like UI, but does not seem like a good substitute.
+* Collections of extensions can be handy, especially if we're shooting for an extension ecosystem that provides lots of little features that people can pick and choose from. If one click can install a dozen useful features that work well together, that's a win. [The Janus Vim Distribution](https://github.com/carlhuda/janus) is an example of a combination plugins/configuration that helps people get going with a more productive vim setup.
+
+* Bower helps webapp developers reuse browser-based components. Though not directly related to Brackets extension management, it would be neat to provide similar UI for managing components used in the end-user projects.
+
 [nj] From a UX perspective, I think it would be good to aim for something between the bare-bones feel of Sublime (or npm) and the slick, app-store-like experience of Firefox or Ubuntu. We should expose more functionality that aids discovery than Sublime/npm, but avoid feeling too "marketingy". For example, perhaps we shouldn't have icons for extensions; we wouldn't want developers who create useful extensions to feel penalized in their appearance in the extension manager because they don't happen to have access to someone who can create nice artwork for them. On the other hand, we should have a good search mechanism, perhaps a categorization or keyword tagging scheme, and ultimately ratings and reviews, because those all aid discovery in practical ways.
 
 ## Traits to Avoid ##
 
+* Package Control is too terse, does not offer ratings/reviews
+* Eclipse's solutions manager requires configuration from the preferences dialog and is hidden away in the Help menu. There's no real integration with the marketplace.
+* Firefox Add-on Manager provides a less capable version of addons.mozilla.org within it
+
 ## Reusable Infrastructure? ##
+
+* npm has powerful dependency management and a reusable server
