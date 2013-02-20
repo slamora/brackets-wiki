@@ -156,6 +156,8 @@ Top features:
 * One, easy-to-get-at UI for installing extensions from our repository and managing them after installation
 * a stable repository so that users don't lose extensions that they've come to rely on
 * Straightforward workflow for developers to publish and update their extensions
+  * One idea that njx and dangoor discussed is the idea that the extension manager could list extensions in the "dev" extensions directory
+  * publishing those extensions could be a one-click operation (a publish button rather than a remove button)
 * Extensions can provide
   * description
   * home page and support links
