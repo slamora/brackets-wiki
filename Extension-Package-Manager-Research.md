@@ -4,6 +4,10 @@ This is a look at existing extension and package managers to get an idea of the 
 
 [jdiehl and DennisKehrig made a Brackets extension](https://github.com/jdiehl/brackets-extension-manager) for extension management.
 
+![Brackets Extension Manager extension](https://www.evernote.com/shard/s24/sh/138a073e-4e70-4e6e-881b-b352fdf9a537/b8c5cab92834571e7aacbde2211a0989/res/37459e7a-a03f-4ebe-92b0-3d989680eb7a/skitch.png?resizeSmall&width=832)
+
+The Extension Manager extension provides a straightforward UI for installing, updating and uninstalling extensions. It requires Node to be installed (it appears that this is largely for file access, though I think the Node server is also responsible for downloading the extension database). The information about the available extensions comes from a static JSON file on jdiehl's github account.
+
 ## Package Control ##
 
 The [third-party package manager for Sublime Text](http://wbond.net/sublime_packages/package_control).
