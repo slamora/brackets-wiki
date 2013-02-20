@@ -66,16 +66,34 @@ I believe (but have not verified) that npm packages are stored on their server a
 
 A [package system for browser-based components](https://github.com/component/component). The command line tool for Component is written for Node, but Component does not appear to use npm machinery at all. The idea is that it packages up JS and CSS into a bundle that you can install and depend on.
 
+It's conceivable that we could offer support (through a Node-based extension) for Component, but I don't see anything we need to consider from a package management perspective.
+
 ## bower ##
 
 Another [package system for browser-based components](http://twitter.github.com/bower), created by Twitter. Somewhat similar to component, but seems simpler. Uses a `component.json` metadata file that's similar to npm's `package.json`.
+
+There are [more than 1,000 components available for Bower](http://sindresorhus.com/bower-components/). Bower is also used by [Yeoman](http://yeoman.io/).
+
+Seeing all of those packages makes me wonder if some of the extension management UI we create can be reused for managing installed packages for the user's projects.
 
 ## Firefox Add-ons ##
 
 Firefox's [add-on manager](https://support.mozilla.org/en-US/kb/find-and-install-add-ons-add-features-to-firefox) and [add-ons website](https://addons.mozilla.org/en-US/firefox/) have a long history and a lot of development behind them.
 
-* Star ratings, reviews
-* Collections
+* "Featured" add-ons
+* Categories/Tags
+* "Report Abuse"
+* "Often Used With"
+* Star ratings
+* Reviews
+* Collections (groups of add-ons that can't be installed together, but can be "followed" and voted up/down. [The Web Developer's Toolbox](https://addons.mozilla.org/en-us/firefox/collections/mozilla/webdeveloper/) is an example). Each add-on's page also shows collections that it's a part of
+* Usage statistics (there's a daily ping that checks for updates, so there are stats on how many "daily users" an add-on has)
+* Share (via tweets, etc.)
+* Screenshots, Icon
+* Links for home page, support
+* Version info/what's new
+
+![addons.mozilla.org](https://www.evernote.com/shard/s24/sh/ec12aba0-1a86-403d-b2be-7bf9fa3a74ca/91b4cfc0605912def4c20178dd86a4b5/res/3757b3c4-63c6-4106-9671-60410cf988f9/skitch.png?resizeSmall&width=832)
 
 Different kinds of add-ons:
 
@@ -85,9 +103,17 @@ Different kinds of add-ons:
 
 All of these add-ons are basically zipped directories.
 
+The Firefox Add-on Manager makes it easy to disable and remove add-ons and also provides access to an add-ons preferences (which can be displayed in any form the add-on wishes... some use XUL windows, some use HTML windows).
+
+![Firefox Add-on Manager](https://www.evernote.com/shard/s24/sh/d9bd61c9-af3a-4122-991e-2708293abfc1/ab3886f131c29bb0f0dbd8fa76fcf754/res/b03e1159-fc7b-41ca-917f-225896b73618/skitch.png?resizeSmall&width=832)
+
+When an add-on is updated, if a restart is required that is noted in the Add-on Manager (with a link that allows for restarting with a single click). Add-ons can display a web page on restart or update.
+
 ## Ubuntu ##
 
-The [Ubuntu Software Centre](http://www.ubuntu.com/ubuntu/features/find-more-apps) is an open source "app store". It is notable as a graphical front end to [apt](http://en.wikipedia.org/wiki/Advanced_Packaging_Tool) which is a widely used Linux package manager that needs to be able to wrangle dependencies between lots of packages. The package management needed by Linux applications is likely an extreme case of what we would see in a Brackets extension ecosystem (though the Node community has proven with npm that a good package manager can result in the creation of many inter-related packages).
+The [Ubuntu Software Centre](http://www.ubuntu.com/ubuntu/features/find-more-apps) is a desktop "app store". It is notable as a graphical front end to [apt](http://en.wikipedia.org/wiki/Advanced_Packaging_Tool) which is a widely used Linux package manager that needs to be able to wrangle dependencies between lots of packages. The package management needed by Linux applications is likely an extreme case of what we would see in a Brackets extension ecosystem (though the Node community has proven with npm that a good package manager can result in the creation of many inter-related packages).
+
+A cursory look leads me to believe that there's nothing especially notable here, relative to the things we can learn from others above.
 
 # Conclusions #
 
