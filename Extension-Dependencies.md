@@ -39,7 +39,42 @@ With its short release cycles, having Brackets extensions specify their min/max 
 
 [Semantic Versioning](http://semver.org/) is a convention for version numbers that provides real meaning behind them. semver is a standard among npm users.
 
-If Brackets used semver, an extension made for Brackets 1.x is *guaranteed* to work until Brackets 2.0.0 is released.
+To separate the marketing needs for version numbers from the extensions' needs for version numbers, we can talk about the "API version". If the Brackets API used semver, an extension made for Brackets API 1.x is *guaranteed* to work until Brackets API 2.0.0 is released. (It would be considered a bug if an extension *did* break during the 1.x cycle.)
+
+This is an improvement over the min/max version scheme because it gives the Brackets team the ability to consciously choose when we make breaking changes and to ensure that there's enough warning for developers to deal with it.
+
+The drawback to this scheme, though, is that it's very coarse-grained. If we felt the need to make even *one* backwards-incompatible change, semver dictates that we move to API 2.0. The number itself is not meaningful, but the fact that we've just broken all of the extensions *is*.
+
+### Smart Deprecation + Crowdsourcing ###
+
+In the Python standard library, a function deprecated in version 2.5 will start displaying warnings when used. When 2.6 comes out, that function will be gone. This policy gave Python a chance to move forward, while giving people a reasonable amount of time to heed the warnings and build to the new API.
+
+With a central extensions repository, we can take this a step farther. Extension developers would not specify which version of Brackets their extensions are compatible with. The repository would keep track of the information for everyone.
+
+Here's an example to show the idea:
+
+* I publish an extension called WriteMyCodeForMe. Brackets 0.20 is the current version at the time.
+* The repository marks the extension as having no upperbound version of Brackets. (It may default to a minimum version of the current version when the extension is first published.)
+* Brackets 0.22 comes out and starts warning (via developer tools console, possibly via other UI) that WriteMyCodeForMe is using a now-deprecated API. The warning states that the API will go away in 0.24.
+* When a user:
+  * runs Brackets 0.22
+  * that includes WriteMyCodeForMe that was installed from the repository
+  * and that copy of WriteMyCodeForMe has not been marked as max API version 0.23
+  * a message is sent to the repository warning of the impending problem
+* during the next update check, everyone else's copy of WriteMyCodeForMe would get the new max API version message
+* we could even send the author an email message
+* when Brackets 0.24 is released, if WriteMyCodeForMe has *not* been updated, everyone's copies will be disabled
+
+What if no one had WriteMyCodeForMe installed, and then someone installed it on top of Brackets 0.24? There would be a button in the extension manager that a user can click to say "This extension isn't working properly with my version of Brackets."
+
+The combination of these features would mean:
+
+1. users see fewer extensions get disabled because of being "incompatible" (though probably not really incompatible)
+2. developers need to do less busywork keeping their extensions up-to-date
+
+## Dependencies for Extensions ##
+
+Let's say that there's a public/extension API we're replacing. 
 
 The experience that Node users have with npm provides some useful background:
 
