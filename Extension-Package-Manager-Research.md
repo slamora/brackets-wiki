@@ -155,29 +155,31 @@ Top features:
   * or, more usefully, for extensions that support proprietary workflows
 * One, easy-to-get-at UI for installing extensions from our repository and managing them after installation
 * a stable repository so that users don't lose extensions that they've come to rely on
+* Users can find extensions via a quick search (minimally a QuickOpen-style search, if not something more advanced) and one click install
 * Straightforward workflow for developers to publish and update their extensions
   * One idea that njx and dangoor discussed is the idea that the extension manager could list extensions in the "dev" extensions directory
   * publishing those extensions could be a one-click operation (a publish button rather than a remove button)
 * Extensions can provide
-  * description
+  * description (can be Markdown)
   * home page and support links
   * screenshots (optional)
   * version
   * update info (changelog)
   * additional information to display after installation (either a text file or web page) or update
+* Extensions needing update can display all (or, ideally part) of the changelog so that users know what they're getting
 * Restartless extensions provide the best workflow for installation, update and removal. Updates are especially smooth when they can be done without interrupting the user.
 * The extension manager itself should provide a link to get help for an extension that the user has installed and is having trouble with.
 * Update checks should be automatic
+* Crowdsourced control for extensions that are malicious (flag them) or no longer compatible (probably want some kind of authentication for this to avoid abuse)
 
 Next features:
 
-* Crowdsourced control for extensions that are malicious (flag them) or no longer compatible
 * Search, ratings, reviews, categories, tags and popularity all help users find new and useful extensions
 * Ratings and reviews should require the user to authenticate, which reduces gaming of the system
-* A nice-to-have feature would be for an authenticated user's preferences and installed extensions to sync between Brackets installations (possibly even on the web)
 * Users will be more likely to rate and review extensions if they can do so from the extension manager.
 * When Brackets has a command line, a Sublime Package Control-like interface for managing extensions would be a great *addition* to a Firefox Add-on Manager-like UI, but does not seem like a good substitute.
 * Collections of extensions can be handy, especially if we're shooting for an extension ecosystem that provides lots of little features that people can pick and choose from. If one click can install a dozen useful features that work well together, that's a win. [The Janus Vim Distribution](https://github.com/carlhuda/janus) is an example of a combination plugins/configuration that helps people get going with a more productive vim setup.
+* A nice-to-have feature would be for an authenticated user's preferences and installed extensions to sync between Brackets installations (possibly even on the web)
 
 Also interesting:
 
