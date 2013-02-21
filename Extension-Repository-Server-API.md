@@ -2,6 +2,8 @@ Proposal for the server API to support [the workflows](https://github.com/adobe/
 
 The overall idea is a typical REST+JSON approach.
 
+# Unauthenticated API #
+
 ## GET list ##
 
 `list` is called once per day (or when the user forces a refresh) by Brackets. It provides a list of extensions with all of the data needed to provide:
@@ -79,3 +81,7 @@ Retrieves detailed info about the extension.
     ]
 }
 ```
+
+# Authenticated API #
+
+Access to the APIs in this section require the user to be logged in. Users will be able to use existing logins rather than learning a new password (GitHub, Twitter, Facebook, Google). (Note: [Passport](http://passportjs.org/guide/) may be one implementation strategy.)
