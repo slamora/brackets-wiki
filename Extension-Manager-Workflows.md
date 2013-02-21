@@ -108,13 +108,18 @@ on the rating widget next to that one to give it a 5. Brackets prompts him to
 login using OpenID in order to rate it. He does so, and chooses to let Brackets
 remember his credentials.
 
-> (kd) I'm partial to BrowserID, but I also recognize that it's easiest for
-> people to log in with the accounts they already use, and I think we should
-> allow GitHub, Google, Facebook, Twitter logins.
-
 > We probably need some sort of login for ratings to avoid abuse. I'm assuming
 > OpenID makes the most sense, but Facebook, Twitter, G+, etc. logins might be
 > more likely to be convenient.
+
+> (kd) This is going to require a little thought about the authentication flow,
+> since we're not in the browser. If we open up an iframe to Twitter within Brackets,
+> for example, the user would have to actually authenticate. I wonder if it's possible
+> to open the user's browser, have them approve the oauth request there, and then
+> return them to Brackets where they're logged in.
+> After writing that, it seems a bit worse to do it that way than to have them type
+> in their Twitter username/password in a Brackets-controlled window.
+
 >
 > Also, I'm not sure how credential remembering would work&mdash;would we need to
 > have it time out after awhile?
