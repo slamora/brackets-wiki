@@ -72,6 +72,14 @@ The combination of these features would mean:
 1. users see fewer extensions get disabled because of being "incompatible" (though probably not really incompatible)
 2. developers need to do less busywork keeping their extensions up-to-date
 
+> (nj) I like this "smart deprecation + crowdsourcing" idea. One further thought on top of that: if an
+> extension had a good unit test suite, we could actually just run the unit tests and see if any deprecated
+> APIs were hit. So perhaps each time we make a release, we could automatically run the unit tests for
+> all the extensions in the repository that have them, which would automatically trigger the version
+> incompatibility process (flagging it in the repo, emailing the developer, etc.) even before any user
+> ran it. That would be even more incentive for devs to have good unit tests :), and in those cases
+> it would make it much less likely that you'd hit the scenario where the first time we'd detect a
+> problem is when a user hits it.
 
 ## Dependencies for Extensions ##
 
@@ -115,11 +123,3 @@ If we made some *huge* breaking change to how extensions work in Brackets, we'd 
 Extensions that offer capabilities for other extensions do not have this ability. If the TypeScript extension needed to make a big change, it should still be able to do so. The author could register a "TypeScript2" extension, but that wouldn't be so good because then users could have both "TypeScript" and "TypeScript2" installed and the behavior may not be desirable.
 
 As a solution to this, my suggestion is that the Brackets API and extensions like the hypothetical TypeScript extension would have an "API version", which would be a whole number for simplicity's sake. This will almost always just be "1" (and can, in fact, default to that). When an extension makes a change to its API that is too large for the deprecation mechanism to work well, the "API version" is incremented and any extensions that used the old API version will no longer be compatible.
-
-> (nj) I like this "smart deprecation + crowdsourcing" idea. One further thought on top of that: if an
-> extension had a good unit test suite, we could actually just run the unit tests and see if any deprecated
-> APIs were hit. So perhaps each time we make a release, we could automatically run the unit tests for
-> all the extensions in the repository that have them, which would automatically trigger the version
-> incompatibility process (flagging it in the repo, emailing the developer, etc.) even before any user
-> ran it. That would be even more incentive for devs to have good unit tests :)
-
