@@ -81,6 +81,15 @@ The combination of these features would mean:
 > it would make it much less likely that you'd hit the scenario where the first time we'd detect a
 > problem is when a user hits it.
 
+> (nj) Are there some kinds of API changes that would be difficult to support in this scheme? For example,
+> if we need to change a method signature rather than getting rid of the method outright, would we need
+> to essentially create a new method ("myMethodName2()")? Or, if a method signature doesn't technically
+> change--because, say, its first argument is still an object--but the expectations for the fields in that
+> object change, would we have to create a new method and deprecate the old one? I could imagine that
+> becoming cumbersome over time. In general, it might be good to game out a few different API change 
+> scenarios to think about how they would shake out (which might include things like object structure 
+> changes in addition to method or module function changes).
+
 ## Dependencies for Extensions ##
 
 Next, we get into the idea of how extensions can depend on other extensions. The main purpose in allowing an extension to say that it depends on another is:
