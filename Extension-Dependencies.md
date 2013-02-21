@@ -74,7 +74,20 @@ The combination of these features would mean:
 
 ## Dependencies for Extensions ##
 
-Let's say that there's a public/extension API we're replacing. 
+Next, we get into the idea of how extensions can depend on other extensions. The main purpose in allowing an extension to say that it depends on another is:
+
+1. that extension plugs in to features provided by the one it depends on
+2. if the user wants to install that extension, they automatically get the depended-on extension as well, to ensure that their newly installed extension works properly
+
+Another use case that *could* be mentioned is an extension that relies on another extension to merely act as a *library*, providing useful functions and data structures. That does not seem quite a Brackets-specific a problem. In fact, that is a problem that is well-handled by npm, which tries to combine the best aspects of static and dynamic linking. My focus here is not on extension dependencies for purposes of code sharing, but rather for the purposes of *extending Brackets in ways not directly supported by Brackets core*.
+
+In the [list of extensions today](https://github.com/adobe/brackets/wiki/Brackets-Extensions), we don't actually see a need for this. This is doubtless in part because Brackets extensions currently don't have a way to share code or make their objects and events available to one another. When we do our extension API research, we will doubtless improve the ways in which extensions can share and increase the likelihood that extensions will rely upon each other. A need for extensions to provide facilities for other extensions would be more obvious today if Brackets itself was built on a foundation of extensions.
+
+Let's start with a hypothetical scenario. As part of the [JavaScript code hinting work](https://trello.com/card/2-code-hinting-javascript/4f90a6d98f77505d7940ce88/775), we're adding a JS parser (esprima) to the package. esprima parses on a worker thread, to ensure that the UI stays responsive. Even so, you'd ideally only do the parsing *once* and provide the data to as many consumers as needed. Perhaps one extension would like to use the AST that's built. Another may want to subscribe to events as the AST changes. (These are hypothetical, please ignore whether we can actually get these things from our current parser setup.)
+
+These JS parsing features are going to be built-in to Brackets, so they're still not a good example of an extension requiring another. Imagine, though, an extension that wants similar access to TypeScript parsing from the [TypeScript extension](https://github.com/tomsdev/brackets-typescript-code-intel).
+
+
 
 The experience that Node users have with npm provides some useful background:
 
