@@ -1,4 +1,4 @@
-**NOTE: This page is now obsolete, as CodeMirror v3 has landed in Brackets master. See [Notes on CodeMirror] for more info on how we're managing our CodeMirror fork going forward.**
+### NOTE: This page is now obsolete, as CodeMirror v3 has landed in Brackets master. See [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror) for more info on how we're managing our CodeMirror fork going forward. ###
 
 We've started the official integration of CodeMirror v3 into Brackets. You can get this by pulling the [`cmv3`](https://github.com/adobe/brackets/tree/cmv3) branch from Brackets, then doing `git submodule update`, which will switch the CodeMirror2 submodule to use the [`upstream-master`](https://github.com/adobe/CodeMirror2/tree/upstream-master) branch (now that v3 has been officially merged into CodeMirror's master).
 
