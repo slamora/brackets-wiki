@@ -3,6 +3,11 @@ the Brackets Extension Manager to support.
 
 > (kd) General question: do we want to add social sharing (so that users can share an interesting extension on Twitter, Facebook, G+)?
 
+> (nj) Seems like a second-tier feature. I'd like to keep this workflow to (mostly) first-tier
+> features for now--I don't feel like adding sharing will significantly affect the overall UI design
+> (it would probably just be another button associated with the extension, perhaps in the "More..."
+> section).
+
 ## Discovery
 
 John, a Brackets user, is starting to experiment with CoffeeScript. He opens a CoffeeScript
@@ -25,33 +30,38 @@ At the top of the Extension Manager are two tabs, "Find" and "Manage", with the
 "Find" tab preselected, and a button to the right labelled "Create". Within the 
 Find tab is a search field, and below the field is a list of popular extensions, 
 sorted by rating. He briefly browses this and notes that there's a cool-sounding 
-extension for GitHub integration that's popular, but he's focused on CoffeeScript 
-for now. 
+extension for GitHub integration that's popular; he clicks the Install button on
+it, and it starts installing in the background.
 
-> (kd) I wonder if there was an Install button right on that listing, would this user have
-> just clicked Install and then continued on looking for CoffeeScript extensions?
+> Note that this implies that extension download and installation is asynchronous and
+> non-modal as well as restartless. 
 
-The search field already has focus, so he starts typing "coffee". As he types, the 
-list of popular extensions in the main part of the window is filtered to show a list 
-of extensions that match his typed search, also sorted by rating.
+While it's downloading and installing, he continues his search for CoffeeScript 
+extensions. He types "coffee" into the search field. As he types, the list of 
+popular extensions in the main part of the window is filtered to show a list 
+of all extensions that match his typed search, also sorted by rating.
 
 > (kd) is it limited to just the popular extensions, or will it put the popular/highly rated on top
 > and seek out all of the coffee extensions?
 
+> (nj) It will show all matching extensions, but just sort them by popularity. We
+> could add a way to change the sort order (e.g. by Quick Open match heuristic or
+> alphabetically).
+
 He sees that there are three extensions that sound interesting at the top of the list: 
 Auto-Compile CoffeeScript, CoffeeScript Quick Open/Quick Edit, and CoffeeScript
-Formatting. Each extension has a title, the first few lines of a description (with
-a "More..." link), and an "Install" button on the right.
+Formatting. Each extension has a screenshot thumbnail, a title, the first few lines 
+of a description (with a "More..." link), and an "Install" button on the right.
 
 > (kd) if there are screenshots, are any displayed in thumbnail form in this view?
 
-He clicks on the "More..." link on the first extension to see more info. It shows
-more of the description text, which explains the basic usage of the extension, along
-with a link to the extension developer's website for more info.
+> (nj) That makes sense, but I actually wonder how meaningful a small thumbnail of a
+> screenshot would be--they might all kind of look the same. Still, I'll put it in
+> here and we can see how it works out.
 
-> (kd) screenshots here as well. or are you thinking we punt on screenshots for round 1?
-> screenshots are great when there is something visual to show, but that won't
-> always be the case with editor extensions.
+He clicks on the "More..." link on the first extension to see more info. It shows
+the full screenshot and more of the description text, which explains the basic usage 
+of the extension, along with a link to the extension developer's website for more info.
 
 ## Installation
 
@@ -68,8 +78,13 @@ two buttons, "Disable" and "Uninstall".
 > (kd) has there been a change in which tab he's on to see disable/uninstall?
 > Those would be in the Manage tab, right?
 
-> Note that this implies that extension download and installation is asynchronous and
-> non-modal as well as restartless. 
+> (nj) Good point. I guess I was assuming that the view of a given extension would be
+> the same no matter which tab you're in (and I don't think it would make sense to
+> *eliminate* installed extensions from the "Find" view). But then that suggests that the 
+> "Manage" tab isn't really necessary, in a way&mdash;the list of installed extensions 
+> could just be another filter on the list of all extensions. Would it make sense to just
+> have a single view with the search box, and then an "All" vs. "Installed" radiobutton?
+> Or is it clearer to have separate tabs?
 
 Also, next to the "CoffeeScript Formatting" extension, there is a "Settings" button.
 He clicks on this button, and a dialog expands in-place with various formatting
@@ -87,21 +102,12 @@ CoffeeScript Formatting extension doesn't seem to work properly&mdash;when he tr
 use it, his code gets mangled. He opens the Extension Manager and clicks on the
 "Installed" tab, which shows all of his installed extensions. He clicks "Disable"
 next to the CoffeeScript Formatting extension. He also sees that there's a "Report
-a Bug" link, along with a rating widget. He wants to give the extension developer
-the benefit of the doubt, so rather than rating it, he clicks "Report a Bug", and
-is taken to the developer's GitHub depot.
+a Problem" dropdown button, along with a rating widget. 
 
-> We talked about having a "Report Abuse" button, or a "Not Compatible With This
-> Version" button. However, I'm not sure how the user would be able to tell whether
-> a problem is due to a version compatibility issue, or is just a general bug.
-> Kevin, how did Firefox handle this?
-
-> (kd) "Not Compatible With This Version" implies that an extension *did* work, but doesn't
-> work any more. Perhaps we only show this when the user is running a Brackets version
-> that is newer than the one for which the extension was last updated?
-> Maybe another way to present these three items is a "Report A Problem" button that
-> gives choices like: "I found a bug...", "This extension no longer works with Brackets
-> like it used to...", "Report abuse"
+He wants to give the extension developer the benefit of the doubt, so rather than 
+rating it, he clicks "Report a Problem". A dropdown menu appears with three choices:
+"Report a Bug", "Report Version Incompatibility", and "Report Abuse". He chooses
+"Report a Bug", and is taken to the developer's GitHub issue tracker.
 
 He's been really impressed with the Quick Open/Quick Edit extension, so he clicks
 on the rating widget next to that one to give it a 5. Brackets prompts him to
@@ -120,25 +126,33 @@ remember his credentials.
 > After writing that, it seems a bit worse to do it that way than to have them type
 > in their Twitter username/password in a Brackets-controlled window.
 
->
+> (nj) Yeah, I feel like I've seen apps that pop up their own Facebook, Twitter, etc.
+> windows, authenticating within that app window, and then caching the credentials
+> in that app (though I don't even exactly know how the credential stuff works--I'm
+> assuming there's a token that the app hangs onto that expires after some time).
+> Since we *are* a browser (but not in the user's browser), I'm assuming that we
+> could just do this the same way a normal web app does.
+
 > Also, I'm not sure how credential remembering would work&mdash;would we need to
 > have it time out after awhile?
 
 > (kd) seems like a good question for Andrew. For the purposes of rating/reviewing things,
 > I'm not so worried. For publishing extensions, it's more of a concern.
 
+> (nj) If things work the way I mentioned above, then presumably we could just hold
+> onto the auth token until it expires (which is presumably controlled by whichever
+> sign-in service provided the token).
+
 ## Update
 
 The next day, John sits back down at his computer and brings Brackets to the
 front. He sees that there's a little "1" badge on the Extension Manager icon.
 He clicks on the Extension Manager, and a notification at the top informs him
-that an update is available to the CoffeeScript Formatting extension&mdash;maybe
-the developer already fixed his bug! He clicks on the "Update" link in the
-notification, and the update is downloaded and installed. Brackets prompts him
-if he wants to re-enable the extension now that it's been updated, and he
-clicks Yes.
-
-> (kd) how about seeing what's changed before hitting update? I like that feature of app stores.
+that an update is available to the CoffeeScript Formatting extension. The
+update descriptions describes the bugs that were fixed in the update--one of
+which was his bug! He clicks on the "Update" link in the notification, and the 
+update is downloaded and installed. Brackets prompts him if he wants to re-enable 
+the extension now that it's been updated, and he clicks Yes.
 
 Closing the Extension Manager, he tries the formatting command again, and
 lo and behold, it works! He goes back to the extension developer's bug
