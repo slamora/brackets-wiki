@@ -72,6 +72,7 @@ The combination of these features would mean:
 1. users see fewer extensions get disabled because of being "incompatible" (though probably not really incompatible)
 2. developers need to do less busywork keeping their extensions up-to-date
 
+
 ## Dependencies for Extensions ##
 
 Next, we get into the idea of how extensions can depend on other extensions. The main purpose in allowing an extension to say that it depends on another is:
@@ -79,39 +80,38 @@ Next, we get into the idea of how extensions can depend on other extensions. The
 1. that extension plugs in to features provided by the one it depends on
 2. if the user wants to install that extension, they automatically get the depended-on extension as well, to ensure that their newly installed extension works properly
 
-Another use case that *could* be mentioned is an extension that relies on another extension to merely act as a *library*, providing useful functions and data structures. That does not seem quite a Brackets-specific a problem. In fact, that is a problem that is well-handled by npm, which tries to combine the best aspects of static and dynamic linking. My focus here is not on extension dependencies for purposes of code sharing, but rather for the purposes of *extending Brackets in ways not directly supported by Brackets core*.
+Another use case that *could* be mentioned is an extension that relies on another extension to merely act as a *library*, providing useful functions and data structures. That does not seem quite a Brackets-specific a problem. In fact, that is a problem that is well-handled by npm, which tries to combine the best aspects of static and dynamic linking. My focus here is not on extension dependencies for purposes of code sharing, but rather for the purposes of *extending Brackets in ways not directly supported by Brackets core*. See "What npm Does" below.
 
 In the [list of extensions today](https://github.com/adobe/brackets/wiki/Brackets-Extensions), we don't actually see a need for this. This is doubtless in part because Brackets extensions currently don't have a way to share code or make their objects and events available to one another. When we do our extension API research, we will doubtless improve the ways in which extensions can share and increase the likelihood that extensions will rely upon each other. A need for extensions to provide facilities for other extensions would be more obvious today if Brackets itself was built on a foundation of extensions.
 
 Let's start with a hypothetical scenario. As part of the [JavaScript code hinting work](https://trello.com/card/2-code-hinting-javascript/4f90a6d98f77505d7940ce88/775), we're adding a JS parser (esprima) to the package. esprima parses on a worker thread, to ensure that the UI stays responsive. Even so, you'd ideally only do the parsing *once* and provide the data to as many consumers as needed. Perhaps one extension would like to use the AST that's built. Another may want to subscribe to events as the AST changes. (These are hypothetical, please ignore whether we can actually get these things from our current parser setup.)
 
-These JS parsing features are going to be built-in to Brackets, so they're still not a good example of an extension requiring another. Imagine, though, an extension that wants similar access to TypeScript parsing from the [TypeScript extension](https://github.com/tomsdev/brackets-typescript-code-intel).
+These JS parsing features are going to be built-in to Brackets, so they're still not a good example of an extension requiring another. Imagine, though, an extension that wants similar access to TypeScript parsing from the [TypeScript extension](https://github.com/tomsdev/brackets-typescript-code-intel). Someone else comes along and they want to build a TypeScript beautification extension that takes advantage of an AST already built by the TypeScript extension.
 
+### What npm Does ###
 
+npm uses semantic versioning and fancy module loader tricks to make code happy when it brings in library code. Let's say an application uses libraries to connect to Twitter and Google. The Twitter package depends on some "oauth" library version 1.x and the Google package relies on version 2.x of the same library.
 
-The experience that Node users have with npm provides some useful background:
+When the Twitter library says `require("oauth")`, it gets version 1.2.3. The Google library says `require("oauth")` and it gets version 2.1.2. Both libraries are happy.
 
-* [npm now supports "peer dependencies" for packages that are needed but not required in](http://blog.nodejs.org/2013/02/07/undefined/)
-* There was a useful discussion about how [npm avoids dependency hell](https://groups.google.com/forum/?fromgroups=#!topic/nodejs/0iQDxCIznO0) in October 2011
+npm also has a feature called ["peer dependencies"](http://blog.nodejs.org/2013/02/07/undefined/) that is specifically for plugins.
 
-## Kevin's notes ##
+### But, That's Not The Problem We Have ###
 
-* Two separate considerations
-  * Brackets version
-  * Dependency on other extensions that need to be downloaded as 
-* npm supports version conflicts
-  * different libraries can get different versions of the same 
-* semver helps but is not granular enough…
-  * we may change some APIs that would break some extensions, but not likely all or possibly even 
-* What about Deprecation Warnings that not only print to the console but actually register the coming incompatibility with the repository?
-* Firefox has the Add-on Compatibility Reporter
-  * users can report that an extension is no longer compatible
-  * the idea is that beta users would use this
-  * the repo could track which version the reports started coming in for
-* Are shared libraries worth it? (see Go for example)
-  * what about shared capabilities?
-  * rather than multiple extensions sharing an esprima, maybe it's more useful to share the AST that esprima produces? (one background thread parsing JS, rather than multiple!)
-  * npm goes to great lengths to avoid DLL Hell. Maybe we don't want to reinvent that wheel? (Either use npm or statically include dependencies?)
-* This gets into extension APIs but rather than sharing capabilities via modules, you share via named extension points and pub/sub
-  * Rather than a fully dynamic pub/sub where subscribers may subscribe to a message that never gets published, what if we had warnings for messages that never get published?
-* Will we be keeping every version of every extension around?
+In my TypeScript example, the problem we're solving is that we're not trying to access code in a library. We're trying to access a *service*. We want a current AST, or a stream of events.
+
+Another way to think of our problem: some Brackets extensions will add UI elements. If we handled these like npm does, the UI bits would get hooked up *twice*, once for each version.
+
+What if extension authors can use exactly the same mechanism that's suggested for Brackets up above? Smart deprecation + crowdsourcing.
+
+The TypeScript extension will provide its services (through means that will be discussed during the extension API research). If it changes how these work, it will deprecate the old ways, marking the version planned to remove the deprecated APIs. Extensions that specify (in the metadata) that they rely on the TypeScript extension will be marked incompatible following the deprecation scheme. Users will also be able to use the same button to report that "an extension has become incompatible" to let people know that the extension no longer works as it used to (whether that's because of Brackets changing or TypeScript changing).
+
+# Smart Deprecation + Crowdsourcing + API Versions #
+
+In conclusion, my suggestion is that we use "smart deprecation + crowdsourcing" (if you haven't been reading the whole way through, see the section with that title above for more detail), with one further addition.
+
+If we made some *huge* breaking change to how extensions work in Brackets, we'd be able to change the extension loader code in one way or another to recognize new vs. old extensions (something I did recently with my prototype that could load 3 different styles of extensions all in the same Brackets instance).
+
+Extensions that offer capabilities for other extensions do not have this ability. If the TypeScript extension needed to make a big change, it should still be able to do so. The author could register a "TypeScript2" extension, but that wouldn't be so good because then users could have both "TypeScript" and "TypeScript2" installed and the behavior may not be desirable.
+
+As a solution to this, my suggestion is that the Brackets API and extensions like the hypothetical TypeScript extension would have an "API version", which would be a whole number for simplicity's sake. This will almost always just be "1" (and can, in fact, default to that). When an extension makes a change to its API that is too large for the deprecation mechanism to work well, the "API version" is incremented and any extensions that used the old API version will no longer be compatible.
