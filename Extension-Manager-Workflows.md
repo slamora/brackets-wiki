@@ -26,6 +26,8 @@ Extension Manager. He clicks on the icon, and a modal Extension Manager dialog a
 > don't have). On the Mac, you could also argue for the application menu, but that
 > doesn't exist on Windows.
 
+> (re) The Extension Manager dialog doesn't need to be *modal*, correct? Is that just for simplicity of initial implementation?
+
 At the top of the Extension Manager are two tabs, "Find" and "Manage", with the
 "Find" tab preselected, and a button to the right labelled "Create". Within the 
 Find tab is a search field, and below the field is a list of popular extensions, 
