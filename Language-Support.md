@@ -11,7 +11,7 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 * A language can have a list of file extensions
 * A language can have a prefix for line comments (i.e. "//")
 * A language can have a prefix and a suffix for block comments (i.e. "/*" and "*/")
-* A language can refer to one main CodeMirror mode and multiple mode aliases
+* A language can refer to a CodeMirror mode
 
 ## Places contributing to current language support
 Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
@@ -131,7 +131,7 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 ### Module utils/TokenUtils
 
-* Method `getModeAt` **has a hardcoded special case for XML**
+* Method `getModeAt` **has a hardcoded special case for XML**. Once the other places are no longer based on this mode, but on the language, this can be removed to just report "xml", which should be mapped to HTML for the language HTML.
 
 ## Notes
 
