@@ -4,3 +4,4 @@ This page collects the output of the [Extension Management Workflow and Metadata
 
 * [Package Manager research](https://github.com/adobe/brackets/wiki/Extension-Package-Manager-Research): a look into what other package managers do and the good ideas we can reuse.
 * [Dependency Management research](https://github.com/adobe/brackets/wiki/Extension-Dependencies)
+* [User workflow proposals](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows)
