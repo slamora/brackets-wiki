@@ -1,6 +1,8 @@
 This document proposes a set of user and extension developer workflow scenarios that we want 
 the Brackets Extension Manager to support.
 
+> (kd) General question: do we want to add social sharing (so that users can share an interesting extension on Twitter, Facebook, G+)?
+
 ## Discovery
 
 John, a Brackets user, is starting to experiment with CoffeeScript. He opens a CoffeeScript
