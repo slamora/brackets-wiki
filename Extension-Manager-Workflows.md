@@ -66,7 +66,7 @@ menus to see what other functionality has been added by his new extensions.
 ## Feedback
 
 As he starts using the extensions, he notices that they mostly work well, but the
-CoffeeScript Formatting extension doesn't seem to work properly--when he tries to
+CoffeeScript Formatting extension doesn't seem to work properly&mdash;when he tries to
 use it, his code gets mangled. He opens the Extension Manager and clicks on the
 "Installed" tab, which shows all of his installed extensions. He clicks "Disable"
 next to the CoffeeScript Formatting extension. He also sees that there's a "Report
@@ -88,7 +88,7 @@ remember his credentials.
 > OpenID makes the most sense, but Facebook, Twitter, G+, etc. logins might be
 > more likely to be convenient.
 >
-> Also, I'm not sure how credential remembering would work--would we need to
+> Also, I'm not sure how credential remembering would work&mdash;would we need to
 > have it time out after awhile?
 
 ## Update
@@ -96,7 +96,7 @@ remember his credentials.
 The next day, John sits back down at his computer and brings Brackets to the
 front. He sees that there's a little "1" badge on the Extension Manager icon.
 He clicks on the Extension Manager, and a notification at the top informs him
-that an update is available to the CoffeeScript Formatting extension--maybe
+that an update is available to the CoffeeScript Formatting extension&mdash;maybe
 the developer already fixed his bug! He clicks on the "Update" link in the
 notification, and the update is downloaded and installed. Brackets prompts him
 if he wants to re-enable the extension now that it's been updated, and he
@@ -146,5 +146,5 @@ the "official" version he just uploaded to test it out. It seems to be working
 fine, so he disables the official version and re-enables his development version
 so he can keep hacking on it.
 
-> This is a little funny--not sure if this is the right way to handle this
+> This is a little funny&mdash;not sure if this is the right way to handle this
 > scenario or if there's something smarter we want to do here.
