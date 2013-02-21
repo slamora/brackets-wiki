@@ -26,18 +26,30 @@ sorted by rating. He briefly browses this and notes that there's a cool-sounding
 extension for GitHub integration that's popular, but he's focused on CoffeeScript 
 for now. 
 
+> (kd) I wonder if there was an Install button right on that listing, would this user have
+> just clicked Install and then continued on looking for CoffeeScript extensions?
+
 The search field already has focus, so he starts typing "coffee". As he types, the 
 list of popular extensions in the main part of the window is filtered to show a list 
 of extensions that match his typed search, also sorted by rating.
+
+> (kd) is it limited to just the popular extensions, or will it put the popular/highly rated on top
+> and seek out all of the coffee extensions?
 
 He sees that there are three extensions that sound interesting at the top of the list: 
 Auto-Compile CoffeeScript, CoffeeScript Quick Open/Quick Edit, and CoffeeScript
 Formatting. Each extension has a title, the first few lines of a description (with
 a "More..." link), and an "Install" button on the right.
 
+> (kd) if there are screenshots, are any displayed in thumbnail form in this view?
+
 He clicks on the "More..." link on the first extension to see more info. It shows
 more of the description text, which explains the basic usage of the extension, along
 with a link to the extension developer's website for more info.
+
+> (kd) screenshots here as well. or are you thinking we punt on screenshots for round 1?
+> screenshots are great when there is something visual to show, but that won't
+> always be the case with editor extensions.
 
 ## Installation
 
@@ -50,6 +62,9 @@ progress for all three extensions, starting with "Installing Auto-Compile Coffee
 (1 of 3)...". As they complete, a checkmark appears next to each extension indicating 
 that it's been installed, and the "Install" button on each extension is replaced by 
 two buttons, "Disable" and "Uninstall".
+
+> (kd) has there been a change in which tab he's on to see disable/uninstall?
+> Those would be in the Manage tab, right?
 
 > Note that this implies that extension download and installation is asynchronous and
 > non-modal as well as restartless. 
@@ -79,10 +94,21 @@ is taken to the developer's GitHub depot.
 > a problem is due to a version compatibility issue, or is just a general bug.
 > Kevin, how did Firefox handle this?
 
+> (kd) "Not Compatible With This Version" implies that an extension *did* work, but doesn't
+> work any more. Perhaps we only show this when the user is running a Brackets version
+> that is newer than the one for which the extension was last updated?
+> Maybe another way to present these three items is a "Report A Problem" button that
+> gives choices like: "I found a bug...", "This extension no longer works with Brackets
+> like it used to...", "Report abuse"
+
 He's been really impressed with the Quick Open/Quick Edit extension, so he clicks
 on the rating widget next to that one to give it a 5. Brackets prompts him to
 login using OpenID in order to rate it. He does so, and chooses to let Brackets
 remember his credentials.
+
+> (kd) I'm partial to BrowserID, but I also recognize that it's easiest for
+> people to log in with the accounts they already use, and I think we should
+> allow GitHub, Google, Facebook, Twitter logins.
 
 > We probably need some sort of login for ratings to avoid abuse. I'm assuming
 > OpenID makes the most sense, but Facebook, Twitter, G+, etc. logins might be
@@ -90,6 +116,9 @@ remember his credentials.
 >
 > Also, I'm not sure how credential remembering would work&mdash;would we need to
 > have it time out after awhile?
+
+> (kd) seems like a good question for Andrew. For the purposes of rating/reviewing things,
+> I'm not so worried. For publishing extensions, it's more of a concern.
 
 ## Update
 
@@ -101,6 +130,8 @@ the developer already fixed his bug! He clicks on the "Update" link in the
 notification, and the update is downloaded and installed. Brackets prompts him
 if he wants to re-enable the extension now that it's been updated, and he
 clicks Yes.
+
+> (kd) how about seeing what's changed before hitting update? I like that feature of app stores.
 
 Closing the Extension Manager, he tries the formatting command again, and
 lo and behold, it works! He goes back to the extension developer's bug
@@ -148,3 +179,7 @@ so he can keep hacking on it.
 
 > This is a little funny&mdash;not sure if this is the right way to handle this
 > scenario or if there's something smarter we want to do here.
+
+> (kd) I guess we could handle this case specifically. In addition to the "Upload"
+> button there could be a "Try Published Version" button that acts as a toggle
+> between the released version and the in-development version.
