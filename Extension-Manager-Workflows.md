@@ -175,12 +175,8 @@ he sees in the file tree that a main.js, a package.json, a README, and other
 boilerplate files have already been created for his extension. 
 
 He starts writing and debugging the extension, and loves how easy it is to 
-get it working.
-
-As he's working on the extension, he realizes that he wants to check it into
-GitHub. He remembers the GitHub extension he saw in the Extension Manager, and
-goes and installs it, so he can create the repo and check in the extension
-from Brackets.
+get it working. As he's working on the extension, he checks it directly into 
+GitHub from Brackets using the extension he had installed earlier.
 
 ## Uploading
 
