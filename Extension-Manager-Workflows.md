@@ -38,6 +38,8 @@ it, and it starts installing in the background.
 > Note that this implies that extension download and installation is asynchronous and
 > non-modal as well as restartless. 
 
+> (re) It might also be helpful to be able to sort/filter extensions by number of downloads, recently uploaded/updated, or Author
+
 While it's downloading and installing, he continues his search for CoffeeScript 
 extensions. He types "coffee" into the search field. As he types, the list of 
 popular extensions in the main part of the window is filtered to show a list 
