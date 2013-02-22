@@ -180,6 +180,7 @@ Next features:
 * When Brackets has a command line, a Sublime Package Control-like interface for managing extensions would be a great *addition* to a Firefox Add-on Manager-like UI, but does not seem like a good substitute.
 * Collections of extensions can be handy, especially if we're shooting for an extension ecosystem that provides lots of little features that people can pick and choose from. If one click can install a dozen useful features that work well together, that's a win. [The Janus Vim Distribution](https://github.com/carlhuda/janus) is an example of a combination plugins/configuration that helps people get going with a more productive vim setup.
 * A nice-to-have feature would be for an authenticated user's preferences and installed extensions to sync between Brackets installations (possibly even on the web)
+* Share extension on Twitter, FB, G+, etc.
 
 Also interesting:
 
