@@ -69,6 +69,10 @@ He clicks on the "More..." link on the first extension to see more info. It show
 the full screenshot and more of the description text, which explains the basic usage 
 of the extension, along with a link to the extension developer's website for more info.
 
+> (js) Have we considered out-of-app workflows for discovery? Tying into Kevin's thoughts
+> on social sharing, it seems useful to have an in-browser discovery experience that
+> might use a URL scheme to launch Brackets or even provide a manual download link.
+
 ## Installation
 
 He doesn't feel like he needs to read any more for the other extensions, so he clicks 
