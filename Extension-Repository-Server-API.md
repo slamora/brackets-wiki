@@ -84,4 +84,24 @@ Retrieves detailed info about the extension.
 
 # Authenticated API #
 
-Access to the APIs in this section require the user to be logged in. Users will be able to use existing logins rather than learning a new password (GitHub, Twitter, Facebook, Google). (Note: [Passport](http://passportjs.org/guide/) may be one implementation strategy.)
+**All access to authenticated APIs will be via HTTPS.**
+
+Access to the APIs in this section require the user to be logged in.
+
+Ideally, users will be able to use existing logins rather than learning a new password (GitHub, Twitter, Facebook, Google), but starting with a username/password is reasonable. Note: [Passport](http://passportjs.org/guide/) may be one implementation strategy.
+
+As far as authentication goes, we can start as simple as basic auth and move onward to oauth ourselves (user authorizes the copy of Brackets and a token is sent that is kept by the client). oauth "scopes" would provide a standardized mechanism for us to authorize clients to rate/review extensions without the ability to upload extensions. oauth is not the only way to do this, but it is a standard.
+
+## POST extension/{{name}}/review ##
+
+Logs a review for the given extension. If the user has already posted a review for this extension, it is replaced with the new one. The POST body is a JSON object with the review information. Example:
+
+```javascript
+{
+    "rating": 4,
+    "title": "Fish!",
+    "review": "It ate my fish. I didn't like that fish anyway, though."
+}
+```
+
+`rating` is a required integer from 1 to 5. `title` is an optional review title and `review` is the optional review text. A review can include only a `rating` and `title`, but if `review` is present, `title` must be present, too.
