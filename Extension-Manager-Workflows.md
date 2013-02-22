@@ -1,12 +1,14 @@
 This document proposes a set of user and extension developer workflow scenarios that we want 
 the Brackets Extension Manager to support.
 
+> **RESOLVED**:
 > (kd) General question: do we want to add social sharing (so that users can share an interesting extension on Twitter, Facebook, G+)?
 
 > (nj) Seems like a second-tier feature. I'd like to keep this workflow to (mostly) first-tier
 > features for now--I don't feel like adding sharing will significantly affect the overall UI design
 > (it would probably just be another button associated with the extension, perhaps in the "More..."
-> section).
+> section). I've added this to the list of desirable features in 
+> [Extension Package Manager Research](https://github.com/adobe/brackets/wiki/Extension-Package-Manager-Research).
 
 ## Discovery
 
@@ -16,35 +18,46 @@ for it. He wonders if there are Brackets extensions available that add CoffeeScr
 features.
 
 In the toolbar on the right-hand side of the Brackets window, the topmost icon is the
-Extension Manager. He clicks on the icon, and a modal Extension Manager dialog appears.
+Extension Manager. He clicks on the icon, and an Extension Manager panel appears to
+the right.
 
-> Note that I'm deliberately saying that the Extension Manager icon deserves to be
-> the first icon on the toolbar (and I'm assuming the Topcoat layout here, with the
-> vertical toolbar on the right). Of course, we should have an ordinary menu item
-> as well, though it's not obvious where it should go; Chrome puts it in the Window
-> menu, which seems a little odd, while Firefox puts it in the Tools menu (which we
-> don't have). On the Mac, you could also argue for the application menu, but that
-> doesn't exist on Windows.
+> **UNRESOLVED**: Should this be in a panel or a popover? Garth's wireframes suggest
+> a panel. NJ thinks that makes it feel too permanent, and that a popover would be
+> consistent with where we're likely to go with EWF (as in Reflow), which seems
+> similar.
 
-> (re) The Extension Manager dialog doesn't need to be *modal*, correct? Is that just for simplicity of initial implementation?
+> (re) The Extension Manager dialog doesn't need to be *modal*, correct? Is that just 
+> for simplicity of initial implementation?
+
+> (nj) No, I just wasn't thinking about it too hard :) Garth suggests using a side
+> panel; I was thinking of a popover. Shouldn't affect the workflow all that
+> much either way, but we should resolve it before moving forward.
 
 At the top of the Extension Manager are two tabs, "Find" and "Manage", with the
 "Find" tab preselected, and a button to the right labelled "Create". Within the 
 Find tab is a search field, and below the field is a list of popular extensions, 
 sorted by rating. He briefly browses this and notes that there's a cool-sounding 
 extension for GitHub integration that's popular; he clicks the Install button on
-it, and it starts installing in the background.
+it, and it starts installing in the background. 
 
+> **RESOLVED**:
 > Note that this implies that extension download and installation is asynchronous and
 > non-modal as well as restartless. 
 
-> (re) It might also be helpful to be able to sort/filter extensions by number of downloads, recently uploaded/updated, or Author
+> **RESOLVED**:
+> (re) It might also be helpful to be able to sort/filter extensions by number of 
+> downloads, recently uploaded/updated, or Author
+
+> (nj) Agreed, though I don't think those need to be called out in this workflow.
+> I've added this to the list of desirable features in 
+> [Extension Package Manager Research](https://github.com/adobe/brackets/wiki/Extension-Package-Manager-Research).
 
 While it's downloading and installing, he continues his search for CoffeeScript 
 extensions. He types "coffee" into the search field. As he types, the list of 
 popular extensions in the main part of the window is filtered to show a list 
 of all extensions that match his typed search, also sorted by rating.
 
+> **RESOLVED**:
 > (kd) is it limited to just the popular extensions, or will it put the popular/highly rated on top
 > and seek out all of the coffee extensions?
 
@@ -52,26 +65,37 @@ of all extensions that match his typed search, also sorted by rating.
 > could add a way to change the sort order (e.g. by Quick Open match heuristic or
 > alphabetically).
 
-> (pt) Yeah, I agree it might be valuable to be able to sort by criteria like rating or date published (newest)
+> (pt) Yeah, I agree it might be valuable to be able to sort by criteria like rating 
+> or date published (newest)
+
+> (nj) Yup, added that to the "desirable features" list as noted below Randy's comment above.
 
 He sees that there are three extensions that sound interesting at the top of the list: 
 Auto-Compile CoffeeScript, CoffeeScript Quick Open/Quick Edit, and CoffeeScript
 Formatting. Each extension has a screenshot thumbnail, a title, the first few lines 
 of a description (with a "More..." link), and an "Install" button on the right.
 
+> **RESOLVED**:
 > (kd) if there are screenshots, are any displayed in thumbnail form in this view?
 
 > (nj) That makes sense, but I actually wonder how meaningful a small thumbnail of a
-> screenshot would be--they might all kind of look the same. Still, I'll put it in
-> here and we can see how it works out.
+> screenshot would be--they might all kind of look the same. I've added it to the
+> description above--we can see if it works out.
 
 He clicks on the "More..." link on the first extension to see more info. It shows
 the full screenshot and more of the description text, which explains the basic usage 
 of the extension, along with a link to the extension developer's website for more info.
 
+> **RESOLVED**:
 > (js) Have we considered out-of-app workflows for discovery? Tying into Kevin's thoughts
 > on social sharing, it seems useful to have an in-browser discovery experience that
 > might use a URL scheme to launch Brackets or even provide a manual download link.
+
+> (nj) That seems useful but second-tier to me...although if we know we want to do it
+> eventually, that might affect how we write the code for the in-Brackets version
+> (i.e., make sure as much of it as possible is reusable for a browser version). I'll
+> add it to the list of desirable features in
+> [Extension Package Manager Research](https://github.com/adobe/brackets/wiki/Extension-Package-Manager-Research).
 
 ## Installation
 
@@ -85,6 +109,7 @@ progress for all three extensions, starting with "Installing Auto-Compile Coffee
 that it's been installed, and the "Install" button on each extension is replaced by 
 two buttons, "Disable" and "Uninstall".
 
+> **RESOLVED**:
 > (kd) has there been a change in which tab he's on to see disable/uninstall?
 > Those would be in the Manage tab, right?
 
@@ -96,6 +121,9 @@ two buttons, "Disable" and "Uninstall".
 > have a single view with the search box, and then an "All" vs. "Installed" radiobutton?
 > Or is it clearer to have separate tabs?
 
+> (nj) For now, let's keep the tabs--I think it makes things clearer even if you could
+> theoretically treat the "installed" list as just another filter.
+
 Also, next to the "CoffeeScript Formatting" extension, there is a "Settings" button.
 He clicks on this button, and a dialog expands in-place with various formatting
 settings for CoffeeScript code. He tweaks it to fit his style. Finally, he clicks
@@ -105,7 +133,13 @@ Now, back in his CoffeeScript file, he tries hitting Cmd-E on a function call, a
 an inline editor opens on the function definition. Success! He also browses the
 menus to see what other functionality has been added by his new extensions.
 
-> (pt) Not sure if we need to display a license while the user is installing an extension, we should check with legal on that.
+> **RESOLVED**:
+> (pt) Not sure if we need to display a license while the user is installing an 
+> extension, we should check with legal on that.
+
+> (nj) I was assuming we wouldn't need to since app stores, Firefox's add-on
+> manager, etc. don't seem to do that. The developer can add license info to
+> the description.
 
 ## Feedback
 
@@ -126,6 +160,9 @@ on the rating widget next to that one to give it a 5. Brackets prompts him to
 login using OpenID in order to rate it. He does so, and chooses to let Brackets
 remember his credentials.
 
+> **RESOLVED** (in that we probably need login for the workflow, but the actual
+> mechanics need to be figured out):
+> 
 > We probably need some sort of login for ratings to avoid abuse. I'm assuming
 > OpenID makes the most sense, but Facebook, Twitter, G+, etc. logins might be
 > more likely to be convenient.
@@ -151,7 +188,9 @@ remember his credentials.
 > (kd) seems like a good question for Andrew. For the purposes of rating/reviewing things,
 > I'm not so worried. For publishing extensions, it's more of a concern.
 
-> (pt) I share Kevin's concerns around the publish workflow. Beside that, as a user I would find reviews or a kind of a user rating (wrote x extensions with an average rating of z) useful too.
+> (pt) I share Kevin's concerns around the publish workflow. Beside that, as a user 
+> I would find reviews or a kind of a user rating (wrote x extensions with an average 
+> rating of z) useful too.
 
 > (nj) If things work the way I mentioned above, then presumably we could just hold
 > onto the auth token until it expires (which is presumably controlled by whichever
@@ -188,11 +227,17 @@ creates the extension project in his "dev" folder and switches to it, and
 he sees in the file tree that a main.js, a package.json, a README, and other 
 boilerplate files have already been created for his extension. 
 
+> **RESOLVED**:
 > (js) My interpretation here is that we are promoting the Create workflow pretty highly.
 > I'll reserve judgement once we get to mockups, but I'm not sold on foregrounding this
 > since most users won't be authoring their own extensions. Maybe we instead have a
 > Brackets developers extension or some other mechanism to enable this workflow without
 > adding noise for our typical user.
+
+> (nj) That was actually deliberate in that I think we *want* to encourage users to
+> think of themselves as potential extension developers (at least in Brackets).
+> I don't think adding a single "Create" button to the UI adds that much noise, and
+> the other bits of the workflow only kick in once you've clicked that button.
 
 He starts writing and debugging the extension, and loves how easy it is to 
 get it working. As he's working on the extension, he checks it directly into 
@@ -214,6 +259,7 @@ the "official" version he just uploaded to test it out. It seems to be working
 fine, so he disables the official version and re-enables his development version
 so he can keep hacking on it.
 
+> **RESOLVED**:
 > This is a little funny&mdash;not sure if this is the right way to handle this
 > scenario or if there's something smarter we want to do here.
 
@@ -221,4 +267,8 @@ so he can keep hacking on it.
 > button there could be a "Try Published Version" button that acts as a toggle
 > between the released version and the in-development version.
 
-> (re) If the version number was displayed then I think it would be easy to see. For example, it would be be easy to see that v1.0.0 is the published version and v1.0.1 is the in-development version.
+> (re) If the version number was displayed then I think it would be easy to see. 
+> For example, it would be be easy to see that v1.0.0 is the published version and 
+> v1.0.1 is the in-development version.
+
+> (nj) Makes sense. For now, let's not add anything special for this case.
