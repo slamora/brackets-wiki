@@ -6,7 +6,7 @@ Research task to determine the set of work required to enhance and standardize t
 
 
 #Working prototype of Topcoat design applied
-In progress on [branch](https://github.com/adobe/brackets/tree/garthdb/topcoat-parity) on the public repo
+In progress on a [branch](https://github.com/adobe/brackets/tree/garthdb/topcoat-parity) in the repo.
 
 #Audit components needed from Topcoat components
 Here's what we need now:
