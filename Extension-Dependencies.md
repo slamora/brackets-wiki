@@ -86,9 +86,19 @@ The combination of these features would mean:
 > to essentially create a new method ("myMethodName2()")? Or, if a method signature doesn't technically
 > change--because, say, its first argument is still an object--but the expectations for the fields in that
 > object change, would we have to create a new method and deprecate the old one? I could imagine that
-> becoming cumbersome over time. In general, it might be good to game out a few different API change 
+> becoming cumbersome over time. In general, it would be good to game out a few different API change 
 > scenarios to think about how they would shake out (which might include things like object structure 
-> changes in addition to method or module function changes).
+> changes, DOM structure changes, or perhaps even CSS changes that could break things, in addition to 
+> method or module function changes).
+
+> (nj) Another problematic case: API changes in CodeMirror--we got bitten by this in the CMv3 merge.
+> In *theory*, no one should ever access CM APIs directly, and in a perfect world we would have
+> Brackets APIs for everything that call through to CM where necessary. But we might not get there
+> any time soon, and we might never want to get there (e.g., if someone wants to make a new CodeMirror
+> mode as part of their Brackets extension, they should be able to plug that directly into CM).
+> Perhaps we could do a trick where, if CodeMirror changes some API incompatibly, we manually patch
+> in a proxy around that function that calls our deprecation logic. That does put us on the hook to
+> closely track any such changes in CM.
 
 ## Dependencies for Extensions ##
 
