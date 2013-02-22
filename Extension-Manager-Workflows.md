@@ -101,6 +101,8 @@ Now, back in his CoffeeScript file, he tries hitting Cmd-E on a function call, a
 an inline editor opens on the function definition. Success! He also browses the
 menus to see what other functionality has been added by his new extensions.
 
+> (pt) Not sure if we need to display a license while the user is installing an extension, we should check with legal on that.
+
 ## Feedback
 
 As he starts using the extensions, he notices that they mostly work well, but the
