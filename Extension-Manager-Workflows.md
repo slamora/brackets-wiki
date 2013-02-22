@@ -52,6 +52,8 @@ of all extensions that match his typed search, also sorted by rating.
 > could add a way to change the sort order (e.g. by Quick Open match heuristic or
 > alphabetically).
 
+> (pt) Yeah, I agree it might be valuable to be able to sort by criteria like rating or date published (newest)
+
 He sees that there are three extensions that sound interesting at the top of the list: 
 Auto-Compile CoffeeScript, CoffeeScript Quick Open/Quick Edit, and CoffeeScript
 Formatting. Each extension has a screenshot thumbnail, a title, the first few lines 
