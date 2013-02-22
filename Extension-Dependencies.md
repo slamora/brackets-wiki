@@ -97,8 +97,12 @@ The combination of these features would mean:
 > any time soon, and we might never want to get there (e.g., if someone wants to make a new CodeMirror
 > mode as part of their Brackets extension, they should be able to plug that directly into CM).
 > Perhaps we could do a trick where, if CodeMirror changes some API incompatibly, we manually patch
-> in a proxy around that function that calls our deprecation logic. That does put us on the hook to
-> closely track any such changes in CM.
+> in a proxy around that function that calls our deprecation logic. That's still not quite good
+> enough, though, because (for the general scheme to work) we'd actually have to patch it in a
+> Brackets release *in advance* of the CM API change. That would probably force us into a world where
+> we're staying behind upstream master by a couple of weeks, which has caused us problems in the past
+> (because then if we have critical bugfixes we need Marijn to make, we have to monkeypatch them 
+> into an earlier version).
 
 ## Dependencies for Extensions ##
 
