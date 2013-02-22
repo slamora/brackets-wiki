@@ -145,6 +145,8 @@ remember his credentials.
 > (kd) seems like a good question for Andrew. For the purposes of rating/reviewing things,
 > I'm not so worried. For publishing extensions, it's more of a concern.
 
+> (pt) I share Kevin's concerns around the publish workflow. Beside that, as a user I would find reviews or a kind of a user rating (wrote x extensions with an average rating of z) useful too.
+
 > (nj) If things work the way I mentioned above, then presumably we could just hold
 > onto the auth token until it expires (which is presumably controlled by whichever
 > sign-in service provided the token).
