@@ -177,6 +177,7 @@ Next features:
 * Search, ratings, reviews, categories, tags and popularity all help users find new and useful extensions
 * Ratings and reviews should require the user to authenticate, which reduces gaming of the system
 * Users will be more likely to rate and review extensions if they can do so from the extension manager.
+* Sort/filter extensions by number of downloads, recently uploaded/updated, or Author.
 * When Brackets has a command line, a Sublime Package Control-like interface for managing extensions would be a great *addition* to a Firefox Add-on Manager-like UI, but does not seem like a good substitute.
 * Collections of extensions can be handy, especially if we're shooting for an extension ecosystem that provides lots of little features that people can pick and choose from. If one click can install a dozen useful features that work well together, that's a win. [The Janus Vim Distribution](https://github.com/carlhuda/janus) is an example of a combination plugins/configuration that helps people get going with a more productive vim setup.
 * A nice-to-have feature would be for an authenticated user's preferences and installed extensions to sync between Brackets installations (possibly even on the web)
