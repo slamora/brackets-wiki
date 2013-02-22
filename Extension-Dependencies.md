@@ -104,6 +104,11 @@ The combination of these features would mean:
 > (because then if we have critical bugfixes we need Marijn to make, we have to monkeypatch them 
 > into an earlier version).
 
+> (nj) Is there a danger that a single "deprecated API access report" causing the extension to become 
+> disabled eventually would invite potential abuse? Would we wait for some number of these reports to 
+> come in from different accounts? (Also, does that mean that we'd need a user to authenticate in order to
+> send in a deprecation report?)
+
 ## Dependencies for Extensions ##
 
 Next, we get into the idea of how extensions can depend on other extensions. The main purpose in allowing an extension to say that it depends on another is:
