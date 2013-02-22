@@ -184,6 +184,12 @@ creates the extension project in his "dev" folder and switches to it, and
 he sees in the file tree that a main.js, a package.json, a README, and other 
 boilerplate files have already been created for his extension. 
 
+> (js) My interpretation here is that we are promoting the Create workflow pretty highly.
+> I'll reserve judgement once we get to mockups, but I'm not sold on foregrounding this
+> since most users won't be authoring their own extensions. Maybe we instead have a
+> Brackets developers extension or some other mechanism to enable this workflow without
+> adding noise for our typical user.
+
 He starts writing and debugging the extension, and loves how easy it is to 
 get it working. As he's working on the extension, he checks it directly into 
 GitHub from Brackets using the extension he had installed earlier.
