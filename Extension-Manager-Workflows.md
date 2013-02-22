@@ -24,7 +24,7 @@ the right.
 > **UNRESOLVED**: Should this be in a panel or a popover? Garth's wireframes suggest
 > a panel. NJ thinks that makes it feel too permanent, and that a popover would be
 > consistent with where we're likely to go with EWF (as in Reflow), which seems
-> similar.
+> kind of similar (large browsing interface that only needs to appear temporarily).
 
 > (re) The Extension Manager dialog doesn't need to be *modal*, correct? Is that just 
 > for simplicity of initial implementation?
