@@ -206,3 +206,5 @@ so he can keep hacking on it.
 > (kd) I guess we could handle this case specifically. In addition to the "Upload"
 > button there could be a "Try Published Version" button that acts as a toggle
 > between the released version and the in-development version.
+
+> (re) If the version number was displayed then I think it would be easy to see. For example, it would be be easy to see that v1.0.0 is the published version and v1.0.1 is the in-development version.
