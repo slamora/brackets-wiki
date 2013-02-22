@@ -12,7 +12,7 @@ In progress on a [branch](https://github.com/adobe/brackets/tree/garthdb/topcoat
 Here's what we need now:
 
 * **Modal dialogs** (currently no design, no styles)
-* **buttons**
+* **Buttons**
 	* [Call to action](http://topcoat.io/topcoat/src/desktop.html#call-to-action-button)
 	* [Standard](http://topcoat.io/topcoat/src/desktop.html#button)
 * **Panels** both bottom and right side (currently no design, no styles)
