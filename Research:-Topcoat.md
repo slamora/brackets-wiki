@@ -6,7 +6,7 @@ Research task to determine the set of work required to enhance and standardize t
 
 
 #Working prototype of Topcoat design applied
-In progress.
+In progress on [branch](https://github.com/adobe/brackets/tree/garthdb/topcoat-parity) on the public repo
 
 #Audit components needed from Topcoat components
 Here's what we need now:
@@ -29,3 +29,11 @@ Soon we'll need:
 	- **Text area** (currently no styles)
 	- **[Radio](http://topcoat.io/topcoat/src/desktop.html#radio-button)** (currently there is an initial design, no styles)
 * **[Breadcrumbs](http://topcoat.io/topcoat/src/desktop.html#breadcrumbs)** (currently there is an initial design, no styles)
+
+#Assess the dependency on Bootstrap
+In progress.
+
+#Identify opportunities for animation.
+
+* Animate inline editor open and close
+* Animate file tree open close
