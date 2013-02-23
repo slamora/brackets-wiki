@@ -146,7 +146,7 @@ menus to see what other functionality has been added by his new extensions.
 As he starts using the extensions, he notices that they mostly work well, but the
 CoffeeScript Formatting extension doesn't seem to work properly&mdash;when he tries to
 use it, his code gets mangled. He opens the Extension Manager and clicks on the
-"Installed" tab, which shows all of his installed extensions. He clicks "Disable"
+"Manage" tab, which shows all of his installed extensions. He clicks "Disable"
 next to the CoffeeScript Formatting extension. He also sees that there's a "Report
 a Problem" dropdown button, along with a rating widget. 
 
