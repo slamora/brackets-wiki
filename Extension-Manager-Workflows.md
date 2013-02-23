@@ -33,6 +33,9 @@ the right.
 > panel; I was thinking of a popover. Shouldn't affect the workflow all that
 > much either way, but we should resolve it before moving forward.
 
+> (pf) I don't see why modal is bad. You're not going to be bopping in & out of this thing constantly. It should probably be easier to stay in (harder to close accidentally) rather than optimized for getting out quickly...  I agree a panel feels wrong though.
+
+
 At the top of the Extension Manager are two tabs, "Find" and "Manage", with the
 "Find" tab preselected, and a button to the right labelled "Create". Within the 
 Find tab is a search field, and below the field is a list of popular extensions, 
@@ -82,9 +85,15 @@ of a description (with a "More..." link), and an "Install" button on the right.
 > screenshot would be--they might all kind of look the same. I've added it to the
 > description above--we can see if it works out.
 
+> (pf) We could encourage people to use a cropped & zoomed version instead of a literal downscaled thumbnail. I assume even after clicking "More" we don't show a full-resolution screenshot though right? What resolution are we expecting/enforcing? Can you click the image to see a 1:1 full-res copy?
+
 He clicks on the "More..." link on the first extension to see more info. It shows
 the full screenshot and more of the description text, which explains the basic usage 
 of the extension, along with a link to the extension developer's website for more info.
+
+> (pf) Other details we might want to show: download count, date last updated, author (GitHub username?). I assume the rating is shown without needing to click More? Perhaps some of those other blurbs should be foregrounded too.
+
+> (pf) B feature: "More by this author" link -- that's very useful in mobile app stores.
 
 > **RESOLVED**:
 > (js) Have we considered out-of-app workflows for discovery? Tying into Kevin's thoughts
@@ -124,10 +133,16 @@ two buttons, "Disable" and "Uninstall".
 > (nj) For now, let's keep the tabs--I think it makes things clearer even if you could
 > theoretically treat the "installed" list as just another filter.
 
+> (pf) I think tabs labeled Find/Installed or All/Installed would make more sense than Find/Manage if the two views are so similar.
+
+> (pf) Re '"Installing Auto-Compile CoffeeScript (1 of 3)..."': this implies download, unzip, and init are serial if you have clicked multiple extensions? Or just some of those steps? Can you cancel a download if it's too slow or stalled?  Seems especially important if it's serial -- otherwise you're hosed on installing other extensions until it times out.
+
 Also, next to the "CoffeeScript Formatting" extension, there is a "Settings" button.
 He clicks on this button, and a dialog expands in-place with various formatting
 settings for CoffeeScript code. He tweaks it to fit his style. Finally, he clicks
 the Close button on the Extension Manager dialog to close it.
+
+> (pf) Do we envision having a Prefs dialog eventually? Would be expose each extension's settings UI there too, or would the user have to go to different places for core vs. extension settings? (Maybe eventually the Settings... button could just pop open the Prefs dialog with that panel pre-selected...)
 
 Now, back in his CoffeeScript file, he tries hitting Cmd-E on a function call, and
 an inline editor opens on the function definition. Success! He also browses the
@@ -154,6 +169,8 @@ He wants to give the extension developer the benefit of the doubt, so rather tha
 rating it, he clicks "Report a Problem". A dropdown menu appears with three choices:
 "Report a Bug", "Report Version Incompatibility", and "Report Abuse". He chooses
 "Report a Bug", and is taken to the developer's GitHub issue tracker.
+
+> (pf) "Report Version Incompatibility" sounds cool but maybe B-feature level. I also wonder whether users would understand the distinction between that and "Report a Bug" (incompatibility is a bug too...).
 
 He's been really impressed with the Quick Open/Quick Edit extension, so he clicks
 on the rating widget next to that one to give it a 5. Brackets prompts him to
@@ -196,13 +213,20 @@ remember his credentials.
 > onto the auth token until it expires (which is presumably controlled by whichever
 > sign-in service provided the token).
 
+> Opening an iframe onto the web within our app shell feels a little scary. What if the login UI has links to other pages (e.g. forgot password, etc.)? Will that all work properly? Is there any risk of landing on an untrustworthy page that might abuse the app shell APIs? Seems hard to get right. What do 'normal' native apps do? I'm guessing many show their own native UI to enter credentials and then the app hands them to the server itself; you have to trust the app a bit more since it then knows your cleartext password, but the app stays walled off from the web in the bargain...
+
 ## Update
 
 The next day, John sits back down at his computer and brings Brackets to the
 front. He sees that there's a little "1" badge on the Extension Manager icon.
 He clicks on the Extension Manager, and a notification at the top informs him
-that an update is available to the CoffeeScript Formatting extension. The
-update descriptions describes the bugs that were fixed in the update--one of
+that an update is available to the CoffeeScript Formatting extension.
+
+> (pf) Is the icon size in Topcoat big enough to accommodate a legible number badge?
+
+> (pf) Instead of a message at the top of the dialog, what about an "Updates" tab? Seems like that'd work better when multiple updates are available. (And clicking the tab could trigger us to ping for updates if we haven't already done so recently).
+
+The update descriptions describes the bugs that were fixed in the update--one of
 which was his bug! He clicks on the "Update" link in the notification, and the 
 update is downloaded and installed. Brackets prompts him if he wants to re-enable 
 the extension now that it's been updated, and he clicks Yes.
@@ -211,6 +235,8 @@ Closing the Extension Manager, he tries the formatting command again, and
 lo and behold, it works! He goes back to the extension developer's bug
 tracker and lets him know the bug was fixed, and gives the command a rating
 for good measure.
+
+> (pf) The workflow here implies restartless extension removal -- which I still think is _much_ harder to do well than restartless addition (installation). Are we totally sure we want to bite this much off right away? (Is there an expectation that everything in this doc will be implemented by May?). How many other editors/tools/browsers do restartless extensions widely? It seems like a _subset_ of FF extensions support it; but FF leaves most of the tricky work up to devs, and devs there have much stronger incentives to get it right (the extensions code-debug cycle is _way_ more painful otherwise -- not true in Brackets).
 
 ## Developing a new extension
 
@@ -239,6 +265,8 @@ boilerplate files have already been created for his extension.
 > I don't think adding a single "Create" button to the UI adds that much noise, and
 > the other bits of the workflow only kick in once you've clicked that button.
 
+> (pf) This feels a little orthogonal or B-featurey to me... While it'd be awesome to have a "new extension wizard" or whatnot, it doesn't seem key to the extension management workflow (while Upload clearly is critical). Also, is there a strong enough lead-in from Create to Upload? Upload seems sort of hidden.
+
 He starts writing and debugging the extension, and loves how easy it is to 
 get it working. As he's working on the extension, he checks it directly into 
 GitHub from Brackets using the extension he had installed earlier.
@@ -259,6 +287,14 @@ the "official" version he just uploaded to test it out. It seems to be working
 fine, so he disables the official version and re-enables his development version
 so he can keep hacking on it.
 
+> (pf) I think we need a section here on security. Letting semi-anonymous third parties upload text that will be rendered in the HTML content of _every_ Brackets user has enormous risks if it's not all escaped religiously.
+
+> (pf) Where in the workflow does the user enter the description, big tracker URL, upload thumbnail/screenshot, etc? Or are we expecting they include it in the repo and link to the right files in package.json?
+
+> (pf) Should we describe the update workflow? Can the author enter 'update notification' text? Do we aggregate it across skipped versions like Brackets core does?
+
+> (pf) Have we considered whether this should be more tied into GitHub? It seems more natural to have the author's ID be a GitHub ID, for example. And that we ensure the source of every extension is easily accessible. The current workflow makes it easy to upload & share extensions that are sitting on your local disk, and makes it hard for other users to inspect the source before installing. (nd if we used GitHub repos as the means of giving your source to us, it'd be easy for us to link to a specific SHA tree and feel confident that it's exactly the bits we're about to install -- rather than trusting the author that the ZIP file they just uploaded to us is identical (or even related) to the source available at the homepage link they provided in their metadata.
+
 > **RESOLVED**:
 > This is a little funny&mdash;not sure if this is the right way to handle this
 > scenario or if there's something smarter we want to do here.
@@ -272,3 +308,5 @@ so he can keep hacking on it.
 > v1.0.1 is the in-development version.
 
 > (nj) Makes sense. For now, let's not add anything special for this case.
+
+> (pf) Seems like a fairly non-critical use case anyway: unless uploading munges the bits in some way, the published version should basically be guaranteed to behave identically to your local bits at time of upload...
