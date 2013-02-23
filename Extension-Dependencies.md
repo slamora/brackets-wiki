@@ -35,6 +35,8 @@ The [Add-on Compatibility Reporter](https://addons.mozilla.org/en-US/firefox/add
 
 With its short release cycles, having Brackets extensions specify their min/max versions will result in users being penalized for keeping their Brackets up to date – many of their extensions will likely stop working when new updates come out. This is especially true given that Brackets has no beta test period at this time.
 
+> (pf) It doesn't seem like the design FF _stabilized_ on is that bad, though: authors specify a min and the max is optional. Unless a max is specified the extension is assumed to work with all future versions. That sounds pretty similar to the below -- the main difference being that in FF only the extension author can add a max constraint, whereas below it might happen automatically due to various flagging.
+
 ### Semantic Versioning ###
 
 [Semantic Versioning](http://semver.org/) is a convention for version numbers that provides real meaning behind them. semver is a standard among npm users.
@@ -51,6 +53,8 @@ In the Python standard library, a function deprecated in version 2.5 will start 
 
 With a central extensions repository, we can take this a step farther. Extension developers would not specify which version of Brackets their extensions are compatible with. The repository would keep track of the information for everyone.
 
+> (pf) I think we should still let authors explicitly set a max if they want to -- if a dev _wants_ to be conscientious, we might as well accept their input.
+
 Here's an example to show the idea:
 
 * I publish an extension called WriteMyCodeForMe. Brackets 0.20 is the current version at the time.
@@ -65,7 +69,14 @@ Here's an example to show the idea:
 * we could even send the author an email message
 * when Brackets 0.24 is released, if WriteMyCodeForMe has *not* been updated, everyone's copies will be disabled
 
+> (pf) I'm confused re "a message is sent to the repository warning of the impending problem". Are we saying Brackets will do this _automatically_ without user intervention? That implies that when a deprecated API is called we can look up the call stack to determine which extension called us. Can that really be done reliably? (for example, IIRC filenames are not always available in stack traces when you don't have the dev tools open)
+
+> (pf) However, I sort of think the combination of spewing warnings to the console + social flagging might be enough. Or for that matter, maybe even just spewing warnings + the core team manually marking a max-version when we hear complaints (Twitter-driven development FTW!). We have 50+ extensions now and so far we've gotten by alright with only half of _that_ in place (since we have near-zero advance notice before APIs go away and never log deprecation warnings to the console).
+
 What if no one had WriteMyCodeForMe installed, and then someone installed it on top of Brackets 0.24? There would be a button in the extension manager that a user can click to say "This extension isn't working properly with my version of Brackets."
+
+> (pf) It may be hard to interpret that data robustly. If 20 people flag an extension, does it mean (a) it's incompatible with that version of Brackets, (b) it's buggy in general, or (c) it interacts poorly with some other popular extension (regardless of Brackets version) that those 20 users all have installed? Granted, in all those cases it's still useful feedback for us to capture :-) But making automated assumptions about version compatibility based on such data seems tricky.
+
 
 The combination of these features would mean:
 
@@ -81,6 +92,8 @@ The combination of these features would mean:
 > it would make it much less likely that you'd hit the scenario where the first time we'd detect a
 > problem is when a user hits it.
 
+> (pf) The unit tests idea is cool, but I wonder how many extension devs will take the time to write a suite with good coverage -- everyone's doing this in spare time.
+
 > (nj) Are there some kinds of API changes that would be difficult to support in this scheme? For example,
 > if we need to change a method signature rather than getting rid of the method outright, would we need
 > to essentially create a new method ("myMethodName2()")? Or, if a method signature doesn't technically
@@ -90,6 +103,10 @@ The combination of these features would mean:
 > scenarios to think about how they would shake out (which might include things like object structure 
 > changes, DOM structure changes, or perhaps even CSS changes that could break things, in addition to 
 > method or module function changes).
+
+> (pf) I think we should treat deprecation warnings as a "best effort" on our part instead of a rigid rule. We should strive to make API changes that either use a new vs. old method name, or when changing args do it in such a way that we can have (temporary) code at the top of the function that detects which signature you're using. But if we can't (e.g. major refactoring, HTML structure change that involves no callable API, etc.) then that should be ok too.
+
+> (pf) And I think that also covers the CM case below --  since it's unsupported API, it seems fair to not try too hard there. (Although perhaps we should do another audit of `_codeMirror` usages to see if there are any glaring holes in the Editor API surface).
 
 > (nj) Another problematic case: API changes in CodeMirror--we got bitten by this in the CMv3 merge.
 > In *theory*, no one should ever access CM APIs directly, and in a perfect world we would have
