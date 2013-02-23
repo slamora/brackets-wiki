@@ -213,7 +213,7 @@ remember his credentials.
 > onto the auth token until it expires (which is presumably controlled by whichever
 > sign-in service provided the token).
 
-> Opening an iframe onto the web within our app shell feels a little scary. What if the login UI has links to other pages (e.g. forgot password, etc.)? Will that all work properly? Is there any risk of landing on an untrustworthy page that might abuse the app shell APIs? Seems hard to get right. What do 'normal' native apps do? I'm guessing many show their own native UI to enter credentials and then the app hands them to the server itself; you have to trust the app a bit more since it then knows your cleartext password, but the app stays walled off from the web in the bargain...
+> (pf) Opening an iframe onto the web within our app shell feels a little scary. What if the login UI has links to other pages (e.g. forgot password, etc.)? Will that all work properly? Is there any risk of landing on an untrustworthy page that might abuse the app shell APIs? Seems hard to get right. What do 'normal' native apps do? I'm guessing many show their own native UI to enter credentials and then the app hands them to the server itself; you have to trust the app a bit more since it then knows your cleartext password, but the app stays walled off from the web in the bargain...
 
 ## Update
 
