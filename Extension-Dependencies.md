@@ -159,6 +159,10 @@ What if extension authors can use exactly the same mechanism that's suggested fo
 
 The TypeScript extension will provide its services (through means that will be discussed during the extension API research). If it changes how these work, it will deprecate the old ways, marking the version planned to remove the deprecated APIs. Extensions that specify (in the metadata) that they rely on the TypeScript extension will be marked incompatible following the deprecation scheme. Users will also be able to use the same button to report that "an extension has become incompatible" to let people know that the extension no longer works as it used to (whether that's because of Brackets changing or TypeScript changing).
 
+> (pf) Does this add any wrinkles to the updating process? For example, do we need to warn users that updating extension A will disable extension B, since they both depend on a service from extension C and A requires a newer version of it than B supports? Also, does this imply that we should encourage service-providing extensions to _not_ offer any user-facing UI themselves? (Otherwise, updating extension A could affect other features you weren't expecting the update to touch, since they're provided by some other extension C).
+
+> (pf) Seems like this makes the "incompatible" flagging data even harder to process -- if users are flagging an extensions we don't know which of its multiple dependencies (including Brackets core) is the thing it's become incompatible with.
+
 # Smart Deprecation + Crowdsourcing + API Versions #
 
 In conclusion, my suggestion is that we use "smart deprecation + crowdsourcing" (if you haven't been reading the whole way through, see the section with that title above for more detail), with one further addition.
