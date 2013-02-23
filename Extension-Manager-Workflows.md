@@ -293,7 +293,9 @@ so he can keep hacking on it.
 
 > (pf) Should we describe the update workflow? Can the author enter 'update notification' text? Do we aggregate it across skipped versions like Brackets core does?
 
-> (pf) Have we considered whether this should be more tied into GitHub? It seems more natural to have the author's ID be a GitHub ID, for example. And that we ensure the source of every extension is easily accessible. The current workflow makes it easy to upload & share extensions that are sitting on your local disk, and makes it hard for other users to inspect the source before installing. (nd if we used GitHub repos as the means of giving your source to us, it'd be easy for us to link to a specific SHA tree and feel confident that it's exactly the bits we're about to install -- rather than trusting the author that the ZIP file they just uploaded to us is identical (or even related) to the source available at the homepage link they provided in their metadata.
+> (pf) Can an author manage existing uploaded extensions? For example, pull an extension (or version thereof) from the registry if they realize something is badly broken or mis-licenced?
+
+> (pf) Have we considered whether this should be more tied into GitHub? It seems more natural to have the author's ID be a GitHub ID, for example. And that we ensure the source of every extension is easily accessible. The current workflow makes it easy to upload & share extensions that are sitting on your local disk, and makes it hard for other users to inspect the source before installing. (And if we used GitHub repos as the means of giving your source to us, it'd be easy for us to link to a specific SHA tree and feel confident that it's exactly the bits we're about to install -- rather than trusting the author that the ZIP file they just uploaded to us is identical (or even related) to the source available at the homepage link they provided in their metadata.
 
 > **RESOLVED**:
 > This is a little funny&mdash;not sure if this is the right way to handle this
