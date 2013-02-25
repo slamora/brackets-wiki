@@ -16,24 +16,28 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 ## Listing ##
 
 * Provides everything the Extension Manager needs to display the list of extensions
+* Includes all extensions with an "active" state
 * Fields needed:
   * ID of extension (used for constructing download URL, for example)
   * display name of extension
   * date of last update
   * download count (possibly total and "recent" (last week, perhaps) to help with sorting)
   * version number
+  * min/max Brackets API version
   * a short description
   * rating
   * thumbnail URL (if available)
   * homepage URL
   * support URL
   * a flag for "has been disabled"
+  * dependencies
 * if an installed extension is marked "has been disabled", then it will be turned off automatically
 * unauthenticated
 
 ## Download ##
 
 * Downloads the extension package
+* Allows downloading older extension versions
 * unauthenticated
 
 ## Detail ##
@@ -65,6 +69,21 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
   * "disabled" extensions are turned off on end user computers automatically
 * **authenticated**
 
+## Publish ##
+
+* Enables an extension developer to upload an extension
+* Can update an existing extension that the developer owns
+* Uploads a package with metadata (package format TBD)
+* **authenticated** and **authorized** only for the owner of the extension
+
+## Manage ##
+
+* Allows Brackets team members to change the settings for an extension
+* Can set the state (between active, unlisted, pending disable and disabled)
+  * pending disable and unlisted both result in the extension not being listed to users
+  * the difference is that we may want to be able to remove crufty old extensions from the listing, but that is not representative of abuse
+* Can set the Brackets API max version
+* **authenticated** and **authorized** only for Brackets team members
 
 # Strawman APIs #
 
