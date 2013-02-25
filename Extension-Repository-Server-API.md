@@ -1,5 +1,18 @@
 Server API requirements to support [the workflows](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows).
 
+# Requirements #
+
+## General ##
+
+* A REST+JSON API
+  * Focused on use within Brackets
+  * There may be a web-facing interface of some sort later
+  * Clients other than Brackets/Edge Code are *not* important
+  * Consequently, level 2 on the [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) is likely about right
+* Everything a user needs to be able to find and install extensions should be available without authentication
+* Authenticated APIs **must** use HTTPS
+  * Server certificate should be verified to avoid man in the middle attacks (in other words, don't turn this feature off)
+
 
 # Strawman APIs #
 
