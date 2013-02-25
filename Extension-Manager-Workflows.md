@@ -215,6 +215,8 @@ remember his credentials.
 
 > (pf) Opening an iframe onto the web within our app shell feels a little scary. What if the login UI has links to other pages (e.g. forgot password, etc.)? Will that all work properly? Is there any risk of landing on an untrustworthy page that might abuse the app shell APIs? Seems hard to get right. What do 'normal' native apps do? I'm guessing many show their own native UI to enter credentials and then the app hands them to the server itself; you have to trust the app a bit more since it then knows your cleartext password, but the app stays walled off from the web in the bargain...
 
+> (kd) on iOS, the typical app seems to open a UIWebView, which wouldn't have any privileged access. OAuth is definitely nicer (and likely better supported) than taking the user's username and password for a third party service. I'll write more about authentication, but the more I've thought about it, the more I think we should treat oauth support as a separate story.
+
 ## Update
 
 The next day, John sits back down at his computer and brings Brackets to the
@@ -237,6 +239,10 @@ tracker and lets him know the bug was fixed, and gives the command a rating
 for good measure.
 
 > (pf) The workflow here implies restartless extension removal -- which I still think is _much_ harder to do well than restartless addition (installation). Are we totally sure we want to bite this much off right away? (Is there an expectation that everything in this doc will be implemented by May?). How many other editors/tools/browsers do restartless extensions widely? It seems like a _subset_ of FF extensions support it; but FF leaves most of the tricky work up to devs, and devs there have much stronger incentives to get it right (the extensions code-debug cycle is _way_ more painful otherwise -- not true in Brackets).
+
+> (kd) I'm not convinced that "good enough" restartless extensions are going to be *that* difficult, and we'll find out soon in the extension API research. That said, one thing that is not called out in this document is current extensions which decidedly *do* require a restart. I think we should be explicit about whether current extensions are managed at all via this UI.
+
+> (kd) If we do decide to support both restartless and restart-requiring extensions, the UI need only change a little bit (as Firefox's does). When installing/updating a restart-requiring extension, the user is prompted after the installation is complete to restart Brackets. Since the actual installation happens in the background, this would probably be in a popover.
 
 ## Developing a new extension
 
@@ -291,11 +297,15 @@ so he can keep hacking on it.
 
 > (pf) Where in the workflow does the user enter the description, big tracker URL, upload thumbnail/screenshot, etc? Or are we expecting they include it in the repo and link to the right files in package.json?
 
+> (kd) These could be in the package metadata (even URLs for screenshots).
+
 > (pf) Should we describe the update workflow? Can the author enter 'update notification' text? Do we aggregate it across skipped versions like Brackets core does?
 
 > (pf) Can an author manage existing uploaded extensions? For example, pull an extension (or version thereof) from the registry if they realize something is badly broken or mis-licenced?
 
 > (pf) Have we considered whether this should be more tied into GitHub? It seems more natural to have the author's ID be a GitHub ID, for example. And that we ensure the source of every extension is easily accessible. The current workflow makes it easy to upload & share extensions that are sitting on your local disk, and makes it hard for other users to inspect the source before installing. (And if we used GitHub repos as the means of giving your source to us, it'd be easy for us to link to a specific SHA tree and feel confident that it's exactly the bits we're about to install -- rather than trusting the author that the ZIP file they just uploaded to us is identical (or even related) to the source available at the homepage link they provided in their metadata.
+
+> (kd) That's a good question. I don't think we'd want to assume that *all* extensions are on GitHub. Consider extensions written to support an internal company workflow.
 
 > **RESOLVED**:
 > This is a little funny&mdash;not sure if this is the right way to handle this
