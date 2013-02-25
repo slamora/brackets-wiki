@@ -172,6 +172,9 @@ rating it, he clicks "Report a Problem". A dropdown menu appears with three choi
 
 > (pf) "Report Version Incompatibility" sounds cool but maybe B-feature level. I also wonder whether users would understand the distinction between that and "Report a Bug" (incompatibility is a bug too...).
 
+> (kd) I share the concern that it may be hard to understand when to click on which button. I was thinking of something along the lines of "This extension used to work, but doesn't any more". This is only a B-level feature depending on the extensions dependency work.
+> We should probably define the "Report Abuse" flow somewhere. I'm thinking we should prompt the user for more information. Additionally, what happens on the other side? Definitely an email notification. Do we disable the extension right away? (I'm thinking yes. I'd rather be conservative to start with and then if "Report Abuse" proves to be problematic, we fix it.)
+
 He's been really impressed with the Quick Open/Quick Edit extension, so he clicks
 on the rating widget next to that one to give it a 5. Brackets prompts him to
 login using OpenID in order to rate it. He does so, and chooses to let Brackets
