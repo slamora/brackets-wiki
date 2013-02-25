@@ -59,6 +59,8 @@ With a central extensions repository, we can take this a step farther. Extension
 
 > (kd) True, there's no harm in accepting what the developer says. We'll want to be clear in docs how/when to set that value.
 
+> (re) What about the same argument for minimum version? For example, what if I introduce an extension in 0.20 that only uses API calls that have been in code since 0.15, then I don't want Brackets to think that min version is 0.20. Another option would be for Brackets to scan code and determine min version based on which API calls are used.
+
 Here's an example to show the idea:
 
 * I publish an extension called WriteMyCodeForMe. Brackets 0.20 is the current version at the time.
