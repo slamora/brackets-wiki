@@ -140,7 +140,7 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 We should potentially add a central point to extract file extensions for a given file name to support extensions with multiple parts (i.e. ".html.erb"). Then file names wouldn't have just one potential extension, since file names like "1. Introduction.html" (also multiple dots) would also need to be supported.
 
 ### Features we think should be able to be built as plug-ins
-_From the [Extensibility Proposal](https://zerowing.corp.adobe.com/display/brackets/Extensibility+Proposal)_
+_From the [Extensibility Proposal](https://zerowing.corp.adobe.com/display/brackets/Extensibility+Proposal)_ (internal)
 - Access to code model
 - Quick open / go to symbol
 - Index files/code (background process)
