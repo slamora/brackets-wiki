@@ -23,7 +23,7 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 ### Module document/DocumentCommandHandlers
 
-* Method `_handleNewItemInProject` hardcodes ".js"/"Untitled.js" as the default file extension/name for new files. **Should maybe be a per-project setting.**
+* Method `_handleNewItemInProject` hardcodes ".js"/"Untitled.js" as the default file extension/name for new files. **Should maybe be a per-project setting.** See also [Card #291](https://trello.com/c/WUdhIRlh)
 
 ### Module document/DocumentManager
 
