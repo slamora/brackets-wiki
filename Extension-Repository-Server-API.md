@@ -1,10 +1,15 @@
-Proposal for the server API to support [the workflows](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows).
+Server API requirements to support [the workflows](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows).
+
+
+# Strawman APIs #
+
+These notes were to help think through the API requirements. They may or may not reflect the desired approach once implementation starts.
 
 The overall idea is a typical REST+JSON approach.
 
-# Unauthenticated API #
+## Unauthenticated API ##
 
-## GET list ##
+### GET list ###
 
 `list` is called once per day (or when the user forces a refresh) by Brackets. It provides a list of extensions with all of the data needed to provide:
 
@@ -39,11 +44,11 @@ Output example:
 ]
 ```
 
-## GET extension/{{name}}/latest/download ##
+### GET extension/{{name}}/latest/download ###
 
 Downloads the package for the latest version of the named extension. (See package format for details about the response.)
 
-## GET extension/{{name}}/moreinfo ##
+### GET extension/{{name}}/moreinfo ###
 
 Retrieves detailed info about the extension.
 
@@ -82,7 +87,7 @@ Retrieves detailed info about the extension.
 }
 ```
 
-# Authenticated API #
+## Authenticated API ##
 
 **All access to authenticated APIs will be via HTTPS.**
 
@@ -92,7 +97,7 @@ Ideally, users will be able to use existing logins rather than learning a new pa
 
 As far as authentication goes, we can start as simple as basic auth and move onward to oauth ourselves (user authorizes the copy of Brackets and a token is sent that is kept by the client). oauth "scopes" would provide a standardized mechanism for us to authorize clients to rate/review extensions without the ability to upload extensions. oauth is not the only way to do this, but it is a standard.
 
-## POST extension/{{name}}/review ##
+### POST extension/{{name}}/review ###
 
 Logs a review for the given extension. If the user has already posted a review for this extension, it is replaced with the new one. The POST body is a JSON object with the review information. Example:
 
