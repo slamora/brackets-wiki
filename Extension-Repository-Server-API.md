@@ -10,8 +10,60 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
   * Clients other than Brackets/Edge Code are *not* important
   * Consequently, level 2 on the [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) is likely about right
 * Everything a user needs to be able to find and install extensions should be available without authentication
-* Authenticated APIs **must** use HTTPS
+* Authenticated APIs **must** use https
   * Server certificate should be verified to avoid man in the middle attacks (in other words, don't turn this feature off)
+
+## Listing ##
+
+* Provides everything the Extension Manager needs to display the list of extensions
+* Fields needed:
+  * ID of extension (used for constructing download URL, for example)
+  * display name of extension
+  * date of last update
+  * download count (possibly total and "recent" (last week, perhaps) to help with sorting)
+  * version number
+  * a short description
+  * rating
+  * thumbnail URL (if available)
+  * homepage URL
+  * support URL
+  * a flag for "has been disabled"
+* if an installed extension is marked "has been disabled", then it will be turned off automatically
+* unauthenticated
+
+## Download ##
+
+* Downloads the extension package
+* unauthenticated
+
+## Detail ##
+
+* Allows the user to retrieve more detailed information about an extension
+* Fields needed:
+  * Long description
+  * URLs for additional screenshots if any
+  * changelog
+  * Ratings breakdown
+  * Reviews
+* unauthenticated
+
+## Review ##
+
+* Submits a rating (and possibly review) for a an extension
+* Replaces a previous rating/review by the same user if there was one
+* **authenticated**
+
+## Report ##
+
+* Used to report that an extension is malicious
+* User can provide comments with further detail about the abuse
+* Will send email to the Brackets team
+* Sets the state to "pending disable"
+  * extensions that are "pending disable" do not appear in listings
+  * "pending disable" does not set the "has been disabled" flag in the listings
+  * someone from the Brackets team will investigate and change the state to disabled if they determine the extension causes harm
+  * "disabled" extensions are turned off on end user computers automatically
+* **authenticated**
 
 
 # Strawman APIs #
