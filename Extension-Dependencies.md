@@ -57,7 +57,7 @@ With a central extensions repository, we can take this a step farther. Extension
 
 > **resolved** (pf) I think we should still let authors explicitly set a max if they want to -- if a dev _wants_ to be conscientious, we might as well accept their input.
 
-> (kd) I agree with you in theory. There's no harm in accepting a max value if the author sets it. That said, it seems less likely (though possible) that an 
+> (kd) True, there's no harm in accepting what the developer says. We'll want to be clear in docs how/when to set that value.
 
 Here's an example to show the idea:
 
