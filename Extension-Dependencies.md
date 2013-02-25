@@ -33,9 +33,11 @@ Addons on addons.mozilla.org started having their metadata automatically updated
 
 The [Add-on Compatibility Reporter](https://addons.mozilla.org/en-US/firefox/addon/add-on-compatibility-reporter/) allows users to report add-ons that are having trouble with newer versions of Firefox.
 
-With its short release cycles, having Brackets extensions specify their min/max versions will result in users being penalized for keeping their Brackets up to date – many of their extensions will likely stop working when new updates come out. This is especially true given that Brackets has no beta test period at this time.
+With its short release cycles, having Brackets extensions specify their max versions as the version for which the extension was written will result in users being penalized for keeping their Brackets up to date – many of their extensions will likely stop working when new updates come out. This is especially true given that Brackets has no beta test period at this time.
 
-> (pf) It doesn't seem like the design FF _stabilized_ on is that bad, though: authors specify a min and the max is optional. Unless a max is specified the extension is assumed to work with all future versions. That sounds pretty similar to the below -- the main difference being that in FF only the extension author can add a max constraint, whereas below it might happen automatically due to various flagging.
+> *resolved* (pf) It doesn't seem like the design FF _stabilized_ on is that bad, though: authors specify a min and the max is optional. Unless a max is specified the extension is assumed to work with all future versions. That sounds pretty similar to the below -- the main difference being that in FF only the extension author can add a max constraint, whereas below it might happen automatically due to various flagging.
+
+> (kd) I changed the language in the paragraph above to note specifically that I meant specifying a max version as the version for which an extension was written (which, in theory, is the only one the author knows for sure is compatible). See below regarding allowing the author to set a max version.
 
 ### Semantic Versioning ###
 
@@ -51,9 +53,11 @@ The drawback to this scheme, though, is that it's very coarse-grained. If we fel
 
 In the Python standard library, a function deprecated in version 2.5 will start displaying warnings when used. When 2.6 comes out, that function will be gone. This policy gave Python a chance to move forward, while giving people a reasonable amount of time to heed the warnings and build to the new API.
 
-With a central extensions repository, we can take this a step farther. Extension developers would not specify which version of Brackets their extensions are compatible with. The repository would keep track of the information for everyone.
+With a central extensions repository, we can take this a step farther. Extension developers need not specify which version of Brackets their extensions are compatible with. The repository would keep track of the information for everyone. (If an extension developer *knows* that they're extension is not compatible past a certain version of Brackets and doesn't have time to update the extension, they can go ahead and add a max version.)
 
-> (pf) I think we should still let authors explicitly set a max if they want to -- if a dev _wants_ to be conscientious, we might as well accept their input.
+> **resolved** (pf) I think we should still let authors explicitly set a max if they want to -- if a dev _wants_ to be conscientious, we might as well accept their input.
+
+> (kd) I agree with you in theory. There's no harm in accepting a max value if the author sets it. That said, it seems less likely (though possible) that an 
 
 Here's an example to show the idea:
 
@@ -71,7 +75,11 @@ Here's an example to show the idea:
 
 > (pf) I'm confused re "a message is sent to the repository warning of the impending problem". Are we saying Brackets will do this _automatically_ without user intervention? That implies that when a deprecated API is called we can look up the call stack to determine which extension called us. Can that really be done reliably? (for example, IIRC filenames are not always available in stack traces when you don't have the dev tools open)
 
+> (kd) You're right. *If* we were to end up with a sandboxed extension API, we would be able to do this reliably. Otherwise, we cannot. (I can think of some common cases that we *could* handle, but I can also think of others that we simply wouldn't have the info.)
+
 > (pf) However, I sort of think the combination of spewing warnings to the console + social flagging might be enough. Or for that matter, maybe even just spewing warnings + the core team manually marking a max-version when we hear complaints (Twitter-driven development FTW!). We have 50+ extensions now and so far we've gotten by alright with only half of _that_ in place (since we have near-zero advance notice before APIs go away and never log deprecation warnings to the console).
+
+> (kd) Excellent point.
 
 What if no one had WriteMyCodeForMe installed, and then someone installed it on top of Brackets 0.24? There would be a button in the extension manager that a user can click to say "This extension isn't working properly with my version of Brackets."
 
@@ -106,7 +114,11 @@ The combination of these features would mean:
 
 > (pf) I think we should treat deprecation warnings as a "best effort" on our part instead of a rigid rule. We should strive to make API changes that either use a new vs. old method name, or when changing args do it in such a way that we can have (temporary) code at the top of the function that detects which signature you're using. But if we can't (e.g. major refactoring, HTML structure change that involves no callable API, etc.) then that should be ok too.
 
+> (kd) I agree. I think that the places in which we're unable to do deprecation warnings would be good signals to us that we've identified a spot where having better defined extension APIs could help.
+
 > (pf) And I think that also covers the CM case below --  since it's unsupported API, it seems fair to not try too hard there. (Although perhaps we should do another audit of `_codeMirror` usages to see if there are any glaring holes in the Editor API surface).
+
+> (kd) I agree again. This was my thought exactly. Deprecation warnings for private APIs should *not* be expected.
 
 > (nj) Another problematic case: API changes in CodeMirror--we got bitten by this in the CMv3 merge.
 > In *theory*, no one should ever access CM APIs directly, and in a perfect world we would have
