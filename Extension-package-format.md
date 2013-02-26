@@ -25,3 +25,7 @@ Keywords can be anything that will help users find the right extension. Some con
 * Relevant file extensions including a leading ".". For example, if your extension is specifically for JavaScript files, include a ".js" keyword.
 
 Additional keyword conventions will be created as we review the categories of extensions.
+
+## module files ##
+
+**npm uses CommonJS modules, Brackets uses AMD**
