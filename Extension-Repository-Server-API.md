@@ -33,6 +33,7 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
   * homepage URL
   * support URL
   * a flag for "has been disabled"
+  * a flag for "requires restart"
   * dependencies
 * if an installed extension is marked "has been disabled", then it will be turned off automatically
 * unauthenticated
