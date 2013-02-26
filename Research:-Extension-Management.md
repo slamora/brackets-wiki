@@ -6,3 +6,4 @@ This page collects the output of the [Extension Management Workflow and Metadata
 * [Dependency Management research](https://github.com/adobe/brackets/wiki/Extension-Dependencies)
 * [User workflow proposals](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows)
 * [Server API to support user workflows](https://github.com/adobe/brackets/wiki/Extension-Repository-Server-API)
+* [Package Format](https://github.com/adobe/brackets/wiki/Extension-Package-Format)
