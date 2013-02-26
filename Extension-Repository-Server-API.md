@@ -89,6 +89,44 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 * Can set the Brackets API max version
 * **authenticated** and **authorized** only for Brackets team members
 
+# Notes about Authentication #
+
+## Usernames/Passwords ##
+
+If we implement the authenticated APIs using simple usernames/passwords using standard basic auth, implementation is straightforward but has the following drawbacks:
+
+1. users have yet another username/password
+2. we need to implement the registration flow
+3. we need to implement the whole "forgotten password" exchange
+
+It's not rocket science, and there is possibly reusable code for this, no matter what the server side technology is.
+
+## OAuth ##
+
+Using OAuth, we can allow users to authenticate using their existing accounts. We see Facebook, Twitter and Google used this way all over the place. Relevant to our audience, authentication via GitHub would also be possible. As a quick test to see what was involved, I tried the GitHub sample for [Passport](http://passportjs.org/). The example was really easy to set up, and I was able to authenticate with GitHub with no trouble.
+
+OAuth is slightly cumbersome in that it requires users to hop over to the authenticating site and then hop back, but the user does not need to be presented with this flow often and it is likely preferable to a new username/password.
+
+Considerations:
+
+* to build a completely in-Brackets authentication flow, we would need to be able to open a browser context that does not have access to Brackets APIs. (Perhaps a sandboxed iframe?)
+* another option would be to delegate the authentication flow to the user's browser and use a URL handler to get the result back (the Osfoora Twitter client on Mac OS worked this way). This has the advantage of not requiring the user to re-enter their credentials.
+* we'll have to navigate [signatures](https://dev.twitter.com/docs/auth/creating-signature) vs. [OAuth 2.0 bearer tokens](http://self-issued.info/docs/draft-ietf-oauth-v2-bearer.html) (which have [detractors](http://hueniverse.com/2010/09/oauth-bearer-tokens-are-a-terrible-idea/)).
+
+## OpenID ##
+
+OpenID has an authentication flow that is as cumbersome as OAuth, but with the disadvantage that it's generally harder to set up and more obscure than OAuth.
+
+## Creative Cloud ##
+
+To investigate: I don't think Creative Cloud authentication is currently open for OAuth-style use outside of Adobe services. If it is, that should definitely be an option.
+
+## Recommendation ##
+
+A minimum viable product for extension installation need not include authentication at all, but it is not something we'd put off for long.
+
+Given that there's work involved in implementing either traditional username/password authentication and OAuth, and that there are mature-looking libraries for OAuth, my suggestion is that we implement authentication using OAuth and skip usernames/passwords altogether.
+
 # Strawman APIs #
 
 These notes were to help think through the API requirements. They may or may not reflect the desired approach once implementation starts, and were written before the requirements above so they are certainly incomplete.
