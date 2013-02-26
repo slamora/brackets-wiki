@@ -14,7 +14,7 @@ I put it in the callback passed to <code>SpecRunnerUtils.createTestWindowAndRun(
 
 4. From SpecRunner: Show Developer Tools
 
-5. Set breakpoint(s) in unit test code before you start tests. The line numbers in the Dev Tools windows sometimes stop tracking the file, and, once this happens, you can't set any more breakpoints.
+5. Set breakpoint(s) in unit test code before you start tests. The line numbers in the Dev Tools windows sometimes stop tracking the file, and, once this happens, you can't set any more breakpoints. (Update 2/26/2013: this seems to be fixed in CEF3)
 
 6. Leave SpecRunner Dev Tools Window open. I wasn't hitting my breakpoint when I closed it.
 
