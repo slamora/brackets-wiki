@@ -15,11 +15,18 @@ It is early enough for Brackets that we can defer this, but ultimately we'll wan
 
 ## Brackets Version Compatibility ##
 
-Extensions work fine with the version of Brackets for which they were created. However, as Brackets continues to evolve, extensions will break if they are not maintained. Here are a few approaches for ensuring that a given extension is compatible with a user's version of Brackets:
+Extensions work fine with the version of Brackets for which they were created. However, as Brackets continues to evolve, extensions will break if they are not maintained. 
+
+There are two guiding requirements with respect to an extension's compatibility with a given Brackets version:
+
+1. Users should not be troubled by extensions that are known to be incompatible with the version of Brackets they are using
+2. Extensions should not be branded as incompatible when they actually work just fine
+
+Here are a few approaches for ensuring that a given extension is compatible with a user's version of Brackets:
 
 1. extension developer keeps minimum and maximum version numbers up to date
 2. [semantic versioning](http://semver.org/) is used to make extension API compatibility clear
-3. "smart deprecation" and crowdsourcing marks keeps compatibility info up-to-date
+3. crowdsourcing and active management keeps compatibility info up-to-date
 
 I'm going to suggest that the third option is the best, but only after explaining the first two options for clarity as those first two options are the paths more often traveled.
 
@@ -35,10 +42,6 @@ The [Add-on Compatibility Reporter](https://addons.mozilla.org/en-US/firefox/add
 
 With its short release cycles, having Brackets extensions specify their max versions as the version for which the extension was written will result in users being penalized for keeping their Brackets up to date – many of their extensions will likely stop working when new updates come out. This is especially true given that Brackets has no beta test period at this time.
 
-> *resolved* (pf) It doesn't seem like the design FF _stabilized_ on is that bad, though: authors specify a min and the max is optional. Unless a max is specified the extension is assumed to work with all future versions. That sounds pretty similar to the below -- the main difference being that in FF only the extension author can add a max constraint, whereas below it might happen automatically due to various flagging.
-
-> (kd) I changed the language in the paragraph above to note specifically that I meant specifying a max version as the version for which an extension was written (which, in theory, is the only one the author knows for sure is compatible). See below regarding allowing the author to set a max version.
-
 ### Semantic Versioning ###
 
 [Semantic Versioning](http://semver.org/) is a convention for version numbers that provides real meaning behind them. semver is a standard among npm users.
@@ -49,17 +52,141 @@ This is an improvement over the min/max version scheme because it gives the Brac
 
 The drawback to this scheme, though, is that it's very coarse-grained. If we felt the need to make even *one* backwards-incompatible change, semver dictates that we move to API 2.0. The number itself is not meaningful, but the fact that we've just broken all of the extensions *is*.
 
-### Smart Deprecation + Crowdsourcing ###
+### Deprecation Warnings as a Guide ###
 
 In the Python standard library, a function deprecated in version 2.5 will start displaying warnings when used. When 2.6 comes out, that function will be gone. This policy gave Python a chance to move forward, while giving people a reasonable amount of time to heed the warnings and build to the new API.
 
+In many cases, we can provide that same kind of warning to our extension developers. Rather than simply making a backwards-incompatible change, we can issue a deprecation warning that can be logged to the console (and possibly an extensions-specific view) that provides information about the change including which Brackets version will break the compatibility and how the code in question needs to change.
+
+Ideally, the warning would be able to point to the extension that called the deprecated API, though this is not easy to do especially when confronted with asynchronously-called code.
+
+Deprecation warnings would be created on a best-effort basis and would help extension authors keep their extensions up-to-date.
+
+### Crowdsourced Compatibility Information ###
+
+To date, Brackets has more than 50 extensions. When one breaks, we'll often see someone complain on Twitter or our mailing list. This is a reasonable starting point if we have a way to take this information and use it to ensure that additional users do not run into trouble with that extension.
+
+If Brackets team members have the ability to set a max version on an extension, it will be easy to stop the pain for the users without requiring the involvement of the original extension developer.
+
+Over time, we will add in-product feedback features that will help us gather compatibility information in a more structured way, but we don't need to start there.
+
+**What happens from a user's perspective when an extension is marked as incompatible with the version of Brackets they're running?**
+
+### Semantic Versioning, Not Strictly Enforced ###
+
+If we apply semantic versioning to the Brackets API, this will provide a couple of benefits:
+
+1. We will be very conscious of the impact that we're having on extension APIs as we change Brackets (because we'll have to change the API version to match)
+2. When we do get reports of extensions breaking, it will be clearer which API version we need to peg the extension to (because we probably won't make API-breaking changes in every sprint)
+3. If we inadvertently make a breaking change, the fact that we didn't rev the major version will be a clearer indication that the change is a bug
+
+It would also set a good example for the extensions community.
+
+To avoid the problem of all extensions breaking when we make one little change to the API, we would recommend that extensions do not have a max version set and we rely on the crowdsourced information that a given extension has broken.
+
+## Dependencies for Extensions ##
+
+Next, we get into the idea of how extensions can depend on other extensions. The main purpose in allowing an extension to say that it depends on another is:
+
+1. that extension plugs in to features provided by the one it depends on
+2. if the user wants to install that extension, they automatically get the depended-on extension as well, to ensure that their newly installed extension works properly
+
+Another use case that *could* be mentioned is an extension that relies on another extension to merely act as a *library*, providing useful functions and data structures. That does not seem quite a Brackets-specific a problem. In fact, that is a problem that is well-handled by npm, which tries to combine the best aspects of static and dynamic linking. My focus here is not on extension dependencies for purposes of code sharing, but rather for the purposes of *extending Brackets in ways not directly supported by Brackets core*. See "What npm Does" below.
+
+In the [list of extensions today](https://github.com/adobe/brackets/wiki/Brackets-Extensions), we don't actually see a need for this. This is doubtless in part because Brackets extensions currently don't have a way to share code or make their objects and events available to one another. When we do our extension API research, we will doubtless improve the ways in which extensions can share and increase the likelihood that extensions will rely upon each other. A need for extensions to provide facilities for other extensions would be more obvious today if Brackets itself was built on a foundation of extensions.
+
+Let's start with a hypothetical scenario. As part of the [JavaScript code hinting work](https://trello.com/card/2-code-hinting-javascript/4f90a6d98f77505d7940ce88/775), we're adding a JS parser (esprima) to the package. esprima parses on a worker thread, to ensure that the UI stays responsive. Even so, we should only do the parsing *once* and provide the data to as many consumers as needed. Perhaps one extension would like to use the AST that's built. Another may want to subscribe to events as the AST changes. (These are hypothetical, please ignore whether we can actually get these things from our current parser setup.)
+
+These JS parsing features are going to be built-in to Brackets, so they're still not a good example of an extension requiring another. Imagine, though, an extension that wants similar access to TypeScript parsing from the [TypeScript extension](https://github.com/tomsdev/brackets-typescript-code-intel). Someone else comes along and they want to build a TypeScript beautification extension that takes advantage of an AST already built by the TypeScript extension.
+
+### What npm Does ###
+
+npm uses semantic versioning and fancy module loader tricks to make code happy when it brings in library code. Let's say an application uses libraries to connect to Twitter and Google. The Twitter package depends on some "oauth" library version 1.x and the Google package relies on version 2.x of the same library.
+
+When the Twitter library says `require("oauth")`, it gets version 1.2.3. The Google library says `require("oauth")` and it gets version 2.1.2. Both libraries are happy.
+
+npm also has a feature called ["peer dependencies"](http://blog.nodejs.org/2013/02/07/undefined/) that is specifically for plugins. The peer dependencies for a library state which host versions need to be installed. For example, a library that adds Grunt 0.4 tasks will specify that Grunt 0.4 is a peer dependency. If the user has Grunt 0.3 installed, the library that requires Grunt 0.4 will not be loaded. This is very different behavior from the normal module loading mechanism.
+
+### But, That's Not The Problem We Have ###
+
+In my TypeScript example, the problem we're solving is that we're not trying to access code in a library. We're trying to access a *service*. We want a current AST, or a stream of events.
+
+Another way to think of our problem: some Brackets extensions will add UI elements. If we handled these like npm does, the UI bits would get hooked up *twice*, once for each version.
+
+Extensions that provide extension services are going to be relatively rarer than extensions that merely add features to Brackets. We should keep the management of these extensions simple and encourage the authors of such extensions to keep backwards compatibility as much as possible and use deprecation warnings to help *their* extension authors cope with change.
+
+We'll recommend that peer dependencies for extensions *do* follow semantic versioning rules and actually set a max version for the peer dependency. The reason for this difference from the handling of Brackets core is that it will be difficult for us to manage the feedback that comes in if an extension breaks because of another extension, rather than because of a change to Brackets core code.
+
+To keep the management of these dependencies simple, we'll use these rules:
+
+1. In listings and at installation time, we only display extensions that are compatible with the current version of their peer dependencies
+2. When there is a breaking change to an extension that others depend on, we warn the user of the extensions that are going to be disabled (assuming no compatible versions can be found).
+
+To keep things simple and conservative, users would not initially be given the option to stick with the old version of peer dependency and no effort would be made to make as many extensions work as possible.
+
+If an extension author can make it work reliably, they could make a "My Extension 2" extension that could co-exist with "My Extension", thus allowing older extensions to continue to work. This will not be possible in all (or perhaps even many) cases, however, because of UI elements that would be duplicated or expensive services that would be run twice.
+
+A couple of examples will make #2 clearer.
+
+#### Hover Previewer Updated ####
+
+Let's take Glenn's [Hover Preview](https://github.com/gruehle/HoverPreview) extension as an example. Hover Preview, as the name implies, displays a preview of whatever the cursor is hovering over. Imagine that there's an extension to Hover Preview for previewing images in HTML files (called HTML Image Preview).
+
+* HTML Image Preview 1.0 works with Hover Preview 1.x.
+* Glenn needs to make some breaking changes to support some new file types
+* He adds deprecation warnings to Hover Preview 1.1 to let people know that the changes are coming
+* Hover Preview 2.0 is released before the author of HTML Image Preview had a chance to update
+* HTML Image Preview is no longer listed for download from the registry
+* Users of HTML Image Preview are told that HTML Image Preview is going to be disabled because of incompatibility with Hover Preview 2.0
+* When a Hover Preview 2.0-compatible update to HTML Image Preview is released, HTML Image Preview is listed once more in the repository listing
+* Additionally, users with disabled copies of HTML Image Preview will get updated to the new version
+
+#### HTML Image Preview Updated ####
+
+One more example to change things up a bit.
+
+* HTML Image Preview 1.0 works with Hover Preview 1.x.
+* Hover Preview 1.1 is the current version of Hover Preview
+* The author of HTML Image Preview heeds the deprecation warnings and releases HTML Image Preview 1.1 which is comaptible with Hover Preview 2.x
+* Because Hover Preview 2.x is not yet available, the registry will continue to list HTML Image Preview 1.0
+* Once Hover Preview 2.0 is released, HTML Image Preview 1.1 will automatically become the current version
+
+
+# Conclusion #
+
+For all Brackets extensions:
+
+* the Brackets API version signals backwards and forwards compatibility through semantic versioning
+* Extensions would be registered initially with no max version set
+* As we make changes, we will add deprecation warnings as possible to give extension developers time to fix their extensions
+* Upon complaints of extensions no longer working, the Brackets team will set a max version for the extension in question
+* Users will not see incompatible extensions when looking for extensions to install
+* Extensions that are not compatible with the Brackets version a user is running will be disabled until a compatible update is released
+
+For extensions that rely on other extensions (as "peer dependencies"):
+
+* Dependencies on other extensions may not be an initial feature
+* We will recommend the use of semantic versioning with compatible versions set for peer dependencies
+* We will also recommend the use of deprecation warnings
+* Users will only be given compatible sets of extensions, with the peer dependencies taking the lead
+
+
+# Historical Discussion #
+
+This section contains bit that were from the original discussion, while we were still coming to the conclusions reached above.
+
+#### From Min/Max Version Numbers in Metadata ####
+
+With its short release cycles, having Brackets extensions specify their max versions as the version for which the extension was written will result in users being penalized for keeping their Brackets up to date – many of their extensions will likely stop working when new updates come out. This is especially true given that Brackets has no beta test period at this time.
+
+> *resolved* (pf) It doesn't seem like the design FF _stabilized_ on is that bad, though: authors specify a min and the max is optional. Unless a max is specified the extension is assumed to work with all future versions. That sounds pretty similar to the below -- the main difference being that in FF only the extension author can add a max constraint, whereas below it might happen automatically due to various flagging.
+
+> (kd) I changed the language in the paragraph above to note specifically that I meant specifying a max version as the version for which an extension was written (which, in theory, is the only one the author knows for sure is compatible). See below regarding allowing the author to set a max version.
+
+
+#### Smart Deprecation ####
+
 With a central extensions repository, we can take this a step farther. Extension developers need not specify which version of Brackets their extensions are compatible with. The repository would keep track of the information for everyone. (If an extension developer *knows* that they're extension is not compatible past a certain version of Brackets and doesn't have time to update the extension, they can go ahead and add a max version.)
-
-> **resolved** (pf) I think we should still let authors explicitly set a max if they want to -- if a dev _wants_ to be conscientious, we might as well accept their input.
-
-> (kd) True, there's no harm in accepting what the developer says. We'll want to be clear in docs how/when to set that value.
-
-> (re) What about the same argument for minimum version? For example, what if I introduce an extension in 0.20 that only uses API calls that have been in code since 0.15, then I don't want Brackets to think that min version is 0.20. Another option would be for Brackets to scan code and determine min version based on which API calls are used.
 
 Here's an example to show the idea:
 
@@ -82,11 +209,6 @@ Here's an example to show the idea:
 > (pf) However, I sort of think the combination of spewing warnings to the console + social flagging might be enough. Or for that matter, maybe even just spewing warnings + the core team manually marking a max-version when we hear complaints (Twitter-driven development FTW!). We have 50+ extensions now and so far we've gotten by alright with only half of _that_ in place (since we have near-zero advance notice before APIs go away and never log deprecation warnings to the console).
 
 > (kd) Excellent point.
-
-What if no one had WriteMyCodeForMe installed, and then someone installed it on top of Brackets 0.24? There would be a button in the extension manager that a user can click to say "This extension isn't working properly with my version of Brackets."
-
-> (pf) It may be hard to interpret that data robustly. If 20 people flag an extension, does it mean (a) it's incompatible with that version of Brackets, (b) it's buggy in general, or (c) it interacts poorly with some other popular extension (regardless of Brackets version) that those 20 users all have installed? Granted, in all those cases it's still useful feedback for us to capture :-) But making automated assumptions about version compatibility based on such data seems tricky.
-
 
 The combination of these features would mean:
 
@@ -140,34 +262,7 @@ The combination of these features would mean:
 > come in from different accounts? (Also, does that mean that we'd need a user to authenticate in order to
 > send in a deprecation report?)
 
-## Dependencies for Extensions ##
-
-Next, we get into the idea of how extensions can depend on other extensions. The main purpose in allowing an extension to say that it depends on another is:
-
-1. that extension plugs in to features provided by the one it depends on
-2. if the user wants to install that extension, they automatically get the depended-on extension as well, to ensure that their newly installed extension works properly
-
-Another use case that *could* be mentioned is an extension that relies on another extension to merely act as a *library*, providing useful functions and data structures. That does not seem quite a Brackets-specific a problem. In fact, that is a problem that is well-handled by npm, which tries to combine the best aspects of static and dynamic linking. My focus here is not on extension dependencies for purposes of code sharing, but rather for the purposes of *extending Brackets in ways not directly supported by Brackets core*. See "What npm Does" below.
-
-In the [list of extensions today](https://github.com/adobe/brackets/wiki/Brackets-Extensions), we don't actually see a need for this. This is doubtless in part because Brackets extensions currently don't have a way to share code or make their objects and events available to one another. When we do our extension API research, we will doubtless improve the ways in which extensions can share and increase the likelihood that extensions will rely upon each other. A need for extensions to provide facilities for other extensions would be more obvious today if Brackets itself was built on a foundation of extensions.
-
-Let's start with a hypothetical scenario. As part of the [JavaScript code hinting work](https://trello.com/card/2-code-hinting-javascript/4f90a6d98f77505d7940ce88/775), we're adding a JS parser (esprima) to the package. esprima parses on a worker thread, to ensure that the UI stays responsive. Even so, you'd ideally only do the parsing *once* and provide the data to as many consumers as needed. Perhaps one extension would like to use the AST that's built. Another may want to subscribe to events as the AST changes. (These are hypothetical, please ignore whether we can actually get these things from our current parser setup.)
-
-These JS parsing features are going to be built-in to Brackets, so they're still not a good example of an extension requiring another. Imagine, though, an extension that wants similar access to TypeScript parsing from the [TypeScript extension](https://github.com/tomsdev/brackets-typescript-code-intel). Someone else comes along and they want to build a TypeScript beautification extension that takes advantage of an AST already built by the TypeScript extension.
-
-### What npm Does ###
-
-npm uses semantic versioning and fancy module loader tricks to make code happy when it brings in library code. Let's say an application uses libraries to connect to Twitter and Google. The Twitter package depends on some "oauth" library version 1.x and the Google package relies on version 2.x of the same library.
-
-When the Twitter library says `require("oauth")`, it gets version 1.2.3. The Google library says `require("oauth")` and it gets version 2.1.2. Both libraries are happy.
-
-npm also has a feature called ["peer dependencies"](http://blog.nodejs.org/2013/02/07/undefined/) that is specifically for plugins.
-
-### But, That's Not The Problem We Have ###
-
-In my TypeScript example, the problem we're solving is that we're not trying to access code in a library. We're trying to access a *service*. We want a current AST, or a stream of events.
-
-Another way to think of our problem: some Brackets extensions will add UI elements. If we handled these like npm does, the UI bits would get hooked up *twice*, once for each version.
+#### from the section on extension dependencies ####
 
 What if extension authors can use exactly the same mechanism that's suggested for Brackets up above? Smart deprecation + crowdsourcing.
 
@@ -177,7 +272,7 @@ The TypeScript extension will provide its services (through means that will be d
 
 > (pf) Seems like this makes the "incompatible" flagging data even harder to process -- if users are flagging an extensions we don't know which of its multiple dependencies (including Brackets core) is the thing it's become incompatible with.
 
-# Smart Deprecation + Crowdsourcing + API Versions #
+#### the original conclusion ####
 
 In conclusion, my suggestion is that we use "smart deprecation + crowdsourcing" (if you haven't been reading the whole way through, see the section with that title above for more detail), with one further addition.
 
