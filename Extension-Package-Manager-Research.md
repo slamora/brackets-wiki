@@ -174,8 +174,9 @@ Top features:
 
 Next features:
 
-* Search, ratings, reviews, categories, tags and popularity all help users find new and useful extensions
+* Search, ratings, reviews, categories, tags and popularity/download count all help users find new and useful extensions
 * Ratings and reviews should require the user to authenticate, which reduces gaming of the system
+* Link from a detail preview to other extensions by the same author.
 * Users will be more likely to rate and review extensions if they can do so from the extension manager.
 * Sort/filter extensions by number of downloads, recently uploaded/updated, or Author.
 * When Brackets has a command line, a Sublime Package Control-like interface for managing extensions would be a great *addition* to a Firefox Add-on Manager-like UI, but does not seem like a good substitute.
