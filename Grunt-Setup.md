@@ -10,6 +10,10 @@
 * ``grunt test`` Run JSHINT and Jasmine if JSHINT completes without errors
 * ``grunt watch`` Watch for file changes, then run JSHINT and Jasmine
 
+# Adding Unit Tests
+
+Non-integration tests (typically tests that don't require a full Brackets instance running) are candidates to run headless via [PhantomJS](http://phantomjs.org). The headless tests use a separate spec runner that is configured in [Gruntfile.js](https://github.com/adobe/brackets/blob/master/Gruntfile.js). To add new tests, modify the ``config`` object, find the ``specs`` property and add the path to the spec file (e.g. ``test/spec/MyFeature.js`` to the array of specs.
+
 # Misc. Tasks
 
 * ``grunt write-config`` Automatically run after ``npm install`` to update ``src/config.json``
