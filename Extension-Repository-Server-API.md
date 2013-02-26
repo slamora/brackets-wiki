@@ -12,6 +12,7 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 * Everything a user needs to be able to find and install extensions should be available without authentication
 * Authenticated APIs **must** use https
   * Server certificate should be verified to avoid man in the middle attacks (in other words, don't turn this feature off)
+* Authentication information **must not** be sent over http with unauthenticated requests
 
 ## Listing ##
 
@@ -20,10 +21,12 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 * Fields needed:
   * ID of extension (used for constructing download URL, for example)
   * display name of extension
+  * name of the extension author
   * date of last update
   * download count (possibly total and "recent" (last week, perhaps) to help with sorting)
   * version number
   * min/max Brackets API version
+  * peer dependency requirements (if peer dependencies are being implemented)
   * a short description
   * rating
   * thumbnail URL (if available)
@@ -47,7 +50,7 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
   * Long description
   * URLs for additional screenshots if any
   * changelog
-  * Ratings breakdown
+  * Ratings breakdown (number of ratings at each count of stars)
   * Reviews
 * unauthenticated
 
@@ -59,12 +62,12 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 
 ## Report ##
 
-* Used to report that an extension is malicious
+* Used to report that an extension is malicious or causing significant harm
 * User can provide comments with further detail about the abuse
 * Will send email to the Brackets team
 * Sets the state to "pending disable"
   * extensions that are "pending disable" do not appear in listings
-  * "pending disable" does not set the "has been disabled" flag in the listings
+  * "pending disable" does *not* set the "has been disabled" flag in the listings
   * someone from the Brackets team will investigate and change the state to disabled if they determine the extension causes harm
   * "disabled" extensions are turned off on end user computers automatically
 * **authenticated**
@@ -74,7 +77,7 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 * Enables an extension developer to upload an extension
 * Can update an existing extension that the developer owns
 * Uploads a package with metadata (package format TBD)
-* **authenticated** and **authorized** only for the owner of the extension
+* **authenticated** and **authorized** only for the owner of the extension (or any user, if it's a new extension name)
 
 ## Manage ##
 
@@ -87,7 +90,7 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 
 # Strawman APIs #
 
-These notes were to help think through the API requirements. They may or may not reflect the desired approach once implementation starts.
+These notes were to help think through the API requirements. They may or may not reflect the desired approach once implementation starts, and were written before the requirements above so they are certainly incomplete.
 
 The overall idea is a typical REST+JSON approach.
 
