@@ -19,8 +19,12 @@ No major changes to existing features.
 API Changes
 -----------
 
+* Editor - TODO jasonsanjose, peterflynn or denniskehrig, see https://github.com/adobe/brackets/pull/2844#discussion-diff-3108017
+
 New/Improved Extensibility APIs
 -------------------------------
+
+* LanguageManager - TODO jasonsanjose, peterflynn or denniskehrig, see https://github.com/adobe/brackets/pull/2844
 
 Known Issues
 ------------
