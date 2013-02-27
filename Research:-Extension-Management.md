@@ -64,3 +64,32 @@ The preceding sections were intended as a quick overview of the results of our r
 
 # Open Questions #
 
+* How do parts of an extension run within Node?
+* Management of uploaded extensions (pulling an extension, for example). Just contact Brackets team for now?
+
+# Candidate Stories #
+
+* Extension publishing
+  * UI that lists development extensions with "Publish" button
+  * Validation of extension
+    * Required package.json fields
+    * No required files missing
+    * Version number different from previously published extension
+  * Authentication for server
+  * Server side to handle publishing
+* Extension Listing
+  * Compact view and detailed view
+  * Secured Markdown formatting of description
+  * Server side of listing
+* Extension updates
+  * Prompts for restart for extensions that require a restart
+* Create an Extension workflow
+
+# Deferred Questions #
+
+The answers to these questions will be resolved at implementation time.
+
+* Will the extension manager live in a sidebar, popover or full frame?
+* What will the login workflow be like? does the login need to time out? can we safely implement a flow within Brackets that authenticates with other services?
+* Is there enough space for an update count badge on the extension manager icon?
+* How do we present extension descriptions securely? (allow Markdown formatting, but escape embedded HTML?)
