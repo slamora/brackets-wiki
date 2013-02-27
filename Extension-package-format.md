@@ -44,7 +44,9 @@ Modules that are imported via `require` are searched for from the root of the ex
 
 ## Node Modules ##
 
-Brackets extensions that use Node are expected to ship with the node_modules incorporated directly into the extension package. Including dependencies directly in a package for deployment [is considered a best practice](http://www.futurealoof.com/posts/nodemodules-in-git.html).
+Brackets extensions will be able to provide modules that run in a Node process. The exact location of these modules will depend on the answers to the open questions at the end of this section.
+
+Brackets extensions will also be able to use modules downloaded via npm. The `node_modules` directory will be incorporated directly into the extension package. Including dependencies directly in a package for deployment [is considered a best practice](http://www.futurealoof.com/posts/nodemodules-in-git.html).
 
 Node modules (or any modules for that matter) are *not* shared between extensions.
 
