@@ -8,7 +8,7 @@ In the interest of truly summarizing what we've come up with, this document will
 
 The [Extension Manager Workflows](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows) document how users will interact with the extension manager in Brackets.
 
-The wireframe below gives an idea of how the extensions may be presented (the presentation in the sidebar is the relevant bit, a sidebar may very well not be the home of the extension manager).
+The wireframe below gives an idea of how the extensions may be presented (the content within the sidebar is the relevant bit, a sidebar may very well not be the home of the extension manager).
 
 ![Wireframe of Extension Listing](http://behance.vo.llnwd.net/profiles15/2147647/projects/7290337/613d565250285ac4ed3b10a2c48985cb.png)
 
