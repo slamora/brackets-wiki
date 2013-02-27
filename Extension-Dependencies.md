@@ -70,8 +70,6 @@ If Brackets team members have the ability to set a max version on an extension, 
 
 Over time, we will add in-product feedback features that will help us gather compatibility information in a more structured way, but we don't need to start there.
 
-**What happens from a user's perspective when an extension is marked as incompatible with the version of Brackets they're running?**
-
 ### Semantic Versioning, Not Strictly Enforced ###
 
 If we apply semantic versioning to the Brackets API, this will provide a couple of benefits:
