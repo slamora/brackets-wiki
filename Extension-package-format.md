@@ -28,6 +28,8 @@ Brackets uses the same [package.json format as npm](https://npmjs.org/doc/json.h
 * `engines` is used to specify the compatible Brackets versions. For most extensions, the version should be expressed as `>= (some Brackets version)` (in other words, there's no max version).
 * We should honor the `private` flag to not publish private extensions
 
+**note** by reusing `engines` and `peerDependencies`, we may run into friction with npm, assuming that we allow users to install and use npm modules. If need be, we can change to using two other Brackets-specific fields in package.json for these needs.
+
 ## Keywords ##
 
 Keywords can be anything that will help users find the right extension. Some conventions will help Brackets steer users to the right extensions quicker:
