@@ -84,6 +84,10 @@ These are in descending order of likely priority.
 * Extension install
   * Given a URL to an extension package, install it
   * Checks for compatibility with Brackets and peer dependencies
+* Extension handling on Brackets update
+  * Disable extensions that are no longer compatible
+  * Warn the user
+  * Update extensions as possible
 * Extension Listing
   * Compact view and detailed view
     * Detailed view provides optional links to homepage and bug reporting
@@ -95,24 +99,26 @@ These are in descending order of likely priority.
   * Server side of listing
     * Supports retrieval of extension listing based on Brackets API version
   * One click install
+  * Handle extensions that require a restart
 * Extension updates
   * Can automatically disable extensions that are found to be damaging
   * Prompts for restart for extensions that require a restart
   * Displays changelog entries since installed version
   * Warns users of extensions that will be disabled because of compatibility issues
-* Ratings and reviews
+* Extension ratings and reviews
   * Requires authentication to submit review
   * Integrate ratings/reviews into listings
   * Change default sorting to include ratings along with download popularity
   * Required server side changes
-* Improved discoverability
+* Improved extension discoverability
   * Look at languages in project and suggest extensions based on that
 * Create an Extension workflow
-* Synchronize settings and extensions between Brackets instances
-* Share extension via Twitter, Facebook
+  * Installs an extension template into a new directory.
 * Extension collections
   * One click "distributions" of extensions
 * View extensions on the web
+* Synchronize settings and extensions between Brackets instances
+* Share extension via Twitter, Facebook
 
 # Deferred Questions #
 
