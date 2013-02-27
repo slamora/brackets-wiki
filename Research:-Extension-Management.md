@@ -13,7 +13,7 @@ The wireframe below gives an idea of how the extensions may be presented (the pr
 ![Wireframe of Extension Listing](http://behance.vo.llnwd.net/profiles15/2147647/projects/7290337/613d565250285ac4ed3b10a2c48985cb.png)
 
 * Users will be able to quickly see the most popular extensions (based on ratings and downloads)
-* Very speedy search is right at the top
+* Very speedy (entirely client-side) search is right at the top
 * Installing an extension just takes a click on the install button
 * More information is available to help the user pick the right extension (longer description, reviews)
 * Installation occurs in the background, while the user works
@@ -43,10 +43,17 @@ This wireframe shows how the user can manage installed extensions:
 
 The [extension package format](https://github.com/adobe/brackets/wiki/Extension-Package-Format) will be familiar for anyone who has used npm, and easy for anyone who has not. All of the information about the extension is located in a `package.json` file, with optional information in some other files. This allows that information to be stored in a version control system and makes publishing a new version a one click step.
 
-Our goal is for [extensions to be as compatible with Brackets and one another as possible](https://github.com/adobe/brackets/wiki/Extension-Dependencies), even as changes are made. We'll do our best to minimize disruption for the users while ensuring that their editor remains stable.
+Our goal is for [extensions to be as compatible with Brackets and one another as possible](https://github.com/adobe/brackets/wiki/Extension-Dependencies), even as changes are made. We'll do our best to minimize disruption for Brackets users while ensuring that their editor remains stable.
 
+## The Registry Server ##
+
+The registry server will be set up to quickly deliver information about the extensions and the extensions themselves. It will have a straightforward REST+JSON API for submitting ratings and reviews and publishing extensions, and we will seek to make authentication as easy on the users as possible.
+
+There will also be a management API for ensuring that Brackets users get updates as quickly as possible when out of date or potentially damaging extensions are identified.
 
 # Detailed Documents #
+
+The preceding sections were intended as a quick overview of the results of our research. For background and additional details, you can dive in below:
 
 * [Package Manager research](https://github.com/adobe/brackets/wiki/Extension-Package-Manager-Research): a look into what other package managers do and the good ideas we can reuse.
 * [Dependency Management research](https://github.com/adobe/brackets/wiki/Extension-Dependencies)
@@ -54,3 +61,6 @@ Our goal is for [extensions to be as compatible with Brackets and one another as
 * [Rough initial wireframes](http://www.behance.net/gallery/Brackets-Extension-Manager-rough-wireframes/7290337) (note that the extension manager will likely *not* be in a sidebar)
 * [Server API to support user workflows](https://github.com/adobe/brackets/wiki/Extension-Repository-Server-API)
 * [Package Format](https://github.com/adobe/brackets/wiki/Extension-Package-Format)
+
+# Open Questions #
+
