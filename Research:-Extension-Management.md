@@ -64,7 +64,7 @@ The preceding sections were intended as a quick overview of the results of our r
 
 # Open Questions #
 
-* How do parts of an extension run within Node?
+* How do parts of an extension run within Node? (Do we defer this until the Extension API research?)
 * Management of uploaded extensions (pulling an extension, for example). Just contact Brackets team for now?
 * How do we reconcile the module format difference between node/npm and Brackets?
 
