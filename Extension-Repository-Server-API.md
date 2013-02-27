@@ -18,6 +18,9 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 
 * Provides everything the Extension Manager needs to display the list of extensions
 * Includes all extensions with an "active" state
+* A different listing is available for each Brackets API version
+  * When the Brackets API is updated, we generally stop maintaining the old listings.
+  * Users running old versions of Brackets will be able to continue to use old (and compatible) versions of the extensions
 * Fields needed:
   * ID of extension (used for constructing download URL, for example)
   * display name of extension
