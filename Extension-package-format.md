@@ -24,7 +24,7 @@ Brackets uses the same [package.json format as npm](https://npmjs.org/doc/json.h
 * `description` is required, but will optionally be pulled from a README.txt or README.md file at the top of the package
 * the `keywords` field will help users find the extensions they need (see below)
 * `files` works the same as it does for npm, including the optional use of an `.npmignore` file
-* Brackets does not support any of npm's dependencies-related features. When we implement extension dependencies, those will likely be expressed as [peerDependencies](http://blog.nodejs.org/2013/02/07/peer-dependencies/)
+* Brackets does not support any of npm's dependencies-related features on installation. When we implement extension dependencies, those will likely be expressed as [peerDependencies](http://blog.nodejs.org/2013/02/07/peer-dependencies/)
 * `engines` is used to specify the compatible Brackets versions. For most extensions, the version should be expressed as `>= (some Brackets version)` (in other words, there's no max version).
 * We should honor the `private` flag to not publish private extensions
 
@@ -42,7 +42,15 @@ Subject to change from the [Extension API research](https://trello.com/card/5-re
 
 Modules that are imported via `require` are searched for from the root of the extension. For example, `require("foo/bar")` will look for `foo/bar.js` in the extension.
 
-## changelog ##
+## Node Modules ##
+
+Brackets extensions that use Node are expected to ship with the node_modules incorporated directly into the extension package. Including dependencies directly in a package for deployment [is considered a best practice](http://www.futurealoof.com/posts/nodemodules-in-git.html).
+
+Node modules (or any modules for that matter) are *not* shared between extensions.
+
+There are open questions surrounding the lifecycle of the Node code and the module format differences between Brackets and Node and these will be resolved as we head toward the Extension API research story.
+
+## Changelog ##
 
 If there is a CHANGELOG.md file at the package root, the h2 headers (delimited by ##) are assumed to contain version numbers and the sections of the file will be pulled apart to display update information to users.
 
