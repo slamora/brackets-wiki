@@ -36,9 +36,11 @@ Keywords can be anything that will help users find the right extension. Some con
 
 Additional keyword conventions will be created as we review the categories of extensions.
 
-## main extension module ##
+## extension modules ##
 
 Subject to change from the [Extension API research](https://trello.com/card/5-research-extension-api/4f90a6d98f77505d7940ce88/769), Brackets will automatically execute `main.js` at the root of the package when the extension is loaded.
+
+Modules that are imported via `require` are searched for from the root of the extension. For example, `require("foo/bar")` will look for `foo/bar.js` in the extension.
 
 ## changelog ##
 
