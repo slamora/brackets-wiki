@@ -134,6 +134,15 @@ version of a registered extension.
 
 > (kd) perhaps we just provide contact information for the Brackets team somewhere in the publishing UI? I'm guessing the number of these requests will be pretty small.
 
+## Brackets Update
+
+A new Brackets version came out and John upgraded his Brackets. The CoffeeScript Formatting extension was not compatible with the new version of Brackets. As a result, the following happened:
+
+1. The extension was disabled
+2. The toolbar has an indicator on the extension manager icon reflecting that an extension has a problem
+3. In the extension manager, there is a message for the CoffeeScript Formatting extension saying that the installed version is not compatible with the version of Brackets and that it has been disabled
+4. As soon as an update to the CoffeeScript Formatting extension becomes available, John is given the option of updating and re-enabling the extension
+
 # Historical content #
 
 What follows is discussion that was contained within the original document. This section will be removed once the dust has settled a bit.
