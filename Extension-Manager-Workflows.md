@@ -80,16 +80,12 @@ that an update is available to the CoffeeScript Formatting extension and also to
 the "Hover Preview" which he installed recently.
 
 The update descriptions describes the CoffeeScript Formatting bugs that were fixed in the 
-update--one of which was his bug! He clicks on the "Update" link in the notification, and the update is downloaded and installed.
+update--one of which was his bug! He clicks on the "Update" link in the notification, and the update is downloaded and installed. Since John had previously disabled this extension, Brackets prompts him 
+if he wants to re-enable the extension now that it's been updated, and he clicks Yes.
 
 When updating Hover Preview, Brackets warns him that the HTML Image Preview extension
 will be disabled because it is not compatible with the new version of Hover Preview.
 John decides to go ahead and update Hover Preview anyhow.
-
-Brackets prompts him if he wants to re-enable 
-the extension now that it's been updated, and he clicks Yes.
-
-> (kd) Does it actually need to do this? Why not just re-enable.
 
 Closing the Extension Manager, he tries the formatting command again, and
 lo and behold, it works! He goes back to the extension developer's bug
