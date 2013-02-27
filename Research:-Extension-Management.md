@@ -66,8 +66,11 @@ The preceding sections were intended as a quick overview of the results of our r
 
 * How do parts of an extension run within Node?
 * Management of uploaded extensions (pulling an extension, for example). Just contact Brackets team for now?
+* How do we reconcile the module format difference between node/npm and Brackets?
 
 # Candidate Stories #
+
+These are in descending order of likely priority.
 
 * Extension publishing
   * UI that lists development extensions with "Publish" button
@@ -77,13 +80,37 @@ The preceding sections were intended as a quick overview of the results of our r
     * Version number different from previously published extension
   * Authentication for server
   * Server side to handle publishing
+* Extension install
+  * Given a URL to an extension package, install it
+  * Checks for compatibility with Brackets and peer dependencies
 * Extension Listing
   * Compact view and detailed view
+    * Detailed view provides optional links to homepage and bug reporting
   * Secured Markdown formatting of description
+  * Search
+  * Filter by keyword
+  * See more by author
+  * Sort by downloads, alphabetical
   * Server side of listing
+  * One click install
 * Extension updates
+  * Can automatically disable extensions that are found to be damaging
   * Prompts for restart for extensions that require a restart
+  * Displays changelog entries since installed version
+  * Warns users of extensions that will be disabled because of compatibility issues
+* Ratings and reviews
+  * Requires authentication to submit review
+  * Integrate ratings/reviews into listings
+  * Change default sorting to include ratings along with download popularity
+  * Required server side changes
+* Improved discoverability
+  * Look at languages in project and suggest extensions based on that
 * Create an Extension workflow
+* Synchronize settings and extensions between Brackets instances
+* Share extension via Twitter, Facebook
+* Extension collections
+  * One click "distributions" of extensions
+* View extensions on the web
 
 # Deferred Questions #
 
