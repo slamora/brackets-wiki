@@ -62,13 +62,6 @@ The preceding sections were intended as a quick overview of the results of our r
 * [Server API to support user workflows](https://github.com/adobe/brackets/wiki/Extension-Repository-Server-API)
 * [Package Format](https://github.com/adobe/brackets/wiki/Extension-Package-Format)
 
-# Open Questions #
-
-* How do parts of an extension run within Node? (Do we defer this until the Extension API research?)
-* Management of uploaded extensions (pulling an extension, for example). Just contact Brackets team for now?
-* How do we reconcile the module format difference between node/npm and Brackets?
-* Added a couple of new things: Brackets Updates with incompatible extensions, and the ability for old Brackets to get old extensions
-
 # Candidate Stories #
 
 These are in descending order of likely priority.
@@ -128,3 +121,5 @@ The answers to these questions will be resolved at implementation time.
 * What will the login workflow be like? does the login need to time out? can we safely implement a flow within Brackets that authenticates with other services?
 * Is there enough space for an update count badge on the extension manager icon?
 * How do we present extension descriptions securely? (allow Markdown formatting, but escape embedded HTML?)
+* How do parts of an extension run within Node? (Do we defer this until the Extension API research?)
+* How do we reconcile the module format difference between node/npm and Brackets?
