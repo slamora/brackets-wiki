@@ -1,5 +1,31 @@
 A Linux version of Brackets has [always been on the roadmap](https://trello.com/card/linux-desktop-application/4f90a6d98f77505d7940ce88/457) but there is currently no official Brackets build for Linux. Recently however the community has started work on the Linux version. This wiki will serve as a resource for anyone wanting to work on or use Brackets in Linux. 
 
+### Using the Unofficial Build (by Priam Baral)
+
+* clone the main repo https://github.com/adobe/brackets.git
+* download the latest binary from Pritam's downloads page: https://github.com/pritambaral/brackets-shell/downloads (looks like Brackets-shell-....bz2)
+* extract the binary.
+* symlink in "brackets/src" (from the main repo) as "www" in the directory with the Brackets binary
+* also symlink in the "samples" directory
+* run ./Brackets
+
+The shell of it looks like:
+
+```bash
+mkdir ~/brackets && cd ~/brackets
+git clone https://github.com/adobe/brackets.git
+cd brackets
+git submodule update --init
+cd ..
+wget https://github.com/downloads/pritambaral/brackets-shell/Brackets-shell-32.tar.bz2
+tar xf Brackets-shell-32.tar.bz2 && rm Brackets-shell-32.tar.bz2
+ln -s brackets/src www
+ln -s brackets/samples ./samples
+./Brackets
+```
+
+[this worked for me on 32 bit Ubuntu 12.10]
+
 ### The Challenge
 
 The main challenge with a Linux version of Brackets is that Brackets uses the [Chromium Embedded Framework version 3 (CEF3)](http://code.google.com/p/chromiumembedded/) for [brackets-shell](https://github.com/adobe/brackets-shell/), the native wrapper that hosts Brackets. There is currently no Linux binary for CEF3 and building it requires some manual work.
