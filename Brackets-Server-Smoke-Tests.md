@@ -13,7 +13,7 @@ You will need an HTTP and PHP server for these tests. Options are:
     c. Server root folder: /Library/WebServer/Documents/  
     d. (OSX 10.8 and later) Start (or restart) apache:  run `sudo apachectl start` in a terminal window (use `restart` if already running)
 * Use a remote server with drive mapped to local machine.
-* _Future:_ Use Brackets built-in node server with HTTP plugin.
+* Sprint 21: Brackets has node js built-in with an HTTP server plugin. Note that this server does not support PHP, so that test cannot be run.
 
 Setup
 =====
