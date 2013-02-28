@@ -25,9 +25,9 @@ No major changes to existing features.
 
 API Changes
 -----------
-**Editor constructor** - The "mode" argument has been removed, shifting other arguments over (mode is now retrieved from the Document). Note: it would be very unusual for an extension to be calling the Editor constructor directly.
-**Debug menu** - Removed ``Menus.AppMenuBar.DEBUG_MENU`` menu ID
-**EditorUtils removed** - ``EditorUtils.getModeFromFileExtension()`` changed to ``Languages.getLanguageForFileExtension()``
+* **Editor constructor** - The "mode" argument has been removed, shifting other arguments over (mode is now retrieved from the Document). Note: it would be very unusual for an extension to be calling the Editor constructor directly.
+* **Debug menu** - Removed ``Menus.AppMenuBar.DEBUG_MENU`` menu ID
+* **EditorUtils removed** - ``EditorUtils.getModeFromFileExtension()`` changed to ``Languages.getLanguageForFileExtension()``
 
 New/Improved Extensibility APIs
 -------------------------------
