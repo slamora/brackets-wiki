@@ -21,6 +21,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
 * [Extension UI Guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines)
 * [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
+* [The Future Extension Manager](https://github.com/adobe/brackets/wiki/Research:-Extension-Management)
 
 ## Usage
 * [Quick Start Video](http://www.youtube.com/watch?v=VKitqLpJtAY&feature=plcp)
