@@ -13,7 +13,7 @@ You will need an HTTP and PHP server for these tests. Options are:
     c. Server root folder: /Library/WebServer/Documents/  
     d. (OSX 10.8 and later) Start (or restart) apache:  run `sudo apachectl start` in a terminal window (use `restart` if already running)
 * Use a remote server with drive mapped to local machine.
-* Sprint 21: Brackets has node js built-in with an HTTP server plugin. Any project folder can be the server root. Note that this server does not support PHP, so that test cannot be run.
+* Sprint 21: Brackets has node js built-in with an HTTP server plugin. Any project folder can be the server root. Note that this server does not support PHP, so the .php cannot be viewed, but all of the tests in that section can be run using one of the .html pages.
 
 Setup
 =====
@@ -31,10 +31,10 @@ Server smoke test steps
 5. Open pathRel.html, start Live Preview using File > Live Preview.
 6. If you trashed prefs, you'll get an info dialog explaining how Live Preview works. Click OK.
 7. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome. Click "Relaunch". Chrome should relaunch and open the page.
-8. Verify that the base URL is http://127.0.0.1:_nnnnn_/  (where _nnnnn_ is an auto-generated port number) and page renders correctly in browser.
+8. Verify that the base URL is 127.0.0.1: _nnnnn_ (where _nnnnn_ is an auto-generated port number) and page renders correctly in browser.
 9. Open File menu, verify Live Preview has a check mark next to it, then click it to toggle off Live Preview.
 10. Open pathRoot.html and click Live Preview (lightning bolt) icon on right side of menu bar.
-11. Verify that page is opened in browser, but with no CSS or images. Click Live Preview icon to disconnect Live Preview.
+11. Verify that page is opened in browser and CSS, images (with site-relative paths) are rendered correctly. Click Live Preview icon to disconnect Live Preview.
 12. Open server.php and start Live Preview. Verify Project Settings dialog is invoked with warning message indicating a Base URL is required.
 13. Enter the URL that maps to the project on your server (e.g. http://localhost/). Click OK. Verify that the URL protocol is the same as in your URL Prefix (http: or https:) and page renders correctly in browser.
 14. In Brackets, set the cursor in the `<body>` tag, hit Cmd/Ctrl-E, and verify that it shows a single body rule.
@@ -44,5 +44,4 @@ Server smoke test steps
 18. Verify that text has not yet changed in browser. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
 19. Disconnect Live Preview. Undo changes in HTML file and save to get back to original state.
 20. Close all files and discard changes.
-21. Open pathRoot.html again, start Live Preview, and verify that CSS and images are now rendered. Turn off Live Preview and close file.
-22. Click on recent project dropdown list and use Project Settings... to set Base URL back to blank.
+21. Click on recent project dropdown list and use Project Settings... to set Base URL back to blank.
