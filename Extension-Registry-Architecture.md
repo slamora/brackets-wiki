@@ -38,6 +38,8 @@ Given node's single-threaded nature, we can just keep the extension listing as a
 
 User registrations *might* warrant a database, but it may be just as easy to work with the user data in the same manner as the extension listing. When the user database consists just of Brackets extension authors, that will clearly be a small amount of data. Even when we add ratings and reviews, only a fraction of Brackets users will use these features.
 
+For reviews and ratings, we can pull the detailed info from S3 (probably keeping a cache on disk to avoid eventual consistency issues) and just store them directly in that JSON data. No need to keep it in memory.
+
 If the authoritative data for everything is stored in S3, then we will not need to bother with EBS or using one of Amazon's database services. If the API server goes down, it needs only to reload from S3 to get started.
 
 ## Log Processing ##
