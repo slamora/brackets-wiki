@@ -158,7 +158,7 @@ For all Brackets extensions:
 * Extensions would be registered initially with no max version set
 * As we make changes, we will add deprecation warnings as possible to give extension developers time to fix their extensions
 * Upon complaints of extensions no longer working, the Brackets team will set a max version for the extension in question
-* Users will not see incompatible extensions when looking for extensions to install
+* Users will see incompatible extensions listed (perhaps at the bottom) when they are looking for extensions, but there will be an explanation about why the extension can't be installed
 * Extensions that are not compatible with the Brackets version a user is running will be disabled until a compatible update is released
 
 For extensions that rely on other extensions (as "peer dependencies"):
@@ -166,7 +166,7 @@ For extensions that rely on other extensions (as "peer dependencies"):
 * Dependencies on other extensions may not be an initial feature
 * We will recommend the use of semantic versioning with compatible versions set for peer dependencies
 * We will also recommend the use of deprecation warnings
-* Users will only be given compatible sets of extensions, with the peer dependencies taking the lead
+* Users will may be shown incompatible sets of extensions, but there will be a notice about why the extensions are incompatible
 
 
 # Historical Discussion #
