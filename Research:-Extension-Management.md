@@ -8,9 +8,11 @@ In the interest of truly summarizing what we've come up with, this document will
 
 The [Extension Manager Workflows](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows) document how users will interact with the extension manager in Brackets.
 
-The wireframe below gives an idea of how the extensions may be presented (the content within the sidebar is the relevant bit, a sidebar may very well not be the home of the extension manager).
+The wireframe below gives a couple of ideas of how the extensions may be presented (the first shows in a sidebar, the second in a full view).
 
-![Wireframe of Extension Listing](http://behance.vo.llnwd.net/profiles15/2147647/projects/7290337/613d565250285ac4ed3b10a2c48985cb.png)
+![Wireframe of Extension Listing (sidebar)](http://behance.vo.llnwd.net/profiles15/2147647/projects/7290337/613d565250285ac4ed3b10a2c48985cb.png)
+
+![Wireframe of Extension Listing (full view)](http://behance.vo.llnwd.net/profiles15/2147647/projects/7290337/0670d5e494a804bf5042fda0b86fdba4.png)
 
 * Users will be able to quickly see the most popular extensions (based on ratings and downloads)
 * Very speedy (entirely client-side) search is right at the top
@@ -88,12 +90,11 @@ These are in descending order of likely priority.
     * Given a URL to an extension package, install it
     * Checks for compatibility with Brackets and peer dependencies
 * Extension handling on Brackets update
-    * Disable extensions that are no longer compatible
-    * Warn the user
-    * Update extensions as possible
+* Disable extensions that are no longer compatible
+* Warn the user
+* Update extensions as possible
 * Extension Listing
-    * Compact view and detailed view
-        * Detailed view provides optional links to homepage and bug reporting
+    * Compact view only
     * Secured Markdown formatting of description
     * Tell user why certain extensions can't be installed
         * newer or older version of Brackets required
@@ -103,6 +104,11 @@ These are in descending order of likely priority.
     * Consider sending SHAs for packages
     * One click install
     * Handle extensions that require a restart
+* Extension Detail View
+    * Optionally provides more screenshots
+    * Links to homepage, bug reporting
+    * If available, shows reviews, rating breakdown
+    * View of changelog
 * Extension search/filter
     * Search
     * Filter by keyword
