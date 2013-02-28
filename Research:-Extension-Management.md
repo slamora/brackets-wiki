@@ -61,8 +61,9 @@ The preceding sections were intended as a quick overview of the results of our r
 * [Dependency Management research](https://github.com/adobe/brackets/wiki/Extension-Dependencies)
 * [User workflow proposals](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows)
 * [Rough initial wireframes](http://www.behance.net/gallery/Brackets-Extension-Manager-rough-wireframes/7290337) (note that the extension manager will likely *not* be in a sidebar)
-* [Server API to support user workflows](https://github.com/adobe/brackets/wiki/Extension-Repository-Server-API)
 * [Package Format](https://github.com/adobe/brackets/wiki/Extension-Package-Format)
+* [Server API to support user workflows](https://github.com/adobe/brackets/wiki/Extension-Repository-Server-API)
+* [Server architecture](https://github.com/adobe/brackets/wiki/Extension-Registry-Architecture)
 
 # Candidate Stories #
 
