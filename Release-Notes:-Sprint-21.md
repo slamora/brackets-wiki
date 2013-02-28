@@ -7,7 +7,7 @@ What's New in Sprint 21
 * **Code Hinting**
     * [JavaScript code hinting](https://trello.com/card/2-code-hinting-javascript/4f90a6d98f77505d7940ce88/775): Smart code hinting includes keywords, local variables, arguments, and property names based on nearby code.
 * **Live Development**
-    * [Default localhost for Live Preview](https://trello.com/card/5-live-development-on-localhost/4f90a6d98f77505d7940ce88/684): By default, Live Preview now launches an http://localhost URL instead of file:// thanks to a build-in Node server. Pointing Live Preview at your _own_ local server remains supported (see File > Project Settings).
+    * [Default localhost for Live Preview](https://trello.com/card/5-live-development-on-localhost/4f90a6d98f77505d7940ce88/684): By default, Live Preview now launches an http://localhost URL instead of file:// thanks to a build-in Node.js server. Pointing Live Preview at your _own_ local server remains supported (see File > Project Settings).
 * **Overall UI**
     * [Drag & drop to open files](https://github.com/adobe/brackets-shell/pull/190): Drag files onto the Dock icon (on Mac) or the Brackets window itself (on Windows) to open them.
     * [Remember cursor & scroll position across launches](https://github.com/adobe/brackets/pull/2898): Files you leave open when you quit or switch projects will be reopened right where you left off. Within a session, this also works for files you open, close, then reopen later.
