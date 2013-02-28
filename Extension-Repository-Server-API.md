@@ -18,6 +18,7 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 
 * Provides everything the Extension Manager needs to display the list of extensions
 * Includes all extensions with an "active" state
+* Provides base URLs (or URL templates) for initiating downloads and getting detailed information (this allows us to move these around without changing the client code)
 * Fields needed:
   * ID of extension (used for constructing download URL, for example)
   * display name of extension
