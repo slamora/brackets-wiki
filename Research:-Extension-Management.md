@@ -67,48 +67,62 @@ The preceding sections were intended as a quick overview of the results of our r
 These are in descending order of likely priority.
 
 * Extension publishing
-  * UI that lists development extensions with "Publish" button
-  * Validation of extension
-    * Required package.json fields
-    * No required files missing
-    * Version number different from previously published extension
-  * Authentication for server
-  * Server side to handle publishing
+    * Web-based UI with login and file upload
+    * Validation of extension
+        * Required package.json fields
+        * No required files missing
+        * Version number different from previously published extension
+    * Authentication for server (OAuth preferred)
+    * Server side to handle publishing
+* Extension management mechanism
+    * Provides critical management functions
+        * Hide extension from listing
+        * Disable extension everywhere
+        * Reactivate extension
+        * Change max version of extension
+        * Deactivate/activate user (disallow login)
+        * Set authorizations (ability to access this API, for example)
+    * Authorized for Brackets committers/core team only
+    * UI should be whatever is easiest to implement
 * Extension install
-  * Given a URL to an extension package, install it
-  * Checks for compatibility with Brackets and peer dependencies
+    * Given a URL to an extension package, install it
+    * Checks for compatibility with Brackets and peer dependencies
 * Extension handling on Brackets update
-  * Disable extensions that are no longer compatible
-  * Warn the user
-  * Update extensions as possible
+    * Disable extensions that are no longer compatible
+    * Warn the user
+    * Update extensions as possible
 * Extension Listing
-  * Compact view and detailed view
-    * Detailed view provides optional links to homepage and bug reporting
-  * Secured Markdown formatting of description
-  * Search
-  * Filter by keyword
-  * See more by author
-  * Sort by downloads, alphabetical
-  * Server side of listing
-    * Supports retrieval of extension listing based on Brackets API version
-  * One click install
-  * Handle extensions that require a restart
+    * Compact view and detailed view
+        * Detailed view provides optional links to homepage and bug reporting
+    * Secured Markdown formatting of description
+    * Tell user why certain extensions can't be installed
+        * newer or older version of Brackets required
+        * Incompatibility between extensions (peer dependency issues)
+    * Sort by downloads, alphabetical
+    * Server side of listing
+    * Consider sending SHAs for packages
+    * One click install
+    * Handle extensions that require a restart
+* Extension search/filter
+    * Search
+    * Filter by keyword
+    * See more by author
 * Extension updates
-  * Can automatically disable extensions that are found to be damaging
-  * Prompts for restart for extensions that require a restart
-  * Displays changelog entries since installed version
-  * Warns users of extensions that will be disabled because of compatibility issues
+    * Can automatically disable extensions that are found to be damaging
+    * Prompts for restart for extensions that require a restart
+    * Displays changelog entries since installed version
+    * Warns users of extensions that will be disabled because of compatibility issues
 * Extension ratings and reviews
-  * Requires authentication to submit review
-  * Integrate ratings/reviews into listings
-  * Change default sorting to include ratings along with download popularity
-  * Required server side changes
+    * Requires authentication to submit review
+    * Integrate ratings/reviews into listings
+    * Change default sorting to include ratings along with download popularity
+    * Required server side changes
 * Improved extension discoverability
-  * Look at languages in project and suggest extensions based on that
+    * Look at languages in project and suggest extensions based on that
 * Create an Extension workflow
-  * Installs an extension template into a new directory.
+    * Installs an extension template into a new directory.
 * Extension collections
-  * One click "distributions" of extensions
+    * One click "distributions" of extensions
 * View extensions on the web
 * Synchronize settings and extensions between Brackets instances
 * Share extension via Twitter, Facebook
@@ -123,3 +137,4 @@ The answers to these questions will be resolved at implementation time.
 * How do we present extension descriptions securely? (allow Markdown formatting, but escape embedded HTML?)
 * How do parts of an extension run within Node? (Do we defer this until the Extension API research?)
 * How do we reconcile the module format difference between node/npm and Brackets?
+* Feasibility of packages being submitted to other registries as appropriate (maybe for Edge Code)?
