@@ -66,7 +66,7 @@ The preceding sections were intended as a quick overview of the results of our r
 
 # Candidate Stories #
 
-These are in descending order of likely priority.
+These proposed stories have already been moved to the [backlog in Trello](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88). Look there for the latest versions. (They're left here for convenient reading.)
 
 * Extension publishing
     * Web-based UI with login and file upload
@@ -90,9 +90,9 @@ These are in descending order of likely priority.
     * Given a URL to an extension package, install it
     * Checks for compatibility with Brackets and peer dependencies
 * Extension handling on Brackets update
-* Disable extensions that are no longer compatible
-* Warn the user
-* Update extensions as possible
+    * Disable extensions that are no longer compatible
+    * Warn the user
+    * Update extensions as possible
 * Extension Listing
     * Compact view only
     * Secured Markdown formatting of description
@@ -123,6 +123,9 @@ These are in descending order of likely priority.
     * Integrate ratings/reviews into listings
     * Change default sorting to include ratings along with download popularity
     * Required server side changes
+
+The following possible stories have been discussed but are not yet part of the backlog:
+
 * Improved extension discoverability
     * Look at languages in project and suggest extensions based on that
 * Create an Extension workflow
