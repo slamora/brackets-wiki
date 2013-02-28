@@ -23,6 +23,7 @@ Node offers a number of features that make it well-suited to serving as the plat
 * Support for [zip files](https://github.com/springmeyer/node-zipfile), [gzip](http://nodejs.org/api/zlib.html) and [tar](https://github.com/isaacs/node-tar)
 * Implementing HTTP+JSON APIs is the bread and butter for node
 * Ability to share code for package validation and possibly other uses between Brackets and the server
+* If/when we want to display extension information on the web, we can do so using the same templates and generated from the same code as used in Brackets itself
 * Everyone on the team knows JavaScript already :)
 * Node's single-threaded nature makes it straightforward to synchronize writes to the registry
 
