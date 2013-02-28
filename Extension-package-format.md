@@ -1,6 +1,8 @@
 # Extension Package Format #
 
-Status: Proposal
+Status: Proposal+Current Practice
+
+Note: this will likely undergo revision during the [extension API research](https://trello.com/card/5-research-extension-api/4f90a6d98f77505d7940ce88/769)
 
 Brackets extensions follow a format established by CommonJS and npm.
 
@@ -58,10 +60,16 @@ There are open questions surrounding the lifecycle of the Node code and the modu
 
 If there is a CHANGELOG.md file at the package root, the h2 headers (delimited by ##) are assumed to contain version numbers and the sections of the file will be pulled apart to display update information to users.
 
-## unit tests ##
+## Unit Tests ##
 
 A unit test module can be located at `unittests.js` at the root of the package.
 
 ## module files ##
 
 **Open question: npm uses CommonJS modules, Brackets uses AMD, how do we reconcile?**
+
+(This will be investigated during the extension API research. We have discussed a move to pure CommonJS modules.)
+
+## Localization ##
+
+The pattern for localizing extensions is to put an `nls` directory at the root, containing a `strings.js` module. Next to that module, there is a `root` directory with the baseline set of strings and a directory for each locale's specific strings. See the [Localization Example extension](https://github.com/adobe/brackets/tree/master/src/extensions/samples/LocalizationExample).
