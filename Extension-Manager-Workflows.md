@@ -33,6 +33,8 @@ He clicks on the "More..." link on the first extension to see more info. It show
 the full screenshot and more of the description text, which explains the basic usage 
 of the extension, along with a link to the extension developer's website for more info.
 
+There is a fourth extension listed, CoffeeScript Lint, but the "Install" button is disabled and there's a message stating that CoffeeScript Lint is only compatible with earlier versions of Brackets. John considers following the developer's website link to ask about a newer version, but decides he'll just try out the other three extensions to start with.
+
 ## Installation
 
 He doesn't feel like he needs to read any more for the other extensions, so he clicks 
