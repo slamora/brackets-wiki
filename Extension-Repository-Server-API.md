@@ -1,4 +1,4 @@
-Server API requirements to support [the workflows](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows).
+Server API requirements to support [the workflows](https://github.com/adobe/brackets/wiki/Extension-Manager-Workflows). See also [the proposed server architecture](https://github.com/adobe/brackets/wiki/Extension-Registry-Architecture)
 
 # Requirements #
 
