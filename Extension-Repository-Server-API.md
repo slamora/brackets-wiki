@@ -81,7 +81,8 @@ Server API requirements to support [the workflows](https://github.com/adobe/brac
 
 * Enables an extension developer to upload an extension
 * Can update an existing extension that the developer owns
-* Uploads a package with metadata (package format TBD)
+* Uploads [a package](https://github.com/adobe/brackets/wiki/Extension-package-format) with metadata
+* Registers the extension and computes any metadata that needs computing (such as converting "nls" directories into language support metadata)
 * **authenticated** and **authorized** only for the owner of the extension (or any user, if it's a new extension name)
 
 ## Manage ##
