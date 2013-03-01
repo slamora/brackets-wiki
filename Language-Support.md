@@ -1,10 +1,27 @@
 ## Introduction
-Support for languages like HTML, JavaScript and CSS is currently a core part of Brackets. Support on the same level cannot easily be added by extensions. This page documents our efforts to change that.
+Support for languages like HTML, JavaScript and CSS is currently a core part of Brackets. Support for other languages on the same level cannot easily be added by extensions. This page documents our efforts to change that.
 
-## Ongoing work
-- Introduced a new high-level concept "language" and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
+## TL;DR
 
-## The language concept
+In an extension, if a language has an existing CodeMirror mode, you can declare the new language in a simple JSON object:
+
+```
+var LanguageManager = brackets.getModule("language/LanguageManager");
+
+LanguageManager.defineLanguage("shell", {
+    name: "Shell",
+    mode: "shell",
+    fileExtensions: ["sh"],
+    lineComment: "#"
+});
+```
+
+If you need to provide a custom mode, it must be registered to CodeMirror using ``CodeMirror.defineMode()`` first before calling ``LanguageManager.defineLanguage()``.
+
+## New LanguageManager Module and Language API
+- The Sprint 21 release introduced a new high-level "language" concept and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
+
+## The Language Concept
 
 * A language has an ID (i.e. "cpp", "cs") for computers (variables, object keys, file names, etc.)
 * A language has a name (i.e. "C++", "C#") for humans (displayed in the status bar)
@@ -13,7 +30,10 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 * A language can have a prefix and a suffix for block comments (i.e. "/*" and "*/")
 * A language can refer to a CodeMirror mode
 
-## Places contributing to current language support
+### Future/Goals
+
+Our goal is to extend languages as the primary mechanism to extend other core features of Brackets such as code hinting, text manipulation commands, quick edit, live preview, etc.
+## Places contributing to "language" support as of Sprint 21
 Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
 ### Module brackets
