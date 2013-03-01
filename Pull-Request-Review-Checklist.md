@@ -1,5 +1,10 @@
 This checklist is for Brackets Committers to assist in reviewing pull requests to ensure that they are ready to merge. It has some elements in common with the [Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist) because committers have a chance to double check work before it goes in.
 
+How to use the checklist:
+
+* The purpose of the checklist is to make sure that we don't forget anything important
+* Consider each item in the list, but only act on the items that you think are relevant to the change you're looking at
+
 ## Proposed Pull Request Review checklist
 
 ### Ensuring the change is ready to go in ###
