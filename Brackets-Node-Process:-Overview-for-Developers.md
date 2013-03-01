@@ -1,5 +1,12 @@
 **Status:** Implemented in Sprint 21. Document last updated 3/1/13.
 
+Overview
+--------
+
+Starting with Sprint 21, the Brackets has a [Node.js](http://nodejs.org/) process integrated into the shell. The purpose of this document is to give a brief overview of the architecture as well as pragmatic examples of how to develop for and debug code that leverages node.
+
+For more information on _why_ we've integrated Node in the way we have, take a look at [[Research: Node.JS Integration]].
+
 Architecture
 ------------
 
