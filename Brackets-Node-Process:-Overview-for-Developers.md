@@ -16,7 +16,29 @@ We will message any API changes via the [Brackets-Dev Google Group](https://grou
 Architecture
 ------------
 
-On both Mac and Windows, node runs as a separate child process of the main Brackets-shell process. The child process communicates with the shell via stdin/stdout
+On both Mac and Windows, node runs as a separate child process of the main Brackets-shell process. The child process communicates with the shell via stdin/stdout (communication with the parent process should be kept to a minimum). The node process runs a simple http and websocket server on localhost at a randomly-assigned port, which are used to communicate with the client JS code.
+
+Communication between the node process and client JS code is handled almost exclusively through websockets. The high-level protocol for communication is modeled after the [Chromium Web Inspector remote debugging protocol](https://developers.google.com/chrome-developer-tools/docs/debugger-protocol) (which is used by our Live Development code).
+
+A major goal of the architecture of the node system is to keep "core" node code as small as possible. This code is responsible for launching the http and websocket servers, managing connections, and allowing extensions to register new commands. Because the core code is small and tied to specific APIs in the brackets shell, this code is in the brackets-shell repo. All "core" code lives in the ["appshell/node-core" directory of the brackets-shell repo](https://github.com/adobe/brackets-shell/tree/master/appshell/node-core). An added benefit of this organization is that we get to use the phrase "node-core" a lot, which sounds like a great name for an 80s punk band.
+
+The "useful" parts of the node process are implemented as "domains". (Note: this usage of the word "domains" is modeled after the web inspector usage, **not** after the Node.js usage. Node.js domains are _very_ different.) Domains define commands and events that can be executed by the client. When a client connects, it can retrieve a list of all registered domains by making an HTTP request to the "/api" path. (I.e., by requesting http://localhost:port/api). This returns a JSON representation of the current API.
+
+On the client side, a connection to the Node server is handled by the NodeConnection class inside [src/utils/NodeConnection.js](https://github.com/adobe/brackets/blob/master/src/utils/NodeConnection.js). Upon connection, this class automatically requests the API and constructs wrapper functions that make calling commands, receiving events, and so-forth straightforward. Suppose we have a connection to node stored in an object pointed to by the variable name ```_nodeConnection```. This object will have a property named "domains" which contains functions that wrap commands. In the usage example below, we define a domain called "simple", and a command in that domain called "getMemory". This command can be accessed at ```_nodeConnection.domains.simple.getMemory```. Calling this function will return a promise that will resolve with the result, or reject with an error message.
+
+The connection interface also supports events coming from node. (One example of this is log events.) Events are registered using the ```registerEvent``` command in the DomainManger, and emitted using the ```emitEvent```. On the client side, events can be listed for using the standard jQuery event system on instances of the NodeConenction class. So, to listen for log events, we can do:
+
+```javascript
+$(_nodeConnection).on("base.log", function (evt, level, timestamp, message) {
+    console.log("[node] %s %s %s", level, timestamp, message);
+});
+```
+
+As of right now, Brackets client code automatically registers as a listener for log events and forwards them to the client console, prefixed with "[node-(level) (timestamp)]".
+
+As with almost all things JS, everything here is asynchronous. Here, there there are two different sources of asynchrony to consider. First, communication between the client and node is _always_ asynchronous. Asynchrony on the client side is handled entirely through jQuery promises. Behind the scenes, NodeConnection assigns message IDs to each message sent, maps responses to those original IDs, and resolves appropriate promises that were returned at command call time.
+
+The second source of asynchrony is entirely on the node side: any single command that node executes _could be_ asynchronous (or, it could be synchronous). The ConnectionManager and DomainManager on the node side handle this asynchrony. (See ```executeCommand``` in [DomainManager.js](https://github.com/adobe/brackets-shell/blob/master/appshell/node-core/DomainManager.js).) Commands that are asynchronous on the server side are registered with the "isAsync" parameter of registerCommand set to true. Such commands are called with an automatically-constructed "errback" callback (a function with a Google Closure type of {function(err:?string, result:*}). We use errbacks instead of Promises on the node side because most core node modules use errbacks.
 
 Usage Example
 -------------
