@@ -66,7 +66,7 @@ It defines three methods for managing languages:
 * ``getLanguageForMode()`` Returns either a language associated with the mode or the fallback language. Used to disambiguate modes used by multiple languages.
 
 ## Places contributing to "language" support as of Sprint 21
-Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
+Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The remainder of this page documents future work required to support languages across various features in Brackets.
 
 ### Module brackets
 
