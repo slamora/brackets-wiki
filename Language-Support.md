@@ -28,7 +28,7 @@ If you need to provide a custom mode, it must be registered to CodeMirror using 
 * A language can have a list of file extensions
 * A language can have a prefix for line comments (i.e. "//")
 * A language can have a prefix and a suffix for block comments (i.e. "/*" and "*/")
-* A language can refer to a CodeMirror mode
+* A language can refer to a CodeMirror mode for parsing, tokenization, indentation and syntax highlighting
 
 ### Goals
 
