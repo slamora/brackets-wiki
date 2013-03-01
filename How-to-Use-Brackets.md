@@ -30,10 +30,10 @@ add a file to the working set, just make an edit in it, or double-click it
 in the file tree.
 
 Brackets currently has color-coding for HTML, JS, CSS, and LESS files. It
-also has some basic code hinting for HTML tags and attribute names and
-values. They'll pop up automatically as you type tags, or you can hit
-Ctrl-Space to bring them up manually. More code hinting will come in future
-sprints.
+also has some basic code hinting for HTML tags, attribute names and
+values, CSS property names and values, and JavaScript. They'll pop up 
+automatically as you type, or you can hit Ctrl-Space to bring them up manually. 
+More code hinting will come in future sprints.
 
 <a id="inlines"></a>Quick Edit
 ----------
@@ -102,9 +102,9 @@ While Live Preview is open, putting your cursor in a CSS rule
 in Brackets will highlight all matching HTML elements in the browser.
 Use "File > Live Highlight" to toggle this off.
 
-By default, Brackets previews files using a direct file:// URL. If you want
-to preview off a server, you can use **File > Project Settings...**. In the Base URL
-field, set the URL on the server that corresponds to the root of your project.
+By default, Brackets previews files using a local http server that is included with Brackets. 
+If you want to preview off a server, you can use **File > Project Settings...**. 
+In the Base URL field, set the URL on the server that corresponds to the root of your project.
 
 Some limitations of the current implementation:
 
