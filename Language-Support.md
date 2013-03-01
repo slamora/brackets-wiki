@@ -30,9 +30,31 @@ If you need to provide a custom mode, it must be registered to CodeMirror using 
 * A language can have a prefix and a suffix for block comments (i.e. "/*" and "*/")
 * A language can refer to a CodeMirror mode
 
-### Future/Goals
+### Goals
 
 Our goal is to extend languages as the primary mechanism to extend other core features of Brackets such as code hinting, text manipulation commands, quick edit, live preview, etc.
+
+## LanguageManager Module
+
+The ``LanguageManager`` modules can be accessed in an extension: ``brackets.getModule("language/LanguageManager")``.
+
+It defines three methods for managing languages:
+
+* ``defineLanguage(id, definition)``
+* ``getLanguage(id)``
+* ``getLanguageForFileExtension(path)``
+
+## Language API
+
+A ``Language`` ...
+
+* ``getName()``
+* ``getMode()``
+* ``getFileExtensions()``
+* ``hasLineCommentSyntax()/getLineCommentSyntax()/setLineCommentSyntax(prefix)``
+* ``hasBlockCommentSyntax()/getBlockCommentPrefix()/getBlockCommentSuffix()/setLineCommentSyntax(prefix)``
+* ``getLanguageForMode()``
+
 ## Places contributing to "language" support as of Sprint 21
 Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
 
