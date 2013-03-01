@@ -20,7 +20,7 @@ I put it in the callback passed to <code>SpecRunnerUtils.createTestWindowAndRun(
 
 7. Run your unit test
 
-You should hit your breakpoint(s) and be able to step into code. Note that there are 2 Dev Tools windows: 1 fro Jasmine and 1 for the Brackets test window. When you step or run from code in the Jasmine Dev Tools window to code in the Brackets test Dev Tools window, there is no indication in the Jasmine Dev Tools Window and you are not automatically switched, so you'll need to manually changed to the other Dev Tools window.
+You should hit your breakpoint(s) and be able to step into code. Note that there are 2 Dev Tools windows: 1 for Jasmine and 1 for the Brackets test window. When you step or run from code in the Jasmine Dev Tools window to a code or a breakpoint in the Brackets test Dev Tools window, there is no indication in the Jasmine Dev Tools Window and you are not automatically switched to the other window, so you'll need to manually changed to the other Dev Tools window.
 
 Opening a Dev Tools window for every Brackets test window slows down tests, so you may want to disable all tests except the one you are debugging.
 
