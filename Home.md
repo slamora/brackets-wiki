@@ -18,6 +18,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 ### Extensions
 * [How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)
+* [Language Support](https://github.com/adobe/brackets/wiki/Language-Support)
 * [How the Node process in Brackets-Shell Works](wiki/Brackets-Node-Process:-Overview-for-Developers)
 * [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
 * [Extension UI Guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines)
