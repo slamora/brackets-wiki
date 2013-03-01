@@ -16,7 +16,7 @@ LanguageManager.defineLanguage("shell", {
 });
 ```
 
-If you need to provide a custom mode, it must be (registered to CodeMirror)[http://codemirror.net/doc/manual.html#modeapi] using ``CodeMirror.defineMode()`` first before calling ``LanguageManager.defineLanguage()``.
+If you need to provide a custom mode, it must be [registered to CodeMirror](http://codemirror.net/doc/manual.html#modeapi) using ``CodeMirror.defineMode()`` first before calling ``LanguageManager.defineLanguage()``.
 
 ## New LanguageManager Module and Language API
 - The Sprint 21 release introduced a new high-level "language" concept and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
