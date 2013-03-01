@@ -3,7 +3,7 @@ Support for languages like HTML, JavaScript and CSS is currently a core part of 
 
 ## TL;DR
 
-In an extension, if a language has an existing CodeMirror mode, you can declare the new language in a simple JSON object:
+In an extension, if a language has an [existing CodeMirror mode](http://codemirror.net/doc/modes.html), you can declare the new language in a simple JSON object:
 
 ```
 var LanguageManager = brackets.getModule("language/LanguageManager");
