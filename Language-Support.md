@@ -1,5 +1,5 @@
 ## Introduction
-Support for languages like HTML, JavaScript and CSS is currently a core part of Brackets. Support for other languages on the same level cannot easily be added by extensions. This page documents our efforts to change that.
+Support for languages like HTML, JavaScript and CSS is currently a core part of Brackets. Support for other languages, before Sprint 21, could not easily be added by extensions. This page documents language support (added in Sprint 21) to allow extensions to define languages without modifying core Brackets modules.
 
 ## TL;DR
 
@@ -8,11 +8,12 @@ In an extension, if a language has an [existing CodeMirror mode](http://codemirr
 ```
 var LanguageManager = brackets.getModule("language/LanguageManager");
 
-LanguageManager.defineLanguage("shell", {
-    name: "Shell",
-    mode: "shell",
-    fileExtensions: ["sh"],
-    lineComment: "#"
+var language = LanguageManager.defineLanguage("haskell", {
+    name: "Haskell",
+    mode: "haskell",
+    fileExtensions: ["hs"],
+    blockComment: ["{-", "-}"],
+    lineComment: "--"
 });
 ```
 
@@ -42,7 +43,14 @@ The ``LanguageManager`` modules can be accessed in an extension: ``brackets.getM
 
 It defines three methods for managing languages:
 
-* ``defineLanguage(id, definition)``
+* ``defineLanguage(id, definition)`` - Defines a language. returns A promise object that will be resolved with a Language object.
+    * ``id`` Unique identifier for this language, use only letters a-z, numbers and _ inbetween (i.e. "cpp", "foo_bar")
+    * ``defintion`` An object describing the language
+    * ``defintion.name`` Human-readable name of the language, as it's commonly referred to (i.e. "C++")
+    * ``defintion.fileExtensions`` List of file extensions used by this language (e.g ["php", "php3"])
+    * ``defintion.lineComment`` Line comment prefix (i.e. "//")
+    * ``defintion.blockComment`` Array with two entries defining the block comment prefix and suffix (e.g ["<!--", "-->"])
+    * ``defintion.mode`` CodeMirror mode (i.e. "htmlmixed"), optionally with a MIME mode defined by that mode ["clike", "text/x-c++src"] unless the mode is located in thirdparty/CodeMirror2/mode/<name>/<name>.js, you need to first load it yourself.
 * ``getLanguage(id)``
 * ``getLanguageForFileExtension(path)``
 
