@@ -16,6 +16,8 @@ We will message any API changes via the [Brackets-Dev Google Group](https://grou
 Architecture
 ------------
 
+On both Mac and Windows, node runs as a separate child process of the main Brackets-shell process. The child process communicates with the shell via stdin/stdout
+
 Usage Example
 -------------
 
@@ -29,7 +31,7 @@ A brackets extension lives in a single folder, and its entry point is main.js. B
 
 **Note on third-party modules:** Convention recommends putting any third-party modules inside a "node_modules" directory that lives inside the "node" directory. For development, node modules can be installed through npm by putting a "package.json" file in the "node" directory and running ```npm install``` from inside that directory. By doing this (and adding "node/node_modules" to your .gitignore) you can avoid checking third party code into your repo. For _distribution_, the actual bits of any third-party modules should be bundled in to the zip. (This is recommended practice in the node community to ensure that all end users get the same bits. See http://www.futurealoof.com/posts/nodemodules-in-git.html )
 
-### Step 1: Implementing the domian.
+### Step 1: Implementing the domain.
 
 All of our node code will live in a file called "node/SimpleDomain.js". The first thing we need to do in this file is require the built-in libraries we'll be using:
 
@@ -53,7 +55,7 @@ function cmdGetMemory() {
 
 When a domain gets registered, the DomainManager calls an init function (if one exists). We need to write our init function that will actually register the command we just created.
 
-When we register a command, we can optionally pass in documentation. This documentation isn't actually used by node in any way. But, it is output through the "api" call and could be used to actually build human-readable documentation that is (hopefully) in sync with the code. The last three parameters to ```registerCommand``` are documentation parameters.
+When we register a command, we can optionally pass in documentation. This documentation isn't actually used by node in any way. But, it is output through the "/api" call and could be used to actually build human-readable documentation that is (hopefully) in sync with the code. The last three parameters to ```registerCommand``` are documentation parameters.
 
 ```javascript
 /**
@@ -176,6 +178,10 @@ That's it! There is no step 3! (since we started at step 0...)
 
 Note that there are a few more non-node-related things you need to do to make your extension work. Check out the full source at https://github.com/joelrbrandt/brackets-simple-node
 
+### Other Examples
+
+The "StaticServer" extension in "src/extensions/default/StaticServer" in the main Brackets repo is a more complicated example.
+
 How to Debug
 ------------
 
@@ -224,12 +230,18 @@ Common "Gotchas"
 Future Work
 -----------
 
+ * **Linux** -- Work with community to integrate into Linux shell
+ 
  *  **Implement "safe mode" in node core** -- It is easy to write a domain that continually crashes Node. Right now, if we get two crashes within 5 seconds, we do _not_ restart the node process. The risk here is that the user will install an extension that repeatedly crashes node, parts of Brackets will become unusable. For the things we have implemented now, this isn't a huge problem. But, if we start using node for filesystem access, that means we could get into a state where the user's node process crashes and he or she can't save their open documents.
 
-     A fix for this would be to implement a "safe mode" in node core that doesn't allow registering of new domains. We would only load known-good domains (e.g. a filesystem domain). On any un-intended crash/restart, we would enter this safe mode.
+     A fix for this would be to implement a "safe mode" in node core that doesn't allow registering of new domains. We would only load known-good domains (e.g. a filesystem domain). On any unintended crash/restart, we would enter this safe mode.
 
  * **Remove auto-reconnect / auto-reload-domains from NodeConnection** -- This code seems to work great, and has unit tests that seem to consistently pass. But it's really complicated, which means it's more likely to have bugs. If we go to a safe mode, we might be able to remove this logic. (But maybe not: We want intended reloads that happen during the development process to work properly.)
 
- * **Improve the event infrastructure** -- Right now, we send all events to every connection. We could instead have connections register for events they care about so that we don't transfer unwanted data over the websocket
+ * **Improve the event infrastructure** -- Right now, we send all events to every connection. We could instead have connections register for events they care about so that we don't transfer unwanted data over the websocket.
 
  * **Figure out a way to transfer binary data very quickly** -- Right now, the safest way to transfer binary data over the websocket is to base64 encode it. Ugh. We don't actually use binary data in Brackets right now, so this isn't a problem. But it could be soon...
+
+ * **Use named pipes for communication with parent process** -- Right now, we're using stdin/stdout, which was easy but is not ideal. This would also allow us to move to overlapped reads on Windows and would make it cleaner to capture crash debugging info in syslogs.
+
+ * **Add more infrastructure around preventing abandoned processes** -- Upon successful launch/closing, the shell could check for abandoned Brackets-node processes and kill them.
