@@ -18,6 +18,8 @@ LanguageManager.defineLanguage("shell", {
 
 If you need to provide a custom mode, it must be [registered to CodeMirror](http://codemirror.net/doc/manual.html#modeapi) using ``CodeMirror.defineMode()`` first before calling ``LanguageManager.defineLanguage()``.
 
+To inspect the language of the current ``Document`` call ``document.getLanguage()``. To inspect the language of the current selection in an ``Editor``, use ``editor.getLanguageForSelection()``. This language in a selection may not be the same as the language for the document. For example, the ``html`` language supports ``css`` and ``javascript`` content.
+
 ## New LanguageManager Module and Language API
 - The Sprint 21 release introduced a new high-level "language" concept and refactored support for LESS based on that ([Pull Request](https://github.com/adobe/brackets/pull/2844))
 
