@@ -26,11 +26,11 @@ Smoke test steps
 9. Click on index.html. Verify that the selection in the project panel draws properly.
 10. Double-click on index.html. Verify that it's added to the working set and the selection draws properly.
 11. Resize the window. Verify that the editor resizes properly and the title bar wraps appropriately.
-12. Look through the in-Brackets menus. Verify that they look okay and that they properly pop on top of other UI in the app.
-13. Set the cursor in the `<body>` tag immediately before the `>`.
-14. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
-15. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
-16. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
+12. Set the cursor in the `<body>` tag immediately before the `>`.
+13. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
+14. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
+15. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
+16. In the native shell menu, choose View > Increase Font Size. Verify both the host and inline editors font size increases. The inline editor should not show a vertical scrollbar.
 17. Click the lightning bolt in the upper right. If you trashed prefs, you'll get an info dialog explaining how live preview works. Hit OK.
 18. You should see the page load in Chrome. Mac only: after a few seconds you should get a dialog saying you need to relaunch Chrome.
 19. Mac only: Click "Relaunch". Chrome should relaunch and open the page.
