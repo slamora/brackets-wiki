@@ -43,7 +43,7 @@ The ``LanguageManager`` modules can be accessed in an extension: ``brackets.getM
 
 It defines three methods for managing languages:
 
-* ``defineLanguage(id, definition)`` - Defines a language. returns A promise object that will be resolved with a Language object.
+* ``defineLanguage(id, definition)`` Defines a language. returns A promise object that will be resolved with a Language object.
     * ``id`` Unique identifier for this language, use only letters a-z, numbers and _ inbetween (i.e. "cpp", "foo_bar")
     * ``defintion`` An object describing the language
     * ``defintion.name`` Human-readable name of the language, as it's commonly referred to (i.e. "C++")
@@ -51,19 +51,19 @@ It defines three methods for managing languages:
     * ``defintion.lineComment`` Line comment prefix (i.e. "//")
     * ``defintion.blockComment`` Array with two entries defining the block comment prefix and suffix (e.g ["<!--", "-->"])
     * ``defintion.mode`` CodeMirror mode (i.e. "htmlmixed"), optionally with a MIME mode defined by that mode ["clike", "text/x-c++src"] unless the mode is located in thirdparty/CodeMirror2/mode/<name>/<name>.js, you need to first load it yourself.
-* ``getLanguage(id)``
-* ``getLanguageForFileExtension(path)``
+* ``getLanguage(id)`` Resolves a language ID to a Language object.
+* ``getLanguageForFileExtension(path)`` Resolves a file path to a Language object.
 
 ## Language API
 
-A ``Language`` ...
+``Language`` contains model data for a language.
 
-* ``getName()``
-* ``getMode()``
-* ``getFileExtensions()``
-* ``hasLineCommentSyntax()/getLineCommentSyntax()/setLineCommentSyntax(prefix)``
-* ``hasBlockCommentSyntax()/getBlockCommentPrefix()/getBlockCommentSuffix()/setLineCommentSyntax(prefix)``
-* ``getLanguageForMode()``
+* ``getName()`` Returns the human-readable name of this language.
+* ``getMode()`` Returns the CodeMirror mode for this language.
+* ``getFileExtensions()`` Returns an array of file extensions for this language.
+* ``hasLineCommentSyntax()/getLineCommentSyntax()/setLineCommentSyntax(prefix)`` Line comment info used for toggle line comment editor command.
+* ``hasBlockCommentSyntax()/getBlockCommentPrefix()/getBlockCommentSuffix()/setLineCommentSyntax(prefix)`` Block comment info used for toggle block comment editor command.
+* ``getLanguageForMode()`` Returns either a language associated with the mode or the fallback language. Used to disambiguate modes used by multiple languages.
 
 ## Places contributing to "language" support as of Sprint 21
 Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844)
