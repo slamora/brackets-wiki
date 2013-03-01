@@ -7,6 +7,12 @@ Starting with Sprint 21, the Brackets has a [Node.js](http://nodejs.org/) proces
 
 For more information on _why_ we've integrated Node in the way we have, take a look at [[Research: Node.JS Integration]].
 
+###API Stability
+
+The API is expected to change dramatically over the next few sprints (starting with Sprint 22). Brave developers are encouraged to use this extensibility mechanism and give us feedback. However, things may break frequently.
+
+We will message any API changes via the [Brackets-Dev Google Group](https://groups.google.com/forum/?fromgroups#!forum/brackets-dev) and update these docs accordingly.
+
 Architecture
 ------------
 
