@@ -28,12 +28,12 @@ API Changes
 * **Editor constructor** - The ``mode`` argument has been removed, shifting other arguments over (mode is now retrieved from the Document). Note: it would be very unusual for an extension to be calling the Editor constructor directly.
 * **Debug menu** - Removed ``Menus.AppMenuBar.DEBUG_MENU`` menu ID
 * **EditorUtils removed** - ``EditorUtils.getModeFromFileExtension()`` changed to ``LanguageManager.getLanguageForFileExtension()``. However, when dealing with open documents, extensions should not use this API. Instead, to detect the language for a given ``Document``, use ``document.getLanguage()`` or for a given ``Editor`` selection, use ``editor.getLanguageForSelection()``.
-* **LanguageManager and Language** - ``LanguageManager`` allows extensions to define new language support in Brackets without making modifications to core Brackets code. In this first iteration, a ``Language`` can be defined declaratively in JSON as a set of properties including a CodeMirror syntax highlighting mode, file extensions to map to the language, and finally line and block commenting syntax. Optionally, extensions may define custom CodeMirror modes. For an [overview of language support](https://github.com/adobe/brackets/wiki/Language-Support) and our future direction please see the [wiki](https://github.com/adobe/brackets/wiki/Language-Support).
 
 New/Improved Extensibility APIs
 -------------------------------
 
-* LanguageManager and Language - [See Language Support](https://github.com/adobe/brackets/wiki/Language-Support)
+* **LanguageManager and Language** - ``LanguageManager`` allows extensions to define new language support in Brackets without making modifications to core Brackets code. In this first iteration, a ``Language`` can be defined declaratively in JSON as a set of properties including a CodeMirror syntax highlighting mode, file extensions to map to the language, and finally line and block commenting syntax. Optionally, extensions may define custom CodeMirror modes. For an [overview of language support](https://github.com/adobe/brackets/wiki/Language-Support) and our future direction please see the [wiki](https://github.com/adobe/brackets/wiki/Language-Support).
+* **Node Process** - [Brackets Node Process: Overview for Developers](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers)
 
 Known Issues
 ------------
