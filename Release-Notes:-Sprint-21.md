@@ -71,6 +71,8 @@ Community contributions to Brackets
 
 Contributions _from_ Brackets
 -----------------------------
+**Contributions to [CodeMirror](https://github.com/marijnh/CodeMirror):**
+* [Avoid scrolling to cursor position in a non-visible editor](https://github.com/marijnh/CodeMirror/pull/1256)
 
 Bugs fixed in Sprint 21
 -----------------------
