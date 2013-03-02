@@ -58,13 +58,16 @@ Community contributions to Brackets
 * [Update Getting started screenshot for 'de' locale, transparent background](https://github.com/adobe/brackets/pull/2840) by [J.M](https://github.com/mynetx)
 * [Fix: Move Line Up/Down collapses inline editor when moving past the start/end](https://github.com/adobe/brackets/pull/2431) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [LESS Refactoring](https://github.com/adobe/brackets/pull/2844) by [Dennis Kehrig](https://github.com/DennisKehrig)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [Adding language, extensions and comments support](https://github.com/adobe/brackets/pull/2971) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Continued Language API work](https://github.com/adobe/brackets/pull/2979) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Move the Update List information to a template](https://github.com/adobe/brackets/pull/2938) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #2902: Externalize debug menu as an extension](https://github.com/adobe/brackets/pull/2942) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Prevent prefix based conflicts when renaming](https://github.com/adobe/brackets/pull/2914) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Spanish Strings for Sprint 21](https://github.com/adobe/brackets/pull/2994) by [Chema Balsas](https://github.com/jbalsas)
+* [Extracted default menus into extra file](https://github.com/adobe/brackets/pull/2940) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fix #1399: Make the update dialog text selectable](https://github.com/adobe/brackets/pull/2990) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Contributors List on the About Dialog](https://github.com/adobe/brackets/pull/2934) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix About Dialog Contributors (Issue 3012 from Pull 2934)](https://github.com/adobe/brackets/pull/3014) by [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
 
 Contributions _from_ Brackets
 -----------------------------
