@@ -115,7 +115,7 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The re
 
 ### Module language/JSLintUtils
 
-* Method `run` to run JSLint on the current document. Checks if the extension is one of .js, .htm or .html, therefore **uses file extensions**. Otherwise uses JSLint internally which could be swapped out.
+* Method `run` to run JSLint on the current document. Checks if the extension is .js, therefore **uses file extensions**. Otherwise uses JSLint internally which could be swapped out.
 
 ### Module language/JSUtils
 
