@@ -44,6 +44,27 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [Add SASS Support](https://github.com/adobe/brackets/pull/2609) by [Bryan Stedman](https://github.com/bryanstedman)
+* [Update Getting started screenshot, styling for 'es' locale](https://github.com/adobe/brackets/pull/2801) by [J.M](https://github.com/mynetx)
+* [Fixed: Issue #2551 Rename folder does not update jsTree completely](https://github.com/adobe/brackets/pull/2862) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Spanish strings for sprint 20](https://github.com/adobe/brackets/pull/2871) by [Chema Balsas](https://github.com/jbalsas)
+* [Fix: Move Line Up/Down collapses inline editor when moving past the start/end](https://github.com/adobe/brackets/pull/2431) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Live development bugfixes](https://github.com/adobe/brackets/pull/2819) by [Jonathan Diehl](https://github.com/jdiehl)
+* [Add check for broken symlinks to hacking scripts (#2895)](https://github.com/adobe/brackets/pull/2896) by [Chema Balsas](https://github.com/jbalsas)
+* [Fix Issue #2875: CSS code hints overwrite 1 char too many on current line](https://github.com/adobe/brackets/pull/2884) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix Issue #2877: Debug menu shortcuts are enabled even when Debug menu is hidden](https://github.com/adobe/brackets/pull/2888) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Disable the cache before every reload](https://github.com/adobe/brackets/pull/) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Trigger scroll on project files container to reposition scroller shadows (#2255)](https://github.com/adobe/brackets/pull/2905) by [Chema Balsas](https://github.com/jbalsas)
+* [Update Getting started screenshot for 'de' locale, transparent background](https://github.com/adobe/brackets/pull/2840) by [J.M](https://github.com/mynetx)
+* [Fix: Move Line Up/Down collapses inline editor when moving past the start/end](https://github.com/adobe/brackets/pull/2431) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [LESS Refactoring](https://github.com/adobe/brackets/pull/2844) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
 
 Contributions _from_ Brackets
 -----------------------------
