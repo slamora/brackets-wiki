@@ -4,12 +4,12 @@ If you've written an extension (even just as an experiment), please feel free to
 
 Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts) page to see which shortcuts are available and also to add the shortcuts that you have used. Thanks!
 
-**Code/Text Editing**
+**Editing & Navigation**
 * [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
 * [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor. 
+* [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
 * [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
-* [Continuous Compilation](https://github.com/JoachimK/brackets-continuous-compilation): Displays JSLint error messages inline, highlighting infringing code and checking the code while you type.
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/emmet): Adds Emmet (Zen Coding) support to Brackets ([download here](https://github.com/emmetio/brackets-emmet)).
@@ -19,7 +19,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
 * [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): auto-complete Paranthesis, Brackets, Braces, Double and Single Quotes...
 
-**Code/Text Formatting**
+**Formatting**
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
 * [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
@@ -34,7 +34,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions
 
 **Language Support**
-* [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets.
 * [PHP](https://github.com/aonic/brackets-QuickOpenPHP): adds PHP function definition support to QuickOpen search
 * [TypeScript Code Intel](https://github.com/tomsdev/brackets-typescript-code-intel): Adds TypeScript support in Brackets (Auto-completion, Quick Edit and more soon).
 
@@ -46,10 +45,9 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
 * [Brackets Commands Guide](https://github.com/peterflynn/brackets-commands-guide): Search and execute commands by typing part of their name, similar to Quicksilver (or Sublime's Ctrl+Shift+P or Eclipse's Ctrl+3).
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor.
-* [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
 * [TestQuickly](https://github.com/dangoor/TestQuickly): simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
 * [PageSuck](https://github.com/timburgess/brackets-pagesuck): prompts for a URL and pulls that page's HTML directly into the editor as a new file
-* [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): Code mirror themes for brackets from the main menu.
+* [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): CodeMirror themes for brackets from the main menu.
 
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
@@ -78,12 +76,16 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks.
 
 **Linting & Warnings**
+* [Continuous Compilation](https://github.com/JoachimK/brackets-continuous-compilation): Displays JSLint error messages inline, highlighting infringing code and checking the code while you type.
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
 * [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
 * [W3CValidator](https://github.com/cfjedimaster/brackets-w3cvalidation): Run the W3C Validator on your HTML.
 * (See also [App Cache Buddy](https://github.com/davidderaedt/appcache-gen) above).
 
+---
+
 **Deprecated Extensions**
+* [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets. _(Merged into Brackets as of Sprint 21)._
 * [Color Editor](https://github.com/GarthDB/brackets-inline-color-editor): Quick Edit on a hex/rgb/hsl color opens an inline color picker, plus a listing of all colors used in the file. _(Merged into Brackets as of Sprint 17)._
 * [Color Picker](https://github.com/jdiehl/brackets-color-picker): Quick Edit on a hex color opens an inline color picker. _(A color picker is built into Brackets as of Sprint 17)._
 * [Editor Shortcuts](https://github.com/aonic/editor-shortcuts): Keyboard shortcut to delete line. _(This command is built into Brackets as of Sprint 15)._
