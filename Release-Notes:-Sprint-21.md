@@ -57,7 +57,6 @@ Community contributions to Brackets
 * [Disable the cache before every reload](https://github.com/adobe/brackets/pull/) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Trigger scroll on project files container to reposition scroller shadows (#2255)](https://github.com/adobe/brackets/pull/2905) by [Chema Balsas](https://github.com/jbalsas)
 * [Update Getting started screenshot for 'de' locale, transparent background](https://github.com/adobe/brackets/pull/2840) by [J.M](https://github.com/mynetx)
-* [Fix: Move Line Up/Down collapses inline editor when moving past the start/end](https://github.com/adobe/brackets/pull/2431) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [LESS Refactoring](https://github.com/adobe/brackets/pull/2844) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Adding language, extensions and comments support](https://github.com/adobe/brackets/pull/2971) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Continued Language API work](https://github.com/adobe/brackets/pull/2979) by [Dennis Kehrig](https://github.com/DennisKehrig)
