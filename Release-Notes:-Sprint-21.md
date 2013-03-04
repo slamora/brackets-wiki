@@ -40,6 +40,7 @@ Known Issues
 * _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
 * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet.  To work around this, right click the Brackets app and choose Open.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
 * [#2272](https://github.com/adobe/brackets/issues/2272): Windows Vista may not allow the Brackets installer to run (you may not see _any_ error message). To work around this, right-click the installer file, choose Properties, and click the Unblock button.
+* During development, JavaScript Code Hinting was made available to the community as an extension for evaluation and testing as the brackets-js-code-hints extension. You **must uninstall** this extension before running Sprint 21 to avoid code conflicts.
 
 
 Community contributions to Brackets
