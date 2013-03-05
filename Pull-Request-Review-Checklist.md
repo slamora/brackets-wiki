@@ -9,7 +9,7 @@ How to use the checklist:
 
 ### Ensuring the change is ready to go in ###
 
-* Has the user signed the CLA?
+* Has the user [signed the CLA](http://dev.brackets.io/cla/brackets/check.cfm)?
 * Was there new third-party code? If so, what's the license? (ideally MIT or BSD)
 * Does this change belong in core? Some features would be better as an extension - could it be done as an extension by separating out a more limited set of core changes (e.g. more generic APIs)?
 * Any major architectural or UI changes have been discussed in the forum?
