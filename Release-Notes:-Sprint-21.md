@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 21 -- approximately March 1._
-
 What's New in Sprint 21
 -----------------------
 * **Code Hinting**
