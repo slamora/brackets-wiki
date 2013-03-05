@@ -70,6 +70,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
+* [Ant for Brackets](https://github.com/jbalsas/brackets-ant): Launch any target in your ant files . 
 
 **Documentation**
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
