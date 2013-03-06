@@ -15,7 +15,6 @@ What's New in Sprint 21
     * SASS code coloring
     * Toggle Line/Block Comment support for PHP, XML, C/C++/C#
 
-
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-20...sprint-21#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-20...sprint-21#commits_bucket)
 
 
@@ -48,6 +47,9 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+The Brackets team welcomes five **new core committers**: [Jonathan Diehl](https://github.com/jdiehl), [Jon Rowny](https://github.com/jrowny), [Dennis Kehrig](https://github.com/DennisKehrig), [Chema Balsas](https://github.com/jbalsas), and [Tomás Malbrán](https://github.com/TomMalbran). ([Read more...](http://blog.brackets.io/2013/03/05/welcome-new-brackets-contributors))
+
+
 * [Language extensibility APIs & refactor LESS support as a default extension](https://github.com/adobe/brackets/pull/2844) ([and cleanups](https://github.com/adobe/brackets/pull/2979)) by [Dennis Kehrig](https://github.com/DennisKehrig)
 * [Enable SASS code coloring](https://github.com/adobe/brackets/pull/2609) by [Bryan Stedman](https://github.com/bryanstedman)
 * [Toggle Comment support for PHP & C/C++/C#; recognize .jsx as JS; bug fixes](https://github.com/adobe/brackets/pull/2971) by [Tomás Malbrán](https://github.com/TomMalbran)
