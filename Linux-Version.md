@@ -49,6 +49,7 @@ cd chromium
 gclient config http://src.chromium.org/svn/releases/25.0.1364.152
 gclient sync --jobs 8 --force
 cd src
+# (optional?) ./build/install-build-deps.sh --no-chromeos-fonts
 svn co http://chromiumembedded.googlecode.com/svn/branches/1364/cef3 cef
 
 # create projects
