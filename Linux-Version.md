@@ -34,6 +34,8 @@ The main challenge with a Linux version of Brackets is that Brackets uses the [C
 
 ### Building CEF3 on Linux
 
+> Download Linux binary: [cef_binary_3.1364.1131_linux.zip](https://docs.google.com/file/d/0B7as0diokeHxeTNqZFIyNWZKSWM/edit?usp=sharing)
+
 The CEF project page has several paths to building CEF for Linux. The one we've had success with begins here [https://code.google.com/p/chromiumembedded/wiki/BranchesAndBuilding#Release_Branch](https://code.google.com/p/chromiumembedded/wiki/BranchesAndBuilding#Release_Branch). Follow the steps outlined there. Additional notes and example steps are shown below
 
 **Step 1**: **SKIP** http://dev.chromium.org/developers/how-tos/get-the-code - Using the tarball to bootstrap the setup does not seem to work for building a specific release branch. Instead, follow step 1, parts A through C.
