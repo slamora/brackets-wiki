@@ -34,6 +34,33 @@ The main challenge with a Linux version of Brackets is that Brackets uses the [C
 
 ### Building CEF3 on Linux
 
+The CEF project page has several paths to building CEF for Linux. The one we've had success with begins here [https://code.google.com/p/chromiumembedded/wiki/BranchesAndBuilding#Release_Branch](https://code.google.com/p/chromiumembedded/wiki/BranchesAndBuilding#Release_Branch). Follow the steps outlined there. Additional notes and example steps are shown below
+
+**Step 1**: **SKIP** http://dev.chromium.org/developers/how-tos/get-the-code - Using the tarball to bootstrap the setup does not seem to work for building a specific release branch. Instead, follow step 1, parts A through C.
+**Step 2**: Identify the Chromium release branch based on the CEF release version (e.g. 1364 from CEF version  3.**1364**.1094 from [CHROMIUM_BUILD_COMPATIBILITY](https://code.google.com/p/chromiumembedded/source/browse/branches/1364/cef3/CHROMIUM_BUILD_COMPATIBILITY.txt))
+
+```
+# For CEF 3.1364.1094
+
+# download source
+mkdir chromium
+cd chromium
+gclient config http://src.chromium.org/svn/releases/25.0.1364.152
+gclient sync --jobs 8 --force
+cd src
+svn co http://chromiumembedded.googlecode.com/svn/branches/1364/cef3 cef
+
+# create projects
+cd cef
+./cef_create_projects.sh
+
+# build both Debug and Release (both required for distrib)
+cd tools
+./build_projects.sh Debug
+./build_projects.sh Release
+./make_distrib.sh
+```
+
 ### Modifying the Brackets Shell
 
 Pritam Baral has a [modified version of the Brackets Shell](https://github.com/pritambaral/brackets-shell/tree/linux) that works on Linux. He has also created instructions for building brackets-shell on Linux which are included below.
