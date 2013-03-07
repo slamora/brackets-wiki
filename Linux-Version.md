@@ -60,6 +60,8 @@ cd tools
 ./build_projects.sh Debug
 ./build_projects.sh Release
 ./make_distrib.sh
+
+# distribution saved to chromium/src/cef/binary_distrib/cef_binary_3.1364.1131_linux.zip
 ```
 
 ### Modifying the Brackets Shell
