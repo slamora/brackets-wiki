@@ -37,6 +37,7 @@ The main challenge with a Linux version of Brackets is that Brackets uses the [C
 The CEF project page has several paths to building CEF for Linux. The one we've had success with begins here [https://code.google.com/p/chromiumembedded/wiki/BranchesAndBuilding#Release_Branch](https://code.google.com/p/chromiumembedded/wiki/BranchesAndBuilding#Release_Branch). Follow the steps outlined there. Additional notes and example steps are shown below
 
 **Step 1**: **SKIP** http://dev.chromium.org/developers/how-tos/get-the-code - Using the tarball to bootstrap the setup does not seem to work for building a specific release branch. Instead, follow step 1, parts A through C.
+
 **Step 2**: Identify the Chromium release branch based on the CEF release version (e.g. 1364 from CEF version  3.**1364**.1094 from [CHROMIUM_BUILD_COMPATIBILITY](https://code.google.com/p/chromiumembedded/source/browse/branches/1364/cef3/CHROMIUM_BUILD_COMPATIBILITY.txt))
 
 ```
