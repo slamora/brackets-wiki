@@ -116,7 +116,7 @@ I see two open questions:
 * what do people think of this conceptual model for extensions?
 * does lazy loading matter?
 
-Assuming that people do like this model, implementation can proceed with a set of stories like this:
+If people on the team do like this model, implementation could proceed with a set of stories like this:
 
 * Implement extensions core
     * publish/subscribe bus
@@ -124,3 +124,8 @@ Assuming that people do like this model, implementation can proceed with a set o
     * shared data management
     * new extension lifecycle
 * Implement commands, menus
+    * Possibly out of scope: removing menus (which we currently don't have)
+* Research: Needs for five extensions
+    * Choose 5 extensions that are either representative of a category or "most useful"
+    * See which APIs they use and design new-style APIs for those APIs
+    * Produce stories to migrate those APIs
