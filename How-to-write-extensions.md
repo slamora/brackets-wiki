@@ -56,11 +56,13 @@ Be sure to follow the [[Extension UI Guidelines]].
 
 ### <a name="featurehooks"></a>Extending specific Brackets features
 
-**Quick Edit (inline editors):** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. That manager works by iterating through all the possible inline edit providers on CTRL+E and finding which ones actually respond - it has no notion of priority yet, so if your extension wants to respond in the same situation as some other provider you'll be out of luck. 
+**Quick Edit (inline editors):** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. If multiple "providers" all want to respond in a given context, however, the first one wins - there's no notion of priority or cycling through providers yet. 
 
 **Quick Open:** To interface with the quick open (file open/jump to) feature, use ```QuickOpen.addQuickOpenPlugin()```.
 
-**Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Similar to Quick Edit, if your extension wants to respond in the same situation as some other provider you'll be out of luck. 
+**Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Unlike Quick Edit, these "providers" can have varying priority to resolve conflicts; more specific providers take precedence.
+
+**Syntax Coloring:** Extensions can add new code-coloring "modes" via `LanguageManager.defineLanguage()`. See [[Language Support]] for details.
 
 ### <a name="tourl"></a>Accessing resources (e.g. images) in your extension
 
