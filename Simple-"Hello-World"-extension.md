@@ -1,4 +1,4 @@
-Save this file as ```brackets/src/extensions/dev/HelloWorld/main.js``` to see it running in Brackets.  (You'll need Sprint 10 or later.)
+Choose _Help > Show Extensions Folder_, save this file as ```extensions/user/HelloWorld/main.js```, then restart Brackets to see it in effect.
 
 ```javascript
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
@@ -30,12 +30,6 @@ define(function (require, exports, module) {
     // We could also add a key binding at the same time:
     //menu.addMenuItem(MY_COMMAND_ID, "Ctrl-Alt-H");
     // (Note: "Ctrl" is automatically mapped to "Cmd" on Mac)
-    
-    // Or you can add a key binding without having to create a menu item:
-    //KeyBindingManager.addBinding(MY_COMMAND_ID, "Ctrl-Alt-H");
-
-    // For dynamic menu item labels, you can change the command name at any time:
-    //CommandManager.get(MY_COMMAND_ID).setName("Goodbye!");
 });
 ```
 
