@@ -37,9 +37,9 @@ To inspect the language of the current ``Document`` call ``document.getLanguage(
 
 Our goal is to extend languages as the primary mechanism to extend other core features of Brackets such as code hinting, text manipulation commands, quick edit, live preview, etc.
 
-### To do
+### To Do
 
-* [Refactor JSLint into an extension](https://github.com/adobe/brackets/issues/3094)
+* [#3094: Refactor JSLint into an extension](https://github.com/adobe/brackets/issues/3094)
 
 ## LanguageManager Module
 
