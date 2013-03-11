@@ -45,12 +45,12 @@ It defines three methods for managing languages:
 
 * ``defineLanguage(id, definition)`` Defines a language. returns A promise object that will be resolved with a Language object.
     * ``id`` Unique identifier for this language, use only letters a-z, numbers and _ inbetween (i.e. "cpp", "foo_bar")
-    * ``defintion`` An object describing the language
-    * ``defintion.name`` Human-readable name of the language, as it's commonly referred to (i.e. "C++")
-    * ``defintion.fileExtensions`` List of file extensions used by this language (e.g ["php", "php3"])
-    * ``defintion.lineComment`` Line comment prefix (i.e. "//")
-    * ``defintion.blockComment`` Array with two entries defining the block comment prefix and suffix (e.g ["<!--", "-->"])
-    * ``defintion.mode`` CodeMirror mode (i.e. "htmlmixed"), optionally with a MIME mode defined by that mode ["clike", "text/x-c++src"] unless the mode is located in thirdparty/CodeMirror2/mode/<name>/<name>.js, you need to first load it yourself.
+    * ``definition`` An object describing the language
+    * ``definition.name`` Human-readable name of the language, as it's commonly referred to (i.e. "C++")
+    * ``definition.fileExtensions`` List of file extensions used by this language (e.g ["php", "php3"])
+    * ``definition.lineComment`` Line comment prefix (i.e. "//")
+    * ``definition.blockComment`` Array with two entries defining the block comment prefix and suffix (e.g ["<!--", "-->"])
+    * ``definition.mode`` CodeMirror mode (i.e. "htmlmixed"), optionally with a MIME mode defined by that mode ["clike", "text/x-c++src"] unless the mode is located in thirdparty/CodeMirror2/mode/<name>/<name>.js, you need to first load it yourself.
 * ``getLanguage(id)`` Resolves a language ID to a Language object.
 * ``getLanguageForFileExtension(path)`` Resolves a file path to a Language object.
 
