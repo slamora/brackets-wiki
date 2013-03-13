@@ -132,7 +132,7 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The re
 * Loads default languages from `language/languages.json`
 * Method `defineLanguage` to add a new language (see JSDoc)
 * Method `getLanguage` to get an object representing a language by its ID
-* Method `getLanguageForPath` to map file extensions to languages
+* Method `getLanguageForPath` to map file names or extensions to languages
 * Used by extension "LESSSupport" to add basic support for LESS
 
 ### Module LiveDevelopment/LiveDevelopment
