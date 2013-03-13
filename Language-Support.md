@@ -56,7 +56,7 @@ It defines three methods for managing languages:
     * ``definition.blockComment`` Array with two entries defining the block comment prefix and suffix (e.g ["<!--", "-->"])
     * ``definition.mode`` CodeMirror mode (i.e. "htmlmixed"), optionally with a MIME mode defined by that mode ["clike", "text/x-c++src"] unless the mode is located in thirdparty/CodeMirror2/mode/<name>/<name>.js, you need to first load it yourself.
 * ``getLanguage(id)`` Resolves a language ID to a Language object.
-* ``getLanguageForFileExtension(path)`` Resolves a file path to a Language object.
+* ``getLanguageForPath(path)`` Resolves a file path to a Language object.
 
 ## Language API
 
@@ -132,7 +132,7 @@ Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The re
 * Loads default languages from `language/languages.json`
 * Method `defineLanguage` to add a new language (see JSDoc)
 * Method `getLanguage` to get an object representing a language by its ID
-* Method `getLanguageForFileExtension` to map file extensions to languages
+* Method `getLanguageForPath` to map file extensions to languages
 * Used by extension "LESSSupport" to add basic support for LESS
 
 ### Module LiveDevelopment/LiveDevelopment
