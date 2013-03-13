@@ -22,6 +22,7 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
+* (Programming) languages can now also be associated with file names (e.g. "Makefile") in addition to file extensions. Check `language/LanguageManager.js` for examples.
 
 Known Issues
 ------------
