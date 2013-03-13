@@ -87,6 +87,9 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [W3CValidator](https://github.com/cfjedimaster/brackets-w3cvalidation): Run the W3C Validator on your HTML.
 * (See also [App Cache Buddy](https://github.com/davidderaedt/appcache-gen) above).
 
+**Code Metrics**
+* [complexityReport.js](https://github.com/sahlas/brackets-complexityReport): A Brackets extension that enables phil booth's complexityReport.js tool. Displays complexity statistics on a per-function and aggregate basis. 
+
 ---
 
 **Deprecated Extensions**
