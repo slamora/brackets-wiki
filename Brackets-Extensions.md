@@ -89,6 +89,8 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 
 **Code Metrics**
 * [complexityReport.js](https://github.com/sahlas/brackets-complexityReport): A Brackets extension that enables phil booth's complexityReport.js tool. Displays complexity statistics on a per-function and aggregate basis. 
+* [Jasmine](https://github.com/dschaffe/brackets-jasmine): Runs the Jasmine-node unit test tool against the
+current file.
 
 ---
 
