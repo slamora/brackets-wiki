@@ -18,30 +18,72 @@ To do restartless "right" means building out new APIs specifically for extension
 
 ## Side Effects of a New API ##
 
-If we build a new extension API, we can build it such that we make some attractive side effects possible.
+If we build a new extension API, we can build it such that we make some attractive side effects possible, even if they're not implemented in the first round.
 
-* pieces of Brackets core can be more independent, less coupled, better factored out
+* pieces of Brackets core can be more independent/less coupled
 * looser coupling will make the transition to the browser easier
-* live documentation about the APIs that's available within Brackets
+* we can offer live documentation about the APIs that are available within Brackets
 * extensions can themselves be extensible
-* poorly written extensions don't break Brackets
-* or adversely affect Brackets performance
 * we can hide away more of the complexity of working with Node
+* Brackets core can be more protected from poorly written extensions
+* we *may* also be able to protect Brackets core code from poorly performing extensions
 * it may actually be possible to secure extensions later on if we decide that's valuable (we don't have to do it, but we also don't have to shut the door on it)
 * lazy loading? (my experiments to date have not incorporated this trait, but if we decide we want this feature it should be possible to incorporate)
 
-## New Extensions Conceptual Model ##
+## Traits of a New API ##
 
-![Conceptual Model](https://www.evernote.com/shard/s24/sh/e28f2fe4-8ed6-4264-bc35-13e985b6e1dd/d8030dec6889b9c424c551c05c077012/res/8ad1a591-277c-49af-99be-952ef08c030f/skitch.png?resizeSmall&width=832)
+If we can agree on the features we want and the basic patterns we wish to apply, we can start working on the extension mechanism and build out the new API iteratively. By starting out talking about the features and basic concepts, we can avoid getting hung up on syntax.
+
+**Declarative**
+
+To allow extensions to be restartless and not require a bunch of extra work on the part of extension authors, extensions will need to register the features they provide in a declarative manner. The declarations should be tied to the extension so that they can be automatically unregistered when the extension is removed (whether it's because the user uninstalled it, disabled it or upgraded it).
+
+Things like commands, menu items and key bindings are already fairly declarative and I have had three different experimental models that have wrapped those APIs and enabled restartlessness.
+
+**Loosely Coupled**
+
+Registering commands today is largely declarative. However, to register a command an extension has to get a direct reference to the CommandManager module. There is a tight coupling between the CommandManager module and the extension. Looking from the other direction the CommandManager has a reference to the command function, but it does not actually know which extension the command function came from (which is part of the reason that it can't be automatically unregistered).
+
+We can make this situation better by putting a *mediator* in between. This is the sort of architecture proposed in Addy Osmani's [Patterns for Large-Scale JavaScript Application Architecture](http://addyosmani.com/largescalejavascript/). That article is long, but worth reading. For convenience, I'll quote from it along the way in this document.
+
+Through the use of a mediator (more on this to come), we can break the direct link between CommandManager and extensions. Beyond helping extensions become unloadable, Osmani cites four architecture questions that are answered by this sort of pattern:
+
+> 1. How much of this architecture is instantly re-usable?
+>
+> 2. How much do modules depend on other modules in the system?
+>
+> 3. If specific parts of your application fail, can it still function?
+>
+> 4. How easily can you test individual modules?
+
+Flipping the questions around, this architecture makes:
+
+* more code reusable
+* has fewer direct dependencies between modules
+* can make more of the application resilient to failure of other parts
+* can make testing easier
+
+He expressed what the architecture is trying to achieve thusly:
+
+> We want a loosely coupled architecture with functionality broken down into independent modules with ideally no inter-module dependencies. Modules speak to the rest of the application when something interesting happens and an intermediate layer interprets and reacts to these messages. 
+
+Note that when Osmani says "modules", we don't have to interpret this as modules in the RequireJS/CommonJS sense. We can think of these modules as independent functional units (Brackets core, extensions, Node code). In his article, Osmani does talk about routing all communication between actual code modules through the mediator (with a façade in between), but I personally think of modules more in terms of "library code" and the mediator as a means to communicate between services that are available in the total system.
+
+## A New Extensions Conceptual Model ##
+
+![Conceptual Model](https://www.evernote.com/shard/s24/sh/5c77ad19-35da-495d-89dc-1182623ffd9f/f4299d5e27042d1d2cebcac861946aa0/res/7a0b75f5-3c0b-46f8-ab92-98046c9aaa23/skitch.png?resizeSmall&width=832)
 
 To enable all of the features listed in the previous section, extensions will be given a [façade][http://en.wikipedia.org/wiki/Facade_pattern] that allows them to communicate with the core Brackets code, the extensions' own Node code and other extensions. The communication between parts of the system happen via a mediator which offers a shared messaging bus that supports publish/subscribe messaging, request/response messaging and a notion of shared data.
 
-A variation of this architecture is described in Addy Osmani's [Patterns for Large-Scale JavaScript Application Architecture](http://addyosmani.com/largescalejavascript/).
+Osmani talks about using the façade for security purposes, but for us the façade has value as a way to maintain information about the services an extension uses and provides to assist in cleaning up if the extension goes away.
 
-All of the communication between the façade and the mediator is asynchronous and the data is jsonifiable so that it can pass between any boundaries it needs to. A message sent to the bus could be handled by code in CEF, Node, a Web Worker, or the server (for Brackets in the browser).
+All of the communication between the façade and the mediator is asynchronous. Ideally, the data would be jsonifiable so that it can pass between any boundaries it needs to. This way, a message sent to the bus could be handled by code in the client side in brackets-shell, Node, a Web Worker, or the server (for Brackets in the browser). However, passing only jsonifiable data across the bus is only a requirement when crossing process boundaries and should not be considered a requirement.
 
+As a concrete example of this, some editor commands could be implemented requiring just the full text of the current file or selection. The command does some manipulation of the text and then sends a replacement back. These kinds of editor commands could be run *anywhere* because the data is easily serialized.
 
-The "shared data" makes the programming easier in the common cases by using a model like dependency injection where the extension says which piece of data it needs (the selected text, for example) and the framework provides that when a subscriber is called.
+Other editor commands (block comment, for example) use a lot of contextual information about the document and iteratively expand the selection. Implementing those commands with asynchronous, jsonifiable data would be difficult. For these types of commands, I feel that we are better off at this stage simply passing the document object along.
+
+The "shared data" in the model makes the programming easier in the common cases by using something akin to dependency injection where the extension says which piece of data it needs (the selected text, for example) and the framework provides that when a subscriber is called.
 
 Within Brackets core or within an extension, direct communication between modules can work as it always has.
 
@@ -99,6 +141,14 @@ define(function (require, exports, module) {
 
 If this extension is turned off/removed, the menu item automatically goes away and the command subscription is removed as well.
 
+## Node ##
+
+Extensions (and core Brackets code) that want to run code in Node need to go through a bit of set up ceremony in order to communicate, but the communication is reasonably straightforward after that.
+
+We could bridge the message bus between Node and the client side code. This would make it possible for the extension above to run entirely in Node. Of course, there's no reason for that extension to run in Node, but it's easy to imagine other commands that would be easier to write in Node (a deployment command, for example).
+
+Even better, though, is that an extension could use one communication model between its own client side code, its Node code, Brackets core and even other extensions.
+
 ## What about UI? ##
 
 UI patterns that are easily configured and compartmentalized (such as menu items) are no problem. What about more complicated bits of UI?
@@ -107,25 +157,6 @@ My view is that we help extension developers as much as possible, but otherwise 
 
 For example, the Hover Preview extension currently attaches a mouse move listener and watches for what's under the cursor. If Brackets exposed a set of "hover" events, Hover Preview could just listen for those events and then it only needs to worry about placing its UI on the screen and removing that visible UI if it is disabled. Brackets will manage the mouse move listener, adding and removing it as necessary.
 
-## One implementation path ##
+## Sandboxing? ##
 
-This conceptual model is flexible enough to support anything we want to do, and we can adjust the syntax to make things convenient for all common cases we come across. The prototype demonstrates how things can work, but is definitely a prototype... the code should be thrown away.
-
-I see two open questions:
-
-* what do people think of this conceptual model for extensions?
-* does lazy loading matter?
-
-If people on the team do like this model, implementation could proceed with a set of stories like this:
-
-* Implement extensions core
-    * publish/subscribe bus
-    * request/response capability
-    * shared data management
-    * new extension lifecycle
-* Implement commands, menus
-    * Possibly out of scope: removing menus (which we currently don't have)
-* Research: Needs for five extensions
-    * Choose 5 extensions that are either representative of a category or "most useful"
-    * See which APIs they use and design new-style APIs for those APIs
-    * Produce stories to migrate those APIs
+The model presented here allows us to move forward with extensions that are not sandboxed but does not actively shut the door on sandboxing. The more API surface area that we build out that is asynchronous and jsonifiable, the easier it would be to put compliant extensions into a sandbox. But, we will not need to implement that today or burden extension developers with added complexity.
