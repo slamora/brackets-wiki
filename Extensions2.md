@@ -91,7 +91,7 @@ Within Brackets core or within an extension, direct communication between module
 
 The conceptual model is the key and we can adjust the syntax used to make writing extensions convenient. Even so, concrete examples in code can be a lot easier to understand than a diagram and prose.
 
-What follows is a complete extension that adds a "Reverse" menu item to the Edit menu. It is functional (and hot reloadable) on the [dangoor/extensions2 branch](https://github.com/adobe/brackets/tree/dangoor/extensions2).
+What follows is a complete extension that adds a "Reverse" menu item to the Edit menu. The "ext" object is the façade in the conceptual model and the channels send/receive messages on the shared bus. This extension is functional (and hot reloadable) on the [dangoor/extensions2 branch](https://github.com/adobe/brackets/tree/dangoor/extensions2).
 
 ```javascript
 define(function (require, exports, module) {
