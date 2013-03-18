@@ -149,6 +149,39 @@ We could bridge the message bus between Node and the client side code. This woul
 
 Even better, though, is that an extension could use one communication model between its own client side code, its Node code, Brackets core and even other extensions.
 
+## Why not JSON? ##
+
+If we're using a declarative format for specifying what an extension offers and needs, why not use JSON for the declarations?
+
+Bespin used a JSON file for its plugins in order to support lazy loading (the JSON for every plugin would be loaded, but the code would only be loaded as needed). There are disadvantages, however:
+
+1. No comments
+2. No variables
+3. No loops
+4. No functions (for Bespin, we defined a "pointer" format: path/to/module#functionName. This was key for lazy loading because it told the system what to load)
+
+JSON is an *option*, but it is not necessarily the most convenient for extension writers. I'll note that this is not a theoretical concern. Here is [a block of main.js from Emmet](https://github.com/emmetio/emmet/blob/master/plugins/brackets/main.js):
+
+```javascript
+
+    r("actions").getList().forEach(function(action) {
+    if (_.include(skippedActions, action.name))
+        return;
+
+    var id = "io.emmet." + action.name;
+    var shortcut = keymap[action.name];
+
+    CommandManager.register(action.options.label, id, function() {
+        return runAction(action);
+    });
+
+    if (!action.options.hidden) {
+        menu.addMenuItem(id, shortcut);
+    } else if (shortcut) {
+        KeyBindingManager.addBinding(id, shortcut);
+    }
+```
+
 ## What about UI? ##
 
 UI patterns that are easily configured and compartmentalized (such as menu items) are no problem. What about more complicated bits of UI?
@@ -160,3 +193,12 @@ For example, the Hover Preview extension currently attaches a mouse move listene
 ## Sandboxing? ##
 
 The model presented here allows us to move forward with extensions that are not sandboxed but does not actively shut the door on sandboxing. The more API surface area that we build out that is asynchronous and jsonifiable, the easier it would be to put compliant extensions into a sandbox. But, we will not need to implement that today or burden extension developers with added complexity.
+
+# Conclusion #
+
+What I'm proposing at this point is that we move forward with an API for extensions that offers:
+
+1. a predictable extension lifecycle (so that manual setup and teardown is possible as needed)
+2. a declarative mechanism for registering what an extension offers and needs (but this mechanism is in JS)
+3. a mediator that break the coupling and provides a consistent model between Brackets core, extensions, Node and future server-based Brackets
+4. an extension mechanism core that supports these features with actual extension APIs built iteratively over time
