@@ -65,6 +65,13 @@ If you keep getting errors when trying to launch Chrome, or if you keep getting 
 
 Also, if you keep getting prompted to restart Chrome when switching between HTML files, make sure that you have another tab open in Chrome. This prevents Chrome from shutting down and restarting between each file, so it's much faster and smoother.
 
+### Check Windows Registry
+If Brackets cannot launch the Chrome browser on your Windows system, check the Registry setting here:
+
+* HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe
+
+This is the file path that Brackets uses to launch Chrome. If this is not correct, then try uninstalling the Chrome browser at this location.
+
 ## Brackets Is Acting Weird
 ### Debug w/ The Developer Tools
 If Brackets opens, but behaves incorrectly, don't forget you can open the Developer Tools. Under the Debug Menu, select "Show Developer Tools" to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Ensure the Console tab is open and see if any errors show up there.
