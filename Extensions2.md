@@ -220,4 +220,5 @@ Going forward, we can:
 3. research decoupling of other Brackets components (such as Project Manager)
 4. implementation of the decoupling
 5. implement easier Node use via the façade and decoupling mechanisms from items 2 and 3
-6. research: review a collection of extensions for commonality and features that appeared to be difficult to implement
+6. implement mechanism for extensions to provide features for other extensions (if it's not already done by other stories)
+7. research: review a collection of extensions for commonality and features that appeared to be difficult to implement
