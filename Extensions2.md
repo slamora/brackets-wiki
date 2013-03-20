@@ -202,3 +202,13 @@ What I'm proposing at this point is that we move forward with an API for extensi
 2. a declarative mechanism for registering what an extension offers and needs (but this mechanism is in JS)
 3. a mediator that break the coupling and provides a consistent model between Brackets core, extensions, Node and future server-based Brackets
 4. an extension mechanism core that supports these features with actual extension APIs built iteratively over time
+
+## Feedback and Going Forward ##
+
+* We may want to do some research into which part of Brackets core code could be better decoupled
+* We need to make sure that extension APIs are clear about which things should be synchronous vs. which things are asynchronous
+    * The example code above is a good example because that code wouldn't really work reliably
+    * selected text can change between the time it's passed in and the time the text is replaced
+* mediated pub/sub for events may not be a win if you need to go grab another object to get the required data
+    * for example, adding an event handler to ProjectManager directly vs. a global mediator seems okay if you're going to be calling a bunch of methods on ProjectManager
+    * on the other hand, testability can be better if you're given a mock ProjectManager instead of the real one
