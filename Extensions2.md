@@ -217,7 +217,7 @@ Going forward, we can:
 
 1. start with [defining extension lifecycle](https://trello.com/card/extensions-lifecycle-improvements/4f90a6d98f77505d7940ce88/647) and making restartless extensions possible
 2. create an [initial façade for registering/unregistering the items](https://trello.com/card/easy-restartless-extensions-for-commands-menu-items-and-keybindings/4f90a6d98f77505d7940ce88/823) that are already designed in a declarative style (commands, menu items and keybindings)
-3. research decoupling of other Brackets components (such as Project Manager)
+3. research [decoupling of other Brackets components](https://trello.com/card/research-decoupling-of-brackets-core-components/4f90a6d98f77505d7940ce88/824) (such as Project Manager)
 4. implementation of the decoupling
 5. implement easier Node use via the façade and decoupling mechanisms from items 2 and 3
 6. implement mechanism for extensions to provide features for other extensions (if it's not already done by other stories)
