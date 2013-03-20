@@ -212,3 +212,10 @@ What I'm proposing at this point is that we move forward with an API for extensi
 * mediated pub/sub for events may not be a win if you need to go grab another object to get the required data
     * for example, adding an event handler to ProjectManager directly vs. a global mediator seems okay if you're going to be calling a bunch of methods on ProjectManager
     * on the other hand, testability can be better if you're given a mock ProjectManager instead of the real one
+
+Going forward, we can:
+
+1. start with [defining extension lifecycle](https://trello.com/card/extensions-lifecycle-improvements/4f90a6d98f77505d7940ce88/647) and making restartless extensions possible
+2. create an initial façade for registering/unregistering the items that are already designed in a declarative style (commands, menu items and keybindings)
+3. research decoupling of other Brackets components (such as Project Manager)
+4. implement easier Node use via the façade and decoupling mechanisms from items 2 and 3
