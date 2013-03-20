@@ -31,7 +31,4 @@ The problem was addressed by pull [#3142](https://github.com/adobe/brackets/pull
 
 Pro tip: a simple but surprisingly effective way to flush out race issues with asynchrony is to just open up multiple files, turn on live development, and then hold down control-tab to very quickly switch among all the documents. This puts some stress on the open/openDocument/changeDocument/closeDocument/close part of the Live Development lifecycle. There are still existing bugs!
 
-The next step is probably to generalize Live Development to handle multiple simultaneous open sessions or windows. This means generalizing the Inspector to manage multiple WebSockets, parametrizing LiveDevelopment the lifecycle methods by URL, updating the implementation of the agents from singletons to instantiable `classes` that are parametrized by the URL or socket they service and that encapsulate their state, and also updating the the UI and XD workflow of Live Development accordingly.
-
-
-
+The next step is probably to generalize Live Development to handle multiple simultaneous open sessions or windows. This means generalizing the Inspector to manage multiple WebSockets, parametrizing LiveDevelopment the lifecycle methods by URL, updating the implementation of the agents from singletons to instantiable `classes` that are parametrized by the URL or socket they service and that encapsulate their state, and also updating the the UI and XD workflow of Live Development accordingly. Additionally, the connection between Brackets and the Chrome remote debugger should be abstracted and generalized to support live development with other browsers or remote interfaces like Weinre. 
