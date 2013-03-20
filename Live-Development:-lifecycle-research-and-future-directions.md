@@ -2,7 +2,7 @@
 
 This section describes in some detail a problem with Live Development startup that was be manifesting itself as issue [#2858](https://github.com/adobe/brackets/issues/2858).
 
-### One race condition of many
+### A CSS Agent race condition
 
 Upon Live Development startup, Brackets tries to interact with the Chrome remote debugger to find a web socket, one end of which is connected to the window/tab in which live development will take place. This interaction consists of:
 
@@ -29,7 +29,7 @@ Unfortunately, there is a race condition here which, in some cases, can cause th
 
 In this case, the CSS agent handles the pageLoad event of the interstitial page instead of the target page, and hence queries the interstitial page for its list of stylesheets instead of the querying the target page.
 
-### A fix
+### The solution
 
 The problem was addressed by pull [#3142](https://github.com/adobe/brackets/pull/3142) by ensuring that the interstitial page has loaded before attempting to load the target page. To ensure this, it is not sufficient to listen for the page load event of the interstitial page because the connection to the browser may not be set up before the page load event fires. Instead, the interstitial page was modified to set a global flag (`window.isBracketsLiveDevelopmentInterstitialPageLoaded`) on pageLoad, and that variable is polled remotely by Brackets. Once the flag is observed to be true, then we know that the page has certainly loaded. From that point, the agents can be loaded and, once they are ready (i.e., have registered their page load handlers), we can navigate away from the interstitial page to the target page, having certain knowledge that the page load event will be triggered after the agents registered their handlers. 
 
