@@ -39,11 +39,12 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 
-* [](https://github.com/adobe/brackets/pull/) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
-* [](https://github.com/adobe/brackets/pull/) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [](https://github.com/adobe/brackets/pull/) by [yodfz](https://github.com/yodfz)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
-
+* [Fix issue #2306 (Recent projects close arrow fail to close without mouse move)](https://github.com/adobe/brackets/pull/2590) by [Chema Balsas](https://github.com/jbalsas)
+* [Preferences ID cleanups - Part II](https://github.com/adobe/brackets/pull/3101) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Adding support for multiple lineComment prefixes](https://github.com/adobe/brackets/pull/3121) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [add zh-cn language!](https://github.com/adobe/brackets/pull/3107) by [yodfz](https://github.com/yodfz)
+* [Fix #1098: Some code uses $.each, some uses Array.prototype.forEach](https://github.com/adobe/brackets/pull/3087) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fixed: #1863 Selector width info is wrong when no space before '{'](https://github.com/adobe/brackets/pull/3082) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
 * [Fixing issue #2923 - Getting mode from file extension won't always work](https://github.com/adobe/brackets/pull/3029) by [Mark Murphy](https://github.com/MarkMurphy)
 * [edit nls/string.js and delete file](https://github.com/adobe/brackets/pull/3112) by [yodfz](https://github.com/yodfz)
 * [Scroll line up/down - Take 3](https://github.com/adobe/brackets/pull/3068) by [Tomás Malbrán](https://github.com/TomMalbran)
