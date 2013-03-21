@@ -4,10 +4,14 @@ _This document will not be finalized until the end of Sprint 22 -- approximately
 
 What's New in Sprint 22
 -----------------------
-* **TODO: category headings**
-    * [Install extension from URL](https://trello.com/card/3-extension-installation-url/4f90a6d98f77505d7940ce88/789)
-    * [Word wrap](https://trello.com/card/2-word-wrap/4f90a6d98f77505d7940ce88/270): To enable, ...
-
+* Extensions
+    * [Install extension from URL](https://trello.com/card/3-extension-installation-url/4f90a6d98f77505d7940ce88/789) in the Brackets UI via File > Install Extensions\u2026. A URL to a ZIP file or GitHub repo is required.
+* Code Editing
+    * [Word wrap](https://trello.com/card/2-word-wrap/4f90a6d98f77505d7940ce88/270) is now enabled by default. Use the View > Enable Word Wrap menu to toggle.
+    * Show Active Line: Active line highlighting emphasizes which line the cursor is positioned on. Use the View > Show Active Line menu to toggle.
+    * Line numbers can now be hidden. Use the View > Show Line Numbers menu to toggle.
+* Live Development
+    * [Improvements and bug fixes](https://trello.com/c/R0ZFrFV4) were made to make the connection to Chrome more reliable and to report errors more effectively.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-21...sprint-22#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-21...sprint-22#commits_bucket)
 
