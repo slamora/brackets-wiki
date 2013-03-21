@@ -17,10 +17,10 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Performance Tests Results](https://docs.google.com/spreadsheet/ccc?key=0Aras0diokeHxdEc5RGtOeVI0V0xGU3FPUXBuX3ZYTlE) | [Sprint DoD Performance Tests Procedure](https://github.com/adobe/brackets/wiki/Performance-Tests-Procedure)
 
 ### Extensions
+* [Brackets Extensions List](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
 * [How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)
 * [Language Support](https://github.com/adobe/brackets/wiki/Language-Support)
 * [How the Node process in Brackets-Shell Works](wiki/Brackets-Node-Process:-Overview-for-Developers)
-* [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
 * [Extension UI Guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines)
 * [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
 * [The Future Extension Manager](https://github.com/adobe/brackets/wiki/Research:-Extension-Management)
