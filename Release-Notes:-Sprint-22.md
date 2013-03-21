@@ -39,6 +39,28 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 
+* [](https://github.com/adobe/brackets/pull/) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [](https://github.com/adobe/brackets/pull/) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [](https://github.com/adobe/brackets/pull/) by [yodfz](https://github.com/yodfz)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+
+* [Fixing issue #2923 - Getting mode from file extension won't always work](https://github.com/adobe/brackets/pull/3029) by [Mark Murphy](https://github.com/MarkMurphy)
+* [edit nls/string.js and delete file](https://github.com/adobe/brackets/pull/3112) by [yodfz](https://github.com/yodfz)
+* [Scroll line up/down - Take 3](https://github.com/adobe/brackets/pull/3068) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fixed: #3032 KeyBindingManager no longer warns / prevents binding collisions](https://github.com/adobe/brackets/pull/3081) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fix issue 2078](https://github.com/adobe/brackets/pull/3058) by [Lance Campbell](https://github.com/lkcampbell)
+* [Added Localisation for the Loading... message](https://github.com/adobe/brackets/pull/3020) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fix for #3095 (German translation)](https://github.com/adobe/brackets/pull/3096) by [Markus Siemens](https://github.com/msiemens)
+* [Updated italian translation](https://github.com/adobe/brackets/pull/2996) by [antonellopasella](https://github.com/antonellopasella)
+* [Preferences id cleanup](https://github.com/adobe/brackets/pull/3018) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Persisting font size between Brackets Sessions](https://github.com/adobe/brackets/pull/) by [Lance Campbell](https://github.com/lkcampbell)
+* [Cleanup for Adding the CodeMirror built-in Auto Close Brackets addon](https://github.com/adobe/brackets/pull/3075) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Adding the CodeMirror built-in Auto Close Brackets addon](https://github.com/adobe/brackets/pull/3040) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fixed: Issue #2878 Expanding/collapsing a folder tree node steals focus from editor](https://github.com/adobe/brackets/pull/2879) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Changed to check for case insensitive http: and https:](https://github.com/adobe/brackets/pull/3019) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fixed an Error showing up in the dev console when executing a disabled command](https://github.com/adobe/brackets/pull/3045) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fixed: #2278 Editor should not have upward dependencies on EditorManager](https://github.com/adobe/brackets/pull/2750) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+
 Contributions _from_ Brackets
 -----------------------------
 
