@@ -1,5 +1,3 @@
-**IMPORTANT: The extension location [changed] (https://github.com/adobe/brackets/wiki/New%20Extension%20Location) in Sprint 16**
-
 * [Download Brackets](How to Use Brackets#wiki-howtoget)
 * Create a new folder in `src/extensions/dev` with yourExtensionName, and a main.js file for your extension code.
 * For a quick start, you may want to read the [[Simple "Hello World" extension]] or refer to an [existing extension](https://github.com/adobe/brackets/wiki/Brackets-Extensions) (like InlineImageViewer) that is similar to what you want to do.
