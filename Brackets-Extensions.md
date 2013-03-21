@@ -1,4 +1,16 @@
-Brackets doesn't yet have functionality for discovering and installing extensions. In the meantime, here's a list of extensions that people have built. You can copy them into the user extension folder, which can be opened by selecting _Help > Show Extensions Folder_. Brackets needs to be restarted after installing a new extension.
+## Installing Extensions ##
+
+As of Sprint 22, Brackets has the ability to install extensions when presented with a URL. Select _File > Install Extension..._ to install one of the extensions below. (Hint: you can just right click on one of the links, copy the URL and then paste it into the Install Extension dialog in Brackets.)
+
+Extensions will start up right away after they're installed.
+
+## Updating and Removing Extensions ##
+
+Note that Brackets does not currently have the ability to *update* or *remove* extensions. You can use the _Help > Show Extensions Folder_ command to see the old extension folders on disk and delete them. You will need to restart Brackets for the old extensions to be fully removed.
+
+## Extensions List ##
+
+Here's a list of extensions that people have built.
 
 If you've written an extension (even just as an experiment), please feel free to edit this page directly and add it (with some indication of what state it's in), and post to the [brackets-dev Google Group](http://groups.google.com/group/brackets-dev) to let the community know about it. 
 
