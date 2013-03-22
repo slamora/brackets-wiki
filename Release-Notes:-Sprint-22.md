@@ -10,6 +10,7 @@ What's New in Sprint 22
     * [Word wrap](https://trello.com/card/2-word-wrap/4f90a6d98f77505d7940ce88/270): Use View > Enable Word Wrap menu to toggle (enabled by default).
     * [Auto close braces](https://github.com/adobe/brackets/pull/3040): Use Edit > Auto Close Braces to enable automatically inserting closing `)` `]` `}` `"` `'` characters (disabled by default).
     * [Highlight active line](https://github.com/adobe/brackets/pull/3097): Use View > Show Active Line menu to highlight the line the cursor is currently on (disabled by default).
+    * [Improved word-by-word navigation](https://github.com/adobe/brackets/issues/670): Moving the cursor with Ctrl+Left/Right arrows (Windows) or Alt+Left/Right arrows (Mac) now behaves more like other modern editors.
     * [Scroll up/down via keyboard](https://github.com/adobe/brackets/pull/3068): Use Ctrl+Up/Down arrows on Windows; Ctrl+Alt+Up/Down arrows on Mac to scroll the view one line at a time
     * [Hide line numbers](https://github.com/adobe/brackets/pull/3097): Use the View > Show Line Numbers menu to toggle (still visible by default).
     * Fixed several issues with scroll position jiggling or getting lost
