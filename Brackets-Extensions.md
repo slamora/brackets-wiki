@@ -4,7 +4,7 @@ As of Sprint 22, you can install an extension directly within the Brackets UI: j
 
 Extensions will start up right away after they're installed.
 
-## Updating and Removing Extensions ##
+#### Updating and Removing Extensions
 
 Removing an extension or updating it to a new version is still a little more manual. Select _Help > Show Extensions Folder_ and delete the extension folder in question. Restart Brackets to fully remove the extension. Then you can install a newer copy using the steps above.
 
