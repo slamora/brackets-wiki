@@ -1,18 +1,18 @@
 ## Installing Extensions ##
 
-As of Sprint 22, Brackets has the ability to install extensions when presented with a URL. Select _File > Install Extension..._ to install one of the extensions below. (Hint: you can just right click on one of the links, copy the URL and then paste it into the Install Extension dialog in Brackets.)
+As of Sprint 22, you can install an extension directly within the Brackets UI: just Select _File > Install Extension_ and provide a URL. (To install most of the extensions below, just right click its link, copy the URL and then paste into the Install Extension dialog.)
 
 Extensions will start up right away after they're installed.
 
 ## Updating and Removing Extensions ##
 
-Note that Brackets does not currently have the ability to *update* or *remove* extensions. You can use the _Help > Show Extensions Folder_ command to see the old extension folders on disk and delete them. You will need to restart Brackets for the old extensions to be fully removed.
+Removing an extension or updating it to a new version is still a little more manual. Select _Help > Show Extensions Folder_ and delete the extension folder in question. Restart Brackets to fully remove the extension. Then you can install a newer copy using the steps above.
 
 ## Extensions List ##
 
 Here's a list of extensions that people have built.
 
-If you've written an extension (even just as an experiment), please feel free to edit this page directly and add it (with some indication of what state it's in), and post to the [brackets-dev Google Group](http://groups.google.com/group/brackets-dev) to let the community know about it. 
+If you've written an extension &ndash; even just as an experiment &ndash; please feel free to edit this page directly and add it (with some indication of what state it's in), and post to the [brackets-dev Google Group](http://groups.google.com/group/brackets-dev) to let the community know about it. 
 
 Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts) page to see which shortcuts are available and also to add the shortcuts that you have used. Thanks!
 
@@ -22,8 +22,9 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor. 
 * [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
 * [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
-* [Quick Search] (https://github.com/enturn/brackets-quick-search): highlights occurrences of the selected word (Notepad++ smart highlighting)
+* [Quick Search] (https://github.com/enturn/brackets-quick-search): automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
 * [Ctrl-Left/Ctrl-Right] (https://github.com/MiguelCastillo/Brackets-LineNavigator): helps you navigate through your code using your standard Ctrl-Left/Ctrl-Right/Ctrl-Up/Ctrl-Down keys.
+* [Indent Guides] (https://github.com/lkcampbell/brackets-indent-guides): An extension for Brackets to show indent guides in the code editor.
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/emmet): Adds Emmet (Zen Coding) support to Brackets ([download here](https://github.com/emmetio/brackets-emmet)).
@@ -31,7 +32,9 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
 * [Quick Markup](https://github.com/redmunds/brackets-quick-markup): fast HTML markup generation as you type.
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
-* [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): auto-complete Paranthesis, Brackets, Braces, Double and Single Quotes...
+* [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): auto-complete parenthesis, brackets, braces, double and single quotes.
+* [Disable AutoClosing Tags](https://github.com/talmand/Brackets-Disable-AutoClose-Tags): Disables auto-insertion of closing HTML tag when typing the opening tag, but preserves auto-completion of the closing tag when `</` is typed.
+* [Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter
 
 **Formatting**
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
@@ -42,7 +45,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Beautify](https://github.com/drewhjava/brackets-beautify): Beautify HTML, CSS, and Javascript (uses js-beautify)
 * [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
 * [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
-* [Disable AutoClosing Tags](https://github.com/talmand/Brackets-Disable-AutoClose-Tags): Disables CodeMirror's auto-closing HTML tags "whenOpening", still auto-closes when starting the closing tag.
 
 **Code Generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
@@ -57,14 +59,9 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Extension Toolkit](https://github.com/davidderaedt/Brackets-extension-toolkit) An extension to make building Brackets extensions easier.
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 * [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav): shortcuts for switching to next/previous editor (<em>non</em>-MRU order), and a version of Quick Open scoped to only open files.
-* [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
 * [Brackets Commands Guide](https://github.com/peterflynn/brackets-commands-guide): Search and execute commands by typing part of their name, similar to Quicksilver (or Sublime's Ctrl+Shift+P or Eclipse's Ctrl+3).
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor.
-* [TestQuickly](https://github.com/dangoor/TestQuickly): simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
-* [PageSuck](https://github.com/timburgess/brackets-pagesuck): prompts for a URL and pulls that page's HTML directly into the editor as a new file
 * [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): CodeMirror themes for brackets from the main menu.
-* [Indent Guides] (https://github.com/lkcampbell/brackets-indent-guides): An extension for Brackets to show indent guides in the code editor.
-* [Helper] (https://github.com/Zolmeister/brackets-helper): A better brace autocomplete, and F12 Linux support
 
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
@@ -80,11 +77,13 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [SVG Preview](https://github.com/peterflynn/svg-preview): Live preview SVG files in an inline panel while you edit them.
 * [Markdown Preview](https://github.com/gruehle/MarkdownPreview): Live preview of Markdown files, updated as the document is edited.
 
-**External Tools**
+**External Tools & Online Content**
 * [BracketLESS] (https://github.com/olsgreen/BracketLESS): Compiles LESS files to CSS on save
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Implements the Full GitHub API, but is just in an early prototype state
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
+* [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
+* [PageSuck](https://github.com/timburgess/brackets-pagesuck): prompts for a URL and pulls that page's HTML directly into the editor as a new file
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 * [Ant for Brackets](https://github.com/jbalsas/brackets-ant): Launch any target in your ant files. (Uses Node. Requires Brackets Sprint 21 or greater)
@@ -101,10 +100,11 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [W3CValidator](https://github.com/cfjedimaster/brackets-w3cvalidation): Run the W3C Validator on your HTML.
 * (See also [App Cache Buddy](https://github.com/davidderaedt/appcache-gen) above).
 
-**Code Metrics**
+**Testing & Code Metrics**
 * [complexityReport.js](https://github.com/sahlas/brackets-crjs.git): A Brackets extension that enables phil booth's complexityReport.js tool. Displays complexity statistics on a per-function and aggregate basis. 
 * [Jasmine](https://github.com/dschaffe/brackets-jasmine): Runs the Jasmine-node unit test tool against the
 current file.
+* [TestQuickly](https://github.com/dangoor/TestQuickly): simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
 
 ---
 
