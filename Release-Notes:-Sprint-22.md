@@ -24,7 +24,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 API Changes
 -----------
-No known breaking changes to existing APIs.
+**Editor API updated** - `getIndentUnit()/setIndentUnit()` are replaced by `getSpaceUnits()/setSpaceUnits()`. This was done to fix indenting with mixed tab and space settings
 
 New/Improved Extensibility APIs
 -------------------------------
