@@ -24,7 +24,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 API Changes
 -----------
-**Editor API updated** - `getIndentUnit()/setIndentUnit()` are replaced by `getSpaceUnits()/setSpaceUnits()`. This was done to fix indenting with mixed tab and space settings
+**Editor API updated** - `Editor.getIndentUnit()/Editor.setIndentUnit()` are replaced by `Editor.getSpaceUnits()/Editor.setSpaceUnits()`. This was done to fix indenting with mixed tab and space settings
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -36,6 +36,7 @@ New/Improved Extensibility APIs
 
 **Preferences storage keys** - `PreferencesManager.getPreferenceStorage()` can now accept a module object and automatically generate a storage id based on it. Use `PreferencesManager.handleClientIdChange()` to migrate preferences from an old storage key to a new one.
 
+**LiveDevelopment** - `LiveDevelopment.connect()` was made public. This is called to reload agents on page update.
 
 Known Issues
 ------------
