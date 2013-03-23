@@ -22,6 +22,11 @@ What's New in Sprint 22
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-21...sprint-22#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-21...sprint-22#commits_bucket)
 
 
+UI Changes
+----------
+**Find dialog** now shows the number of strings found.
+
+
 API Changes
 -----------
 **Editor API updated** - `Editor.getIndentUnit()/Editor.setIndentUnit()` are replaced by `Editor.getSpaceUnits()/Editor.setSpaceUnits()`. This was done to fix indenting with mixed tab and space settings
