@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 22 -- approximately
 What's New in Sprint 22
 -----------------------
 * **Extensions**
-    * [Install extension from URL easily](https://trello.com/card/3-extension-installation-url/4f90a6d98f77505d7940ce88/789): Use File > Install Extensions\u2026 to install from a URL pointing to a ZIP file or GitHub repo.
+    * [Install extension from URL easily](https://trello.com/card/3-extension-installation-url/4f90a6d98f77505d7940ce88/789): Use File > Install Extensions... to install from a URL pointing to a ZIP file or GitHub repo.
 * **Code Editing**
     * [Word wrap](https://trello.com/card/2-word-wrap/4f90a6d98f77505d7940ce88/270): Use View > Enable Word Wrap menu to toggle (enabled by default).
     * [Auto close braces](https://github.com/adobe/brackets/pull/3040): Use Edit > Auto Close Braces to enable automatically inserting closing `)` `]` `}` `"` `'` characters (disabled by default).
