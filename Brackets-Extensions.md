@@ -1,6 +1,6 @@
 ## Installing Extensions ##
 
-As of Sprint 22, you can install an extension directly within the Brackets UI: just Select _File > Install Extension_ and provide a URL. (To install most of the extensions below, just right click its link, copy the URL and then paste into the Install Extension dialog.)
+As of Sprint 22, you can install an extension directly within the Brackets UI: just Select _File > Install Extension_ and provide a URL to a GitHub repo or a ZIP file. (To install most of the extensions below, just right click its link, copy the URL and then paste into the Install Extension dialog.)
 
 Extensions will start up right away after they're installed.
 
