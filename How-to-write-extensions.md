@@ -26,11 +26,11 @@ _See [[Simple "Hello World" extension]] for a code sample._
 
 For any new behavior, first register a Command that implements your behavior, via ```CommandManager.register()```. This just maps a Command id (string) to your handler function. Use package-style naming for your Command id (e.g. ```"myorg.myextension.mycommand"```) to avoid collisions with other extensions. (See also: [higher-level overview of command architecture](Brackets Development How Tos#wiki-commands)).
 
-**Add a menu item:** Get a top-level menu by calling ```Menus.getMenu()``` with one of the ```AppMenuBar``` constants.  Then add a menu item via ```theMenu.addMenuItem()```, linking it to your Command id. The menu item's label will be the string name you gave the Command when it was created.
+**Add a menu item:** Get a top-level menu by calling ```Menus.getMenu()``` with one of the ```AppMenuBar``` constants (currently ```FILE_MENU```, ```EDIT_MENU```, ```VIEW_MENU```, ```NAVIGATE_MENU``` or ```HELP_MENU```).  Then add a menu item via ```theMenu.addMenuItem()```, linking it to your Command id. The menu item's label will be the string name you gave the Command when it was created.
 
 As a convenience, ```addMenuItem()``` also lets you create a keyboard shortcut for your Command at the same time.
 
-**Add a context menu item:** Get a context menu by calling ```Menus.getContextMenu()``` with one of the ```ContextMenuIds``` constants (currently ```project-context-menu``` or ```editor-context-menu```).  Then add a menu item via ```theContextMenu.addMenuItem()```, linking it to your Command id exactly like a top level menu item. 
+**Add a context menu item:** Get a context menu by calling ```Menus.getContextMenu()``` with one of the ```ContextMenuIds``` constants (currently ```EDITOR_MENU```, ```INLINE_EDITOR_MENU```, ```PROJECT_MENU``` or ```WORKING_SET_MENU```).  Then add a menu item via ```theContextMenu.addMenuItem()```, linking it to your Command id exactly like a top level menu item. 
 
 **Add a menu divider** Get a top level or context menu as explained above.  Then add a menu dividers via ```theMenu.addMenuDivider()```. It will default to the last position currently in the menu.  You have the option of placing it with the position parameter ```first``` and ```last```, which will place the divider accordingly. Additionally, you can set position parameter to ```before``` and ```after```, pass in a Command ID, and place the divider accordingly.  
 
