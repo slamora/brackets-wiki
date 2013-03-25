@@ -27,7 +27,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Indent Guides] (https://github.com/lkcampbell/brackets-indent-guides): An extension for Brackets to show indent guides in the code editor.
 
 **Snippets & Shorthand**
-* [Emmet/Zen Coding](https://github.com/emmetio/emmet): Adds Emmet (Zen Coding) support to Brackets ([download here](https://github.com/emmetio/brackets-emmet)).
+* [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
 * [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
 * [Quick Markup](https://github.com/redmunds/brackets-quick-markup): fast HTML markup generation as you type.
