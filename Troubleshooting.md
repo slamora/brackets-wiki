@@ -70,7 +70,7 @@ If Brackets cannot launch the Chrome browser on your Windows system, check the R
 
 * HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe
 
-This is the file path that Brackets uses to launch Chrome. If this is not correct, then try uninstalling the Chrome browser at this location.
+This is the file path that Brackets uses to launch Chrome. If this is not correct, then try reinstalling the Chrome browser at this location.
 
 ## Brackets Is Acting Weird
 ### Debug w/ The Developer Tools
