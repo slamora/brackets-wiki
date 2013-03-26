@@ -35,6 +35,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): auto-complete parenthesis, brackets, braces, double and single quotes.
 * [Disable AutoClosing Tags](https://github.com/talmand/Brackets-Disable-AutoClose-Tags): Disables auto-insertion of closing HTML tag when typing the opening tag, but preserves auto-completion of the closing tag when `</` is typed.
 * [Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter
+* [Lorem Ipsum Generator] (https://github.com/lkcampbell/brackets-lorem-ipsum): Insert Lorem Ipsum text into any Brackets document.
 
 **Formatting**
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
