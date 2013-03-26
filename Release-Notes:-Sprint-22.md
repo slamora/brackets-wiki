@@ -1,7 +1,7 @@
 What's New in Sprint 22
 -----------------------
 * **Extensions**
-    * [Install extension from URL easily](https://trello.com/card/3-extension-installation-url/4f90a6d98f77505d7940ce88/789): Use File > Install Extensions... to install from a URL pointing to a ZIP file or GitHub repo.
+    * [Install extension from URL easily](https://trello.com/card/3-extension-installation-url/4f90a6d98f77505d7940ce88/789): Use File > Install Extensions to install from a URL pointing to a ZIP file or GitHub repo.
 * **Code Editing**
     * [Word wrap](https://trello.com/card/2-word-wrap/4f90a6d98f77505d7940ce88/270): Use View > Enable Word Wrap menu to toggle (enabled by default).
     * [Auto close braces](https://github.com/adobe/brackets/pull/3040): Use Edit > Auto Close Braces to enable automatically inserting closing `)` `]` `}` `"` `'` characters (disabled by default).
@@ -18,14 +18,9 @@ What's New in Sprint 22
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-21...sprint-22#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-21...sprint-22#commits_bucket)
 
 
-UI Changes
-----------
-**Find dialog** now shows the number of strings found.
-
-
 API Changes
 -----------
-**Editor API updated** - `Editor.getIndentUnit()/Editor.setIndentUnit()` are replaced by `Editor.getSpaceUnits()/Editor.setSpaceUnits()`. This was done to fix indenting with mixed tab and space settings
+**Editor indentation** - `Editor.getIndentUnit()`/`Editor.setIndentUnit()` are replaced by `Editor.getSpaceUnits()`/`Editor.setSpaceUnits()`. They mean the same thing but are now more properly decoupled from tab size settings (see [#3209](https://github.com/adobe/brackets/pull/3209)).
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -37,10 +32,11 @@ New/Improved Extensibility APIs
 
 **Preferences storage keys** - `PreferencesManager.getPreferenceStorage()` can now accept a module object and automatically generate a storage id based on it. Use `PreferencesManager.handleClientIdChange()` to migrate preferences from an old storage key to a new one.
 
-**LiveDevelopment** - `LiveDevelopment.connect()` was made public. This is called to reload agents on page update.
+**LiveDevelopment** - Extensions can force a page reload by using `Inspector.Page.reload()` coupled with `LiveDevelopment.reconnect()`, which is now public.
 
 Known Issues
 ------------
+* [#3241](https://github.com/adobe/brackets/issues/3241): When deleting large blocks of text at the bottom of a document, parts of the editor may go blank. Resize the window or switch documents to repaint the view.
 * [#3207](https://github.com/adobe/brackets/issues/3207): If you use an earlier build of Brackets (e.g. Sprint 20) after using this build at least once, a few preferences such as Recent Projects may get reset. (You can back up your [[cache folder]] if you're concerned about this).
 * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet.  To work around this, right click the Brackets app and choose Open.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
 * [#2272](https://github.com/adobe/brackets/issues/2272): Windows Vista may not allow the Brackets installer to run (you may not see _any_ error message). To work around this, right-click the installer file, choose Properties, and click the Unblock button.
