@@ -1,11 +1,13 @@
 * [Download Brackets](How to Use Brackets#wiki-howtoget)
-* Create a new "yourExtensionName" folder in `www/extensions/dev` (`src/extensions/dev` if you've cloned from git), and inside create a main.js file for your extension code.
-* For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](https://github.com/adobe/brackets/wiki/Brackets-Extensions) that is similar to what you want to do.
+* Create a new "yourExtensionName" folder in `www/extensions/dev`, and inside create a main.js file for your extension code.
+* For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](Brackets-Extensions) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
+
+(Note: you may also [clone Brackets source from git](How-to-Hack-on-Brackets#wiki-getcode). In that case, refer to the `src` folder instead of `www`).
 
 ## Simple Development Workflow
 
-* Open up Brackets and use "File > Open Folder" to open the Brackets `www` folder (or `src` if cloned from git).
+* Launch Brackets and use "File > Open Folder" to open the Brackets `www` folder.
 * Open your main.js file and make changes.
 * Save the file and restart Brackets via "Debug > Reload Brackets" to see your changes.
 * To debug problems, use "Debug > Show Developer Tools" to open developer tools in a tab in Chrome. You can use console.log() from your extension code, set breakpoints, etc.
