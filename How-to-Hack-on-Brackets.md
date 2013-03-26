@@ -42,13 +42,13 @@ The first step is to fork the projects on GitHub so you can start making changes
 Next pull the repositories down to your local machine. 
 
 The [brackets](https://github.com/adobe/brackets) repo has all of the HTML/JS/CSS files.
-```
+```bash
 git clone https://github.com/<your username>/brackets.git
 ```
 
 _Important:_ Brackets uses submodules to track third-party repos (like [CodeMirror](http://codemirror.net/)) that it depends on. To get these set up, you need to run this command from within the `brackets` folder:
 
-```
+```bash
 git submodule update --init
 ```
 
@@ -56,7 +56,7 @@ git submodule update --init
 
 The [brackets-shell](https://github.com/adobe/brackets-shell) repo has the code for the native shell. You _only_ need to clone this repo if you plan on making changes to the native shell. 
 
-```
+```bash
 git clone https://github.com/<your username>/brackets-shell.git
 ```
 
@@ -78,14 +78,14 @@ If you're only hacking on HTML/JS/CSS files, you can have the installed version 
   1. Open a Terminal window
   2. `cd` to the root of your brackets repo
   3. run `tools/setup_for_hacking.sh`, passing the full pathname to your installed Brackets.app. For example:
-```
+```bash
 tools/setup_for_hacking.sh "/Applications/Brackets Sprint 14.app"
 ```
 4. On Windows:
   1. Open a Command Prompt (you will likely need to "Run as Administrator")
   2. `cd` to the root of your brackets repo
   3. run `tools\setup_for_hacking.bat`, passing the full path of the directory where Brackets.exe is installed. For example:
-```
+```bat
 tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 14"
 ```
 5. Launch the installed copy of Brackets, select _Help > About_, and make sure that the version number says "sprint xx development build". This indicates that you're running Brackets from your git repo instead of the installed build. (If you see "sprint xx experimental build", you're not properly set up.)
@@ -98,7 +98,7 @@ If you cloned the brackets-shell, see the brackets-shell [readme](https://github
 ### Tracking Changes from the Main Repository ###
 It's important to be working off of the latest build and the easiest way to do that is to make sure that your local copy of Brackets is tracking the main repository. This involves using the `git remote` command which lets you link your local version to a different remote repository (by default, it's linked to your github fork). To link your local repository to the main brackets repository, use this command from the _brackets_ directory:
 
-```
+```bash
 cd brackets
 git remote add upstream https://github.com/adobe/brackets.git
 ```
@@ -108,7 +108,7 @@ This will create a link from your local brackets repository to the main one call
 If you want to avoid getting branches other than master, you can add the `--track master` argument after `add`. However, that will mean that if you need to pull a different branch, you'll need to explicitly fetch it. 
 
 Do the same for the brackets-shell repository (if you forked it).
-```
+```bash
 cd brackets-shell
 git remote add upstream https://github.com/adobe/brackets-shell.git
 ```
