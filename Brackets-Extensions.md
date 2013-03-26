@@ -106,6 +106,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Jasmine](https://github.com/dschaffe/brackets-jasmine): Runs the Jasmine-node unit test tool against the
 current file.
 * [TestQuickly](https://github.com/dangoor/TestQuickly): simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
+* [xUnit](https://github.com/dschaffe/brackets-xunit): extension to run current buffer as a javascript unit test with right click (supports jasmine, yui3, more coming soon...)
 
 ---
 
