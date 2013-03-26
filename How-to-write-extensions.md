@@ -1,24 +1,29 @@
 * [Download Brackets](How to Use Brackets#wiki-howtoget)
-* Create a new folder in `src/extensions/dev` with yourExtensionName, and a main.js file for your extension code.
-* For a quick start, you may want to read the [[Simple "Hello World" extension]] or refer to an [existing extension](https://github.com/adobe/brackets/wiki/Brackets-Extensions) (like InlineImageViewer) that is similar to what you want to do.
+* Create a new "yourExtensionName" folder in `www/extensions/dev` (`src/extensions/dev` if you've cloned from git), and inside create a main.js file for your extension code.
+* For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](https://github.com/adobe/brackets/wiki/Brackets-Extensions) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
 
-## Development Workflow:
+## Simple Development Workflow
 
-* Open up Brackets, and if it's not already opened, open the brackets/ folder.
-* Open a second window (Debug->New Window), which opens a new Brackets instance. You'll use this window for testing your extension. (This is optional: you can use just one window, but it's nice to have separate stable & testing windows in case you end up breaking Brackets in the process of developing your extension).
-* In window #2, you can open a different folder on your file system to access other content for testing your extension (e.g. test.html).
-* The development workflow is like this:
- * In window #1, edit your extension code.
- * In window #2, reload window (F5/Command-R) to get extension changes and test. _Note: if your extension is not reloading correctly, [disable caching in the Chrome Dev Tools](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_
- * To debug problems, open the developer tools for window #2 (Debug->Show Developer Tools). You can use console.log() from the extension code, set breakpoints, etc.
-  * Repeat. 
+* Open up Brackets and use "File > Open Folder" to open the Brackets `www` folder (or `src` if cloned from git).
+* Open your main.js file and make changes.
+* Save the file and restart Brackets via "Debug > Reload Brackets" to see your changes.
+* To debug problems, use "Debug > Show Developer Tools" to open developer tools in a tab in Chrome. You can use console.log() from your extension code, set breakpoints, etc.
+    * _The first time you open Developer Tools, you must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_ - otherwise using Reload while dev tools are open will not reflect changes to your extension.
 
-## Extension Architecture:
+##### Optional: more robust workflow
 
-An extension consists of a main.js (your main module) and any other JS files (other modules). When you use Require in your main module to import your own modules, you get a private copy of modules, so they dont conflict with other modules. To access core Brackets modules, use ```brackets.getModule()```.
+You can run two instances of Brackets so you still have a working editor if you end up breaking Brackets in the process of developing your extension:
 
-You often want an extension to integrate with the UI somehow. If your extension is doing something new from scratch, you can add new menu items or keyboard shortcuts for your new behavior -- see next section. Some Brackets features that already provide a UI are also extensible via feature-specific APIs -- see the section after next.
+* Use "Debug > New Window" to launch a new, separate Brackets instance.
+* In window #2, you can open a different folder on disk to access other content for testing your extension (e.g. test.html).
+* In window #1, edit your extension code and save.
+* Reload window #2 to pick up extension changes, and test it out.
+* Don't reload window #1 until you're at a good stable "safe point."
+
+## Extension Architecture
+
+An extension consists of a main.js (your main module) and any other files in its subtree (which may include other JS modules). You can use Require to load modules from your extension's folder tree or modules from core Brackets (to load core Brackets modules, use ```brackets.getModule()``` instead of `require()`). You cannot load modules from _other_ extensions.
 
 ### <a name="uihooks"></a>Adding menu items and keyboard shortcuts
 
