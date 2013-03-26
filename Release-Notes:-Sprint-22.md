@@ -20,7 +20,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 API Changes
 -----------
-**Editor indentation** - `Editor.getIndentUnit()`/`Editor.setIndentUnit()` are replaced by `Editor.getSpaceUnits()`/`Editor.setSpaceUnits()`. They mean the same thing but are now more properly decoupled from tab size settings (see [#3209](https://github.com/adobe/brackets/pull/3209)).
+**Editor indentation** - `Editor.getIndentUnit()`/`setIndentUnit()` are replaced by `Editor.getSpaceUnits()`/`setSpaceUnits()`. They mean the same thing but are now more properly decoupled from tab size settings (see [#3209](https://github.com/adobe/brackets/pull/3209)).
 
 New/Improved Extensibility APIs
 -------------------------------
