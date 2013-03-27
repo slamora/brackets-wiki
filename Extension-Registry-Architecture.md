@@ -1,6 +1,6 @@
 # Extension Registry Architecture #
 
-Status: Proposal
+Status: In Development
 
 The extension registry needs to implement the [server API](https://github.com/adobe/brackets/wiki/Extension-Repository-Server-API). We want the registry to be:
 
@@ -8,14 +8,16 @@ The extension registry needs to implement the [server API](https://github.com/ad
 * simple
 * reliable
 
-*Fast* because speed is a feature that users appreciate, *simple* because we really want to spend more of our time building Brackets itself rather than extension infrastructure and *reliable* because we don't want our users to be thwarted in their attempts to install extensions.
+*Fast* because speed is a feature that users appreciate, *simple* because we really want to spend more of our time building Brackets itself rather than extension infrastructure and *reliable* because we don't want our users to be thwarted in their attempts to install extensions. We also want reliability in terms of not losing our extension data.
 
-To achieve these three goals, I recommend that the extension registry is built on two distinct parts:
+The complete registry will be built in two parts:
 
-* The *registry*, which is responsible for providing Brackets users with the extension listing information as well as the extension packages themselves
-* The *api*, which is responsible for managing the registry
+* The *repository*, which is responsible for providing Brackets users with the extension listing information as well as the extension packages themselves
+* The *registry*, which is responsible for managing the repository
 
-## Simplicity: Node-based API Server on EC2 ##
+The initial version of the registry will provide an web-based interface for uploading packages. Extension authors will authenticate using OAuth with GitHub.
+
+## Simplicity: Node-based Registry Server on EC2 ##
 
 Node offers a number of features that make it well-suited to serving as the platform for the API:
 
@@ -23,13 +25,16 @@ Node offers a number of features that make it well-suited to serving as the plat
 * Support for [zip files](https://github.com/springmeyer/node-zipfile), [gzip](http://nodejs.org/api/zlib.html) and [tar](https://github.com/isaacs/node-tar)
 * Implementing HTTP+JSON APIs is the bread and butter for node
 * Ability to share code for package validation and possibly other uses between Brackets and the server
-* If/when we want to display extension information on the web, we can do so using the same templates and generated from the same code as used in Brackets itself
 * Everyone on the team knows JavaScript already :)
 * Node's single-threaded nature makes it straightforward to synchronize writes to the registry
 
-## Speed and Reliability: S3-based Registry ##
+The registry server code will be in the [brackets-registry repository](https://github.com/adobe/brackets-registry). We have chosen [Express](http://expressjs.com/) as the web framework and will use [Handlebars templates](https://github.com/donpark/hbs).
 
-S3 is fast, reliable and inexpensive. We can use our own domain name with it. By serving our extension metadata and extension packages directly from S3, installing extensions and keeping them up to date will be fast and reliable.
+## Speed and Reliability: S3-based Repository ##
+
+S3 is reliable, durable, inexpensive and scalable in both speed and size. By serving our extension metadata and extension packages directly from S3, installing extensions and keeping them up to date will be reliable and immediate.
+
+S3 supports HTTPS, but not with custom domain names. Brackets will retrieve information directly from our S3 bucket over HTTPS to ensure that no one uses a man-in-the-middle attack on extension installers.
 
 Note: AWS does not support gzipping of files directly. We'll want to be sure to gzip the extension metadata. Upload a gzipped file and set the header appropriately.
 
