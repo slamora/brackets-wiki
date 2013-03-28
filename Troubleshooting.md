@@ -72,6 +72,10 @@ If Brackets cannot launch the Chrome browser on your Windows system, check the R
 
 This is the file path that Brackets uses to launch Chrome. If this is not correct, then try reinstalling the Chrome browser at this location.
 
+### Disable Background Apps
+
+On Windows, Brackets is not able to close and relaunch Chrome if "Continue running background apps when Google Chrome is closed" is enabled. This can be disabled by right-clicking in Chrome icon in Tray, or in Advanced Settings.
+
 ## Brackets Is Acting Weird
 ### Debug w/ The Developer Tools
 If Brackets opens, but behaves incorrectly, don't forget you can open the Developer Tools. Under the Debug Menu, select "Show Developer Tools" to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Ensure the Console tab is open and see if any errors show up there.
