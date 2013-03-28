@@ -101,7 +101,7 @@ These need to be changed to use existing functionality.
 * brackets.js __requires language/JSLintUtils.js__. This can be refactored into an extension without introducing new APIs (see [#3094](https://github.com/adobe/brackets/issues/3094)).
 * brackets.js __requires editor/CSSInlineEditor.js__. It should first call __require("editor/MultiRangeInlineEditor")__ (loaded by CSSInlineEditor.js), since this defines shortcuts for inline editor navigation. Then the CSSInlineEditor could be moved to an extension.
 * editor/CodeHintManager.js
-    * Method `registerHintProvider` **registers hint providers by mode**. This can simply be changed to check for language IDs since currently all modes this function is being called with (either by Brackets or the known extensions) belong to a language with an equal ID ("css", "html", "javascript").
+    * Method `registerHintProvider` **registers hint providers by mode**. This can simply be changed to check for language IDs since currently all modes this function is being called with (either by Brackets or the known extensions) belong to a language with an equal ID ("css", "html", "javascript"). See [issue #3085](https://github.com/adobe/brackets/issues/3085) and [pull request #3270](https://github.com/adobe/brackets/pull/3270).
 * editor/CSSInlineEditor.js
     * Inline editor provider `htmlToCSSProvider` **decides to open based on the editor mode**. This can simply be changed to check for the language ID to be "html" (via `editor.getLanguageForSelection().getId()`).
 * project/FileIndexManager.js
