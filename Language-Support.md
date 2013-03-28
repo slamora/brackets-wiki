@@ -70,129 +70,295 @@ It defines three methods for managing languages:
 * ``getLanguageForMode()`` Returns either a language associated with the mode or the fallback language. Used to disambiguate modes used by multiple languages.
 
 ## Places contributing to "language" support as of Sprint 21
-Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The remainder of this page documents future work required to support languages across various features in Brackets.
+Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The remainder of this page documents future work required to support languages across various features in Brackets. The focus is on finding out what is hardcoded and needs to be refactored to use existing capabilities, or requires new capabilities before it can be refactored.
 
-### Module brackets
+### No changes required
 
-* Loads a few selected submodules that it doesn't use, including `CSSInlineEditor`, `JSUtils`, and `JSLintUtils`.
-* Function `_initTest` loads a few more
+These are okay the way the are.
 
-### Module document/DocumentCommandHandlers
+* document/DocumentManager.js
+    * `Document.getLanguage` uses the LanguageManager to determine the language based on the file extension.
+* language/CSSUtils.js
+    * Method `extractAllSelectors` extracts CSS selectors from a string. Internally uses CodeMirror's css mode as a parser, but that could be swapped out.
+* language/JSLintUtils.js
+    * Uses JSLint internally which could be swapped out.
+* language/JSUtils.js
+    * Method `findAllMatchingFunctionsInText` to find all instances of a function name in a string of code. Internally uses CodeMirror's javascript mode as a parser, but that could be swapped out.
+* language/LanguageManager.js
+    * Defines the "language" concept
+    * Loads default languages from `language/languages.json`
+    * Method `defineLanguage` to add a new language (see JSDoc)
+    * Method `getLanguage` to get an object representing a language by its ID
+    * Method `getLanguageForPath` to map file names or extensions to languages
+    * Used by extension "LESSSupport" to add basic support for LESS
+* utils/StringUtils.js
+    * Method `htmlEscape` escapes characters with special meaning in HTML. However, this function is necessary since the Brackets UI is written in HTML, and has nothing to do with language support for the users.
 
-* Method `_handleNewItemInProject` hardcodes ".js"/"Untitled.js" as the default file extension/name for new files. **Should maybe be a per-project setting.** See also [Card #291](https://trello.com/c/WUdhIRlh)
+### Straightforward refactoring
 
-### Module document/DocumentManager
+These need to be changed to use existing functionality.
 
-* `Document.getLanguage` uses the language API to determine the language based on the file extension.
+* brackets.js __requires language/JSLintUtils.js__. This can be refactored into an extension without introducing new APIs (see [#3094](https://github.com/adobe/brackets/issues/3094)).
+* brackets.js __requires editor/CSSInlineEditor.js__. It should first call __require("editor/MultiRangeInlineEditor")__ (loaded by CSSInlineEditor.js), since this defines shortcuts for inline editor navigation. Then the CSSInlineEditor could be moved to an extension.
+* editor/CodeHintManager.js
+    * Method `registerHintProvider` **registers hint providers by mode**. This can simply be changed to check for language IDs since currently all modes this function is being called with (either by Brackets or the known extensions) belong to a language with an equal ID ("css", "html", "javascript").
+* editor/CSSInlineEditor.js
+    * Inline editor provider `htmlToCSSProvider` **decides to open based on the editor mode**. This can simply be changed to check for the language ID to be "html" (via `editor.getLanguageForSelection().getId()`).
+* project/FileIndexManager.js
+    * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**. The call to add this index should be moved to CSSUtils (the only place this index is used at the moment). In addition, the filter function can be changed to use the language API: `return LanguageManager.getLanguageForPath(entry.name).getId() === "css";`
+* language/JSLintUtils.js
+    * Method `run` to run JSLint on the current document. Checks if the extension is .js, therefore **uses file extensions**.
+* language/JSUtils.js
+    * Method `findMatchingFunctions` finds all functions with a specified name within a set of files. Filters these files by checking that the file extension is ".js", i.e. **uses file extensions**. This should use the language API instead (determine the language for the file and check whether that language has the ID "javascript").
+* search/QuickOpen
+    * Method `addQuickOpenPlugin` **uses file extensions** to register plugins. It should use language IDs instead. It is currently only used with file extensions "css", "js" and "html". For "css" and "html", the calling code can remain unchanged, transparently changing the meaning of the string from file extension to language ID. For "js", the calling code needs to use "javascript" instead. Currently `extensions/default/QuickOpenJavaScript/main.js` is the only place in either Brackets core or the extensions that uses this file extension.
 
-### Module editor/CodeHintManager
+### Issues that should be adressed as part of other planned work
 
-* Method `registerHintProvider` **registers hint providers by mode**.
+These are places that affect areas we already have plans to work on, and where issues are best adressed as part of that work.
 
-### Module editor/CSSInlineEditor
+* document/DocumentCommandHandlers.js
+    * Method `_handleNewItemInProject` hardcodes ".js"/"Untitled.js" as the default file extension/name for new files. Changing this to work as proposed in [card #291](https://trello.com/c/WUdhIRlh) would remove this issue.
+* language/{CSSUtils|HTMLUtils|JSUtils}.js should be provided by default extensions. For this to work, all other parts that depend on them (ideally only other extensions) need to be able to access these extensions. Supporting this is part of the [ongoing extensions research](https://github.com/adobe/brackets/wiki/Extensions2).
+    * brackets.js __loads JSUtils.js__. This is only necessary so extensions can load it synchronously via `JSUtils = brackets.getModule("language/JSUtils")` instead of asynchronously via `brackets.getModule(["language/JSUtils"], function (JSUtils) { ... })`. This can be removed once JSUtils can be loaded as an extension.
+    * brackets.js __exports CSSUtils and JSUtils for tests__. Tests should instead load these modules from extensions, but this depends on the point above.
+    * editor/CSSInlineEditor.js __relies on HTMLUtils and CSSUtils__.
+    * LiveDevelopment/Agents/DOMHelpers.js contains multiple methods that encapsulate knowledge about HTML, **should potentially be moved to HTMLUtils**
+    * LiveDevelopment/Agents/DOMNode.js contains DOMNode.prototype.toString contains basic knowledge about HTML, **should potentially be HTMLUtils**
+* utils/ExtensionUtils
+    * Method `loadStyleSheet` **uses file extensions** to support LESS files. Once we have a compiler infrastructure in place, any path could be mapped to a language, and if there's a compiler to CSS for that language, it should be used. Note that is only relevant for extension developers.
+* utils/TokenUtils
+    * Method `getModeAt` **has a hardcoded special case for XML**. Once the other places are no longer based on this mode, but on the language, this can be removed to just report "xml". For HTML documents, the language manager maps the "xml" mode to the HTML language. XML documents are not affected by this. See [issue #2965](https://github.com/adobe/brackets/issues/2965) for a related discussion.
 
-* Inline editor provider `htmlToCSSProvider` **decides to open based on the editor mode**. In addition it **relies on HTMLUtils and CSSUtils**
+### Code that relies on the current editor state
 
-### Module editor/Editor.js
+These places currently access CodeMirror's state directly and are therefore not usable without an active editor. They might benefit from doing their own parsing, possibly using CodeMirror modes as parsers. CodeMirror's editor state could still optionally be used for optimization, but nothing else.
 
-* Method `_checkElectricChars` adjusts indentation when blocks are ended. **The characters to detect block boundaries are hard-coded - `]`, `{`, `}` and `)`**
+* editor/EditorCommandHandlers.js
+    * Functions `_findCommentStart`, `_findCommentEnd` and `_findNextBlockComment` **use tokens provided by CodeMirror** to search for comment boundaries. While the strings they search are provided by a language definition, this prevents us from defining arbitrary comment symbols. One example is "//~" as the prefix for line comments (as [SciTE](http://www.scintilla.org/SciTE.html) does). Adding a comment this way is possible, but removing it does not work because "//~" is not a prefix of the CodeMirror token for "//".
+    * Methods `blockCommentPrefixSuffix` and `lineCommentPrefixSuffix` have similar constraints as they navigate by tokens instead of characters. In addition they check whether a token's `className` is different from `"comment"`. Therefore they **use tokens provided by CodeMirror**.
+* language/CSSUtils.js
+    * Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils __if it is the current full editor's document__.
+    * Method `findSelectorAtDocumentPos` to find the selector(s) of a CSS block, directly **uses tokens provided by CodeMirror**
+    * Method `getInfoAtPos` to provide a context info object for the given cursor position, directly **uses tokens provided by CodeMirror**
+* language/HTMLUtils.js
+    * Method `findStyleBlocks` to gather info about all `<style>` blocks in an HTML document, directly **uses tokens provided by CodeMirror** 
 
-### Module editor/EditorCommandHandlers
+### Providing code semantics
 
-* Functions `_findCommentStart`, `_findCommentEnd` and `_findNextBlockComment` **use tokens provided by CodeMirror** to search for comment boundaries. While the strings they search are provided by a language definition, this prevents us from defining "//~" as the prefix for line comments (like [SciTE](http://www.scintilla.org/SciTE.html) does) because it is not a prefix of the "//" token.
-* Methods `blockCommentPrefixSuffix` and `lineCommentPrefixSuffix` have similar constrains as they navigate by tokens instead of characters. In addition they check whether a token's `className` is different from `"comment"`. Therefore they **use tokens provided by CodeMirror**.
+This relates to places that require information about the semantics of code beyond what is provided by CodeMirror.
 
-### Module file/FileUtils.js
+* editor/Editor.js
+    * Method `_checkElectricChars` adjusts the current line's indentation when blocks are ended. **The characters to detect block boundaries are hard-coded - `]`, `{`, `}` and `)`.** The function is supposed to replace CodeMirror's own implementation, citing [bugs](https://github.com/adobe/brackets/pull/250). In contrast to `_checkElectricChars`, CodeMirror's own implementation does not re-indent the line after typing "]" in a JavaScript file, so for now we cannot remove our own implementation without removing existing functionality.
 
-* Methods `isStaticHtmlFileExt` and `isServerHtmlFileExt` **use hardcoded lists of file extensions**
+__New API:__ Allow adding electric __strings__ to language definitions. Some languages have block boundaries that are not just one char long, for instance Ruby's `begin ... end`.
 
-### Module language/CSSUtils
+### Starting Live Preview
 
-* Method `findMatchingRules` to find CSS rules matching a selector. Searches an HTML document via language/HTMLUtils if it is the current full editor's document. Also searches CSS files as indexed by project/FileIndexManager in the css index, therefore currently indirectly **uses file extensions**
-* Method `extractAllSelectors` extracts CSS selectors from a string. Internally uses CodeMirror's css mode as a parser, but that could be swapped out.
-* Method `findSelectorAtDocumentPos` to find the selector(s) of a CSS block, directly **uses tokens provided by CodeMirror**
-* Method `getInfoAtPos` to provide a context info object for the given cursor position, directly **uses tokens provided by CodeMirror**
+These areas are concerned with what files live preview can be started with. This also affects Brackets' behavior when switching between files while live preview is active.
 
-### Module language/HTMLUtils
+* file/FileUtils.js
+    * Methods `isStaticHtmlFileExt` and `isServerHtmlFileExt` __use hardcoded lists of file extensions__ to determine which file extensions are okay to open statically and which require a base URL to work. Switching to a file matching these criteria causes live preview to show that file instead unless it is included in the currently displayed file.
+* LiveDevelopment/LiveDevelopment.js
+    * Method `open` **reduces LiveDevelopment support to HTML files based on file extensions**
+    * Function `_onDocumentChange` **closes LiveDevelopment when switching to a different, not included HTML file**
 
-* Method `findStyleBlocks` to gather info about all `<style>` blocks in an HTML document, directly **uses tokens provided by CodeMirror** 
+In general the possibility of live development for a given file depends on its format, the formats we can turn it into and the formats a client supports.
 
-### Module language/JSLintUtils
+Consequently we need ways to define what formats are supported by which client, and what formats the project's files are available in.
+Right now the only supported client is Chrome. We want to extend this to other browsers, and may eventually want to extend this to different types of clients, like Node.js, or a PDF viewer to preview LaTeX files.
 
-* Method `run` to run JSLint on the current document. Checks if the extension is .js, therefore **uses file extensions**. Otherwise uses JSLint internally which could be swapped out.
+__languages.json:__
 
-### Module language/JSUtils
+    {
+        "html": {
+            "name": "HTML",
+            "mimeTypes": ["text/html"],
+            "fileExtensions": ["html"]
+        }
+    }
 
-* Method `findAllMatchingFunctionsInText` to find all instances of a function name in a string of code. Internally uses CodeMirror's javascript mode as a parser, but that could be swapped out.
-* Method `findMatchingFunctions` to find all functions with a specified name within a set of files. Only uses files ending with ".js", i.e. **uses file extensions**
+__clients.json:__
 
-### Module language/Languages
+    {
+        "chrome": {
+            "mimeTypes": ["text/html", "application/xhtml+xml", "application/xml"]
+        }
+    }
 
-* Defines the "language" concept
-* Loads default languages from `language/languages.json`
-* Method `defineLanguage` to add a new language (see JSDoc)
-* Method `getLanguage` to get an object representing a language by its ID
-* Method `getLanguageForPath` to map file names or extensions to languages
-* Used by extension "LESSSupport" to add basic support for LESS
+If the user opens "index.html" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview.
 
-### Module LiveDevelopment/LiveDevelopment
+If the user provides a base URL, opens "index.php" and clicks the live preview button, Brackets could send a HEAD request for index.php to the server. If the returned MIME type is "text/html", Brackets would know that Chrome supports this format and allow the live preview. Otherwise, the live preview will not be enabled.
 
-* **Requires hardcoded list of special documents**, namely {CSS,HTML,JS}Document
-* Function `_setDocInfo` **determines a root URL biased towards HTML and HTML extensions**
-* Function `_classForDocument` **uses a hardcoded mapping of file extensions to document types**
-* Function `_openDocument` **only loads related CSS documents** (no JavaScript, not extensible)
-* Function `_onLoad` **excludes CSSDocument from being marked as out of sync** (not extensible)
-* Method `open` **reduces LiveDevelopment support to HTML files based on file extensions**
-* Method `showHighlight` **only calls doc.updateHighlight() for CSSDocuments**
-* Function `_onDocumentChange` **closes LiveDevelopment when switching to an HTML file** and **excludes CSSDocument from being marked as out of sync** (not extensible)
-* Function `_onDocumentSaved` **only reloads the page if the document is not a CSSDocument** (not extensible)
-* Function `_onDirtyFlagChange` **only updates the LiveDevelopment status if the dirty file is not a CSSDocument** (not extensible)
+This way, we would not need to maintain a list of file extensions that may or may not generate content in a format supported by Chrome.
 
-### Module LiveDevelopment/Agents/DOMHelpers
+__Extension:__
 
-* Contains multiple methods that encapsulate knowledge about HTML, **should potentially be tied to the language object**
+    var ClientManager = brackets.getModule("LiveDevelopment/ClientManager"),
+        chrome = ClientManager->getClient("chrome");
+    chrome.addMimeType("image/svg+xml");
 
-### Module LiveDevelopment/Agents/DOMNode
+    var LanguageManager = brackets.getModule("language/LanguageManager"),
+        svg = LanguageManager.getLanguage("svg");
+    svg.addMimeType("image/svg+xml");
 
-* DOMNode.prototype.toString contains basic knowledge about HTML, **should potentially be tied to the language object**
+If the user opens "index.svg" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview. This would also work if index.php generates SVG code, provided it sends the proper MIME type. SVG is an interesting use case since Brackets would right now provide live development with SVG if only its extension were listed in the `_staticHtmlFileExts` array. Brackets would show XML code, the browser would show the rendered image, Brackets would reload the browser when saving the file, and even refresh styles as they are changed if the SVG file links to external stylesheets (`<?xml-stylesheet type="text/css" href="style.css" ?>` before the opening `<svg>` tag).
 
-### Module LiveDevelopment/Agents/GotoAgent
+__Extension:__
 
-* **Has hardcoded support for HTML, CSS and JavaScript**
+    var LanguageManager = brackets.getModule("language/LanguageManager"),
+        md = LanguageManager.getLanguage("markdown");
+    md.addCompiler("html", function (doc) {
+        ...
+        return htmlCode;
+    });
 
-### Module LiveDevelopment/Agents/HighlightAgent
+If the user opens "index.md" and clicks the live preview button, Brackets would know that it could compile this code to HTML. It would look up HTML's MIME type and see that Chrome could open the compiled file. It would then use the first file extension defined for the HTML language and create a temporary file - say "file.md.html" - with the return value of the compiler function as its contents. Finally, Brackets would start a live preview on the compiled file. On a related note, [card 565](https://trello.com/c/4BHJSfzo) introduces the idea of HTML rewriting.
 
-* **Has hardcoded support for HTML and CSS**
+__Extension:__
 
-### Script LiveDevelopment/Agents/RemoteFunctions
+    var ClientManager   = brackets.getModule("LiveDevelopment/ClientManager"),
+        LanguageManager = brackets.getModule("language/LanguageManager"),
+        $preview        = ...,
+        sync;
 
-* Function `_typeColor` has **hardcoded distinctions between html, css, js and others**
+    var client = ClientManager.addClient("preview", {
+        open: function (doc) {
+            sync = function () {
+                var compile = doc.getLanguage().getDefaultCompilerToLanguage("html");
+                $preview.html(compile(doc.getText()));
+            };
 
-### Module project/FileIndexManager
+            $(doc).on("change", sync);
+            sync();
+            
+            // Add preview frame to Brackets
+            $preview.appendTo(...);
+        },
+        close: function () {
+            // Close preview frame
+            $preview.remove();
+            
+            $(doc).off("change", sync);
+            sync = null;
+        }
+    });
 
-* Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**
+    // Mark this client as compatible with every language that has an HTML compiler
+    function considerLanguage(language) {
+        if (language.getDefaultCompilerToLanguage("html")) {
+            // Indirectly define MIME types via a language to make synchronization unnecessary
+            // when adding MIME types to the language 
+            client.addLanguage(language);
+        }
+    }
 
-### Module search/QuickOpen
+    // Consider new or modified languages
+    $(LanguageManager).on("languageAdded languageModified", function (e, language) {
+        considerLanguage(language);
+    });
 
-* Method `addQuickOpenPlugin` **uses file extensions** to register plugins
+    // Consider existing languages
+    Array.forEach(LanguageManager.getLanguages(), considerLanguage);
 
-### Module utils/ExtensionUtils
+### Updating Live Preview
 
-* Method `loadStyleSheet` **uses file extensions** to support LESS files. Note that is only relevant for extension developers, but technically this could use a more general architecture that allows to auto-discover compilers to CSS.
+These areas are concerned with making sure that the live preview is up to date. This is needed if the main document or included files are changed.
 
-### Module utils/StringUtils
+* LiveDevelopment/LiveDevelopment.js
+    * **Requires hardcoded list of special documents**, namely {CSS,HTML,JS}Document. These function as updaters and highlighters.
+    * Function `_classForDocument` **uses a hardcoded mapping of file extensions to document types**
+    * Function `_openDocument` **only loads related CSS documents** (no JavaScript, not extensible)
+    * Function `_onLoad` **excludes CSSDocument from being marked as out of sync** (not extensible)
+    * Function `_onDocumentChange` **excludes CSSDocument from being marked as out of sync** (not extensible)
+    * Function `_onDocumentSaved` **only reloads the page if the document is not a CSSDocument** (not extensible)
+    * Function `_onDirtyFlagChange` **only updates the LiveDevelopment status if the dirty file is not a CSSDocument** (not extensible)
 
-* Method `htmlEscape` **escapes characters with special meaning in HTML**, should this at least be refactored to the language object for HTML?
+For live development on _save_, the client only needs to reveal that the saved file was requested by the document. This allows Brackets to reload the document if an included file is saved. For Chrome, the network agent handles this task by listening to the "Network.requestWillBeSent" event.
 
-### Module utils/TokenUtils
+For live development on _change_, the client needs to provide ways to directly inject the new content into the document. In Brackets, we need to be aware of such methods and use them instead of reloading the whole document. Extensions therefore need a way to register an updater. We currently provide this in a hard-coded way for CSS, and for HTML and JavaScript files if `LiveDevelopment.config.experimental` is true.
 
-* Method `getModeAt` **has a hardcoded special case for XML**. Once the other places are no longer based on this mode, but on the language, this can be removed to just report "xml", which should be mapped to HTML for the language HTML.
+The following scenarios showcase what needs to change, using LESS as an example.
+
+#### External Precompilation
+
+In this scenario, the LESS file is converted to a static CSS file by an external tool. This tool might monitor the LESS file for changes, or the user could run it manually. The resulting static CSS file is delivered to the browser in the usual way. Therefore, it can also be updated like normal CSS files.
+
+To support this, we would need to detect external changes to included CSS files even if the corresponding CSS file is not open in Brackets. Such an external change would then need to be treated like the user saving the file.
+
+Updating on change is not possible in this scenario since the external tool only has access to the contents of the file through the file system.
+
+#### Internal Precompilation
+
+In this scenario, the LESS file is converted to a static CSS file by Brackets. The resulting static CSS file is delivered to the browser in the usual way. Therefore, it can also be updated like normal CSS files.
+
+To support this, the user would need to be able to turn this behavior on, possibly for individual files only since LESS files can include other LESS files, and typically only the master file should be converted.
+
+However, the [BracketsLESS extension](https://github.com/olsgreen/BracketLESS) adds a menu entry to turn compilation on for all LESS files. Compilation occurs when the file is saved. Sadly, Brackets currently doesn't detect that the CSS file was changed, not even when switching to it from within Brackets after saving the LESS file. Switching to another application and back to Brackets will update the CSS file in the browser if at one point a Document object has been created for the CSS file (for instance by opening the CSS file within Brackets). There also is no straightforward way to create the file via the Document API in the first place. Even if the file already exists (and the Document object can therefore be created), there is no `doc.save()` method to call since all writing is apparently done via editors (presumed to be user visible, which may be incorrect). Clearly, programmatic changes to documents need to be made easier. For now, saving the file manually and calling `$(window).triggerHandler("focus");` is the most convenient way to make Brackets aware of the changed file so the preview is updated accordingly.
+
+Ideally, this extension could simply open a Document object with the target path and replicate all changes of the LESS file to the CSS file. If the LESS file is changed, `cssDoc.setText(cssCode)` is called, and the live preview is updated as if the user had typed these changes into the CSS file manually. If the LESS file is saved, so is the CSS file, similarly with deleting the LESS file.
+
+#### Client-side compilation
+
+In this scenario, the browser includes less.js and references the LESS stylesheets in `<link>` tags with the MIME type "stylesheet/less". LESS finds these references and downloads the files with `XMLHttpRequest`s. Consequently, the network agent regards the LESS files as requested, causing the HTML document to reload when the LESS document is saved.
+
+For better live development support, Brackets would need to compile the LESS code to CSS and update the corresponding CSS code in the browser.
+
+There are three critical components to this:
+* The compiler to convert LESS code into CSS code (could be requested via `doc.getLanguage().getDefaultCompilerToLanguage("css")`)
+* The updater to find the `<link>` tag that referenced the LESS file, determine the ID of the corresponding `<style>` tag, generate the CSS code (using the compiler), and change the contents of the `<style>` tag
+* The live development module to allow registering the updater, trigger it at the right time and avoid reloading the page if the updater was successful
+
+#### Server-side compilation
+
+In this scenario, the server compiles LESS code to CSS on the fly. There are various conceivable ways to implement this. The URLs for the file might look like this:
+
+* `style.less` - same file name, but transparently returns the CSS version
+* `style.less?compile=true` returns the CSS version while `style.less` will return the file as-is
+* `style.less.css` returns the CSS version
+* `style.css` returns the CSS version
+* `compiled/style.less` returns the CSS version
+* `compiled/style.css` returns the CSS version
+* `compile.php?file=style.css` returns the CSS version
+* `all_styles.css` - returns various styles combined into one file
+
+If the file name is not modified (and even if a query string is appended to its URL), the network agent will already declare the file as requested. The network agent could detect usage of the two conventions that only modify the file extension by checking whether the file exists on the server. If not, it could conclude that the server generates derivatives of the current file for these URLs.
+
+If the network agent also listens to the "responseReceived" event, it will be able to report the MIME type as well. We can then check whether there is a compiler for the current document's language (LESS) to a language that has the same MIME type as returned by the server. If so, we can update the file ourselves whenever it is changed in the same way normal CSS files are updated.
+
+However, this might fail if the server compiler uses special settings, like a search path to use when including other LESS files in a LESS file. A safe compromise would be to only update the stylesheet after it has been saved: in this case, the compiled document can simply be requested by the server and we would only inject the result into the running page.
+
+An alternative with other risks would be to transparently move the saved version to a backup location, silently save the changed version in the editor, request the compiled version from the server and restore the saved version from the backup. If either Brackets or the whole computer crash in the middle of that process, or a cloud storage service watches the directory, this approach could result in data loss.
+
+
+# Showing the context in Live Preview
+
+These areas are concerned with showing the context of the current cursor position by highlighting affected areas in the live preview and opening files related to elements in the page (GotoAgent).
+
+* LiveDevelopment/LiveDevelopment.js
+    * **Requires hardcoded list of special documents**, namely {CSS,HTML,JS}Document. These function as updaters and highlighters.
+    * Function `_classForDocument` **uses a hardcoded mapping of file extensions to document types**
+    * Function `_openDocument` **only loads related CSS documents** (no JavaScript, not extensible)
+    * Method `showHighlight` **only calls doc.updateHighlight() for CSSDocuments**
+* LiveDevelopment/Agents/GotoAgent.js
+    * **Has hardcoded support for HTML, CSS and JavaScript**
+* LiveDevelopment/Agents/HighlightAgent
+    * **Has hardcoded support for HTML and CSS**
+* LiveDevelopment/Agents/RemoteFunctions.js
+    * Function `_typeColor` has **hardcoded distinctions between html, css, js and others**
+
+Todo: describe what is necessary to make this extendable
+
+
+
+
+
 
 ## Notes
 
 ### Determining file extensions
 
-We should potentially add a central point to extract file extensions for a given file name to support extensions with multiple parts (i.e. ".html.erb"). Then file names wouldn't have just one potential extension, since file names like "1. Introduction.html" (also multiple dots) would also need to be supported.
+We should potentially add a central point to extract file extensions for a given file name to support extensions with multiple parts (i.e. ".html.erb"). Then file names wouldn't have just one potential extension, since file names like "1. Introduction.html" (also multiple dots) would also need to be supported. (see [pull request #3122](https://github.com/adobe/brackets/pull/3122))
 
 ### Features we think should be able to be built as plug-ins
 _From the [Extensibility Proposal](https://zerowing.corp.adobe.com/display/brackets/Extensibility+Proposal)_ (internal)
