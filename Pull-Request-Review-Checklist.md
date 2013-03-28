@@ -27,7 +27,7 @@ How to use the checklist:
 * Check copyright date on file
 * Code is syntactically valid (Brackets launches & no exceptions in the console)
 * All unit, integration and extension tests pass
-* Smoke tests and server smoke tests have been run (nontrivial changes specifically)
+* [Smoke tests](Brackets-Smoke-Tests) and server smoke tests have been run (nontrivial changes specifically)
 * Try out edge cases for the change
     * Clearly depends on what the change is
     * Look for problems at beginnings/ends of files, top/bottom of the editor window
