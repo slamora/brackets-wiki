@@ -76,7 +76,7 @@ These are okay the way the are.
     * `Document.getLanguage` uses the LanguageManager to determine the language based on the file extension.
 * language/CSSUtils.js
     * Method `extractAllSelectors` extracts CSS selectors from a string. Internally uses CodeMirror's css mode as a parser, but that could be swapped out.
-* language/JSLintUtils.js
+* language/JSLintUtils.js (now extensions/default/JSLint/main.js)
     * Uses JSLint internally which could be swapped out.
 * language/JSUtils.js
     * Method `findAllMatchingFunctionsInText` to find all instances of a function name in a string of code. Internally uses CodeMirror's javascript mode as a parser, but that could be swapped out.
@@ -102,8 +102,8 @@ These need to be changed to use existing functionality.
     * Inline editor provider `htmlToCSSProvider` **decides to open based on the editor mode**. This can simply be changed to check for the language ID to be "html" (via `editor.getLanguageForSelection().getId()`).
 * project/FileIndexManager.js
     * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**. The call to add this index should be moved to CSSUtils (the only place this index is used at the moment). In addition, the filter function can be changed to use the language API: `return LanguageManager.getLanguageForPath(entry.name).getId() === "css";`
-* language/JSLintUtils.js
-    * Method `run` to run JSLint on the current document. Checks if the extension is .js, therefore **uses file extensions**.
+* __Done:__ language/JSLintUtils.js
+    * Method `run` to run JSLint on the current document. Checks if the extension is .js, therefore **uses file extensions**. See [issue #3094](https://github.com/adobe/brackets/issues/3094) and [pull request #3143](https://github.com/adobe/brackets/pull/3143).
 * language/JSUtils.js
     * Method `findMatchingFunctions` finds all functions with a specified name within a set of files. Filters these files by checking that the file extension is ".js", i.e. **uses file extensions**. This should use the language API instead (determine the language for the file and check whether that language has the ID "javascript").
 * search/QuickOpen
