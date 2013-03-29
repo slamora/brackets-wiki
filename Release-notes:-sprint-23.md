@@ -9,6 +9,9 @@ What's New in Sprint 23
     * [Extension publishing workflow](https://trello.com/card/5-extension-publishing/4f90a6d98f77505d7940ce88/788)
     * [Toolbar redesign](https://trello.com/card/2-ux-implement-toolbar/4f90a6d98f77505d7940ce88/785)
 
+* **Localization**
+    * [Czech translation (cs)](https://github.com/adobe/brackets/pull/3150)
+    * [Polish translation (pl)](https://github.com/adobe/brackets/pull/3235)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-22...sprint-23#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-22...sprint-23#commits_bucket)
 
