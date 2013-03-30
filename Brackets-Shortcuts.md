@@ -197,6 +197,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Extension(Beautify)</td>
     </tr>
     <tr>
+        <td class="shortcut-base">M</td>
+        <td class="shortcut-binding">Ctrl-M</td>
+        <td class="shortcut-cmd-id">minifier.min</td>
+        <td class="shortcut-cmd-name">Minify Code</td>
+        <td class="shortcut-orig">Extension(Minifier)</td>
+    </tr>
+    <tr>
         <td class="shortcut-base">N</td>
         <td class="shortcut-binding">Ctrl-N</td>
         <td class="shortcut-cmd-id">file.new</td>
