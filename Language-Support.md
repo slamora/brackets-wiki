@@ -106,8 +106,8 @@ These need to be changed to use existing functionality.
     * Method `run` to run JSLint on the current document. Checks if the extension is .js, therefore **uses file extensions**. See [issue #3094](https://github.com/adobe/brackets/issues/3094) and [pull request #3143](https://github.com/adobe/brackets/pull/3143).
 * language/JSUtils.js
     * Method `findMatchingFunctions` finds all functions with a specified name within a set of files. Filters these files by checking that the file extension is ".js", i.e. **uses file extensions**. This should use the language API instead (determine the language for the file and check whether that language has the ID "javascript").
-* search/QuickOpen
-    * __Done:__ Method `addQuickOpenPlugin` **uses file extensions** to register plugins. It should use language IDs instead. It is currently only used with file extensions "css", "js" and "html". For "css" and "html", the calling code can remain unchanged, transparently changing the meaning of the string from file extension to language ID. For "js", the calling code needs to use "javascript" instead. Currently `extensions/default/QuickOpenJavaScript/main.js` is the only place in either Brackets core or the extensions that uses this file extension. See [pull request #3301](https://github.com/adobe/brackets/pull/3301).
+* __Done:__ search/QuickOpen
+    * Method `addQuickOpenPlugin` **uses file extensions** to register plugins. It should use language IDs instead. It is currently only used with file extensions "css", "js" and "html". For "css" and "html", the calling code can remain unchanged, transparently changing the meaning of the string from file extension to language ID. For "js", the calling code needs to use "javascript" instead. Currently `extensions/default/QuickOpenJavaScript/main.js` is the only place in either Brackets core or the extensions that uses this file extension. See [pull request #3301](https://github.com/adobe/brackets/pull/3301).
 
 ### Issues that should be adressed as part of other planned work
 
