@@ -27,6 +27,8 @@ API Changes
 New/Improved Extensibility APIs
 -------------------------------
 
+* `QuickOpen.addQuickOpenPlugin(pluginDef)` now expects `pluginDef.languageIds` instead of `pluginDef.fileTypes`. Using the latter still works for now, but is deprecated and will print a warning to the console.
+
 Known Issues
 ------------
 * [#3207](https://github.com/adobe/brackets/issues/3207): If you use a Sprint 21 or earlier build after using this build at least once, a few preferences such as Recent Projects may get reset. (You can back up your [[cache folder]] if you're concerned about this).
