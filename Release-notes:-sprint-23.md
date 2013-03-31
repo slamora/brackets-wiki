@@ -27,7 +27,7 @@ API Changes
 New/Improved Extensibility APIs
 -------------------------------
 
-* `QuickOpen.addQuickOpenPlugin(pluginDef)` now expects `pluginDef.languageIds` instead of `pluginDef.fileTypes`. Using the latter still works for now, but is deprecated and will print a warning to the console.
+* `QuickOpen.addQuickOpenPlugin(pluginDef)` now expects `pluginDef.languageIds` instead of `pluginDef.fileTypes`. Using the latter still works for now, but is deprecated and will print a warning to the console. For HTML and CSS, only the key needs to be changed, for JavaScript, `"js"` needs to be changed to `"javascript"`
 
 Known Issues
 ------------
