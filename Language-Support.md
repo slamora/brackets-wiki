@@ -98,16 +98,16 @@ These need to be changed to use existing functionality.
 * brackets.js __requires editor/CSSInlineEditor.js__. It should first call __require("editor/MultiRangeInlineEditor")__ (loaded by CSSInlineEditor.js), since this defines shortcuts for inline editor navigation. Then the CSSInlineEditor could be moved to an extension.
 * editor/CodeHintManager.js
     * _In progress:_ Method `registerHintProvider` **registers hint providers by mode**. This can simply be changed to check for language IDs since currently all modes this function is being called with (either by Brackets or the known extensions) belong to a language with an equal ID ("css", "html", "javascript"). See [issue #3085](https://github.com/adobe/brackets/issues/3085) and [pull request #3270](https://github.com/adobe/brackets/pull/3270).
-* editor/CSSInlineEditor.js
+* __Done:__ editor/CSSInlineEditor.js
     * Inline editor provider `htmlToCSSProvider` **decides to open based on the editor mode**. This can simply be changed to check for the language ID to be "html" (via `editor.getLanguageForSelection().getId()`).
-* project/FileIndexManager.js
+* project/FileIndexManager.js. See [pull request #3301](https://github.com/adobe/brackets/pull/3301).
     * Maintains an index called "css" using only files ending with ".css", i.e. **uses file extensions**. The call to add this index should be moved to CSSUtils (the only place this index is used at the moment). In addition, the filter function can be changed to use the language API: `return LanguageManager.getLanguageForPath(entry.name).getId() === "css";`
 * __Done:__ language/JSLintUtils.js
     * Method `run` to run JSLint on the current document. Checks if the extension is .js, therefore **uses file extensions**. See [issue #3094](https://github.com/adobe/brackets/issues/3094) and [pull request #3143](https://github.com/adobe/brackets/pull/3143).
 * language/JSUtils.js
     * Method `findMatchingFunctions` finds all functions with a specified name within a set of files. Filters these files by checking that the file extension is ".js", i.e. **uses file extensions**. This should use the language API instead (determine the language for the file and check whether that language has the ID "javascript").
 * search/QuickOpen
-    * Method `addQuickOpenPlugin` **uses file extensions** to register plugins. It should use language IDs instead. It is currently only used with file extensions "css", "js" and "html". For "css" and "html", the calling code can remain unchanged, transparently changing the meaning of the string from file extension to language ID. For "js", the calling code needs to use "javascript" instead. Currently `extensions/default/QuickOpenJavaScript/main.js` is the only place in either Brackets core or the extensions that uses this file extension.
+    * __Done:__ Method `addQuickOpenPlugin` **uses file extensions** to register plugins. It should use language IDs instead. It is currently only used with file extensions "css", "js" and "html". For "css" and "html", the calling code can remain unchanged, transparently changing the meaning of the string from file extension to language ID. For "js", the calling code needs to use "javascript" instead. Currently `extensions/default/QuickOpenJavaScript/main.js` is the only place in either Brackets core or the extensions that uses this file extension. See [pull request #3301](https://github.com/adobe/brackets/pull/3301).
 
 ### Issues that should be adressed as part of other planned work
 
