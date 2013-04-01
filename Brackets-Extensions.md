@@ -19,7 +19,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **Editing & Navigation**
 * [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
-* [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor. 
+* [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor 
 * [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
 * [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
 * [Quick Search] (https://github.com/enturn/brackets-quick-search): automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
@@ -57,6 +57,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [TypeScript Code Intel](https://github.com/tomsdev/brackets-typescript-code-intel): Adds TypeScript support in Brackets (Auto-completion, Quick Edit and more soon).
 
 **General Functionality**
+* [Tabs](https://github.com/albertxing/brackets-tabs): Show tabs in place of title when sidebar is hidden
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node).
 * [Extension Toolkit](https://github.com/davidderaedt/Brackets-extension-toolkit) An extension to make building Brackets extensions easier.
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
