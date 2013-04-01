@@ -29,8 +29,8 @@ To inspect the language of the current ``Document`` call ``document.getLanguage(
 * A language has an ID (i.e. "cpp", "cs") for computers (variables, object keys, file names, etc.)
 * A language has a name (i.e. "C++", "C#") for humans (displayed in the status bar)
 * A language can have a list of file extensions
-* A language can have a prefix for line comments (i.e. "//")
-* A language can have a prefix and a suffix for block comments (i.e. "/*" and "*/")
+* A language can have one or more prefixes for line comments (i.e. "//")
+* A language can have one or more sets of a prefix and a suffix for block comments (i.e. "/*" and "*/")
 * A language can refer to a CodeMirror mode for parsing, tokenization, indentation and syntax highlighting
 
 ### Goals
