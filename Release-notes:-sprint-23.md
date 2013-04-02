@@ -8,10 +8,9 @@ What's New in Sprint 23
     * [Live Development: highlight elements in browser from HTML code](https://trello.com/card/5-live-development-highlight-html-elements-in-browser-from-html/4f90a6d98f77505d7940ce88/565)
     * [Extension publishing workflow](https://trello.com/card/5-extension-publishing/4f90a6d98f77505d7940ce88/788)
     * [Toolbar redesign](https://trello.com/card/2-ux-implement-toolbar/4f90a6d98f77505d7940ce88/785)
-
 * **Localization**
-    * [Czech translation (cs)](https://github.com/adobe/brackets/pull/3150)
-    * [Polish translation (pl)](https://github.com/adobe/brackets/pull/3235)
+    * [Czech translation](https://github.com/adobe/brackets/pull/3150)
+    * [Polish translation](https://github.com/adobe/brackets/pull/3235)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-22...sprint-23#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-22...sprint-23#commits_bucket)
 
@@ -23,11 +22,14 @@ UI Changes
 
 API Changes
 -----------
+**Code Hints** - Code hint providers are now registered to a list of _language IDs_ rather than a list of CodeMirror modes. For some languages (like HTML and CSS) these strings are the same; for others, you must update your code (e.g. for JavaScript, use `"javascript"` instead of `"js"`).
+
+**Quick Open** - The `fileTypes` member of Quick Open plugins (passed to `QuickOpen.addQuickOpenPlugin()`) is deprecated. Please migrate to `languageIds` instead. For some languages, the language id is the same as the file extension; for others, you must update the string.
 
 New/Improved Extensibility APIs
 -------------------------------
+**Languages** - File extensions can now contain a dot to support conventions like ".mustache.html" or ".coffee.md".
 
-* `QuickOpen.addQuickOpenPlugin(pluginDef)` now expects `pluginDef.languageIds` instead of `pluginDef.fileTypes`. Using the latter still works for now, but is deprecated and will print a warning to the console. For HTML and CSS, only the key needs to be changed, for JavaScript, `"js"` needs to be changed to `"javascript"`.
 
 Known Issues
 ------------
