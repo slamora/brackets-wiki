@@ -9,7 +9,7 @@ What's New in Sprint 21
     * [Drag & drop to open files](https://github.com/adobe/brackets-shell/pull/190): Drag files onto the Dock icon (on Mac) or the Brackets window itself (on Windows) to open them.
     * [Remember cursor & scroll position across launches](https://github.com/adobe/brackets/pull/2898): Files you leave open when you quit or switch projects will be reopened right where you left off. Within a session, this also works for files you close and reopen later.
 * **Extensions**
-    * [Enables language extensions](https://trello.com/card/2-support-for-language-extensions/4f90a6d98f77505d7940ce88/773): New file types can be added by extensions, with support for syntax highlighting, block/line comments, and more.
+    * [Extensions can add new syntax languages](https://trello.com/card/2-support-for-language-extensions/4f90a6d98f77505d7940ce88/773): New file types can be added by extensions, with support for syntax highlighting, block/line comments, code hinting, Go to Definition, and more.
     * Extension developers no longer need to disable the cache using Developer Tools -- reloading Brackets should always show changes made to extensions.
 * **Code Editing**
     * SASS code coloring
