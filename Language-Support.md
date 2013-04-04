@@ -352,10 +352,6 @@ Todo: describe what is necessary to make this extendable
 
 ## Notes
 
-### Determining file extensions
-
-We should potentially add a central point to extract file extensions for a given file name to support extensions with multiple parts (i.e. ".html.erb"). Then file names wouldn't have just one potential extension, since file names like "1. Introduction.html" (also multiple dots) would also need to be supported. (see [pull request #3122](https://github.com/adobe/brackets/pull/3122))
-
 ### Features we think should be able to be built as plug-ins
 _From the [Extensibility Proposal](https://zerowing.corp.adobe.com/display/brackets/Extensibility+Proposal)_ (internal)
 - Access to code model
