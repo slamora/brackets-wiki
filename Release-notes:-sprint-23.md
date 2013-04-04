@@ -41,8 +41,10 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 
-Contributions _from_ the Brackets team
---------------------------------------
+Contributions _from_ the Brackets community
+-------------------------------------------
+**Contributions to [CodeMirror](https://github.com/marijnh/CodeMirror):**
+* [Don't auto-close apostrophes in comments](https://github.com/marijnh/CodeMirror/commit/c1b7ea4)
 
 Bugs fixed in Sprint 23
 -----------------------
