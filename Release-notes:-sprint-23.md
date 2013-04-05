@@ -46,6 +46,9 @@ Contributions _from_ the Brackets community
 **Contributions to [CodeMirror](https://github.com/marijnh/CodeMirror):**
 * [Don't auto-close apostrophes in comments](https://github.com/marijnh/CodeMirror/commit/c1b7ea4)
 
+**Other:**
+* Dropzone: [Make Dropzone message clickable](https://github.com/enyo/dropzone/pull/91)
+
 Bugs fixed in Sprint 23
 -----------------------
 For details on the bugs addressed, please refer to [closed sprint 23 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=10&state=closed). A few of the fixed bugs might not be caught by this search query, however.
