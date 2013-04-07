@@ -37,6 +37,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter
 * [Lorem Ipsum] (https://github.com/lkcampbell/brackets-lorem-ipsum): Generates Lorem Ipsum text and inserts it into any Brackets document.
 * [Surround] (https://github.com/pedelman/brackets-surround): Wraps selected text with HTML, comments, brackets, quotes, etc.
+* [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): addition to the context menu to insert from a special HTML character list.
 
 **Formatting**
 * [Minifier](https://github.com/alfredxing/brackets-minifier): Minifies JavaScript and CSS files using Google Closure Compiler (JS) and YUI (CSS). Working but under development.
