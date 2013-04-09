@@ -61,7 +61,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **General Functionality**
 * [Tabs](https://github.com/albertxing/brackets-tabs): Show tabs in place of title when sidebar is hidden
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node).
-* [Extension Toolkit](https://github.com/davidderaedt/Brackets-extension-toolkit) An extension to make building Brackets extensions easier.
+* [Extension Toolkit](https://github.com/davidderaedt/Brackets-extension-toolkit): An extension to make building Brackets extensions easier.
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 * [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav): shortcuts for switching to next/previous editor (<em>non</em>-MRU order), and a version of Quick Open scoped to only open files.
 * [Brackets Commands Guide](https://github.com/peterflynn/brackets-commands-guide): Search and execute commands by typing part of their name, similar to Quicksilver (or Sublime's Ctrl+Shift+P or Eclipse's Ctrl+3).
@@ -108,7 +108,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * (See also [App Cache Buddy](https://github.com/davidderaedt/appcache-gen) above).
 
 **Testing & Code Metrics**
-* [complexityReport.js](https://github.com/sahlas/brackets-crjs.git): A Brackets extension that enables phil booth's complexityReport.js tool. Displays complexity statistics on a per-function and aggregate basis. 
+* [complexityReport.js](https://github.com/sahlas/brackets-crjs): A Brackets extension that enables phil booth's complexityReport.js tool. Displays complexity statistics on a per-function and aggregate basis. 
 * [Jasmine](https://github.com/dschaffe/brackets-jasmine): Runs the Jasmine-node unit test tool against the
 current file.
 * [TestQuickly](https://github.com/dangoor/TestQuickly): simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
