@@ -104,7 +104,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
 * [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
 * [W3CValidator](https://github.com/cfjedimaster/brackets-w3cvalidation): Run the W3C Validator on your HTML.
-* [Interactive JSHint](https://github.com/MiguelCastillo/Brackets-Interactive-JSHint): Get JSHint feedback on source as you work on it.
+* [Interactive JSHint](https://github.com/MiguelCastillo/Brackets-Interactive-JSHint): Get JSHint feedback on your source as you work on it.
 * (See also [App Cache Buddy](https://github.com/davidderaedt/appcache-gen) above).
 
 **Testing & Code Metrics**
