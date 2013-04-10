@@ -32,7 +32,7 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
     <th width=60% scope="col">usage</th>
   </tr>
   <tr>
-    <td rowspan="7">Process </td>
+    <td rowspan="6">Process </td>
     <td>fix in progress</td>
     <td>Bug has been assigned and assignee has started to make improvements</td>
   </tr>
