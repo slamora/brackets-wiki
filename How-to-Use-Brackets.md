@@ -29,8 +29,8 @@ so you can quickly browse through different files without opening them. To
 add a file to the working set, just make an edit in it, or double-click it 
 in the file tree.
 
-Brackets currently has color-coding for HTML, JS, CSS, and LESS files. It
-also has some basic code hinting for HTML tags, attribute names and
+Brackets has color-coding for HTML, JS, CSS, LESS, and many other files.
+It also has some basic code hinting for HTML tags, attribute names and
 values, CSS property names and values, and JavaScript. They'll pop up 
 automatically as you type, or you can hit Ctrl-Space to bring them up manually. 
 More code hinting will come in future sprints.
