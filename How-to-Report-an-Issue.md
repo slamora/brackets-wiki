@@ -49,10 +49,6 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
     <td>enhancement  marker - to be put  on the <a href="https://trello.com/b/Slx4ibBw" target="_blank">backlog</a></td>
   </tr>
   <tr>
-    <td>sprintN</td>
-    <td>tag for issues to be addressed in sprint N</td>
-  </tr>
-  <tr>
     <td>starter bug</td>
     <td>This issue doesn’t require deep knowledge of the architecture and is the recommended level for new contributors</td>
   </tr>
