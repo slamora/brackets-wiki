@@ -2,8 +2,6 @@ Originally, most support for programming languages was implemented in core Brack
 
 This page documents how language support in Brackets is currently implemented. The companion page [Language Support Changes](Language Support Changes) documents what additional capabilities extensions would need in order to add language support on par with the current level of support for HTML, JavaScript and CSS. 
 
-Our goal is to base all language-related features like code hinting, text manipulation commands, quick edit, live preview, etc. on these capabilities. Support for non-web programming languages will be moved moved to dedicated extensions (see [issue #2969](https://github.com/adobe/brackets/issues/2969)).
-
 
 ## Retrieving a Language object
 
@@ -79,7 +77,7 @@ For further details, please refer to the comments in [LanguageManager.js](https:
 
 
 ## Places contributing to "language" support as of Sprint 21
-Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The remainder of this page documents future work required to support languages across various features in Brackets. The focus is on finding out what is hardcoded and needs to be refactored to use existing capabilities, or requires new capabilities before it can be refactored.
+Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The remainder of this page documents what parts of language support are hardcoded and need to be refactored to use existing capabilities, or require new capabilities before they can be refactored.
 
 
 ### No changes required
