@@ -5,13 +5,13 @@ Our goal is to base all language-related features like code hinting, text manipu
 
 ### Providing code semantics
 
-Allow adding electric __strings__ to language definitions. Some languages have block boundaries that are not just one char long, for instance Ruby's `begin ... end`.
+We need to allow adding electric __strings__ to language definitions. Strings instead of chars because some languages have block boundaries that are not just one char long, for instance Ruby's `begin ... end`.
 
 ### Starting Live Preview
 
 In general the possibility of live development for a given file depends on its format, the formats we can turn it into and the formats a client supports.
 
-#### New concept: client
+#### New concept: clients
 
 Consequently we need ways to define clients and the formats they support. Right now the only supported client is Chrome. We want to extend this to other browsers, and may eventually want to extend this to different types of clients, like Node.js, or a PDF viewer to preview LaTeX files.
 
