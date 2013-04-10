@@ -5,7 +5,9 @@ Our goal is to base all language-related features like code hinting, text manipu
 
 ### Providing code semantics
 
-We need to allow adding electric __strings__ to language definitions. Strings instead of chars because some languages have block boundaries that are not just one char long, for instance Ruby's `begin ... end`.
+We need to allow adding electric __strings__ to language definitions*. Strings instead of chars because some languages have block boundaries that are not just one char long, for instance Ruby's `begin ... end`.
+
+*From [CodeMirror's manual](http://codemirror.net/doc/manual.html): "electricChars: boolean - Configures whether the editor should re-indent the current line when a character is typed that might change its proper indentation (only works if the mode supports indentation). Default is true."
 
 ### Starting Live Preview
 
