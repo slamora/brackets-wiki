@@ -39,6 +39,8 @@ __MIME types supported by Chrome in clients.json:__
 
 If the user opens "index.html" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview.
 
+#### Auto-detecting the format of a server-generated file
+
 If the user provides a base URL, opens "index.php" and clicks the live preview button, Brackets could send a HEAD request for index.php to the server. If the returned MIME type is "text/html", Brackets would know that Chrome supports this PHP file's output and could allow the live preview. Otherwise, the live preview would not be enabled. The same is true for other server-side file extensions.
 
 This way, we would not need to maintain a list of file extensions that may or may not generate content in a format supported by Chrome.
