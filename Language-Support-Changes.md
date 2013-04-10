@@ -11,10 +11,11 @@ Allow adding electric __strings__ to language definitions. Some languages have b
 
 In general the possibility of live development for a given file depends on its format, the formats we can turn it into and the formats a client supports.
 
-Consequently we need ways to define what formats are supported by which client, and what formats the project's files are available in.
-Right now the only supported client is Chrome. We want to extend this to other browsers, and may eventually want to extend this to different types of clients, like Node.js, or a PDF viewer to preview LaTeX files.
+#### New concept: client
 
-Since browsers usually declare support for formats via a list of MIME types (e.g. "Accept:	text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8") and since web servers use MIME types the response's header ("Content-Type: text/html; charset=utf-8"), we should allow adding MIME types to languages.
+Consequently we need ways to define clients and the formats they support. Right now the only supported client is Chrome. We want to extend this to other browsers, and may eventually want to extend this to different types of clients, like Node.js, or a PDF viewer to preview LaTeX files.
+
+Also, we need ways to define what formats the project's files are available in. In principle, we could use the language concept for this, but since browsers usually declare support for formats via a list of MIME types (e.g. "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8") and since web servers use MIME types in the response's header ("Content-Type: text/html; charset=utf-8"), we should allow adding MIME types to languages and use those instead.
 
 __MIME type for HTML in languages.json:__
 
@@ -36,9 +37,11 @@ __MIME types supported by Chrome in clients.json:__
 
 If the user opens "index.html" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview.
 
-If the user provides a base URL, opens "index.php" and clicks the live preview button, Brackets could send a HEAD request for index.php to the server. If the returned MIME type is "text/html", Brackets would know that Chrome supports this PHP file's output and could allow the live preview. Otherwise, the live preview would not be enabled.
+If the user provides a base URL, opens "index.php" and clicks the live preview button, Brackets could send a HEAD request for index.php to the server. If the returned MIME type is "text/html", Brackets would know that Chrome supports this PHP file's output and could allow the live preview. Otherwise, the live preview would not be enabled. The same is true for other server-side file extensions.
 
 This way, we would not need to maintain a list of file extensions that may or may not generate content in a format supported by Chrome.
+
+#### Extending clients
 
 Extensions should be able to add new file extensions to languages and clients:
 
@@ -54,7 +57,11 @@ If the user opens "index.svg" and clicks the live preview button, Brackets would
 
 SVG is an interesting use case since Brackets would right now provide live development with SVG if only its extension were listed in the `_staticHtmlFileExts` array. Brackets would show XML code, the browser would show the rendered image, Brackets would reload the browser when saving the file, and even refresh styles as they are changed if the SVG file links to external stylesheets (`<?xml-stylesheet type="text/css" href="style.css" ?>` before the opening `<svg>` tag).
 
-__Extension:__
+#### Supporting derivatives (compilers)
+
+Currently we only support the format a file comes in, but we could extend live development to files that could be converted to a format supported by the client.
+
+__Registering an HTML compiler for Markdown:__
 
     var LanguageManager = brackets.getModule("language/LanguageManager"),
         md = LanguageManager.getLanguage("markdown");
@@ -63,9 +70,13 @@ __Extension:__
         return htmlCode;
     });
 
-If the user opens "index.md" and clicks the live preview button, Brackets would know that it could compile this code to HTML. It would look up HTML's MIME type and see that Chrome could open the compiled file. It would then use the first file extension defined for the HTML language and create a temporary file - say "file.md.html" - with the return value of the compiler function as its contents. Finally, Brackets would start a live preview on the compiled file. On a related note, [card 565](https://trello.com/c/4BHJSfzo) introduces the idea of HTML rewriting.
+If the user opens "index.md" and clicks the live preview button, Brackets would know that it could compile this code to HTML. It would look up HTML's MIME type and see that Chrome could open the compiled file. It would then use the first file extension defined for the HTML language and create a temporary file (real or virtual through Node) - say "file.md.html" - with the return value of the compiler function as its contents. Finally, Brackets would start a live preview on the compiled file. On a related note, [card 565](https://trello.com/c/4BHJSfzo) introduces the idea of HTML rewriting.
 
-__Extension:__
+#### Adding new clients
+
+Clients do not necessarily have to be external applications, a Brackets extension could just add a DIV to Brackets UI and render a file into it. Through the ClientManager, it could define a client in a structured manner.
+
+__Embedded HTML Live Development client:__
 
     var ClientManager   = brackets.getModule("LiveDevelopment/ClientManager"),
         LanguageManager = brackets.getModule("language/LanguageManager"),
@@ -111,10 +122,11 @@ __Extension:__
     // Consider existing languages
     Array.forEach(LanguageManager.getLanguages(), considerLanguage);
 
+In this example, the client would handle updating the document itself. Behavior like this should however be triggered by Brackets in a central place to be extensible and possibly adjustable by the user. This requires the client definition to declare support for such operations in a structured manner.
 
 ### Updating Live Preview
 
-For live development on _save_, the client only needs to reveal that the saved file was requested by the document. This allows Brackets to reload the document if an included file is saved. For Chrome, the network agent handles this task by listening to the "Network.requestWillBeSent" event.
+For live development on _save_, the client needs to allow reloading the document. It also needs to reveal that the saved file was requested by the document. This allows Brackets to reload the document if an included file is saved. For Chrome, the network agent handles this task by listening to the "Network.requestWillBeSent" event. We may however want to augment this with offline detection routines to detect server-side file inclusions (to reload index.php if shared.php is modified). Since those mechanisms can use arbitrary amounts of magic (i.e. [autoloading](http://php.net/manual/de/language.oop5.autoload.php) or [auto_prepend_file](http://www.php.net/manual/en/ini.core.php#ini.auto-prepend-file)), supporting all or even most scenarios is unrealistic. Instead, we could introduce a standard for server-side scripts to announce a list of included files in the response header. The community could provide the necessary plugins for server-side languages. For PHP, the function [get_included_files](http://php.net/manual/de/function.get-included-files.php) would provide an easy starting point.
 
 For live development on _change_, the client needs to provide ways to directly inject the new content into the document. In Brackets, we need to be aware of such methods and use them instead of reloading the whole document. Extensions therefore need a way to register an updater. We currently provide this in a hard-coded way for CSS, and for HTML and JavaScript files if `LiveDevelopment.config.experimental` is true.
 
