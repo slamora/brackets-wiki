@@ -187,7 +187,7 @@ However, this might fail if the server compiler uses special settings, like a se
 An alternative with other risks would be to transparently move the saved version to a backup location, silently save the changed version in the editor, request the compiled version from the server and restore the saved version from the backup. If either Brackets or the whole computer crash in the middle of that process, or a cloud storage service watches the directory, this approach could result in data loss.
 
 
-# Showing the context in Live Preview
+#### Showing the context in Live Preview
 
 Todo: describe what is necessary to make this extendable
 
