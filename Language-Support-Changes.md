@@ -14,7 +14,9 @@ In general the possibility of live development for a given file depends on its f
 Consequently we need ways to define what formats are supported by which client, and what formats the project's files are available in.
 Right now the only supported client is Chrome. We want to extend this to other browsers, and may eventually want to extend this to different types of clients, like Node.js, or a PDF viewer to preview LaTeX files.
 
-__languages.json:__
+Since browsers usually declare support for formats via a list of MIME types (e.g. "Accept:	text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8") and since web servers use MIME types the response's header ("Content-Type: text/html; charset=utf-8"), we should allow adding MIME types to languages.
+
+__MIME type for HTML in languages.json:__
 
     {
         "html": {
@@ -24,7 +26,7 @@ __languages.json:__
         }
     }
 
-__clients.json:__
+__MIME types supported by Chrome in clients.json:__
 
     {
         "chrome": {
@@ -34,11 +36,11 @@ __clients.json:__
 
 If the user opens "index.html" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview.
 
-If the user provides a base URL, opens "index.php" and clicks the live preview button, Brackets could send a HEAD request for index.php to the server. If the returned MIME type is "text/html", Brackets would know that Chrome supports this format and allow the live preview. Otherwise, the live preview will not be enabled.
+If the user provides a base URL, opens "index.php" and clicks the live preview button, Brackets could send a HEAD request for index.php to the server. If the returned MIME type is "text/html", Brackets would know that Chrome supports this PHP file's output and could allow the live preview. Otherwise, the live preview would not be enabled.
 
 This way, we would not need to maintain a list of file extensions that may or may not generate content in a format supported by Chrome.
 
-__Extension:__
+Extensions should be able to add new file extensions to languages and clients:
 
     var ClientManager = brackets.getModule("LiveDevelopment/ClientManager"),
         chrome = ClientManager->getClient("chrome");
@@ -48,7 +50,9 @@ __Extension:__
         svg = LanguageManager.getLanguage("svg");
     svg.addMimeType("image/svg+xml");
 
-If the user opens "index.svg" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview. This would also work if index.php generates SVG code, provided it sends the proper MIME type. SVG is an interesting use case since Brackets would right now provide live development with SVG if only its extension were listed in the `_staticHtmlFileExts` array. Brackets would show XML code, the browser would show the rendered image, Brackets would reload the browser when saving the file, and even refresh styles as they are changed if the SVG file links to external stylesheets (`<?xml-stylesheet type="text/css" href="style.css" ?>` before the opening `<svg>` tag).
+If the user opens "index.svg" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview. This would also work if index.php generated SVG code, assuming if provides the proper MIME type in the Content-Type header.
+
+SVG is an interesting use case since Brackets would right now provide live development with SVG if only its extension were listed in the `_staticHtmlFileExts` array. Brackets would show XML code, the browser would show the rendered image, Brackets would reload the browser when saving the file, and even refresh styles as they are changed if the SVG file links to external stylesheets (`<?xml-stylesheet type="text/css" href="style.css" ?>` before the opening `<svg>` tag).
 
 __Extension:__
 
