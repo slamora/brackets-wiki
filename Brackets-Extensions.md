@@ -40,13 +40,13 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): addition to the context menu to insert from a special HTML character list.
 
 **Formatting**
-* [Minifier](https://github.com/alfredxing/brackets-minifier): Minifies JavaScript and CSS files using Google Closure Compiler (JS) and YUI (CSS). Working but under development.
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
 * [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
 * [Beautify](https://github.com/drewhjava/brackets-beautify): Beautify HTML, CSS, and Javascript (uses js-beautify)
+* [Minifier](https://github.com/alfredxing/brackets-minifier): Minifies JavaScript and CSS files using Google Closure Compiler (JS) and YUI (CSS). Working but under development.
 * [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
 * [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
 
@@ -83,7 +83,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Markdown Preview](https://github.com/gruehle/MarkdownPreview): Live preview of Markdown files, updated as the document is edited.
 
 **External Tools & Online Content**
-* (See also [Minifier](https://github.com/alfredxing/brackets-minifier) above).
 * [BracketLESS] (https://github.com/olsgreen/BracketLESS): Compiles LESS files to CSS on save
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Implements the Full GitHub API, but is just in an early prototype state
@@ -91,8 +90,9 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
 * [PageSuck](https://github.com/timburgess/brackets-pagesuck): prompts for a URL and pulls that page's HTML directly into the editor as a new file
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
-* (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 * [Ant for Brackets](https://github.com/jbalsas/brackets-ant): Launch any target in your ant files. (Uses Node. Requires Brackets Sprint 21 or greater)
+* (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
+* (See also [Minifier](https://github.com/alfredxing/brackets-minifier) above).
 
 **Documentation**
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
