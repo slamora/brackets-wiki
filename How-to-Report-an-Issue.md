@@ -96,7 +96,7 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
   </tr>
   <tr>
     <td rowspan="6">Architecturally-focused</td>
-    <td>Win only / Mac only</td>
+    <td>Win only<br/>Mac only</td>
     <td>platform specific issue</td>
   </tr>
   <tr>
