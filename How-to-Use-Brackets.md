@@ -98,9 +98,9 @@ If you save an HTML or JS file, it will auto-reload the browser
 preview. We're hoping to work on making these work more like true live development
 in the future.
 
-While Live Preview is open, putting your cursor in a CSS rule
-in Brackets will highlight all matching HTML elements in the browser.
-Use "File > Live Highlight" to toggle this off.
+While Live Preview is open, putting your cursor in an HTML tag in Brackets will
+highlight the matching element in the browser. Putting your cursor in a CSS rule will
+highlight all matching HTML elements. Use "File > Live Highlight" to toggle this off.
 
 By default, Brackets previews files using a local http server that is included with Brackets. 
 If you want to preview off a server, you can use **File > Project Settings...**. 
