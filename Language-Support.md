@@ -189,7 +189,7 @@ These areas are concerned with making sure that the live preview is up to date. 
     * Function `_onDirtyFlagChange` **only updates the LiveDevelopment status if the dirty file is not a CSSDocument** (not extensible)
 
 
-# Showing the context in Live Preview
+#### Showing the context in Live Preview
 
 These areas are concerned with showing the context of the current cursor position by highlighting affected areas in the live preview and opening files related to elements in the page (GotoAgent).
 
