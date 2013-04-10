@@ -187,9 +187,25 @@ However, this might fail if the server compiler uses special settings, like a se
 An alternative with other risks would be to transparently move the saved version to a backup location, silently save the changed version in the editor, request the compiled version from the server and restore the saved version from the backup. If either Brackets or the whole computer crash in the middle of that process, or a cloud storage service watches the directory, this approach could result in data loss.
 
 
-#### Showing the context in Live Preview
+### Showing the context in Live Preview
 
-Todo: describe what is necessary to make this extendable
+Todo: describe what is necessary to make this extensible
+
+
+### General purpose hooks
+
+Our live development support does not solely rely on the Chrome remote debugger. Via the RemoteAgent we also add capabilities like CSS rule highlighting by injecting code into the running page whenever it reloads. Similarly, extensions should be able to register such hooks. While it is tempting to merely allow adding more agents to the current LiveDevelopment module, this is not generic enough. Rather, the connection process should be split into phases.
+
+1. Establishing a connection to the client
+2. Installing services (i.e. loading the agents)
+3. Extending services (i.e. running client plugins)
+4. Initializing services (this would allow extensions to configure the agents)
+
+Such plugins would be specific to a client and can therefore use client-specific capabilities like the agents we define for Chrome.
+
+
+
+
 
 ## Notes
 
