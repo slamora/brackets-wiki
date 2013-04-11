@@ -82,3 +82,9 @@ For example, if you have ```awesome.jpg``` in your extension's top-level ```foo`
 For more detail on Brackets internals, see [[Brackets Development How Tos]].
 
 If you're interested in contributing to the core Brackets codebase, see [[How to Hack on Brackets]].
+
+## Publishing Extensions
+
+See the [Extension Package Format](https://github.com/adobe/brackets/wiki/Extension-package-format) for information on preparing your extension for sharing with others.
+
+For the time being, publish your extension by linking to its zip file or GitHub repository here from the [extensions list](https://github.com/adobe/brackets/wiki/Brackets-Extensions).
