@@ -35,7 +35,8 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 ## Releases
 
 * [Downloads](http://download.brackets.io)
-* [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
+* Release Notes:
+ * [Sprint 23](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-23)
  * [Sprint 22](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-22)
  * [Sprint 21](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-21)
  * [Sprint 20](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-20)
@@ -43,12 +44,4 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
  * [Sprint 18](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-18)
  * [Sprint 17](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-17)
  * [Sprint 16](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-16)
- * [Sprint 15](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-15)
- * [Sprint 14](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-14)
- * [Sprint 13](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-13)
- * [Sprint 12](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-12)
- * [Sprint 11](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-11)
- * [Sprint 10](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-10)
- * [Sprint 9](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-9)
- * [Sprint 8](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-8)
- * [Sprint 7](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-7)
+ * [more...](https://github.com/adobe/brackets/wiki/Release-Notes)
