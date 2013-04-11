@@ -55,6 +55,7 @@ Community contributions to Brackets
 * [Fix #3253: Active line highlight doesn't disappear in unfocused editor](https://github.com/adobe/brackets/pull/3274) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Fix #3228: Code hints popup positioned wrong with non-default font size](https://github.com/adobe/brackets/pull/3232) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Maintain scroll position when adjusting font size](https://github.com/adobe/brackets/pull/3300) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Use more standard way to open Finder on Mac](https://github.com/adobe/brackets-shell/pull/225) by [Alex Zielenski](https://github.com/alexzielenski)
 * [Cleanup: refactor JSLint into a default extension](https://github.com/adobe/brackets/pull/3143) ([and](https://github.com/adobe/brackets/pull/3315)) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Cleanup: Recent Projects code](https://github.com/adobe/brackets/pull/3213) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Cleanup: only Live Preview server provider should check file extension](https://github.com/adobe/brackets/pull/3218) by [Jonathan Rowny](https://github.com/jrowny)
