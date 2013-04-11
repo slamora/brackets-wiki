@@ -1,6 +1,6 @@
 # Extension Package Format #
 
-Status: Proposal+Current Practice
+Status: Implemented
 
 Note: this will likely undergo revision during the [extension API research](https://trello.com/card/5-research-extension-api/4f90a6d98f77505d7940ce88/769)
 
@@ -31,6 +31,27 @@ Brackets uses the same [package.json format as npm](https://npmjs.org/doc/json.h
 * We should honor the `private` flag to not publish private extensions
 
 **note** by reusing `engines` and `peerDependencies`, we may run into friction with npm, assuming that we allow users to install and use npm modules. If need be, we can change to using two other Brackets-specific fields in package.json for these needs.
+
+## Categories ##
+
+Our package.json files include a "categories" field which is not present in npm's format. Categories, unlike keywords, are primarily a "browsing" feature rather than a searching one.
+
+The `categories` field can be either a string (the common case, since most extensions have only one), or an array of strings.
+
+Each of the strings should be one of the following boldface values:
+
+* **editing** – Editing and Navigation
+* **snippets** – Snippets and Shorthand
+* **formatting** – Formatting
+* **codegen** – Code Generation
+* **language** – Language Support
+* **general** – General Functionality
+* **livedev** – Live Development
+* **visual** – Visual Editing
+* **external** – External Tools and Online Content
+* **docs** – Documentation
+* **linting** – Linting and Warnings
+* **testing** – Testing and Code Metrics
 
 ## Keywords ##
 
