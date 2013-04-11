@@ -1,15 +1,11 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 23 -- approximately April 10._
-
 What's New in Sprint 23
 -----------------------
 * **Live Preview**
-    * [Highlight elements in browser from HTML code](https://trello.com/card/5-live-development-highlight-html-elements-in-browser-from-html/4f90a6d98f77505d7940ce88/565)
+    * [Highlight elements in browser from HTML code](https://trello.com/card/5-live-development-highlight-html-elements-in-browser-from-html/4f90a6d98f77505d7940ce88/565): While Live Preview is open, as you move the cursor around in an HTML file Brackets will highlight the corresponding element in the browser. Use "File > Live Highlight" to toggle this off.
 * **Overall UI**
-    * [Toolbar redesign](https://trello.com/card/2-ux-implement-toolbar/4f90a6d98f77505d7940ce88/785)
+    * [Toolbar redesign](https://trello.com/card/2-ux-implement-toolbar/4f90a6d98f77505d7940ce88/785): The horizontal top toolbar has been replaced with a vertical side toolbar to make better use of precious vertical real estate. See below for details.
 * **Code Editing**
-    * [Code hints for HTML entities](https://github.com/adobe/brackets/pull/3237)
+    * [Code hints for HTML entities](https://github.com/adobe/brackets/pull/3237) (for example `&nbsp;`)
     * [.sh code coloring](https://github.com/adobe/brackets/pull/3348/files)
 * **Search**
     * [Quick Open performance](https://github.com/adobe/brackets/pull/3184): now more responsive on large projects
@@ -22,7 +18,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-**TODO - toolbar**
+**Toolbar** - The white horizontal toolbar above the editor has been removed. Icons (such as the Live Preview lightning bolt) now appear in a vertical toolbar on the right. The current file name now appears in the window titlebar. This maximizes the vertical space available for viewing code.
 
 
 API Changes
@@ -30,6 +26,12 @@ API Changes
 **Code Hints** - Code hint providers are now registered to a list of _language IDs_ rather than a list of CodeMirror modes. For some languages (like HTML and CSS) these strings are the same; for others, you must update your code (e.g. for JavaScript, use `"javascript"` instead of `"js"`).
 
 **Quick Open** - The `fileTypes` member of Quick Open plugins (passed to `QuickOpen.addQuickOpenPlugin()`) is deprecated. Please migrate to `languageIds` instead. For some languages, the language id is the same as the file extension; for others, you must update the string.
+
+**Toolbar Layout** - Although extensions that add new toolbar icons generally still work with the new toolbar, several potential incompatibilities may arise:
+* Dark colored icons may now be too hard to see
+* Icon placement differs (previously, earlier in the DOM order meant further to the right, away from the default Brackets icons; now it means closer to the top, closer to the default icons)
+* Extensions that add new horizontal toolbars need to be updated. Rather than inserting content inside or next to `#main-toolbar`, insert content above `#editor-holder`.
+* Resizer's `forcepadding` option has been replaced with `forceLeft`
 
 New/Improved Extensibility APIs
 -------------------------------
