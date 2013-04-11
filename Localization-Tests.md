@@ -262,3 +262,9 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 8. Press Cancel
 9. Hover over the update icon (a gift box) in the toolbar
 10. Confirm update information tooltip appears ``<tooltip_update_notification>``
+
+# Extension Installation
+
+1. File > Install Extension...
+2. Paste this URL https://github.com/adobe/brackets/raw/master/test/spec/extension-test-files/incompatible-version.zip and press Install
+3. Confirm error message appears in dialog ``<install_extension_incompatible_version>``
