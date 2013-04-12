@@ -48,13 +48,17 @@ To decline a keyboard event and allow other parts of Brackets to handle it, make
 
 ### <a name="newui"></a>Adding new UI elements
 
-Be sure to follow the [[Extension UI Guidelines]].
+_**This is unofficial API**_ - adding UI elements directly through the DOM works, but puts you on shaky ground. Code that does this _will_ break as Brackets updates evolve the UI. _The only official way to extend the Brackets UI is through JavaScript APIs_, such as the Menu interface above or the Quick Edit interface below.
 
-**Add UI elements to the DOM:** Official APIs like the Quick Edit provider API above are the only officially supported way to add new UI elements to Brackets. You _could_ just insert new DOM nodes somewhere, but it may break with future updates to Brackets. 
+However, following these best practices will ensure your code behaves as nicely as it possibly can under the circumstances:
 
-**<a name="addpanel"></a>Add a panel below the editor:** There's no official way to do this yet, so you'll have to insert your own DOM elements.  Tips:
-* Be sure you add your panel _above_ the status bar. To ensure this, use `$myPanel.insertBefore("#status-bar")` or better yet `$myPanel.insertAfter(".bottom-panel:last")`.
-* To make your panel resizable, use `Resizer.makeResizable()`: it even takes care of remembering the panels size across launches. See Resizer.js for documentation.
+**<a name="addpanel"></a>Add a panel below the editor:** Use the CSS class `.bottom-panel`; see the JSLint bottom-panel.html for an example. Add your panel _above_ the status bar using `$myPanel.insertBefore("#status-bar")` or better yet `$myPanel.insertAfter(".bottom-panel:last")`. To make your panel resizable, use `Resizer.makeResizable()`: it even takes care of remembering the panel's size across launches. See Resizer.js for documentation.
+
+**Add a toolbar icon:** Use `$myIcon.appendTo($("#main-toolbar .buttons"))`.
+
+**Add a top panel/toolbar:** Use `$myPanel.insertBefore("#editor-holder")`.
+
+**UI design:** Be sure to follow the [[Extension UI Guidelines]].
 
 **Load a CSS file:** use `ExtensionUtils.loadStyleSheet()`. It returns a Promise you can use to track when the CSS is done loading.
 <br>_To avoid accidentally breaking core Brackets UI_, place a CSS class on the root of your UI and make sure _all_ your CSS rules include a descendant selector. E.g. instead of `li { ... }` use `.myExtension li { ... }`.
