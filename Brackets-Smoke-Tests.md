@@ -26,7 +26,7 @@ Smoke test steps
 9. Click on index.html. Verify that the selection in the project panel draws properly.
 10. Double-click on index.html. Verify that it's added to the working set and the selection draws properly.
 11. Open the File menu and verify the "Live Highlight" menu item is disabled and checked.
-12. Resize the window. Verify that the editor resizes properly and the title bar wraps appropriately.
+12. Resize the window. Verify that the editor resizes properly.
 13. Set the cursor in the `<body>` tag immediately before the `>`.
 14. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
 15. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
