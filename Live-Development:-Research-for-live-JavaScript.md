@@ -2,5 +2,6 @@ This page documents research results for building out live JavaScript developmen
 
 ## Issues with Feature Behavior ##
 
-* Using the [TodoMVC](http://todomvc.com) example
-    * The footer blinks a lot when the ScriptAgent is turned on (even when no edits have been made to the script)
+* Using the [TodoMVC](http://todomvc.com) jquery example
+    * The footer blinks when the ScriptAgent is turned on (even when no edits have been made to the script). Even more noticeable with the Backbone example
+    * The Live Development icon looks like it's turned off
