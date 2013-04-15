@@ -9,3 +9,5 @@ This page documents research results for building out live JavaScript developmen
     * The framerate does *not* appear to be affected by having the ScriptAgent loaded (I had a theory about the blinking in TodoMVC. Turned out to be false)
     * not surprisingly, making a change to `initPalette` live has no effect
     * changing `smooth`, on the other hand, works fine
+    * changing a script in the HTML page has no effect
+    * adding code outside of a function block in the script file has no effect
