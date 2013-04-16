@@ -18,7 +18,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-**Toolbar** - The white horizontal toolbar above the editor has been removed. Icons (such as the Live Preview lightning bolt) now appear in a vertical toolbar on the right. The current file name now appears in the window titlebar. This maximizes the vertical space available for viewing code.
+**Toolbar** - The white horizontal toolbar above the editor has been removed. Icons (such as the Live Preview lightning bolt) now appear in a vertical toolbar on the right. The current file name now appears in the window titlebar. This maximizes the vertical space available for viewing code. For more on the design direction Brackets is headed in, [take look at this mockup](http://www.behance.net/gallery/Brackets/6499177).
 
 
 API Changes
