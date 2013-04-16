@@ -15,6 +15,7 @@ This page documents research results for building out live JavaScript developmen
         * commented out the call to that function
         * alert call showed that it was still calling that function
     * changing a variable's value set in a closure does not work (`var foo = 1000;` changed to `var foo = 10;`)
+    * deleting a line that calls a function seems to stop the updating sometimes
 * Using a [canvas demo](https://github.com/chrislongo/html5-canvas-demo)
     * The framerate does *not* appear to be affected by having the ScriptAgent loaded (I had a theory about the blinking in TodoMVC. Turned out to be false)
     * not surprisingly, making a change to `initPalette` live has no effect
