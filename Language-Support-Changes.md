@@ -69,10 +69,18 @@ __Registering an HTML compiler for Markdown:__
 
     var LanguageManager = brackets.getModule("language/LanguageManager"),
         md = LanguageManager.getLanguage("markdown");
-    md.addCompiler("html", function (doc) {
+    md.addCompiler("html", function (url) {
         var deferred = new $.Deferred();
         ...
-        deferred.resolve(htmlCode);
+        var mainFile = {
+            url:          url.replace(/[^\.]*$/, "html"),
+            lastModified: lastModified,
+            contents:     htmlCode,
+        };
+        deferred.resolve({
+            files: [mainFile]
+            mainFile: mainFile
+        });
         ...
         return deferred.promise();
     });
