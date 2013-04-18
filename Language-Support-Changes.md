@@ -70,11 +70,35 @@ __Registering an HTML compiler for Markdown:__
     var LanguageManager = brackets.getModule("language/LanguageManager"),
         md = LanguageManager.getLanguage("markdown");
     md.addCompiler("html", function (doc) {
+        var deferred = new $.Deferred();
         ...
-        return htmlCode;
+        deferred.resolve(htmlCode);
+        ...
+        return deferred.promise();
     });
 
 If the user opens "index.md" and clicks the live preview button, Brackets would know that it could compile this code to HTML. It would look up HTML's MIME type and see that Chrome could open the compiled file. It would then use the first file extension defined for the HTML language and create a temporary file (real or virtual through Node) - say "file.md.html" - with the return value of the compiler function as its contents. Finally, Brackets would start a live preview on the compiled file. On a related note, [card 565](https://trello.com/c/4BHJSfzo) introduces the idea of HTML rewriting.
+
+__Question:__ What should we pass to a compiler - a Document instance, a URL or a string with code?
+
+If a LESS file imports another LESS file, the included LESS file either needs to be referenced with an absolute URL or LESS needs to be provided with a list of search paths. If the only search path is relative, LESS will use window.location.href as the base URL to figure out an absolute path. LESS uses the path to load the imported file with an XMLHttpRequest. Providing "./" as the search path would only work if the main file were located in Bracket's src directory.
+
+Therefore, providing just a string with contents of the main LESS file is not enough. LESS also needs an absolute path to the directory the file is in. Then it can access all imported files. For live development on save, this is good enough, as long as the included file does not contain relative references to background images, fonts, etc. LESS would prefix the URLs to these with the path to the main file's directory. Since Brackets is loaded from the local file system, this would be a local file URL. The background images in the browser would then be loaded from the local hard drive. If we ever want to support live development on smartphones or other remote devices, this would no longer work. Instead, the URL as seen from the client should be used.
+
+When LiveDevelopment is active, this URL is available via doc.url. If we want the compiler architecture to be more universal, say to compile LESS files provided by extensions, then doc.url wouldn't be set for such a file. Basically, a URL always relates to a client, so we would need something like `doc.urlForClient(client)` or `client.urlForDocument(doc)` (the latter seems preferable, but then we need a client object representing Brackets).
+
+There's another problem: if a Document instance is passed, `doc.getText()` would be used to get the file's contents. If the user has changed the document without saving, the unsaved version would be retrieved. This is what should happen for live development on change, but may not be wanted in other circumstances. In addition, LESS would still try to load referenced files via an XMLHttpRequest, normally not getting the unsaved contents of the file. In some cases, we may be able to configure the compiler to use a source of our own choosing. LESS is hard to customize in this respect - while it is possible to overwrite less.Parser.importer, this function is also reponsible for parsing the resulting file. Our own implementation of the importer would therefore need to do more than just retrieve files and would be harder to keep in sync with updates to LESS. Effectively, we would provide our own version of the LESS compiler, which may be necessary for other languages as well.
+
+An alternative would be to provide a URL to an HTTP server that delivers files straight from the Document objects in Brackets' memory. Compilers could then continue to use XMLHttpRequest. Unless the live development server uses Document instances, the resulting URLs in the CSS file (for background images, etc.) would need to be adjusted to access the actual live development server. If the user provides a base URL, we do not start our own server and may need to do this mapping anyway. One alternative to this would be to always launch our own live development server and turn it into a proxy if a base URL is provided. This would also allow us to continue rewriting HTML documents even if we do not read them from the hard disk directly, but from the server the user provided.
+
+__Question:__ How should a compiler deliver its output?
+
+In many cases, the compiler will only generate one file, even if it uses many input files (LESS with included files, a minifier). However, in many of these cases it also makes sense to generate a SourceMap alongside the core output file. The compiler could write these files to the hard disk directly, but this would prevent us from generating and serving files in memory (say, a Markdown preview in HTML format). Instead, the compiler should provide its outpus as an array of objects. The objects would contain the generated file's contents, a URL to store them at, and possibly semantic information like `"SourceMap"` or "Main" to ease programmatic use of the output.
+
+__Summary:__
+
+Compilation isn't a simple 1:1 mapping of input to output. Any number of inputs can be mapped to any number of outputs. In addition, the output may contain references to files. These references can depend on the locations of the inputs. Therefore, a compiler needs a lot of information to produce the right output depending on the context. Variables are whether to use the saved or unsaved version of files, whether the output is saved to disk or provided from memory, and the base URL of the client that will consume the outputs.
+
 
 #### Adding new clients
 
@@ -150,7 +174,7 @@ In this scenario, the LESS file is converted to a static CSS file by Brackets. T
 
 To support this, the user would need to be able to turn this behavior on, possibly for individual files only since LESS files can include other LESS files, and typically only the master file should be converted.
 
-However, the [BracketsLESS extension](https://github.com/olsgreen/BracketLESS) adds a menu entry to turn compilation on for all LESS files. Compilation occurs when the file is saved. Sadly, Brackets currently doesn't detect that the CSS file was changed, not even when switching to it from within Brackets after saving the LESS file. Switching to another application and back to Brackets will update the CSS file in the browser if at one point a Document object has been created for the CSS file (for instance by opening the CSS file within Brackets). There also is no straightforward way to create the file via the Document API in the first place. Even if the file already exists (and the Document object can therefore be created), there is no `doc.save()` method to call since all writing is apparently done via editors (presumed to be user visible, which may be incorrect). Clearly, programmatic changes to documents need to be made easier. For now, saving the file manually and calling `$(window).triggerHandler("focus");` is the most convenient way to make Brackets aware of the changed file so the preview is updated accordingly.
+However, the [BracketsLESS extension](https://github.com/olsgreen/BracketLESS) adds a menu entry to turn compilation on for all LESS files. Compilation occurs when the file is saved. Sadly, Brackets currently doesn't detect that the CSS file was changed, not even when switching to it from within Brackets after saving the LESS file. Switching to another application and back to Brackets will update the CSS file in the browser if at one point a Document object has been created for the CSS file (for instance by opening the CSS file within Brackets). There also is no straightforward way to create the file via the Document API in the first place. Even if the file already existed (and the Document object can therefore be created), there is no `doc.save()` method to call since all writing is apparently done via Editor instances. There is also no public API to access a document's editor. Even if there were, there is no `editor.save()` either - the code to save a file is only available through the File > Save command and therefore only available for the currently opened document. Clearly, programmatic changes to documents need to be made easier. For now, saving the file manually, then getting a Document for it and calling `$(window).triggerHandler("focus");` is the most convenient way to make Brackets aware of the changed file so the preview is updated accordingly.
 
 Ideally, this extension could simply open a Document object with the target path and replicate all changes of the LESS file to the CSS file. If the LESS file is changed, `cssDoc.setText(cssCode)` is called, and the live preview is updated as if the user had typed these changes into the CSS file manually. If the LESS file is saved, so is the CSS file, similarly with deleting the LESS file.
 
@@ -189,12 +213,28 @@ An alternative with other risks would be to transparently move the saved version
 
 ### Showing the context in Live Preview
 
-Todo: describe what is necessary to make this extensible
+Showing the context consists of five phases: injecting, identifying, locating, styling and highlighting.
+
+Injecting means enhancing the data delivered to the client by injecting information that makes elements easier to identify and locate. For instance, we rewrite HTML pages to insert explicit IDs for every tag to be independent of later modifications to the DOM tree. In addition, JavaScript code is injected to provide an API for drawing the highlights based on CSS selectors. To locate context elements in JavaScript files, wrapping API calls can be necessary to trace the effects of a function.
+
+Identifying is about describing elements of the document that are related to the current cursor position. In an HTML file, this could be an XPath or a CSS selector describing the DOM node that got created from the closest tag around the cursor. In a CSS file, it could simply be the CSS rule around the cursor. In a JavaScript file, the context contains all the elements on the page that got affected by the closest function around the tag. It could be described by CSS selectors for the nodes that got created, modified, moved or styled by the function or that use the function as an event handler. It could also be the shape and position of areas in a `<canvas>` element that got drawn by the function. Similarly, in a LaTeX file, the context could be a shape with a page number and a position that happens to outline the area of the PDF file that got created from the code at the current cursor position.
+
+Locating is about using the description to get a handle on the context elements in the rendered document. Browsers usually provide convenient lookup methods like `document.querySelectorAll()`, though extra work may be necessary (see Injecting). By determining which part of the document the client is showing and where the context elements are positioned, the locator can make sure that the client shows at least one such element (if there is one).
+
+Styling is about the visual aspects of highlighting, i.e. what shapes and colors to use, whether to use animations, etc. The user may want to be able to configure this, or install an extension for a different highlighting style. Currently we highlight the context of a CSS rule by shading the background of affected nodes with a transparent blue background and a blue border around the element. If the user adds a one pixel wide red border around the element, they won't see the result until changing the context to a different element because the blue border of the highlight covers the red border created by the user. Similarly, every background color set by the user is affected by the highlight. The user may want to install a styler that instead dims everything around the targeted elements.
+
+Highlighting is about enhancing the visual representation of located elements by applying the styling rules. In the most basic case, the locator provides just the position and size of a rectangle within the content area of the client, and the highlighter draws a rectangle at these coordinates. The idea behind separating styling and highlighting is that different clients may require different techniques for highlighting, yet we want the highlight to look roughly the same on all clients.
+
+Injecting and highlighting are very client specific. Identifying is mostly language specific, but the resulting descriptions need to be in a format that can be used by the locator (and possibly by the highlighter).
+
+In order to make highlighting extensible, extensions need to be able to add context identifiers to languages. There can be multiple identifiers per language, possibly creating descriptions of the same elements in different formats or providing additional descriptions. For instance, one extension may concentrate solely on identifying the nodes selected by a certain jQuery call, another may concentrate on allowing `<canvas>` elements to be highlighted.
+
+Todo: flesh out API proposals
 
 
 ### General purpose hooks
 
-Our live development support does not solely rely on the Chrome remote debugger. Via the RemoteAgent we also add capabilities like CSS rule highlighting by injecting code into the running page whenever it reloads. Similarly, extensions should be able to register such hooks. While it is tempting to merely allow adding more agents to the current LiveDevelopment module, this is not generic enough. Rather, the connection process should be split into phases.
+Our live development support does not solely rely on the Chrome remote debugger. Via the RemoteAgent we also add capabilities like CSS rule highlighting by injecting code into the running page whenever it reloads. Similarly, extensions should be able to register such services. While it is tempting to merely allow adding more agents to the current LiveDevelopment module, this is not generic enough. Rather, the connection process should be split into phases.
 
 1. Establishing a connection to the client
 2. Installing services (i.e. loading the agents)
