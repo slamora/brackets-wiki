@@ -57,7 +57,7 @@ Extensions should be able to add new MIME types to languages and clients:
         svg = LanguageManager.getLanguage("svg");
     svg.addMimeType("image/svg+xml");
 
-If the user opens "index.svg" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview. This would also work if index.php generated SVG code, assuming if provides the proper MIME type in the Content-Type header.
+If the user opens "index.svg" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview. This would also work if index.php generated SVG code, assuming it provides the proper MIME type in the Content-Type header.
 
 SVG is an interesting use case since Brackets would right now provide live development with SVG if only its extension were listed in the `_staticHtmlFileExts` array. Brackets would show XML code, the browser would show the rendered image, Brackets would reload the browser when saving the file, and even refresh styles as they are changed if the SVG file links to external stylesheets (`<?xml-stylesheet type="text/css" href="style.css" ?>` before the opening `<svg>` tag).
 
