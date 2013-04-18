@@ -3,17 +3,17 @@ For the current state of language support, see page [Language Support](Language 
 Our goal is to base all language-related features like code hinting, text manipulation commands, quick edit, live preview, etc. on these capabilities. Support for non-web programming languages will be moved moved to dedicated extensions (see [issue #2969](https://github.com/adobe/brackets/issues/2969)).
 
 
-### Providing code semantics
+## Providing code semantics
 
 We need to allow adding electric __strings__ to language definitions*. Strings instead of chars because some languages have block boundaries that are not just one char long, for instance Ruby's `begin ... end`.
 
 *From [CodeMirror's manual](http://codemirror.net/doc/manual.html): "electricChars: boolean - Configures whether the editor should re-indent the current line when a character is typed that might change its proper indentation (only works if the mode supports indentation). Default is true."
 
-### Starting Live Preview
+## Starting Live Preview
 
 In general the possibility of live development for a given file depends on its format, the formats we can turn it into and the formats a client supports.
 
-#### New concept: clients
+### New concept: clients
 
 Consequently we need ways to define clients and the formats they support. Right now the only supported client is Chrome. We want to extend this to other browsers, and may eventually want to extend this to different types of clients, like Node.js, or a PDF viewer to preview LaTeX files.
 
@@ -39,13 +39,13 @@ __MIME types supported by Chrome in clients.json:__
 
 If the user opens "index.html" and clicks the live preview button, Brackets would know that Chrome supports this file and allow the live preview.
 
-#### Auto-detecting the format of a server-generated file
+### Auto-detecting the format of a server-generated file
 
 If the user provides a base URL, opens "index.php" and clicks the live preview button, Brackets could send a HEAD request for index.php to the server. If the returned MIME type is "text/html", Brackets would know that Chrome supports this PHP file's output and could allow the live preview. Otherwise, the live preview would not be enabled. The same is true for other server-side file extensions.
 
 This way, we would not need to maintain a list of file extensions that may or may not generate content in a format supported by Chrome.
 
-#### Extending clients
+### Extending clients
 
 Extensions should be able to add new file extensions to languages and clients:
 
@@ -61,7 +61,7 @@ If the user opens "index.svg" and clicks the live preview button, Brackets would
 
 SVG is an interesting use case since Brackets would right now provide live development with SVG if only its extension were listed in the `_staticHtmlFileExts` array. Brackets would show XML code, the browser would show the rendered image, Brackets would reload the browser when saving the file, and even refresh styles as they are changed if the SVG file links to external stylesheets (`<?xml-stylesheet type="text/css" href="style.css" ?>` before the opening `<svg>` tag).
 
-#### Supporting derivatives (compilers)
+### Supporting derivatives (compilers)
 
 Currently we only support the format a file comes in, but we could extend live development to files that could be converted to a format supported by the client.
 
@@ -108,7 +108,7 @@ __Summary:__
 Compilation isn't a simple 1:1 mapping of input to output. Any number of inputs can be mapped to any number of outputs. In addition, the output may contain references to files. These references can depend on the locations of the inputs. Therefore, a compiler needs a lot of information to produce the right output depending on the context. Variables are whether to use the saved or unsaved version of files, whether the output is saved to disk or provided from memory, and the base URL of the client that will consume the outputs.
 
 
-#### Adding new clients
+### Adding new clients
 
 Clients do not necessarily have to be external applications, a Brackets extension could just add a DIV to Brackets UI and render a file into it. Through the ClientManager, it could define a client in a structured manner.
 
@@ -142,7 +142,7 @@ __Embedded HTML Live Development client:__
 
 This client would only support "reloading" by calling client.open again. For a more elaborate updating behavior, clients would need to declare support for such operations in a structured manner.
 
-### Updating Live Preview
+## Updating Live Preview
 
 For live development on _save_, the client needs to allow reloading the document. It also needs to reveal which files were requested by the document. This allows Brackets to reload the document if an included file is changed. For Chrome, the network agent handles this task by listening to the "Network.requestWillBeSent" event. We may however want to augment this with offline detection routines to detect server-side file inclusions (to reload index.php if shared.php is modified). Since those mechanisms can use arbitrary amounts of magic (i.e. [autoloading](http://php.net/manual/de/language.oop5.autoload.php) or [auto_prepend_file](http://www.php.net/manual/en/ini.core.php#ini.auto-prepend-file)), supporting all or even most scenarios is unrealistic. Instead, we could introduce a standard for server-side scripts to announce a list of included files in the response header. The community could provide the necessary plugins for server-side languages. For PHP, the function [get_included_files](http://php.net/manual/de/function.get-included-files.php) would provide an easy starting point.
 
@@ -150,7 +150,7 @@ For live development on _change_, the client needs to provide ways to directly i
 
 The following scenarios showcase what needs to change, using LESS as an example.
 
-#### External Precompilation
+### External Precompilation
 
 In this scenario, the LESS file is converted to a static CSS file by an external tool. This tool might monitor the LESS file for changes, or the user could run it manually. The resulting static CSS file is delivered to the browser in the usual way. Therefore, it can also be updated like normal CSS files.
 
@@ -158,7 +158,7 @@ To support this, we would need to detect external changes to included CSS files 
 
 Updating on change is not possible in this scenario since the external tool only has access to the contents of the file through the file system.
 
-#### Internal Precompilation
+### Internal Precompilation
 
 In this scenario, the LESS file is converted to a static CSS file by Brackets. The resulting static CSS file is delivered to the browser in the usual way. Therefore, it can also be updated like normal CSS files.
 
@@ -168,7 +168,7 @@ However, the [BracketsLESS extension](https://github.com/olsgreen/BracketLESS) a
 
 Ideally, this extension could simply open a Document object with the target path and replicate all changes of the LESS file to the CSS file. If the LESS file is changed, `cssDoc.setText(cssCode)` is called, and the live preview is updated as if the user had typed these changes into the CSS file manually. If the LESS file is saved, so is the CSS file, similarly with deleting the LESS file.
 
-#### Client-side compilation
+### Client-side compilation
 
 In this scenario, the browser includes less.js and references the LESS stylesheets in `<link>` tags with the MIME type "stylesheet/less". LESS finds these references and downloads the files with `XMLHttpRequest`s. Consequently, the network agent regards the LESS files as requested, causing the HTML document to reload when the LESS document is saved.
 
@@ -179,7 +179,7 @@ There are three critical components to this:
 * The updater to find the `<link>` tag that referenced the LESS file, determine the ID of the corresponding `<style>` tag, generate the CSS code (using the compiler), and change the contents of the `<style>` tag
 * The live development module to allow registering the updater, trigger it at the right time and avoid reloading the page if the updater was successful
 
-#### Server-side compilation
+### Server-side compilation
 
 In this scenario, the server compiles LESS code to CSS on the fly. There are various conceivable ways to implement this. The URLs for the file might look like this:
 
@@ -201,7 +201,7 @@ However, this might fail if the server compiler uses special settings, like a se
 An alternative with other risks would be to transparently move the saved version to a backup location, silently save the changed version in the editor, request the compiled version from the server and restore the saved version from the backup. If either Brackets or the whole computer crash in the middle of that process, or a cloud storage service watches the directory, this approach could result in data loss.
 
 
-### Showing the context in Live Preview
+## Showing the context in Live Preview
 
 Showing the context consists of five phases: injecting, identifying, locating, styling and highlighting.
 
@@ -222,7 +222,7 @@ In order to make highlighting extensible, extensions need to be able to add cont
 Todo: flesh out API proposals
 
 
-### General purpose hooks
+## General purpose hooks
 
 Our live development support does not solely rely on the Chrome remote debugger. Via the RemoteAgent we also add capabilities like CSS rule highlighting by injecting code into the running page whenever it reloads. Similarly, extensions should be able to register such services. While it is tempting to merely allow adding more agents to the current LiveDevelopment module, this is not generic enough. Rather, the connection process should be split into phases.
 
