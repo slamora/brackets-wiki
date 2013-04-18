@@ -101,7 +101,7 @@ An alternative would be to provide a URL to an HTTP server that delivers files s
 
 __Question:__ How should a compiler deliver its output?
 
-In many cases, the compiler will only generate one file, even if it uses many input files (LESS with included files, a minifier). However, in many of these cases it also makes sense to generate a SourceMap alongside the core output file. The compiler could write these files to the hard disk directly, but this would prevent us from generating and serving files in memory (say, a Markdown preview in HTML format). Instead, the compiler should provide its outpus as an array of objects. The objects would contain the generated file's contents, a URL to store them at, and possibly semantic information like `"SourceMap"` or "Main" to ease programmatic use of the output.
+In many cases, the compiler will only generate one file, even if it uses many input files (LESS with included files, a minifier). However, in many of these cases it also makes sense to generate a SourceMap alongside the core output file. The compiler could write these files to the hard disk directly, but this would prevent us from generating and serving files in memory (say, a Markdown preview in HTML format). Instead, the compiler should provide its outputs as an array of objects. The objects would contain the generated file's contents, a URL to store them at, and possibly semantic information like `"SourceMap"` or "Main" to ease programmatic use of the output.
 
 __Summary:__
 
