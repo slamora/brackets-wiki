@@ -47,7 +47,7 @@ This way, we would not need to maintain a list of file extensions that may or ma
 
 ### Extending clients
 
-Extensions should be able to add new file extensions to languages and clients:
+Extensions should be able to add new MIME types to languages and clients:
 
     var ClientManager = brackets.getModule("LiveDevelopment/ClientManager"),
         chrome = ClientManager->getClient("chrome");
