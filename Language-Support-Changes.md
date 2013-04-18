@@ -85,7 +85,7 @@ __Registering an HTML compiler for Markdown:__
         return deferred.promise();
     });
 
-If the user opens "index.md" and clicks the live preview button, Brackets would know that it could compile this code to HTML. It would look up HTML's MIME type and see that Chrome could open the compiled file. It would then use the first file extension defined for the HTML language and create a temporary file (real or virtual through Node) - say "file.md.html" - with the return value of the compiler function as its contents. Finally, Brackets would start a live preview on the compiled file. On a related note, [card 565](https://trello.com/c/4BHJSfzo) introduces the idea of HTML rewriting.
+If the user opens "index.md" and clicks the live preview button, Brackets would know that it could compile this code to HTML. It would look up HTML's MIME type and see that Chrome could open the compiled file. It would determine a URL to the Markdown file as seen from Chrome by calling `client.urlForDocument(doc)` and  pass it to the compiler. The compiler would somehow access the file using the URL, possibly via an XMLHttpRequested. It would resolve it's promise with a list of generated files. Brackets would make these  files (so far, in memory only) available - either by writing them to the hard disk as a temporary file or by registering their URLs with the live preview server. Finally, Brackets would start a live preview using the URL to the compiled file. On a related note, [card 565](https://trello.com/c/4BHJSfzo) introduces the idea of HTML rewriting.
 
 __Question:__ What should we pass to a compiler - a Document instance, a URL or a string with code?
 
