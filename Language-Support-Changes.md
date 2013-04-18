@@ -1,6 +1,6 @@
 For the current state of language support, see page [Language Support](Language Support). This page documents what additional capabilities extensions would need in order to add language support on par with the current level of support for HTML, JavaScript and CSS. 
 
-Our goal is to base all language-related features like code hinting, text manipulation commands, quick edit, live preview, etc. on these capabilities. Support for non-web programming languages will be moved moved to dedicated extensions (see [issue #2969](https://github.com/adobe/brackets/issues/2969)).
+Our goal is to base all language-related features like code hinting, text manipulation commands, quick edit, live preview, etc. on these capabilities. Support for non-web programming languages will be moved to dedicated extensions (see [issue #2969](https://github.com/adobe/brackets/issues/2969)).
 
 
 ## Providing code semantics
