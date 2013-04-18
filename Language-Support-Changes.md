@@ -116,49 +116,31 @@ __Embedded HTML Live Development client:__
 
     var ClientManager   = brackets.getModule("LiveDevelopment/ClientManager"),
         LanguageManager = brackets.getModule("language/LanguageManager"),
-        $preview        = ...,
-        sync;
+        $preview        = ...;
 
     var client = ClientManager.addClient("preview", {
-        open: function (doc) {
-            sync = function () {
-                var compile = doc.getLanguage().getDefaultCompilerToLanguage("html");
-                $preview.html(compile(doc.getText()));
-            };
+        mimeTypes: ["text/html"],
+        urlForDocument: function (doc) {
+            // This method doesn't exist yet, but turning a path into a URL involves more
+            // than adding a prefix, so there should be a utility function somewhere.
+            return doc.file.getUrlForFullPath();
+        },
+        open: function (url) {
+            // url would be something like "http://localhost:12345/markdown.html"
+            $.get(url, function (contents) {
+                // ... extract the <body> ...
 
-            $(doc).on("change", sync);
-            sync();
-            
-            // Add preview frame to Brackets
-            $preview.appendTo(...);
+                // Fill and show the preview frame in Brackets
+                $preview.html(contents).appendTo(...);
+            });
         },
         close: function () {
-            // Close preview frame
+            // Remove the preview frame
             $preview.remove();
-            
-            $(doc).off("change", sync);
-            sync = null;
         }
     });
 
-    // Mark this client as compatible with every language that has an HTML compiler
-    function considerLanguage(language) {
-        if (language.getDefaultCompilerToLanguage("html")) {
-            // Indirectly define MIME types via a language to make synchronization unnecessary
-            // when adding MIME types to the language 
-            client.addLanguage(language);
-        }
-    }
-
-    // Consider new or modified languages
-    $(LanguageManager).on("languageAdded languageModified", function (e, language) {
-        considerLanguage(language);
-    });
-
-    // Consider existing languages
-    Array.forEach(LanguageManager.getLanguages(), considerLanguage);
-
-In this example, the client would handle updating the document itself. Behavior like this should however be triggered by Brackets in a central place to be extensible and possibly adjustable by the user. This requires the client definition to declare support for such operations in a structured manner.
+This client would only support "reloading" by calling client.open again. For a more elaborate updating behavior, clients would need to declare support for such operations in a structured manner.
 
 ### Updating Live Preview
 
