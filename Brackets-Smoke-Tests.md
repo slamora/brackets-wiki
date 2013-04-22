@@ -17,7 +17,7 @@ Smoke test steps
 
 1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel and its index.html file is opened automatically.
 2. File > Open Folder and browse to the Brackets source folder.
-3. Click on the triangle next to the project name. The dropdown should show the "Getting Started" folder as well as "Project Settings..." and "Open Folder..."
+3. Click on the triangle next to the project name. The dropdown should show the "Getting Started" folder and an "Open Folder..." option
 4. Switch back to the "Getting Started" folder using the project dropdown, verifying that it switches back to the previous project and shows its index.html.
 5. Switch back to the "brackets" folder using the project dropdown.
 6. Expand some folders in the brackets project, enough that it has to scroll.
