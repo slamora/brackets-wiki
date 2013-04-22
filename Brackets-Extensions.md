@@ -69,6 +69,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor.
 * [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): CodeMirror themes for brackets from the main menu.
 * [Code folding] (https://github.com/thehogfather/brackets-code-folding): enables code folding in brackets.
+
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
 * [Everyscrub](https://github.com/peterflynn/everyscrub): Everything's a scrubber! Cmd/Ctrl + drag on any number or hex color to scrub its value and update the browser in real time.
