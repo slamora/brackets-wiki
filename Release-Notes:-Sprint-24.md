@@ -7,8 +7,6 @@ What's New in Sprint 24
 * **Visual Editing**
     * [CSS image/gradient preview](https://trello.com/card/2-hover-preview/4f90a6d98f77505d7940ce88/848): Hover over CSS code to see a popup preview of images, colors, and gradients
     * [CSS Quick Docs](https://trello.com/card/3-quick-docs-css/4f90a6d98f77505d7940ce88/839)
-* **Extensions**
-    * [Find & install extensions from within Brackets](https://trello.com/card/3-extension-listing/4f90a6d98f77505d7940ce88/792)
 * **Overall UI**
     * [Project panel redesign](https://trello.com/card/2-ux-implement-project-panel/4f90a6d98f77505d7940ce88/807)
 
@@ -19,6 +17,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 UI Changes
 ----------
 **Project panel / folder tree** - _TODO!_
+* Removed "Project Settings..." option from recent project drop-down menu
 
 **Extension installation** - _TODO!_
 
