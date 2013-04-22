@@ -60,6 +60,10 @@ A minor implementation note: JavaScript's object model [happens to be perfect fo
 
 If you look at `prefs.indentationStyle` where "prefs" is the file object, each of objects in the chain will be traversed to find the closest one that has a specific value set.
 
+## Data Storage ##
+
+Currently, we put preferences data into localStorage. This *may* be okay for global preferences, but it's not okay for project preferences. Project and file preferences should be put in a file with the project that can be checked into version control, allowing everyone on the team to share the settings associated with the project.
+
 ## Conclusion ##
 
 Not all prefs *need* the ability to be overridden at every level. Some, in fact, only make sense at the glboal level. But, we need to have a model in mind that can handle the cases that users do need to be able to customize.
