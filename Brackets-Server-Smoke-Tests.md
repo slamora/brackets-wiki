@@ -44,4 +44,4 @@ Server smoke test steps
 18. Verify that text has not yet changed in browser. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
 19. Disconnect Live Preview. Undo changes in HTML file and save to get back to original state.
 20. Close all files and discard changes.
-21. Click on recent project dropdown list and use Project Settings... to set Base URL back to blank.
+21. Select File > Project Settings... to set Base URL back to blank.
