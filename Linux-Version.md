@@ -32,7 +32,11 @@ The main challenge with a Linux version of Brackets is that Brackets uses the [C
 
 ## Building a Linux Version of Brackets
 
-### Building CEF3 on Linux
+### Download
+
+**Update 4/22/2013** Linux binary builds are now available here http://www.magpcss.net/cef_downloads/
+
+### Building CEF3 on Linux (deprecated? See Download section above.)
 
 > Download Linux binary: [cef_binary_3.1364.1131_linux.zip](https://docs.google.com/file/d/0B7as0diokeHxeTNqZFIyNWZKSWM/edit?usp=sharing)
 
