@@ -27,7 +27,7 @@ Smoke test steps
 10. Double-click on index.html. Verify that it's added to the working set and the selection draws properly.
 11. Open the File menu and verify the "Live Highlight" menu item is disabled and checked.
 12. Resize the window. Verify that the editor resizes properly.
-13. Hover the mouse over the name of the source of an `<img>` tag (e.g. "images/events.jpg" on line 32). Verify that a preview of the image is displayed with the width and height.
+13. Move mouse over the name of the source of an `<img>` tag (e.g. "images/events.jpg" on line 32). Verify that Hover Preview of the image is displayed properly with the width and height.
 14. Set the cursor in the `<body>` tag immediately before the `>`.
 15. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
 16. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
