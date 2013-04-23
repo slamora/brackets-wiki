@@ -5,8 +5,12 @@ _This document will not be finalized until the end of Sprint 24 -- approximately
 What's New in Sprint 24
 -----------------------
 * **Visual Editing**
-    * [CSS image/gradient preview](https://trello.com/card/2-hover-preview/4f90a6d98f77505d7940ce88/848): Hover over CSS code to see a popup preview of images, colors, and gradients
-    * [CSS Quick Docs](https://trello.com/card/3-quick-docs-css/4f90a6d98f77505d7940ce88/839)
+    * [Quick View for CSS colors, gradients, images](https://trello.com/card/2-hover-preview/4f90a6d98f77505d7940ce88/848): Hover over CSS code to see a popup preview of colors, gradients and images
+    * [Quick Docs for CSS](https://trello.com/card/3-quick-docs-css/4f90a6d98f77505d7940ce88/839): Press Ctrl/Cmd+K on a CSS property to see inline documentation from the [Web Platform Docs project](http://docs.webplatform.org/).
+* **Code Editing**
+    * [Supercharged JavaScript code hints](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Much more accurate code hints based on [Tern](http://ternjs.net/) type inferencing. Code hints even for items declared in other files! Now supports camelCase matching as well.
+    * [Jump to Definition](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Locate a function or property definition anywhere in your project, instantly.
+    * [Function signature hints](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Press Ctrl+Space inside a function call's `()`s to see information on its arguments and their types.
 * **Overall UI**
     * [Project panel redesign](https://trello.com/card/2-ux-implement-project-panel/4f90a6d98f77505d7940ce88/807)
 
@@ -18,8 +22,6 @@ UI Changes
 ----------
 **Project panel / folder tree** - _TODO!_
 * Removed "Project Settings..." option from recent project drop-down menu
-
-**Extension installation** - _TODO!_
 
 
 API Changes
