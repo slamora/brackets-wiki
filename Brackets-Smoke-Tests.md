@@ -27,20 +27,21 @@ Smoke test steps
 10. Double-click on index.html. Verify that it's added to the working set and the selection draws properly.
 11. Open the File menu and verify the "Live Highlight" menu item is disabled and checked.
 12. Resize the window. Verify that the editor resizes properly.
-13. Set the cursor in the `<body>` tag immediately before the `>`.
-14. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
-15. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
-16. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
-17. In the native shell menu, choose View > Increase Font Size. Verify both the host and inline editors font size increases. The inline editor should not show a vertical scrollbar.
-18. Click the lightning bolt in the upper right. If you trashed prefs, you'll get an info dialog explaining how live preview works. Hit OK.
-19. You should see the page load in Chrome. After a few seconds you should get a dialog saying you need to relaunch Chrome.
-20. Click "Relaunch". Chrome should relaunch and open the page.
-21. Back in Brackets, edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
-22. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
-23. Put the cursor immediately after the `<a` in one of the `<a>` tags in the navbar.
-24. Hit Cmd/Ctrl-E. Verify that the inline editor opens and that you see a number of rules in the list on the right.
-25. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
-26. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
-27. Click on a rule in the rule list. Verify that the editor shows the correct rule.
-28. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
-29. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
+13. Hover the mouse over the name of the source of an `<img>` tag (e.g. "images/events.jpg" on line 32). Verify that a preview of the image is displayed with the width and height.
+14. Set the cursor in the `<body>` tag immediately before the `>`.
+15. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
+16. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
+17. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
+18. In the native shell menu, choose View > Increase Font Size. Verify both the host and inline editors font size increases. The inline editor should not show a vertical scrollbar.
+19. Click the lightning bolt in the upper right. If you trashed prefs, you'll get an info dialog explaining how live preview works. Hit OK.
+20. You should see the page load in Chrome. After a few seconds you should get a dialog saying you need to relaunch Chrome.
+21. Click "Relaunch". Chrome should relaunch and open the page.
+22. Back in Brackets, edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
+23. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
+24. Put the cursor immediately after the `<a` in one of the `<a>` tags in the navbar.
+25. Hit Cmd/Ctrl-E. Verify that the inline editor opens and that you see a number of rules in the list on the right.
+26. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
+27. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
+28. Click on a rule in the rule list. Verify that the editor shows the correct rule.
+29. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
+30. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
