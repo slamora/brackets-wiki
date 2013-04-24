@@ -65,6 +65,8 @@ If you look at `prefs.indentationStyle` where "prefs" is the file object, each o
 
 Currently, we put preferences data into localStorage. This *may* be okay for global preferences, but it's not okay for project preferences. Project and file preferences should be put in a file with the project that can be checked into version control, allowing everyone on the team to share the settings associated with the project.
 
+[dk] We might want to be able to do both: per-project settings shared with others via the repository and per-project settings just for me. For instance, a base URL is probably not universal enough to share with all developers as every developer my use a different test server setup.
+
 ## Preferences vs. "View State" ##
 
 In Brackets today, much of what we save via our "preferences" system could actually be called something like "view state". Things like "sidebar width", "expanded folders in the project tree", "working set documents" would fall into this category.
