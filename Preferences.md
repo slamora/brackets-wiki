@@ -14,14 +14,15 @@ I think we need a preferences system that makes the common preferences easy and 
 
 ## An Example ##
 
-I'll use an example that is simple but touches on the complexity of the problem: indentation style. There are two related prefs here: tabs vs. spaces and the width of a single indentation stop. We'll look just at tabs/spaces.
+I'll use an example that is simple but touches on the complexity of the problem: indentation style for new files. There are two related prefs here: tabs vs. spaces and the width of a single indentation stop. We'll look just at tabs/spaces.
 
 * Brackets will have some default value (say "spaces")
 * The user may want to set a global default to "tabs" for when they're starting something new
 * A given project edited by that user may have standardized on "spaces" for JavaScript files
-* There may be some JavaScript files imported into that project that need to be set to "tabs"
 
 Indentation style is not the only pref that is like this. Most preferences won't flip back and forth like this from one context to another, but given the variability of developer workflows, there's no way to know in advance which preferences might vary from one to another.
+
+Indentation style can be detected for an existing file. Other preferences, however, may even need to be overridden at the file level.
 
 Ideally, a part of Brackets that needs to know the value of a pref should be able to just ask for it and get back the correct value in context.
 
@@ -64,6 +65,12 @@ If you look at `prefs.indentationStyle` where "prefs" is the file object, each o
 
 Currently, we put preferences data into localStorage. This *may* be okay for global preferences, but it's not okay for project preferences. Project and file preferences should be put in a file with the project that can be checked into version control, allowing everyone on the team to share the settings associated with the project.
 
+## Preferences vs. "View State" ##
+
+In Brackets today, much of what we save via our "preferences" system could actually be called something like "view state". Things like "sidebar width", "expanded folders in the project tree", "working set documents" would fall into this category.
+
+An important difference between view state and preferences is that you wouldn't put view state into version control. Project-level view state would need to have a different storage backend from project-level preferences.
+
 ## Conclusion ##
 
-Not all prefs *need* the ability to be overridden at every level. Some, in fact, only make sense at the glboal level. But, we need to have a model in mind that can handle the cases that users do need to be able to customize.
+Not all prefs *need* the ability to be overridden at every level. Some, in fact, only make sense at the glboal level. But, we need to have a model in mind that can handle the cases that users do need to be able to customize and, in the case of some project preferences, share with others via version control.
