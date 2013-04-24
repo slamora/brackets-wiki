@@ -6,7 +6,7 @@ What's New in Sprint 24
 -----------------------
 * **Visual Editing**
     * [Quick View for CSS colors, gradients, images](https://trello.com/card/2-hover-preview/4f90a6d98f77505d7940ce88/848): Hover over CSS code to see a popup preview of colors, gradients and images
-    * [Quick Docs for CSS](https://trello.com/card/3-quick-docs-css/4f90a6d98f77505d7940ce88/839): Press Ctrl/Cmd+K on a CSS property to see inline documentation from the [Web Platform Docs project](http://docs.webplatform.org/).
+    * [Quick Docs for CSS](https://trello.com/card/3-quick-docs-css/4f90a6d98f77505d7940ce88/839): Press Ctrl+K/&#x2318;K on a CSS property to see inline documentation from the [Web Platform Docs project](http://docs.webplatform.org/).
 * **Code Editing**
     * [Supercharged JavaScript code hints](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Much more accurate code hints based on [Tern](http://ternjs.net/) type inferencing. Code hints even for items declared in other files! Now supports camelCase matching as well.
     * [Jump to Definition](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Locate a function or property definition anywhere in your project, instantly.
@@ -23,7 +23,7 @@ UI Changes
 **Project panel / folder tree** - _TODO!_
 * Removed "Project Settings..." option from recent project drop-down menu
 
-**Install Extension icon** - The toolbar now contains a shortcut to the "Install Extension" command.
+**Install Extension shortcuts** - New toolbar icon provides quicker access to the Install Extension command, and the Install Extension dialog box contains a link to the [extensions listing page](https://github.com/adobe/brackets/wiki/Brackets-Extensions).
 
 
 API Changes
