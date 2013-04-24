@@ -71,6 +71,10 @@ In Brackets today, much of what we save via our "preferences" system could actua
 
 An important difference between view state and preferences is that you wouldn't put view state into version control. Project-level view state would need to have a different storage backend from project-level preferences.
 
+[nj] I wonder if caches are a third thing that could fit into this model. As an example, you could imagine that code hint info caching worked this way: JS builtins would go into the global cache, info for non-local libraries (e.g. jQuery from a CDN) would go into a per-project cache, and per-file info would go into a per-file cache. Like view state, you wouldn't want to check this into source control.
+
+[nj] Also, while view state might never be checked into source control, you might still want it to be sharable in some easy fashion, so you can carry your settings with you from computer to computer.
+
 ## Conclusion ##
 
 Not all prefs *need* the ability to be overridden at every level. Some, in fact, only make sense at the glboal level. But, we need to have a model in mind that can handle the cases that users do need to be able to customize and, in the case of some project preferences, share with others via version control.
