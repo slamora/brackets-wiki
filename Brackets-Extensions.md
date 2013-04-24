@@ -116,6 +116,9 @@ current file.
 * [TestQuickly](https://github.com/dangoor/TestQuickly): simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
 * [xUnit](https://github.com/dschaffe/brackets-xunit): extension to run current buffer as a javascript unit test with right click (supports jasmine, yui3, qUnit, more coming soon...)
 
+**Fun & Games**
+* [Cowsay](https://github.com/lkcampbell/brackets-cowsay): An extension for Brackets to generate a cow saying very profound and silly things.
+
 ---
 
 **Deprecated Extensions**
