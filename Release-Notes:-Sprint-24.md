@@ -12,7 +12,7 @@ What's New in Sprint 24
     * [Jump to Definition](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Locate a function or property definition anywhere in your project, instantly.
     * [Function signature hints](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Press Ctrl+Space inside a function call's `()`s to see information on its arguments and their types.
 * **Overall UI**
-    * [Project panel redesign](https://trello.com/card/2-ux-implement-project-panel/4f90a6d98f77505d7940ce88/807)
+    * [Project panel redesign](https://trello.com/card/2-ux-implement-project-panel/4f90a6d98f77505d7940ce88/807): Minor visual updates to the project panel.
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-23...sprint-24#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-23...sprint-24#commits_bucket)
