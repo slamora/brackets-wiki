@@ -65,7 +65,9 @@ However, following these best practices will ensure your code behaves as nicely 
 
 ### <a name="featurehooks"></a>Extending specific Brackets features
 
-**Quick Edit (inline editors):** To create an extension that responds on CTRL+E (like the inline image viewer), use ```EditorManager.registerInlineEditProvider()```. If multiple "providers" all want to respond in a given context, however, the first one wins - there's no notion of priority or cycling through providers yet. 
+**Quick Edit (inline editors):** To create an extension that responds on Ctrl+E (like the inline color picker), use `EditorManager.registerInlineEditProvider()`. If multiple "providers" all want to respond in a given context, however, the first one wins - there's no notion of priority or cycling through providers yet. 
+
+**Quick Docs:** Similar to Quick Edit, but register your provider with `EditorManager.registerInlineDocsProvider()` instead.
 
 **Quick Open:** To interface with the quick open (file open/jump to) feature, use ```QuickOpen.addQuickOpenPlugin()```.
 
