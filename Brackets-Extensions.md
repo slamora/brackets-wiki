@@ -21,23 +21,23 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
 * [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor 
 * [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
-* [Spell Checker] (https://github.com/couzteau/SpellCheck): integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
-* [Quick Search] (https://github.com/enturn/brackets-quick-search): automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
-* [Ctrl-Left/Ctrl-Right] (https://github.com/MiguelCastillo/Brackets-LineNavigator): helps you navigate through your code using your standard Ctrl-Left/Ctrl-Right/Ctrl-Up/Ctrl-Down keys.
+* [Spell Checker] (https://github.com/couzteau/SpellCheck): Integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
+* [Quick Search] (https://github.com/enturn/brackets-quick-search): Automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
+* [Ctrl-Left/Ctrl-Right] (https://github.com/MiguelCastillo/Brackets-LineNavigator): Helps you navigate through your code using your standard Ctrl-Left/Ctrl-Right/Ctrl-Up/Ctrl-Down keys.
 * [Indent Guides] (https://github.com/lkcampbell/brackets-indent-guides): An extension for Brackets to show indent guides in the code editor.
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
 * [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
 * [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
-* [Quick Markup](https://github.com/redmunds/brackets-quick-markup): fast HTML markup generation as you type.
+* [Quick Markup](https://github.com/redmunds/brackets-quick-markup): Fast HTML markup generation as you type.
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
-* [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): auto-complete parenthesis, brackets, braces, double and single quotes.
+* [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): Auto-complete parenthesis, brackets, braces, double and single quotes.
 * [Disable AutoClosing Tags](https://github.com/talmand/Brackets-Disable-AutoClose-Tags): Disables auto-insertion of closing HTML tag when typing the opening tag, but preserves auto-completion of the closing tag when `</` is typed.
 * [Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter
 * [Lorem Ipsum] (https://github.com/lkcampbell/brackets-lorem-ipsum): Generates Lorem Ipsum text and inserts it into any Brackets document.
 * [Surround] (https://github.com/pedelman/brackets-surround): Wraps selected text with HTML, comments, brackets, quotes, etc.
-* [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): addition to the context menu to insert from a special HTML character list.
+* [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): Addition to the context menu to insert from a special HTML character list.
 
 **Formatting**
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
@@ -55,7 +55,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions
 
 **Language Support**
-* [PHP](https://github.com/aonic/brackets-QuickOpenPHP): adds PHP function definition support to QuickOpen search
+* [PHP](https://github.com/aonic/brackets-QuickOpenPHP): Adds PHP function definition support to QuickOpen search
 * [TypeScript Code Intel](https://github.com/tomsdev/brackets-typescript-code-intel): Adds TypeScript support in Brackets (Auto-completion, Quick Edit and more soon).
 * [Tern hints](https://github.com/MiguelCastillo/Brackets-Tern): Use tern capabilities in Brackets.
 
@@ -64,11 +64,11 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node).
 * [Extension Toolkit](https://github.com/davidderaedt/Brackets-extension-toolkit): An extension to make building Brackets extensions easier.
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
-* [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav): shortcuts for switching to next/previous editor (<em>non</em>-MRU order), and a version of Quick Open scoped to only open files.
+* [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav): Shortcuts for switching to next/previous editor (<em>non</em>-MRU order), and a version of Quick Open scoped to only open files.
 * [Brackets Commands Guide](https://github.com/peterflynn/brackets-commands-guide): Search and execute commands by typing part of their name, similar to Quicksilver (or Sublime's Ctrl+Shift+P or Eclipse's Ctrl+3).
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor.
 * [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): CodeMirror themes for brackets from the main menu.
-* [Code folding] (https://github.com/thehogfather/brackets-code-folding): enables code folding in brackets.
+* [Code folding] (https://github.com/thehogfather/brackets-code-folding): Enables code folding in brackets.
 
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
@@ -90,7 +90,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Implements the Full GitHub API, but is just in an early prototype state
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
 * [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
-* [PageSuck](https://github.com/timburgess/brackets-pagesuck): prompts for a URL and pulls that page's HTML directly into the editor as a new file
+* [PageSuck](https://github.com/timburgess/brackets-pagesuck): Prompts for a URL and pulls that page's HTML directly into the editor as a new file
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
 * [Ant for Brackets](https://github.com/jbalsas/brackets-ant): Launch any target in your ant files. (Uses Node. Requires Brackets Sprint 21 or greater)
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
@@ -113,11 +113,12 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [complexityReport.js](https://github.com/sahlas/brackets-crjs): A Brackets extension that enables phil booth's complexityReport.js tool. Displays complexity statistics on a per-function and aggregate basis. 
 * [Jasmine](https://github.com/dschaffe/brackets-jasmine): Runs the Jasmine-node unit test tool against the
 current file.
-* [TestQuickly](https://github.com/dangoor/TestQuickly): simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
-* [xUnit](https://github.com/dschaffe/brackets-xunit): extension to run current buffer as a javascript unit test with right click (supports jasmine, yui3, qUnit, more coming soon...)
+* [TestQuickly](https://github.com/dangoor/TestQuickly): Simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
+* [xUnit](https://github.com/dschaffe/brackets-xunit): Extension to run current buffer as a javascript unit test with right click (supports jasmine, yui3, qUnit, more coming soon...)
 
 **Fun & Games**
 * [Cowsay](https://github.com/lkcampbell/brackets-cowsay): An extension for Brackets to generate a cow saying very profound and silly things.
+* [Snake](https://github.com/AboutWebLLC/brackets-snake): Because sometimes you need to eat your code.
 
 ---
 
