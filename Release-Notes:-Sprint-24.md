@@ -12,7 +12,7 @@ What's New in Sprint 24
     * [Jump to Definition](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Locate a function or property definition anywhere in your project, instantly.
     * [Function signature hints](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Press Ctrl+Space inside a function call's `()`s to see information on its arguments and their types.
 * **Overall UI**
-    * [Project panel redesign](https://trello.com/card/2-ux-implement-project-panel/4f90a6d98f77505d7940ce88/807): Minor visual updates to the project panel.
+    * [Project panel redesign](https://trello.com/card/2-ux-implement-project-panel/4f90a6d98f77505d7940ce88/807)
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-23...sprint-24#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-23...sprint-24#commits_bucket)
@@ -23,13 +23,15 @@ UI Changes
 **Project panel / folder tree** - _TODO!_
 * Removed "Project Settings..." option from recent project drop-down menu
 
+**Install Extension icon** - The toolbar now contains a shortcut to the "Install Extension" command.
+
 
 API Changes
 -----------
 
 New/Improved Extensibility APIs
 -------------------------------
-**Quick Docs** - _TODO!_
+**Quick Docs** - To register an additional inline docs provider, use `EditorManager.registerInlineDocsProvider()`. Similar to inline editors (Quick Edit), Quick Docs providers are "winner take all": if two providers are both willing to respond for a given cursor position, the first one registered is shown and the other is completely ignored. To be a good citizen, your provider should be as narrowly tailored as is reasonably possible.
 
 Known Issues
 ------------
