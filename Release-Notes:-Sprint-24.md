@@ -20,6 +20,10 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
+**Go to Definition** renamed to **Quick Find Definition** - This helps to distinguish it more clearly from the new "Jump to Definition" command:
+* Jump to Definition - searches across all files based on the identifier at the cursor position.
+* Quick Find Definition - searches within the current file for the identifier you type in the quick search bar.
+
 **Project panel / folder tree** - _TODO!_
 * Removed "Project Settings..." option from recent project drop-down menu
 
