@@ -245,7 +245,7 @@ and call `doubleIt` from `logIt`:
 
 ```javascript
     log(t.name + " is " + t.doubleAge + " years old and his weapon of choice is " + t.np + " " + doubleIt(4, 5));
- ```
+```
 
  Click Reset Thing on the page, then click Logger. You'll see that doubleIt was successfully added to the page.
 
