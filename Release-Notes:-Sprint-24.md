@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 24 -- approximately
 What's New in Sprint 24
 -----------------------
 * **Visual Editing**
-    * [Quick View for CSS colors, gradients, images](https://trello.com/card/2-hover-preview/4f90a6d98f77505d7940ce88/848): Hover over CSS code to see a popup preview
+    * [Quick View for colors, gradients, images](https://trello.com/card/2-hover-preview/4f90a6d98f77505d7940ce88/848): Hover over code to see a popup preview
     * [Quick Docs for CSS](https://trello.com/card/3-quick-docs-css/4f90a6d98f77505d7940ce88/839): Press Ctrl+K/&#x2318;K on a CSS property to see inline documentation from [WebPlatform.org](http://docs.webplatform.org/).
 * **Code Editing**
     * [Supercharged JavaScript code hints](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Greatly improved code hints based on [Tern](http://ternjs.net/) type inferencing. Increased code hinting accuracy, camelCase support and built-in intelligence for RequireJS and jQuery. Code hints even for items declared in other files!
