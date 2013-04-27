@@ -373,6 +373,14 @@ These are the boundaries we have seen of Chrome's live JavaScript swapping featu
 * Adding a function in a scope that has already been executed
 * Adding to an object's prototype (unless you previously added to the prototype)
 
-# What Does This Mean for the Feature? #
+# Conclusion #
 
-Without a good way to predict whether a given function will be executed again, it is very hard to predict whether a live JS edit that the user makes will have any effect. Most well-written JavaScript code today, runs in some kind of closure (the [module pattern](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html), for example). Just being within a function body does not tell us much.
+Without a good way to predict whether a given function will be executed again, it is very hard to predict whether a live JS edit that the user makes will have any effect. Most well-written JavaScript code today, runs in some kind of closure (the [module pattern](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html), for example). Just being within a function body does not tell us much about when that function can safely be executed.
+
+Chrome's script replacement is not enough to give us "live JavaScript development" that is comparable to what we give users for CSS and plan to give them for HTML. There are too many common cases that aren't handled.
+
+Due to the very nature of JavaScript, "Live Development" for JavaScript cannot be as high fidelity as live development for CSS is. Proceeding from here means deciding which tradeoffs we're willing to make.
+
+1. Using Chrome's script replacement (as tested here), we could allow users to change certain bits of code without reloading. We could identify and warn the user about some changes that require a reload to take effect, but almost certainly not in all cases.
+2. We could do further research to try to remove some of the limitations discussed here by instrumenting JavaScript code or augmenting the runtime.
+3. We could do research into coding styles/frameworks for building JavaScript that are specifically suited to hot code replacement.
