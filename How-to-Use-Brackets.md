@@ -15,8 +15,8 @@ If you want to download and run the absolutely _latest_ version of the code, you
 Basic Usage
 -----------
 
-You can open a file from *File > Open* (Ctrl/Cmd-O) , or open a folder in the file tree 
-on the left using *File > Open Folder*.
+You can open a file from **File > Open (Ctrl/Cmd-O)**, or open a folder in the file tree 
+on the left using **File > Open Folder**.
 It's a good idea to open the root of whatever project you're working on in the 
 file tree, since other Brackets features search in the current tree. You can
 easily get back to previous projects you've worked on by clicking on the project's
@@ -28,6 +28,11 @@ files in the file tree doesn't automatically add them to the working set,
 so you can quickly browse through different files without opening them. To 
 add a file to the working set, just make an edit in it, or double-click it 
 in the file tree.
+
+To change the default indentation for the editor, use the controls on the
+right end of the status bar at the bottom of the window. Click the word
+"Spaces" or "Tab Size" to switch whether you're using spaces or tabs, and 
+change the indentation size by clicking on the number to the right.
 
 <a id="inlines"></a>Quick Edit
 ----------
@@ -154,11 +159,11 @@ aren't completely implemented, and might have significant bugs.
 A couple of notes on unofficial features:
 
 * By default, JSLint runs on all JS files and shows its results in a panel
-  at the bottom. If your file is clean, you'll see a gold star in the upper
-  right corner. JSLint is very picky about formatting. JSLint is very picky 
-  about a lot of things. If you want to turn it off, uncheck *View > Enable
-  JSLint*. This setting is global and remembered across runs.
-* *Navigate > Quick Open* (Ctrl/Cmd-Shift-O) brings up a Quick Open field to 
+  at the bottom. If your file is clean, you'll see a gold star in the status
+  bar. JSLint is very picky about formatting. JSLint is very picky 
+  about a lot of things. If you want to turn it off, uncheck **View > Enable
+  JSLint**. This setting is global and remembered across runs.
+* **Navigate > Quick Open** (Ctrl/Cmd-Shift-O) brings up a Quick Open field to 
   let you quickly switch to another file from the keyboard. You can start typing 
   a filename in the field, then down-arrow or use the mouse to select one of the 
   files that matches. 
@@ -191,6 +196,10 @@ for a more complete list of shortcuts.
 <td>Switch between rules in the inline editor.</td>
 </tr>
 <tr>
+<td>Ctrl/Cmd-K</td>
+<td>Open Quick Docs.</td>
+</tr>
+<tr>
 <td>Ctrl-Space</td>
 <td>Bring up code hints, if applicable.</td>
 </tr>
@@ -212,7 +221,7 @@ for a more complete list of shortcuts.
 </tr>
 <tr>
 <td>Ctrl/Cmd-Alt-P</td>
-<td>Live file preview.</td>
+<td>Live preview.</td>
 </tr>
 </tbody>
 </table>
