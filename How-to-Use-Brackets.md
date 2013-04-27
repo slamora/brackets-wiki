@@ -29,12 +29,6 @@ so you can quickly browse through different files without opening them. To
 add a file to the working set, just make an edit in it, or double-click it 
 in the file tree.
 
-Brackets has color-coding for HTML, JS, CSS, LESS, and many other files.
-It also has some basic code hinting for HTML tags, attribute names and
-values, CSS property names and values, and JavaScript. They'll pop up 
-automatically as you type, or you can hit Ctrl-Space to bring them up manually. 
-More code hinting will come in future sprints.
-
 <a id="inlines"></a>Quick Edit
 ----------
 
@@ -43,7 +37,7 @@ different bits of code without having to jump around between files.
 
 Currently, Brackets has an early implementation of this. If you're in an HTML
 file, and you put the cursor inside a class or id attribute or a tag name,
-you can hit Ctrl/Cmd-E (for "edit"). Brackets will search the CSS files in the 
+you can hit **Ctrl/Cmd-E** (for "edit"). Brackets will search the CSS files in the 
 file tree for relevant rules, then open up an inline editor embedded in the HTML
 file that lets you make quick tweaks to one of the rules.
 
@@ -56,7 +50,7 @@ by hitting Cmd-E again. Edits you make in the inline editor will be properly
 applied in Live Development mode (see below).
 
 Brackets also has an early implementation of JavaScript support. If you are in
-some JavaScript code, you put the cursor in a function call, and hit Ctrl/Cmd-E.
+some JavaScript code, you put the cursor in a function call, and hit **Ctrl/Cmd-E**.
 Brackets will search the JS files in the file tree for matching functions,
 then open up an inline editor embedded in the HTML file that lets you make
 quick edits to one of the functions.
@@ -124,6 +118,33 @@ highlighting DOM nodes in the browser from Brackets, clicking on an item in
 the browser to jump back to its source code in Brackets, and setting JS breakpoints 
 from Brackets.
 
+<a id="quickview"></a>Quick View
+----------------
+Quick View makes it easy to visualize assets and colors in your code. Just hover your
+mouse over a color, gradient, or image reference, and a popover will appear showing
+a preview. You can toggle this feature on or off in the View menu.
+
+<a id="quickdocs"></a>Quick Docs
+----------------
+Quick Docs brings documentation from [webplatform.org](http://docs.webplatform.org) 
+right into your editor window, in a similar fashion to
+Quick Edit. In the current implementation, Quick Docs shows documentation on CSS property names and 
+values. To use it, just put your cursor in a property name or value in a CSS file, and hit
+**Ctrl/Cmd-K**. To close the docs, hit Escape.
+
+<a id="codehints"></a>Code Hints
+----------------
+Brackets has initial support for code hints in HTML, CSS, and JavaScript files. Code hints generally pop up automatically, but you can manually bring them up with **Ctrl-Space** (note that this shortcut uses Ctrl even on Mac).
+* In HTML, code hints are provided for tag names, attribute names, and attribute values.
+* In CSS, code hints are provided for property names and enumerated property values. Code hints 
+don't yet work for shorthand properties (e.g. `background`), only for individual properties (e.g.
+`background-repeat`).
+* In JS, code hints are provided for variables and functions using the [Tern](http://ternjs.net/) engine.
+    * RequireJS modules are supported, so referencing a required module will show you its exports.
+    * For non-RequireJS files, Brackets looks in source files that are in the same folder as the JS file you're currently editing to try to find hints.
+    * Code hints use smart matching, so you can do things like type camel-case initials to see functions that match that (e.g. `gsp` for `getScrollPos`).
+    * In cases where Brackets can't determine exactly what hints should be available, it will fall back to a list of heuristic guesses. These guesses are shown in italics.
+
 Unofficial Features
 -------------------
 A number of features, including Find/Replace, Find in Files, and everything
@@ -148,8 +169,10 @@ Extensions
 ----------
 There is a large and growing body of extensions available for Brackets, many
 of which were written by community members, that add all kinds of interesting
-and useful functionality. For a list of extensions and
-information on how to install them, see [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions).
+and useful functionality. You can install an extension using *File > Install Extension..."
+or clicking the "brick" icon on the toolbar. From that dialog, you can click on
+"Browse Extensions" to get to the [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions) 
+Wiki page, which has further instructions on installation.
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
