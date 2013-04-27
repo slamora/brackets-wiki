@@ -382,5 +382,5 @@ Chrome's script replacement is not enough to give us "live JavaScript developmen
 Due to the very nature of JavaScript, "Live Development" for JavaScript cannot be as high fidelity as live development for CSS is. Proceeding from here means deciding which tradeoffs we're willing to make.
 
 1. Using Chrome's script replacement (as tested here), we could allow users to change certain bits of code without reloading. We could identify and warn the user about some changes that require a reload to take effect, but almost certainly not in all cases.
-2. We could do further research to try to remove some of the limitations discussed here by instrumenting JavaScript code or augmenting the runtime.
+2. We could do further research to try to remove *some* of the limitations discussed here by instrumenting JavaScript code or augmenting the runtime.
 3. We could do research into coding styles/frameworks for building JavaScript that are specifically suited to hot code replacement.
