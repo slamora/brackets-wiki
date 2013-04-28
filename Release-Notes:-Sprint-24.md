@@ -24,6 +24,12 @@ UI Changes
 * Jump to Definition - searches across all files based on the identifier at the cursor position.
 * Quick Find Definition - searches within the current file for the identifier you type in the quick search bar.
 
+**Quick View**
+* Added menu item to enable/disable feature: View > Quick View on Hover
+
+**Quick Docs**
+* Added menu item to open/close inline widget: Navigate > Quick Docs
+
 **Project panel / folder tree** - _TODO!_
 * Removed "Project Settings..." option from recent project drop-down menu
 
