@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 24 -- approximately April 26._
-
 What's New in Sprint 24
 -----------------------
 * **Visual Editing**
@@ -11,6 +7,7 @@ What's New in Sprint 24
     * [Supercharged JavaScript code hints](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Greatly improved code hints based on [Tern](http://ternjs.net/) type inferencing. Increased code hinting accuracy, camelCase support and built-in intelligence for RequireJS and jQuery. Code hints even for items declared in other files!
     * [Jump to Definition](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Locate a function or property definition anywhere in your project, instantly.
     * [Function argument / signature hints](https://trello.com/card/2-pull-request-tern-based-code-hinting/4f90a6d98f77505d7940ce88/849): Press Ctrl+Space inside a function call's `()`s to see information on its arguments and their types.
+    * [Insert line above / below current line](https://github.com/adobe/brackets/pull/2729): Press Ctrl+Enter/&#x2318;+Enter or Ctrl+Shift+Enter/&#x2318;+Shift+Enter to insert a blank line below or above the current line, respectively.
 * **Overall UI**
     * [New project panel visual design](https://trello.com/card/2-ux-implement-project-panel/4f90a6d98f77505d7940ce88/807)
 
@@ -24,20 +21,14 @@ UI Changes
 * Jump to Definition - searches across all files based on the identifier at the cursor position.
 * Quick Find Definition - searches within the current file for the identifier you type in the quick search bar.
 
-**Quick View**
-* Added menu item to enable/disable feature: View > Quick View on Hover
-
-**Quick Docs**
-* Added menu item to open/close inline widget: Navigate > Quick Docs
-
-**Project panel / folder tree** - _TODO!_
-* Removed "Project Settings..." option from recent project drop-down menu
+**Project panel / folder tree** - In addition to the aesthetic changes, "Project Settings..." has been removed from the recent projects dropdown menu. It remains accessible via the File menu. For more on the design direction Brackets is headed in, [take look at this mockup](http://www.behance.net/gallery/Brackets/6499177).
 
 **Install Extension shortcuts** - New toolbar icon provides quicker access to the Install Extension command, and the Install Extension dialog box contains a link to the [extensions listing page](https://github.com/adobe/brackets/wiki/Brackets-Extensions).
 
 
 API Changes
 -----------
+No known breaking changes to existing APIs.
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -45,12 +36,12 @@ New/Improved Extensibility APIs
 
 Known Issues
 ------------
+* [#3458](https://github.com/adobe/brackets/issues/3458): Quick View does not yet support the latest CSS gradient syntax (using `to` keyword, unprefixed `radial-gradient`, `repeating-linear-gradient` or `repeating-radial-gradient`).
 * [#3207](https://github.com/adobe/brackets/issues/3207): If you use a Sprint 21 or earlier build after using this build at least once, a few preferences such as Recent Projects may get reset. (You can back up your [[cache folder]] if you're concerned about this).
 * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet.  To work around this, right click the Brackets app and choose Open.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
 * [#2272](https://github.com/adobe/brackets/issues/2272): Windows Vista may not allow the Brackets installer to run (you may not see _any_ error message). To work around this, right-click the installer file, choose Properties, and click the Unblock button.
 * _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
 * [#3570](https://github.com/adobe/brackets/issues/3570): Mac only - Quick View popover may not appear after resizing window or going fullscreen. Move the mouse to the top of the screen to fix.
-* [#3458](https://github.com/adobe/brackets/issues/3458) [quick view] Some gradients not yet supported.
 
 Community contributions to Brackets
 -----------------------------------
