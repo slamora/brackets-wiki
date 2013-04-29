@@ -50,7 +50,7 @@ This way, we would not need to maintain a list of file extensions that may or ma
 Extensions should be able to add new MIME types to languages and clients:
 
     var ClientManager = brackets.getModule("LiveDevelopment/ClientManager"),
-        chrome = ClientManager->getClient("chrome");
+        chrome = ClientManager.getClient("chrome");
     chrome.addMimeType("image/svg+xml");
 
     var LanguageManager = brackets.getModule("language/LanguageManager"),
