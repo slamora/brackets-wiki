@@ -54,11 +54,21 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [Insert line above/below shortcuts](https://github.com/adobe/brackets/pull/2729) by [Alessandro Di Martino](https://github.com/zeis)
+* [Inline color editor: support percentage RGB colors](https://github.com/adobe/brackets/pull/2212) by [Dennis Kehrig](https://github.com/DennisKehrig)
+* [Basic syntax highlighting for .tpl/.twig files](https://github.com/adobe/brackets/pull/3362) by [niu tech](https://github.com/niutech)
+* [Fix #3130: Move line up/down has incorrect behavior in edge cases in inline editor](https://github.com/adobe/brackets/pull/3233) by [Tom Malbrán](https://github.com/TomMalbran)
+* [Fix #3466: Brackets hangs if floating-point value entered for Tab/Spaces size](https://github.com/adobe/brackets/pull/3487) by [Tom Malbrán](https://github.com/TomMalbran)
+* [Fix #3440: Working set does not re-sort when automatic sort is turned on](https://github.com/adobe/brackets/pull/3450) by [Tom Malbrán](https://github.com/TomMalbran)
+* [Fix #1570: Quick Edit should work on closing tag](https://github.com/adobe/brackets/pull/3419) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fix #3323: Reopening same folder closes all files](https://github.com/adobe/brackets/pull/3329) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fix #2641: Input field goes blank if F2 pressed a second time](https://github.com/adobe/brackets/pull/3299) by [Tom Malbrán](https://github.com/TomMalbran)
+* [Fix #3041: Shortcuts using "-" are shown as "+" on Windows](https://github.com/adobe/brackets/pull/3331) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Add CollectionUtils.some() to allow breaking out of iteration](https://github.com/adobe/brackets/pull/3117) by [Tom Malbrán](https://github.com/TomMalbran)
+* [German translation update](https://github.com/adobe/brackets/pull/2937) ([and](https://github.com/adobe/brackets/pull/3500)) by [mynetx](https://github.com/mynetx)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/3536) by [Chema Balsas](https://github.com/jbalsas)
+* [Add YouTube link to README](https://github.com/adobe/brackets/pull/3276) by [drdamour](https://github.com/drdamour)
 
-Contributions _from_ the Brackets community
--------------------------------------------
-**Contributions to [CodeMirror](https://github.com/marijnh/CodeMirror):**
-* ...
 
 Bugs fixed in Sprint 24
 -----------------------
