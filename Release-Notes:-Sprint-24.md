@@ -47,7 +47,7 @@ Community contributions to Brackets
 -----------------------------------
 * [Insert line above/below shortcuts](https://github.com/adobe/brackets/pull/2729) by [Alessandro Di Martino](https://github.com/zeis)
 * [Inline color editor: support percentage RGB colors](https://github.com/adobe/brackets/pull/2212) by [Dennis Kehrig](https://github.com/DennisKehrig)
-* [Basic syntax highlighting for .tpl/.twig files](https://github.com/adobe/brackets/pull/3362) by [niu tech](https://github.com/niutech)
+* [Highlight .tpl/.twig files (as plain HTML)](https://github.com/adobe/brackets/pull/3362) by [niu tech](https://github.com/niutech)
 * [Fix #3130: Move line up/down has incorrect behavior in edge cases in inline editor](https://github.com/adobe/brackets/pull/3233) by [Tom Malbrán](https://github.com/TomMalbran)
 * [Fix #3466: Brackets hangs if floating-point value entered for Tab/Spaces size](https://github.com/adobe/brackets/pull/3487) by [Tom Malbrán](https://github.com/TomMalbran)
 * [Fix #3440: Working set does not re-sort when automatic sort is turned on](https://github.com/adobe/brackets/pull/3450) by [Tom Malbrán](https://github.com/TomMalbran)
