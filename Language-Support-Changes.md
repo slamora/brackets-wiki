@@ -78,7 +78,7 @@ __Registering an HTML compiler for Markdown:__
             contents:     htmlCode,
         };
         deferred.resolve({
-            files: [mainFile]
+            files: [mainFile],
             mainFile: mainFile
         });
         ...
