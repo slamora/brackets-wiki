@@ -19,7 +19,7 @@ If more compatibility with npm proves to be desirable, we can always repack the 
 
 ## package.json ##
 
-Brackets uses the same [package.json format as npm](https://npmjs.org/doc/json.html). Many of the fields that make sense for Node are ignored in Brackets (such as scripts and man pages).
+Brackets uses the same [package.json format as npm](https://npmjs.org/doc/json.html). There is a sample package.json in the section below. Many of the fields that make sense for Node are ignored in Brackets (such as scripts and man pages).
 
 * `name` and `version` are required as in Node
 * Brackets adds an optional `title` that is the pretty display form of `name`
@@ -31,6 +31,24 @@ Brackets uses the same [package.json format as npm](https://npmjs.org/doc/json.h
 * We should honor the `private` flag to not publish private extensions
 
 **note** by reusing `engines` and `peerDependencies`, we may run into friction with npm, assuming that we allow users to install and use npm modules. If need be, we can change to using two other Brackets-specific fields in package.json for these needs.
+
+## Sample package.json ##
+
+`name` and `version` are required. `title`, `description` and `license` are also recommended.
+
+```javascript
+﻿﻿{
+    "name": "unique-lowercase-identifier",
+    "title": "Pretty Title for the UI",
+    "description": "More useful details to let someone know what your extension is all about.",
+    "version": "1.0.0",
+    "author": "Your Name <your@email> (http://your.url)",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.24.0"
+    }
+}
+```
 
 ## Categories ##
 
