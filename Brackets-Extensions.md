@@ -118,6 +118,7 @@ current file.
 
 **Fun & Games**
 * [Cowsay](https://github.com/lkcampbell/brackets-cowsay): An extension for Brackets to generate a cow saying very profound and silly things.
+* [Fortune](https://github.com/lkcampbell/brackets-fortune): An extension for Brackets to insert a random fortune into the editor.
 * [Snake](https://github.com/AboutWebLLC/brackets-snake): Because sometimes you need to eat your code.
 
 ---
