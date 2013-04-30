@@ -373,6 +373,10 @@ These are the boundaries we have seen of Chrome's live JavaScript swapping featu
 * Adding a function in a scope that has already been executed
 * Adding to an object's prototype (unless you previously added to the prototype)
 
+# Limitations of this Research #
+
+This research looked at the usability boundaries of our *existing* JavaScript live development experimental code. It did not involve looking into Chrome's mechanism for this functionality to see if improvements have been made since the original experimental code was created, or to see if there are other ways to apply this feature of Chrome's.
+
 # Conclusion #
 
 Without a good way to predict whether a given function will be executed again, it is very hard to predict whether a live JS edit that the user makes will have any effect. Most well-written JavaScript code today, runs in some kind of closure (the [module pattern](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html), for example). Just being within a function body does not tell us much about when that function can safely be executed.
