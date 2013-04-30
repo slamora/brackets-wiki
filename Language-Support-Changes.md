@@ -75,7 +75,7 @@ __Registering an HTML compiler for Markdown:__
         var mainFile = {
             url:          url.replace(/[^\.]*$/, "html"),
             lastModified: lastModified,
-            contents:     htmlCode,
+            content:      htmlCode,
         };
         deferred.resolve({
             files: [mainFile],
@@ -91,17 +91,17 @@ __Question:__ What should we pass to a compiler - a Document instance, a URL or 
 
 If a LESS file imports another LESS file, the included LESS file either needs to be referenced with an absolute URL or LESS needs to be provided with a list of search paths. If the only search path is relative, LESS will use window.location.href as the base URL to figure out an absolute path. LESS uses this path to load the imported file with an XMLHttpRequest. Consequently, providing "./" as the search path would only work if the main file were located in Brackets' src directory.
 
-Therefore, providing just a string with contents of the main LESS file is not enough. LESS also needs an absolute path to the directory the file is in. Then it can access all imported files. For live development on save, this is good enough, as long as the included file does not contain relative references to background images, fonts, etc. LESS would prefix the URLs to these with the path to the main file's directory. Since Brackets is loaded from the local file system, this would be a local file URL. The background images in the browser would then be loaded from the local hard drive. If we ever want to support live development on smartphones or other remote devices, this would no longer work. Instead, the URL as seen from the client should be used.
+Therefore, providing just a string with the content of the main LESS file is not enough. LESS also needs an absolute path to the directory the file is in. Then it can access all imported files. For live development on save, this is good enough, as long as the included file does not contain relative references to background images, fonts, etc. LESS would prefix the URLs to these with the path to the main file's directory. Since Brackets is loaded from the local file system, this would be a local file URL. The background images in the browser would then be loaded from the local hard drive. If we ever want to support live development on smartphones or other remote devices, this would no longer work. Instead, the URL as seen from the client should be used.
 
 When LiveDevelopment is active, this URL is available via doc.url. If we want the compiler architecture to be more universal, say to compile LESS files provided by extensions, then doc.url wouldn't be set for such a file. Basically, a URL always relates to a client, so we would need something like `doc.urlForClient(client)` or `client.urlForDocument(doc)` (the latter seems preferable, but then we need a client object representing Brackets).
 
-There's another problem: if a Document instance is passed, `doc.getText()` would be used to get the file's contents. If the user has changed the document without saving, the unsaved version would be retrieved. This is what should happen for live development on change, but may not be wanted in other circumstances. In addition, LESS would still try to load referenced files via an XMLHttpRequest, normally not getting the unsaved contents of the file. In some cases, we may be able to configure the compiler to use a source of our own choosing. LESS is hard to customize in this respect - while it is possible to overwrite less.Parser.importer, this function is also reponsible for parsing the resulting file. Our own implementation of the importer would therefore need to do more than just retrieve files and would be harder to keep in sync with updates to LESS. Effectively, we would provide our own version of the LESS compiler, which may be necessary for other languages as well.
+There's another problem: if a Document instance is passed, `doc.getText()` would be used to get the file's content. If the user has changed the document without saving, the unsaved version would be retrieved. This is what should happen for live development on change, but may not be wanted in other circumstances. In addition, LESS would still try to load referenced files via an XMLHttpRequest, normally not getting the unsaved content of the file. In some cases, we may be able to configure the compiler to use a source of our own choosing. LESS is hard to customize in this respect - while it is possible to overwrite less.Parser.importer, this function is also reponsible for parsing the resulting file. Our own implementation of the importer would therefore need to do more than just retrieve files and would be harder to keep in sync with updates to LESS. Effectively, we would provide our own version of the LESS compiler, which may be necessary for other languages as well.
 
 An alternative would be to provide a URL to an HTTP server that delivers files straight from the Document objects in Brackets' memory. Compilers could then continue to use XMLHttpRequest. Unless the live development server uses Document instances, the resulting URLs in the CSS file (for background images, etc.) would need to be adjusted to access the actual live development server. If the user provides a base URL, we do not start our own server and may need to do this mapping anyway. One alternative to this would be to always launch our own live development server and turn it into a proxy if a base URL is provided. This would also allow us to continue rewriting HTML documents even if we do not read them from the hard disk directly, but from the server the user provided.
 
 __Question:__ How should a compiler deliver its output?
 
-In many cases, the compiler will only generate one file, even if it uses many input files (LESS with included files, a minifier). However, in many of these cases it also makes sense to generate a SourceMap alongside the core output file. The compiler could write these files to the hard disk directly, but this would prevent us from generating and serving files in memory (say, a Markdown preview in HTML format). Instead, the compiler should provide its outputs as an array of objects. The objects would contain the generated file's contents, a URL to store them at, and possibly semantic information like `"SourceMap"` or "Main" to ease programmatic use of the output.
+In many cases, the compiler will only generate one file, even if it uses many input files (LESS with included files, a minifier). However, in many of these cases it also makes sense to generate a SourceMap alongside the core output file. The compiler could write these files to the hard disk directly, but this would prevent us from generating and serving files in memory (say, a Markdown preview in HTML format). Instead, the compiler should provide its outputs as an array of objects. The objects would contain the generated file's content, a URL to store them at, and possibly semantic information like `"SourceMap"` or "Main" to ease programmatic use of the output.
 
 __Summary:__
 
@@ -127,11 +127,11 @@ __Embedded HTML Live Development client:__
         },
         open: function (url) {
             // url would be something like "http://localhost:12345/markdown.html"
-            $.get(url, function (contents) {
+            $.get(url, function (content) {
                 // ... extract the <body> ...
 
                 // Fill and show the preview frame in Brackets
-                $preview.html(contents).appendTo(...);
+                $preview.html(content).appendTo(...);
             });
         },
         close: function () {
@@ -156,7 +156,7 @@ In this scenario, the LESS file is converted to a static CSS file by an external
 
 To support this, we would need to detect external changes to included CSS files even if the corresponding CSS file is not open in Brackets. Such an external change would then need to be treated like the user saving the file.
 
-Updating on change is not possible in this scenario since the external tool only has access to the contents of the file through the file system.
+Updating on change is not possible in this scenario since the external tool only has access to the content of the file through the file system.
 
 ### Internal Precompilation
 
@@ -176,7 +176,7 @@ For better live development support, Brackets would need to compile the LESS cod
 
 There are three critical components to this:
 * The compiler to convert LESS code into CSS code (could be requested via `doc.getLanguage().getDefaultCompilerToLanguage("css")`)
-* The updater to find the `<link>` tag that referenced the LESS file, determine the ID of the corresponding `<style>` tag, generate the CSS code (using the compiler), and change the contents of the `<style>` tag
+* The updater to find the `<link>` tag that referenced the LESS file, determine the ID of the corresponding `<style>` tag, generate the CSS code (using the compiler), and change the content of the `<style>` tag
 * The live development module to allow registering the updater, trigger it at the right time and avoid reloading the page if the updater was successful
 
 ### Server-side compilation
