@@ -126,6 +126,24 @@ Bugs are tracked in the <a href="https://github.com/adobe/brackets/issues" targe
 For feature requests, please file them in the issue tracker; they'll be converted
 to user stories on the [public Brackets backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88).
 
+<h3>Extension Bugs</h3>
+Sometimes a bug is caused by a Brackets extension. Before you file an issue on
+the core product you should first rule out all of your installed extensions.
+Eventually, Brackets will have an automatic way to enable and disable extensions.
+For now it must be done manually:
+<ol>
+<li>Select <strong>Brackets &gt; Help &gt; Show Extensions Folder</strong>.</li>
+<li>Move all of the extensions from the <code>user</code> directory to the <code>disabled</code>
+directory, then reload or restart Brackets.</li>
+<li>If you can still reproduce the issue, file the issue on Brackets.</li>
+<li>If you can't reproduce the issue, you can test each extension individually
+by moving them back to the <code>user</code> directory one at a time. If you find
+an extension bug, please file an issue for the extension so it can be addressed
+by the extension author.</li>
+<li>Make sure all of your extensions are moved back into the <code>user</code> directory,
+then reload or restart Brackets.</li>
+</ol>
+
 ## Retrieving SHA for current commit
 
 You can retrieve the SHA hash for the current commit that you are using by running the following command:
