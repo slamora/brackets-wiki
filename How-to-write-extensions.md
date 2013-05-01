@@ -1,5 +1,6 @@
 * [Download Brackets](How to Use Brackets#wiki-howtoget)
-* Create a new "yourExtensionName" folder in `www/extensions/dev`, and inside create a main.js file for your extension code.
+* Open your extensions folder by selecting Show Extensions Folder from the Help menu in Brackets
+* Create a new "yourExtensionName" folder in the `user` folder in your extensions folder, and inside create a main.js file for your extension code.
 * For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](Brackets-Extensions) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
 
