@@ -137,9 +137,10 @@ For now it must be done manually:
 directory, then reload or restart Brackets.</li>
 <li>If you can still reproduce the issue, file the issue on Brackets.</li>
 <li>If you can't reproduce the issue, you can test each extension individually
-by moving them back to the <code>user</code> directory one at a time. If you find
-an extension bug, please file an issue for the extension so it can be addressed
-by the extension author.</li>
+by moving them back to the <code>user</code> directory one at a time. You will
+have to reload or restart Brackets each time. If you find an extension bug,
+please file an issue for the extension so it can be addressed by the extension
+author.</li>
 <li>Make sure all of your extensions are moved back into the <code>user</code> directory,
 then reload or restart Brackets.</li>
 </ol>
