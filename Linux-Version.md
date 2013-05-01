@@ -45,11 +45,9 @@ This is known to work on 32 bit Ubuntu 12.10, at the least.
 
 ### Out of date
 
-Be forewarned, however: these brackets-shell builds are based on Brackets Sprint 16, which dates to early November 2012. To get Brackets source that is _guaranteed_ to work with such an old shell, you'd need to `git checkout sprint-16` in your brackets repo.
+Be forewarned: these brackets-shell builds are based on Brackets Sprint 16, which dates to early November 2012. To get Brackets source that is _guaranteed_ to work with such an old shell, you'd need to `git checkout sprint-16` in your brackets repo.
 
-To get the tip of tree to work with this shell, you may need to make changes such as:
-* In brackets.js, remove the conditional around `$("body").addClass("in-browser");` so that line always runs.
-* In Menus.js, change `_isHTMLMenu()` so it always returns true.
+[See workarounds below](#wiki-issues) to get these shell builds working with the _latest_ Brackets source.
 
 
 ## <a name="building"></a> Building Brackets for Linux
@@ -98,15 +96,12 @@ A successful build will be placed in `out/Release/` directory (`out/Debug` for a
 ####Running
 Brackets should automatically scan for `www/index.html` in it's own directory. If it doesn't find one, you will be prompted to select an `index.html` file. Navigate to your local copy of the brackets repo and select `src/index.html`.
 
+**[Workarounds are needed](#wiki-issues)** for functionality like menus and Live Preview to work correctly.
+
 ####Generating Projects
 This is only required if you are changing the project files. **NOTE:** Don't change the Makefiles directly. Any changes should be done to the .gyp files, and new Makefiles should be generated.
 
 * Open a terminal window on this directory and run <code>gyp --depth .</code>
-
-### Modifying Brackets Core
-
-Any changes needed?
-
 
 ## <a name="cef"></a> CEF 3 on Linux
 
@@ -152,7 +147,14 @@ cd tools
 
 ## <a name="issues"></a> Issues and Workarounds
 
-#### Getting Live Preview to Work
+#### Re-enable HTML menus
+Current Linux shell builds lack the native menu APIs that Brackets Sprint 19+ expect. To use HTML-based menus instead:
+
+* In brackets.js, remove the conditional around `$("body").addClass("in-browser");` so that line always runs (and `$("body").addClass("in-appshell");` never runs).
+* In Menus.js, change `_isHTMLMenu()` so it always returns true.
+
+
+#### Get Live Preview to work
 
 From Marcus Clearspring [on the mailing list](https://groups.google.com/d/msg/brackets-dev/K26IkouXAq0/L65r-auzNzcJ):
 
