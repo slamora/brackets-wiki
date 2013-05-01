@@ -8,7 +8,7 @@ A Linux version of Brackets has [always been on the roadmap](https://trello.com/
 
 ### The Challenge
 
-Brackets uses the [Chromium Embedded Framework version 3 (CEF3)](http://code.google.com/p/chromiumembedded/) for [brackets-shell](https://github.com/adobe/brackets-shell/), the native wrapper that hosts Brackets. An official Linux binary for CEF3 was _just recently_ rolled out.
+Brackets uses the [Chromium Embedded Framework version 3 (CEF3)](http://code.google.com/p/chromiumembedded/) for [brackets-shell](https://github.com/adobe/brackets-shell/), the native wrapper that hosts Brackets. The CEF project _just recently_ began posting official Linux binaries of CEF3.
 
 However, the brackets-shell project includes several extensions to CEF to enable desktop functionality (file I/O, native menus, launching Chrome for Live Preview, managing the built-in Node.js server, drag-and-drop, etc.). The code for these extensions is mostly OS-specific and will need to be ported to Linux. Some was ported in Pritam's Sprint 16 build, but a significant amount of this platform-specific code was added _after_ Sprint 16.
 
