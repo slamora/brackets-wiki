@@ -1,15 +1,32 @@
 A Linux version of Brackets has [always been on the roadmap](https://trello.com/card/linux-desktop-application/4f90a6d98f77505d7940ce88/457) but there is currently no official Brackets build for Linux. Recently however the community has started work on the Linux version. This wiki will serve as a resource for anyone wanting to work on or use Brackets in Linux. 
 
-### Using the Unofficial Build (by Priam Baral)
+### Current Status
 
-* clone the main repo https://github.com/adobe/brackets.git
-* download the latest binary from Pritam's downloads page: https://github.com/pritambaral/brackets-shell/downloads (looks like Brackets-shell-....bz2)
-* extract the binary.
-* symlink in "brackets/src" (from the main repo) as "www" in the directory with the Brackets binary
-* also symlink in the "samples" directory
-* run ./Brackets
+* There's an [unofficial build (see below)](#wiki-pritam-build) based on the older Sprint 16 release of Brackets. It's possible to get this build working with newer Brackets source, but some functionality will be missing.
+* **We need your help** to get newer builds working and create a more permanent, maintainable Linux build process. See steps below to [hack together a Linux build](#wiki-building) and get started tinkering.
+* See ["Issues and Workarounds" at the bottom of this page](#wiki-issues) for more tips.
 
-The shell of it looks like:
+### The Challenge
+
+Brackets uses the [Chromium Embedded Framework version 3 (CEF3)](http://code.google.com/p/chromiumembedded/) for [brackets-shell](https://github.com/adobe/brackets-shell/), the native wrapper that hosts Brackets. There is currently no Linux binary for CEF3 and building it requires some manual work.
+
+In addition, the brackets-shell project includes several extensions to CEF to enable desktop functionality (file I/O, native menus, launching Chrome for Live Preview, managing the built-in Node.js server, drag-and-drop, etc.). The code for these extensions is mostly OS-specific and will need to be ported to Linux. Some was ported in Pritam's Sprint 16 build, but a significant amount of this platform-specific code was added _after_ Sprint 16.
+
+We also need to create an automated build process for Linux, paralleling the build scripts already in place for Windows & Mac. This will make it possible keep the Linux version up to date as new Brackets sprints are released twice a month.
+
+
+## <a name="pritam-build"></a> Older Unofficial Build (by Pritam Baral)
+
+[Pritam Baral](https://github.com/pritambaral) put a bunch of effort into porting brackets-shell to Linux, and has posted pre-built binaries for download. To use:
+
+* Clone the main repo https://github.com/adobe/brackets.git
+* Download the latest binary from Pritam's downloads page: https://github.com/pritambaral/brackets-shell/downloads (looks like Brackets-shell-....bz2)
+* Extract the binary.
+* Symlink in "brackets/src" (from the main repo) as "www" in the directory with the Brackets binary
+* Also symlink in the "samples" directory
+* Run ./Brackets
+
+Aka, in shell terms:
 
 ```bash
 mkdir ~/brackets && cd ~/brackets
@@ -24,13 +41,74 @@ ln -s brackets/samples ./samples
 ./Brackets
 ```
 
-[this worked for me on 32 bit Ubuntu 12.10]
+This is known to work on 32 bit Ubuntu 12.10, at the least.
 
-### The Challenge
+### Out of date
 
-The main challenge with a Linux version of Brackets is that Brackets uses the [Chromium Embedded Framework version 3 (CEF3)](http://code.google.com/p/chromiumembedded/) for [brackets-shell](https://github.com/adobe/brackets-shell/), the native wrapper that hosts Brackets. There is currently no Linux binary for CEF3 and building it requires some manual work.
+Be forewarned, however: these brackets-shell builds are based on Brackets Sprint 16, which dates to early November 2012. To get Brackets source that is _guaranteed_ to work with such an old shell, you'd need to `git checkout sprint-16` in your brackets repo.
 
-## CEF 3 on Linux
+To get the tip of tree to work with this shell, you may need to make changes such as:
+* In brackets.js, remove the conditional around `$("body").addClass("in-browser");` so that line always runs.
+* In Menus.js, change `_isHTMLMenu()` so it always returns true.
+
+
+## <a name="building"></a> Building Brackets for Linux
+
+### Modifying the Brackets Shell
+
+Pritam Baral has a [modified version of the Brackets Shell](https://github.com/pritambaral/brackets-shell/tree/linux) that works on Linux. He has also created instructions for building brackets-shell on Linux which are included below.
+
+####Prerequisites
+
+* make, g++, GTK-2.0 and glib-2.0 development headers & libraries
+  * The linux branch on this repo. Not yet merged into master.
+* gyp (Separately downloadable. Packaged in Ubuntu and Debian by default. Also provided in Chromium source code `src/tools/gyp/`)
+  * If you have build-deps of Chromium installed, you don't need anything extra
+* [CEF3 binary distribution](http://github.com/pritambaral/brackets-shell/downloads)  version 3.1271 (recommended) 
+* Nothing more is required to modify the project files.
+
+####Setup and Building
+
+* Create a folder named `deps` inside the `brackets-shell` folder.
+* Create a folder named `cef` inside the `deps` folder.
+* Copy all of the contents of the [CEF3 binary distribution](#wiki-cef) into the `deps/cef` directory. 
+
+Your directory structure should look like this:
+```
+brackets-shell
+   deps
+      cef
+         // CEF3 binary content in this folder
+   appshell
+      // appshell source
+   README.md
+   ...
+```
+
+* Open a terminal window on the `brackets-shell` directory and run `scripts/make_symlinks.sh`. This will create symbolic links to several folders in the `deps/cef` directory.
+
+* run the following commands in the `brackets-shell` directory:
+```
+gyp --depth .
+make
+```
+
+A successful build will be placed in `out/Release/` directory (`out/Debug` for a Debug build)
+
+####Running
+Brackets should automatically scan for `www/index.html` in it's own directory. If it doesn't find one, you will be prompted to select an `index.html` file. Navigate to your local copy of the brackets repo and select `src/index.html`.
+
+####Generating Projects
+This is only required if you are changing the project files. **NOTE:** Don't change the Makefiles directly. Any changes should be done to the .gyp files, and new Makefiles should be generated.
+
+* Open a terminal window on this directory and run <code>gyp --depth .</code>
+
+### Modifying Brackets Core
+
+Any changes needed?
+
+
+## <a name="cef"></a> CEF 3 on Linux
 
 ### Download a Build
 
@@ -71,70 +149,8 @@ cd tools
 # distribution saved to chromium/src/cef/binary_distrib/cef_binary_3.1364.1131_linux.zip
 ```
 
-## Building Brackets for Linux
 
-### Modifying the Brackets Shell
-
-Pritam Baral has a [modified version of the Brackets Shell](https://github.com/pritambaral/brackets-shell/tree/linux) that works on Linux. He has also created instructions for building brackets-shell on Linux which are included below.
-
-####Prerequisites
-
-* make, g++, GTK-2.0 and glib-2.0 development headers & libraries
-  * The linux branch on this repo. Not yet merged into master.
-* gyp (Separately downloadable. Packaged in Ubuntu and Debian by default. Also provided in Chromium source code `src/tools/gyp/`)
-  * If you have build-deps of Chromium installed, you don't need anything extra
-* [CEF3 binary distribution](http://github.com/pritambaral/brackets-shell/downloads)  version 3.1271 (recommended) 
-* Nothing more is required to modify the project files.
-
-####Setup and Building
-
-Create a folder named `deps` inside the `brackets-shell` folder.
-Create a folder named `cef` inside the `deps` folder.
-Copy all of the contents of the CEF3 binary distribution into the `deps/cef` directory. 
-
-Your directory structure should look like this:
-```
-brackets-shell
-   deps
-      cef
-         // CEF3 binary content in this folder
-   appshell
-      // appshell source
-   README.md
-   ...
-```
-
-Open a terminal window on the `brackets-shell` directory and run `scripts/make_symlinks.sh`. This will create symbolic links to several folders in the `deps/cef` directory.
-
-run the following commands in the `brackets-shell` directory:
-```
-gyp --depth .
-make
-```
-
-A successful build will be placed in `out/Release/` directory (`out/Debug` for a Debug build)
-
-####Running
-Brackets should automatically scan for `www/index.html` in it's own directory. If it doesn't find one, you will be prompted to select an `index.html` file. Navigate to your local copy of the brackets repo and select `src/index.html`.
-
-####Generating Projects
-This is only required if you are changing the project files. **NOTE:** Don't change the Makefiles directly. Any changes should be done to the .gyp files, and new Makefiles should be generated.
-
-* Open a terminal window on this directory and run <code>gyp --depth .</code>
-
-### Modifying Brackets Core
-
-Any changes needed?
-
-## Distributions 
-
-A list of working distributions and download locations?
-
-## Resources
-
-Pritam's repo? 
-
-## Issues
+## <a name="issues"></a> Issues and Workarounds
 
 #### Getting Live Preview to Work
 
