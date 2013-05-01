@@ -30,15 +30,15 @@ ln -s brackets/samples ./samples
 
 The main challenge with a Linux version of Brackets is that Brackets uses the [Chromium Embedded Framework version 3 (CEF3)](http://code.google.com/p/chromiumembedded/) for [brackets-shell](https://github.com/adobe/brackets-shell/), the native wrapper that hosts Brackets. There is currently no Linux binary for CEF3 and building it requires some manual work.
 
-## Building a Linux Version of Brackets
+## CEF 3 on Linux
 
-### Download
+### Download a Build
 
 **Update 4/22/2013** Linux binary builds are now available here http://www.magpcss.net/cef_downloads/
 
-### Building CEF3 on Linux (deprecated? See Download section above.)
+> Old binary download: [cef_binary_3.1364.1131_linux.zip](https://docs.google.com/file/d/0B7as0diokeHxeTNqZFIyNWZKSWM/edit?usp=sharing)
 
-> Download Linux binary: [cef_binary_3.1364.1131_linux.zip](https://docs.google.com/file/d/0B7as0diokeHxeTNqZFIyNWZKSWM/edit?usp=sharing)
+### Build from Source
 
 The CEF project page has several paths to building CEF for Linux. The one we've had success with begins here [https://code.google.com/p/chromiumembedded/wiki/BranchesAndBuilding#Release_Branch](https://code.google.com/p/chromiumembedded/wiki/BranchesAndBuilding#Release_Branch). Follow the steps outlined there. Additional notes and example steps are shown below
 
@@ -70,6 +70,8 @@ cd tools
 
 # distribution saved to chromium/src/cef/binary_distrib/cef_binary_3.1364.1131_linux.zip
 ```
+
+## Building Brackets for Linux
 
 ### Modifying the Brackets Shell
 
