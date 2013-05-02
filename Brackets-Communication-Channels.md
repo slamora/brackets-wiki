@@ -11,9 +11,9 @@ This page lists ways in which the Brackets Team is communicating with our Commun
         
 **github**
 
-* [Brackets](github.com/adobe/brackets)
-* [Brackets Shell](github.com/adobe/brackets-shell)
-* [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)
+* [Brackets](http://github.com/adobe/brackets)
+* [Brackets Shell](http://github.com/adobe/brackets-shell)
+* [Brackets Extensions](http://github.com/adobe/brackets/wiki/Brackets-Extensions)
 
 **Trello**
 
