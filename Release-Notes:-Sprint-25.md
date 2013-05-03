@@ -41,7 +41,7 @@ Community contributions to Brackets
 Contributions _from_ the Brackets community
 -------------------------------------------
 **Contributions to [CodeMirror](https://github.com/marijnh/CodeMirror):**
-* ...
+* [[css mode] Add @import context](https://github.com/marijnh/CodeMirror/pull/1487)
 
 Bugs fixed in Sprint 25
 -----------------------
