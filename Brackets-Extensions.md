@@ -82,7 +82,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 
 **Visual Editing**
 * [Edge Web Fonts](https://github.com/adobe/brackets-edge-web-fonts/): Browse free fonts from the Edge Web Fonts collection, with thumbnails. Activated via CSS code hints for font-family.
-* [Hover Preview](https://github.com/gruehle/HoverPreview): Displays a preview when hovering over a color value, gradient, or image filename.
 * [CSS Exclusion Shape Viewer](https://github.com/adobe/brackets-plugin-exclusions): Quick Edit on an exclusion shape definition in CSS displays the shape.
 * [SVG Preview](https://github.com/peterflynn/svg-preview): Live preview SVG files in an inline panel while you edit them.
 * [Markdown Preview](https://github.com/gruehle/MarkdownPreview): Live preview of Markdown files, updated as the document is edited.
@@ -127,6 +126,7 @@ current file.
 ---
 
 **Deprecated Extensions**
+* [Hover Preview](https://github.com/gruehle/HoverPreview): Displays a preview when hovering over a color value, gradient, or image filename. _(Merged into Brackets as of Sprint 24)._
 * [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets. _(Merged into Brackets as of Sprint 21)._
 * [Color Editor](https://github.com/GarthDB/brackets-inline-color-editor): Quick Edit on a hex/rgb/hsl color opens an inline color picker, plus a listing of all colors used in the file. _(Merged into Brackets as of Sprint 17)._
 * [Color Picker](https://github.com/jdiehl/brackets-color-picker): Quick Edit on a hex color opens an inline color picker. _(A color picker is built into Brackets as of Sprint 17)._
