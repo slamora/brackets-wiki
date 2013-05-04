@@ -41,7 +41,8 @@ Community contributions to Brackets
 Contributions _from_ the Brackets community
 -------------------------------------------
 **Contributions to [CodeMirror](https://github.com/marijnh/CodeMirror):**
-* [[css mode] Add @import context](https://github.com/marijnh/CodeMirror/pull/1487)
+* [[css mode] Add @import context](https://github.com/marijnh/CodeMirror/pull/1487) - to make it easier to parse css @import statements.
+* [Gutter Filler](https://github.com/marijnh/CodeMirror/pull/1493) - don't show line numbers next to horizontal scrollbar.
 
 Bugs fixed in Sprint 25
 -----------------------
