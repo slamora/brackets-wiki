@@ -141,9 +141,9 @@ If new submodules are added to Brackets, you'll need to run `git submodule updat
 ## Contributing Code ##
 
 ### Useful Tools for Development ###
-If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. (If your Brackets gets really hosed, you may need to restart the application).  Note: because of bug [#1551](https://github.com/adobe/brackets/issues/1551), Reload may ignore changes to certain files unless you [disable caching via the Developer Tools](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4).
+If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. (If your Brackets gets really hosed, you may need to restart the application).  
 
-To bring up the Chrome Developer Tools on the Brackets window, use *Debug > Show Developer Tools*. This will open a new Chrome tab with the developer tools (Unlike previous builds of Brackets that opened up the developer tools in a new Brackets window, the new CEF3-based shell needs to open the developer tools in Chrome. We're hoping to get this fixed soon).
+To bring up the Chrome Developer Tools on the Brackets window, use *Debug > Show Developer Tools*. This will open a new Chrome tab with the developer tools.
 
 If you need to debug startup code, you can launch Brackets, open the developer tools, set your breakpoints, and then select *Debug > Reload Brackets*. This will re-run all of the startup code and stop at any breakpoints you have set.
 
@@ -198,7 +198,7 @@ If you are working on a specific bug, here are the steps to follow:
 1. Create a new branch and use the issue number as the branch name. Be sure you have the latest code from the main repository before branching to make merging as easy as possible (instructions above).
 1. Fix the bug.
 1. Commit and push your changes according to the instructions above.
-1. Submit a pull request. Make sure the text "issue #123" (use your specific issue number) is in the pull request in order to create a link to the issue.
+1. Submit a pull request. Make sure the text "issue #123" (use your specific issue number) is in the pull request notes in order to create a link to the issue.
 
 That's it! You've just made Brackets even better.
 
