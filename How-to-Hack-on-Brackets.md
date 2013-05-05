@@ -5,6 +5,54 @@
 
 [CONTRIBUTING.md](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md) contains a high-level overview of what you may need to consider if you plan to contribute to Brackets.    
 
+## Overview ##
+
+Here is a brief overview of the steps required to hack on Brackets. Detailed information can be found in the rest of this document.
+
+### Requirements ###
+
+* Latest [Brackets build](http://download.brackets.io)
+* Git command line tools. Follow the setup instruction [on GitHub](https://help.github.com/articles/set-up-git) or download [here](http://git-scm.com/downloads)
+
+**NOTE: All commands should be run in a Terminal window (on the Mac) or Git Bash shell (on Windows).**
+
+### Setting up your dev environment ###
+
+Steps for setting up a dev environment to hack on the core Brackets HTML/CSS/JavaScript files:
+
+1. Fork the [brackets](https://github.com/adobe/brackets) repo
+2. Clone your fork of the repo: `git clone https://github.com/<username>/brackets.git`
+3. Update submodules: `cd brackets && git submodule update --init`
+4. Add an `upstream` remote: `git remote add upstream https://github.com/adobe/brackets.git`
+5. Run `setup_for_hacking` script:
+```bat
+mac
+---
+tools/setup_for_hacking.sh "/Application/Brackets Sprint 24.app"
+
+windows
+-------
+IMPORTANT! This command MUST be run in a Command Prompt started with "Run as Administrator"
+tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 24"
+```
+
+_Optional: [Steps for setting up a brackets-shell dev environment](https://github.com/adobe/brackets-shell/wiki/Building-Brackets-Shell)._
+
+### Hacking ###
+
+1. Make sure your local copy of source is up to date: `git fetch upstream && git merge upstream/master`
+2. Make sure submodules are up to date: `git submodule update --init`
+3. Create a feature/bugfix branch: `git checkout -b <branchname>`
+4. Hack!
+5. Commit your changes: `git commit -am"Your commit message here"`
+6. Run unit tests
+
+### Submit pull request ###
+
+1. Push changes to your fork of the repo: `git push origin <branchname>`
+2. Make sure you've signed the [Brackets Contributor Licence Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html).
+2. Submit pull request from GitHub. If this is a bugfix, include "Fix #1234" (changing "1234" to the actual bug number) in the pull request comments. This tags the pull request in the bug comments.
+
 ## How to Get Started ##
 
 ### How Brackets is Organized ###
