@@ -59,7 +59,7 @@ A minor implementation note: JavaScript's object model [happens to be perfect fo
 * global
 * default
 
-If you look at `prefs.indentationStyle` where "prefs" is the file object, each of objects in the chain will be traversed to find the closest one that has a specific value set.
+If you look at `prefs.indentationStyle` where "prefs" is the file object, each of objects in the chain will be traversed to find the closest one that has a specific value set.             
 [pt] Would it also make sense to have customer specific preferences? (that is a collection of projects)
 
 ## Data Storage ##
