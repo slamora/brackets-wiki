@@ -28,7 +28,7 @@ Steps for setting up a dev environment to hack on the core Brackets HTML/CSS/Jav
 ```bat
 mac
 ---
-tools/setup_for_hacking.sh "/Application/Brackets Sprint 24.app"
+tools/setup_for_hacking.sh "/Applications/Brackets Sprint 24.app"
 
 windows
 -------
