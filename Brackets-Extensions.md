@@ -28,6 +28,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Go to Last Edit](https://github.com/peterflynn/goto-last-edit): Jump to the location of your last edit in the current file with a quick keyboard shortcut (Ctrl+*)
 * [Quick Navigate](https://github.com/jeffslofish/quick-navigate): Navigate back to previous cursor and edit locations quickly with toolbar buttons.
 * [Sidebar Plus](https://github.com/sathyamoorthi/brackets-sidebar-plus): Show / Hide sidebar using mouse over.
+* [Edit History](https://github.com/iwehrman/brackets-edit-history): Yet another extension for navigating forward and backward among edit positions. 
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
