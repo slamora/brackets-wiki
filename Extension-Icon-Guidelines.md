@@ -14,6 +14,10 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 * use thinner lines rather than thicker lines
 * try to use SVG instead of PNG
 
+![Rounded Corner Example](icon-guidelines/rounded-corner-example.png)
+![Stroke Example](icon-guidelines/stroke-example.png)
+
+
 ## Icon Size:   
 
 * 20px by 20px
