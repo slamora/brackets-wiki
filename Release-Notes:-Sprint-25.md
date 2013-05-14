@@ -22,9 +22,11 @@ No major changes to existing features.
 
 API Changes
 -----------
+**Quick Open** - Search heuristics no longer applies special weighting automatically to match items that look like a path. Quick Open providers can override this behavior by supplying `matcherOptions: { segmentedSearch: true }` in the settings passed to `addQuickOpenPlugin()`.
 
 New/Improved Extensibility APIs
 -------------------------------
+**Quick Open** - TODO: new `matcherOptions: { preferPrefixMatches: true }` option.
 
 Known Issues
 ------------
