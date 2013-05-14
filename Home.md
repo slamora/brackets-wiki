@@ -22,6 +22,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Language Support](https://github.com/adobe/brackets/wiki/Language-Support)
 * [How the Node process in Brackets-Shell Works](wiki/Brackets-Node-Process:-Overview-for-Developers)
 * [Extension UI Guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines)
+* [Extension Icon Guidelines](https://github.com/adobe/brackets/wiki/Extension-Icon-Guidelines)
 * [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
 * [The Future Extension Manager](https://github.com/adobe/brackets/wiki/Research:-Extension-Management)
 
