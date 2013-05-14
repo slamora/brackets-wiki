@@ -1,4 +1,5 @@
 Brackets uses some specific coding conventions. All of the pull requests that come in should adhere to the following rules:
+
 ## Basics ##
 * Use 4 space indents (spaces, not tabs)
 
@@ -28,12 +29,12 @@ define(function (require, exports, module) {
 
 (With one wrinkle: JSLint warns about lines consisting entirely of whitespace, but we ignore those warnings. The JSLint feature built into Brackets filters out these warnings automatically).
 
+
 ### Globals ###
 
 Globals should be limited to those defined by thirdparty libraries (e.g. jquery ``$``, RequireJS ``require``, CodeMirror ``CodeMirror``, etc.). Browser globals should be referenced via the ``window`` object, e.g. ``window.setTimeout()`` instead of ``setTimeout()``.
 
 ## Naming and Syntax ##
-<br/>
 Variable and function names use camelCase (not under_scores):
 > Do this:
 >
@@ -134,33 +135,6 @@ Use double quotes in JavaScript. If a JavaScript string literal _contains_ code 
 
 
 ## Code Structure ##
-<br/>
-Use of Array.forEach() instead of a for loop or $.each():
-> Do this:
->
-> ```
-> var anArray = [1, 2, 3, 4];
-> anArray.forEach(function (value, index) {
->     // ...
-> });
-> ```
->
-> Not this:
-> ```
-> var anArray = [1, 2, 3, 4];
-> for (var i = 0; i < anArray.length; i++) {  // Use Array.forEach()
->     // ...
-> }
-> ```
->
-> Or this:
-> ```
-> var anArray = [1, 2, 3, 4];
-> $.each(anArray, function (index, value) {  // Use Array.forEach()
->     // ...
-> })
-> ```
-
 Prototypal inheritance pattern:
 > ```
 > function MyClass() { // constructor
@@ -190,6 +164,64 @@ Prototypal inheritance pattern:
 >      MyClass.prototype.parentClass.myMethod.apply(this, arguments);
 >      // ... 
 > };
+
+
+## APIs to Use or Avoid ##
+On Arrays, use Array.forEach() or Array.some() rather than $.each() or for loops:
+> Do this:
+> ```
+> var anArray = [1, 2, 3, 4];
+> anArray.forEach(function (value, index) {
+>     // ...
+> });
+> ```
+>
+> Not this:
+> ```
+> for (var i = 0; i < anArray.length; i++) {  // Use Array.forEach()
+>     // ...
+> }
+> ```
+>
+> Or this:
+> ```
+> $.each(anArray, function (index, value) {  // Use Array.forEach()
+>     // ...
+> })
+> ```
+
+<br/>
+To iterate object keys, use CollectionUtils.forEach() or CollectionUtils.some() rather than $.each() or for-in loops. (This avoids various pitfalls when the keys could have arbitrary values, and matches Array.forEach()'s callback API better).
+> Do this:
+> ```
+> var anObject = { foo: "a", bar: "b", baz: "c" };
+> CollectionUtils.forEach(anObject, function (value, key) {
+>     // ...
+> });
+> ```
+>
+> Not this:
+> ```
+> for (var key in anObject) {  // Use CollectionUtils.forEach()
+>     if (anObject.hasOwnProperty(key)) { /* ... */ }
+> }
+> ```
+>
+> Or this:
+> ```
+> $.each(anObject, function (key, value) {  // Use CollectionUtils.forEach()
+>     // ...
+> })
+> ```
+
+<br/>
+Use ViewUtils.toggleClass() instead of jQuery.toggleClass(). (This avoids problems with flags that are truthy/falsy but not strictly boolean).
+> Do this:
+> `ViewUtils.toggleClass($listItem, "selected", isSelected);`
+>
+> Not this:
+> `$listItem.toggleClass("selected", isSelected);`
+
 
 ## Comments ##
 * All comments should be C++ single line style //comment.
