@@ -31,7 +31,7 @@ Feel free to file feature requests as an issue on GitHub, just like a bug. We ta
 
 ### Bug review
 
-We review _all_ new issues on a regular basis (the issue tagged [_'last reviewed'_](https://github.com/adobe/brackets/issues?labels=last+reviewed&milestone=&state=open) is the most recent one we've officially reviewed). When reviewing, several things typically happen:
+We review _all_ new issues on a regular basis (the issue tagged _'last reviewed'_ is the most recent one reviewed). Several things typically happen as part of review:
 
 * Is the issue clearly understandable? If not, we'll ask for clarification (tagging the filer with "@").
 * Is the issue a bug or a feature request? If a feature, we'll tag it [_'move to backlog'_](https://github.com/adobe/brackets/issues?labels=move+to+backlog&milestone=&state=open); these items are periodically bulk-migrated to our [feature backlog on Trello](http://bit.ly/BracketsBacklog).
@@ -100,11 +100,11 @@ We use labels/tags for a number of purposes:
   </tr>
   <tr>
     <td height="40">last reviewed</td>
-    <td>Last reviewed/triaged bug. See ["Bug review" above](#bug-review) more on the review process.</td>
+    <td>Last reviewed/triaged bug. See <a href="#bug-review">"Bug review" above</a> more on the review process.</td>
   </tr>
   <tr>
     <td>move to backlog</td>
-    <td>This is a feature/enhancement request rather than a bug. Will be moved to the [feature backlog](http://bit.ly/BracketsBacklog).</td>
+    <td>This is a feature/enhancement request rather than a bug. Will be moved to the <a href="http://bit.ly/BracketsBacklog">feature backlog</a>.</td>
   </tr>
   <tr>
     <td rowspan="4">Priority <a name="bug-priority"></a></td>
@@ -139,11 +139,11 @@ We use labels/tags for a number of purposes:
   <tr>
     <td rowspan="3">External tracking </td>
     <td>codemirror</td>
-    <td>Needs [CodeMirror](https://github.com/marijnh/CodeMirror) changes.</td>
+    <td>Needs <a href="https://github.com/marijnh/CodeMirror">CodeMirror</a> changes.</td>
   </tr>
   <tr>
     <td>cef<br>webkit</td>
-    <td>Needs code changes in [Chromium Embedded Framework](https://code.google.com/p/chromiumembedded/) (which brackets-shell is built on) or in WebKit/Chromium itself.</td>
+    <td>Needs code changes in <a href="https://code.google.com/p/chromiumembedded/">Chromium Embedded Framework</a> (which brackets-shell is built on) or in WebKit/Chromium itself.</td>
   </tr>
   <tr>
     <td>tracking</td>
@@ -168,7 +168,7 @@ We use labels/tags for a number of purposes:
   </tr>
   <tr>
     <td>native shell</td>
-    <td>Needs code changes in [brackets-shell](https://github.com/adobe/brackets-shell), the native wrapper that packages Brackets as a desktop app.</td>
+    <td>Needs code changes in <a href="https://github.com/adobe/brackets-shell">brackets-shell</a>, the native wrapper that packages Brackets as a desktop app.</td>
   </tr>
 </table>
 
