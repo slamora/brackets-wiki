@@ -1,217 +1,199 @@
-# How to deal with issues
+# How to Report a Brackets Issue
 
-You tested Brackets and found an issue - now you want to file it – that's great!
+Found a bug you'd like to tell us about? Great!
 
-While you help us to improve the quality of Brackets, please keep a few steps in mind to help us manage issues in Brackets.
-Bugs are tracked in the [GitHub issue tracker](https://github.com/adobe/brackets/issues).
+### How to file a bug
 
-## Existing issues, feature backlog
-Please review the existing issues – GitHub provides a search field to search for Issues and Milestones, found in the top right:
-![search in github](https://github.com/adobe/brackets/wiki/screenshots/issues_search.jpg)
+Brackets bugs are tracked in [the issue list on GitHub](https://github.com/adobe/brackets/issues). Always search for existing issues before filing a new one (use the search field at the top of the page).
 
-Typing into the search field will show related issues, this illustrates the importance of choosing keywords within titles, such that others don't file duplicates for your issue. Some of the issues – basically enhancement requests – are moved to our [public feature backlog](http://bit.ly/BracketsBacklog), please consider to search through the existing user stories too. There you most likely will find the missing features, enhancements to existing features, etc.
+When filing a new bug, please remember to include:
 
-If you find an issue which seems to cover your case you may add comments or scenarios which are specific to your workflow or content. You can also vote for backlog items to help us prioritize.
+* A helpful title - use descriptive keywords in the title and description so others can find your bug (avoiding duplicates).
+* Steps to reproduce the problem
+* Contrast actual vs. expected results
+* Brackets sprint number <br>(or if you're pulling directly from the Git repo, your current commit SHA - use `git rev-parse HEAD`)
+* OS version
+* If the problem happens with specific code, link to test files ([gist.github.com](https://gist.github.com/) is a great place to upload code).
+* Screenshots are very helpful if you're seeing an error message or a UI display problem. (Just drag an image into the issue description field to include it).
 
-## How to file an issue or feature request
-Filing an issue is simple, click on the _"New Issue"_ button, add a title and a description. We want to provide some guidance regarding which information should be contained in the description, how we consider to set priority, and how we make use of labels in GitHub.
+### If you've installed extensions
 
- Thanks for supporting our project and other contributors - To enhance reproducibility we ask you to provide information necessary to understand and confirm issues.
+Bugs can be caused by Brackets extensions you've added on. Before you file an issue on the core product, first rule out extensions by disabling them. [See "Extension bugs" below](#extension-bugs) for details.
 
-* Brackets version/sprint number (please use sprint labels or commit SHA if you're pulling directly from the repo (see below)).
-* Platform/OS version (please use labels for Windows / Mac)
-* Reproducible steps, actual and expected results
-* Link to test files (you can create a gist on gist.github.com if that's convenient).
+### What about requesting a feature?
 
-### Determine the priority
-We differentiate three priorities for issues, we use labels on GitHub to set the priority:
+Please first check our [feature backlog on Trello](http://bit.ly/BracketsBacklog) to see if it's already there. You can vote on features in the backlog to help us prioritize them.
 
-* _High_: crashes/data loss unless they're very unlikely edge cases
-* _Medium_: functional/ui issues that are at least somewhat severe and that a significant number of users will hit
-* _Low_: issues that have low severity and/or low frequency
-* _No Priority_: issues will remain open but the Brackets development team is not planning to fix (see more about No Priority issues below)
+Feel free to file feature requests as an issue on GitHub, just like a bug. We tag these issues "move to backlog" and periodically migrate them onto feature backlog for you.
 
-### Use of labels for issues found in Brackets
 
-<table width=90% border="5" cellpadding="1" bordercolor="#000033">
-  <tr>
-    <th width=15% scope="col">group</th>
-    <th width=15% scope="col">labels</th>
-    <th width=60% scope="col">usage</th>
-  </tr>
-  <tr>
-    <td rowspan="6">Process </td>
-    <td>fix in progress</td>
-    <td>Bug has been assigned and assignee has started to make improvements</td>
-  </tr>
-  <tr>
-    <td>fixed but not closed</td>
-    <td>issue has been fixed but not merged, may need to be regressed</td>
-  </tr>
-  <tr>
-    <td height="40">last reviewed</td>
-    <td>maker for last reviewed bug, see below for explanation of the review process</td>
-  </tr>
-  <tr>
-    <td>move to backlog</td>
-    <td>enhancement marker - to be put  on the [backlog](http://bit.ly/BracketsBacklog)</td>
-  </tr>
-  <tr>
-    <td>starter bug</td>
-    <td>This issue doesn’t require deep knowledge of the architecture and is the recommended level for new contributors</td>
-  </tr>
-  <tr>
-    <td>documentation</td>
-    <td>insufficient documentation</td>
-  </tr>
-  <tr>
-    <td rowspan="4">Priority</td>
-    <td>high priority</td>
-    <td>crashes/data loss unless they're very unlikely edge cases</td>
-  </tr>
-  <tr>
-    <td>medium priority</td>
-    <td>functional/ui or performance issues that are at least somewhat severe and that a significant number of users will hit</td>
-  </tr>
-  <tr>
-    <td>low priority</td>
-    <td>issues that have low severity and/or low frequency, cosmetic issues</td>
-  </tr>
-  <tr>
-    <td>no priority</td>
-    <td>This is a low priority issue we will leave open but do not intent to fix - please refer to the explanation below.</td>
-  </tr>
-  <tr>
-    <td rowspan="5">External tracking</td>
-    <td>codemirror</td>
-    <td>needs CM code changes</td>
-  </tr>
-  <tr>
-    <td>webkit</td>
-    <td>needs code changes within webkit</td>
-  </tr>
-  <tr>
-    <td>LESS</td>
-    <td>needs code changes within LESS module</td>
-  </tr>
-  <tr>
-    <td>cef</td>
-    <td>needs code changes in CEF sources</td>
-  </tr>
-  <tr>
-    <td>tracking</td>
-    <td> issue is being tracked for example due to dependencies not yet resolved</td>
-  </tr>
-  <tr>
-    <td rowspan="6">Architecturally-focused</td>
-    <td>Win only<br/>Mac only<br/>Linux only</td>
-    <td>platform specific issue</td>
-  </tr>
-  <tr>
-    <td>architecture</td>
-    <td>To fix this issue significant architectural change is required or desired</td>
-  </tr>
-  <tr>
-    <td>async</td>
-    <td>asynchronous processing / runtime issue</td>
-  </tr>
-  <tr>
-    <td height="35">code cleanup</td>
-    <td>provides an opportunity to do code cleanup, basically, it's a tag that means small, opportunistic refactorings that don't require major cross-cutting changes</td>
-  </tr>
-  <tr>
-    <td>performance</td>
-    <td>perceived or measurable performance issue</td>
-  </tr>
-  <tr>
-    <td>native shell</td>
-    <td>needs code changes in the native shell</td>
-  </tr>
-</table>
+# What happens after a bug is filed?
 
-### Feature requests
+### Bug review
 
-For feature requests, please file them in the issue tracker; they'll be converted
-to user stories on the [Brackets feature backlog](http://bit.ly/BracketsBacklog).
+We review _all_ new issues on a regular basis (the issue tagged [_'last reviewed'_](https://github.com/adobe/brackets/issues?labels=last+reviewed&milestone=&state=open) is the most recent one we've officially reviewed). When reviewing, several things typically happen:
 
-### Extension bugs
-Sometimes a bug is caused by a Brackets extension. Before you file an issue on
-the core product you should first rule out all of your installed extensions.
-Eventually, Brackets will have an automatic way to enable and disable extensions.
-For now it must be done manually:
+* Is the issue clearly understandable? If not, we'll ask for clarification (tagging the filer with "@").
+* Is the issue a bug or a feature request? If a feature, we'll tag it [_'move to backlog'_](https://github.com/adobe/brackets/issues?labels=move+to+backlog&milestone=&state=open); these items are periodically bulk-migrated to our [feature backlog on Trello](http://bit.ly/BracketsBacklog).
+* What's the priority of the bug? Labels are added to indicate initial prioritization - high, medium, low, or none ([read more below](#wiki-bug-priority)). Bugs may also be assigned a sprint milestone - if they are high priority or related to features still under development in the current sprint.
+* Labels may also be applied to categorize the bug. See ["Understanding issue labels"](#understanding-issue-labels) below.
+* Is the bug a good way to "ease into" the Brackets source code? If so we'll tag it [_'starter bug'_](https://github.com/adobe/brackets/issues?labels=starter+bug&state=open) to encourage Brackets newcomers to work on it.
+* Most other bugs are assigned to a Brackets core committer right away. Depending on priority, milestone, and other workload, the developer may begin working on the bug right away or not until much later.
+
+Some bugs may be closed without fixing - see ["Hey! My bug wasn't fixed!" below](#hey-my-bug-wasnt-fixed).
+
+### Bug lifecycle
+
+The process above covers the first two steps. Here are the rest:
+
+1. New bug is filed; awaiting review -- bug is newer than _'last reviewed'_ tag
+2. Bug is reviewed and triaged -- bug is assigned to a developer
+3. Developer begins working on bug -- bug is tagged _'fix in progress'_
+4. Developer opens a pull request with a fix, which must be reviewed -- a link to the pull request appears in the bug's activity stream
+5. Pull request is merged, and original filer is requested to verify that it's fixed -- bug is tagged _'fixed but not closed'_ (FBNC)
+6. Filer agrees that it's fixed -- bug is closed, and its milestone is set to the sprint the fix landed
+
+As noted above, the delay between 2 and 3 can vary a lot. One way to ensure a bug gets fixed sooner is to work on a fix yourself and submit it as a pull request. Which brings us to...
+
+### Can I help fix a bug?
+
+Yes please! But first...
+
+* Check to make sure no one else is already working on it. If the bug has a sprint milestone assigned or is tagged _'fix in progress'_ then it's already under way. Otherwise, post to the [brackets-dev newsgroup](http://groups.google.com/group/brackets-dev), the [#brackets IRC channel on freenode](http://webchat.freenode.net/?channels=brackets), or the bug comment thread itself (pinging the assigned developer via "@") to check.
+* Read the [guidelines for contributing code](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#contributing-code) - especially, make sure you're following our [pull request guidelines](Pull Request Checklist) and [coding conventions](Brackets Coding Conventions).
+
+# Extension bugs
+
+Bugs can be caused by Brackets extensions you've added on. Before you file an issue on the core product, first rule out extensions by disabling them.
+
+For now, disabling extensions must be done manually:
 
 1. Select _Brackets > Help > Show Extensions Folder_.
 2. Move all of the extensions from the `user` directory to the `disabled`
-directory, then reload or restart Brackets.
+directory, then restart Brackets.
 3. If you can still reproduce the issue, file the issue on Brackets.
 4. If you can't reproduce the issue, you can test each extension individually
-by moving them back to the `user` directory one at a time. You will
-have to reload or restart Brackets each time. If you find an extension bug,
-please file an issue for the extension so it can be addressed by the extension
-author.
-4. Make sure all of your extensions are moved back into the `user` directory,
-then reload or restart Brackets.
+by moving them back to the `user` directory one at a time (restarting Brackets
+each time). If you find an extension bug, please file an issue in that extension's
+repo so it can be addressed by the extension author.
+5. When finished, move all your extensions back into the `user` directory, then
+restart Brackets again to re-enable them all.
 
+# Understanding issue labels
 
-## Retrieving SHA for current commit
+We use labels/tags for a number of purposes:
 
-You can retrieve the SHA hash for the current commit that you are using by running the following command:
-
-    git rev-parse HEAD
-
-
-## What happens to the issues I filed?
-
-We're reviewing the new issues regularly the _'last reviewed'_ label is being used to indicate the last bug which has been reviewed. During the review we make sure the appropriate labels are used for the bug. If an issue is related to the work of the current sprint we tag it with the current sprint tag. If it feels rather like an enhancement request we will tag it as _'move to backlog'_. In addition we identify starter issues _'starter bug'_ for individuals who want to start to contribute.
-
-Before you fix a bug, post to the [brackets-dev newsgroup](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://webchat.freenode.net/?channels=brackets) about what you're thinking of working on, so you can get early feedback. If you start to contribute code to Brackets please also consider reading some of our wiki documents like [[How to Hack on Brackets]] and [Coding Conventions](Brackets Coding Conventions).
-
-The Brackets team needs to assign or label bugs, therefore we ask you to document the progress to trigger necessary changes along the bug lifecycle.
-
-Once you start to address a bug please let us know and add a note to set it to _'fix in progress'_, this helps to avoid multiplied efforts. Once an issue is fixed a the contributor opens a pull request to inform the core team to get the bug fix reviewed. After potential adjustments according to the review feedback have been added we will merge the bug fix into master. At this point the status of the bug will be set to _'fixed but not closed'_ and the filer will close the issue (or notify the team) once he verified the fix.
-
-### Issues we won't fix
-The consensus is that closing some of the low priority issues would only feel appropriate under specific criteria/circumstances, we don't want to end up burying issues which are affecting the quality of Brackets or are otherwise important to the community. We encourage feedback and contributors actually may review and request to re-open issues in case they feel strongly about them.
-
-#### No priority
-
-Items we keep open but will not work on soon. 
-<table width="90%" border="1">
-<tr>
-    <td rowspan="3">No Priority</td>
-    <td>High risk / low impact</td>
+<table width=90% border="5" cellpadding="1" bordercolor="#000033">
+  <tr>
+    <th width=15% scope="col"></th>
+    <th width=15% scope="col">label</th>
+    <th width=60% scope="col">meaning</th>
   </tr>
   <tr>
-    <td>High effort / low impact</td>
+    <td rowspan="4">Process </td>
+    <td>fix in progress</td>
+    <td>Someone has started work on a fix (or the fix is ready but is still undergoing code review - not merged yet).</td>
   </tr>
   <tr>
-    <td>Underlying code or architecture is changing / will change soon</td>
+    <td>fixed but not closed</td>
+    <td>Bug has been fixed and the fix is merged. Waiting for the original bug reported to verify that it's fixed.</td>
+  </tr>
+  <tr>
+    <td height="40">last reviewed</td>
+    <td>Last reviewed/triaged bug. See ["Bug review" above](#bug-review) more on the review process.</td>
+  </tr>
+  <tr>
+    <td>move to backlog</td>
+    <td>This is a feature/enhancement request rather than a bug. Will be moved to the [feature backlog](http://bit.ly/BracketsBacklog).</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Priority <a name="bug-priority"></a></td>
+    <td>high priority</td>
+    <td>Crashes/data loss (unless a very unlikely edge case, which might be considered medium). We try to have zero high-priority bugs before shipping each sprint.</td>
+  </tr>
+  <tr>
+    <td>medium priority</td>
+    <td>Functional, UI, or performance issues that are at least somewhat severe and a significant number of users will hit. We closely track the total number of medium-priority bugs.</td>
+  </tr>
+  <tr>
+    <td>low priority</td>
+    <td>Low severity (for example a small cosmetic issue) and/or few users will hit. May not be worked on for a few months.</td>
+  </tr>
+  <tr>
+    <td>no priority</td>
+    <td>Low severity issues we might not bother to ever fix, but would consider taking a pull request for. Usually these are issues that fit within the scope of Brackets core but seem to involve high effort for a low impact. Some are issues we anticipate will become obsolete due to upcoming UI or feature changes.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Suggestions </td>
+    <td>starter bug</td>
+    <td>Fixing this bug would be a good intro to the Brackets source code. Recommended for new contributors.</td>
+  </tr>
+  <tr>
+    <td>Extension Idea</td>
+    <td>This feature/enhancement request is a great idea for a Brackets extension. We may not work on adding the functionality to core Brackets any time soon, if ever.</td>
+  </tr>
+  <tr>
+    <td>documentation</td>
+    <td>The fix involves improving documentation rather than writing code.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">External tracking </td>
+    <td>codemirror</td>
+    <td>Needs [CodeMirror](https://github.com/marijnh/CodeMirror) changes.</td>
+  </tr>
+  <tr>
+    <td>cef<br>webkit</td>
+    <td>Needs code changes in [Chromium Embedded Framework](https://code.google.com/p/chromiumembedded/) (which brackets-shell is built on) or in WebKit/Chromium itself.</td>
+  </tr>
+  <tr>
+    <td>tracking</td>
+    <td>We have identified or filed a specific bug in an external project, and now we're just waiting for it to be fixed.</td>
+  </tr>
+  <tr>
+    <td rowspan="5">Architecturally-focused</td>
+    <td>architecture</td>
+    <td>Requires significant architectural changes. Architecture issues are discussed periodically in meetings or on the newsgroup.</td>
+  </tr>
+  <tr>
+    <td>performance</td>
+    <td>Perceived or measurable performance issue.</td>
+  </tr>
+  <tr>
+    <td>code cleanup</td>
+    <td>Fixing the issue involves cleaning up code in a way that improves maintainability without making major architectural changes. (In some cases, this is the only benefit of fixing the bug).</td>
+  </tr>
+  <tr>
+    <td>async</td>
+    <td>Problem related to asynchronous execution.</td>
+  </tr>
+  <tr>
+    <td>native shell</td>
+    <td>Needs code changes in [brackets-shell](https://github.com/adobe/brackets-shell), the native wrapper that packages Brackets as a desktop app.</td>
   </tr>
 </table>
 
-### Issues we close
+### Other bug-related terminology
 
-<table width="90%" border="1">
-  <tr>
-    <th scope="col">Category</th>
-    <th scope="col">Description</th>
-  </tr>
-  <tr>
-    <td rowspan="2">Feature not supported</td>
-    <td>Feature is 'as designed' and the request is not an enhancement.</td>
-  </tr>
-  <tr>
-    <td>Feature removed or beyond scope of Brackets</td>
-  </tr>
-  <tr>
-    <td>Not this product</td>
-    <td>Feature or issue is not in our product and we have no reasonable way to influence the fix being made</td>
-  </tr>
-  <tr>
-    <td>Intermittent or not reproducible</td>
-    <td>basically a flavor of high effort / low impact <br />
-( at times we may need additional information to reproduce a bug, those cases don't fall into this category if we're able to gather the information necessary with reasonable effort )</td>
-  </tr>
-</table>
+Acronyms we use frequently in bug comments:
 
+* _FBNC_ = "fixed but not closed": See the bug-process label above.
+* _UTR_ = "unable to reproduce": Someone tried to follow the steps in the bug, but everything seemed to work fine.
+* _NAB_ = "not a bug": The behavior described in the bug is actually how it's supposed to work. This may indicate a usability or documentation problem.
+* _FOL_ = "fact of life": The bug is virtually impossible to fix due to constraints of the OS, browser runtime, etc. Suggests the bug should be closed or tagged "no priority."
+
+# Hey! My bug wasn't fixed!
+
+Yeah, what's up with that? There are a number of reasons an issue might get closed without being fixed:
+
+* Tagged "move to backlog" - the issue is a larger feature/enhancement request. It's not forgotten! Look for a link in the comment thread to a user story on our [feature backlog](http://bit.ly/BracketsBacklog). Please vote on the story to help us prioritize it!
+* Tagged "fixed but not closed" - well, _we_ think it's fixed. Make sure you have a Brackets build containing the fix (check the sprint milestone assigned to the bug). If you're still seeing it, please let us know.
+* Duplicate - there's already a bug for this (may be part of a larger issue).
+* Unable to reproduce - we're unable to reproduce the results described in the bug report. If you're still seeing it, please reply with more detailed steps to trigger the bug.
+* Out of scope - the change requested probably doesn't belong in Brackets core... but it could still make for a great extension! Feel free to start a discussion on the newsgroup about building one.
+* Not a bug / fact of life - what the bug report describes is the intended behavior. If it feels wrong, we should discuss how to improve the usability of the feature.
+* Tagged "no priority" (and typically left open) - the impact is so low that we don't plan to spend time fixing the bug. But we would accept a fix is someone else is willing to work on it.
+
+If you disagree with a bug being closed, feel free to post a comment asking for clarification or re-evaluation. The more new/updated info you can provide, the better.
+
+<br>
 Thanks a ton for your support and contributions to Brackets!
