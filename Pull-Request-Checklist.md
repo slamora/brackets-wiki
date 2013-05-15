@@ -1,26 +1,31 @@
-###Proposed Pull Request checklist
+High quality code and a top-notch user experience are very important in Brackets, and we carefully review pull requests keep it that way. Here's what we expect of a good quality pull request - be sure to follow all these items for a smooth landing!
 
-* Does this change belong in core? Some features would be better as an extension - could it be done as an extension by separating out a more limited set of core changes (e.g. more generic APIs)?
-* Some pull requests require the core team to implement additional supporting code in order to work. These pull requests may be delayed until the core team has time to do that work.
-* Any major architectural or UI changes have been discussed in the forum?
-* All new APIs are documented in the [Release Notes] (https://github.com/adobe/brackets/wiki/Release-Notes)?
-* Code follows our JS coding style guidelines (we probably need to clean those up)
-* Code passes JSLint
-* Code is syntactically valid (Brackets launches & no exceptions in the console)
-* Testing
-    * Code has been tested -- describe the cases that were tested
-    * All unit tests pass
+
+###Pull Request Checklist
+
+1. Discuss any major architectural or UI changes in the [brackets-dev newsgroup](http://groups.google.com/group/brackets-dev)
+2. Does this change belong in Brackets core? Some features would be better as an extension - which may require factoring out a generic set of core API changes to enable writing the extension. When in doubt discuss in the newsgroup
+3. Code follows our [JS coding style guidelines](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions)
+4. Code is well documented, including Closure-style [type annotations](https://developers.google.com/closure/compiler/docs/js-for-compiler#types)
+5. Code passes JSLint
+6. Testing
+    * Code has been tested - in your pull request, describe the cases you tested
     * No known bugs
-    * Smoke tests have been run (nontrivial changes specifically)
-    * Please write Unit Tests for all new functionality
-* All UI strings externalized (we should have a how-to page for this).
-* If there are string changes, it can't land at the very end of the sprint
-* Native: should compile
-* Native: Mac AND Win implementations
-* UI is reasonably polished ?
+    * All unit tests pass (_Debug > Run Tests_)
+    * [Smoke tests](Brackets Smoke Tests) pass (for larger, cross-cutting changes)
+7. Include unit tests for new functionality
+8. Avoid breaking API changes - existing public APIs are not strictly frozen, but you'll need a good reason for breaking backwards compatibility. The more commonly-used the API, the stronger the reason needed
+9. All user-visible strings are [externalized](Localization)
+    * Note: there's a "string freeze" near the end of each sprint. Pending pull requests with string changes must wait until the start of the next sprint.
+10. UI is reasonably polished
+11. After merging, all new & changed APIs should be documented in the [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
 
-###Avoid Common pitfalls
-(make sure these have been thought about):
-* Text manipulation commands: should consider what happens when in an inline editor at boundaries
-* Inline editors: does this collide with any other providers?
-* Code hinting: does this collide with any other providers?
+###Common Pitfalls
+
+To avoid problems, consider whether any of these apply to your pull request:
+
+* Text editing commands: what happens at the edges of an inline editor? (not just the edges of the overall document)
+* Inline editors: does this collide with any other Quick Edit providers?
+* Code hinting: does this collide with any other hint providers?
+* Live Preview: ensure [Server smoke tests](Brackets Server Smoke Tests) pass
+* Native code (brackets-shell): must include both Mac _and_ Win implementations
