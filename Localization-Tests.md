@@ -1,4 +1,6 @@
-# Notes for testing
+These steps are designed to walk you through almost every piece of the Brackets UI. This especially valuable when working on localization since it lets you see every string in the context it's used in.
+
+### Notes for testing
 
 * Clone the brackets git repository to your local machine. The repo contains test used for these localization tests.
 * ``citrus completed`` test project: https://github.com/adobe/brackets/tree/master/test/smokes/citrus%20completed
@@ -9,7 +11,7 @@
 
 # General UI
 
-## Menus
+### Menus
 
 **Note: Debug menu is not tested**
 
@@ -20,15 +22,15 @@
 5. Navigate
 6. Help
 
-## Toolbar
+### Toolbar
 1. Experimental Build
 2. Lightning bolt icon tooltip ``<tooltip_live_preview>``
 
-## About
+### About
 1. On mac, ``Brackets > About Brackets``. On win, ``Help > About``
 2. Confirm about dialog text ``<dialog_about>``
 
-## Sidebar
+### Sidebar
 
 1. Click ``View > Hide Sidebar`` menu
 2. Open the ``View`` menu again
@@ -37,7 +39,7 @@
 
 # File Operations
 
-## Open
+### Open
 
 1. Click ``File > Open...`` menu
 2. Confirm file open dialog ``<dialog_file_open>``
@@ -45,12 +47,12 @@
 4. Click ``File > Open Folder...`` menu
 5. Confirm open folder dialog ``<dialog_folder_open>``
 
-## Quick Open
+### Quick Open
 
 1. Click ``Navigate > Quick Open``
 2. Confirm the quick open UI appears at the top of the editor ``<dialog_quick_open>``
 
-## Error opening file (mac only)
+### Error opening file (mac only)
 
 _On Windows, we have a backlog item to address the lack of an error message https://trello.com/c/lSdnZmBc_
 
@@ -58,7 +60,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 2. Click on ``events.jpg``
 3. Confirm error message ``<dialog_error_opening_file>``
 
-## Invalid file name
+### Invalid file name
 
 1. Click ``File > New`` menu
 2. Confirm ``untitled.js`` editable file name <project_panel_untitled_file>
@@ -69,7 +71,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 7. Rename ``untitled.js`` to ``index.html``
 8. Confirm error message ``<dialog_error_file_already_exists>``
 
-## Save
+### Save
 
 1. Open ``index.html``
 2. Make any change
@@ -91,7 +93,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 **Note: These tests assume that Brackets does not update the project tree when files are added and removed. Since these tests require changes to the file system, it is recommended to work with a separate copy of the ``citrus completed`` project and to close and restart Brackets for each test.**
 
-## Directory Permissions
+### Directory Permissions
 
 1. In the operating system, remove **write** permissions from the ``css`` directory. On mac, use ``chmod 444 css``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
 2. In Brackets, select the ``css`` directory in the project tree.
@@ -100,7 +102,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Confirm error creating file dialog ``<dialog_error_creating_file_no_modifications>``
 6. In the operating system, restore the original permissions to the ``css`` directory
 
-## Write Permissions
+### Write Permissions
 
 1. In the operating system, remove **write** permissions from ``index.html``. On mac, use ``chmod 444 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
 2. In Brackets, open ``index.html``
@@ -109,14 +111,14 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Confirm error saving file dialog ``<dialog_error_saving_file_no_modifications>``
 6. In the operating system, restore the original file permissions to ``index.html``
 
-## Read Permissions
+### Read Permissions
 
 1. In the operating system, remove **read** permissions from ``index.html``. On mac, use ``chmod 0 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Read" permission. Save permission changes when finished.
 2. In Brackets, open ``index.html``
 3. Confirm error opening file dialog ``<dialog_error_opening_file_not_readable>``
 4. In the operating system, restore the original file permissions to ``index.html``
 
-## Read Permissions on Reload
+### Read Permissions on Reload
 
 1. In Brackets, open ``index.html``
 2. Make any edit, do not save. A dirty dot should appear in the working set next to the file and in the toolbar next to the file name.
@@ -131,7 +133,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 11. Choose ``OK`` and confirm the file in Brackets is still dirty
 12. In the operating system, restore the original file permissions to index.html
 
-## File Encoding Error (mac only)
+### File Encoding Error (mac only)
 
 1. Open ``index.html`` in a text editor that allows saving with a different encoding (e.g. Sublime Text 2)
 2. In the text editor save ``index.html`` with encoding: UTF-16 BE with BOM
@@ -141,7 +143,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 6. Choose ``OK``
 7. In the text editor save ``index.html`` restore the original UTF-8 encoding
 
-## File not found
+### File not found
 
 1. In Brackets, close ``index.html`` if open
 2. In the operating system, delete ``index.html``
@@ -150,7 +152,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Confirm error opening file dialog ``<dialog_error_opening_file_file_not_found>``
 6. In the operating system, restore ``index.html``
 
-## Directory not found
+### Directory not found
 
 1. In Brackets, collapse all folders (only ``css``, ``images`` and ``index.html`` should be visible in the tree)
 2. Quit and restart Brackets
@@ -159,7 +161,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Confirm error loading project dialog ``<dialog_error_loading_project_directory_contents>``
 6. In the operating system, restore the ``images`` directory
 
-## Directory not found at startup
+### Directory not found at startup
 
 1. With ``citrus completed`` as the current project, quit Brackets
 2. In the operating system, rename the ``citrus completed`` directory to ``foo``
@@ -169,7 +171,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 # Editor
 
-## Find/Replace
+### Find/Replace
 1. Open ``index.html``
 2. Click ``Edit > Find`` menu
 3. Confirm find UI appears at the top of the editor ``<dialog_find>``
@@ -180,7 +182,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
 9. Press escape
 
-## JSLint
+### JSLint
 
 1. Enable ``View > Enable JSLint`` (a checkmark will appear when enabled)
 2. Confirm JSLint panel title ``<panel_jslint>``
@@ -199,7 +201,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 **Requires Google Chrome to be installed http://www.google.com/chrome**
 
-## Connect
+### Connect
 
 1. Exit Chrome if it is running.
 2. Open ``index.html``
@@ -208,18 +210,18 @@ _On Windows, we have a backlog item to address the lack of an error message http
 4. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
 5. Quit Chrome
 
-## Connection Error (mac only)
+### Connection Error (mac only)
 1. Start Chrome
 2. Click ``File > Live Preview`` menu
 3. Confirm live development error dialog ``<dialog_live_development_connection_error>``
 4. Click ``Cancel``
 
-## Wrong File Type
+### Wrong File Type
 1. Open ``css\desktop.css``
 2. Click ``File > Live Preview`` menu
 3. Confirm live development error dialog ``<dialog_live_developement_file_type_error>``
 
-## Chrome Not Found
+### Chrome Not Found
 1. Close Chrome if running
 2. Rename the Chrome executable
 3. Open ``index.html``
@@ -227,7 +229,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Confirm live development error dialog ``<dialog_live_development_chrome_not_found>``
 6. Restore the Chrome executable name
 
-## Base URL
+### Base URL
 1. Open the ``server-smokes`` project
 2. File > Project Settings...
 3. Confirm project settings dialog ``<project_settings_dialog>>``
@@ -247,7 +249,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 The following tests configure fake updates for testing ``Help > Check for Updates``. Update information is normally pulled from http://brackets.io.
 
-## Manual Check for Updates
+### Manual Check for Updates
 1. Click ``Debug > Show Developer Tools`` to open dev tools window (if Debug is not available, open Chrome, go to http://localhost:9234, then choose the last link)
 2. Click the ``Sources`` tab at the top of the dev tools window
 3. If the script console is hidden, press ``esc`` to open the console
