@@ -12,7 +12,7 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 * make sure it's flat i.e. without gradients, highlights, or shadows
 * the corners are slightly rounded
 * use thinner lines rather than thicker lines
-* try to use SVG instead of PNG
+* try to use SVG instead of PNG.
 
 ![Rounded Corner Example](icon-guidelines/rounded-corner-example.png)
 
@@ -32,11 +32,11 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 The icon should be white with opacity set to 0.7 in the CSS by default.
 
 * pressed state has an opacity of 0.5 set in CSS on the white icon
-* disabled state has an opacity of 0.3 set in CSS on the white icon
+* inactive/disabled state has an opacity of 0.3 set in CSS on the white icon
 * use green (#91cc41) for success state
 * use blue (#78b2f2) for active/open state
 * use yellow (#e3b551) for warning state
-* use red (#f74687) for error state
+* use red (#f74687) for error state.
 
 ### Examples
 
