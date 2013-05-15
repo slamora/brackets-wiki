@@ -20,6 +20,8 @@ High quality code and a top-notch user experience are very important in Brackets
 10. UI is reasonably polished
 11. After merging, all new & changed APIs should be documented in the [Release Notes](https://github.com/adobe/brackets/wiki/Release-Notes)
 
+(See also the [Pull Request _Review_ Checklist](Pull-Request-Review-Checklist) that committers follow when doing the code review)
+
 ###Common Pitfalls
 
 To avoid problems, consider whether any of these apply to your pull request:
