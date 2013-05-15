@@ -6,7 +6,7 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 * enforce consistency within the application
 * make the interface visually engaging.
 
-# Styleguide
+## Styleguide
 
 * use simple shapes that are not too detailed, use as less anchor points as possible
 * make sure it's flat i.e. without gradients, highlights, or shadows
@@ -19,12 +19,15 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 ![Stroke Example](icon-guidelines/stroke-example.png)
 
 
-## Icon Size:   
+### Icon Size  
 
 * 20px by 20px
 * for sprites use a grid with gridlines 20px apart.
 
-## Use Colors to Indicate Extension State:
+
+### Use Colors to Indicate Extension State
+
+![Extension State Example](icon-guidelines/extension-icon-states.png)
 
 The icon should be white with opacity set to 0.7 in the CSS by default.
 
@@ -34,5 +37,12 @@ The icon should be white with opacity set to 0.7 in the CSS by default.
 * use blue (#78b2f2) for active/open state
 * use yellow (#e3b551) for warning state
 * use red (#f74687) for error state
+
+### Examples
+
+* [Extension Manager Icon](icon-guidelines/topcoat-plugin-20.svg)
+* [Device Preview Icon](icon-guidelines/topcoat-preview-20.svg)
+* [Web Font Icon](icon-guidelines/topcoat-webfont-20.svg)
+
 
 Ping @larz0 if you need help with your extension icon.
