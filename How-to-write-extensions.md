@@ -14,15 +14,7 @@
 * To debug problems, use "Debug > Show Developer Tools" to open developer tools in a tab in Chrome. You can use console.log() from your extension code, set breakpoints, etc.
     * _The first time you open Developer Tools, you must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_ - otherwise using Reload while dev tools are open will not reflect changes to your extension.
 
-##### Optional: more robust workflow
-
-You can run two instances of Brackets so you still have a working editor if you end up breaking Brackets in the process of developing your extension:
-
-* Use "Debug > New Window" to launch a new, separate Brackets instance.
-* In window #2, you can open a different folder on disk to access other content for testing your extension (e.g. test.html).
-* In window #1, edit your extension code and save.
-* Reload window #2 to pick up extension changes, and test it out.
-* Don't reload window #1 until you're at a good stable "safe point."
+See **[[Debugging Brackets]]** for a more robust two-window workflow.
 
 ## Extension Architecture
 
