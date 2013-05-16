@@ -13,7 +13,7 @@ Note: you must sign the **[Brackets Contributor License Agreement](http://dev.br
 6. Testing
     * Code has been tested - in your pull request, describe the cases you tested
     * No known bugs
-    * All unit tests pass (_Debug > Run Tests_)
+    * All unit tests pass (<i>Debug > Run Tests</i>)
     * [Smoke tests](Brackets Smoke Tests) pass (for larger, cross-cutting changes)
 7. Include unit tests for new functionality
 8. Avoid breaking API changes - existing public APIs are not strictly frozen, but you'll need a good reason for breaking backwards compatibility. The more commonly-used the API, the stronger the reason needed
