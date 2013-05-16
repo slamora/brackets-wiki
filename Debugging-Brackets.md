@@ -1,8 +1,10 @@
 ## Simple Debugging
 
-To bring up the Chrome Developer Tools on the Brackets window, use _Debug > Show Developer Tools_. This will open a new tab in Chrome containing the developer tools.
+To bring up the Chrome Developer Tools on the Brackets window, use _Debug > Show Developer Tools_. This will open a new tab in Chrome containing the developer tools. You can use `console.log()`, breakpoints, etc. just as if you were debugging a normal web page.
 
-If you need to debug code that runs at startup, you can launch Brackets, open the developer tools, set your breakpoints, and then select _Debug > Reload Brackets_. The developer tools will remember your breakpoints as the startup process runs after reload.
+_The first time you open Developer Tools, you must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_ - otherwise using Reload while dev tools are open will not reflect changes to certain code (such as extensions).
+
+To debug code that runs at startup you can launch Brackets, open the developer tools, set your breakpoints, and then select _Debug > Reload Brackets_. Developer tools will remember your breakpoints as the startup process runs after reload.
 
 
 ## Two-Window Workflow
