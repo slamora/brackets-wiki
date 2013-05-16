@@ -2,50 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="480px" height="640px" viewBox="0 0 480 640" enable-background="new 0 0 480 640" xml:space="preserve">
-<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M9,5.176v-1c0-1.5-0.44-2-2-2c-1.5,0-2,0.56-2,2v1H4
-	c-1.56,0-2,0.5-2,2v8c0,1.529,0.44,2,2,2h13c1.561,0,2-0.471,2-2v-8c0-1.5-0.439-2-2-2h-1v-1c0-1.44-0.5-2-2-2c-1.561,0-2,0.5-2,2v1
-	H9z"/>
-<path fill-rule="evenodd" clip-rule="evenodd" fill="#91CC41" d="M29,5.176v-1c0-1.5-0.44-2-2-2c-1.5,0-2,0.56-2,2v1h-1
-	c-1.56,0-2,0.5-2,2v8c0,1.529,0.44,2,2,2h13c1.561,0,2-0.471,2-2v-8c0-1.5-0.439-2-2-2h-1v-1c0-1.44-0.5-2-2-2c-1.561,0-2,0.5-2,2v1
-	H29z"/>
-<path fill-rule="evenodd" clip-rule="evenodd" fill="#78B2F2" d="M49,5.176v-1c0-1.5-0.44-2-2-2c-1.5,0-2,0.56-2,2v1h-1
-	c-1.56,0-2,0.5-2,2v8c0,1.529,0.44,2,2,2h13c1.561,0,2-0.471,2-2v-8c0-1.5-0.439-2-2-2h-1v-1c0-1.44-0.5-2-2-2c-1.561,0-2,0.5-2,2v1
-	H49z"/>
-<path fill-rule="evenodd" clip-rule="evenodd" fill="#E3B551" d="M69,5.176v-1c0-1.5-0.44-2-2-2c-1.5,0-2,0.56-2,2v1h-1
-	c-1.56,0-2,0.5-2,2v8c0,1.529,0.44,2,2,2h13c1.561,0,2-0.471,2-2v-8c0-1.5-0.439-2-2-2h-1v-1c0-1.44-0.5-2-2-2c-1.561,0-2,0.5-2,2v1
-	H69z"/>
-<path fill-rule="evenodd" clip-rule="evenodd" fill="#F74687" d="M89,5.176v-1c0-1.5-0.44-2-2-2c-1.5,0-2,0.56-2,2v1h-1
-	c-1.56,0-2,0.5-2,2v8c0,1.529,0.44,2,2,2h13c1.561,0,2-0.471,2-2v-8c0-1.5-0.439-2-2-2h-1v-1c0-1.44-0.5-2-2-2c-1.561,0-2,0.5-2,2v1
-	H89z"/>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+	 width="20px" height="20.583px" viewBox="0 0 20 20.583" enable-background="new 0 0 20 20.583" xml:space="preserve">
+<path fill="#FFFFFF" d="M8,6.5v-1C8,4,7.561,3,6,3C4.5,3,4,4.06,4,5.5v1H3c-1.56,0-2,0.5-2,2v6c0,1.529,0.44,2,2,2h13
+	c1.561,0,2-0.471,2-2v-6c0-1.5-0.439-2-2-2h-1v-1C15,4.06,14.5,3,13,3c-1.561,0-2,1-2,2.5v1H8z"/>
 </svg>
