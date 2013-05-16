@@ -175,22 +175,14 @@ For a higher-level overview (with API important changes called out), check the [
 ## Contributing Code ##
 
 ### Useful Tools for Development ###
-If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. (If your Brackets gets really hosed, you may need to restart the application).  
+If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. [More on debugging Brackets...](Debugging Brackets)
 
-To bring up the Chrome Developer Tools on the Brackets window, use *Debug > Show Developer Tools*. This will open a new Chrome tab with the developer tools.
+You can use *Debug > Run Tests* to run our unit test suite. Use *Debug > Show Perf Data* to show some rudimentary performance info (see the `PerfUtils` API for adding more).
 
-If you need to debug startup code, you can launch Brackets, open the developer tools, set your breakpoints, and then select *Debug > Reload Brackets*. This will re-run all of the startup code and stop at any breakpoints you have set.
+### Saving Your Code Changes ###
+If you've found an issue you want to fix or a feature you want to implement, eventually you'll want to submit a _pull request_ back to Brackets upstream. Here's how to organize your changes so they're ready to turn into a pull request.
 
-You can open a second Brackets window from *Debug > New Window*. This is nice because it means you can use a stable Brackets in one window to edit your code, and then reload the app in the second window to see if your changes worked. You can bring up the developer tools on the second window, too. 
-
-You can use *Debug > Run Tests* to run our unit test suite, and *Debug > Show Perf Data* to show some rudimentary performance info. There is also an article on [Debugging Test Windows in Unit Tests](https://github.com/adobe/brackets/wiki/Debugging-Test-Windows-in-Unit-Tests).
-
-### Modifying the Code ###
-So you have found an issue that you want to fix or a feature you want to implement. Start off by creating a new branch in your local directory. This assumes you are working in the brackets directory, but the same thing would apply for the brackets-app project as well. 
-
-> Make sure to follow the [coding conventions](Brackets Coding Conventions) for Brackets so that your code matches the rest of the project.
-
-Start by creating a new branch off of master for the feature you want to work on. This makes sure that your master branch can stay in sync with the main Brackets repository and if the feature doesn't work or breaks something, you can always start fresh with your local master branch. It also makes updating your pull request much easier as you can see below.
+First, create a new branch off of `master` for the change you want to work on. This allows your `master` branch to stay in sync with the main Brackets repository - and if your change doesn't work or breaks something, you can always start fresh from your local `master` again.
 
 ```
 git checkout master
@@ -198,57 +190,45 @@ git branch mynewfeature
 git checkout mynewfeature
 ```
 
-> Note, that if you are fixing a particular issue, it can be useful to include the issue number in the branch name, for example _fix_issue_68_.
+That creates a new branch called `mynewfeature` and sets it as your working branch. Any changes you make now will be linked to that branch. While you work on it, you should still keep your branch in sync with Brackets master following the "Getting Updates from the Main Repository" steps above. 
 
-That creates a new branch called `mynewfeature` and sets it as your working branch. Any changes you make now will be linked to that branch. If you're working on a big feature that may take some time, remember that you can always use the git fetch and merge commands from upstream, as described above, to merge the latest master from the main Brackets repository into your current working branch. Dealing with merges incrementally like this can be better than trying to reconcile everything once you're finished with your feature. 
+Now go ahead and modify some code, make your fix, and be sure that it works in your copy of Brackets. As always, please follow the [guidelines for contributing code](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#contributing-code) to ensure your code matches what's expected for Brackets contributions.
 
-Go ahead and modify some code, make your fix, and be sure that it works in your copy of Brackets. Once you're happy with the fix, it's time to commit those changes and get ready to send it back to the team. You can use `git add <filename>` to add any files you've changed to the commit you want to make and then use `git commit -m "COMMIT MESSAGE"` to commit those changes. You can also use `git commit -a` to commit all of the current changes. Be sure to replace COMMIT MESSAGE with a detailed message that describes the changes you're making for that specific commit. 
+Next it's time to _commit_ your changes to your local git repo. Use `git add <filename>` to stage any modified files for committing, then use `git commit -m "COMMIT MESSAGE"` to commit those files. (Or just use use `git commit -am "COMMIT MESSAGE"` to commit all modified files). Be sure to write a thorough commit message that describes the changes you're making and why. 
 
-Once that's done the next step is to push those changes to your GitHub account using git push. This is where it's important to understand branches, origins, and remotes. You've made all of these changes (and committed them) to your local copy of the Brackets repository. And hopefully you've been pulling down new versions from the linked, remote branch of Brackets, and merging them as you go. What you need to do now is tell Github about your branch and the commits it contains. Github repositories use `origin` to reference your Github-hosted fork. So to push your changes use.
+The last step before submitting a pull request is to _push_ those changes to your GitHub account - so far the changes are only stored in your local copy of the Brackets repository. Remember that your GitHub fork of the Brackets repo is called "origin"... so to push your changes use:
 
 ```
 git push origin mynewfeature
 ```
 
-That command creates a branch on your Github-hosted fork of Brackets and commits all of the changes. Until now everything we did was local. Now Github knows about our branch as well as our changes.
+That command creates a matching branch on your GitHub-hosted repo and copies your branch's commits into it. Now your commits are stored on the GitHub server and not just locally.
 
-> Before you submit a pull request you should make sure everything passes JSLint. This is easy because Brackets will show you anywhere in your file that JSLint sees an error. You also need to make sure that the unit tests pass without any errors. You can run the Brackets unit tests by going to *Debug > Run Unit Tests* in Brackets. The tests require Chrome and you should quit Chrome before running the tests for the most accurate results.
-Please also review the [Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist) for additional guidance.
+This is a good time to review the **[[Pull Request Checklist]]** - make sure your code passes JSLint, doesn't break any unit tests, etc.
  
 
 ### Submitting a Pull Request ###
-Now you're ready to submit a pull request. Go to the GitHub page for your fork of Brackets. In order to submit a pull request, you need to be looking at the branch you created, which we called `mynewfeature`. GitHub has a pulldown that lets you select branches in your fork of the repository. Click that, find the branch you were working on, and select it. Now you're looking at the code for that branch. 
+Now you're ready to submit a pull request. Go to the GitHub page for your fork of Brackets and choose your branch from the dropdown near the upper left (it says `master` by default). Now you're looking at the code for that branch. 
 
-Click the pull request button in the top right and you'll be brought to a page that describes the pull request. You want to make sure that you're submitting your pull request to the `adobe/brackets` repository and that the pull request is coming from the branch you've been working on. 
+Click the Pull Request button in the top right and you'll be brought to a page that describes the pull request. Make sure you're submitting _to_ the `adobe/brackets` repository, _from_ the branch you've been working on. 
 
-You'll be able to take a look at all of the commits associated with this pull request and all the files that you've modified. Make sure this is all correct and then in the description provide a detailed description of what your pull request does.
+Review the "Commits" and "Files Changed" tabs to make sure you're submitting only the changes you intend. Write a detailed description of what your pull request does (including any associated bug numbers, e.g. "issue #1234", to ensure the pull request is linked to the bug). Then click "Send pull request."
 
-Now you've got your first pull request in! Check back for comments the team might have for the pull request. If it's set, they'll merge it in and you're officially a Brackets contributor. Sometimes they'll ask you to make changes.
+Congratulations on submitting your pull request - you've helping make Brackets even better! Read about [the pull request review process](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#the-code-review-process) for what happens next.
 
 #### Updating an Existing Pull Request
-In a lot of cases you may have to make changes to your pull request. If you're working off a branch, Github makes this very easy. After you've gotten comments on the pull request and know what changes you need to make, go into your code and make sure you're working on your branch.
+During code review, you will probably be asked to make some changes to your code. First, make sure you're working on the correct branch:
 
 ```
 git checkout mynewfeature
 ```
 
-Then go through the steps above to modify your code and make any changes based on comments from the pull request. Commit all of those changes with `git commit` and then push the changes to your Github-hosted fork with `git push origin mynewfeature`.
+Then make the necessary code changes. When done, repeat the `git commit` and `git push` steps from above.
 
-As soon as you push those changes to the origin, the pull request you submitted will automatically be updated with the new code. If you go look at the pull request, you'll see a new comment entry with the commits that you added to the branch. Sometimes it helps to add another comment right after that commit describing some of the changes you made in more detail. 
-
-### Fixing a Bug ###
-
-If you are working on a specific bug, here are the steps to follow:
-
-1. Create a new branch and use the issue number as the branch name. Be sure you have the latest code from the main repository before branching to make merging as easy as possible (instructions above).
-1. Fix the bug.
-1. Commit and push your changes according to the instructions above.
-1. Submit a pull request. Make sure the text "issue #123" (use your specific issue number) is in the pull request notes in order to create a link to the issue.
-
-That's it! You've just made Brackets even better.
+_Ta daa!_ As soon as you've pushed those changes to "origin" (your fork on GitHub), your pull request is automatically updated with the new code. Finally, add a comment to the pull request describing the new changes - this ensures the code reviewer is notified of your update.
 
 
-### <a name="nativeshell"></a> Hacking on brackets-shell ###
+## <a name="nativeshell"></a> Hacking on brackets-shell ##
 For most of your changes to Brackets, you should only need to edit the HTML/JS/CSS code in the brackets repo. You won't need the source for brackets-shell because you can use a pre-built binary from a Brackets installer to run your modified HTML/JS/CSS code ([see instructions above](#setup_for_hacking)).
 
 However, you may want to set up a dev environment for brackets-shell if:
