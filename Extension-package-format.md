@@ -23,7 +23,8 @@ Brackets uses the same [package.json format as npm](https://npmjs.org/doc/json.h
 
 * `name` and `version` are required as in Node
 * Brackets adds an optional `title` that is the pretty display form of `name`
-* `description` is required, but will optionally be pulled from a README.txt or README.md file at the top of the package
+* `description` is required, but will optionally be pulled from a README.txt or README.md file at the top of the package (note that pulling from README files is not currently implemented).
+* `homepage` can be a URL that will provide the user with more information (and a "More Info" link is provided in the Extension Manager for this purpose)
 * the `keywords` field will help users find the extensions they need (see below)
 * `files` works the same as it does for npm, including the optional use of an `.npmignore` file
 * Brackets does not support any of npm's dependencies-related features on installation. When we implement extension dependencies, those will likely be expressed as [peerDependencies](http://blog.nodejs.org/2013/02/07/peer-dependencies/)
@@ -41,6 +42,7 @@ Brackets uses the same [package.json format as npm](https://npmjs.org/doc/json.h
     "name": "unique-lowercase-identifier",
     "title": "Pretty Title for the UI",
     "description": "More useful details to let someone know what your extension is all about.",
+    "homepage": "https://github.com/yourname/yourproject",
     "version": "1.0.0",
     "author": "Your Name <your@email> (http://your.url)",
     "license": "MIT",
