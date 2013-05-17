@@ -42,3 +42,16 @@ Go-To-Definition allows the user to have the cursor move to the definition of th
 **Interaction:**
 
 This feature is controlled by the Navigation Menu -> Jump to Definition (control-J).  Note that there is already a different Brackets feature called Go-To-Definition.  We expect the names of both features to change.
+
+##Initializing a hinting context on file open
+
+If the opened file had already been added to Tern then no new files need to be read in. If the previous file has been modified (does not need to be saved) then the contents of the new file will be updated in Tern.
+
+When a JavaScript or HTML file is opened in Brackets the JS Code Hinter reads additional files and adds those to Tern to be analyzed. All of the JS files in the directory of the opened file are added to Tern. More files may be added depending on if the opened file uses requirejs. This directory of the initial file is considered the root directory of the JS Code Hinter.
+
+After the files in the current directory are added to Tern, the opened file is analyzed. If the opened file uses requirejs to create dependencies, all of the dependent files will be added to Tern.
+
+If the opened file does not have dependencies on other files, it is assumed that more files will be needed to provide a better context for hinting. First the JS files in the subdirectories of the opened file will be added to Tern to provide more context. If the opened file is in a subdirectory of the Bracket's project root, then JS files from the project's root directory will be added to Tern as well. 
+
+The JS Code Hinter limits the number files that can be added to Tern at 100.
+
