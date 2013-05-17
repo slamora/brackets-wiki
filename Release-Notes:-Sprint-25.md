@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 25 -- approximately
 What's New in Sprint 25
 -----------------------
 * **Live Preview**
-    * [Improved connection reliability on Windows](https://trello.com/card/2-live-development-improve-launching-chrome-on-win/4f90a6d98f77505d7940ce88/835): No longer need to restart Chrome.
+    * [Improved connection reliability](https://trello.com/card/2-live-development-improve-launching-chrome-on-win/4f90a6d98f77505d7940ce88/835): No longer need to restart Chrome on Windows. If the Live Preview connection is lost, Brackets gives the reason why.
 * **Extensions**
     * [Extension manager](https://trello.com/card/2-extension-listing-remove-manage/4f90a6d98f77505d7940ce88/815): Listing of your currently installed extensions. Easier to uninstall extensions.
 * **File Management**
