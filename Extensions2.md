@@ -1,224 +1,317 @@
-# Extensions 2 #
+# Extension API Evolution #
 
-Compiled by Kevin Dangoor with feedback from the Brackets team. Feel free to contact me (dangoor@adobe.com) with feedback.
+Status: Proposal
 
-**Status:** This is the second draft.
+Email comments to: dangoor@adobe.com
 
-This document follows the research on [Extension Management](https://github.com/adobe/brackets/wiki/Research:-Extension-Management). We have charted out a general path forward describing how Brackets users will be able to find, install and manage the extensions they use. Making these things easier will likely increase the number of Brackets extensions significantly.
+## Introduction ##
 
-Extension Management covered extension packages and how they are shipped around. In that research, we did not delve into how extensions are written.
+The Brackets extension API has been very successful as measured by the number and power of the extensions we have. We presently have two requirements that are not met by our current extension API:
 
-## Restartlessness ##
+* Ability to be "restartless" (not requiring a restart when disabling or updating an extension)
+* Mechanism for sharing services between extensions
 
-Our product owner has expressed that he would like extensions to be restartless. More specifically, users can install, upgrade, disable, re-enable and remove extensions at will without having to restart Brackets.
+The need for restartlessness may not be obvious right now, but already in Sprint 25, the addition of the Extension Manager has started to show the 
 
-We *could* add this capability to Brackets extensions as they exist today (Sprint 21) by defining an extension lifecycle with a hook for removing everything an extension has plugged in. However, by not making automatic deregistration a core feature of our API, we are placing a burden on our extension developers. Adding the "restartless" feature will make writing extensions more difficult and will likely result in extensions that don't fully clean up after themselves.
+I have been working through some ideas on how to achieve these things and created a prototype that meets these requirements and provides other improvements as well. A simple example extension will show the proposed style.
 
-To do restartless "right" means building out new APIs specifically for extensions.
+Note that this proposal is about the *style* and *features* of the API and not about the exact calls that will be made. I expect that those calls will be worked out over time.
 
-## Side Effects of a New API ##
+## Sample Extension ##
 
-If we build a new extension API, we can build it such that we make some attractive side effects possible, even if they're not implemented in the first round.
+Adding commands and menu items is something that nearly every extension does, so I chose those two features for the sample extension. I didn't want a lot of other code to distract from the main proposal.
 
-* pieces of Brackets core can be more independent/less coupled
-* looser coupling will make the transition to the browser easier
-* we can offer live documentation about the APIs that are available within Brackets
-* extensions can themselves be extensible
-* we can hide away more of the complexity of working with Node
-* Brackets core can be more protected from poorly written extensions
-* we *may* also be able to protect Brackets core code from poorly performing extensions
-* it may actually be possible to secure extensions later on if we decide that's valuable (we don't have to do it, but we also don't have to shut the door on it)
-* lazy loading? (my experiments to date have not incorporated this trait, but if we decide we want this feature it should be possible to incorporate)
-
-## Traits of a New API ##
-
-If we can agree on the features we want and the basic patterns we wish to apply, we can start working on the extension mechanism and build out the new API iteratively. By starting out talking about the features and basic concepts, we can avoid getting hung up on syntax.
-
-**Declarative**
-
-To allow extensions to be restartless and not require a bunch of extra work on the part of extension authors, extensions will need to register the features they provide in a declarative manner. The declarations should be tied to the extension so that they can be automatically unregistered when the extension is removed (whether it's because the user uninstalled it, disabled it or upgraded it).
-
-Things like commands, menu items and key bindings are already fairly declarative and I have had three different experimental models that have wrapped those APIs and enabled restartlessness.
-
-**Loosely Coupled**
-
-Registering commands today is largely declarative. However, to register a command an extension has to get a direct reference to the CommandManager module. There is a tight coupling between the CommandManager module and the extension. Looking from the other direction the CommandManager has a reference to the command function, but it does not actually know which extension the command function came from (which is part of the reason that it can't be automatically unregistered).
-
-We can make this situation better by putting a *mediator* in between. This is the sort of architecture proposed in Addy Osmani's [Patterns for Large-Scale JavaScript Application Architecture](http://addyosmani.com/largescalejavascript/). That article is long, but worth reading. For convenience, I'll quote from it along the way in this document.
-
-Through the use of a mediator (more on this to come), we can break the direct link between CommandManager and extensions. Beyond helping extensions become unloadable, Osmani cites four architecture questions that are answered by this sort of pattern:
-
-> 1. How much of this architecture is instantly re-usable?
->
-> 2. How much do modules depend on other modules in the system?
->
-> 3. If specific parts of your application fail, can it still function?
->
-> 4. How easily can you test individual modules?
-
-Flipping the questions around, this architecture makes:
-
-* more code reusable
-* has fewer direct dependencies between modules
-* can make more of the application resilient to failure of other parts
-* can make testing easier
-
-He expressed what the architecture is trying to achieve thusly:
-
-> We want a loosely coupled architecture with functionality broken down into independent modules with ideally no inter-module dependencies. Modules speak to the rest of the application when something interesting happens and an intermediate layer interprets and reacts to these messages. 
-
-Note that when Osmani says "modules", we don't have to interpret this as modules in the RequireJS/CommonJS sense. We can think of these modules as independent functional units (Brackets core, extensions, Node code). In his article, Osmani does talk about routing all communication between actual code modules through the mediator (with a façade in between), but I personally think of modules more in terms of "library code" and the mediator as a means to communicate between services that are available in the total system.
-
-## A New Extensions Conceptual Model ##
-
-![Conceptual Model](https://www.evernote.com/shard/s24/sh/5c77ad19-35da-495d-89dc-1182623ffd9f/f4299d5e27042d1d2cebcac861946aa0/res/7a0b75f5-3c0b-46f8-ab92-98046c9aaa23/skitch.png?resizeSmall&width=832)
-
-To enable all of the features listed in the previous section, extensions will be given a [façade][http://en.wikipedia.org/wiki/Facade_pattern] that allows them to communicate with the core Brackets code, the extensions' own Node code and other extensions. The communication between parts of the system happen via a mediator which offers a shared messaging bus that supports publish/subscribe messaging, request/response messaging and a notion of shared data.
-
-Osmani talks about using the façade for security purposes, but for us the façade has value as a way to maintain information about the services an extension uses and provides to assist in cleaning up if the extension goes away.
-
-All of the communication between the façade and the mediator is asynchronous. Ideally, the data would be jsonifiable so that it can pass between any boundaries it needs to. This way, a message sent to the bus could be handled by code in the client side in brackets-shell, Node, a Web Worker, or the server (for Brackets in the browser). However, passing only jsonifiable data across the bus is only a requirement when crossing process boundaries and should not be considered a requirement.
-
-As a concrete example of this, some editor commands could be implemented requiring just the full text of the current file or selection. The command does some manipulation of the text and then sends a replacement back. These kinds of editor commands could be run *anywhere* because the data is easily serialized.
-
-Other editor commands (block comment, for example) use a lot of contextual information about the document and iteratively expand the selection. Implementing those commands with asynchronous, jsonifiable data would be difficult. For these types of commands, I feel that we are better off at this stage simply passing the document object along.
-
-The "shared data" in the model makes the programming easier in the common cases by using something akin to dependency injection where the extension says which piece of data it needs (the selected text, for example) and the framework provides that when a subscriber is called.
-
-Within Brackets core or within an extension, direct communication between modules can work as it always has.
-
-## Show Me Some Code ##
-
-The conceptual model is the key and we can adjust the syntax used to make writing extensions convenient. Even so, concrete examples in code can be a lot easier to understand than a diagram and prose.
-
-What follows is a complete extension that adds a "Reverse" menu item to the Edit menu. The "ext" object is the façade in the conceptual model and the channels send/receive messages on the shared bus. This extension is functional (and hot reloadable) on the [dangoor/extensions2 branch](https://github.com/adobe/brackets/tree/dangoor/extensions2).
+package.json:
 
 ```javascript
+{
+    "name": "ex1",
+    "version": "1.0"
+}
+```
+
+main.json
+
+```javascript
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
+/*global define, $, brackets */
+
 define(function (require, exports, module) {
-    'use strict';
+    "use strict";
     
-    exports.init = function (ext) {
-        var command = ext.channel("command");
-        var document = ext.channel("document");
-        var menu = ext.channel("menu");
-        
-        // command registration is just a matter of subscribing 
-        // to the corresponding event
-        // the "data" parameter is the information passed along with
-        // the event. The "envelope" contains metadata about the
-        // event.
-        command.subscribe("reverse", function (data, envelope) {
-
-            // envelope.data contains the information requested
-            // via the event subscription options (see below)
-            var text = envelope.data["document.selectedText"];
-            if (!text) {
-                return;
-            }
-            text = text.split("").reverse().join("");
-
-            // this message results in the document change
-            document.publish("replaceSelectedText", text);
-
-        }, {   // start the options for the subscription, this is command metadata
-               // and withData is the data that this handler would like to
-               // have passed in
-            id: "reverse",
-            name: "Reverse",
-            withData: "document.selectedText"
-        });
-        
-        // publish a message to add the item
-        menu.publish("addItem", {
-            menu: "edit-menu",
-            position: "last",
-            command: "reverse"
-        });
-    };
-
+    var CommandManager  = brackets.getModule("command/CommandManager"),
+        Menus           = brackets.getModule("command/Menus");
+    
+    CommandManager.register("Show Message", "showMessage", function () {
+        alert("This is the fun message.");
+    });
+    
+    var viewMenu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
+    viewMenu.addMenuItem("showMessage", null, Menus.FIRST);
 });
 ```
 
-If this extension is turned off/removed, the menu item automatically goes away and the command subscription is removed as well.
+As you can see, this extension is super simple. It adds a menu item:
+
+![Show Message on View menu](screenshots/extensions2/Show_Message_on_View_menu.png)
+
+which, when selected, pops up an alert:
+
+![The Message](screenshots/extensions2/The_Message.png)
+
+This is not my finest moment in UI design. But, I hope you like the API.
+
+## Restartless ##
+
+The simplest thing we can do to make this extension restartless is to [define the extension lifecycle](https://trello.com/card/extensions-lifecycle-improvements/4f90a6d98f77505d7940ce88/647) such that the extension can clean up any bits it has attached to Brackets. In fact, we will certainly want to do this anyhow, because Brackets extensions will always be *able* to do things that we cannot automatically clean up.
+
+Here's what it looks like in my prototype:
+
+```javascript
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
+/*global define, $, brackets */
+
+define(function (require, exports, module) {
+    "use strict";
+    
+    var CommandManager  = brackets.getModule("command/CommandManager"),
+        Menus           = brackets.getModule("command/Menus");
+    
+    var init = function () {
+        CommandManager.register("Show Message", "showMessage", function () {
+            alert("This is the funnest message.");
+        });
+        
+        var viewMenu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
+        viewMenu.addMenuItem("showMessage", null, Menus.FIRST);
+    };
+    
+    var disable = function () {
+        var viewMenu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
+        viewMenu.removeMenuItem("showMessage");
+        CommandManager.unregister("showMessage");
+    };
+    
+    exports.init = init;
+    exports.disable = disable;
+});
+```
+
+There's an `init` function that runs when the extension can attach its parts to Brackets and a `disable` function that runs when the extension is being disabled (either because the user wanted to disable the extension, the user is installing an update to the extension or the extension developer wanted to reload it).
+
+In the prototype, there's an Extensions menu with options to reload any extensions that appear to be reloadable. If you try it out, you'll find that you can change things like the name of the command or the message that appears, reload the extension and it works just fine. The prototype does have bugs. In the full implementation, we could offer an extension for extension developers that provides keyboard shortcuts for reloading the extension they're working on and things like that.
+
+There are a couple of problems with the code above:
+
+1. It's too easy to forget to clean something up. Computers are good at keeping track of things. We don't we let the computer do it?
+2. We can have less code than this, right?
+
+## Less Code and Code Hints! ##
+
+Here's where we make common extensions easier to write. The `init` function takes an argument which is a `ServiceRegistry` object, generally called `services`.
+
+```javascript
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
+/*global define, $, brackets */
+
+define(function (require, exports, module) {
+    "use strict";
+    
+    /*
+     * @param {ServiceRegistry} services
+     */
+    var init = function (services) {
+        services.commands.add("Show Message", "showMessage", function showMessage() {
+            alert("This is the fun message.");
+        });
+        services.menus.viewMenu.addItem("showMessage", null, "first");
+    };
+    exports.init = init;
+});
+```
+
+This code also works in a restartless way. The ServiceRegistry object keeps track of everything set up on behalf of the extension.
+
+The specially formatted comment ([JSDoc](http://usejsdoc.org/) comment) in front of the init function tells Brackets' code hinting that the `services` parameter is a `ServiceRegistry` object. The prototype provides information about `ServiceRegistry` objects to the code hinting.
+
+![CodeHint services](screenshots/extensions2/CodeHint_services.png)
+
+![CodeHint services menus](screenshots/extensions2/CodeHint_services_menus.png)
+
+The code hinting can tell you all about the API of the common extension points of Brackets. Cool, no?
+
+## Service Sharing ##
+
+Beyond restartlessness, the second major feature missing from our current extension API is a mechanism that extensions can use for sharing services. The code hinting screenshots above provide a clue about how this API allows for sharing of services. If, for example, we wanted another extension to be able to access the amazing functionality of popping up an alert box, we could just do this:
+
+```javascript
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
+/*global define, $, brackets */
+
+define(function (require, exports, module) {
+    "use strict";
+    
+    function showMessage() {
+        alert("This is the fun message.");
+    }
+    
+    /*
+     * @param {ServiceRegistry} services
+     */
+    var init = function (services) {
+        services.commands.add("Show Message", "showMessage", showMessage);
+        services.addFunction("ex1.showMessage", showMessage);
+        services.menus.viewMenu.addItem("showMessage", null, "first");
+    };
+    exports.init = init;
+});
+```
+
+In the example above, we've pulled the message display out into a separate function and then used `services.addFunction` to make that available elsewhere. If we start a new extension, code hinting will tell us about the function we've added:
+
+![CodeHint ex1](screenshots/extensions2/CodeHint_ex1.png)
+
+Important note: the intention of this mechanism is the sharing of *services*, not code. While you *could* hook up a library of functions to the `ServiceRegistry`, the real purpose of the registry is to connect *objects* in the running system. My proposal for sharing code is later in this document.
 
 ## Node ##
 
-Extensions (and core Brackets code) that want to run code in Node need to go through a bit of set up ceremony in order to communicate, but the communication is reasonably straightforward after that.
+Brackets extensions gained some major superpowers recently with the addition of [Node.js](http://nodejs.org). Extensions can run external processes, access databases, perform file manipulations with ease and more thanks to Node and the [30,000+ packages in npm](https://npmjs.org/).
 
-We could bridge the message bus between Node and the client side code. This would make it possible for the extension above to run entirely in Node. Of course, there's no reason for that extension to run in Node, but it's easy to imagine other commands that would be easier to write in Node (a deployment command, for example).
+Brackets provides a fairly high-level interface to connect the Node "server" process with the Brackets "client" process. Here's an example with the [server side](https://github.com/dschaffe/brackets-jasmine/blob/master/node/JasmineDomain.js#L28) and [client side](https://github.com/dschaffe/brackets-jasmine/blob/master/main.js#L65) of the [brackets-jasmine](https://github.com/dschaffe/brackets-jasmine) extension.
 
-Even better, though, is that an extension could use one communication model between its own client side code, its Node code, Brackets core and even other extensions.
-
-## Why not JSON? ##
-
-If we're using a declarative format for specifying what an extension offers and needs, why not use JSON for the declarations?
-
-Bespin used a JSON file for its plugins in order to support lazy loading (the JSON for every plugin would be loaded, but the code would only be loaded as needed). There are disadvantages, however:
-
-1. No comments
-2. No variables
-3. No loops
-4. No functions (for Bespin, we defined a "pointer" format: path/to/module#functionName. This was key for lazy loading because it told the system what to load)
-
-JSON is an *option*, but it is not necessarily the most convenient for extension writers. I'll note that this is not a theoretical concern. Here is [a block of main.js from Emmet](https://github.com/emmetio/emmet/blob/master/plugins/brackets/main.js):
+One goal with my prototype was to provide a seamless and *consistent* interface between Brackets and Node. Let's change the `ex1.showMessage` function to accept an argument with the message to display:
 
 ```javascript
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
+/*global define, $, brackets */
 
-    r("actions").getList().forEach(function(action) {
-    if (_.include(skippedActions, action.name))
-        return;
-
-    var id = "io.emmet." + action.name;
-    var shortcut = keymap[action.name];
-
-    CommandManager.register(action.options.label, id, function() {
-        return runAction(action);
-    });
-
-    if (!action.options.hidden) {
-        menu.addMenuItem(id, shortcut);
-    } else if (shortcut) {
-        KeyBindingManager.addBinding(id, shortcut);
+define(function (require, exports, module) {
+    "use strict";
+    
+    function showMessage(message) {
+        message = message || "This is the fun message";
+        alert(message);
     }
+    
+    /*
+     * @param {ServiceRegistry} services
+     */
+    var init = function (services) {
+        services.commands.add("Show Message", "showMessage", showMessage);
+        services.addFunction("ex1.showMessage", showMessage);
+        services.menus.viewMenu.addItem("showMessage", null, "first");
+    };
+    exports.init = init;
+});
 ```
 
-## What about UI? ##
+Now, we create a file called `node-main.js` that sits next to our `main.js` file:
 
-UI patterns that are easily configured and compartmentalized (such as menu items) are no problem. What about more complicated bits of UI?
+```javascript
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50, node: true */
 
-My view is that we help extension developers as much as possible, but otherwise they access the DOM and operate as they always have. To make their extensions restartless, anything that isn't explicitly registered with Brackets will have to be manually cleaned up. But, there are many cases that we can handle for the developers.
+"use strict";
 
-For example, the Hover Preview extension currently attaches a mouse move listener and watches for what's under the cursor. If Brackets exposed a set of "hover" events, Hover Preview could just listen for those events and then it only needs to worry about placing its UI on the screen and removing that visible UI if it is disabled. Brackets will manage the mouse move listener, adding and removing it as necessary.
+/*
+ * @param {ServiceRegistry} services
+ */
+function init(services) {
+    services.commands.add("Powerful Nodey Command", "powerNode", function () {
+        services.ex1.showMessage("Imagine some async nodey goodness here.");
+    });
+    services.menus.fileMenu.addItem("powerNode", null, "first");
+}
 
-## Sandboxing? ##
+exports.init = init;
+```
 
-The model presented here allows us to move forward with extensions that are not sandboxed but does not actively shut the door on sandboxing. The more API surface area that we build out that is asynchronous and jsonifiable, the easier it would be to put compliant extensions into a sandbox. But, we will not need to implement that today or burden extension developers with added complexity.
+Though the code above looks *exactly* like the client-side Brackets code we've seen so far in this document, this code is running in Node. It defines a command and a menu item:
 
-# Conclusion #
+![Node Command](screenshots/extensions2/Node_Command.png)
 
-What I'm proposing at this point is that we move forward with an API for extensions that offers:
+Here's how this works:
 
-1. a predictable extension lifecycle (so that manual setup and teardown is possible as needed)
-2. a declarative mechanism for registering what an extension offers and needs (but this mechanism is in JS)
-3. a mediator that break the coupling and provides a consistent model between Brackets core, extensions, Node and future server-based Brackets
-4. an extension mechanism core that supports these features with actual extension APIs built iteratively over time
+1. The user selects "Powerful Nodey Command" from the File menu
+2. The client side calls the function for the command on the Node side
+3. The Node side then calls *back* to the client to run the ex1.showMessage command with the new message to display
+4. The client side displays the alert with the message provided by the Node side
 
-## Feedback and Going Forward ##
+Calls between the client side and Node are limited to JSON-compatible objects, *except* there is special support for functions in order to make cases like the one above work.
 
-* We may want to do some research into which part of Brackets core code could be better decoupled
-* We need to make sure that extension APIs are clear about which things should be synchronous vs. which things are asynchronous
-    * The example code above is a good example because that code wouldn't really work reliably
-    * selected text can change between the time it's passed in and the time the text is replaced
-* mediated pub/sub for events may not be a win if you need to go grab another object to get the required data
-    * for example, adding an event handler to ProjectManager directly vs. a global mediator seems okay if you're going to be calling a bunch of methods on ProjectManager
-    * on the other hand, testability can be better if you're given a mock ProjectManager instead of the real one
+## Web Workers and Sandboxes ##
 
-Going forward, we can:
+The `ServiceRegistry` is synchronized between the client side and the Node side. It would be possible to fire up a Web Worker to perform background computation on the client side and synchronize a `ServiceRegistry` there in order to provide the same kind of seamless interface that you see with Node.
 
-1. start with [defining extension lifecycle](https://trello.com/card/extensions-lifecycle-improvements/4f90a6d98f77505d7940ce88/647) and making restartless extensions possible
-2. create an [initial façade for registering/unregistering the items](https://trello.com/card/easy-restartless-extensions-for-commands-menu-items-and-keybindings/4f90a6d98f77505d7940ce88/823) that are already designed in a declarative style (commands, menu items and keybindings)
-3. research [decoupling of other Brackets components](https://trello.com/card/research-decoupling-of-brackets-core-components/4f90a6d98f77505d7940ce88/824) (such as Project Manager)
-4. implementation of the decoupling
-5. implement easier Node use via the façade and decoupling mechanisms from items 2 and 3
-6. implement mechanism for extensions to provide features for other extensions (if it's not already done by other stories)
-7. research: review a collection of extensions for commonality and features that appeared to be difficult to implement
+Though we want Brackets extensions to have the kind of unfettered access to Brackets that has enabled them to do so much, this same mechanism could also be used to create restricted execution sandboxes in which to run untrusted extensions.
+
+## Code Sharing ##
+
+In the section on Service Sharing, I suggested that the `ServiceRegistry` is intended to connect up objects in the running system and not just share libraries of functions. So, how *should* extensions share code?
+
+Many packaging systems have been built over the years, each of which had their own good and bad points. Many suffered from issues of different pieces of code relying upon different versions of libraries. This is generally called ["dependency hell"](http://en.wikipedia.org/wiki/Dependency_hell).
+
+npm and Node have actually solved dependency hell. Each package will get the version of a given library that it needs. What if we could just use a common module format and npm to share code?
+
+We can. In fact, in the prototype, we can change main.js to:
+
+```javascript
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50, node: true */
+/*global define, $, brackets */
+
+"use strict";
+
+function showMessage(message) {
+    message = message || "This is the fun message";
+    alert(message);
+}
+
+/*
+ * @param {ServiceRegistry} services
+ */
+var init = function (services) {
+    services.commands.add("Show Message", "showMessage", showMessage);
+    services.addFunction("ex1.showMessage", showMessage);
+    services.menus.viewMenu.addItem("showMessage", null, "first");
+};
+exports.init = init;
+```
+
+No more `define` call at the top. In the prototype, an extension can share a single code module between the client side and Node. This works using [Cajon](https://github.com/requirejs/cajon). A better solution would be to create a module loader for Brackets that follows the [Node module resolution rules](http://nodejs.org/api/modules.html#modules_all_together). By doing that, extension authors can just use `npm install` to get libraries that work in both Brackets client side and the Brackets node server.
+
+Making this change opens up Brackets to a lot of pre-built functionalty, but doesn't sacrifice our ability to run Brackets in the browser thanks to projects like [Browserify](http://browserify.org/).
+
+## Decoupling, Dependency Injection and Unit Testing in the Core ##
+
+Major separate parts of the Brackets client core would use the `ServiceRegistry` to expose their services to extensions, but this can also be the mechanism used to connect the major subsystems (the various "managers"). If each subsystem is provided with its `ServiceRegistry` "from the outside", it could be given a registry that is designed for testing and mocks out other subsystems. This kind of design is commonly referred to as [dependency injection](http://en.wikipedia.org/wiki/Dependency_injection).
+
+## Backwards Compatibility and Full Access ##
+
+`brackets.getModule` would still be available, as would access to the DOM. Brackets extensions will have all of the power that they have today to tweak anything they want. The proposal here is to build a new extension API that provides a façade giving extensions:
+
+1. Restartlessness without extra bookkeeping
+2. A mechanism for code sharing between extensions
+3. Code hinting with detailed information about the extension API
+4. Seamless integration with Node
+
+## Availability and Limitations of the Prototype ##
+
+The prototype is available in the [dangoor/extensions3 branch](https://github.com/adobe/brackets/tree/dangoor/extensions3) of the Brackets repository. The current code is actually the second iteration of this particular design and likely does not need to be thrown away to build out the "real" implementation. It was, however, built quickly and needs work. Here's a list of limitations that comes to mind:
+
+1. Clean up/comment/more tests. A chunk of the code in `extensibility/ExtensionData` was built using TDD, but more tests would be good.
+2. Implement return values when Node calls the client. The prototype "cheats" by using the features of the existing Node support when some extension of the protocol is likely in order.
+3. Cleaner API for restarting extension. Right now, the responsibility for restarting an extension is split between `ExtensionLoader` and `command/Menus`(!)
+4. Flesh out code hinting. I'd like to see a lot of documentation available via hinting. Right now, the hinting just knows about the existence of objects and functions in the `ServiceRegistry`.
+5. Command/menu registries store their information directly in the `ServiceRegistry`. Ideally, you should be able to type `services.commands.commandId.execute()` to run a command. Currently, though, commands and menus are maintaining their own registries and using subscribing to events that let them know when to clean up.
+6. In order for extensions to truly share services, we need to implement extension dependencies so that one extension can fire up after another one has completed its own initialization.
+7. Parts of Brackets core that depend on services provided by other parts need to know when those services have become available (some mechanism like AppInit or extension dependencies)
+8. Fix the lifecycle. `ExtensionLoader` right now depends on things like `package.json` in order to fully fire things up. That just needs to be cleaned up.
+9. Async function calling. Anything that crosses the border between the client side and Node needs to be asynchronous. It would be easy to implement a wrapper that makes calls that *could* be synchronous asynchronous allowing a single piece of code to be shared between the client side and Node easily.
+10. One-time callbacks. Functions passed between Node and the client side are maintained in a special `__callbacks` part of the `ServiceRegistry`. Functions added there are currently only removed when a given extension is removed. Some control over the lifespan of these remotable functions will be needed.
+11. Hierarchical pub/sub. `ServiceRegistry` includes a built-in publish/subscribe system. You can define nested "channels", but you can currently only subscribe to the leaf nodes. For example, you can subscribe to "brackets.extension.loaded", but you can't subscribe to "brackets.extension" to get all messages about extensions.
+12. There are bugs. Reloading is really new, for example, and sometimes just doesn't work as it should.
+
+Many of the items above are actually things that would be ironed out as we design real APIs for the Brackets subsystems.
+
+That probably looks like a lot of work. However, both iterations of the current prototype were built in probably a week's worth of work. Further, everything above does not need to be built in one go. This is a project that can be built out iteratively, though we will want to be careful about crafting pleasing and consistent APIs for the extension developers.
+
+In conclusion, I think this API design offeres real benefits for Brackets users (restartlessness) and extension developers.
