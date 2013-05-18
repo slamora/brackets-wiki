@@ -32,9 +32,13 @@ API Changes
 
 **QuickOpen** - The search heuristic no longer automatically applies special weighting when items look like a path. Quick Open providers can switch back to the path-oriented behavior by supplying `matcherOptions: { segmentedSearch: true }` in the settings passed to `addQuickOpenPlugin()`.
 
+**Sidebar show/hide** - `SidebarView.toggleSidebar()` was renamed to `toggle()`. Added new `show()`, `hide()`, and `isVisible()` methods.
+
 New/Improved Extensibility APIs
 -------------------------------
 **QuickOpen / StringMatch** - In addition to the `segmentedSearch` option described above, Quick Open providers can also specify `matcherOptions: { preferPrefixMatches: true }` to give additional weighting when the search text is an exact prefix of some results. The same options can be passed to the raw StringMatch API as a constructor argument. (Prefix weighting is useful for sorting code hint matches, for example &ndash; which would typically use a raw StringMatcher for sorting).
+
+**Font size event** - `ViewCommandHandlers` dispatches a `"fontSizeChange"` event whenever the editor font size is changed by the user.
 
 **showOSFolder()** - The existing `brackets.app.showOSFolder()` API can now be passed a file instead of a folder. It will open the containing folder with that file pre-selected.
 
