@@ -309,8 +309,9 @@ The prototype is available in the [dangoor/extensions3 branch](https://github.co
 10. One-time callbacks. Functions passed between Node and the client side are maintained in a special `__callbacks` part of the `ServiceRegistry`. Functions added there are currently only removed when a given extension is removed. Some control over the lifespan of these remotable functions will be needed.
 11. Hierarchical pub/sub. `ServiceRegistry` includes a built-in publish/subscribe system. You can define nested "channels", but you can currently only subscribe to the leaf nodes. For example, you can subscribe to "brackets.extension.loaded", but you can't subscribe to "brackets.extension" to get all messages about extensions.
 12. There are bugs. Reloading is really new, for example, and sometimes just doesn't work as it should.
+13. Ability to mark whether a piece of the API is available across `ServiceRegistry` boundaries. For example, a `Document` object would not be able to move transparently from the client side to Node, so an API that returns or uses a `Document` should be marked as local only.
 
-Many of the items above are actually things that would be ironed out as we design real APIs for the Brackets subsystems.
+Many of the items above are actually things that would be ironed out as we design real APIs for the Brackets subsystems. Assuming this general model is accepted, one more task is to define the actual APIs we would like to see for the commonly-used extension APIs.
 
 That probably looks like a lot of work. However, both iterations of the current prototype were built in probably a week's worth of work. Further, everything above does not need to be built in one go. This is a project that can be built out iteratively, though we will want to be careful about crafting pleasing and consistent APIs for the extension developers.
 
