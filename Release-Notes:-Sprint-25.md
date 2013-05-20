@@ -9,6 +9,7 @@ What's New in Sprint 25
 * **Extensions**
     * [Extension manager](https://trello.com/card/2-extension-listing-remove-manage/4f90a6d98f77505d7940ce88/815): Listing of your currently installed extensions. Easier to uninstall extensions.
 * **File Management**
+    * [Refresh file tree](https://github.com/adobe/brackets/pull/3370): Right-click on the file tree and choose Refresh to update the file list from disk &ndash; no need to restart Brackets. (This is a stopgap along the way to [fully automatic refresh](https://trello.com/card/8-file-directory-watching/4f90a6d98f77505d7940ce88/292), which will come further down the road).
     * [Delete file/folder](https://github.com/adobe/brackets/pull/3879): Right-click in the file tree an choose Delete to move a file or entire folder to the trash.
     * [Show file/folder in OS](https://github.com/adobe/brackets/pull/2128): Right-click in the file tree or working files list and choose Show in OS to show a file or folder in Windows Explorer or Mac Finder.
 * **Search**
