@@ -21,7 +21,9 @@ Note that this proposal is about the *style* and *features* of the API and not a
 
 ## See the Proposed Style in Action ##
 
-[There's a video](https://www.youtube.com/watch?v=RjJKsnfbI3M) that shows off the main features of this proposal running on top of the prototype code.
+I've made a screencast that shows off the new API style:
+
+[![video](screenshots/extensions2/screencast.jpg)](https://www.youtube.com/watch?v=RjJKsnfbI3M)
 
 ## Sample Extension ##
 
