@@ -13,7 +13,7 @@ The Brackets extension API has been very successful as measured by the number an
 
 The need for restartlessness may not be obvious right now, but already in Sprint 25, the addition of the Extension Manager has started to show how the user experience of our current extension handling is suboptimal:
 
-![Remove Extensions requires restart](https://www.evernote.com/shard/s24/sh/76120d56-cbf9-4b3a-a92d-49a18559b00b/3955ee158346b24c1996c6d14303db1c/res/a8c3958c-f7c9-4237-bff0-a5280357ca5f/skitch.png?resizeSmall&width=832)
+![Remove Extensions requires restart](https://www.evernote.com/shard/s24/sh/76120d56-cbf9-4b3a-a92d-49a18559b00b/3955ee158346b24c1996c6d14303db1c//res/a8c3958c-f7c9-4237-bff0-a5280357ca5f/skitch.png?resizeSmall&width=832)
 
 I have been working through some ideas on how to achieve these things and created a prototype that meets these requirements and provides other improvements as well. A simple example extension will show the proposed style.
 
