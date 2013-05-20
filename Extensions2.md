@@ -103,7 +103,7 @@ In the prototype, there's an Extensions menu with options to reload any extensio
 
 There are a couple of problems with the code above:
 
-1. It's too easy to forget to clean something up. Computers are good at keeping track of things. We don't we let the computer do it?
+1. It's too easy to forget to clean something up. Computers are good at keeping track of things. Why don't we let the computer do it?
 2. We can have less code than this, right?
 
 ## Less Code and Code Hints! ##
