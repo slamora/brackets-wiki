@@ -30,6 +30,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Sidebar Plus](https://github.com/sathyamoorthi/brackets-sidebar-plus): Show / Hide sidebar using mouse over.
 * [Edit History](https://github.com/iwehrman/brackets-edit-history): Yet another extension for navigating forward and backward among edit positions.
 * [Ruler] (https://github.com/lkcampbell/brackets-ruler): A column ruler for Brackets
+* [Delete to Start/End of line](https://github.com/probertson/brackets-delete-line-start-end): Shortcuts to delete from the current cursor position to the start or end of the line (common shortcuts Cmd+Backspace and Cmd+Delete on Mac)
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
