@@ -85,7 +85,7 @@ define(function (require, exports, module) {
     var CommandManager  = brackets.getModule("command/CommandManager"),
         Menus           = brackets.getModule("command/Menus");
     
-    var init = function () {
+    var load = function () {
         CommandManager.register("Show Message", "showMessage", function () {
             alert("This is the funnest message.");
         });
@@ -94,18 +94,18 @@ define(function (require, exports, module) {
         viewMenu.addMenuItem("showMessage", null, Menus.FIRST);
     };
     
-    var disable = function () {
+    var unload = function () {
         var viewMenu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
         viewMenu.removeMenuItem("showMessage");
         CommandManager.unregister("showMessage");
     };
     
-    exports.init = init;
-    exports.disable = disable;
+    exports.load = load;
+    exports.unload = unload;
 });
 ```
 
-There's an `init` function that runs when the extension can attach its parts to Brackets and a `disable` function that runs when the extension is being disabled (either because the user wanted to disable the extension, the user is installing an update to the extension or the extension developer wanted to reload it).
+There's an `load` function that runs when the extension can attach its parts to Brackets and a `unload` function that runs when the extension is being disabled (either because the user wanted to disable the extension, the user is installing an update to the extension or the extension developer wanted to reload it).
 
 In the prototype, there's an Extensions menu with options to reload any extensions that appear to be reloadable. If you try it out, you'll find that you can change things like the name of the command or the message that appears, reload the extension and it works just fine. The prototype does have bugs. In the full implementation, we could offer an extension for extension developers that provides keyboard shortcuts for reloading the extension they're working on and things like that.
 
@@ -116,7 +116,7 @@ There are a couple of problems with the code above:
 
 ## Less Code and Code Hints! ##
 
-Here's where we make common extensions easier to write. The `init` function takes an argument which is a `ServiceRegistry` object, generally called `services`.
+Here's where we make common extensions easier to write. The `load` function takes an argument which is a `ServiceRegistry` object, generally called `services`.
 
 ```javascript
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
@@ -128,19 +128,19 @@ define(function (require, exports, module) {
     /*
      * @param {ServiceRegistry} services
      */
-    var init = function (services) {
+    var load = function (services) {
         services.commands.add("Show Message", "showMessage", function showMessage() {
             alert("This is the fun message.");
         });
         services.menus.viewMenu.addItem("showMessage", null, "first");
     };
-    exports.init = init;
+    exports.load = load;
 });
 ```
 
 This code also works in a restartless way. The ServiceRegistry object keeps track of everything set up on behalf of the extension.
 
-The specially formatted comment ([JSDoc](http://usejsdoc.org/) comment) in front of the init function tells Brackets' code hinting that the `services` parameter is a `ServiceRegistry` object. The prototype provides information about `ServiceRegistry` objects to the code hinting.
+The specially formatted comment ([JSDoc](http://usejsdoc.org/) comment) in front of the load function tells Brackets' code hinting that the `services` parameter is a `ServiceRegistry` object. The prototype provides information about `ServiceRegistry` objects to the code hinting.
 
 ![CodeHint services](screenshots/extensions2/CodeHint_services.png)
 
@@ -166,12 +166,12 @@ define(function (require, exports, module) {
     /*
      * @param {ServiceRegistry} services
      */
-    var init = function (services) {
+    var load = function (services) {
         services.commands.add("Show Message", "showMessage", showMessage);
         services.addFunction("ex1.showMessage", showMessage);
         services.menus.viewMenu.addItem("showMessage", null, "first");
     };
-    exports.init = init;
+    exports.load = load;
 });
 ```
 
@@ -204,12 +204,12 @@ define(function (require, exports, module) {
     /*
      * @param {ServiceRegistry} services
      */
-    var init = function (services) {
+    var load = function (services) {
         services.commands.add("Show Message", "showMessage", showMessage);
         services.addFunction("ex1.showMessage", showMessage);
         services.menus.viewMenu.addItem("showMessage", null, "first");
     };
-    exports.init = init;
+    exports.load = load;
 });
 ```
 
@@ -223,14 +223,14 @@ Now, we create a file called `node-main.js` that sits next to our `main.js` file
 /*
  * @param {ServiceRegistry} services
  */
-function init(services) {
+function load(services) {
     services.commands.add("Powerful Nodey Command", "powerNode", function () {
         services.ex1.showMessage("Imagine some async nodey goodness here.");
     });
     services.menus.fileMenu.addItem("powerNode", null, "first");
 }
 
-exports.init = init;
+exports.load = load;
 ```
 
 Though the code above looks *exactly* like the client-side Brackets code we've seen so far in this document, this code is running in Node. It defines a command and a menu item:
@@ -276,12 +276,12 @@ function showMessage(message) {
 /*
  * @param {ServiceRegistry} services
  */
-var init = function (services) {
+var load = function (services) {
     services.commands.add("Show Message", "showMessage", showMessage);
     services.addFunction("ex1.showMessage", showMessage);
     services.menus.viewMenu.addItem("showMessage", null, "first");
 };
-exports.init = init;
+exports.load = load;
 ```
 
 No more `define` call at the top. In the prototype, an extension can share a single code module between the client side and Node. This works using [Cajon](https://github.com/requirejs/cajon). A better solution would be to create a module loader for Brackets that follows the [Node module resolution rules](http://nodejs.org/api/modules.html#modules_all_together). By doing that, extension authors can just use `npm install` to get libraries that work in both Brackets client side and the Brackets node server.
