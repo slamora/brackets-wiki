@@ -63,6 +63,34 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [Make JSLint error messages selectable in JSLint panel](https://github.com/adobe/brackets/pull/3688) by [Jeffrey Fisher](https://github.com/jeffslofish)
+* [Color-code Handlebars .hbs files as HTML](https://github.com/adobe/brackets/pull/3699) by [Thomas Carlsen](https://github.com/tcarlsen)
+* [Color-code Kit .kit files as HTML](https://github.com/adobe/brackets/pull/3809) by [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
+* [Color-code Embedded JS .ejs & Java .jsp files as HTML](https://github.com/adobe/brackets/pull/3809) by [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
+* [Fix #3723: Allow replacing non-multi-line selection with Tab character](https://github.com/adobe/brackets/pull/3759) by [Jeffrey Fisher](https://github.com/jeffslofish)
+* [Fix #3679: File extension isn't color-coded if created via File > New](https://github.com/adobe/brackets/pull/3690) by [Rajesh Segu](https://github.com/rajeshsegu)
+* [Restore useful error messages when addMenuItem() is passed bad arguments](https://github.com/adobe/brackets/pull/3611) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #3637: Incorrect selection indicator after loading Brackets with sidebar hidden](https://github.com/adobe/brackets/pull/3719) by [Jeffrey Fisher](https://github.com/jeffslofish)
+* [Partial fix for #3478: 1px top border sometimes appears on search result highlight](https://github.com/adobe/brackets/pull/3568) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #3773: Only show '"The maximum number of files have been indexed' error once per project (per session)](https://github.com/adobe/brackets/pull/3783) by [dschaffe](https://github.com/dschaffe)
+* [Fix incorrect plural in statusbar for 1-line files](https://github.com/adobe/brackets/pull/3584) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Speed improvement to CollectionUtils.hasOwnProperty()](https://github.com/adobe/brackets/pull/3687) by [Rajesh Segu](https://github.com/rajeshsegu)
+* [Add ViewCommandHandlers "fontSizeChange" event](https://github.com/adobe/brackets/pull/3787) by [Lance Campbell](https://github.com/lkcampbell)
+* [Add cleaner APIs for sidebar panel: isVisibile(), show(), hide()](https://github.com/adobe/brackets/pull/3297) ([and](https://github.com/adobe/brackets/pull/3876)) by [Lance Campbell](https://github.com/lkcampbell)
+* [Cleanup: Use Mustache templates for some of the Debug commands' UI](https://github.com/adobe/brackets/pull/3336) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Cleanup: Upgrade Mustache version](https://github.com/adobe/brackets/pull/3693) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Cleanup: Use submodules for RequireJS text & i18n plugins](https://github.com/adobe/brackets/pull/3680) by [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
+* [Cleanup: Stop using jQuery.toggleClass() due to argument type bug-proneness](https://github.com/adobe/brackets/pull/3689) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Cleanup: Stop using deprecated Promise.isResolved()/isRejected()](https://github.com/adobe/brackets/pull/3665) by [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
+* [Cleanup: Stop using deprecated CodeMirror token.className](https://github.com/adobe/brackets/pull/3697) by [Jeffrey Fisher](https://github.com/jeffslofish)
+* [Cleanup: Group strings used by default extensions](https://github.com/adobe/brackets/pull/3575) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Cleanup: Remove unused string](https://github.com/adobe/brackets/pull/3586) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Unit tests for HTML entity code hints](https://github.com/adobe/brackets/pull/3524) ([and](https://github.com/adobe/brackets/pull/3710)) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Localize language names in Debug > Switch Language dropdown](https://github.com/adobe/brackets/pull/3704) by [Tammo Pape](https://github.com/tammo)
+* [Fix unlocalized string "pixels" in Quick View popup](https://github.com/adobe/brackets/pull/3811) by [Kieran Gorman](https://github.com/kjgorman)
+* [German translation update](https://github.com/adobe/brackets/pull/3641) by [mynetx](https://github.com/mynetx)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/3929) by [Chema Balsas](https://github.com/jbalsas)
+
 
 Contributions _from_ the Brackets community
 -------------------------------------------
