@@ -29,7 +29,13 @@ New visual design for Quick Open / Quick Find Definition, JSLint panel, and Find
 
 API Changes
 -----------
-**ProjectManager** - Previously, `ProjectManager.getSelectedItem()` returned null when the selection highlight was in the working set instead of the file tree. Now it returns whatever file/folder is selected _anywhere_ in the sidebar. (Note that is may still return null in some cases when a current document is open - for example if a Find in Files result was clicked and the opened file is not visible anywhere in the sidebar, the sidebar will have no selection).
+**Extension package format** - _All extensions should now include a **package.json file**_ with descriptive metadata. See [[Extension package format]] for details. Extensions that omit package.json will still work, but won't look very nice in the new Extension Manager dialog. (Down the road, package.json will become required though).
+
+**Adding panels** -
+* To add a resizable panel below the editor, use `PanelManager.createBottomPanel()`. The previous approach (insert DOM node manually, then call `Resizer.makeResizable()`) still works, but is deprecated.
+* To show/hide a panel, use Resizer's APIs or the Panel object returned by PanelManager. Again, the old approach (call jQuery `show()`/`hide()`, then call `EditorManager.resizeEditor()`) still works for now, but is deprecated.
+
+**ProjectManager** - Previously, `ProjectManager.getSelectedItem()` returned null when the selection highlight was in the working set instead of the file tree. Now it returns whatever file/folder is selected _anywhere_ in the sidebar (working set _or_ file tree). (Note that is may still return null in some cases when a current document is open - for example if a Find in Files result was clicked and the opened file is not visible anywhere in the sidebar, the sidebar will have no selection).
 
 **QuickOpen** - The search heuristic no longer automatically applies special weighting when items look like a path. Quick Open providers can switch back to the path-oriented behavior by supplying `matcherOptions: { segmentedSearch: true }` in the settings passed to `addQuickOpenPlugin()`.
 
