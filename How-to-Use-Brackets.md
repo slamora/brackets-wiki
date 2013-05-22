@@ -118,7 +118,7 @@ Some limitations of the current implementation:
   shut down and restart between each page.
 * Opening the developer tools in Chrome will close the live development connection.
   
-As with quick edit, there are lots of ideas for how to extend this, including
+As with Quick Edit, there are lots of ideas for how to extend this, including
 highlighting DOM nodes in the browser from Brackets, clicking on an item in
 the browser to jump back to its source code in Brackets, and setting JS breakpoints 
 from Brackets.
