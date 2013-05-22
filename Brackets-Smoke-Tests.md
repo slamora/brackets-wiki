@@ -34,8 +34,8 @@ Smoke test steps
 17. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
 18. In the native shell menu, choose View > Increase Font Size. Verify both the host and inline editors font size increases. The inline editor should not show a vertical scrollbar.
 19. Click the lightning bolt in the upper right. If you trashed prefs, you'll get an info dialog explaining how live preview works. Hit OK.
-20. You should see the page load in Chrome. After a few seconds you should get a dialog saying you need to relaunch Chrome.
-21. Click "Relaunch". Chrome should relaunch and open the page.
+20. You should see the page load in Chrome.
+21. On Mac, you should get a dialog saying you need to relaunch Chrome. Click "Relaunch". Chrome should relaunch and open the page.
 22. Back in Brackets, edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
 23. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
 24. Put the cursor immediately after the `<a` in one of the `<a>` tags in the navbar.
