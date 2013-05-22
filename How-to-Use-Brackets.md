@@ -109,7 +109,7 @@ Some limitations of the current implementation:
 
 * It only works with Chrome as the target browser.
 * It relies on the remote debugging features in Chrome, which are enabled by
-  a command-line flag. If you're already running Chrome when you start
+  a command-line flag. On the Mac, if you're already running Chrome when you start
   Live Preview, Brackets will ask if you want to relaunch Chrome with remote
   debugging enabled, and if you say yes, it will go ahead and do it for you.
 * Only one HTML file can have a live connection to the browser at a time--if you
