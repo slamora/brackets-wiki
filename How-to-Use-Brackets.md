@@ -174,10 +174,11 @@ Extensions
 ----------
 There is a large and growing body of extensions available for Brackets, many
 of which were written by community members, that add all kinds of interesting
-and useful functionality. You can install an extension using *File > Install Extension..."
-or clicking the "brick" icon on the toolbar. From that dialog, you can click on
-"Browse Extensions" to get to the [Brackets Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions) 
-Wiki page, which has further instructions on installation.
+and useful functionality. You can install an extension using *File > Extension Manager...*
+or clicking the "brick" icon on the toolbar, then clicking the *Install from URL...* button
+at the bottom. From there, you can click on
+"Browse Extensions" to get to the [list of Brackets extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions), which has further instructions on installation.
+You can also remove extensions from the Extension Manager dialog.
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
