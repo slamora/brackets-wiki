@@ -3,7 +3,7 @@
 You can install extensions by choosing **File > Extension Manager...** (or clicking on the "brick" icon in the toolbar), then clicking the **Install from URL...** button at the bottom. From there, you can install most of the extensions below by doing the following:
 * Right-click the extension link and copy the URL.
 * Switch back to Brackets.
-* Paste the link into the **Install from URL...** dialog, then click **Install**.
+* Paste the link into the Install Extension dialog, then click **Install**.
 
 (Some extensions might not work by just copying and pasting the GitHub repo URL if they have submodules. Authors who post such extensions are encouraged to link directly to a ZIP file with all the submodules included.)
 
