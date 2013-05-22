@@ -1,24 +1,38 @@
 * [Download Brackets](How to Use Brackets#wiki-howtoget)
-* Open your extensions folder by selecting Show Extensions Folder from the Help menu in Brackets
-* Create a new "yourExtensionName" folder in the `user` folder in your extensions folder, and inside create a main.js file for your extension code.
+* Open your extensions folder by selecting "Help > Show Extensions Folder" in Brackets
+* Inside the `user` folder, create a new "yourExtensionName" folder, and inside that create a `main.js` file.
 * For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](Brackets-Extensions) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
 
-(Note: you may also [clone Brackets source from git](How-to-Hack-on-Brackets#wiki-getcode). In that case, refer to the `src` folder instead of `www`).
-
 ## Simple Development Workflow
 
-* Launch Brackets and use "File > Open Folder" to open the Brackets `www` folder.
-* Open your main.js file and make changes.
+* Launch Brackets and use "File > Open Folder" to open your extension's folder.
+* Edit your main.js file.
 * Save the file and restart Brackets via "Debug > Reload Brackets" to see your changes.
 * To debug problems, use "Debug > Show Developer Tools" to open developer tools in a tab in Chrome. You can use console.log() from your extension code, set breakpoints, etc.
     * _The first time you open Developer Tools, you must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_ - otherwise using Reload while dev tools are open will not reflect changes to your extension.
 
 See **[[Debugging Brackets]]** for a more robust two-window workflow.
 
-## Extension Architecture
+## Extension Structure
 
-An extension consists of a main.js (your main module) and any other files in its subtree (which may include other JS modules). You can use Require to load modules from your extension's folder tree or modules from core Brackets (to load core Brackets modules, use ```brackets.getModule()``` instead of `require()`). You cannot load modules from _other_ extensions.
+A basic extension consists of just two files:
+* main.js -- your main module, in RequireJS format
+* package.json (optional) -- [metadata about the extension](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format)
+
+Although it's optional, you should _always_ include package.json for extensions you publish for others to use. Your extension will look pretty ugly in the Brackets Extension Manager UI without metadata such as a display name! Luckily the [package.json format](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format) is very simple.
+
+An extension can include other files in its subtree as well, including other JS modules.
+
+### Referencing Modules ###
+
+* To load modules from your extension's folder tree, use `require()` with a path relative to your extension's root folder.
+* To load modules from Brackets core, use ```brackets.getModule()``` with a path relative to the Brackets src root.
+* You cannot load modules from _other_ extensions.
+
+You can also use other files packaged inside your extension - for example, see "Load a CSS file" below.
+
+## Common How-Tos
 
 ### <a name="uihooks"></a>Adding menu items and keyboard shortcuts
 
