@@ -33,10 +33,11 @@ define(function (require, exports, module) {
 });
 ```
 
+Extensions should [also include a _package.json_ file](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format) when ready to share with others.
+
 **Looking for more detailed information?** Check out [[How to write extensions]], or look up the above APIs in the Brackets source code for complete docs.
 
 ----
-
 Here's a slightly fancier version that changes the text in the editor instead of showing an alert() dialog:
 
 ```javascript
