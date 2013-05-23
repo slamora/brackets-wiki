@@ -1,4 +1,5 @@
-* _[Release Notes: Sprint 25](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25) (in progress)_
+* _[Release Notes: Sprint 26](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-26) (in progress)_
+* [Release Notes: Sprint 25](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25)
 * [Release Notes: Sprint 24](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-24)
 * [Release Notes: Sprint 23](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-23)
 * [Release Notes: Sprint 22](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-22)
