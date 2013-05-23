@@ -12,7 +12,7 @@ What's New in Sprint 25
     * [Faster, more accurate Quick Edit for JavaScript](https://github.com/adobe/brackets/pull/3847): Now using the [Tern code intelligence engine](http://ternjs.net/) that powers code hints and Jump to Definition.
 * **Code Editing**
     * Many bug fixes in JavaScript code hinting
-    * [Improved typing performance](https://trello.com/card/3-research-rendering-typing-performance/4f90a6d98f77505d7940ce88/860): ...........
+    * [Improved typing performance](https://trello.com/card/3-research-rendering-typing-performance/4f90a6d98f77505d7940ce88/860): Brackets responds to keypresses 21% faster in JavaScript code and 13% faster in general (fixed [unneeded repaints](https://github.com/marijnh/CodeMirror/issues/1514) and optimized code hint popup creation).
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-24...sprint-25#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-24...sprint-25#commits_bucket)
