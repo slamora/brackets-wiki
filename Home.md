@@ -37,6 +37,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [Downloads](http://download.brackets.io)
 * Release Notes:
+ * [Sprint 25](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25)
  * [Sprint 24](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-24)
  * [Sprint 23](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-23)
  * [Sprint 22](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-22)
