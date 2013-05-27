@@ -97,6 +97,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 
 **External Tools & Online Content**
 * [BracketLESS] (https://github.com/olsgreen/BracketLESS): Compiles LESS files to CSS on save
+* [git-integration](https://github.com/pollensoft/git-integration): Git Command line integration
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Implements the Full GitHub API, but is just in an early prototype state
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
