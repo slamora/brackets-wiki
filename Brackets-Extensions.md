@@ -110,6 +110,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * (See also [Minifier](https://github.com/alfredxing/brackets-minifier) above).
 
 **Documentation**
+* [Docco](https://github.com/aghiura/brackets-docco): Runs [Docco](http://jashkenas.github.io/docco/) on a js file.
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
 * [Display Shortcuts](https://github.com/redmunds/brackets-display-shortcuts): Display Shortcuts defined to Brackets.
 * [MDNLookup](https://github.com/pamelafox/brackets-MDNLookup-extension): Includes a way of creating an extensions toolbar and adding buttons to the toolbar with callbacks.
