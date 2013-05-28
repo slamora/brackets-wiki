@@ -77,7 +77,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 * [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav): Shortcuts for switching to next/previous editor (<em>non</em>-MRU order), and a version of Quick Open scoped to only open files.
 * [Brackets Commands Guide](https://github.com/peterflynn/brackets-commands-guide): Search and execute commands by typing part of their name, similar to Quicksilver (or Sublime's Ctrl+Shift+P or Eclipse's Ctrl+3).
-* [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor.
 * [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): CodeMirror themes for brackets from the main menu.
 * [Code folding] (https://github.com/thehogfather/brackets-code-folding): Enables code folding in brackets.
 * [Debug] (https://github.com/aghiura/brackets-console): See console.log & console.error messages directly in Brackets
@@ -139,6 +138,7 @@ current file.
 ---
 
 **Deprecated Extensions**
+* [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor. _(Brackets Sprint 25 includes an enhanced version of this functionality: when invoked on a file, the file is automatically selected inside its containing folder)._
 * [Hover Preview](https://github.com/gruehle/HoverPreview): Displays a preview when hovering over a color value, gradient, or image filename. _(Merged into Brackets as of Sprint 24)._
 * [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets. _(Merged into Brackets as of Sprint 21)._
 * [Color Editor](https://github.com/GarthDB/brackets-inline-color-editor): Quick Edit on a hex/rgb/hsl color opens an inline color picker, plus a listing of all colors used in the file. _(Merged into Brackets as of Sprint 17)._
