@@ -77,6 +77,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 * [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav): Shortcuts for switching to next/previous editor (<em>non</em>-MRU order), and a version of Quick Open scoped to only open files.
 * [Brackets Commands Guide](https://github.com/peterflynn/brackets-commands-guide): Search and execute commands by typing part of their name, similar to Quicksilver (or Sublime's Ctrl+Shift+P or Eclipse's Ctrl+3).
+* [Themes for Brackets](https://github.com/Jacse/themes-for-brackets): Customize your Brackets experience with themes. Make Brackets easy on your eyes, and improve the coding experience.
 * [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): CodeMirror themes for brackets from the main menu.
 * [Code folding] (https://github.com/thehogfather/brackets-code-folding): Enables code folding in brackets.
 * [Debug] (https://github.com/aghiura/brackets-console): See console.log & console.error messages directly in Brackets
