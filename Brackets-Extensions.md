@@ -26,7 +26,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
 * [Spell Checker] (https://github.com/couzteau/SpellCheck): Integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
 * [Quick Search] (https://github.com/enturn/brackets-quick-search): Automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
-* [Ctrl-Left/Ctrl-Right] (https://github.com/MiguelCastillo/Brackets-LineNavigator): Helps you navigate through your code using your standard Ctrl-Left/Ctrl-Right/Ctrl-Up/Ctrl-Down keys.
 * [Indent Guides] (https://github.com/lkcampbell/brackets-indent-guides): An extension for Brackets to show indent guides in the code editor.
 * [Go to Last Edit](https://github.com/peterflynn/goto-last-edit): Jump to the location of your last edit in the current file with a quick keyboard shortcut (Ctrl+*)
 * [Quick Navigate](https://github.com/jeffslofish/quick-navigate): Navigate back to previous cursor and edit locations quickly with toolbar buttons.
