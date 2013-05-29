@@ -23,7 +23,7 @@ Deprecated Functions
 
 * [`$.browser`](http://api.jquery.com/jQuery.browser/) (Removed)
     * [src/thirdparty/jstree_pre1.0_fix_1/jquery.jstree.js](../blob/master/src/thirdparty/jstree_pre1.0_fix_1/jquery.jstree.js)
-    * Bootstrap > Update Being Reviewed? [#3672](../pull/3672])
+    * Bootstrap > Update Being Reviewed? [#3996](../pull/3996)
 
 * [`$.sub`](http://api.jquery.com/jQuery.sub/) (Removed)
     * Not Used?
