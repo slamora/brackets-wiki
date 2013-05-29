@@ -105,6 +105,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
 * [Ant for Brackets](https://github.com/jbalsas/brackets-ant): Launch any target in your ant files. (Uses Node. Requires Brackets Sprint 21 or greater)
 * [ImageToData](https://github.com/FloValence/brackets-ImageToData): Converts any image, local or on the web into data URI with its URL.
+* [Project Links](https://github.com/chrismatheson/brackets-project-links): Add some links to the sidebar for quick access **dev** still a lot of stuff i want to add
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 * (See also [Minifier](https://github.com/alfredxing/brackets-minifier) above).
 
