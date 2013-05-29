@@ -3,10 +3,10 @@ This page can be used to keep track of changes for the jQuery 2.0 upgrade.
 
 Upgrade Guides
 ----------------------------------------
-<http://api.jquery.com/category/deprecated/>
-<http://blog.jquery.com/2012/08/09/jquery-1-8-released/>
-<http://jquery.com/upgrade-guide/1.9/>
-<http://twitter.github.io/bootstrap/upgrading.html>
+* <http://api.jquery.com/category/deprecated/>
+* <http://blog.jquery.com/2012/08/09/jquery-1-8-released/>
+* <http://jquery.com/upgrade-guide/1.9/>
+* <http://twitter.github.io/bootstrap/upgrading.html>
 
 Deprecated Functions
 ----------------------------------------
