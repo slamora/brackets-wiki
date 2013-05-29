@@ -38,7 +38,7 @@ Deprecated Functions
     * Not Used?
 
 * [`$.fn.size`](http://api.jquery.com/size/) (Replaced with [`$.fn.length`](http://api.jquery.com/length/))
-    * [src/thirdparty/jstree_pre1.0_fix_1/jquery.jstree.js](../blob/master/src/thirdparty/jstree_pre1.0_fix_1/jquery.jstree.js)
+    * Resolved in [#4026](../pull/4026)
 
 * [`$.fn.toggle`](http://api.jquery.com/toggle-event/)
     * ?
