@@ -10,17 +10,7 @@ Deprecated Functions
     * Resolved in [#3665](../pull/3665)
 
 * [`deferred.pipe`](http://api.jquery.com/deferred.pipe/) (Replaced with [`deferred.then`](http://api.jquery.com/deferred.then/))
-    * [src/brackets.js](../blob/master/src/brackets.js)
-    * [src/document/DocumentCommandHandlers.js](../blob/master/src/document/DocumentCommandHandlers.js)
-    * [src/language/CSSUtils.js](../blob/master/src/language/CSSUtils.js)
-    * [src/project/ProjectManager.js](../blob/master/src/project/ProjectManager.js)
-    * [src/utils/Async.js](../blob/master/src/utils/Async.js)
-    * [src/extensibility/Package.js](../blob/master/src/extensibility/Package.js)
-    * [src/extensibility/node/ExtensionManagerDomain.js](../blob/master/src/extensibility/node/ExtensionManagerDomain.js)
-    * [src/extensibility/node/package-validator.js](../blob/master/src/extensibility/node/package-validator.js)
-    * [test/spec/ExtensionUtils-test.js](../blob/master/test/spec/ExtensionUtils-test.js)
-    * [test/spec/JSUtils-test.js](../blob/master/test/spec/JSUtils-test.js)
-    * [test/spec/SpecRunnerUtils.js](../blob/master/test/spec/SpecRunnerUtils.js)
+    * Resolved in [#4028](../pull/4028)
 
 * [`$.fn.die`](http://api.jquery.com/die/)
     * Not Used?
