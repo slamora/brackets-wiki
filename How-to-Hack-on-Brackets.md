@@ -7,7 +7,7 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 3. Sign the [Brackets Contributor License Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html) - we can't merge your code otherwise. You only need to do this once.
 
 
-## TL;DR Overview ##
+## Overview ##
 
 ### Requirements ###
 
