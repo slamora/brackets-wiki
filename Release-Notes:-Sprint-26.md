@@ -25,9 +25,20 @@ UI Changes
 
 API Changes
 -----------
+**Dialog API changes** - _TODO - describe API changes in https://github.com/adobe/brackets/pull/3086_
+
 **jQuery API changes** - _TODO - link to jQuery info on removed/changed APIs_
 
-**Bootstrap API / CSS changes** - _TODO - is there a Bootstrap migration doc we can link to?_
+**Bootstrap API / CSS changes** - 
+The [Bootstrap Upgrade Guide](http://twitter.github.io/bootstrap/upgrading.html) covers all of the CSS changes. The primary changes affecting Brackets code are:
+* Tables:
+  * Add class `table`
+  * Change `zebra-striped` to `table-striped`
+  * Change `condensed-table` to `table-condensed`
+* Alerts:
+  * Change `alert-message` to `alert`
+
+Pretty much all of the Bootstrap JavaScript plugins have [been re-written](http://twitter.github.io/bootstrap/upgrading.html#javascript). If your extension depends on specific Bootstrap JS components, make sure you test it fully.
 
 New/Improved Extensibility APIs
 -------------------------------
