@@ -25,7 +25,12 @@ UI Changes
 
 API Changes
 -----------
-**Dialog API changes** - _TODO - describe API changes in https://github.com/adobe/brackets/pull/3086_
+**Dialog API changes** - The following changes where made to the Dialog API:
+* `showModalDialog` now receives an additional parameter: buttons. Buttons is a an array that contains for each button a class name, an id and a text. Additionally, `showModalDialog` will always creates a new dialog element from a default template using the given class name, title, message and buttons. Instead of adding a dialog template to the DOM and using `showModalDialog` to show the dialog, use `showModalDialogUsingTemplate` with the parsed template as a parameter.
+
+* The title and message parameters from `showModalDialogUsingTemplate` where removed.
+
+* Both `showModalDialog` and `showModalDialogUsingTemplate` now return a Dialog object with 4 methods: `getElement` that returns the dialog jQuery object; `getPromise` that returns the promise used by the dialog (previously returned by both methods); `close` that can be used to close the dialog; and `done` to attach a done function to the dialog's promise as before. Notice that the promise is never rejected and is resolved when the dialog is dismissed, so the always and fail methods on the promise aren't required.
 
 **jQuery API changes** - _TODO - link to jQuery info on removed/changed APIs_
 
