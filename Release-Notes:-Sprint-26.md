@@ -33,6 +33,8 @@ API Changes
 * Both `showModalDialog` and `showModalDialogUsingTemplate` now return a Dialog object with 4 methods: `getElement` that returns the dialog jQuery object; `getPromise` that returns the promise used by the dialog (previously returned by both methods); `close` that can be used to close the dialog; and `done` to attach a done function to the dialog's promise as before. Notice that the promise is never rejected and is resolved when the dialog is dismissed, so the always and fail methods on the promise aren't required.
 
 **jQuery API changes** - _TODO - link to jQuery info on removed/changed APIs_
+ * Use `val()` instead of `attr("value")`
+ * CSS position properties like `$foo.css("left")` always return pixel values. If you want percentage, use `$foo[0].style.left`.
 
 **Bootstrap API / CSS changes** - 
 The [Bootstrap Upgrade Guide](http://twitter.github.io/bootstrap/upgrading.html) covers all of the CSS changes. The primary changes affecting Brackets code are:
