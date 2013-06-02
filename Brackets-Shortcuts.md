@@ -449,6 +449,20 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">CodeMirror</td>
     </tr>
     <tr>
+        <td class="shortcut-base">Enter</td>
+        <td class="shortcut-binding">Ctrl-Enter</td>
+        <td class="shortcut-cmd-id">edit.openLineBelow</td>
+        <td class="shortcut-cmd-name">Open Line Below</td>
+        <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">Enter</td>
+        <td class="shortcut-binding">Ctrl-Shift-Enter</td>
+        <td class="shortcut-cmd-id">edit.openLineAbove</td>
+        <td class="shortcut-cmd-name">Open Line Above</td>
+        <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
         <td class="shortcut-base">F2</td>
         <td class="shortcut-binding">F2</td>
         <td class="shortcut-cmd-id">file.rename</td>
