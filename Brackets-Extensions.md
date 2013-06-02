@@ -88,6 +88,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
 * [V8/Node Live Development](https://github.com/DennisKehrig/brackets-v8-node-live): Updates scripts running in Node.js as you type
 * [Evaluate Clojure Expressions](https://github.com/yehohanan7/clj-brackets): Select any expression and evaluate it in wrepl
+* [Theseus](https://github.com/adobe-research/theseus): Retroactive debugging for JavaScript in Chrome and Node.js
 
 **Visual Editing**
 * [Edge Web Fonts](https://github.com/adobe/brackets-edge-web-fonts/): Browse free fonts from the Edge Web Fonts collection, with thumbnails. Activated via CSS code hints for font-family.
