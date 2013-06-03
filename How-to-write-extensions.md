@@ -59,7 +59,7 @@ _**This is unofficial API**_ - adding UI elements directly through the DOM works
 
 However, following these best practices will ensure your code behaves as nicely as it possibly can under the circumstances:
 
-**<a name="addpanel"></a>Add a panel below the editor:** Use the CSS class `.bottom-panel`; see the JSLint bottom-panel.html for an example. Add your panel _above_ the status bar using `$myPanel.insertBefore("#status-bar")` or better yet `$myPanel.insertAfter(".bottom-panel:last")`. To make your panel resizable, use `Resizer.makeResizable()`: it even takes care of remembering the panel's size across launches. See Resizer.js for documentation.
+**<a name="addpanel"></a>Add a panel below the editor:** Use the CSS class `.bottom-panel`; see the JSLint bottom-panel.html for an example. Add your panel _above_ the status bar using `PanelManager.createBottomPanel("yourExtension.name", $(panelHtml))`. You may see `Resizer.makeResizable()` and manual DOM insertion of panels in some extensions but this practice is being phased out since the introduction of PanelManager.
 
 **Add a toolbar icon:** Use `$myIcon.appendTo($("#main-toolbar .buttons"))`.
 
