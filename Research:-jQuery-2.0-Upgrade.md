@@ -65,3 +65,8 @@ jQuery 1.8 Upgrade
 
 jQuery 1.9 Upgrade
 ----------------------------------------
+* Use `$.prop('disabled')` instead of `$.attr('disabled')`
+    * Resolved in [#4054](../pull/4054)
+
+* Use `$.val()` instead of `$.attr('value')`
+    * Resolved in [#4054](../pull/4054)
