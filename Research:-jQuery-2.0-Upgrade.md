@@ -70,3 +70,6 @@ jQuery 1.9 Upgrade
 
 * Use `$.val()` instead of `$.attr('value')`
     * Resolved in [#4054](../pull/4054)
+
+* Use `style.top/right/bottom/left` to get actual set values instead of `$.css('top/right/bottom/left')` (which seems to convert to pixels)
+    * Resolved in [#4054](../pull/4054)
