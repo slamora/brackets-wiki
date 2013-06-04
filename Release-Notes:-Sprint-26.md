@@ -13,6 +13,8 @@ What's New in Sprint 26
     * [Status bar redesign](https://trello.com/card/1-ux-implement-status-bar/4f90a6d98f77505d7940ce88/808): Added separators, changed JSLint results icon to more standard colors (green = passing, yellow = warnings).
 * **Architecture**
     * [Upgrade Brackets source to jQuery 2.0, Bootstrap 2.3.1, LESS 1.3.3](https://trello.com/card/3-upgrade-jquery-less-bootstrap/4f90a6d98f77505d7940ce88/813): From jQuery 1.7, Bootstrap 1.4.0, LESS 1.3.0
+* **Code Hinting**
+    * CSS URL Hints - property values, @import
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-25...sprint-26#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-25...sprint-26#commits_bucket)
