@@ -94,7 +94,7 @@ make
 A successful build will be placed in `out/Release/` directory (`out/Debug` for a Debug build)
 
 ####Running
-Brackets should automatically scan for `www/index.html` in it's own directory. If it doesn't find one, you will be prompted to select an `index.html` file. Navigate to your local copy of the brackets repo and select `src/index.html`.
+Brackets should automatically scan for `www/index.html` in it's own directory. If it doesn't find one, you will be prompted to select an `index.html` file. Navigate to your local copy of the brackets repo and select `src/index.html`. If Brackets still won't launch, copy the brackets `src` directory to the location of the Brackets executable and rename it `www`. You will also want to copy the `samples` directory to the same location. Now launch Brackets and navigate the to `www` directory and select the `index.html` file.
 
 **[Workarounds are needed](#wiki-issues)** for functionality like menus and Live Preview to work correctly.
 
