@@ -16,7 +16,7 @@ Basic Usage
 -----------
 
 You can open a file from **File > Open (Ctrl/Cmd-O)**, or open a folder in the file tree 
-on the left using **File > Open Folder**.
+on the left using **File > Open Folder (Ctrl/Cmd-Alt-O)**.
 It's a good idea to open the root of whatever project you're working on in the 
 file tree, since other Brackets features search in the current tree. You can
 easily get back to previous projects you've worked on by clicking on the project's
