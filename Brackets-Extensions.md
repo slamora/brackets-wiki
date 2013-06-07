@@ -121,7 +121,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **Linting & Warnings**
 * [Continuous Compilation](https://github.com/JoachimK/brackets-continuous-compilation): Displays JSLint error messages inline, highlighting infringing code and checking the code while you type.
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
-* [JSONLint](https://github.com/katsh/brackets-jsonlint): JSONLint your document or string with [jsonlint.com's](http://jsonlint.com) parser.
 * [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
 * [W3CValidator](https://github.com/cfjedimaster/brackets-w3cvalidation): Run the W3C Validator on your HTML.
 * [Interactive JSHint](https://github.com/MiguelCastillo/Brackets-Interactive-Linter): Get JSHint feedback on your source as you work on it.
