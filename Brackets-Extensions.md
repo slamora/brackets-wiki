@@ -81,6 +81,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): CodeMirror themes for brackets from the main menu.
 * [Code folding] (https://github.com/thehogfather/brackets-code-folding): Enables code folding in brackets.
 * [Debug] (https://github.com/aghiura/brackets-console): See console.log & console.error messages directly in Brackets
+* [Parent Dir] (https://github.com/katsh/brackets-parent-dir): Show parent directory of opened files in the Working Set.
 
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
@@ -120,11 +121,13 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **Linting & Warnings**
 * [Continuous Compilation](https://github.com/JoachimK/brackets-continuous-compilation): Displays JSLint error messages inline, highlighting infringing code and checking the code while you type.
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
+* [JSONLint](https://github.com/katsh/brackets-jsonlint): JSONLint your document or string with [jsonlint.com's](http://jsonlint.com) parser.
 * [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
 * [W3CValidator](https://github.com/cfjedimaster/brackets-w3cvalidation): Run the W3C Validator on your HTML.
 * [Interactive JSHint](https://github.com/MiguelCastillo/Brackets-Interactive-Linter): Get JSHint feedback on your source as you work on it.
 * [PHPCS](https://github.com/jeffslofish/brackets-PHPCS-client): PHP_CodeSniffer for brackets. Lints your PHP through a web service.
 * (See also [App Cache Buddy](https://github.com/davidderaedt/appcache-gen) above).
+
 
 **Testing & Code Metrics**
 * [complexityReport.js](https://github.com/sahlas/brackets-crjs): A Brackets extension that enables phil booth's complexityReport.js tool. Displays complexity statistics on a per-function and aggregate basis. 
