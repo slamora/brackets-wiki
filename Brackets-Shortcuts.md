@@ -595,4 +595,11 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-name">Move Line(s) Up</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
+    <tr>
+        <td class="shortcut-base">J</td>
+        <td class="shortcut-binding">Ctrl-Shift-J</td>
+        <td class="shortcut-cmd-id">katsh.JSONLint</td>
+        <td class="shortcut-cmd-name">Parse json file or hilighted string</td>
+        <td class="shortcut-orig">Extension (JSONLint)</td>
+    </tr>
 </table>
