@@ -33,6 +33,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Edit History](https://github.com/iwehrman/brackets-edit-history): Yet another extension for navigating forward and backward among edit positions.
 * [Ruler] (https://github.com/lkcampbell/brackets-ruler): A column ruler for Brackets
 * [Delete to Start/End of line](https://github.com/probertson/brackets-delete-line-start-end): Shortcuts to delete from the current cursor position to the start or end of the line (common shortcuts Cmd+Backspace and Cmd+Delete on Mac)
+* [Vimderbar] (https://github.com/fontface/brackets-vimderbar): Adds vim-like functionality & status bar to Brackets.
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
