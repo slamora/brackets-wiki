@@ -60,6 +60,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Minifier](https://github.com/alfredxing/brackets-minifier): Minifies JavaScript and CSS files using Google Closure Compiler (JS) and YUI (CSS). Working but under development.
 * [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
 * [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
+* [Quote Converter](https://github.com/drewhjava/brackets-quoteconverter): Converts double to single quotes or single to double quotes
 
 **Code Generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
