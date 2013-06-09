@@ -56,7 +56,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
 * [Reasonable Comments](https://github.com/peterflynn/reasonable-comments): More reasonable behavior when pressing Enter inside a JS block comment - the "*" with proper indentation is inserted for you.
-* [Beautify](https://github.com/drewhjava/brackets-beautify): Beautify HTML, CSS, and Javascript (uses js-beautify)
+* [Beautify](https://github.com/drewhjava/brackets-beautify): Beautify(Tidy, Format) HTML, CSS, and Javascript (uses js-beautify)
 * [Minifier](https://github.com/alfredxing/brackets-minifier): Minifies JavaScript and CSS files using Google Closure Compiler (JS) and YUI (CSS). Working but under development.
 * [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
 * [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
