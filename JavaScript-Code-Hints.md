@@ -57,7 +57,7 @@ The JS Code Hinter limits the number files that can be added to Tern at 100.
 
 ## Configuration
 
-Very large and complicated JavaScript files can cause performance issues. The configuration file provides the ability to work around these issues. When Brackets opens a new project root, configuration file is found, the settings are used to control loading files for code hinting. Configuration files are only updated when changing the project root. Opening new files will not cause a search for a new configuration file. The configuration file is a JSON formatted file named “.jscodehints”.
+Very large and complicated JavaScript files can cause performance issues. A JS Code Hinting configuration file provides the ability to work around these issues. When Brackets opens a new project root, if a configuration file is found, the settings are used to control loading files for code hinting. Configuration files are only updated when changing the project root. Opening new files will not cause a search for a new configuration file. The configuration file is a JSON formatted file named “.jscodehints”.
 
 The following properties are supported:
 
