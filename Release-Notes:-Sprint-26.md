@@ -78,8 +78,8 @@ Community contributions to Brackets
 
 Contributions _from_ the Brackets community
 -------------------------------------------
-**Contributions to [CodeMirror](https://github.com/marijnh/CodeMirror):**
-* ...
+
+* None
 
 Bugs fixed in Sprint 26
 -----------------------
