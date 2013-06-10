@@ -22,6 +22,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 UI Changes
 ----------
 **Status bar** - Visual design, layout and typography changes. Extensions that use status bar indicators (via ``StatusBar`` ``addIndicator`` and ``updateIndicator`` methods) do not require any modifications.
+
 **OK/Cancel Dialog Buttons on Windows** - OK and Cancel buttons in dialogs now display in the correct order. Previously the order was reversed.
 
 API Changes
