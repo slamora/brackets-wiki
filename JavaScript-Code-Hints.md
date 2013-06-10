@@ -72,7 +72,7 @@ Limits the total number of files that can be processed for hints. The default va
 * **max-file-size**  	
 Files larger than this number of bytes will not be parsed. The default value is 524,288 bytes.
 
-The strings in "excluded-directories" or "excluded-files" will be treated as a regular expression if the first and last characters of the string are the '/' character. Note the '\' character in a regular expression needs to be escaped to be valid in a JSON formatted file. For example "/[\d]/" becomes "/[\\d]/".
+The strings in "excluded-directories" or "excluded-files" will be treated as a regular expression if the first and last characters of the string are the '/' character. Note the '\' character in a regular expression needs to be escaped to be valid in a JSON formatted file. For example "/[\d]/" becomes "/[\\\\d]/".
 
 **Example file:**
 
