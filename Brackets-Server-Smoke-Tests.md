@@ -36,12 +36,13 @@ Server smoke test steps
 10. Open pathRoot.html and click Live Preview (lightning bolt) icon on right side of menu bar.
 11. Verify that page is opened in browser and CSS, images (with site-relative paths) are rendered correctly. Click Live Preview icon to disconnect Live Preview.
 12. Open server.php and start Live Preview. Verify Project Settings dialog is invoked with warning message indicating a Base URL is required.
-13. Enter the URL that maps to the project on your server (e.g. http://localhost/). Click OK. Verify that the URL protocol is the same as in your URL Prefix (http: or https:) and page renders correctly in browser.
-14. In Brackets, set the cursor in the `<body>` tag, hit Cmd/Ctrl-E, and verify that it shows a single body rule.
-15. Edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
-16. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
-17. Make an edit to some text in HTML page that is visible in browser. Note: some text in the page is replaced by logo image via CSS (e.g. first h1 tag and first h2 tag) so edits will not be visible; try updating text in News section.
-18. Verify that text has not yet changed in browser. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
-19. Disconnect Live Preview. Undo changes in HTML file and save to get back to original state.
-20. Close all files and discard changes.
-21. Select File > Project Settings... to set Base URL back to blank.
+13. Enter the URL that maps to the project on your server (e.g. http://localhost/). Click OK.
+14. Verify that page is opened in Chrome and the URL protocol is the same as in your URL Prefix (http: or https:) and page renders correctly in browser.
+15. In Brackets, set the cursor in the `<body>` tag, hit Cmd/Ctrl-E, and verify that it shows a single body rule.
+16. Edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
+17. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
+18. Make an edit to some text in HTML page that is visible in browser. Note: some text in the page is replaced by logo image via CSS (e.g. first h1 tag and first h2 tag) so edits will not be visible; try updating text in News section.
+19. Verify that text has not yet changed in browser. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
+20. Disconnect Live Preview. Undo changes in HTML file and save to get back to original state.
+21. Close all files and discard changes.
+22. Select File > Project Settings... to set Base URL back to blank.
