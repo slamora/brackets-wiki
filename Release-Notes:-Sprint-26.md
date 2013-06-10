@@ -65,6 +65,20 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [Update to jQuery 2.0.1, LESS 1.3.3 and Bootstrap 2.3.1](https://github.com/adobe/brackets/pull/4054) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper) and [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
+* [Replace deferred.pipe with deferred.then (jQuery 1.8 Deprecation)](https://github.com/adobe/brackets/pull/4028) by [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
+* [Resolves #3974 -- Inconsistent header capitalisation](https://github.com/adobe/brackets/pull/4069) by [kieran gorman](https://github.com/kjgorman)
+* [Consolidate color matching regex and share across extensions](https://github.com/adobe/brackets/pull/4079) by [Razvan Caliman](https://github.com/oslego)
+* [Fixed language manager unit test. Issue #3957](https://github.com/adobe/brackets/pull/4106) by [Daniel Seymour](https://github.com/DaBungalow)
+* [Fix #4023: MenuSection object is out of sync with current Brackets Menus](https://github.com/adobe/brackets/pull/4112) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #4091: Order of OK and Cancel buttons is reversed](https://github.com/adobe/brackets/pull/4113) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
 
 Contributions _from_ the Brackets community
 -------------------------------------------
