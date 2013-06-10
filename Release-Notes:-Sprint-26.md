@@ -7,14 +7,13 @@ What's New in Sprint 26
 * **Extensions**
     * [Easier extension updating](https://trello.com/card/2-extension-listing-update/4f90a6d98f77505d7940ce88/877): When installing a newer version of an extension you already have installed, Brackets will automatically replace the older version.
 * **File Management**
-    * [Save As](https://trello.com/card/3-create-file-w-save-as/4f90a6d98f77505d7940ce88/286): Just what it sounds like!
-    * [Polish on delete file/folder](https://trello.com/card/2-delete-file-folder/4f90a6d98f77505d7940ce88/382): Better handling of unsaved changes... now with unit tests!
+    * [Delete file/folder improvements](https://trello.com/card/2-delete-file-folder/4f90a6d98f77505d7940ce88/382): Better handling of unsaved changes.
 * **Overall UI**
-    * [Status bar redesign](https://trello.com/card/1-ux-implement-status-bar/4f90a6d98f77505d7940ce88/808): Added separators, changed JSLint results icon to more standard colors (green = passing, yellow = warnings).
+    * [Status bar redesign](https://trello.com/card/1-ux-implement-status-bar/4f90a6d98f77505d7940ce88/808): New visual design, updated JSLint validation status icons.
 * **Architecture**
     * [Upgrade Brackets source to jQuery 2.0, Bootstrap 2.3.1, LESS 1.3.3](https://trello.com/card/3-upgrade-jquery-less-bootstrap/4f90a6d98f77505d7940ce88/813): From jQuery 1.7, Bootstrap 1.4.0, LESS 1.3.0
 * **Code Hinting**
-    * CSS URL Hints - property values, @import
+    * CSS URL Hints - In an @import or url() statement, code hints will show relative paths to files in your project.
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-25...sprint-26#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-25...sprint-26#commits_bucket)
@@ -22,8 +21,8 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-**Status bar / JSLint icon** - _TODO_
-
+**Status bar** - Visual design, layout and typography changes. Extensions that use status bar indicators (via ``StatusBar`` ``addIndicator`` and ``updateIndicator`` methods) do not require any modifications.
+**OK/Cancel Dialog Buttons on Windows** - OK and Cancel buttons in dialogs now display in the correct order. Previously the order was reversed.
 
 API Changes
 -----------
@@ -34,7 +33,7 @@ API Changes
 
 * Both `showModalDialog` and `showModalDialogUsingTemplate` now return a Dialog object with 4 methods: `getElement` that returns the dialog jQuery object; `getPromise` that returns the promise used by the dialog (previously returned by both methods); `close` that can be used to close the dialog; and `done` to attach a done function to the dialog's promise as before. Notice that the promise is never rejected and is resolved when the dialog is dismissed, so the always and fail methods on the promise aren't required.
 
-**jQuery API changes** - _TODO - link to jQuery info on removed/changed APIs_
+**jQuery API changes** - jQuery's [1.8 release notes](http://blog.jquery.com/2012/08/09/jquery-1-8-released/) and the [1.9 upgrade guide](http://jquery.com/upgrade-guide/1.9/) cover the API changes of our upgrade from 1.7 to 2.0. The list below highlights some major changes that we experienced during our upgrade:
  * Use `val()` instead of `attr("value")`
  * CSS position properties like `$foo.css("left")` always return pixel values. If you want percentage, use `$foo[0].style.left`.
 
