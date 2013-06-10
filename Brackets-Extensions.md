@@ -71,6 +71,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [TypeScript Code Intel](https://github.com/tomsdev/brackets-typescript-code-intel): Adds TypeScript support in Brackets (Auto-completion, Quick Edit and more soon).
 * [Tern hints](https://github.com/MiguelCastillo/Brackets-Tern): Use tern capabilities in Brackets.
 * [Simple JS code hints](https://github.com/iwehrman/brackets-simple-js-code-hints): Like the Tern-based JS hinter, but stupid!
+* [MVC.net](https://github.com/edwinvankoppen/Brackets-MVC.net): Adds cshtml (views in MVC.net) to the HTML highlighting.
 
 **General Functionality**
 * [Tabs](https://github.com/albertxing/brackets-tabs): Show tabs in place of title when sidebar is hidden
