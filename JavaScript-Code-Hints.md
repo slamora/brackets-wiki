@@ -62,10 +62,10 @@ Very large and complicated JavaScript files can cause performance issues. A JS C
 The following properties are supported:
 
 * **excluded-directories**   
-An array of strings or regular expressions that match directories relative to the project root. Matching directories will be excluded from analysis. Directories may be excluded if they contain automated tests that aren’t relevant for code hinting. There are two kinds of strings that are supported. The first is a simple string that may the wildcards “*” and “?”. The second is a regular expression literal embedded in a string. The default value is an empty array.
+An array of strings or regular expressions that match directories relative to the project root. Matching directories will be excluded from analysis. Directories may be excluded if they contain automated tests that aren’t relevant for code hinting. There are two kinds of strings that are supported. The first is a simple string that may contain the wildcards “*” and “?”. The second is a regular expression literal embedded in a string. The default value is an empty array.
 
 * **excluded-files**  
-An array of strings or regular expressions that match files that will be excluded from analysis. Files are typically excluded because their API is in a JSON file or they are known to cause problems with either stability or performance. There are two kinds of strings that are supported. The first is a simple string that may the wildcards “*” and “?”.  The second is a regular expression literal embedded in a string. The default value is ["require.js", "jquery*.js", "less*.min.js", "ember*.js"].
+An array of strings or regular expressions that match files that will be excluded from analysis. Files are typically excluded because their API is in a JSON file or they are known to cause problems with either stability or performance. There are two kinds of strings that are supported. The first is a simple string that may contain the wildcards “*” and “?”.  The second is a regular expression literal embedded in a string. The default value is ["require.js", "jquery*.js", "less*.min.js", "ember*.js"].
 * **max-file-count**   
 Limits the total number of files that can be processed for hints. The default value is 100.
 
@@ -77,8 +77,8 @@ The strings in "excluded-directories" or "excluded-files" will be treated as a r
 **Example file:**
 
     {               
-         "excluded-directories" : [],  
-         "excluded-files" : ["require.js", "jquery*.js", "less*.min.js", "ember*.js"],  
+         "excluded-directories" : ["excluded-dir", "/tests-.*files/"],  
+         "excluded-files" : ["require.js", "jquery*.js", "/lib-1.[12].js/"],  
          "max-file-count": 100,   
          "max-file-size": 524288  
     }
