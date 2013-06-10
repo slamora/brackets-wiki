@@ -36,7 +36,6 @@ foo.
 1. On line 3, verify ``Function`` method code hints on ``foo``
 1. In the project tree, right click on ``temp.js`` and choose delete (when prompted discard changes)
 1. Open the OS Trash/Recycle Bin and confirm ``temp.js`` was deleted
-1. Resize the window. Verify that the editor resizes properly.
 1. Move mouse over the name of the source of an `<img>` tag (e.g. "images/events.jpg" on line 33). Verify that Hover Preview of the image is displayed properly with the width and height.
 1. Set the cursor in the `<body>` tag immediately before the `>`.
 1. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
@@ -50,8 +49,7 @@ foo.
 1. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
 1. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
 1. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
-1. Click on a rule in the rule list. Verify that the editor shows the correct rule.
-1. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
-1. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
 1. File > Extension Manager, Install from URL..., and install the Emmet extension using the GitHub URL ``https://github.com/emmetio/brackets-emmet``
 1. Verify the Emmet menu was added
+1. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
+1. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
