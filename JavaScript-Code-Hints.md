@@ -75,13 +75,9 @@ The strings in "excluded-directories" or "excluded-files" will be treated as a r
 
 **Example file:**
 
-    {  
-       "excluded-directories" : [],  
-
-       "excluded-files" : ["require.js", "jquery*.js", "less*.min.js", "ember*.js"],  
-
-        "max-file-count": 100,   
-
-        "max-file-size": 524288  
-
+    {               
+         "excluded-directories" : [],  
+         "excluded-files" : ["require.js", "jquery*.js", "less*.min.js", "ember*.js"],  
+         "max-file-count": 100,   
+         "max-file-size": 524288  
     }
