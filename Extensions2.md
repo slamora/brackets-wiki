@@ -107,6 +107,8 @@ define(function (require, exports, module) {
 
 There's an `load` function that runs when the extension can attach its parts to Brackets and a `unload` function that runs when the extension is being disabled (either because the user wanted to disable the extension, the user is installing an update to the extension or the extension developer wanted to reload it).
 
+Note: we currently have a module called AppInit that allows code to run on an `appReady` event (fired after `htmlReady` (the main template is rendered), the initial project is loaded and all extensions are loaded). We could expose appReady as another function that can be exported in main.js/node-main.js.
+
 In the prototype, there's an Extensions menu with options to reload any extensions that appear to be reloadable. If you try it out, you'll find that you can change things like the name of the command or the message that appears, reload the extension and it works just fine. The prototype does have bugs. In the full implementation, we could offer an extension for extension developers that provides keyboard shortcuts for reloading the extension they're working on and things like that.
 
 There are a couple of problems with the code above:
@@ -178,6 +180,8 @@ define(function (require, exports, module) {
 In the example above, we've pulled the message display out into a separate function and then used `services.addFunction` to make that available elsewhere. If we start a new extension, code hinting will tell us about the function we've added:
 
 ![CodeHint ex1](screenshots/extensions2/CodeHint_ex1.png)
+
+In order for service sharing to work well, extensions need to be able to depend on the services provided by other extensions. To keep this simple, an extension would declare the extensions upon which it depends in `package.json`. Using `package.json` for this would allow the Extension Manager to automatically install required extensions. Note that the property used in `package.json` would be a different property than `dependencies` which will continue to have the same meaning it does for npm.
 
 Important note: the intention of this mechanism is the sharing of *services*, not code. While you *could* hook up a library of functions to the `ServiceRegistry`, the real purpose of the registry is to connect *objects* in the running system. My proposal for sharing code is later in this document.
 
@@ -252,6 +256,21 @@ The `ServiceRegistry` is synchronized between the client side and the Node side.
 
 Though we want Brackets extensions to have the kind of unfettered access to Brackets that has enabled them to do so much, this same mechanism could also be used to create restricted execution sandboxes in which to run untrusted extensions.
 
+## Not Crossing the Border ##
+
+Not everything can be conveniently made asynchronous or readily converted to JSON. If a service can't work across an async border or a function's result can't be turned into JSON, it will not "cross the border" between Node and the Client.
+
+One possible example:
+
+```javascript
+var text = services.editor.getSelectedText();
+var doc = services.editor.getDocument();
+```
+
+The first function could be made available everywhere, whereas the second (which returns a complex object full of methods and such) would be limited to client side only. The Node code would not even see `services.editor.getDocument`.
+
+Note that the prototype does not implement this feature, but it will absolutely be required early in the development of the API.
+
 ## Code Sharing ##
 
 In the section on Service Sharing, I suggested that the `ServiceRegistry` is intended to connect up objects in the running system and not just share libraries of functions. So, how *should* extensions share code?
@@ -324,3 +343,13 @@ Many of the items above are actually things that would be ironed out as we desig
 That probably looks like a lot of work. However, both iterations of the current prototype were built in probably a week's worth of work. Further, everything above does not need to be built in one go. This is a project that can be built out iteratively, though we will want to be careful about crafting pleasing and consistent APIs for the extension developers.
 
 In conclusion, I think this API design offeres real benefits for Brackets users (restartlessness) and extension developers.
+
+
+# Extension API Specifics #
+
+The first part of this document described features of a new extension API and a prototype that implemented those features. In this section, we start to drill in to the specifics of the new extension API.
+
+## Namespacing ##
+
+Services provided by the Brackets core can be made available via a separate namespace so that it's clear to extension developers which services they're using that require a different extension to be installed in order to work. Namespacing core features will also help avoid collisions between features that all Brackets extension developers rely on and services provided by specific extensions.
+
