@@ -42,7 +42,7 @@ Here's how these fields are exposed in the Extension Manager UI:
 
 ### Details ###
 
-* `name` (<b>required</b>) - unique, lowercase alpha-numeric name without spaces; may include ".", "-", or "_"
+* `name` (<b>required</b>) - unique, lowercase alpha-numeric name without spaces; may include ".", "-", or "_". If you are adding a package.json to an existing extension, making the name field the same as the name of your GitHub repository will make the migration easier for people who already have the extension installed.
 * `version` (<b>required</b>) - must follow the [Semantic Versioning format](http://semver.org/); typically a three-part version number of the form "x.y.z"
 * `title` (<i>highly recommended</i>) - short user-visible display name of extension (a few words)
 * `description` (<i>highly recommended</i>) - longer user-visible description of extension (a couple sentences)
