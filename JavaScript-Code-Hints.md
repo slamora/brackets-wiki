@@ -57,12 +57,12 @@ The JS Code Hinter limits the number files that can be added to Tern at 100.
 
 ## Configuration
 
-Very large and complicated JavaScript files can cause performance issues. The configuration file provides the ability to work around these issues. When Brackets opens a new project root, configuration file is found, the settings are used to control loading files for code hinting. Configuration files are only updated when changing the project root. Opening new files will not cause a search for a new configuration file. The name of the configuration file is “.jscodehints”.
+Very large and complicated JavaScript files can cause performance issues. The configuration file provides the ability to work around these issues. When Brackets opens a new project root, configuration file is found, the settings are used to control loading files for code hinting. Configuration files are only updated when changing the project root. Opening new files will not cause a search for a new configuration file. The configuration file is a JSON formatted file named “.jscodehints”.
 
 The following properties are supported:
 
 * **excluded-directories**   
-An array of strings or regular expressions that match directories relative to the project root. Matching directories will be excluded from analysis. Directories may be excluded if they contain automated tests that aren’t relevant for code hinting. There are two kinds of strings that are supported. The first is a simple string that may the wildcards “*” and “?”.  The second is a regular expression literal embedded in a string. The default value is an empty array.
+An array of strings or regular expressions that match directories relative to the project root. Matching directories will be excluded from analysis. Directories may be excluded if they contain automated tests that aren’t relevant for code hinting. There are two kinds of strings that are supported. The first is a simple string that may the wildcards “*” and “?”. The second is a regular expression literal embedded in a string. The default value is an empty array.
 
 * **excluded-files**  
 An array of strings or regular expressions that match files that will be excluded from analysis. Files are typically excluded because their API is in a JSON file or they are known to cause problems with either stability or performance. There are two kinds of strings that are supported. The first is a simple string that may the wildcards “*” and “?”.  The second is a regular expression literal embedded in a string. The default value is ["require.js", "jquery*.js", "less*.min.js", "ember*.js"].
