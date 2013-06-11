@@ -67,7 +67,7 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 * [Improving the Dialog API](https://github.com/adobe/brackets/pull/3086) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Added support for closing files on middle click](https://github.com/adobe/brackets/pull/3901) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Added support for closing files on middle click](https://github.com/adobe/brackets/pull/3901) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
 * [Update to jQuery 2.0.1, LESS 1.3.3 and Bootstrap 2.3.1](https://github.com/adobe/brackets/pull/4054) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper) and [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
 * [Replace deferred.pipe with deferred.then (jQuery 1.8 Deprecation)](https://github.com/adobe/brackets/pull/4028) by [Tucker Whitehouse](https://github.com/TuckerWhitehouse)
 * [Resolves #3974 -- Inconsistent header capitalisation](https://github.com/adobe/brackets/pull/4069) by [kieran gorman](https://github.com/kjgorman)
