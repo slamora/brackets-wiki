@@ -67,7 +67,7 @@ An array of strings or regular expressions that match directories relative to th
 * **excluded-files**  
 An array of strings or regular expressions that match files that will be excluded from analysis. Files are typically excluded because their API is in a JSON file or they are known to cause problems with either stability or performance. There are two kinds of strings that are supported. The first is a simple string that may contain the wildcards “*” and “?”.  The second is a regular expression literal embedded in a string. The default value is ["require.js", "jquery*.js", "less*.min.js", "ember*.js"].
 * **max-file-count**   
-Limits the total number of files that can be processed for hints. The default value is 100.
+Limits the total number of files that can be processed for hints. This limit only applies when an opened file does not use "require" and files under the project root are being added to the hinting context. The default value is 100.
 
 * **max-file-size**  	
 Files larger than this number of bytes will not be parsed. The default value is 524,288 bytes.
