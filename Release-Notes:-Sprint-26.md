@@ -27,7 +27,7 @@ UI Changes
 
 API Changes
 -----------
-**Dialog API changes** - The following changes where made to the Dialog API:
+**Dialog API changes** - The following changes were made to the Dialog API:
 * `showModalDialog` now receives an additional parameter: buttons. Buttons is a an array that contains for each button a class name, an id and a text. If omitted, the dialog will be created with an OK button that will close the dialog when clicked. Additionally, `showModalDialog` will always creates a new dialog element from a default template using the given class name, title, message and buttons. Instead of adding a dialog template to the DOM and using `showModalDialog` to show the dialog, use `showModalDialogUsingTemplate` with the parsed template as a parameter.
 
 * The title and message parameters from `showModalDialogUsingTemplate` where removed.
