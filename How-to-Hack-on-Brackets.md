@@ -23,7 +23,7 @@ For hacking on the core Brackets HTML/CSS/JavaScript files:
 1. Fork the [brackets repo](https://github.com/adobe/brackets)
 2. Clone your fork of the repo: `git clone https://github.com/<username>/brackets.git`
 3. Update submodules: `cd brackets` and `git submodule update --init`
-4. Add an `upstream` remote: `git remote add upstream https://github.com/adobe/brackets.git`
+4. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
 5. Run `setup_for_hacking` script:
 ```bat
 mac
