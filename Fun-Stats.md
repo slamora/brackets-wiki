@@ -8,4 +8,4 @@
     - Need to manually count back to when sprint started.
     - Note that not all "Closed" pull requests were "Merged".
     - Count external committers separately.
-* [Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions) - Manually subtract total from previous sprint.
+* [Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions) - Manually subtract total from previous sprint. [History page](https://github.com/adobe/brackets/wiki/Brackets-Extensions/_history) could be used to collect count from previous sprint.
