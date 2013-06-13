@@ -55,6 +55,29 @@ Contributors: If you are willing to test other Linux distributions please add yo
 | Ubuntu | 12.04 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
 | Mint 15 | 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
 
+Building brackets-shell
+----
+
+The setup script will automatically create ``/path/to/brackets-shell/Makefile``. If you're only making changes to C++ code, just run ``make`` and the binaries will be in ``/path/to/brackets-shell/out/Release``. 
+
+When adding new files or changing the build configuration, you'll need to make modifications to the GYP configuration files (either ``appshell.gyp.txt`` or ``common.gypi``). After making changes, you'll need to generate a new ``Makefile``. To do this, run:
+
+```
+gyp --depth .
+```
+
+Packaging Brackets
+----
+
+Currently, we do not have a way to create an Ubuntu package suitable for end users to install. In the meantime, we can assemble all the required files necessary to run Brackets with the following script:
+
+```
+# copy required brackets-shell and brackets files to /path/to/brackets-shell/installer/linux/staging
+/path/to/brackets-shell > ./installer/linux/stage_for_packaging.sh
+```
+
+This staging folder can be zipped and distributed as a "portable" install that the runtime dependencies are addressed separately.
+
 User Stories
 ====
 
@@ -69,29 +92,6 @@ There are several user stories (feature work) to complete in brackets-shell befo
 | [Native Menus](https://trello.com/c/WMB6vtwO) | Not Started | Menus (HTML menus are an interim, but completely functional substitute) | |
 | [Show in OS](https://trello.com/c/RF1ddQGK) | Not Started | Project tree command to show the selected file in the native OS file viewer | |
 | [Automated Builds](https://trello.com/c/P35As8lf) | Not Started | | [Jason San Jose](http://github.com/jasonsanjose) |
-
-Building brackets-shell
-====
-
-The setup script will automatically create ``/path/to/brackets-shell/Makefile``. If you're only making changes to C++ code, just run ``make`` and the binaries will be in ``/path/to/brackets-shell/out/Release``. 
-
-When adding new files or changing the build configuration, you'll need to make modifications to the GYP configuration files (either ``appshell.gyp.txt`` or ``common.gypi``). After making changes, you'll need to generate a new ``Makefile``. To do this, run:
-
-```
-gyp --depth .
-```
-
-Packaging Brackets
-====
-
-Currently, we do not have a way to create an Ubuntu package suitable for end users to install. In the meantime, we can assemble all the required files necessary to run Brackets with the following script:
-
-```
-# copy required brackets-shell and brackets files to /path/to/brackets-shell/installer/linux/staging
-/path/to/brackets-shell > ./installer/linux/stage_for_packaging.sh
-```
-
-This staging folder can be zipped and distributed as a "portable" install that the runtime dependencies are addressed separately.
 
 FAQ
 ====
