@@ -135,3 +135,15 @@ The [W3C Packaged Web Apps Spec](http://www.w3.org/TR/2012/REC-widgets-20121127/
 * Uncommenting code
     * After doing the previous case, delete the `<!--` from line 114, then delete the `-->` from line 121.
     * Ideally, the original DOM node for the `<p>` would reappear (but at the very least, we should create a new `<p>`).
+
+## Operational Transforms vs. Simple Events ##
+
+Wikipedia offers basic information about [Operational Transformation (OT)](http://en.wikipedia.org/wiki/Operational_transformation).
+
+Sending events from the editor to the previewing browser should be reliable. However, my concern is that we could have changes to the DOM on the browser side as well. Ultimately, it *could* look like a collaboration between the browser-side code and the editor. As an added bonus, if we ever did implement actual real time collaboration, we would be able to reuse this work in that context.
+
+I spent a little time looking at the [ShareJS code](https://github.com/share/ShareJS). From a quick survey of the code, it looks like their implementation of OT wraps a straightforward event stream with a bit of extra bookkeeping on each side to ensure that operations are applied successfully. They even have a CodeMirror adapter which uses CM events that are mildly adapted to ShareJS.
+
+If we start with a simple event model, it seems like it should be possible to later migrate to OT. Diff/Patch would basically work with OT as well (because a Patch would be an operation).
+
+One final note: for dealing with synchronization with the browser DOM, it would be possible to use [MutationObservers](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). These appear to be available in Chrome today. I would imagine that listening to the whole document for mutations is likely expensive, but it may be okay for our use (authoring work).
