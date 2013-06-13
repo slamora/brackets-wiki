@@ -158,3 +158,19 @@ I spent a little time looking at the [ShareJS code](https://github.com/share/Sha
 If we start with a simple event model, it seems like it should be possible to later migrate to OT. Diff/Patch would basically work with OT as well (because a Patch would be an operation).
 
 One final note: for dealing with synchronization with the browser DOM, it would be possible to use [MutationObservers](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). These appear to be available in Chrome today. I would imagine that listening to the whole document for mutations is likely expensive, but it may be okay for our use (authoring work).
+
+## Well-formed HTML
+
+In the context of this feature, "well-formed HTML" means markup and content that can be pushed to the browser and expect it to render in a reasonable way. Modern browsers are _very_ forgiving in the markup they render. They ignore what the don't understand and subsequent markup and content is generally not affected.
+
+Well-formed markup just needs to satisfy generic tag format:
+
+* &lt;tag attr="val" attr2&gt;
+* &lt;tag attr="val"/&gt;
+
+It's not critical to require ending tags (i.e. &lt;/tag&gt;) as browsers do a good job of auto-inserting them. Also, Brackets auto-inserts these, anyway, so it's not an issue unless user turns this off.
+
+It's not important to perform "W3C Validation" because it's too strict for many users (and also a moving target).
+
+It's also not important to validate that tag and attribute, names and context are valid. Users want to see results in browser for visual feedback -- not wait for perfect markup.
+
