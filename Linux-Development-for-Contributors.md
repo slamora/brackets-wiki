@@ -73,5 +73,12 @@ This staging folder can be zipped and distributed as a "portable" install that t
 FAQ
 ====
 
+1. I want to help, but I don't have any C++ or GTK experience. How can I help?
+1. I can't help on the native shell, but how else can I help?
 1. Why isn't Linux distribution X supported?
 We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](https://code.google.com/p/chromiumembedded/) is well tested there both in a development environment and in deployment. We're open to contributors helping us support more distributions.
+1. Why aren't the Grunt scripts updated for Linux?
+1. Why is NodeJS required for brackets-shell?
+1. How do I use a browser other than Google Chrome?
+1. What IDE or tools should I use to work on brackets-shell?
+1. I really want to use Brackets in my browser instead of the native shell. How do I do that?
