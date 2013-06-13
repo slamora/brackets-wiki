@@ -136,6 +136,15 @@ The [W3C Packaged Web Apps Spec](http://www.w3.org/TR/2012/REC-widgets-20121127/
     * After doing the previous case, delete the `<!--` from line 114, then delete the `-->` from line 121.
     * Ideally, the original DOM node for the `<p>` would reappear (but at the very least, we should create a new `<p>`).
 
+### 10: Undo/Redo ###
+
+* Delete + undo
+    * Go to line 20
+    * Select to the closing paragraph tag on line 24
+    * Delete
+    * Undo
+    * Note: it should actually be possible to to keep that DOM node across the delete/undo, but it is probably not worthwhile to invest the effort
+
 ## Operational Transforms vs. Simple Events ##
 
 Wikipedia offers basic information about [Operational Transformation (OT)](http://en.wikipedia.org/wiki/Operational_transformation).
