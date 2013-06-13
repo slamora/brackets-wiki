@@ -78,6 +78,7 @@ FAQ
 1. I can't help on the native shell, but how else can I help? You can help fix issues (Linux-specific or not) in the www code located in the brackets repository.
 1. Why isn't Linux distribution X supported?
 We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](https://code.google.com/p/chromiumembedded/) is well tested there both in a development environment and in deployment. We're open to contributors helping us support more distributions.
+1. How do I debug the native shell? As of June 12, 2013, CEF does not have a 32-bit Debug build. Once this is available, we'll post a new answer to this question.
 1. Why aren't the Grunt scripts updated for Linux? The CEF binaries for Linux use 7zip instead of the standard ZIP file format. Some work needs to be done in the Grunt scripts to support this.
 1. Why is NodeJS required for brackets-shell? 
 1. How do I use a browser other than Google Chrome? 
