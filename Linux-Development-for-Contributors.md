@@ -20,7 +20,7 @@ wget -O - https://gist.github.com/jasonsanjose/5514813/raw/d4ed00adfaf5613a629e9
 5. To setup for Brackets development, we would normally use ``/path/to/brackets/tools/setup_for_hacking.sh`` to redirect the Brackets binary at the brackets git repository. There's still some open issues there, so instead, just manually run the following
 ```shell
 ln -s /path/to/brackets /path/to/brackets-shell/installer/linux/staging/dev
-``` 
+```
 
 Tested Distributions
 ----
