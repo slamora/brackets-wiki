@@ -30,6 +30,7 @@ That was easy, wasn't it?
 * Line 61: Delete the `alt` attribute entirely
     * Use backspace starting from the "s" in `src`
     * Expected `<img src="screenshots/quick-edit.png" />`
+* Alternative: do the same case, but select the entire attribute first and then hit delete. (Should be easier, but needs to be tested.)
 
 Still kind of easy, but there are some invalid states while editing.
 
@@ -40,12 +41,13 @@ Still kind of easy, but there are some invalid states while editing.
     * Type in the new tag
     * Navigate to just after the closing "
     * Type `</span>`
-* Unnesting: After doing the previous case:
-    * Put the cursor after the `<span class="save-reload">`
-    * Backspace to delete the opening tag
-    * Put the cursor after the `</span>`
-    * Backspace to delete the closing tag
-* Alternative: Do the unnesting case, but deleting the closing tag first.
+* Line 60: Delete the surrounding `<a>` tag
+    * Start with the caret at the end of the opening `<a>` tag
+    * Delete it using backspace
+    * Navigate to just after the matching `</a>` tag on line 62
+    * Delete it using backspace
+    * Ideally, the `<img>` tag would be reparented instead of being destroyed/recreated.
+* Alternative: Do the previous case, but delete the closing tag first.
 * Line 74: Add `id` and surround paragraph with `<span>`
     * Put the caret after the "p"
     * Type `id="foo"<span>` (note that `p` tag was not closed properly)
