@@ -69,3 +69,9 @@ Currently, we do not have a way to create an Ubuntu package suitable for end use
 ```
 
 This staging folder can be zipped and distributed as a "portable" install that the runtime dependencies are addressed separately.
+
+FAQ
+====
+
+1. Why isn't Linux distribution X supported?
+We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](https://code.google.com/p/chromiumembedded/) is well tested there both in a development environment and in deployment. We're open to contributors helping us support more distributions.
