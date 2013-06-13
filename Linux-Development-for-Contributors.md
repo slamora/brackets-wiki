@@ -16,7 +16,7 @@ These instructions will download the Git repositories for [brackets-shell](https
 wget -O - https://gist.github.com/jasonsanjose/5514813/raw/d4ed00adfaf5613a629e97a4f9123532e9938928/setup.sh | bash
 ```
 3. Respond to ``sudo`` password prompts when requested
-4. When complete, Brackets will launch from ``/path/to/brackets-shell/installer/linux/staging/Brackets`` with www source copied to ``/path/to/brackets-shell/installer/linux/staging/www
+4. When complete, Brackets will launch from ``/path/to/brackets-shell/installer/linux/staging/Brackets`` with ``www`` source (brackets/src) copied to ``/path/to/brackets-shell/installer/linux/staging/www``
 5. To setup for Brackets development, we would normally use ``/path/to/brackets/tools/setup_for_hacking.sh`` to redirect the Brackets binary at the brackets git repository. There's still some open issues there, so instead, just manually run the following
 ```shell
 ln -s /path/to/brackets /path/to/brackets-shell/installer/linux/staging/dev
