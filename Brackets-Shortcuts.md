@@ -519,6 +519,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
+        <td class="shortcut-base">F6</td>
+        <td class="shortcut-binding">F6</td>
+        <td class="shortcut-cmd-id">project.gruntDefault</td>
+        <td class="shortcut-cmd-name">Grunt default</td>
+        <td class="shortcut-orig">Extension (brackets-grunt)</td>
+    </tr>
+    <tr>
         <td class="shortcut-base">F12</td>
         <td class="shortcut-binding">F12</td>
         <td class="shortcut-cmd-id">debug.showDeveloperTools</td>
