@@ -126,6 +126,8 @@ This tests invalid states with nested tags and adding new tags across lines.
 
 The [W3C Packaged Web Apps Spec](http://www.w3.org/TR/2012/REC-widgets-20121127/) is a reasonably large document (344KB, 4400+ lines) with a good deal of structure to it. Once the basic tests are in place, performing similar tests against this large document will help find performance concerns.
 
+**Note**: I just tried loading this document into Brackets and starting Live Development on it. Brackets froze for probably a minute (with Brackets Helper taking 100% of CPU). Eventually, Brackets became responsive again, but the highlighting wasn't working.
+
 ### 9: Commenting/uncommenting
 
 * Commenting out code
