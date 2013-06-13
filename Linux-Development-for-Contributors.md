@@ -25,8 +25,12 @@ ln -s /path/to/brackets /path/to/brackets-shell/installer/linux/staging/dev
 Tested Distributions
 ----
 
-* Ubuntu 12.04 32-bit
-* Ubuntu 12.04 64-bit (manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/)
+Contributors: If you are willing to test other Linux distributions please add your results here
+
+| Distribution | Version | Issues |
+| ------------ | ------- | ----- |
+| Ubuntu | 12.04 32-bit | None |
+| Ubuntu | 12.04 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
 
 User Stories
 ====
