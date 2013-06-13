@@ -82,8 +82,16 @@ This tests invalid states with nested tags and adding new tags across lines.
 
 ### 6: Copy/paste
 
-* Cut/paste, same parent: Select the `<li>` on line 142, cut it, then move to the beginning of line 141 and paste. This should result in the DOM node (and its children) moving without being recreated.
-* Cut/paste, different parents: Select the `<img>` on line 61, cut it, then move to the text at the beginning of line 65 (inside the `<p>` tag) and paste. This should result in the DOM node moving without being recreated.
+* Cut/paste, same parent
+  * Select the `<li>` on line 142
+  * Cut it
+  * Move to the beginning of line 141
+  * Paste. This should result in the DOM node (and its children) moving without being recreated.
+* Cut/paste, different parents
+  * Select the `<img>` on line 61
+  * Cut it
+  * Move to the text at the beginning of line 65 (inside the `<p>` tag)
+  * Paste. This should result in the DOM node moving without being recreated.
 * **TODO:** For copy/paste, it's harder to know what to do since you're actually creating a new node. Is there any expectation that you'll copy the state of the original node somehow, or should we just treat it as if you retyped the text?
 
 ### 7: Changing tags
@@ -92,3 +100,12 @@ This tests invalid states with nested tags and adding new tags across lines.
 
 ### 9: Big file editing
 
+### 10: Commenting/uncommenting
+
+* Commenting out code
+  * At the beginning of line 114, type `<!--`
+  * Move the cursor to line 121 and type `-->`
+  * Ideally, the DOM nodes after line 121 would reappear with all their original state. (That sounds hard, but if we use the marked range info in the document, perhaps we could be try to be smart about this case and cache the DOM nodes that were removed after the first step, then reinsert them after the second step.)
+* Uncommenting code
+  * After doing the previous case, delete the `<!--` from line 114, then delete the `-->` from line 121.
+  * Ideally, the original DOM node for the `<p>` would reappear (but at the very least, we should create a new `<p>`).
