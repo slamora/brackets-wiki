@@ -14,41 +14,44 @@ Each scenario starts with a fresh copy of the file, though many could work as a 
 
 ### 1: Text node manipulation
 
-* Line 13: insert "YOU SHOULD BE " immediately after the `<h1>` open tag
-    * Expected `<h1>YOU SHOULD BE GETTING STARTED WITH BRACKETS</h1>`
-* Line 13: Replace the text "GETTING STARTED WITH" with "ALREADY USING"
-    * Expected `<h1>YOU SHOULD BE ALREADY USING BRACKETS</h1>`
+* Insert text at the beginning of a text node
+    * Line 13: insert "YOU SHOULD BE " immediately after the `<h1>` open tag
+* Alter text in the middle of a text node
+    * Line 13: Replace the text "GETTING STARTED WITH" with "ALREADY USING"
 
 That was easy, wasn't it?
 
 ### 2: Attributes
 
-* Line 13: after "h1", type ' class="main"'.
-    * Expected `<h1 class="main">GETTING STARTED WITH BRACKETS</h1>`
-* Line 61: Change "showing" to "displaying"
-    * Expected `<img alt="A screenshot displaying CSS Quick Edit" src="screenshots/quick-edit.png" />`
-* Line 61: Delete the `alt` attribute entirely
+* Add an attribute
+    * Line 13: after "h1", type ' class="main"'.
+* Change the contents of an attribute
+    * Line 61: Change "showing" to "displaying"
+* Delete an attribute
+    * Line 61: Delete the `alt` attribute entirely
     * Use backspace starting from the "s" in `src`
-    * Expected `<img src="screenshots/quick-edit.png" />`
 * Alternative: do the same case, but select the entire attribute first and then hit delete. (Should be easier, but needs to be tested.)
 
 Still kind of easy, but there are some invalid states while editing.
 
 ### 3: Nesting/Across Lines
 
-* Line 75: Surround `"save/reload dance"` with a `<span class="save-reload">` tag
+* Adding a tag
+    * Line 75: Surround `"save/reload dance"` with a `<span class="save-reload">` tag
     * Start with the caret before the opening "
     * Type in the new tag
     * Navigate to just after the closing "
     * Type `</span>`
-* Line 60: Delete the surrounding `<a>` tag
+* Deleting a tag (but not its text)
+    * Line 60: Delete the surrounding `<a>` tag
     * Start with the caret at the end of the opening `<a>` tag
     * Delete it using backspace
     * Navigate to just after the matching `</a>` tag on line 62
     * Delete it using backspace
     * Ideally, the `<img>` tag would be reparented instead of being destroyed/recreated.
 * Alternative: Do the previous case, but delete the closing tag first.
-* Line 74: Add `id` and surround paragraph with `<span>`
+* Sloppily adding a tag
+    * Line 74: Add `id` and surround paragraph with `<span>`
     * Put the caret after the "p"
     * Type `id="foo"<span>` (note that `p` tag was not closed properly)
     * Navigate to line 84, before the `</p>` tag
@@ -62,7 +65,8 @@ This tests invalid states with nested tags and adding new tags across lines.
 
 ### 4: Lists
 
-* Line 141: Adding a new item after this one
+* Add a new list item
+    * Line 141: Adding a new item after this one
     * Navigate to the end of the line
     * Hit enter to create a new line at 142
     * Type `<li>Sometimes read about us on `
@@ -71,7 +75,8 @@ This tests invalid states with nested tags and adding new tags across lines.
 
 ### 5: Tables
 
-* Line 150: Adding a table
+* Adding a table
+    * Go to line 150
     * Type:
 
 ```html
@@ -91,29 +96,42 @@ This tests invalid states with nested tags and adding new tags across lines.
 ### 6: Copy/paste
 
 * Cut/paste, same parent
-  * Select the `<li>` on line 142
-  * Cut it
-  * Move to the beginning of line 141
-  * Paste. This should result in the DOM node (and its children) moving without being recreated.
+    * Select the `<li>` on line 142
+    * Cut it
+    * Move to the beginning of line 141
+    * Paste. This should result in the DOM node (and its children) moving without being recreated.
 * Cut/paste, different parents
-  * Select the `<img>` on line 61
-  * Cut it
-  * Move to the text at the beginning of line 65 (inside the `<p>` tag)
-  * Paste. This should result in the DOM node moving without being recreated.
+    * Select the `<img>` on line 61
+    * Cut it
+    * Move to the text at the beginning of line 65 (inside the `<p>` tag)
+    * Paste. This should result in the DOM node moving without being recreated.
 * **TODO:** For copy/paste, it's harder to know what to do since you're actually creating a new node. Is there any expectation that you'll copy the state of the original node somehow, or should we just treat it as if you retyped the text?
 
 ### 7: Changing tags
 
-### 8: Changes to HEAD
+* Changing end tag first
+    * Go to line 24 (closing `p` tag)
+    * Delete tag
+    * Type `</div>`
+    * Go to line 20
+    * Backspace over the tag
+    * type `<div>`
+* Change open tag first
+    * Go to line 14
+    * Replace the "2" in `h2` with "3" in the opening tag
+    * Go to the ending tag
+    * Replace the "2" in `/h2` with a "3"
 
-### 9: Big file editing
+### 8: Big file editing
 
-### 10: Commenting/uncommenting
+The [W3C Packaged Web Apps Spec](http://www.w3.org/TR/2012/REC-widgets-20121127/) is a reasonably large document (344KB, 4400+ lines) with a good deal of structure to it. Once the basic tests are in place, performing similar tests against this large document will help find performance concerns.
+
+### 9: Commenting/uncommenting
 
 * Commenting out code
-  * At the beginning of line 114, type `<!--`
-  * Move the cursor to line 121 and type `-->`
-  * Ideally, the DOM nodes after line 121 would reappear with all their original state. (That sounds hard, but if we use the marked range info in the document, perhaps we could be try to be smart about this case and cache the DOM nodes that were removed after the first step, then reinsert them after the second step.)
+    * At the beginning of line 114, type `<!--`
+    * Move the cursor to line 121 and type `-->`
+    * Ideally, the DOM nodes after line 121 would reappear with all their original state. (That sounds hard, but if we use the marked range info in the document, perhaps we could be try to be smart about this case and cache the DOM nodes that were removed after the first step, then reinsert them after the second step.)
 * Uncommenting code
-  * After doing the previous case, delete the `<!--` from line 114, then delete the `-->` from line 121.
-  * Ideally, the original DOM node for the `<p>` would reappear (but at the very least, we should create a new `<p>`).
+    * After doing the previous case, delete the `<!--` from line 114, then delete the `-->` from line 121.
+    * Ideally, the original DOM node for the `<p>` would reappear (but at the very least, we should create a new `<p>`).
