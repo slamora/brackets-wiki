@@ -40,6 +40,12 @@ Still kind of easy, but there are some invalid states while editing.
     * Type in the new tag
     * Navigate to just after the closing "
     * Type `</span>`
+* Unnesting: After doing the previous case:
+    * Put the cursor after the `<span class="save-reload">`
+    * Backspace to delete the opening tag
+    * Put the cursor after the `</span>`
+    * Backspace to delete the closing tag
+* Alternative: Do the unnesting case, but deleting the closing tag first.
 * Line 74: Add `id` and surround paragraph with `<span>`
     * Put the caret after the "p"
     * Type `id="foo"<span>` (note that `p` tag was not closed properly)
