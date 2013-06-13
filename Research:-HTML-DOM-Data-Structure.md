@@ -82,6 +82,10 @@ This tests invalid states with nested tags and adding new tags across lines.
 
 ### 6: Copy/paste
 
+* Cut/paste, same parent: Select the `<li>` on line 142, cut it, then move to the beginning of line 141 and paste. This should result in the DOM node (and its children) moving without being recreated.
+* Cut/paste, different parents: Select the `<img>` on line 61, cut it, then move to the text at the beginning of line 65 (inside the `<p>` tag) and paste. This should result in the DOM node moving without being recreated.
+* **TODO:** For copy/paste, it's harder to know what to do since you're actually creating a new node. Is there any expectation that you'll copy the state of the original node somehow, or should we just treat it as if you retyped the text?
+
 ### 7: Changing tags
 
 ### 8: Changes to HEAD
