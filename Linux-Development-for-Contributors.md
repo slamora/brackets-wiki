@@ -8,6 +8,9 @@ To be clear, if you are NOT an extension developer and NOT planning to contribut
 Development Environment Setup
 ====
 
+Required Setup For brackets-shell and brackets
+----
+
 These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, stage all the runtime files, then run Brackets.
 
 1. Create a top level folder to contain the Brackets git repositories
@@ -21,6 +24,25 @@ wget -O - https://gist.github.com/jasonsanjose/5514813/raw/d4ed00adfaf5613a629e9
 ```shell
 ln -s /path/to/brackets /path/to/brackets-shell/installer/linux/staging/dev
 ```
+
+Cache Location
+----
+
+```
+# cache root
+~/.Brackets
+
+# browser cache, local storage, etc.
+~/.Brackets/cef_data
+
+# extensions
+~/.Brackets/extensions/user
+```
+
+Extension Development
+----
+
+The extension development workflow is the same as Mac and Windows. Please refer to [How to hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) and [How to write extensions](https://github.com/adobe/brackets/wiki/How%20to%20write%20extensions). Please note that the extension location on Linux is ``~/.Brackets/extensions/user``.
 
 Tested Distributions
 ----
