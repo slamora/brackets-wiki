@@ -27,3 +27,18 @@ Tested Distributions
 
 * Ubuntu 12.04 32-bit
 * Ubuntu 12.04 64-bit (manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/)
+
+User Stories
+====
+
+There are several user stories (feature work) to complete in brackets-shell before the Linux version reaches feature parity with Mac and Windows. These stories are listed below in priority order
+
+| User Story | Status | Affected Features | Contact |
+| ---------- | ------ | ----------------- | ------- |
+| [Update CEF](https://trello.com/c/E8N0Q6dE) | In Progress | Everything | [Jason San Jose](http://github.com/jasonsanjose) |
+| [Node Integration](https://trello.com/c/9nX06hWa) | Not Started | Live Preview HTML Highlighting, Extension Manager Install/Update/Remove | [Joel Brandt](http://github.com/joelrbrandt) |
+| [Ubuntu Installer/Packaging](https://trello.com/c/ZoCPy6mD) | Not Started | Install experience | |
+| [Native Menus](https://trello.com/c/WMB6vtwO) | Not Started | Menus (HTML menus are an interim, but completely functional substitute) | |
+| [File API - delete, rename](https://trello.com/c/WMB6vtwO) | Not Started | Project tree and File menu delete and rename commands | |
+| [Show in OS](https://trello.com/c/RF1ddQGK) | Not Started | Project tree command to show the selected file in the native OS file viewer | |
+| [Automated Builds](https://trello.com/c/P35As8lf) | Not Started | | [Jason San Jose](http://github.com/jasonsanjose) |
