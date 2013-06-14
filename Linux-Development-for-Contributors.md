@@ -104,6 +104,7 @@ We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](http
 1. How do I debug the native shell? As of June 12, 2013, CEF does not have a 32-bit Debug build. Once this is available, we'll post a new answer to this question.
 1. Why aren't the Grunt scripts updated for Linux? The CEF binaries for Linux use 7zip instead of the standard ZIP file format. Some work needs to be done in the Grunt scripts to support this.
 1. Why is NodeJS required for brackets-shell? 
-1. How do I use a browser other than Google Chrome? 
+1. How do I use a browser other than Google Chrome?
+1. Live Development doesn't work with the Chromium browser.  How can I fix it?  If you want to use the Chromium browser for Live Development, you will need to add symlink the file `/usr/bin/google-chrome` to the chromium executable which is normally located at `/usr/bin/chromium-browser`. All it should take is `sudo ln -s /usr/bin/google-chrome /usr/bin/chromium-browser`.
 1. What IDE or tools should I use to work on brackets-shell?
 1. I really want to use Brackets in my browser instead of the native shell. How do I do that?
