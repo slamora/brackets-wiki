@@ -174,3 +174,5 @@ It's not important to perform "W3C Validation" because it's too strict for many 
 
 It's also not important to validate that tag and attribute, names and context are valid. Users want to see results in browser for visual feedback -- not wait for perfect markup.
 
+[nj] In general I think this is right, but I think we have to do some work in order to anticipate how browsers will auto-insert end tags, because we need to know how the structure is mapped in order to properly manipulate the DOM on future edits.
+
