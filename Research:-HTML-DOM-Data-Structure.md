@@ -174,5 +174,8 @@ It's not important to perform "W3C Validation" because it's too strict for many 
 
 It's also not important to validate that tag and attribute, names and context are valid. Users want to see results in browser for visual feedback -- not wait for perfect markup.
 
-[nj] In general I think this is right, but I think we have to do some work in order to anticipate how browsers will auto-insert end tags, because we need to know how the structure is mapped in order to properly manipulate the DOM on future edits.
+[nj] Some comments:
 
+* In general I think this is right, but I think we have to do some work in order to anticipate how browsers will auto-insert end tags, because we want to accurately reflect the structure the browser would have created if it were to simply load the given HTML.
+
+* Given that, though, it sounds like our starting proposal is that we'll consider the HTML to be well-formed as long as there are no unclosed start or end tags (i.e. as long as the user is in the middle of typing `<tag attr...`, we'll consider it ill-formed, but as soon as they type the `>`, we'll make our best guess as to where the tag closure should be, and manipulate the DOM accordingly). It seems like that's a simple enough heuristic that we could start with it and see how it goes.
