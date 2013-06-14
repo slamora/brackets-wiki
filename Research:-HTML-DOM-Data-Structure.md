@@ -180,6 +180,27 @@ It's also not important to validate that tag and attribute, names and context ar
 
 * In general I think this is right, but I think we have to do some work in order to anticipate how browsers will auto-insert end tags, because we want to accurately reflect the structure the browser would have created if it were to simply load the given HTML.
 
-* Given that, though, it sounds like our starting proposal is that we'll consider the HTML to be well-formed as long as there are no unclosed start or end tags (i.e. as long as the user is in the middle of typing `<tag attr...`, we'll consider it ill-formed, but as soon as they type the `>`, we'll make our best guess as to where the tag closure should be, and manipulate the DOM accordingly). It seems like that's a simple enough heuristic that we could start with it and see how it goes.
+* Given that, though, it sounds like our starting proposal is that we'll consider the HTML to be well-formed as long as there are no unclosed start or end tags (i.e. as long as the user is in the middle of typing `<tag attr...`, we'll consider it ill-formed, but as soon as they type the `>`, we'll make our best guess as to where the tag closure should be, and manipulate the DOM accordingly); and also we'll consider a start tag invalid if the attribute syntax in it is messed up enough (e.g. `<tag foo=>`). It seems like that's a simple enough heuristic that we could start with it and see how it goes.
 
 * Do we know what the existing code we're using to parse HTML for highlighting (in DOMHelpers.js) does if it encounters an unclosed start or end tag (in the sense of a `<` without a `>`)?
+
+## High-level algorithm flow proposal
+
+1. On file open, parse the file as we currently do for highlighting purposes, and mark matching start/end tag ranges. Also, mark the boundaries of the start and end tags separately (I don't think we currently do this--I think the range currently goes from the beginning of the start tag to the end of the end tag.)
+2. Set the state to STATE_VALID. (As a simplification, assume that on open, the file is always well-formed HTML as defined above--TBD what to do if it's not.)
+3. On each change event: (for now, let's assume that all change events are single-character granularity)
+
+| Start State | Event | Conditions | Action/DOM manipulation |
+|---|---|---|---|
+| STATE_VALID | Insert char | Inside text, char is not '<' | Update text DOM node with inserted text |
+| STATE_VALID | Insert char | Inside text, char is '<' | Record current DOM hierarchy and transition to STATE_INVALID |
+| STATE_VALID | Insert or delete char | Inside known start tag range | Reparse start tag to find tag name and attributes; if syntax is invalid, record current DOM hierarchy and transition to STATE_INVALID, otherwise diff against existing DOM node attributes and apply changes to DOM node; **TBD** if tag name changes |
+| STATE_VALID | Insert or delete char | Inside known end tag range | **TBD** if tag name changes |
+| STATE_VALID | Delete char | Inside text, not in start/end tag | Update text DOM node with deleted text |
+| STATE_VALID | Delete char | At tag boundary (`<` or `>`) | Record current DOM hierarchy and transition to STATE_INVALID |
+| STATE_INVALID | Insert or delete char | Reparse entire document and see if it's now valid. If so, diff the new hierarchy against the old hierarchy, taking into account the marked text ranges (which map into both the old and new hierarchies) in order to establish identities between the two. Modify and reparent as necessary to transform the old hierarchy into the new hierarchy. |
+
+Issues:
+* As a performance optimization, we could try to avoid reparsing the entire document each time when in STATE_INVALID by trying to limit the amount of the document that could be dirtied (e.g. only reparse from the next tag boundary before the location of the edit; not clear where we can end reparsing).
+* What happens if edits are not at a character granularity--for example, we get a change record from CodeMirror that contains multiple edits in different parts of the document? It could just be equivalent to handling each one in order.
+* What about comment/uncomment? Will this work?
