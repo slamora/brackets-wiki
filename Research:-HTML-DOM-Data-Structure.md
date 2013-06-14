@@ -198,7 +198,7 @@ It's also not important to validate that tag and attribute, names and context ar
 | STATE_VALID | Insert or delete char | Inside known end tag range | **TBD** if tag name changes |
 | STATE_VALID | Delete char | Inside text, not in start/end tag | Update text DOM node with deleted text |
 | STATE_VALID | Delete char | At tag boundary (`<` or `>`) | Record current DOM hierarchy and transition to STATE_INVALID |
-| STATE_INVALID | Insert or delete char | Reparse entire document and see if it's now valid. If so, diff the new hierarchy against the old hierarchy, taking into account the marked text ranges (which map into both the old and new hierarchies) in order to establish identities between the two. Modify and reparent as necessary to transform the old hierarchy into the new hierarchy. |
+| STATE_INVALID | Insert or delete char | Any | Reparse entire document and see if it's now valid. If so, diff the new hierarchy against the old hierarchy, taking into account the marked text ranges (which map into both the old and new hierarchies) in order to establish identities between the two. Modify and reparent as necessary to transform the old hierarchy into the new hierarchy. |
 
 Issues:
 * As a performance optimization, we could try to avoid reparsing the entire document each time when in STATE_INVALID by trying to limit the amount of the document that could be dirtied (e.g. only reparse from the next tag boundary before the location of the edit; not clear where we can end reparsing).
