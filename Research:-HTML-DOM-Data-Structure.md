@@ -204,3 +204,12 @@ Issues:
 * As a performance optimization, we could try to avoid reparsing the entire document each time when in STATE_INVALID by trying to limit the amount of the document that could be dirtied (e.g. only reparse from the next tag boundary before the location of the edit; not clear where we can end reparsing).
 * What happens if edits are not at a character granularity--for example, we get a change record from CodeMirror that contains multiple edits in different parts of the document? It could just be equivalent to handling each one in order.
 * What about comment/uncomment? Will this work?
+
+## Notes on Diffs
+
+
+I did some looking into the prior art of HTML/XML diffing. I found an [XML diff survey](http://www.scribd.com/doc/14482474/XML-diff-survey) paper that walked through the issues and algorithms well. Reading this also crystallized in my mind what is different between the problem that we face and the problem that all of these others have faced.
+
+Existing XML diff solutions are designed to take two static files and compare them, trying to find a small difference between them. This makes it really hard to find a node that has been reparented, for example.
+
+What we have is, potentially, a snapshot of the last state pushed to the browser and markers all over the place for the tags in the document. CodeMirror goes to some amount of effort to ensure that those markers keep referring to the same blocks of code. It's possible that some of the prior art in diffing (computing edit distances, perhaps?) may apply, but much of the problem is different because of the data that we're maintaining. This is a good thing.
