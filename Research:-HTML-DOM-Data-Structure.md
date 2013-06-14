@@ -181,8 +181,7 @@ It's also not important to validate that tag and attribute, names and context ar
 * In general I think this is right, but I think we have to do some work in order to anticipate how browsers will auto-insert end tags, because we want to accurately reflect the structure the browser would have created if it were to simply load the given HTML.
 
 * Given that, though, it sounds like our starting proposal is that we'll consider the HTML to be well-formed as long as there are no unclosed start or end tags (i.e. as long as the user is in the middle of typing `<tag attr...`, we'll consider it ill-formed, but as soon as they type the `>`, we'll make our best guess as to where the tag closure should be, and manipulate the DOM accordingly); and also we'll consider a start tag invalid if the attribute syntax in it is messed up enough (e.g. `<tag foo=>`). It seems like that's a simple enough heuristic that we could start with it and see how it goes.
-
-[randy] Chrome is ridiculously forgiving. The only really bad case (where tag is not rendered at all) I could find is unmatched quotes in an attribute value. A lone "<" renders as text -- kinda dumb, but doesn't affect subsequent tags. Even "<li" is recognized as a list item! But, since we have to handle some cases, we might as well wait for the basic well-formed case before pushing to browser.
+**[randy]** Chrome is ridiculously forgiving. The only really bad case (where tag is not rendered at all) I could find is unmatched quotes in an attribute value. A lone "<" renders as text -- kinda dumb, but doesn't affect subsequent tags. Even "<li" is recognized as a list item! But, since we have to handle some cases, we might as well wait for the basic well-formed case before pushing to browser.
 
 * Do we know what the existing code we're using to parse HTML for highlighting (in DOMHelpers.js) does if it encounters an unclosed start or end tag (in the sense of a `<` without a `>`)?
 
