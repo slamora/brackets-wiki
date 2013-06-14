@@ -31,7 +31,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
 * [A Peek at Brackets from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/)
 * [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
-* [Keyboard Shortcuts](https://github.com/adobe/brackets/wiki/Keyboard-Shortcuts)
+* [Keyboard Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts)
 
 ## Releases
 
