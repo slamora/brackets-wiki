@@ -159,7 +159,7 @@ If we start with a simple event model, it seems like it should be possible to la
 
 One final note: for dealing with synchronization with the browser DOM, it would be possible to use [MutationObservers](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). These appear to be available in Chrome today. I would imagine that listening to the whole document for mutations is likely expensive, but it may be okay for our use (authoring work).
 
-[nj] I think this is right in general, but I have a slightly different way of thinking about this. OT is trying to solve the problem of reconciling edits to the same data structure. In our case, we have two different data structures: on the Brackets side, we have a stream of text, and on the browser side, we have a hierarchical DOM (we're not pushing textual updates directly to the browser). The biggest issue we face is not reconciling two streams of DOM manipulations, but in figuring out how to convert textual updates into DOM manipulations. Once we've figured out what DOM manipulations a given set of textual edits in the code correspond to, then we could use OT to reconcile those with changes in the browser. (I think this might be basically the same thing you're saying, but your comment two paragraphs above about events vs. diff patches confused me; in my mind, OT would happen *after* the point at which we would convert events or diffs to a DOM manipulation stream, so which one we choose has no impact on the input to OT.)
+**[nj]** I think this is right in general, but I have a slightly different way of thinking about this. OT is trying to solve the problem of reconciling edits to the same data structure. In our case, we have two different data structures: on the Brackets side, we have a stream of text, and on the browser side, we have a hierarchical DOM (we're not pushing textual updates directly to the browser). The biggest issue we face is not reconciling two streams of DOM manipulations, but in figuring out how to convert textual updates into DOM manipulations. Once we've figured out what DOM manipulations a given set of textual edits in the code correspond to, then we could use OT to reconcile those with changes in the browser. (I think this might be basically the same thing you're saying, but your comment two paragraphs above about events vs. diff patches confused me; in my mind, OT would happen *after* the point at which we would convert events or diffs to a DOM manipulation stream, so which one we choose has no impact on the input to OT.)
 
 ## Well-formed HTML
 
@@ -176,7 +176,7 @@ It's not important to perform "W3C Validation" because it's too strict for many 
 
 It's also not important to validate that tag and attribute, names and context are valid. Users want to see results in browser for visual feedback -- not wait for perfect markup.
 
-[nj] Some comments:
+**[nj]** Some comments:
 
 * In general I think this is right, but I think we have to do some work in order to anticipate how browsers will auto-insert end tags, because we want to accurately reflect the structure the browser would have created if it were to simply load the given HTML.
 
