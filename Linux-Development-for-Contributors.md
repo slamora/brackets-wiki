@@ -54,6 +54,9 @@ Contributors: If you are willing to test other Linux distributions please add yo
 | Ubuntu | 12.04 32-bit | None |
 | Ubuntu | 12.04 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
 | Mint 15 | 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
+|LMDE(*) | Debian Testing 32 bit |None|
+
+(*) Linux Mint Debian Edition
 
 Building brackets-shell
 ----
