@@ -169,6 +169,7 @@ Well-formed markup just needs to satisfy generic tag format:
 
 * &lt;tag attr="val" attr2&gt;
 * &lt;tag attr="val"/&gt;
+* &lt;/tag&gt;
 
 It's not critical to require ending tags (i.e. &lt;/tag&gt;) as browsers do a good job of auto-inserting them. Also, Brackets auto-inserts these, anyway, so it's not an issue unless user turns this off.
 
