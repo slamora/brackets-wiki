@@ -186,6 +186,8 @@ It's also not important to validate that tag and attribute, names and context ar
 
 * Do we know what the existing code we're using to parse HTML for highlighting (in DOMHelpers.js) does if it encounters an unclosed start or end tag (in the sense of a `<` without a `>`)?
 
+**[randy]** The DOMHelpers.js code will ignore tag started with `<` if there is not a subsequent `>`. But, it searches entire file looking for `>` (i.e. does not detect any other `<` chars while searching. The DOMHelpers.js attribute parsing code needs to be improved to detect invalid attributes -- currently, it ignores anything that does not fit `attr=val` format. It also does not handle valid attribute case where there is optional whitespace around `=`.
+
 ## High-level algorithm flow proposal
 
 1. On file open, parse the file as we currently do for highlighting purposes, and mark matching start/end tag ranges. Also, mark the boundaries of the start and end tags separately (I don't think we currently do this--I think the range currently goes from the beginning of the start tag to the end of the end tag.)
