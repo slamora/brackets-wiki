@@ -29,6 +29,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Indent Guides] (https://github.com/lkcampbell/brackets-indent-guides): An extension for Brackets to show indent guides in the code editor.
 * [Go to Last Edit](https://github.com/peterflynn/goto-last-edit): Jump to the location of your last edit in the current file with a quick keyboard shortcut (Ctrl+*)
 * [Quick Navigate](https://github.com/jeffslofish/quick-navigate): Navigate back to previous cursor and edit locations quickly with toolbar buttons.
+* [Close Others](https://github.com/sathyamoorthi/brackets-close-others): This will give you additional options like Close others, Close top and bottom files to operate 'Working Files' section efficiently.
 * [Sidebar Plus](https://github.com/sathyamoorthi/brackets-sidebar-plus): Show / Hide sidebar using mouse over.
 * [HTML Tag Highlight](https://github.com/sathyamoorthi/brackets-html-tag-highlight): Highlight start and end tags in HTML document.
 * [Edit History](https://github.com/iwehrman/brackets-edit-history): Yet another extension for navigating forward and backward among edit positions.
