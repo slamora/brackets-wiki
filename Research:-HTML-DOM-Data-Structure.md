@@ -217,3 +217,21 @@ I did some looking into the prior art of HTML/XML diffing. I found an [XML diff 
 Existing XML diff solutions are designed to take two static files and compare them, trying to find a small difference between them. This makes it really hard to find a node that has been reparented, for example.
 
 What we have is, potentially, a snapshot of the last state pushed to the browser and markers all over the place for the tags in the document. CodeMirror goes to some amount of effort to ensure that those markers keep referring to the same blocks of code. It's possible that some of the prior art in diffing (computing edit distances, perhaps?) may apply, but much of the problem is different because of the data that we're maintaining. This is a good thing.
+
+## Pushing changes to the browser
+
+Recommendations: Use (1) a custom build of jQuery limited to DOM manipulation or (2) write our own DOM manipulation APIs. 
+
+This [pull request](https://github.com/adobe/brackets/pull/4237) loads the full jQuery library (into a private namespace) in the inspected page via ``RemoteAgent``. We use this method to support CSS rule and HTML element highlighting features in Live Preview.
+
+The prototype exposes a subset of jQuery DOM manipulation methods to support the text editing use cases we've outlined above for basic CRUD operations on a DOM tree (attr, removeAttr, before, after, append, prepend, text, detach, remove). 
+
+### Issues with Inspector DOM API
+
+A quick review of the [Inspector DOM API docs](https://developers.google.com/chrome-developer-tools/docs/protocol/tot/dom) exposes a major weakness: a lack of a node insertion API.
+
+Other notes:
+
+* ``DOM.getDocument()`` only returns a node tree to the depth of ``body``
+* Same node is never sent twice, i.e. sequential calls to ``DOM.getDocument()`` will return the same tree but with different ``nodeId`` values
+* @jdiehl's prototype work (see ``DOMAgent/DOMNode/DOMHelpers``) maintains a DOM tree representation by listening to a complete set of DOM mutation events. 
