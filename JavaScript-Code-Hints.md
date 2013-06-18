@@ -82,3 +82,16 @@ The strings in "excluded-directories" or "excluded-files" will be treated as a r
          "max-file-count": 100,   
          "max-file-size": 524288  
     }
+
+## Advanced Hinting
+JS Function Parameter and Documentation Hints
+
+In addition to the current hints, the JS code hints will provide independent windows for function parameter hints and documentation hints. The look and feel of the three windows will be similar to the Eclipse implementation. The function parameter hints will be displayed above the current line; the main hints below the current line, and documentation on a highlighted hint will pop out to the side of the main hint window.
+
+ 
+
+The function parameter hints will be displayed after the user chooses a function from the hints popup, inserting the function text and dismissing the main hint window. Function parameter hints can be re-displayed anytime the cursor is inside a function by pressing Shift+Ctrl+Space. The parameters will be displayed in a format similar to closure annotation but without enclosing brackets around the type annotation. Optional parameters will be enclosed in brackets.
+
+The main hints themselves will be unchanged from the current format. 
+
+Documentation on a function or variable will pop out to the side of the main hint window when a hint is highlighted. A small delay between highlighting a hint and displaying the documentation will prevent flash in the case where the user is quickly moving through the hints. The documentation for functions will contain the function signature, origin, description, parameters, and return type. The documentation window for variables and properties will show the type, origin, and description. The figure below shows a documentation hint for a highlighted function.
