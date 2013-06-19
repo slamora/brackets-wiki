@@ -75,6 +75,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Simple JS code hints](https://github.com/iwehrman/brackets-simple-js-code-hints): Like the Tern-based JS hinter, but stupid!
 * [Rename JavaScript Identifier](https://github.com/asgerf/bracket-rename): Renames JavaScript identifiers.
 * [MVC.net](https://github.com/edwinvankoppen/Brackets-MVC.net): Adds cshtml (views in MVC.net) to the HTML highlighting.
+* [Ruby](https://github.com/TheresNoBox/Brackets-Ruby): Adds support for Haml, ERB, and Ruby line and block comments. 
 
 **General Functionality**
 * [Tabs](https://github.com/albertxing/brackets-tabs): Show tabs in place of title when sidebar is hidden
