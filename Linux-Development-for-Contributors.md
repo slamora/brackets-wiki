@@ -79,7 +79,7 @@ Currently, we do not have a way to create an Ubuntu package suitable for end use
 /path/to/brackets-shell > ./installer/linux/stage_for_packaging.sh
 ```
 
-This staging folder can be zipped and distributed as a "portable" install that the runtime dependencies are addressed separately.
+This staging folder can be zipped and distributed as a "portable" install (assuming that the runtime dependencies are addressed separately).
 
 User Stories
 ====
