@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 26 -- approximately June 10._
-
 What's New in Sprint 26
 -----------------------
 * **Extensions**
