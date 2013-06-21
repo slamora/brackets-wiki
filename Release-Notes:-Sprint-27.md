@@ -4,10 +4,11 @@ _This document will not be finalized until the end of Sprint 27 -- approximately
 
 What's New in Sprint 27
 -----------------------
-* **Story 1**
-    * [Easier extension updating](https://trello.com/card/2-extension-listing-update/4f90a6d98f77505d7940ce88/877): When installing a newer version of an extension you already have installed, Brackets will automatically replace the older version.
-* **Story 2**
-    * [Delete file/folder improvements](https://trello.com/card/2-delete-file-folder/4f90a6d98f77505d7940ce88/382): Better handling of unsaved changes.
+* **Research**
+    * [Data Structure for HTML DOM Edit Mapping](https://trello.com/c/lGIOrElQ): Research task to figure out how to do live HTML editing. 
+    * [Drag and Drop](https://trello.com/c/PDyKD95J): Research task to figure out how to intercept native drag events on the mac so we can support dropping files onto the Brackets window. 
+* **Architecture**
+    * [Update Brackets Shell (CEF)](https://trello.com/c/YQlER69q): Update to the latest CEF, v 3.1453.1255.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-26...sprint-27#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-26...sprint-27#commits_bucket)
 
