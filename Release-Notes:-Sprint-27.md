@@ -19,6 +19,8 @@ UI Changes
 API Changes
 -----------
 
+* brackets.openURLInDefaultBrowser(err, url) parameters were reversed from convention. To accommodate an optional callback the parameters were normalized in this build.  The correct API usage is brackets.openURLInDefaultBrowser(url, err) where err is an optional function callback that takes 1 argument.
+
 New/Improved Extensibility APIs
 -------------------------------
 
