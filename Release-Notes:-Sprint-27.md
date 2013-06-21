@@ -1,8 +1,8 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 26 -- approximately June 10._
+_This document will not be finalized until the end of Sprint 27 -- approximately June 27._
 
-What's New in Sprint 26
+What's New in Sprint 27
 -----------------------
 * **Story 1**
     * [Easier extension updating](https://trello.com/card/2-extension-listing-update/4f90a6d98f77505d7940ce88/877): When installing a newer version of an extension you already have installed, Brackets will automatically replace the older version.
