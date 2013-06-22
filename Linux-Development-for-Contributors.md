@@ -17,7 +17,7 @@ These instructions will download the Git repositories for [brackets-shell](https
 2. Create a top level folder to contain the Brackets git repositories
 3. In a terminal window, ``cd`` to the folder from the previous step and run the following command
 ```shell
-wget https://gist.github.com/jasonsanjose/5514813/raw/36df303fc62379761a7939c1ddf838e15eb0a219/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
+wget https://gist.github.com/jasonsanjose/5514813/raw/8e2c9eaf326aa7de39e1f7a6f43bcb1c739928cf/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
 ```
 4. You'll be prompted for your GitHub user name to clone your fork of the repositories
 5. Respond to ``sudo`` password prompts when requested
