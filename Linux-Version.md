@@ -1,10 +1,13 @@
-Current Status
+Download Brackets
 ====
 
-As of Sprint 27 (ending June 26, 2013), Linux support is still a work in progress.
-
 * Contributors - See [Linux Development For Contributors](https://github.com/adobe/brackets/wiki/Linux-Development-for-Contributors). This is your guide to setting up a development environment, navigating your way around the code base, finding Linux specific user stories to contribute to, and updates on our progress overall.
-* End Users - Coming soon
+* Users - Coming soon
+
+Feature Status
+====
+
+The latest Linux builds (as of Sprint 27), are *near* feature parity with the the Mac and Windows builds. However, there are notable features (e.g. Node.js integration and extension install UI) that are in various stages of planning and development. To be clear though, Brackets features going forward that only rely on features in the browser can be developed in lock-step on all 3 platforms.
 
 FAQ
 ----
