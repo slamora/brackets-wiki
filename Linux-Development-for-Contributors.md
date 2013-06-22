@@ -98,22 +98,6 @@ There are several user stories (feature work) to complete in brackets-shell befo
 | [Show in OS](https://trello.com/c/RF1ddQGK) | Not Started | Project tree command to show the selected file in the native OS file viewer | |
 | [Automated Builds](https://trello.com/c/P35As8lf) | Not Started | | [Jason San Jose](http://github.com/jasonsanjose) |
 
-FAQ
-====
-
-1. I found a bug, where do I file it? Here [Brackets issues](https://github.com/adobe/brackets/issues)
-1. I want to help, but I don't have any C++ or GTK experience. How can I help? Start learning C++ and GTK! Otherwise, see the next question.
-1. I can't help on the native shell, but how else can I help? You can help fix issues (Linux-specific or not) in the www code located in the brackets repository.
-1. Why isn't Linux distribution X supported?
-We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](https://code.google.com/p/chromiumembedded/) is well tested there both in a development environment and in deployment. We're open to contributors helping us *test* and support more distributions.
-1. How do I debug the native shell? As of June 12, 2013, CEF does not have a 32-bit Debug build. Once this is available, we'll post a new answer to this question.
-1. Why aren't the Grunt scripts updated for Linux? The CEF binaries for Linux use 7zip instead of the standard ZIP file format. Some work needs to be done in the Grunt scripts to support this.
-1. Why is NodeJS required for brackets-shell? 
-1. How do I use a browser other than Google Chrome?
-1. Live Development doesn't work with the Chromium browser.  How can I fix it?  If you want to use the Chromium browser for Live Development, you will need to add symlink the file `/usr/bin/google-chrome` to the chromium executable which is normally located at `/usr/bin/chromium-browser`. All it should take is `sudo ln -s /usr/bin/chromium-browser /usr/bin/google-chrome`.
-1. What IDE or tools should I use to work on brackets-shell?
-1. I really want to use Brackets in my browser instead of the native shell. How do I do that?
-
 Development Log
 ====
 * 2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon [jasonsanjose](http://github.com/jasonsanjose)
