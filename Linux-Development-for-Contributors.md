@@ -114,5 +114,5 @@ We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](http
 
 Development Log
 ====
-2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon
-2013-06-21: Linux branches land in master in ``brackets-shell`` and ``brackets``. Includes: CEF parity with Mac and Win, stubbed methods for incomplete native shell stories (Node, File I/O, etc.), debian packaging. (jasonsanjose)
+2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon [jasonsanjose](http://github.com/jasonsanjose)
+2013-06-21: Linux branches land in master in ``brackets-shell`` and ``brackets``. Includes: CEF parity with Mac and Win, stubbed methods for incomplete native shell stories (Node, File I/O, etc.), debian packaging. [jasonsanjose](http://github.com/jasonsanjose)
