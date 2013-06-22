@@ -13,21 +13,16 @@ Required Setup for brackets-shell and brackets
 
 These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( ``/usr/bin/brackets`` points to ``/usr/lib/brackets/Brackets``).
 
-1. Create a top level folder to contain the Brackets git repositories
-2. In a terminal window, ``cd`` to the folder from the previous step and run the following command
+1. [Fork brackets](https://github.com/adobe/brackets/fork) and [fork brackets-shell](https://github.com/adobe/brackets-shell/fork) 
+2. Create a top level folder to contain the Brackets git repositories
+3. In a terminal window, ``cd`` to the folder from the previous step and run the following command
 ```shell
-wget -O - https://gist.github.com/jasonsanjose/5514813/raw/cff18a4388ab04f16d1519d3f713729a8fd3c7a4/setup.sh | bash
+wget https://gist.github.com/jasonsanjose/5514813/raw/36df303fc62379761a7939c1ddf838e15eb0a219/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
 ```
-3. Respond to ``sudo`` password prompts when requested
+4. You'll be prompted for your GitHub user name to clone your fork of the repositories
+5. Respond to ``sudo`` password prompts when requested
 
-*ATTENTION* This setup script will point your installed Brackets directly to the the ``brackets/master`` branch for the main Adobe git repository. Assuming you're here to contribute to Brackets, you will want to point your git repositories at your own fork. 
-
-```shell
-# TODO
-# git instructions to change the repo downloaded in the one-line setup
-# to point to the user's fork and brackets upstream
-# https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#setting-up-your-dev-environment
-```
+*ATTENTION* This setup script will point your git ``origin`` to your own fork, then add a remote ``upstream``and point to the ``upstream/master`` branch in the main git repository. Assuming you're here to contribute to Brackets, you will want to point to your fork later on. This setup script automates the fork and upstream [setup instructions here](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#setting-up-your-dev-environment).
 
 Cache Location
 ----
