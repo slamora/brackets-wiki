@@ -8,7 +8,7 @@ To be clear, if you are NOT an extension developer and NOT planning to contribut
 Development Environment Setup
 ====
 
-Required Setup For brackets-shell and brackets
+Required Setup for brackets-shell and brackets
 ----
 
 These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( ``/usr/bin/brackets`` points to ``/usr/lib/brackets/Brackets``).
