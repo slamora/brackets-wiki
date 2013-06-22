@@ -183,7 +183,9 @@ Also, the prototype implementation is limited in that it can only deal with oper
 
 ## Well-formed HTML
 
-In the context of this feature, "well-formed HTML" means markup and content that can be pushed to the browser and expect it to render in a reasonable way. Modern browsers are _very_ forgiving in the markup they render. They ignore what the don't understand and subsequent markup and content is generally not affected.
+In the context of this feature, "well-formed HTML" means markup and content that can be parsed/diffed in order for us to calculate live edits. In general, our goal is to be as lax as possible and handle HTML that isn't strictly "valid" in the spec sense, but has a clean enough structure that we can parse it.
+
+Modern browsers are _very_ forgiving in the markup they render. They ignore what the don't understand and subsequent markup and content is generally not affected.
 
 Well-formed markup just needs to satisfy generic tag format:
 
@@ -205,6 +207,8 @@ Here's our current plan:
 * Continue to run the DOM builder on each edit until it succeeds. At that point, do a full re-diff of the entire document to determine what's changed since the last time we were valid, and send live updates accordingly.
 
 This is currently implemented in the prototype. It works well for most cases, but doesn't yet detect some cases--in particular, the case where there's a `<` before text with no matching `>`. It's likely that we'll need to augment the tokenizer to detect some of these cases, and have it send errors up to the parser. I'm confident that it would be straightforward to add detection as necessary.
+
+We could also consider being even laxer. For example, if an open tag has no matching close tag, we could "guess" where it should be based on the parentage rather than bailing. However, that might lead to undesirable side-effects as the user continues editing. That said, we should at least handle those cases for tags that the spec allows to be implicitly closed, like `<li>` and `<p>`; we aren't currently handling those in the prototype.
 
 ## Pushing changes to the browser
 
