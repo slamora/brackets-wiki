@@ -11,19 +11,20 @@ Development Environment Setup
 Required Setup For brackets-shell and brackets
 ----
 
-These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, stage all the runtime files, then run Brackets.
+These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( ``/usr/bin/brackets`` points to ``/usr/lib/brackets/Brackets``).
 
 1. Create a top level folder to contain the Brackets git repositories
 2. In a terminal window, ``cd`` to the folder from the previous step and run the following command
 ```shell
-wget -O - https://gist.github.com/jasonsanjose/5514813/raw/d4ed00adfaf5613a629e97a4f9123532e9938928/setup.sh | bash
+wget -O - https://gist.github.com/jasonsanjose/5514813/raw/cff18a4388ab04f16d1519d3f713729a8fd3c7a4/setup.sh | bash
 ```
 3. Respond to ``sudo`` password prompts when requested
-4. When complete, Brackets will launch from ``/path/to/brackets-shell/installer/linux/staging/Brackets`` with ``www`` source (brackets/src) copied to ``/path/to/brackets-shell/installer/linux/staging/www``
-5. To setup for Brackets development, we would normally use ``/path/to/brackets/tools/setup_for_hacking.sh`` to redirect the Brackets binary at the brackets git repository. There's still some open issues there, so instead, just manually run the following
-```shell
-ln -s /path/to/brackets /path/to/brackets-shell/installer/linux/staging/dev
+
+*ATTENTION* This setup script will point your installed Brackets directly to the the ``brackets/master`` branch for the main Adobe git repository. Assuming you're here to contribute to Brackets, you will want to point your git repositories at your own fork. 
+
 ```
+TODO git instructions to change the repo downloaded in the one-line setup to point to the [user's fork and brackets upstream](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#setting-up-your-dev-environment)
+``` 
 
 Cache Location
 ----
@@ -114,5 +115,5 @@ We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](http
 
 Development Log
 ====
-2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon [jasonsanjose](http://github.com/jasonsanjose)
-2013-06-21: Linux branches land in master in ``brackets-shell`` and ``brackets``. Includes: CEF parity with Mac and Win, stubbed methods for incomplete native shell stories (Node, File I/O, etc.), debian packaging. [jasonsanjose](http://github.com/jasonsanjose)
+* 2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon [jasonsanjose](http://github.com/jasonsanjose)
+* 2013-06-21: Linux branches land in master in ``brackets-shell`` and ``brackets``. Includes: CEF parity with Mac and Win, stubbed methods for incomplete native shell stories (Node, File I/O, etc.), debian packaging. [jasonsanjose](http://github.com/jasonsanjose)
