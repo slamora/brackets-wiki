@@ -13,4 +13,4 @@ TODO
 
 Log
 ----
-2013-06-22: Created. Pointer to dev wiki page. Placeholder for end users until download and documentation plans are in place.
+2013-06-22: Created. Pointer to dev wiki page. Placeholder for end users until download and documentation plans are in place. [jasonsanjose](http://github.com/jasonsanjose)
