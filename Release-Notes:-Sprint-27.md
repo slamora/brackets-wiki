@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 27 -- approximately
 What's New in Sprint 27
 -----------------------
 * **File Management**
-    * [Save As](https://trello.com/c/wxmFpxW3): Create a new file from an existing file using the File > Save As… menu, project tree context menu, or with the keyboard shortcut Ctrl+Shift+S or ⇧⌘SS.
+    * [Save As](https://trello.com/c/wxmFpxW3): Create a new file from an existing file using the File > Save As… menu, project tree context menu, or with the keyboard shortcut Ctrl+Shift+S or ⇧⌘S.
 * **Code Editing**
     * [Updated Quick View Gradient Support](https://github.com/adobe/brackets/issues/3458): Quick View for gradients now supports the "to" keyword for gradient direction and new repeating-linear-gradient and repeating-radial-gradient types.
 * **Research**
