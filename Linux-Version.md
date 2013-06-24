@@ -40,5 +40,5 @@ We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](http
 
 Log
 ----
-2013-06-24: Updated known issues and FAQ. [jasonsanjose](http://github.com/jasonsanjose)
-2013-06-22: Created. Pointer to dev wiki page. Placeholder for end users until download and documentation plans are in place. [jasonsanjose](http://github.com/jasonsanjose)
+* 2013-06-24: Updated known issues and FAQ. [jasonsanjose](http://github.com/jasonsanjose)
+* 2013-06-22: Created. Pointer to dev wiki page. Placeholder for end users until download and documentation plans are in place. [jasonsanjose](http://github.com/jasonsanjose)
