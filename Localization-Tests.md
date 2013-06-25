@@ -1,21 +1,23 @@
 These steps are designed to walk you through almost every piece of the Brackets UI. This especially valuable when working on localization since it lets you see every string in the context it's used in.
 
 ### Tip on Mac/Unix (Optional)
-Using Symbolic links, you can test your localization directly in the APP. (This is how I did it for Sprint version 26.)
+Using Symbolic links, you can test your localization directly in the APP. (Sprint version 26.)
 ```bash
-# Assuming you have it installed into your Applications folder
+# In Terminal.
+# Assuming you have Brackets Sprint installed into your Applications folder
 $ cd /Applications/Brackets\ Sprint\ 26.app/Contents/www/nls/
 # ln -s source_file/directory target_file/directory
-# Example would be for german (de)
-$ ln -s de ~/path/to/forked/project/brackets/src/nls/de/
-# Default (root) - Fallback for language, you may change the strings.js file and add your language to the LANGUAGE_xx: "Language" trupal
+# Change "lang" with your localization.
+$ ln -s lang ~/path/to/forked/project/brackets/src/nls/lang/
+# Default (root) - Fallback for language, you may change the strings.js file.
+# Add your language to the LANGUAGE_xx: "Language" dict.
 $ ln -s root ~/path/to/forked/project/brackets/src/nls/root/
-# string.js - With your localization specified
-$ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/strings.js
+# string.js - With your localization specified.
+$ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 ```
-***NOTE 1:*** Does file already exist in the `/Applications/Brackets Sprint 26.app/Contents/www/` folder, you will have to delete it first, before writing your symbolic link. (ln -s)
+**NOTE 1:** Does file already exist in the `/Applications/Brackets Sprint 26.app/Contents/www/nls/` folder, you will have to delete it first, before writing your symbolic link. (ln -s) You can also use `ls -la` to see were your symbolic links are pointed to.
 
-**NOTE 2:** This isn't meant to overtake the "Notes for testing," only meant as a second way to do it. (And to see your changes live.) This way you can simply CMD+R every time you save the `your_lang/strings.js` file. To see your stuff in action as is.
+**NOTE 2:** This isn't meant to overtake the "Notes for testing," only meant as another way to watch how your language looks like in the Brackets APP. This way you can simply CMD+R (if you use Brackets to make your localization) every time you save the `lang/strings.js` file. To see your stuff in action as is.
 
 ### Notes for testing
 
