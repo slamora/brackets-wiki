@@ -111,6 +111,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Implements the Full GitHub API, but is just in an early prototype state
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
+* [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
 * [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
 * [PageSuck](https://github.com/timburgess/brackets-pagesuck): Prompts for a URL and pulls that page's HTML directly into the editor as a new file
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
