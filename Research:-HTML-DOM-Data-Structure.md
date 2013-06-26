@@ -21,6 +21,7 @@ We built a prototype to explore ideas, try things out and reach these conclusion
     * Clean up parsing (doesn't handle automatically closed tags, for example)
     * Switch from child number to node-relative positioning everywhere (better for accuracy)
     * Clean up the interaction between Brackets and the Browser (load a library in the browser)
+    * Note that there is new third party code (HTMLTokenizer, priority queue and MurmurHash3)
 2. Implement moves
     * This reduces churn in the browser
     * Faster
