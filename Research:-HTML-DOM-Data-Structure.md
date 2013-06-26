@@ -1,8 +1,245 @@
 # HTML DOM Data Structure Research #
 
-Status: Research Starting (Sprint 27)
+Status: Research Complete
 
-This page will collect the results of the [HTML DOM Data Structure research story](https://trello.com/card/5-research-data-structure-for-html-dom-edit-mapping/4f90a6d98f77505d7940ce88/844).
+This page contains the results of the [HTML DOM Data Structure research story](https://trello.com/card/5-research-data-structure-for-html-dom-edit-mapping/4f90a6d98f77505d7940ce88/844).
+
+The fundamental goal of this research was to **figure out a path forward** for HTML live development. We needed to figure out:
+
+* How do we know when to push changes?
+* What form do those changes take?
+* How do we actually push the changes out to the browser?
+
+We explored two different variations of tracking changes, ultimately finding that the two were linked and also tied directly into knowing when to push changes.
+
+We built a prototype to explore ideas, try things out and reach these conclusions.
+
+## Proposed Stories ##
+
+1. Fix up the prototype
+    * More extensive testing
+    * Clean up parsing (doesn't handle automatically closed tags, for example)
+    * Switch from child number to node-relative positioning everywhere (better for accuracy)
+    * Clean up the interaction between Brackets and the Browser (load a library in the browser)
+2. Implement moves
+    * This reduces churn in the browser
+    * Faster
+    * Elements will keep their added properties and event handlers
+3. Profiling and performance improvements step 1
+    * Minimize the impact on typing performance and support "medium sized" files well (20 KB)
+4. Profiling and performance improvements step 2
+    * Correct the issues with large file editing
+5. Possible research into handling browser DOM changes gracefully
+    * We may want to see what issues come up in real world usage first.
+
+## The DOM and Diff ##
+
+With CSS live editing, we can just replace all of the CSS in the browser and the browser will correctly apply all of the styles. With HTML, JavaScript may have altered the DOM after the initial HTML was loaded. There can be new properties on DOM objects, event handlers added to elements, new elements and attributes in the DOM, and other changes.
+
+In order to update the HTML while preserving the state in the browser, we want to send just the *differences* between what Brackets initially sent to the browser and the current text in the editor. Quickly computing a small diff is a difficult task. However, we have quite a bit in our favor in approaching this problem:
+
+1. This has been an area of [active research](http://www.scribd.com/doc/14482474/XML-diff-survey) for some time.
+2. An algorithm called ["BULD" (for Bottom Up, Lazy Down)](http://www.cs.rutgers.edu/~amelie/papers/2002/diff.pdf), described in a 2002 paper by Cobéna, Abiteboul and Marian, has an efficient solution to a very similar problem to the one we face
+3. Using CodeMirror "marks", we can maintain unique IDs that map a region of the editor to elements in the browser. Most diff algorithms have only the plain source text to work from.
+4. Diffs generated while a user is typing will typically be small.
+
+For the "live HTML highlighting" feature that we shipped a couple of sprints back, we did some simple parsing of the HTML, coming up with a tag ID for each element in the HTML. This ID was placed in CodeMirror marks and in the HTML sent to the browser during live development. For the prototype, we extended this by adding a more complete HTML tokenizer and a parser that builds a simple document object model (Simple DOM).
+
+We had thought there would be a separate step for knowing when the HTML was valid. The conclusion we came to, however, was that we already needed a parsing step for building the Simple DOM and we could just use that step to also determine the document's validity at the same time.
+
+We hang on to the Simple DOM that is built. When the user types into the editor, we try to build a new Simple DOM. If the HTML they have entered is invalid, then we don't make any changes to the browser. If we can successfully build a Simple DOM, then we diff the new and old DOMs and the diff is sent to the live development code so that the browser can be updated. Currently, the diff supports these operations:
+
+1. Text Insert (add a new text node)
+2. Text Replace (replace an entire text node, we don't send portions of text nodes)
+3. Text Delete (delete a text node)
+4. Element Insert (add an element to the document)
+5. Element Delete (delete an element from the document)
+6. Attribute Change (change an element attribute's value)
+7. Attribute Delete (delete an element's attribute)
+8. Attribute Add (add an attribute to an element)
+
+These fine-grained changes allow us to make only small modifications to the page in the browser, maintaining as much state as we can. We also want to add the ability to move a node from one place in the tree to another as another optimization for maintaining the browser state.
+
+## Optimizing through Editor Events ##
+
+We considered a possible approach in which we have editor events that propagate directly out to the browser. We came to realize, however, that we still needed to identify the semantic changes we needed to make (in other words, the diff operations listed in the previous section).
+
+We could, however, use editor events as a trigger for doing updates to only a part of the document. The process looks like this:
+
+1. User makes changes in a portion of the document
+2. We identify the earliest point in the document that was changed
+3. We use the CodeMirror marks to find the enclosing tag ID for that part of the document
+4. We build a new Simple DOM sub-tree for that enclosing tag
+5. We diff the new sub-tree and the old sub-tree
+6. We replace the sub-tree in the old complete Simple DOM with the new sub-tree
+
+This optimization means that for many changes a user may make to their document, we're only diffing a very small number of elements in the Simple DOM. The diff algorithm we use is an efficient diff, but diffing is still expensive and minimizing the area of interest for the diff is worthwhile (see "Performance" below).
+
+## Sending Changes to the Browser ##
+
+Our prototype sends a custom jQuery build (designed to not interfere with whatever the user has loaded on the page) to the browser. This is used to make manipulation of the browser's DOM easier.
+
+For each of the diff operations, we generate a small bit of JavaScript that is sent to the browser to make the required changes. Some of the JavaScript was getting a bit larger than we wanted, and escaping it made the code a bit ugly. In a production version of this prototype, we would want to send the diff operations directly to the browser as JSON and have a library on that end apply the changes.
+
+## Performance ##
+
+These first tests were performed using a copy of the Getting Started with Brackets document. For each operation, several tests were performed for comparison:
+
+* Base edit: how long Brackets takes to make the change with none of our new code in operation
+* Full: how long did the update take using a full diff
+* Incremental: how long did the update take using the "Editor Events" optimization described a couple of sections ago
+
+The full and incremental times include the "base edit" time. The times listed are in milliseconds for each of 10 runs. High-resolution timers were used in the testing (`window.performance.webkitNow`).
+
+Additionally, the tests measured the time it takes to build the Simple DOM for the whole document and apply the marks.
+
+* The first test that was executed took just **5.63 ms** to build the Simple DOM.
+* Applying the CodeMirror marks took **16.56 ms**.
+* Subsequent tests took as little as **1.23 ms** to build the DOM and **6.57 ms** to apply the marks, likely due to JavaScript JIT performance
+
+
+### Text Replacement ###
+
+This test was equivalent to selecting a range of text and pasting in new text:
+
+```javascript
+editor.document.replaceRange("AWESOMER", {line: 12, ch: 12}, {line: 12, ch: 19});
+```
+
+<table>
+    <thead>
+        <tr><th>Test</th><th>Min</th><th>Max</th><th>Median</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Base edit</td><td>7.49</td><td>15.73</td><td>9.38</td></tr>
+        <tr><td>Full</td><td>100.91</td><td>219.74</td><td>108.43</td></tr>
+        <tr><td>Incremental</td><td>17.43</td><td>22.45</td><td>19.64</td></tr>
+    </tbody>
+</table>
+
+On this test, you can see that the incremental updates took about twice as long as the base edit and doing a full update took 5 times longer than that! I have heard it said that anything less than ~60 ms is perceived as instantaneous by the user, so the 20 ms time is quite good.
+
+### Simulated Typing of Text ###
+
+This test has the same result as the previous one, but acts as if the user typed each character individually.
+
+```javascript
+editor.document.replaceRange("A", {line: 12, ch: 12});
+editor.document.replaceRange("W", {line: 12, ch: 13});
+editor.document.replaceRange("E", {line: 12, ch: 14});
+editor.document.replaceRange("S", {line: 12, ch: 15});
+editor.document.replaceRange("O", {line: 12, ch: 16});
+editor.document.replaceRange("M", {line: 12, ch: 17});
+editor.document.replaceRange("E", {line: 12, ch: 18});
+editor.document.replaceRange("R", {line: 12, ch: 19});
+```
+
+The timings below are a total for these 8 edit operations.
+
+<table>
+    <thead>
+        <tr><th>Test</th><th>Min</th><th>Max</th><th>Median</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Base edit</td><td>53.38</td><td>76.82</td><td>63.73</td></tr>
+        <tr><td>Full</td><td>744.03</td><td>866.29</td><td>755.27</td></tr>
+        <tr><td>Incremental</td><td>184.60</td><td>258.96</td><td>200.98</td></tr>
+    </tbody>
+</table>
+
+These results are similar to the ones in the previous section, though the incremental update got a bit more expensive.
+
+### New Tag ###
+
+This test simulates pasting a new tag into the document.
+
+```javascript
+editor.document.replaceRange("<div>New Content</div>", {line: 15, ch: 0});
+```
+
+<table>
+    <thead>
+        <tr><th>Test</th><th>Min</th><th>Max</th><th>Median</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Base edit</td><td>7.38</td><td>11.97</td><td>7.94</td></tr>
+        <tr><td>Full</td><td>92.96</td><td>181.41</td><td>103.84</td></tr>
+        <tr><td>Incremental</td><td>494.74</td><td>843.90</td><td>519.87</td></tr>
+    </tbody>
+</table>
+
+Making this change takes a similar amount of work as pasting in new text for both the base edit and full diff cases. Something is amiss with the incremental test in this case, however. This must be hitting some edge case in the code. I am confident we would be able to fix this.
+
+### Typing a New Tag ###
+
+This test is the same as the previous one, but measures typing of the tag. Note that it simulates the automatic addition of the closing tag.
+
+```javascript
+editor.document.replaceRange("<", {line: 15, ch: 0});
+editor.document.replaceRange("d", {line: 15, ch: 1});
+editor.document.replaceRange("i", {line: 15, ch: 2});
+editor.document.replaceRange("v", {line: 15, ch: 3});
+editor.document.replaceRange(">", {line: 15, ch: 4});
+editor.document.replaceRange("</div>", {line: 15, ch: 5});
+editor.document.replaceRange("N", {line: 15, ch: 5});
+editor.document.replaceRange("e", {line: 15, ch: 6});
+editor.document.replaceRange("w", {line: 15, ch: 7});
+editor.document.replaceRange(" ", {line: 15, ch: 8});
+editor.document.replaceRange("C", {line: 15, ch: 9});
+editor.document.replaceRange("o", {line: 15, ch: 10});
+editor.document.replaceRange("n", {line: 15, ch: 11});
+editor.document.replaceRange("t", {line: 15, ch: 12});
+editor.document.replaceRange("e", {line: 15, ch: 13});
+editor.document.replaceRange("n", {line: 15, ch: 14});
+editor.document.replaceRange("t", {line: 15, ch: 15});
+```
+
+<table>
+    <thead>
+        <tr><th>Test</th><th>Min</th><th>Max</th><th>Median</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Base edit</td><td>121.73</td><td>133.53</td><td>126.03</td></tr>
+        <tr><td>Full</td><td>1459.80</td><td>1534.03</td><td>1518.74</td></tr>
+        <tr><td>Incremental</td><td>921.66</td><td>1070.39</td><td>977.61</td></tr>
+    </tbody>
+</table>
+
+Here, we see that the incremental updates takes the lead over the full updates again, though the difference has narrowed. The one second spent doing the updates may sound like a lot, but given the time that the user will spend typing that text, it is not as bad as it may seem.
+
+### Big File Test ###
+
+The "Getting Started with Brackets" page is 146 lines long and about 6 KB in size. It is not a very big file. As a stress test, I tried loading up [the W3C Packaged Web Apps](http://www.w3.org/TR/2012/REC-widgets-20121127/) document. This is 4407 lines long and 441 KB in size. I only tried the "Text Replacement" test (the one that simulates selecting a range of text and pasting in new text).
+
+I only did one run of this test, so the JavaScript JIT compiler would not have been able to do some of its optimizations.
+
+The base edit took **108.73 ms** which means that there would be a slightly perceptible delay as the user pastes in the text, but it would not be too bad.
+
+Despite the document's size, the initial DOM build took only **179.40 ms**. This is not surprising, as building the Simple DOM would increase roughly linearly with the size of the file. Performing a full diff on each keystroke would take this much time *plus* the time to run the diff, which is more expensive than building the Simple DOM.
+
+The surprising part was that marking the text in CodeMirror took more than **23 seconds**! There is clearly something in there that is not scaling linearly and even our live highlighting feature would have a problem with this. I confirmed on the current master that loading this document and turning on Live Development causes a very long freeze before there is a Live Development error and then Brackets finally becomes responsive again.
+
+The incremental edit took **293.79 ms**.
+
+## Performance Conclusions ##
+
+The code implemented today is a prototype and has not been profiled. For modestly sized files, it already performs acceptably well and we should be able to make the performance acceptable on larger files.
+
+The current, shipping Live Development has a performance issue that we need to address if we want people to be able to use Live Development on large files.
+
+Using incremental, sub-tree updates is a worthwhile optimization that already generally performs much faster than running a full diff. We can tweak how we decide when to perform the diff and batch up edits to make sure that editing performance remains good while updating the browser reasonably quickly.
+
+## Changes in the Browser ##
+
+At this phase, live HTML editing has no knowledge about changes that are occuring in the browser's DOM. This means that edits made in Brackets could be invalid as far as the current DOM is concerned. We can detect cases where the user makes an edit to an element that is no longer on the page (because there won't be an element with the Brackets-assigned ID available in the browser DOM). However, we couldn't detect cases where a button label had been changed, for example.
+
+For the most part, our approach to creating a diff and updating the browser should be fairly resilient to changes that JavaScript makes in the browser DOM. We could consider using something like [Mutation Observers](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) to make it clear to the user when they would need to reload the page in order to see changes that they're making.
+
+## Prototype Status ##
+
+Prototypes are generally considered throwaway code. The code in the [ResearchLiveHTML](https://github.com/adobe/brackets/tree/ResearchLiveHTML) branch needs a good deal of work, but should be considered a good starting point rather than a complete throwaway.
+
+# Old Content #
 
 ## Test Scenarios ##
 
@@ -220,7 +457,7 @@ The prototype exposes a subset of jQuery DOM manipulation methods to support the
 
 **[nj]** It turns out that some edits are not straightforward to do with just the basic jQuery functions. In particular, jQuery doesn't make it easy to select text nodes; you have to get the `contents()` of the parent to even see them (`children()` doesn't include text nodes), so I ended up falling back on standard DOM APIs anyway. My suggestion is that we get rid of jQuery and just use the standard DOM APIs on the browser side. Also, we can tune the edit descriptors generated by the differ to whatever makes it easiest for us to implement on the browser side.
 
-# Older content
+# Ancient content
 
 ## Comments on valid/invalid states
 
