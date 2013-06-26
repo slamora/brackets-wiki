@@ -10,7 +10,7 @@ Setup
 1. Make sure your ```git status``` is clean **and** your user extensions folder and `src/extensions/dev` folders are both empty (git status will _not_ tell you about these folders).
 2. Quit and relaunch Chrome if it's open (so it's *not* in remote debugger mode).
 3. If you've run the smokes previously, revert any changes you might have made in `brackets/test/smokes/citrus completed`.
-4. Delete your [cache folder](Cache-Folder) (Mac:  `~/Library/Application Support/Brackets/cef_data`, Win: `%appdata%\Brackets\cef_data`).
+4. Delete your [cache folder](Cache-Folder) (Mac:  `~/Library/Application\ Support/Brackets/cef_data`, Win: `%appdata%\Brackets\cef_data`).
 
 Smoke test steps
 ================
