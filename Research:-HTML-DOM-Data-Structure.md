@@ -26,12 +26,15 @@ We built a prototype to explore ideas, try things out and reach these conclusion
     * This reduces churn in the browser
     * Faster
     * Elements will keep their added properties and event handlers
-3. Profiling and performance improvements step 1
+3. Highlight invalid HTML
+    * Gives the user an idea of why the page may not be updating
+4. Profiling and performance improvements step 1
     * Minimize the impact on typing performance and support "medium sized" files well (20 KB)
-4. Profiling and performance improvements step 2
+5. Profiling and performance improvements step 2
     * Correct the issues with large file editing
-5. Possible research into handling browser DOM changes gracefully
+6. Possible research into handling browser DOM changes gracefully
     * We may want to see what issues come up in real world usage first.
+    * The idea is to automatically detect when a page reload is required to view changes made to the HTML
 
 ## The DOM and Diff ##
 
