@@ -40,10 +40,6 @@ API Changes
 
 * `optionChange` event -- Triggered when an option for the editor is changed. See [Add Editor optionChange event](https://github.com/adobe/brackets/pull/4162).
 
-**KeyBindingManager**
-
-* `addBinding` and `getKeyBindings` now add and retrieve bindings based on priority. Priority is given to bindings whose optional platform property matches the current platform.
-
 **DocumentManager**
 
 * [Two indistinguishable events for different cases of working set reordering](https://github.com/adobe/brackets/pull/3080) by [Tomás Malbrán](https://github.com/TomMalbran).
