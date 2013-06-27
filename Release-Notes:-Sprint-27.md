@@ -49,6 +49,7 @@ _TODO_ - Fill out this section. This item is a placeholder template.
 * [Minor clean ups](https://github.com/adobe/brackets/pull/4059) by [Anatoly Shikolay](https://github.com/shikolay)
 * [Add Editor optionChange event](https://github.com/adobe/brackets/pull/4162) by [Lance Campbell](https://github.com/lkcampbell)
 * [Move the Project Preferences Dialog variables to the template](https://github.com/adobe/brackets/pull/3286) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #2076: Two indistinguishable events for different cases of working set reordering](https://github.com/adobe/brackets/pull/3080) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Do not copy entire Strings Object; pass by reference instead](https://github.com/adobe/brackets/pull/4260) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Translate in French the localized text](https://github.com/adobe/brackets/pull/4005) by [Florian M Valence](https://github.com/FloValence)
 * [Fix for Issue 3891: Extension name and description should be selectable](https://github.com/adobe/brackets/pull/4284) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
@@ -56,7 +57,8 @@ _TODO_ - Fill out this section. This item is a placeholder template.
 * [Update Linux to CEF 3.1453.1255](https://github.com/adobe/brackets-shell/pull/264) by [Chhatoi Pritam Baral](https://github.com/pritambaral), [radorodopski](https://github.com/radorodopski)
 * [Adding groovy syntax highlighting.](https://github.com/adobe/brackets/pull/4322) by [Arturo Elias](https://github.com/arturoeanton)
 * [Update 'de' locale](https://github.com/adobe/brackets/pull/4279) by [J.M.](https://github.com/mynetx)
-* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
+* [Hungarian language pack for Brackets](https://github.com/adobe/brackets/pull/4282) by [rigor789](https://github.com/rigor789)
+* [Fix for Issue 4265: Mac: KeyBindingManager displays errant error message](https://github.com/adobe/brackets/pull/4305) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
 
 Contributions _from_ the Brackets community
 -------------------------------------------
