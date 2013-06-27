@@ -21,7 +21,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-None
+**Menus** The `File` menu now has a `Save As` command.
 
 API Changes
 -----------
