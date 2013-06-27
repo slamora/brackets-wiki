@@ -44,7 +44,6 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-_TODO_ - Fill out this section. This item is a placeholder template.
 * [Fix for issue #4137](https://github.com/adobe/brackets/pull/4166) by [Lance Campbell](https://github.com/lkcampbell)
 * [Minor clean ups](https://github.com/adobe/brackets/pull/4059) by [Anatoly Shikolay](https://github.com/shikolay)
 * [Add Editor optionChange event](https://github.com/adobe/brackets/pull/4162) by [Lance Campbell](https://github.com/lkcampbell)
