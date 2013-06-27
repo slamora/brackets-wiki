@@ -30,11 +30,11 @@ API Changes
 * `openURLInDefaultBrowser` -- The parameters for this API were reversed from what was the convention for the other APIs. This was confusing so to conform to convention and accommodate an optional callback, the parameters for this API were normalized.  The API usage is now `brackets.app.openURLInDefaultBrowser(url, err)` where `err` is an optional function callback that takes 1 argument.
 
 **brackets.fs**
-* `brackets.fs.showSaveDialog` -- Shows a modal dialog for selecting a new file name
-* Callbacks for `brackets.fs` methods are now optional
+* `brackets.fs.showSaveDialog` -- Shows a modal dialog for selecting a new file name.
+* Callbacks for most `brackets.fs` methods are now optional.
 
 **NativeFileSystem**
-* `showSaveDialog` -- Shows a modal dialog for selecting a new file name
+* `showSaveDialog` -- Shows a modal dialog for selecting a new file name.
 
 **Editor**
 
@@ -46,9 +46,9 @@ API Changes
 
 **DocumentManager**
 
-* [Two indistinguishable events for different cases of working set reordering](https://github.com/adobe/brackets/pull/3080) by [Tomás Malbrán](https://github.com/TomMalbran)
-    * `workingSetReorder` renamed to `workingSetDisableAutoSorting` 
-* `Document` class moved from `document/DocumentManager` to `document/Document`
+* [Two indistinguishable events for different cases of working set reordering](https://github.com/adobe/brackets/pull/3080) by [Tomás Malbrán](https://github.com/TomMalbran).
+    * `workingSetReorder` renamed to `workingSetDisableAutoSorting`. 
+* `Document` class moved from `document/DocumentManager` to `document/Document`.
 
 New/Improved Extensibility APIs
 -------------------------------
