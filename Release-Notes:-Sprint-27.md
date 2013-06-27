@@ -46,12 +46,12 @@ API Changes
 **DocumentManager**
 
 * [Two indistinguishable events for different cases of working set reordering](https://github.com/adobe/brackets/pull/3080) by [Tomás Malbrán](https://github.com/TomMalbran)
-** `workingSetReorder` renamed to `workingSetDisableAutoSorting` 
-* `Document` class moved from `document/DocumentManager` to `document/Document`
+    * `workingSetReorder` renamed to `workingSetDisableAutoSorting` 
+    * `Document` class moved from `document/DocumentManager` to `document/Document`
 
 New/Improved Extensibility APIs
 -------------------------------
-
+None
 
 Known Issues
 ------------
