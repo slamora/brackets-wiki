@@ -45,7 +45,18 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 _TODO_ - Fill out this section. This item is a placeholder template.
-* [Improving the Dialog API](https://github.com/adobe/brackets/pull/3086) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix for issue #4137](https://github.com/adobe/brackets/pull/4166) by [Lance Campbell](https://github.com/lkcampbell)
+* [Minor clean ups](https://github.com/adobe/brackets/pull/4059) by [Anatoly Shikolay](https://github.com/shikolay)
+* [Add Editor optionChange event](https://github.com/adobe/brackets/pull/4162) by [Lance Campbell](https://github.com/lkcampbell)
+* [Move the Project Preferences Dialog variables to the template](https://github.com/adobe/brackets/pull/3286) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Do not copy entire Strings Object; pass by reference instead](https://github.com/adobe/brackets/pull/4260) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Translate in French the localized text](https://github.com/adobe/brackets/pull/4005) by [Florian M Valence](https://github.com/FloValence)
+* [Fix for Issue 3891: Extension name and description should be selectable](https://github.com/adobe/brackets/pull/4284) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Spanish strings for Sprint 26](https://github.com/adobe/brackets/pull/4286) by [Chema Balsas](https://github.com/jbalsas)
+* [Update Linux to CEF 3.1453.1255](https://github.com/adobe/brackets-shell/pull/264) by [Chhatoi Pritam Baral](https://github.com/pritambaral), [radorodopski](https://github.com/radorodopski)
+* [Adding groovy syntax highlighting.](https://github.com/adobe/brackets/pull/4322) by [Arturo Elias](https://github.com/arturoeanton)
+* [Update 'de' locale](https://github.com/adobe/brackets/pull/4279) by [J.M.](https://github.com/mynetx)
+* [](https://github.com/adobe/brackets/pull/) by [](https://github.com/)
 
 Contributions _from_ the Brackets community
 -------------------------------------------
