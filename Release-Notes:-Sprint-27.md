@@ -74,7 +74,6 @@ Community contributions to Brackets
 * [Adding groovy syntax highlighting.](https://github.com/adobe/brackets/pull/4322) by [Arturo Elias](https://github.com/arturoeanton)
 * [Update 'de' locale](https://github.com/adobe/brackets/pull/4279) by [J.M.](https://github.com/mynetx)
 * [Hungarian language pack for Brackets](https://github.com/adobe/brackets/pull/4282) by [rigor789](https://github.com/rigor789)
-* [Fix for Issue 4265: Mac: KeyBindingManager displays errant error message](https://github.com/adobe/brackets/pull/4305) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
 
 Contributions _from_ the Brackets community
 -------------------------------------------
