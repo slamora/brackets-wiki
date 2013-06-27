@@ -27,7 +27,13 @@ API Changes
 
 **brackets.app**  
 * `openURLInDefaultBrowser` -- The parameters for this API were reversed from what was the convention for the other APIs. This was confusing so to conform to convention and accommodate an optional callback, the parameters for this API were normalized.  The API usage is now `brackets.app.openURLInDefaultBrowser(url, err)` where `err` is an optional function callback that takes 1 argument.
+
+**brackets.fs**
+* `brackets.fs.showSaveDialog` -- Shows a modal dialog for selecting a new file name
 * Callbacks for `brackets.fs` methods are now optional
+
+**NativeFileSystem**
+* `showSaveDialog` -- Shows a modal dialog for selecting a new file name
 
 **Editor**
 
