@@ -159,9 +159,11 @@ aren't completely implemented, and might have significant bugs.
 A couple of notes on unofficial features:
 
 * By default, JSLint runs on all JS files and shows its results in a panel
-  at the bottom. If your file is clean, you'll see a gold star in the status
+  at the bottom. If your file is clean, you'll see a green checkmark in the status
   bar. JSLint is very picky about formatting. JSLint is very picky 
-  about a lot of things. If you want to turn it off, uncheck **View > Enable
+  about a lot of things. If you want to hide the JSLint results panel, click
+  the close box at the top (the icon will still indicate if you have an error or 
+  not). If you want to turn off JSLint completely, uncheck **View > Enable
   JSLint**. This setting is global and remembered across runs.
 * **Navigate > Quick Open** (Ctrl/Cmd-Shift-O) brings up a Quick Open field to 
   let you quickly switch to another file from the keyboard. You can start typing 
