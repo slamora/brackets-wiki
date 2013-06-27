@@ -21,6 +21,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
+None
 
 API Changes
 -----------
