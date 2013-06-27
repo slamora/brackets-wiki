@@ -12,7 +12,7 @@ What's New in Sprint 27
     * [Data Structure for HTML DOM Edit Mapping](https://trello.com/c/lGIOrElQ): Research task to figure out how to do live HTML editing. 
     * [Drag and Drop](https://trello.com/c/PDyKD95J): Research task to figure out how to intercept native drag events on the mac so we can support dropping files onto the Brackets window. 
 * **Architecture**
-    * [Update Brackets Shell (CEF)](https://trello.com/c/YQlER69q): Update to the latest CEF, v 3.1453.1255.
+    * [Update Brackets Shell (CEF)](https://trello.com/c/YQlER69q): Update to the latest CEF, v 3.1453.1279.
 * **Localization**
     * [Hungarian translation](https://github.com/adobe/brackets/pull/4282)
 
