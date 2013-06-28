@@ -11,6 +11,8 @@ Development Environment Setup
 Required Setup for brackets-shell and brackets
 ----
 
+**Note:** This setup script only works for 32-bit Linux. 64-bit support is in progress.
+
 These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( ``/usr/bin/brackets`` points to ``/usr/lib/brackets/Brackets``).
 
 1. [Fork brackets](https://github.com/adobe/brackets/fork) and [fork brackets-shell](https://github.com/adobe/brackets-shell/fork) 
