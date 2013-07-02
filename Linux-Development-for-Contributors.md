@@ -56,7 +56,7 @@ Contributors: If you are willing to test other Linux distributions please add yo
 | Ubuntu | 12.04 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
 | Mint 15 | 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
 |LMDE(*) | Debian Testing 32 bit |None|
-| Arch | 64-bit | https://aur.archlinux.org/packages/brackets-git |
+| Arch | 64-bit | None - (Package: https://aur.archlinux.org/packages/brackets-git) |
 
 (*) Linux Mint Debian Edition
 
