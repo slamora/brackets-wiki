@@ -2,6 +2,7 @@
 * [[How to Hack on Brackets]]
 * [[How to write extensions]]
 * [[Brackets Development How Tos]]
+* [Brackets on Hacker Notes](http://www.thehackernotes.com/adobe/brackets)
 
 ## Videos
 
