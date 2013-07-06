@@ -90,6 +90,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Code folding] (https://github.com/thehogfather/brackets-code-folding): Enables code folding in brackets.
 * [Debug] (https://github.com/aghiura/brackets-console): See console.log & console.error messages directly in Brackets
 * [Parent Dir] (https://github.com/katsh/brackets-parent-dir): Show parent directory of opened files in the Working Set.
+* [Key Remapper] (https://bitbucket.org/sacah/brackets-key-remapper/overview): Shows current keyboard shortcuts and allows you to set new ones. These are stored in settings, so should persist across Brackets installations.
 
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
