@@ -1,42 +1,6 @@
-Originally, most support for programming languages was implemented in core Brackets. Starting with [Sprint 21](https://github.com/adobe/brackets/pull/2844), the [language manager](https://github.com/adobe/brackets/blob/master/src/language/LanguageManager.js) is used for adding basic language support, like syntax highlighting and comment toggling (for a list of supported languages, see [languages.json](https://github.com/adobe/brackets/blob/master/src/language/languages.json)). The language manager can also be used by extensions to add support for additional languages.
+Starting with [Sprint 21](https://github.com/adobe/brackets/pull/2844), extensions can add basic language support &ndash; like syntax highlighting and comment toggling &ndash; via the [LanguageManager](https://github.com/adobe/brackets/blob/master/src/language/LanguageManager.js) API. This page explains how to use LanguageManager, and documents how language support in Brackets is currently implemented.
 
-This page documents how language support in Brackets is currently implemented. The companion page [Language Support Changes](Language Support Changes) documents what additional capabilities extensions would need in order to add language support on par with the current level of support for HTML, JavaScript and CSS. 
-
-
-## Retrieving a Language object
-
-Each supported language is represented by exactly one Language object that can be retrieved in various ways:
-
-* When defining a language:
-  `LanguageManager.defineManager(id, definition).done(function (language) { ... });`
-* Using a language ID:
-  `var language = LanguageManager.getLanguage("javascript");`
-* Using a file path:
-  `var language = LanguageManager.getLanguageForPath("/path/to/file.js");`
-* Using a Document instance:
-  `var language = doc.getLanguage();`
-* Using an Editor instance*:
-  `var language = editor.getLanguageForSelection();`
-* Using another Language instance and a CodeMirror mode:
-  `var language = otherLanguage.getLanguageForMode("xml");`
-
-*The language in a selection may not be the same as the language for the document. For example, the ``html`` language supports ``css`` and ``javascript`` content.
-
-Except for `LanguageManager.getLanguage`, these methods always return a language object. To determine whether this is the fallback language, use `if (language.getId() === "unknown") { ... }`.
-
-
-## Using a Language object
-
-A ``Language`` object contains model data for a language. The following methods are available:
-
-* ``getId()`` returns the ID of a language (e.g. "cpp", "cs"). Use this to trigger language-specific behavior.
-* ``getName()`` returns the human-readable name of a language (e.g. "C++", "C#"). Used by the status bar.
-* ``getMode()`` returns the CodeMirror mode for a language. Used by EditorManager, should only be used in combination with CodeMirror specific code. Use ``getId()`` to identify a language.
-* ``getFileExtensions()`` returns an array of file extensions for a language (e.g. "svg", "html.erb").
-* ``getFileNames()`` returns an array of file names for a language (e.g. "Makefile", ".profile").
-* ``hasLineCommentSyntax()/getLineCommentSyntax()/setLineCommentSyntax(prefix)`` returns line comment info. Used by the toggle line comment editor command.
-* ``hasBlockCommentSyntax()/getBlockCommentPrefix()/getBlockCommentSuffix()/setLineCommentSyntax(prefix)`` returns block comment info. Used by the toggle block comment editor command.
-* ``getLanguageForMode()`` returns either a language associated with the mode or the fallback language. Used to disambiguate modes used by multiple languages.
+Some languages are built into core Brackets by default (for a list, see [languages.json](https://github.com/adobe/brackets/blob/master/src/language/languages.json)). The companion page [Language Support Changes](Language Support Changes) documents what _would be_ needed to enable extensions to add new languages with rich support on par with the built-in HTML, JavaScript and CSS languages.
 
 
 ## Defining a new language
@@ -55,12 +19,12 @@ LanguageManager.defineLanguage("haskell", {
 });
 ```
 
-If you need to provide a custom mode, it must be [registered to CodeMirror](http://codemirror.net/doc/manual.html#modeapi) using ``CodeMirror.defineMode()`` first before calling ``LanguageManager.defineLanguage()``.
+If you need to provide a custom CodeMirror mode, it must be [registered to CodeMirror](http://codemirror.net/doc/manual.html#modeapi) using ``CodeMirror.defineMode()`` first before calling ``LanguageManager.defineLanguage()``.
 
 
 ## Refining an existing language
 
-Retrieve a Language object by its ID, then call setter methods to change it.
+An extension can also modify/enhance an existing registered language. Retrieve a Language object by its ID, then use setter methods to change it:
 
 ```
 var LanguageManager = brackets.getModule("language/LanguageManager");
@@ -76,8 +40,49 @@ language.setBlockCommentSyntax("###", "###");
 For further details, please refer to the comments in [LanguageManager.js](https://github.com/adobe/brackets/blob/master/src/language/LanguageManager.js).
 
 
-## Places contributing to "language" support as of Sprint 21
-Based on [LESS Refactoring](https://github.com/adobe/brackets/pull/2844). The remainder of this page documents what parts of language support are hardcoded and need to be refactored to use existing capabilities, or require new capabilities before they can be refactored.
+## Using an existing language
+
+### Retrieving a Language object
+
+Each supported language is represented by exactly one Language object that can be retrieved in various ways:
+
+* When defining a language: (returns the newly created Language object)
+  `LanguageManager.defineLanguage(id, definition).done(function (language) { ... });`
+* Using a language ID:
+  `var language = LanguageManager.getLanguage("javascript");`
+* Using a file path:
+  `var language = LanguageManager.getLanguageForPath("/path/to/file.js");`
+* Using a Document instance:
+  `var language = doc.getLanguage();`
+* Using an Editor instance*:
+  `var language = editor.getLanguageForSelection();`
+* Using another Language instance and a CodeMirror mode:
+  `var language = otherLanguage.getLanguageForMode("xml");`
+
+*The language in a selection may not be the same as the language for the document. For example, the ``html`` language supports ``css`` and ``javascript`` content.
+
+Except for `LanguageManager.getLanguage`, these methods always return a language object. To determine whether this is the fallback language, use `if (language.getId() === "unknown") { ... }`.
+
+### Using the Language object
+
+A ``Language`` object contains model data for a language. The following methods are available:
+
+* ``getId()`` returns the ID of a language (e.g. "cpp", "cs"). Use this to trigger language-specific behavior.
+* ``getName()`` returns the human-readable name of a language (e.g. "C++", "C#"). Used by the status bar.
+* ``getMode()`` returns the CodeMirror mode for a language. Used by EditorManager, should only be used in combination with CodeMirror specific code. Use ``getId()`` to identify a language.
+* ``getFileExtensions()`` returns an array of file extensions for a language (e.g. "svg", "html.erb").
+* ``getFileNames()`` returns an array of file names for a language (e.g. "Makefile", ".profile").
+* ``hasLineCommentSyntax()/getLineCommentSyntax()/setLineCommentSyntax(prefix)`` returns line comment info. Used by the toggle line comment editor command.
+* ``hasBlockCommentSyntax()/getBlockCommentPrefix()/getBlockCommentSuffix()/setLineCommentSyntax(prefix)`` returns block comment info. Used by the toggle block comment editor command.
+* ``getLanguageForMode()`` returns either a language associated with the mode or the fallback language. Used to disambiguate modes used by multiple languages.
+
+
+
+# Notes on "language" support (as of Sprint 21)
+
+The remainder of this page documents what parts of language support are hardcoded and need to be refactored to allow extensibility, or require new capabilities before they can be refactored. See also [[Language Support Changes]].
+
+These notes are based on the [LESS Refactoring](https://github.com/adobe/brackets/pull/2844) work.
 
 
 ### No changes required
