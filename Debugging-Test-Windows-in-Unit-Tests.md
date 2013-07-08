@@ -1,4 +1,4 @@
-When creating Unit Tests, it's often helpful to create a new Brackets window. The <code>createTestWindowAndRun()</code> and <code>closeTestWindow()</code> functions in SpecRunnerUtils makes this easy to do.
+When creating Unit Tests, it's often helpful to create a new Brackets window. The `createTestWindowAndRun()` and `closeTestWindow()` functions in SpecRunnerUtils make this easy to do.
 
 One problem with testing in this way is that you can't step into the code in the debugger because it's in a separate window which is created and closed too quickly to be able to manually open the Dev Tools. Luckily, there are several ways to do this:
 
@@ -12,11 +12,7 @@ One problem with testing in this way is that you can't step into the code in the
 
 ## Option B: Repeatable Setup
 
-1. At some point after the test window has been created, add this temporary line of code:
-
-&nbsp;&nbsp;&nbsp;&nbsp;<code>testWindow.brackets.app.showDeveloperTools();</code>
-
-I put it in the callback passed to <code>SpecRunnerUtils.createTestWindowAndRun()</code>, but it can go anywhere.
+1. At some point after the test window has been created, add this temporary line of code: <br>`testWindow.brackets.app.showDeveloperTools();` <br>(I put it in the callback passed to `SpecRunnerUtils.createTestWindowAndRun()`, but it can go anywhere).
 
 2. Restart Brackets (because sometimes Reload doesn't reload everything...)
 
@@ -26,14 +22,14 @@ I put it in the callback passed to <code>SpecRunnerUtils.createTestWindowAndRun(
 
 5. From SpecRunner: Show Developer Tools
 
-6. Set breakpoint(s) in unit test code before you start tests. The line numbers in the Dev Tools windows sometimes stop tracking the file, and, once this happens, you can't set any more breakpoints. (Update 2/26/2013: this seems to be fixed in CEF3)
+6. Set breakpoint(s) in unit test code as desired.
 
 7. Leave SpecRunner Dev Tools Window open. I wasn't hitting my breakpoint when I closed it.
 
 8. Run your unit test
 
-You should hit your breakpoint(s) and be able to step into code. Note that there are 2 Dev Tools windows open: 1 for Jasmine and 1 for the Brackets test window. When you step or run from code in the Jasmine Dev Tools window to a code or a breakpoint in the Brackets test Dev Tools window, there is no indication in the Jasmine Dev Tools Window and you are not automatically switched to the other window, so you'll need to manually change to the other Dev Tools window.
+You should hit your breakpoint(s) and be able to step into code. Note that there are 2 Dev Tools windows open: 1 for the SpecRunner (Jasmine) window, and 1 for the Brackets test window. When you step or run from code in the SpecRunner Dev Tools window to a code or a breakpoint in the Brackets test Dev Tools window, there is no indication in the SpecRunner Dev Tools Window and you are not automatically switched to the other window, so you'll need to manually change to the other Dev Tools window.
 
 Opening a Dev Tools window for every Brackets test window slows down tests, so you may want to disable all tests except the one you are debugging.
 
-If this is helpful, we could build it in to the createTestWindowAndRun() function and control it by a parameter or global flag. Let us know!
+If this is helpful, we could build it in to the `createTestWindowAndRun(`) function and control it by a parameter or global flag. Let us know!
