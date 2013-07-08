@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 27 -- approximately June 27._
-
 What's New in Sprint 27
 -----------------------
 * **File Management**
@@ -19,36 +15,27 @@ What's New in Sprint 27
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-26...sprint-27#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-26...sprint-27#commits_bucket)
 
 
-UI Changes
-----------
-**Menus** -- The `File` menu now has a `Save As` command.
-
 API Changes
 -----------
+**DocumentManager**
+* `Document` class moved from `document/DocumentManager` to new `document/Document` module. Should _not affect_ most code because, while document objects are widely used, the `Document` identifier itself is rarely referenced directly.
+* `"workingSetReorder"` event renamed to `"workingSetDisableAutoSorting"` (still has same semantics: fired when working set is reordered via manual drag & drop). [See pull request](https://github.com/adobe/brackets/pull/3080) for details.
 
 **brackets.app**  
-* `openURLInDefaultBrowser` -- The parameters for this API were reversed from what was the convention for the other APIs. This was confusing so to conform to convention and accommodate an optional callback, the parameters for this API were normalized.  The API usage is now `brackets.app.openURLInDefaultBrowser(url, err)` where `err` is an optional function callback that takes 1 argument.
-
-**brackets.fs**
-* `brackets.fs.showSaveDialog` -- Shows a modal dialog for selecting a new file name.
-* Callbacks for most `brackets.fs` methods are now optional.
-
-**NativeFileSystem**
-* `showSaveDialog` -- Shows a modal dialog for selecting a new file name.
-
-**Editor**
-
-* `optionChange` event -- Triggered when an option for the editor is changed. See [Add Editor optionChange event](https://github.com/adobe/brackets/pull/4162).
-
-**DocumentManager**
-
-* [Two indistinguishable events for different cases of working set reordering](https://github.com/adobe/brackets/pull/3080) by [Tomás Malbrán](https://github.com/TomMalbran).
-    * `workingSetReorder` renamed to `workingSetDisableAutoSorting`. 
-* `Document` class moved from `document/DocumentManager` to `document/Document`.
+* `openURLInDefaultBrowser()` -- Parameters reversed to match other APIs - URL now comes 1st, optional error callback 2nd. Most code uses <code><i>NativeApp</i>.openURLInDefaultBrowser()</code> instead, and is _not affected_ by this change.
 
 New/Improved Extensibility APIs
 -------------------------------
-None
+**Editor**
+* `"optionChange"` event -- Triggered when an option for the editor is changed. [See pull request](https://github.com/adobe/brackets/pull/4162) for details. (Note: this may be deprecated when a full preferences API becoems available).
+
+**NativeFileSystem**
+* `showSaveDialog()` -- Shows a modal dialog for selecting a new file name.
+
+**brackets.fs**
+* Callbacks for most `brackets.fs` methods are now optional. Note: this is a low-level API; most code should use NativeFileSystem instead.
+
+
 
 Known Issues
 ------------
@@ -61,24 +48,20 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-* [Fix for issue #4137](https://github.com/adobe/brackets/pull/4166) by [Lance Campbell](https://github.com/lkcampbell)
-* [Minor clean ups](https://github.com/adobe/brackets/pull/4059) by [Anatoly Shikolay](https://github.com/shikolay)
+* [Update experimental Linux build to CEF 3.1453.1255](https://github.com/adobe/brackets-shell/pull/264) by [Chhatoi Pritam Baral](https://github.com/pritambaral), [radorodopski](https://github.com/radorodopski)
 * [Add Editor optionChange event](https://github.com/adobe/brackets/pull/4162) by [Lance Campbell](https://github.com/lkcampbell)
-* [Move the Project Preferences Dialog variables to the template](https://github.com/adobe/brackets/pull/3286) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Fix #2076: Two indistinguishable events for different cases of working set reordering](https://github.com/adobe/brackets/pull/3080) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Do not copy entire Strings Object; pass by reference instead](https://github.com/adobe/brackets/pull/4260) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Translate in French the localized text](https://github.com/adobe/brackets/pull/4005) by [Florian M Valence](https://github.com/FloValence)
-* [Fix for Issue 3891: Extension name and description should be selectable](https://github.com/adobe/brackets/pull/4284) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
-* [Spanish strings for Sprint 26](https://github.com/adobe/brackets/pull/4286) by [Chema Balsas](https://github.com/jbalsas)
-* [Update Linux to CEF 3.1453.1255](https://github.com/adobe/brackets-shell/pull/264) by [Chhatoi Pritam Baral](https://github.com/pritambaral), [radorodopski](https://github.com/radorodopski)
-* [Adding groovy syntax highlighting.](https://github.com/adobe/brackets/pull/4322) by [Arturo Elias](https://github.com/arturoeanton)
-* [Update 'de' locale](https://github.com/adobe/brackets/pull/4279) by [J.M.](https://github.com/mynetx)
-* [Hungarian language pack for Brackets](https://github.com/adobe/brackets/pull/4282) by [rigor789](https://github.com/rigor789)
+* [Add Groovy syntax highlighting](https://github.com/adobe/brackets/pull/4322) by [Arturo Elias](https://github.com/arturoeanton)
+* [Improve .ejs syntax highlighting](https://github.com/adobe/brackets/pull/4166) by [Lance Campbell](https://github.com/lkcampbell)
+* [Fix #2076: Change the events fired when working set is reordered](https://github.com/adobe/brackets/pull/3080) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Move Project Preferences Dialog variables to the template](https://github.com/adobe/brackets/pull/3286) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Template optimization: do not copy entire Strings Object; pass by reference instead](https://github.com/adobe/brackets/pull/4260) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #3891: Extension name and description should be selectable](https://github.com/adobe/brackets/pull/4284) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Minor code clean ups](https://github.com/adobe/brackets/pull/4059) by [Anatoly Shikolay](https://github.com/shikolay)
+* [Add Hungarian translation](https://github.com/adobe/brackets/pull/4282) by [rigor789](https://github.com/rigor789)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/4286) by [Chema Balsas](https://github.com/jbalsas)
+* [German translation update](https://github.com/adobe/brackets/pull/4279) by [J.M.](https://github.com/mynetx)
+* [Use actual French in localization example](https://github.com/adobe/brackets/pull/4005) by [Florian M Valence](https://github.com/FloValence)
 
-Contributions _from_ the Brackets community
--------------------------------------------
-
-* None
 
 Bugs fixed in Sprint 27
 -----------------------
