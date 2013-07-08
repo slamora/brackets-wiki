@@ -32,4 +32,4 @@ You should hit your breakpoint(s) and be able to step into code. Note that there
 
 Opening a Dev Tools window for every Brackets test window slows down tests, so you may want to disable all tests except the one you are debugging.
 
-If this is helpful, we could build it in to the `createTestWindowAndRun(`) function and control it by a parameter or global flag. Let us know!
+If this is helpful, we could build it in to the `createTestWindowAndRun()` function and control it by a parameter or global flag. Let us know!
