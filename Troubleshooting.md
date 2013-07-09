@@ -81,4 +81,10 @@ On Windows, you may run into issues starting Live Preview if you installed Chrom
 If Brackets opens, but behaves incorrectly, don't forget you can open the Developer Tools. Under the Debug Menu, select "Show Developer Tools" to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Ensure the Console tab is open and see if any errors show up there.
 
 ## Still Having a Problem?
-[File an issue](http://github.com/adobe/brackets/issues) or contact us via one of the channels mentioned in the [README](https://github.com/adobe/brackets/blob/master/README.md#i-want-to-keep-track-of-how-brackets-is-doing).
+[File an issue](http://github.com/adobe/brackets/issues) or contact us via one of the channels mentioned in the [README](https://github.com/adobe/brackets/blob/master/README.md#i-want-to-keep-track-of-how-brackets-is-doing).   It is best to list the following information:
+
+1.    OS & version
+2.    brackets version
+3.    extensions / plug-in listing
+4.    detailed steps for problem & if it is repeatable
+5.    steps for attempts of working around
