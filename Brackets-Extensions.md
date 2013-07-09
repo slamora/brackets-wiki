@@ -55,6 +55,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
 * [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
+* [Cleaner](https://github.com/cezarywojcik/cezarywojcik.cleaner) - Cleans code to ensure that there is a newline at the end of a file, remove trailing whitespace, and convert tabs to spaces if the user is using spaces.
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
 * [Reasonable Comments](https://github.com/peterflynn/reasonable-comments): More reasonable behavior when pressing Enter inside a JS block comment - the "*" with proper indentation is inserted for you.
@@ -63,7 +64,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
 * [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
 * [Quote Converter](https://github.com/drewhjava/brackets-quoteconverter): Converts double to single quotes or single to double quotes
-* [Cleaner](https://github.com/cezarywojcik/cezarywojcik.cleaner) - cleans code to ensure that there is a newline at the end of a file, remove trailing whitespace, and convert tabs to spaces if the user is using spaces
 
 **Code Generation**
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
