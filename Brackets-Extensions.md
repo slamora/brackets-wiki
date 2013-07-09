@@ -55,9 +55,10 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
 * [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
-* [Cleaner](https://github.com/cezarywojcik/cezarywojcik.cleaner) - Cleans code to ensure that there is a newline at the end of a file, remove trailing whitespace, and convert tabs to spaces if the user is using spaces.
+* [Cleaner](https://github.com/cezarywojcik/cezarywojcik.cleaner): Cleans code to ensure that there is a newline at the end of a file, remove trailing whitespace, and convert tabs to spaces if the user is using spaces.
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
+* [CharLimit](https://github.com/cezarywojcik/cezarywojcik.charlimit): Draws a gray line at character limit to help formatting.
 * [Reasonable Comments](https://github.com/peterflynn/reasonable-comments): More reasonable behavior when pressing Enter inside a JS block comment - the "*" with proper indentation is inserted for you.
 * [Beautify](https://github.com/drewhjava/brackets-beautify): Beautify(Tidy, Format) HTML, CSS, and Javascript (uses js-beautify)
 * [Minifier](https://github.com/alfredxing/brackets-minifier): Minifies JavaScript and CSS files using Google Closure Compiler (JS) and YUI (CSS). Working but under development.
