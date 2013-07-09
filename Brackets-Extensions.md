@@ -55,8 +55,8 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
 * [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
 * [TabToSpace](https://github.com/davidderaedt/tabtospace-extension): Converts indentation to tabs or spaces
-* [CharLimit](https://github.com/cezarywojcik/cezarywojcik.charlimit): Draws a line at character limit to help formatting. Includes settings screen to choose character limit, line color, and line toggle.
-* [Cleaner](https://github.com/cezarywojcik/cezarywojcik.cleaner): Cleans code to ensure that there is a newline at the end of a file, remove trailing whitespace, and convert tabs to spaces if the user is using spaces.
+* [CharLimit](https://github.com/cezarywojcik/cezarywojcik.charlimit): Draws a line at character limit to help formatting; includes settings screen to choose character limit, line color, and line toggle.
+* [Cleaner](https://github.com/cezarywojcik/cezarywojcik.cleaner): Cleans code to ensure that there is a newline at the end of a file, removes trailing whitespace, and converts tabs to spaces if the user is using spaces.
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
 * [Reasonable Comments](https://github.com/peterflynn/reasonable-comments): More reasonable behavior when pressing Enter inside a JS block comment - the "*" with proper indentation is inserted for you.
