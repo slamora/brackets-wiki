@@ -20,6 +20,7 @@ If you've written an extension &ndash; even just as an experiment &ndash; please
 Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts) page to see which shortcuts are available and also to add the shortcuts that you have used. Thanks!
 
 **Editing & Navigation**
+* [Document Outline](https://github.com/soimon/brackets-document-outliner): Shows the document outline of the currently selected HTML5 document.
 * [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
 * [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor 
