@@ -112,11 +112,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 
 **External Tools & Online Content**
 * [BracketLESS] (https://github.com/olsgreen/BracketLESS): Compiles LESS files to CSS on save
-* [git-integration](https://github.com/pollensoft/git-integration): Git Command line integration
-* [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
-* [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Implements the Full GitHub API, but is just in an early prototype state
 * [ToGist](https://github.com/davidderaedt/togist): Create an anonymous gist from the current selection.
-* [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
 * [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` atribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
 * [PageSuck](https://github.com/timburgess/brackets-pagesuck): Prompts for a URL and pulls that page's HTML directly into the editor as a new file
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
@@ -127,6 +123,12 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Tomcat Manager](https://github.com/MiguelCastillo/Brackets-TomcatManager): Tomcat server integration with Brackets
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 * (See also [Minifier](https://github.com/alfredxing/brackets-minifier) above).
+
+**Source Control**
+* [git-integration](https://github.com/pollensoft/git-integration): Git Command line integration
+* [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
+* [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Implements the Full GitHub API, but is just in an early prototype state
+* [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
 
 **Documentation**
 * [Docco](https://github.com/aghiura/brackets-docco): Runs [Docco](http://jashkenas.github.io/docco/) on a js file.
