@@ -123,6 +123,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Grunt for Brackets](https://github.com/markrendle/brackets-grunt): Run any task in your Gruntfile.js. (Uses Node. Tested on Brackets Sprint 25.)
 * [ImageToData](https://github.com/FloValence/brackets-ImageToData): Converts any image, local or on the web into data URI with its URL.
 * [Project Links](https://github.com/chrismatheson/brackets-project-links): Add some links to the sidebar for quick access **dev** still a lot of stuff i want to add
+* [Tomcat Manager](https://github.com/MiguelCastillo/Brackets-TomcatManager): Tomcat server integration with Brackets
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 * (See also [Minifier](https://github.com/alfredxing/brackets-minifier) above).
 
