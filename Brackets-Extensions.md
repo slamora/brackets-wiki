@@ -123,6 +123,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Tomcat Manager](https://github.com/MiguelCastillo/Brackets-TomcatManager): Tomcat server integration with Brackets
 * (See also [Prefixr](https://github.com/davidderaedt/prefixr-extension) above).
 * (See also [Minifier](https://github.com/alfredxing/brackets-minifier) above).
+* [JSCompressor](https://github.com/slorenzot/brackets-jscompressor): This extension allows automatically compress javascript and css files using YUI compressor.
 
 **Source Control**
 * [git-integration](https://github.com/pollensoft/git-integration): Git Command line integration
