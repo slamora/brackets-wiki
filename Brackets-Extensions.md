@@ -154,6 +154,7 @@ current file.
 * [TestQuickly](https://github.com/dangoor/TestQuickly): Simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
 * [xUnit](https://github.com/dschaffe/brackets-xunit): Extension to run current buffer as a javascript unit test with right click (supports jasmine, yui3, qUnit, more coming soon...)
 * [MaDGe](https://github.com/sahlas/brackets-node-madge): An extension that enables node-madge functionality. Search for module dependencies, circular dependencies and more.
+* [Karma](https://github.com/artoale/karma-brackets): Run mocha, jasmine, qunit and more tests inside brackets
 
 **Fun & Games**
 * [Cowsay](https://github.com/lkcampbell/brackets-cowsay): An extension for Brackets to generate a cow saying very profound and silly things.
