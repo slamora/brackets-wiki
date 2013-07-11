@@ -97,7 +97,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Key Remapper] (https://bitbucket.org/sacah/brackets-key-remapper/overview): Shows current keyboard shortcuts and allows you to set new ones. These are stored in settings, so should persist across Brackets installations.
 
 **Live Development**
-* [Debugger](https://github.com/jdiehl/brackets-debugger): Brackets Debugger for the Live Development browser.
+* [Debugger](https://github.com/jdiehl/brackets-debugger) *Incompatible with Brackets >= 0.20*: Brackets Debugger for the Live Development browser.
 * [Everyscrub](https://github.com/peterflynn/everyscrub): Everything's a scrubber! Cmd/Ctrl + drag on any number or hex color to scrub its value and update the browser in real time.
 * [Reload in Browser](https://github.com/DennisKehrig/brackets.ReloadInBrowser): Adds a toolbar button and shortcut to reload the page in the browser
 * [V8/Node Live Development](https://github.com/DennisKehrig/brackets-v8-node-live): Updates scripts running in Node.js as you type
