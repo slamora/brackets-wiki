@@ -1,5 +1,7 @@
 Choose _Help > Show Extensions Folder_, save this file as ```extensions/user/HelloWorld/main.js```, then restart Brackets to see it in effect.
 
+Also, extension can define their own unit tests. See `unittests.js` at the bottom of this page.
+
 main.js
 ----
 
