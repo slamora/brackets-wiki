@@ -93,7 +93,7 @@ define(function (require, exports, module) {
     var main = require("main");
     
     describe("Hello World", function () {
-        it("should expose a handleHelloWorldMethod", function () {
+        it("should expose a handleHelloWorld method", function () {
             expect(main.handleHelloWorld).not.toBeNull();
         });
     });
