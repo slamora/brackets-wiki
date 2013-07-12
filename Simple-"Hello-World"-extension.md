@@ -1,5 +1,8 @@
 Choose _Help > Show Extensions Folder_, save this file as ```extensions/user/HelloWorld/main.js```, then restart Brackets to see it in effect.
 
+main.js
+----
+
 ```javascript
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
 /*global define, $, brackets, window */
@@ -30,6 +33,8 @@ define(function (require, exports, module) {
     // We could also add a key binding at the same time:
     //menu.addMenuItem(MY_COMMAND_ID, "Ctrl-Alt-H");
     // (Note: "Ctrl" is automatically mapped to "Cmd" on Mac)
+
+    exports.handleHelloWorld = handleHelloWorld;
 });
 ```
 
@@ -71,5 +76,24 @@ define(function (require, exports, module) {
     // The label of the menu item is the name we gave the command (see above)
     var menu = Menus.getMenu(Menus.AppMenuBar.FILE_MENU);
     menu.addMenuItem(MY_COMMAND_ID);
+
+    exports.handleHelloWorld = handleHelloWorld;
+});
+```
+
+unittest.js
+----
+
+```javascript
+define(function (require, exports, module) {
+    "use strict";
+
+    var main = require("main");
+    
+    describe("Hello World", function () {
+        it("should expose a handleHelloWorldMethod", function () {
+            expect(main.handleHelloWorld).not.toBeNull();
+        });
+    }); // describe("Url Code Hinting"
 });
 ```
