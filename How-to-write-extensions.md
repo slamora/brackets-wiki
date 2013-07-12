@@ -3,6 +3,7 @@
 * Inside the `user` folder, create a new "yourExtensionName" folder, and inside that create a `main.js` file.
 * For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](Brackets-Extensions) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
+* Add a `unittests.js` to your extension folder. See example code in [[Simple "Hello World" extension]]
 
 ## Simple Development Workflow
 
