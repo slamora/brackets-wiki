@@ -96,6 +96,6 @@ define(function (require, exports, module) {
         it("should expose a handleHelloWorldMethod", function () {
             expect(main.handleHelloWorld).not.toBeNull();
         });
-    }); // describe("Url Code Hinting"
+    });
 });
 ```
