@@ -132,6 +132,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
 
 **Documentation**
+* [DevDocs Viewer](https://github.com/gruehle/dev-docs-viewer): Search and view content from [devdocs.io](http://devdocs.io).
 * [Docco](https://github.com/aghiura/brackets-docco): Runs [Docco](http://jashkenas.github.io/docco/) on a js file.
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
 * [Display Shortcuts](https://github.com/redmunds/brackets-display-shortcuts): Display Shortcuts defined to Brackets.
