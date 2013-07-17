@@ -25,7 +25,7 @@ Smoke test steps
 1. From the Finder/Explorer window, drag the `brackets/test/smokes/citrus completed` folder onto Brackets (note that there's a space in the name; this is intentional). In the Project panel, verify that the folder opened and it contains "css" and "images" folders and an "index.html" file.
 1. From the Finder/Explorer window, drag the `brackets/test/smokes/citrus completed/index.html` file onto Brackets. Verify that the file is opened, selected, and added to the working set.
 1. File > New
-1. File > Save As, name the file ``temp.js``
+1. File > Save, name the file ``temp.js`` in the current project
 1. Type the following code
 ```
 var foo = "", bar = function(){};
