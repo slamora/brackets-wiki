@@ -23,6 +23,11 @@ UI Changes
 * TODO - Windows dark titlebar
 * TODO - Extension Registry
 
+**New File** - File > New now creates an untitled document (name and location aren't specified until the first time you save). The folder tree context menu's New File command continues to work as before (location is determined by what you right-clicked, name is given immediately). Both commands no longer default to a .js file extension.
+
+**New Folder** - Has been removed from the File menu. Use the context menu in the folder tree to access New Folder.
+
+**Live Highlighting** - This toggle has been moved from the File menu to the View menu.
 
 API Changes
 -----------
