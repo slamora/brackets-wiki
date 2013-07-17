@@ -23,8 +23,9 @@ Smoke test steps
 1. Expand some folders in the brackets project, enough that it has to scroll.
 1. Scroll around in the folder area. Verify that the shadows look right (appears at top when not scrolled all the way to the top) and there are no visual glitches.
 1. From the Finder/Explorer window, drag the `brackets/test/smokes/citrus completed` folder onto Brackets (note that there's a space in the name; this is intentional). In the Project panel, verify that the folder opened and it contains "css" and "images" folders and an "index.html" file.
-1. From the Finder/Explorer window, drag the `brackets/test/smokes/citrus completed/index.hmtl` file onto Brackets. Verify that the file is opened, selected, and added to the working set.
-1. File > New and name the new file ``temp.js``
+1. From the Finder/Explorer window, drag the `brackets/test/smokes/citrus completed/index.html` file onto Brackets. Verify that the file is opened, selected, and added to the working set.
+1. File > New
+1. File > Save As, name the file ``temp.js``
 1. Type the following code
 ```
 var foo = "", bar = function(){};
