@@ -50,6 +50,7 @@ foo.
 1. Put the cursor after the `<a` in one of the navbar items and hit Cmd/Ctrl-E to open another inline editor.
 1. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
 1. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
+1. Hit Esc to close the inline editor.
 1. File > Extension Manager, Install from URL..., and install the Emmet extension using the GitHub URL ``https://github.com/emmetio/brackets-emmet``
 1. Verify the Emmet menu was added
 1. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
