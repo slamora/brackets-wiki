@@ -87,7 +87,7 @@ These notes are based on the [LESS Refactoring](https://github.com/adobe/bracket
 
 ### No changes required
 
-These are okay the way the are.
+These are okay the way they are.
 
 * document/DocumentManager.js
     * `Document.getLanguage` uses the LanguageManager to determine the language based on the file extension.
@@ -128,9 +128,9 @@ These need to be changed to use existing functionality.
     * Method `addQuickOpenPlugin` **uses file extensions** to register plugins. It should use language IDs instead. It is currently only used with file extensions "css", "js" and "html". For "css" and "html", the calling code can remain unchanged, transparently changing the meaning of the string from file extension to language ID. For "js", the calling code needs to use "javascript" instead. Currently `extensions/default/QuickOpenJavaScript/main.js` is the only place in either Brackets core or the extensions that uses this file extension. See [pull request #3301](https://github.com/adobe/brackets/pull/3301).
 
 
-### Issues that should be adressed as part of other planned work
+### Issues that should be addressed as part of other planned work
 
-These are places that affect areas we already have plans to work on, and where issues are best adressed as part of that work.
+These are places that affect areas we already have plans to work on, and where issues are best addressed as part of that work.
 
 * document/DocumentCommandHandlers.js
     * Method `_handleNewItemInProject` hardcodes ".js"/"Untitled.js" as the default file extension/name for new files. Changing this to work as proposed in [card #291](https://trello.com/c/WUdhIRlh) would remove this issue.
