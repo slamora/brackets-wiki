@@ -5,8 +5,8 @@ The Brackets extension format is inspired by CommonJS and npm.  The format **_ma
 ## Package Files ##
 
 A Brackets extension package is a zip file containing two components:
-* main.js -- extension entry-point module (see [[How to write extensions]])
-* package.json -- metadata (see below)
+* main.js — extension entry-point module (see [[How to write extensions]])
+* package.json — metadata (see below)
 
 These two files may be nested inside a folder, but they must be inside the same folder.
 
