@@ -47,6 +47,7 @@ foo.
 1. On Mac, you should get a dialog saying you need to relaunch Chrome. Click "Relaunch". Chrome should relaunch and open the page.
 1. Back in Brackets, edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
 1. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
+1. Put the cursor after the `<a` in one of the navbar items and hit Cmd/Ctrl-E to open another inline editor.
 1. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
 1. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
 1. File > Extension Manager, Install from URL..., and install the Emmet extension using the GitHub URL ``https://github.com/emmetio/brackets-emmet``
