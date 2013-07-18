@@ -129,7 +129,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **Source Control**
 * [git-integration](https://github.com/pollensoft/git-integration): Git Command line integration
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
-* [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Implements the Full GitHub API, but is just in an early prototype state
+* [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Is able to completly clone a repo from GitHub into a selected Folder. (Works only for non-binary data)
 * [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
 
 **Documentation**
