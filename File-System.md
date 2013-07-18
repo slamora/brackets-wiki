@@ -8,11 +8,11 @@ Email comments to: [gruehle@adobe.com](mailto:gruehle@adobe.com)
 
 The file system APIs in Brackets are a bit chaotic, and usage is inconsistent. Here are just a few issues:
 
-* Two APIs for file i/o: `brackets.fs` and `NativeFileSystem` (HTML5 File API)
+* No centralized file system model. This makes it difficult to add file watchers, and update all file references in the app after operations like rename.
+* Inefficient. We constantly hit the disk to read timestamps, content, etc.
+* Two APIs for file i/o: `brackets.fs` and `NativeFileSystem`
 * Inconsistent use of `fullPath` vs. `FileEntry`
 * Incorrect creation of `FileEntry` objects (these should never be directly instantiated)
-* Inefficient. We constantly hit the disk to read timestamps, content, etc.
-* No centralized file system model. This makes it difficult to add file watchers and update all file references in the app after operations like rename.
 * No way to use alternate storage--Dropbox, Google Drive, etc.
 
 I'm pretty sure there are many more...
@@ -29,7 +29,7 @@ Here is a block diagram of the major parts:
 
 ![File System Block Diagram](screenshots/filesystem/filesystem-block-diagram.png)
 
-Clients only interact with the blue boxes. The green boxes represent low-level file i/o implementations, which can be added as extensions. The red box replaces the old `FileIndexManager` functionality, and does not have a public API (you can access the indexed files through `FileSystem`).
+Clients only interact with the blue boxes. The green boxes represent low-level file i/o implementations, which can be added as extensions. The red box replaces the old `FileIndexManager` functionality, and does not have a public API (indexed files are accessed through `FileSystem`).
 
 
 ### Basic Usage ###
@@ -45,6 +45,10 @@ There are a few basic rules for using the new file system.
 A prototype implementation can be found in the [`glenn/filesystem` branch](https://github.com/adobe/brackets/tree/glenn/file-system). 
 
 Most of the basic functionality works. Unit tests are completely broken (this is the next thing I want to work on), and many extensions are broken. 
+
+File watchers require node 0.10. You will need to update the shell in order to get proper file watching (directory watching works fine in 0.8).
+
+##API##
 
 ### FileSystem ###
 The main module is `FileSystem`. This is the public API for getting files and directories, showing open/save dialogs, and getting the list of all the files in the project.
@@ -75,6 +79,9 @@ The main performance gains come from caching. The stats and contents of files an
 ##File Watchers##
 `FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. For now, the prototype refreshes the entire file tree whenever a directory changes. This is overkill, but was easy to implement. Ideally, only the directory that changed will be updated.
 
-##Porting Guide##
-To be written...
-
+##Next Steps##
+* Get unit tests working.
+* Add a third low-level implementation (Google Drive, SkyDrive, etc.) to vet the API for completeness.
+* Write a porting guide.
+* Consider adding scaffolding APIs to ease the transition. For example, the file system entry uses `getPath()` to enforce read-only access. Most existing code that uses `fullPath` just needs to change to `getPath()`, so we could add a `fullPath` getter that emits a deprecation warning.
+* Testing and bug fixing. 
