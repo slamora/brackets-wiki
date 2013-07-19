@@ -42,7 +42,7 @@ There are a few basic rules for using the new file system.
 * Listen for `"change"` events on `FileSystem` to be notified if a file or directory changes.
 
 ### Prototype ###
-A prototype implementation can be found in the [`glenn/filesystem` branch](https://github.com/adobe/brackets/tree/glenn/file-system). 
+A prototype implementation can be found in the `glenn/file-system` [branch](https://github.com/adobe/brackets/tree/glenn/file-system). 
 
 Most of the basic functionality works. Unit tests are completely broken (this is the next thing I want to work on), and many extensions are broken. 
 
@@ -68,7 +68,7 @@ This class represents a file on disk (this could be a local disk or cloud storag
 [/src/filesystem/File.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/File.js)
 
 
-##Directory##
+###Directory###
 This class represents a directory on disk (this could be a local disk or cloud storage). This is a subclass of `FileSystemEntry`.
 
 [/src/filesystem/Directory.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemEntry.js)
