@@ -21,9 +21,10 @@ I'm pretty sure there are many more...
 
 The high-level goals of the new file system are:
 
-* Clean and consistent API.
-* High Performance. Cache wherever possible.
-* Ability to swap out the low-level I/O routines.  
+* Clean, consistent API.
+* Unified file system model, including file watchers.
+* High Performance. Only hit the disk when we need to.
+* Ability to swap out low-level I/O routines (for cloud storage, etc.).
 
 Here is a block diagram of the major parts:
 
