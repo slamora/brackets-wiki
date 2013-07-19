@@ -25,7 +25,7 @@ Smoke test steps
 1. From the Finder/Explorer window, drag the `brackets/test/smokes/citrus completed` folder onto Brackets (note that there's a space in the name; this is intentional). In the Project panel, verify that the folder opened and it contains "css" and "images" folders and an "index.html" file.
 1. From the Finder/Explorer window, drag the `brackets/test/smokes/citrus completed/index.html` file onto Brackets. Verify that the file is opened, selected, and added to the working set.
 1. File > New
-1. File > Save, name the file ``temp.js`` in the current project
+1. File > Save, name the file ``temp.js`` in the current project. Verify that the name in the working set and title bar changes to ``temp.js`` and the mode in the status bar changes to "JavaScript".
 1. Type the following code
 ```
 var foo = "", bar = function(){};
@@ -34,7 +34,8 @@ foo.
 1. Verify ``String`` method code hints on ``foo``
 1. Insert a new line 2 ``foo = bar``
 1. On line 3, verify ``Function`` method code hints on ``foo``
-1. In the project tree, right click on ``temp.js`` and choose delete (when prompted discard changes)
+1. In the project tree, right-click on ``temp.js`` and change it to ``temp.txt``. Verify that the name in the working set and title bar changes, the code coloring disappears and the mode changes to "Text".
+1. In the project tree, right click on ``temp.txt`` and choose delete (when prompted discard changes)
 1. Open the OS Trash/Recycle Bin and confirm ``temp.js`` was deleted
 1. Move mouse over the name of the source of an `<img>` tag (e.g. "images/events.jpg" on line 33). Verify that Hover Preview of the image is displayed properly with the width and height.
 1. Set the cursor in the `<body>` tag immediately before the `>`.
