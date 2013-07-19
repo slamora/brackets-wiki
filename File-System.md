@@ -82,6 +82,7 @@ The main performance gains come from caching. The stats and contents of files an
 
 ##Next Steps##
 * Get unit tests working.
+* Write unit tests for the new APIs.
 * Add a third low-level implementation (Google Drive, SkyDrive, etc.) to vet the API for completeness.
 * Write a porting guide.
 * Consider adding scaffolding APIs to ease the transition. For example, the file system entry uses `getPath()` to enforce read-only access. Most existing code that uses `fullPath` just needs to change to `getPath()`, so we could add a `fullPath` getter that emits a deprecation warning.
