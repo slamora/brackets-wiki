@@ -32,10 +32,10 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 The icon should be #BBBBBB by default.
 
 * inactive/disabled state has an opacity of 0.4 set in CSS on the default icon
-* use green (#91cc41) for "everything is okay right now"/success state
-* use blue (#78b2f2) for on/active state
-* use yellow (#e3b551) for warning state
-* use red (#f74687) for error state.
+* use green (#91CC41) for "everything is okay right now"/success state
+* use blue (#78B2F2) for on/active state
+* use yellow (#E3B551) for warning state
+* use red (#F74687) for error state.
 
 ### Examples
 
