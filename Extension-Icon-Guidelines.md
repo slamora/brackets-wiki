@@ -8,11 +8,11 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 
 ## Styleguide
 
-* use simple shapes that are not too detailed, use as less anchor points as possible
-* make sure it's flat i.e. without gradients, highlights, or shadows
-* the corners are slightly rounded
-* use thinner lines rather than thicker lines
-* try to use SVG instead of PNG.
+* Use simple shapes that are not too detailed, use as less anchor points as possible
+* Make sure it's flat i.e. without gradients, highlights, or shadows
+* The corners are slightly rounded
+* Use thinner lines rather than thicker lines
+* Try to use SVG instead of PNG.
 
 ![Rounded Corner Example](icon-guidelines/rounded-corner-example.png)
 
@@ -30,17 +30,14 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 
 The icon should be #BBBBBB by default.
 
-* inactive/disabled state has an opacity of 0.4 set in CSS on the default icon
-* use green (#91CC41) for "everything is okay right now"/success state
-* use blue (#78B2F2) for on/active state
-* use yellow (#E3B551) for warning state
-* use red (#F74687) for error state.
+* Inactive/disabled state has an opacity of 0.4 set in CSS on the default icon
+* Green (#91CC41) for "everything is okay right now"/success state
+* Blue (#78B2F2) for on/active state
+* Yellow (#E3B551) for warning state
+* Red (#F74687) for error state.
 
-### Examples
+###Icon Template
 
-* [Extension Manager Icon](icon-guidelines/topcoat-plugin-20.svg)
-* [Device Preview Icon](icon-guidelines/topcoat-preview-20.svg)
-* [Web Font Icon](icon-guidelines/topcoat-webfont-20.svg)
-
+[Download Extension Icon Template SVG](icon-guidelines/extension-icon-template.svg)
 
 Ping @larz0 if you need help with your extension icon.
