@@ -19,15 +19,14 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 ![Stroke Example](icon-guidelines/stroke-example.png)
 
 
-### Extension Icon Size  
+### Dimension  
 
-* 24px by 24px
+* A single icon is 24px by 24px with 3px padding so that the largest solid square you should have is 18px by 18px or 19px by 19px if it's a circle.
 * for sprites use a 24x24 grid.
 
+![Extension State Example](icon-guidelines/extension-icon-states.png)
 
 ### Use Colors to Indicate Extension State
-
-![Extension State Example](icon-guidelines/extension-icon-states.png)
 
 The icon should be #BBBBBB by default.
 
