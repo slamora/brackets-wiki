@@ -83,7 +83,7 @@ This class represents a file on disk (this could be a local disk or cloud storag
 ###Directory###
 This class represents a directory on disk (this could be a local disk or cloud storage). This is a subclass of `FileSystemEntry`.
 
-[/src/filesystem/Directory.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemEntry.js)
+[/src/filesystem/Directory.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/Directory.js)
 
 ##Performance##
 The main performance gains come from caching. The stats and contents of files and directories are cached in memory. This has a huge impact on i/o-intensive operations like "find in files", and generally speeds up many other parts of the system.
