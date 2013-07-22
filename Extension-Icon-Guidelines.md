@@ -19,22 +19,21 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 ![Stroke Example](icon-guidelines/stroke-example.png)
 
 
-### Icon Size  
+### Extension Icon Size  
 
-* 20px by 20px
-* for sprites use a grid with gridlines 20px apart.
+* 24px by 24px
+* for sprites use a 24x24 grid.
 
 
 ### Use Colors to Indicate Extension State
 
 ![Extension State Example](icon-guidelines/extension-icon-states.png)
 
-The icon should be white with opacity set to 0.7 in the CSS by default.
+The icon should be #BBBBBB by default.
 
-* pressed state has an opacity of 0.5 set in CSS on the white icon
-* inactive/disabled state has an opacity of 0.3 set in CSS on the white icon
-* use green (#91cc41) for success state
-* use blue (#78b2f2) for active/open state
+* inactive/disabled state has an opacity of 0.4 set in CSS on the default icon
+* use green (#91cc41) for "everything is okay right now"/success state
+* use blue (#78b2f2) for on/active state
 * use yellow (#e3b551) for warning state
 * use red (#f74687) for error state.
 
