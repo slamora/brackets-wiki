@@ -38,6 +38,6 @@ The icon should be #BBBBBB by default.
 
 ###Icon Template
 
-[Download Extension Icon Template SVG](icon-guidelines/extension-icon-template.svg)
+[Download Extension Icon Template SVG](http://cl.ly/3L370g0k3l1j)
 
 Ping @larz0 if you need help with your extension icon.
