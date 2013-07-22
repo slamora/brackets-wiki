@@ -70,6 +70,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Copy as HTML](https://github.com/peterflynn/copy-as-html): Copy code to the clipboard with full color syntax highlighting (Edit > Copy as Colored HTML).
 
 **Code Generation**
+* [Creative Cloud Extension Builder](https://github.com/davidderaedt/CC-Extension-Builder-for-Brackets): Create HTML based extensions for Adobe tools like Photoshop and Illustrator.
 * [App Cache Buddy](https://github.com/davidderaedt/appcache-gen): Generate and validate application cache manifests.
 * [Annotate](https://github.com/davidderaedt/annotate-extension): Generates JSDoc annotations for your functions.
 
