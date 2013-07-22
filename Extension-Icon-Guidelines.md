@@ -21,8 +21,8 @@ direct the user visually and break down or differentiate elements (i.e. feature 
 
 ### Dimension  
 
-* A single icon is 24px by 24px with 3px padding so that the largest solid square you should have is 18px by 18px or 19px by 19px if it's a circle.
-* for sprites use a 24x24 grid.
+* A single icon is 24px × 24px with 3px padding so that the largest solid square you should have is 18px × 18px.
+* For sprites use a 24x24 grid.
 
 ![Extension State Example](icon-guidelines/extension-icon-states.png)
 
