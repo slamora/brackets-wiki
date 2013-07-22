@@ -11,7 +11,6 @@ The file system APIs in Brackets are a bit chaotic, and usage is inconsistent. H
 * No centralized file system model. This makes it difficult to add file watchers, and update all file references in the app after operations like rename.
 * Inefficient. We constantly hit the disk to read timestamps, content, etc.
 * Two APIs for file i/o: `brackets.fs` and `NativeFileSystem`
-* Inconsistent use of `fullPath` vs. `FileEntry`
 * Incorrect creation of `FileEntry` objects (these should never be directly instantiated)
 * No way to use alternate storage--Dropbox, Google Drive, etc.
 
@@ -39,7 +38,7 @@ There are a few basic rules for using the new file system.
 * Persist full pathnames, but convert into `File` and `Directory` objects for in-memory use. Creating `File` and `Directory` objects is cheap so there is no need to worry about performance.
 * There is a forced 1:1 relationship between `File` and `Directory` objects and their representation on disk. If two pieces of code ask the `FileSystem` for the same file path, they will both be returned the same `File` object.
 * All asyc operations return promises. If the operation succeeds, the promise is resolved. If there was an error, the promise is rejected with the error code.
-* To get the contents of a `Directory`, call `FileSystem.getDirectoryContents()`. There is no `readdir()` on `Directory`.
+* To get the contents of a `Directory`, call `fileSystem.getDirectoryContents()`. There is no `readdir()` on `Directory`.
 * Listen for `"change"` events on `FileSystem` to be notified if a file or directory changes.
 
 ### Prototype ###
@@ -51,11 +50,23 @@ File watchers require node 0.10. You will need to update the shell in order to g
 
 ##API##
 
+### FileSystemManager ###
+This is a singleton object for registering low-level file system implementations, and creating new `FileSystem` instances. Most code will never interact directly with this module.
+
+[/src/filesystem/FileSystemManager.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemManager.js)
+
 ### FileSystem ###
-The main module is `FileSystem`. This is the public API for getting files and directories, showing open/save dialogs, and getting the list of all the files in the project.
+The main class is `FileSystem`. This is the public API for getting files and directories, showing open/save dialogs, and getting the list of all the files in the project.
 
 [/src/filesystem/FileSystem.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystem.js)
 
+There are two main `FileSystem` instances:
+
+#### brackets.appFileSystem ####
+This is the file system used for accessing application files like extensions and config files.
+
+#### ProjectManager.getFileSystem() ####
+This is the file system for the current project, used to access any file related to the project.
 
 ###FileSystemEntry###
 This is an abstract representation of a FileSystem entry, and the base class for the `File` and `Directory` classes. FileSystemEntry objects are never created directly by client code. Use `FileSystem.getFileForPath()`, `FileSystem.getDirectoryForPath()`, or `FileSystem.getDirectoryContents()` to create the entry.
