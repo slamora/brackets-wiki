@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 28 -- approximately June 24._
+_This document will not be finalized until the end of Sprint 28 -- approximately July 24._
 
 What's New in Sprint 28
 -----------------------
@@ -43,7 +43,7 @@ Known Issues
 * [#3207](https://github.com/adobe/brackets/issues/3207): If you use a Sprint 21 or earlier build after using this build at least once, a few preferences such as Recent Projects may get reset. (You can back up your [[cache folder]] if you're concerned about this).
 * [#4362](https://github.com/adobe/brackets/issues/4362): Slow startup of Brackets and Live Preview on Windows due to Chrome proxy settings. See workaround https://support.google.com/chrome/answer/106010?hl=en.
 * _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
-
+* If you use Brackets from the GitHub source, you'll need to run `git submodule sync` and `git submodule update` to get a workaround for a [v8-related crash](https://github.com/adobe/brackets/issues/4400)
 
 Community contributions to Brackets
 -----------------------------------
