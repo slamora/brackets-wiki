@@ -33,6 +33,8 @@ API Changes
 
 **Working set events** - `"workingSetSort"` is now fired in all cases where the existing list items are reordered . There is no longer any need to listen for `"workingSetDisableAutoSorting"`.
 
+**Toolbar icons** - Icons for the right-side toolbar must now conform to a 24x24 sprite grid. See [Extension Icon Guidelines - Dimensions](https://github.com/adobe/brackets/wiki/Extension-Icon-Guidelines#dimension) for details.
+
 New/Improved Extensibility APIs
 -------------------------------
 
