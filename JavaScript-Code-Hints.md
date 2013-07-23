@@ -36,12 +36,12 @@ As the user types, the lists of choices in the hints pop-up is narrowed. All the
 
 The code that filters and sorts the hints is in the getHints() method in [Session.js](https://github.com/adobe/brackets/blob/master/src/extensions/default/JavaScriptCodeHints/Session.js). The results are returned to the getHints() in [main.js](https://github.com/adobe/brackets/blob/master/src/extensions/default/JavaScriptCodeHints/main.js) where they are formatted. Formatting is done by adding CSS class names to hint objects. The CSS classes are defined in [brackets-js-hints.css](https://github.com/adobe/brackets/blob/master/src/extensions/default/JavaScriptCodeHints/styles/brackets-js-hints.css)
 
-## Go-To-Definition (of current identifier)
-Go-To-Definition allows the user to have the cursor move to the definition of the variable or function to which the cursor currently points.  This works for definitions within the current file and within all other open files.  Definitions are selected/highlighted when found.
+## Jump-To-Definition (of current identifier)
+Jump-To-Definition allows the user to have the cursor move to the definition of the variable or function to which the cursor currently points.  This works for definitions within the current file and within all other open files.  Definitions are selected/highlighted when found.
 
 **Interaction:**
 
-This feature is controlled by the Navigation Menu -> Jump to Definition (control-J).  Note that there is already a different Brackets feature called Go-To-Definition.  We expect the names of both features to change.
+This feature is controlled by the Navigation Menu -> Jump to Definition (control-J).
 
 ##Initializing a hinting context on file open
 
