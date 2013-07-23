@@ -31,6 +31,8 @@ API Changes
 -----------
 * TODO - Extension Registry
 
+**Working set events** - `"workingSetSort"` is now fired in all cases where the existing list items are reordered . There is no longer any need to listen for `"workingSetDisableAutoSorting"`.
+
 New/Improved Extensibility APIs
 -------------------------------
 
