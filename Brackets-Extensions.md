@@ -98,6 +98,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Parent Dir] (https://github.com/katsh/brackets-parent-dir): Show parent directory of opened files in the Working Set.
 * [Key Remapper] (https://bitbucket.org/sacah/brackets-key-remapper/overview) : Shows current keyboard shortcuts and allows you to set new ones. These are stored in settings, so should persist across Brackets installations.
 * [bracketsFileWatcher] (https://github.com/WebsiteDeveloper/bracketsFileWatcher/releases/download/0.0.1/bracketsFileWatcher-0.0.1.zip): Watches the current project file tree for changes and refreshes the file tree in brackets if necessary. [Source Code] (https://github.com/WebsiteDeveloper/bracketsFileWatcher)
+* [WD Minimap] (https://github.com/websiteduck/brackets-wdminimap): The minimap shows a smaller version of your code at the right of the screen.  It can be used to quickly scroll to a certain part of your file.
 
 **Live Development**
 * [Debugger](https://github.com/jdiehl/brackets-debugger) *Incompatible with Brackets >= 0.20*: Brackets Debugger for the Live Development browser.
