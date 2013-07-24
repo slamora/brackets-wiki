@@ -40,4 +40,18 @@ The icon should be #BBBBBB by default.
 
 [Download Extension Icon Template SVG](http://cl.ly/3L370g0k3l1j)
 
+###CSS Example
+
+```bat
+#extension-name-icon {
+    background-image: url(extension-name-sprite.svg);
+}
+ 
+#extension-name-icon.active {
+    background-position: 0 -24px !important;
+}
+```
+
+
+
 Ping @larz0 if you need help with your extension icon.
