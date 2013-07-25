@@ -182,6 +182,8 @@ at the bottom. From there, you can click on
 **Browse Extensions** to get to the [list of Brackets extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions), which has further instructions on installation.
 You can also remove extensions from the Extension Manager dialog.
 
+In Sprint 28, we've introduced a central registry of Brackets extensions that you can access by clicking the "Available" tab in the Extension Manager. This tab allows you to browse and search the list of available extensions and install or update them with one click. The registry doesn't yet have the full set of extensions from the wiki page above, but over time it should become more complete. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
+
 Keyboard Shortcut Cheat Sheet
 -----------------------------
 Here are some keyboard shortcuts that are worth knowing. Also see the
