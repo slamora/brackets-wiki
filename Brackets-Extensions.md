@@ -9,7 +9,7 @@ You can install extensions by choosing **File > Extension Manager...** (or click
 
 You can remove an extension from Extension Manager by clicking on the **Remove** button in the item's listing in the "Installed" tab.
 
-In Sprint 28, we've introduced a central registry of Brackets extensions that you can access by clicking the "Available" tab in the Extension Manager. This tab allows you to browse and search the list of available extensions and install or update them with one click. The registry doesn't yet have the full set of extensions from the original list, but over time it should become more complete. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
+In Sprint 28, we've introduced a central registry of Brackets extensions that you can access from the "Available" tab in Extension Manager. This tab allows you to browse and search the list of available extensions and install or update them with one click. The registry doesn't yet have the full set of extensions from the original list, but over time it should become more complete. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
 
 #### Updating Extensions ####
 
