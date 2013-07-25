@@ -46,6 +46,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Delete to Start/End of line](https://github.com/probertson/brackets-delete-line-start-end): Shortcuts to delete from the current cursor position to the start or end of the line (common shortcuts Cmd+Backspace and Cmd+Delete on Mac)
 * [Vimderbar] (https://github.com/fontface/brackets-vimderbar): Adds vim-like functionality & status bar to Brackets.
 * [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only).
+* [Various Improvements] (https://github.com/Dammmien/brackets-various-improvements): Ddd some small improvements ( close all folders in file tree, case converter, additional information in status bar, super clipboard)
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
