@@ -24,11 +24,11 @@ root folder name in the file tree. You can also drag a folder from the OS onto t
 window to open it in the file tree, and drag files onto the Brackets window to open them.
 
 Unlike other editors that show open files in tabs, Brackets has a notion of 
-the "working set", which is displayed above the file tree. Just clicking on 
-files in the file tree doesn't automatically add them to the working set, 
+the "Working Files" list, which is displayed above the file tree. Just clicking on 
+files in the file tree doesn't automatically add them to the Working Files list, 
 so you can quickly browse through different files without opening them. To 
-add a file to the working set, just make an edit in it, or double-click it 
-in the file tree.
+add a file to Working Files, just make an edit in it, or double-click it in 
+the file tree.
 
 To change the default indentation for the editor, use the controls on the
 right end of the status bar at the bottom of the window. Click the word
