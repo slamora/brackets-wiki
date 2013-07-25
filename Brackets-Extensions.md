@@ -11,6 +11,8 @@ You can remove an extension from Extension Manager by clicking on the **Remove**
 
 In Sprint 28, we've introduced a central registry of Brackets extensions that you can access from the "Available" tab in Extension Manager. This tab allows you to browse and search the list of available extensions and install or update them with one click. The registry doesn't yet have the full set of extensions from the original list, but over time it should become more complete. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
 
+![Extension Manager Registry](screenshots/extension-manager/registry.png)
+
 #### Updating Extensions ####
 
 If you've installed an extension from the registry and the developer has uploaded an update, an **Update** button will appear next to it in the Installed tab, and you can simply click on that button to update it.
