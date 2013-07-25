@@ -6,7 +6,7 @@ This proposal does not attempt to cover the resulting UI changes except to the e
 
 The body of this proposal describes the conditions and the details of the new system.  The appendices provide additional insight into how other products (ie. Adobe CC and competitive) implement their preference settings.
 
-For more information, please see the [Edge Code Trello card](https://trello.com/card/5-research-preference-format/51072abad1b1f8a4560086bf/97) and the [Brackets team Wiki](https://github.com/adobe/brackets/wiki/Preferences).
+For more information, please see this [research page](https://github.com/adobe/brackets/wiki/Preferences) on the Brackets team Wiki.
 
 ## B. Proposed Use Cases and Workflows
 
