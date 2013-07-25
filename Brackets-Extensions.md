@@ -7,13 +7,13 @@ You can install extensions by choosing **File > Extension Manager...** (or click
 
 (Some extensions might not work by just copying and pasting the GitHub repo URL if they have submodules. Authors who post such extensions are encouraged to link directly to a ZIP file with all the submodules included.)
 
-You can remove an extension from Extension Manager by clicking on the "Remove" button in the item's listing in the Installed tab.
+You can remove an extension from Extension Manager by clicking on the **Remove** button in the item's listing in the "Installed" tab.
 
 In Sprint 28, we've introduced a central registry of Brackets extensions that you can access by clicking the "Available" tab in the Extension Manager. This tab allows you to browse and search the list of available extensions and install or update them with one click. The registry doesn't yet have the full set of extensions from the original list, but over time it should become more complete. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
 
 #### Updating Extensions ####
 
-If you've installed an extension from the registry and the developer has uploaded an update, an "Update" button will appear next to it in the Installed tab, and you can simply click on that button to update it.
+If you've installed an extension from the registry and the developer has uploaded an update, an **Update** button will appear next to it in the Installed tab, and you can simply click on that button to update it.
 
 If you installed the extension using the "Install from URL" dialog, and you have a URL for a newer version (or the GitHub repo has been updated since you installed it), you can just use the "Install from URL" dialog again to update it.
 
