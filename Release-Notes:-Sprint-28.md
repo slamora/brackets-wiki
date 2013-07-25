@@ -46,10 +46,29 @@ Known Issues
 * [#3207](https://github.com/adobe/brackets/issues/3207): If you use a Sprint 21 or earlier build after using this build at least once, a few preferences such as Recent Projects may get reset. (You can back up your [[cache folder]] if you're concerned about this).
 * [#4362](https://github.com/adobe/brackets/issues/4362): Slow startup of Brackets and Live Preview on Windows due to Chrome proxy settings. See workaround https://support.google.com/chrome/answer/106010?hl=en.
 * _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
-* If you use Brackets from the GitHub source, you should run `git submodule sync` before running `git submodule update`. This ensures you have the correct versions of all submodules.
 
 Community contributions to Brackets
 -----------------------------------
+* [Exclude obvious binary file types from Quick Open, Find in Files, etc.](https://github.com/adobe/brackets/pull/4442) by [Mikhail Shevchuk](https://github.com/shevchuk)
+* [Enable toggle line/block comment in Groovy](https://github.com/adobe/brackets/pull/4346) by [Arturo Elias](https://github.com/arturoeanton)
+* [Enable basic syntax coloring for .NET files .aspx, .cshtml, .asax, .ashx, .config](https://github.com/adobe/brackets/pull/4449) by [Ricky Abell](https://github.com/RickyAbell)
+* [Enable syntax coloring for Python .wsgi files](https://github.com/adobe/brackets/pull/4431/files) by [Globex Designs](https://github.com/globexdesigns)
+* [Fix #4332: Locale-aware filename sorting in file tree](https://github.com/adobe/brackets/pull/4463) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #4409: Sort order of "Untitled-NN" filenames should match OS](https://github.com/adobe/brackets/pull/4524) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #4333: Paths containing "#" are mishandled](https://github.com/adobe/brackets/pull/4379) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Fix #2076: Simplify events fired when working set is reordered](https://github.com/adobe/brackets/pull/4450) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #4390: Change dialog box message container from \<p> to \<div>](https://github.com/adobe/brackets/pull/4416) by [Hoshi Chigurh](https://github.com/Chigurh)
+* [Fix #3985: Error messages related to New Folder say "file" instead of "folder"](https://github.com/adobe/brackets/pull/4244) by [Daniel Seymour](https://github.com/DaBungalow)
+* [Fix #4453: "{0}" appears in filename error dialog](https://github.com/adobe/brackets/pull/4491) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Remove File > New Folder menu item to avoid confusion](https://github.com/adobe/brackets/pull/4488) (remains in context menu) by [Daniel Seymour](https://github.com/DaBungalow)
+* [Move File > Live Highlight to View menu to avoid confusion](https://github.com/adobe/brackets/pull/4395) by [Hoshi Chigurh](https://github.com/Chigurh)
+* [Cleanup: Refactor inline JS out of index.html](https://github.com/adobe/brackets/pull/4374) by [Maksim Lin](https://github.com/maks)
+* [Cleanup: Move JSLint into a submodule](https://github.com/adobe/brackets/pull/4467) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Readme improvements](https://github.com/adobe/brackets/pull/4375) by [Tom Byrer](https://github.com/tomByrer)
+* [Linux setup changes for building brackets-shell](https://github.com/adobe/brackets-shell/pull/275) by [Tim Burgess](https://github.com/timburgess)
+* [Czech translation update](https://github.com/adobe/brackets/pull/4278) by [kvarel](https://github.com/kvarel)
+* [Brazilian Portuguese translation tweaks](https://github.com/adobe/brackets/pull/4396) by [Michael Lancaster](https://github.com/weblancaster)
+* [Fix Turkish translation typo](https://github.com/adobe/brackets/pull/4356) by [Mahmut Bulut](https://github.com/vertexclique)
 
 Contributions _from_ the Brackets community
 -------------------------------------------
