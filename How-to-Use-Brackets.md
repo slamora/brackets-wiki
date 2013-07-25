@@ -20,7 +20,8 @@ on the left using **File > Open Folder (Ctrl/Cmd-Alt-O)**.
 It's a good idea to open the root of whatever project you're working on in the 
 file tree, since other Brackets features search in the current tree. You can
 easily get back to previous projects you've worked on by clicking on the project's
-root folder name in the file tree.
+root folder name in the file tree. You can also drag a folder from the OS onto the Brackets
+window to open it in the file tree, and drag files onto the Brackets window to open them.
 
 Unlike other editors that show open files in tabs, Brackets has a notion of 
 the "working set", which is displayed above the file tree. Just clicking on 
