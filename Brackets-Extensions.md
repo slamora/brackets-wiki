@@ -121,7 +121,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Edge Web Fonts](https://github.com/adobe/brackets-edge-web-fonts/): Browse free fonts from the Edge Web Fonts collection, with thumbnails. Activated via CSS code hints for font-family.
 * [CSS Exclusion Shape Viewer](https://github.com/adobe/brackets-plugin-exclusions): Quick Edit on an exclusion shape definition in CSS displays the shape.
 * [SVG Preview](https://github.com/peterflynn/svg-preview): Live preview SVG files in an inline panel while you edit them.
-* [Markdown Preview](https://github.com/gruehle/MarkdownPreview): Live preview of Markdown files, updated as the document is edited.
+* [Markdown Preview](https://github.com/gruehle/MarkdownPreview/archive/sprint-27.zip) (use [this link](https://github.com/gruehle/MarkdownPreview/archive/sprint-27.zip) for Brackets Sprint 27 or earlier): Live preview of Markdown files, updated as the document is edited.
 
 **External Tools & Online Content**
 * [BracketLESS] (https://github.com/olsgreen/BracketLESS): Compiles LESS files to CSS on save
@@ -145,7 +145,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
 
 **Documentation**
-* [DevDocs Viewer](https://github.com/gruehle/dev-docs-viewer): Search and view content from [devdocs.io](http://devdocs.io).
+* [DevDocs Viewer](https://github.com/gruehle/dev-docs-viewer) (use [this link](https://github.com/gruehle/dev-docs-viewer/archive/sprint-27.zip) for Brackets Sprint 27 or earlier): Search and view content from [devdocs.io](http://devdocs.io).
 * [Docco](https://github.com/aghiura/brackets-docco): Runs [Docco](http://jashkenas.github.io/docco/) on a js file.
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
 * [Display Shortcuts](https://github.com/redmunds/brackets-display-shortcuts): Display Shortcuts defined to Brackets.
