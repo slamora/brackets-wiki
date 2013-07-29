@@ -1,11 +1,12 @@
 _This is a draft!_
 --------------------
 _This document will not be finalized until the end of Sprint 28 -- approximately July 24._
+_The end of Sprint 28 has been delayed due to [#4571](https://github.com/adobe/brackets/issues/4571) and [#4400](https://github.com/adobe/brackets/issues/4400). We hope to have an update by July 30._
 
 What's New in Sprint 28
 -----------------------
 * **Extensions**
-    * [Extension Registry](https://trello.com/card/2-extension-registry-support-in-extension-manager/4f90a6d98f77505d7940ce88/911): .........
+    * [Extension Registry](https://trello.com/card/2-extension-registry-support-in-extension-manager/4f90a6d98f77505d7940ce88/911): Search for and install extensions directly within Brackets! Extension authors, [upload your extensions](https://brackets-registry.aboutweb.com/) to the new registry. More details below.
 * **File Management**
     * [New Untitled documents](https://trello.com/card/3-create-save-untitled-file-file-new/4f90a6d98f77505d7940ce88/291): File > New now instantly creates an untitled document. You are not prompted for a name/location until save.
 * **Drag & Drop**
@@ -19,7 +20,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-* TODO - Extension Registry
+**Extension Manager** - The "Available" tab now lists all Brackets extensions, pulled from an online registry. You can browse or search the listing, and install any extension with one click. [Read more...](https://github.com/adobe/brackets/wiki/Brackets-Extensions#installing-and-removing-extensions)
 
 **New File** - File > New now creates an untitled document (name and location aren't specified until the first time you save). The folder tree context menu's New File command continues to work as before (location is determined by what you right-clicked, name is given immediately). Both commands no longer default to a .js file extension.
 
@@ -29,14 +30,15 @@ UI Changes
 
 API Changes
 -----------
-* TODO - Extension Registry
+**Extension registry** - To appear in the new Extension Manager listing, your extension must be uploaded to [our new online extension registry](https://brackets-registry.aboutweb.com/). Be sure your extension includes a package.json file [with the required fields](https://github.com/adobe/brackets/wiki/Extension-package-format) (the upload site will validate this for you automatically).
 
-**Working set events** - `"workingSetSort"` is now fired in all cases where the existing list items are reordered . There is no longer any need to listen for `"workingSetDisableAutoSorting"`.
+**Toolbar icons** - Icons for the right-side toolbar should be exactly 24x24 pixels. See [Extension Icon Guidelines](https://github.com/adobe/brackets/wiki/Extension-Icon-Guidelines#dimension) for details.
 
-**Toolbar icons** - Icons for the right-side toolbar must now conform to a 24x24 sprite grid. See [Extension Icon Guidelines - Dimensions](https://github.com/adobe/brackets/wiki/Extension-Icon-Guidelines#dimension) for details.
+**Working set events** - `"workingSetSort"` is now fired in all cases where the existing list items are reordered. There is no longer any need to listen for `"workingSetDisableAutoSorting"`.
 
 New/Improved Extensibility APIs
 -------------------------------
+**Inline editors** - Quick Edit and Quick Docs providers may now specify a priority to override other providers, including the default providers in Brackets core. See new arguments to `EditorManager.registerInlineEditProvider()` and `registerInlineDocsProvider()`.
 
 
 Known Issues
@@ -46,6 +48,7 @@ Known Issues
 * [#3207](https://github.com/adobe/brackets/issues/3207): If you use a Sprint 21 or earlier build after using this build at least once, a few preferences such as Recent Projects may get reset. (You can back up your [[cache folder]] if you're concerned about this).
 * [#4362](https://github.com/adobe/brackets/issues/4362): Slow startup of Brackets and Live Preview on Windows due to Chrome proxy settings. See workaround https://support.google.com/chrome/answer/106010?hl=en.
 * _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
+
 
 Community contributions to Brackets
 -----------------------------------
