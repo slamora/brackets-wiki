@@ -1,8 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 28 -- approximately July 24._
-_The end of Sprint 28 has been delayed due to [#4571](https://github.com/adobe/brackets/issues/4571) and [#4549](https://github.com/adobe/brackets/issues/4549). We hope to have an update by July 30._
-
 What's New in Sprint 28
 -----------------------
 * **Extensions**
