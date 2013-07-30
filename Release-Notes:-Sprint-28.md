@@ -9,6 +9,8 @@ What's New in Sprint 28
     * [Drag _folder_ onto window to switch projects](https://trello.com/card/2-native-drag-n-drop-open-folder/4f90a6d98f77505d7940ce88/873): Dragging a folder onto the Brackets window works the same as File > Open Folder.
 * **Overall UI**
     * [Animation cues on open/close inline editor & hover preview (Quick View)](https://trello.com/card/1-ux-animate-inline-editor-and-quick-view/4f90a6d98f77505d7940ce88/809)
+* **Research**
+    * [Investigate Windows titlebar restyling](https://trello.com/c/d77Fd4F9/874-5-into-darkness-shell-windows): Early investigation for changing to a compact, dark titlebar design on Windows.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-27...sprint-28#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-27...sprint-28#commits_bucket)
 
