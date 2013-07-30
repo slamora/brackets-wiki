@@ -7,6 +7,8 @@ What's New in Sprint 28
 * **Drag & Drop**
     * [Drag _file_ onto window to open](https://trello.com/card/2-native-drag-n-drop-open-file/4f90a6d98f77505d7940ce88/281): Dragging a file onto the Brackets window works the same as File > Open. (This functionality was previously working on Windows only).
     * [Drag _folder_ onto window to switch projects](https://trello.com/card/2-native-drag-n-drop-open-folder/4f90a6d98f77505d7940ce88/873): Dragging a folder onto the Brackets window works the same as File > Open Folder.
+* **Stability**
+    * The [crash](https://github.com/adobe/brackets/issues/4400) (blank UI) seen by several people while editing JS code should no longer occur. It was caused by a V8 bug that we have temporarily worked around; the actual V8 fix will get merged in the future ([once we can update CEF safely](https://trello.com/c/gIwbocii/938-3-cef-crash-issues)).
 * **Overall UI**
     * [Animation cues on open/close inline editor & hover preview (Quick View)](https://trello.com/card/1-ux-animate-inline-editor-and-quick-view/4f90a6d98f77505d7940ce88/809)
 * **Research**
