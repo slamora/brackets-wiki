@@ -11,7 +11,7 @@ Development Environment Setup
 Required Setup for brackets-shell and brackets
 ----
 
-**IMPORTANT:** This setup script only works for 32-bit Linux. 64-bit support is in progress, but not ready yet. [Developers have already reported issues](https://groups.google.com/d/msg/brackets-dev/n1wo3aDxNls/Ub58QH_1SbUJ) with this script on 64-bit Linux. DO NOT ATTEMPT.
+**IMPORTANT:** This setup script only works for 32-bit Linux. 64-bit support is in progress (Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288). On `master` [fevelopers have already reported issues](https://groups.google.com/d/msg/brackets-dev/n1wo3aDxNls/Ub58QH_1SbUJ) with this script on 64-bit Linux. DO NOT ATTEMPT a 64-bit install from `master` use `jasonsanjose/linux-sprint-28`.
 
 These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( ``/usr/bin/brackets`` points to ``/usr/lib/brackets/Brackets``).
 
@@ -19,6 +19,7 @@ These instructions will download the Git repositories for [brackets-shell](https
 2. Create a top level folder to contain the Brackets git repositories
 3. In a terminal window, ``cd`` to the folder from the previous step and run the following command
 ```shell
+# TODO update when https://github.com/adobe/brackets-shell/pull/288 is merged (branch jasonsanjose/linux-sprint-28)
 wget https://gist.github.com/jasonsanjose/5514813/raw/e2e688f0e5151b93a2f2c17c93436bac13d32f35/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
 ```
 4. You'll be prompted for your GitHub user name to clone your fork of the repositories
@@ -53,8 +54,8 @@ Contributors: If you are willing to test other Linux distributions please add yo
 | Distribution | Version | Issues |
 | ------------ | ------- | ----- |
 | Ubuntu | 12.04 32-bit | None |
-| Ubuntu | 12.04 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
-| Mint 15 | 64-bit | Manually replace brackets-shell/deps/cef/Release/libcef.so with the 64-bit binary from http://www.magpcss.net/cef_downloads/ and rebuild |
+| Ubuntu | 12.04 64-bit | Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288 |
+| Mint 15 | 64-bit | Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288 |
 |LMDE(*) | Debian Testing 32 bit |None|
 | Arch | 32/64-bit | Not tested / None - (Package: https://aur.archlinux.org/packages/brackets-git) |
 
@@ -62,6 +63,11 @@ Contributors: If you are willing to test other Linux distributions please add yo
 
 Building brackets-shell
 ----
+
+```
+TODO update after https://github.com/adobe/brackets-shell/pull/288
+* Replace `make` with `grunt build`
+```
 
 The setup script will automatically create ``/path/to/brackets-shell/Makefile``. If you're only making changes to C++ code, just run ``make`` and the binaries will be in ``/path/to/brackets-shell/out/Release``. 
 
@@ -73,6 +79,12 @@ gyp --depth .
 
 Packaging Brackets
 ----
+
+```
+TODO update after https://github.com/adobe/brackets-shell/pull/288
+
+To build a debian package for installation on Debian/Ubuntu distributions, use the `grunt installer` build task. This tasks copies over both the binaries and the www source and creates a debian pacakge, e.g. installer/linux/Brackets Sprint 28.deb.
+```
 
 On Mac and Windows we would use the ``grunt installer`` task to build an installer. However, we haven't updated all our Grunt tasks for Linux yet. In the meantime, you can do the following to copy the www source and binaries into a debian package
 
@@ -103,5 +115,6 @@ There are several user stories (feature work) to complete in brackets-shell befo
 
 Development Log
 ====
+* 2013-07-30: Inline draft comments for sprint 28 build
 * 2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon [jasonsanjose](http://github.com/jasonsanjose)
 * 2013-06-21: Linux branches land in master in ``brackets-shell`` and ``brackets``. Includes: CEF parity with Mac and Win, stubbed methods for incomplete native shell stories (Node, File I/O, etc.), debian packaging. [jasonsanjose](http://github.com/jasonsanjose)
