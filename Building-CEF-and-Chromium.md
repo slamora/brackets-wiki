@@ -1,4 +1,4 @@
-The first thing you're going need to do is clone the brackets and brackets-shell repositories and build brackets-shell following the instructions from the brackets-shell repo.
+The first thing you're going to need to do is clone the brackets and brackets-shell repositories and build brackets-shell following the instructions from the brackets-shell repo.
 
 Next you need to get the Depot_Tools and add it to your path
 
