@@ -11,7 +11,7 @@ Development Environment Setup
 Required Setup for brackets-shell and brackets
 ----
 
-**IMPORTANT:** This setup script only works for 32-bit Linux. 64-bit support is in progress (Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288). On `master` [fevelopers have already reported issues](https://groups.google.com/d/msg/brackets-dev/n1wo3aDxNls/Ub58QH_1SbUJ) with this script on 64-bit Linux. DO NOT ATTEMPT a 64-bit install from `master` use `jasonsanjose/linux-sprint-28`.
+**IMPORTANT:** This setup script only works for 32-bit Linux. 64-bit support is in progress (Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288). On `master` [developers have already reported issues](https://groups.google.com/d/msg/brackets-dev/n1wo3aDxNls/Ub58QH_1SbUJ) with this script on 64-bit Linux. DO NOT ATTEMPT a 64-bit install from `master` use `jasonsanjose/linux-sprint-28`.
 
 These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( ``/usr/bin/brackets`` points to ``/usr/lib/brackets/Brackets``).
 
