@@ -14,8 +14,10 @@ This table lists features that appear in the Linux build but do not function as 
 Known Issues
 ----
 
-| Feature | Description | Workaround |
+| Issue/Feature | Description | Workaround |
 | ------------ | ------- | ----- |
+| Slow Startup | Startup time is slower due to missing Node.js implementation | None |
+| App Doesn't Quit on First Attempt | Brackets doesn't close when first clicking the window close button | Click on close again |
 | Extension Manager | Install, update and remove extensions via File > Extension Manager... UI is enabled but all functionality fails. | Unzip extensions to ``~/.Brackets/extensions/user``. |
 | HTML Highlighting | When in Live Preview mode, place the cursor on an HTML element to highlight that element in the browser. | None |
 | Native Menus | Native OS menus | N/A. Brackets already fallback to HTML menus on Linux |
