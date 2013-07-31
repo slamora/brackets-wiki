@@ -33,6 +33,8 @@ API Changes
 
 **Toolbar icons** - Icons for the right-side toolbar should be exactly 24x24 pixels. See [Extension Icon Guidelines](https://github.com/adobe/brackets/wiki/Extension-Icon-Guidelines#dimension) for details.
 
+**Untitled Documents** - You may encounter a new subclass of `FileEntry`, `InaccessibleFileEntry`, in two places: the value of `Document.file`, or as an entry in the working set. The `fullPath` can still be used as a key to retrieve the untitled Document (via `getDocumentForPath()`/`getOpenDocumentForPath()`), but it will not point to a real location on disk and any attempts at direct file I/O will fail (though the regular `FILE_SAVE` command works). Use `Document.isUntitled()` to check if a Document is untitled.
+
 **Working set events** - `"workingSetSort"` is now fired in all cases where the existing list items are reordered. There is no longer any need to listen for `"workingSetDisableAutoSorting"`.
 
 New/Improved Extensibility APIs
