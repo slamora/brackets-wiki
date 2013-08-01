@@ -20,7 +20,7 @@ Next you need to get gyp into a search path.  I just copied the one from ~/brack
 Next you need to start the process of getting the chromium and cef sources:
 
     cd ~/
-    svn checkout http://chromiumembedded.googlecode.com/svn/branches/1547/cef3/automate automate
+    svn checkout http://chromiumembedded.googlecode.com/svn/branches/1547/cef3/tools/automate automate
     cd ~/automate
     python automate.py --url http://chromiumembedded.googlecode.com/svn/branches/1547/cef3 --download-dir download --ninja-build --no-release-build --force-build --force-distrib
  
