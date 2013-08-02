@@ -30,4 +30,3 @@ Other flags (documented as we find and need them):
     -–force-clean     (deletes intermediates)
     --force-update    (deletes webkit so it can be downloaded again)
 
-I didn't need them but Ion suggested that you could use them if you absolutely need to clean everything and reset.
