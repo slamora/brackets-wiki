@@ -22,26 +22,12 @@ Next you need to start the process of getting the chromium and cef sources:
     cd ~/
     svn checkout http://chromiumembedded.googlecode.com/svn/branches/1547/cef3/tools/automate automate
     cd ~/automate
-    python automate.py --url http://chromiumembedded.googlecode.com/svn/branches/1547/cef3 --download-dir download --ninja-build --no-release-build --force-build --force-distrib
+    python automate.py --url http://chromiumembedded.googlecode.com/svn/branches/1547/cef3 --download-dir download --ninja-build --no-release-build --force-build --force-distrib --force-config
  
-This will clone the chromium source and it may stop on an error because gclient hasn't been configured yet.  You need the download folder to configure it so you can do that now and restart it.
-
-    cd ~/automate/download/chromium
-    gclient config http://src.chromium.org/svn/releases/29.0.1547.22
-
-Now restart the build
-    cd ~/automate
-    python automate.py --url http://chromiumembedded.googlecode.com/svn/branches/1547/cef3 --download-dir download --ninja-build --no-release-build --force-build --force-distrib
-
-You should finish now but if you run into trouble from here try this:
-
-    cd ~/automate
-    python automate.py --url http://chromiumembedded.googlecode.com/svn/branches/1547/cef3 --download-dir download --ninja-build --no-release-build --force-build -–force-clean --force-distrib
 
 Other flags (documented as we find and need them):
-
     
-    --force-config 
-    --force-update
+    -–force-clean     (deletes intermediates)
+    --force-update    (deletes webkit so it can be downloaded again)
 
 I didn't need them but Ion suggested that you could use them if you absolutely need to clean everything and reset.
