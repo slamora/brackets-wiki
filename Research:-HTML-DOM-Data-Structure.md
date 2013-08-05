@@ -1,6 +1,94 @@
 # HTML DOM Data Structure Research #
 
-Status: Research Complete
+Status: Implementation underway (Sprint 29)
+
+# Implementation Notes #
+
+## Diff/Patch ##
+
+There is some complexity around diff/patch that is not accounted for in the original research prototype. We basically threw out comments, for example. Comments, like text nodes, cannot be identified and individually located easily in the browser. However, our purpose here is to allow people to preview their work. Comments are not visual at all, so previewing is not important. What if we just ignore comments – both when generating our SimpleDOM structure or when applying a patch?
+
+Here's an example:
+
+```html
+<div data-brackets-id="100">Hi there<!-- silly person -->, good neighbor!</div>
+```
+
+That `<div>` contains three nodes: text, comment, text. If "good neighbor" was changed to "charitable fool" the code would have to go through some contortions to reflect that the "good neighbor!" text node was the one that was deleted and "charitable fool" is being inserted.
+
+If we treat the comments as not even worthy of attention, we end up with a diff that looks like this:
+
+```javascript
+{
+    parentID: 100,
+    type: "textReplace",
+    content: "Hi there, foul cretin"
+}
+```
+
+On the browser side, it just replaces *all* of the text nodes inside of that parent div with one text node with the new content. In this case, it doesn't really matter where it goes, because the comment does not display.
+
+How about something a little more complicated?
+
+```html
+<div data-brackets-id="100">
+    This is <!-- need a good adjective here --> <em data-brackets-id="101">the ultimate</em> doohickey for
+    <strong data-brackets-id="102">kibitzing</strong> on the internets.<!-- remove this next bit? It seems... wrong? --><span style="display: none" data-brackets-id="103"> All of them.</span>
+</div>
+```
+
+An operation like this one is straightforward:
+
+```javascript
+{
+    parentID: 100,
+    beforeID: 101,
+    type: "textReplace",
+    content: "\n    This was"
+}
+```
+
+It replaces the "is" with "was". There's also a space character between the end of the comment and the `em` tag. That character will be deleted. Whether the text node ends up before or after the comment is irrelevant.
+
+```javascript
+{
+    parentID: 100,
+    type: "textReplace",
+    content: "\n    This was"
+}
+```
+
+would be illegal in this case, because there are child nodes to consider.
+
+```javascript
+{
+    parentID: 100,
+    afterID: 102,
+    beforeID: 103,
+    type: "textReplace",
+    content: " on the internet."
+}
+```
+
+This change makes it very clear which text we're talking about because it is completely bounded by the before and after elements. How about two changes coming together that might have been confusing to the prototype implementation?
+
+```javascript
+{
+    tagID: 101,
+    type: "elementDelete"
+}
+{
+    parentID: 100,
+    afterID: 101,
+    beforeID: 103,
+    type: "textReplace",
+    content: " doohickey for chatting on the internet."
+}
+```
+
+We have deleted the `<strong>` tag. The text node siblings that surrounded that tag will get merged together when the textReplace happens (all of the text nodes between 101 and 103 are deleted and the new text is put in its place).
+
+# Initial Research Results #
 
 This page contains the results of the [HTML DOM Data Structure research story](https://trello.com/card/5-research-data-structure-for-html-dom-edit-mapping/4f90a6d98f77505d7940ce88/844).
 
