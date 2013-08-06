@@ -22,7 +22,7 @@ If we treat the comments as not even worthy of attention, we end up with a diff 
 {
     parentID: 100,
     type: "textReplace",
-    content: "Hi there, foul cretin"
+    content: "Hi there, charitable fool"
 }
 ```
 
