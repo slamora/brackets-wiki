@@ -4,7 +4,7 @@ Status: Implementation underway (Sprint 29)
 
 # Implementation Notes #
 
-## Diff/Patch ##
+## Text Diff/Patch ##
 
 There is some complexity around diff/patch that is not accounted for in the original research prototype. We basically threw out comments, for example. Comments, like text nodes, cannot be identified and individually located easily in the browser. However, our purpose here is to allow people to preview their work. Comments are not visual at all, so previewing is not important. What if we just ignore comments – both when generating our SimpleDOM structure or when applying a patch?
 
@@ -74,7 +74,7 @@ This change makes it very clear which text we're talking about because it is com
 
 ```javascript
 {
-    tagID: 101,
+    tagID: 102,
     type: "elementDelete"
 }
 {
@@ -87,6 +87,65 @@ This change makes it very clear which text we're talking about because it is com
 ```
 
 We have deleted the `<strong>` tag. The text node siblings that surrounded that tag will get merged together when the textReplace happens (all of the text nodes between 101 and 103 are deleted and the new text is put in its place).
+
+## Implicit Open Tags ##
+
+Another source of complication in the diff/patch process is implict open tags. Consider the following:
+
+```html
+<table data-brackets-id="1">
+    <tr data-brackets-id="2">
+        <td  data-brackets-id="3">George</td>
+        <td data-brackets-id="4">of the Jungle</td>
+    </tr>
+    <tr data-brackets-id="5">
+        <td data-brackets-id="6">George</td>
+        <td data-brackets-id="7">Washington</td>
+    </tr>
+</table>
+```
+
+This seems like a straightforward DOM... except what the browser actually generates is this:
+
+```html
+<table data-brackets-id="1">
+    <tbody><tr data-brackets-id="2">
+            <td  data-brackets-id="3">George</td>
+            <td data-brackets-id="4">of the Jungle</td>
+        </tr>
+        <tr data-brackets-id="5">
+            <td data-brackets-id="6">George</td>
+            <td data-brackets-id="7">Washington</td>
+        </tr></tbody>
+</table>
+```
+
+The crazy indentation above is there to highlight that there are text nodes surrounding the `<tbody>` but not between the `<tbody>` and the `<tr>`. Note that since the browser synthesized the `<tbody>`, there is no brackets ID there.
+
+Let's imagine a case where the first row is deleted. Brackets would send the following message to the browser:
+
+```javascript
+{
+    tagID: 2
+    type: "elementDelete"
+}
+```
+
+This case is easy for the browser to handle, because when it deletes the element the browser knows what to do. This one is harder:
+
+```javascript
+{
+    tagID: 8,
+    beforeID: 5,
+    parentID: 1,
+    type: "elementInsert",
+    tag: "tr"
+}
+```
+
+This is telling us to insert a new `<tr>` tag before George Washington's `<tr>`.  In the prototype, elementInserts were specified with a position index relative to the parent's childNodes. By specifying a beforeID, the browser can simply find that element and call `insertBefore`. 
+
+What if the table is empty? It turns out that you can add a `<tr>` to the table directly. The browser is fine with that and it does not create an implicit `<tbody>` in the process.
 
 # Initial Research Results #
 
