@@ -88,6 +88,71 @@ This change makes it very clear which text we're talking about because it is com
 
 We have deleted the `<strong>` tag. The text node siblings that surrounded that tag will get merged together when the textReplace happens (all of the text nodes between 101 and 103 are deleted and the new text is put in its place).
 
+Another complicating factor is when new text nodes and elements combine. For example:
+
+```html
+<div data-brackets-id="1">
+    <div data-brackets-id="2">Text goes here</div>
+    <div data-brackets-id="3">More text</div>
+</div>
+```
+
+Imagine a scenario in which we're going to insert a new element in between 2 and 3, so that we end up with this:
+
+```html
+<div data-brackets-id="1">
+    <div data-brackets-id="2">Text goes here</div>
+    <div data-brackets-id="4">New text</div>
+    <div data-brackets-id="3">More text</div>
+</div>
+```
+
+On the surface, this seems like a straightforward edit:
+
+```javascript
+{
+    tagID: 4,
+    type: "elementInsert",
+    parentID: 1,
+    afterID: 2,
+    beforeID: 3,
+    attributes: {}
+}
+{
+    type: "textInsert",
+    parentID: 4,
+    content: "New text"
+}
+```
+
+The problem is that there is an existing text node and a new text node each of which contains "`\n`&nbsp;&nbsp;". So, we need to do something like this:
+
+```javascript
+{
+    tagID: 4,
+    type: "elementInsert",
+    parentID: 1,
+    afterID: 2,
+    beforeID: 3,
+    attributes: {},
+    afterText: true
+}
+{
+    type: "textInsert",
+    parentID: 1,
+    afterID: 4,
+    beforeID: 3,
+    content: "\n  "
+}
+{
+    type: "textInsert",
+    parentID: 4,
+    content: "New text"
+}
+```
+
+The `afterText` flag is a signal that the new element is to be inserted *after* the text node between elements 2 and 3.
+
 ## Implicit Open Tags ##
 
 Another source of complication in the diff/patch process is implict open tags. Consider the following:
