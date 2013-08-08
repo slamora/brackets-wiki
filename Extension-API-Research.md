@@ -56,7 +56,9 @@ In priority / implementation order. See also [Extension API Evolution](Extension
 #### Notes from Peter
 * I converted four simple extensions over to an approximation of the services architecture: Markdown Preview, Everyscrub, Goto Last Edit, and File Navigation Shortcuts.
     * Caveat: none of these used Node-side code
-    * Caveat: I didn't actually get them running against Kevin's branch; the ported code is onoly hypothetical
+    * Caveat: I didn't actually get them running against Kevin's branch; the ported code is only hypothetical
+    * Caveat: I made up a bunch of API redesigns on the fly. But I think they are all fairly sane.
+* **Verbosity** - Extensions stayed about the same size (on average only +2 lines), but the splitting of service reference declaration & assignment did feel annoying.
 * **Storing off service references** - 3 of 4 extensions required some retained references (even after a bunch of light refactoring). I would want to store off separate refs for individual services, rather than just storing the whole `services` object, to avoid having to use fully-qualified names on every ref.
 * **Restartless**
     * Already run into a _large set of APIs that would need to be auto-restartless_: commands, menu items, bare keybindings, keybinding patching, QuickOpen, EditorManager/DocumentManager listeners, PanelManager listeners, DOM injection (panels, toolbar icons, etc.), stylesheet loading
