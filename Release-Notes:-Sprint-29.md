@@ -41,6 +41,18 @@ Community contributions to Brackets
 
 Contributions _from_ the Brackets community
 -------------------------------------------
+* https://github.com/adobe/brackets/pull/4569
+* https://github.com/adobe/brackets/pull/4581
+* https://github.com/adobe/brackets/pull/4598
+* https://github.com/adobe/brackets/pull/4515
+* https://github.com/adobe/brackets/pull/4642
+* https://github.com/adobe/brackets/pull/4303
+* https://github.com/adobe/brackets/pull/4506
+* https://github.com/adobe/brackets/pull/4398
+* https://github.com/adobe/brackets/pull/4605
+* https://github.com/adobe/brackets/pull/4622
+* https://github.com/adobe/brackets/pull/4520
+* https://github.com/adobe/brackets/pull/4607
 
 Bugs fixed in Sprint 29
 -----------------------
