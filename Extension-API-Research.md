@@ -1,6 +1,6 @@
 ## Proposed API changes
 
-(in priority / implementation order)
+In priority / implementation order. See also [Extension API Evolution](Extensions2): includes some longer-term ideas that are deferred here, but also has more concrete into on the near-term work listed here.
 
 #### 1. Shared services architecture
 * Allows extension-to-extension dependencies
