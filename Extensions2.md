@@ -4,6 +4,8 @@ Status: Proposal
 
 Email comments to: dangoor@adobe.com
 
+_See [[Extension API Research]] for the near-term plans to implement parts of this._
+
 ## Introduction ##
 
 The Brackets extension API has been very successful as measured by the number and power of the extensions we have. We presently have two requirements that are not met by our current extension API:
