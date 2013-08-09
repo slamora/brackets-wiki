@@ -54,6 +54,7 @@ Community contributions to Brackets
 * [Improvements to the Inline Editor Tests](https://github.com/adobe/brackets/pull/4598) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Confirm folder delete - fixes issue #4446](https://github.com/adobe/brackets/pull/4515) by [Greg Palmer](https://github.com/g-palmer)
 * [Upgrade JSLint to the commit we were using before switching to a submodule](https://github.com/adobe/brackets/pull/4642) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Use one window for all specs in the suite on more integration tests](https://github.com/adobe/brackets/pull/4635) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Find in Files Improvements (Part 2: Pagination)](https://github.com/adobe/brackets/pull/4303) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Added Finnish language](https://github.com/adobe/brackets/pull/4506) by [valtlait](https://github.com/valtlait)
 * [sprint 27 - updated czech language](https://github.com/adobe/brackets/pull/4398) by [kvarel](https://github.com/kvarel)
