@@ -38,9 +38,6 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-
-Contributions _from_ the Brackets community
--------------------------------------------
 * [Fix for issue #4562](https://github.com/adobe/brackets/pull/4569) by [Lance Campbell](https://github.com/lkcampbell)
 * [Implementation of beforeAll/afterAll](https://github.com/adobe/brackets/pull/4581) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Improvements to the Inline Editor Tests](https://github.com/adobe/brackets/pull/4598) by [Tomás Malbrán](https://github.com/TomMalbran)
@@ -53,6 +50,10 @@ Contributions _from_ the Brackets community
 * [Fix bug #4536, No tooltip for author name in extension manager](https://github.com/adobe/brackets/pull/4622) by [Luan Pham](https://github.com/thanhluan001)
 * [Update German Localization](https://github.com/adobe/brackets/pull/4520) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
 * [sprint 28 - czech language update](https://github.com/adobe/brackets/pull/4607) by [kvarel](https://github.com/kvarel)
+
+Contributions _from_ the Brackets community
+-------------------------------------------
+None
 
 Bugs fixed in Sprint 29
 -----------------------
