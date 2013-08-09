@@ -3,7 +3,7 @@ Introduction
 
 Brackets officially supports Mac and Windows. However, we're working on adding Linux support with the help of our open source community. If you're an end user that just wants to try out Brackets on Linux, please be aware that many features are missing or partially implemented.
 
-To be clear, if you are NOT an extension developer and NOT planning to contribute to brackets-shell, please visit (TBD landing page) to download an experimental build of Brackets. Please review the release notes for known issues.
+To be clear, if you are NOT an extension developer and NOT planning to contribute to brackets-shell, please visit [download.brackets.io](http://download.brackets.io) to download a preview build of Brackets. Please review the release notes for known issues.
 
 Development Environment Setup
 ====
@@ -11,7 +11,7 @@ Development Environment Setup
 Required Setup for brackets-shell and brackets
 ----
 
-**IMPORTANT:** This setup script only works for 32-bit Linux. 64-bit support is in progress (Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288). On `master` [developers have already reported issues](https://groups.google.com/d/msg/brackets-dev/n1wo3aDxNls/Ub58QH_1SbUJ) with this script on 64-bit Linux. DO NOT ATTEMPT a 64-bit install from `master` use `jasonsanjose/linux-sprint-28`.
+**IMPORTANT:** This setup script only works for 32-bit Linux. 64-bit support is in progress (Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288). On `master` [developers have already reported issues](https://groups.google.com/d/msg/brackets-dev/n1wo3aDxNls/Ub58QH_1SbUJ) with this script on 64-bit Linux. DO NOT ATTEMPT a 64-bit install from `master`, use `jasonsanjose/linux-sprint-28`.
 
 These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( ``/usr/bin/brackets`` points to ``/usr/lib/brackets/Brackets``).
 
@@ -19,8 +19,12 @@ These instructions will download the Git repositories for [brackets-shell](https
 2. Create a top level folder to contain the Brackets git repositories
 3. In a terminal window, ``cd`` to the folder from the previous step and run the following command
 ```shell
-# TODO update when https://github.com/adobe/brackets-shell/pull/288 is merged (branch jasonsanjose/linux-sprint-28)
+# master with 32-bit support only
 wget https://gist.github.com/jasonsanjose/5514813/raw/e2e688f0e5151b93a2f2c17c93436bac13d32f35/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
+
+# jasonsanjose/linux-sprint-28
+# TODO update when https://github.com/adobe/brackets-shell/pull/288 is merged
+# wget https://gist.github.com/jasonsanjose/5514813/raw/0daee71bf39c8c72ed2f1bb51558810da1e62986/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
 ```
 4. You'll be prompted for your GitHub user name to clone your fork of the repositories
 5. Respond to ``sudo`` password prompts when requested
@@ -120,6 +124,7 @@ We tag Linux-specific bugs in our [GitHub issues](https://github.com/adobe/brack
 
 Development Log
 ====
+* 2013-08-09: Edit inline sprint 28 comments
 * 2013-07-30: Inline draft comments for sprint 28 build
 * 2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon [jasonsanjose](http://github.com/jasonsanjose)
 * 2013-06-21: Linux branches land in master in ``brackets-shell`` and ``brackets``. Includes: CEF parity with Mac and Win, stubbed methods for incomplete native shell stories (Node, File I/O, etc.), debian packaging. [jasonsanjose](http://github.com/jasonsanjose)
