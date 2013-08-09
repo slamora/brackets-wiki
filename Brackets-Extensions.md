@@ -47,6 +47,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only).
 * [Various Improvements] (https://github.com/Dammmien/brackets-various-improvements): Add some small improvements ( close all folders in file tree, case converter, additional informations in status bar, super clipboard)
 * [Todo] (https://github.com/mikaeljorhult/brackets-todo): Find and displays all todo comments in current document.
+* [Unused Files] (https://github.com/Dammmien/brackets-unused-files): Find unused files in your web project.
 
 **Snippets & Shorthand**
 * [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
