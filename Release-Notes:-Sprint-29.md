@@ -30,9 +30,12 @@ UI Changes
 API Changes
 -----------
 
+None
+
 New/Improved Extensibility APIs
 -------------------------------
 
+None
 
 Known Issues
 ------------
