@@ -2,12 +2,12 @@ Download Brackets
 ====
 
 * Contributors - See [Linux Development For Contributors](https://github.com/adobe/brackets/wiki/Linux-Development-for-Contributors). This is your guide to setting up a development environment, navigating your way around the code base, finding Linux specific user stories to contribute to, and updates on our progress overall.
-* Users - Coming soon
+* Users - Visit [download.brackets.io](http://download.brackets.io) for 64-bit and 32-bit debian package downloads.
 
 Feature Status
 ====
 
-The latest Linux builds (as of Sprint 27), are *near* feature parity with the the Mac and Windows builds. However, there are notable features (e.g. Node.js integration and extension install UI) that are in various stages of planning and development. To be clear though, Brackets features going forward that only rely on features in the browser can be developed in lock-step on all 3 platforms.
+The latest Linux builds (as of Sprint 28), are *near* feature parity with the the Mac and Windows builds. However, there are notable features (e.g. Node.js integration and extension install UI) that are in various stages of planning and development. To be clear though, Brackets features going forward that only rely on features in the browser can be developed in lock-step on all 3 platforms.
 
 This table lists features that appear in the Linux build but do not function as expected. Please see the [Linux Development For Contributors](https://github.com/adobe/brackets/wiki/Linux-Development-for-Contributors) for progress on these features.
 
@@ -42,5 +42,6 @@ We're currently focused on Ubuntu since [Chromium Embedded Framework (CEF)](http
 
 Log
 ----
+* 2013-08-09: Added download link
 * 2013-06-24: Updated known issues and FAQ. [jasonsanjose](http://github.com/jasonsanjose)
 * 2013-06-22: Created. Pointer to dev wiki page. Placeholder for end users until download and documentation plans are in place. [jasonsanjose](http://github.com/jasonsanjose)
