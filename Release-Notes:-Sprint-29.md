@@ -10,13 +10,19 @@ What's New in Sprint 29
     * [Design extensibility API revamp](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design)
     * [Investigate crashes blocking CEF upgrade](https://trello.com/c/gIwbocii/938-3-cef-crash-issues)
     * [Continue work on Windows titlebar restyling](https://trello.com/c/d77Fd4F9/874-5-into-darkness-shell-windows)
+* Localization
+    * New - [Finnish language](https://github.com/adobe/brackets/pull/4506)
+    * Update - [German](https://github.com/adobe/brackets/pull/4520)
+    * Update - [Czech](https://github.com/adobe/brackets/pull/4607)
+    * Update - [Swedish](https://github.com/adobe/brackets/pull/4605)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-28...sprint-29#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-28...sprint-29#commits_bucket)
 
 
 UI Changes
 ----------
-No major changes to existing features.
+**Confirm Folder Delete** - A confirmation dialog will appear when attempting to delete a folder.
+
 
 
 API Changes
