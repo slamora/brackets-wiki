@@ -4,8 +4,6 @@ _This document will not be finalized until the end of Sprint 29 -- approximately
 
 What's New in Sprint 29
 -----------------------
-* **Live Preview**
-    * [Live preview HTML changes as you type](https://trello.com/c/cc8kk9zG/927-5-live-development-html-initial-implementation)
 * **Research**
     * [Design extensibility API revamp](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design)
     * [Investigate crashes blocking CEF upgrade](https://trello.com/c/gIwbocii/938-3-cef-crash-issues)
@@ -23,7 +21,11 @@ UI Changes
 ----------
 **Confirm Folder Delete** - A confirmation dialog will appear when attempting to delete a folder.
 
+**Status Bar Selection Info** - When selecting text, the status now shows the selection length.
 
+**Open With… Updated File Extension Support for Mac** - The "Open With…" context menu in the Mac Finder will show Brackets for all supported file extensions.
+
+**Find in Files Shows More Results** - Find in Files now displays more than 100 results. You may double click on a result to add the file to the working set.
 
 API Changes
 -----------
