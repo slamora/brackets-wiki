@@ -41,18 +41,18 @@ Community contributions to Brackets
 
 Contributions _from_ the Brackets community
 -------------------------------------------
-* https://github.com/adobe/brackets/pull/4569
-* https://github.com/adobe/brackets/pull/4581
-* https://github.com/adobe/brackets/pull/4598
-* https://github.com/adobe/brackets/pull/4515
-* https://github.com/adobe/brackets/pull/4642
-* https://github.com/adobe/brackets/pull/4303
-* https://github.com/adobe/brackets/pull/4506
-* https://github.com/adobe/brackets/pull/4398
-* https://github.com/adobe/brackets/pull/4605
-* https://github.com/adobe/brackets/pull/4622
-* https://github.com/adobe/brackets/pull/4520
-* https://github.com/adobe/brackets/pull/4607
+* [Fix for issue #4562](https://github.com/adobe/brackets/pull/4569) by [Lance Campbell](https://github.com/lkcampbell)
+* [Implementation of beforeAll/afterAll](https://github.com/adobe/brackets/pull/4581) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Improvements to the Inline Editor Tests](https://github.com/adobe/brackets/pull/4598) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Confirm folder delete - fixes issue #4446](https://github.com/adobe/brackets/pull/4515) by [Greg Palmer](https://github.com/g-palmer)
+* [Upgrade JSLint to the commit we were using before switching to a submodule](https://github.com/adobe/brackets/pull/4642) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Find in Files Improvements (Part 2: Pagination)](https://github.com/adobe/brackets/pull/4303) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Added Finnish language](https://github.com/adobe/brackets/pull/4506) by [valtlait](https://github.com/valtlait)
+* [sprint 27 - updated czech language](https://github.com/adobe/brackets/pull/4398) by [kvarel](https://github.com/kvarel)
+* [Make swedish translation up-to-date.](https://github.com/adobe/brackets/pull/4605) by [Mikael Jorhult](https://github.com/mikaeljorhult)
+* [Fix bug #4536, No tooltip for author name in extension manager](https://github.com/adobe/brackets/pull/4622) by [Luan Pham](https://github.com/thanhluan001)
+* [Update German Localization](https://github.com/adobe/brackets/pull/4520) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [sprint 28 - czech language update](https://github.com/adobe/brackets/pull/4607) by [kvarel](https://github.com/kvarel)
 
 Bugs fixed in Sprint 29
 -----------------------
