@@ -6,6 +6,12 @@ You can remove an extension from Extension Manager by clicking on the **Remove**
 
 ![Extension Manager Registry](screenshots/extension-manager/registry.png)
 
+### Updating Extensions
+
+If you've installed an extension from the registry and the developer has uploaded an update, an **Update** button will appear next to it in the Installed tab, and you can simply click on that button to update it.
+
+If you installed the extension using the "Install from URL" dialog, and you have a URL for a newer version (or the GitHub repo has been updated since you installed it), you can just use the "Install from URL" dialog again to update it.
+
 ### Manual Install
 
 You can install extensions manually by choosing **File > Extension Manager...** (or clicking on the "brick" icon in the toolbar), then clicking the **Install from URL...** button at the bottom. From there, you can install most of the extensions below by doing the following:
@@ -15,12 +21,6 @@ You can install extensions manually by choosing **File > Extension Manager...** 
 * Paste the link into the Install Extension dialog, then click **Install**.
 
 (Some extensions might not work by just copying and pasting the GitHub repo URL if they have submodules. Authors who post such extensions are encouraged to link directly to a ZIP file with all the submodules included.)
-
-#### Updating Extensions ####
-
-If you've installed an extension from the registry and the developer has uploaded an update, an **Update** button will appear next to it in the Installed tab, and you can simply click on that button to update it.
-
-If you installed the extension using the "Install from URL" dialog, and you have a URL for a newer version (or the GitHub repo has been updated since you installed it), you can just use the "Install from URL" dialog again to update it.
 
 ## Extensions List ##
 
