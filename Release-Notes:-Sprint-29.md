@@ -49,23 +49,17 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-* [Fix for issue #4562](https://github.com/adobe/brackets/pull/4569) by [Lance Campbell](https://github.com/lkcampbell)
-* [Implementation of beforeAll/afterAll](https://github.com/adobe/brackets/pull/4581) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Improvements to the Inline Editor Tests](https://github.com/adobe/brackets/pull/4598) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Confirm folder delete - fixes issue #4446](https://github.com/adobe/brackets/pull/4515) by [Greg Palmer](https://github.com/g-palmer)
-* [Upgrade JSLint to the commit we were using before switching to a submodule](https://github.com/adobe/brackets/pull/4642) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Use one window for all specs in the suite on more integration tests](https://github.com/adobe/brackets/pull/4635) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Find in Files Improvements (Part 2: Pagination)](https://github.com/adobe/brackets/pull/4303) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Added Finnish language](https://github.com/adobe/brackets/pull/4506) by [valtlait](https://github.com/valtlait)
-* [sprint 27 - updated czech language](https://github.com/adobe/brackets/pull/4398) by [kvarel](https://github.com/kvarel)
-* [Make swedish translation up-to-date.](https://github.com/adobe/brackets/pull/4605) by [Mikael Jorhult](https://github.com/mikaeljorhult)
-* [Fix bug #4536, No tooltip for author name in extension manager](https://github.com/adobe/brackets/pull/4622) by [Luan Pham](https://github.com/thanhluan001)
-* [Update German Localization](https://github.com/adobe/brackets/pull/4520) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
-* [sprint 28 - czech language update](https://github.com/adobe/brackets/pull/4607) by [kvarel](https://github.com/kvarel)
-
-Contributions _from_ the Brackets community
--------------------------------------------
-None
+* [Show folder name in when several Working Files items have same name](https://github.com/adobe/brackets/pull/4419) by [Martin Zagora](https://github.com/zaggino)
+* [Pagination (next/previous buttons) for unlimited Find in Files results](https://github.com/adobe/brackets/pull/4303) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Add Finnish translation](https://github.com/adobe/brackets/pull/4506) by [valtlait](https://github.com/valtlait)
+* [Confirmation prompt for folder deletion](https://github.com/adobe/brackets/pull/4515) by [Greg Palmer](https://github.com/g-palmer)
+* [Big unit test improvement: share one Brackets window for multiple tests](https://github.com/adobe/brackets/pull/4581), greatly improving test speed ([part 2](https://github.com/adobe/brackets/pull/4598), [part 3](https://github.com/adobe/brackets/pull/4635/files)) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #4536: Add tooltip for author name in Extension Manager](https://github.com/adobe/brackets/pull/4622) by [Luan Pham](https://github.com/thanhluan001)
+* [Fix regression in JSLint version](https://github.com/adobe/brackets/pull/4642) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #4562: Console warning at startup](https://github.com/adobe/brackets/pull/4569) by [Lance Campbell](https://github.com/lkcampbell)
+* [Swedish translation for 'Getting Started' project](https://github.com/adobe/brackets/pull/4626) by [Mikael Jorhult](https://github.com/mikaeljorhult)
+* [Swedish translation update](https://github.com/adobe/brackets/pull/4605) by [Mikael Jorhult](https://github.com/mikaeljorhult)
+* [German translation update](https://github.com/adobe/brackets/pull/4520) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
 
 Bugs fixed in Sprint 29
 -----------------------
