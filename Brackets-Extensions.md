@@ -14,7 +14,7 @@ If you installed the extension using the "Install from URL" dialog, and you have
 
 ### Manual Install
 
-You can install extensions manually by choosing **File > Extension Manager...** (or clicking on the "brick" icon in the toolbar), then clicking the **Install from URL...** button at the bottom. From there, you can install most of the extensions below by doing the following:
+You can manually install extensions that aren't in the registry yet by choosing **File > Extension Manager...** (or clicking on the "brick" icon in the toolbar), then clicking the **Install from URL...** button at the bottom. From there, you can install most of the extensions below by doing the following:
 
 * On this page, right-click the extension link and copy the URL.
 * Switch back to Brackets.
