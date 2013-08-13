@@ -24,7 +24,7 @@ UI Changes
 ----------
 **Confirm folder delete** - A confirmation dialog will appear when attempting to delete a whole folder. As before, deleted files/folders are sent to the trash, so you can still recover anything you delete this way.
 
-**Working Files** - When two items in the "Working Files" list have the same file name, the folder name is shown after a hyphen to make the labels less ambiguous.
+**Working Files** - When two open files (in the "Working Files" list) have the same file name, the folder name is shown after a hyphen to make the labels less ambiguous.
 
 API Changes
 -----------
