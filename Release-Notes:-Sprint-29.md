@@ -1,6 +1,6 @@
 What's New in Sprint 29
 -----------------------
-This sprint didn't turn out quite the way we expected! We worked on several features that became more complex than expected, and weren't ready in time to include in this sprint (see "Ongoing Research" below). As a result, there are fewer new features this sprint than usual &ndash; but hopefully more next time!
+This sprint didn't turn out quite the way we expected! We worked on several features that became more complex than expected, and weren't ready in time to include in this sprint (see "Ongoing Research" below). As a result, there are fewer new features than usual &ndash; but hopefully more next time!
 
 * **Search**
     * [Pagination for unlimited Find in Files results](https://github.com/adobe/brackets/pull/4303): Click the next/previous arrows to navigate through long results.
@@ -12,7 +12,7 @@ This sprint didn't turn out quite the way we expected! We worked on several feat
     * [Status bar shows length of text selection](https://github.com/adobe/brackets/pull/4579)
 * **Localization**
     * [Finnish translation added](https://github.com/adobe/brackets/pull/4506)
-* **Ongoing Research**
+* **Ongoing Research** (not available yet)
     * [Prototype live HTML editing](https://trello.com/c/cc8kk9zG/927-5-live-development-html-initial-implementation)
     * [Plan extensibility API revamp](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design)
     * [Investigate crashes blocking CEF upgrade](https://trello.com/c/gIwbocii/938-3-cef-crash-issues)
@@ -32,7 +32,7 @@ No changes to existing APIs.
 
 New/Improved Extensibility APIs
 -------------------------------
-**Unit tests** - We've extended the Jasmine API to add 'beforeFirst()` and `afterLast()`, useful for setting up & tearing down anything shared across an entire test suite. Especially useful with `SpecRunnerUtils.createTestWindowAndRun()`.
+**Unit tests** - We've extended the Jasmine API to add `beforeFirst()` and `afterLast()`, useful for setting up & tearing down anything shared across an entire test suite. Especially useful with `SpecRunnerUtils.createTestWindowAndRun()`.
 
 Known Issues
 ------------
