@@ -148,6 +148,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Is able to completly clone a repo from GitHub into a selected Folder. (Works only for non-binary data)
 * [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
+* [brackets-git](https://github.com/zaggino/brackets-git): Right now just an experimental code that will get your git version and displays it in status bar, but hoping to put out useful features soon.
 
 **Documentation**
 * [DevDocs Viewer](https://github.com/gruehle/dev-docs-viewer) (use [this link](https://github.com/gruehle/dev-docs-viewer/archive/sprint-27.zip) for Brackets Sprint 27 or earlier): Search and view content from [devdocs.io](http://devdocs.io).
