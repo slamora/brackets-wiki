@@ -42,8 +42,8 @@ Community contributions to Brackets
 
 
 #### Pulling source code from Git
-* A new brackets-shell build is required _only_ to enable the OS X "Open With" functionality. You may need to restart Finder for the rebuilt .app package to appear in Open With menus.
-
+* A new brackets-shell build is _required_ for this sprint. Be sure to rerun `grunt setup` before building.
+* A submodule _URL_ was changed this sprint. Run `git submodule sync` and then `git submodule update --init --recursive` to ensure your local source tree reflects the update.
 
 Contributions _from_ the Brackets community
 -------------------------------------------
