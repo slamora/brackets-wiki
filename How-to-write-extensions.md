@@ -77,7 +77,9 @@ However, following these best practices will ensure your code behaves as nicely 
 
 **Quick Docs:** Similar to Quick Edit, but register your provider with `EditorManager.registerInlineDocsProvider()` instead.
 
-**Quick Open:** To interface with the quick open (file open/jump to) feature, use ```QuickOpen.addQuickOpenPlugin()```.
+**Quick Find Definition:** To provide quick symbol navigation for a new language, use `QuickOpen.addQuickOpenPlugin()`. Register for a specific language id and only return true from `match()` when an "@" prefix is present (see [CSS support](https://github.com/adobe/brackets/blob/master/src/extensions/default/QuickOpenCSS/main.js) for a simple example).
+
+**Quick Open:** To add a new _global_ search feature (like Quick Open), use `QuickOpen.addQuickOpenPlugin()` with an empty `languageIds` array. Pick a new, unique prefix for `match()` to respond to, and register a new command that invokes `QuickOpen.beginSearch()` with your custom prefix. (See the [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav/blob/master/main.js#L128) extension for a simple example).
 
 **Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Unlike Quick Edit, these "providers" can have varying priority to resolve conflicts; more specific providers take precedence.
 
