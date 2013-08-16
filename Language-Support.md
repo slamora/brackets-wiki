@@ -1,6 +1,6 @@
 Starting with [Sprint 21](https://github.com/adobe/brackets/pull/2844), extensions can add basic language support &ndash; like syntax highlighting and comment toggling &ndash; via the [LanguageManager](https://github.com/adobe/brackets/blob/master/src/language/LanguageManager.js) API. This page explains how to use LanguageManager, and documents how language support in Brackets is currently implemented.
 
-Some languages are built into core Brackets by default (for a list, see [languages.json](https://github.com/adobe/brackets/blob/master/src/language/languages.json)). The companion page [Language Support Changes](Language Support Changes) documents what _would be_ needed to enable extensions to add new languages with rich support on par with the built-in HTML, JavaScript and CSS languages.
+Some languages are built into core Brackets by default (for a list, see [languages.json](https://github.com/adobe/brackets/blob/master/src/language/languages.json)). A small set of these (HTML, JS, CSS) support richer editing features such as Quick Edit, Quick Find Definition, code hints, and Live Preview. _Some_ of those capabilities are extensible for new languages already (see [Extending specific Brackets features](https://github.com/adobe/brackets/wiki/How%20to%20write%20extensions#extending-specific-brackets-features)); others are not yet ([Language Support Changes](Language Support Changes) lists proposals for making the remaining rich functionality extensible).
 
 
 ## Defining a new language
@@ -19,7 +19,9 @@ LanguageManager.defineLanguage("haskell", {
 });
 ```
 
-If you need to provide a custom CodeMirror mode, it must be [registered to CodeMirror](http://codemirror.net/doc/manual.html#modeapi) using ``CodeMirror.defineMode()`` first before calling ``LanguageManager.defineLanguage()``.
+#### Custom CodeMirror modes
+
+If your language is not already supported by CodeMirror (see list above), you'll need to [write a new CodeMirror mode](http://codemirror.net/doc/manual.html#modeapi). To use your custom CodeMirror mode, load it using require(), register it with CodeMirror using [``CodeMirror.defineMode()``](http://codemirror.net/doc/manual.html#modeapi), then call ``LanguageManager.defineLanguage()`` as above.
 
 
 ## Refining an existing language
