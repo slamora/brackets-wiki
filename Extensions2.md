@@ -4,7 +4,7 @@ Status: Proposal
 
 Email comments to: dangoor@adobe.com
 
-_See [[Extension API Research]] for the near-term plans to implement parts of this._
+_This is **early research**. See [[Extension API Research]] for an updated proposal._
 
 ## Introduction ##
 
