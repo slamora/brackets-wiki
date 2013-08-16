@@ -2,7 +2,7 @@
 
 ## Proposed API changes
 
-In priority / implementation order.
+In priority / implementation order:
 
 #### 1. Better module loader
 * Easy shimming/mocking for unit tests
@@ -91,7 +91,9 @@ In priority / implementation order.
     * (kevin) d) if the objects exposed through the ServiceRegistry are actually wrappers that know which extension is accessing them, they can automatically track listeners.
         * (peter) At first I thought this would have the same problem as (b), but I _think_ it could duck that. E.g. all wrapper APIs return wrapper objects, and whenever a wrapper object is generated it's added to an extension-specific wrapper registry. When an extension unloads, we'd traverse its registry and dispose all wrapper objects (letting them unlisten from the core objects they're mirroring), and then throw out the registry itself to let the wrappers get GC'ed.
 
-## A Top-Level Question
+## Discussion of new proposal
+
+(peter: the top sections above now reflect this proposal)
 
 (kevin)
 
