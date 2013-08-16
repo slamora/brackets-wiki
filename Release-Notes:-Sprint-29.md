@@ -7,7 +7,7 @@ This sprint didn't turn out quite the way we expected! We worked on several feat
     * Double-click Find in Files results to add to Working Files, just like double-clicking in file tree
 * **Files and Folders**
     * [Show folder name when several Working Files items have same name](https://github.com/adobe/brackets/pull/4419)
-    * [Support "Open With..." in OS X Finder](https://github.com/adobe/brackets-shell/pull/293): Previously available for a very limited set of file extensions, "Open With" now works with all file types Brackets supports out of the box.
+    * [Support "Open With..." in OS X](https://github.com/adobe/brackets-shell/pull/293): Previously available for a very limited set of file extensions, "Open With" now works with all file types Brackets supports out of the box. Coming soon for Windows too!
 * **Editing**
     * [Status bar shows length of text selection](https://github.com/adobe/brackets/pull/4579)
 * **Localization**
