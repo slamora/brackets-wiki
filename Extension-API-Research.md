@@ -156,6 +156,6 @@ Adam: what is the priority of restartlessness and sandboxing, given that they ar
 
 Team: what do you think about taking control of our module loading rather than building a services API?
 
-## More notes
+## API Cleanups
 
 I think we should still review extensions that are out there and incrementally update the extension APIs to be more convenient. For example, Markdown Preview adds a document change handler during which it turns off its document listener and turns on a new one. This kind of thing can be made more declarative ("listen for changes to documents with these extensions"). These also seem like the kind of events that could be pub/sub channels if we decided to go that route.
