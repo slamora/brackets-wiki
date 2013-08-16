@@ -80,7 +80,7 @@ In priority / implementation order. See also [Extension API Evolution](Extension
     * Automate a full restart instead of quit & manual-relaunch
         * (kevin) We talked about this one and it *seems* like the native menu problem should be tractable allowing for simply "refresh" of Brackets rather than relaunch. I will note that we'd also need to make sure that the Node side is restarted properly.
     * Throttle / batch extension update notifications
-    * Hold notifications until next launch (or quit, or idle time - it might be a preference kind of things, since Kevin pointed out he hates notify-on-launch while Peter prefers it)
+    * Hold notifications until next launch (or quit, or idle time - it might be a preference kind of thing, since Kevin pointed out he hates notify-on-launch while Peter prefers it)
     * Notify & download updates whenever, but don't force a restart until later (updates take effect whenever restart occurs)
 * Need an extremely clear way to document / make predictable _which_ APIs are automatically reversible and which aren't...
 * _Listeners_ are a very tricky area: hard for extensions to remember to detach all of them, but hard to make them auto-detach too. Auto-detach seems like it would have to mean:
@@ -88,6 +88,7 @@ In priority / implementation order. See also [Extension API Evolution](Extension
     * b) All event-dispatching objects listen for extension unload to auto-remove listeners. But this implies all event-dispatching objects must be explicitly disposed (can't just be GC'ed). True for Editor and Document already, but this still feels like a nasty requirement...
     * c) Event-dispatching objects lazily check for & remove 'dead' listeners each time they trigger an event. Avoids the above limitations, but might be slow.
     * (kevin) d) if the objects exposed through the ServiceRegistry are actually wrappers that know which extension is accessing them, they can automatically track listeners.
+        * (peter) At first I thought this would have the same problem as (b), but I _think_ it could duck that. E.g. all wrapper APIs return wrapper objects, and whenever a wrapper object is generated it's added to an extension-specific wrapper registry. When an extension unloads, we'd traverse its registry and dispose all wrapper objects (letting them unlisten from the core objects they're mirroring), and then throw out the registry itself to let the wrappers get GC'ed.
 
 ## A Top-Level Question
 
