@@ -57,9 +57,10 @@ Contributors: If you are willing to test other Linux distributions please add yo
 
 | Distribution | Version | Issues |
 | ------------ | ------- | ----- |
+| Ubuntu | 13.04 64-bit | (1) libudev workaround https://github.com/adobe/brackets/issues/4720 (2) use jasonsanjose/linux-sprint-29 branch. See https://github.com/adobe/brackets-shell/pull/297 |
 | Ubuntu | 12.04 32-bit | None |
-| Ubuntu | 12.04 64-bit | Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288 |
-| Mint 15 | 64-bit | Use jasonsanjose/linux-sprint-28 branch. See https://github.com/adobe/brackets-shell/pull/288 |
+| Ubuntu | 12.04 64-bit | Use jasonsanjose/linux-sprint-29 branch. See https://github.com/adobe/brackets-shell/pull/297 |
+| Mint 15 | 64-bit | Use jasonsanjose/linux-sprint-29 branch. See https://github.com/adobe/brackets-shell/pull/297 |
 |LMDE(*) | Debian Testing 32 bit |None|
 | Arch | 32/64-bit | Not tested / None - (Package: https://aur.archlinux.org/packages/brackets-git) |
 

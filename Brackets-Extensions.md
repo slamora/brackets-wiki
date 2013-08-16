@@ -43,6 +43,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Quick Navigate](https://github.com/jeffslofish/quick-navigate): Navigate back to previous cursor and edit locations quickly with toolbar buttons.
 * [Close Others](https://github.com/sathyamoorthi/brackets-close-others): This will give you additional options like Close others, Close top and bottom files to operate 'Working Files' section efficiently.
 * [Sidebar Plus](https://github.com/sathyamoorthi/brackets-sidebar-plus): Show / Hide sidebar using mouse over.
+* [Toolbar Toggle](https://github.com/ruanmer/brackets-toolbar-toggle): Toggle toolbar view based on sidebar view.
 * [Edit History](https://github.com/iwehrman/brackets-edit-history): Yet another extension for navigating forward and backward among edit positions.
 * [Ruler] (https://github.com/lkcampbell/brackets-ruler): A column ruler for Brackets
 * [Delete to Start/End of line](https://github.com/probertson/brackets-delete-line-start-end): Shortcuts to delete from the current cursor position to the start or end of the line (common shortcuts Cmd+Backspace and Cmd+Delete on Mac)
@@ -147,6 +148,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [GitHub](https://github.com/jrowny/brackets-github): Implements the GitHub API, including oAuth. Currently functionality limited to Gists.
 * [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Is able to completly clone a repo from GitHub into a selected Folder. (Works only for non-binary data)
 * [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
+* [brackets-git](https://github.com/zaggino/brackets-git): Integration of Git features into Brackets UI. Features in development, see link for details.
 
 **Documentation**
 * [DevDocs Viewer](https://github.com/gruehle/dev-docs-viewer) (use [this link](https://github.com/gruehle/dev-docs-viewer/archive/sprint-27.zip) for Brackets Sprint 27 or earlier): Search and view content from [devdocs.io](http://devdocs.io).
