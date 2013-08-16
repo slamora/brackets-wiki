@@ -8,6 +8,7 @@ In priority / implementation order:
 * Easy shimming/mocking for unit tests
 * Extensions authors get code hints for core APIs
 * Less verbose per-module boilerplate, matching Node module format more closely
+* [Implementation research notes here...](https://github.com/adobe/brackets/wiki/ModuleLoader)
 
 #### 2. Cross-extension dependencies
 * Built atop new module loader: APIs pulled in the same way as core APIs. Factored into the dependency-driven load order.
@@ -36,7 +37,8 @@ In priority / implementation order:
 
 ## Open questions
 
-* See inline note above
+* **Open question:** See inline note above re priority of NPM-style loader resolution work
+* **Open question:** Should we deprecate `require()` paths that lack a "./" prefix? This is more consistent with Node and the module loaders we might use for Brackets. We could do it without breaking extensions since the deprecated `brackets.getModule()` API could continue to work the old way.
 
 #### Resolved questions
 
