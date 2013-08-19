@@ -80,6 +80,9 @@ On Windows, you may run into issues starting Live Preview if you installed Chrom
 ### Debug w/ The Developer Tools
 If Brackets opens, but behaves incorrectly, don't forget you can open the Developer Tools. Under the Debug Menu, select "Show Developer Tools" to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Ensure the Console tab is open and see if any errors show up there.
 
+### Can't Paste Text Into Brackets
+There's a [known issue](https://github.com/adobe/brackets/issues/2531) when running the Webroot firewall where text can't be pasted into Brackets. If you're running webroot you can find [some potential workarounds on their support page](https://community.webroot.com/t5/Webroot-SecureAnywhere-Antivirus/Cut-Copy-or-Paste-Problems-Character-Entry-Issues-Scripting/ta-p/18396#.UhKfpmR4b9F). The team has also reached out to Webroot to try and get Brackets on the "known" list so this isn't a problem in the future.
+
 ## Still Having a Problem?
 [File an issue](http://github.com/adobe/brackets/issues) or contact us via one of the channels mentioned in the [README](https://github.com/adobe/brackets/blob/master/README.md#i-want-to-keep-track-of-how-brackets-is-doing).   It is best to list the following information:
 
