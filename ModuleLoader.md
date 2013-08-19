@@ -93,3 +93,7 @@ Assume a jstools extension that looks like this:
     * Look for src/jslint
     * Look for src/jslint.js
     * Add shim that exports JSLINT (this one is not so magical)
+
+# Additional Notes
+
+* Look into the [Google module server](https://github.com/google/module-server)
