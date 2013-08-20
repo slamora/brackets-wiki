@@ -90,7 +90,7 @@ There are several user stories (feature work) to complete in brackets-shell befo
 | [Show in OS](https://trello.com/c/RF1ddQGK) | Not Started | Project tree command to show the selected file in the native OS file viewer | |
 | [Automated Builds](https://trello.com/c/P35As8lf) | In Progress | | [Jason San Jose](http://github.com/jasonsanjose), [Ingo Richter](http://github.com/ingorichter) |
 
-Open Issue
+Open Issues
 ====
 
 We tag Linux-specific bugs in our [GitHub issues](https://github.com/adobe/brackets/issues?labels=Linux+only&page=1&state=open).
