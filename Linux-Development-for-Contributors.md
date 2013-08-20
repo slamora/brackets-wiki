@@ -97,8 +97,8 @@ We tag Linux-specific bugs in our [GitHub issues](https://github.com/adobe/brack
 
 Development Log
 ====
-* 2013-08-20: Update user story status, remove TODOs
-* 2013-08-09: Edit inline sprint 28 comments
-* 2013-07-30: Inline draft comments for sprint 28 build
+* 2013-08-20: Update user story status, remove TODOs [jasonsanjose](http://github.com/jasonsanjose)
+* 2013-08-09: Edit inline sprint 28 comments [jasonsanjose](http://github.com/jasonsanjose)
+* 2013-07-30: Inline draft comments for sprint 28 build [jasonsanjose](http://github.com/jasonsanjose)
 * 2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon [jasonsanjose](http://github.com/jasonsanjose)
 * 2013-06-21: Linux branches land in master in ``brackets-shell`` and ``brackets``. Includes: CEF parity with Mac and Win, stubbed methods for incomplete native shell stories (Node, File I/O, etc.), debian packaging. [jasonsanjose](http://github.com/jasonsanjose)
