@@ -39,23 +39,14 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Edit History](https://github.com/iwehrman/brackets-edit-history): Yet another extension for navigating forward and backward among edit positions.
 * [Vimderbar] (https://github.com/fontface/brackets-vimderbar): Adds vim-like functionality & status bar to Brackets.
 * [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only).
-* [Various Improvements] (https://github.com/Dammmien/brackets-various-improvements): Add some small improvements ( close all folders in file tree, case converter, additional informations in status bar, super clipboard)
-* [Todo] (https://github.com/mikaeljorhult/brackets-todo): Find and displays all todo comments in current document.
-* [Unused Files] (https://github.com/Dammmien/brackets-unused-files): Find unused files in your web project.
 
 **Snippets & Shorthand**
-* [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
-* [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
-* [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
-* [Quick Markup](https://github.com/redmunds/brackets-quick-markup): Fast HTML markup generation as you type.
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
 * [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): Auto-complete parenthesis, brackets, braces, double and single quotes.
 * [Disable AutoClosing Tags](https://github.com/talmand/Brackets-Disable-AutoClose-Tags): Disables auto-insertion of closing HTML tag when typing the opening tag, but preserves auto-completion of the closing tag when `</` is typed.
 * [Brace Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter
-* [Lorem Ipsum] (https://github.com/lkcampbell/brackets-lorem-ipsum): Generates Lorem Ipsum text and inserts it into any Brackets document.
 * [Surround] (https://github.com/pedelman/brackets-surround): Wraps selected text with HTML, comments, brackets, quotes, etc.
 * [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): Addition to the context menu to insert from a special HTML character list.
-* [Quick Require Import](https://github.com/peterflynn/quick-import): Quickly generate RequireJS/CommonJS import statements - just press Ctrl+I and type a module name.
 
 **Formatting**
 * [String Convert](https://github.com/mikechambers/StringConvert): Provides shortcuts for modifying and encoding strings within the editor.
@@ -189,6 +180,15 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [Sidebar Plus](https://github.com/sathyamoorthi/brackets-sidebar-plus): Show / Hide sidebar using mouse over.
 * [Ruler] (https://github.com/lkcampbell/brackets-ruler): A column ruler for Brackets
 * [Delete to Start/End of line](https://github.com/probertson/brackets-delete-line-start-end): Shortcuts to delete from the current cursor position to the start or end of the line (common shortcuts Cmd+Backspace and Cmd+Delete on Mac)
+* [Various Improvements] (https://github.com/Dammmien/brackets-various-improvements): Add some small improvements ( close all folders in file tree, case converter, additional informations in status bar, super clipboard)
+* [Todo] (https://github.com/mikaeljorhult/brackets-todo): Find and displays all todo comments in current document.
+* [Unused Files] (https://github.com/Dammmien/brackets-unused-files): Find unused files in your web project.
+* [Emmet/Zen Coding](https://github.com/emmetio/brackets-emmet): Adds Emmet (Zen Coding) support to Brackets.
+* [Snippets](https://github.com/jrowny/brackets-snippets): Assign trigger keys to insert snippets. Configurable with JSON
+* [Prefixr](https://github.com/davidderaedt/prefixr-extension): Generate browser specific CSS prefixes using the prefixr service.
+* [Quick Markup](https://github.com/redmunds/brackets-quick-markup): Fast HTML markup generation as you type.
+* [Lorem Ipsum] (https://github.com/lkcampbell/brackets-lorem-ipsum): Generates Lorem Ipsum text and inserts it into any Brackets document.
+* [Quick Require Import](https://github.com/peterflynn/quick-import): Quickly generate RequireJS/CommonJS import statements - just press Ctrl+I and type a module name.
 
 
 ---
