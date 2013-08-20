@@ -11,25 +11,18 @@ Development Environment Setup
 Required Setup for brackets-shell and brackets
 ----
 
-**IMPORTANT:** This setup script only works for 32-bit Linux. 64-bit support is in progress (Use jasonsanjose/linux-sprint-29 branch. See https://github.com/adobe/brackets-shell/pull/288). On `master` [developers have already reported issues](https://groups.google.com/d/msg/brackets-dev/n1wo3aDxNls/Ub58QH_1SbUJ) with this script on 64-bit Linux. DO NOT ATTEMPT a 64-bit install from `master`, use `jasonsanjose/linux-sprint-29`.
-
-These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( ``/usr/bin/brackets`` points to ``/usr/lib/brackets/Brackets``).
+These instructions will download the Git repositories for [brackets-shell](https://github.com/adobe/brackets-shell) and [brackets](https://github.com/adobe/brackets), download required dependencies, compile the native shell, create and install a debian package, then run Brackets ( `/usr/bin/brackets`).
 
 1. [Fork brackets](https://github.com/adobe/brackets/fork) and [fork brackets-shell](https://github.com/adobe/brackets-shell/fork) 
 2. Create a top level folder to contain the Brackets git repositories
 3. In a terminal window, ``cd`` to the folder from the previous step and run the following command
 ```shell
-# master with 32-bit support only
-wget https://gist.github.com/jasonsanjose/5514813/raw/e2e688f0e5151b93a2f2c17c93436bac13d32f35/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
-
-# jasonsanjose/linux-sprint-29
-# TODO update when https://github.com/adobe/brackets-shell/pull/297 is merged
-# wget https://gist.github.com/jasonsanjose/5514813/raw/5b9e5ff17a54cbd50dd16e9b8cc1fdc0077e21ba/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
+wget https://gist.github.com/jasonsanjose/5514813/raw/5b9e5ff17a54cbd50dd16e9b8cc1fdc0077e21ba/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
 ```
 4. You'll be prompted for your GitHub user name to clone your fork of the repositories
 5. Respond to ``sudo`` password prompts when requested
 
-*ATTENTION* This setup script will point your git ``origin`` to your own fork, then add a remote ``upstream``and point to the ``upstream/master`` branch in the main git repository. Assuming you're here to contribute to Brackets, you will want to point to your fork later on. This setup script automates the fork and upstream [setup instructions here](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#setting-up-your-dev-environment).
+*ATTENTION* This setup script will point your git ``origin`` to your own fork, then add a remote ``upstream``and point to the ``upstream/master`` branch in the main git repository. Assuming you're here to contribute to Brackets, you will want to point to your fork. This setup script automates the fork and upstream [setup instructions here](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#setting-up-your-dev-environment).
 
 Cache Location
 ----
@@ -57,10 +50,10 @@ Contributors: If you are willing to test other Linux distributions please add yo
 
 | Distribution | Version | Issues |
 | ------------ | ------- | ----- |
-| Ubuntu | 13.04 64-bit | (1) libudev workaround https://github.com/adobe/brackets/issues/4720 (2) use jasonsanjose/linux-sprint-29 branch. See https://github.com/adobe/brackets-shell/pull/297 |
+| Ubuntu | 13.04 64-bit | libudev workaround https://github.com/adobe/brackets/issues/4720 (Fix arrives in Sprint 30) |
 | Ubuntu | 12.04 32-bit | None |
-| Ubuntu | 12.04 64-bit | Use jasonsanjose/linux-sprint-29 branch. See https://github.com/adobe/brackets-shell/pull/297 |
-| Mint 15 | 64-bit | Use jasonsanjose/linux-sprint-29 branch. See https://github.com/adobe/brackets-shell/pull/297 |
+| Ubuntu | 12.04 64-bit | libudev workaround https://github.com/adobe/brackets/issues/4720 (Fix arrives in Sprint 30) |
+| Mint 15 | 64-bit | libudev workaround https://github.com/adobe/brackets/issues/4720 (Fix arrives in Sprint 30) |
 |LMDE(*) | Debian Testing 32 bit |None|
 | Arch | 32/64-bit | Not tested / None - (Package: https://aur.archlinux.org/packages/brackets-git) |
 
@@ -69,14 +62,9 @@ Contributors: If you are willing to test other Linux distributions please add yo
 Building brackets-shell
 ----
 
-```
-TODO update after https://github.com/adobe/brackets-shell/pull/288
-* Replace `make` with `grunt build`
-```
+The setup script will automatically create `/path/to/brackets-shell/Makefile`. If you're only making changes to C++ code, just run `grunt build` and the binaries will be in `/path/to/brackets-shell/out/Release`. 
 
-The setup script will automatically create ``/path/to/brackets-shell/Makefile``. If you're only making changes to C++ code, just run ``make`` and the binaries will be in ``/path/to/brackets-shell/out/Release``. 
-
-When adding new files or changing the build configuration, you'll need to make modifications to the GYP configuration files (either ``appshell.gyp.txt`` or ``common.gypi``). After making changes, you'll need to generate a new ``Makefile``. To do this, run:
+When adding new files or changing the build configuration, you'll need to make modifications to the GYP configuration files (either `appshell.gyp.txt` or `common.gypi`). After making changes, you'll need to generate a new `Makefile`. To do this, run:
 
 ```
 gyp --depth .
@@ -85,23 +73,7 @@ gyp --depth .
 Packaging Brackets
 ----
 
-```
-TODO update after https://github.com/adobe/brackets-shell/pull/288
-
-To build a debian package for installation on Debian/Ubuntu distributions, use the `grunt installer` build task. This tasks copies over both the binaries and the www source and creates a debian pacakge, e.g. installer/linux/Brackets Sprint 28.deb.
-```
-
-On Mac and Windows we would use the ``grunt installer`` task to build an installer. However, we haven't updated all our Grunt tasks for Linux yet. In the meantime, you can do the following to copy the www source and binaries into a debian package
-
-```
-cd /path/to/brackets-shell
-
-# copy shell binaries and www files from brackets repo
-grunt copy:linux copy:www copy:samples
-
-# creates debian package installer/linux/brackets.deb
-./installer/linux/build_installer.sh
-```
+To build a debian package for installation on Debian/Ubuntu distributions, use the `grunt installer` build task. This tasks copies over both the binaries and the www source and creates a debian pacakge, e.g. installer/linux/Brackets Sprint 30.deb.
 
 User Stories
 ====
@@ -125,7 +97,7 @@ We tag Linux-specific bugs in our [GitHub issues](https://github.com/adobe/brack
 
 Development Log
 ====
-* 2013-08-20: Update user story status
+* 2013-08-20: Update user story status, remove TODOs
 * 2013-08-09: Edit inline sprint 28 comments
 * 2013-07-30: Inline draft comments for sprint 28 build
 * 2013-06-22: Updated ``brackets-shell/linux`` branch with SVG app icon [jasonsanjose](http://github.com/jasonsanjose)
