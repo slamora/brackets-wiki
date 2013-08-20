@@ -32,22 +32,11 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 
 **Editing & Navigation**
 * [Document Outline](https://github.com/soimon/brackets-document-outliner): Shows the document outline of the currently selected HTML5 document.
-* [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
-* [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file
-* [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor 
-* [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
-* [Spell Checker] (https://github.com/couzteau/SpellCheck): Integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
 * [Quick Search] (https://github.com/enturn/brackets-quick-search): Automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
-* [Indent Guides] (https://github.com/lkcampbell/brackets-indent-guides): An extension for Brackets to show indent guides in the code editor.
-* [Go to Last Edit](https://github.com/peterflynn/goto-last-edit): Jump to the location of your last edit in the current file with a quick keyboard shortcut (Ctrl+*)
 * [Quick Navigate](https://github.com/jeffslofish/quick-navigate): Navigate back to previous cursor and edit locations quickly with toolbar buttons.
-* [Close Others](https://github.com/sathyamoorthi/brackets-close-others): This will give you additional options like Close others, Close top and bottom files to operate 'Working Files' section efficiently.
-* [Sidebar Plus](https://github.com/sathyamoorthi/brackets-sidebar-plus): Show / Hide sidebar using mouse over.
 * [Toolbar Toggle](https://github.com/ruanmer/brackets-toolbar-toggle): Toggle toolbar view based on sidebar view.
 * [Toolbar Horizontal](https://github.com/ruanmer/brackets-toolbar-horizontal): Move toolbar from vertical (right) to horizontal (top).
 * [Edit History](https://github.com/iwehrman/brackets-edit-history): Yet another extension for navigating forward and backward among edit positions.
-* [Ruler] (https://github.com/lkcampbell/brackets-ruler): A column ruler for Brackets
-* [Delete to Start/End of line](https://github.com/probertson/brackets-delete-line-start-end): Shortcuts to delete from the current cursor position to the start or end of the line (common shortcuts Cmd+Backspace and Cmd+Delete on Mac)
 * [Vimderbar] (https://github.com/fontface/brackets-vimderbar): Adds vim-like functionality & status bar to Brackets.
 * [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only).
 * [Various Improvements] (https://github.com/Dammmien/brackets-various-improvements): Add some small improvements ( close all folders in file tree, case converter, additional informations in status bar, super clipboard)
@@ -186,6 +175,24 @@ current file.
 
 ---
 
+## Moved Extensions
+
+These extensions are now available via the [Brackets Registry](https://brackets-registry.aboutweb.com), which is definitely the easiest way to get the extensions and keep them up-to-date.
+
+* [Select Parent](https://github.com/njx/select-parent): Quick way to select the block enclosing the selection
+* [Kill Ring](https://github.com/iwehrman/brackets-kill-ring): Adds an Emacs-style kill ring to the editor 
+* [Bookmarks](https://github.com/toshsharma/brackets-bookmarks): Navigate within a document using bookmarks.
+* [Spell Checker] (https://github.com/couzteau/SpellCheck): Integrates the spell checker web service <i>After The Deadline</i> - now in beta - Supports English, German, French, Spanish and Portuguese. _Note: Now compatible with brackets build >== build 0.18.x /Sprint 18_ 
+* [Indent Guides] (https://github.com/lkcampbell/brackets-indent-guides): An extension for Brackets to show indent guides in the code editor.
+* [Go to Last Edit](https://github.com/peterflynn/goto-last-edit): Jump to the location of your last edit in the current file with a quick keyboard shortcut (Ctrl+*)
+* [Close Others](https://github.com/sathyamoorthi/brackets-close-others): This will give you additional options like Close others, Close top and bottom files to operate 'Working Files' section efficiently.
+* [Sidebar Plus](https://github.com/sathyamoorthi/brackets-sidebar-plus): Show / Hide sidebar using mouse over.
+* [Ruler] (https://github.com/lkcampbell/brackets-ruler): A column ruler for Brackets
+* [Delete to Start/End of line](https://github.com/probertson/brackets-delete-line-start-end): Shortcuts to delete from the current cursor position to the start or end of the line (common shortcuts Cmd+Backspace and Cmd+Delete on Mac)
+
+
+---
+
 **Deprecated Extensions**
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor. _(Brackets Sprint 25 includes an enhanced version of this functionality: when invoked on a file, the file is automatically selected inside its containing folder)._
 * [Hover Preview](https://github.com/gruehle/HoverPreview): Displays a preview when hovering over a color value, gradient, or image filename. _(Merged into Brackets as of Sprint 24)._
@@ -194,3 +201,4 @@ current file.
 * [Color Picker](https://github.com/jdiehl/brackets-color-picker): Quick Edit on a hex color opens an inline color picker. _(A color picker is built into Brackets as of Sprint 17)._
 * [Editor Shortcuts](https://github.com/aonic/editor-shortcuts): Keyboard shortcut to delete line. _(This command is built into Brackets as of Sprint 15)._
 * [HTML Tag Highlight](https://github.com/sathyamoorthi/brackets-html-tag-highlight): Highlight start and end tags in HTML document. _(This is not working in sprint 28. Already there is a [pull request](https://github.com/adobe/brackets/pull/4504) for this functionality.)._
+* [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file (README says that it's no longer being updated)
