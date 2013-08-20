@@ -110,13 +110,13 @@ There are several user stories (feature work) to complete in brackets-shell befo
 
 | User Story | Status | Affected Features | Contact |
 | ---------- | ------ | ----------------- | ------- |
-| [Update CEF](https://trello.com/c/E8N0Q6dE) | In Progress | Everything | [Jason San Jose](http://github.com/jasonsanjose) |
-| [Node Integration](https://trello.com/c/9nX06hWa) | Not Started | Live Preview HTML Highlighting, Extension Manager Install/Update/Remove | [Joel Brandt](http://github.com/joelrbrandt) |
+| ~~[Update CEF](https://trello.com/c/E8N0Q6dE)~~ | Done | Everything | [Jason San Jose](http://github.com/jasonsanjose) |
+| [Node Integration](https://trello.com/c/9nX06hWa) | In Progress | Live Preview HTML Highlighting, Extension Manager Install/Update/Remove | [Joel Brandt](http://github.com/joelrbrandt), [Tim Burgess](http://github.com/timburgess), https://github.com/adobe/brackets-shell/pull/278 |
 | [Ubuntu Installer/Packaging](https://trello.com/c/ZoCPy6mD) | In Progress | Install experience | [Jason San Jose](http://github.com/jasonsanjose) |
-| [File API - delete, rename](https://trello.com/c/WMB6vtwO) | Not Started | Project tree and File menu delete and rename commands | |
+| [File API - delete, rename](https://trello.com/c/WMB6vtwO) | In Progress | Project tree and File menu delete and rename commands | https://github.com/adobe/brackets-shell/pull/304, https://github.com/adobe/brackets-shell/pull/285|
 | [Native Menus](https://trello.com/c/WMB6vtwO) | Not Started | Menus (HTML menus are an interim, but completely functional substitute) | |
 | [Show in OS](https://trello.com/c/RF1ddQGK) | Not Started | Project tree command to show the selected file in the native OS file viewer | |
-| [Automated Builds](https://trello.com/c/P35As8lf) | Not Started | | [Jason San Jose](http://github.com/jasonsanjose) |
+| [Automated Builds](https://trello.com/c/P35As8lf) | In Progress | | [Jason San Jose](http://github.com/jasonsanjose), [Ingo Richter](http://github.com/ingorichter) |
 
 Open Issue
 ====
