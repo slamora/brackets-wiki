@@ -93,6 +93,12 @@ Thankfully, the ```require``` context that's passed in to your extension's ```ma
 
 For example, if you have ```awesome.jpg``` in your extension's top-level ```foo``` folder, you can do ```require.toUrl('./awesome.jpg')```, and it will return something like ```/extensions/dev/foo/awesome.jpg``` when you call it and ```/Users/<user>/Library/Application Settings/Brackets/extensions/user/bar/awesome.jpg``` when your user calls it. The path you give ```toUrl``` should be relative to your extension's top-level folder (yes, subdirectories work), and the URL you get back will be relative to the site root (i.e. it will begin with "/").
 
+### Accessing Node APIs
+
+Brackets includes a built-in [Node.js](http://nodejs.org/) server that runs as a side process.  Your extension can include code that runs in Node -- accessing useful Node APIs and pulling in helpful NPM libraries.
+
+[Read more on running code in Bracket's Node instance...](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers#usage-example)
+
 ### Further reading
 
 For more detail on Brackets internals, see [[Brackets Development How Tos]].
