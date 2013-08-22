@@ -4,9 +4,15 @@ _This document will not be finalized until the end of Sprint 30 -- approximately
 
 What's New in Sprint 30
 -----------------------
-* **Mac OS 10.6 support restored**
+* **Mac OS 10.6 support restored**: Brackets once again runs on 10.6
 * **Live Preview**
     * [Live Preview HTML changes](https://trello.com/c/cc8kk9zG/927-5-live-development-html-initial-implementation)
+* **Linux Preview**
+    * Although it is still an early preview, the Ubuntu/Debian Linux builds now have enabled:
+    * Extension Manager (install extensions)
+    * Live Preview Highlighting
+    * Support for extensions that require Node
+    * Several install issues fixed
 * **Files and Folders**
     * [Support "Open With..." in Windows](https://github.com/adobe/brackets-shell/pull/299): The file explorer context menu's Open With list now includes Brackets for all file types Brackets supports out of the box. (Already supported on Mac).
 * **CSS Editing**
