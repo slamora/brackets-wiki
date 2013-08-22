@@ -95,9 +95,9 @@ For example, if you have ```awesome.jpg``` in your extension's top-level ```foo`
 
 ### Accessing Node APIs
 
-Brackets includes a built-in [Node.js](http://nodejs.org/) server that runs as a side process.  Your extension can include code that runs in Node -- accessing useful Node APIs and pulling in helpful NPM libraries.
+Brackets includes a built-in [Node.js](http://nodejs.org/) server that runs as a side process.  Your extension can include code that runs in Node &ndash; accessing useful Node APIs and pulling in helpful NPM libraries.
 
-[Read more on running code in Bracket's Node instance...](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers#usage-example)
+[Read more on running code in Brackets' Node instance...](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers#usage-example)
 
 ### Further reading
 
