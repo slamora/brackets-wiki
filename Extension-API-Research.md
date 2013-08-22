@@ -14,6 +14,7 @@ In priority / implementation order:
 * Built atop new module loader: APIs pulled in the same way as core APIs. Factored into the dependency-driven load order.
 * Extensions are treated as singleton "service" providers rather than NPM-style dependencies
 * Extension Manager automatically pulls down dependency extensions & identifies conflicts
+* **Open question:** Do we enforce that the dependency is declared in package.json?
 
 #### 3. Transparently expose APIs from Node-side modules
 * _Restrictions:_ all APIs are async; all APIs can only receive & return JSON values (no complex objects)
