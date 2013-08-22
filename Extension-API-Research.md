@@ -9,6 +9,7 @@ In priority / implementation order:
 * Extensions authors get code hints for core APIs
 * Less verbose per-module boilerplate, matching Node module format more closely
 * [Implementation research notes here...](https://github.com/adobe/brackets/wiki/ModuleLoader)
+* **Open question:** What do we do for worker-thread code? E.g. see _tern-worker.js_ in JS code hints &ndash; it looks like an unusual edge case for module loading...
 
 #### 2. Cross-extension dependencies
 * Built atop new module loader: APIs pulled in the same way as core APIs. Factored into the dependency-driven load order.
