@@ -24,7 +24,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-**File selection highlight** - The selection marker indicating the currently open file now shows the file name in "Brackets blue" text, matching the Brackets logo.
+**Blue selected-file highlight** - The selection marker indicating the currently open file now shows the file name in "Brackets blue" text, matching the Brackets logo.
 
 
 API Changes
