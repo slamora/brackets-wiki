@@ -7,12 +7,10 @@ What's New in Sprint 30
 * **Mac OS 10.6 support restored**: Brackets once again runs on 10.6
 * **Live Preview**
     * [Live Preview HTML changes](https://trello.com/c/cc8kk9zG/927-5-live-development-html-initial-implementation)
-* **Linux Preview**
-    * Although it is still an early preview, the Ubuntu/Debian Linux builds now have enabled:
-    * Extension Manager (install extensions)
-    * Live Preview Highlighting
-    * Support for extensions that require Node
+* **Linux Preview Build**
+    * Linux build now supports: Extension Manager (install extensions), Live Preview Highlighting, extensions that require Node
     * Several install issues fixed
+    * Warning: The Linux build is still a _preview_ &ndash; it doesn't have all the features and stability of the Mac/Windows builds yet.
 * **Files and Folders**
     * [Support "Open With..." in Windows](https://github.com/adobe/brackets-shell/pull/299): The file explorer context menu's Open With list now includes Brackets for all file types Brackets supports out of the box. (Already supported on Mac).
 * **CSS Editing**
@@ -26,7 +24,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-No major changes to existing features.
+**File selection highlight** - The selection marker indicating the currently open file now shows the file name in "Brackets blue" text, matching the Brackets logo.
 
 
 API Changes
