@@ -1,3 +1,7 @@
+## Opening Extensions Manager
+
+To the right of the work area, click on the icon that looks like a LEGO(r) brick.  This will open the Extension Manager.
+
 ## Installing and Removing Extensions
 
 The [Brackets Registry](https://brackets-registry.aboutweb.com) is our central registry of Brackets extensions that you can access on the web https://brackets-registry.aboutweb.com or from the "Available" tab in Extension Manager (introduced in Sprint 28). This tab allows you to browse and search the list of available extensions and install or update them with one click. The registry doesn't yet have the full set of extensions from the original wiki page list (see below), but over time it should become more complete. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
