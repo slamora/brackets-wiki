@@ -30,6 +30,8 @@ UI Changes
 API Changes
 -----------
 
+*Live Development* - TODO https://github.com/adobe/brackets/pull/4801
+
 New/Improved Extensibility APIs
 -------------------------------
 
