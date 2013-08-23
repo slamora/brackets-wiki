@@ -130,6 +130,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [GitHubAccess](https://github.com/WebsiteDeveloper/GitHubAccess): Is able to completly clone a repo from GitHub into a selected Folder. (Works only for non-binary data)
 * [git-project-info] (https://github.com/couzteau/brackets-git-info): A minimalistic approach to git integration: Just show the git branch next to the project. That's it.
 * [brackets-git](https://github.com/zaggino/brackets-git): Integration of Git features into Brackets UI. Features in development, see link for details.
+* [brackets-perforce] (https://github.com/JoshGalvin/brackets-perforce): Integration of Perforce (no GUI).
 
 **Documentation**
 * [DevDocs Viewer](https://github.com/gruehle/dev-docs-viewer) (use [this link](https://github.com/gruehle/dev-docs-viewer/archive/sprint-27.zip) for Brackets Sprint 27 or earlier): Search and view content from [devdocs.io](http://devdocs.io).
