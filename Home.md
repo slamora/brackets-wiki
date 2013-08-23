@@ -4,6 +4,13 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [CONTRIBUTING](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md) -- in case you'd like to hack on Brackets.
 * [Troubleshooting](https://github.com/adobe/brackets/wiki/Troubleshooting) -- read this if you're having trouble running Brackets.
 
+## Usage
+* [Quick Start Video](http://www.youtube.com/watch?v=VKitqLpJtAY&feature=plcp)
+* [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
+* [A Peek at Brackets from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/)
+* [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
+* [Keyboard Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts)
+
 ## Development
 
 * [Brackets Contributor License Agreement](http://dev.brackets.io/brackets-contributor-license-agreement.html) You must agree to and submit this before you can contribute to Brackets.
@@ -25,13 +32,6 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Extension Icon Guidelines](https://github.com/adobe/brackets/wiki/Extension-Icon-Guidelines)
 * [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
 * [The Future Extension Manager](https://github.com/adobe/brackets/wiki/Research:-Extension-Management)
-
-## Usage
-* [Quick Start Video](http://www.youtube.com/watch?v=VKitqLpJtAY&feature=plcp)
-* [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
-* [A Peek at Brackets from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/)
-* [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
-* [Keyboard Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts)
 
 ## Releases
 
