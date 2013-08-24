@@ -11,11 +11,13 @@ What's New in Sprint 30
     * Linux build now supports: Extension Manager (install extensions), Live Preview Highlighting, extensions that require Node
     * Several install issues fixed
     * Warning: The Linux build is still a _preview_ &ndash; it doesn't have all the features and stability of the Mac/Windows builds yet.
-* **Files and Folders**
-    * [Support "Open With..." in Windows](https://github.com/adobe/brackets-shell/pull/299): The file explorer context menu's Open With list now includes Brackets for all file types Brackets supports out of the box. (Already supported on Mac).
+* **JavaScript Editing**
+    * [Function parameter hints](https://github.com/adobe/brackets/pull/4637): Hints appear automatically when you first type inside `()`s, or when invoked manually with Ctrl+Shift+Space.
 * **CSS Editing**
     * [Code hints for CSS Regions named flows](https://trello.com/c/gNvtHgu7/949-1-css-regions-named-flow): Hints names used in the same file
-* **Ongoing Research** (not available yet)
+* **Files and Folders**
+    * [Support "Open With..." in Windows](https://github.com/adobe/brackets-shell/pull/299): The file explorer context menu's Open With list now includes Brackets for all file types Brackets supports out of the box. (Already supported on Mac).
+* **Ongoing Research** (not implemented yet)
     * [Plan extensibility API revamp](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design)
 
 
