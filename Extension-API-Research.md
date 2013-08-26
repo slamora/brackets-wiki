@@ -1,5 +1,9 @@
 (See ["Extension API Evolution"](Extensions2) for the _predecessor_ to this proposal, including more detail on the longer-term ideas such as restartless extensions & sandboxing)
 
+## Status
+* Created as part of the [Extension API research story](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design)
+* Implementation begins with [module loader research story](https://trello.com/c/Qk7uqIw8/991-research-extension-loader-implementation) followed by [module loader implementation (and package format migration) story](https://trello.com/c/Wtv5a74b/992-new-module-loader-module-format).
+
 ## Proposed API changes
 
 In priority / implementation order:
@@ -8,6 +12,7 @@ In priority / implementation order:
 * Easy shimming/mocking for unit tests
 * Extensions authors get code hints for core APIs
 * Less verbose per-module boilerplate, matching Node module format more closely
+* **[Sample code here...](https://gist.github.com/peterflynn/6323175)**
 * [Implementation research notes here...](https://github.com/adobe/brackets/wiki/ModuleLoader)
 * **Open question:** What do we do for worker-thread code? E.g. see _tern-worker.js_ in JS code hints &ndash; it looks like an unusual edge case for module loading... _(Added to [implementation research story](https://trello.com/c/Qk7uqIw8/991-research-extension-loader-implementation))._
 
