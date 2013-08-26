@@ -9,14 +9,13 @@ In priority / implementation order:
 * Extensions authors get code hints for core APIs
 * Less verbose per-module boilerplate, matching Node module format more closely
 * [Implementation research notes here...](https://github.com/adobe/brackets/wiki/ModuleLoader)
-* **Open question:** What do we do for worker-thread code? E.g. see _tern-worker.js_ in JS code hints &ndash; it looks like an unusual edge case for module loading...
-* **Open question:** Should extension references to core modules be behind a single root namespace, to disambiguate the first "path segment" in case of collisions between core folder names & user extension names?
+* **Open question:** What do we do for worker-thread code? E.g. see _tern-worker.js_ in JS code hints &ndash; it looks like an unusual edge case for module loading... _(Added to [implementation research story](https://trello.com/c/Qk7uqIw8/991-research-extension-loader-implementation))._
 
 #### 2. Cross-extension dependencies
 * Built atop new module loader: APIs pulled in the same way as core APIs. Factored into the dependency-driven load order.
 * Extensions are treated as singleton "service" providers rather than NPM-style dependencies
 * Extension Manager automatically pulls down dependency extensions & identifies conflicts
-* **Open question:** Do we enforce that the dependency is declared in package.json?
+* Cross-extension dependencies _must_ be declared in package.json (to allow Extension Manager to properly manage the dependency). If not declared, any `require()` calls referencing another extension will fail.
 
 #### 3. Transparently expose APIs from Node-side modules
 * _Restrictions:_ all APIs are async; all APIs can only receive & return JSON values (no complex objects)
@@ -31,7 +30,6 @@ In priority / implementation order:
 #### 5. Allow a generic Node utility module (installed via NPM) to be loaded shell-side
 * Easier to reuse some of our own headless utility code
 * Enables reusing NPM utility modules, if they're headless (no dependencies on Node-only APIs)
-* **Open question:** If we wait too long to do this, does it encourage people to use the cross-extension dependency mechanism to share utility code instead? (Which is not really the right model - see discussion of services vs. libraries).
 
 #### Tabled - not in near future
 * Track API calls so extensions can be made restartless semi-automagically &ndash; Wait & see how extension auto-updating feels with simpler mitigations (e.g. auto-restart, batched update notifications).
@@ -40,8 +38,7 @@ In priority / implementation order:
 
 ## Open questions
 
-* **Open question:** See inline note above re priority of NPM-style loader resolution work
-* **Open question:** Should we deprecate `require()` paths that lack a "./" prefix? This is more consistent with Node and the module loaders we might use for Brackets. We could do it without breaking extensions since the deprecated `brackets.getModule()` API could continue to work the old way.
+* (See inline above)
 
 #### Resolved questions
 
@@ -57,7 +54,14 @@ In priority / implementation order:
     * _Resolved:_ In new proposal, things aren't explicitly labeled as "services."
 * Do we still want to define general API principles (to be used by core APIs when we port them over later) in Sprint 29's research story? Seems like what the APIs look like depends a lot on our restartless thinking, which we've deferred a bit (e.g. restartless might imply moving to pub-sub for everything).
     * _Resolved:_ Deferred to a later story that will specifically cover API cleanup. Restartless is lower on the priority list now, so we shouldn't block API cleanups on that anymore (and ideally we'd try to do restartless without imposing big new constraints on API design anyway).
-
+* Do we enforce that the dependency is declared in package.json?
+    * _Resolved:_ Yes. It's essential for Extension Manager to know about dependencies, so we want to force authors to always declare them. Module loader _will not_ enforce API version constraints, though - only Extension Manager deal with version issues.
+* Should extension references to core modules be behind a single root namespace, to disambiguate the first "path segment" in case of collisions between core folder names & user extension names?
+    * _Resolved:_ Not needed -- core modules take precedence. A collision could still occur if core code adds a new folder name conflicting with an existing poorly-named extension that was already providing an API to other extensions, breaking its ability to be referenced as a dependency. But that will be rare, and our docs for cross-extension dependencies can amplify the need to use "."s in extension names.
+* Should we deprecate `require()` paths that lack a "./" prefix? This is more consistent with Node and the module loaders we might use for Brackets. We could do it without breaking extensions since the deprecated `brackets.getModule()` API could continue to work the old way.
+    * _Resolved:_ Only extension-to-core module references will need a "./" prefix, but it will indeed be required there.
+* If we wait too long to implement "Allow a generic Node utility module (installed via NPM) to be loaded shell-side," does it encourage people to use the cross-extension dependency mechanism to share utility code instead? (Which is not really the right model - see discussion of services vs. libraries).
+    * _Resolved:_ We think most people will just copy utility libs into each extension since that's the path of least resistance. The alternative cross-extension dependency approach is unlikely to be (ab)used often.
 
 ## Prototyping notes
 
