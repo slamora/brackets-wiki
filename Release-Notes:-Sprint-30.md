@@ -34,12 +34,11 @@ UI Changes
 
 API Changes
 -----------
-
-*Live Development* - TODO https://github.com/adobe/brackets/pull/4801
+**Live Development** - TODO https://github.com/adobe/brackets/pull/4801
 
 New/Improved Extensibility APIs
 -------------------------------
-
+**Async utils** - The new `Async.chain()` API works much like `Async.doSequentially()`, but with an array of different functions whose results are piped together (rather than a single homogenous function repeated over a static array of data).
 
 Known Issues
 ------------
