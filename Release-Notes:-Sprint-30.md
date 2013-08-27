@@ -29,6 +29,8 @@ UI Changes
 ----------
 **Blue selected-file highlight** - The selection marker indicating the currently open file now shows the file name in "Brackets blue" text, matching the Brackets logo.
 
+**Editor current-line highlight** - Line highlight is now hidden whenever there's a text selection, to improve contrast and reduce confusion with whole-line selections.
+
 
 API Changes
 -----------
