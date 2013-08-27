@@ -8,11 +8,10 @@ What's New in Sprint 30
 * **Live Preview**
     * [Live Preview HTML changes](https://trello.com/c/cc8kk9zG/927-5-live-development-html-initial-implementation)
 * **Linux Preview Build**
-    * Linux build now supports: Extension Manager (install extensions), Live Preview Highlighting, extensions that require Node
-    * Several install issues fixed
-    * Warning: The Linux build is still a _preview_ &ndash; it doesn't have all the features and stability of the Mac/Windows builds yet.
-* **General Editing**
-    * [Replace All](https://github.com/adobe/brackets/pull/4686): Replace All displays a panel showing all occurrences that will be replaced. Users can optionally remove one or more occurrences from the list.
+    * Linux build now supports: Extension Manager (install extensions), Live Preview Highlighting, saving Untitled documents, Save As, extensions that require Node. Several install issues fixed.
+    * _Warning: The Linux build is still a preview_ &ndash; it doesn't have all the features and stability of the Mac/Windows builds yet.
+* **Find/Replace**
+    * [Replace All](https://github.com/adobe/brackets/pull/4686): Click "All" in the Replace bar to display a panel showing all occurrences that will be replaced. You can review and uncheck any occurrences you don't want to change, then replace all the rest with a single click.
 * **JavaScript Editing**
     * [Function parameter hints](https://github.com/adobe/brackets/pull/4637): Hints appear automatically when you first type inside `()`s, or when invoked manually with Ctrl+Shift+Space.
 * **CSS Editing**
