@@ -38,7 +38,7 @@ foo.
 1. In the project tree, right-click on ``temp.js`` and choose "Rename". Rename the file to ``temp.txt``. Verify that the name in the working set and title bar changes, the code coloring disappears and the mode changes to "Text".
 1. In the project tree, right click on ``temp.txt`` and choose delete (when prompted discard changes)
 1. Open the OS Trash/Recycle Bin and confirm ``temp.txt`` was deleted
-1. Move mouse over the name of the source of an `<img>` tag (e.g. "images/events.jpg" on line 33). Verify that Hover Preview of the image is displayed properly with the width and height.
+1. Verify that index.html is now current file. Move mouse over the name of the source of an `<img>` tag (e.g. "images/events.jpg" on line 33). Verify that Hover Preview of the image is displayed properly with the width and height.
 1. Set the cursor in the `<body>` tag immediately before the `>`.
 1. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
 1. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
