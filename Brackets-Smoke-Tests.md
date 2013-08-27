@@ -33,7 +33,7 @@ var foo = "", bar = function(){};
 foo.
 ```
 1. Verify ``String`` method code hints on ``foo``
-1. Insert a new line 2 ``foo = bar``
+1. Insert a new line 2 ``foo = bar;``
 1. On line 3, verify ``Function`` method code hints on ``foo``
 1. In the project tree, right-click on ``temp.js`` and choose "Rename". Rename the file to ``temp.txt``. Verify that the name in the working set and title bar changes, the code coloring disappears and the mode changes to "Text".
 1. In the project tree, right click on ``temp.txt`` and choose delete (when prompted discard changes)
