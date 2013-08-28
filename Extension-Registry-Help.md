@@ -1,4 +1,4 @@
-# Help for using the [Brackets Extension Registry](http://brackets-registry.aboutweb.com/) #
+Help for using the [Brackets Extension Registry](http://brackets-registry.aboutweb.com/)
 
 ## How do I write an extension? ##
 
