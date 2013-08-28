@@ -24,7 +24,7 @@ Setup
 Server smoke test steps
 =======================
 
-1. Launch Brackets. Use File > Open Folder... and browse to the server root folder.
+1. Launch Brackets. Use File > Open Folder... and browse to the smoke tests folder (brackets/test/smokes).
 2. Open the server-tests folder in the project tree and verify that you see pathRel.html, pathRoot.html, server.php files, and css &amp; images folders.
 3. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
 4. Verify informational text is displayed in empty input field. Click OK.
