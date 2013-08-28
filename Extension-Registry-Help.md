@@ -42,4 +42,4 @@ You could also upload an update to your extension that contains an empty main.js
 
 ## I need some other help! ##
 
-If you have questions that are not answered here, feel free to ask on the [email list](https://groups.google.com/forum/#!forum/brackets-dev). If you have a question or concern that cannot be addressed publicly, feel free to contact Kevin Dangoor (dangoor at adobe.com).
+If you have questions that are not answered here, feel free to ask on the [email list](https://groups.google.com/forum/#!forum/brackets-dev).
