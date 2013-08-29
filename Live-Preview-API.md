@@ -1,4 +1,13 @@
 ```
+
+### Server API
+
+Brackets ships with 3 server implementations currently
+
+* UserServer - Serves content from the user-specified base URL (File > Project Settings...).
+* StaticServer - Serves content from the built-in HTTP server (via Node.js). 
+* FileServer - Serves file: URL sites locally
+
 /**
  * @constructor
  * Base class for live preview servers
@@ -83,9 +92,9 @@ BaseServer.prototype.start = function () {};
 BaseServer.prototype.stop = function () {};
 ```
 
-h3. Example Server Implementation
+### Example Server Implementation
 
-The snippet below is from the [Theseus](https://github.com/adobe-research/theseus) JavaScript Debugger Extension. It shows how to implement 
+The snippet below is simplified from the [Theseus](https://github.com/adobe-research/theseus) JavaScript Debugger Extension. It shows a minimal implementation for creating and registering a live preview server.
 
 ```
 var LiveDevelopment = brackets.getModule("LiveDevelopment/LiveDevelopment"),
@@ -98,16 +107,13 @@ function ProxyServer(config) {
 ProxyServer.prototype = Object.create(BaseServer.prototype);
 ProxyServer.prototype.constructor = ProxyServer;
 
-ProxyServer.prototype.canServe = function (localPath) {
-    return true;
+ProxyServer.prototype.canServe = function (localAbsoluteFilePath) {
+    return myTestIfFileTypeCanBeServedAsAWebPage(localAbsoluteFilePath);
 };
 
 ProxyServer.prototype.readyToServe = function () {
-    var self = this;
-    var d = getServer(ProjectManager.getProjectRoot().fullPath, main.getModeName());
-    d.done(function (proxy) {
-        self._baseUrl = proxy.proxyRootURL;
-    });
-    return d;
+    var deferred = new $.Deferred();
+    // ... async initialization of server ...
+    return deferred.promise();
 };
 ```
