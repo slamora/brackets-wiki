@@ -4,7 +4,7 @@ To the right of the work area, click on the icon that looks like a LEGO(r) brick
 
 ## Installing and Removing Extensions
 
-You can browse a list of available extensions in the **Available** tab of the Extension Manager, and click **Install** to install an extension wiht one click. This list comes from the [Brackets Registry](https://brackets-registry.aboutweb.com), a web app that makes it easy for extension authors to upload new extensions. The registry doesn't yet have the full set of extensions from the original wiki page list (see below), but over time it should become more complete. 
+You can browse a list of available extensions in the **Available** tab of the Extension Manager, and click **Install** to install an extension with one click. This list comes from the [Brackets Registry](https://brackets-registry.aboutweb.com), a web app that makes it easy for extension authors to upload new extensions. The registry doesn't yet have the full set of extensions from the original wiki page list (see below), but over time it should become more complete. 
 
 You can remove an extension from Extension Manager by clicking on the **Remove** button in the item's listing in the "Installed" tab.
 
