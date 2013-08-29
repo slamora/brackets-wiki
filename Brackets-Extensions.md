@@ -82,6 +82,7 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [MVC.net](https://github.com/edwinvankoppen/Brackets-MVC.net): Adds cshtml (views in MVC.net) to the HTML highlighting.
 * [Ruby](https://github.com/TheresNoBox/Brackets-Ruby): Adds support for Haml, ERB, and Ruby line and block comments. 
 * [Jade Templating](https://github.com/dbratcher/brackets-jade): Adds syntax highlighting for .jade files.
+* [Gherkin](https://github.com/tregusti/brackets-gherkin): Adds syntax highlighting for Gherkin (.feature) files.
 
 **General Functionality**
 * [Tabs](https://github.com/albertxing/brackets-tabs): Show tabs in place of title when sidebar is hidden
