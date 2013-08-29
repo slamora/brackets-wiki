@@ -1,4 +1,6 @@
-```
+## Overview
+
+TODO
 
 ### Server API
 
@@ -8,6 +10,7 @@ Brackets ships with 3 server implementations currently
 * StaticServer - Serves content from the built-in HTTP server (via Node.js). 
 * FileServer - Serves file: URL sites locally
 
+```
 /**
  * @constructor
  * Base class for live preview servers
