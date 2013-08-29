@@ -1,12 +1,14 @@
-## Opening Extensions Manager
+## Opening Extension Manager
 
 To the right of the work area, click on the icon that looks like a LEGO(r) brick.  This will open the Extension Manager.
 
 ## Installing and Removing Extensions
 
-You can browse a list of available extensions in the **Available** tab of the Extension Manager, and install or update them with one click. This list comes from the [Brackets Registry](https://brackets-registry.aboutweb.com), a web app that makes it easy for extension authors to upload new extensions. The registry doesn't yet have the full set of extensions from the original wiki page list (see below), but over time it should become more complete. If you're an extension author, please upload your extension to the registry at https://brackets-registry.aboutweb.com.
+You can browse a list of available extensions in the **Available** tab of the Extension Manager, and install or update them with one click. This list comes from the [Brackets Registry](https://brackets-registry.aboutweb.com), a web app that makes it easy for extension authors to upload new extensions. The registry doesn't yet have the full set of extensions from the original wiki page list (see below), but over time it should become more complete. 
 
 You can remove an extension from Extension Manager by clicking on the **Remove** button in the item's listing in the "Installed" tab.
+
+If you're an extension author, please upload your extension to the registry at https://brackets-registry.aboutweb.com, and move your listing on this page to the "Moved Extensions" list. Our hope is to eventually migrate all the extensions into the registry. For more information, see [Extension Registry Help](https://github.com/adobe/brackets/wiki/Extension-Registry-Help).
 
 ![Extension Manager Registry](screenshots/extension-manager/registry.png)
 
