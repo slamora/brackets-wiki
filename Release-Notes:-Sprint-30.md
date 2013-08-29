@@ -33,7 +33,7 @@ UI Changes
 
 API Changes
 -----------
-**Live Development** - TODO https://github.com/adobe/brackets/pull/4801
+**Live Development** - See [Live Preview API wiki page](https://github.com/adobe/brackets/wiki/Live-Preview-API)
 
 New/Improved Extensibility APIs
 -------------------------------
