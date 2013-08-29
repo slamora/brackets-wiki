@@ -82,10 +82,8 @@ There are several user stories (feature work) to complete in brackets-shell befo
 
 | User Story | Status | Affected Features | Contact |
 | ---------- | ------ | ----------------- | ------- |
-| ~~[Update CEF](https://trello.com/c/E8N0Q6dE)~~ | Done | Everything | [Jason San Jose](http://github.com/jasonsanjose) |
 | [Node Integration](https://trello.com/c/9nX06hWa) | In Progress | Live Preview HTML Highlighting, Extension Manager Install/Update/Remove | [Joel Brandt](http://github.com/joelrbrandt), [Tim Burgess](http://github.com/timburgess), https://github.com/adobe/brackets-shell/pull/278 |
 | [Ubuntu Installer/Packaging](https://trello.com/c/ZoCPy6mD) | In Progress | Install experience | [Jason San Jose](http://github.com/jasonsanjose) |
-| [File API - delete, rename](https://trello.com/c/WMB6vtwO) | In Progress | Project tree and File menu delete and rename commands | https://github.com/adobe/brackets-shell/pull/304, https://github.com/adobe/brackets-shell/pull/285|
 | [Native Menus](https://trello.com/c/WMB6vtwO) | Not Started | Menus (HTML menus are an interim, but completely functional substitute) | |
 | [Show in OS](https://trello.com/c/RF1ddQGK) | Not Started | Project tree command to show the selected file in the native OS file viewer | |
 | [Automated Builds](https://trello.com/c/P35As8lf) | In Progress | | [Jason San Jose](http://github.com/jasonsanjose), [Ingo Richter](http://github.com/ingorichter) |
@@ -97,6 +95,7 @@ We tag Linux-specific bugs in our [GitHub issues](https://github.com/adobe/brack
 
 Development Log
 ====
+* 2013-08-29: Updated for Sprint 30
 * 2013-08-20: Update user story status, remove TODOs [jasonsanjose](http://github.com/jasonsanjose)
 * 2013-08-09: Edit inline sprint 28 comments [jasonsanjose](http://github.com/jasonsanjose)
 * 2013-07-30: Inline draft comments for sprint 28 build [jasonsanjose](http://github.com/jasonsanjose)
