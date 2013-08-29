@@ -5,8 +5,6 @@ _This document will not be finalized until the end of Sprint 30 -- approximately
 What's New in Sprint 30
 -----------------------
 * **Mac OS 10.6 support restored**: Brackets once again runs on 10.6
-* **Live Preview**
-    * [Live Preview HTML changes](https://trello.com/c/cc8kk9zG/927-5-live-development-html-initial-implementation)
 * **Linux Preview Build**
     * Linux build now supports: Extension Manager (install extensions), Live Preview Highlighting, saving Untitled documents, Save As, extensions that require Node. Several install issues fixed.
     * _Warning: The Linux build is still a preview_ &ndash; it doesn't have all the features and stability of the Mac/Windows builds yet.
@@ -19,7 +17,8 @@ What's New in Sprint 30
 * **Files and Folders**
     * [Support "Open With..." in Windows](https://github.com/adobe/brackets-shell/pull/299): The file explorer context menu's Open With list now includes Brackets for all file types Brackets supports out of the box. (Already supported on Mac).
 * **Ongoing Research** (not implemented yet)
-    * [Plan extensibility API revamp](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design)
+    * [Live Preview HTML changes](https://trello.com/c/cc8kk9zG/927-5-live-development-html-initial-implementation): This is _almost_ ready to roll, but needs just a few more fixes and performance tweaks. If you'd like to try it out anyway, open the dev tools and run `brackets.livehtml = true` just after launching Brackets.
+    * [Plan extensibility API revamp](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design): See [summary on brackets-dev](https://groups.google.com/forum/#!topic/brackets-dev/c5626MgNQG4).
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-29...sprint-30#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-29...sprint-30#commits_bucket)
