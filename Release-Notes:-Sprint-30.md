@@ -72,6 +72,7 @@ Community contributions to Brackets
 * [Swedish translation update](https://github.com/adobe/brackets/pull/4691) by [Mikael Jorhult](https://github.com/mikaeljorhult)
 * [Turkish translation update](https://github.com/adobe/brackets/pull/4820) by [Veysi Ertekin](https://github.com/veysiertekin)
 * [Turkish translation update](https://github.com/adobe/brackets/pull/4355) by [Mahmut Bulut](https://github.com/vertexclique)
+* [Czech translation update](https://github.com/adobe/brackets/pull/4967) by [kvarel](https://github.com/kvarel)
 
 #### Pulling source code from Git
 * A new brackets-shell build is _required_ for this sprint. Be sure to rerun `grunt setup` before building.
