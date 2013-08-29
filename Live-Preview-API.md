@@ -130,8 +130,6 @@ function _createProxyServer() {
     return new ProxyServer(config);
 }
 
-function init() {
-    // register server provider
-    LiveDevServerManager.registerProvider({ create: _createProxyServer }, 10);
-}
+// register server provider
+LiveDevServerManager.registerProvider({ create: _createProxyServer }, 10);
 ```
