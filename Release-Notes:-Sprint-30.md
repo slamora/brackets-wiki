@@ -6,7 +6,7 @@ What's New in Sprint 30
 -----------------------
 * **Mac OS 10.6 support restored**: Brackets once again runs on 10.6
 * **Linux Preview Build**
-    * Linux build now supports: Extension Manager (install extensions), Live Preview Highlighting, saving Untitled documents, Save As, extensions that require Node. Several install issues fixed.
+    * Linux build now supports: Extension Manager (install extensions), Live Preview Highlighting, saving Untitled documents, Save As, Delete file/folder, various extensions that require Node. Several install issues fixed.
     * _Warning: The Linux build is still a preview_ &ndash; it doesn't have all the features and stability of the Mac/Windows builds yet.
 * **Find/Replace**
     * [Replace All](https://github.com/adobe/brackets/pull/4686): Click "All" in the Replace bar to display a panel showing all occurrences that will be replaced. You can review and uncheck any occurrences you don't want to change, then replace all the rest with a single click.
@@ -39,6 +39,8 @@ New/Improved Extensibility APIs
 -------------------------------
 **Async utils** - The new `Async.chain()` API works much like `Async.doSequentially()`, but with an array of different functions whose results are piped together (rather than a single homogenous function repeated over a static array of data).
 
+**Editor.setCursorPos()** - New, optional `expandTabs` argument similar to the one in `getCursorPos()`.
+
 Known Issues
 ------------
 * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet. To work around this, right click the Brackets app and choose Open. You only need to do that once -- afterward, launching Brackets the normal way will work also.
@@ -50,16 +52,32 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-
+* [Replace All](https://github.com/adobe/brackets/pull/4686) ([and](https://github.com/adobe/brackets/pull/4814)) by [Martin Zagora](https://github.com/zaggino)
+* [Linux: Implement Delete file/folder](https://github.com/adobe/brackets-shell/pull/304) by [eyelash](https://github.com/eyelash)
+* [Active line highlight: Hide when text is selected](https://github.com/adobe/brackets/pull/4878) ([and](https://github.com/adobe/brackets/pull/4927)) by [Lance Campbell](https://github.com/lkcampbell)
+* [Active line highlight: Cover line numbers too; hide when not focused](https://github.com/adobe/brackets/pull/4887) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix tabbing through dialog box controls, improve layering of nested dialogs](https://github.com/adobe/brackets/pull/4714) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Linux: Fix 'hacking on Brackets' scripts](https://github.com/adobe/brackets/pull/4810) by [Andreas Renberg](https://github.com/IQAndreas)
+* [Fix #4781: After stopping Replace, next Find isn't prepopulated with selection](https://github.com/adobe/brackets/pull/4782) by [Martin Zagora](https://github.com/zaggino)
+* [Fix #4784: Correct singular strings in Find bar](https://github.com/adobe/brackets/pull/4853) by [Corné Dorrestijn](https://github.com/cornedor)
+* [Fix #4762: `word-break` missing from CSS hints](https://github.com/adobe/brackets/pull/4771) by [Tom Erik Støwer](https://github.com/testower)
+* [Fix truncation when Find/Find in Files string very wide](https://github.com/adobe/brackets/pull/4661) by [Martin Zagora](https://github.com/zaggino) (fix not visible yet - see [#4940](https://github.com/adobe/brackets/pull/4940))
+* [Allow theme extensions to style active line highlight](https://github.com/adobe/brackets/pull/4806) by [John Amiah Ford](https://github.com/johnamiahford)
+* [Support tab expansion in Editor.setCursorPos()](https://github.com/adobe/brackets/pull/4719) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix unit test failure when indentation is set to tabs](https://github.com/adobe/brackets/pull/4805) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #4750: Debug > Switch Language ignores Cancel button](https://github.com/adobe/brackets/pull/4753) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [UI tweak to Debug > Show Performance Data results](https://github.com/adobe/brackets/pull/4902) by [Robert Gawdzik](https://github.com/rgawdzik)
+* [German translation update](https://github.com/adobe/brackets/pull/4639) ([part 2](https://github.com/adobe/brackets/pull/4754), [part 3](https://github.com/adobe/brackets/pull/4835)) by [mynetx](https://github.com/mynetx)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/4935) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Swedish translation update](https://github.com/adobe/brackets/pull/4691) by [Mikael Jorhult](https://github.com/mikaeljorhult)
+* [Turkish translation update](https://github.com/adobe/brackets/pull/4820) by [Veysi Ertekin](https://github.com/veysiertekin)
+* [Turkish translation update](https://github.com/adobe/brackets/pull/4355) by [Mahmut Bulut](https://github.com/vertexclique)
 
 #### Pulling source code from Git
 * A new brackets-shell build is _required_ for this sprint. Be sure to rerun `grunt setup` before building.
 * brackets-shell's Node dependencies have changed. Run `npm install` before rebuilding brackets-shell.
 * A submodule _URL_ was changed this sprint. Run `git submodule sync` and then `git submodule update --init --recursive` to ensure your local source tree reflects the update.
 * The Windows "Open With" feature noted above _only_ works with installed builds of Brackets. Copies of brackets-shell you build yourself will not appear in the "Open With" list.
-
-Contributions _from_ the Brackets community
--------------------------------------------
 
 Bugs fixed in Sprint 30
 -----------------------
