@@ -100,8 +100,9 @@ BaseServer.prototype.stop = function () {};
 The snippet below is simplified from the [Theseus](https://github.com/adobe-research/theseus) JavaScript Debugger Extension. It shows a minimal implementation for creating and registering a live preview server.
 
 ```
-var LiveDevelopment = brackets.getModule("LiveDevelopment/LiveDevelopment"),
-    BaseServer      = brackets.getModule("LiveDevelopment/Servers/BaseServer");
+var LiveDevelopment      = brackets.getModule("LiveDevelopment/LiveDevelopment"),
+    LiveDevServerManager = brackets.getModule("LiveDevelopment/LiveDevServerManager"),
+    BaseServer           = brackets.getModule("LiveDevelopment/Servers/BaseServer");
 
 function ProxyServer(config) {
     BaseServer.call(this, config);
@@ -119,4 +120,18 @@ ProxyServer.prototype.readyToServe = function () {
     // ... async initialization of server ...
     return deferred.promise();
 };
+
+function _createProxyServer() {
+    var config = {
+        pathResolver    : ProjectManager.makeProjectRelativeIfPossible,
+        root            : ProjectManager.getProjectRoot().fullPath
+    };
+    
+    return new ProxyServer(config);
+}
+
+function init() {
+    // register server provider
+    LiveDevServerManager.registerProvider({ create: _createProxyServer }, 10);
+}
 ```
