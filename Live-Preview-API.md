@@ -2,13 +2,17 @@
 
 TODO
 
+### Document API
+
+TODO
+
 ### Server API
 
 Brackets ships with 3 server implementations currently
 
-* UserServer - Serves content from the user-specified base URL (File > Project Settings...).
-* StaticServer - Serves content from the built-in HTTP server (via Node.js). 
-* FileServer - Serves file: URL sites locally
+* `UserServer` - Serves dynamic and static content from the user-specified base URL (File > Project Settings...). Supports live CSS editing but does not support live HTML editing. Typically used for server-side languages like PHP.
+* `StaticServer` - Serves static content from the built-in HTTP server (via Node.js).  Supports both live CSS editing and live HTML editing. Live HTML editing works by serving 
+* `FileServer` - Serves static `file:` URL sites from the local file system (subject to browser constraints).
 
 ```
 /**
@@ -95,9 +99,11 @@ BaseServer.prototype.start = function () {};
 BaseServer.prototype.stop = function () {};
 ```
 
-### Example Server Implementation
+#### Example Server Implementation
 
 The snippet below is simplified from the [Theseus](https://github.com/adobe-research/theseus) JavaScript Debugger Extension. It shows a minimal implementation for creating and registering a live preview server.
+
+The _interesting_ part of Theseus isn't shown here. Like our built-in `StaticServer`, Theseus' `ProxyServer` uses [Connect](http://www.senchalabs.org/connect/) middleware to intercept HTTP requests and serve instrumented content back to the browser.
 
 ```
 var LiveDevelopment      = brackets.getModule("LiveDevelopment/LiveDevelopment"),
