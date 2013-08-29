@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 30 -- approximately August 28._
-
 What's New in Sprint 30
 -----------------------
 * **Mac OS 10.6 support restored**: Brackets once again runs on 10.6
@@ -33,7 +29,7 @@ UI Changes
 
 API Changes
 -----------
-**Live Development** - See [Live Preview API wiki page](https://github.com/adobe/brackets/wiki/Live-Preview-API)
+**Live Development** - Sprint 30 breaks the API for registering servers to `LiveDevServerManager`. We've also introduced a new "server" concept for handling live preview that manages startup, document handling, and URL resolution. See [Live Preview API wiki page](https://github.com/adobe/brackets/wiki/Live-Preview-API) for details.
 
 New/Improved Extensibility APIs
 -------------------------------
