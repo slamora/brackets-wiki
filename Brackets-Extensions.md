@@ -193,7 +193,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 ---
 
 **Deprecated Extensions**
-* [Brace Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter (
+* [Brace Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor. _(Brackets Sprint 25 includes an enhanced version of this functionality: when invoked on a file, the file is automatically selected inside its containing folder)._
 * [Hover Preview](https://github.com/gruehle/HoverPreview): Displays a preview when hovering over a color value, gradient, or image filename. _(Merged into Brackets as of Sprint 24)._
 * [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets. _(Merged into Brackets as of Sprint 21)._
