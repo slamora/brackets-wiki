@@ -54,7 +54,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
 * [Minifier](https://github.com/alfredxing/brackets-minifier): Minifies JavaScript and CSS files using Google Closure Compiler (JS) and YUI (CSS). Working but under development.
 * [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
-* [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
 * [Quote Converter](https://github.com/drewhjava/brackets-quoteconverter): Converts double to single quotes or single to double quotes
 
 **Language Support**
@@ -188,6 +187,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [Quick Markup](https://github.com/redmunds/brackets-quick-markup): Fast HTML markup generation as you type.
 * [Lorem Ipsum] (https://github.com/lkcampbell/brackets-lorem-ipsum): Generates Lorem Ipsum text and inserts it into any Brackets document.
 * [Quick Require Import](https://github.com/peterflynn/quick-import): Quickly generate RequireJS/CommonJS import statements - just press Ctrl+I and type a module name.
+* [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
 
 
 ---
