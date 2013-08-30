@@ -45,7 +45,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [HTML Templates](https://github.com/talmand/Brackets-HTML-Templates): Pastes in barebones HTML code for different doctypes.
 * [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): Auto-complete parenthesis, brackets, braces, double and single quotes.
 * [Disable AutoClosing Tags](https://github.com/talmand/Brackets-Disable-AutoClose-Tags): Disables auto-insertion of closing HTML tag when typing the opening tag, but preserves auto-completion of the closing tag when `</` is typed.
-* [Brace Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter
 * [Surround] (https://github.com/pedelman/brackets-surround): Wraps selected text with HTML, comments, brackets, quotes, etc.
 * [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): Addition to the context menu to insert from a special HTML character list.
 
@@ -194,6 +193,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 ---
 
 **Deprecated Extensions**
+* [Brace Helper] (https://github.com/Zolmeister/brackets-helper): Insert closing `}` on Enter (
 * [Open Containing Folder](https://github.com/ujjaval/Open-containing-folder): Opens folder containing current file or a file/folder in Sidebar. Added keyboard shortcut ```CTRL+ALT+O``` for opening folder containing document opened in editor. _(Brackets Sprint 25 includes an enhanced version of this functionality: when invoked on a file, the file is automatically selected inside its containing folder)._
 * [Hover Preview](https://github.com/gruehle/HoverPreview): Displays a preview when hovering over a color value, gradient, or image filename. _(Merged into Brackets as of Sprint 24)._
 * [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets. _(Merged into Brackets as of Sprint 21)._
