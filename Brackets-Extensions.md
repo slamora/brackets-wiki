@@ -46,7 +46,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): Auto-complete parenthesis, brackets, braces, double and single quotes.
 * [Disable AutoClosing Tags](https://github.com/talmand/Brackets-Disable-AutoClose-Tags): Disables auto-insertion of closing HTML tag when typing the opening tag, but preserves auto-completion of the closing tag when `</` is typed.
 * [Surround] (https://github.com/pedelman/brackets-surround): Wraps selected text with HTML, comments, brackets, quotes, etc.
-* [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): Addition to the context menu to insert from a special HTML character list.
 
 **Formatting**
 * [Show Whitespace](https://github.com/DennisKehrig/brackets-show-whitespace): Visualizes spaces and tabs
@@ -119,6 +118,7 @@ current file.
 
 These extensions are now available via the [Brackets Registry](https://brackets-registry.aboutweb.com), which is definitely the easiest way to get the extensions and keep them up-to-date.
 
+* [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): Addition to the context menu to insert from a special HTML character list.
 * [Karma](https://github.com/artoale/karma-brackets): Run mocha, jasmine, qunit and more tests inside brackets
 * [TestQuickly](https://github.com/dangoor/TestQuickly): Simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
 * [xUnit](https://github.com/dschaffe/brackets-xunit): Extension to run current buffer as a javascript unit test with right click (supports jasmine, yui3, qUnit, more coming soon...)
