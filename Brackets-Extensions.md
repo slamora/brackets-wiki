@@ -38,7 +38,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Quick Search] (https://github.com/enturn/brackets-quick-search): Automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
 * [Quick Navigate](https://github.com/jeffslofish/quick-navigate): Navigate back to previous cursor and edit locations quickly with toolbar buttons.
 * [Toolbar Horizontal](https://github.com/ruanmer/brackets-toolbar-horizontal): Move toolbar from vertical (right) to horizontal (top).
-* [Vimderbar] (https://github.com/fontface/brackets-vimderbar): Adds vim-like functionality & status bar to Brackets.
 * [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only).
 
 **Snippets & Shorthand**
@@ -188,6 +187,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [Lorem Ipsum] (https://github.com/lkcampbell/brackets-lorem-ipsum): Generates Lorem Ipsum text and inserts it into any Brackets document.
 * [Quick Require Import](https://github.com/peterflynn/quick-import): Quickly generate RequireJS/CommonJS import statements - just press Ctrl+I and type a module name.
 * [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
+* [Vimderbar] (https://github.com/fontface/brackets-vimderbar): Adds vim-like functionality & status bar to Brackets.
 
 
 ---
