@@ -107,8 +107,6 @@ current file.
 * [MaDGe](https://github.com/sahlas/brackets-node-madge): An extension that enables node-madge functionality. Search for module dependencies, circular dependencies and more.
 
 **Fun & Games**
-* [Cowsay](https://github.com/lkcampbell/brackets-cowsay): An extension for Brackets to generate a cow saying very profound and silly things.
-* [Fortune](https://github.com/lkcampbell/brackets-fortune): An extension for Brackets to insert a random fortune into the editor.
 * [Snake](https://github.com/AboutWebLLC/brackets-snake): Because sometimes you need to eat your code.
 
 ---
@@ -117,6 +115,8 @@ current file.
 
 These extensions are now available via the [Brackets Registry](https://brackets-registry.aboutweb.com), which is definitely the easiest way to get the extensions and keep them up-to-date.
 
+* [Cowsay](https://github.com/lkcampbell/brackets-cowsay): An extension for Brackets to generate a cow saying very profound and silly things.
+* [Fortune](https://github.com/lkcampbell/brackets-fortune): An extension for Brackets to insert a random fortune into the editor.
 * [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): Addition to the context menu to insert from a special HTML character list.
 * [Karma](https://github.com/artoale/karma-brackets): Run mocha, jasmine, qunit and more tests inside brackets
 * [TestQuickly](https://github.com/dangoor/TestQuickly): Simple extension to run unit tests with a keystroke (handy for Brackets core and extension developers)
