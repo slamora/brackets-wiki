@@ -109,4 +109,4 @@ If you're interested in contributing to the core Brackets codebase, see [[How to
 
 See the [Extension Package Format](https://github.com/adobe/brackets/wiki/Extension-package-format) for information on preparing your extension for sharing with others.
 
-For the time being, publish your extension by linking to its zip file or GitHub repository here from the [extensions list](https://github.com/adobe/brackets/wiki/Brackets-Extensions).
+Publish your extension by uploading its zip file to the [Brackets Extension Registry](https://brackets-registry.aboutweb.com/).
