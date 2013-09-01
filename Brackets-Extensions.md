@@ -35,7 +35,6 @@ Here's a list of extensions that people have built that haven't yet been uploade
 Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts) page to see which shortcuts are available and also to add the shortcuts that you have used. Thanks!
 
 **Editing & Navigation**
-* [Quick Search] (https://github.com/enturn/brackets-quick-search): Automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
 * [Quick Navigate](https://github.com/jeffslofish/quick-navigate): Navigate back to previous cursor and edit locations quickly with toolbar buttons.
 * [Toolbar Horizontal](https://github.com/ruanmer/brackets-toolbar-horizontal): Move toolbar from vertical (right) to horizontal (top).
 * [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only).
@@ -115,6 +114,7 @@ current file.
 
 These extensions are now available via the [Brackets Registry](https://brackets-registry.aboutweb.com), which is definitely the easiest way to get the extensions and keep them up-to-date.
 
+* [Quick Search] (https://github.com/enturn/brackets-quick-search): Automatically highlights occurrences of the selected word (like Notepad++ smart highlighting)
 * [Cowsay](https://github.com/lkcampbell/brackets-cowsay): An extension for Brackets to generate a cow saying very profound and silly things.
 * [Fortune](https://github.com/lkcampbell/brackets-fortune): An extension for Brackets to insert a random fortune into the editor.
 * [Special HTML Characters] (https://github.com/thaneuk/brackets-special-html-chars): Addition to the context menu to insert from a special HTML character list.
