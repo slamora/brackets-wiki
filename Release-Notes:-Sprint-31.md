@@ -8,6 +8,7 @@ What's New in Sprint 31
     * [Live Preview HTML changes](https://trello.com/c/ya9wexlA/998-2-improve-html-live-development-performance): ...
 * **Overall UI**
     * [Compact, dark titlebar (Windows)](https://trello.com/card/5-into-darkness-shell-windows/4f90a6d98f77505d7940ce88/874): A similar change will be [coming soon for Mac](https://trello.com/card/into-darkness-shell-osx/4f90a6d98f77505d7940ce88/900) too.
+    * [Keyboard shortcuts for switching projects](https://github.com/adobe/brackets/pull/4546)
 * **SCSS Support**
     * [Code hints for CSS property names & values](https://github.com/adobe/brackets/pull/4931): The same code hints you see in CSS files will now also appear in SCSS files.
 * **HTML Editing**
