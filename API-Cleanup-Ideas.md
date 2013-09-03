@@ -1,4 +1,4 @@
-Notes for [Extensibility API simplification](https://trello.com/c/iSG75qG4/995-research-extensibility-api-simplification) research story.
+Notes for **[Extensibility API simplification](https://trello.com/c/iSG75qG4/995-research-extensibility-api-simplification)** research story.
 
 ## Commands, Menus, Key bindings
 
