@@ -27,7 +27,7 @@ UI Changes
 ----------
 TODO: Windows shell appearance
 
-TODO: [UI](https://trello.com/c/cmkAdt20/985-2-live-development-html-ui-for-invalid-state) indicating HTML is invalid & won't be syncing
+TODO: [UI indicating](https://trello.com/c/cmkAdt20/985-2-live-development-html-ui-for-invalid-state) HTML is invalid & won't be syncing
 
 
 API Changes
