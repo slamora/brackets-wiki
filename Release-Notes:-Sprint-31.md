@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 23 -- approximately
 What's New in Sprint 31
 -----------------------
 * **Live Preview**
-    * [Live Preview HTML changes](https://trello.com/c/ya9wexlA/998-2-improve-html-live-development-performance): ...
+    * [Live Preview HTML changes](https://trello.com/c/ya9wexlA/998-2-improve-html-live-development-performance): Live Preview updates in real time as you type in HTML files. Updates pause whenever the HTML is not syntactically valid.
 * **Overall UI**
     * [Compact, dark titlebar (Windows)](https://trello.com/card/5-into-darkness-shell-windows/4f90a6d98f77505d7940ce88/874): A similar change will be [coming soon for Mac](https://trello.com/card/into-darkness-shell-osx/4f90a6d98f77505d7940ce88/900) too.
     * [Keyboard shortcuts for switching projects](https://github.com/adobe/brackets/pull/4546)
@@ -27,9 +27,12 @@ UI Changes
 ----------
 TODO: Windows shell appearance
 
+TODO: [UI](https://trello.com/c/cmkAdt20/985-2-live-development-html-ui-for-invalid-state) indicating HTML is invalid & won't be syncing
+
 
 API Changes
 -----------
+TODO: Node upgrade
 
 New/Improved Extensibility APIs
 -------------------------------
