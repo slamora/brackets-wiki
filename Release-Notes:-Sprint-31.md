@@ -55,7 +55,7 @@ Community contributions to Brackets
 
 #### Pulling source code from Git
 * A new brackets-shell build is required _only_ to enable the new Windows border appearance.
-* Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
+* A submodule _URL_ was changed this sprint. Run `git submodule sync` and _then_ `git submodule update` to ensure your local source tree reflects the update.
 
 Bugs fixed in Sprint 31
 -----------------------
