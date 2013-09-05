@@ -11,6 +11,7 @@ What's New in Sprint 31
     * [Keyboard shortcuts for switching projects](https://github.com/adobe/brackets/pull/4546)
 * **SCSS Support**
     * [Code hints for CSS property names & values](https://github.com/adobe/brackets/pull/4931): The same code hints you see in CSS files will now also appear in SCSS files.
+    * [Quick Docs for CSS properties](https://github.com/adobe/brackets/pull/5069): Ditto &ndash; just like in CSS.
 * **HTML Editing**
     * [Highlight matching open/close tag](https://github.com/adobe/brackets/pull/4504)
 * **Search**
