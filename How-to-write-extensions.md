@@ -1,41 +1,49 @@
-* [Download Brackets](How to Use Brackets#wiki-howtoget)
+There are three stages to developing an extension:
+
+1. **[Set up](How-to-write-extensions#creating-an-extension)** the basic scaffolding.
+2. **[Develop](How-to-write-extensions#common-how-tos)** your extension and **[debug](How-to-write-extensions#testingdebugging-workflow)** it.
+3. **[Package and publish](How-to-write-extensions#publishing-extensions)** your extension for others to use.
+
+Read the sections linked above for details!
+
+
+## Creating an Extension
+
 * Open your extensions folder by selecting "Help > Show Extensions Folder" in Brackets
 * Inside the `user` folder, create a new "yourExtensionName" folder, and inside that create a `main.js` file.
 * For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](Brackets-Extensions) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
-* Add a `unittests.js` to your extension folder. See example code in [[Simple "Hello World" extension]]
 
-## Simple Development Workflow
+## Testing/Debugging Workflow
 
-* Launch Brackets and use "File > Open Folder" to open your extension's folder.
 * Edit your main.js file.
 * Save the file and restart Brackets via "Debug > Reload Brackets" to see your changes.
-* To debug problems, use "Debug > Show Developer Tools" to open developer tools in a tab in Chrome. You can use console.log() from your extension code, set breakpoints, etc.
+* To debug problems, use "Debug > Show Developer Tools" (opens as a tab in Chrome). You can use console.log(), set breakpoints, etc.
     * _The first time you open Developer Tools, you must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_ - otherwise using Reload while dev tools are open will not reflect changes to your extension.
 
 See **[[Debugging Brackets]]** for a more robust two-window workflow.
 
-## Extension Structure
+You can also [write unit tests for your extension](Extension Unit Tests).
 
-A basic extension consists of just two files:
-* main.js -- your main module, in RequireJS format
-* package.json (optional) -- [metadata about the extension](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format)
 
-Although it's optional, you should _always_ include package.json for extensions you publish for others to use. Your extension will look pretty ugly in the Brackets Extension Manager UI without metadata such as a display name! Luckily the [package.json format](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format) is very simple.
+## Publishing Extensions
 
-An extension can include other files in its subtree as well, including other JS modules.
+1. Add a **[package.json file](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format)** next to your main.js
+2. ZIP up your entire extension folder (the GitHub "Download ZIP" button is handy for this)
+3. Publish your extension by uploading the ZIP to the **[Brackets Extension Registry](https://brackets-registry.aboutweb.com/)**
 
-### Referencing Modules ###
-
-* To load modules from your extension's folder tree, use `require()` with a path relative to your extension's root folder.
-* To load modules from Brackets core, use ```brackets.getModule()``` with a path relative to the Brackets src root.
-* You cannot load modules from _other_ extensions.
-
-You can also use other files packaged inside your extension - for example, see "Load a CSS file" below.
 
 ## Common How-Tos
 
-### <a name="uihooks"></a>Adding menu items and keyboard shortcuts
+### Using modules
+
+* To load modules from your extension's folder tree, use `require()` with a path relative to your extension's root folder.
+* To load modules from Brackets core, use `brackets.getModule()` with a path relative to the Brackets src root.
+* You cannot load modules from _other_ extensions (yet).
+
+You can also use other files packaged inside your extension - for example, see "Load a CSS file" below.
+
+### <a name="uihooks"></a>Adding menu items & keyboard shortcuts
 
 _See [[Simple "Hello World" extension]] for a code sample._
 
@@ -95,18 +103,10 @@ For example, if you have ```awesome.jpg``` in your extension's top-level ```foo`
 
 ### Accessing Node APIs
 
-Brackets includes a built-in [Node.js](http://nodejs.org/) server that runs as a side process.  Your extension can include code that runs in Node &ndash; accessing useful Node APIs and pulling in helpful NPM libraries.
-
-[Read more on running code in Brackets' Node instance...](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers#usage-example)
+Brackets includes a built-in [Node.js](http://nodejs.org/) server that runs as a side process.  Your extension can include code that runs in Node &ndash; accessing useful Node APIs and pulling in helpful NPM libraries.  [Read more on running code in Brackets' Node instance...](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers#usage-example)
 
 ### Further reading
 
-For more detail on Brackets internals, see [[Brackets Development How Tos]].
+For more on Brackets APIs and architecture, see [[Brackets Development How Tos]].
 
-If you're interested in contributing to the core Brackets codebase, see [[How to Hack on Brackets]].
-
-## Publishing Extensions
-
-See the [Extension Package Format](https://github.com/adobe/brackets/wiki/Extension-package-format) for information on preparing your extension for sharing with others.
-
-Publish your extension by uploading its zip file to the [Brackets Extension Registry](https://brackets-registry.aboutweb.com/).
+If you're interested in contributing to the _core_ Brackets codebase, see [[How to Hack on Brackets]].
