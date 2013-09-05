@@ -60,7 +60,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 
 **General Functionality**
 * [Tabs](https://github.com/albertxing/brackets-tabs): Show tabs in place of title when sidebar is hidden
-* [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 * [Debug] (https://github.com/aghiura/brackets-console): See console.log & console.error messages directly in Brackets
 * [Parent Dir] (https://github.com/katsh/brackets-parent-dir): Show parent directory of opened files in the Working Set.
 
@@ -203,3 +202,4 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [HTML Tag Highlight](https://github.com/sathyamoorthi/brackets-html-tag-highlight): Highlight start and end tags in HTML document. _(This is not working in sprint 28. Already there is a [pull request](https://github.com/adobe/brackets/pull/4504) for this functionality.)._
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file (README says that it's no longer being updated)
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node). _(Superseded by the built-in Extension Manager.)_
+* [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project. _(Not working in sprint 30.)_
