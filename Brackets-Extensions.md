@@ -187,7 +187,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [Whitespace Normalizer](https://github.com/dsbonev/whitespace-normalizer): Trims trailing whitespaces, transforms tabs to spaces and adds newline at the last line when saving files.
 * [Vimderbar] (https://github.com/fontface/brackets-vimderbar): Adds vim-like functionality & status bar to Brackets.
 * [Surround] (https://github.com/pedelman/brackets-surround): Wraps selected text with HTML, comments, brackets, quotes, etc.
-
+* [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 
 ---
 
@@ -202,4 +202,3 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [HTML Tag Highlight](https://github.com/sathyamoorthi/brackets-html-tag-highlight): Highlight start and end tags in HTML document. _(This is not working in sprint 28. Already there is a [pull request](https://github.com/adobe/brackets/pull/4504) for this functionality.)._
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file (README says that it's no longer being updated)
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node). _(Superseded by the built-in Extension Manager.)_
-* [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project. _(Not working in sprint 30.)_
