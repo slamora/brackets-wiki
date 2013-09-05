@@ -42,4 +42,4 @@ You could also upload an update to your extension that contains an empty main.js
 
 ## I need some other help! ##
 
-If you have questions that are not answered here, feel free to ask on the [email list](https://groups.google.com/forum/#!forum/brackets-dev).
+If you have questions that are not answered here, feel free to ask on the [email list](https://groups.google.com/forum/#!forum/brackets-dev). If you have a security or other private issue, feel free to email brackets-registry (which is at aboutweb.com – the company that is hosting the Brackets Registry).
