@@ -48,7 +48,7 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-* [Implement Node.js on Linux](https://github.com/adobe/brackets-shell/pull/306) [Tim Burgess](https://github.com/jasonsanjose)
+* [Implement Node.js on Linux](https://github.com/adobe/brackets-shell/pull/306) [Tim Burgess](https://github.com/timburgess)
 * [Replace All](https://github.com/adobe/brackets/pull/4686) ([and](https://github.com/adobe/brackets/pull/4814)) by [Martin Zagora](https://github.com/zaggino)
 * [Linux: Implement Delete file/folder](https://github.com/adobe/brackets-shell/pull/304) by [eyelash](https://github.com/eyelash)
 * [Active line highlight: Hide when text is selected](https://github.com/adobe/brackets/pull/4878) ([and](https://github.com/adobe/brackets/pull/4927)) by [Lance Campbell](https://github.com/lkcampbell)
