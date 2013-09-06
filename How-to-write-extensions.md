@@ -32,6 +32,8 @@ You can also [write unit tests for your extension](Extension Unit Tests).
 2. ZIP up your entire extension folder (the GitHub "Download ZIP" button is handy for this)
 3. Publish your extension by uploading the ZIP to the **[Brackets Extension Registry](https://brackets-registry.aboutweb.com/)**
 
+For more, see [[Extension Registry Help]].
+
 
 ## Common How-Tos
 
