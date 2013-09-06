@@ -28,3 +28,8 @@ To debug tests that run in the unit test window -- click "Show Developer Tools" 
 <br>_You must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4) once you open dev tools,_ even if you've already done so in the dev tools for the main Brackets window.
 
 To debug tests that run in a separate window -- see [[Debugging Test Windows in Unit Tests]].
+
+
+## Debugging Brackets with Theseus
+
+[Theseus](https://github.com/adobe-research/theseus) is an awesome research project built atop Brackets, providing omniscient, retroactive debugging for JavaScript. And you can use Theseus to debug Brackets itself! [Here's how...](http://blog.brackets.io/2013/08/28/theseus-javascript-debugger-for-chrome-and-nodejs/)
