@@ -25,5 +25,6 @@ You can open separate copies of developer tools for the two windows if needed.
 Some Brackets unit tests run directly in the unit test runner window, while others pop up a separate test instance of Brackets.
 
 To debug tests that run in the unit test window -- click "Show Developer Tools" in the window header.
+<br>_You must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4) once you open dev tools,_ even if you've already done so in the dev tools for the main Brackets window.
 
 To debug tests that run in a separate window -- see [[Debugging Test Windows in Unit Tests]].
