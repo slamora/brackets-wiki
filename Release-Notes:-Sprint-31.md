@@ -37,7 +37,7 @@ TODO: Node upgrade
 
 New/Improved Extensibility APIs
 -------------------------------
-TODO: linting API
+**Linting** - Use `CodeInspection.register()` to provide a linting/inspection for a given Language. Just like the built-in JSLint functionality, the provider is invoked whenever a file is opened or saved, and its results are displayed in a panel below the editor. Currently, only one provider is accepted per language; extensions can replace the default provider for JavaScript, however.
 
 
 Known Issues
