@@ -95,6 +95,9 @@ However, following these best practices will ensure your code behaves as nicely 
 
 **Syntax Coloring:** Extensions can add new code-coloring "modes" via `LanguageManager.defineLanguage()`. See [[Language Support]] for details.
 
+**Linting:** Use `CodeInspection.register()` to provide linting/inspection for a given Language. Just like the built-in JSLint functionality, the provider is invoked whenever a file is opened or saved, and its results are displayed in a panel below the editor (providers may be run more frequently in the future, however). Currently, only one provider is accepted per language, although extensions _can_ replace the default JSLint provider for JavaScript.
+
+
 ### <a name="tourl"></a>Accessing resources (e.g. images) in your extension
 
 Extensions can get installed at (semi-)arbitrary paths. For example, you might develop your extension in the ```brackets/src/extensions/dev/foo``` directory, but a user might install it in ```/Users/<user>/Library/Application Settings/Brackets/extensions/user/bar```.
