@@ -47,7 +47,8 @@ foo.
 1. Click the lightning bolt in the upper right. If you trashed prefs, you'll get an info dialog explaining how live preview works. Hit OK.
 1. You should see the page load in Chrome.
 1. On Mac, you should get a dialog saying you need to relaunch Chrome. Click "Relaunch". Chrome should relaunch and open the page.
-1. Back in Brackets, on line 26, put the cursor after "A new" and type ` and totally <em>AWESOME</em> local` (with a space after it); let the `<em>` tag autocomplete. Verify that everything appears as you type, except that nothing updates while you type `<em`, and verify that AWESOME is italicized (and nothing else is).
+1. Back in Brackets, on line 26, put the cursor after "A new" and type ` and totally <em>AWESOME</em> local`; let the `<em>` tag autocomplete (you can arrow or click select after the `</em>` to type `local`). Verify that everything appears as you type, except that nothing updates while you type `<em`, and verify that AWESOME is italicized (and nothing else is).
+1. Undo the file back to a clean state. Verify that as you undo, the HTML preview continues to match the current state of the document, and ends up looking the same as when you first opened the file.
 1. Edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
 1. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
 1. Put the cursor after the `<a` in one of the navbar items and hit Cmd/Ctrl-E to open another inline editor.
