@@ -37,7 +37,9 @@ TODO: Node upgrade
 
 New/Improved Extensibility APIs
 -------------------------------
-**Linting** - Use `CodeInspection.register()` to provide linting/inspection for a given Language. Just like the built-in JSLint functionality, the provider is invoked whenever a file is opened or saved, and its results are displayed in a panel below the editor (providers may be run more frequently in the future, however). Currently, only one provider is accepted per language, although extensions _can_ replace the default JSLint provider for JavaScript.
+* **Linting** - Use `CodeInspection.register()` to provide linting/inspection for a given Language. Just like the built-in JSLint functionality, the provider is invoked whenever a file is opened or saved, and its results are displayed in a panel below the editor (providers may be run more frequently in the future, however). Currently, only one provider is accepted per language, although extensions _can_ replace the default JSLint provider for JavaScript.
+
+* **Code Hints** - The behavior of the CodeHintList on tab key events is now configurable on a global and per-CodeHintProvider basis. The CodeHintManager provider registration API has been generalized with an additional optional property, `insertHintOnTab`, that indicates whether the CodeHintManager should request that the provider of the current session insert the currently selected hint on tab key events, or if instead a tab character should be inserted into the editor. See [#5084](https://github.com/adobe/brackets/pull/5084 "Make code hint insertion on tab key configurable") for more details.
 
 
 Known Issues
