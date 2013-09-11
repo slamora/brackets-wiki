@@ -44,7 +44,7 @@ There are a few basic rules for using the new file system.
 ### Prototype ###
 A prototype implementation can be found in the `glenn/file-system` [branch](https://github.com/adobe/brackets/tree/glenn/file-system). 
 
-Most of the basic functionality works. Unit tests are completely broken (this is the next thing I want to work on), and many extensions are broken. 
+Most of the basic functionality works. Existing unit tests pass, but there are no unit tests for the new code (yes, shame on me...). Many extensions are broken. 
 
 File watchers require node 0.10. You will need to update the shell in order to get proper file watching (directory watching works fine in 0.8).
 
