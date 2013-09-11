@@ -100,3 +100,4 @@ The main performance gains come from caching. The stats and contents of files an
 * Testing and bug fixing. 
 * Figure out how to deal with both case-sensitive and case-insensitive file systems.
 * Make getFileList async 
+* Should directory paths include trailing slash or not? 
