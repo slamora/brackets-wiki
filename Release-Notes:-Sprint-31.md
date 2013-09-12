@@ -33,7 +33,9 @@ TODO: [UI indicating](https://trello.com/c/cmkAdt20/985-2-live-development-html-
 
 API Changes
 -----------
-TODO: Node upgrade
+TODO: Node version upgrade
+
+TODO: KeyBindingManager clearer semantics for `platform`
 
 New/Improved Extensibility APIs
 -------------------------------
