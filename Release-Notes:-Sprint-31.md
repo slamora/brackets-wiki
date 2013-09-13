@@ -9,7 +9,7 @@ What's New in Sprint 31
 * **Overall UI**
     * [Compact, dark titlebar (Windows)](https://trello.com/card/5-into-darkness-shell-windows/4f90a6d98f77505d7940ce88/874): A similar change will be [coming soon for Mac](https://trello.com/card/into-darkness-shell-osx/4f90a6d98f77505d7940ce88/900) too.
     * [Keyboard shortcut to switch between recent projects](https://github.com/adobe/brackets/pull/4546): Press Ctrl+Alt+R (&#x2325;⌘R) to open the "recent projects" dropdown, then use the arrows and Enter to switch projects.
-* **SCSS Support**
+* **CSS code hints in SCSS**
     * [Code hints for CSS property names & values](https://github.com/adobe/brackets/pull/4931): The same code hints you see in CSS files will now also appear in SCSS files.
     * [Quick Docs for CSS properties](https://github.com/adobe/brackets/pull/5069): Ditto &ndash; just like in CSS.
 * **HTML Editing**
@@ -18,8 +18,8 @@ What's New in Sprint 31
     * [Update Find in Files results while typing](https://github.com/adobe/brackets/pull/4729)
 * **Linting**
     * [Extensibility for linting tools](https://github.com/adobe/brackets/pull/4588)
-* **Linux Support**
-    * [Linux universal installer](https://github.com/adobe/brackets-shell/pull/316)
+* **Arch Linux Support**
+    * [Brackets is now available for Arch Linux on the Arch User Repository (AUR).](https://github.com/adobe/brackets-shell/pull/316)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-30...sprint-31#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-30...sprint-31#commits_bucket)
 
