@@ -54,11 +54,24 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-
+* [Failing with useful message on mac build step](https://github.com/adobe/brackets-shell/pull/325) by [jsoverson](https://github.com/jsoverson).
+* [Support for chromium browser in linux](https://github.com/adobe/brackets-shell/pull/317) by [macie](https://github.com/macie).
+* [Update swedish translation](https://github.com/adobe/brackets/pull/4964) by [mikaeljorhult](https://github.com/mikaeljorhult).
+* [Update Russian index.html](https://github.com/adobe/brackets/pull/4999) by [morozd](https://github.com/morozd).
+* [[UX] Issue #4174 - Add find next / previous buttons for easy navigation](https://github.com/adobe/brackets/pull/5002) by [rajeshsegu](https://github.com/rajeshsegu).
+* [Working set context menu pops closed when right-clicking file that hasn't been opened yet](https://github.com/adobe/brackets/pull/5004) by [lkcampbell](https://github.com/lkcampbell).
+* [Added .ASP files highlighting](https://github.com/adobe/brackets/pull/5010) by [Fr3nzzy](https://github.com/Fr3nzzy).
+* []() by []().
+* []() by []().
+* []() by []().
+* []() by []().
+* []() by []().
+* []() by []().
+* []() by []().
+* []() by []().
 
 #### Pulling source code from Git
-* A new brackets-shell build is required _only_ to enable the new Windows border appearance.
-* A submodule _URL_ was changed this sprint. Run `git submodule sync` and _then_ `git submodule update` to ensure your local source tree reflects the update.
+* 
 
 Bugs fixed in Sprint 31
 -----------------------
