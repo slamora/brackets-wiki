@@ -30,12 +30,15 @@ TODO: Windows shell appearance
 
 TODO: [UI indicating](https://trello.com/c/cmkAdt20/985-2-live-development-html-ui-for-invalid-state) HTML is invalid & won't be syncing
 
+TODO: Implement document proxy icon in Brackets editor
+
 
 API Changes
 -----------
-TODO: Node version upgrade
-
 TODO: KeyBindingManager clearer semantics for `platform`
+
+TODO: CodeHintManager Response.query
+
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -61,11 +64,11 @@ Community contributions to Brackets
 * [[UX] Issue #4174 - Add find next / previous buttons for easy navigation](https://github.com/adobe/brackets/pull/5002) by [rajeshsegu](https://github.com/rajeshsegu).
 * [Working set context menu pops closed when right-clicking file that hasn't been opened yet](https://github.com/adobe/brackets/pull/5004) by [lkcampbell](https://github.com/lkcampbell).
 * [Added .ASP files highlighting](https://github.com/adobe/brackets/pull/5010) by [Fr3nzzy](https://github.com/Fr3nzzy).
-* []() by []().
-* []() by []().
-* []() by []().
-* []() by []().
-* []() by []().
+* [Update strings.js](https://github.com/adobe/brackets/pull/5012), [and again](https://github.com/adobe/brackets/pull/5025) by [SAPlayer](https://github.com/SAPlayer).
+* [.idea added to gitignore](https://github.com/adobe/brackets/pull/5018) by [Fr3nzzy](https://github.com/Fr3nzzy).
+* [Tree context menu behaves unpredictably while naming new file](https://github.com/adobe/brackets/pull/5089) by [lkcampbell](https://github.com/lkcampbell).
+* [Unit Test Failing: ExtensionManager](https://github.com/adobe/brackets/pull/5115) by [TomMalbran](https://github.com/TomMalbran).
+* [Implement document proxy icon in Brackets editor](https://github.com/adobe/brackets/pull/5117) by [eugeneo](https://github.com/eugeneo).
 * []() by []().
 * []() by []().
 * []() by []().
