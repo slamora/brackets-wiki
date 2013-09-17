@@ -89,12 +89,19 @@ Community contributions to Brackets
 * [Tab and modality fixes for the modal dialogs](https://github.com/adobe/brackets/pull/4714) by [TomMalbran](https://github.com/TomMalbran).
 * [Update to Finnish localization](https://github.com/adobe/brackets/pull/4741) by [ghost](https://github.com/ghost).
 * [Do not show Active Line Highlight when editor has selection](https://github.com/adobe/brackets/pull/4878) by [lkcampbell](https://github.com/lkcampbell).
-* [File Rename should complete when clicking anywhere in project panel](https://github.com/adobe/brackets/pull/4323) by [vladnicula](https://github.com/vladnicula).
+* [File Rename should complete when clicking anywhere in project panel](https://github.com/adobe/brackets/pull/4934) by [vladnicula](https://github.com/vladnicula), [lkcampbell](https://github.com/lkcampbell).
 * [Implementation of Navigate Recent Projects](https://github.com/adobe/brackets/pull/4546) by [TomMalbran](https://github.com/TomMalbran).
 * [Updated the flex property for the latest chrome version to fix #4602 and #4870](https://github.com/adobe/brackets/pull/4940) by [TomMalbran](https://github.com/TomMalbran).
 * [[ARCH] Image preview draft](https://github.com/adobe/brackets/pull/4492) by [warabe](https://github.com/warabe).
-* []() by []().
-* []() by []().
+* [Fix issue #3556: Consolidate link handling code](https://github.com/adobe/brackets/pull/4718) by [TomMalbran](https://github.com/TomMalbran).
+* [Updated documentation on sidebar view events](https://github.com/adobe/brackets/pull/4804) by [lkcampbell](https://github.com/lkcampbell).
+* [Remove strings for commands that are not user facing](https://github.com/adobe/brackets/pull/4306) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
+* [Slovak language support](https://github.com/adobe/brackets/pull/4856) by [erichstark](https://github.com/erichstark).
+* [Clean up _getFileExtension() method and fix all its callers](https://github.com/adobe/brackets/pull/4846) by [megatolya](https://github.com/megatolya).
+* [Update Less to 1.4.2](https://github.com/adobe/brackets/pull/4476) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
+* [Update 'de' locale for HTML preview, more minor changes](https://github.com/adobe/brackets/pull/5145) by [mynetx](https://github.com/mynetx).
+* [Find in Files Improvements (Part 3: Auto-update)](https://github.com/adobe/brackets/pull/4729) by [TomMalbran](https://github.com/TomMalbran).
+* [Spanish strings and sample translations](https://github.com/adobe/brackets/pull/5221) by [TomMalbran](https://github.com/TomMalbran).
 
 #### Pulling source code from Git
 * 
