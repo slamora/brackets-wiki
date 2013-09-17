@@ -68,10 +68,14 @@ Community contributions to Brackets
 * [.idea added to gitignore](https://github.com/adobe/brackets/pull/5018) by [Fr3nzzy](https://github.com/Fr3nzzy).
 * [Tree context menu behaves unpredictably while naming new file](https://github.com/adobe/brackets/pull/5089) by [lkcampbell](https://github.com/lkcampbell).
 * [Unit Test Failing: ExtensionManager](https://github.com/adobe/brackets/pull/5115) by [TomMalbran](https://github.com/TomMalbran).
-* [Implement document proxy icon in Brackets editor](https://github.com/adobe/brackets/pull/5117) by [eugeneo](https://github.com/eugeneo).
-* []() by []().
-* []() by []().
-* []() by []().
+* [Implement document proxy icon in Brackets editor](https://github.com/adobe/brackets/pull/5118) by [eugeneo](https://github.com/eugeneo).
+* [Renewed German translation](https://github.com/adobe/brackets/pull/5123) by [SAPlayer](https://github.com/SAPlayer).
+* [Update German translation](https://github.com/adobe/brackets/pull/5129) by [SAPlayer](https://github.com/SAPlayer).
+* [Change: UNKOWN -> UNKNOWN](https://github.com/adobe/brackets/pull/5133) by [SAPlayer](https://github.com/SAPlayer).
+* [Update Japanese translation](https://github.com/adobe/brackets/pull/5140) by [kanreisa](https://github.com/kanreisa).
+* [Update 'de' locale for HTML preview, more minor changes](https://github.com/adobe/brackets/pull/5145) by [mynetx](https://github.com/mynetx).
+* [Document file and handler function for each command](https://github.com/adobe/brackets/pull/5155) by [lkcampbell](https://github.com/lkcampbell).
+* [Update strings.js, merge new translates strings for latest version](https://github.com/adobe/brackets/pull/5161) by [michaeljayt](https://github.com/michaeljayt).
 
 #### Pulling source code from Git
 * 
