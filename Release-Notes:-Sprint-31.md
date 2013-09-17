@@ -96,6 +96,7 @@ Community contributions to Brackets
 * [Update 'de' locale for HTML preview, more minor changes](https://github.com/adobe/brackets/pull/5145) by [mynetx](https://github.com/mynetx).
 * [Find in Files Improvements (Part 3: Auto-update)](https://github.com/adobe/brackets/pull/4729) by [TomMalbran](https://github.com/TomMalbran).
 * [Spanish strings and sample translations](https://github.com/adobe/brackets/pull/5221) by [TomMalbran](https://github.com/TomMalbran).
+* [Adding Menus.removeMenu() and Menus.getAllMenus()](https://github.com/adobe/brackets/pull/5217) by [lkcampbell](https://github.com/lkcampbell).
 
 #### Pulling source code from Git
 * 
