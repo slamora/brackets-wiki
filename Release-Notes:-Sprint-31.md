@@ -68,7 +68,7 @@ Community contributions to Brackets
 * [.idea added to gitignore](https://github.com/adobe/brackets/pull/5018) by [Fr3nzzy](https://github.com/Fr3nzzy).
 * [Tree context menu behaves unpredictably while naming new file](https://github.com/adobe/brackets/pull/5114) by [lkcampbell](https://github.com/lkcampbell).
 * [Unit Test Failing: ExtensionManager](https://github.com/adobe/brackets/pull/5115) by [TomMalbran](https://github.com/TomMalbran).
-* [Implement document proxy icon in Brackets editor](https://github.com/adobe/brackets/pull/5118) by [eugeneo](https://github.com/eugeneo).
+* [Implement document proxy icon in Brackets editor](https://github.com/adobe/brackets/pull/5119) by [eugeneo](https://github.com/eugeneo).
 * [Renewed German translation](https://github.com/adobe/brackets/pull/5123) by [SAPlayer](https://github.com/SAPlayer).
 * [Update German translation](https://github.com/adobe/brackets/pull/5129) by [SAPlayer](https://github.com/SAPlayer).
 * [Change: UNKOWN -> UNKNOWN](https://github.com/adobe/brackets/pull/5133) by [SAPlayer](https://github.com/SAPlayer).
