@@ -26,9 +26,9 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-**Dark Titlebar on Windows** -- the Windows shell now has a dark titlebar that visually complements the Brackets UI.
+**Dark Titlebar on Windows** - the Windows shell now has a dark titlebar that visually complements the Brackets UI.
 
-TODO **Live HTML UI for Invalid State** -- during Live HTML Development, Brackets indicates when code
+TODO **Live HTML UI for Invalid State** - during Live HTML Development, Brackets indicates when code
 isn't updating due to being in an invalid state by changing the Live Development icon and
 displaying markers in the gutter.
 
