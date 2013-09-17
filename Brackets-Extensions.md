@@ -53,7 +53,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 
 **Language Support**
 * [PHP](https://github.com/aonic/brackets-QuickOpenPHP): Adds PHP function definition support to QuickOpen search
-* [Rename JavaScript Identifier](https://github.com/asgerf/bracket-rename): Renames JavaScript identifiers.
 * [MVC.net](https://github.com/edwinvankoppen/Brackets-MVC.net): Adds cshtml (views in MVC.net) to the HTML highlighting.
 * [Ruby](https://github.com/TheresNoBox/Brackets-Ruby): Adds support for Haml, ERB, and Ruby line and block comments. 
 
@@ -187,6 +186,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [Vimderbar] (https://github.com/fontface/brackets-vimderbar): Adds vim-like functionality & status bar to Brackets.
 * [Surround] (https://github.com/pedelman/brackets-surround): Wraps selected text with HTML, comments, brackets, quotes, etc.
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
+* [Rename JavaScript Identifier](https://github.com/asgerf/bracket-rename): Renames JavaScript identifiers.
 
 ---
 
