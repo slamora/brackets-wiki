@@ -66,7 +66,7 @@ Community contributions to Brackets
 * [Added .ASP files highlighting](https://github.com/adobe/brackets/pull/5010) by [Fr3nzzy](https://github.com/Fr3nzzy).
 * [Update strings.js](https://github.com/adobe/brackets/pull/5012), [and again](https://github.com/adobe/brackets/pull/5025) by [SAPlayer](https://github.com/SAPlayer).
 * [.idea added to gitignore](https://github.com/adobe/brackets/pull/5018) by [Fr3nzzy](https://github.com/Fr3nzzy).
-* [Tree context menu behaves unpredictably while naming new file](https://github.com/adobe/brackets/pull/5089) by [lkcampbell](https://github.com/lkcampbell).
+* [Tree context menu behaves unpredictably while naming new file](https://github.com/adobe/brackets/pull/5114) by [lkcampbell](https://github.com/lkcampbell).
 * [Unit Test Failing: ExtensionManager](https://github.com/adobe/brackets/pull/5115) by [TomMalbran](https://github.com/TomMalbran).
 * [Implement document proxy icon in Brackets editor](https://github.com/adobe/brackets/pull/5118) by [eugeneo](https://github.com/eugeneo).
 * [Renewed German translation](https://github.com/adobe/brackets/pull/5123) by [SAPlayer](https://github.com/SAPlayer).
