@@ -28,6 +28,10 @@ UI Changes
 ----------
 **Dark Titlebar on Windows** -- the Windows shell now has a dark titlebar that visually complements the Brackets UI.
 
+TODO **Live HTML UI for Invalid State** -- during Live HTML Development, Brackets indicates when code
+isn't updating due to being in an invalid state by changing the Live Development icon and
+displaying markers in the gutter.
+
 TODO: [UI indicating](https://trello.com/c/cmkAdt20/985-2-live-development-html-ui-for-invalid-state) HTML is invalid & won't be syncing
 
 TODO: Implement document proxy icon in Brackets editor
