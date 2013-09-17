@@ -39,7 +39,7 @@ API Changes
 -----------
 `KeyBindingManager` now supports `platform: "all"` on key bindings for clearer semantics.
 
-TODO: `CodeHintManager.getHints` return object added `query` property used for preventing a race condition as described in [issue #5003](https://github.com/adobe/brackets/issues/5003).
+TODO: `CodeHintManager` hint provider callback `getHints()` return object added `query` property used for preventing a race condition as described in [issue #5003](https://github.com/adobe/brackets/issues/5003).
 
 
 New/Improved Extensibility APIs
