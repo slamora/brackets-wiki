@@ -35,7 +35,7 @@ TODO: Implement document proxy icon in Brackets editor
 
 API Changes
 -----------
-TODO: KeyBindingManager clearer semantics for `platform`
+`KeyBindingManager` now supports `platform: "all"` for clearer semantics.
 
 TODO: CodeHintManager Response.query
 
