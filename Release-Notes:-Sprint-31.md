@@ -7,7 +7,7 @@ What's New in Sprint 31
 * **Live Preview**
     * [Live Preview HTML changes](https://trello.com/c/ya9wexlA/998-2-improve-html-live-development-performance): Live Preview updates in real time as you type in HTML files. Updates pause whenever the HTML is not syntactically valid.
 * **Overall UI**
-    * [Compact, dark titlebar  on Windows](https://trello.com/card/5-into-darkness-shell-windows/4f90a6d98f77505d7940ce88/874): A similar change will be [coming soon for Mac](https://trello.com/card/into-darkness-shell-osx/4f90a6d98f77505d7940ce88/900) too.
+    * [Dark titlebar on Windows](https://trello.com/card/5-into-darkness-shell-windows/4f90a6d98f77505d7940ce88/874): A similar change will be [coming soon for Mac](https://trello.com/card/into-darkness-shell-osx/4f90a6d98f77505d7940ce88/900) too.
     * [Keyboard shortcut to switch between recent projects](https://github.com/adobe/brackets/pull/4546): Press Ctrl+Alt+R (&#x2325;⌘R) to open the "recent projects" dropdown, then use the arrows and Enter to switch projects.
 * **CSS Code Hints in SCSS**
     * [Code hints for CSS property names & values](https://github.com/adobe/brackets/pull/4931): The same code hints you see in CSS files will now also appear in SCSS files.
@@ -26,7 +26,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-TODO: Windows shell appearance
+**Dark Titlebar on Windows** -- the Windows shell now has a dark titlebar that visually complements the Brackets UI.
 
 TODO: [UI indicating](https://trello.com/c/cmkAdt20/985-2-live-development-html-ui-for-invalid-state) HTML is invalid & won't be syncing
 
