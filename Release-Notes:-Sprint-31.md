@@ -15,7 +15,8 @@ What's New in Sprint 31
 * **HTML Matching Tag Highlighting**
     * [Highlight matching open/close tag](https://github.com/adobe/brackets/pull/4504)
 * **Search**
-    * [Update Find in Files results while typing](https://github.com/adobe/brackets/pull/4729)
+    * [Search result tickmarks](https://github.com/adobe/brackets/pull/5191): Find results are visually mapped out as yellow tickmarks along the scroll bar track.
+    * [Find in Files results auto-update while typing](https://github.com/adobe/brackets/pull/4729)
 * **Linting**
     * [Extensibility for linting tools](https://github.com/adobe/brackets/pull/4588)
 * **Arch Linux Support**
