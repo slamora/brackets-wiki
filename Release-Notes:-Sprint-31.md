@@ -83,6 +83,18 @@ Community contributions to Brackets
 * [Update 'de' locale for HTML preview, more minor changes](https://github.com/adobe/brackets/pull/5145) by [mynetx](https://github.com/mynetx).
 * [Document file and handler function for each command](https://github.com/adobe/brackets/pull/5155) by [lkcampbell](https://github.com/lkcampbell).
 * [Update strings.js, merge new translates strings for latest version](https://github.com/adobe/brackets/pull/5161) by [michaeljayt](https://github.com/michaeljayt).
+* [HTML tag highlight added](https://github.com/adobe/brackets/pull/4504) by [sathyamoorthi](https://github.com/sathyamoorthi).
+* [Followup updates to #4581 and #4598](https://github.com/adobe/brackets/pull/4629) by [TomMalbran](https://github.com/TomMalbran).
+* [Added projectRefresh event when project tree is refreshed but project root has not changed](https://github.com/adobe/brackets/pull/4815) by [zaggino](https://github.com/zaggino).
+* [Tab and modality fixes for the modal dialogs](https://github.com/adobe/brackets/pull/4714) by [TomMalbran](https://github.com/TomMalbran).
+* [Update to Finnish localization](https://github.com/adobe/brackets/pull/4741) by [ghost](https://github.com/ghost).
+* [Do not show Active Line Highlight when editor has selection](https://github.com/adobe/brackets/pull/4878) by [lkcampbell](https://github.com/lkcampbell).
+* [File Rename should complete when clicking anywhere in project panel](https://github.com/adobe/brackets/pull/4323) by [vladnicula](https://github.com/vladnicula).
+* [Implementation of Navigate Recent Projects](https://github.com/adobe/brackets/pull/4546) by [TomMalbran](https://github.com/TomMalbran).
+* [Updated the flex property for the latest chrome version to fix #4602 and #4870](https://github.com/adobe/brackets/pull/4940) by [TomMalbran](https://github.com/TomMalbran).
+* [[ARCH] Image preview draft](https://github.com/adobe/brackets/pull/4492) by [warabe](https://github.com/warabe).
+* []() by []().
+* []() by []().
 
 #### Pulling source code from Git
 * 
