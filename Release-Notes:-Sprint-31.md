@@ -98,6 +98,7 @@ Community contributions to Brackets
 * [Spanish strings and sample translations](https://github.com/adobe/brackets/pull/5221) by [TomMalbran](https://github.com/TomMalbran).
 * [Adding Menus.removeMenu() and Menus.getAllMenus()](https://github.com/adobe/brackets/pull/5217) by [lkcampbell](https://github.com/lkcampbell).
 * [Show more info about failure in console](https://github.com/adobe/brackets/pull/5223) by [zaggino](https://github.com/zaggino).
+* [Support for chromium browser in linux](https://github.com/adobe/brackets-shell/pull/317) by [macie](https://github.com/macie).
 
 Bugs fixed in Sprint 31
 -----------------------
