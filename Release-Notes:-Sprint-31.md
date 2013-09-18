@@ -97,9 +97,7 @@ Community contributions to Brackets
 * [Find in Files Improvements (Part 3: Auto-update)](https://github.com/adobe/brackets/pull/4729) by [TomMalbran](https://github.com/TomMalbran).
 * [Spanish strings and sample translations](https://github.com/adobe/brackets/pull/5221) by [TomMalbran](https://github.com/TomMalbran).
 * [Adding Menus.removeMenu() and Menus.getAllMenus()](https://github.com/adobe/brackets/pull/5217) by [lkcampbell](https://github.com/lkcampbell).
-
-#### Pulling source code from Git
-* 
+* [Show more info about failure in console](https://github.com/adobe/brackets/pull/5223) by [zaggino](https://github.com/zaggino).
 
 Bugs fixed in Sprint 31
 -----------------------
