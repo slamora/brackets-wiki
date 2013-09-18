@@ -19,8 +19,6 @@ What's New in Sprint 31
     * [Find in Files results auto-update while typing](https://github.com/adobe/brackets/pull/4729)
 * **Linting**
     * [Extensibility for linting tools](https://github.com/adobe/brackets/pull/4588)
-* **Arch Linux Support**
-    * [Brackets is now available for Arch Linux on the Arch User Repository (AUR).](https://github.com/adobe/brackets-shell/pull/316)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-30...sprint-31#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-30...sprint-31#commits_bucket)
 
