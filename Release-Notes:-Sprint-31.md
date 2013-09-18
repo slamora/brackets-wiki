@@ -39,6 +39,8 @@ API Changes
 -----------
 `KeyBindingManager` now supports `platform: "all"` on key bindings for clearer semantics.
 
+`Menus` now has `removeMenu()` and `getAllMenus()` methods.
+
 TODO: `CodeHintManager` hint provider callback `getHints()` return object added `query` property used for preventing a race condition as described in [issue #5003](https://github.com/adobe/brackets/issues/5003).
 
 
