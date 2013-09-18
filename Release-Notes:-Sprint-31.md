@@ -93,7 +93,6 @@ Community contributions to Brackets
 * [Slovak language support](https://github.com/adobe/brackets/pull/4856) by [erichstark](https://github.com/erichstark).
 * [Clean up _getFileExtension() method and fix all its callers](https://github.com/adobe/brackets/pull/4846) by [megatolya](https://github.com/megatolya).
 * [Update Less to 1.4.2](https://github.com/adobe/brackets/pull/4476) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
-* [Update 'de' locale for HTML preview, more minor changes](https://github.com/adobe/brackets/pull/5145) by [mynetx](https://github.com/mynetx).
 * [Find in Files Improvements (Part 3: Auto-update)](https://github.com/adobe/brackets/pull/4729) by [TomMalbran](https://github.com/TomMalbran).
 * [Spanish strings and sample translations](https://github.com/adobe/brackets/pull/5221) by [TomMalbran](https://github.com/TomMalbran).
 * [Adding Menus.removeMenu() and Menus.getAllMenus()](https://github.com/adobe/brackets/pull/5217) by [lkcampbell](https://github.com/lkcampbell).
