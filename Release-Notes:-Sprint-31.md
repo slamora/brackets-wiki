@@ -39,8 +39,6 @@ API Changes
 -----------
 `KeyBindingManager` now supports `platform: "all"` on key bindings for clearer semantics.
 
-`Menus` now has `removeMenu()` and `getAllMenus()` methods.
-
 TODO: `CodeHintManager` hint provider callback `getHints()` return object added `query` property used for preventing a race condition as described in [issue #5003](https://github.com/adobe/brackets/issues/5003).
 
 
@@ -50,6 +48,7 @@ New/Improved Extensibility APIs
 
 * **Code Hints** - The behavior of the CodeHintList on tab key events is now configurable on a global and per-CodeHintProvider basis. The CodeHintManager provider registration API has been generalized with an additional optional property, `insertHintOnTab`, that indicates whether the CodeHintManager should request that the provider of the current session insert the currently selected hint on tab key events, or if instead a tab character should be inserted into the editor. See [#5084](https://github.com/adobe/brackets/pull/5084 "Make code hint insertion on tab key configurable") for more details.
 
+* **Menus** - `removeMenu()` and `getAllMenus()` methods have been implemented.
 
 Known Issues
 ------------
