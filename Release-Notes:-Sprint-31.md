@@ -35,9 +35,7 @@ and the tooltip indicates "not updating due to syntax error".
 
 API Changes
 -----------
-`KeyBindingManager` now supports `platform: "all"` on key bindings for clearer semantics.
-
-TODO: `CodeHintManager` hint provider callback `getHints()` return object added `query` property used for preventing a race condition as described in [issue #5003](https://github.com/adobe/brackets/issues/5003).
+`KeyBindingManager` key binding resolution changed slightly to fix a conflict described in [issue #4265](https://github.com/adobe/brackets/issues/4265). It now supports `platform: "all"` on key bindings for clearer semantics.
 
 
 New/Improved Extensibility APIs
