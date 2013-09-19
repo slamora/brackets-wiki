@@ -88,15 +88,10 @@ With Live Development, the idea is to tie Brackets more closely to the browser,
 so that you can make changes and debug from Brackets itself, and see the results
 instantly in the browser.
 
-The initial implementation of this in Brackets is for CSS editing. If you open an 
-HTML file, and then click the "lightning bolt" icon on the right side of the toolbar, 
-Brackets will open the HTML file in Chrome. If you then make edits to CSS files 
-used by that HTML file (either in an inline editor or just by opening up the CSS 
-file), your edits will be instantly reflected in Chrome as you type.
+The initial implementation of this in Brackets was for CSS editing but starting with Sprint 30,
+it has been extended to allow live editing of HTML. If you open an  HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This include changes to the style and class tag attributes.  
 
-If you save an HTML or JS file, it will auto-reload the browser
-preview. We're hoping to work on making these work more like true live development
-in the future.
+If you make changes and save a JS file, however, the content in your browser will be refreshed for preview. 
 
 While Live Preview is open, putting your cursor in an HTML tag in Brackets will
 highlight the matching element in the browser. Putting your cursor in a CSS rule will
