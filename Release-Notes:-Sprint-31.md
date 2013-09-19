@@ -73,23 +73,23 @@ Community contributions to Brackets
 * [Change: UNKOWN -> UNKNOWN](https://github.com/adobe/brackets/pull/5133) by [SAPlayer](https://github.com/SAPlayer).
 * [Added .ASP files highlighting](https://github.com/adobe/brackets/pull/5010) by [Fr3nzzy](https://github.com/Fr3nzzy).
 * [.idea added to gitignore](https://github.com/adobe/brackets/pull/5018) by [Fr3nzzy](https://github.com/Fr3nzzy).
+* [Added projectRefresh event when project tree is refreshed but project root has not changed](https://github.com/adobe/brackets/pull/4815) by [zaggino](https://github.com/zaggino).
+* [Show more info about failure in console](https://github.com/adobe/brackets/pull/5223) by [zaggino](https://github.com/zaggino).
+* [Support for chromium browser in linux](https://github.com/adobe/brackets-shell/pull/317) by [macie](https://github.com/macie).
 * [Update swedish translation](https://github.com/adobe/brackets/pull/4964) by [mikaeljorhult](https://github.com/mikaeljorhult).
 * [Failing with useful message on mac build step](https://github.com/adobe/brackets-shell/pull/325) by [jsoverson](https://github.com/jsoverson).
-* [Support for chromium browser in linux](https://github.com/adobe/brackets-shell/pull/317) by [macie](https://github.com/macie).
 * [Update Russian index.html](https://github.com/adobe/brackets/pull/4999) by [morozd](https://github.com/morozd).
 * [[UX] Issue #4174 - Add find next / previous buttons for easy navigation](https://github.com/adobe/brackets/pull/5002) by [rajeshsegu](https://github.com/rajeshsegu).
 * [Update Japanese translation](https://github.com/adobe/brackets/pull/5140) by [kanreisa](https://github.com/kanreisa).
 * [Update 'de' locale for HTML preview, more minor changes](https://github.com/adobe/brackets/pull/5145) by [mynetx](https://github.com/mynetx).
 * [Update strings.js, merge new translates strings for latest version](https://github.com/adobe/brackets/pull/5161) by [michaeljayt](https://github.com/michaeljayt).
 * [HTML tag highlight added](https://github.com/adobe/brackets/pull/4504) by [sathyamoorthi](https://github.com/sathyamoorthi).
-* [Added projectRefresh event when project tree is refreshed but project root has not changed](https://github.com/adobe/brackets/pull/4815) by [zaggino](https://github.com/zaggino).
 * [Update to Finnish localization](https://github.com/adobe/brackets/pull/4741) by [ghost](https://github.com/ghost).
 * [[ARCH] Image preview draft](https://github.com/adobe/brackets/pull/4492) by [warabe](https://github.com/warabe).
 * [Remove strings for commands that are not user facing](https://github.com/adobe/brackets/pull/4306) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
 * [Slovak language support](https://github.com/adobe/brackets/pull/4856) by [erichstark](https://github.com/erichstark).
 * [Clean up _getFileExtension() method and fix all its callers](https://github.com/adobe/brackets/pull/4846) by [megatolya](https://github.com/megatolya).
 * [Update Less to 1.4.2](https://github.com/adobe/brackets/pull/4476) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
-* [Show more info about failure in console](https://github.com/adobe/brackets/pull/5223) by [zaggino](https://github.com/zaggino).
 
 Bugs fixed in Sprint 31
 -----------------------
