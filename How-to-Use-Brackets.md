@@ -89,7 +89,7 @@ so that you can make changes and debug from Brackets itself, and see the results
 instantly in the browser.
 
 The initial implementation of this in Brackets was limited to CSS editing but, starting with Sprint 30,
-Live Development has been expanded to include support for live editing of HTML. If you open an  HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This include changes to the style and class tag attributes.  
+Live Development has been expanded to include support for live editing of HTML. If you open an  HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This includes changes to the style and class tag attributes.  
 
 If you make changes and save a JS file, however, the content in your browser will be refreshed for preview. 
 
