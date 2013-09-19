@@ -52,45 +52,44 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-* [Failing with useful message on mac build step](https://github.com/adobe/brackets-shell/pull/325) by [jsoverson](https://github.com/jsoverson).
-* [Support for chromium browser in linux](https://github.com/adobe/brackets-shell/pull/317) by [macie](https://github.com/macie).
-* [Update swedish translation](https://github.com/adobe/brackets/pull/4964) by [mikaeljorhult](https://github.com/mikaeljorhult).
-* [Update Russian index.html](https://github.com/adobe/brackets/pull/4999) by [morozd](https://github.com/morozd).
-* [[UX] Issue #4174 - Add find next / previous buttons for easy navigation](https://github.com/adobe/brackets/pull/5002) by [rajeshsegu](https://github.com/rajeshsegu).
-* [Working set context menu pops closed when right-clicking file that hasn't been opened yet](https://github.com/adobe/brackets/pull/5004) by [lkcampbell](https://github.com/lkcampbell).
-* [Added .ASP files highlighting](https://github.com/adobe/brackets/pull/5010) by [Fr3nzzy](https://github.com/Fr3nzzy).
-* [Update strings.js](https://github.com/adobe/brackets/pull/5012), [and again](https://github.com/adobe/brackets/pull/5025) by [SAPlayer](https://github.com/SAPlayer).
-* [.idea added to gitignore](https://github.com/adobe/brackets/pull/5018) by [Fr3nzzy](https://github.com/Fr3nzzy).
-* [Tree context menu behaves unpredictably while naming new file](https://github.com/adobe/brackets/pull/5114) by [lkcampbell](https://github.com/lkcampbell).
 * [Unit Test Failing: ExtensionManager](https://github.com/adobe/brackets/pull/5115) by [TomMalbran](https://github.com/TomMalbran).
+* [Followup updates to #4581 and #4598](https://github.com/adobe/brackets/pull/4629) by [TomMalbran](https://github.com/TomMalbran).
+* [Tab and modality fixes for the modal dialogs](https://github.com/adobe/brackets/pull/4714) by [TomMalbran](https://github.com/TomMalbran).
+* [Implementation of Navigate Recent Projects](https://github.com/adobe/brackets/pull/4546) by [TomMalbran](https://github.com/TomMalbran).
+* [Updated the flex property for the latest chrome version to fix #4602 and #4870](https://github.com/adobe/brackets/pull/4940) by [TomMalbran](https://github.com/TomMalbran).
+* [Fix issue #3556: Consolidate link handling code](https://github.com/adobe/brackets/pull/4718) by [TomMalbran](https://github.com/TomMalbran).
+* [Find in Files Improvements (Part 3: Auto-update)](https://github.com/adobe/brackets/pull/4729) by [TomMalbran](https://github.com/TomMalbran).
+* [Spanish strings and sample translations](https://github.com/adobe/brackets/pull/5221) by [TomMalbran](https://github.com/TomMalbran).
+* [Working set context menu pops closed when right-clicking file that hasn't been opened yet](https://github.com/adobe/brackets/pull/5004) by [lkcampbell](https://github.com/lkcampbell).
+* [Tree context menu behaves unpredictably while naming new file](https://github.com/adobe/brackets/pull/5114) by [lkcampbell](https://github.com/lkcampbell).
+* [Document file and handler function for each command](https://github.com/adobe/brackets/pull/5155) by [lkcampbell](https://github.com/lkcampbell).
+* [Do not show Active Line Highlight when editor has selection](https://github.com/adobe/brackets/pull/4878) by [lkcampbell](https://github.com/lkcampbell).
+* [File Rename should complete when clicking anywhere in project panel](https://github.com/adobe/brackets/pull/4934) by [vladnicula](https://github.com/vladnicula), [lkcampbell](https://github.com/lkcampbell).
+* [Updated documentation on sidebar view events](https://github.com/adobe/brackets/pull/4804) by [lkcampbell](https://github.com/lkcampbell).
+* [Adding Menus.removeMenu() and Menus.getAllMenus()](https://github.com/adobe/brackets/pull/5217) by [lkcampbell](https://github.com/lkcampbell).
+* [Update strings.js](https://github.com/adobe/brackets/pull/5012), [and again](https://github.com/adobe/brackets/pull/5025) by [SAPlayer](https://github.com/SAPlayer).
 * [Renewed German translation](https://github.com/adobe/brackets/pull/5123) by [SAPlayer](https://github.com/SAPlayer).
 * [Update German translation](https://github.com/adobe/brackets/pull/5129) by [SAPlayer](https://github.com/SAPlayer).
 * [Change: UNKOWN -> UNKNOWN](https://github.com/adobe/brackets/pull/5133) by [SAPlayer](https://github.com/SAPlayer).
+* [Added .ASP files highlighting](https://github.com/adobe/brackets/pull/5010) by [Fr3nzzy](https://github.com/Fr3nzzy).
+* [.idea added to gitignore](https://github.com/adobe/brackets/pull/5018) by [Fr3nzzy](https://github.com/Fr3nzzy).
+* [Update swedish translation](https://github.com/adobe/brackets/pull/4964) by [mikaeljorhult](https://github.com/mikaeljorhult).
+* [Failing with useful message on mac build step](https://github.com/adobe/brackets-shell/pull/325) by [jsoverson](https://github.com/jsoverson).
+* [Support for chromium browser in linux](https://github.com/adobe/brackets-shell/pull/317) by [macie](https://github.com/macie).
+* [Update Russian index.html](https://github.com/adobe/brackets/pull/4999) by [morozd](https://github.com/morozd).
+* [[UX] Issue #4174 - Add find next / previous buttons for easy navigation](https://github.com/adobe/brackets/pull/5002) by [rajeshsegu](https://github.com/rajeshsegu).
 * [Update Japanese translation](https://github.com/adobe/brackets/pull/5140) by [kanreisa](https://github.com/kanreisa).
 * [Update 'de' locale for HTML preview, more minor changes](https://github.com/adobe/brackets/pull/5145) by [mynetx](https://github.com/mynetx).
-* [Document file and handler function for each command](https://github.com/adobe/brackets/pull/5155) by [lkcampbell](https://github.com/lkcampbell).
 * [Update strings.js, merge new translates strings for latest version](https://github.com/adobe/brackets/pull/5161) by [michaeljayt](https://github.com/michaeljayt).
 * [HTML tag highlight added](https://github.com/adobe/brackets/pull/4504) by [sathyamoorthi](https://github.com/sathyamoorthi).
-* [Followup updates to #4581 and #4598](https://github.com/adobe/brackets/pull/4629) by [TomMalbran](https://github.com/TomMalbran).
 * [Added projectRefresh event when project tree is refreshed but project root has not changed](https://github.com/adobe/brackets/pull/4815) by [zaggino](https://github.com/zaggino).
-* [Tab and modality fixes for the modal dialogs](https://github.com/adobe/brackets/pull/4714) by [TomMalbran](https://github.com/TomMalbran).
 * [Update to Finnish localization](https://github.com/adobe/brackets/pull/4741) by [ghost](https://github.com/ghost).
-* [Do not show Active Line Highlight when editor has selection](https://github.com/adobe/brackets/pull/4878) by [lkcampbell](https://github.com/lkcampbell).
-* [File Rename should complete when clicking anywhere in project panel](https://github.com/adobe/brackets/pull/4934) by [vladnicula](https://github.com/vladnicula), [lkcampbell](https://github.com/lkcampbell).
-* [Implementation of Navigate Recent Projects](https://github.com/adobe/brackets/pull/4546) by [TomMalbran](https://github.com/TomMalbran).
-* [Updated the flex property for the latest chrome version to fix #4602 and #4870](https://github.com/adobe/brackets/pull/4940) by [TomMalbran](https://github.com/TomMalbran).
 * [[ARCH] Image preview draft](https://github.com/adobe/brackets/pull/4492) by [warabe](https://github.com/warabe).
-* [Fix issue #3556: Consolidate link handling code](https://github.com/adobe/brackets/pull/4718) by [TomMalbran](https://github.com/TomMalbran).
-* [Updated documentation on sidebar view events](https://github.com/adobe/brackets/pull/4804) by [lkcampbell](https://github.com/lkcampbell).
 * [Remove strings for commands that are not user facing](https://github.com/adobe/brackets/pull/4306) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
 * [Slovak language support](https://github.com/adobe/brackets/pull/4856) by [erichstark](https://github.com/erichstark).
 * [Clean up _getFileExtension() method and fix all its callers](https://github.com/adobe/brackets/pull/4846) by [megatolya](https://github.com/megatolya).
 * [Update Less to 1.4.2](https://github.com/adobe/brackets/pull/4476) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
-* [Find in Files Improvements (Part 3: Auto-update)](https://github.com/adobe/brackets/pull/4729) by [TomMalbran](https://github.com/TomMalbran).
-* [Spanish strings and sample translations](https://github.com/adobe/brackets/pull/5221) by [TomMalbran](https://github.com/TomMalbran).
-* [Adding Menus.removeMenu() and Menus.getAllMenus()](https://github.com/adobe/brackets/pull/5217) by [lkcampbell](https://github.com/lkcampbell).
 * [Show more info about failure in console](https://github.com/adobe/brackets/pull/5223) by [zaggino](https://github.com/zaggino).
-* [Support for chromium browser in linux](https://github.com/adobe/brackets-shell/pull/317) by [macie](https://github.com/macie).
 
 Bugs fixed in Sprint 31
 -----------------------
