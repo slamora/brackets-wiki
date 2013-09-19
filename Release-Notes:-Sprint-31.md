@@ -71,6 +71,8 @@ Community contributions to Brackets
 * [Renewed German translation](https://github.com/adobe/brackets/pull/5123) by [SAPlayer](https://github.com/SAPlayer).
 * [Update German translation](https://github.com/adobe/brackets/pull/5129) by [SAPlayer](https://github.com/SAPlayer).
 * [Change: UNKOWN -> UNKNOWN](https://github.com/adobe/brackets/pull/5133) by [SAPlayer](https://github.com/SAPlayer).
+* [Remove strings for commands that are not user facing](https://github.com/adobe/brackets/pull/4306) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
+* [Update Less to 1.4.2](https://github.com/adobe/brackets/pull/4476) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
 * [Added .ASP files highlighting](https://github.com/adobe/brackets/pull/5010) by [Fr3nzzy](https://github.com/Fr3nzzy).
 * [.idea added to gitignore](https://github.com/adobe/brackets/pull/5018) by [Fr3nzzy](https://github.com/Fr3nzzy).
 * [Added projectRefresh event when project tree is refreshed but project root has not changed](https://github.com/adobe/brackets/pull/4815) by [zaggino](https://github.com/zaggino).
@@ -86,10 +88,8 @@ Community contributions to Brackets
 * [HTML tag highlight added](https://github.com/adobe/brackets/pull/4504) by [sathyamoorthi](https://github.com/sathyamoorthi).
 * [Update to Finnish localization](https://github.com/adobe/brackets/pull/4741) by [ghost](https://github.com/ghost).
 * [[ARCH] Image preview draft](https://github.com/adobe/brackets/pull/4492) by [warabe](https://github.com/warabe).
-* [Remove strings for commands that are not user facing](https://github.com/adobe/brackets/pull/4306) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
 * [Slovak language support](https://github.com/adobe/brackets/pull/4856) by [erichstark](https://github.com/erichstark).
 * [Clean up _getFileExtension() method and fix all its callers](https://github.com/adobe/brackets/pull/4846) by [megatolya](https://github.com/megatolya).
-* [Update Less to 1.4.2](https://github.com/adobe/brackets/pull/4476) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper).
 
 Bugs fixed in Sprint 31
 -----------------------
