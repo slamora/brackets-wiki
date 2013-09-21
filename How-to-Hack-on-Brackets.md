@@ -53,7 +53,7 @@ For more in-depth instructions see ["Getting a Copy of the Code" below](#wiki-ge
 
 1. Push changes to your fork of the repo: `git push origin <branchname>`
 2. Make sure you've reviewed the [Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist) and signed the [Contributor Licence Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html).
-3. Submit pull request from GitHub. If this is a bugfix, include "Fix #1234" (changing "1234" to the actual bug number) in the description. This tags the pull request in the bug comments.
+3. Submit pull request from GitHub. If this is a bugfix, include a reference with # followed by issue number (e.g. #1234) in the description (not title) of the issue. Note: do *not* use the phrase "fixes #1234" (or any form of word "fix"?) because it will cause the bug to auto-close when pull request is merged. This tags the pull request in the bug comments.
 
 
 ## Getting Started ##
