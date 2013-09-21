@@ -120,7 +120,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [CSSLint](https://github.com/cfjedimaster/brackets-csslint): CSSLint your documents.
 * [JSHint](https://github.com/cfjedimaster/brackets-jshint): Performs a JSHint report.
 * [W3CValidator](https://github.com/cfjedimaster/brackets-w3cvalidation): Run the W3C Validator on your HTML.
-* [Interactive JSHint](https://github.com/MiguelCastillo/Brackets-Interactive-Linter): Get JSHint feedback on your source as you work on it.
+* [Interactive Linter](https://github.com/MiguelCastillo/Brackets-InteractiveLinter): Get JSHint/JSLint/CoffeeLint feedback on your source as you work on it.
 * [CanIUse](https://github.com/cfjedimaster/brackets-caniuse): An inline viewer of CanIUse.com support data.
 * [Display Shortcuts](https://github.com/redmunds/brackets-display-shortcuts): Display Shortcuts defined to Brackets.
 * [DevDocs Viewer](https://github.com/gruehle/dev-docs-viewer) (use [this link](https://github.com/gruehle/dev-docs-viewer/archive/sprint-27.zip) for Brackets Sprint 27 or earlier): Search and view content from [devdocs.io](http://devdocs.io).
