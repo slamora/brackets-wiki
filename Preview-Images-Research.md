@@ -33,6 +33,8 @@ _Also known as Glenn's hack_
 * So far Brackets does not support immutable documents, hence all APIs that modify text would have to be tweaked to check for mutability.
 * getFocusedEditor should return null - need to investigate what the implications are. Some code may assume that if getFocusedEditor returns null that the working set must be empty.
 
+Needs more research to determine how many extensions break and if so how they break
+
 
 
  
