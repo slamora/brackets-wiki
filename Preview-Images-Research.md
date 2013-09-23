@@ -35,6 +35,7 @@ _Also known as Glenn's hack_
 
 Needs more research to determine how many extensions break and if so how they break
 
-
+###  Non modal image viewer in place of the text editor backed by a custom document
+_Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
 
  
