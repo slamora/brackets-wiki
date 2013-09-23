@@ -38,9 +38,11 @@ TBD: how many extensions break and if so how? How involved would be the fix
 ###  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
 
-* DocumentCommandHandlers.doOpen() or DocumentManager.getDocumentForPath(fullPath) to generate a special image document that is immutable and has no editor.
+* DocumentManager.getDocumentForPath(fullPath) on path to image returns ImageDocument.
+* DocumentCommandHandlers.doOpen() generates a special image document that is immutable and has no editor, the .
 * asserts / throws errors when any text-related APIs are called.
 * DocumentManager.getCurrentDocument()  - returns Document, standard document or image document
+* Image document does not have any of the methods related to text.
 * EditorManager.getCurrentFullEditor - returns NULL when ImageDocument is displayed
 * EditorManager.getFocusedEditor - returns NULL when ImageDocument is displayed
 * EditorManager.getActiveEditor - returns NULL when ImageDocument is displayed
