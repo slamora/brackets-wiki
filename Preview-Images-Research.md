@@ -33,9 +33,22 @@ _Also known as Glenn's hack_
 * So far Brackets does not support immutable documents, hence all APIs that modify text would have to be tweaked to check for mutability.
 * getFocusedEditor should return null - need to investigate what the implications are. Some code may assume that if getFocusedEditor returns null that the working set must be empty.
 
-Needs more research to determine how many extensions break and if so how they break
+TBD: how many extensions break and if so how? How involved would be the fix
 
 ###  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
 
+* DocumentCommandHandlers.doOpen() or DocumentManager.getDocumentForPath(fullPath) to generate a special image document that is immutable and has no editor.
+* asserts / throws errors when any text-related APIs are called.
+* DocumentManager.getCurrentDocument()  - returns Document, standard document or image document
+* EditorManager.getCurrentFullEditor - returns NULL when ImageDocument is displayed
+* EditorManager.getFocusedEditor - returns NULL when ImageDocument is displayed
+* EditorManager.getActiveEditor - returns NULL when ImageDocument is displayed
+* Listeners to DocumentManager event: currentDocumentChange or EditorManager event: activeEditorChange will likely break.
+* Double click on image adds to working set.
+* FileOpen: adds to working set.
+* add new mode / language: API clients like extensions should check the language / mode
+* Save as creates copy of file, updates working set
+
+TBD: how many extensions break and if so how? How involved would be the fix
  
