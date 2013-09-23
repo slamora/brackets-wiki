@@ -7,13 +7,13 @@ To complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-
 The choice seems to be be between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
 
 This document explores the ramifications of four ideas, ranked by hackiness, where I'm assuming that the most hacky is the least disruptive:
-    - replace modal  error with modal dialog with image
-    - a non modal image viewer in place of the text editor backed by a standard document that has no text
-    - a non modal image viewer in place of the text editor backed by a custom document
-    - a clean generic model where Document and Editor have base classes. 
+* Modal dialog with image
+* Non modal image viewer in place of the text editor backed by a standard document that has no text
+* Non modal image viewer in place of the text editor backed by a custom document
+* Clean generic model where Document and Editor have base classes. 
 
 
-###  show modal dialog with image
+###  Show modal dialog with image
 * add logic to DocumentCommandHandlers.doOpen() to detect file type to open modal dialog.
 
 Advantages
