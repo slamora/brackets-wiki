@@ -31,7 +31,7 @@
   </tr>
   <tr>
     <td>NativeFileSystem</td>
-    <td>Jason</td>
+    <td>Jeff, Jason</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -41,7 +41,7 @@
   </tr>
   <tr>
     <td>Menus, Keyboard Shortcuts, Commands</td>
-    <td>Jason, Raymond</td>
+    <td>Jeff, Jason, Raymond</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -91,7 +91,7 @@
   </tr>
   <tr>
     <td>Native Shell</td>
-    <td>Glenn, Randy, Raymond</td>
+    <td>Jeff, Glenn, Randy, Raymond</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
