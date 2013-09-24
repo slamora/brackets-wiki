@@ -39,13 +39,14 @@ _Also known as the original proposal_ - based on the discussion and outline [her
 
 * DocumentManager.getDocumentForPath(fullPath) on path to image returns ImageDocument.
 * DocumentCommandHandlers.doOpen() generates a special image document that is immutable and has no editor, the .
-* asserts / throws errors when any text-related APIs are called.
+* ImageDocument asserts / throws errors when any text-related APIs are called.
+* ImageDocument has no editor
 * DocumentManager.getCurrentDocument()  - returns Document, standard document or image document
 * Image document does not have any of the methods related to text.
 * EditorManager.getCurrentFullEditor - returns NULL when ImageDocument is displayed
 * EditorManager.getFocusedEditor - returns NULL when ImageDocument is displayed
 * EditorManager.getActiveEditor - returns NULL when ImageDocument is displayed
-* Listeners to DocumentManager event: currentDocumentChange or EditorManager event: activeEditorChange will likely break.
+* Listeners to DocumentManager event: currentDocumentChange or EditorManager event: activeEditorChange may break. Event activeEditorChange will have NULL as argument in place of new Editor.
 * EditorManager.focusEditor() gives focus to ImageViewer
 * Double click on image adds to working set.
 * FileOpen: adds to working set.
