@@ -56,6 +56,9 @@ _Also known as the original proposal_ - based on the discussion and outline [her
 
 TBD: how many extensions break and if so how? How involved would be the fix
 
+###  extensions may break
+code folding, delete-line-start-end, superclipboard.js, case-converter, brackets-special-html-chars, brackets-minifier, brackets-indent-guides, spell-check, :
+
 
 ###  Generic model where Document and Editor have base classes
 seems to be the least likely choice, being the most disruptive.
@@ -67,19 +70,4 @@ seems to be the least likely choice, being the most disruptive.
 * ... lots of changes everywhere
 This will break a lot of extensions and will require many core changes.
 
-### Code examples from extensions that would have issues, with one of the above
-code folding:
-~~~~~~
-var editor = EditorManager.getCurrentFullEditor(), cm = editor._codeMirror
-~~~~~~
-delete-line-start-end:
-~~~~~~
-var cm = EditorManager.getFocusedEditor()._codeMirror;
-~~~~~~
-superclipboard.js, case-converter, brackets-special-html-chars:
-~~~~~~
- var currentEditor     = EditorManager.getCurrentFullEditor(),
-     selectedText      = currentEditor.getSelectedText(),
-     selectedPos       = currentEditor.getSelection(),
-     doc               = DocumentManager.getCurrentDocument(),
-~~~~~~
+
