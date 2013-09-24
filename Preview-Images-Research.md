@@ -54,10 +54,9 @@ _Also known as the original proposal_ - based on the discussion and outline [her
 * add new mode / language: API clients like extensions should check the language / mode
 * Save as creates copy of file, updates working set
 
-TBD: how many extensions break and if so how? How involved would be the fix
 
 ###  extensions may break
-code folding, delete-line-start-end, superclipboard.js, case-converter, brackets-special-html-chars, brackets-minifier, brackets-indent-guides, spell-check, :
+code folding, delete-line-start-end, superclipboard.js, case-converter, brackets-special-html-chars, brackets-minifier, brackets-indent-guides, spell-check, brackets-xunit, brackets-beautify, camden.w3cvalidation, cezarwojcik.cleaner, dehats.annotate, dehats.prefixr, dehats.togist, fontParser, :
 
 
 ###  Generic model where Document and Editor have base classes
