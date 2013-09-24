@@ -87,9 +87,11 @@ Advantage:
 Disadvantage: 
 * more extensions break. 
 
-###  example extensions may break
+###  Random and incomplete  collection of extensions will likely break:
+
 code folding, delete-line-start-end, superclipboard.js, case-converter, brackets-special-html-chars, brackets-minifier, brackets-indent-guides, spell-check, brackets-xunit, brackets-beautify, camden.w3cvalidation, cezarwojcik.cleaner, dehats.annotate, dehats.prefixr, dehats.togist, fontParser, enturn.quick-search, fontface.brackets-vimderbar, mikaeljorhult.brackets-autoprefixer, ...:
 
+Note on the meaning of _breaking_: In many cases errors will only occur if i.e. a command provided by an extension is invoked while an image is displayed. The extension may continue to work fine on regular text documents. But some extensions will be rendered completely broken, i.e, those that make calls to changed APIs on startup.
 
 ###  Generic model where Document and Editor have base classes
 seems to be the least likely choice, being the most disruptive.
