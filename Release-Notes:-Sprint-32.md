@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 23 -- approximately April 10._
+_This document will not be finalized until the end of Sprint 32 -- approximately October 4._
 
 What's New in Sprint 23
 -----------------------
