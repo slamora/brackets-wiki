@@ -49,7 +49,7 @@ Common disadvantage: getFocusedEditor returns null - this will break some extens
 ### Non modal image viewer in place of the text editor backed by a standard document
 _Also known as Glenn's proposal_
 * A HTML doc with the image is placed where the code mirror editor would normally show text. 
-* A document for an image is a standard but immutable doc w/o text. 
+* A document for an image is a standard but imutable doc w/o text. 
 * All calls to text based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * Implement support imutable documents, APIs that modify text would have to be tweaked to check for mutability.
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
@@ -59,17 +59,17 @@ _Also known as Glenn's proposal_
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
 Disadvantage: 
-* extra work to enable immutable documents
+* extra work to enable imutable documents
 * extra work to maintain EditorManager.focusEditor
 * Documents class gains in complexity, no separation of concerns for text and image documents, seems harder to maintain if new editors are added, i.e. image editors, hex editor, ...
 
 ###  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
-* A HTML doc with the image is placed in place of the editor. A document for an image is a new type of immutable document. 
+* A HTML doc with the image is placed in place of the editor. A document for an image is a new type of imutable document. 
 * ImageDocument asserts / throws errors when any text-related APIs are called.
 * DocumentManager.getDocumentForPath(fullPath) on path to image returns ImageDocument.
 * DocumentCommandHandlers.doOpen() generates a special image document
-* ImageDocument is immutable
+* ImageDocument is imutable
 * ImageDocument has no editor, but a view
 * DocumentManager.getCurrentDocument()  - returns either standard document or image document
 * Image document does not have any of the methods related to text.
