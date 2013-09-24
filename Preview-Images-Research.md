@@ -48,13 +48,13 @@ Common disadvantage: getFocusedEditor returns null - this will break some extens
 
 ### Non modal image viewer in place of the text editor backed by a standard document
 _Also known as Glenn's proposal_
-* A HTML doc with the image is placed injected into the code mirror editor. 
+* A HTML doc with the image is placed where the code mirror editor would normally show text. 
 * A document for an image is a standard but immutable doc w/o text. 
 * All calls to text based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * Provide support immutable documents, APIs that modify text would have to be tweaked to check for mutability.
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 
-__Question what about getActiveEditor,  getCurrentFullEditor should return null
+__Question what about getActiveEditor,  getCurrentFullEditor? should return null
 
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
