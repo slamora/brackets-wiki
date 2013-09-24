@@ -28,7 +28,7 @@ Open question:
 * when does the modal dialog open? Single click, double click, hover
 
 ### Non modal image viewer in place of the text editor backed by a standard document
-_Also known as Glenn's hack_
+_Also known as Glenn's proposal_
 * A HTML doc with the image is placed in place of the editor. A document for an image is a standard but immutable doc w/o text. All calls to text based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * So far Brackets does not support immutable documents, hence all APIs that modify text would have to be tweaked to check for mutability.
 * getFocusedEditor should return null - need to investigate what the implications are. Some code may assume that if getFocusedEditor returns null that the working set must be empty.
@@ -41,7 +41,7 @@ _Also known as the original proposal_ - based on the discussion and outline [her
 * DocumentManager.getDocumentForPath(fullPath) on path to image returns ImageDocument.
 * DocumentCommandHandlers.doOpen() generates a special image document that is immutable and has no editor, the .
 
-* ImageDocument has no editor
+* ImageDocument has no editor, just a view
 * DocumentManager.getCurrentDocument()  - returns Document, standard document or image document
 * Image document does not have any of the methods related to text.
 * EditorManager.getCurrentFullEditor - returns NULL when ImageDocument is displayed
