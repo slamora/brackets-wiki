@@ -76,7 +76,7 @@ delete-line-start-end:
 ~~~~~~
 var cm = EditorManager.getFocusedEditor()._codeMirror;
 ~~~~~~
-superclipboard.js, case-converter:
+superclipboard.js, case-converter, brackets-special-html-chars:
 ~~~~~~
  var currentEditor     = EditorManager.getCurrentFullEditor(),
      selectedText      = currentEditor.getSelectedText(),
