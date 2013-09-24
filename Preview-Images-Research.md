@@ -36,10 +36,11 @@ _Also known as Glenn's hack_
 
 ###  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
-
+* A HTML doc with the image is placed in place of the editor. A document for an image is a new type of immutable document. 
+* ImageDocument asserts / throws errors when any text-related APIs are called.
 * DocumentManager.getDocumentForPath(fullPath) on path to image returns ImageDocument.
 * DocumentCommandHandlers.doOpen() generates a special image document that is immutable and has no editor, the .
-* ImageDocument asserts / throws errors when any text-related APIs are called.
+
 * ImageDocument has no editor
 * DocumentManager.getCurrentDocument()  - returns Document, standard document or image document
 * Image document does not have any of the methods related to text.
