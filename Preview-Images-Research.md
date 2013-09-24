@@ -108,3 +108,5 @@ I suggest to implement _Glenn's proposal_ for the following reasons
 * few extensions break, fixes should be straightforward
 * requires a reasonably small change to core code, which introduces minimizes the risk regarding unexpected challenges that may have been missed writing up this document.
 * despite lack conceptual clarity the change seems small enough to revert, i.e in case of the need for more flavors of viewers and editors.
+
+As a 2nd option I suggest to go with _Modal dialog with image_ as this is a very small and low risk change without side effects. The simplicity of the change outweighs the disadvantage of the user experience.
