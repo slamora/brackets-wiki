@@ -54,6 +54,8 @@ _Also known as Glenn's proposal_
 * Provide support immutable documents, APIs that modify text would have to be tweaked to check for mutability.
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 
+__Question what about getActiveEditor,  getCurrentFullEditor should return null
+
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
 Disadvantage: 
