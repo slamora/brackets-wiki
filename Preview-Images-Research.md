@@ -1,4 +1,5 @@
- Motivation for this document is to enable a educated decision on trade offs that have to be made when introducing API changes to enable displaying an image in place of the  main editor.
+_DRAFT_
+Motivation for this document is to enable a educated decision on trade offs that have to be made when introducing API changes to enable displaying an image in place of the  main editor.
 
 The problem to be solved is that so all documents in Brackets so far have always been text documents that use a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions such that it is always possible to call getText() documents and that every editor is always a codemirror instance tied to a text document.
 
