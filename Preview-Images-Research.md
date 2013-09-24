@@ -2,7 +2,7 @@ _DRAFT_
 
 Motivation for this document is to enable a educated decision on trade offs that have to be made when introducing API changes to enable displaying an image in place of the  main editor.
 
-The problem to be solved is that so all documents in Brackets so far have always been text documents that use a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions such that it is always possible to call getText() documents and that every editor is always a codemirror instance tied to a text document.
+The problem is that documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document.
 
 To complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images) Brackets needs to show a simple view ( a very simple HTML document ) in place of a code mirror instance.
 
