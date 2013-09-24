@@ -101,8 +101,8 @@ seems to be the least likely choice, being the most disruptive.
 This is not fully fleshed out as it doesn't seem to be the obvious choice.
 
 Disadvantage: 
-* Some new code to write for Base classes, plenty of core code to change - which seems particularly risky
-*  extensions break - expected about the same amount as in previous option _original proposal_
+* Some new code to write for Base classes, plenty of core code to change. The amount of changes to the core code make this proposal the most uncertain, thus the most risky.
+* extensions break - expected about the same amount as in previous option _original proposal_
 
 ## Summary
 I suggest to implement _Glenn's proposal_ for the following reasons
