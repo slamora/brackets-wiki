@@ -34,8 +34,9 @@ _Also known as Glenn's hack_
 * Image documents are empty standard but immutable documents. All calls to text based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * So far Brackets does not support immutable documents, hence all APIs that modify text would have to be tweaked to check for mutability.
 * getFocusedEditor should return null - need to investigate what the implications are. Some code may assume that if getFocusedEditor returns null that the working set must be empty.
-
+* EditorManager.focusEditor() should do ?
 TBD: how many extensions break and if so how? How involved would be the fix
+
 
 ###  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
@@ -49,6 +50,7 @@ _Also known as the original proposal_ - based on the discussion and outline [her
 * EditorManager.getFocusedEditor - returns NULL when ImageDocument is displayed
 * EditorManager.getActiveEditor - returns NULL when ImageDocument is displayed
 * Listeners to DocumentManager event: currentDocumentChange or EditorManager event: activeEditorChange will likely break.
+* EditorManager.focusEditor() gives focus to ImageViewer
 * Double click on image adds to working set.
 * FileOpen: adds to working set.
 * add new mode / language: API clients like extensions should check the language / mode
@@ -64,7 +66,17 @@ seems to be the least likely choice, being the most disruptive.
 * EditorManager.getCurrentFullEditor - returns BaseEditor. Any consumer of this API needs to check wether it can call code mirror /text editor related APIs
 * EditorManager.getFocusedEditor - returns BaseEditor. Any consumer of this API needs to check wether it can call code mirror /text editor related APIs
 * EditorManager.getActiveEditor - returns BaseEditor. Any consumer of this API needs to check wether it can call code mirror /text editor related APIs
-
+* ... lots of changes everywhere
 This will break a lot of extensions and will require many core changes.
+
+### Code examples from extensions that would have issues
+* code folding, fails if getCurrentFullEditor() returns NULL
+~~~~~~
+         var editor = EditorManager.getCurrentFullEditor(), cm = editor._codeMirror
+~~~~~~
+* delete line start end
+~~~~~~
+var cm = EditorManager.getFocusedEditor()._codeMirror;
+~~~~~~
 
  
