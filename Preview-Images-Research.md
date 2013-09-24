@@ -56,7 +56,7 @@ _Also known as the original proposal_ - based on the discussion and outline [her
 
 
 ###  extensions may break
-code folding, delete-line-start-end, superclipboard.js, case-converter, brackets-special-html-chars, brackets-minifier, brackets-indent-guides, spell-check, brackets-xunit, brackets-beautify, camden.w3cvalidation, cezarwojcik.cleaner, dehats.annotate, dehats.prefixr, dehats.togist, fontParser, :
+code folding, delete-line-start-end, superclipboard.js, case-converter, brackets-special-html-chars, brackets-minifier, brackets-indent-guides, spell-check, brackets-xunit, brackets-beautify, camden.w3cvalidation, cezarwojcik.cleaner, dehats.annotate, dehats.prefixr, dehats.togist, fontParser, enturn.quick-search, fontface.brackets-vimderbar, mikaeljorhult.brackets-autoprefixer, ...:
 
 
 ###  Generic model where Document and Editor have base classes
@@ -68,5 +68,4 @@ seems to be the least likely choice, being the most disruptive.
 * EditorManager.getActiveEditor - returns BaseEditor. Any consumer of this API needs to check wether it can call code mirror /text editor related APIs
 * ... lots of changes everywhere
 This will break a lot of extensions and will require many core changes.
-
 
