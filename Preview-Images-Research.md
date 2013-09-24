@@ -58,6 +58,7 @@ _Also known as Glenn's proposal_
 
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
+
 Disadvantage: 
 * extra work to enable immutable documents
 * extra work to maintain EditorManager.focusEditor
