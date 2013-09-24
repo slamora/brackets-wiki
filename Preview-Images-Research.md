@@ -8,7 +8,7 @@ To complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-
 
 The choice seems to be be between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
 
-This document explores the ramifications of four ideas, ranked by hackiness, where I'm assuming that the most hacky is the least disruptive:
+This document explores the ramifications of four ideas, ranked by hackiness, where I'm assuming that the most hacky is the least disruptive API change:
 * [Modal dialog with image](https://github.com/adobe/brackets/wiki/Preview-Images-Research#show-modal-dialog-with-image)
 * [Non modal image viewer in place of the text editor backed by a standard document](https://github.com/adobe/brackets/wiki/Preview-Images-Research#non-modal-image-viewer-in-place-of-the-text-editor-backed-by-a-standard-document)
 * [Non modal image viewer in place of the text editor backed by a custom document](https://github.com/adobe/brackets/wiki/Preview-Images-Research#non-modal-image-viewer-in-place-of-the-text-editor-backed-by-a-custom-document)
