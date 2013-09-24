@@ -18,7 +18,7 @@ What's New in Sprint 31
 * **Localization**
     * [Slovak translation added](https://github.com/adobe/brackets/pull/4856)
 
-_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-30...sprint-31#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-30...sprint-31#commits_bucket)
+_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-30...sprint-31a#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-30...sprint-31a#commits_bucket)
 
 
 UI Changes
