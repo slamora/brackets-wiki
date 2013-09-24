@@ -1,12 +1,14 @@
 _DRAFT_
 
-Motivation for this document is to enable a educated decision on trade offs that have to be made when introducing API changes to enable displaying an image in place of the  main editor.
+Motivation for this document is to enable a educated decision on trade offs that have to be made when introducing API changes to enable displaying an image from the project tree to complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
 
-The problem is that documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document.
+Documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document. Hence the question how to extend and modify the existing code while keeping the following goals in mind:
+* avoid breaking extensions, if we do, we better have a good reason
+* build core code that is maintainable
+* build core code that is extensible
+* keep API intuitively understandable
 
-To complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images) Brackets needs to show a simple view  in place of a code mirror instance.
-
-The choice seems to be be between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
+The seems to be a trade off between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
 
 This document explores the ramifications of four ideas, ranked by hackiness, where I'm assuming that the most hacky is the least disruptive API change:
 * [Modal dialog with image](https://github.com/adobe/brackets/wiki/Preview-Images-Research#show-modal-dialog-with-image)
