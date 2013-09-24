@@ -66,11 +66,11 @@ seems to be the least likely choice, being the most disruptive.
 This will break a lot of extensions and will require many core changes.
 
 ### Code examples from extensions that would have issues, with one of the above
-* code folding, fails if getCurrentFullEditor() returns NULL
+code folding, fails if getCurrentFullEditor() returns NULL
 ~~~~~~
          var editor = EditorManager.getCurrentFullEditor(), cm = editor._codeMirror
 ~~~~~~
-* delete line start end
+delete line start end
 ~~~~~~
 var cm = EditorManager.getFocusedEditor()._codeMirror;
 ~~~~~~
