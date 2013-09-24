@@ -85,7 +85,7 @@ Advantage:
 * Opens a path to add more types of documents
 
 Disadvantage: 
-* more extensions break. 
+* compared to the previous proposal more extensions break, because there are more API changes.
 
 ###  Random and incomplete  collection of extensions will likely break:
 
