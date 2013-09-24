@@ -53,4 +53,16 @@ _Also known as the original proposal_ - based on the discussion and outline [her
 * Save as creates copy of file, updates working set
 
 TBD: how many extensions break and if so how? How involved would be the fix
+
+
+###  Generic model where Document and Editor have base classes
+seems to be the least likely choice, being the most disruptive.
+* DocumentManager.getCurrentDocument()  -  returns BaseDocument. Any consumer of this API needs to check wether it can call text or cursor related APIs
+
+* EditorManager.getCurrentFullEditor - returns BaseEditor. Any consumer of this API needs to check wether it can call code mirror /text editor related APIs
+* EditorManager.getFocusedEditor - returns BaseEditor. Any consumer of this API needs to check wether it can call code mirror /text editor related APIs
+* EditorManager.getActiveEditor - returns BaseEditor. Any consumer of this API needs to check wether it can call code mirror /text editor related APIs
+
+This will break a lot of extensions and will require many core changes.
+
  
