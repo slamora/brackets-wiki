@@ -78,7 +78,8 @@ var cm = EditorManager.getFocusedEditor()._codeMirror;
 ~~~~~~
 superclipboard.js:
 ~~~~~~
-var currentEditor     = EditorManager.getCurrentFullEditor(),
-selectedText      = currentEditor.getSelectedText(),
-selectedPos       = currentEditor.getSelection(),
+ var currentEditor     = EditorManager.getCurrentFullEditor(),
+     selectedText      = currentEditor.getSelectedText(),
+     selectedPos       = currentEditor.getSelection(),
+     doc               = DocumentManager.getCurrentDocument(),
 ~~~~~~
