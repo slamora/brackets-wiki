@@ -33,8 +33,6 @@ _Also known as Glenn's hack_
 * So far Brackets does not support immutable documents, hence all APIs that modify text would have to be tweaked to check for mutability.
 * getFocusedEditor should return null - need to investigate what the implications are. Some code may assume that if getFocusedEditor returns null that the working set must be empty.
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
-TBD: how many extensions break and if so how? How involved would be the fix
-
 
 ###  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
@@ -67,7 +65,7 @@ seems to be the least likely choice, being the most disruptive.
 * ... lots of changes everywhere
 This will break a lot of extensions and will require many core changes.
 
-### Code examples from extensions that would have issues
+### Code examples from extensions that would have issues, with one of the above
 * code folding, fails if getCurrentFullEditor() returns NULL
 ~~~~~~
          var editor = EditorManager.getCurrentFullEditor(), cm = editor._codeMirror
