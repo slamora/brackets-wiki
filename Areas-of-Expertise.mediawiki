@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td>Code Hints</td>
-    <td>Raymond</td>
+    <td>Raymond, Kevin</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -36,7 +36,7 @@
   </tr>
   <tr>
     <td>Live Development</td>
-    <td>Glenn, Raymond</td>
+    <td>Glenn, Raymond, Kevin</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
