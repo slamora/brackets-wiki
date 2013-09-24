@@ -33,7 +33,7 @@ API Changes
 -----------
 **LESS** - updated to 1.4.2 (from 1.3.3). May require minor changes to LESS stylesheets (e.g. wrapping math expressions in parens).
 
-**Key bindings** - `KeyBindingManager` key binding resolution changed slightly to fix a conflict described in [issue #4265](https://github.com/adobe/brackets/issues/4265). It now supports `platform: "all"` on key bindings for clearer semantics.
+**Key bindings** - Cross-platform behavior is now better defined when specifying a set of bindings for one command. Bindings with no platform specified are not used if another binding in the set explicitly specifies the current platform. Bindings can specify a new platform `"all"` to ensure they are used on all platforms regardless of other platform-specific bindings in the set. [See brief examples](https://github.com/adobe/brackets/issues/4265#issuecomment-23831957).
 
 
 New/Improved Extensibility APIs
