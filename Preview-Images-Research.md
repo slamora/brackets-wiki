@@ -104,7 +104,7 @@ Disadvantage:
 
 ## Summary
 I suggest to implement _Glenn's proposal_ for the following reasons
-* better user experience than modal
+* better user experience than Modal dialog with image
 * few extensions break, fixes should be straightforward
 * requires a reasonably small change to core code, which introduces minimizes the risk regarding unexpected challenges that may have been missed writing up this document.
 * despite lack conceptual clarity the change seems small enough to revert, i.e in case of the need for more flavors of viewers and editors.
