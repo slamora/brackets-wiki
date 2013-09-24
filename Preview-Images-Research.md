@@ -98,6 +98,7 @@ seems to be the least likely choice, being the most disruptive.
 * EditorManager.getActiveEditor - returns BaseEditor. Any consumer of this API needs to check wether it can call code mirror /text editor related APIs
 
 This is not fully fleshed out as it doesn't seem to be the obvious choice.
+
 Disadvantage: 
 * Some new code to write for Base classes, plenty of core code to change - which seems particularly risky
 *  extensions break - expected about the same amount as in previous option _original proposal_
