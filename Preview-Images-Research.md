@@ -12,10 +12,10 @@ The seems to be a trade off between making non-disruptive or less disruptive API
 
 This document explores the ramifications of four ideas, ranked by hackiness, where I'm assuming that the most hacky is the least disruptive API change:
 * [Modal dialog with image](https://github.com/adobe/brackets/wiki/Preview-Images-Research#show-modal-dialog-with-image)
-* [Non modal image viewer in place of the text editor
-** [backed by a standard document](https://github.com/adobe/brackets/wiki/Preview-Images-Research#non-modal-image-viewer-in-place-of-the-text-editor-backed-by-a-standard-document)
-** [backed by a custom document](https://github.com/adobe/brackets/wiki/Preview-Images-Research#non-modal-image-viewer-in-place-of-the-text-editor-backed-by-a-custom-document)
-** [backed by a generic image document, here Document and Editor have base classes](https://github.com/adobe/brackets/wiki/Preview-Images-Research#generic-model-where-document-and-editor-have-base-classes)
+* Non modal image viewer in place of the text editor
+  * backed by a [standard document](https://github.com/adobe/brackets/wiki/Preview-Images-Research#non-modal-image-viewer-in-place-of-the-text-editor-backed-by-a-standard-document)
+  * backed by a [custom document](https://github.com/adobe/brackets/wiki/Preview-Images-Research#non-modal-image-viewer-in-place-of-the-text-editor-backed-by-a-custom-document)
+* [backed by a generic image document, here Document and Editor have base classes](https://github.com/adobe/brackets/wiki/Preview-Images-Research#generic-model-where-document-and-editor-have-base-classes)
 
 ##  Show modal dialog with image
 * add logic to DocumentCommandHandlers.doOpen() to detect file type to open modal dialog.
