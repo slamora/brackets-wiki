@@ -50,6 +50,7 @@ Behavior:
 Implementation:
 * add new mode / language: API clients like extensions can check the language / mode
 * getFocusedEditor returns null
+    * _[nj] I'm not clear why this has to be the case in Glenn's proposal. If `getActiveEditor()` can return an "immutable" editor, it seems like `getFocusedEditor()` could return the same._
 
 Common disadvantage: getFocusedEditor returns null - this will break some extensions
 
@@ -62,8 +63,7 @@ _Also known as Glenn's proposal_
     * _[pthiess] Are there concerns with a design which allows - let's say a paste operation - on a document that isn't mutable?_
     * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
-    * _[nj] Just to be clear, in this case, does getActiveEditor() return an Editor when an image is selected? (I believe that's the intention.)_
-    * _[nj] Also, my understanding of Glenn's proposal is that the Editor's `_codeMirror` instance would still exist, but would be read-only. Is that still true? If so, we should explain that, and mention that our intent would be to make it so that instance basically never takes user input._
+    * _[nj] My understanding of Glenn's proposal is that `getActiveEditor()` would return an ordinary Editor whose `_codeMirror` instance would still exist, but would be read-only. Is that still true? If so, we should explain that, and mention that our intent would be to make it so that instance basically never takes user input._
 
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
