@@ -66,7 +66,7 @@ _Also known as Glenn's proposal_
     * _[pthiess] Are there concerns with a design which allows - let's say a paste operation - on a document that isn't mutable?_
     * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
-* _[nj] The spec doesn't explicitly describe what happens to `getActiveEditor()` or `getCurrentFullEditor()` in this case. My understanding of Glenn's proposal is that `getActiveEditor()` and `getCurrentFullEditor()` would return an ordinary Editor whose `_codeMirror` instance would still exist (behind the image div), but would be read-only. Is that still true? If so, we should explain that, and mention that our intent would be to make it so that instance basically never takes user input._
+* _[nj] The spec doesn't explicitly describe what happens to `getActiveEditor()` or `getCurrentFullEditor()` in this case. My understanding of Glenn's proposal is that `getActiveEditor()` and `getCurrentFullEditor()` would return an ordinary Editor whose `_codeMirror` instance would still exist (behind the image div), but would be read-only. Is that still true? If so, we should explain that, and mention that our intent would be to make it so that instance basically never takes user input. Also, are we going to bother to stub out APIs on the CodeMirror instance that programmatically modify it, or are we just not going to care if an extension tries to write into it?_
 
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
