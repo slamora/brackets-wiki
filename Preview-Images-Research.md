@@ -49,6 +49,7 @@ Behavior:
 
 Implementation:
 * add new mode / language: API clients like extensions can check the language / mode
+    * _[nj] We should be more explicit about what we'll do here (I'm assuming we'll just create a new language called "image" for any file whose extension is an image type extension)._
 * getFocusedEditor returns null
     * _[nj] I'm not clear why this has to be the case in Glenn's proposal. If `getActiveEditor()` can return an "immutable" editor, it seems like `getFocusedEditor()` could return the same._
 
@@ -59,7 +60,7 @@ _Also known as Glenn's proposal_
 * An HTML document with the image is placed where the code mirror editor would normally show text.
     * _[nj] I think we should be a little clearer here--I believe the proposal is that we would overlay the CodeMirror editor with a `<div>` containing the image. (It's not clear what "placing an HTML document with the image" would mean.)_
 * A document for an image is a standard but immutable document w/o text.
-    * _[nj] This would be clearer if we said "a document whose text is always empty"._ 
+    * _[nj] This would be clearer if we said "a document whose text is always empty". It's probably also worth stating the obvious--that we won't actually be loading the content of the image file into the document; if someone wants to get that content for some reason, they'll have to read the file themselves._ 
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
     * _[nj] ...except for APIs that try to *change* the text, which would (silently) do nothing, right?_
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability.    
