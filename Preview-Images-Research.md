@@ -51,14 +51,16 @@ _Also known as Glenn's proposal_
 * An HTML document with the image is placed where the code mirror editor would normally show text. 
 * A document for an image is a standard but immutable document w/o text. 
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
-* Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability.
+* Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability.    
+    * _[pthiess] Are there concerns with a design which allows - let's say a paste operation - on a document that isn't mutable?_
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
 
 Disadvantage: 
-* extra work to enable immutable documents
+* extra work to enable immutable documents    
+    * _[pthiess] I do agree there might be some hidden work or potential to break extensions in case the extension tries to alter the immutable document._
 * extra work to maintain EditorManager.focusEditor
 * Documents class gains in complexity, no separation of concerns for text and image documents, seems harder to maintain if new editors are added, i.e. image editors, hex editor, ...
 
@@ -114,4 +116,3 @@ I suggest to implement _Glenn's proposal_ for the following reasons
 While this relatively small change enables a solution with a good user experience  it seems small enough to revert, i.e in case of the need for more flavors of viewers and editors. During feature discussion the need for displaying additional types of documents was rated unlikely. 
 
 As plan B I suggest the _modal dialog with image_ as this is a very small and low risk change without side effects. Again simplicity of the change is the deciding factor. Since there are different opinions regarding the ideal user experience some may champion this solution. If you factor out the user experience question from the decision this solution is the most straightforward, hence the least risk as well as the least disruptive.
-
