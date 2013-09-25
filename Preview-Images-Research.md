@@ -54,8 +54,6 @@ _Also known as Glenn's proposal_
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability.
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 
-
-
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
 
@@ -87,7 +85,7 @@ Advantage:
 Disadvantage: 
 * compared to the previous proposal more extensions break, because there are more API changes.
 
-###  Random and incomplete  collection of extensions will likely break:
+Random and incomplete  collection of extensions will likely break:
 
 code folding, delete-line-start-end, superclipboard.js, case-converter, brackets-special-html-chars, brackets-minifier, brackets-indent-guides, spell-check, brackets-xunit, brackets-beautify, camden.w3cvalidation, cezarwojcik.cleaner, dehats.annotate, dehats.prefixr, dehats.togist, fontParser, enturn.quick-search, fontface.brackets-vimderbar, mikaeljorhult.brackets-autoprefixer, ...:
 
