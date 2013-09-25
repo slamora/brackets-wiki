@@ -56,9 +56,12 @@ Common disadvantage: getFocusedEditor returns null - this will break some extens
 
 ### Non modal image viewer in place of the text editor backed by a standard document
 _Also known as Glenn's proposal_
-* An HTML document with the image is placed where the code mirror editor would normally show text. 
-* A document for an image is a standard but immutable document w/o text. 
+* An HTML document with the image is placed where the code mirror editor would normally show text.
+    * _[nj] I think we should be a little clearer here--I believe the proposal is that we would overlay the CodeMirror editor with a `<div>` containing the image. (It's not clear what "placing an HTML document with the image" would mean.)_
+* A document for an image is a standard but immutable document w/o text.
+    * _[nj] This would be clearer if we said "a document whose text is always empty"._ 
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
+    * _[nj] ...except for APIs that try to *change* the text, which would (silently) do nothing, right?_
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability.    
     * _[pthiess] Are there concerns with a design which allows - let's say a paste operation - on a document that isn't mutable?_
     * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
