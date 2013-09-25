@@ -16,10 +16,10 @@ This document explores the ramifications of four ideas, ranked by disruptiveness
   * backed by a [standard document](https://github.com/adobe/brackets/wiki/Preview-Images-Research#non-modal-image-viewer-in-place-of-the-text-editor-backed-by-a-standard-document)
   * backed by a [custom document](https://github.com/adobe/brackets/wiki/Preview-Images-Research#non-modal-image-viewer-in-place-of-the-text-editor-backed-by-a-custom-document)
 * [backed by a generic image document, here Document and Editor have base classes](https://github.com/adobe/brackets/wiki/Preview-Images-Research#generic-model-where-document-and-editor-have-base-classes)
-* click on image in project tree is handles liek click on folder
 
 ##  Show modal dialog with image
 * add logic to DocumentCommandHandlers.doOpen() to detect file type to open modal dialog.
+* click on image in project tree is handles like click on folder
 
 Advantage: 
 * smallest change, neither Document API nor Editor API need to change.
