@@ -49,7 +49,9 @@ Behavior:
 
 Implementation:
 * add new mode / language: API clients like extensions can check the language / mode
-    * _[nj] We should be more explicit about what we'll do here (I'm assuming we'll just create a new language called "image" for any file whose extension is an image type extension)._
+    * _[nj] We should be more explicit about what we'll do here (I'm assuming we'll just create a new 
+language called "image" for any file whose extension is an image type extension)._
+    * _[jh] I have just looked into this. We could also add 3 new modes: GIF, PNG, JPEG 
 * getFocusedEditor returns null
     * _[nj] I'm not clear why this has to be the case in Glenn's proposal. If `getActiveEditor()` can return an "immutable" editor, it seems like `getFocusedEditor()` could return the same._
 
