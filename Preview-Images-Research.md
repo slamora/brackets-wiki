@@ -20,6 +20,7 @@ This document explores the ramifications of four ideas, ranked by disruptiveness
 ##  Show modal dialog with image
 * add logic to DocumentCommandHandlers.doOpen() to detect file type to open modal dialog.
 * click on image in project tree is handles like click on folder
+* prevent situation where a binary file is opened as garbage text into the editor
 
 Advantage: 
 * smallest change, neither Document API nor Editor API need to change.
@@ -28,7 +29,9 @@ Advantage:
 Disadvantage
 * user experience - some say it's not the best.
 * no "Save as...".
-* inconsistencies regarding how selection in the file tree is handled
+* inconsistencies regarding how selection in the file tree is handled (thanks Raymond)
+* extra work to prevent showing garbage text in editor
+
 
 Open question:
 * when would the modal dialog open? Single click, double-click, hover
