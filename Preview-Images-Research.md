@@ -32,8 +32,8 @@ Disadvantage
 
 Open question:
 * when would the modal dialog open? Single click, double-click, hover
-* [rlim] You need to mention the selection model in the project tree and working set. What happens with a right click on an image file? Do we add the image file into the working set? Do we show selection on the image file when the modal image dialog is showing?
-* [randy] All of the other solutions imply that the problem where editor shows garbage or shows a modal error dialog is fixed, but that needs to be fixed with this solution, so it should explicitly be listed.
+* _[rlim] You need to mention the selection model in the project tree and working set. What happens with a right click on an image file? Do we add the image file into the working set? Do we show selection on the image file when the modal image dialog is showing?_
+* _[randy] All of the other solutions imply that the problem where editor shows garbage or shows a modal error dialog is fixed, but that needs to be fixed with this solution, so it should explicitly be listed._
 
 
 ## Non modal image viewer in place of the text editor
@@ -57,6 +57,7 @@ _Also known as Glenn's proposal_
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability.    
     * _[pthiess] Are there concerns with a design which allows - let's say a paste operation - on a document that isn't mutable?_
+    * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 
 Advantage: 
