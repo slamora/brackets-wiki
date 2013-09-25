@@ -30,7 +30,7 @@ Disadvantage
 * user experience - some say it's not the best.
 * no "Save as...".
 * inconsistencies regarding how selection in the file tree is handled (thanks Raymond)
-* extra work to prevent showing garbage text in editor
+* extra work to prevent showing garbage text in editor (thanks Randy)
 
 
 Open question:
