@@ -33,6 +33,7 @@ Disadvantage
 Open question:
 * when would the modal dialog open? Single click, double-click, hover
 * [rlim] You need to mention the selection model in the project tree and working set. What happens with a right click on an image file? Do we add the image file into the working set? Do we show selection on the image file when the modal image dialog is showing?
+* [randy] All of the other solutions imply that the problem where editor shows garbage or shows a modal error dialog is fixed, but that needs to be fixed with this solution, so it should explicitly be listed.
 
 
 ## Non modal image viewer in place of the text editor
