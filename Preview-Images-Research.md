@@ -111,6 +111,9 @@ I suggest to implement _Glenn's proposal_ for the following reasons
 * better user experience than Modal dialog with image
 * few extensions break, fixes should be straightforward
 * requires a reasonably small change to core code, which introduces minimizes the risk regarding unexpected challenges that may have been missed writing up this document.
-* despite lack conceptual clarity the change seems small enough to revert, i.e in case of the need for more flavors of viewers and editors.
+* the simplicity outweighs a lack conceptual clarity. 
 
-As a 2nd option I suggest to go with _Modal dialog with image_ as this is a very small and low risk change without side effects. The simplicity of the change outweighs the disadvantage of the user experience.<br>
+While this relatively small change enables a solution with a good user experience  it seems small enough to revert, i.e in case of the need for more flavors of viewers and editors. During feature discussion the need for displaying additional types of documents was rated unlikely. 
+
+As plan B I suggest the _modal dialog with image_ as this is a very small and low risk change without side effects. Again simplicity of the change is the deciding factor. Since there are different opinions regarding the ideal user experience some may champion this solution. If you factor out the user experience question from the decision this solution is the most straightforward, hence the least risk as well as the least disruptive.
+
