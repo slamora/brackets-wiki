@@ -8,25 +8,31 @@ Documents in Brackets have always been text documents with a code mirror instanc
 * build core code that is extensible
 * keep API intuitively understandable
 
+The following design has been picked after investigating a number of architectures comparing trade offs between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
+
+This design does seems to strike a good balance between the goals stated above
+
 Behavior details
 * Double click on image in project display image
-* images are not added to working set
-* FileOpen adds to working set only if a single image file is selected
+* Images are not added to working set
+* FileOpen opens an image if a single image file is selected in the open dialog
 * Drag & Drop of single image displays image
 * Drag & Drop of multiple images does not display any image
 * No _Save As_ for images
 * File Rename, Delete, Show in File Tree, Show in OS continue to work
 
 Implementation details
-* getCurrentDocument returns null while an image is displayed, so that code / extensions that modify documents do not have to be updated.
-* getFocusedEditor should always return null when image is displayed
-* getActiveEditor should always return null when image is displayed
-* getCurrentFullEditor should always return null when image is displayed
-
-
+* DocumentManager.getCurrentDocument returns null while an image is displayed, so that code / extensions that modify documents do not have to be updated.
+* EditorManager.getFocusedEditor always returns null when image is displayed
+* EditorManager.getActiveEditor always returns null when image is displayed
+* EditorManager.getCurrentFullEditor always returns null when image is displayed
+* To display an image a div-tag wrapping an img-tag is appended to the code mirror wrapper element.The image file's content won't is not loaded at all.  It will merely be loaded for rendering by the browser / CEF shell.
+* A new mode / language will be added such that LanguageManager.getLanguageForPath() on an image can be called to identify wether fileEntry points to an image file, by checking mode.getName(), i.e.
+`var mode = LanguageManager.getLanguageForPath(fullPath);
+if(mode.getName() === "image"){...}`
 
 Advantage:
-* The boilerplate mode check for documents is gone. Makes for more readable code in extensions
+* The boilerplate mode check for documents is gone. Makes for more readable code in extensions. Properly written extensions, i.e. those that are prepared for
 
 Disadvantage:
 * 
