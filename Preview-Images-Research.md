@@ -33,7 +33,8 @@ Implementation details
 * A new mode / language will be added such that LanguageManager.getLanguageForPath() on an image can be called to identify wether fileEntry points to an image file, by checking mode.getName(), i.e.
 `var mode = LanguageManager.getLanguageForPath(fullPath);
 if(mode.getName() === "image"){...}`
-* Extensions that are prepared for getCurrentDocument to return NULL will be fine
+* Extensions that are prepared for getCurrentDocument to return NULL will be fine.
+* DocumentManager.getDocumentForPath is modified so that no document will be created for paths to image files.
 
 
 ---
