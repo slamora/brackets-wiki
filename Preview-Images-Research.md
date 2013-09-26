@@ -19,7 +19,7 @@ Behavior details
 * Drag & Drop of single image displays image
 * Drag & Drop of multiple images does not display any image
 * No _Save As_ for images
-* File Rename, Delete, Show in File Tree, Show in OS continue to work
+* File Rename, Delete, Show in File Tree, Show in OS work on image files the same way as for other files.
 * Find, Replace, QuickOpen UI and the likes do not show UI when an Image is displayed
 
 Implementation details
