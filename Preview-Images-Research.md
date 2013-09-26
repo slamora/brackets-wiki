@@ -36,6 +36,7 @@ Disadvantage
 Open question:
 * when would the modal dialog open? Single click, double-click, hover
 * _[rlim] You need to mention the selection model in the project tree and working set. What happens with a right click on an image file? Do we add the image file into the working set? Do we show selection on the image file when the modal image dialog is showing?_
+    * _[pf] Currently it sounds like the proposal is that clicking in the tree does nothing, like clicking a folder... but that seems confusing to me. Maybe clicking should show the image, and only right click should do nothing._
 * _[randy] All of the other solutions imply that the problem where editor shows garbage or shows a modal error dialog is fixed, but that needs to be fixed with this solution, so it should explicitly be listed._
 
 
@@ -46,6 +47,7 @@ Behavior:
 * Double click on image adds to working set.
 * FileOpen adds to working set.
 * Save as creates copy of file, updates working set
+    * _[pf] I don't think we get "Save As" for free here, since it currently relies on the Document content and we don't have any APIs that support binary file IO._
 
 Implementation:
 * add new mode / language: API clients like extensions can check the language / mode
@@ -54,8 +56,12 @@ language called "image" for any file whose extension is an image type extension)
     * _[jh] I have just looked into this. We could also add 3 new modes: GIF, PNG, JPEG._
 * getFocusedEditor returns null
     * _[nj] I'm not clear why this has to be the case in Glenn's proposal. If `getActiveEditor()` can return an "immutable" editor, it seems like `getFocusedEditor()` could return the same._
+    * _[pf] It might be nicer though: that way well-written extensions might disable some of their behavior. Any extension that blows up when `getFocusedEditor()` is null would be pretty buggy already anyway..._
 
 Common disadvantage: getFocusedEditor returns null - this will break some extensions
+
+_[pf] Another common disadvantage: we'd have to go through all our core features like Find, Replace, Quick Find Definition, file-scoped Find in Files, etc. and make them turn themselves off when an image is open. (Unless we feel ok about the sloppiness of no-op Find bars, etc. being accessible)._
+
 
 ### Non modal image viewer in place of the text editor backed by a standard document
 _Also known as Glenn's proposal_
@@ -64,14 +70,19 @@ _Also known as Glenn's proposal_
 * A document for an image is a standard but immutable document w/o text.
     * _[nj] This would be clearer if we said "a document whose text is always empty". It's probably also worth stating the obvious--that we won't actually be loading the content of the image file into the document; if someone wants to get that content for some reason, they'll have to read the file themselves._ 
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
+    * _[pf] For this reason I find the label "standard document" confusing. It's not really a standard Document, since it's specially been made immutable._
     * _[nj] ...except for APIs that try to *change* the text, which would (silently) do nothing, right?_
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability.    
     * _[pthiess] Are there concerns with a design which allows - let's say a paste operation - on a document that isn't mutable?_
+        * _[pf] The design wouldn't allow Paste or any other change, since both the Document & the CodeMirror instance are set to readonly._
     * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
+        * _[pf] I think Copy specifically would no-op and not modify the clipboard, since there isn't any text selection. But I wonder if there are other "read" operations that could cause issues?_
+    * _[pf] I'd suggest this should actually be a subclass of Document with stubbed-out mutators, rather than cluttering all the existing Document methods with readonly checks. (Which makes this more similar to the next proposal below, except that there'd still be an Editor)._
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 * _[nj] The spec doesn't explicitly describe what happens to `getActiveEditor()` or `getCurrentFullEditor()` in this case._
     * _My understanding of Glenn's proposal is that `getActiveEditor()` and `getCurrentFullEditor()` would return an ordinary Editor whose `_codeMirror` instance would still exist (behind the image div), but would be read-only. Is that still true? If so, we should explain that, and mention that our intent would be to make it so that instance basically never takes user input._
     * _Also, are we going to bother to stub out APIs on the CodeMirror instance that programmatically modify it, or are we just not going to care if an extension tries to write into it?_
+        * _[pf] I think Glenn's proposal was to set the CodeMirror instance to readonly too, which should internally block write attempts._
 
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
@@ -108,6 +119,7 @@ Disadvantage:
 Random and incomplete  collection of extensions will likely break:
 
 code folding, delete-line-start-end, superclipboard.js, case-converter, brackets-special-html-chars, brackets-minifier, brackets-indent-guides, spell-check, brackets-xunit, brackets-beautify, camden.w3cvalidation, cezarwojcik.cleaner, dehats.annotate, dehats.prefixr, dehats.togist, fontParser, enturn.quick-search, fontface.brackets-vimderbar, mikaeljorhult.brackets-autoprefixer, ...:
+* _[pf] I think list is a bit over-aggressive. I looked at the camden.w3cvalidation, brackets-minifier, and brackets-indent-guides extensions and I'm pretty sure they would all work fine._
 
 Note on the meaning of _breaking_: In many cases errors will only occur if i.e. a command provided by an extension is invoked while an image is displayed. The extension may continue to work fine on regular text documents. But some extensions will be rendered completely broken, i.e, those that make calls to changed APIs on startup.
 
