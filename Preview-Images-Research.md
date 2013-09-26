@@ -41,13 +41,12 @@ Open question:
 
 
 ## Non modal image viewer in place of the text editor
-The following 2 options share the following details:
+The following options share the following details:
 
 Behavior:
 * Double click on image adds to working set.
 * FileOpen adds to working set.
 * Save as creates copy of file, updates working set
-    * _[pf] I don't think we get "Save As" for free here, since it currently relies on the Document content and we don't have any APIs that support binary file IO._
 
 Implementation:
 * add new mode / language: API clients like extensions can check the language / mode
@@ -57,22 +56,21 @@ language called "image" for any file whose extension is an image type extension)
 * getFocusedEditor returns null
     * _[nj] I'm not clear why this has to be the case in Glenn's proposal. If `getActiveEditor()` can return an "immutable" editor, it seems like `getFocusedEditor()` could return the same._
     * _[pf] It might be nicer though: that way well-written extensions might disable some of their behavior. Any extension that blows up when `getFocusedEditor()` is null would be pretty buggy already anyway..._
+    * _[jh] This is a take awy from our initial discussion (jh + nj)_
 
-Common disadvantage: getFocusedEditor returns null - this will break some extensions
+Common disadvantage: 
+* getFocusedEditor returns null - this will break some extensions
+* Save as needs extra work
 
 _[pf] Another common disadvantage: we'd have to go through all our core features like Find, Replace, Quick Find Definition, file-scoped Find in Files, etc. and make them turn themselves off when an image is open. (Unless we feel ok about the sloppiness of no-op Find bars, etc. being accessible)._
 
 
-### Non modal image viewer in place of the text editor backed by a standard document
+### Non modal image viewer in place of the text editor backed by immutable and empty document
 _Also known as Glenn's proposal_
-* An HTML document with the image is appended to the code mirror wrapper.
-    * _[nj] I think we should be a little clearer here--I believe the proposal is that we would overlay the CodeMirror editor with a `<div>` containing the image. (It's not clear what "placing an HTML document with the image" would mean.)_
-* A document for an image is a standard but immutable document a document whose text is always empty. The image file's content won't be loaded into the editor, it will be loaded for rendering by the browser. 
-    * _[nj] This would be clearer if we said "a document whose text is always empty". It's probably also worth stating the obvious--that we won't actually be loading the content of the image file into the document; if someone wants to get that content for some reason, they'll have to read the file themselves._ 
+* An HTML document with the image is appended as a div-tag to the code mirror wrapper element.
+* A document for an image is an immutable instance of Document, whose text is always empty. The image file's content won't ever be loaded into the editor, it will be loaded for rendering by the browser. 
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
-    * _[pf] For this reason I find the label "standard document" confusing. It's not really a standard Document, since it's specially been made immutable._
-    * _[nj] ...except for APIs that try to *change* the text, which would (silently) do nothing, right?_
-* Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability.    
+* Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability. When called on an immutable document any of these would silently do nothing.
     * _[pthiess] Are there concerns with a design which allows - let's say a paste operation - on a document that isn't mutable?_
         * _[pf] The design wouldn't allow Paste or any other change, since both the Document & the CodeMirror instance are set to readonly._
     * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
@@ -86,6 +84,8 @@ _Also known as Glenn's proposal_
 
 Advantage: 
 * since EditorManager and DocumentManager APIs are unchanged, fewer extensions will break.
+* Since documents are added to the working set, the editor state persists across sessions.
+* Rename, Delete, Show in File Tree, Show in OS still work
 
 Disadvantage: 
 * extra work to enable immutable documents    
@@ -93,6 +93,22 @@ Disadvantage:
 * extra work to maintain EditorManager.focusEditor
 * Documents class gains in complexity, no separation of concerns for text and image documents, seems harder to maintain if new editors are added, i.e. image editors, hex editor, ...
 * Find, Replace, QuickOpen UI needs to be disabled, unless we feel ok with the clutter.
+* Not clean enough to enable editable binary content, i.e. to enable an image editor
+
+### Peter's updated proposal
+Same as above,
+* but getCurrentDocument also returns null when an image is displayed, so that  extensionswouldn't have to verify the mode of the document if it's an image document
+* Images are handled by an immutable subclass of Document where mutating methods are stubbed out.
+* Image documenst are not added to the working set.
+
+Advantage:
+* The boilerplate mode check for documents is gone. Makes for more readable code in extensions
+
+Disadvantage:
+* More extensions may break
+* Rename, Delete, Show in File Tree, Show in OS will not work
+
+
 
 ###  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
