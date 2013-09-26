@@ -30,16 +30,12 @@ Implementation details
 * A new mode / language will be added such that LanguageManager.getLanguageForPath() on an image can be called to identify wether fileEntry points to an image file, by checking mode.getName(), i.e.
 `var mode = LanguageManager.getLanguageForPath(fullPath);
 if(mode.getName() === "image"){...}`
+* Extensions that are prepared for getCurrentDocument to return NULL will be fine
 
-Advantage:
-* The boilerplate mode check for documents is gone. Makes for more readable code in extensions. Properly written extensions, i.e. those that are prepared for
-
-Disadvantage:
-* 
 
 ---
+Previous drafts:
 
-The seems to be a trade off between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
 
 This document explores the ramifications of four ideas, ranked by disruptiveness:
 * [Modal dialog with image](https://github.com/adobe/brackets/wiki/Preview-Images-Research#show-modal-dialog-with-image)
