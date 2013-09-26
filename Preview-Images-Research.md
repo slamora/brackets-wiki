@@ -172,5 +172,3 @@ I suggest to implement _Glenn's proposal_ for the following reasons
 * the simplicity outweighs a lack conceptual clarity. 
 
 While this relatively small change enables a solution with a good user experience  it seems small enough to revert, i.e in case of the need for more flavors of viewers and editors. During feature discussion the need for displaying additional types of documents was rated unlikely. 
-
-As plan B I suggest the _modal dialog with image_ as this is a very small and low risk change without side effects. Again simplicity of the change is the deciding factor. Since there are different opinions regarding the ideal user experience some may champion this solution. If you factor out the user experience question from the decision this solution is the most straightforward, hence the least risk as well as the least disruptive.
