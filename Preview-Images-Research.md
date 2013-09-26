@@ -47,7 +47,7 @@ Behavior:
 * Double click on image adds to working set.
 * FileOpen adds to working set.
 * Save as creates copy of file, updates working set
-* cut & copy do nothing when an image is displayed
+* cut & paste do nothing when an image is displayed, copy does not update contents of clipboard
 
 Implementation:
 * add new mode / language: API clients like extensions can check the language / mode
@@ -70,9 +70,7 @@ _Also known as Glenn's proposal_
 * A document for an image is an immutable instance of Document, whose text is always empty. The image file's content won't ever be loaded into the editor, it will be loaded for rendering by the browser. 
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability. When called on an immutable document any of these would silently do nothing.
-        * _[pf] The design wouldn't allow Paste or any other change, since both the Document & the CodeMirror instance are set to readonly._
     * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
-        * _[pf] I think Copy specifically would no-op and not modify the clipboard, since there isn't any text selection. But I wonder if there are other "read" operations that could cause issues?_
     * _[pf] I'd suggest this should actually be a subclass of Document with stubbed-out mutators, rather than cluttering all the existing Document methods with readonly checks. (Which makes this more similar to the next proposal below, except that there'd still be an Editor)._
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 * _[nj] The spec doesn't explicitly describe what happens to `getActiveEditor()` or `getCurrentFullEditor()` in this case._
