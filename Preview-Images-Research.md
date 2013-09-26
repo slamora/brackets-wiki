@@ -35,6 +35,7 @@ Implementation details
 if(mode.getName() === "image"){...}`
 * Extensions that are prepared for getCurrentDocument to return NULL will be fine.
 * DocumentManager.getDocumentForPath is modified so that no document will be created for paths to image files.
+DocumentCommandHandlers.doOpen will own the responsibility to determine wether an image file or a text file or something else is attempted to be opened.
 
 
 ---
