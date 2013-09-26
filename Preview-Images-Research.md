@@ -8,6 +8,31 @@ Documents in Brackets have always been text documents with a code mirror instanc
 * build core code that is extensible
 * keep API intuitively understandable
 
+Behavior details
+* Double click on image in project display image
+* images are not added to working set
+* FileOpen adds to working set only if a single image file is selected
+* Drag & Drop of single image displays image
+* Drag & Drop of multiple images does not display any image
+* No _Save As_ for images
+* File Rename, Delete, Show in File Tree, Show in OS continue to work
+
+Implementation details
+* getCurrentDocument returns null while an image is displayed, so that code / extensions that modify documents do not have to be updated.
+* getFocusedEditor should always return null when image is displayed
+* getActiveEditor should always return null when image is displayed
+* getCurrentFullEditor should always return null when image is displayed
+
+
+
+Advantage:
+* The boilerplate mode check for documents is gone. Makes for more readable code in extensions
+
+Disadvantage:
+* 
+
+---
+
 The seems to be a trade off between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
 
 This document explores the ramifications of four ideas, ranked by disruptiveness:
