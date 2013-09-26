@@ -50,17 +50,18 @@ Behavior:
 
 Implementation:
 * add new mode / language: API clients like extensions can check the language / mode
-    * _[nj] We should be more explicit about what we'll do here (I'm assuming we'll just create a new 
-language called "image" for any file whose extension is an image type extension)._
+`doc.language.id !== “image”`
     * _[jh] I have just looked into this. We could also add 3 new modes: GIF, PNG, JPEG._
 * getFocusedEditor returns null
     * _[nj] I'm not clear why this has to be the case in Glenn's proposal. If `getActiveEditor()` can return an "immutable" editor, it seems like `getFocusedEditor()` could return the same._
     * _[pf] It might be nicer though: that way well-written extensions might disable some of their behavior. Any extension that blows up when `getFocusedEditor()` is null would be pretty buggy already anyway..._
     * _[jh] This is a take awy from our initial discussion (jh + nj)_
+    * cut & copy do nothing
 
 Common disadvantage: 
 * getFocusedEditor returns null - this will break some extensions
 * Save as needs extra work
+
 
 _[pf] Another common disadvantage: we'd have to go through all our core features like Find, Replace, Quick Find Definition, file-scoped Find in Files, etc. and make them turn themselves off when an image is open. (Unless we feel ok about the sloppiness of no-op Find bars, etc. being accessible)._
 
@@ -71,7 +72,6 @@ _Also known as Glenn's proposal_
 * A document for an image is an immutable instance of Document, whose text is always empty. The image file's content won't ever be loaded into the editor, it will be loaded for rendering by the browser. 
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability. When called on an immutable document any of these would silently do nothing.
-    * _[pthiess] Are there concerns with a design which allows - let's say a paste operation - on a document that isn't mutable?_
         * _[pf] The design wouldn't allow Paste or any other change, since both the Document & the CodeMirror instance are set to readonly._
     * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
         * _[pf] I think Copy specifically would no-op and not modify the clipboard, since there isn't any text selection. But I wonder if there are other "read" operations that could cause issues?_
