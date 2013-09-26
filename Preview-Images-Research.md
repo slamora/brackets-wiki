@@ -66,8 +66,8 @@ Disadvantage
 
 Open question:
 * when would the modal dialog open? Single click, double-click, hover
-* _[rlim] You need to mention the selection model in the project tree and working set. What happens with a right click on an image file? Do we add the image file into the working set? Do we show selection on the image file when the modal image dialog is showing?_
-    * _[pf] Currently it sounds like the proposal is that clicking in the tree does nothing, like clicking a folder... but that seems confusing to me. Maybe clicking should show the image, and only right click should do nothing._
+* _[rlim] You need to mention the selection model in the project tree and working set. What happens with a right-click on an image file? Do we add the image file into the working set? Do we show selection on the image file when the modal image dialog is showing?_
+    * _[pf] Currently it sounds like the proposal is that clicking in the tree does nothing, like clicking a folder... but that seems confusing to me. Maybe clicking should show the image, and only right-click should do nothing._
 * _[randy] All of the other solutions imply that the problem where editor shows garbage or shows a modal error dialog is fixed, but that needs to be fixed with this solution, so it should explicitly be listed._
 
 
@@ -102,7 +102,7 @@ _Also known as Glenn's proposal_
 * A document for an image is an instance of Document, whose text is always empty. The image file's content won't ever be loaded into the editor, it will be loaded for rendering by the browser. It is made immutable by making it's cm editor instance immutable.
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability. When called on an immutable document any of these would silently do nothing.
-    * _[pf] I'd suggest this should actually be a subclass of Document with stubbed-out mutators, rather than cluttering all the existing Document methods with readonly checks. (Which makes this more similar to the next proposal below, except that there'd still be an Editor)._
+    * _[pf] I'd suggest this should actually be a subclass of Document with stubbed-out mutators, rather than cluttering all the existing Document methods with read only checks. (Which makes this more similar to the next proposal below, except that there'd still be an Editor)._
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 * _[nj] The spec doesn't explicitly describe what happens to `getActiveEditor()` or `getCurrentFullEditor()` in this case._
     * _My understanding of Glenn's proposal is that `getActiveEditor()` and `getCurrentFullEditor()` would return an ordinary Editor whose `_codeMirror` instance would still exist (behind the image div), but would be read-only. Is that still true? If so, we should explain that, and mention that our intent would be to make it so that instance basically never takes user input._
@@ -123,9 +123,9 @@ Disadvantage:
 
 ### Peter's updated proposal
 Same as above,
-* but getCurrentDocument also returns null when an image is displayed, so that  extensionswouldn't have to verify the mode of the document if it's an image document
+* but getCurrentDocument also returns null when an image is displayed, so that  extensions wouldn't have to verify the mode of the document if it's an image document
 * Images are handled by an immutable subclass of Document where mutating methods are stubbed out.
-* Image documenst are not added to the working set.
+* Image documents are not added to the working set.
 
 Advantage:
 * The boilerplate mode check for documents is gone. Makes for more readable code in extensions
