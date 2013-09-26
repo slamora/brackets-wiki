@@ -65,9 +65,9 @@ _[pf] Another common disadvantage: we'd have to go through all our core features
 
 ### Non modal image viewer in place of the text editor backed by a standard document
 _Also known as Glenn's proposal_
-* An HTML document with the image is placed where the code mirror editor would normally show text.
+* An HTML document with the image is appended to the code mirror wrapper.
     * _[nj] I think we should be a little clearer here--I believe the proposal is that we would overlay the CodeMirror editor with a `<div>` containing the image. (It's not clear what "placing an HTML document with the image" would mean.)_
-* A document for an image is a standard but immutable document w/o text.
+* A document for an image is a standard but immutable document a document whose text is always empty. The image file's content won't be loaded into the editor, it will be loaded for rendering by the browser. 
     * _[nj] This would be clearer if we said "a document whose text is always empty". It's probably also worth stating the obvious--that we won't actually be loading the content of the image file into the document; if someone wants to get that content for some reason, they'll have to read the file themselves._ 
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
     * _[pf] For this reason I find the label "standard document" confusing. It's not really a standard Document, since it's specially been made immutable._
@@ -92,6 +92,7 @@ Disadvantage:
     * _[pthiess] I do agree there might be some hidden work or potential to break extensions in case the extension tries to alter the immutable document._
 * extra work to maintain EditorManager.focusEditor
 * Documents class gains in complexity, no separation of concerns for text and image documents, seems harder to maintain if new editors are added, i.e. image editors, hex editor, ...
+* Find, Replace, QuickOpen UI needs to be disabled, unless we feel ok with the clutter.
 
 ###  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
