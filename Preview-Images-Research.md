@@ -121,21 +121,6 @@ Disadvantage:
 * Documents class gains in complexity, no separation of concerns for text and image documents, seems harder to maintain if new editors are added, i.e. image editors, hex editor, ...
 * Not clean enough to enable editable binary content, i.e. to enable an image editor
 
-#### Peter's updated proposal
-Same as above,
-* but getCurrentDocument also returns null when an image is displayed, so that  extensions wouldn't have to verify the mode of the document if it's an image document
-* Images are handled by an immutable subclass of Document where mutating methods are stubbed out.
-* Image documents are not added to the working set.
-
-Advantage:
-* The boilerplate mode check for documents is gone. Makes for more readable code in extensions
-
-Disadvantage:
-* More extensions may break
-* Rename, Delete, Show in File Tree, Show in OS will not work
-
-
-
 ####  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
 * A HTML document with the image is placed in place of the editor. A document for an image is a new type of immutable document. 
