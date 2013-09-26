@@ -29,7 +29,7 @@ You can also [write unit tests for your extension](Extension Unit Tests).
 ## Publishing Extensions
 
 1. Add a **[package.json file](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format)** next to your main.js
-2. ZIP up your entire extension folder (the GitHub "Download ZIP" button is handy for this)
+2. ZIP up your entire extension folder (the GitHub "Download ZIP" button is handy for this) or use the command `git archive --format zip -o yourextension.zip master` to generate a zip file.
 3. Publish your extension by uploading the ZIP to the **[Brackets Extension Registry](https://brackets-registry.aboutweb.com/)**
 
 For more, see [[Extension Registry Help]].
