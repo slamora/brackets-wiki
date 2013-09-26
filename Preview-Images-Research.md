@@ -48,7 +48,7 @@ This document explores the ramifications of four ideas, ranked by disruptiveness
 * [Peter's updated proposal](https://github.com/adobe/brackets/wiki/Preview-Images-Research#peters-updated-proposal)
 * [backed by a generic image document, here Document and Editor have base classes](https://github.com/adobe/brackets/wiki/Preview-Images-Research#generic-model-where-document-and-editor-have-base-classes)
 
-##  Show modal dialog with image
+###  Show modal dialog with image
 * add logic to DocumentCommandHandlers.doOpen() to detect file type to open modal dialog.
 * click on image in project tree is handles like click on folder
 * prevent situation where a binary file is opened as garbage text into the editor
@@ -71,7 +71,7 @@ Open question:
 * _[randy] All of the other solutions imply that the problem where editor shows garbage or shows a modal error dialog is fixed, but that needs to be fixed with this solution, so it should explicitly be listed._
 
 
-## Non modal image viewer in place of the text editor
+### Non modal image viewer in place of the text editor
 The following options share the following details:
 
 Behavior:
@@ -96,7 +96,7 @@ Common disadvantage:
 * Save as needs extra work
 * Find, Replace, QuickOpen UI needs to be disabled, unless we feel ok with the clutter.
 
-### Non modal image viewer in place of the text editor backed by immutable and empty document
+#### Non modal image viewer in place of the text editor backed by immutable and empty document
 _Also known as Glenn's proposal_
 * An HTML document with the image is appended as a div-tag to the code mirror wrapper element.
 * A document for an image is an instance of Document, whose text is always empty. The image file's content won't ever be loaded into the editor, it will be loaded for rendering by the browser. It is made immutable by making it's cm editor instance immutable.
@@ -121,7 +121,7 @@ Disadvantage:
 * Documents class gains in complexity, no separation of concerns for text and image documents, seems harder to maintain if new editors are added, i.e. image editors, hex editor, ...
 * Not clean enough to enable editable binary content, i.e. to enable an image editor
 
-### Peter's updated proposal
+#### Peter's updated proposal
 Same as above,
 * but getCurrentDocument also returns null when an image is displayed, so that  extensions wouldn't have to verify the mode of the document if it's an image document
 * Images are handled by an immutable subclass of Document where mutating methods are stubbed out.
@@ -136,7 +136,7 @@ Disadvantage:
 
 
 
-###  Non modal image viewer in place of the text editor backed by a custom document
+####  Non modal image viewer in place of the text editor backed by a custom document
 _Also known as the original proposal_ - based on the discussion and outline [here](https://github.com/adobe/brackets/pull/4492) 
 * A HTML document with the image is placed in place of the editor. A document for an image is a new type of immutable document. 
 * ImageDocument asserts / throws errors when any text-related APIs are called.
@@ -166,7 +166,7 @@ code folding, delete-line-start-end, superclipboard.js, case-converter, brackets
 
 Note on the meaning of _breaking_: In many cases errors will only occur if i.e. a command provided by an extension is invoked while an image is displayed. The extension may continue to work fine on regular text documents. But some extensions will be rendered completely broken, i.e, those that make calls to changed APIs on startup.
 
-###  Generic model where Document and Editor have base classes
+####  Generic model where Document and Editor have base classes
 seems to be the least likely choice, being the most disruptive.
 * DocumentManager.getCurrentDocument()  -  returns BaseDocument. Any consumer of this API needs to check whether it can call text or cursor related APIs
 * EditorManager.getCurrentFullEditor - returns BaseEditor. Any consumer of this API needs to check whether it can call code mirror /text editor related APIs
@@ -179,7 +179,7 @@ Disadvantage:
 * Some new code to write for Base classes, plenty of core code to change. The amount of changes to the core code make this proposal the most uncertain, thus the most risky.
 * extensions break - expected about the same amount as in previous option _original proposal_
 
-## Summary
+### Summary
 I suggest to implement _Glenn's proposal_ for the following reasons
 * better user experience than Modal dialog with image
 * few extensions break, fixes should be straightforward
