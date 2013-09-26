@@ -47,6 +47,7 @@ Behavior:
 * Double click on image adds to working set.
 * FileOpen adds to working set.
 * Save as creates copy of file, updates working set
+* cut & copy do nothing when an image is displayed
 
 Implementation:
 * add new mode / language: API clients like extensions can check the language / mode
@@ -56,7 +57,7 @@ Implementation:
     * _[nj] I'm not clear why this has to be the case in Glenn's proposal. If `getActiveEditor()` can return an "immutable" editor, it seems like `getFocusedEditor()` could return the same._
     * _[pf] It might be nicer though: that way well-written extensions might disable some of their behavior. Any extension that blows up when `getFocusedEditor()` is null would be pretty buggy already anyway..._
     * _[jh] This is a take awy from our initial discussion (jh + nj)_
-    * cut & copy do nothing
+
 
 Common disadvantage: 
 * getFocusedEditor returns null - this will break some extensions
