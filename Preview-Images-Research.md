@@ -50,6 +50,7 @@ Behavior:
 * cut & paste do nothing when an image is displayed, copy does not update contents of clipboard
 
 Implementation:
+* DocumentManager.doOpen checks the documents type by means of the inferred mode and does not read the file contents, instead it create a new empty document, with immutable cm editor instance.
 * add new mode / language: API clients like extensions can check the language / mode
 `doc.language.id !== “image”`
     * _[jh] I have just looked into this. We could also add 3 new modes: GIF, PNG, JPEG._
@@ -67,10 +68,9 @@ Common disadvantage:
 ### Non modal image viewer in place of the text editor backed by immutable and empty document
 _Also known as Glenn's proposal_
 * An HTML document with the image is appended as a div-tag to the code mirror wrapper element.
-* A document for an image is an immutable instance of Document, whose text is always empty. The image file's content won't ever be loaded into the editor, it will be loaded for rendering by the browser. 
+* A document for an image is an instance of Document, whose text is always empty. The image file's content won't ever be loaded into the editor, it will be loaded for rendering by the browser. It is made immutable by making it's cm editor instance immutable.
 * All calls to text-based APIs (get text, cursor, selection) should remain unchanged and respond as they would on an empty document.
 * Implement support immutable documents, APIs that modify text would have to be tweaked to check for mutability. When called on an immutable document any of these would silently do nothing.
-    * _[randy] Also, what about immutable operations such as copy -- what would you get if you then pasted into an HTML document?_
     * _[pf] I'd suggest this should actually be a subclass of Document with stubbed-out mutators, rather than cluttering all the existing Document methods with readonly checks. (Which makes this more similar to the next proposal below, except that there'd still be an Editor)._
 * EditorManager.focusEditor() returns focus to last element shown in main editor space, i.e. image if that had focus or last editor otherwise
 * _[nj] The spec doesn't explicitly describe what happens to `getActiveEditor()` or `getCurrentFullEditor()` in this case._
