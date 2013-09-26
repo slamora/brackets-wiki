@@ -62,10 +62,7 @@ Implementation:
 Common disadvantage: 
 * getFocusedEditor returns null - this will break some extensions
 * Save as needs extra work
-
-
-_[pf] Another common disadvantage: we'd have to go through all our core features like Find, Replace, Quick Find Definition, file-scoped Find in Files, etc. and make them turn themselves off when an image is open. (Unless we feel ok about the sloppiness of no-op Find bars, etc. being accessible)._
-
+* Find, Replace, QuickOpen UI needs to be disabled, unless we feel ok with the clutter.
 
 ### Non modal image viewer in place of the text editor backed by immutable and empty document
 _Also known as Glenn's proposal_
@@ -93,7 +90,6 @@ Disadvantage:
     * _[pthiess] I do agree there might be some hidden work or potential to break extensions in case the extension tries to alter the immutable document._
 * extra work to maintain EditorManager.focusEditor
 * Documents class gains in complexity, no separation of concerns for text and image documents, seems harder to maintain if new editors are added, i.e. image editors, hex editor, ...
-* Find, Replace, QuickOpen UI needs to be disabled, unless we feel ok with the clutter.
 * Not clean enough to enable editable binary content, i.e. to enable an image editor
 
 ### Peter's updated proposal
