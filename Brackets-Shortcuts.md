@@ -609,4 +609,18 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-name">Parse json file or hilighted string</td>
         <td class="shortcut-orig">Extension (JSONLint)</td>
     </tr>
+    <tr>
+        <td class="shortcut-base">-</td>
+        <td class="shortcut-binding">Ctrl-Alt--</td>
+        <td class="shortcut-cmd-id">codefolding.collapse</td>
+        <td class="shortcut-cmd-name">Collapse code region at cursor position</td>
+        <td class="shortcut-orig">Extension (Code Folding)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">+</td>
+        <td class="shortcut-binding">Ctrl-Alt-+</td>
+        <td class="shortcut-cmd-id">codefolding.expand</td>
+        <td class="shortcut-cmd-name">Expand code region at cursor position</td>
+        <td class="shortcut-orig">Extension (Code Folding)</td>
+    </tr>
 </table>
