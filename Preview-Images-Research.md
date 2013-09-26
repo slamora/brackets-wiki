@@ -21,6 +21,8 @@ Behavior details
 * No _Save As_ for images
 * File Rename, Delete, Show in File Tree, Show in OS work on image files the same way as for other files.
 * Find, Replace, QuickOpen UI and the likes do not show UI when an Image is displayed
+* Copy does not modify the clipboard contents
+* Cut, Paste do nothing on an image file.
 
 Implementation details
 * DocumentManager.getCurrentDocument returns null while an image is displayed, so that code / extensions that modify documents do not have to be updated.
