@@ -20,6 +20,7 @@ Behavior details
 * Drag & Drop of multiple images does not display any image
 * No _Save As_ for images
 * File Rename, Delete, Show in File Tree, Show in OS continue to work
+* Find, Replace, QuickOpen UI and the likes do not show UI when an Image is displayed
 
 Implementation details
 * DocumentManager.getCurrentDocument returns null while an image is displayed, so that code / extensions that modify documents do not have to be updated.
