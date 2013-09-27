@@ -8,7 +8,7 @@ _If you have written extensions this is what you need to know to make sure they 
 ### Using DocumentManager?
 `DocumentManager.getCurrentDocument()`: returns NULL while an image is displayed
 
-Make sure to handle null correctly. If your extension relies on getting the current document to do stuff, the recommended way to get the current document going forward is:
+If your extension needs the current document, the recommended way to get the current document going forward is:
 ~~~~
 var activeEditor = EditorManager.getActiveEditor(),
     activeDoc = activeEditor && activeEditor.document;
