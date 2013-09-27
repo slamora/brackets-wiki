@@ -44,7 +44,7 @@ Example, also see example for `DocumentManager.getCurrentDocument` above:
 ~~~~
 function _onCurrentDocumentChange() {
    var doc = DocumentManager.getCurrentDocument();
-   if(doc){ // make sure to check for null!
+   if (doc) { // make sure to check for null!
      ...
    }
    // even better use example above 
