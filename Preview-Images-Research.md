@@ -8,7 +8,7 @@ _If you have written extensions this is what you need to know to make sure they 
 ### Using DocumentManager?
 `DocumentManager.getCurrentDocument()`: returns NULL while an image is displayed
 
-Needs the current document, use this:
+Need? the current document? Do this:
 ~~~~
 var activeEditor = EditorManager.getActiveEditor(),
     activeDoc = activeEditor && activeEditor.document;
