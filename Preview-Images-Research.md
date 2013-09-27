@@ -1,4 +1,3 @@
-
 _DRAFT_
 
 ## Have extensions?
@@ -15,8 +14,8 @@ var activeEditor = EditorManager.getActiveEditor(),
     activeDoc = activeEditor && activeEditor.document;
 ~~~~
 ### Consuming Events?
-`DocumentManager: currentDocumentChange` - This event will be sent if an image is displayed. Often subscribers will call `DocumentManager.getCurrentDocument()` which will return NULL in this case - see above.
-`EditorManager:activeEditorChange` -  will have NULL as argument in place of new Editor when image is displayed
+* `DocumentManager: currentDocumentChange` - This event will be sent if an image is displayed. Often subscribers will call `DocumentManager.getCurrentDocument()` which will return NULL in this case - see above.
+* `EditorManager:activeEditorChange` -  will have NULL as argument in place of new Editor when image is displayed
 
 Test your extensions with this branch:
 TBA
