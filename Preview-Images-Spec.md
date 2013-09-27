@@ -25,8 +25,25 @@ var activeEditor = EditorManager.getActiveEditor(),
     activeDoc = activeEditor && activeEditor.document;
 ~~~~
 ### Consuming Events?
-* `DocumentManager: currentDocumentChange` - This event will be sent if an image is displayed. Often subscribers will call `DocumentManager.getCurrentDocument()` which will return NULL in this case - see above.
-* `EditorManager:activeEditorChange` -  will have NULL as argument in place of new Editor when image is displayed
+* `DocumentManager: currentDocumentChange` - This event will be sent if an image is displayed. 
+Example: Often subscribers will call `DocumentManager.getCurrentDocument()` which will return NULL in this case - see above.
+* `EditorManager:activeEditorChange` -  2nd argument is NULL when image is displayed
+Example: 
+When listening for activeEditorChange expect NULL for current: 
+
+~~~~~
+    function _onActiveEditorChange(event, current, previous) {
+        if (current) {
+            ...
+        }
+        if (previous) { // previous can be null too!
+            ...
+        } 
+    }
+    $(EditorManager).on("activeEditorChange", _onActiveEditorChange)
+~~~~~        
+
+
 
 Test your extensions with this branch:
 TBA
