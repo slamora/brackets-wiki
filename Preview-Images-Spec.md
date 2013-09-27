@@ -69,12 +69,12 @@ When listening for activeEditorChange expect NULL for current:
 ~~~~~        
 
 
-
 Test your extensions with this branch:
 TBA
 
 ---
 
+## Spec
 
 The following design has been picked after investigating a number of architectures comparing trade offs between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
 
