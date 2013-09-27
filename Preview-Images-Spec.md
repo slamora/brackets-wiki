@@ -27,8 +27,7 @@ var activeEditor = EditorManager.getActiveEditor(),
 ### Consuming Events?
 * `DocumentManager: currentDocumentChange` - This event will be sent if an image is displayed.
 
-Example: Often subscribers will call `DocumentManager.getCurrentDocument()` which will return NULL in this case - see above.
-
+Example, also see example for `DocumentManager.getCurrentDocument` above: 
 ~~~~
 $(DocumentManager).on("currentDocumentChange", _onCurrentDocumentChange);
 function _onCurrentDocumentChange() {
