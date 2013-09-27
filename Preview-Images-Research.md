@@ -1,5 +1,6 @@
 _DRAFT_
 
+---
 ## Have extensions?
 _If you have written extensions this is what you need to know to make sure they work fine with the changes proposed in this document_
 
