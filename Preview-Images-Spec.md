@@ -15,6 +15,19 @@ Hence the question how to extend and modify the existing code while keeping the 
 If you have written extensions, this is what you need to know:
 
 ### Using EditorManager?
+`getFocusedEditor`, `getActiveEditor` and `getCurrentFullEditor` always returns null when image is displayed
+~~~~
+var editor = EditorManager.getFocusedEditor();
+if (editor) { // make sure to check for null! ...}
+
+var editor = EditorManager.getActiveEditor();
+if (editor) { // make sure to check for null! ...}
+
+var editor = EditorManager.getCurrentFullEditor();
+if (editor) { // make sure to check for null! ...}
+
+~~~~
+
 
 ### Using DocumentManager?
 `DocumentManager.getCurrentDocument()`: returns NULL while an image is displayed
@@ -31,7 +44,7 @@ Example, also see example for `DocumentManager.getCurrentDocument` above:
 ~~~~
 function _onCurrentDocumentChange() {
    var doc = DocumentManager.getCurrentDocument();
-   if(doc){ // make sure to check for null
+   if(doc){ // make sure to check for null!
      ...
    }
    // even better use example above 
