@@ -1,8 +1,14 @@
 _DRAFT_
+Motivation for this document is to spec out introducing API changes to enable displaying an image from the project tree to complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
 
+Documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document. Hence the question how to extend and modify the existing code while keeping the following goals in mind:
+* avoid breaking extensions, if we do, we better have a good reason
+* build core code that is maintainable
+* build core code that is extensible
+* keep API intuitively understandable
 ---
 ## Have extensions?
-_If you have written extensions this is what you need to know to make sure they work fine with the changes proposed in this document_
+If you have written extensions, this is what you need to know:
 
 ### Using EditorManager?
 
@@ -22,13 +28,7 @@ Test your extensions with this branch:
 TBA
 
 ---
-Motivation for this document is to enable a educated decision on trade offs that have to be made when introducing API changes to enable displaying an image from the project tree to complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
 
-Documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document. Hence the question how to extend and modify the existing code while keeping the following goals in mind:
-* avoid breaking extensions, if we do, we better have a good reason
-* build core code that is maintainable
-* build core code that is extensible
-* keep API intuitively understandable
 
 The following design has been picked after investigating a number of architectures comparing trade offs between making non-disruptive or less disruptive API changes at the cost of conceptual clarity of Editor and Document classes.
 
