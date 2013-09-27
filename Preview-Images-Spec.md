@@ -39,7 +39,7 @@ function _onCurrentDocumentChange() {
 $(DocumentManager).on("currentDocumentChange", _onCurrentDocumentChange);
 ~~~~
 
-**EditorManager:activeEditorChange** -  2nd argument is NULL when image is displayed
+**EditorManager: activeEditorChange** -  2nd argument is NULL when image is displayed
 Example: 
 When listening for activeEditorChange expect NULL for current: 
 
