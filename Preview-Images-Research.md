@@ -33,7 +33,7 @@ The following design has been picked after investigating a number of architectur
 This design does seems to strike a good balance between the goals stated above
 
 Behavior details
-* Double click on image in project display image
+* Single click on image in project display image
 * Images are not added to working set
 * FileOpen opens an image if a single image file is selected in the open dialog
 * Drag & Drop of single image displays image
