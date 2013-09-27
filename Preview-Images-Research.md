@@ -29,7 +29,7 @@ Implementation details
 * EditorManager.getFocusedEditor always returns null when image is displayed
 * EditorManager.getActiveEditor always returns null when image is displayed
 * EditorManager.getCurrentFullEditor always returns null when image is displayed
-* To display an image a div-tag wrapping an img-tag is appended to the code mirror wrapper element.The image file's content won't is not loaded at all.  It will merely be loaded for rendering by the browser / CEF shell.
+* A div-tag containing an img-tag is appended to the code mirror wrapper element to display the image. The image itself is not loaded at all. It is loaded by the browser / CEF  to render the view.
 * A new mode / language will be added such that LanguageManager.getLanguageForPath() on an image can be called to identify wether fileEntry points to an image file, by checking mode.getName(), i.e.
 `var mode = LanguageManager.getLanguageForPath(fullPath);
 if(mode.getName() === "image"){...}`
