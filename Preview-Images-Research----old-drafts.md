@@ -1,8 +1,3 @@
-
----
-Previous drafts:
-
-
 This document explores the ramifications of four ideas, ranked by disruptiveness:
 * [Modal dialog with image](https://github.com/adobe/brackets/wiki/Preview-Images-Research#show-modal-dialog-with-image)
 * Non modal image viewer in place of the text editor
