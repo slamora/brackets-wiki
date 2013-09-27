@@ -29,7 +29,6 @@ var activeEditor = EditorManager.getActiveEditor(),
 
 Example, also see example for `DocumentManager.getCurrentDocument` above: 
 ~~~~
-$(DocumentManager).on("currentDocumentChange", _onCurrentDocumentChange);
 function _onCurrentDocumentChange() {
    var doc = DocumentManager.getCurrentDocument();
    if(doc){ // make sure to check for null
@@ -37,7 +36,9 @@ function _onCurrentDocumentChange() {
    }
    // even better use example above 
 }
+$(DocumentManager).on("currentDocumentChange", _onCurrentDocumentChange);
 ~~~~
+
 * `EditorManager:activeEditorChange` -  2nd argument is NULL when image is displayed
 Example: 
 When listening for activeEditorChange expect NULL for current: 
