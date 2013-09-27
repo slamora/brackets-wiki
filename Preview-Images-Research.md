@@ -19,6 +19,7 @@ var activeEditor = EditorManager.getActiveEditor(),
 
 Test your extensions with this branch:
 TBA
+
 ---
 Motivation for this document is to enable a educated decision on trade offs that have to be made when introducing API changes to enable displaying an image from the project tree to complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
 
