@@ -1,8 +1,10 @@
 _DRAFT_
 
-Motivation for this document is to spec out API changes to enable displaying an image from the project tree to complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
+Motivation for this document is to spec out API changes to enable displaying an image from the project tree. Also see this Trello card for the user story  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
 
-Documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document. Hence the question how to extend and modify the existing code while keeping the following goals in mind:
+Documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document. That needs to change to enable this user story
+
+Hence the question how to extend and modify the existing code while keeping the following goals in mind:
 * avoid breaking extensions, if we do, we better have a good reason
 * build core code that is maintainable
 * build core code that is extensible
