@@ -1,5 +1,25 @@
 _DRAFT_
+---
+## Have extensions?
+_If you have written extensions this is what you need to know to make sure they work fine with the changes proposed in this document_
 
+### Using EditorManager?
+
+### Using DocumentManager?
+`DocumentManager.getCurrentDocument()`: returns NULL while an image is displayed
+
+Make sure to handle null correctly. If your extension relies on getting the current document to do stuff, the recommended way to get the current document going forward is:
+~~~~
+var activeEditor = EditorManager.getActiveEditor(),
+    activeDoc = activeEditor && activeEditor.document;
+~~~~
+### Consuming Events?
+`DocumentManager: currentDocumentChange` - This event will be sent if an image is displayed. Often subscribers will call `DocumentManager.getCurrentDocument()` which will return NULL in this case - see above.
+`EditorManager:activeEditorChange` -  will have NULL as argument in place of new Editor when image is displayed
+
+Test your extensions with this branch:
+TBA
+---
 Motivation for this document is to enable a educated decision on trade offs that have to be made when introducing API changes to enable displaying an image from the project tree to complete the  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
 
 Documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document. Hence the question how to extend and modify the existing code while keeping the following goals in mind:
