@@ -18,13 +18,13 @@ If you have written extensions, this is what you need to know:
 `getFocusedEditor`, `getActiveEditor` and `getCurrentFullEditor` always returns null when image is displayed
 ~~~~
 var editor = EditorManager.getFocusedEditor();
-if (editor) { /* make sure to check for null! ... */ }
+if (editor) { /* always check editor for null! ... */ }
 
 var editor = EditorManager.getActiveEditor();
-if (editor) { /* make sure to check for null! ... */ }
+if (editor) { /* always check editor for null! ... */ }
 
 var editor = EditorManager.getCurrentFullEditor();
-if (editor) { /* make sure to check for null! ... */ }
+if (editor) { /* always check editor for null! ... */ }
 
 ~~~~
 
