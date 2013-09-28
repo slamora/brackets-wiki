@@ -29,13 +29,16 @@ API Changes
 
 **Embedded Node server** - Upgraded from 0.8 to 0.10. Migrated from node-unzip to decompress-zip.
 
+**Paths** - `FileUtils.getFilenameExtension()` has been **deprecated** in favor of the new `FileUtils.getFileExtension()`. The old API may be removed in a near-future sprint.
+
 New/Improved Extensibility APIs
 -------------------------------
 **Linting/inspection** - Use `CodeInspection.inspectFile()` to headlessly (no UI updates) get linting results for any file.
 
 **Closing files** - TODO: new DocumentCommandHandlers API for closing multiple files in a batch
 
-**Paths** - New `NativeFileSystem.isRelativePath()` utility (given a string)
+**Paths** - New `NativeFileSystem.isRelativePath()` utility (given a string).
+
 
 Known Issues
 ------------
