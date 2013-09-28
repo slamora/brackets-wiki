@@ -28,7 +28,7 @@ For hacking on the core Brackets HTML/CSS/JavaScript files:
 ```bat
 mac
 ---
-tools/setup_for_hacking.sh "/Applications/Brackets Sprint 27.app"
+tools/setup_for_hacking.sh "/Applications/Brackets Sprint 31.app"
 
 windows
 -------
