@@ -2,7 +2,7 @@ _This is a draft!_
 --------------------
 _This document will not be finalized until the end of Sprint 32 -- approximately October 4._
 
-What's New in Sprint 23
+What's New in Sprint 32
 -----------------------
 * **Images**
     * [Preview image files](https://trello.com/c/l9AcILkC/24-8-preview-images): Select in image in the file tree (or via Quick Open) to see a preview in the editor area.
