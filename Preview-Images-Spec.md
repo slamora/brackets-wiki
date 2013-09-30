@@ -91,6 +91,7 @@ Behavior details
 * Find, Replace, QuickOpen UI and the likes do not show UI when an Image is displayed
 * Copy does not modify the clipboard contents
 * Cut, Paste do nothing on an image file.
+* File->close, CMD-W closes image
 
 Implementation details
 * DocumentManager.getCurrentDocument returns null while an image is displayed, so that code / extensions that modify documents do not have to be updated.
