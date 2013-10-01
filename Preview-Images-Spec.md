@@ -106,4 +106,9 @@ if(mode.getName() === "image"){...}`
 * DocumentManager.getDocumentForPath is modified so that no document will be created for paths to image files.
 DocumentCommandHandlers.doOpen will own the responsibility to determine wether an image file or a text file or something else is attempted to be opened.
 
+### Screen mockups
+![1](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/4f91ec23c0e7c29036c1e92f/93e6ecaa4aec4fe4d174427ca515bd7a/Brackets_ImageView_005.png)
+![2](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/4f91ec23c0e7c29036c1e92f/e3a0f30e8308702b98469e910d0c7a5f/Brackets_ImageView_004.png)
+![3](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/4f91ec23c0e7c29036c1e92f/468e703d2a78ee5f0b7f9774331483ca/Brackets_ImageView_003.png)
+
 [More info on different designs discussed](https://github.com/adobe/brackets/wiki/Preview-Images-Research----old-drafts)
