@@ -72,7 +72,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [BracketLESS] (https://github.com/olsgreen/BracketLESS): Compiles LESS files to CSS on save
 * [Open File from URL](https://github.com/deemeetar/OpenFileFromUrl): Opens any ```href``` and ```rel``` attribute urls in editor on ```ALT+0``` shortcut. Currently works only with existing files. 
 * [PhoneGap Extension for Brackets](https://github.com/adobe/brackets-phonegap): Manage PhoneGap Build projects from Brackets. 
-* [Ant for Brackets](https://github.com/jbalsas/brackets-ant): Launch any target in your ant files. (Uses Node. Requires Brackets Sprint 21 or greater)
 * [Grunt for Brackets](https://github.com/markrendle/brackets-grunt): Run any task in your Gruntfile.js. (Uses Node. Tested on Brackets Sprint 25.)
 * [Project Links](https://github.com/chrismatheson/brackets-project-links): Add some links to the sidebar for quick access **dev** still a lot of stuff i want to add
 * [JSCompressor](https://github.com/slorenzot/brackets-jscompressor): This extension allows automatically compress javascript and css files using YUI compressor.
