@@ -187,6 +187,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [Related Files](https://github.com/jhatwich/brackets-related-files): Discovers and allows you to open related files in your project.
 * [Rename JavaScript Identifier](https://github.com/asgerf/bracket-rename): Renames JavaScript identifiers.
 * [git-integration](https://github.com/pollensoft/git-integration): Git Command line integration
+* [Ant for Brackets](https://github.com/jbalsas/brackets-ant): Launch any target in your ant files. (Uses Node. Requires Brackets Sprint 21 or greater)
 
 ---
 
