@@ -70,7 +70,7 @@ When listening for activeEditorChange expect NULL for current:
 
 
 Test your extensions with this branch:
-TBA
+https://github.com/adobe/brackets/tree/couzteau/preview-images
 
 ---
 
