@@ -1,10 +1,10 @@
-Motivation for this document is to spec out API changes to enable displaying an image from the project tree. Also see this Trello card for the [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
+This document describes API changes needed to enable viewing image files within Brackets - see the [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
 
 Brackets currently has notions of "current document" and "active editor." The `Document` and `Editor` objects are closely tied to _text_ content with a CodeMirror widget managing the state and view. Something in that picture will have to change to enable selecting image files for display.
 
 To minimize changes to these existing APIs, "current document" and "active editor" _will both be **null**_ when an image is displayed. Previously, they could only be null when all files were closed.
 
-We think doing this can achieve all of the following goals:
+We think this change can achieve all of the following goals:
 
 * avoid breaking extensions (if we do, we'd better have a good reason)
 * build core code that is maintainable
