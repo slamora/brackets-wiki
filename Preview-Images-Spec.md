@@ -1,46 +1,42 @@
-_DRAFT_
+Motivation for this document is to spec out API changes to enable displaying an image from the project tree. Also see this Trello card for the [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
 
-Motivation for this document is to spec out API changes to enable displaying an image from the project tree. Also see this Trello card for the user story  [_Preview Images_ user story](https://trello.com/c/l9AcILkC/24-8-preview-images).
+Brackets currently has notions of "current document" and "active editor." The `Document` and `Editor` objects are closely tied to _text_ content with a CodeMirror widget managing the state and view. Something in that picture will have to change to enable selecting image files for display.
 
-Documents in Brackets have always been text documents with a code mirror instance to manage state and view. Thus the Document and Editor classes make assumptions every document is a text document. That needs to change to enable this user story
+To minimize changes to these existing APIs, "current document" and "active editor" _will both be **null**_ when an image is displayed. Previously, they could only be null when all files were closed.
 
-Hence the question how to extend and modify the existing code while keeping the following goals in mind:
-* avoid breaking extensions, if we do, we better have a good reason
+We think doing this can achieve all of the following goals:
+
+* avoid breaking extensions (if we do, we'd better have a good reason)
 * build core code that is maintainable
 * build core code that is extensible
 * keep API intuitively understandable
 
 ---
 ## Have extensions?
-If you have written extensions, this is what you need to know:
+If you have written extensions, here's what you need to know...
 
-### Using EditorManager?
-`getFocusedEditor`, `getActiveEditor` and `getCurrentFullEditor` always returns null when image is displayed
+You can use this branch to test your extensions with the new API behavior:
+https://github.com/adobe/brackets/tree/couzteau/preview-images
+
+
+### EditorManager getters
+`getFocusedEditor()`, `getActiveEditor()` and `getCurrentFullEditor()` all return null when an image is displayed. (Note: it's _already_ possible for any of these to return null if all files are closed; and `getFocusedEditor()` is also null if keyboard focus lies outside the Editor). Your code should contain null checks such as this:
+
 ~~~~
-var editor = EditorManager.getFocusedEditor();
-if (editor) { /* always check editor for null! ... */ }
-
 var editor = EditorManager.getActiveEditor();
 if (editor) { /* always check editor for null! ... */ }
-
-var editor = EditorManager.getCurrentFullEditor();
-if (editor) { /* always check editor for null! ... */ }
-
 ~~~~
 
 
-### Using DocumentManager?
-`DocumentManager.getCurrentDocument()`: returns NULL while an image is displayed
+### DocumentManager getters
+`getCurrentDocument()` returns null when an image is displayed. Note: it's _already_ possible for it to return null if all files are closed. Use null checks similar to the above.
 
-Need the current document? Do this:
-~~~~
-var activeEditor = EditorManager.getActiveEditor(),
-    activeDoc = activeEditor && activeEditor.document;
-~~~~
-### Consuming Events?
-**DocumentManager: currentDocumentChange** - This event will be sent if an image is displayed.
+Because of this, `getCurrentDocument() === null` no longer guarantees that `getWorkingSet().length === 0`.
 
-Example, also see example for `DocumentManager.getCurrentDocument` above: 
+### Events from EditorManager & DocumentManager
+
+When opening an image file, the `"activeEditorChange"` and `"currentDocumentChange"` events are triggered. The second `"activeEditorChange"` argument will be null, matching the getter API value. (It's _already_ possible to receive such events transitioning to null, when the last open file is closed). Listeners should always check for null, like this:
+
 ~~~~
 function _onCurrentDocumentChange() {
    var doc = DocumentManager.getCurrentDocument();
@@ -52,25 +48,10 @@ function _onCurrentDocumentChange() {
 $(DocumentManager).on("currentDocumentChange", _onCurrentDocumentChange);
 ~~~~
 
-**EditorManager: activeEditorChange** -  2nd argument is NULL when image is displayed
-Example: 
-When listening for activeEditorChange expect NULL for current: 
+When switching from an image file back to a text document, both these events are triggered again. The third `"activeEditorChange"` argument will be null, matching the previous getter API value. (It's _already_ possible to receive such events transitioning from null, when the first file is opened).
 
-~~~~~
-    function _onActiveEditorChange(event, current, previous) {
-        if (current) {
-            ...
-        }
-        if (previous) { // previous can be null too!
-            ...
-        } 
-    }
-    $(EditorManager).on("activeEditorChange", _onActiveEditorChange)
-~~~~~        
+When switching between two image files, _neither_ of these events are triggered (since the values are remaining null).
 
-
-Test your extensions with this branch:
-https://github.com/adobe/brackets/tree/couzteau/preview-images
 
 ---
 
