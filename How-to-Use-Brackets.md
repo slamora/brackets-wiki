@@ -91,6 +91,10 @@ instantly in the browser.
 The initial implementation of this in Brackets was limited to CSS editing but, starting with Sprint 31,
 Live Development has been expanded to include support for live editing of HTML. If you open an HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This includes changes to the style and class tag attributes.
 
+By default, Brackets previews files using a local http server that is included with Brackets. 
+If you want to preview off a server, you can use **File > Project Settings...**. 
+In the Base URL field, set the URL on the server that corresponds to the root of your project.
+
 Note that live HTML only works with the Brackets built-in server. If you are using your own web server (have a Live Preview Base URL set), only live CSS editing will work.
 
 If you make changes and save a JS file, however, the content in your browser will be refreshed for preview. 
@@ -98,10 +102,6 @@ If you make changes and save a JS file, however, the content in your browser wil
 While Live Preview is open, putting your cursor in an HTML tag in Brackets will
 highlight the matching element in the browser. Putting your cursor in a CSS rule will
 highlight all matching HTML elements. Use "File > Live Highlight" to toggle this off.
-
-By default, Brackets previews files using a local http server that is included with Brackets. 
-If you want to preview off a server, you can use **File > Project Settings...**. 
-In the Base URL field, set the URL on the server that corresponds to the root of your project.
 
 Some limitations of the current implementation:
 
