@@ -138,7 +138,7 @@ values. To use it, just put your cursor in a property name or value in a CSS fil
 <a id="codehints"></a>Code Hints
 ----------------
 Brackets has initial support for code hints in HTML, CSS, and JavaScript files. Code hints generally pop up automatically, but you can manually bring them up with **Ctrl-Space** (note that this shortcut uses Ctrl even on Mac).
-* In HTML, code hints are provided for tag names, attribute names, and attribute values.
+* In HTML, code hints are provided for tag names, attribute names, attribute values, and entities.
 * In CSS, code hints are provided for property names and enumerated property values. Code hints 
 don't yet work for shorthand properties (e.g. `background`), only for individual properties (e.g.
 `background-repeat`).
