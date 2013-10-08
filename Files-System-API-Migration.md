@@ -2,7 +2,7 @@ Here are the API changes that will result from the [File System Evolution](File 
 
 <table>
 <thead>
-<tr><td>Old API</td><td>New API</td><td>Suggested action</td><td>Usage</td></tr>
+<tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Suggested action</b></td><td><b>Usage</b></td></tr>
 </thead>
 
 <tr><td>FileUtils.readAsText(fileEntry)</td><td>FileUtils.readAsText(file)</td><td>Already drop-in compatible</td><td></td></tr>
@@ -14,6 +14,8 @@ Here are the API changes that will result from the [File System Evolution](File 
 
 <tr><td>new NativeFileSystem.FileEntry(fullPath)<br>new NativeFileSystem.DirectoryEntry(fullPath)</td><td>filesystem.getFileForPath(fullPath)<br>filesystem.getDirectoryForPath(fullPath)</td><td>Shim with deprecation warning</td><td></td></tr>
 <tr><td>DirectoryEntry.getFile(relpath)</td><td>filesystem.resolve(path)</td><td>Do not shim (callers will break right away)</td><td></td></tr>
+<tr><td>NativeFileSystem.resolveNativeFileSystemPath(fullPath)</td><td>filesystem.resolve(path)</td><td>Shim with deprecation warning</td><td></td></tr>
+<tr><td>NativeFileSystem.requestNativeFileSystem(fullPath)... fs.root</td><td>filesystem.resolve(fullPath)</td><td>Shim with deprecation warning _(maybe?)_</td><td></td></tr>
 <tr><td>Concatenation: folderPath + "/" + filename</td><td>(same)</td><td>(no change)</td><td></td></tr>
 <tr><td>Concatenation: folderPath + filename</td><td>folderPath + "/" + filename</td><td>**Open question**</td><td></td></tr>
 <tr><td>Substrings: relpath = fullPath.slice(dirFullPath.length)</td><td>relpath = fullPath.slice(dirFullPath.length + 1)</td><td>**Open question**</td><td></td></tr>
@@ -23,6 +25,16 @@ Here are the API changes that will result from the [File System Evolution](File 
 <tr><td>fileEntry.createWriter()... writer.write(text)</td><td>file.write(text)</td><td>Do not shim (callers will break right away)</td><td></td></tr>
 <tr><td>fileEntry.file()... new NativeFileSystem.FileReader().readAsText(fileResult)</td><td>file.readAsText()</td><td>Do not shim (callers will break right away)</td><td></td></tr>
 <tr><td>directoryEntry.createReader().readEntries()</td><td>directory.getContents() ???</td><td>Do not shim (callers will break right away)</td><td>**TODO**</td></tr>
+<tr><td>DirectoryEntry.getFile(relpath, {create:true})</td><td>filesystem.getFileForPath(fullPath).write("")<br>Note: as a result, this can fold in writeText() or createWriter()/write() calls that used to immediately follow the getFile() call.</td><td>Do not shim (callers will break right away)<br>TODO: add a cleaner create() API?</td><td></td></tr>
+<tr><td>DirectoryEntry.getDirectory(relpath, {create:true})</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td>Do not shim (callers will break right away)</td><td></td></tr>
+<tr><td>instanceof NativeFileSystem.InaccessibleFileEntry</td><td>instanceof InMemoryFile</td><td>Do not shim (callers will break right away)</td><td></td></tr>
+<tr><td>entry.remove()</td><td>entry.moveToTrash()</td><td>Do not shim (callers will break right away)</td><td></td></tr>
+
+<tr><td>brackets.fs.makedir(fullPath, ???0???)</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td>Do not shim (callers will break right away)</td><td></td></tr>
+<tr><td>brackets.fs.unlink(fullPath)</td><td>entry.unlink()</td><td>Do not shim (callers will break right away)</td><td></td></tr>
+<tr><td>brackets.fs.rename(oldFullPath, newFullPath)</td><td>entry.rename(newFullPath)<br>(NOTE: Exact semantics of this call are still a bit TBD).</td><td>Do not shim (callers will break right away)</td><td></td></tr>
+<tr><td>brackets.fs.chmod()</td><td>???</td><td>Do not shim (callers will break right away)</td><td></td></tr>
+<tr><td>new NativeFileSystem.InaccessibleFileEntry(fakePath)</td><td>filesystem.getInMemoryFile(fakePath)</td><td>Do not shim (callers will break right away)</td><td></td></tr>
 
 <tr><td>old</td><td>new</td><td>action</td><td></td></tr>
 </table>
