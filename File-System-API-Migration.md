@@ -20,23 +20,35 @@ Here are the API changes that will result from the [File System Evolution](File 
 <tr><td>Concatenation: folderPath + filename</td><td>folderPath + "/" + filename</td><td>Change all directory paths to end in "/" to allow this</td><td>Unclear, but at least several</td></tr>
 <tr><td>Substrings: relpath = fullPath.slice(dirFullPath.length)</td><td>relpath = fullPath.slice(dirFullPath.length + 1)</td><td>(Above change removes this diff too)</td><td></td></tr>
 <tr><td>entry.isFile, entry.isDirectory</td><td>entry.isFile(), entry.isDirectory()</td><td>Change API to use a read-only property (like fullPath)</td><td>9</td></tr>
+<tr><td>NativeFileSystem.isRelativePath()</td><td>???</td><td>???</td><td>None</td></tr>
 <tr><td>NativeFileSystem.showOpenDialog()<br>NativeFileSystem.showSaveDialog()</td><td>filesystem.showOpenDialog()<br>filesystem.showSaveDialog()</td><td>Shim with deprecation warning</td><td>4</td></tr>
 <tr><td>fileEntry.getMetadata()</td><td>file.stat()<br>_TODO: document change in data structure too_</td><td>Do not shim (callers will break right away)</td><td>1</td></tr>
 <tr><td>fileEntry.createWriter()... writer.write(text)</td><td>file.write(text)</td><td>Do not shim (callers will break right away)</td><td>5, but only used in 2</td></tr>
-<tr><td>fileEntry.file()... new NativeFileSystem.FileReader().readAsText(fileResult)</td><td>file.readAsText()</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
+<tr><td>fileEntry.file()... new NativeFileSystem.FileReader().readAsText(fileObj)</td><td>file.readAsText()</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
 <tr><td>directoryEntry.createReader().readEntries()</td><td>directory.getContents() ???</td><td>Do not shim (callers will break right away)</td><td>5</td></tr>
 <tr><td>DirectoryEntry.getFile(relpath, {create:true})</td><td>filesystem.getFileForPath(fullPath).write("")<br>Note: as a result, this can fold in writeText() or createWriter()/write() calls that used to immediately follow the getFile() call.</td><td>Do not shim (callers will break right away)<br>TODO: add a cleaner create() API?</td><td>2</td></tr>
 <tr><td>DirectoryEntry.getDirectory(relpath, {create:true})</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td>Do not shim (callers will break right away)</td><td>2</td></tr>
 <tr><td>instanceof NativeFileSystem.InaccessibleFileEntry</td><td>instanceof InMemoryFile</td><td>Do not shim (callers will break right away)</td><td>1(ish)</td></tr>
 <tr><td>entry.remove()</td><td>entry.moveToTrash()</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
+<tr><td>NativeFileError.*</td><td>???</td><td>Do not shim (callers will break right away)</td><td>1(ish)</td></tr>
+<tr><td>entry.filesystem<br>(not a very useful API)</td><td>n/a</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
+<tr><td>NativeFileSystem.Encodings.*</td><td>???</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
 
+
+<tr><td>brackets.fs.readFile()<br>brackets.fs.writeFile()</td><td>file.readAsText()<br>file.write(text)</td><td>**TODO: Consider shimming**</td><td>2</td></tr>
+<tr><td>brackets.fs.stat()</td><td>file.stat()</td><td>Do not shim (callers will break right away)</td><td>1</td></tr>
+<tr><td>brackets.fs.readdir()</td><td>directory.getContents() ???</td><td>Do not shim (callers will break right away)</td><td>1</td></tr>
 <tr><td>brackets.fs.makedir(fullPath, mode)</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td>Do not shim (callers will break right away)</td><td>1</td></tr>
 <tr><td>brackets.fs.unlink(fullPath)</td><td>entry.unlink()</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
 <tr><td>brackets.fs.rename(oldFullPath, newFullPath)</td><td>entry.rename(newFullPath)<br>(NOTE: Exact semantics of this call are still a bit TBD).</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
+<tr><td>brackets.fs.moveToTrash()</td><td>entry.moveToTrash()</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
+<tr><td>brackets.fs.copyFile()</td><td>???</td><td>Do not shim (callers will break right away)</td><td>1</td></tr>
+<tr><td>brackets.fs.isNetworkDrive()</td><td>???</td><td>???</td><td>None</td></tr>
 <tr><td>brackets.fs.chmod()</td><td>???</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
+<tr><td>brackets.fs.showOpenDialog()<br>brackets.fs.showSaveDialog()</td><td>filesystem.showOpenDialog()<br>filesystem.showSaveDialog()</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
 <tr><td>new NativeFileSystem.InaccessibleFileEntry(fakePath)</td><td>filesystem.getInMemoryFile(fakePath)</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
+<tr><td>brackets.fs.ERR_*<br>brackets.fs.PATH_EXISTS_ERR<br>brackets.fs.NO_ERROR</td><td>???</td><td>Do not shim (callers will break right away)</td><td>1</td></tr>
 
-<tr><td>old</td><td>new</td><td>action</td><td></td></tr>
 </table>
 
 "Usage" = how many extensions currently use the API
