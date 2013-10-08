@@ -525,6 +525,41 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-name">Grunt default</td>
         <td class="shortcut-orig">Extension (brackets-grunt)</td>
     </tr>
+<tr>
+        <td class="shortcut-base">F7</td>
+        <td class="shortcut-binding">F7</td>
+        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.sortLines</td>
+        <td class="shortcut-cmd-name">Sort Lines</td>
+        <td class="shortcut-orig">Extension (Richter)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">F7</td>
+        <td class="shortcut-binding">⇧F7</td>
+        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.reverseLines</td>
+        <td class="shortcut-cmd-name">Reverse Lines</td>
+        <td class="shortcut-orig">Extension (Richter)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">F7</td>
+        <td class="shortcut-binding">⌘F7</td>
+        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.sortLinesByLength</td>
+        <td class="shortcut-cmd-name">Sort Lines by length</td>
+        <td class="shortcut-orig">Extension (Richter)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">F7</td>
+        <td class="shortcut-binding">⌥F7</td>
+        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.shuffleLines</td>
+        <td class="shortcut-cmd-name">Shuffle Lines</td>
+        <td class="shortcut-orig">Extension (Richter)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">F7</td>
+        <td class="shortcut-binding">⌥⌘F7</td>
+        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.uniqueLines</td>
+        <td class="shortcut-cmd-name">Remove Duplicate Lines</td>
+        <td class="shortcut-orig">Extension (Richter)</td>
+    </tr>
     <tr>
         <td class="shortcut-base">F12</td>
         <td class="shortcut-binding">F12</td>
