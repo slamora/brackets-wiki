@@ -50,6 +50,8 @@ File watchers require node 0.10. You will need to update the shell in order to g
 
 ##API##
 
+For a guide to converting from current Brackets file APIs to these new APIs, see [[File System API Migration]].
+
 ### FileSystemManager ###
 This is a singleton object for registering low-level file system implementations, and creating new `FileSystem` instances. Most code will never interact directly with this module.
 
