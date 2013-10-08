@@ -55,6 +55,19 @@ Here are the API changes that will result from the [File System Evolution](File 
 
 ### Extensions that will break
 
-The following extensions use at least one API in the "Do not shim (callers will break right away)" category:
+The following 14 extensions use at least one API on the "Do not shim" list:
 
-* ...
+* emmet (fs.readFile(), fs.writeFile())
+* themes (DirectoryEntry.createReader())
+* themesforbrackets (DirectoryEntry.createReader())
+* interactive-linter (DirectoryEntry.getFile(), DirectoryEntry.createReader(), FileEntry.createWriter(), NativeFile Error \[only minor bug\])
+* angularui.angularjs (FileEntry.getMetadata())
+* timburgess.pagesuck (DirectoryEntry.getFile())
+* ternific (DirectoryEntry.getFile(), DirectoryEntry.createReader(), FileEntry.createWriter())
+* tomcat-manager (DirectoryEntry.getFile(), FileEntry.createWriter())
+* simple-js-code-hints (DirectoryEntry.createReader())
+* bsirlinger.github-access (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create}), FileEntry.createWriter())
+* xunit (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create})
+* jeffbooher.new-project (fs.makedir(), fs.ERR_*/etc., fs.readdir(), fs.stat(), fs.readFile(), fs.copyFile())
+* workspaces (FileEntry.createWriter())
+* pflynn.brackets.editor.nav \[won't crash, minor bug\] (InaccessibleFileEntry)
