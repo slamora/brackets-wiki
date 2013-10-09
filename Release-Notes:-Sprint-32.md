@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 32 -- approximately October 9._
-
 What's New in Sprint 32
 -----------------------
 * **Live Preview**
@@ -21,7 +17,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 API Changes
 -----------
-**Embedded Node server** - Upgraded from 0.8 to 0.10. Migrated from node-unzip to decompress-zip.
+**Embedded Node server** - Upgraded from 0.8 to 0.10. Migrated from node-unzip to decompress-zip. (Only affects extensions that use NodeConnection to run code on the Node server side).
 
 **Paths** - `FileUtils.getFilenameExtension()` has been **deprecated** in favor of the new `FileUtils.getFileExtension()`. The old API may be removed in a near-future sprint.
 
@@ -62,8 +58,10 @@ Community contributions to Brackets
 * [Fix JSDoc parameter name](https://github.com/adobe/brackets/pull/5389) by [Ashok Gelal](https://github.com/ashokgelal)
 
 #### Pulling source code from Git
-TODO
-* A new brackets-shell build is _optional_ for this sprint. ??
+* It is now possible to build brackets-shell with XCode 5.
+* A new brackets-shell build is _required_ for this sprint (due to the Node upgrade). Be sure to rerun `grunt setup` before building.
+* brackets-shell's Node dependencies have changed. Run `npm install` before rebuilding brackets-shell.
+* Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
 Bugs fixed in Sprint 32
