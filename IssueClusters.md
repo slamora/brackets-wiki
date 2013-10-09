@@ -1,3 +1,7 @@
+This is a clustering of medium priority issues (as of early October 2013) so that we can consider fixing a collection of these as a "make X better" story. Generally, we can be more efficient if we fix several bugs in the same area because the programmers/reviewers can "swap in" the context needed to do work in that area without bouncing around between bugs in unrelated parts of Brackets.
+
+(This list is generated through a partially scripted process...)
+
 * mac
     * 5407 [Scrollbar ticks show up under thumb on Mac with Lion scrollbars](https://github.com/adobe/brackets/issues/5407)
     * 5028 [Mac discrete graphics card required.](https://github.com/adobe/brackets/issues/5028)
