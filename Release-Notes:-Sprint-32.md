@@ -1,16 +1,13 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 32 -- approximately October 4._
+_This document will not be finalized until the end of Sprint 32 -- approximately October 9._
 
 What's New in Sprint 32
 -----------------------
-* **Images**
-    * [Preview image files](https://trello.com/c/l9AcILkC/24-8-preview-images): Select in image in the file tree (or via Quick Open) to see a preview in the editor area.
 * **Live Preview**
     * [Launch with non-HTML file selected](https://trello.com/c/gbBtpARq/709-1-define-default-html-file-for-live-development): Brackets will automatically find a nearby index.html file to use. No more switching way from your CSS file to start Live Preview!
 * **Overall UI**
     * [Dark Themed Window Chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows last sprint.
-    * [Close Others and Close Others Above/Below in Working Files context menu](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these new commands.
 * **Under the hood**
     * [Update to Node 0.10](https://trello.com/c/2fqQFO5J/999-2-upgrade-node-to-latest-0-10)
 
@@ -18,15 +15,8 @@ What's New in Sprint 32
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-31a...sprint-32#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-31a...sprint-32#commits_bucket)
 
 
-UI Changes
-----------
-No major changes to existing features.
-
-
 API Changes
 -----------
-**Image files** - TODO
-
 **Embedded Node server** - Upgraded from 0.8 to 0.10. Migrated from node-unzip to decompress-zip.
 
 **Paths** - `FileUtils.getFilenameExtension()` has been **deprecated** in favor of the new `FileUtils.getFileExtension()`. The old API may be removed in a near-future sprint.
@@ -34,8 +24,6 @@ API Changes
 New/Improved Extensibility APIs
 -------------------------------
 **Linting/inspection** - Use `CodeInspection.inspectFile()` to headlessly (no UI updates) get linting results for any file.
-
-**Closing files** - TODO: new DocumentCommandHandlers API for closing multiple files in a batch
 
 **Paths** - New `NativeFileSystem.isRelativePath()` utility (given a string).
 
@@ -51,7 +39,23 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TODO
+* [Add CodeInspection.inspectFile() headless API](https://github.com/adobe/brackets/pull/5125) by [Martin Zagora](https://github.com/zaggino)
+* [Fix #5310: Many items in 'Edit' menu do nothing on Linux](https://github.com/adobe/brackets/pull/5311) ([and](https://github.com/adobe/brackets/pull/5350)) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Fix #5362: Linux menu dropdowns appear below bottom panel headers](https://github.com/adobe/brackets/pull/5363) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Add <dialog> to HTML tag hinting](https://github.com/adobe/brackets/pull/5390) by [Oskar Tjoskar](https://github.com/tjoskar)
+* [Highlight .jsm files as JavaScript](https://github.com/adobe/brackets/pull/5340) by [Neil Stansbury](https://github.com/nstansbury)
+* [Highlight ASP.NET .master files as JavaScript](https://github.com/adobe/brackets/pull/5320) by [Clay Miller](https://github.com/smockle)
+* [Highlight Dust.js (.dust) templates as generic EJS templates](https://github.com/adobe/brackets/pull/5370) by [Josh Parolin](https://github.com/joshparolin)
+* [Re-enable unit tests for HTML Menu rendering](https://github.com/adobe/brackets/pull/5290) by [Lance Campbell](https://github.com/lkcampbell)
+* [Disable 'Restart' button in Debug > Switch Language when language not changed](https://github.com/adobe/brackets/pull/5287) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Fix #5173: Find in Files titlebar doesn't support proper localization](https://github.com/adobe/brackets/pull/5274) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [German translation fix](https://github.com/adobe/brackets/pull/5285) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Turkish translation update](https://github.com/adobe/brackets/pull/4808) by [Muhammet Ali Bekiroglu](https://github.com/Cryptexx)
+* [Czech translation update](https://github.com/adobe/brackets/pull/5127) by [kvarel](https://github.com/kvarel)
+* [Czech translation update](https://github.com/adobe/brackets/pull/5227) by [Martin Starman](https://github.com/martinstarman)
+* [Czech translation typo fix](https://github.com/adobe/brackets/pull/5142) by [Martin Starman](https://github.com/martinstarman)
+* [Finnish translation screenshot](https://github.com/adobe/brackets/pull/5373) by [Wouter92](https://github.com/Wouter92)
+* [Fix JSDoc parameter name](https://github.com/adobe/brackets/pull/5389) by [Ashok Gelal](https://github.com/ashokgelal)
 
 #### Pulling source code from Git
 TODO
