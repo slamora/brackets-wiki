@@ -6,11 +6,15 @@ What's New in Sprint 32
 -----------------------
 * **Live Preview**
     * [Launch with non-HTML file selected](https://trello.com/c/gbBtpARq/709-1-define-default-html-file-for-live-development): Brackets will automatically find a nearby index.html file to use. No more switching way from your CSS file to start Live Preview!
+* **Performance**
+    * [Improved Find performance](https://github.com/adobe/brackets/pull/5303) when searching in large files
+    * [Fixed lag while editing JS code inside a \<script> block](https://github.com/adobe/brackets/pull/5395)
 * **Overall UI**
-    * [Dark Themed Window Chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows last sprint.
+    * [Fixed](https://github.com/adobe/brackets-shell/pull/347) [bugs](https://github.com/adobe/brackets-shell/pull/345) in Windows dark-themed window chrome
+    * [HTML syntax highlighting visible while cursor on tag](https://github.com/adobe/brackets/pull/5355): HTML close/open tag highlighting now permits the regular syntax highlighting to show through.
+    * [Quick Edit results list easier to scan](https://github.com/adobe/brackets/pull/5230): File name is better distinguished from selector text.
 * **Under the hood**
     * [Update to Node 0.10](https://trello.com/c/2fqQFO5J/999-2-upgrade-node-to-latest-0-10)
-
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-31a...sprint-32#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-31a...sprint-32#commits_bucket)
 
