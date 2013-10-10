@@ -10,9 +10,9 @@ What's New in Sprint 33
 * **Images**
     * [Preview image files](https://trello.com/c/l9AcILkC/24-8-preview-images): Select in image in the file tree (or via Quick Open) to see a preview in the editor area.
 * **Overall UI**
-    * [Dark Themed Window Chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
+    * [Dark themed window chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
 * **Files and Folders**
-    * [Close Others and Close Others Above/Below in Working Files context menu](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these new commands.
+    * [Close Others [Above/Below] in Working Files context menu](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these three new commands.
 * **Localization**
     * [Greek translation added](https://github.com/adobe/brackets/pull/5378)
     * [Dutch translation added](https://github.com/adobe/brackets/pull/5372)
