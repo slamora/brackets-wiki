@@ -94,12 +94,4 @@ The main performance gains come from caching. The stats and contents of files an
 `FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. For now, the prototype refreshes the entire file tree whenever a directory changes. This is overkill, but was easy to implement. Ideally, only the directory that changed will be updated.
 
 ##Next Steps##
-* Get unit tests working.
-* Write unit tests for the new APIs.
-* Add a third low-level implementation (Google Drive, SkyDrive, etc.) to vet the API for completeness.
-* Write a porting guide.
-* Address TODOs in code.
-* Testing and bug fixing. 
-* Figure out how to deal with both case-sensitive and case-insensitive file systems.
-* Make getFileList async 
-* Should directory paths include trailing slash or not? 
+Several core developers are working on getting this implemented. We will share a more detailed API proposal with the community soon, but in the meantime feel free to take a look at the [unstable file-system dev branch](https://github.com/adobe/brackets/tree/glenn/file-system).
