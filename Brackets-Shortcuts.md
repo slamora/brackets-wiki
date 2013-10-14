@@ -658,4 +658,18 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-name">Expand code region at cursor position</td>
         <td class="shortcut-orig">Extension (Code Folding)</td>
     </tr>
+    <tr>
+        <td class="shortcut-base">1</td>
+        <td class="shortcut-binding">Shift-Alt-1</td>
+        <td class="shortcut-cmd-id">codefolding.expand.all</td>
+        <td class="shortcut-cmd-name">Expand all code in current editor</td>
+        <td class="shortcut-orig">Extension (Code Folding)</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">1</td>
+        <td class="shortcut-binding">Alt-1</td>
+        <td class="shortcut-cmd-id">codefolding.collapse.all</td>
+        <td class="shortcut-cmd-name">Collapse all code in current editor</td>
+        <td class="shortcut-orig">Extension (Code Folding)</td>
+    </tr>
 </table>
