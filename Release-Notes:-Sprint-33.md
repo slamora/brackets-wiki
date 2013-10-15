@@ -29,6 +29,12 @@ API Changes
 -----------
 **Image files** - TODO
 
+**Dialogs** - TODO: [auto-centering](https://github.com/adobe/brackets/pull/5399)
+
+**Inline editors** - TODO: automatically-created close button; `InlineTextEditor.editors` removal
+
+**Files** - TODO: trailing-"/" cleanups; deprecated `FileUtils.canonicalizeFolderPath()`
+
 New/Improved Extensibility APIs
 -------------------------------
 **Closing files** - TODO: new DocumentCommandHandlers API for closing multiple files in a batch
