@@ -42,7 +42,7 @@ Server smoke test steps
 16. Edit the background color for the <body> tag in the inline editor (#D90 is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
 17. Hit Cmd/Ctrl-E. Verify that the inline editor closes.
 18. Make an edit to some text in HTML page that is visible in browser. Note: some text in the page is replaced by logo image via CSS (e.g. first h1 tag and first h2 tag) so edits will not be visible; try updating text in News section.
-19. Verify that text has not yet changed in browser. Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
+19. Verify that text has not yet changed in browser (since Live HTML is not supported on external server). Use Cmd/Ctrl-S to save changes to HTML file. Verify that saved text changes and unsaved CSS changes are shown in browser.
 20. Disconnect Live Preview. Undo changes in HTML file and save to get back to original state.
 21. Close all files and discard changes.
 22. Select File > Project Settings... to set Base URL back to blank.
