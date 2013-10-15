@@ -1,7 +1,7 @@
 What's New in Sprint 32
 -----------------------
 * **Live Preview**
-    * [Launch with non-HTML file selected](https://trello.com/c/gbBtpARq/709-1-define-default-html-file-for-live-development): Brackets will automatically find a nearby index.html file to use. No more switching way from your CSS file to start Live Preview!
+    * [Launch with non-HTML file selected](https://trello.com/c/gbBtpARq/709-1-define-default-html-file-for-live-development): Brackets will automatically find a nearby index.html file to use. No more switching away from your CSS file to start Live Preview!
 * **Performance**
     * [Improved Find performance](https://github.com/adobe/brackets/pull/5303) when searching in large files
     * [Fixed lag while editing JS code inside a \<script> block](https://github.com/adobe/brackets/pull/5395)
