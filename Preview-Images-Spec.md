@@ -35,7 +35,7 @@ Because of this, `getCurrentDocument() === null` no longer guarantees that `getW
 
 ### Events from EditorManager & DocumentManager
 
-When opening an image file, the `"activeEditorChange"` and `"currentDocumentChange"` events are triggered. The second `"activeEditorChange"` argument will be null, matching the getter API value. (It's _already_ possible to receive such events transitioning to null, when the last open file is closed). Listeners should always check for null, like this:
+When opening an image file while a text document is open, the `"activeEditorChange"` and `"currentDocumentChange"` events are triggered. The second `"activeEditorChange"` argument will be null, matching the getter API value. (It's _already_ possible to receive such events transitioning to null, when the last open file is closed). Listeners should always check for null, like this:
 
 ~~~~
 function _onCurrentDocumentChange() {
