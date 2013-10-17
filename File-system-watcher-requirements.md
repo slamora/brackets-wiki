@@ -1,0 +1,2 @@
+The new file system module assumes that its underlying file system implementations provide file and directory watching capabilities. That is, when the file system module asks its underlying implementation to watch a given file or directory the implementation should begin to send notifications back about changes to that file or directory in a timely manner. This is a partial list of functionality in Brackets that relies on these change events.
+
