@@ -191,25 +191,25 @@ On Arrays, use Array.forEach() or Array.some() rather than $.each() or for loops
 > ```
 
 <br/>
-To iterate object keys, use CollectionUtils.forEach() or CollectionUtils.some() rather than $.each() or for-in loops. (This avoids various pitfalls when the keys could have arbitrary values, and matches Array.forEach()'s callback API better).
+To iterate object keys, use _.forEach() or _.some() rather than $.each() or for-in loops. (This avoids various pitfalls when the keys could have arbitrary values, and matches Array.forEach()'s callback API better).
 > Do this:
 > ```
 > var anObject = { foo: "a", bar: "b", baz: "c" };
-> CollectionUtils.forEach(anObject, function (value, key) {
+> _.forEach(anObject, function (value, key) {
 >     // ...
 > });
 > ```
 >
 > Not this:
 > ```
-> for (var key in anObject) {  // Use CollectionUtils.forEach()
+> for (var key in anObject) {  // Use _.forEach()
 >     if (anObject.hasOwnProperty(key)) { /* ... */ }
 > }
 > ```
 >
 > Or this:
 > ```
-> $.each(anObject, function (key, value) {  // Use CollectionUtils.forEach()
+> $.each(anObject, function (key, value) {  // Use _.forEach()
 >     // ...
 > })
 > ```
