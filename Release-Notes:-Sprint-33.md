@@ -27,6 +27,8 @@ No major changes to existing features.
 
 API Changes
 -----------
+**TODO** - utility API deprecations/removals due to lodash integration
+
 **Image files** - TODO
 
 **Dialogs** - TODO: [auto-centering](https://github.com/adobe/brackets/pull/5399)
@@ -37,6 +39,8 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
+**Lodash** - TODO
+
 **Closing files** - TODO: new DocumentCommandHandlers API for closing multiple files in a batch
 
 
