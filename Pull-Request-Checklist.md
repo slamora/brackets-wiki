@@ -32,4 +32,4 @@ To avoid problems, consider whether any of these apply to your pull request:
 * Inline editors: does this collide with any other Quick Edit providers?
 * Code hinting: does this collide with any other hint providers?
 * Live Preview: ensure [Server smoke tests](Brackets Server Smoke Tests) pass
-* Native code (brackets-shell): must include both Mac _and_ Win implementations
+* Native code (brackets-shell): must include implementations for Mac, Windows _and_ Linux
