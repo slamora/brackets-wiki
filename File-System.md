@@ -36,7 +36,7 @@ There are a few basic rules for using the new file system.
 * Persist full pathnames, but convert into `File` and `Directory` objects for in-memory use. Creating `File` and `Directory` objects is cheap so there is no need to worry about performance.
 * There is a forced 1:1 relationship between `File` and `Directory` objects and their representation on disk. If two pieces of code ask the `FileSystem` for the same file path, they will both be returned the same `File` object.
 * When caching file (or directory) related data, you should use the file.id property as the key, and _not_ the file.fullPath. The path of a file is subject to change if any of its parent directories are renamed.
-* Listen for `"change"` events on `FileSystem` to be notified if a file or directory changes.
+* Listen for `"change"` events on `FileSystem` to be notified of file or directory changes. 
 
 ### Prototype ###
 A prototype implementation can be found in the `glenn/file-system` [branch](https://github.com/adobe/brackets/tree/glenn/file-system). 
@@ -47,23 +47,10 @@ Most functionality works. Existing unit tests pass, but there are no unit tests 
 
 For a guide to converting from current Brackets file APIs to these new APIs, see [[File System API Migration]].
 
-### FileSystemManager ###
-This is a singleton object for registering low-level file system implementations, and creating new `FileSystem` instances. Most code will never interact directly with this module.
-
-[/src/filesystem/FileSystemManager.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemManager.js)
-
 ### FileSystem ###
-The main class is `FileSystem`. This is the public API for getting files and directories, showing open/save dialogs, and getting the list of all the files in the project.
+The main module is `FileSystem`. This is the public API for getting files and directories, showing open/save dialogs, and getting notified about file system changes.
 
 [/src/filesystem/FileSystem.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystem.js)
-
-There are two main `FileSystem` instances:
-
-#### brackets.appFileSystem ####
-This is the file system used for accessing application files like extensions and config files.
-
-#### ProjectManager.getFileSystem() ####
-This is the file system for the current project, used to access any file related to the project.
 
 ###FileSystemEntry###
 This is an abstract representation of a FileSystem entry, and the base class for the `File` and `Directory` classes. FileSystemEntry objects are never created directly by client code. Use `FileSystem.getFileForPath()`, `FileSystem.getDirectoryForPath()`, or `Directory.getContents()` to create the entry.
@@ -86,7 +73,9 @@ This class represents a directory on disk (this could be a local disk or cloud s
 The main performance gains come from caching. The stats and contents of files and directories are cached in memory. This has a huge impact on i/o-intensive operations like "find in files", and generally speeds up many other parts of the system.
 
 ##File Watchers##
-`FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. For now, the prototype refreshes the entire file tree whenever a directory changes. This is overkill, but was easy to implement. Ideally, only the directory that changed will be updated.
+`FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. This event is passed an `entry` parameter, which can be a `File`, `Directory`, or `null`. If `entry` is `null`, a "wholesale" change has occurred and the code should assume everything has changed.
+
+For now, the prototype refreshes the entire file tree whenever a directory changes. This is overkill, but was easy to implement. Ideally, only the directory that changed will be updated.
 
 ##Next Steps##
 Several core developers are working on getting this implemented. We will share a more detailed API proposal with the community soon, but in the meantime feel free to take a look at the [unstable file-system dev branch](https://github.com/adobe/brackets/tree/glenn/file-system).
