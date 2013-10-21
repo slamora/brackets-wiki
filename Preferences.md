@@ -80,4 +80,4 @@ An important difference between view state and preferences is that you wouldn't 
 
 ## Conclusion ##
 
-Not all prefs *need* the ability to be overridden at every level. Some, in fact, only make sense at the glboal level. But, we need to have a model in mind that can handle the cases that users do need to be able to customize and, in the case of some project preferences, share with others via version control.
+Not all prefs *need* the ability to be overridden at every level. Some, in fact, only make sense at the global level. But, we need to have a model in mind that can handle the cases that users do need to be able to customize and, in the case of some project preferences, share with others via version control.
