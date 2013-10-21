@@ -47,7 +47,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **Formatting**
 * [Auto Formatter](https://github.com/shumpei/brackets-formatter-extension): Auto formatter for XML/HTML, CSS, JavaScript files.
 * [Auto Indent](https://github.com/shumpei/brackets-autoindent-extension): Indent automatically for whole file.
-* [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
 * [Quote Converter](https://github.com/drewhjava/brackets-quoteconverter): Converts double to single quotes or single to double quotes
 
 **Language Support**
@@ -187,6 +186,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [Rename JavaScript Identifier](https://github.com/asgerf/bracket-rename): Renames JavaScript identifiers.
 * [git-integration](https://github.com/pollensoft/git-integration): Git Command line integration
 * [Ant for Brackets](https://github.com/jbalsas/brackets-ant): Launch any target in your ant files. (Uses Node. Requires Brackets Sprint 21 or greater)
+* [Remove Trailing Spaces](https://github.com/pockata/brackets-StripTrailingSpaces): Removes unnecessary whitespace when saving files.
 
 ---
 
