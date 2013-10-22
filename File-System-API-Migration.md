@@ -33,7 +33,7 @@ Here are the API changes that will result from the [File System Evolution](File 
 <tr><td>NativeFileError.*</td><td>???</td><td>Do not shim (callers will break right away)</td><td>1</td></tr>
 <tr><td>entry.filesystem<br>(not a very useful API)</td><td>n/a</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
 <tr><td>NativeFileSystem.Encodings.*</td><td>???</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
-
+<tr><td>"projectFilesChange" event (sent from ProjectManager)</td><td>"change" event (sent from FileSystem)</td><td>Do not shim</td><td>2</td></tr>
 
 <tr><td>brackets.fs.readFile()<br>brackets.fs.writeFile()</td><td>file.readAsText()<br>file.write(text)</td><td>Low-level API continues to exist</td><td>2</td></tr>
 <tr><td>brackets.fs.stat()</td><td>file.stat()</td><td>Low-level API continues to exist</td><td>1</td></tr>
