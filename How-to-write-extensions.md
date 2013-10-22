@@ -66,15 +66,13 @@ To decline a keyboard event and allow other parts of Brackets to handle it, make
 
 ### <a name="newui"></a>Adding new UI elements
 
-_**This is unofficial API**_ - adding UI elements directly through the DOM works, but puts you on shaky ground. Code that does this _will_ break as Brackets updates evolve the UI. _The only official way to extend the Brackets UI is through JavaScript APIs_, such as the Menu interface above or the Quick Edit interface below.
-
-However, following these best practices will ensure your code behaves as nicely as it possibly can under the circumstances:
-
 **<a name="addpanel"></a>Add a panel below the editor:** Use the CSS class `.bottom-panel`; see the JSLint bottom-panel.html for an example. Add your panel _above_ the status bar using `PanelManager.createBottomPanel("yourExtension.name", $(panelHtml))`. You may see `Resizer.makeResizable()` and manual DOM insertion of panels in some extensions but this practice is being phased out since the introduction of PanelManager.
 
-**Add a toolbar icon:** Use `$myIcon.appendTo($("#main-toolbar .buttons"))`.
+_**Unofficial techniques**_ - adding UI elements directly through the DOM works, but puts you on shaky ground. Code that does this _will_ break as Brackets updates evolve the UI. Use these code snippets as best practices that behave as nicely as possible given the risks:
 
-**Add a top panel/toolbar:** Use `$myPanel.insertBefore("#editor-holder")`.
+> **Add a toolbar icon:** _(unofficial)_ Use `$myIcon.appendTo($("#main-toolbar .buttons"))`.
+
+> **Add a top panel/toolbar:** _(unofficial)_ Use `$myPanel.insertBefore("#editor-holder")`.
 
 **UI design:** Be sure to follow the [[Extension UI Guidelines]].
 
