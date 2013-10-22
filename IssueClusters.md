@@ -60,7 +60,7 @@ This is a clustering of medium priority issues (as of early October 2013) so tha
     * 5237 [Find in Files provides no feedback when no results are matched](https://github.com/adobe/brackets/issues/5237)
     * 3063 [Find Next doesn't scroll to the right (but Find Previous does)](https://github.com/adobe/brackets/issues/3063)
 * arch
-    * 5229 [Add lo-dash](https://github.com/adobe/brackets/issues/5229)
+    * ~~5229 [Add lo-dash](https://github.com/adobe/brackets/issues/5229)~~
     * 3205 [Returning errors from Node-side code should be more consistent](https://github.com/adobe/brackets/issues/3205)
 * FBNC
     * 5196 [Drag & drop to open files works while modal dialog open](https://github.com/adobe/brackets/issues/5196)
