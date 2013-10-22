@@ -56,6 +56,9 @@ foo.
 1. Scroll up and down in the outer editor. Verify that the inline editor scrolls properly with the editor.
 1. Resize the window. Verify that the rule list moves properly and there are no visual glitches.
 1. Hit Esc to close the inline editor.
+1. Type ` class="huge"`, place the cursor in `huge` and hit Cmd/Ctrl-E. The inline editor should open with a message saying there are no matching rules, and focus should be on the New Rule button.
+1. Click the New Rule button and choose desktop.css. A blank `.huge` rule should appear in the inline editor. Type `font-size: 30px;` and verify that the navbar item gets huge.
+1. Switch to desktop.css and verify that the rule you added is at the end of the file.
 1. File > Extension Manager, Install from URL..., and install the Emmet extension using the GitHub URL ``https://github.com/emmetio/brackets-emmet``
 1. Verify the Emmet menu was added
 1. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
