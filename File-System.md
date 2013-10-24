@@ -77,14 +77,16 @@ The main performance gains come from caching. The file system provides two cachi
 
 In both cases, changes made _via the file system's own APIs_ are always reflected immediately (as soon as the operation's callback signals success).
 
-##File Watchers##
-`FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. This event is passed an `entry` parameter, which loosley describes the type of change:
+##Change Events##
+`FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. This event is passed an `entry` parameter, which loosely describes the type of change:
 
 * a `File` object - the file's contents have changed
 * a `Directory` object - one or more of the directory's immediate children have been created, deleted, renamed/move, or otherwise changed. (This could include a subdirectory being created/deleted, but not changes to items _within_ a subdirectory).
 * `null` - a "wholesale" change has occurred and listeners should assume everything in the file hierarchy may have changed
 
-For now, the prototype refreshes the entire file tree whenever a directory changes. This is overkill, but was easy to implement. Ideally, only the directory that changed will be updated.
+For _external_ changes, there may be a significant delay before a "change" event is dispatched (file watchers may be unreliable or laggy). But changes made via the file system's _own_ APIs dispatch a "change" event immediately, after the operation in question finishes running its callback.
+
+> Note: It's always fine as a (less-performant) shortcut to treat change notifications as if they were less fine-grained. For example, the prototype refreshes the entire folder tree view whenever any Directory is passed with a change event. This is overkill, but simpler to implement than only refreshing the affected part of the tree.
 
 ##Next Steps##
 Several core developers are working on getting this implemented. We will share a more detailed API proposal with the community soon, but in the meantime feel free to take a look at the [unstable file-system dev branch](https://github.com/adobe/brackets/tree/glenn/file-system).
