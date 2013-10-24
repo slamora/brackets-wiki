@@ -78,7 +78,11 @@ The main performance gains come from caching. The file system provides two cachi
 In both cases, changes made _via the file system's own APIs_ are always reflected immediately (as soon as the operation's callback signals success).
 
 ##File Watchers##
-`FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. This event is passed an `entry` parameter, which can be a `File`, `Directory`, or `null`. If `entry` is `null`, a "wholesale" change has occurred and the code should assume everything has changed.
+`FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. This event is passed an `entry` parameter, which loosley describes the type of change:
+
+* a `File` object - the file's contents have changed
+* a `Directory` object - one or more of the directory's immediate children have been created, deleted, renamed/move, or otherwise changed. (This could include a subdirectory being created/deleted, but not changes to items _within_ a subdirectory).
+* `null` - a "wholesale" change has occurred and listeners should assume everything in the file hierarchy may have changed
 
 For now, the prototype refreshes the entire file tree whenever a directory changes. This is overkill, but was easy to implement. Ideally, only the directory that changed will be updated.
 
