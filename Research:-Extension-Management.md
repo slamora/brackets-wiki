@@ -1,3 +1,5 @@
+Note: Brackets now ships with extension management. This page is here as a historical reference of the thinking behind extension management features.
+
 # Extension Management Research #
 
 In Sprint 21, we had a story to research [Extension Management Workflow and Metadata](https://trello.com/card/3-research-extension-management-workflow-metadata/4f90a6d98f77505d7940ce88/767). This document has a summary of the results and links to the details. If you're interested in diving straight into all of the details, take a look at the "Detailed Documents" section at the end.
