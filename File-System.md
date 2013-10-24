@@ -69,8 +69,13 @@ This class represents a directory on disk (this could be a local disk or cloud s
 
 [/src/filesystem/Directory.js](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/Directory.js)
 
-##Performance##
-The main performance gains come from caching. The stats and contents of files and directories are cached in memory. This has a huge impact on i/o-intensive operations like "find in files", and generally speeds up many other parts of the system.
+##Performance & Caching##
+The main performance gains come from caching. The file system provides two caching levels:
+
+* File contents & metadata - reads are guaranteed to be up to date. Caches may be used to reduce bandwidth, but we always ping the impl and wait to ensure the cached copy is the latest.
+* Directory structure / file listing - reads are fast, but may not reflect external changes quickly. Cached info is returned immediately without waiting for the underlying storage impl.
+
+In both cases, changes made _via the file system's own APIs_ are always reflected immediately (as soon as the operation's callback signals success).
 
 ##File Watchers##
 `FileSystem` dispatches a `"change"` event whenever a file or directory changes on disk. This event is passed an `entry` parameter, which can be a `File`, `Directory`, or `null`. If `entry` is `null`, a "wholesale" change has occurred and the code should assume everything has changed.
