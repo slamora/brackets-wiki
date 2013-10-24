@@ -7,10 +7,8 @@ Here are the API changes that will result from the [File System Evolution](File 
 
 <tr><td>FileUtils.readAsText(fileEntry)</td><td>FileUtils.readAsText(file)</td><td>Already drop-in compatible</td><td>13</td></tr>
 <tr><td>FileUtils.writeText(fileEntry)</td><td>FileUtils.writeText(file)</td><td>Already drop-in compatible</td><td>5</td></tr>
-<tr><td>FileIndexManager.getFileInfoList("all")<br>FileIndexManager.getFileInfoList("...")</td><td>filesystem.getFileList()<br>filesystem.getFileList(filter)<br>_Note: returns an array of actual Files, but they provide the same properties as the old FileInfos)_</td><td>Shim with deprecation warning</td><td>7</td></tr>
-<tr><td>FileIndexManager.getFilenameMatches("...", filename)</td><td>filesystem.getFileList(filter)</td><td>Shim with deprecation warning</td><td>None</td></tr>
-<tr><td>ProjectManager.shouldShow(entry)</td><td>filesystem.shouldShow(fullPath)</td><td>Leave old API in place permanently</td><td>None?</td></tr>
-<tr><td>ProjectManager.isBinaryFile(name/fullPath)</td><td>(unchanged)</td><td>(unchanged)<br>But eventually, should move to LanguageManager.</td><td>None</td></tr>
+<tr><td>FileIndexManager.getFileInfoList("all")<br>FileIndexManager.getFileInfoList("...")</td><td>ProjectManager.getAllFiles()<br>ProjectManager.getAllFiles(filter)<br>_Note: returns an array of actual Files, but they provide the same properties as the old FileInfos)_</td><td>Shim with deprecation warning</td><td>7</td></tr>
+<tr><td>FileIndexManager.getFilenameMatches("...", filename)</td><td>ProjectManager.getAllFiles(filter)</td><td>Shim with deprecation warning</td><td>None</td></tr>
 
 <tr><td>new NativeFileSystem.FileEntry(fullPath)<br>new NativeFileSystem.DirectoryEntry(fullPath)</td><td>filesystem.getFileForPath(fullPath)<br>filesystem.getDirectoryForPath(fullPath)</td><td>Shim with deprecation warning</td><td>19</td></tr>
 <tr><td>DirectoryEntry.getFile(relpath)</td><td>filesystem.resolve(dirFullPath + relpath)</td><td>TODO: Consider offering same/similar API on Directory</td><td>4</td></tr>
@@ -33,7 +31,7 @@ Here are the API changes that will result from the [File System Evolution](File 
 <tr><td>NativeFileError.*</td><td>???</td><td>Do not shim (callers will break right away)</td><td>1</td></tr>
 <tr><td>entry.filesystem<br>(not a very useful API)</td><td>n/a</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
 <tr><td>NativeFileSystem.Encodings.*</td><td>???</td><td>Do not shim (callers will break right away)</td><td>None</td></tr>
-<tr><td>"projectFilesChange" event (sent from ProjectManager)</td><td>"change" event (sent from FileSystem)</td><td>Do not shim</td><td>2</td></tr>
+<tr><td>ProjectManager "projectFilesChange" event</td><td>FileSystem "change" event</td><td>Do not shim</td><td>2</td></tr>
 
 <tr><td>brackets.fs.readFile()<br>brackets.fs.writeFile()</td><td>file.readAsText()<br>file.write(text)</td><td>Low-level API continues to exist</td><td>2</td></tr>
 <tr><td>brackets.fs.stat()</td><td>file.stat()</td><td>Low-level API continues to exist</td><td>1</td></tr>
@@ -55,11 +53,11 @@ Here are the API changes that will result from the [File System Evolution](File 
 
 ### Extensions that will break
 
-The following 12 extensions use at least one API on the "Do not shim" list:
+The following 14 extensions use at least one API on the "Do not shim" list:
 
 * themes -- (DirectoryEntry.createReader())
 * themesforbrackets -- (DirectoryEntry.createReader())
-* interactive-linter -- (DirectoryEntry.getFile(), DirectoryEntry.createReader(), FileEntry.createWriter(), NativeFile Error (only minor bug))
+* interactive-linter -- (DirectoryEntry.getFile(), DirectoryEntry.createReader(), FileEntry.createWriter(), NativeFileError (only minor bug))
 * angularui.angularjs -- (FileEntry.getMetadata())
 * timburgess.pagesuck -- (DirectoryEntry.getFile())
 * ternific -- (DirectoryEntry.getFile(), DirectoryEntry.createReader(), FileEntry.createWriter())
@@ -68,6 +66,8 @@ The following 12 extensions use at least one API on the "Do not shim" list:
 * bsirlinger.github-access -- (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create}), FileEntry.createWriter())
 * xunit -- (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create})
 * workspaces -- (FileEntry.createWriter())
-* pflynn.brackets.editor.nav -- (won't crash, only minor bug) (InaccessibleFileEntry)
+* zaggino.brackets-git -- (won't crash, notable bug) ("projectFilesChange" event)
+* variousimprovements -- (won't crash, minor bug) ("projectFilesChange" event)
+* pflynn.brackets.editor.nav -- (won't crash, very minor bug) (InaccessibleFileEntry)
 
 We will file bugs with all extensions that are using removed APIs to make sure authors are aware of the change.
