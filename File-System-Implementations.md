@@ -92,5 +92,15 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * Initialize file watching for this filesystem, optionally calling back asynchronously with a possibly null error. The implementation must use the supplied `changeCallback` to provide change notifications. The first parameter of `changeCallback` specifies the changed path (either a file or a directory); if this parameter is null, it indicates that the implementation cannot specify a particular changed path, and so the callers should consider all paths to have changed and to update their state accordingly. The second parameter to `changeCallback`is an optional `FileSystemStats` object that may be provided in case the changed path already exists and stats are readily available.
 
 ### `watchPath(path, callback)`
+* `@param {string} path`
+* `@param {function(?string)=} callback`
+* Start providing change notifications for the file or directory at the given path, optionally calling back asynchronously with a possibly null error when the operation is complete. Notifications are provided using the `changeCallback` function provided by the `initWatchers` method. Note that change notifications are not to be provided recursively for directories.
+
 ### `unwatchPath(path, callback)`
+* `@param {string} path`
+* `@param {function(?string)=} callback`
+* Stop providing change notifications for the file or directory at the given path, optionally calling back asynchronously with a possibly null error when the operation is complete. 
+
 ### `unwatchAll(callback)`
+* `@param {function(?string)=} callback`
+* Stop providing change notifications for all previously watched files and directories, optionally calling back asynchronously with a possibly null error when the operation is complete. 
