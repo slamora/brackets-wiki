@@ -105,5 +105,5 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {function(?string)=} callback`
 * Stop providing change notifications for all previously watched files and directories, optionally calling back asynchronously with a possibly null error when the operation is complete. 
 
-## `FileSystemStats` and ``FileSystemError`
-The stats objects passed to callbacks above are instances of the `FileSystemStats` class, and the possibly null error parameters are constants defined in the `FileSystemError` class.
+## `FileSystemStats` and `FileSystemError`
+The stats objects passed to callbacks above are instances of the [`FileSystemStats` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemStats.js), and the possibly null error parameters are constants defined in the [`FileSystemError` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemError.js).
