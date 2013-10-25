@@ -5,10 +5,18 @@ The front-end client-facing filesystem API is decoupled from the back-end filesy
 The client-facing filesystem API is provided by a singleton `FileSystem` object. This object has a single method, `FileSystem.init`, to initialize the filesystem with a particular filesystem implementation, which is responsible for core functionality like reading and writing files, and providing file and directory change notifications. The implementation object should satisfy a `FileSystemImpl` interface, as described below.
 
 ### `init(callback)`
-* `@param {function(?string)}` 
+* `@param {function(?string)} callback` 
 * Initialize the implementation object, and callback asynchronously when the initialization is complete. The callback takes a single, nullable error parameter, as given by the properties of `FileSystemError`, described below. 
 
-### showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, function (err, data))
+### showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, callback)
+* `@param {boolean} allowMultipleSelection` - 
+* `@param {boolean} chooseDirectories`
+* `@param {string} title`
+* `@param {string} initialPath`
+* `@param {Array.<string>=} fileTypes`
+* `@param {function(?string, Array.<string>)} callback`
+* Display an open-files dialog to the user and callback asynchronously with either an error string or an array of path strings, which indicate the file or files chosen by the user.
+
 ### `showSaveDialog(title, initialPath, proposedNewFilename, callback)`
 ### *optional* `isNetworkDrive(path, callback)`
 ### `exists(path, callback)`
