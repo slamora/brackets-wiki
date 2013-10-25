@@ -39,7 +39,12 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {function(?string, Array.<FileSystemEntry>=, Array.<FileSystemStats=>=)} callback`
 * Read the contents of the directory at the given path, calling back asynchronously either with an error or an array of FileSystemEntry objects. The callback may also include an array of FileSystemStats objects, which correspond to the FileSystemEntry objects. Neither the array of stats objects, nor the individual stats themselves are guaranteed to exist.
 
-### `mkdir(path, [mode], callback)`
+### `mkdir(path, mode, callback)`
+* `@param {string} path`
+* `@param {number=} mode`
+* `@param {function(?string, FileSystemStats=)} callback`
+* Create a directory at the given path, and call back asynchronously with either an error or a stats object for the newly created directory.
+
 ### `rename(oldPath, newPath, callback)`
 ### `stat(path, callback)`
 ### `readFile(path, [options], callback)`
