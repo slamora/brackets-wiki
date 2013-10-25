@@ -24,11 +24,6 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {function(?string, string=)} callback`
 * Display a save-file dialog to the user and call back asynchronously with either an error or the path to which the user has chosen to save the file.
 
-### *optional* `isNetworkDrive(path, callback)`
-* `@param {string} path`
-* `@param {function(?string, boolean=)} callback`
-* Determine whether the given path resides on a high-latency network-mounted drive by calling back asynchronously either with an error or a boolean, which is true if the drive is network mounted and false otherwise.
-
 ### `exists(path, callback)`
 * `@param {string} path`
 * `@param {function(boolean)} callback`
