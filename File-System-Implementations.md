@@ -9,19 +9,19 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * Initialize the implementation object, and callback asynchronously when the initialization is complete. The callback takes a single, nullable error parameter, as given by the properties of `FileSystemError`, described below. 
 
 ### showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, function (err, data))
-### showSaveDialog((title, initialPath, proposedNewFilename, callback))
-### [isNetworkDrive(path, callback)]
-### exists(path, callback)
-### readdir(path, callback)
-### mkdir(path, [mode], callback)
-### rename(oldPath, newPath, callback)
-### stat(path, callback)
-### readFile(path, [options], callback)
-### writeFile(path, data, [options], callback)
-### chmod(path, mode, callback)
-### unlink(path, callback)
-### [moveToTrash(path, callback)]
-### initWatchers(callback)
-### watchPath(path, callback)
-### unwatchPath(path, callback)
-### unwatchAll(callback)
+### `showSaveDialog(title, initialPath, proposedNewFilename, callback)`
+### *optional* `isNetworkDrive(path, callback)`
+### `exists(path, callback)`
+### `readdir(path, callback)`
+### `mkdir(path, [mode], callback)`
+### `rename(oldPath, newPath, callback)`
+### `stat(path, callback)`
+### `readFile(path, [options], callback)`
+### `writeFile(path, data, [options], callback)`
+### `chmod(path, mode, callback)`
+### `unlink(path, callback)`
+### *optional* `moveToTrash(path, callback)`
+### `initWatchers(callback)`
+### `watchPath(path, callback)`
+### `unwatchPath(path, callback)`
+### `unwatchAll(callback)`
