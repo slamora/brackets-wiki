@@ -43,7 +43,7 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {string} path`
 * `@param {number=} mode`
 * `@param {function(?string, FileSystemStats=)=} callback`
-* Create a directory at the given path, and optionally call back asynchronously with either an error or a stats object for the newly created directory. The mode parameter is optional; if unspecified, the mode of the created directory is implementation dependent.
+* Create a directory at the given path, and optionally call back asynchronously with either an error or a stats object for the newly created directory. The octal mode parameter is optional; if unspecified, the mode of the created directory is implementation dependent.
 
 ### `rename(oldPath, newPath, callback)`
 * `@param {string} oldPath`
@@ -67,7 +67,7 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {string} data`
 * `@param {{encoding : string=, mode : number=}=} options`
 * `@param {function(?string, FileSystemStats=)} callback`
-* Write the given data to the file at the given path, calling back asynchronously with either an error or, optionally, the FileSystemStats object associated with the written file. The optional `options` parameter can be used to specify an encoding (default `"utf8"`) and a mode (default unspecified and implementation dependent). If no file exists at the given path, a new file will be created.
+* Write the given data to the file at the given path, calling back asynchronously with either an error or, optionally, the FileSystemStats object associated with the written file. The optional `options` parameter can be used to specify an encoding (default `"utf8"`) and an octal mode (default unspecified and implementation dependent). If no file exists at the given path, a new file will be created.
 
 ### `chmod(path, mode, callback)`
 * `@param {string} path`
