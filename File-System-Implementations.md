@@ -43,7 +43,7 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {string} path`
 * `@param {number=} mode`
 * `@param {function(?string, FileSystemStats=)=} callback`
-* Create a directory at the given path, and optionally call back asynchronously with either an error or a stats object for the newly created directory.
+* Create a directory at the given path, and optionally call back asynchronously with either an error or a stats object for the newly created directory. The mode parameter is optional; if unspecified, the mode of the created directory is implementation dependent.
 
 ### `rename(oldPath, newPath, callback)`
 * `@param {string} oldPath`
@@ -52,9 +52,16 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * Rename the file or directory at `oldPath` to `newPath`, and optionally call back asynchronously with an optional error.
 
 ### `stat(path, callback)`
+* `@param {string} path`
+* `@param {function(?string, FileSystemStats=)} callback` 
+* Stat the file or directory at the given path, calling back asynchronously with either an error or the entry's associated FileSystemStats object.
 
+### `readFile(path, options, callback)`
+* `@param {string} path`
+* `@param {{encoding : string=, mode : number=}=} options`
+* `@param {function(?error, string=, FileSystemStats=)} callback`
+* Read the contents of the file at the given path, calling back asynchronously with either an error or the data and, optionally, the FileSystemStats object associated with the read file. The optional `options` parameter can be used to specify an encoding (default `"utf8"`).
 
-### `readFile(path, [options], callback)`
 ### `writeFile(path, data, [options], callback)`
 ### `chmod(path, mode, callback)`
 ### `unlink(path, callback)`
