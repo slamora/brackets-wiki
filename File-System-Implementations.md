@@ -4,7 +4,8 @@ The front-end client-facing filesystem API is decoupled from the back-end filesy
 
 The client-facing filesystem API is provided by a singleton `FileSystem` object. This object has a single method, `FileSystem.init`, to initialize the filesystem with a particular filesystem implementation, which is responsible for core functionality like reading and writing files, and providing file and directory change notifications. The implementation object should satisfy a `FileSystemImpl` interface described below.
 
-* init(callback)
+* `init(callback)`
+** `@param {function(?string)}` 
 * showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, function (err, data))
 * showSaveDialog((title, initialPath, proposedNewFilename, callback))
 * [isNetworkDrive(path, callback)]
