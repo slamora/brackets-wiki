@@ -1,12 +1,12 @@
 The front-end client-facing filesystem API is decoupled from the back-end filesystem implementation in order to accommodate completely different kinds of filesystems. For example, with this API, clients can uniformly access filesystems for accessing local files based on Brackets shell or Node.JS, or for accessing remove files stored on Dropbox or SkyDrive. This page describes the requirements for implementing a filesystem back-end implementation.
 
-## FileSystemImpl
+## `FileSystemImpl`
 
 The client-facing filesystem API is provided by a singleton `FileSystem` object. This object has a single method, `FileSystem.init`, to initialize the filesystem with a particular filesystem implementation, which is responsible for core functionality like reading and writing files, and providing file and directory change notifications. The implementation object should satisfy a `FileSystemImpl` interface, as described below.
 
 ### `init(callback)`
-* `@param {function(?string)} callback` 
-* Initialize the implementation object, and callback asynchronously when the initialization is complete. The callback takes a single, nullable error parameter, as given by the properties of `FileSystemError`, described below. 
+* `@param {function(?string)=} callback` 
+* Initialize the implementation object, and optionally call back asynchronously when the initialization is complete. The callback takes a single, nullable error parameter, as given by the properties of `FileSystemError`, described below. 
 
 ### `showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, callback)`
 * `@param {boolean} allowMultipleSelection`
@@ -42,11 +42,18 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 ### `mkdir(path, mode, callback)`
 * `@param {string} path`
 * `@param {number=} mode`
-* `@param {function(?string, FileSystemStats=)} callback`
-* Create a directory at the given path, and call back asynchronously with either an error or a stats object for the newly created directory.
+* `@param {function(?string, FileSystemStats=)=} callback`
+* Create a directory at the given path, and optionally call back asynchronously with either an error or a stats object for the newly created directory.
 
 ### `rename(oldPath, newPath, callback)`
+* `@param {string} oldPath`
+* `@param {string} newPath`
+* `@param {function(?string)=} callback`
+* Rename the file or directory at `oldPath` to `newPath`, and optionally call back asynchronously with an optional error.
+
 ### `stat(path, callback)`
+
+
 ### `readFile(path, [options], callback)`
 ### `writeFile(path, data, [options], callback)`
 ### `chmod(path, mode, callback)`
