@@ -5,8 +5,9 @@ Here are the API changes that will result from the [File System Evolution](File 
 <tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Suggested action</b></td><td><b>Usage</b></td></tr>
 </thead>
 
-<tr><td>FileUtils.readAsText(fileEntry)</td><td>FileUtils.readAsText(file)</td><td>Already drop-in compatible</td><td>13</td></tr>
-<tr><td>FileUtils.writeText(fileEntry)</td><td>FileUtils.writeText(file)</td><td>Already drop-in compatible</td><td>5</td></tr>
+<tr><td>FileEntry<br>DirectoryEntry</td><td>File<br>Directory</td><td>These objects are drop-in compatible (same fields), so unless you reference them by name nothing will break</td><td>(lots)</td></tr>
+<tr><td>FileUtils.readAsText(fileEntry)</td><td>FileUtils.readAsText(file)</td><td>Drop-in compatible</td><td>13</td></tr>
+<tr><td>FileUtils.writeText(fileEntry)</td><td>FileUtils.writeText(file)</td><td>Drop-in compatible</td><td>5</td></tr>
 <tr><td>FileIndexManager.getFileInfoList("all")<br>FileIndexManager.getFileInfoList("...")</td><td>ProjectManager.getAllFiles()<br>ProjectManager.getAllFiles(filter)<br>_Note: returns an array of actual Files, but they provide the same properties as the old FileInfos)_</td><td>Shim with deprecation warning</td><td>7</td></tr>
 <tr><td>FileIndexManager.getFilenameMatches("...", filename)</td><td>ProjectManager.getAllFiles(filter)</td><td>Shim with deprecation warning</td><td>None</td></tr>
 
