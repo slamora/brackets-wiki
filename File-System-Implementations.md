@@ -9,16 +9,26 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * Initialize the implementation object, and callback asynchronously when the initialization is complete. The callback takes a single, nullable error parameter, as given by the properties of `FileSystemError`, described below. 
 
 ### showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, callback)
-* `@param {boolean} allowMultipleSelection` - 
+* `@param {boolean} allowMultipleSelection`
 * `@param {boolean} chooseDirectories`
 * `@param {string} title`
 * `@param {string} initialPath`
 * `@param {Array.<string>=} fileTypes`
-* `@param {function(?string, Array.<string>)} callback`
-* Display an open-files dialog to the user and callback asynchronously with either an error string or an array of path strings, which indicate the file or files chosen by the user.
+* `@param {function(?string, Array.<string>=)} callback`
+* Display an open-files dialog to the user and call back asynchronously with either an error string or an array of path strings, which indicate the file or files chosen by the user.
 
 ### `showSaveDialog(title, initialPath, proposedNewFilename, callback)`
+* `@param {string} title`
+* `@param {string} initialPath`
+* `@param {string} proposedNewFilename`
+* `@param {function(?string, string=)} callback`
+* Display a save-file dialog to the user and call back asynchronously with either an error or the path to which the user has chosen to save the file.
+
 ### *optional* `isNetworkDrive(path, callback)`
+* `@param {string} path`
+* `@param {function(?string, boolean=)} callback`
+* Determine whether the given path resides on a high-latency network-mounted drive, by calling back either with an error or a boolean, which is true if the drive is network mounted and false otherwise.
+
 ### `exists(path, callback)`
 ### `readdir(path, callback)`
 ### `mkdir(path, [mode], callback)`
