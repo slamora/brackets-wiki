@@ -49,7 +49,7 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {string} oldPath`
 * `@param {string} newPath`
 * `@param {function(?string)=} callback`
-* Rename the file or directory at `oldPath` to `newPath`, and optionally call back asynchronously with an optional error.
+* Rename the file or directory at `oldPath` to `newPath`, and optionally call back asynchronously with a possibly null error.
 
 ### `stat(path, callback)`
 * `@param {string} path`
@@ -58,13 +58,29 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 
 ### `readFile(path, options, callback)`
 * `@param {string} path`
-* `@param {{encoding : string=, mode : number=}=} options`
+* `@param {{encoding : string=}=} options`
 * `@param {function(?error, string=, FileSystemStats=)} callback`
 * Read the contents of the file at the given path, calling back asynchronously with either an error or the data and, optionally, the FileSystemStats object associated with the read file. The optional `options` parameter can be used to specify an encoding (default `"utf8"`).
 
 ### `writeFile(path, data, [options], callback)`
+* `@param {string} path`
+* `@param {string} data`
+* `@param {{encoding : string=, mode : number=}=} options`
+* `@param {function(?error, FileSystemStats=)} callback`
+* Write the given data to the file at the given path, calling back asynchronously with either an error or, optionally, the FileSystemStats object associated with the written file. The optional `options` parameter can be used to specify an encoding (default `"utf8"`) and a mode (default unspecified and implementation dependent). If no file exists at the given path, a new file will be created.
+
 ### `chmod(path, mode, callback)`
+* `@param {string} path`
+* `@param {number} mode`
+* `@param {function(err)=} callback`
+* Change the mode of the file or directory at the given path, optionally calling back asynchronously with an possibly null error.
+
 ### `unlink(path, callback)`
+* `@param {string} path`
+* `@param {number} mode`
+* `@param {function(err)=} callback`
+* Delete the file or directory at the given path, optionally calling back asynchronously with an possibly null error.
+
 ### *optional* `moveToTrash(path, callback)`
 ### `initWatchers(callback)`
 ### `watchPath(path, callback)`
