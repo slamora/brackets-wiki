@@ -8,7 +8,7 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {function(?string)} callback` 
 * Initialize the implementation object, and callback asynchronously when the initialization is complete. The callback takes a single, nullable error parameter, as given by the properties of `FileSystemError`, described below. 
 
-### showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, callback)
+### `showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, callback)`
 * `@param {boolean} allowMultipleSelection`
 * `@param {boolean} chooseDirectories`
 * `@param {string} title`
@@ -27,10 +27,18 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 ### *optional* `isNetworkDrive(path, callback)`
 * `@param {string} path`
 * `@param {function(?string, boolean=)} callback`
-* Determine whether the given path resides on a high-latency network-mounted drive, by calling back either with an error or a boolean, which is true if the drive is network mounted and false otherwise.
+* Determine whether the given path resides on a high-latency network-mounted drive by calling back asynchronously either with an error or a boolean, which is true if the drive is network mounted and false otherwise.
 
 ### `exists(path, callback)`
+* `@param {string} path`
+* `@param {function(boolean)} callback`
+* Determine whether a file or directory exists at the given path by calling back asynchronously with a boolean, which is true if the file exists and false otherwise.
+
 ### `readdir(path, callback)`
+* `@param {string} path`
+* `@param {function(?string, Array.<FileSystemEntry>=, Array.<FileSystemStats=>=)} callback`
+* Read the contents of the directory at the given path, calling back asynchronously either with an error or an array of FileSystemEntry objects. The callback may also include an array of FileSystemStats objects, which correspond to the FileSystemEntry objects. Neither the array of stats objects, nor the individual stats themselves are guaranteed to exist.
+
 ### `mkdir(path, [mode], callback)`
 ### `rename(oldPath, newPath, callback)`
 ### `stat(path, callback)`
