@@ -17,7 +17,7 @@ What's New in Sprint 33
     * [Greek translation added](https://github.com/adobe/brackets/pull/5378)
     * [Dutch translation added](https://github.com/adobe/brackets/pull/5372)
 
-_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-22...sprint-23#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-22...sprint-23#commits_bucket)
+_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-32...sprint-33#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-32...sprint-33#commits_bucket)
 
 
 UI Changes
