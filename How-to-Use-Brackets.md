@@ -90,8 +90,7 @@ With Live Development, the idea is to tie Brackets more closely to the browser,
 so that you can make changes and debug from Brackets itself, and see the results
 instantly in the browser.
 
-The initial implementation of this in Brackets was limited to CSS editing but, starting with Sprint 31,
-Live Development has been expanded to include support for live editing of HTML. If you open an HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This includes changes to the style and class tag attributes.
+Live Development also includes support for live editing of HTML. If you open an HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This includes changes to the style and class tag attributes.
 
 By default, Brackets previews files using a local http server that is included with Brackets. 
 If you want to preview off a server, you can use **File > Project Settings...**. 
@@ -119,9 +118,8 @@ Some limitations of the current implementation:
 * Opening the developer tools in Chrome will close the live development connection.
   
 As with Quick Edit, there are lots of ideas for how to extend this, including
-highlighting DOM nodes in the browser from Brackets, clicking on an item in
-the browser to jump back to its source code in Brackets, and setting JS breakpoints 
-from Brackets.
+clicking on an item in the browser to jump back to its source code in Brackets, 
+and setting JS breakpoints from Brackets.
 
 <a id="quickview"></a>Quick View
 ----------------
@@ -182,7 +180,7 @@ at the bottom. From there, you can click on
 **Browse Extensions** to get to the [list of Brackets extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions), which has further instructions on installation.
 You can also remove extensions from the Extension Manager dialog.
 
-In Sprint 28, we've introduced a central registry of Brackets extensions that you can access by clicking the "Available" tab in the Extension Manager. This tab allows you to browse and search the list of available extensions and install or update them with one click. The registry doesn't yet have the full set of extensions from the original list, but over time it should become more complete. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
+There is a central registry of Brackets extensions managed by [AboutWeb](http://aboutweb.com) that you can access by clicking the "Available" tab in the Extension Manager. This tab allows you to browse and search the list of available extensions and install or update them with one click. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
