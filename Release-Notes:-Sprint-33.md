@@ -99,7 +99,7 @@ Community contributions to Brackets
 * [Fix Tests for non English locales](https://github.com/adobe/brackets/pull/5433) by [WebsiteDeveloper](https://github.com/WebsiteDeveloper)
 
 #### Pulling source code from Git
-more TBD
+* A new brackets-shell build is _required_ for this sprint (due to new CEF libraries, Dark Shell changes on Mac and Win). Be sure to rerun `grunt setup` before building.
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
