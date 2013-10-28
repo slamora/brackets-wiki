@@ -14,7 +14,7 @@ What's New in Sprint 33
 * **Files and Folders**
     * [Close Others [Above/Below] in Working Files context menu](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these three new commands.
 * **Replace**
-    * [Handle Regexp replacements with $1, $2, etc.](https://github.com/adobe/brackets/pull/5618)
+    * When using Replace with a Regep search argument, Brackets now [handles replacements with $1, $2, etc.](https://github.com/adobe/brackets/pull/5618).
 * **Extension Manager**
     * If latest version of an extension is not compatible with your version of Brackets, then [Extension Manager will install an older version of the extension](https://github.com/adobe/brackets/pull/5653), if available.
 * **Live Preview**
