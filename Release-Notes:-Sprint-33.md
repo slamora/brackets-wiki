@@ -22,7 +22,9 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-No major changes to existing features.
+**Dark-themed window chrome on Mac** - the Mac shell now has a dark window chrome that visually complements the Brackets UI. (The Windows shell received a similar update in Sprint 31).
+
+**Dialogs** - Modal Dialogs are now [auto-centered](https://github.com/adobe/brackets/pull/5399) both horizontally and vertically over the Brackets Window.
 
 
 API Changes
@@ -31,11 +33,10 @@ API Changes
 
 **Image files** - TODO
 
-**Dialogs** - TODO: [auto-centering](https://github.com/adobe/brackets/pull/5399)
-
 **Inline editors** - TODO: automatically-created close button; `InlineTextEditor.editors` removal
 
 **Files** - TODO: trailing-"/" cleanups; deprecated `FileUtils.canonicalizeFolderPath()`
+
 
 New/Improved Extensibility APIs
 -------------------------------
