@@ -32,6 +32,8 @@ UI Changes
 
 **Dialogs** - Modal Dialogs are now [auto-centered](https://github.com/adobe/brackets/pull/5399) both horizontally and vertically over the Brackets Window.
 
+**Inline editors** - An "**x**" Close button is now automatically created for all inline editors.
+
 
 API Changes
 -----------
@@ -50,7 +52,7 @@ Functions are deprecated by adding a `@deprecated` annotation, and by replacing 
 
 **Image files** - The [Preview Images Spec](https://github.com/adobe/brackets/wiki/Preview-Images-Spec) describes the API changes for the new Preview Images feature.
 
-**Inline editors** - TODO: automatically-created close button; `InlineTextEditor.editors` removal
+**Inline editors** - TODO: `InlineTextEditor.editors` removal
 
 **Files** - usage of trailing-"/" was cleaned up.
 
