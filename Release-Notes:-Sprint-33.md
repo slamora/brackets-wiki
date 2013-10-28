@@ -29,7 +29,19 @@ UI Changes
 
 API Changes
 -----------
-**TODO** - utility API deprecations/removals due to lodash integration
+**Lo-Dash** - added as a third-party dependency. The following conversions and deprecations were made:
+
+* Convert `Array.slice(0)` to `_.clone()`
+* Convert `Async.whenIdle` to `_.debounce`.
+* Convert `NumberUtils.getRandomNumber()` to `_.random` and removed `NumberUtils.js`
+* Convert `StringUtils.htmlEscape` to `._escape` and deprecated it.
+* Convert `CollectionUtils.indexOf` to `_.findIndex` and deprecated it.
+* Convert `CollectionUtils.forEach` to `_.forEach` and deprecated it.
+* Convert `CollectionUtils.some` to `_.some` and deprecated it.
+* Convert `CollectionUtils.hasProperty` to `_.has` and deprecated it.
+
+Functions are deprecated by adding a `@deprecated` annotation, and by replacing their implementation with the corresponding Lo-Dash function and a `console.warn` message.
+
 
 **Image files** - TODO
 
