@@ -13,6 +13,8 @@ What's New in Sprint 33
     * [Dark themed window chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
 * **Files and Folders**
     * [Close Others [Above/Below] in Working Files context menu](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these three new commands.
+* **Replace**
+    * [Handle Regexp replacements with $1, $2, etc.](https://github.com/adobe/brackets/pull/5618)
 * **Localization**
     * [Greek translation added](https://github.com/adobe/brackets/pull/5378)
     * [Dutch translation added](https://github.com/adobe/brackets/pull/5372)
