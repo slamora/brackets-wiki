@@ -50,9 +50,11 @@ file that lets you make quick tweaks to one of the rules.
 On the right side of the inline editor, Brackets shows the list of
 all rules that might be relevant to the selected tag/class/id. You can switch 
 between the rules by clicking on them in the list, or using Alt-Up/Down Arrow.
+You can also add a new rule by clicking the New Rule button or pressing
+Ctrl-Alt-N/Cmd-Opt-N.
 
 You can make changes in the inline editor and save them, then close the editor 
-by hitting Cmd-E again. Edits you make in the inline editor will be properly
+by hitting Ctrl-E/Cmd-E again. Edits you make in the inline editor will be properly
 applied in Live Development mode (see below).
 
 Brackets also has an early implementation of JavaScript support. If you are in
