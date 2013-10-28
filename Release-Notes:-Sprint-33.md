@@ -16,7 +16,7 @@ What's New in Sprint 33
 * **Replace**
     * [Handle Regexp replacements with $1, $2, etc.](https://github.com/adobe/brackets/pull/5618)
 * **Extension Manager**
-    * If latest version of an extension is not compatible with your version of Brackets, then [Extension Manager will install an older version of the extension ](https://github.com/adobe/brackets/pull/5653), if available.
+    * If latest version of an extension is not compatible with your version of Brackets, then [Extension Manager will install an older version of the extension](https://github.com/adobe/brackets/pull/5653), if available.
 * **Localization**
     * Added Serbian translation
     * Updated translations for: Czech, Finnish, German, Polish, Spanish, Swedish, and Turkish.
