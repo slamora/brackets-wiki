@@ -31,14 +31,14 @@ API Changes
 -----------
 **Lo-Dash** - added as a third-party dependency. The following conversions and deprecations were made:
 
-* Convert `Array.slice(0)` to `_.clone()`
-* Convert `Async.whenIdle` to `_.debounce`.
-* Convert `NumberUtils.getRandomNumber()` to `_.random` and removed `NumberUtils.js`
-* Convert `StringUtils.htmlEscape` to `._escape` and deprecated it.
-* Convert `CollectionUtils.indexOf` to `_.findIndex` and deprecated it.
-* Convert `CollectionUtils.forEach` to `_.forEach` and deprecated it.
-* Convert `CollectionUtils.some` to `_.some` and deprecated it.
-* Convert `CollectionUtils.hasProperty` to `_.has` and deprecated it.
+* Converted `Array.slice(0)` to `_.clone()`
+* Converted `Async.whenIdle` to `_.debounce`.
+* Converted `NumberUtils.getRandomNumber()` to `_.random` and removed `NumberUtils.js`
+* Converted `StringUtils.htmlEscape` to `._escape` and deprecated it.
+* Converted `CollectionUtils.indexOf` to `_.findIndex` and deprecated it.
+* Converted `CollectionUtils.forEach` to `_.forEach` and deprecated it.
+* Converted `CollectionUtils.some` to `_.some` and deprecated it.
+* Converted `CollectionUtils.hasProperty` to `_.has` and deprecated it.
 
 Functions are deprecated by adding a `@deprecated` annotation, and by replacing their implementation with the corresponding Lo-Dash function and a `console.warn` message.
 
