@@ -42,13 +42,18 @@ API Changes
 
 Functions are deprecated by adding a `@deprecated` annotation, and by replacing their implementation with the corresponding Lo-Dash function and a `console.warn` message.
 
-
 **Image files** - TODO
 
 **Inline editors** - TODO: automatically-created close button; `InlineTextEditor.editors` removal
 
-**Files** - TODO: trailing-"/" cleanups; deprecated `FileUtils.canonicalizeFolderPath()`
+**Files** - usage of trailing-"/" was cleaned up.
 
+The "canonical" folder path format used in `DirectoryEntry.fullPath` includes a trailing "/".  However, we have some Brackets code that requires or generates paths in the _opposite_ format.  Several of those cases were cleaned up:
+
+* Renamed `FileUtils.canonicalizeFolderPath()` to `stripTrailingSlash()` since it actually makes paths **not** canonical. Old API was **deprecated** since it's still used by several extensions.
+* Added warning to docs for these APIs that return non-canonical paths: `FileUtils.getNativeBracketsDirectoryPath()` and `FileUtils.getNativeModuleDirectoryPath()`.
+* Documented that `ProjectManager._loadProject()` and `openProject()` support receiving non-canonical paths
+* Fixed several `ProjectManager` APIs that used to return and/or receive non-canonical paths: `getInitialProjectPath()`, `_getWelcomeProjectPath()`, and `updateWelcomeProjectPath()`.  No extensions were found that use these APIs.
 
 New/Improved Extensibility APIs
 -------------------------------
