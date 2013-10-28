@@ -16,8 +16,8 @@ What's New in Sprint 33
 * **Replace**
     * [Handle Regexp replacements with $1, $2, etc.](https://github.com/adobe/brackets/pull/5618)
 * **Localization**
-    * [Greek translation added](https://github.com/adobe/brackets/pull/5378)
-    * [Dutch translation added](https://github.com/adobe/brackets/pull/5372)
+    * Added Serbian translation
+    * Updated translations for: Czech, Finnish, German, Polish, Spanish, Swedish, and Turkish.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-32...sprint-33#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-32...sprint-33#commits_bucket)
 
@@ -80,7 +80,7 @@ Community contributions to Brackets
 * Finnish translation [fixes](https://github.com/adobe/brackets/pull/5557), [more fixes](https://github.com/adobe/brackets/pull/5556) by [Jukka Hyytiälä](https://github.com/jukkah)
 * [Start live development if there is no open file](https://github.com/adobe/brackets/pull/5547) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Added Serbian translation](https://github.com/adobe/brackets/pull/5515) by [Goran Vasić](https://github.com/Gocilla)
-[Fix sv Node translation](https://github.com/adobe/brackets/pull/5647) by [Michael Cole](https://github.com/micole)
+[Fix Swedish Node translation](https://github.com/adobe/brackets/pull/5647) by [Michael Cole](https://github.com/micole)
 * [css quick edit blank line number](https://github.com/adobe/brackets/pull/5582) by [Patrick Oladimeji](https://github.com/thehogfather)
 * [Clicking project-dropdown-toggle again closes the dropdown](https://github.com/adobe/brackets/pull/5435) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Recent Projects - Pressing delete key removes project from list](https://github.com/adobe/brackets/pull/5354) by [Sandeep Jain](https://github.com/sandeepjain)
@@ -90,7 +90,7 @@ Community contributions to Brackets
 * [Change not.toBeNull() to toBeTruthy() in unit tests](https://github.com/adobe/brackets/pull/5492) by [Gregg Meluski](https://github.com/gmeluski)
 * [Fix URL hints not showing](https://github.com/adobe/brackets/pull/5422) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
 * [Update 'de' locale](https://github.com/adobe/brackets/pull/5470) by [J.M.](https://github.com/mynetx)
-* [czech language](https://github.com/adobe/brackets/pull/5510) by [kvarel](https://github.com/kvarel)
+* [Czech language](https://github.com/adobe/brackets/pull/5510) by [kvarel](https://github.com/kvarel)
 * [Fix: Quick View popup closes & reopens...](https://github.com/adobe/brackets/pull/5428) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Standardize the format of nls files](https://github.com/adobe/brackets/pull/5505) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Fix layout issue](https://github.com/adobe/brackets/pull/5484) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
