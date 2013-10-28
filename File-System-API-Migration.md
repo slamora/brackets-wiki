@@ -1,52 +1,66 @@
 Here are the API changes that will result from the [File System Evolution](File System) plan:
 
-**"Compatibility"** column:
+("Usage" column = how many extensions currently use the API)
 
-* **Drop-in compatible** - code using the API probably does not need to change at all, though it's _possible_ there are subtle differences in edge cases
-* **Deprecated & shimmed** - the API will _temporarily_ continue to behave as before, but will be removed in the near future (under the hood, the old API has been reimplemented in terns of the new APIs, so there may be minor, subtle differences)
-* **Removed** - the API is completely gone; code using it will throw exceptions
+### Backwards-compatible APIs
+
+These APIs are either unchanged or "drop-in compatible" - code using them probably does not need to change at all, though in some unusual usage scenarios the APIs may behave differently from before.
 
 <table>
 <thead>
-<tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Compatibility</b></td><td><b>Usage</b></td></tr>
+<tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Notes</b></td><td><b>Usage</b></td></tr>
 </thead>
-
 <tr><td>FileEntry<br>DirectoryEntry</td><td>File<br>Directory</td><td>Drop-in compatible (same fields/members)</td><td>(lots)</td></tr>
-<tr><td>entry.fullPath, entry.isFile, entry.isDirectory</td><td>(unchanged)</td><td>(unchanged)<br>Properties are now read-only</td><td>fullPath: many<br>isFile/Directory: 9</td></tr>
+<tr><td>entry.fullPath, entry.isFile, entry.isDirectory</td><td>(unchanged)</td><td>Properties are now read-only</td><td>fullPath: many<br>isFile/Directory: 9</td></tr>
 <tr><td>FileUtils.readAsText(fileEntry)</td><td>FileUtils.readAsText(file)</td><td>Drop-in compatible</td><td>13</td></tr>
 <tr><td>FileUtils.writeText(fileEntry)</td><td>FileUtils.writeText(file)</td><td>Drop-in compatible</td><td>5</td></tr>
-<tr><td>new NativeFileSystem.FileEntry(fullPath)<br>new NativeFileSystem.DirectoryEntry(fullPath)</td><td>filesystem.getFileForPath(fullPath)<br>filesystem.getDirectoryForPath(fullPath)</td><td>Deprecated & shimmed (constructors return a File/Directory object instead)</td><td>19</td></tr>
-
-<tr><td>DirectoryEntry.getFile(relpath)</td><td>filesystem.resolve(dirFullPath + relpath)</td><td>Deprecated & shimmed</td><td>4</td></tr>
-<tr><td>NativeFileSystem.resolveNativeFileSystemPath(fullPath)</td><td>filesystem.resolve(path)</td><td>Deprecated & shimmed</td><td>4</td></tr>
-<tr><td>NativeFileSystem.requestNativeFileSystem(fullPath)... fs.root</td><td>filesystem.resolve(fullPath)</td><td>Deprecated & shimmed</td><td>6</td></tr>
-<tr><td>Concatenation: folderPath + "/" + filename</td><td>(unchanged)</td><td>(unchanged)<br>Doubled "/"es are normalized out by fs APIs</td><td></td></tr>
-<tr><td>Concatenation: folderPath + filename</td><td>(unchanged)</td><td>(unchanged)<br>Directory.fullPath always ends in "/", just like DirectoryEntry.fullPath</td><td>Several</td></tr>
-<tr><td>Substrings: relpath = fullPath.slice(dirFullPath.length)</td><td>(unchanged)</td><td>(unchanged)<br>Directory.fullPath always ends in "/", just like DirectoryEntry.fullPath</td><td></td></tr>
-<tr><td>NativeFileSystem.showOpenDialog()<br>NativeFileSystem.showSaveDialog()</td><td>filesystem.showOpenDialog()<br>filesystem.showSaveDialog()</td><td>Deprecated & shimmed</td><td>4</td></tr>
-<tr><td>fileEntry.createWriter()... writer.write(text)</td><td>file.write(text)</td><td>Removed</td><td>5 (unused in 3)</td></tr>
-<tr><td>fileEntry.file()... new NativeFileSystem.FileReader().readAsText(fileObj)</td><td>file.readAsText()</td><td>Removed</td><td>None</td></tr>
-<tr><td>directoryEntry.createReader().readEntries()</td><td>directory.getContents() ???</td><td>Removed</td><td>5</td></tr>
-<tr><td>DirectoryEntry.getFile(relpath, {create:true})</td><td>filesystem.getFileForPath(fullPath).write("")</td><td>Removed</td><td>2</td></tr>
-<tr><td>DirectoryEntry.getDirectory(relpath, {create:true})</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td>Removed</td><td>2</td></tr>
-<tr><td>FileIndexManager.getFileInfoList("all")<br>FileIndexManager.getFileInfoList("...")</td><td>ProjectManager.getAllFiles()<br>ProjectManager.getAllFiles(filter)<br>(Returns an array of Files, but they provide same properties as the old FileInfos)</td><td>Deprecated & shimmed</td><td>7</td></tr>
-<tr><td>FileIndexManager.getFilenameMatches("...", filename)</td><td>ProjectManager.getAllFiles(filter)</td><td>Deprecated & shimmed</td><td>None</td></tr>
-<tr><td>ProjectManager "projectFilesChange" event</td><td>FileSystem "change" event</td><td>Removed</td><td>2</td></tr>
-
-<tr><td colspan="4"><b>Less common APIs</b></td></tr>
-
-<tr><td>fileEntry.getMetadata()</td><td>file.stat()</td><td>Removed</td><td>1</td></tr>
-<tr><td>NativeFileError.*</td><td>FileSystemError.*</td><td>Removed</td><td>1</td></tr>
-<tr><td>instanceof NativeFileSystem.InaccessibleFileEntry</td><td>instanceof InMemoryFile</td><td>Removed</td><td>1</td></tr>
-<tr><td>entry.remove()</td><td>entry.moveToTrash()</td><td>Removed</td><td>None</td></tr>
-<tr><td>entry.filesystem</td><td>n/a</td><td>Removed</td><td>None</td></tr>
-<tr><td>NativeFileSystem.Encodings.*</td><td>(none)</td><td>Removed</td><td>None</td></tr>
-<tr><td>NativeFileSystem.isRelativePath()</td><td>(none)</td><td>Removed</td><td>None</td></tr>
-<tr><td>brackets.fs.*()</td><td>(various)</td><td>These low-level APIs continue to exist, but have never been officially supported. They may break at any time.</td><td>Several</td></tr>
-
+<tr><td>Concatenation: folderPath + "/" + filename</td><td>(unchanged)</td><td>Doubled "/"es are now normalized out by fs APIs</td><td></td></tr>
+<tr><td>Concatenation: folderPath + filename</td><td>(unchanged)</td><td>Directory.fullPath always ends in "/", just like DirectoryEntry.fullPath</td><td>Several</td></tr>
+<tr><td>Substrings: relpath = fullPath.slice(dirFullPath.length)</td><td>(unchanged)</td><td>Directory.fullPath always ends in "/", just like DirectoryEntry.fullPath</td><td></td></tr>
 </table>
 
-"Usage" = how many extensions currently use the API
+### Removed APIs
+
+These APIs are completely gone - code using them will throw exceptions. Extensions using these APIs will be broken immediately, and should be fixed ASAP.
+
+<table>
+<thead>
+<tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Notes</b></td><td><b>Usage</b></td></tr>
+</thead>
+<tr><td>fileEntry.createWriter()... writer.write(text)</td><td>file.write(text)</td><td></td><td>5 (unused in 3)</td></tr>
+<tr><td>fileEntry.file()... new NativeFileSystem.FileReader().readAsText(fileObj)</td><td>file.readAsText()</td><td></td><td>None</td></tr>
+<tr><td>directoryEntry.createReader().readEntries()</td><td>directory.getContents()</td><td></td><td>5</td></tr>
+<tr><td>DirectoryEntry.getFile(relpath, {create:true})</td><td>filesystem.getFileForPath(fullPath).write("")</td><td></td><td>2</td></tr>
+<tr><td>DirectoryEntry.getDirectory(relpath, {create:true})</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td></td><td>2</td></tr>
+<tr><td>ProjectManager "projectFilesChange" event</td><td>FileSystem "change" event</td><td></td><td>2</td></tr>
+<tr><td>fileEntry.getMetadata()</td><td>file.stat()</td><td></td><td>1</td></tr>
+<tr><td>NativeFileError.*</td><td>FileSystemError.*</td><td></td><td>1</td></tr>
+<tr><td>instanceof NativeFileSystem.InaccessibleFileEntry</td><td>instanceof InMemoryFile</td><td></td><td>1</td></tr>
+<tr><td>entry.remove()</td><td>entry.moveToTrash()</td><td></td><td>None</td></tr>
+<tr><td>entry.filesystem</td><td>n/a</td><td></td><td>None</td></tr>
+<tr><td>NativeFileSystem.Encodings.*</td><td>(none)</td><td></td><td>None</td></tr>
+<tr><td>NativeFileSystem.isRelativePath()</td><td>(none)</td><td></td><td>None</td></tr>
+</table>
+
+### Deprecated APIs
+
+These APIs will _temporarily_ continue to behave as before, but will be removed in the near future. Extensions using these APIs should be fixed relatively soon, within the next sprint or two.
+
+Under the hood, the old API has been reimplemented in terns of the new APIs, so there may be subtle differences noticeable in some edge use cases. (Also - the shim code may be a helpful reference when migrating over to the new APIs).
+
+<table>
+<thead>
+<tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Notes</b></td><td><b>Usage</b></td></tr>
+</thead>
+<tr><td>new NativeFileSystem.FileEntry(fullPath)<br>new NativeFileSystem.DirectoryEntry(fullPath)</td><td>filesystem.getFileForPath(fullPath)<br>filesystem.getDirectoryForPath(fullPath)</td><td>These now return a File / Directory object using the new APIs instead of constructing a FileEntry / DirectoryEntry. (You never directly construct a File / Directory).</td><td>19</td></tr>
+<tr><td>DirectoryEntry.getFile(relpath)</td><td>filesystem.resolve(dirFullPath + relpath)</td><td></td><td>4</td></tr>
+<tr><td>NativeFileSystem.resolveNativeFileSystemPath(fullPath)</td><td>filesystem.resolve(path)</td><td></td><td>4</td></tr>
+<tr><td>NativeFileSystem.requestNativeFileSystem(fullPath)... fs.root</td><td>filesystem.resolve(fullPath)</td><td></td><td>6</td></tr>
+<tr><td>NativeFileSystem.showOpenDialog()<br>NativeFileSystem.showSaveDialog()</td><td>filesystem.showOpenDialog()<br>filesystem.showSaveDialog()</td><td></td><td>4</td></tr>
+<tr><td>FileIndexManager.getFileInfoList("all")<br>FileIndexManager.getFileInfoList("...")</td><td>ProjectManager.getAllFiles()<br>ProjectManager.getAllFiles(filter)</td><td>Returns an array of Files, but they provide same properties as the old FileInfos</td><td>7</td></tr>
+<tr><td>FileIndexManager.getFilenameMatches("...", filename)</td><td>ProjectManager.getAllFiles(filter)</td><td></td><td>None</td></tr>
+<tr><td>brackets.fs.*()</td><td>(various)</td><td>These low-level APIs continue to exist, but have never been officially supported. They may break at any time.</td><td>Several</td></tr>
+</table>
 
 ### Extensions that will break
 
