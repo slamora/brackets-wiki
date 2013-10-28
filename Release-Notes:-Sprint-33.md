@@ -52,7 +52,7 @@ Functions are deprecated by adding a `@deprecated` annotation, and by replacing 
 
 New/Improved Extensibility APIs
 -------------------------------
-**Lodash** - TODO
+**Lo-Dash** - [utility library](http://lodash.com/) is now available in Brackets.
 
 **Closing files** - TODO: new DocumentCommandHandlers API for closing multiple files in a batch
 
