@@ -42,7 +42,7 @@ API Changes
 
 Functions are deprecated by adding a `@deprecated` annotation, and by replacing their implementation with the corresponding Lo-Dash function and a `console.warn` message.
 
-**Image files** - TODO
+**Image files** - The [Preview Images Spec](https://github.com/adobe/brackets/wiki/Preview-Images-Spec) describes the API changes for the new Preview Images feature.
 
 **Inline editors** - TODO: automatically-created close button; `InlineTextEditor.editors` removal
 
