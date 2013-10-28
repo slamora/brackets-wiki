@@ -11,8 +11,6 @@ What's New in Sprint 33
     * [Preview image files](https://trello.com/c/l9AcILkC/24-8-preview-images): Select in image in the file tree (or via Quick Open) to see a preview in the editor area.
 * **Overall UI**
     * [Dark themed window chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
-* **Files and Folders**
-    * [Close Others [Above/Below] in Working Files context menu](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these three new commands.
 * **Replace**
     * When using Replace with a Regep search argument, Brackets now [handles replacements with $1, $2, etc.](https://github.com/adobe/brackets/pull/5618).
 * **Extension Manager**
@@ -66,8 +64,6 @@ The "canonical" folder path format used in `DirectoryEntry.fullPath` includes a 
 New/Improved Extensibility APIs
 -------------------------------
 **Lo-Dash** - [utility library](http://lodash.com/) is now available in Brackets.
-
-**Closing files** - TODO: new DocumentCommandHandlers API for closing multiple files in a batch
 
 
 Known Issues
