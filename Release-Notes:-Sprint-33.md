@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 33 -- approximately October 29._
-
 What's New in Sprint 33
 -----------------------
 * **Quick Edit**
@@ -9,8 +5,6 @@ What's New in Sprint 33
     * [Visually edit CSS transition timing function Bezier curves](https://trello.com/c/5EPJdO1q/838-2-quick-edit-css-cubic-bezier): Just invoke Quick Edit when your cursor is on any `cubic-bezier()`, `linear`, `ease`, `ease-in`, `ease-out`, or `ease-in-out` functions in a CSS rule!
 * **Images**
     * [Preview image files](https://trello.com/c/l9AcILkC/24-8-preview-images): Select in image in the file tree (or via Quick Open) to see a preview in the editor area.
-* **Overall UI**
-    * [Dark themed window chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
 * **Replace**
     * When using Replace with a Regep search argument, Brackets now [handles replacements with $1, $2, etc.](https://github.com/adobe/brackets/pull/5618).
 * **Extension Manager**
@@ -26,8 +20,6 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-**Dark-themed window chrome on Mac** - the Mac shell now has a dark window chrome that visually complements the Brackets UI. (The Windows shell received a similar update in Sprint 31).
-
 **Dialogs** - Modal Dialogs are now [auto-centered](https://github.com/adobe/brackets/pull/5399) both horizontally and vertically over the Brackets Window.
 
 **Inline editors** - An "**x**" Close button is now automatically created for all inline editors.
