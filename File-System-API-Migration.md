@@ -39,7 +39,7 @@ These APIs are completely gone - code using them will throw exceptions. Extensio
 <tr><td>entry.remove()</td><td>entry.moveToTrash()</td><td></td><td>None</td></tr>
 <tr><td>entry.filesystem</td><td>n/a</td><td></td><td>None</td></tr>
 <tr><td>NativeFileSystem.Encodings.*</td><td>(none)</td><td></td><td>None</td></tr>
-<tr><td>NativeFileSystem.isRelativePath()</td><td>(none)</td><td></td><td>None</td></tr>
+<tr><td>NativeFileSystem.isRelativePath()</td><td>!FileSystem.isAbsolutePath()</td><td></td><td>None</td></tr>
 </table>
 
 ### Deprecated APIs
