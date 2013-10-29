@@ -7,6 +7,11 @@ What's New in Sprint 34
 * **Overall UI**
     * [Dark themed window chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
 
+* **Files and Folders**
+
+    * Close Others [Above/Below] in Working Files context menu: Quickly close batches of files with these three new commands.
+
+
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-33...sprint-34#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-33...sprint-34#commits_bucket)
 
 
@@ -23,6 +28,8 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
+* **Closing files** - TODO: new DocumentCommandHandlers API for closing multiple files in a batch
+
 TODO
 
 
