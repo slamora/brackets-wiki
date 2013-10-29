@@ -50,7 +50,7 @@ Functions are deprecated by adding a `@deprecated` annotation, and by replacing 
 
 **Image files** - The [Preview Images Spec](https://github.com/adobe/brackets/wiki/Preview-Images-Spec) describes the API changes for the new Preview Images feature.
 
-**Inline editors** - TODO: `InlineTextEditor.editors` removal
+**Inline editors** - `InlineTextEditor.editors` (array of editors) was removed and replaced with `InlineTextEditor.editor` (single editor). With current usage, there was never more than a single element in the array anyway, so this simplifies the API.
 
 **Files** - usage of trailing-"/" was cleaned up.
 
