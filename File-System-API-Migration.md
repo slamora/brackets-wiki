@@ -12,8 +12,8 @@ These APIs are either unchanged or "drop-in compatible" - code using them probab
 </thead>
 <tr><td>FileEntry<br>DirectoryEntry</td><td>File<br>Directory</td><td>Drop-in compatible (same fields/members)</td><td>(lots)</td></tr>
 <tr><td>entry.fullPath, entry.isFile, entry.isDirectory</td><td>(unchanged)</td><td>Properties are now read-only</td><td>fullPath: many<br>isFile/Directory: 9</td></tr>
-<tr><td>FileUtils.readAsText(fileEntry)</td><td>FileUtils.readAsText(file)</td><td>Drop-in compatible</td><td>13</td></tr>
-<tr><td>FileUtils.writeText(fileEntry)</td><td>FileUtils.writeText(file)</td><td>Drop-in compatible</td><td>5</td></tr>
+<tr><td>FileUtils.readAsText(fileEntry)</td><td>(same except takes new objects)</td><td>Drop-in compatible</td><td>13</td></tr>
+<tr><td>FileUtils.writeText(fileEntry)</td><td>(same except takes new objects)</td><td>Drop-in compatible</td><td>5</td></tr>
 <tr><td>Concatenation: folderPath + "/" + filename</td><td>(unchanged)</td><td>Doubled "/"es are now normalized out by fs APIs</td><td></td></tr>
 <tr><td>Concatenation: folderPath + filename</td><td>(unchanged)</td><td>Directory.fullPath always ends in "/", just like DirectoryEntry.fullPath</td><td>Several</td></tr>
 <tr><td>Substrings: relpath = fullPath.slice(dirFullPath.length)</td><td>(unchanged)</td><td>Directory.fullPath always ends in "/", just like DirectoryEntry.fullPath</td><td></td></tr>
@@ -34,7 +34,7 @@ These APIs are completely gone - code using them will throw exceptions. Extensio
 <tr><td>DirectoryEntry.getDirectory(relpath, {create:true})</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td></td><td>2</td></tr>
 <tr><td>ProjectManager "projectFilesChange" event</td><td>FileSystem "change" event</td><td></td><td>2</td></tr>
 <tr><td>fileEntry.getMetadata()</td><td>file.stat()</td><td></td><td>1</td></tr>
-<tr><td>NativeFileError.*</td><td>FileSystemError.*</td><td></td><td>1</td></tr>
+<tr><td>NativeFileError.*</td><td>FileSystemError.*<br>(different constants)</td><td></td><td>1</td></tr>
 <tr><td>instanceof NativeFileSystem.InaccessibleFileEntry</td><td>instanceof InMemoryFile</td><td></td><td>1</td></tr>
 <tr><td>entry.remove()</td><td>entry.moveToTrash()</td><td></td><td>None</td></tr>
 <tr><td>entry.filesystem</td><td>n/a</td><td></td><td>None</td></tr>
