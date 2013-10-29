@@ -29,12 +29,19 @@ Smoke test steps
 1. File > Save, name the file ``temp.js`` in the current project. Verify that the name in the working set and title bar changes to ``temp.js`` and the mode in the status bar changes to "JavaScript".
 1. Type the following code
 ```
-var foo = "", bar = function(){};
+var foo = "";
+function add(a, b) {
+    return a+b;
+}
+
 foo.
 ```
 1. Verify ``String`` method code hints on ``foo``
-1. Insert a new line 2 ``foo = bar;``
-1. On line 3, verify ``Function`` method code hints on ``foo``
+1. Replace the last line with ``add(``
+1. Verify that the parameter hint ``Object a, Object b`` appears with ``Object a`` in boldface
+1. Type ``5, 10);`` and press enter
+1. Type ``add(``
+1. Verify that the parameter hint ``Number a, Number b`` appears with the ``Number a`` in boldface
 1. In the project tree, right-click on ``temp.js`` and choose "Rename". Rename the file to ``temp.txt``. Verify that the name in the working set and title bar changes, the code coloring disappears and the mode changes to "Text".
 1. In the project tree, right click on ``temp.txt`` and choose delete (when prompted discard changes)
 1. Open the OS Trash/Recycle Bin and confirm ``temp.txt`` was deleted
