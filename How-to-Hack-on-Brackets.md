@@ -34,6 +34,10 @@ windows
 -------
 IMPORTANT! This command MUST be run in a Command Prompt started with "Run as Administrator"
 tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 25"
+
+linux
+-----
+sudo tools/setup_for_hacking.sh "/opt/brackets"
 ```
 
 _Optional: For hacking on the native code, [see "Hacking on brackets-shell" below](#nativeshell)._
