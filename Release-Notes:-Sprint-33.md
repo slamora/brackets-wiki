@@ -1,57 +1,57 @@
 What's New in Sprint 33
 -----------------------
 * **Quick Edit**
-    * [Create new CSS rules via Quick Edit](https://trello.com/c/5I5AddGo/599-5-css-quick-edit-create-new-selector): In HTML files, click the new "New Rule" button in the Quick Edit inline editor to create a new CSS rule based on the tag/class/id your cursor was on. Fully keyboard accessible using Cmd/Ctrl-Alt-N. The inline editor now appears even when no existing rules match the search, so you can easily create new CSS rules at any time.
-    * [Visually edit CSS transition timing function Bezier curves](https://trello.com/c/5EPJdO1q/838-2-quick-edit-css-cubic-bezier): Just invoke Quick Edit when your cursor is on any `cubic-bezier()`, `linear`, `ease`, `ease-in`, `ease-out`, or `ease-in-out` functions in a CSS rule!
+    * [Create new CSS rules via Quick Edit](https://trello.com/c/5I5AddGo/599-5-css-quick-edit-create-new-selector): In HTML files, click the CSS inline editor's "New Rule" button (or press Cmd/Ctrl-Alt-N) to create a new CSS rule based on the tag/class/id your cursor was on. The inline editor now appears even when no existing rules match the search, so you can easily create new CSS rules at any time.
+    * [Visually edit CSS transition Bezier timing functions](https://trello.com/c/5EPJdO1q/838-2-quick-edit-css-cubic-bezier): Just invoke Quick Edit when your cursor is on any `cubic-bezier()` function in a CSS rule! (or a named shorthand such as `linear`, `ease-in`, etc.)
 * **Images**
     * [Preview image files](https://trello.com/c/l9AcILkC/24-8-preview-images): Select in image in the file tree (or via Quick Open) to see a preview in the editor area.
-* **Replace**
-    * When using Replace with a Regep search argument, Brackets now [handles replacements with $1, $2, etc.](https://github.com/adobe/brackets/pull/5618).
-* **Extension Manager**
-    * If latest version of an extension is not compatible with your version of Brackets, then [Extension Manager will install an older version of the extension](https://github.com/adobe/brackets/pull/5653), if available.
+* **Search/Replace**
+    * [Regexp Replace using $1, $2, etc. substitutions](https://github.com/adobe/brackets/pull/5618) in the replacement text
+    * [Better Find in Files feedback](https://github.com/adobe/brackets/pull/5477): Search bar remains open while search is in progress, and turns red when no results found (like regular Find).
+* **Files and Folders**
+    * [Mac: Drag folders onto dock icon](https://github.com/adobe/brackets-shell/pull/353): Previously, folders could only be dragged onto an already-open Brackets window.
+    * [Close Others [Above/Below] in Working Files context menu](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these three new commands.
+* **Extensions**
+    * [Install older version of extension if latest isn't compatible](github.com/adobe/brackets/pull/5653): Previously, Extension Manager would refuse to install the extension at all.
 * **Live Preview**
-    * If there is no file open, [Live Preview will now start with index.html file](https://github.com/adobe/brackets/pull/5547), if present.
+    * [Launch Live Preview when no files open](https://github.com/adobe/brackets/pull/5547) if an index.html (or similar) file exists at the project root.
 * **Localization**
-    * Added Serbian translation
-    * Updated translations for: Czech, Finnish, German, Polish, Spanish, Swedish, and Turkish.
+    * [Serbian translation added](https://github.com/adobe/brackets/pull/5515)
+    * Updated translations: Czech, Finnish, French, German, Spanish, Swedish
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-32...sprint-33#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-32...sprint-33#commits_bucket)
 
 
 UI Changes
 ----------
-**Dialogs** - Modal Dialogs are now [auto-centered](https://github.com/adobe/brackets/pull/5399) both horizontally and vertically over the Brackets Window.
-
-**Inline editors** - An "**x**" Close button is now automatically created for all inline editors.
+**Inline editors** - All inline widgets (Quick Edit, Quick Docs, etc.) have added an "**x**" Close button in the upper-left.
 
 
 API Changes
 -----------
-**Lo-Dash** - added as a third-party dependency. The following conversions and deprecations were made:
+**Lo-Dash utils** - Now included in Brackets, replacing the following Brackets APIs:
 
-* Converted `Array.slice(0)` to `_.clone()`
-* Converted `Async.whenIdle` to `_.debounce`.
-* Converted `NumberUtils.getRandomNumber()` to `_.random` and removed `NumberUtils.js`
-* Converted `StringUtils.htmlEscape` to `._escape` and deprecated it.
-* Converted `CollectionUtils.indexOf` to `_.findIndex` and deprecated it.
-* Converted `CollectionUtils.forEach` to `_.forEach` and deprecated it.
-* Converted `CollectionUtils.some` to `_.some` and deprecated it.
-* Converted `CollectionUtils.hasProperty` to `_.has` and deprecated it.
+* **Removed** `Async.whenIdle` - use `_.debounce`
+* **Removed** `NumberUtils.getRandomNumber()` - use `_.random` (entire NumberUtils module was removed)
+* Deprecated `StringUtils.htmlEscape` - use `_.escape`
+* Deprecated `CollectionUtils.indexOf` - use `_.findIndex`
+* Deprecated `CollectionUtils.forEach` - use `_.forEach`
+* Deprecated `CollectionUtils.some` - use `_.some`
+* Deprecated `CollectionUtils.hasProperty` - use `_.has`
 
-Functions are deprecated by adding a `@deprecated` annotation, and by replacing their implementation with the corresponding Lo-Dash function and a `console.warn` message.
+The deprecated functions now simply call over to the corresponding Lo-Dash function.
 
-**Image files** - The [Preview Images Spec](https://github.com/adobe/brackets/wiki/Preview-Images-Spec) describes the API changes for the new Preview Images feature.
+**Image files** - `getCurrentDocument()` and `getActiveEditor()` will return null any time an image is open. Use `getCurrentlyViewedPath()` if you need to get the current file even when it's an image. See the [Preview Images Spec](https://github.com/adobe/brackets/wiki/Preview-Images-Spec) for details.
 
-**Inline editors** - `InlineTextEditor.editors` (array of editors) was removed and replaced with `InlineTextEditor.editor` (single editor). With current usage, there was never more than a single element in the array anyway, so this simplifies the API.
+**Inline editors** - `InlineTextEditor.editors` (array of Editors) was removed and replaced with `InlineTextEditor.editor` (single Editor). With current usage, there was never more than a single element in the array anyway, so this simplifies the API.
 
-**Files** - usage of trailing-"/" was cleaned up.
+All InlineWidget subclasses now have a close button automatically inserted at a fixed position in the upper-left. Ensure your widget's UI stays clear of this area.
 
-The "canonical" folder path format used in `DirectoryEntry.fullPath` includes a trailing "/".  However, we have some Brackets code that requires or generates paths in the _opposite_ format.  Several of those cases were cleaned up:
+**Dialogs** - Modal Dialogs are now [auto-centered](https://github.com/adobe/brackets/pull/5399) both horizontally and vertically over the Brackets Window. Extensions that set custom margins on a dialog's top level DOM node may conflict with this.
 
-* Renamed `FileUtils.canonicalizeFolderPath()` to `stripTrailingSlash()` since it actually makes paths **not** canonical. Old API was **deprecated** since it's still used by several extensions.
-* Added warning to docs for these APIs that return non-canonical paths: `FileUtils.getNativeBracketsDirectoryPath()` and `FileUtils.getNativeModuleDirectoryPath()`.
-* Documented that `ProjectManager._loadProject()` and `openProject()` support receiving non-canonical paths
-* Fixed several `ProjectManager` APIs that used to return and/or receive non-canonical paths: `getInitialProjectPath()`, `_getWelcomeProjectPath()`, and `updateWelcomeProjectPath()`.  No extensions were found that use these APIs.
+**Files** - `FileUtils.canonicalizeFolderPath()` is deprecated (it actually makes paths **not** canonical: the standard format used by DirectoryEntry.fullPath includes a trailing "/", while this function removes the trailing "/"). Use `stripTrailingSlash()` if you need to explicitly _un_-normalize a path.
+
+`ProjectManager.getInitialProjectPath()` and `updateWelcomeProjectPath()` now include a trailing "/" as well (previously they did not). (No known extensions use these APIs).
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -69,6 +69,7 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 * [Mac: Accept folder dropped on dock icon](https://github.com/adobe/brackets-shell/pull/353) by [Eugene Ostroukhov](https://github.com/eugeneo)
+* [Replace with regexp subexpression substitutions ($1, etc.)](https://github.com/adobe/brackets/pull/5618) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Start Live Development even if no open file](https://github.com/adobe/brackets/pull/5547) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Close Others [Above/Below] in Working Files context menu](https://github.com/adobe/brackets/pull/4590) by [Sathyamoorthi](https://github.com/sathyamoorthi)
 * [Find in Files: Better feedback while searching & when no results](https://github.com/adobe/brackets/pull/5477) by [Sharat M R](https://github.com/cosmosgenius)
