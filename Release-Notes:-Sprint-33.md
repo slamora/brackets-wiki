@@ -47,6 +47,8 @@ The deprecated functions now simply call over to the corresponding Lo-Dash funct
 
 All InlineWidget subclasses now have a close button automatically inserted at a fixed position in the upper-left. Ensure your widget's UI stays clear of this area.
 
+**Extension load order** - User/dev extensions are now loaded after _all_ built-in Brackets extensions have loaded. Previously, the order was unpredictable - making menu item order inconsistent.
+
 **Dialogs** - Modal Dialogs are now [auto-centered](https://github.com/adobe/brackets/pull/5399) both horizontally and vertically over the Brackets Window. Extensions that set custom margins on a dialog's top level DOM node may conflict with this.
 
 **Files** - `FileUtils.canonicalizeFolderPath()` is deprecated (it actually makes paths **not** canonical: the standard format used by DirectoryEntry.fullPath includes a trailing "/", while this function removes the trailing "/"). Use `stripTrailingSlash()` if you need to explicitly _un_-normalize a path.
