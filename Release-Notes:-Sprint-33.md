@@ -2,7 +2,7 @@ What's New in Sprint 33
 -----------------------
 * **Quick Edit**
     * [Create new CSS rules via Quick Edit](https://trello.com/c/5I5AddGo/599-5-css-quick-edit-create-new-selector): In HTML files, click the CSS inline editor's "New Rule" button (or press Cmd/Ctrl-Alt-N) to create a new CSS rule based on the tag/class/id your cursor was on. The inline editor now appears even when no existing rules match the search, so you can easily create new CSS rules at any time.
-    * [Visually edit CSS transition Bezier timing functions](https://trello.com/c/5EPJdO1q/838-2-quick-edit-css-cubic-bezier): Just invoke Quick Edit when your cursor is on any `cubic-bezier()` function in a CSS rule! (or a named shorthand such as `linear`, `ease-in`, etc.)
+    * [Visually edit CSS transition Bezier timing functions](https://trello.com/c/5EPJdO1q/838-2-quick-edit-css-cubic-bezier): Just invoke Quick Edit when your cursor is on any `cubic-bezier()` function in a CSS rule! (or a named shorthand such as `linear`, `ease-in`, etc.) to get a graphical editor based on Lea Verou's [cubic-bezier.com](http://cubic-bezier.com/).
 * **Images**
     * [Preview image files](https://trello.com/c/l9AcILkC/24-8-preview-images): Select in image in the file tree (or via Quick Open) to see a preview in the editor area.
 * **Search/Replace**
