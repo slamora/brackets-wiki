@@ -1,7 +1,5 @@
 # File System Evolution #
 
-Status: Proposal
-
 ## Introduction ##
 
 The file system APIs in Brackets are a bit chaotic, and usage is inconsistent. Here are just a few issues:
@@ -37,11 +35,6 @@ There are a few basic rules for using the new file system.
 * There is a forced 1:1 relationship between `File` and `Directory` objects and their representation on disk. If two pieces of code ask the `FileSystem` for the same file path, they will both be returned the same `File` object.
 * When caching file (or directory) related data, you should use the file.id property as the key, and _not_ the file.fullPath. The path of a file is subject to change if any of its parent directories are renamed.
 * Listen for `"change"` events on `FileSystem` to be notified of file or directory changes. 
-
-### Prototype ###
-A prototype implementation can be found in the `glenn/file-system` [branch](https://github.com/adobe/brackets/tree/glenn/file-system). 
-
-Most functionality works. Existing unit tests pass, but there are no unit tests for the new code (yes, shame on me...). Many extensions are broken. 
 
 ##API##
 
@@ -87,6 +80,3 @@ In both cases, changes made _via the file system's own APIs_ are always reflecte
 For _external_ changes, there may be a significant delay before a "change" event is dispatched (file watchers may be unreliable or laggy). But changes made via the file system's _own_ APIs dispatch a "change" event immediately, after the operation in question finishes running its callback.
 
 > Note: It's always fine as a (less-performant) shortcut to treat change notifications as if they were less fine-grained. For example, the prototype refreshes the entire folder tree view whenever any Directory is passed with a change event. This is overkill, but simpler to implement than only refreshing the affected part of the tree.
-
-##Next Steps##
-Several core developers are working on getting this implemented. We will share a more detailed API proposal with the community soon, but in the meantime feel free to take a look at the [unstable file-system dev branch](https://github.com/adobe/brackets/tree/glenn/file-system).
