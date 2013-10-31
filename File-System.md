@@ -80,3 +80,58 @@ In both cases, changes made _via the file system's own APIs_ are always reflecte
 For _external_ changes, there may be a significant delay before a "change" event is dispatched (file watchers may be unreliable or laggy). But changes made via the file system's _own_ APIs dispatch a "change" event immediately, after the operation in question finishes running its callback.
 
 > Note: It's always fine as a (less-performant) shortcut to treat change notifications as if they were less fine-grained. For example, the prototype refreshes the entire folder tree view whenever any Directory is passed with a change event. This is overkill, but simpler to implement than only refreshing the affected part of the tree.
+
+##Performance Numbers##
+Performance numbers between the old file system and new file system. 
+
+**Note:** These are the baseline numbers that do _not_ include file caching or file watchers.
+
+<table>
+  <thead>
+    <tr>
+      <th>test</th>
+      <th>old file system</th>
+      <th>new file system</th>
+      <th>difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Open File</td>
+      <td>194ms</td>
+      <td>182ms</td>
+      <td>6.5% improvement</td>
+    </tr>
+    <tr>
+      <td>Load Project</td>
+      <td>631ms</td>
+      <td>705ms</td>
+      <td>12% regression</td>
+    </tr>
+    <tr>
+      <td>Find in Files</td>
+      <td>2749ms</td>
+      <td>1568ms</td>
+      <td>43% improvement</td>
+    </tr>
+    <tr>
+      <td>JS Code Hints</td>
+      <td>61ms</td>
+      <td>63ms</td>
+      <td>3% regression</td>
+    </tr>
+    <tr>
+      <td>Quick Open</td>
+      <td>55ms</td>
+      <td>64ms</td>
+      <td>15% regression</td>
+    </tr>
+    <tr>
+      <td>Memory Usage</td>
+      <td>39MB</td>
+      <td>37.4MB</td>
+      <td>3% improvement</td>
+    </tr>
+  </tbody>
+</table>
+All numbers are averaged over several runs. Memory usage taken after opening JSCode hints and performing "Find in Files". The load project regression is due to additional work at project load time. This work results in significantly faster initial time for "quick open" (not reflected in these numbers).
