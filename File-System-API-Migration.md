@@ -65,7 +65,7 @@ Under the hood, the old API has been reimplemented in terns of the new APIs, so 
 
 ### Extensions that will break
 
-The following 7 extensions use at least one API on the "Removed" list:
+The following 9 extensions use at least one API on the "Removed" list:
 
 * angularui.angularjs -- (FileEntry.getMetadata())
 * bsirlinger.github-access -- (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create}), FileEntry.createWriter())
