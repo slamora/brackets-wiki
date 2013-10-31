@@ -35,6 +35,7 @@ These APIs are completely gone - code using them will throw exceptions. Extensio
 <tr><td>ProjectManager "projectFilesChange" event</td><td>FileSystem "change" event</td><td></td><td>2</td></tr>
 <tr><td>fileEntry.getMetadata()</td><td>file.stat()</td><td></td><td>1</td></tr>
 <tr><td>NativeFileError.*</td><td>FileSystemError.*<br>(different constants)</td><td></td><td>1</td></tr>
+<tr><td>error.name</td><td>error</td><td>e.g. when passing to FileUtils.showFileOpenError()</td><td>>= 2</td></tr>
 <tr><td>instanceof NativeFileSystem.InaccessibleFileEntry</td><td>instanceof InMemoryFile</td><td></td><td>1</td></tr>
 <tr><td>entry.remove()</td><td>entry.moveToTrash()</td><td></td><td>None</td></tr>
 <tr><td>entry.filesystem</td><td>n/a</td><td></td><td>None</td></tr>
@@ -71,6 +72,8 @@ The following 7 extensions use at least one API on the "Removed" list:
 * xunit -- (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create})
 * zaggino.brackets-git (won't crash, but notable bug) -- ("projectFilesChange" event)
 * variousimprovements (won't crash, minor bug) -- ("projectFilesChange" event)
+* camden.caniuse (won't crash, minor bug) -- (FileError.name)
+* jrowny.brackets.snippets (won't crash, minor bug) -- (FileError.name, though was buggy already)
 * pflynn.brackets.editor.nav (won't crash, very minor bug) -- (InaccessibleFileEntry)
 * interactive-linter (no effect on behavior) -- (NativeFileError)
 
