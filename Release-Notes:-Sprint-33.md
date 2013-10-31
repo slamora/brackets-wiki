@@ -10,7 +10,7 @@ What's New in Sprint 33
     * [Better Find in Files feedback](https://github.com/adobe/brackets/pull/5477): Search bar remains open while search is in progress, and turns red when no results found (like regular Find).
 * **Files and Folders**
     * [Mac: Drag folders onto dock icon](https://github.com/adobe/brackets-shell/pull/353): Previously, folders could only be dragged onto an already-open Brackets window.
-    * [Close Others [Above/Below] in Working Files context menu](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these three new commands.
+    * [Close Others [Above/Below]](https://github.com/adobe/brackets/pull/4590): Quickly close batches of files with these three new commands in the Working Files context menu.
 * **Extensions**
     * [Install older version of extension if latest isn't compatible](github.com/adobe/brackets/pull/5653): Previously, Extension Manager would refuse to install the extension at all.
 * **Live Preview**
