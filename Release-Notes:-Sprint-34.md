@@ -6,9 +6,7 @@ What's New in Sprint 34
 -----------------------
 * **Overall UI**
     * [Dark themed window chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
-
 * **Files and Folders**
-
     * Close Others [Above/Below] in Working Files context menu: Quickly close batches of files with these three new commands.
 
 
@@ -28,8 +26,6 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
-* **Closing files** - TODO: new DocumentCommandHandlers API for closing multiple files in a batch
-
 TODO
 
 
@@ -46,7 +42,7 @@ Community contributions to Brackets
 TODO
 
 #### Pulling source code from Git
-* A new brackets-shell build is _required_ for this sprint (due to new CEF libraries, Dark Shell changes on Mac and Win). Be sure to rerun `grunt setup` before building.
+TODO: is new brackets-shell build required?
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
