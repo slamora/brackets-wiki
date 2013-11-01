@@ -11,14 +11,14 @@ Work in Progress, Sprint 34
 
 ## Find in Current File
 
-## Find in Files
+## Find/Replace in Multiple Files
 
 ### Scope
 
 How the user selects the scope of files to search.
 
 * Sublime - In Selected Folder, In Project, In explicit white-list/black-list, Open Folder Dialog
-* TextMate - UI shared with Find in current file.
+* TextMate - Project Folder, Other Folder
 * WebStorm
 * Coda
 * Notepad++
@@ -26,8 +26,8 @@ How the user selects the scope of files to search.
 
 ### Performance
 
-* Sublime
-* TextMate
+* Sublime - Async results display. Cancelable.
+* TextMate - Async results display. Cancelable.
 * WebStorm
 * Coda
 * Notepad++
@@ -37,8 +37,17 @@ How the user selects the scope of files to search.
 
 How the results are displayed and accessed
 
-* Sublime
-* TextMate
+* Sublime - New "editor" opened with results grouped by file. Double click a match to open an editor.
+* TextMate - Find dialog groups results by file. Select a match to display the file in the editor. Double click a match to dismiss the dialog and edit the file.
+* WebStorm
+* Coda
+* Notepad++
+* Dreamweaver
+
+### Search History
+
+* Sublime - Find Results "editor" remains open unless closed by user. Subsequent results are appended to this editor. Query history is traversed with Arrow Up/Down.
+* TextMate - Most recent query results are displayed when dialog is re-opened. Query history is traversed with Arrow Up/Down or dropdown menu. 
 * WebStorm
 * Coda
 * Notepad++
@@ -48,8 +57,8 @@ How the results are displayed and accessed
 
 How multi-file replace is handled.
 
-* Sublime
-* TextMate
+* Sublime - Find query is executed just-in-time. Confirmation dialog "Replace N occurrences across M files?". Files are opened in editors without saving changes. User must manually Save or Save All.
+* TextMate - Find query is exectured just-in-time. Changes are pending until find dialog is closed. Save confirmation dialog upon closing.
 * WebStorm
 * Coda
 * Notepad++
