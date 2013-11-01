@@ -11,6 +11,17 @@ Work in Progress, Sprint 34
 
 ## Find in Current File
 
+* Dreamweaver
+    * All types of find and replace (in-file and multi-file) are integrated into a single dialog, controlled by a "Find in:" dropdown at the top that sets the scope of the search. (See the Find in Files section for more details on that case.) For single-file searches, the options available are "Current File" and "Selected Text".
+    * The dialog always has both Find and Replace fields. Dialog actions include "Find Next" (go to next match), "Replace" (replace the currently selected text if it matches, then do a Find Next), "Find All" (open a panel listing all matches in the current scope), and "Replace All" (replace all matches in the current scope and open a panel listing the changes).
+    * Options are "Match case", "Match whole word", "Ignore whitespace", and "Use regular expression".
+    * In addition to simple textual searches in code, you can do “HTML-aware” searches that parse the HTML and let you do complex queries:
+        * Search in “HTML text” (handles entity translation, ignores markup)
+        * Structural searches: you can search for instances of a specific tag with or without particular attributes/values, or containing/not containing other tags, and specify multiple criteria at once.
+        * When searching for tags, you can choose particular actions to do on those tags, like setting/clearing attributes, adding new tags inside or around, stripping tags, etc.
+    * You can save and load queries.
+    * I’m pretty sure you used to be able to choose particular items in the result list of a Find All and then replace them individually, but it looks like that functionality no longer exists. I’m guessing this is because the logic for keeping the Find list up to date as you did other replacements or made edits to the same documents was fragile.
+
 ## Find/Replace in Multiple Files
 
 ### Scope
@@ -22,7 +33,7 @@ How the user selects the scope of files to search.
 * WebStorm
 * Coda
 * Notepad++
-* Dreamweaver
+* Dreamweaver - Integrated with the ordinary Find dialog. Dropdown at the top lets you choose Selected Text, Current Document, Open Documents, Folder, Selected Files (in the Files panel), Entire Site (project).
 
 ### Performance
 
@@ -31,7 +42,7 @@ How the user selects the scope of files to search.
 * WebStorm
 * Coda
 * Notepad++
-* Dreamweaver
+* Dreamweaver - Async results display with progress bar showing files being scanned. Cancelable.
 
 ### Results
 
@@ -43,6 +54,9 @@ How the results are displayed and accessed
 * Coda
 * Notepad++
 * Dreamweaver
+    * If you're doing a multi-file search, clicking Find Next repeatedly will find instances in the current file, and then when you get to the end of the file, clicking Find Next will open the next file in the scope that has a match and go to the first match.
+    * You can also click a separate Find All button to have it search the entire scope and open a results panel at the bottom, similar to what's in Brackets. You can click a button to reopen the Find dialog with the same query, or export the results to a text file. (I don't think those are important for us.)
+    * All the same query types are available as in single-file Find.
 
 ### Search History
 
@@ -51,7 +65,7 @@ How the results are displayed and accessed
 * WebStorm
 * Coda
 * Notepad++
-* Dreamweaver
+* Dreamweaver - No query history, but you can save/load queries.
 
 ### Replace
 
@@ -63,6 +77,8 @@ How multi-file replace is handled.
 * Coda
 * Notepad++
 * Dreamweaver
+    * Same as multi-file search; the replace field is always visible in the dialog, so if you enter some replacement text and hit Replace it will replace the current instance (if you're already at one) and then find the next occurrence within the scope you've set (so if you're at the end of one file, it will find the next file and open it); or you can hit Replace All to replace all instances within the selected scope.
+    * All the same replacement types and options are available as in single-file Replace.
 
 ### Undo 
 * Sublime - No additional undo feature. Each dirty editor is treated normally.
@@ -70,7 +86,7 @@ How multi-file replace is handled.
 * WebStorm
 * Coda
 * Notepad++
-* Dreamweaver
+* Dreamweaver - For documents that are in the scope but not currently open, if you do Replace, it will navigate to and open the document, so when you do the replacement, it just does it in memory and doesn't save it to disk automatically. If you do Replace All, the replacement is done in memory on files that are open, but is done directly in files on disk that aren't open (so those replacements can't be undone; you get a warning to that effect).
 
 ### Features to investigate
 
