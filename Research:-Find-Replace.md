@@ -37,8 +37,8 @@ How the user selects the scope of files to search.
 
 ### Performance
 
-* Sublime - Async results display. Cancelable.
-* TextMate - Async results display. Cancelable.
+* Sublime - Async results display. Total file count, but no progress. Cancelable.
+* TextMate - Async results display. Progress is reported only as the current file being read. Total files searched shown when finished. Cancelable.
 * WebStorm
 * Coda
 * Notepad++
