@@ -9,6 +9,52 @@ Work in Progress, Sprint 34
 * Notepad++
 * Dreamweaver
 
+## Find in Current File
+
+## Find in Files
+
+### Scope
+
+How the user selects the scope of files to search.
+
+* Sublime - In Selected Folder, In Project, In explicit white-list/black-list, Open Folder Dialog
+* TextMate - UI shared with Find in current file.
+* WebStorm
+* Coda
+* Notepad++
+* Dreamweaver
+
+### Performance
+
+* Sublime
+* TextMate
+* WebStorm
+* Coda
+* Notepad++
+* Dreamweaver
+
+### Results
+
+How the results are displayed and accessed
+
+* Sublime
+* TextMate
+* WebStorm
+* Coda
+* Notepad++
+* Dreamweaver
+
+### Replace
+
+How multi-file replace is handled.
+
+* Sublime
+* TextMate
+* WebStorm
+* Coda
+* Notepad++
+* Dreamweaver
+
 ### Features to investigate
 
 * Find within file
