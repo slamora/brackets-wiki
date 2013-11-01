@@ -58,7 +58,15 @@ How the results are displayed and accessed
 How multi-file replace is handled.
 
 * Sublime - Find query is executed just-in-time. Confirmation dialog "Replace N occurrences across M files?". Files are opened in editors without saving changes. User must manually Save or Save All.
-* TextMate - Find query is exectured just-in-time. Changes are pending until find dialog is closed. Save confirmation dialog upon closing.
+* TextMate - Find query is executed just-in-time. Changes are pending until find dialog is closed. Save confirmation dialog upon closing.
+* WebStorm
+* Coda
+* Notepad++
+* Dreamweaver
+
+### Undo 
+* Sublime - No additional undo feature. Each dirty editor is treated normally.
+* TextMate - Once dialog is confirmed, there is no undo.
 * WebStorm
 * Coda
 * Notepad++
