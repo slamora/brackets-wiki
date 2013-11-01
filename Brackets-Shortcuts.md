@@ -176,13 +176,6 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
-        <td class="shortcut-base">F</td>
-        <td class="shortcut-binding">Shift-Ctrl-F</td>
-        <td class="shortcut-cmd-id">replace</td>
-        <td class="shortcut-cmd-name">replace</td>
-        <td class="shortcut-orig">CodeMirror</td>
-    </tr>
-    <tr>
         <td class="shortcut-base">G</td>
         <td class="shortcut-binding">Ctrl-G</td>
         <td class="shortcut-cmd-id">navigate.gotoLine</td>
@@ -205,7 +198,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     </tr>
     <tr>
         <td class="shortcut-base">G</td>
-        <td class="shortcut-binding">Shift-Ctrl-G</td>
+        <td class="shortcut-binding">Shift-Cmd-G</td>
         <td class="shortcut-cmd-id">findPrev</td>
         <td class="shortcut-cmd-name">findPrev</td>
         <td class="shortcut-orig">CodeMirror</td>
