@@ -17,7 +17,7 @@ Work in Progress, Sprint 34
     * Options are "Match case", "Match whole word", "Ignore whitespace", and "Use regular expression".
     * In addition to simple textual searches in code, you can do “HTML-aware” searches that parse the HTML and let you do complex queries:
         * Search in “HTML text” (handles entity translation, ignores markup)
-        * Structural searches: you can search for instances of a specific tag with or without particular attributes/values, or containing/not containing other tags, and specify multiple criteria at once.
+        * Structural searches: you can search for instances of a specific tag with or without particular attributes/values, or containing/not containing other tags or specific text, and specify multiple criteria at once.
         * When searching for tags, you can choose particular actions to do on those tags, like setting/clearing attributes, adding new tags inside or around, stripping tags, etc.
     * You can save and load queries.
     * I’m pretty sure you used to be able to choose particular items in the result list of a Find All and then replace them individually, but it looks like that functionality no longer exists. I’m guessing this is because the logic for keeping the Find list up to date as you did other replacements or made edits to the same documents was fragile.
