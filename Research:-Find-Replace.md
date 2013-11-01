@@ -38,7 +38,7 @@ How the user selects the scope of files to search.
 How the results are displayed and accessed
 
 * Sublime - New "editor" opened with results grouped by file. Double click a match to open an editor.
-* TextMate - Find dialog groups results by file. Select a match to display the file in the editor. Double click a match to dismiss the dialog and edit the file.
+* TextMate - Find dialog groups results by file. Select a match to display the file in the editor. Double click a match to dismiss the dialog and edit the file. Gutter displays a search icon for lines with a match.
 * WebStorm
 * Coda
 * Notepad++
