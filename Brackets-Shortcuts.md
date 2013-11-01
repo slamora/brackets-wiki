@@ -53,7 +53,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-base">&#x2F;</td>
         <td class="shortcut-binding">Ctrl-&#x2F;</td>
         <td class="shortcut-cmd-id">edit.lineComment</td>
-        <td class="shortcut-cmd-name">Comment&#x2F;Uncomment Lines</td>
+        <td class="shortcut-cmd-name">Toggle Line Comment</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
@@ -62,6 +62,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-id">pflynn.searchCommands</td>
         <td class="shortcut-cmd-name">Search Commands</td>
         <td class="shortcut-orig">Extension</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">&#x2F;</td>
+        <td class="shortcut-binding">Ctrl+Alt+&#x2F;</td>
+        <td class="shortcut-cmd-id">redmunds.show-shortcuts.view.shortcuts</td>
+        <td class="shortcut-cmd-name">Show Shortcuts</td>
+        <td class="shortcut-orig">Extension (Show-shortcuts)</td>
     </tr>
     <tr>
         <td class="shortcut-base">0</td>
