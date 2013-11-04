@@ -41,7 +41,7 @@ How the user selects the scope of files to search.
 * Sublime - Async results display. Total file count, but no progress. Cancelable.
 * TextMate - Async results display. Progress is reported only as the current file being read. Total files searched shown when finished. Cancelable.
 * WebStorm
-* Coda
+* Coda - Async results display. Progress is reported only as the current file being read. Cancelable.
 * Notepad++
 * Dreamweaver - Async results display with progress bar showing files being scanned. Cancelable.
 
@@ -52,7 +52,7 @@ How the results are displayed and accessed
 * Sublime - New "editor" opened with results grouped by file. Double click a match to open an editor.
 * TextMate - Find dialog groups results by file. Select a match to display the file in the editor. Double click a match to dismiss the dialog and edit the file. Gutter displays a search icon for lines with a match.
 * WebStorm
-* Coda
+* Coda - Sidebar groups results by file with a per-file result count. Select a match to display the file in the editor.
 * Notepad++
 * Dreamweaver
     * If you're doing a multi-file search, clicking Find Next repeatedly will find instances in the current file, and then when you get to the end of the file, clicking Find Next will open the next file in the scope that has a match and go to the first match.
@@ -64,7 +64,7 @@ How the results are displayed and accessed
 * Sublime - Find Results "editor" remains open unless closed by user. Subsequent results are appended to this editor. Query history is traversed with Arrow Up/Down.
 * TextMate - Most recent query results are displayed when dialog is re-opened. Query history is traversed with Arrow Up/Down or dropdown menu. 
 * WebStorm
-* Coda
+* Coda - None? (Clear Search History is an option, but not obvious how it's accessed)
 * Notepad++
 * Dreamweaver - No query history, but you can save/load queries.
 
@@ -75,7 +75,7 @@ How multi-file replace is handled.
 * Sublime - Find query is executed just-in-time. Confirmation dialog "Replace N occurrences across M files?". Files are opened in editors without saving changes. User must manually Save or Save All.
 * TextMate - Find query is executed just-in-time. Changes are pending until find dialog is closed. Save confirmation dialog upon closing.
 * WebStorm
-* Coda
+* Coda - Prior query required, *not* just-in-time. If files are open the editors are dirtied. If not, changes are saved and not undoable.
 * Notepad++
 * Dreamweaver
     * Same as multi-file search; the replace field is always visible in the dialog, so if you enter some replacement text and hit Replace it will replace the current instance (if you're already at one) and then find the next occurrence within the scope you've set (so if you're at the end of one file, it will find the next file and open it); or you can hit Replace All to replace all instances within the selected scope.
@@ -85,7 +85,7 @@ How multi-file replace is handled.
 * Sublime - No additional undo feature. Each dirty editor is treated normally.
 * TextMate - Once dialog is confirmed, there is no undo.
 * WebStorm
-* Coda
+* Coda - Can only undo files that were opened before Replace All operation.
 * Notepad++
 * Dreamweaver - For documents that are in the scope but not currently open, if you do Replace, it will navigate to and open the document, so when you do the replacement, it just does it in memory and doesn't save it to disk automatically. If you do Replace All, the replacement is done in memory on files that are open, but is done directly in files on disk that aren't open (so those replacements can't be undone; you get a warning to that effect).
 
