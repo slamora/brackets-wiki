@@ -31,7 +31,7 @@ How the user selects the scope of files to search.
 
 * Sublime - In Selected Folder, In Project, In explicit white-list/black-list, Open Folder Dialog
 * TextMate - Project Folder, Other Folder
-* WebStorm
+* WebStorm - Project Folder, Open Folder Dialog (w/ recursive option), Custom (Project and Libraries, Project Production Files, Project Test Files, Open Files, Module '<name>', Files in Previous Search Result, Selected Files), Source Control (Changed Files, Default). Optional file masks, e.g. *.mxml.
 * Coda - Open Folder Dialog, File Tree (left), Sidebar (right, also file tree?), Open Files
 * Notepad++
 * Dreamweaver - Integrated with the ordinary Find dialog. Dropdown at the top lets you choose Selected Text, Current Document, Open Documents, Folder, Selected Files (in the Files panel), Entire Site (project).
@@ -40,7 +40,7 @@ How the user selects the scope of files to search.
 
 * Sublime - Async results display. Total file count, but no progress. Cancelable.
 * TextMate - Async results display. Progress is reported only as the current file being read. Total files searched shown when finished. Cancelable.
-* WebStorm
+* WebStorm - Foreground search with option to move to background. Async results display. Progress bar. Cancelable. "Too many usages" warning when results greater than 1001.
 * Coda - Async results display. Progress is reported only as the current file being read. Cancelable.
 * Notepad++
 * Dreamweaver - Async results display with progress bar showing files being scanned. Cancelable.
@@ -51,7 +51,7 @@ How the results are displayed and accessed
 
 * Sublime - New "editor" opened with results grouped by file. Double click a match to open an editor.
 * TextMate - Find dialog groups results by file. Select a match to display the file in the editor. Double click a match to dismiss the dialog and edit the file. Gutter displays a search icon for lines with a match.
-* WebStorm
+* WebStorm - Find Occurrences panel groups results by folder, then by file. Double click a match to open an editor. Total number of occurrences displayed at each group level.
 * Coda - Sidebar groups results by file with a per-file result count. Select a match to display the file in the editor.
 * Notepad++
 * Dreamweaver
