@@ -31,9 +31,9 @@ How the user selects the scope of files to search.
 
 * Sublime - In Selected Folder, In Project, In explicit white-list/black-list, Open Folder Dialog
 * TextMate - Project Folder, Other Folder
-* WebStorm - Project Folder, Open Folder Dialog (w/ recursive option), Custom (Project and Libraries, Project Production Files, Project Test Files, Open Files, Module '<name>', Files in Previous Search Result, Selected Files), Source Control (Changed Files, Default). Optional file masks, e.g. *.mxml. Scope can be narrowed further to string literals and comments.
+* WebStorm - Project Folder, Open Folder Dialog w/ sub-folder option, Custom (Project and Libraries, Project Production Files, Project Test Files, Open Files, Module '<name>', Files in Previous Search Result, Selected Files), Source Control (Changed Files, Default). Optional file masks, e.g. *.mxml. Scope can be narrowed further to string literals and comments.
 * Coda - Open Folder Dialog, File Tree (left), Sidebar (right, also file tree?), Open Files
-* Notepad++ - Single absolute path (or Open Folder Dialog). Combo box input with path history. Optional file mask, also with history.
+* Notepad++ - Single absolute path (or Open Folder Dialog) w/ sub-folder option. Combo box input with path history. Optional file mask, also with history.
 * Dreamweaver - Integrated with the ordinary Find dialog. Dropdown at the top lets you choose Selected Text, Current Document, Open Documents, Folder, Selected Files (in the Files panel), Entire Site (project).
 
 ### Performance
@@ -42,7 +42,7 @@ How the user selects the scope of files to search.
 * TextMate - Async results display. Progress is reported only as the current file being read. Total files searched shown when finished. Cancelable.
 * WebStorm - Foreground search with option to move to background. Async results display. Progress bar. Cancelable. "Too many usages" warning when results greater than 1001.
 * Coda - Async results display. Progress is reported only as the current file being read. Cancelable.
-* Notepad++
+* Notepad++ - Synchronous results display. No progress. Cancelable.
 * Dreamweaver - Async results display with progress bar showing files being scanned. Cancelable.
 
 ### Results
@@ -53,7 +53,7 @@ How the results are displayed and accessed
 * TextMate - Find dialog groups results by file. Select a match to display the file in the editor. Double click a match to dismiss the dialog and edit the file. Gutter displays a search icon for lines with a match.
 * WebStorm - Find Occurrences panel groups results by folder, then by file. Double click a match to open an editor. Total number of occurrences displayed at each group level. Toolbar buttons for expand/collapse all results. Toolbar buttons and keyboard shortcuts for next/previous result.
 * Coda - Sidebar groups results by file with a per-file result count. Select a match to display the file in the editor.
-* Notepad++
+* Notepad++ - Find result panel groups result by file. Double click a match to open an editor.
 * Dreamweaver
     * If you're doing a multi-file search, clicking Find Next repeatedly will find instances in the current file, and then when you get to the end of the file, clicking Find Next will open the next file in the scope that has a match and go to the first match.
     * You can also click a separate Find All button to have it search the entire scope and open a results panel at the bottom, similar to what's in Brackets. You can click a button to reopen the Find dialog with the same query, or export the results to a text file. (I don't think those are important for us.)
@@ -65,7 +65,7 @@ How the results are displayed and accessed
 * TextMate - Most recent query results are displayed when dialog is re-opened. Query history is traversed with Arrow Up/Down or dropdown menu. 
 * WebStorm - Find in Path dialog combo box lists search history, has keyboard navigation.
 * Coda - History appears in the Sidebar search dropdown menu. No keyboard navigation in input field.
-* Notepad++
+* Notepad++ - Find results panel groups queries in a tree view. Newer queries are appended to the bottom of the tree.
 * Dreamweaver - No query history, but you can save/load queries.
 
 ### Replace
@@ -76,7 +76,7 @@ How multi-file replace is handled.
 * TextMate - Find query is executed just-in-time. Changes are pending until find dialog is closed. Save confirmation dialog upon closing.
 * WebStorm - Replace in Path dialog nearly identical to Find in Path dialog. Find query is executed just-in-time. After find completes, popup appears with options for: Cancel, Replace, Skip, All in this File, All Files. 
 * Coda - Prior query required, *not* just-in-time. If files are open the editors are dirtied. If not, changes are saved and not undoable.
-* Notepad++
+* Notepad++ - Find query is executed just-in-time. Synchronous replace. If files are open the editors are dirtied. If not, changes are saved and not undoable.
 * Dreamweaver
     * Same as multi-file search; the replace field is always visible in the dialog, so if you enter some replacement text and hit Replace it will replace the current instance (if you're already at one) and then find the next occurrence within the scope you've set (so if you're at the end of one file, it will find the next file and open it); or you can hit Replace All to replace all instances within the selected scope.
     * All the same replacement types and options are available as in single-file Replace.
@@ -86,7 +86,7 @@ How multi-file replace is handled.
 * TextMate - Once dialog is confirmed, there is no undo.
 * WebStorm - Can only undo files that were opened before Replace All operation.
 * Coda - Can only undo files that were opened before Replace All operation.
-* Notepad++
+* Notepad++ - Can only undo files that were opened before Replace All operation.
 * Dreamweaver - For documents that are in the scope but not currently open, if you do Replace, it will navigate to and open the document, so when you do the replacement, it just does it in memory and doesn't save it to disk automatically. If you do Replace All, the replacement is done in memory on files that are open, but is done directly in files on disk that aren't open (so those replacements can't be undone; you get a warning to that effect).
 
 ### Features to investigate
