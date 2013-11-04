@@ -8,6 +8,7 @@ Work in Progress, Sprint 34
 * Coda 2
 * Notepad++
 * Dreamweaver
+* Visual Studio
 
 ## Find in Current File
 
