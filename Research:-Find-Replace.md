@@ -31,7 +31,7 @@ How the user selects the scope of files to search.
 
 * Sublime - In Selected Folder, In Project, In explicit white-list/black-list, Open Folder Dialog
 * TextMate - Project Folder, Other Folder
-* WebStorm - Project Folder, Open Folder Dialog (w/ recursive option), Custom (Project and Libraries, Project Production Files, Project Test Files, Open Files, Module '<name>', Files in Previous Search Result, Selected Files), Source Control (Changed Files, Default). Optional file masks, e.g. *.mxml.
+* WebStorm - Project Folder, Open Folder Dialog (w/ recursive option), Custom (Project and Libraries, Project Production Files, Project Test Files, Open Files, Module '<name>', Files in Previous Search Result, Selected Files), Source Control (Changed Files, Default). Optional file masks, e.g. *.mxml. Scope can be narrowed further to string literals and comments.
 * Coda - Open Folder Dialog, File Tree (left), Sidebar (right, also file tree?), Open Files
 * Notepad++
 * Dreamweaver - Integrated with the ordinary Find dialog. Dropdown at the top lets you choose Selected Text, Current Document, Open Documents, Folder, Selected Files (in the Files panel), Entire Site (project).
@@ -63,7 +63,7 @@ How the results are displayed and accessed
 
 * Sublime - Find Results "editor" remains open unless closed by user. Subsequent results are appended to this editor. Query history is traversed with Arrow Up/Down.
 * TextMate - Most recent query results are displayed when dialog is re-opened. Query history is traversed with Arrow Up/Down or dropdown menu. 
-* WebStorm
+* WebStorm - Find in Path dialog combo box lists search history, has keyboard navigation.
 * Coda - History appears in the Sidebar search dropdown menu. No keyboard navigation in input field.
 * Notepad++
 * Dreamweaver - No query history, but you can save/load queries.
@@ -74,7 +74,7 @@ How multi-file replace is handled.
 
 * Sublime - Find query is executed just-in-time. Confirmation dialog "Replace N occurrences across M files?". Files are opened in editors without saving changes. User must manually Save or Save All.
 * TextMate - Find query is executed just-in-time. Changes are pending until find dialog is closed. Save confirmation dialog upon closing.
-* WebStorm
+* WebStorm - Replace in Path dialog nearly identical to Find in Path dialog. Find query is executed just-in-time. After find completes, popup appears with options for: Cancel, Replace, Skip, All in this File, All Files. 
 * Coda - Prior query required, *not* just-in-time. If files are open the editors are dirtied. If not, changes are saved and not undoable.
 * Notepad++
 * Dreamweaver
@@ -84,7 +84,7 @@ How multi-file replace is handled.
 ### Undo 
 * Sublime - No additional undo feature. Each dirty editor is treated normally.
 * TextMate - Once dialog is confirmed, there is no undo.
-* WebStorm
+* WebStorm - Can only undo files that were opened before Replace All operation.
 * Coda - Can only undo files that were opened before Replace All operation.
 * Notepad++
 * Dreamweaver - For documents that are in the scope but not currently open, if you do Replace, it will navigate to and open the document, so when you do the replacement, it just does it in memory and doesn't save it to disk automatically. If you do Replace All, the replacement is done in memory on files that are open, but is done directly in files on disk that aren't open (so those replacements can't be undone; you get a warning to that effect).
