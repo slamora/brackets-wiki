@@ -51,7 +51,7 @@ How the results are displayed and accessed
 
 * Sublime - New "editor" opened with results grouped by file. Double click a match to open an editor.
 * TextMate - Find dialog groups results by file. Select a match to display the file in the editor. Double click a match to dismiss the dialog and edit the file. Gutter displays a search icon for lines with a match.
-* WebStorm - Find Occurrences panel groups results by folder, then by file. Double click a match to open an editor. Total number of occurrences displayed at each group level.
+* WebStorm - Find Occurrences panel groups results by folder, then by file. Double click a match to open an editor. Total number of occurrences displayed at each group level. Toolbar buttons for expand/collapse all results. Toolbar buttons and keyboard shortcuts for next/previous result.
 * Coda - Sidebar groups results by file with a per-file result count. Select a match to display the file in the editor.
 * Notepad++
 * Dreamweaver
