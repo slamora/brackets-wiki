@@ -33,7 +33,7 @@ How the user selects the scope of files to search.
 * TextMate - Project Folder, Other Folder
 * WebStorm - Project Folder, Open Folder Dialog (w/ recursive option), Custom (Project and Libraries, Project Production Files, Project Test Files, Open Files, Module '<name>', Files in Previous Search Result, Selected Files), Source Control (Changed Files, Default). Optional file masks, e.g. *.mxml. Scope can be narrowed further to string literals and comments.
 * Coda - Open Folder Dialog, File Tree (left), Sidebar (right, also file tree?), Open Files
-* Notepad++
+* Notepad++ - Single absolute path (or Open Folder Dialog). Combo box input with path history. Optional file mask, also with history.
 * Dreamweaver - Integrated with the ordinary Find dialog. Dropdown at the top lets you choose Selected Text, Current Document, Open Documents, Folder, Selected Files (in the Files panel), Entire Site (project).
 
 ### Performance
