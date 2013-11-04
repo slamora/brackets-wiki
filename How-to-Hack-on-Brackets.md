@@ -122,14 +122,14 @@ If you're only hacking on HTML/JS/CSS files, you can have the installed Brackets
   2. `cd` to the root of your brackets repo
   3. run `tools/setup_for_hacking.sh`, passing the full pathname to your installed Brackets.app. For example:
 ```bash
-tools/setup_for_hacking.sh "/Applications/Brackets Sprint 23.app"
+tools/setup_for_hacking.sh "/Applications/Brackets Sprint 33.app"
 ```
 4. On Windows:
   1. Open a Command Prompt _using "Run as Administrator"_
   2. `cd` to the root of your brackets repo
   3. run `tools\setup_for_hacking.bat`, passing the full path of the directory where Brackets.exe is installed. For example:
 ```bat
-tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 23"
+tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 33"
 ```
 5. Launch the installed copy of Brackets, select _Help > About_, and verify that the version number says "sprint xx _development_ build" instead of "sprint xx _experimental_ build". This indicates that you're running Brackets from your git repo instead of the installed build.
 
