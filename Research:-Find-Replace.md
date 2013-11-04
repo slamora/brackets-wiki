@@ -2,10 +2,10 @@ Work in Progress, Sprint 34
 
 ### Editors to investigate
 
-* Sublime
-* TextMate
+* Sublime Text 2
+* TextMate 2
 * WebStorm
-* Coda
+* Coda 2
 * Notepad++
 * Dreamweaver
 
@@ -31,7 +31,7 @@ How the user selects the scope of files to search.
 * Sublime - In Selected Folder, In Project, In explicit white-list/black-list, Open Folder Dialog
 * TextMate - Project Folder, Other Folder
 * WebStorm
-* Coda
+* Coda - Open Folder Dialog, File Tree (left), Sidebar (right, also file tree?), Open Files
 * Notepad++
 * Dreamweaver - Integrated with the ordinary Find dialog. Dropdown at the top lets you choose Selected Text, Current Document, Open Documents, Folder, Selected Files (in the Files panel), Entire Site (project).
 
