@@ -64,7 +64,7 @@ How the results are displayed and accessed
 * Sublime - Find Results "editor" remains open unless closed by user. Subsequent results are appended to this editor. Query history is traversed with Arrow Up/Down.
 * TextMate - Most recent query results are displayed when dialog is re-opened. Query history is traversed with Arrow Up/Down or dropdown menu. 
 * WebStorm
-* Coda - None? (Clear Search History is an option, but not obvious how it's accessed)
+* Coda - History appears in the Sidebar search dropdown menu. No keyboard navigation in input field.
 * Notepad++
 * Dreamweaver - No query history, but you can save/load queries.
 
