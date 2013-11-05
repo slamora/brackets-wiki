@@ -58,7 +58,8 @@ Under the hood, the old API has been reimplemented in terns of the new APIs, so 
 <tr><td>NativeFileSystem.resolveNativeFileSystemPath(fullPath)</td><td>filesystem.resolve(path)</td><td></td><td>4</td></tr>
 <tr><td>NativeFileSystem.requestNativeFileSystem(fullPath)... fs.root</td><td>filesystem.resolve(fullPath)</td><td></td><td>6</td></tr>
 <tr><td>NativeFileSystem.showOpenDialog()<br>NativeFileSystem.showSaveDialog()</td><td>filesystem.showOpenDialog()<br>filesystem.showSaveDialog()</td><td></td><td>4</td></tr>
-<tr><td>FileIndexManager.getFileInfoList("all")<br>FileIndexManager.getFileInfoList("...")</td><td>ProjectManager.getAllFiles()<br>ProjectManager.getAllFiles(filter)</td><td>Returns an array of Files, but they provide same properties as the old FileInfos</td><td>7</td></tr>
+<tr><td>FileIndexManager.getFileInfoList("all")<br>FileIndexManager.getFileInfoList("css")</td><td>ProjectManager.getAllFiles()<br>ProjectManager.getAllFiles(<br>
+&nbsp;&nbsp;&nbsp;ProjectManager.getLanguageFilter("css") )</td><td>Returns an array of Files, but they provide same properties as the old FileInfos</td><td>7</td></tr>
 <tr><td>FileIndexManager.getFilenameMatches("...", filename)</td><td>ProjectManager.getAllFiles(filter)</td><td></td><td>None</td></tr>
 <tr><td>brackets.fs.*()</td><td>(various)</td><td>These low-level APIs continue to exist, but have never been officially supported. They may break at any time.</td><td>Several</td></tr>
 </table>
