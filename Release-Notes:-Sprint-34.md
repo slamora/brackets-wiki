@@ -46,6 +46,8 @@ New/Improved Extensibility APIs
 -------------------------------
 **Quick Open** - TODO: extensions can specify a label
 
+**Documents** - TODO: new, faster getDocumentText() API
+
 
 Known Issues
 ------------
