@@ -53,9 +53,10 @@ Next, try running Brackets from the command line. Open up a Terminal (or Command
 ### Live Development Workflow with CSS, HTML, and JavaScript
 Currently, Live Development works differently for different types of files:
 * For CSS, your changes are applied in the browser immediately as you type, without reloading the page.
-* For HTML and JavaScript, when you save your changes, the page is reloaded to reflect your changes.
+* For HTML, most changes are applied in the browser immediately as you type. There are some case when page is syntactically invalid (e.g. after you type '<' for a new tag but before you type the closing '>') when changes are not pushed to browser -- you will see line number and Live Preview icon turn red in these cases. Brackets will resume pushing changes to browser when syntax becomes valid again.
+* For JavaScript, when you save your changes, the page is reloaded to reflect your changes.
 
-We plan to add as-you-type Live Development support for HTML and JavaScript content in the near future.
+We plan to add as-you-type Live Development support for JavaScript content in the near future.
 
 ### Install Chrome For Multiple User Accounts (Windows Only)
 If you get the error ``An error occurred when launching the browser. (error 2)`` when doing Live Development, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
