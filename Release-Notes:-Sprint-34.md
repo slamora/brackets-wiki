@@ -30,7 +30,9 @@ UI Changes
 
 **Installation** - see above. Starting _next_ sprint, newer versions of Brackets will overwrite previously installed versions.
 
-**Extensions** - the Extension Manager 'Available' and 'Installed' tabs have switched placed.
+**Extensions** - the Extension Manager 'Available' and 'Installed' tabs have switched places.
+
+**Search** - Find in Files and Quick Open now include files you have opened that lie outside the root folder of your project.
 
 
 API Changes
