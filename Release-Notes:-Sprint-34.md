@@ -35,7 +35,8 @@ UI Changes
 
 API Changes
 -----------
-**File System API** - TODO
+**File APIs** - TODO
+also, the already-deprecated FileUtils.getFilenameExtension() was removed
 
 **Linting** - TODO: new way needed to replace default JS linter
 
