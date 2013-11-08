@@ -28,7 +28,7 @@ These APIs are completely gone - code using them will throw exceptions. Extensio
 <tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Notes</b></td><td><b>Usage</b></td></tr>
 </thead>
 <tr><td>fileEntry.createWriter()... writer.write(text)</td><td>file.write(text)</td><td></td><td>5 (unused in 3)</td></tr>
-<tr><td>fileEntry.file()... new NativeFileSystem.FileReader().readAsText(fileObj)</td><td>file.readAsText()</td><td></td><td>None</td></tr>
+<tr><td>fileEntry.file()... new NativeFileSystem.FileReader().readAsText(fileObj)</td><td>file.read()</td><td></td><td>None</td></tr>
 <tr><td>directoryEntry.createReader().readEntries()</td><td>directory.getContents()</td><td></td><td>5</td></tr>
 <tr><td>DirectoryEntry.getFile(relpath, {create:true})</td><td>filesystem.getFileForPath(fullPath).write("")</td><td></td><td>2</td></tr>
 <tr><td>DirectoryEntry.getDirectory(relpath, {create:true})</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td></td><td>2</td></tr>
