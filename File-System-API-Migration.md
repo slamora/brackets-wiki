@@ -27,7 +27,6 @@ These APIs are completely gone - code using them will throw exceptions. Extensio
 <thead>
 <tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Notes</b></td><td><b>Usage</b></td></tr>
 </thead>
-<tr><td>fileEntry.createWriter()... writer.write(text)</td><td>file.write(text)</td><td></td><td>5 (unused in 3)</td></tr>
 <tr><td>fileEntry.file()... new NativeFileSystem.FileReader().readAsText(fileObj)</td><td>file.read()</td><td></td><td>None</td></tr>
 <tr><td>directoryEntry.createReader().readEntries()</td><td>directory.getContents()</td><td></td><td>5</td></tr>
 <tr><td>DirectoryEntry.getFile(relpath, {create:true})</td><td>filesystem.getFileForPath(fullPath).write("")</td><td></td><td>2</td></tr>
@@ -60,6 +59,7 @@ Under the hood, the old API has been reimplemented in terns of the new APIs, so 
 <tr><td>DirectoryEntry.getFile(relpath)</td><td>filesystem.resolve(dirFullPath + relpath)</td><td></td><td>4</td></tr>
 <tr><td>NativeFileSystem.resolveNativeFileSystemPath(fullPath)</td><td>filesystem.resolve(path)</td><td></td><td>4</td></tr>
 <tr><td>NativeFileSystem.requestNativeFileSystem(fullPath)... fs.root</td><td>filesystem.resolve(fullPath)</td><td></td><td>6</td></tr>
+<tr><td>fileEntry.createWriter()... writer.write(text)</td><td>file.write(text)</td><td></td><td>5 (unused in 3)</td></tr>
 <tr><td>NativeFileSystem.showOpenDialog()<br>NativeFileSystem.showSaveDialog()</td><td>filesystem.showOpenDialog()<br>filesystem.showSaveDialog()</td><td></td><td>4</td></tr>
 <tr><td>FileIndexManager.getFileInfoList("all")<br>FileIndexManager.getFileInfoList("css")</td><td>ProjectManager.getAllFiles()<br>ProjectManager.getAllFiles(<br>
 &nbsp;&nbsp;&nbsp;ProjectManager.getLanguageFilter("css") )</td><td>Returns an array of Files, but they provide same properties as the old FileInfos</td><td>7</td></tr>
@@ -72,7 +72,7 @@ Under the hood, the old API has been reimplemented in terns of the new APIs, so 
 The following 9 extensions use at least one API on the "Removed" list:
 
 * angularui.angularjs -- (FileEntry.getMetadata())
-* bsirlinger.github-access -- (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create}), FileEntry.createWriter())
+* bsirlinger.github-access -- (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create}))
 * xunit -- (DirectoryEntry.getFile({create}), DirectoryEntry.getDirectory({create})
 * zaggino.brackets-git (won't crash, but notable bug) -- ("projectFilesChange" event)
 * variousimprovements (won't crash, minor bug) -- ("projectFilesChange" event)
