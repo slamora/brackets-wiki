@@ -18,7 +18,8 @@ What's New in Sprint 34
 * **Under the hood**
     * [New file system API](https://trello.com/c/PO7CIgqf/1050-1-merge-new-file-system): Some [API changes for extensions](https://github.com/adobe/brackets/wiki/File-System-API-Migration) -- see below. Slightly improves performance of some features, like Find in Files (larger improvements to come later!).
 * **Localization**
-    * Updated translations: ....
+    * Updated translations: Czech, German, Finnish, French, Japanese, Brazilian Portuguese (...)
+    * Added translations: [Persian-Farsi](https://github.com/adobe/brackets/pull/5164), [Dutch](https://github.com/adobe/brackets/pull/5372) (...)
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-33...sprint-34#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-33...sprint-34#commits_bucket)
