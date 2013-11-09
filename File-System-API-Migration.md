@@ -31,7 +31,7 @@ These APIs are completely gone - code using them will throw exceptions. Extensio
 <tr><td>DirectoryEntry.getFile(relpath, {create:true})</td><td>filesystem.getFileForPath(fullPath).write("")</td><td></td><td>2</td></tr>
 <tr><td>DirectoryEntry.getDirectory(relpath, {create:true})</td><td>filesystem.getDirectoryForPath(fullPath).create()</td><td></td><td>2</td></tr>
 <tr><td>ProjectManager "projectFilesChange" event</td><td>FileSystem "change" event</td><td></td><td>2</td></tr>
-<tr><td>fileEntry.getMetadata()</td><td>file.stat()</td><td></td><td>1</td></tr>
+<tr><td>fileEntry.getMetadata()</td><td>file.stat()<br>(note: fields of resulting object differ also)</td><td></td><td>1</td></tr>
 <tr><td>NativeFileError.*</td><td>FileSystemError.*<br>(different constants)</td><td></td><td>1</td></tr>
 <tr><td>error.name<br>e.g. when passing to FileUtils.showFileOpenError()</td><td>error</td><td></td><td>2</td></tr>
 <tr><td>instanceof NativeFileSystem.InaccessibleFileEntry</td><td>instanceof InMemoryFile</td><td></td><td>1</td></tr>
