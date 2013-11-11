@@ -29,7 +29,7 @@ UI Changes
 ----------
 **Dark-themed window chrome on Mac** - the Mac shell now has a dark window chrome that visually complements the Brackets UI. (The Windows shell received a similar update in Sprint 31).
 
-**Installation** - see above. Starting _next_ sprint, newer versions of Brackets will overwrite previously installed versions.
+**Installation** - see above. Starting _next_ sprint, newer versions of Brackets will overwrite previously installed versions.  To preserve an already installed version of Brackets, simply copy it to a different location before installing the new release.  For example, on Mac, from the `Application` folder, simply rename `Brackets.app` to `Brackets Sprint 34.app`, and then install the new release from the .dmg.  Similarly, on Windows, in the `\Program Files (x86)` folder, simply copy the `Brackets` folder to `Brackets Sprint 34`, and then install the new release from the .msi. 
 
 **Extensions** - the Extension Manager 'Available' and 'Installed' tabs have switched places.
 
