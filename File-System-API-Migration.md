@@ -1,6 +1,6 @@
 Here are the API changes that will result from the [File System Evolution](File System) plan:
 
-("Usage" column = how many extensions currently use the API)
+**Note:** These quick reference tables don't cover arguments or return values in detail. Be sure to check the **detailed JSDoc comments** on the new APIs for full usage details -- see [FileSystem.js](https://github.com/adobe/brackets/blob/master/src/filesystem/FileSystem.js), [File.js](https://github.com/adobe/brackets/blob/master/src/filesystem/File.js), [Directory.js](https://github.com/adobe/brackets/blob/master/src/filesystem/Directory.js), & base class [FileSystemEntry.js](https://github.com/adobe/brackets/blob/master/src/filesystem/FileSystemEntry.js). (For example, the old APIs used two separate success & error callbacks, while the new APIs use a single callback with combined arguments).
 
 ### Backwards-compatible APIs
 
