@@ -106,12 +106,12 @@ How multi-file replace is handled.
 
 ### Proposed Stories
 
-# Find/Replace in Current File UI
+1. Find/Replace in Current File UI
     * Search history
     * Result Traversal (Enter key does not close modal)
-# Find in Files - Search Scope UI
-# Find in Files - Background search, async results
-# Find in Files - Cancel search
-# Find in Files - Results UI
-# Replace in Files - No Undo
-# Replace in Files - With Undo
+2. Find in Files - Search Scope UI
+3. Find in Files - Background search, async results
+4. Find in Files - Cancel search
+5. Find in Files - Results UI
+6. Replace in Files - No Undo
+7. Replace in Files - With Undo
