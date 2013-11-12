@@ -116,6 +116,8 @@ How multi-file replace is handled.
     * Case-sensitive, regexp, whole word - https://trello.com/c/MBroELwS/260-3-find-in-current-file
 1. Find/Replace in Current File - Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
 1. Find in Files - Search Scope UI
+    * Find all results in single/current file https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
+    * White-list/Black-list options like Sublime Text?
 1. Find in Files - Background search, async results
 1. Find in Files - Cancel search
 1. Find in Files - Results UI
