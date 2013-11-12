@@ -120,9 +120,11 @@ How multi-file replace is handled.
     * Find all results in single/current file https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
     * White-list/Black-list options like Sublime Text?
     * Global (e.g. Find, Quick Open, Code Hints) file include/exclude? https://trello.com/c/LgdleOVx/695-exclude-ignore-binary-files-libraries-or-subfolders-from-find-all-other-searches
+        * Ignore results found in globally filtered files (e.g. files under .git do not appear in project tree, but can be found with Find in Files) https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/917
 1. Find in Files - Background search, async results
 1. Find in Files - Cancel search
 1. Find in Files - Results UI
+    * Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995
 1. Replace in Files - No Undo
     * https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
 1. Replace in Files - With Undo
