@@ -111,7 +111,8 @@ How multi-file replace is handled.
     * Enter key does not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
     * Search in selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
     * Incremental find (i.e. highlight results as user types) for replace queries
-        * Unify Find modal and Replace modal? https://trello.com/c/7TjNR4lD/361-3-incremental-search
+        * Unify Find modal and Replace modal? https://trello.com/c/7TjNR4lD/361-3-incremental-search and https://trello.com/c/MbM48GiP/262-replace-in-single-file
+    * Keyboard accessibility - https://trello.com/c/7HVPLeer/975-replace-dialog-keyboard-support
 1. Find/Replace and Find in Files Query Options
     * Case-sensitive, regexp, whole word - https://trello.com/c/MBroELwS/260-3-find-in-current-file
 1. Find/Replace in Current File - Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
@@ -122,4 +123,5 @@ How multi-file replace is handled.
 1. Find in Files - Cancel search
 1. Find in Files - Results UI
 1. Replace in Files - No Undo
+    * https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
 1. Replace in Files - With Undo
