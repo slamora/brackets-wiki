@@ -114,7 +114,7 @@ These stories aggregate multiple smaller stories:
 ### Proposed Stories
 
 1. Find/Replace in Current File UI
-    * Search history - https://trello.com/c/IzACddEv/344-2-recent-search-history
+    * Search query history - https://trello.com/c/IzACddEv/344-2-recent-search-history
     * Enter key does not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
     * Search in selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
     * Incremental find (i.e. highlight results as user types) for replace queries
@@ -132,6 +132,7 @@ These stories aggregate multiple smaller stories:
 1. Find in Files - Cancel search
 1. Find in Files - Results UI
     * Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995
+    * Results history - https://trello.com/c/KY4eJL7V
 1. Find in Files - Maintain result integrity after edits
     * https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/780
 1. Replace in Files - No Undo
