@@ -108,7 +108,7 @@ How multi-file replace is handled.
 
 1. Find/Replace in Current File UI
     * Search history
-    * Result Traversal (Enter key does not close modal)
+    * Enter key does not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
 2. Find in Files - Search Scope UI
 3. Find in Files - Background search, async results
 4. Find in Files - Cancel search
