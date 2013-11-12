@@ -109,9 +109,12 @@ How multi-file replace is handled.
 1. Find/Replace in Current File UI
     * Search history
     * Enter key does not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
-2. Find in Files - Search Scope UI
-3. Find in Files - Background search, async results
-4. Find in Files - Cancel search
-5. Find in Files - Results UI
-6. Replace in Files - No Undo
-7. Replace in Files - With Undo
+    * Search in selection
+1. Find/Replace and Find in Files Query Options
+    * Case-sensitive, regexp, whole word
+1. Find in Files - Search Scope UI
+1. Find in Files - Background search, async results
+1. Find in Files - Cancel search
+1. Find in Files - Results UI
+1. Replace in Files - No Undo
+1. Replace in Files - With Undo
