@@ -119,6 +119,7 @@ How multi-file replace is handled.
 1. Find in Files - Search Scope UI
     * Find all results in single/current file https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
     * White-list/Black-list options like Sublime Text?
+    * Global (e.g. Find, Quick Open, Code Hints) file include/exclude? https://trello.com/c/LgdleOVx/695-exclude-ignore-binary-files-libraries-or-subfolders-from-find-all-other-searches
 1. Find in Files - Background search, async results
 1. Find in Files - Cancel search
 1. Find in Files - Results UI
