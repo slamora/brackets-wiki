@@ -104,6 +104,13 @@ How multi-file replace is handled.
 * Extensibility
 * Keyboard shortcuts
 
+### Existing Stories
+
+These stories aggregate multiple smaller stories:
+
+* Find in Current File https://trello.com/c/MBroELwS
+* Find in Files https://trello.com/c/AFF2Lnll
+
 ### Proposed Stories
 
 1. Find/Replace in Current File UI
