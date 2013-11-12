@@ -11,6 +11,8 @@ What's New in Sprint 34
 * **Overall UI**
     * [Dark themed window chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
     * Notable bug fixed in Win dark-themed window chrome
+* **Image Preview**
+    * [Pixel coordinates guide](https://github.com/adobe/brackets/pull/5944): When viewing an image file, a crosshair and tooltip indicate the pixel coordinates of your mouse cursor.
 * **Code Hints**
     * Improved JavaScript code hints accuracy: More code hints provided for APIs in medium-sized files (500-2000 lines) and in cases where a module's exports have recently been updated.
 * **Linting**
