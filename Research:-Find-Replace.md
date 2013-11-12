@@ -125,3 +125,9 @@ How multi-file replace is handled.
 1. Replace in Files - No Undo
     * https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
 1. Replace in Files - With Undo
+
+### Wishlist
+
+From [@larz0](http://github.com/larz0)
+
+![test](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/52163e8fd04a56d028002d89/d1303cc6d9a72ef37684d064d7f4506d/WishList_Find_004.png)
