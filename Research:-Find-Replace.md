@@ -103,3 +103,15 @@ How multi-file replace is handled.
     * Undo replace across multiple files
 * Extensibility
 * Keyboard shortcuts
+
+### Proposed Stories
+
+# Find/Replace in Current File UI
+    * Search history
+    * Result Traversal (Enter key does not close modal)
+# Find in Files - Search Scope UI
+# Find in Files - Background search, async results
+# Find in Files - Cancel search
+# Find in Files - Results UI
+# Replace in Files - No Undo
+# Replace in Files - With Undo
