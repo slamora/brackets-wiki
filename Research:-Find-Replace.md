@@ -125,6 +125,8 @@ How multi-file replace is handled.
 1. Find in Files - Cancel search
 1. Find in Files - Results UI
     * Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995
+1. Find in Files - Maintain result integrity after edits
+    * https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/780
 1. Replace in Files - No Undo
     * https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
 1. Replace in Files - With Undo
