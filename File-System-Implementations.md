@@ -64,12 +64,6 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {function(?string, FileSystemStats=)} callback`
 * Write the given data to the file at the given path, calling back asynchronously with either an error or, optionally, the FileSystemStats object associated with the written file. The optional `options` parameter can be used to specify an encoding (default `"utf8"`) and an octal mode (default unspecified and implementation dependent). If no file exists at the given path, a new file will be created.
 
-### `chmod(path, mode, callback)`
-* `@param {string} path`
-* `@param {number} mode`
-* `@param {function(?string)=} callback`
-* Change the mode of the file or directory at the given path, optionally calling back asynchronously with a possibly null error.
-
 ### `unlink(path, callback)`
 * `@param {string} path`
 * `@param {function(string)=} callback`
