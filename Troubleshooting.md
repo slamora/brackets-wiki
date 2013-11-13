@@ -59,8 +59,8 @@ Currently, Live Development works differently for different types of files:
 
 We plan to add as-you-type Live Development support for JavaScript content in the near future.
 
-### Files need to be in Current Project
-You can use `File > Open` to open any file on your computer, but Brackets' definition of a _project_ are the files in the folder opened using `File > Open Folder...`. Make sure the files that you want to use with Live Development are in the current project.
+### Files should be in Current Project
+You can use `File > Open` to open any file on your computer, but Brackets' definition of a _project_ are the files in the folder opened using `File > Open Folder...`. Some (but not all) Live Development features require a node server, which means being in the current project, so make sure the files that you want to use with Live Development are in the current project.
 
 ### Install Chrome For Multiple User Accounts (Windows Only)
 If you get the error ``An error occurred when launching the browser. (error 2)`` when doing Live Development, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
