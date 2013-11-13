@@ -26,8 +26,8 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 
 ### `exists(path, callback)`
 * `@param {string} path`
-* `@param {function(boolean)} callback`
-* Determine whether a file or directory exists at the given path by calling back asynchronously with a boolean, which is true if the file exists and false otherwise.
+* `@param {function(?string, boolean)} callback`
+* Determine whether a file or directory exists at the given path by calling back asynchronously with either an error or a boolean, which is true if the file exists and false otherwise. The error will never be `FileSystemError.NOT_FOUND`; in that case, there will be no error and the boolean parameter will be false.
 
 ### `readdir(path, callback)`
 * `@param {string} path`
