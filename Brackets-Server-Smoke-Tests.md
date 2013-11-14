@@ -30,8 +30,7 @@ Server smoke test steps
 1. Verify informational text is displayed in empty input field. Click OK.
 1. Open pathRel.html, start Live Preview using File > Live Preview.
 1. If you trashed prefs, you'll get an info dialog explaining how Live Preview works. Click OK.
-1. On Mac, you should no longer get a dialog saying you need to relaunch Chrome.
-1. Verify that the base URL is 127.0.0.1: _nnnnn_ (where _nnnnn_ is an auto-generated port number) and page renders correctly in browser.
+1. On Mac, you should get a dialog saying you need to relaunch Chrome. Click "Relaunch". Chrome should relaunch and open the page. 1. Verify that the base URL is 127.0.0.1: _nnnnn_ (where _nnnnn_ is an auto-generated port number) and page renders correctly in browser.
 1. Open File menu, verify Live Preview has a check mark next to it, then click it to toggle off Live Preview.
 1. Open pathRoot.html and click Live Preview (lightning bolt) icon on right side of menu bar.
 1. Verify that page is opened in browser and CSS, images (with site-relative paths) are rendered correctly. Click Live Preview icon to disconnect Live Preview.
