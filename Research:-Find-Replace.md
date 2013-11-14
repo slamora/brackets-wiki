@@ -1,18 +1,8 @@
-Work in Progress, Sprint 34
+_**Work in Progress, Sprint 34**_
 
-### Editors to investigate
+# Find in Current File
 
-* Sublime Text 2
-* TextMate 2
-* WebStorm
-* Coda 2
-* Notepad++
-* Dreamweaver
-* Visual Studio
-
-## Find in Current File
-
-* Dreamweaver
+* **Dreamweaver**
     * All types of find and replace (in-file and multi-file) are integrated into a single dialog, controlled by a "Find in:" dropdown at the top that sets the scope of the search. (See the Find in Files section for more details on that case.) For single-file searches, the options available are "Current File" and "Selected Text".
     * The dialog always has both Find and Replace fields. Dialog actions include "Find Next" (go to next match), "Replace" (replace the currently selected text if it matches, then do a Find Next), "Find All" (open a panel listing all matches in the current scope), and "Replace All" (replace all matches in the current scope and open a panel listing the changes).
     * Options are "Match case", "Match whole word", "Ignore whitespace", and "Use regular expression".
@@ -23,7 +13,77 @@ Work in Progress, Sprint 34
     * You can save and load queries.
     * I’m pretty sure you used to be able to choose particular items in the result list of a Find All and then replace them individually, but it looks like that functionality no longer exists. I’m guessing this is because the logic for keeping the Find list up to date as you did other replacements or made edits to the same documents was fragile.
 
-## Find/Replace in Multiple Files
+### Overall UI
+* Sublime 2 - Search bar at bottom. Incremental. Highlights all matches (can be disabled), _and_ marks them on minimap. Total number shown below search bar.
+* WebStorm 7 - Search bar at top (does _not_ shift text). Incremental. Highlights all matches _and_ marks them in scrollbar track. Total number shown in search bar.
+* Chrome 30 browser - Search 'tab' at top-right (does _not_ shift text). Incremental. Highlights all matches _and_ marks them in scrollbar track. Total number shown in search bar.
+* XCode 5 - Search bar at top (shifts text down). Incremental with slight delay. Highlights all matches. Total number shown at edge of search field.
+* Espresso 2 - Search bar at top (shifts text down). Incremental. Highlights all matches, covers rest text in gray shield. Total number shown in pill in search field.
+* Coda 2 - Search bar at top (shifts text down). _Not_ incremental. Highlights _only_ current match. No total (_unless_ 0).
+* TextMate 2 - Modeless dialog. _Not_ incremental. Highlights _only_ current match. "Σ" button reveals total number in dialog.
+* Notepad++ 6.4 - Modeless dialog (translucent when blurred). _Not_ incremental. Highlights _only_ current match, _but_ "Mark All" button adds semi-permanent highlights. "Count" button reveals total number in dialog.
+* Visual Studio 2010 - Modeless dialog. _Not_ incremental, _but_ there is a separate incremental-search gesture (very minimal: no options, no history, etc.). Highlights _only_ current match. No total.
+
+### Navigation
+* Sublime - "Find"/"Find Prev" buttons, Enter, shortcut. Shortcut works after closing bar. Relative to cursor pos if moved. Wraparound indicated by scroll animation & statusbar message; if disabled, endpoint indicated by statusbar message. Current match index shown in statusbar whenever current-item highlight visible.
+* WebStorm - Up/down buttons, Enter, shortcut. Shorcut works after closing bar. Relative to cursor pos if moved. Wraparound shows a tooltip, then _next_ attempt actually wraps.
+* Chrome - Up/down buttons, Enter, shortcut. Shortcut _reopens_ bar. Relative to cursor pos last click pos. Wraparound gives no indicator. Current match index shown in search bar.
+* XCode - Left/right buttons, Enter, shortcut. Shortcut works after closing bar. Relative to cursor pos if moved. Animated blip at each step. Wraparound indicated by Lightroom-style toast; if disabled, endpoint indicated similarly.
+* Espresso - Left/right buttons, Enter, shortcut. Shortcut works after closing bar. Relative to cursor pos if moved. Animated blip at each step. Wraparound gives no indicator.
+* Coda - Left/right buttons; Enter & shortcut both _move focus_ to editor. Shortcut works after closing bar. Relative to cursor pos if moved. Animated blip at each step. Wrapround gives no indicator; if disabled, endpoint indicated via subtle "0" pill in search field (somewhat odd).
+* TextMate - "Next"/"Previous" buttons, shortcut; Enter _closes_ dialog. Shortcut works after closing dialog. Relative to cursor pos if moved. Animated blip at each step (but buggy). Wraparound (_off by default_) indicated via subtle message in dialog; if disabled, endpoint gives no indicator.
+* Notepad++ - "Find Next" button, Enter in dialog; shortcut in editor. Shortcut works after closing dialog. Relative to cursor pos if moved. Wraparound indicated by green message in dialog; if disabled, endpoint indicated by dialog flashing & red message.
+* Visual Studio - "Find Next" button, Enter, shortcut (shortcut _moves focus_ to editor). Shortcut works after closing dialog. Relative to cursor pos if moved. Wraparound: for file endpoint, status bar turns blue; for search beginning cursor point, modal dialog with DSMA.
+
+### Editing
+* Sublime - Search bar remains open, all matches remain highlighted ('current match' style hidden upon cursor movement or edit; reappears upon Find Next). Updated while typing (total counter also updated). Highlights not visible within selection.
+* WebStorm - Search bar remains open, all matches remain highlighted (including 'current match'). Updated while typing (total counter also updated). Highlights visible within selection (switches to border style).
+* Chrome - n/a
+* XCode - Search bar remains open, but highlights disappear upon first edit. Total counter stays and is updated as you type (with slight delay during which it resets to 0). Highlights visible within selection (blended).
+* Espresso - Search bar remains open, but highlights/shield disappear _immediately_ (reappear upon Find Next; disappear again upon cursor movement or edit). Total counter stays but is _not_ updated.
+* Coda - n/a
+* TextMate - n/a. Total counter in dialog stays but is _not_ updated.
+* Notepad++ - Dialog remains open, "Mark All" highlights remain. Updated as 'passive marked ranges'. Total counter stays but is _not_ updated. Highlights visible within selection (blended).
+* Visual Studio - n/a
+
+### Query Options
+* Sublime - Case-sensitive, regexp, whole-word, in-selection (buttons). Whole-word _can_ be used with regexp. Regexp can span newlines. History: up/down arrow keys (seems to have gaps though - bug?).
+* WebStorm - Case-sensitive, regexp, whole-word (checkboxes), in comments only, in literals only (gear dropdown). Whole-word cannot be used with regexp. Regex can span newlines. History: down arrow, dropdown in search field.
+* Chrome - _None_
+* XCode - Case-sensitive, regexp, whole-word or word prefix/suffix (icon dropdown > Edit Find Options popover). Whole-word cannot be used with regexp. Regexp _cannot_ span newlines. History: in icon dropdown.
+    * In regexp mode, matching parens are highlighted!
+    * Insert Pattern "pills" - ...
+* Espresso - Case-sensitive, regexp (icon dropdown). Regexp can span newlines (but causes buggy highlights). No history.
+* Coda - Case-sensitive, regexp ("dot matches newline" sub-option), in-selection (icon dropdown). Regexp can span newlines (but causes buggy highlights sometimes). History: last 5 in icon dropdown.
+    * "*" icon "pills" - ...
+* TextMate - Case-sensitive (_on by default_), regexp, ignore whitespace. Ignore whitespace cannot be used with regexp. Regexp can span newlines. History: dropdown on textfield.
+* Notepad++ - Case-sensitive, regexp (". matches newline" sub-option), "extended" (C-style escape codes), whole-word. Whold-word cannot be used with regexp. Regexp can span newlines. History: dropdown on textfield.
+* Visual Studio - Case-sensitive, regexp (proprietary syntax in <= 2010), whole-word. Whole-word _can_ be used with regexp. Regexp can span newlines.
+
+### Scrolling
+* Sublime - Smoothly animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: always scrolls minimally (does not return to 0).
+* WebStorm - Smoothly animated. Scrolls if within 1-2 lines of edge. Vertical: if just outside viewport, only scrolls a little; when further, centers in viewport. Horizontal: scrolls extra to left, returning to 0.
+* Chrome - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
+* XCode - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
+* Espresso - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
+* Coda - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
+* TextMate - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
+* Notepad++ - Not animated. Scrolls if last line in view. Vertical: always centers in viewport. Horizontal: always scrolls minimally (does not return to 0).
+* Visual Studio - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: always scrolls minimally (does not return to 0).
+
+### Other Features
+* Sublime - 'Auto highlight' when whole word selected (only when Find not active; uses 'other match' style). Find All turns matches into a multi-selection.
+* WebStorm - 'Auto highlight' when cursor on identifier (in favored language; uses separate match style). Find All opens bottom panel. "Multiline" changes search field to textarea. Limit search to comments/literals.
+* Chrome - none
+* XCode - Wildcard & canned regex "pills" (see above). Regex paren matching. Fancier flavors of word matching.
+* Espresso - none
+* Coda - Wildcard "pills" (see above). Use Expanded Find Banner" option moves all buttons to a 2nd row, making Find/Replace text fields wider.
+* TextMate - Ignore whitespace w/o full regexp syntax. Find All opens results list within dialog.
+* Notepad++ - 'Auto highlight' when whole word selected (separate match style). "Extended" mode allows escape codes w/o full regexp syntax. Find All opens bottom panel.
+* Visual Studio - Tracks two wraparound points: file bounds & search starting point (albeit awful UI for latter).
+
+
+# Find/Replace in Multiple Files
 
 ### Scope
 
@@ -112,6 +172,24 @@ These stories aggregate multiple smaller stories:
 * Find in Files https://trello.com/c/AFF2Lnll
 
 ## Proposed Stories
+
+* Find Next should be relative to cursor pos, not invisible 'search cursor'
+* Explicit toggles for case-sensitive & regexp
+* Search query history
+* Show current match index
+* Continue to show search highlights when bar closed (but hide upon first edit)
+* Continue to show search highlights when bar closed, and maintain them as text edited
+* Animated highlight 'blip' on Find Next/Previous
+* Indication when search wraps around
+* Gesture to convert query from Find to Find All
+* Smoothly animate when auto-scrolling match into view
+* Horizontal scrolling: center horizontally? At least when scrolling left? Or scroll as far left as possible?
+* Insert 'pills' into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps)
+* Filter search to just comments or just literals
+* Syntax highlighting when composing regexps
+* 'Auto highlight' when whole word selected
+* Show at least 3000 highlighting results
+* 'Whole word' toggle
 
 1. Find/Replace in Current File UI
     * Search query history - https://trello.com/c/IzACddEv/344-2-recent-search-history
