@@ -6,8 +6,6 @@ What's New in Sprint 34
 -----------------------
 * **Installation**
     * [Automatically replace older versions](https://trello.com/c/xxabXFIG/1017-2-brackets-update-in-place-via-installer): The Brackets installer on Windows now automatically overwrites previous versions, with no need to manually uninstall them. On all platforms, the app name no longer contains the sprint number. If you have manually assigned Brackets to any file associations, they will no longer need to be reassigned for each new build. (Note: these changes will not be evident until the first update, i.e. _next sprint_ - Sprint 35).
-* **Live Development**
-    * [Mac: No browser restart needed](https://github.com/adobe/brackets-shell/pull/359): Launching Live Preview no longer requires closing and reopening Chrome on Mac. (This was [already](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25) true on Windows).
 * **Overall UI**
     * [Dark themed window chrome on Mac](https://trello.com/c/oyGfEvrK/900-3-into-darkness-shell-osx): Similar to the update on Windows in Sprint 31.
     * Notable bug fixed in Win dark-themed window chrome
