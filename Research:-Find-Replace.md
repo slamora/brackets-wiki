@@ -9,7 +9,7 @@ _**Work in Progress, Sprint 34**_
 * XCode 5 - Search bar at top (shifts text down). Incremental with slight delay. Highlights all matches. Total number shown at edge of search field.
 * Espresso 2 - Search bar at top (shifts text down). Incremental. Highlights all matches, covers rest text in gray shield. Total number shown in pill in search field.
 * Coda 2 - Search bar at top (shifts text down). _Not_ incremental. Highlights _only_ current match. No total (_unless_ 0).
-* Dreamweaver - Modeless dialog. _Not_ incremental. Highlights _only_ current match. Only shows total if you do "Find All".
+* Dreamweaver - Modeless dialog. _Not_ incremental. Highlights _only_ current match. Only shows total if you do "Find All" or when you've visited all matches via "Find Next".
 * TextMate 2 - Modeless dialog. _Not_ incremental. Highlights _only_ current match. "Σ" button reveals total number in dialog.
 * Notepad++ 6.4 - Modeless dialog (translucent when blurred). _Not_ incremental. Highlights _only_ current match, _but_ "Mark All" button adds semi-permanent highlights. "Count" button reveals total number in dialog.
 * Visual Studio 2010 - Modeless dialog. _Not_ incremental, _but_ there is a separate incremental-search gesture (very minimal: no options, no history, etc.). Highlights _only_ current match. No total.
