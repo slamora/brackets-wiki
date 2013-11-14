@@ -2,15 +2,9 @@ _**Work in Progress, Sprint 34**_
 
 # User Stories
 
-### Existing Stories
-
-These items in Trello aggregate multiple smaller stories & ideas:
-
-* Find in Current File https://trello.com/c/MBroELwS
-* Find in Files https://trello.com/c/AFF2Lnll
-* [Wishlist](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/52163e8fd04a56d028002d89/d1303cc6d9a72ef37684d064d7f4506d/WishList_Find_004.png) from [@larz0](http://github.com/larz0)
-
 ### Proposed Stories
+
+In proposed priority order:
 
 #### Search bar UI
 * [ReplaceUI] Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace. (Or even eliminate distinction between Find & Replace modes altogether?) https://trello.com/c/7TjNR4lD/361-3-incremental-search and https://trello.com/c/MbM48GiP/262-replace-in-single-file
@@ -80,8 +74,21 @@ These are generally done, but they mostly lack unit tests and may need some UI p
 * [ResultsList] Concatenated / multiple results lists
 * [ResultsList] Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995 - _or_ if single result, jump to it, else show list (like WebStorm)
 
+## Existing Stories
 
-# Find in Current File
+These items in Trello aggregate multiple smaller stories & ideas:
+
+* Find in Current File https://trello.com/c/MBroELwS
+* Find in Files https://trello.com/c/AFF2Lnll
+* [Wishlist](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/52163e8fd04a56d028002d89/d1303cc6d9a72ef37684d064d7f4506d/WishList_Find_004.png) from [@larz0](http://github.com/larz0)
+
+
+----
+# Research 
+
+
+
+## Find in Current File
 
 ### Overall UI
 * Sublime 2 - Search bar at bottom. Incremental. Highlights all matches (can be disabled), _and_ marks them on minimap. Total number shown below search bar.
@@ -160,7 +167,7 @@ These are generally done, but they mostly lack unit tests and may need some UI p
 
 
 
-# Replace in Single File
+## Replace in Single File
 
 ### Overall UI
 * Sublime 2 - Separate command. Two rows, "Find What"/"Replace With" fields. Replace: next match from cursor pos; first click only highlights match (bug: no highlight), next click replaces.
@@ -198,7 +205,7 @@ These are generally done, but they mostly lack unit tests and may need some UI p
 
 
 
-# Find/Replace in Multiple Files
+## Find/Replace in Multiple Files
 
 ### Scope
 
