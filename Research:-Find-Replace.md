@@ -9,7 +9,7 @@ _**Work in Progress, Sprint 34**_
 * XCode 5 - Search bar at top (shifts text down). Incremental with slight delay. Highlights all matches. Total number shown at edge of search field.
 * Espresso 2 - Search bar at top (shifts text down). Incremental. Highlights all matches, covers rest text in gray shield. Total number shown in pill in search field.
 * Coda 2 - Search bar at top (shifts text down). _Not_ incremental. Highlights _only_ current match. No total (_unless_ 0).
-* Dreamweaver - Modeless(?) dialog. _Not_ incremental(?). Highlights _only_ current match(?). No total(?).
+* Dreamweaver - Modeless dialog. _Not_ incremental. Highlights _only_ current match. Only shows total if you do "Find All".
 * TextMate 2 - Modeless dialog. _Not_ incremental. Highlights _only_ current match. "Σ" button reveals total number in dialog.
 * Notepad++ 6.4 - Modeless dialog (translucent when blurred). _Not_ incremental. Highlights _only_ current match, _but_ "Mark All" button adds semi-permanent highlights. "Count" button reveals total number in dialog.
 * Visual Studio 2010 - Modeless dialog. _Not_ incremental, _but_ there is a separate incremental-search gesture (very minimal: no options, no history, etc.). Highlights _only_ current match. No total.
@@ -21,7 +21,7 @@ _**Work in Progress, Sprint 34**_
 * XCode - Left/right buttons, Enter, shortcut. Shortcut works after closing bar. Relative to cursor pos if moved. Animated blip at each step. Wraparound indicated by Lightroom-style toast; if disabled, endpoint indicated similarly.
 * Espresso - Left/right buttons, Enter, shortcut. Shortcut works after closing bar. Relative to cursor pos if moved. Animated blip at each step. Wraparound gives no indicator.
 * Coda - Left/right buttons; Enter & shortcut both _move focus_ to editor. Shortcut works after closing bar. Relative to cursor pos if moved. Animated blip at each step. Wrapround gives no indicator; if disabled, endpoint indicated via subtle "0" pill in search field (somewhat odd).
-* Dreamweaver - "Find Next" button, Enter(?), shortcut. Shortcut works after closing dialog(?). Relative to cursor pos if moved(?). Wraparound indicated...how??
+* Dreamweaver - "Find Next" button, Enter, shortcut. Shortcut works after closing dialog. Relative to cursor pos if moved. Wraparound is not specifically indicated, but if dialog is open, clicking "Find Next" after all matches have been traversed (which might be in the middle of the document) will show a "Done" message instead of finding the next item. (Clicking "Find Next" again will then jump to the first item again.)
 * TextMate - "Next"/"Previous" buttons, shortcut; Enter _closes_ dialog. Shortcut works after closing dialog. Relative to cursor pos if moved. Animated blip at each step (but buggy). Wraparound (_off by default_) indicated via subtle message in dialog; if disabled, endpoint gives no indicator.
 * Notepad++ - "Find Next" button, Enter in dialog; shortcut in editor. Shortcut works after closing dialog. Relative to cursor pos if moved. Wraparound indicated by green message in dialog; if disabled, endpoint indicated by dialog flashing & red message.
 * Visual Studio - "Find Next" button, Enter, shortcut (shortcut _moves focus_ to editor). Shortcut works after closing dialog. Relative to cursor pos if moved. Wraparound: for file endpoint, status bar turns blue; for search beginning cursor point, modal dialog with DSMA.
@@ -48,7 +48,7 @@ _**Work in Progress, Sprint 34**_
 * Espresso - Case-sensitive, regexp (icon dropdown). Regexp can span newlines (but causes buggy highlights). No history.
 * Coda - Case-sensitive, regexp ("dot matches newline" sub-option), in-selection (icon dropdown). Regexp can span newlines (but causes buggy highlights sometimes). History: last 5 in icon dropdown.
     * "*" icon "pills" - ...
-* Dreamweaver - Case-sensitive, regexp, whole-word, ignore whitespace, in-selection, text content only (ignores HTML tags & converts entities). Can whole-word / ignore-whitespace be used with regexp?? Regexp can span newlines?? History: can explicitly save/load searches. Is other history maintained??
+* Dreamweaver - Case-sensitive, regexp, whole-word, ignore whitespace, in-selection, text content only (ignores HTML tags & converts entities). Whole word can be used with regexp but ignore whitespace can't. Regexp can span newlines, but "." doesn't match newlines by default (you have to do "(.|\n)"). History: can explicitly save/load searches; no auto-maintained history.
 * TextMate - Case-sensitive (_on by default_), regexp, ignore whitespace. Ignore whitespace cannot be used with regexp. Regexp can span newlines. History: dropdown on textfield.
 * Notepad++ - Case-sensitive, regexp (". matches newline" sub-option), "extended" (C-style escape codes), whole-word. Whold-word cannot be used with regexp. Regexp can span newlines. History: dropdown on textfield.
 * Visual Studio - Case-sensitive, regexp (proprietary syntax in <= 2010), whole-word. Whole-word _can_ be used with regexp. Regexp can span newlines.
@@ -60,7 +60,7 @@ _**Work in Progress, Sprint 34**_
 * XCode - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
 * Espresso - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
 * Coda - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
-* Dreamweaver - ???
+* Dreamweaver - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls just enough to see beginning of match.
 * TextMate - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: scrolls extra to left, returning to 0.
 * Notepad++ - Not animated. Scrolls if last line in view. Vertical: always centers in viewport. Horizontal: always scrolls minimally (does not return to 0).
 * Visual Studio - Not animated. Never scrolls if match within view. Vertical: always centers in viewport. Horizontal: always scrolls minimally (does not return to 0).
@@ -88,7 +88,7 @@ _**Work in Progress, Sprint 34**_
     * TODO: do pills factor in here???
 * Espresso 2 - Always available. Same row, field with "Replace Expression" prompt text. Replace: inserts _at cursor pos_ (regardless of whether its a match) and does _not_ move to next match (confusing - seems nearly useless).
 * Coda 2 - Always available. Same row, field with "Replace" prompt text ("Expanded Find Banner" option moves buttons to 2nd row for wider fields). Replace: next match from cursor pos; first click jumps to next match AND replaces, leaving cursor at replacement pos (so you _cannot_ see what is about to get replaced by next click)
-* Dreamweaver - Always available. Two rows(?), "Find"/"Replace" fields. Replace: next match from cursor pos; first click only highlights match(?), next click replaces.
+* Dreamweaver - Always available. Two rows, "Find"/"Replace" fields. Replace: next match from cursor pos; first click only highlights match, next click replaces.
 * TextMate 2 - Always available. Two rows, "Find"/"Replace" fields. "Replace & Find" inserts _at cursor pos_ (regardless of whether its a match) and highlights next match.
 * Notepad++ 6.4 - Alternate tab in dialog. Two rows, "Find what"/"Replace with" fields. Replace: next match from cursor pos; first click only highlights match, next click replaces.
 * Visual Studio 2010 - Always available. "Find what"/"Replace with" fields. Replace: next match from cursor pos; first click only highlights match, next click replaces.
