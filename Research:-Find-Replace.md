@@ -195,60 +195,63 @@ These stories aggregate multiple smaller stories:
 
 ### Proposed Stories
 
-* Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace.
-* Faster Find in Files
-* Find Next should be relative to cursor pos, not invisible 'search cursor'
-* Async, cancelable Find in Files with no paging (or at least much higher page size, e.g. 1000)
-* Explicit toggles for case-sensitive & regexp
-* Find in Files exclusions/filesets
-* Search query history
-* Find in Files expand/collapse all (PR already up)
-* Continue to show search highlights when bar blurred (but hide upon first edit)
-* Continue to show search highlights when bar blurred, and maintain them as text edited
-* Replace across files
-* Animated highlight 'blip' on Find Next/Previous
-* Keyboard shortcuts to navigate Find in Files results (next/prev)
-* Show current match index
-* Gesture to turn Find to a replace operation (if not already unified by previous story)
-* Gesture to convert query from Find to Find All
-* Indication when search wraps around
-* Smoothly animate when auto-scrolling match into view
-* Horizontal scrolling: center horizontally? At least when scrolling left? Or scroll as far left as possible?
-* Extensible Find result filtering
-* Filter search to just comments or just literals
-* Insert 'pills' into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps)
-* Replace field numbered "pills" to match up with regexp groups
-* Syntax highlighting when composing regexps
-* 'Auto highlight' when whole word selected
-* Show at least 3000 highlighting results
-* 'Whole word' toggle
-
-
 1. Find/Replace in Current File UI
+    * Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace. (Or even eliminate distinction between Find & Replace modes altogether?) https://trello.com/c/7TjNR4lD/361-3-incremental-search and https://trello.com/c/MbM48GiP/262-replace-in-single-file
+        * Gesture to turn Find to a replace operation (if not already unified by previous story)
+    * Explicit toggles for case-sensitive & regexp
     * Search query history - https://trello.com/c/IzACddEv/344-2-recent-search-history
     * Enter key does not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
-    * Search in selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
     * Incremental find (i.e. highlight results as user types) for replace queries
-        * Unify Find modal and Replace modal? https://trello.com/c/7TjNR4lD/361-3-incremental-search and https://trello.com/c/MbM48GiP/262-replace-in-single-file
     * Keyboard accessibility - https://trello.com/c/7HVPLeer/975-replace-dialog-keyboard-support
-1. Find/Replace and Find in Files Query Options
+2. Query Options
     * Case-sensitive, regexp, whole word - https://trello.com/c/MBroELwS/260-3-find-in-current-file
-1. Find/Replace in Current File - Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
-1. Find in Files - Search Scope UI
+    * Search in selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
+3. Match Highlighting
+    * Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
+    * Continue to show search highlights when bar blurred (but hide upon first edit)
+    * Continue to show search highlights when bar blurred, and maintain them as text edited
+4. Search Result Navigation
+    * Find Next should be relative to cursor pos, not invisible 'search cursor'
+    * Keyboard shortcuts to navigate Find in Files results (next/prev)
+    * Show current match index
+    * Indication when search wraps around
+    * Horizontal scrolling: center horizontally? At least when scrolling left? Or scroll as far left as possible?
+5. Find in Files - Search Scope
     * Find all results in single/current file https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
-    * White-list/Black-list options like Sublime Text?
-    * Global (e.g. Find, Quick Open, Code Hints) file include/exclude? https://trello.com/c/LgdleOVx/695-exclude-ignore-binary-files-libraries-or-subfolders-from-find-all-other-searches
-        * Ignore results found in globally filtered files (e.g. files under .git do not appear in project tree, but can be found with Find in Files) https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/917
-1. Find in Files - Background search, async results
-1. Find in Files - Cancel search
-1. Find in Files - Results UI
+    * File sets - white-list/black-list, regex similar to Sublime
+    * Global/project-wide file include/exclude? https://trello.com/c/LgdleOVx/695-exclude-ignore-binary-files-libraries-or-subfolders-from-find-all-other-searches
+6. Find in Files - Background search
+    * Async search in background
+    * Incremental results during background search
+    * Cancelable search
+    * _(we're assuming the FileSystem caching work will also greatly improve search performance)_
+7. Find in Files - Results UI
+    * Eliminate paging, or much larger page sizes
     * Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995
     * Results history - https://trello.com/c/KY4eJL7V
-1. Find in Files - Maintain result integrity after edits
+     * Expand all / collapse all gestures _(PR pending)_
+8. Find in Files - Maintain result integrity after edits
     * https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/780
-1. Replace in Files - No Undo
+9. Replace in Files (without atomic undo)
+    * **Open question:** Should we open every file in tabs, allowing Undo? Or modify non-open files directly on disk?
     * https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
-1. Replace in Files - With Undo
+10. Unit tests for existing functionality
+    * Find in Files, highlighting, tickmarks, regex queries, etc. ...
+
+## Features for after daily use milestone
+
+* Animated highlight 'blip' on Find Next/Previous
+* Smoothly animate when auto-scrolling match into view
+* Gesture to convert query from Find to Find All
+* Extensible Find result filtering
+* Filter search to just comments or just literals
+* Insert "pills" into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps) _(regexes aren't that scary)_
+* Replace field numbered "pills" to match up with regexp groups _(regexes aren't that scary)_
+* Syntax highlighting when composing regexps
+* 'Whole word' toggle _(easy with regex)_
+* 'Auto highlight' when whole word selected _(extension exists)_
+* Show at least 3000 highlighting results
+
 
 ## UI Wishlist
 
