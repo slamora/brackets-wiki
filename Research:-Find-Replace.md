@@ -196,25 +196,33 @@ These stories aggregate multiple smaller stories:
 ### Proposed Stories
 
 * Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace.
+* Faster Find in Files
 * Find Next should be relative to cursor pos, not invisible 'search cursor'
+* Async, cancelable Find in Files with no paging (or at least much higher page size, e.g. 1000)
 * Explicit toggles for case-sensitive & regexp
+* Find in Files exclusions/filesets
 * Search query history
-* Show current match index
+* Find in Files expand/collapse all (PR already up)
 * Continue to show search highlights when bar blurred (but hide upon first edit)
 * Continue to show search highlights when bar blurred, and maintain them as text edited
+* Replace across files
 * Animated highlight 'blip' on Find Next/Previous
+* Keyboard shortcuts to navigate Find in Files results (next/prev)
+* Show current match index
 * Gesture to turn Find to a replace operation (if not already unified by previous story)
-* Indication when search wraps around
 * Gesture to convert query from Find to Find All
+* Indication when search wraps around
 * Smoothly animate when auto-scrolling match into view
 * Horizontal scrolling: center horizontally? At least when scrolling left? Or scroll as far left as possible?
+* Extensible Find result filtering
+* Filter search to just comments or just literals
 * Insert 'pills' into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps)
 * Replace field numbered "pills" to match up with regexp groups
-* Filter search to just comments or just literals
 * Syntax highlighting when composing regexps
 * 'Auto highlight' when whole word selected
 * Show at least 3000 highlighting results
 * 'Whole word' toggle
+
 
 1. Find/Replace in Current File UI
     * Search query history - https://trello.com/c/IzACddEv/344-2-recent-search-history
