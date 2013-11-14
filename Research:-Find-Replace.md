@@ -183,29 +183,17 @@ How multi-file replace is handled.
 * Notepad++ - Can only undo files that were opened before Replace All operation.
 * Dreamweaver - For documents that are in the scope but not currently open, if you do Replace, it will navigate to and open the document, so when you do the replacement, it just does it in memory and doesn't save it to disk automatically. If you do Replace All, the replacement is done in memory on files that are open, but is done directly in files on disk that aren't open (so those replacements can't be undone; you get a warning to that effect).
 
-### Features to investigate
 
-* Find within file
-    * Types of queries supported
-    * How results are presented (highlighting, is it incremental, etc.)
-    * Disposition of results while editing
-* Replace within file
-* Find across multiple files
-    * Search scope filtering
-    * Handling large numbers of results
-* Replace across multiple files
-    * Undo replace across multiple files
-* Extensibility
-* Keyboard shortcuts
+# User Stories
 
-## Existing Stories
+### Existing Stories
 
 These stories aggregate multiple smaller stories:
 
 * Find in Current File https://trello.com/c/MBroELwS
 * Find in Files https://trello.com/c/AFF2Lnll
 
-## Proposed Stories
+### Proposed Stories
 
 * Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace.
 * Find Next should be relative to cursor pos, not invisible 'search cursor'
@@ -254,7 +242,7 @@ These stories aggregate multiple smaller stories:
     * https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
 1. Replace in Files - With Undo
 
-### Wishlist
+## UI Wishlist
 
 From [@larz0](http://github.com/larz0)
 
