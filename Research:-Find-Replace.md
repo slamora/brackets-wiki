@@ -12,39 +12,58 @@ These items in Trello aggregate multiple smaller stories & ideas:
 
 ### Proposed Stories
 
-* [SearchUI] Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace. (Or even eliminate distinction between Find & Replace modes altogether?) https://trello.com/c/7TjNR4lD/361-3-incremental-search and https://trello.com/c/MbM48GiP/262-replace-in-single-file
+#### Search bar UI
+* [ReplaceUI] Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace. (Or even eliminate distinction between Find & Replace modes altogether?) https://trello.com/c/7TjNR4lD/361-3-incremental-search and https://trello.com/c/MbM48GiP/262-replace-in-single-file
+    * Improve overall visual polish at the same time
+    * Keyboard shortcuts during Replace - https://trello.com/c/7HVPLeer/975-replace-dialog-keyboard-support
     * Gesture to turn Find to a replace operation (if not already unified by previous story)
-* [SearchUI] Improve overall visual polish
-* [SearchUI] Search query history - https://trello.com/c/IzACddEv/344-2-recent-search-history
-* [SearchUI] Enter key should not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
-* [SearchUI] Keyboard accessibility - https://trello.com/c/7HVPLeer/975-replace-dialog-keyboard-support
 * [QueryOptions] Explicit toggles for case-sensitive & regexp - https://trello.com/c/MBroELwS/260-3-find-in-current-file
-* [QueryOptions] Search in selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
-* [Highlighting] Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
-* [Highlighting] Continue to show search highlights when bar blurred (but hide upon first edit)
-* [Highlighting] Continue to show search highlights when bar blurred, and maintain them as text edited
+* [SearchUI] Enter key should not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
+
+#### Navigation polish & history 
 * [Navigation] Find Next should be relative to cursor pos, not invisible 'search cursor'
-* [Navigation] Keyboard shortcuts to navigate Find in Files results (next/prev)
+* [SearchUI] Search query history - https://trello.com/c/IzACddEv/344-2-recent-search-history
 * [Navigation] Show current match index
-* [Navigation] Indication when search wraps around
 * [Navigation] Horizontal scrolling: center horizontally? At least when scrolling left? Or scroll as far left as possible?
-* [FilesScope] Find all results in single/current file https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
-* [FilesScope] File sets - white-list/black-list, regex similar to Sublime
-* [FilesScope] Global/project-wide file include/exclude? https://trello.com/c/LgdleOVx/695-exclude-ignore-binary-files-libraries-or-subfolders-from-find-all-other-searches
+
+#### Find in Files Search
+* [BackgroundSearch] _(we're assuming the FileSystem caching work will have greatly improved search performance already)_
 * [BackgroundSearch] Async search in background
 * [BackgroundSearch] Incremental results during background search
 * [BackgroundSearch] Cancelable search
-* [BackgroundSearch] _(we're also assuming the FileSystem caching work will also greatly improve search performance)_
 * [ResultsList] Eliminate paging, or much larger page sizes
-* [ResultsList] Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995
-* [ResultsList] Results history - https://trello.com/c/KY4eJL7V
-* [ResultsList] Expand all / collapse all gestures _(PR pending)_
-* [ResultsList] Maintain result list as text edited (or files deleted/added/renamed) https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/780
+
+#### Find in Files Scope
+* [FilesScope] File sets - white-list/black-list, regex similar to Sublime
+
+#### Replace in Files
 * [ReplaceInFiles] Replace in Files (without atomic undo) https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
     * **Open question:** Should we open every file in tabs, allowing Undo? Or modify non-open files directly on disk?
-* Unit tests for existing functionality: Find in Files, highlighting, tickmarks, regex queries, etc. ...
 
-## Features for after daily use milestone
+#### Find/Replace highlighting while editing
+* [Highlighting] Continue to show search highlights when bar blurred (but hide upon first edit)
+* [Highlighting] Continue to show search highlights when bar blurred, and maintain them as text edited
+
+#### Find in Files Scope, Part 2
+* [FilesScope] Global/project-wide file include/exclude? https://trello.com/c/LgdleOVx/695-exclude-ignore-binary-files-libraries-or-subfolders-from-find-all-other-searches
+    * _Note:_ requires clean project-level preferences API
+
+#### Remaining polish & loose ends
+* [QueryOptions] Search/Replace in selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
+* [Navigation] Keyboard shortcuts to navigate Find in Files results (next/prev)
+* [Navigation] Indication when search wraps around
+* [Highlighting] Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
+* [ResultsList] Expand all / collapse all gestures _(PR pending)_
+
+
+## Dangling Trello stories
+
+These are generally done, but they mostly lack unit tests and may need some UI polish:
+* Maintain result list as text edited (or files deleted/added/renamed) https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/780
+* Find all results in single/current file https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
+* Unit tests for other existing functionality: Find in Files, highlighting, tickmarks, regex queries, etc. ...
+
+## After daily use milestone
 
 * Animated highlight 'blip' on Find Next/Previous
 * Smoothly animate when auto-scrolling match into view
@@ -56,7 +75,10 @@ These items in Trello aggregate multiple smaller stories & ideas:
 * Syntax highlighting when composing regexps
 * 'Whole word' toggle _(easy with regex)_
 * 'Auto highlight' when whole word selected _(extension exists)_
-* Show at least 3000 highlighting results
+* [Highlighting] Show at least 3000 highlighting results
+* [ResultsList] Result list history - https://trello.com/c/KY4eJL7V (not query history, but essentially cached results)
+* [ResultsList] Concatenated / multiple results lists
+* [ResultsList] Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995 - _or_ if single result, jump to it, else show list (like WebStorm)
 
 
 # Find in Current File
