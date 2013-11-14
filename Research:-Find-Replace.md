@@ -78,6 +78,45 @@ _**Work in Progress, Sprint 34**_
 * Visual Studio - Tracks two wraparound points: file bounds & search starting point (albeit awful UI for latter).
 
 
+
+# Replace in Single File
+
+### Overall UI
+* Sublime 2 - Separate command. Two rows, "Find What"/"Replace With" fields. Replace: next match from cursor pos; first click only highlights match (bug: no highlight), next click replaces.
+* WebStorm 7 - Separate command. 2nd row, both fields unlabeled. Replace: next match from last 'found' one, _regardless of cursor pos_; click immediately replaces 'next' match and highlights following one. "Exclude" button marks matches in strikethrough (to filter from Replace All) and does a Find-next.
+* XCode 5 - Find/Replace toggle. Two rows, field with "Replacement String" prompt text. "Replace & Find": replaces wherever last match was, _regardless of current cursor pos_; then jumps to next match _based on_ cursor pos. (Also has a useless-seeming "Replace" button that works like Espresso's).
+    * TODO: do pills factor in here???
+* Espresso 2 - Always available. Same row, field with "Replace Expression" prompt text. Replace: inserts _at cursor pos_ (regardless of whether its a match) and does _not_ move to next match (confusing - seems nearly useless).
+* Coda 2 - Always available. Same row, field with "Replace" prompt text ("Expanded Find Banner" option moves buttons to 2nd row for wider fields). Replace: next match from cursor pos; first click jumps to next match AND replaces, leaving cursor at replacement pos (so you _cannot_ see what is about to get replaced by next click)
+* Dreamweaver - Always available. Two rows(?), "Find"/"Replace" fields. Replace: next match from cursor pos; first click only highlights match(?), next click replaces.
+* TextMate 2 - Always available. Two rows, "Find"/"Replace" fields. "Replace & Find" inserts _at cursor pos_ (regardless of whether its a match) and highlights next match.
+* Notepad++ 6.4 - Alternate tab in dialog. Two rows, "Find what"/"Replace with" fields. Replace: next match from cursor pos; first click only highlights match, next click replaces.
+* Visual Studio 2010 - Always available. "Find what"/"Replace with" fields. Replace: next match from cursor pos; first click only highlights match, next click replaces.
+
+### Replace All
+* Sublime - Replaces whole file at once, including matches passed over earlier. No summary.
+* WebStorm - Replaces whole file at once, including matches passed over earlier _except for_ anything marked via Exclude button. Can also Exclude via Find All panel if opened. No summary.
+* XCode - Replaces whole file at once, including matches passed over earlier. No summary.
+* Espresso - Replaces whole file at once, including matches passed over earlier. No summary. Noticeably slow (~1 sec for a 42 KB file with 60 matches).
+* Coda - "All" replaces whole file at once, including matches passed over earlier. Highlights all replacements for a _brief_ moment before fading out, but only persistent summary is a pill in replace field indicating number of items replaced (hidden upon next edit or textfield change). Noticeable pause, but not as slow as Espresso.
+* Dreamweaver - Replaces whole file at once, including matches passed over earlier. Open summary panel at bottom.
+* TextMate - Replaces whole file at once, including matches passed over earlier. No summary.
+* Notepad++ - Replaces _only_ from cursor pos to end of file. No summary (except dialog label indicates number of items replaced).
+* Visual Studio - Replaces whole file at once, including matches passed over earlier. No summary.
+
+### Other Features
+* Sublime - Preserve case option (first letter / rest of word)
+* WebStorm - "Exclude" button. Preserve case option (first letter / rest of word). In-selection (_only_ available for Replace, not regular Find)
+* XCode - none (unlike Coda, "pills" are only for Find, not Replace)
+* Espresso - none
+* Coda - "*" icon numbered "pills"
+* Dreamweaver - In older versions, Find All panel had gesture to replace individual results one at a time.
+* TextMate - none
+* Notepad++ -  In-selection (_only_ available for Replace, not regular Find)
+* Visual Studio - none
+
+
+
 # Find/Replace in Multiple Files
 
 ### Scope
@@ -168,18 +207,21 @@ These stories aggregate multiple smaller stories:
 
 ## Proposed Stories
 
+* Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace.
 * Find Next should be relative to cursor pos, not invisible 'search cursor'
 * Explicit toggles for case-sensitive & regexp
 * Search query history
 * Show current match index
-* Continue to show search highlights when bar closed (but hide upon first edit)
-* Continue to show search highlights when bar closed, and maintain them as text edited
+* Continue to show search highlights when bar blurred (but hide upon first edit)
+* Continue to show search highlights when bar blurred, and maintain them as text edited
 * Animated highlight 'blip' on Find Next/Previous
+* Gesture to turn Find to a replace operation (if not already unified by previous story)
 * Indication when search wraps around
 * Gesture to convert query from Find to Find All
 * Smoothly animate when auto-scrolling match into view
 * Horizontal scrolling: center horizontally? At least when scrolling left? Or scroll as far left as possible?
 * Insert 'pills' into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps)
+* Replace field numbered "pills" to match up with regexp groups
 * Filter search to just comments or just literals
 * Syntax highlighting when composing regexps
 * 'Auto highlight' when whole word selected
