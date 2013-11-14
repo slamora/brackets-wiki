@@ -76,7 +76,7 @@ other colors used in the file.
 Eventually Brackets could leverage inline editing for lots of other kinds of
 things, like gradient and shadow editors for the selected CSS rule.
 
-<a id="livedev"></a>Live Development
+<a id="livedev"></a>Live Preview
 ----------------
 
 Another goal of Brackets is to bridge the gap between code editing and in-browser
@@ -86,11 +86,11 @@ CSS properties in order to fix layout issues. Once they're done, they then have
 to remember what they did and then go back to their editor to fix the problems
 in the source code.
 
-With Live Development, the idea is to tie Brackets more closely to the browser, 
+With Live Preview, the idea is to tie Brackets more closely to the browser, 
 so that you can make changes and debug from Brackets itself, and see the results
 instantly in the browser.
 
-Live Development also includes support for live editing of HTML. If you open an HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This includes changes to the style and class tag attributes.
+Live Preview also includes support for live editing of HTML. If you open an HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This includes changes to the style and class tag attributes.
 
 By default, Brackets previews files using a local http server that is included with Brackets. 
 If you want to preview off a server, you can use **File > Project Settings...**. 
@@ -173,12 +173,11 @@ Extensions
 There is a large and growing body of extensions available for Brackets, many
 of which were written by community members, that add all kinds of interesting
 and useful functionality. You can install an extension using **File > Extension Manager...**
-or clicking the "brick" icon on the toolbar, then clicking the **Install from URL...** button
-at the bottom. From there, you can click on
-**Browse Extensions** to get to the [list of Brackets extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions), which has further instructions on installation.
-You can also remove extensions from the Extension Manager dialog.
+or clicking the "brick" icon on the toolbar. From there, you can view and
+install extensions from the list of "Available" extensions. You can also view 
+and remove your currently installed extensions by going to the "Installed" tab.
 
-There is a central registry of Brackets extensions managed by [AboutWeb](http://aboutweb.com) that you can access by clicking the "Available" tab in the Extension Manager. This tab allows you to browse and search the list of available extensions and install or update them with one click. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
+[AboutWeb](http://aboutweb.com) manages the extension registry. Extension developers can upload new or updated extensions to the registry at https://brackets-registry.aboutweb.com.
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
