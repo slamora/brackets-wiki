@@ -72,7 +72,7 @@ _**Work in Progress, Sprint 34**_
 * XCode - Wildcard & canned regex "pills" (see above). Regex paren matching. Fancier flavors of word matching.
 * Espresso - none
 * Coda - Wildcard "pills" (see above). Use Expanded Find Banner" option moves all buttons to a 2nd row, making Find/Replace text fields wider.
-* Dreamweaver - Ignore whitespace w/o full regexp syntax. "HTML text" mode. HTML structural searches. Find All opens results panel.
+* Dreamweaver - Ignore whitespace w/o full regexp syntax. "HTML text" mode. HTML structural searches. Find All opens results panel. Saved searches.
 * TextMate - Ignore whitespace w/o full regexp syntax. Find All opens results list within dialog.
 * Notepad++ - 'Auto highlight' when whole word selected (separate match style). "Extended" mode allows escape codes w/o full regexp syntax. Find All opens bottom panel.
 * Visual Studio - Tracks two wraparound points: file bounds & search starting point (albeit awful UI for latter).
