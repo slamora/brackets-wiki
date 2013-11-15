@@ -1,4 +1,46 @@
-## Lifecycle research 
+# November 2013 Live Development Future Notes
+
+This page originally detailed Ian Wehrman's look at issues with Live Development's connection stability and made some recommendations for the future. We are now approaching the time where we want to implement that future. Ian's original notes appear in the "March 2013 Research" section below.
+
+## Three Parts to the Browser Connection
+
+As we imagine future possibilities such as Brackets supporting Live Development with browsers other than Chrome or Brackets running in a browser, it's worth noting that there are really three almost entirely separate parts:
+
+1. The API we program to for Live Development features
+2. The protocol that is spoken between Brackets and the browser that is being used for previewing
+3. The network transport used to move protocol messages from place to place.
+
+By consciously treating these as three separate things, we will be able to support the variety of use cases we want in the future.
+
+## The API
+
+Long-term, it would be great if the browsers themselves provided a standard JavaScript API that allowed browser-based tools to work with a separate browser window that contains the user's application. We're a long way away from that.
+
+In the meantime, Brackets will have its own JavaScript API that is used by its various Live Development features. We should design this API to provide the functionality we need to implement our Live Development features without tying the API to a specific protocol.
+
+## The Protocol
+
+Today, Brackets knows how to speak the [Chrome Remote Debugging Protocol](https://developers.google.com/chrome-developer-tools/docs/debugger-protocol), which is what ties Brackets to Chrome. Firefox uses a [different protocol](https://wiki.mozilla.org/Remote_Debugging_Protocol). By abstracting the protocol away in our JavaScript API, as noted above, we can choose to support both the Chrome protocol and the Firefox one.
+
+Or, we could make use of the [RemoteDebug](http://remotedebug.org/) project's work to speak to Firefox via the protocol used by Chrome. Or, we could create an entirely new protocol that can be interpreted by code that we inject into the page when we start Live Development. Ideally, we can make any of these choices without changing the features in Brackets.
+
+We do want to support multiple browsers and the browsers speak different protocols, so somewhere along the way there will be a translation that occurs.
+
+## The Network Transport
+
+Safari uses the same protocol as Chrome (at least, it did when both browsers were based on WebKit). But, [Safari on iOS uses a different transport for the protocol](http://stackoverflow.com/questions/11361822/debug-ios-67-mobile-safari-using-the-chrome-devtools). If we want to support an in-browser Brackets, we may find ourselves needing to implement a different transport, one that proxies all of the messages through a separate server in order to deal with security restrictions. If we proxy all of the messages to a server in another location from the user, then we start having to think about the latency involved.
+
+Choosing how we transport protocol messages is going to depend again on our target browsers, and also on other constraints such as latency.
+
+## Conclusion
+
+Keeping these three concerns separate will give us a chance to more easily add incremental support for the features we want in the future (things like support for other browsers and in-browser Brackets).
+
+See also the "Future Directions" section that Ian wrote below with specific suggestions based on how the code is structured presently.
+
+# March 2013 Research
+
+## Lifecycle research
 
 This section describes in some detail a problem with Live Development startup that was be manifesting itself as issue [#2858](https://github.com/adobe/brackets/issues/2858).
 
