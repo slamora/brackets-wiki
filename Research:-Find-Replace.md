@@ -9,9 +9,9 @@ In proposed priority order:
 #### Search bar UI
 * [ReplaceUI] Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace. (Or even eliminate distinction between Find & Replace modes altogether?) https://trello.com/c/7TjNR4lD/361-3-incremental-search and https://trello.com/c/MbM48GiP/262-replace-in-single-file
     * Improve overall visual polish at the same time
-    * Keyboard shortcuts during Replace - https://trello.com/c/7HVPLeer/975-replace-dialog-keyboard-support
+    * Keyboard shortcuts during Replace - https://trello.com/c/7HVPLeer/975-replace-dialog-keyboard-support _(PR already posted?)_
     * Gesture to turn Find to a replace operation (if not already unified by previous story)
-* [QueryOptions] Explicit toggles for case-sensitive & regexp - https://trello.com/c/MBroELwS/260-3-find-in-current-file
+* [QueryOptions] Explicit toggles for case-sensitive & regexp - https://trello.com/c/MBroELwS/260-3-find-in-current-file, https://trello.com/c/VTWxph8k/306-search-replace-w-regular-expressions
 * [SearchUI] Enter key should not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
 
 #### Navigation polish & history 
@@ -43,27 +43,36 @@ In proposed priority order:
     * _Note:_ requires clean project-level preferences API
 
 #### Remaining polish & loose ends
-* [QueryOptions] Search/Replace in selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
+* [QueryOptions] Search/Replace within selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
 * [Navigation] Keyboard shortcuts to navigate Find in Files results (next/prev)
 * [Navigation] Indication when search wraps around
 * [Highlighting] Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
-* [ResultsList] Expand all / collapse all gestures _(PR pending)_
+* [ResultsList] Expand all / collapse all gestures _(PR already pending)_
+* [QueryOptions] Localize regex error messages - https://trello.com/c/SAPEqkP5/956-localize-regexp-error-messages-in-find
 
 
 ## Dangling Trello stories
 
-These are generally done, but they mostly lack unit tests and may need some UI polish:
+These are generally done, but they lack unit tests and may need some UI polish:
+
 * Maintain result list as text edited (or files deleted/added/renamed) https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/780
 * Find all results in single/current file https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
-* Unit tests for other existing functionality: Find in Files, highlighting, tickmarks, regex queries, etc. ...
+* Incremental search https://trello.com/c/7TjNR4lD/361-3-incremental-search
+* Single-file Find All https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
+* Replace All https://trello.com/c/DdGMEh3f/348-3-111-replace-all-as-a-role-i-want-to-feature-so-that-value
+* Highlight find matches in scrollbar track https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
+
+* Other existing functionality? Find in Files, Find match highlighting, regex queries, etc. ...
+
 
 ## After daily use milestone
 
-* Animated highlight 'blip' on Find Next/Previous
+* Animated highlight 'blip' on Find Next/Previous - https://trello.com/c/Z7WOLNkA/724-use-animation-to-highlight-find-search-results
 * Smoothly animate when auto-scrolling match into view
 * Gesture to convert query from Find to Find All
 * Extensible Find result filtering
 * Filter search to just comments or just literals
+* Language-specific structural search (e.g. HTML via XPath, search on flattened LESS/SASS selector https://trello.com/c/PdYCSVh7/981-advanced-searching-for-selectors-in-less-sass-files, etc.)
 * Insert "pills" into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps) _(regexes aren't that scary)_
 * Replace field numbered "pills" to match up with regexp groups _(regexes aren't that scary)_
 * Syntax highlighting when composing regexps
@@ -71,7 +80,7 @@ These are generally done, but they mostly lack unit tests and may need some UI p
 * 'Auto highlight' when whole word selected _(extension exists)_
 * [Highlighting] Show at least 3000 highlighting results
 * [ResultsList] Result list history - https://trello.com/c/KY4eJL7V (not query history, but essentially cached results)
-* [ResultsList] Concatenated / multiple results lists
+* [ResultsList] Concatenated / multiple results lists - https://trello.com/c/KY4eJL7V/1038-find-in-files-preserve-previous-results
 * [ResultsList] Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995 - _or_ if single result, jump to it, else show list (like WebStorm)
 
 ## Existing Stories
