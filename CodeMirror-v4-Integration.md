@@ -8,18 +8,10 @@
 
 ### Nov 15 - Jason
 
-* Unit test failures
-    * EditorCommandHandlers - 8
-    * HTMLUtils Code Hints - 27 (see `selAfter` stack trace)
-* Integration test failures
-* Extension test failures
-* Confirmed that cmv4 fires 2 change events. In my JS file test, typing a single char, the change event shows the insertion (good) and a deletion of the inserted char (wha?)
-* JS, CSS and HTML code hints are in various states of broken
-    * JS - `change` handler is triggered twice. The first time, the inserted char appears in the editor and a hints popup already appears. The second time, the inserted character was somehow removed.
-    * CSS - inserting a style name works fine, but value hinting immediately after is broken. Instead of seeing the value hints popup, the next char becomes selected
-    * HTML - tag hinting appears to work, but attribute name hinting will delete the next character, yet still show the hints popup. Attribute value hinting is even worse. Inserting a value `ltr` for `dir` attribute in `<div dir=""></div>` actually produces `<div dir="">ltr</div>`
 
-* `selAfter`
+#### HTMLUtils Code Hints - 27  failures
+
+This stack occurs in the first test when creating a new empty editor:
 
 ```
 TypeError: Cannot set property 'selAfter' of undefined
@@ -31,6 +23,18 @@ TypeError: Cannot set property 'selAfter' of undefined
     at new Editor (file:///C:/Program%20Files/Brackets/dev/src/editor/Editor.js:418:14)
     at null.<anonymous> (file:///C:/Program%20Files/Brackets/dev/test/spec/CodeHintUtils-test.js:46:24)
 ```
+
+
+* Unit test failures
+    * EditorCommandHandlers - 8
+    * HTMLUtils Code Hints - 27 
+* Integration test failures
+* Extension test failures
+* Confirmed that cmv4 fires 2 change events. In my JS file test, typing a single char, the change event shows the insertion (good) and a deletion of the inserted char (wha?)
+* JS, CSS and HTML code hints are in various states of broken
+    * JS - `change` handler is triggered twice. The first time, the inserted char appears in the editor and a hints popup already appears. The second time, the inserted character was somehow removed.
+    * CSS - inserting a style name works fine, but value hinting immediately after is broken. Instead of seeing the value hints popup, the next char becomes selected
+    * HTML - tag hinting appears to work, but attribute name hinting will delete the next character, yet still show the hints popup. Attribute value hinting is even worse. Inserting a value `ltr` for `dir` attribute in `<div dir=""></div>` actually produces `<div dir="">ltr</div>`
 
 ### Nov 14 - NJ
 
