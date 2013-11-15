@@ -86,6 +86,8 @@ define(function (require, exports, module) {
 unittest.js
 ----
 
+Brackets uses Jasmine to execute unit tests. For more information about Jasmine see [http://pivotal.github.io/jasmine/](http://pivotal.github.io/jasmine/).
+
 ```javascript
 define(function (require, exports, module) {
     "use strict";
