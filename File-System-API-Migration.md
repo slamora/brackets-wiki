@@ -55,7 +55,7 @@ Under the hood, the old API has been reimplemented in terns of the new APIs, so 
 <tr><td><b>Old API</b></td><td><b>New API</b></td><td><b>Notes</b></td><td><b>Usage</b></td></tr>
 </thead>
 <tr><td>new NativeFileSystem.FileEntry(fullPath)<br>new NativeFileSystem.DirectoryEntry(fullPath)</td><td>filesystem.getFileForPath(fullPath)<br>filesystem.getDirectoryForPath(fullPath)<br>(You never directly construct a File / Directory)</td><td>These now return a File / Directory object using the new APIs instead of constructing a FileEntry / DirectoryEntry</td><td>19</td></tr>
-<tr><td>DirectoryEntry.getFile(relpath)</td><td>filesystem.resolve(dirFullPath + relpath)</td><td></td><td>4</td></tr>
+<tr><td>DirectoryEntry.getFile(relpath)<br>DirectoryEntry.getDirectory(relpath)<br>(*without* 'create' flag)</td><td>filesystem.resolve(dirFullPath + relpath)</td><td></td><td>4</td></tr>
 <tr><td>NativeFileSystem.resolveNativeFileSystemPath(fullPath)</td><td>filesystem.resolve(path)</td><td></td><td>4</td></tr>
 <tr><td>NativeFileSystem.requestNativeFileSystem(fullPath)... fs.root</td><td>filesystem.resolve(fullPath)</td><td></td><td>6</td></tr>
 <tr><td>directoryEntry.createReader().readEntries()</td><td>directory.getContents()</td><td></td><td>5</td></tr>
