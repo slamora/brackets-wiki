@@ -10,6 +10,8 @@
 
 #### EditorCommandHandlers - 8 failures
 
+All 8 failures due to mismatched cursor/selection positions
+
 #### HTMLUtils Code Hints - 27  failures
 
 This stack occurs in the first test when creating a new empty editor:
