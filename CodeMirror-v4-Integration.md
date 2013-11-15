@@ -9,6 +9,8 @@
 ### Nov 15 - Jason
 
 * Unit test failures
+    * EditorCommandHandlers - 8
+    * HTMLUtils Code Hints - 27
 * Integration test failures
 * Extension test failures
 * Confirmed that cmv4 fires 2 change events. In my JS file test, typing a single char, the change event shows the insertion (good) and a deletion of the inserted char (wha?)
