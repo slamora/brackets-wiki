@@ -8,6 +8,7 @@
 
 ### Nov 15 - Jason
 
+* Confirmed that cmv4 fires 2 change events. In my JS file test, typing a single char, the change event shows the insertion (good) and a deletion of the inserted char (wha?)
 * JS, CSS and HTML code hints are in various states of broken
     * JS - `change` handler is triggered twice. The first time, the inserted char appears in the editor and a hints popup already appears. The second time, the inserted character was somehow removed.
     * CSS - inserting a style name works fine, but value hinting immediately after is broken. Instead of seeing the value hints popup, the next char becomes selected
