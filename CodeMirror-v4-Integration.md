@@ -8,6 +8,7 @@
 
 ### Nov 15 - Jason
 
+#### EditorCommandHandlers - 8 failures
 
 #### HTMLUtils Code Hints - 27  failures
 
@@ -24,12 +25,6 @@ TypeError: Cannot set property 'selAfter' of undefined
     at null.<anonymous> (file:///C:/Program%20Files/Brackets/dev/test/spec/CodeHintUtils-test.js:46:24)
 ```
 
-
-* Unit test failures
-    * EditorCommandHandlers - 8
-    * HTMLUtils Code Hints - 27 
-* Integration test failures
-* Extension test failures
 * Confirmed that cmv4 fires 2 change events. In my JS file test, typing a single char, the change event shows the insertion (good) and a deletion of the inserted char (wha?)
 * JS, CSS and HTML code hints are in various states of broken
     * JS - `change` handler is triggered twice. The first time, the inserted char appears in the editor and a hints popup already appears. The second time, the inserted character was somehow removed.
