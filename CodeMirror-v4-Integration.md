@@ -8,6 +8,10 @@
 
 ### Nov 15 - Jason
 
+* JS, CSS and HTML code hints are in various states of broken
+    * JS - `change` handler is triggered twice. The first time, the inserted char appears in the editor and a hints popup already appears. The second time, the inserted character was somehow removed.
+    * CSS - inserting a style name works fine, but value hinting immediately after is broken. Instead of seeing the value hints popup, the next char becomes selected
+    * HTML - tag hinting appears to work, but attribute name hinting will delete the next character, yet still show the hints popup. Attribute value hinting is even worse. Inserting a value `ltr` for `dir` attribute in `<div dir=""></div>` actually produces `<div dir="">ltr</div>`
 
 ### Nov 14 - NJ
 
