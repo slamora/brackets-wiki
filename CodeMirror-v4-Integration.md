@@ -8,11 +8,11 @@
 
 ### Nov 15 - Jason
 
-#### EditorCommandHandlers - 8 failures
+#### EditorCommandHandlers (8)
 
 All 8 failures due to mismatched cursor/selection positions
 
-#### HTMLUtils Code Hints - 27  failures
+#### HTMLUtils Code Hints (27), EditorManager (12), CSSUtils - Other (1), HTML Instrumentation (1)
 
 This stack occurs in the first test when creating a new empty editor:
 
@@ -26,6 +26,19 @@ TypeError: Cannot set property 'selAfter' of undefined
     at new Editor (file:///C:/Program%20Files/Brackets/dev/src/editor/Editor.js:418:14)
     at null.<anonymous> (file:///C:/Program%20Files/Brackets/dev/test/spec/CodeHintUtils-test.js:46:24)
 ```
+
+### LanguageManager (1)
+
+```
+Error: Expected undefined not to be undefined.
+    at new jasmine.ExpectationResult (file:///C:/Program%20Files/Brackets/dev/test/thirdparty/jasmine-core/jasmine.js:102:32)
+    at null.toBe (file:///C:/Program%20Files/Brackets/dev/test/thirdparty/jasmine-core/jasmine.js:1194:29)
+    at null.<anonymous> (file:///C:/Program%20Files/Brackets/dev/test/spec/LanguageManager-test.js:398:54)
+    at jasmine.Block.execute (file:///C:/Program%20Files/Brackets/dev/test/thirdparty/jasmine-core/jasmine.js:1024:15)
+    at jasmine.Queue.next_ (file:///C:/Program%20Files/Brackets/dev/test/thirdparty/jasmine-core/jasmine.js:1842:31)
+    at file:///C:/Program%20Files/Brackets/dev/test/thirdparty/jasmine-core/jasmine.js:1832:18
+```
+
 
 * Confirmed that cmv4 fires 2 change events. In my JS file test, typing a single char, the change event shows the insertion (good) and a deletion of the inserted char (wha?)
 * JS, CSS and HTML code hints are in various states of broken
