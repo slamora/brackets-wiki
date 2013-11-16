@@ -49,7 +49,7 @@ Error: Expected undefined not to be undefined.
     * JS - `change` handler is triggered twice. The first time, the inserted char appears in the editor and a hints popup already appears. The second time, the inserted character was somehow removed.
     * CSS - inserting a style name works fine, but value hinting immediately after is broken. Instead of seeing the value hints popup, the next char becomes selected
     * HTML - tag hinting appears to work, but attribute name hinting will delete the next character, yet still show the hints popup. Attribute value hinting is even worse. Inserting a value `ltr` for `dir` attribute in `<div dir=""></div>` actually produces `<div dir="">ltr</div>`
-* [nj] I wonder if those issues are related to the fact that CM sends out multiple change events for a single operation now (as opposed to chaining them all together in a single change). We might have a lot of code that assumes you only get one change event for a given typing op.
+* [nj] I wonder if those issues are somehow related to the fact that CM sends out multiple change events for a single operation now (as opposed to chaining them all together in a single change). It doesn't seem like we should be sensitive to that (except for performance reasons), but maybe we have code that assumes a single typing op only produces one change event. (Though I'm not sure why you would get two change events for just typing a character anyway.)
 
 ### Nov 14 - NJ
 
