@@ -8,6 +8,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Quick Start Video](http://www.youtube.com/watch?v=VKitqLpJtAY&feature=plcp)
 * [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)
 * [A Peek at Brackets from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/)
+* [Deeper In the Brackets Editor from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/deeper-in-the-brackets-editor)
 * [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
 * [Keyboard Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts)
 
@@ -47,3 +48,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
  * [Sprint 27](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-27)
  * [Sprint 26](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-26)
  * [more...](https://github.com/adobe/brackets/wiki/Release-Notes)
+
+## Community
+
+* [Brackets Communication Channels from Brackets Wiki](https://github.com/adobe/brackets/wiki/Brackets-Communication-Channels)
