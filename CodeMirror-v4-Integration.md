@@ -4,6 +4,10 @@
 * User Manuals [v4 manual](http://codemirror.net/4/doc/manual.html) and [v3 manual](http://codemirror.net/doc/manual.html)
 * Multiple cursor demo http://codemirror.net/4/demo/multiselect.html
 
+## Known Issues
+
+* [Uncaught TypeError during setValue after editor construction](https://github.com/marijnh/CodeMirror/issues/1961)
+
 ## Notes
 
 ### Nov 15 - Jason
