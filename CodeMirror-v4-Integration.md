@@ -27,7 +27,7 @@ TypeError: Cannot set property 'selAfter' of undefined
     at null.<anonymous> (file:///C:/Program%20Files/Brackets/dev/test/spec/CodeHintUtils-test.js:46:24)
 ```
 
-### LanguageManager (1)
+#### LanguageManager (1)
 
 ```
 Error: Expected undefined not to be undefined.
