@@ -13,6 +13,7 @@ In proposed priority order:
     * Gesture to turn Find to a replace operation (if not already unified by previous story)
 * [QueryOptions] Explicit toggles for case-sensitive & regexp - https://trello.com/c/MBroELwS/260-3-find-in-current-file, https://trello.com/c/VTWxph8k/306-search-replace-w-regular-expressions
 * [SearchUI] Enter key should not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
+* [Maintainability] Unit tests for existing functionality (see "dangling stories" list below, for starters)
 
 #### Navigation polish & history 
 * [Navigation] Find Next should be relative to cursor pos, not invisible 'search cursor'
@@ -22,7 +23,7 @@ In proposed priority order:
 
 #### Find in Files Search
 * [BackgroundSearch] _(we're assuming the FileSystem caching work will have greatly improved search performance already)_
-* [BackgroundSearch] Async search in background
+* [BackgroundSearch] Async search in background (_Open question:_ consider a progress meter too)
 * [BackgroundSearch] Incremental results during background search
 * [BackgroundSearch] Cancelable search
 * [ResultsList] Eliminate paging, or much larger page sizes
@@ -33,6 +34,7 @@ In proposed priority order:
 #### Replace in Files
 * [ReplaceInFiles] Replace in Files (without atomic undo) https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
     * **Open question:** Should we open every file in tabs, allowing Undo? Or modify non-open files directly on disk?
+    * **Open question:** Summary panel afterward?
 
 #### Find/Replace highlighting while editing
 * [Highlighting] Continue to show search highlights when bar blurred (but hide upon first edit)
@@ -43,12 +45,14 @@ In proposed priority order:
     * _Note:_ requires clean project-level preferences API
 
 #### Remaining polish & loose ends
+* [Navigation] Fix Find Next for inline editors (may be fixed "for free" by [doc linking](https://trello.com/c/cRAl0YHB/774-2-doc-linking-for-inline-editors))
 * [QueryOptions] Search/Replace within selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
 * [Navigation] Keyboard shortcuts to navigate Find in Files results (next/prev)
 * [Navigation] Indication when search wraps around
 * [Highlighting] Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
 * [ResultsList] Expand all / collapse all gestures _(PR already pending)_
 * [QueryOptions] Localize regex error messages - https://trello.com/c/SAPEqkP5/956-localize-regexp-error-messages-in-find
+* [QueryOptions] 'Whole word' toggle (easy with regex, though)
 
 
 ## Dangling Trello stories
@@ -62,21 +66,20 @@ These are generally done, but they lack unit tests and may need some UI polish:
 * Replace All https://trello.com/c/DdGMEh3f/348-3-111-replace-all-as-a-role-i-want-to-feature-so-that-value
 * Highlight find matches in scrollbar track https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
 
-* Other existing functionality? Find in Files, Find match highlighting, regex queries, etc. ...
+* Other existing functionality: Find in Files, Find match highlighting, regex queries, etc. ...
 
 
 ## After daily use milestone
 
-* Animated highlight 'blip' on Find Next/Previous - https://trello.com/c/Z7WOLNkA/724-use-animation-to-highlight-find-search-results
-* Smoothly animate when auto-scrolling match into view
-* Gesture to convert query from Find to Find All
-* Extensible Find result filtering
-* Filter search to just comments or just literals
+* [Navigation] Animated highlight 'blip' on Find Next/Previous - https://trello.com/c/Z7WOLNkA/724-use-animation-to-highlight-find-search-results
+* [Navigation] Smoothly animate when auto-scrolling match into view
+* [SearchUI] Gesture to convert query from Find to Find All
+* [Extensibility] Extensible Find result filtering
+* [QueryOptions] Filter search to just comments or just literals
 * Language-specific structural search (e.g. HTML via XPath, search on flattened LESS/SASS selector https://trello.com/c/PdYCSVh7/981-advanced-searching-for-selectors-in-less-sass-files, etc.)
-* Insert "pills" into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps) _(regexes aren't that scary)_
-* Replace field numbered "pills" to match up with regexp groups _(regexes aren't that scary)_
-* Syntax highlighting when composing regexps
-* 'Whole word' toggle _(easy with regex)_
+* [Regex] Insert "pills" into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps) _(regexes aren't that scary)_
+* [Regex] Replace field numbered "pills" to match up with regexp groups _(regexes aren't that scary)_
+* [Regex] Syntax highlighting when composing regexps
 * 'Auto highlight' when whole word selected _(extension exists)_
 * [Highlighting] Show at least 3000 highlighting results
 * [ResultsList] Result list history - https://trello.com/c/KY4eJL7V (not query history, but essentially cached results)
