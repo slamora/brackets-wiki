@@ -44,6 +44,7 @@ These APIs are completely gone - code using them will throw exceptions. Extensio
 </tr>
 <tr><td>FileUtils.isAffectedWhenRenaming()</td><td>n/a</td><td></td><td>None</td></tr>
 <tr><td>FileUtils.updateFileEntryPath()</td><td>n/a</td><td></td><td>None</td></tr>
+<tr><td>FileUtils.getFilenameExtension()<br>(this was already deprecated)</td><td>FileUtils.getFileExtension()<br>(note: different return value)</td><td></td><td>None</td></tr>
 </table>
 
 ### Deprecated APIs
