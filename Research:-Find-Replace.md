@@ -45,8 +45,9 @@ In proposed priority order:
     * _Note:_ requires clean project-level preferences API
 
 #### Remaining polish & loose ends
-* [Navigation] Fix Find Next for inline editors (may be fixed "for free" by [doc linking](https://trello.com/c/cRAl0YHB/774-2-doc-linking-for-inline-editors))
+* [Regex] Allow matching across newlines
 * [QueryOptions] Search/Replace within selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
+* [Navigation] Fix Find Next for inline editors (may be fixed "for free" by [doc linking](https://trello.com/c/cRAl0YHB/774-2-doc-linking-for-inline-editors))
 * [Navigation] Keyboard shortcuts to navigate Find in Files results (next/prev)
 * [Navigation] Indication when search wraps around
 * [Highlighting] Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
@@ -62,7 +63,6 @@ These are generally done, but they lack unit tests and may need some UI polish:
 * Maintain result list as text edited (or files deleted/added/renamed) https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/780
 * Find all results in single/current file https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
 * Incremental search https://trello.com/c/7TjNR4lD/361-3-incremental-search
-* Single-file Find All https://trello.com/c/FIQZdqrH/308-1-71-single-file-find-all
 * Replace All https://trello.com/c/DdGMEh3f/348-3-111-replace-all-as-a-role-i-want-to-feature-so-that-value
 * Highlight find matches in scrollbar track https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
 
@@ -76,6 +76,7 @@ These are generally done, but they lack unit tests and may need some UI polish:
 * [SearchUI] Gesture to convert query from Find to Find All
 * [Extensibility] Extensible Find result filtering
 * [QueryOptions] Filter search to just comments or just literals
+* [ResultsList] Syntax coloring in results list panel
 * Language-specific structural search (e.g. HTML via XPath, search on flattened LESS/SASS selector https://trello.com/c/PdYCSVh7/981-advanced-searching-for-selectors-in-less-sass-files, etc.)
 * [Regex] Insert "pills" into plain-text query to make writing simple regexp-like queries easier (and/or insert canned snippets into regexps) _(regexes aren't that scary)_
 * [Regex] Replace field numbered "pills" to match up with regexp groups _(regexes aren't that scary)_
