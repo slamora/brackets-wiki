@@ -17,7 +17,7 @@ What's New in Sprint 34
     * [Linux: Support for SSHFS and REISERFS file systems](https://github.com/adobe/brackets-shell/pull/369): Resolves issue where Brackets treated project as an empty folder
     * [Mac: Any file can now be opened via drag/drop, regardless of file extension](https://github.com/adobe/brackets-shell/pull/367): Previously only certain file types were accepted.
 * **Extensions**
-    * [Extension Manager indicates when updates are available](https://github.com/adobe/brackets/pull/5838) via an icon overlaid on the "Installed" tab
+    * [Extension Manager indicates available extension updates](https://github.com/adobe/brackets/pull/5838) via an icon overlaid on the "Installed" tab
 * **Under the hood**
     * [New file system API](https://trello.com/c/PO7CIgqf/1050-1-merge-new-file-system): Some [API changes for extensions](https://github.com/adobe/brackets/wiki/File-System-API-Migration) -- see below. Slightly improves performance of some features, like Find in Files (larger improvements to come later!).
 * **Localization**
@@ -34,7 +34,7 @@ UI Changes
 
 **Installation** - see above. Starting _next_ sprint, newer versions of Brackets will overwrite previously installed versions.
 
-You can preserve an already installed version of Brackets to keep multiple versions of Brackets on your system at once. Simply copy it to a different location before installing the new release.  For example, on Mac, from the `Application` folder, just rename `Brackets.app` to `Brackets Sprint 34.app`, and then install the new release from the .dmg.  On Windows, copy the `\Program Files (x86)\Bracks` folder `Brackets Sprint 34`, and then install the new release from the .msi.  File associations will remain with the newer version that overwrites the original location.
+You can preserve an already installed version of Brackets to keep multiple versions of Brackets on your system at once. Simply copy it to a different location before installing the new release.  For example, on Mac, just rename `Brackets.app` to `Brackets Sprint 34.app` and then install the new release from the .dmg.  On Windows, copy the `\Program Files (x86)\Bracks` folder `Brackets Sprint 34`, and then install the new release from the .msi.  File associations will remain with the newer version that overwrites the original location.
 
 **Extensions** - the Extension Manager 'Available' and 'Installed' tabs have switched places.
 
@@ -43,17 +43,18 @@ You can preserve an already installed version of Brackets to keep multiple versi
 
 API Changes
 -----------
-**File APIs** - TODO
-also, the already-deprecated FileUtils.getFilenameExtension() was removed
+**File APIs** - Sprint 34 introduces a new `FileSystem` API that replaces `NativeFileSystem` and `FileIndexManager`. Some of the old APIs are removed immediately; others are deprecated and will be removed later. See the [API migration guide](https://github.com/adobe/brackets/wiki/File-System-API-Migration) and [discussion thread](https://groups.google.com/forum/#!topic/brackets-dev/95PyDKfMO0M) for details.
 
-**Closing Files** - TODO: mention `Commands.FILE_CLOSE_LIST` once API cleaned up
+`FileUtils.getFilenameExtension()`, which was already deprecated, is now removed. Use `getFileExtension()` instead (note that it excludes the leading ".").
 
 
 New/Improved Extensibility APIs
 -------------------------------
-**Quick Open** - TODO: extensions can specify a label
+**Documents** - New `DocumentManager.getDocumentText()` API can be significantly faster than using `getDocumentForPath()` if all you need to do is call `getText()` on it. Especially beneficial for bulk operations such as Find in Files.
 
-**Documents** - TODO: new, faster getDocumentText() API
+**Quick Open** - QuickOpen providers can now specify a `label` property that is shown in the search bar when that provider is active. Also, some previously required properties are now optional.
+
+**CodeMirror modes** - Brackets can now load CodeMirror modes that use the [multiplex](http://codemirror.net/doc/manual.html#addon_multiplex) or [overlay](http://codemirror.net/doc/manual.html#addon_overlay) addon utilities.
 
 
 Known Issues
@@ -72,9 +73,7 @@ Community contributions to Brackets
 * [Display normal filename in URL code hints list, insteaed of URL-encoded name](https://github.com/adobe/brackets/pull/5854) by [Lance Campbell](https://github.com/lkcampbell)
 * [Allow escaping "$" in regexp Replace mode](https://github.com/adobe/brackets/pull/5840) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Enable Visual Basic syntax highlighting](https://github.com/adobe/brackets/pull/5638) by [Michael Cole](https://github.com/micole)
-* Honorable mention: [work](https://github.com/adobe/brackets-shell/pull/371) on improving the Live Development experience on Mac (not enabled yet) by [fungl164](https://github.com/fungl164)
-    * [Fix OpenLiveBrowser issue with Chrome ghost window ](https://github.com/adobe/brackets-shell/pull/379) by [fungl164](https://github.com/fungl164)
-    * [Fix crash when closing Chrome without a callback function in place](https://github.com/adobe/brackets-shell/pull/373) by [fungl164](https://github.com/fungl164)
+* [Work on improving the Live Development experience on Mac](https://github.com/adobe/brackets-shell/pull/371) _(not enabled yet)_ by [fungl164](https://github.com/fungl164)
 * [Fix #5741: Unable to properly launch Live Preview when an image file is selected](https://github.com/adobe/brackets/pull/5808) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Fix #5699: Re-invoking Find in Files while search bar open was unreliable](https://github.com/adobe/brackets/pull/5793) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Fix #4768: CSS code hints were mising some values for `display` and `transform`](https://github.com/adobe/brackets/pull/5713) by [Ross Brunton](https://github.com/RossBrunton)
