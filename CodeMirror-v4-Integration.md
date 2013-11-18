@@ -12,6 +12,17 @@
 
 ### Nov 16 - Jason
 
+* Context menus within CodeMirror are busted. Stack trace:
+
+```
+Uncaught TypeError: Cannot read property 'length' of undefined codemirror.js:2770
+skipAtomicInSelection codemirror.js:2770
+setSelection codemirror.js:2750
+(anonymous function) codemirror.js:1511
+onContextMenu codemirror.js:2336
+(anonymous function)
+```
+
 * Marijnh's fix for https://github.com/marijnh/CodeMirror/issues/1961 works great and fixed all the `selAfter` failures
 
 ### Nov 15 - Jason
