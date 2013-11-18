@@ -58,7 +58,7 @@ Error: Expected undefined not to be undefined.
     at file:///C:/Program%20Files/Brackets/dev/test/thirdparty/jasmine-core/jasmine.js:1832:18
 ```
 
-* The `selAfter` messages above are easily reproducible when creating a new untitled document
+* ~~The `selAfter` messages above are easily reproducible when creating a new untitled document~~
 * Confirmed that cmv4 fires 2 change events. In my JS file test, typing a single char, the change event shows the insertion (good) and a deletion of the inserted char (wha?)
 * JS, CSS and HTML code hints are in various states of broken
     * JS - `change` handler is triggered twice. The first time, the inserted char appears in the editor and a hints popup already appears. The second time, the inserted character was somehow removed.
