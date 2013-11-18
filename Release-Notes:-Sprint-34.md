@@ -14,6 +14,7 @@ What's New in Sprint 34
     * [Mac: Any file can now be opened via drag/drop, regardless of file extension](https://github.com/adobe/brackets-shell/pull/367): Previously only certain file types were accepted.
 * **Extensions**
     * [Extension Manager indicates available extension updates](https://github.com/adobe/brackets/pull/5838) via an icon overlaid on the "Installed" tab
+    * **Note:** A few extensions may no longer work until you update them, due to the file system API change (see below).
 * **Under the hood**
     * [New file system API](https://trello.com/c/PO7CIgqf/1050-1-merge-new-file-system): Some [API changes for extensions](https://github.com/adobe/brackets/wiki/File-System-API-Migration) -- see below. Slightly improves performance of some features, like Find in Files (larger improvements to come later!).
 * **Localization**
@@ -55,6 +56,7 @@ New/Improved Extensibility APIs
 
 Known Issues
 ------------
+* [A few extensions](https://github.com/adobe/brackets/wiki/File-System-API-Migration#extensions-that-will-break) are incompatible with the file system API change. Most have updates available already; until you have updated, disable or remove the extension to avoid problems.
 * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet. To work around this, right click the Brackets app and choose Open. You only need to do that once -- afterward, launching Brackets the normal way will work also.
 * [#2272](https://github.com/adobe/brackets/issues/2272): Windows Vista may not allow the Brackets installer to run (you may not see _any_ error message). To work around this, right-click the installer file, choose Properties, and click the Unblock button.
 * [#4362](https://github.com/adobe/brackets/issues/4362): Slow startup of Brackets and Live Preview on Windows due to Chrome proxy settings. [See workaround](https://support.google.com/chrome/answer/106010?hl=en).
