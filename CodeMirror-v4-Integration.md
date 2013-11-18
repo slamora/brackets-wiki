@@ -10,6 +10,10 @@
 
 ## Notes
 
+### Nov 16 - Jason
+
+* Marijnh's fix for https://github.com/marijnh/CodeMirror/issues/1961 works great and fixed all the `selAfter` failures
+
 ### Nov 15 - Jason
 
 #### EditorCommandHandlers (8)
