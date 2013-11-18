@@ -6,7 +6,7 @@
 
 ## Known Issues
 
-* [Uncaught TypeError during setValue after editor construction](https://github.com/marijnh/CodeMirror/issues/1961)
+* [[cmv4] search in GitHub Issues](https://github.com/adobe/brackets/search?q=%22%5Bcmv4%5D%22&type=Issues)
 
 ## Notes
 
