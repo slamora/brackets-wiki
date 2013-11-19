@@ -12,6 +12,7 @@
 
 ### Nov 16 - Jason
 
+* `[replaceSelection](http://codemirror.net/4/doc/upgrade_v4.html#replaceSelection)` default parameter change is a non-issue
 * Context menus within CodeMirror are busted. Stack trace:
 
 ```
