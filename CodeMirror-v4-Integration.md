@@ -12,6 +12,7 @@
 
 ### Nov 16 - Jason
 
+* [`beforeSelectionChange`](http://codemirror.net/4/doc/upgrade_v4.html#beforeSelectionChange) callback changes are also a non-issue
 * [`replaceSelection`](http://codemirror.net/4/doc/upgrade_v4.html#replaceSelection) default parameter change is a non-issue
 * Context menus within CodeMirror are busted. Stack trace:
 
