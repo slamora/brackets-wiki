@@ -94,5 +94,9 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {function(?string)=} callback`
 * Stop providing change notifications for all previously watched files and directories, optionally calling back asynchronously with a possibly null error when the operation is complete. 
 
+### `normalizeUNCPaths`
+* `@type {boolean}`
+* Indicates whether or not the FileSystem should expect [UNC paths](http://www.uwplatt.edu/oit/terms/uncpath.html), like `//myserver/drive/folder`. If set, contiguous blocks of leading slashes as in the previous example are normalized to a pair of leading slashes instead of a single leading slash.
+
 ## `FileSystemStats` and `FileSystemError`
 The stats objects passed to callbacks above are instances of the [`FileSystemStats` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemStats.js), and the possibly null error parameters are constants defined in the [`FileSystemError` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemError.js).
