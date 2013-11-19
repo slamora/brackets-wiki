@@ -2,19 +2,26 @@
 
 This page originally detailed Ian Wehrman's look at issues with Live Development's connection stability and made some recommendations for the future. We are now approaching the time where we want to implement that future. Ian's original notes appear in the "March 2013 Research" section below.
 
-## Three Parts to the Browser Connection
+## Four Parts to the Browser Connection
 
 As we imagine future possibilities such as Brackets supporting Live Development with browsers other than Chrome or Brackets running in a browser, it's worth noting that there are really three almost entirely separate parts:
 
-1. The API we program to for Live Development features
-2. The protocol that is spoken between Brackets and the browser that is being used for previewing
-3. The network transport used to move protocol messages from place to place.
+1. Establishing the browser connection
+2. The API we program to for Live Development features
+3. The protocol that is spoken between Brackets and the browser that is being used for previewing
+4. The network transport used to move protocol messages from place to place.
 
 By consciously treating these as three separate things, we will be able to support the variety of use cases we want in the future.
 
+## Establishing the Browser Connection
+
+Currently, Brackets is set up to connect only to Chrome on the local machine. As we expand to support other usage scenarios (one browser window controlling another browser preview window, for example), this code will have to change significantly.
+
+We can possibly abstract some UI aspects of this (selection of browser from the browsers available on the user's machine), but much of the work here will depend on the specifics of the connections we can support.
+
 ## The API
 
-Long-term, it would be great if the browsers themselves provided a standard JavaScript API that allowed browser-based tools to work with a separate browser window that contains the user's application. We're a long way away from that.
+Long-term, it would be great if the browsers themselves provided a standard JavaScript API that allowed browser-based tools to work with a separate browser window that contains the user's application. We're a long way away from that. Additionally, even if the browsers supported a cross-window connection for tools, developers need to test among multiple browsers but generally have a preferred browser for their own use. That means that a developer may still want to run Brackets in Chrome but test against Internet Explorer, and it's hard to imagine the web standards reaching a point where that use case was supported by built-in APIs.
 
 In the meantime, Brackets will have its own JavaScript API that is used by its various Live Development features. We should design this API to provide the functionality we need to implement our Live Development features without tying the API to a specific protocol.
 
@@ -31,6 +38,30 @@ We do want to support multiple browsers and the browsers speak different protoco
 Safari uses the same protocol as Chrome (at least, it did when both browsers were based on WebKit). But, [Safari on iOS uses a different transport for the protocol](http://stackoverflow.com/questions/11361822/debug-ios-67-mobile-safari-using-the-chrome-devtools). If we want to support an in-browser Brackets, we may find ourselves needing to implement a different transport, one that proxies all of the messages through a separate server in order to deal with security restrictions. If we proxy all of the messages to a server in another location from the user, then we start having to think about the latency involved.
 
 Choosing how we transport protocol messages is going to depend again on our target browsers, and also on other constraints such as latency.
+
+## Live Development Managed with Unprivileged Scripts
+
+Brackets today uses a communication path for live development that looks like this:
+
+`Brackets API -> Chrome Protocol -> Web Socket Connection -> Chrome Debugger -> User's Previewed Content`
+
+One way we could imagine changing it could be:
+
+`Brackets API -> Chrome Protocol -> Web Socket Connection -> Any Browser with User's Previewed Content with injected JavaScript`
+
+In other words, we go from using the *privileged* browser debugger connection to using *unprivileged* cross-browser compatible scripts that we inject in the page. If we took a route like this, we can still implement the following Live Development features:
+
+* Live CSS
+* Highlight
+* Live HTML
+* Browser-side UI that can send changes back to Brackets (future feature)
+
+Features that we would **not** be able to implement as easily:
+
+* JavaScript debugging (from Brackets – the browser's built-in tools will still work)
+* JavaScript code swapping
+
+(Note: I write "as easily" because these features *could* be implemented via code rewriting, but that is significantly more complicated than making use of the built-in APIs for these features and would likely not perform nearly as well.)
 
 ## Conclusion
 
