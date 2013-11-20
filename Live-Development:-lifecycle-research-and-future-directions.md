@@ -4,14 +4,14 @@ This page originally detailed Ian Wehrman's look at issues with Live Development
 
 ## Four Parts to the Browser Connection
 
-As we imagine future possibilities such as Brackets supporting Live Development with browsers other than Chrome or Brackets running in a browser, it's worth noting that there are really three almost entirely separate parts:
+As we imagine future possibilities such as Brackets supporting Live Development with browsers other than Chrome or Brackets running in a browser, it's worth noting that there are really four almost entirely separate parts:
 
 1. Establishing the browser connection
 2. The API we program to for Live Development features
 3. The protocol that is spoken between Brackets and the browser that is being used for previewing
 4. The network transport used to move protocol messages from place to place.
 
-By consciously treating these as three separate things, we will be able to support the variety of use cases we want in the future.
+By consciously treating these as separate things, we will be able to support the variety of use cases we want in the future.
 
 ## Establishing the Browser Connection
 
@@ -65,7 +65,7 @@ Features that we would **not** be able to implement as easily:
 
 ## Conclusion
 
-Keeping these three concerns separate will give us a chance to more easily add incremental support for the features we want in the future (things like support for other browsers and in-browser Brackets).
+Keeping these four concerns separate will give us a chance to more easily add incremental support for the features we want in the future (things like support for other browsers and in-browser Brackets).
 
 See also the "Future Directions" section that Ian wrote below with specific suggestions based on how the code is structured presently.
 
