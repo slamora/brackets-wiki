@@ -81,7 +81,14 @@ This is the file path that Brackets uses to launch Chrome. If this is not correc
 
 On Windows, you may run into issues starting Live Preview if you installed Chrome after installing Brackets. In that case, re-installing Brackets should fix the problem.
 
+
 ## Brackets Is Acting Weird
+
+### Disable All Extensions
+Choose _Help > Show Extensions Folder_. Rename the "user" folder to "user_disabled," close Brackets entirely, then re-launch Brackets.  (If you are developing your own extensions, also do a similar rename on the src/extensions/dev folder).
+
+If this fixes the problem, you can identify the problematic extension by re-enabling extensions one-by-one: recreate the "user" folder and move extensions back into it one at a time, restarting Brackets each time until the problem comes back.
+
 ### Debug w/ The Developer Tools
 If Brackets opens, but behaves incorrectly, don't forget you can open the Developer Tools. Under the Debug Menu, select "Show Developer Tools" to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Ensure the Console tab is open and see if any errors show up there.
 
