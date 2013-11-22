@@ -31,6 +31,8 @@ API Changes
 -----------
 TODO: document debugging workflow for minified installed builds
 
+TODO: linting API change for overriding built-in JSLint provider
+
 New/Improved Extensibility APIs
 -------------------------------
 ...
