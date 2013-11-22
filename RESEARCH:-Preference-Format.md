@@ -1,3 +1,143 @@
+## Implementation Notes
+
+### P1 vs. P2
+
+These notes are for the implementation that started during innovation days and is slated to be completed during Sprint 35.
+
+The first thing to note is that I've made *two* implementations. They have similar concepts at the top level, but the underlying implementations have different characteristics. The [first implementation](https://github.com/adobe/brackets/blob/6f363c93ece9fc37e757bba3e9aded5f66530ec1/src/preferences/PreferencesBase.js), which I'll call P1:
+
+1. Was straightforward
+2. Has to traverse the data structures on every preference look up
+3. Has to look at basically *everything* in order to send out change notifications when a layer changes (i.e. whenever you switch files)
+4. supports dynamic changes to the parts of a preference manager
+5. Works
+
+The [second implementation](https://github.com/adobe/brackets/blob/91ca1d1b36bf89cc5aabe21f6726d27fcb1e6c9a/src/preferences/PreferencesBase.js), henceforth P2:
+
+1. Has a bit more indirection (but is only 70 lines longer)
+2. Returns the value of a pref in a single object lookup
+3. Looks at a far more limited set of data in order to compute change notifications
+4. Does not support changes to the parts of the preferences manager
+5. Does not quite work (but should pretty easily)
+
+P2 may seem like a premature optimization, but I had two things in mind:
+
+1. The number of preferences and use of preferences is likely to grow considerably once this is out there. Don't believe me? Open up Firefox and go to `about:config` in the URL bar.
+2. I wanted to try to make a more coherent underlying model. It's not perfect, but I think the new implementation is a bit more coherent.
+
+It would be rational to start the work with either P1 or P2 as a base and go from there. Last night (11/21), I was even considering going back to P1, but ultimately I worked through the problems I was having in P2 and decided that it seemed the better route. I leave it up to whoever is doing the implementation.
+
+My discussion of how things fit together is going to mostly focus on P2, though the high-level concepts are the same between the two implementations.
+
+### The High-Level Concepts
+
+The code that I'm going to be talking about is in `PreferencesBase.js`. `PreferencesManager.js` acts as a singleton for getting and setting preferences.
+
+At the top, the level at which most people will interact, is the **PreferencesManager** object. The most common operation is `get(id)`, which simply retrieve the value of a given preference.
+
+The PreferencesManager has an *ordered* collection of **Scope**s. Each Scope holds one level of settings. `PreferencesManager.js` sets up a singleton PreferencesManager that has the following Scopes:
+
+1. default (the default values for any settings that are explicitly registered)
+2. user (the user's customized settings – the equivalent of Brackets' old localStorage-based system. This is the settings file that lives in AppData)
+3. project (the useful new one: brackets.settings.json file in the root of a project)
+4. session (in-memory only settings for the current editing session)
+
+For example, if `spaceUnits` has a value set at the project level, then a call to `get("spaceUnits")` would return the project level value. Project values come first, user values next, default values last. If the setting is not known at all, `undefined` is returned.
+
+Each Scope has an associated **Storage** object that knows how to load and save the preferences value for that Scope. There are two implementations: MemoryStorage and FileStorage.
+
+The final concept that is common between P1 and P2 is that of **Layer**s. A Layer applies to every Scope and provides an additional level for preference lookups. Generally, a Layer looks for a collection of preferences that are nested in some fashion in the Scope's data. Under certain circumstances (decided upon by the Layer object), those nested preferences will take precedence over the main preferences in the Scope. (See the next section for further discussion of Layers).
+
+P2 adds a data structure that sits underneath the PreferencesManager and Scopes: the **MergedMap**. A MergedMap is a map-like object that merges multiple maps into a single one for lookups and sends out change notifications when there is a change to a value in the map. The PreferencesManager itself is a MergedMap and the Scopes are nested MergedMaps. The Layers are implemented as additional levels in the Scopes.
+
+### A Note About Project Scope
+
+THe P1 implementation would add the "project" scope dynamically, if I recall correctly. This is not really supported in P2. The project scope should be added at the beginning before the session scope is added. When the project is changed, `setData("project", newProjectScopeData)` should be called to update the project-level settings.
+
+### PathLayer vs. LanguageLayer
+
+Our initial thinking was to implement per-language settings, like so:
+
+```json
+{
+    "spaceUnits": 4,
+    "language": {
+        "html": {
+            "spaceUnits": 2
+        }
+    }
+}
+```
+
+The LanguageLayer implements this. When you change files, it looks up the language for the given file and then looks in the preference data to see if there's a "language" object and if that object has a match for the current language. In the example above, when editing HTML files `spaceUnits` will be 2. For all other files, it will be 4.
+
+So, the LanguageLayer has a `setLanguage` method that is used to change the language and the Layer sends out a notification if there is a change to its data.
+
+After releasing the demo of the P1 implementation, I got feedback from someone about the [EditorConfig](http://editorconfig.org/) project. There are a number of JavaScript projects that include EditorConfig files, so it would seem to make sense to ultimately support it. EditorConfig works based on paths/file globs rather than a higher level concept like "language". This is more powerful for our use, because it means that we could include settings specific to `thirdparty/codemirror`, for example. One note about EditorConfig: our current implementation just looks for a `brackets.settings.json` file at the root of the project. EditorConfig looks at each directory relative to the current file (and all the way to the root of the filesystem, I believe). Support that should be out of scope initially.
+
+My thinking is not that we directly support EditorConfig at this time, but rather have a preferences model that *could* support EditorConfig easily down the line. Plus, working with globs is just generally more powerful than the language model.
+
+PathLayer supports setting preferences based on the file path. There's an implementation of the PathLayer in `PreferencesBase.js` now, but it is not wired up to the rest of Brackets.
+
+We could choose to support *only* the PathLayer, and that would likely be adequate. The advantage to also enabling the LanguageLayer is that some languages are invoked by multiple extensions and the user would not need to explicitly pick which files are affected by a setting. Also, it may not be super clear to people how to apply paths in user-level settings. Theoretically, `**.js` should apply to all `.js` files even from the user settings file.
+
+Eliminating the LanguageLayer would be a reasonable option.
+
+### Setting Preferences
+
+As it stands now, there are a couple of outstanding issues with respect to setting preferences:
+
+1. UI
+2. Layers
+
+The first is definitely the bigger issue. Where should the setting be set? If a user changes the `spaceUnits` from the UI, where does that get stored?
+
+Previously, those changes were stored in localStorage. As an interim step, it makes sense to simply do the analog: store these changes at the "user" level.
+
+As for issue #2, the API for setting preferences is `set(levelName, id, value)`. So, you can call `set("user", "spaceUnits", 2)`, for example. The API does not currently support changing settings for layers. The problem is that layers have their own segmentation which is specific to layers. For example, it's not enough to say `set(["user", "language"], "spaceUnits", 2)` because that is ambiguous about *which* language it should save the setting to. Paths are even more ambiguous.
+
+It *could* be possible to change a setting at whatever level is currently providing that setting, but I'm not sure that's useful API. My thinking is that we'll let the future UI determine how the `set` API changes to accommodate settings at different levels.
+
+### View State vs. Preferences
+
+The old localStorage-based prefs implementation was used not only for user-changed settings but also for things that we could call "view state". The big difference between view state and preferences is that the user wouldn't edit view state manually or put view state in a version control system. Here are a couple examples of view state:
+
+1. window size
+2. current open projects
+3. files in the working set
+
+View state *can* (and I'd argue, should) be managed by the new PreferencesManager, but it should be a separate PreferencesManager instance that stores its values in a different file.
+
+### Conversion
+
+We need code to run that will convert from the old localStorage settings to the new settings files. I was thinking that we'd create an object for each registered setting (right now, we really just save the defaults). This object could be used for fine-grained notification like so:
+
+```javascript
+
+var pref = PreferencesManager.getPrefObject("spaceUnits");
+$(pref).on("change", function (...) {...});
+```
+
+That handler would receive change notifications *only* for `spaceUnits`, which is nicer than the current solution which sends all change notifications and requires the client code to see which setting changed.
+
+We could also store a converter on that object. The converter would ideally be triggered based on some version change (Brackets upgrading from 0.34 to 0.35, for example). Ultimately, it would be good if extensions could also trigger conversions between their own versions. A convenience function could be there to convert from an old localStorage-based key to a new pref.
+
+Also, one more note about the preference IDs themselves: while extensions *could* use a nested structure for their prefs (it's all JSON after all), I don't think we should because of the interaction with layers. Consider if we had something like this:
+
+```json
+{
+    "editorOptions": {
+        "spaceUnits": 4
+    }
+}
+```
+
+If you tried to change editorOptions in a layer, you would replace *all* of the editorOptions rather than just the single one you might wish to change. If, instead, it was `editorOptions.spaceUnits`, that could easily be updated based on the current layer machinery. (I'll note that I don't advocate `editorOptions.spaceUnits`... I think it's fine for a built-in pref like this to just be `spaceUnits`)
+
+Also, the JSLint extension is currently doing this wrong with its jslintOptions. What's the problem there? Well, what if you had different rules for `thirdparty/codemirror` vs. the rest of Brackets? (By the way, not having JSLint errors in random files and being able to get rid of all of those jslint options at the beginning of *all* of our files will be truly awesome!)
+
+# Original Research Results
+
 ## A. Introduction
 
 This document presents background and a proposal for an updated Preferences/Settings implementation for Brackets and Edge Code.  It attempts to extend the current Preferences system implemented in Brackets, so that we can support an increased number of preferences in a broader variety of contexts and applications.  This proposal will specifically focus on the underlying implementation and resulting file storage.
