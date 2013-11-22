@@ -9,7 +9,7 @@ In proposed priority order:
 #### Search bar UI
 * [ReplaceUI] Single-stage Replace UI with Find/Replace fields visible at same time. Incremental search with highlighting during Replace. (Or even eliminate distinction between Find & Replace modes altogether?) https://trello.com/c/7TjNR4lD/361-3-incremental-search and https://trello.com/c/MbM48GiP/262-replace-in-single-file
     * Improve overall visual polish at the same time
-    * Keyboard shortcuts during Replace - https://trello.com/c/7HVPLeer/975-replace-dialog-keyboard-support _(PR already posted?)_
+    * Keyboard shortcuts during Replace - https://trello.com/c/7HVPLeer/975-replace-dialog-keyboard-support -> PR in progress: https://github.com/adobe/brackets/pull/5969
     * Gesture to turn Find to a replace operation (if not already unified by previous story)
 * [QueryOptions] Explicit toggles for case-sensitive & regexp - https://trello.com/c/MBroELwS/260-3-find-in-current-file, https://trello.com/c/VTWxph8k/306-search-replace-w-regular-expressions
 * [SearchUI] Enter key should not close modal - https://github.com/adobe/brackets/issues/2299 and https://trello.com/c/MBroELwS
@@ -24,8 +24,8 @@ In proposed priority order:
 #### Find in Files Search
 * [BackgroundSearch] _(we're assuming the FileSystem caching work will have greatly improved search performance already)_
 * [BackgroundSearch] Async search in background (_Open question:_ consider a progress meter too)
-* [BackgroundSearch] Incremental results during background search
 * [BackgroundSearch] Cancelable search
+* [BackgroundSearch] Incremental results during background search
 * [ResultsList] Eliminate paging, or much larger page sizes
 
 #### Find in Files Scope
@@ -33,11 +33,11 @@ In proposed priority order:
 
 #### Replace in Files
 * [ReplaceInFiles] Replace in Files (without atomic undo) https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files-13
-    * **Open question:** Should we open every file in tabs, allowing Undo? Or modify non-open files directly on disk?
-    * **Open question:** Summary panel afterward?
+    * Proposal: run the query first, then show results in a checkbox-list bottom panel (similar to single-file Replace All, but grouped by file). User can choose which matches/files to exclude, then run the Replace operation.
+    * If < N files involved, open them all in editors so the operation is undoable. If > N files, modify directly on disk instead (after confirmation warning).
 
 #### Find/Replace highlighting while editing
-* [Highlighting] Continue to show search highlights when bar blurred (but hide upon first edit)
+* [Highlighting] Continue to show search highlights when bar blurred (but hide upon first edit); don't close search bar on blur
 * [Highlighting] Continue to show search highlights when bar blurred, and maintain them as text edited
 
 #### Find in Files Scope, Part 2
@@ -47,7 +47,7 @@ In proposed priority order:
 #### Remaining polish & loose ends
 * [Regex] Allow matching across newlines
 * [QueryOptions] Search/Replace within selection - https://trello.com/c/PeF376TR/307-search-replace-within-selected-text-3
-* [Navigation] Fix Find Next for inline editors (may be fixed "for free" by [doc linking](https://trello.com/c/cRAl0YHB/774-2-doc-linking-for-inline-editors))
+* [Navigation] Clean up Find in inline editors (Find Next issues may be fixed "for free" by [doc linking](https://trello.com/c/cRAl0YHB/774-2-doc-linking-for-inline-editors))
 * [Navigation] Keyboard shortcuts to navigate Find in Files results (next/prev)
 * [Navigation] Indication when search wraps around
 * [Highlighting] Clickable tick marks in scrollbar - https://trello.com/c/sdJg5Dal/355-119-indicate-find-matches-via-tick-marks-in-near-scroll-bar-gutter-5
@@ -82,7 +82,7 @@ These are generally done, but they lack unit tests and may need some UI polish:
 * [Regex] Replace field numbered "pills" to match up with regexp groups _(regexes aren't that scary)_
 * [Regex] Syntax highlighting when composing regexps
 * 'Auto highlight' when whole word selected _(extension exists)_
-* [Highlighting] Show at least 3000 highlighting results
+* [Highlighting] Improve highlighting performance & raise result max limit
 * [ResultsList] Result list history - https://trello.com/c/KY4eJL7V (not query history, but essentially cached results)
 * [ResultsList] Concatenated / multiple results lists - https://trello.com/c/KY4eJL7V/1038-find-in-files-preserve-previous-results
 * [ResultsList] Display the first result - https://trello.com/c/AFF2Lnll/266-8-find-in-project-aka-find-in-files from https://github.com/adobe/brackets/issues/995 - _or_ if single result, jump to it, else show list (like WebStorm)
