@@ -24,21 +24,11 @@ No. Right now, the Registry requires a GitHub account in order to identify you t
 
 Yes! It has [its own repository](https://github.com/adobe/brackets-registry) on GitHub.
 
-## How do I prevent further installs of my extension? ##
-
-If there's some issue with your extension and you want to keep people from downloading it, create an update to your extension by increasing your extension's version number and setting the engines.brackets value in package.json to restrict installations to earlier Brackets versions. For example, let's say that the current Brackets version is 0.30.0. You can stop installations on that version of Brackets by adding this to your package.json:
-
-```json
-"engines": {
-    "brackets": "<0.30.0"
-}
-```
-
 ## How do I remove an extension from the Registry? ##
 
-At present, there is no (automated) way to remove an extension from the registry. See the section above for preventing further installs of an extension, as that will suffice for many people who are trying to pull an extension from the registry.
+At present, there is no (automated) way to remove an extension from the registry. Contact the Brackets core team if you need to remove something completely from the listing.
 
-You could also upload an update to your extension that contains an empty main.js so that your extension basically does nothing.
+As a quick workaround, you could upload an update to your extension that contains an empty main.js so that your extension basically does nothing (and change the package description to indicate it's obsolete).
 
 ## I need some other help! ##
 
