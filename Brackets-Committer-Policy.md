@@ -4,7 +4,7 @@ Brackets committers have read-write access to the Brackets repository through Gi
 
 Brackets is developed using Agile development methodologies and features are tracked as user stories on the public Brackets backlog. Communication between Brackets committers happens on the committer mailing list and in public via the [Brackets-Dev Google Group](https://groups.google.com/forum/?fromgroups#!forum/brackets-dev).
 
-You can find a full list of Brackets committers at [http://brackets.io/contribute/](http://brackets.io/contribute/). In addition, the [Contributing](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md) document will serve as a helpful guide for anyone who wants to get involved in the project. 
+You can find a full list of Brackets committers at [http://brackets.io/contribute.html/](http://brackets.io/contribute.html). In addition, the [Contributing](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md) document will serve as a helpful guide for anyone who wants to get involved in the project. 
 
 ##Becoming a Committer##
 
