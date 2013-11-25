@@ -1,4 +1,4 @@
-Here are the API changes that will result from the [File System Evolution](File System) plan:
+Significant API changes were made in Sprint 34 as part of the [File System Evolution](File System) plan:
 
 **Note:** These quick reference tables don't cover arguments or return values in detail. Be sure to check the **detailed JSDoc comments** on the new APIs for full usage details -- see [FileSystem.js](https://github.com/adobe/brackets/blob/master/src/filesystem/FileSystem.js), [File.js](https://github.com/adobe/brackets/blob/master/src/filesystem/File.js), [Directory.js](https://github.com/adobe/brackets/blob/master/src/filesystem/Directory.js), & base class [FileSystemEntry.js](https://github.com/adobe/brackets/blob/master/src/filesystem/FileSystemEntry.js).
 
