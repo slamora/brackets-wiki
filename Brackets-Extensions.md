@@ -57,7 +57,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 * [Parent Dir] (https://github.com/katsh/brackets-parent-dir): Show parent directory of opened files in the Working Set.
 
 **Live Development**
-* [Debugger](https://github.com/jdiehl/brackets-debugger) *Incompatible with Brackets >= 0.20*: Brackets Debugger for the Live Development browser.
 * [V8/Node Live Development](https://github.com/DennisKehrig/brackets-v8-node-live): Updates scripts running in Node.js as you type
 * [Evaluate Clojure Expressions](https://github.com/yehohanan7/clj-brackets): Select any expression and evaluate it in wrepl
 
@@ -201,3 +200,4 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node). _(Superseded by the built-in Extension Manager.)_
 * [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only). _(Superseded by the image viewer added in Sprint 33.)_
 * [JSONLint](https://github.com/katsh/brackets-jsonlint): JSONLint your documents. _(Hasn't been updated in awhile; the newer [JSONLint](https://github.com/ingorichter/de.richter.brackets.jsonlint) extension uses the CodeInspection API for better UI integration.)_
+* [Debugger](https://github.com/jdiehl/brackets-debugger) *Incompatible with Brackets >= 0.20*: Brackets Debugger for the Live Development browser. _(Would love to see this updated to work with the latest Brackets sprints.)_
