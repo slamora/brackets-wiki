@@ -13,7 +13,7 @@ The old file system APIs in Brackets were a bit chaotic, and usage was inconsist
 * Incorrect creation of `FileEntry` objects (these should never be directly instantiated)
 * No way to use alternate storage--Dropbox, Google Drive, etc.
 
-For more background, (read this forum post](https://groups.google.com/d/msg/brackets-dev/95PyDKfMO0M/Lw9tBoBDUWwJ).
+For more background, [read this forum post](https://groups.google.com/d/msg/brackets-dev/95PyDKfMO0M/Lw9tBoBDUWwJ).
 
 ## Overview ##
 
