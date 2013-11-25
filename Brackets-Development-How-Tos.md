@@ -31,13 +31,13 @@ For working with a sequence of asynchronous operations (in parallel or in serial
 
 When dealing with files the user is editing, there are three important classes to understand:
 
-* `Editor` represents the view (it wraps a CodeMirror widget) -- either a full-size editor _or_ an inline editor. An Editor can have focus. Use an Editor object to get/set the cursor position, selection, or scroll position. Every Editor is attached to a Document.
-* `Document` represents the model (the text content of the file). Use the Document object to get or modify the text, or to listen for changes to the text. There may be multiple Editors attached to a single Document (for example, a full-size editor plus an inline editor). Every Document is associated with a file on disk.
-* `FileEntry` represents a file on disk. It's very lightweight, like a URI -- it doesn't actually store the file's contents. FileEntry is based on the W3C ["Directories and System" draft spec](http://www.w3.org/TR/file-system-api/#the-fileentry-interface) (not to be confused with the much more limited ["HTML5 file API" spec](http://www.w3.org/TR/FileAPI/)).
+* `Editor` represents the view (it wraps a CodeMirror widget) -- either a full-size editor _or_ an inline editor. An Editor can have focus. Use an Editor object to get/set the cursor position, selection, or scroll position. Every Editor is attached to a Document (accessible via `editor.document`).
+* `Document` represents the model (the text content of the file). Use the Document object to get or modify the text, or to listen for changes to the text. There may be multiple Editors attached to a single Document (for example, a full-size editor plus an inline editor). Every Document is associated with a file on disk (accessible via `document.file`).
+* `File` represents a file on disk. It's almost as lightweight as a plain string path. You can get a `File` object synchronously via `FileSystem.getFileForPath()`, without having to actually read or locate the file on disk yet.
 
 ## <a name="doc"></a>Working with Documents ##
 
-`Document` is an object that represents a file on disk. Documents perform several important functions: they are the backing model for Editors; they provide APIs for reading and modifying the text content; and they emit events whenever the text is edited.
+`Document` is an object that represents an editable file on disk. Documents perform several important functions: they are the backing model for Editors; they provide APIs for reading and modifying the text content; and they emit events whenever the text is edited.
 
 ### How to get a Document ###
 
@@ -89,17 +89,17 @@ See [How to write extensions](How to write extensions#wiki-featurehooks).
 
 Normally, you'll want to use Document (see above) to read the contents of a file that the user might edit. If you modify a file via Document, it will automatically be recorded as an unsaved change for the user to track.
 
-There are some cases where you may want to simply load a configuration file without treating it as a user document. For this, Brackets provides a basic file I/O API loosely based on the HTML 5 [file system API](http://www.w3.org/TR/file-system-api/), except with access to the full local file system. _These APIs are very likely to change in the future._ But for now, here's an example:
+There are some cases where you may want to simply load a configuration file without treating it as a user document. For this, Brackets provides a basic [FileSystem API](File System) for direct access to local files. Here's how to simple read a file:
 ```
 // On Windows, paths look like "C:/foo/bar.txt"
 // On Mac, paths look like "/foo/bar.txt"
-var fileEntry = new NativeFileSystem.FileEntry(localPath);
+var file = FileSystem.getFileForPath(localPath);
 
-var promise = FileUtils.readAsText(fileEntry);  // completes asynchronously
+var promise = FileUtils.readAsText(file);  // completes asynchronously
 promise.done(function (text) {
     console.log("The contents of the file are:\n" + text);
 })
 .fail(function (errorCode) {
-    console.log("Error #" + errorCode);  // one of the FileError constants
+    console.log("Error #" + errorCode);  // one of the FileSystemError constants
 });
 ```
