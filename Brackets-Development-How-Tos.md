@@ -33,7 +33,7 @@ When dealing with files the user is editing, there are three important classes t
 
 * `Editor` represents the view (it wraps a CodeMirror widget) -- either a full-size editor _or_ an inline editor. An Editor can have focus. Use an Editor object to get/set the cursor position, selection, or scroll position. Every Editor is attached to a Document (accessible via `editor.document`).
 * `Document` represents the model (the text content of the file). Use the Document object to get or modify the text, or to listen for changes to the text. There may be multiple Editors attached to a single Document (for example, a full-size editor plus an inline editor). Every Document is associated with a file on disk (accessible via `document.file`).
-* `File` represents a file on disk. It's almost as lightweight as a plain string path. You can get a `File` object synchronously via `FileSystem.getFileForPath()`, without having to actually read or locate the file on disk yet.
+* `File` represents a file on disk. It's almost as lightweight as a plain string path: you can get a `File` object synchronously via `FileSystem.getFileForPath()`, without having to actually read or locate the file on disk yet.
 
 ## <a name="doc"></a>Working with Documents ##
 
