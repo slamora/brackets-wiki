@@ -3,9 +3,9 @@
 ## Status ##
 [Landed](https://github.com/adobe/brackets/pull/5797) in Brackets Sprint 34!
 
-## Introduction ##
+## Motivation ##
 
-The file system APIs in Brackets are a bit chaotic, and usage is inconsistent. Here are just a few issues:
+The old file system APIs in Brackets were a bit chaotic, and usage was inconsistent. Here are just a few issues:
 
 * No centralized file system model. This makes it difficult to add file watchers, and update all file references in the app after operations like rename.
 * Inefficient. We constantly hit the disk to read timestamps, content, etc.
@@ -13,7 +13,7 @@ The file system APIs in Brackets are a bit chaotic, and usage is inconsistent. H
 * Incorrect creation of `FileEntry` objects (these should never be directly instantiated)
 * No way to use alternate storage--Dropbox, Google Drive, etc.
 
-I'm pretty sure there are many more...
+For more background, (read this forum post](https://groups.google.com/d/msg/brackets-dev/95PyDKfMO0M/Lw9tBoBDUWwJ).
 
 ## Overview ##
 
