@@ -37,7 +37,6 @@ Also be sure to use the [Brackets Shortcuts](https://github.com/adobe/brackets/w
 **Editing & Navigation**
 * [Quick Navigate](https://github.com/jeffslofish/quick-navigate): Navigate back to previous cursor and edit locations quickly with toolbar buttons.
 * [Toolbar Horizontal](https://github.com/ruanmer/brackets-toolbar-horizontal): Move toolbar from vertical (right) to horizontal (top).
-* [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only).
 
 **Snippets & Shorthand**
 * [Auto-match pairs](https://github.com/zr0z/brackets-automatch-pairs): Auto-complete parenthesis, brackets, braces, double and single quotes.
@@ -197,7 +196,8 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [JavaScript Code Hints](https://github.com/iwehrman/brackets-js-code-hints): Code hinting (aka autocompletion) for JavaScript files in Brackets. _(Merged into Brackets as of Sprint 21)._
 * [Color Editor](https://github.com/GarthDB/brackets-inline-color-editor): Quick Edit on a hex/rgb/hsl color opens an inline color picker, plus a listing of all colors used in the file. _(Merged into Brackets as of Sprint 17)._
 * [Color Picker](https://github.com/jdiehl/brackets-color-picker): Quick Edit on a hex color opens an inline color picker. _(A color picker is built into Brackets as of Sprint 17)._
-* [Editor Shortcuts](https://github.com/aonic/editor-shortcuts): Keyboard shortcut to delete line. _(This command is built into Brackets as of Sprint 15)._
+* [Editor Shortcuts](https://github.com/aonic/editor-shortcuts): Keyboard shortcut to delete line. _(This command is built into Brackets as of Sprint 15.)_
 * [HTML Tag Highlight](https://github.com/sathyamoorthi/brackets-html-tag-highlight): Highlight start and end tags in HTML document. _(This is not working in sprint 28. Already there is a [pull request](https://github.com/adobe/brackets/pull/4504) for this functionality.)._
 * [Web Fonts](https://github.com/talmand/Brackets-Web-Fonts): Simple interface for adding/deleting/swapping Google Web Fonts in a CSS file (README says that it's no longer being updated)
 * [Extension Manager](https://github.com/jdiehl/brackets-extension-manager): Install, Remove, and upgrade your extensions from the cloud from inside Brackets (requires node). _(Superseded by the built-in Extension Manager.)_
+* [Image Viewer] (https://github.com/warabe/brackets.image-viewer): Adds image and dimensions viewing instead of the error modal (currently for OSX only). _(Superseded by the image viewer added in Sprint 33.)_
