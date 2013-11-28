@@ -133,7 +133,7 @@ These extensions are now available via the [Brackets Registry](https://brackets-
 * [WD Minimap] (https://github.com/websiteduck/brackets-wdminimap): The minimap shows a smaller version of your code at the right of the screen.  It can be used to quickly scroll to a certain part of your file.
 * [bracketsFileWatcher] (https://github.com/WebsiteDeveloper/bracketsFileWatcher/releases/download/0.0.1/bracketsFileWatcher-0.0.1.zip): Watches the current project file tree for changes and refreshes the file tree in brackets if necessary. [Source Code] (https://github.com/WebsiteDeveloper/bracketsFileWatcher)
 * [Key Remapper] (https://bitbucket.org/sacah/brackets-key-remapper/overview) : Shows current keyboard shortcuts and allows you to set new ones. These are stored in settings, so should persist across Brackets installations.
-* [Themes for Brackets](https://github.com/Jacse/themes-for-brackets): Customize your Brackets experience with themes. Make Brackets easy on your eyes, and improve the coding experience.
+* [Themes for Brackets](https://github.com/Jacse/themes-for-brackets): Customize your Brackets experience with themes. Make Brackets easy on your eyes, and improve your coding experience.
 * [Themes] (https://github.com/MiguelCastillo/Brackets-Themes): CodeMirror themes for brackets from the main menu.
 * [Code folding] (https://github.com/thehogfather/brackets-code-folding): Enables code folding in brackets.
 * [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav): Shortcuts for switching to next/previous editor (<em>non</em>-MRU order), and a version of Quick Open scoped to only open files.
