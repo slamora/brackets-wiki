@@ -29,13 +29,6 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
-        <td class="shortcut-base">+</td>
-        <td class="shortcut-binding">Ctrl-Alt-+</td>
-        <td class="shortcut-cmd-id">codefolding.expand</td>
-        <td class="shortcut-cmd-name">Expand code region at cursor position</td>
-        <td class="shortcut-orig">Extension (Code Folding)</td>
-    </tr>
-    <tr>
         <td class="shortcut-base">,</td>
         <td class="shortcut-binding">Ctrl-Shift-,</td>
         <td class="shortcut-cmd-id">com.notwebsafe.select-parent</td>
@@ -48,13 +41,6 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-id">view.decreaseFontSize</td>
         <td class="shortcut-cmd-name">Decrease Font Size</td>
         <td class="shortcut-orig">Brackets</td>
-    </tr>
-    <tr>
-        <td class="shortcut-base">-</td>
-        <td class="shortcut-binding">Ctrl-Alt--</td>
-        <td class="shortcut-cmd-id">codefolding.collapse</td>
-        <td class="shortcut-cmd-name">Collapse code region at cursor position</td>
-        <td class="shortcut-orig">Extension (Code Folding)</td>
     </tr>
     <tr>
         <td class="shortcut-base">.</td>
@@ -132,6 +118,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-id">file.previewHighlight</td>
         <td class="shortcut-cmd-name">Live Highlight</td>
         <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">C</td>
+        <td class="shortcut-binding">Ctrl-Alt-C</td>
+        <td class="shortcut-cmd-id">codefolding.collapse</td>
+        <td class="shortcut-cmd-name">Collapse Current</td>
+        <td class="shortcut-orig">Extension</td>
     </tr>
     <tr>
         <td class="shortcut-base">D</td>
@@ -426,6 +419,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-cmd-id">edit.cut</td>
         <td class="shortcut-cmd-name">Cut</td>
         <td class="shortcut-orig">Brackets</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">X</td>
+        <td class="shortcut-binding">Ctr-Alt-X</td>
+        <td class="shortcut-cmd-id">codefolding.expand</td>
+        <td class="shortcut-cmd-name">Expand Current</td>
+        <td class="shortcut-orig">Extension</td>
     </tr>
     <tr>
         <td class="shortcut-base">Y</td>
