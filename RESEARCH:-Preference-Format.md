@@ -276,6 +276,8 @@ Lastly, as we transition to the new implementation, we propose (optionally) migr
 
 [Jeff] Does brackets sync settings to the the CC cloud or is that an edge code only feature? 
 
+[Jeff] Filename needs to begin with a dot by convention.
+
 ## D. Proposed Next Steps
 
 To move forward with this story, we propose the following, possible User Stories be entered into Trello:
