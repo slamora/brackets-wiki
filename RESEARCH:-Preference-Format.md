@@ -268,6 +268,13 @@ _**[Kevin]** For many people, the user-level settings are enough. Their projects
 
 Lastly, as we transition to the new implementation, we propose (optionally) migrating existing settings saved in localStorage into the per-User default `brackets.settings.json`.  Alternatively, if time is running short, since there are not a lot of already existing preference settings, we could just drop/ignore already existing preference settings.
 
+[Jeff] For path based preferences, do you build a hierarchy and look up the hierarchy of paths for a preference so if a preference isn't defined in the same folder as the file, do you look to its parent, then its parent or is it a flat scheme?
+
+[Jeff] Are preferences user based so that multiple users on the same system have their own set of preferences?  (i.e. are user prefs stored in the user's home or document folder)
+
+[Jeff] Why aren't extension preferences code based?  Can we rely on the extension to manage its own prefs?Conversely, why can't global core brackets prefs be stored in a base-settings JSON file?
+
+[Jeff] Does brackets sync settings to the the CC cloud or is that an edge code only feature? 
 
 ## D. Proposed Next Steps
 
