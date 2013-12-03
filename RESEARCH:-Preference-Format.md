@@ -270,13 +270,23 @@ Lastly, as we transition to the new implementation, we propose (optionally) migr
 
 [Jeff] For path based preferences, do you build a hierarchy and look up the hierarchy of paths for a preference so if a preference isn't defined in the same folder as the file, do you look to its parent, then its parent or is it a flat scheme?
 
+[Kevin] The current implementation just looks at the top of the project, which is not quite ideal. More ideal is to follow the [EditorConfig](http://editorconfig.org/) way, which is to look in all of the paths starting at the file's location. The farther up the tree you go, the lower the precedence for a setting.
+
 [Jeff] Are preferences user based so that multiple users on the same system have their own set of preferences?  (i.e. are user prefs stored in the user's home or document folder)
+
+[Kevin] They are stored in the same place that we store user extensions and such (`~/Library/Application Support/Brackets` on the Mac), so this is a user-specific location.
 
 [Jeff] Why aren't extension preferences code based?  Can we rely on the extension to manage its own prefs?Conversely, why can't global core brackets prefs be stored in a base-settings JSON file?
 
+[Kevin] Err, I missed that in my implementation. I believe that all of the preferences should be defined in code because I'm thinking that there may ultimately be little bits of code that go along with prefs (for handling conversion between versions, or customizing automatically generated preference UI).
+
 [Jeff] Does brackets sync settings to the the CC cloud or is that an edge code only feature? 
 
+[Kevin] This is not a Brackets feature.
+
 [Jeff] Filename needs to begin with a dot by convention.
+
+[Kevin] Agreed, and we discussed in the Architecture Meeting that perhaps we should go with JSON+Comments and call the file something like `.brackets.prefs` or `.brackets.jsonc` so that it's clear that it's not a pure JSON file.
 
 ## D. Proposed Next Steps
 
