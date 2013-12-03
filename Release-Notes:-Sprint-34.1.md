@@ -1,0 +1,4 @@
+Release 34.1 is a "hot fix" to address two high-priority bugs in the [original Sprint 34 build](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-34). No other functionality was added or changed.
+
+* Brackets _may freeze_ when opening a JS file whose siblings contain certain non-JS text, or whose siblings are large binary files. _Workaround:_ move those non-source-code files into a different folder. [See #6067](https://github.com/adobe/brackets/issues/6067). (Will be fixed in next release).
+* Editor renders incorrectly (missing text / wrong height) after opening a LESS file that begins in a tag selector (with no header comment, etc. before it). _Workaround:_ add a comment to top of each LESS file. [See #6057](https://github.com/adobe/brackets/issues/6057). (Will be fixed in next release).
