@@ -11,9 +11,7 @@ The Sprint 35 drop is a bug fix release only. In order to get 2 bug fixes out to
 
 Bugs fixed in Sprint 35
 -----------------------
-* **Fix 6067**
-    * [Bug Fix Issue 6057](https://github.com/adobe/brackets/issues/6057): Sprint 34 crashes when the js file is in Desktop (Windows 7 64bits) - The fix prevents dot files to be read when initializing Tern.
-* **Live Development**
-    * [Bug Fix Issue  6057](https://github.com/adobe/brackets/issues/6057): Cannot open a less file with the following content - The fix resolves the problem that occurred when parsing certain less files.
+* [Bug Fix Issue 6057](https://github.com/adobe/brackets/issues/6057): Sprint 34 crashes when the js file is in Desktop (Windows 7 64bits) - The fix prevents dot files to be read when initializing Tern.
+* [Bug Fix Issue  6057](https://github.com/adobe/brackets/issues/6057): Cannot open a less file with the following content - The fix resolves the problem that occurred when parsing certain less files.
 
 
