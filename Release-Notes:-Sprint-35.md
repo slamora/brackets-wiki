@@ -2,7 +2,7 @@ _This is a draft!_
 --------------------
 _This document will not be finalized until the end of Sprint 35 -- approximately December 7._
 
-What's New in Sprint 36
+What's New in Sprint 35
 -----------------------
 * **Find/Replace**
     * [Major Find/Replace UI overhaul](https://trello.com/c/pQb32zjf/1072-3-find-replace-ui-cleanup): Streamlined, condensed Replace command with the same incremental search and highlighting previously available only for Find. In both Find and Replace, new toggle buttons make case-sensitive and regexp searches easier to access (replacing the additional, often confusing, heuristics that automatically set these options based on the search text).
