@@ -50,7 +50,7 @@ Community contributions to Brackets
 TODO
 
 #### Pulling source code from Git
-* TODO: brackets-shell
+* A new brackets-shell build is _required_ for this sprint on Mac (Live Preview will not work correctly otherwise). Be sure to rerun `grunt setup` before building.
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 Bugs fixed in Sprint 35
