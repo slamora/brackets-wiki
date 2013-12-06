@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 35 -- approximately
 What's New in Sprint 35
 -----------------------
 * **Find/Replace**
-    * [Major Find/Replace UI overhaul](https://trello.com/c/pQb32zjf/1072-3-find-replace-ui-cleanup): Streamlined, condensed Replace command with the same incremental search and highlighting previously available only for Find. In both Find and Replace, new toggle buttons make case-sensitive and regexp searches easier to access (replacing the additional, often confusing, heuristics that automatically set these options based on the search text).
+    * [Major Find/Replace UI overhaul](https://trello.com/c/pQb32zjf/1072-3-find-replace-ui-cleanup): Streamlined, condensed Replace command with the same incremental search and highlighting previously available only for Find. In both Find/Replace and Find in Files, new toggle buttons make case-sensitive and regexp searches easier to access (replacing the unwritten heuristics that used to decide these options based on your search text). After closing the search bar, Find Next/Previous now reflect any manual changes you make to the cursor position.
 * **Live Development**
     * [Mac: No browser restart needed](https://github.com/adobe/brackets-shell/pull/359): Launching Live Preview no longer requires closing and reopening Chrome on Mac. (This was [already](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25) true on Windows).
 * **Preferences**
@@ -25,7 +25,9 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-TODO: link to info on preferences JSON file format
+TODO: link to info on preferences file format
+
+TODO: any more detail needed for Find/Replace?
 
 API Changes
 -----------
@@ -33,9 +35,11 @@ TODO: document debugging workflow for minified installed builds
 
 TODO: linting API change for overriding built-in JSLint provider
 
+**ModalBar** - The bar will no longer take any action when the Enter key is pressed, even when the `autoClose` argument was true. The "commit" event has been removed.
+
 New/Improved Extensibility APIs
 -------------------------------
-...
+TODO: custom viewer extensibility
 
 Known Issues
 ------------
