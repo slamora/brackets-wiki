@@ -56,7 +56,7 @@ New/Improved Extensibility APIs
 
 Known Issues
 ------------
-*** Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet. To work around this, right click the Brackets app and choose Open. You only need to do that once -- afterward, launching Brackets the normal way will work also.**
+* **Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet. To work around this, right click the Brackets app and choose Open. You only need to do that once -- afterward, launching Brackets the normal way will work also.**
 * Brackets _may freeze_ when opening a JS file whose siblings contain certain non-JS text, or whose siblings are large binary files. _Workaround:_ move those non-source-code files into a different folder. [See #6067](https://github.com/adobe/brackets/issues/6067). _This is fixed in the **[Sprint 34.1 update](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-34.1)**._
 * Editor renders incorrectly (missing text / wrong height) after opening a LESS file that begins in a tag selector (with no header comment, etc. before it). _Workaround:_ add a comment to top of each LESS file. [See #6057](https://github.com/adobe/brackets/issues/6057). _This is fixed in the **[Sprint 34.1 update](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-34.1)**._
 * [A few extensions](https://github.com/adobe/brackets/wiki/File-System-API-Migration#extensions-that-will-break) are incompatible with the file system API change. Most have updates available already; until you have updated, disable or remove the extension to avoid problems.
