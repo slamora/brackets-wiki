@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 35 -- approximately December 16._
+_This document will not be finalized until the end of Sprint 35 -- approximately December 17._
 
 What's New in Sprint 35
 -----------------------
@@ -10,8 +10,6 @@ What's New in Sprint 35
     * [Mac: No browser restart needed](https://github.com/adobe/brackets-shell/pull/359): Launching Live Preview no longer requires closing and reopening Chrome on Mac. (This was [already](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25) true on Windows).
 * **Performance**
     * [Faster Brackets launch](https://github.com/adobe/brackets/pull/5776): Brackets now loads up to 50% faster thanks to minified JS and pre-compiled LESS.
-* **Linting**
-    * [Multiple linting providers per Language](https://github.com/adobe/brackets/pull/5235): If multiple providers are registered, they will all be run and the results consolidated.
 * **Build Process**
     * [Use release branches](https://trello.com/c/nOXlN0yd/1069-1-infrastructure-support-for-release-timing): Branching a few days in advance of Brackets releases gives more 'stabilization time' to find bugs before releasing, and also allows work for the next sprint's features to start sooner.
     * Optimized builds: See notes below on new build step for minifying JS and precompiling LESS.
@@ -21,15 +19,11 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-TODO: link to info on preferences file format
-
 TODO: any more detail needed for Find/Replace?
 
 API Changes
 -----------
 TODO: document debugging workflow for minified installed builds
-
-TODO: linting API change for overriding built-in JSLint provider
 
 **ModalBar** - The bar will no longer take any action when the Enter key is pressed, even when the `autoClose` argument was true. The "commit" event has been removed.
 
