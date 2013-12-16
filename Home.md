@@ -38,11 +38,16 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [Building Brackets](https://github.com/adobe/brackets/wiki/Building-Brackets)
 
+## Test
+
+* [Testing Brackets](https://github.com/adobe/brackets/wiki/Testing-Brackets)
+
 ## Releases
 
 * [Downloads](http://download.brackets.io)
 * [Collecting Fun Facts](https://github.com/adobe/brackets/wiki/Fun-Stats)
 * Release Notes:
+ * [Sprint 35](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-35)
  * [Sprint 34](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-34)
  * [Sprint 33](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-33)
  * [Sprint 32](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-32)
