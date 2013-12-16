@@ -8,12 +8,8 @@ What's New in Sprint 35
     * [Major Find/Replace UI overhaul](https://trello.com/c/pQb32zjf/1072-3-find-replace-ui-cleanup): Streamlined, condensed Replace command with the same incremental search and highlighting previously available only for Find. In both Find/Replace and Find in Files, new toggle buttons make case-sensitive and regexp searches easier to access (replacing the unwritten heuristics that used to decide these options based on your search text). After closing the search bar, Find Next/Previous now reflect any manual changes you make to the cursor position.
 * **Live Development**
     * [Mac: No browser restart needed](https://github.com/adobe/brackets-shell/pull/359): Launching Live Preview no longer requires closing and reopening Chrome on Mac. (This was [already](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25) true on Windows).
-* **Preferences**
-    * [Project- and file-specific editor settings](https://trello.com/c/kqFFDqhR/523-3-infrastructure-for-project-file-scoped-preferences): Use JSON configuration files to specify different indentation, word wrap, etc. settings for different folders or different file types. (TODO: link to detailed how-to)
 * **Performance**
     * [Faster Brackets launch](https://github.com/adobe/brackets/pull/5776): Brackets now loads up to 50% faster thanks to minified JS and pre-compiled LESS.
-* **CSS Animation**
-    * [Visually edit CSS transition step timing functions](https://github.com/adobe/brackets/pull/5799): Invoke Quick Edit when your cursor is on any `step()` function in a CSS rule to edit it (building on top of the existing visual `cubic-bezier()` editor).
 * **Linting**
     * [Multiple linting providers per Language](https://github.com/adobe/brackets/pull/5235): If multiple providers are registered, they will all be run and the results consolidated.
 * **Build Process**
