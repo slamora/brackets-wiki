@@ -1,14 +1,14 @@
-# Frameworks, Tools and Services
+## Frameworks, Tools and Services
 
-## Travis CI
+### Travis CI
 
-# Types of Tests
+## Types of Tests
 
-## Unit Tests
-## Integration Tests
-## Extension Tests
-## Localization Tests
+### Unit Tests
+### Integration Tests
+### Extension Tests
+### Localization Tests
 
 ----
 
-# Future Improvements
+## Future Improvements
