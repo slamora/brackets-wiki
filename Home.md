@@ -34,6 +34,10 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
 * [The Future Extension Manager](https://github.com/adobe/brackets/wiki/Research:-Extension-Management)
 
+## Build
+
+* [Building Brackets](https://github.com/adobe/brackets/wiki/Building-Brackets)
+
 ## Releases
 
 * [Downloads](http://download.brackets.io)
