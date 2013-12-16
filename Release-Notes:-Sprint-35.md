@@ -7,12 +7,12 @@ What's New in Sprint 35
 * **Find/Replace**
     * [Major Find/Replace UI overhaul](https://trello.com/c/pQb32zjf/1072-3-find-replace-ui-cleanup): Streamlined, condensed Replace command with the same incremental search and highlighting previously available only for Find. In both Find/Replace and Find in Files, new toggle buttons make case-sensitive and regexp searches easier to access (replacing the heuristics that used to decide these options based on your search text). After closing the search bar, Find Next/Previous now reflect any manual changes you make to the cursor position.
 * **Live Development**
-    * [Mac: No browser restart needed](https://github.com/adobe/brackets-shell/pull/359): Launching Live Preview no longer requires closing and reopening Chrome on Mac. (This was [already](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25) true on Windows).
+    * [Mac: No browser restart needed](https://github.com/adobe/brackets-shell/pull/359): Launching Live Preview no longer requires closing and reopening Chrome on Mac; it is launched in a separate window isolated from your normal browsing session. (This was [already](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-25) the case on Windows).
 * **Performance**
     * [Faster Brackets launch](https://github.com/adobe/brackets/pull/5776): Brackets now loads up to 50% faster thanks to minified JS and pre-compiled LESS.
 * **Build Process**
-    * [Use release branches](https://trello.com/c/nOXlN0yd/1069-1-infrastructure-support-for-release-timing): Branching a few days in advance of Brackets releases gives more 'stabilization time' to find bugs before releasing, and also allows work for the next sprint's features to start sooner.
     * Optimized builds: See notes below on new build step for minifying JS and precompiling LESS. _This is optional_: Brackets can still run directly from Git source without any build steps required, keeping the dev process lightweight.
+    * [Use release branches](https://trello.com/c/nOXlN0yd/1069-1-infrastructure-support-for-release-timing): Branching a few days in advance of Brackets releases gives more 'stabilization time' to find bugs before releasing, and also allows work for the next sprint's features to start sooner.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-34...sprint-35#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-34...sprint-35#commits_bucket)
 
@@ -29,6 +29,8 @@ API Changes
 
 **ModalBar** - The bar will no longer take any action when the Enter key is pressed, even when the `autoClose` argument was true. The "commit" event has been removed.
 
+**RequireJS** - The "Text" plugin has been updated from 2.0.6 to 2.0.10.
+
 New/Improved Extensibility APIs
 -------------------------------
 **Custom viewers for binary files** - To register a custom viewer for files that cannot be represented as text (e.g. video or audio files): first register the file extensions with `LanguageManager().defineLanguage()`, then associate your custom UI with that language using `EditorManager.registerCustomViewer()`.
@@ -44,7 +46,24 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TODO
+* [Launch Live Development in a separate Chrome profile on OSX, no restart needed](https://github.com/adobe/brackets-shell/pull/382) ([and](https://github.com/adobe/brackets/pull/6003)) ([part 2](https://github.com/adobe/brackets-shell/pull/392)) by [fungl164](https://github.com/fungl164)
+* [Add alternate Next/Previous Document shortcuts on Mac: Cmd-Shift-\] and \[](https://github.com/adobe/brackets/pull/6111) by [Võ Anh Duy](https://github.com/voanhduy1512)
+* [Fix #6142: Argument list hints fail for callbacks with no arguments](https://github.com/adobe/brackets/pull/6143) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Fix #5897: Error installing extensions whose npm setup creates symlinks](https://github.com/adobe/brackets/pull/5919) by [Miguel Castillo](https://github.com/MiguelCastillo)
+* [Add `pointer-events` to CSS code hints](https://github.com/adobe/brackets/pull/6156) ([and](https://github.com/adobe/brackets/pull/6179)) by [Calvin Webster](https://github.com/calweb)
+* [Add `filter`](https://github.com/adobe/brackets/pull/6159) [and `border-width` to CSS code hints](https://github.com/adobe/brackets/pull/6147) by [telis93](https://github.com/telis93)
+* [Upgrade RequireJS Text plugin to 2.0.10](https://github.com/adobe/brackets/pull/6103) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Hide *.*~ files (UNIX backups)](https://github.com/adobe/brackets/pull/5992) by [emanb29](https://github.com/emanb29)
+* [Cleanup: Remove workaround for fixed CodeMirror regexp search issue](https://github.com/adobe/brackets/pull/5457) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Clearer names for files Brackets unit tests add to trash](https://github.com/adobe/brackets/pull/5998) by [Marcel Gerber](https://github.com/SAPlayer)
+* [German translation update](https://github.com/adobe/brackets/pull/6226) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/6092) by [joseadrian](https://github.com/joseadrian)
+* [Czech translation update](https://github.com/adobe/brackets/pull/6025) by [kvarel](https://github.com/kvarel)
+* [Romanian translation update](https://github.com/adobe/brackets/pull/6046) by [Micleusanu Nicu](https://github.com/micnic)
+* [Brazilian Portuguese translation update](https://github.com/adobe/brackets/pull/5345) by [Rafael Olivra](https://github.com/RafaelOlivra)
+* [Swedish translation update](https://github.com/adobe/brackets/pull/6112) by [Albin Larsson](https://github.com/Abbe98)
+* [Dutch translation update](https://github.com/adobe/brackets/pull/6081) by [gero3](https://github.com/gero3)
+
 
 #### Pulling source code from Git
 * A new brackets-shell build is _required_ for this sprint on Mac (Live Preview will not work correctly otherwise). Be sure to rerun `grunt setup` before building.
