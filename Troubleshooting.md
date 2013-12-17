@@ -28,9 +28,9 @@ This can happen on some Windows machines. To work around this, try executing the
 
 ## Can't Run Brackets
 
-### 1. Lion/Mountain Lion Security Dialog
+### 1. Mac error: "Brackets can't be opened because it is from an unidentified developer"
 
-The Brackets app is not yet signed, so depending on your security settings, you might get a dialog on Lion or Mountain Lion telling you that you can't run an application from an unknown developer. If so, you'll need to Ctrl-click on the application and choose "Open", then click on the "Open" button in the dialog that comes up.
+The Brackets app is not yet signed, so depending on your security settings you might get a message saying you can't run an application from an unknown developer. If so, you'll need to Ctrl-click on the application and choose "Open", then click on the "Open" button in the dialog that comes up.
 
 ### 2. Check the File Permissions
 
