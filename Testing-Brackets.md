@@ -1,3 +1,8 @@
+## Challenges
+
+* Custom browser (i.e. [brackets-shell](https://github.com/adobe/brackets-shell)) with additional V8 extensions `brackets.fs` file system and `brackets.app` for native menus and miscellaneous native features.
+    * We benefit from a lack of cross-browser testing (for now)
+
 ## Frameworks, Tools and Services
 
 ### Jasmine
