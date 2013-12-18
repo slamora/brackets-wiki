@@ -116,17 +116,17 @@
   </tr>
   <tr>
     <td>User experience - interaction design</td>
-    <td>NJ, Garth, Peter</td>
+    <td>NJ, Larz, Peter</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>User experience - visual design</td>
-    <td>Garth, NJ</td>
+    <td>Larz, NJ</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Designer workflow</td>
-    <td>Garth, NJ</td>
+    <td>Larz, NJ</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
