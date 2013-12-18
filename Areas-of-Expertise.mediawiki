@@ -131,7 +131,7 @@
   </tr>
   <tr>
     <td>Installer / Builds</td>
-    <td>Peter (Win), Glenn (Mac DMG; native build)</td>
+    <td>Peter (Win), Glenn (Mac DMG; native build), Ingo (Win/Mac)</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -141,7 +141,7 @@
   </tr>
   <tr>
     <td>Build</td>
-    <td>Jason</td>
+    <td>Jason/Ingo</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
