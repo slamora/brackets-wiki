@@ -41,7 +41,7 @@
   </tr>
   <tr>
     <td>Menus, Keyboard Shortcuts, Commands</td>
-    <td>Jeff, Jason, Raymond</td>
+    <td>Jeff, Jason, Raymond, Ingo</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -91,7 +91,7 @@
   </tr>
   <tr>
     <td>Native Shell</td>
-    <td>Jeff, Glenn, Randy, Raymond</td>
+    <td>Jeff, Glenn, Randy, Raymond, Ingo</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
