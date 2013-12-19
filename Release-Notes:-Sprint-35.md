@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 35 -- approximately December 17._
-
 What's New in Sprint 35
 -----------------------
 * **Find/Replace**
