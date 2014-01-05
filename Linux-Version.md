@@ -37,6 +37,7 @@ We're currently focused on Debian/Ubuntu since [Chromium Embedded Framework (CEF
 
 Log
 ----
+* 2014-01-05: Removed the known issue with Live Development and restarting Chrome. This was already resolved
 * 2013-08-29: Removed Slow Startup, Extension Manager, HTML Highlighting and File rename and delete from known issues. Removed Grunt from FAQ. All fixed in sprint 30.
 * 2013-08-09: Added download link
 * 2013-06-24: Updated known issues and FAQ. [jasonsanjose](http://github.com/jasonsanjose)
