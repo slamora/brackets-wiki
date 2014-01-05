@@ -19,7 +19,6 @@ Known Issues
 | App Doesn't Quit on First Attempt | Brackets doesn't close when first clicking the window close button | Click on close again |
 | Native Menus | Native OS menus | N/A. Brackets already fallback to HTML menus on Linux |
 | Show in OS | Right click on a file or folder and choose Show in OS to open the location in Mac Finder or Windows Explorer | None |
-| Starting Live Preview | Brackets detects that Chrome browser needs to be Relaunched, and displays a prompt, but actual Relaunching doesn't work. | Manually close Chrome browser before starting Live Preview |
 
 FAQ
 ====
