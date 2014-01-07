@@ -2,7 +2,7 @@
 
 ### P1 vs. P2
 
-These notes are for the implementation that started during innovation days and is slated to be completed during Sprint 35.
+These notes are for the implementation that started during innovation days and is slated to be completed during Sprint 36.
 
 The first thing to note is that I've made *two* implementations. They have similar concepts at the top level, but the underlying implementations have different characteristics. The [first implementation](https://github.com/adobe/brackets/blob/6f363c93ece9fc37e757bba3e9aded5f66530ec1/src/preferences/PreferencesBase.js), which I'll call P1:
 
