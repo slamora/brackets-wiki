@@ -7,6 +7,28 @@ Brackets includes a simple test-runner for internal use. You can leverage this s
 5. Click the _Extensions_ tab
 6. Click the name of your Jasmine block to run it
 
+### Example code
+
+**main.js**
+
+Start with the code from [[Simple "Hello World" extension]]. Then add `exports.handleHelloWorld = handleHelloWorld;` to the bottom of the module, inside the curly braces (this exposes the method as an API that `unittests.js` can invoke).
+
+**unittests.js**
+
+```javascript
+define(function (require, exports, module) {
+    "use strict";
+
+    var main = require("main");
+    
+    describe("Hello World", function () {
+        it("should expose a handleHelloWorld method", function () {
+            expect(main.handleHelloWorld).not.toBeNull();
+        });
+    });
+});
+``` 
+
 ### Caveats
 
 This is not the easiest to use setup yet. Watch out for these gotchas:
