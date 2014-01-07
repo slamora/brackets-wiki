@@ -305,60 +305,8 @@ To move forward with this story, we propose the following, possible User Stories
 
 These appendices provide additional research context re: this proposal.  
   
-## Appendix A - Creative Cloud Sync Support and Requirements
-
-Currently, the Creative Cloud does not yet "officially" dictate how preferences syncing should work.  For the initial CC release, several other CS6 apps followed Photoshop's lead as noted below.  They used [CoreTech's C++ "C4" library](https://zerowing.corp.adobe.com/display/UITechnologies/UxTechC4) to abstract the synchronization.
-
-Going forward though, Eric Wilde is leading an effort to design a "Sync Settings 2.0" framework to provide a more standardized preference sync implementation without requiring a deep understanding of Stormcloud APIs.  They hope to have more details in about 6 months, but here's how he describes it so far:
-
-> From a technical point of view, what we're trying to achieve is an abstraction on preference management such that a native API takes a dictionary of key/value pairs and handles synchronization of that dictionary with Creative Cloud. The API can also accept file pointers and folder pointers as most products also have external files for presets (a type of preference such as brushes and patterns) and keep their preference files themselves in a folder hierarchy.
-
-In short, choosing to implement our preference settings as JSON name-value pairs will allow us to smoothly integrate with any upcoming CC prefs sync strategy.
-
-### Other Adobe app pref sync implementations
-
-* [Flash Pro](https://zerowing.corp.adobe.com/display/FlashAuthoring/Sync+Preferences+using+Adobe+CCM)
-* [Photoshop](https://zerowing.corp.adobe.com/download/attachments/800929995/PS+Sync+v1.4.pdf?version=1&modificationDate=1354034173103)
-
-### CC Sync Prefs Notes
-
-Taken from: https://zerowing.corp.adobe.com/download/attachments/799345645/SyncSettings_MVP_Nov6.pdf?version=1&modificationDate=1352404475607
-
-1. sync prefs-
- * single user across multiple computers
- * shared prefs among a team
-2. sync content
- * custom workspaces
- * settings
- * styles
- * keyboard shortcuts
- * code snippets
- * menu customization
- * etc
-3. CC membership requirements
- * CC membership required to access sync
- * feature fully available to all Free and Paid (even if cancelled)
- * only allow sync to CC -- not to DropBox or other external folders
-4. Desktop product requirements
- * minimal UI
- * no performance degradation
-5. Sync Strategy
- * pushed to CC upon user request
- * received upon update notification
-6. Conflict resolution
- * most recent wins
- * no user option to resolve manually
-7. CC requirements
- * sync prefs do *not* affect CCM storage quota
- * sync prefs not visible in CC files
-
-Additional notes:
-
-Preferences on the Creative Cloud MVP: https://zerowing.corp.adobe.com/download/attachments/799345645/SyncSettings_MVP_1_8_13.pdf?version=2&modificationDate=1357937509583
-
-Personas and Use Cases: https://zerowing.corp.adobe.com/display/CCM/Sync+Settings+Personas+and+Use+Cases
  
-## Appendix B - Competitive Product Survey
+## Appendix A - Competitive Product Survey
 
 Notes on other, competitive apps and how they implement their preference settings.
 
