@@ -26,16 +26,16 @@ For hacking on the core Brackets HTML/CSS/JavaScript files:
 4. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
 5. Run `setup_for_hacking` script:
 ```bat
-mac
+Mac
 ---
-tools/setup_for_hacking.sh "/Applications/Brackets Sprint 33.app"
+tools/setup_for_hacking.sh "/Applications/Brackets.app"
 
-windows
+Windows
 -------
 IMPORTANT! This command MUST be run in a Command Prompt started with "Run as Administrator"
-tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 33"
+tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"
 
-linux
+Linux
 -----
 sudo tools/setup_for_hacking.sh "/opt/brackets"
 ```
@@ -122,14 +122,14 @@ If you're only hacking on HTML/JS/CSS files, you can have the installed Brackets
   2. `cd` to the root of your brackets repo
   3. run `tools/setup_for_hacking.sh`, passing the full pathname to your installed Brackets.app. For example:
 ```bash
-tools/setup_for_hacking.sh "/Applications/Brackets Sprint 33.app"
+tools/setup_for_hacking.sh "/Applications/Brackets.app"
 ```
 4. On Windows:
   1. Open a Command Prompt _using "Run as Administrator"_
   2. `cd` to the root of your brackets repo
   3. run `tools\setup_for_hacking.bat`, passing the full path of the directory where Brackets.exe is installed. For example:
 ```bat
-tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets Sprint 33"
+tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"
 ```
 5. Launch the installed copy of Brackets, select _Help > About_, and verify that the version number says "sprint xx _development_ build" instead of "sprint xx _experimental_ build". This indicates that you're running Brackets from your git repo instead of the installed build.
 
