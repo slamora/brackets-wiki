@@ -13,7 +13,8 @@ What's New in Sprint 36
     * "Safe Mode": Easy command to restart with all extensions disabled, to troubleshoot bugs and performance problems.
 * **Linting**
     * [Multiple linting providers per Language](https://github.com/adobe/brackets/pull/5235): If multiple providers are registered, they will all be run and the results consolidated.
-
+* **LESS Property/Value Code Hinting and Quick Docs**
+    * Code hints for CSS properties and values, and Quick Docs for CSS properties, now work in LESS files.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-35...sprint-36#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-35...sprint-36#commits_bucket)
 
