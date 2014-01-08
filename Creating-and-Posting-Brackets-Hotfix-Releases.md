@@ -1,4 +1,6 @@
-Follow these steps to create a hotfix branch and release for Brackets Sprint (XX):
+This document outlines the steps needed to create a hotfix branch and release for Brackets Sprint (XX).
+
+Please note that the release's version number can consist of a major and minor component, for example "34.1".  Each subsequent release should use a new, increasing version number.
 
 ### Setup the hotfix branch
 
