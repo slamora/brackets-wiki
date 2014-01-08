@@ -4,8 +4,9 @@ Please note that the release's version number can consist of a major and minor c
 
 ### Setup the hotfix branch
 
-1. create a new hotfix branch in **both** brackets and brackets-shell
+1. create a new hotfix branch from major branch in **both** brackets and brackets-shell
 ```
+git checkout sprint-XX
 git checkout -b sprint-XX-hotfix
 ```
 
