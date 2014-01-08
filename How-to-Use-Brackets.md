@@ -29,13 +29,13 @@ Instead of cluttering up your coding environment with lots of panels and icons, 
 You open Quick Edit's inline editors by pressing **Ctrl/Cmd-E** when your cursor is on certain pieces of code. For example:
 
 * In an HTML file with the cursor inside a `class` or `id` attribute or on the tag name - Quick Edit will show you all the CSS rules in your project that match. You can edit these rules directly inline, without ever leaving the context of the HTML file.
-    * When there are multiple rules, you can navigate between them using the list on the right side of the inline editor (or use Alt+Up/Down).
-    * You can also create a new rule in any CSS file directly from the inline editor. Click the **New Rule** button or press Ctrl-Alt-N/Cmd-Opt-N.
-* In any file with a hex color, rgb/rgba color, or hsl/hsla color - Quick Edit opens an inline color picker for previewing and adjusting the color. The color picker also lists the top most-used colors from other parts of the file for quick access.
+    * When multiple rules match, navigate among them using the list on the right side (or use Alt-Up/Down).
+    * To create a new CSS rule directly from the inline editor, click the **New Rule** button (or press Ctrl-Alt-N/Cmd-Opt-N).
+* In any file with a hex color or rgb/rgba/hsl/hsla color - Quick Edit opens an inline color picker for previewing and adjusting the color. The color picker also lists the top most-used colors from other parts of the file for quick access.
 * In a JavaScript file with the cursor on a function name - Quick Edit will show you the function's body (even if it's in a different file).
 * In a CSS file with the cursor on a `cubic-bezier()` or `steps()` transition timing function - Quick Edit opens a graphical transition curve editor.
 
-A related feature, **Quick Docs**, shows you documentation relevant to your cursor position:
+**Quick Docs** is a related feature that displays relevant documentation inline. Use **Ctrl/Cmd-K** to open Quick Docs:
 
 * In a CSS file with the cursor on a CSS property/value - Quick Docs opens documentation from the [Web Platform Docs](http://docs.webplatform.org/) project.
 
@@ -45,7 +45,7 @@ You can open _multiple_ inline editors and docs viewers simultaneously. To close
 ### <a id="livedev"></a>Live Preview
 Brackets works directly with your browser to push code edits instantly, so your browser preview is always up to date while you're coding - no page reloads needed.
 
-There are ways to use Live Preview:
+There are two different ways to use Live Preview:
 
 **With no backend logic** - Open an HTML file and select **File > Live Preview** (or click the "lightning bolt" icon). Brackets will launch Chrome and open your file in a new tab. The content is served statically from a built-in server that Brackets run - it doesn't contain any of your app's backend logic.
 
@@ -61,7 +61,7 @@ All the CSS features above also work when you're in an inline Quick Edit CSS edi
 **Using your own backend** - Make sure your server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open an HTML, PHP, ASP etc. file and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
 
 _However_, this mode disables the HTML-related features:
-* The browser won't update in real time as you type in HTML/PHP/etc. files - only CSS edits will be reflected in real time. Instead, the page is auto-reloaded when you save a HTML/PHP/etc. file.
+* The browser won't update in real time as you type in HTML/PHP/etc. files (only CSS edits will be reflected in real time). Instead, the page is auto-reloaded when you save a HTML/PHP/etc. file.
 * Nothing is highlighted in the browser when you move the cursor around an HTML/PHP/etc. file. (But highlighting when in a CSS file still works).
 
 > Why do these limitations exist? To enable HTML live editing, Brackets needs to inject some annotations into your HTML code before the browser loads it. Normally, the built-in Brackets server does this. When using your own server instead, Brackets can't inject those annotations. Without the annotations, Brackets can't map edits and cursor positions from your source file onto the corresponding DOM nodes in the browser.
