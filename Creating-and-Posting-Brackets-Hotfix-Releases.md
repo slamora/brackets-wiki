@@ -1,6 +1,6 @@
 This document outlines the steps needed to create a hotfix branch and release for Brackets Sprint (XX).
 
-Please note that the release's version number can consist of a major and minor component.  For example in "34.1", "34" is the major and "1" is the minor version.  The Windows Wix installer will upgrade a previous install in-place, so long as the version (major and minor) to install is greater than the version already installed (and so long as the `UpgradeCode` in 'brackets-shell\installer\win\Brackets.wxs' matches).
+Please note that the release's version number can consist of a major and minor component.  For example in "34.1", "34" is the major and "1" is the minor version.  The Windows Wix installer will upgrade a previous install in-place, so long as the version (major and minor) to install is greater than the version already installed (and so long as the `UpgradeCode` in 'brackets-shell/installer/win/Brackets.wxs' matches).
 
 ### Setup the hotfix branch
 
