@@ -28,6 +28,7 @@ To confirm that the installation worked correctly, confirm that:
   * there is just one Brackets application shortcut (ie. that any previously installed, Sprint 34 or later shortcuts were overridden)
   * Brackets launches successfully
   * (Windows-only) there is just one entry to uninstall Brackets in Control Panel > Programs and Features list
+  * (Windows-only) the uninstaller completely removes the installed Brackets binaries
 
 ### Post the hotfix builds to Brackets.io
 
