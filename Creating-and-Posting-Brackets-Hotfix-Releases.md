@@ -1,6 +1,6 @@
 This document outlines the steps needed to create a hotfix branch and release for Brackets Sprint (XX).
 
-Please note that the release's version number can consist of a major and minor component, for example "34.1".  Each subsequent release should use a new, increasing version number.
+Please note that the release's version number can consist of a major and minor component.  For example in "34.1", "34" is the major and "1" is the minor version.  The Windows Wix installer will upgrade a previous install in-place, so long as the version (major and minor) to install is greater than the version already installed (and so long as the `UpgradeCode` matches).
 
 ### Setup the hotfix branch
 
@@ -13,7 +13,7 @@ git checkout -b sprint-XX-hotfix
 ```
 grunt set-sprint --sprint=XX.Y
 ```
-If you choose to increment the version manually, please be sure to increment the `product.sprint.number` value defined in `installer/win/brackets-win-install-build.xml`.  Otherwise, in-place upgrades on Windows won't install correctly.
+If you choose to increment the version manually (ie. not using the `grunt` task, please be sure to increment the `product.sprint.number` value defined in `installer/win/brackets-win-install-build.xml`.  Otherwise, in-place upgrades on Windows won't install correctly.
 
 3. commit and push your branches to both GitHub repos.
 
