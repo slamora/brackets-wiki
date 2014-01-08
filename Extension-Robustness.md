@@ -37,6 +37,8 @@ I have seen this problem actually cause Brackets to not start up (because the Ap
 
 It's also worth noting that Peter Flynn commented to me about the relatively slow performance of firing events using jQuery, not to mention that all of our application events have a useless first parameter which is a more DOM-oriented event object.
 
+_Note: Ian pointed out that jQuery Promises have the same problem_ -- if one done()/fail() handler crashes, none of the subsequent ones attached to that same Promise get to run. Interestingly, Promises are also really inefficient in jQuery. Changing to a different library like Q would change the semantics quite a bit; if we didn't want to go that far, I wonder if we could just write out own simple jQuery-style Promise impl. - Peter
+
 ### Sandboxing
 
 The idea behind sandboxing of extensions is that extensions run in some separate context from the Brackets core and only have access to the APIs that we explicitly provide. Because they run in a separate context, the amount of damage that an extension can cause is minimized. The biggest problem with sandboxing is that sandboxed extensions would not be able to directly manipulate the DOM, something that some extensions do to provide custom UI. Additionally, there is a performance cost to crossing the line between the sandbox and the main process.
