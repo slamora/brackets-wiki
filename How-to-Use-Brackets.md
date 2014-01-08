@@ -45,36 +45,33 @@ You can open _multiple_ inline editors and docs viewers simultaneously. To close
 ### <a id="livedev"></a>Live Preview
 Brackets works directly with your browser to push code edits instantly, so your browser preview is always up to date while you're coding - no page reloads needed.
 
-Live Preview also includes support for live editing of HTML. If you open an HTML file, and then click the "lightning bolt" icon on the right side of the toolbar,  Brackets will open the HTML file in Chrome. If you then make edits to CSS files used by that HTML file (either in an inline editor or just by opening up the CSS file), your edits will be instantly reflected in Chrome as you type.  If you make changes to the content or structure of your HTML, those will be instantaneously updated in the browser without the need to refresh.  This includes changes to the style and class tag attributes.
+There are ways to use Live Preview:
 
-By default, Brackets previews files using a local http server that is included with Brackets. 
-If you want to preview off a server, you can use **File > Project Settings...**. 
-In the Base URL field, set the URL on the server that corresponds to the root of your project.
+**With no backend logic** - Open an HTML file and select **File > Live Preview** (or click the "lightning bolt" icon). Brackets will launch Chrome and open your file in a new tab. The content is served statically from a built-in server that Brackets run - it doesn't contain any of your app's backend logic.
 
-Note that live HTML only works with the Brackets built-in server. If you are using your own web server (have a Live Preview Base URL set), only live CSS editing will work.
+This mode offers the full range of Live Preview functionality:
+* Browser preview updates in real time as you type in HTML _and_ CSS files (without reloading)
+* If you edit any other type of file, the page is auto-reloaded when you save
+* When you move the cursor around an HTML file, the corresponding element is highlighted in the browser
+* When you move the cursor around a CSS file, all elements matching the CSS rule are highlighted in the browser
+* (All cursor-driven highlighting can be disabled by unchecking **View > Live Preview Highlight**)
 
-If you make changes and save a JS file, however, the content in your browser will be refreshed for preview. 
+All the CSS features above also work when you're in an inline Quick Edit CSS editor.
 
-While Live Preview is open, putting your cursor in an HTML tag in Brackets will
-highlight the matching element in the browser. Putting your cursor in a CSS rule will
-highlight all matching HTML elements. Use "File > Live Highlight" to toggle this off.
+**Using your own backend** - Make sure your server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open an HTML, PHP, ASP etc. file and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
 
-Some limitations of the current implementation:
+_However_, this mode disables the HTML-related features:
+* The browser won't update in real time as you type in HTML/PHP/etc. files - only CSS edits will be reflected in real time. Instead, the page is auto-reloaded when you save a HTML/PHP/etc. file.
+* Nothing is highlighted in the browser when you move the cursor around an HTML/PHP/etc. file. (But highlighting when in a CSS file still works).
 
-* It only works with Chrome as the target browser.
-* It relies on the remote debugging features in Chrome, which are enabled by
-  a command-line flag. On the Mac, if you're already running Chrome when you start
-  Live Preview, Brackets will ask if you want to relaunch Chrome with remote
-  debugging enabled, and if you say yes, it will go ahead and do it for you.
-* Only one HTML file can have a live connection to the browser at a time--if you
-  switch to a different HTML file, Brackets will close the original preview and open 
-  one for the new file. Note that if you have another tab open, Chrome will not
-  shut down and restart between each page.
-* Opening the developer tools in Chrome will close the live development connection.
+> Why do these limitations exist? To enable HTML live editing, Brackets needs to inject some annotations into your HTML code before the browser loads it. Normally, the built-in Brackets server does this. When using your own server instead, Brackets can't inject those annotations. Without the annotations, Brackets can't map edits and cursor positions from your source file onto the corresponding DOM nodes in the browser.
+
+Live Preview currently has a few other important limitations:
+
+* It only works with desktop Chrome as the target browser.
+* Opening the Developer Tools in Chrome will close the live development connection.
+* Only one HTML file can be previewed at a time. If you switch to a different HTML file in Brackets, the browser preview will switch to that new page as well.
   
-As with Quick Edit, there are lots of ideas for how to extend this, including
-clicking on an item in the browser to jump back to its source code in Brackets, 
-and setting JS breakpoints from Brackets.
 
 ### <a id="quickview"></a>Quick View
 Quick View makes it easy to visualize assets and colors in your code. Just hover your
