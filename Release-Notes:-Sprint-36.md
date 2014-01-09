@@ -6,15 +6,21 @@ What's New in Sprint 36
 -----------------------
 * **Preferences**
     * [Project- and file-specific editor settings](https://trello.com/c/kqFFDqhR/523-3-infrastructure-for-project-file-scoped-preferences): Use JSON configuration files to specify different indentation, word wrap, etc. settings for different folders or different file types. (TODO: link to detailed how-to)
-* **File System**
-    * [File/directory watchers and file caching](https://trello.com/c/zldzEXmk/292-2-file-directory-watching): Brackets will detect external modifications to files almost immediately, updating the project tree, editor contents, etc. as needed (manually refreshing the tree is no longer needed). Operations like Find in Files will be _much_ faster when used repeatedly, as the contents of files are now cached in memory.
+* **File System & Performance**
+    * [File/directory watchers](https://trello.com/c/zldzEXmk/292-2-file-directory-watching): Brackets will detect external modifications to files almost instantly and update the project tree, editor contents, etc. automatically (manually refreshing the tree is no longer needed).
+    * [File caching](https://trello.com/c/zldzEXmk/292-2-file-directory-watching): Operations like Find in Files will be _much_ faster when used repeatedly, as the contents of files are now cached in memory.
 * **Extensions**
     * [Extension download counts](https://trello.com/c/qOy9Slr1/799-2-extension-download-counts): We will begin tracking how many times each extension has been installed, and will post the download counts at periodic intervals. This will help extension authors decide where to prioritize their efforts, and will help Brackets developers understand what functionality is most important for our users.
-    * "Safe Mode": Easy command to restart with all extensions disabled, to troubleshoot bugs and performance problems.
+    * ["Safe Mode"](https://github.com/adobe/brackets/issues/5078): Choose _Debug > Reload Without Extensions_ to temporarily run Brackets without any extensions loaded for troubleshooting. Extensions are re-enabled when you restart Brackets through any other means.
+* **CSS Editing**
+    * [Visually edit CSS transition step timing functions](https://github.com/adobe/brackets/pull/5799): Invoke Quick Edit when your cursor is on any `step()` function in a CSS rule to edit it (building on top of the existing visual `cubic-bezier()` editor).
+* **LESS Editing and Quick Docs**
+    * [Code hints for CSS property names & values](https://github.com/adobe/brackets/pull/6268): The same code hints you see in CSS & SCSS files will now also appear in LESS files.
+    * [Quick Docs support](https://github.com/adobe/brackets/pull/6419): Ditto – just like in CSS/SCSS files.
+* **Overall UI**
+    * Notable bugs fixed in Win dark-themed window chrome
 * **Linting**
     * [Multiple linting providers per Language](https://github.com/adobe/brackets/pull/5235): If multiple providers are registered, they will all be run and the results consolidated.
-* **LESS Property/Value Code Hinting and Quick Docs**
-    * Code hints for CSS properties and values, and Quick Docs for CSS properties, now work in LESS files.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-35...sprint-36#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-35...sprint-36#commits_bucket)
 
@@ -26,11 +32,14 @@ No major changes to existing features.
 
 API Changes
 -----------
-TODO: anything to say about linter changes?
-
 TODO: Preferences API changes?
 
 TODO: FileSystem API changes
+
+**Linting** - The process for registering a linter is unchanged, but it's now possible to register more than one linter per file type. (Except that, as before, the built-in JSLint provider is automatically disabled when any other JS linter is registered).
+
+The result yielded by `CodeInspection.inspectFile()` has changed: instead of a single linter result, it now returns an array of objects, each containing the result of one specific linter.
+
 
 New/Improved Extensibility APIs
 -------------------------------
