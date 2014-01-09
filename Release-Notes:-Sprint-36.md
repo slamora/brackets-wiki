@@ -12,15 +12,15 @@ What's New in Sprint 36
 * **Extensions**
     * [Extension download counts](https://trello.com/c/qOy9Slr1/799-2-extension-download-counts): We will begin tracking how many times each extension has been installed, and will post the download counts at periodic intervals. This will help extension authors decide where to prioritize their efforts, and will help Brackets developers understand what functionality is most important for our users.
     * ["Safe Mode"](https://github.com/adobe/brackets/issues/5078): Choose _Debug > Reload Without Extensions_ to temporarily run Brackets without any extensions loaded for troubleshooting. Extensions are re-enabled when you restart Brackets through any other means.
-* **CSS Editing**
-    * [Visually edit CSS transition step timing functions](https://github.com/adobe/brackets/pull/5799): Invoke Quick Edit when your cursor is on any `step()` function in a CSS rule to edit it (building on top of the existing visual `cubic-bezier()` editor).
-* **LESS Editing and Quick Docs**
+* **LESS Support**
     * [Code hints for CSS property names & values](https://github.com/adobe/brackets/pull/6268): The same code hints you see in CSS & SCSS files will now also appear in LESS files.
     * [Quick Docs support](https://github.com/adobe/brackets/pull/6419): Ditto – just like in CSS/SCSS files.
+* **CSS Editing**
+    * [Visually edit CSS transition step timing functions](https://github.com/adobe/brackets/pull/5799): Invoke Quick Edit when your cursor is on any `step()` function in a CSS rule to edit it (building on top of the existing visual `cubic-bezier()` editor). Also works in LESS & SCSS files.
 * **Overall UI**
     * Notable bugs fixed in Win dark-themed window chrome
 * **Linting**
-    * [Multiple linting providers per Language](https://github.com/adobe/brackets/pull/5235): If multiple providers are registered, they will all be run and the results consolidated.
+    * [Multiple linting providers per language](https://github.com/adobe/brackets/pull/5235): If multiple providers are registered, they will all be run and the results consolidated.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-35...sprint-36#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-35...sprint-36#commits_bucket)
 
