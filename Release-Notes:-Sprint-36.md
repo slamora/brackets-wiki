@@ -18,7 +18,8 @@ What's New in Sprint 36
 * **CSS Editing**
     * [Visually edit CSS transition step timing functions](https://github.com/adobe/brackets/pull/5799): Invoke Quick Edit when your cursor is on any `step()` function in a CSS rule to edit it (building on top of the existing visual `cubic-bezier()` editor). Also works in LESS & SCSS files.
 * **Overall UI**
-    * Notable bugs fixed in Win dark-themed window chrome
+    * [Windows: many window-chrome visual glitches fixed](https://github.com/adobe/brackets-shell/pull/408): Notably, the window border no longer bleeds onto other monitors.
+    * [Windows: new, flatter scrollbar appearance](https://github.com/adobe/brackets/pull/6305)
 * **Linting**
     * [Multiple linting providers per language](https://github.com/adobe/brackets/pull/5235): If multiple providers are registered, they will all be run and the results consolidated.
 
@@ -27,7 +28,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-No major changes to existing features.
+**Scrollbars** - Scrollbars on all versions of Windows now have a flatter, Windows-8-style appearance that matches the overall Brackets UI design better.
 
 
 API Changes
