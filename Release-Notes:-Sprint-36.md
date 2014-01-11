@@ -41,6 +41,7 @@ TODO: FileSystem API changes
 
 The result yielded by `CodeInspection.inspectFile()` has changed: instead of a single linter result, it now returns an array of objects, each containing the result of one specific linter.
 
+**StatusBar API changes** - `addIndicator()` now receives an additional parameter: insertBefore. If specified, the new statusbar indicator is inserted before the indicator with id of insertBefore. If omitted, the indicator will be inserted at the beginning.
 
 New/Improved Extensibility APIs
 -------------------------------
