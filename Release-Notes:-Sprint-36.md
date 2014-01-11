@@ -16,7 +16,7 @@ What's New in Sprint 36
     * [Code hints for CSS property names & values](https://github.com/adobe/brackets/pull/6268): The same code hints you see in CSS & SCSS files will now also appear in LESS files.
     * [Quick Docs support](https://github.com/adobe/brackets/pull/6419): Ditto – just like in CSS/SCSS files.
 * **CSS Editing**
-    * [Visually edit CSS transition step timing functions](https://github.com/adobe/brackets/pull/5799): Invoke Quick Edit when your cursor is on any `step()` function in a CSS rule to edit it (building on top of the existing visual `cubic-bezier()` editor). Also works in LESS & SCSS files.
+    * [Visually edit CSS transition step timing functions](https://github.com/adobe/brackets/pull/5799): Invoke Quick Edit when your cursor is on any `steps()` function in a CSS rule to edit it (building on top of the existing visual `cubic-bezier()` editor). Also works in LESS & SCSS files.
 * **Overall UI**
     * [Windows: many window-chrome visual glitches fixed](https://github.com/adobe/brackets-shell/pull/408): Notably, the window border no longer bleeds onto other monitors.
     * [Windows: new, flatter scrollbar appearance](https://github.com/adobe/brackets/pull/6305)
