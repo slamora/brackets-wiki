@@ -3,6 +3,13 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * **[Main README](https://github.com/adobe/brackets/blob/master/README.md)** -- please read this first.
 * **[CONTRIBUTING](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md)** -- in case you'd like to hack on Brackets.
 * **[Troubleshooting](https://github.com/adobe/brackets/wiki/Troubleshooting)** -- read this if you're having trouble running Brackets.
+* Online resources
+    * [Homepage](http://brackets.io/) and [blog](http://blog.brackets.io/)
+    * [IRC - #brackets on Freenode](http://webchat.freenode.net/?channels=brackets)
+    * [Twitter - @brackets](http://twitter.com/brackets)
+    * [Forum - brackets-dev](http://groups.google.com/group/brackets-dev)
+    * [Feature backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88) and [bug listing](https://github.com/adobe/brackets/issues)
+    * [More Brackets community online...](Brackets Communication Channels)
 
 ## Usage
 * **[Quick Start Video](http://www.youtube.com/watch?v=VKitqLpJtAY&feature=plcp)**
@@ -20,7 +27,6 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 * [Brackets Contributor License Agreement](http://dev.brackets.io/brackets-contributor-license-agreement.html) - you must agree to and submit this before you can contribute to Brackets.
 * [License](https://github.com/adobe/brackets/blob/master/LICENSE)
 * [Brackets Committer Policy](https://github.com/adobe/brackets/wiki/Brackets-Committer-Policy)
-* [Brackets Community - Communication Channels](https://github.com/adobe/brackets/wiki/Brackets-Communication-Channels)
 * [Resources / Tutorials / Videos](https://github.com/adobe/brackets/wiki/Resources)
 * [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions)
 * [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
