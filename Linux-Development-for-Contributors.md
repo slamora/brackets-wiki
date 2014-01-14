@@ -62,13 +62,21 @@ Contributors: If you are willing to test other Linux distributions please add yo
 Building brackets-shell
 ----
 
-The setup script will automatically create `/path/to/brackets-shell/Makefile`. If you're only making changes to C++ code, just run `grunt build` and the binaries will be in `/path/to/brackets-shell/out/Release`. 
+After the script runs to completion, you'll need to get the CEF components. To do this, run:
 
-When adding new files or changing the build configuration, you'll need to make modifications to the GYP configuration files (either `appshell.gyp.txt` or `common.gypi`). After making changes, you'll need to generate a new `Makefile`. To do this, run:
+```
+grunt cef
+```
+
+To create the `/path/to/brackets-shell/Makefile` run:
 
 ```
 gyp --depth .
 ```
+
+If you're only making changes to C++ code, just run `grunt build` and the binaries will be in `/path/to/brackets-shell/out/Release`. 
+
+When adding new files or changing the build configuration, you'll need to make modifications to the GYP configuration files (either `appshell.gyp.txt` or `common.gypi`). After making changes, you'll need to generate a new `Makefile` with gyp (as above).
 
 Packaging Brackets
 ----
