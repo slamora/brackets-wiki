@@ -2,7 +2,9 @@
 
 [Brackets: An Open Source Code Editor for the Web](http://tv.adobe.com/watch/max-2013/brackets-an-open-source-code-editor-for-the-web/) - Adam Lehman
 
-[Brackets quick start](http://www.youtube.com/watch?v=VKitqLpJtAY) - Narciso (nj) Jaramillo
+[Brackets Quick Start](http://www.youtube.com/watch?v=VKitqLpJtAY) - Narciso (nj) Jaramillo
+
+[Brackets Intro by NetTuts+](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/)
 
 ["Classic" intro video (2012)](http://www.youtube.com/watch?v=rvo3Mv1Z4qU) - Narciso (nj) Jaramillo
 
