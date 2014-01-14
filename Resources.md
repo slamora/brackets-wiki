@@ -4,10 +4,8 @@
 * [[Brackets Development How Tos]]
 * [Brackets on Hacker Notes](http://www.thehackernotes.com/adobe/brackets)
 
-## Videos
-
-* [Brackets YouTube Channel](http://www.youtube.com/user/CodeBrackets) Official YouTube channel for the project.
-* [Nettuts+ Brackets Overview](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/) Video tutorial by Nettuts+
+### Videos
+See **[Videos page](Videos)** for a full listing of intro videos, conference talks, cools demos, etc.
 
 ### Adobe Internal Hackathon, May 2012
 * [Brackets : An Introduction](http://www.youtube.com/watch?v=xirIHMtpc4c)
