@@ -66,7 +66,16 @@ You can use `File > Open` to open any file on your computer, but Brackets' defin
 Extensions can cause problems with Brackets core code. The most notable extensions that may cause problems with Live Preview are Theseus and Debugger, so start with those. After that, but try disabling all extensions. Starting with Sprint 36, you can use `Debug > Reload Without Extensions` to quickly see if the problem is being caused by an extension.
 
 ### Using a Local Server
-If you have specified a Base URL in the `File > Project Settings...` dialog to use a local server, first verify that it has been started. Also, Live HTML requires the Brackets built in node server, so it does not work with this configuration.
+To use a local server, you need to specify a Base URL in the `File > Project Settings...` dialog.
+
+If you are using a local server and are seeing these messages:
+
+* Message in Chrome: "Oops!  Google Chrome could not connect to localhost:[port]"
+* Message in Brackets Live Preview Error "Unable to load Live Development page".
+
+Then verify that the local server has been started.
+
+Also, Live HTML requires the Brackets built in node server, so it does not work with this configuration.
 
 ### Install Chrome For Multiple User Accounts (Windows Only)
 If you get the error ``An error occurred when launching the browser. (error 2)`` when doing Live Development, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
