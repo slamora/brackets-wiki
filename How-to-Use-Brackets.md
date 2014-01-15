@@ -161,6 +161,41 @@ for a more complete list of shortcuts.
 </tbody>
 </table>
 
+Preferences
+-----------
+
+From the Brackets user interface, you can change preferences such as whether you want "code inspection" (automatic detection of errors) turned on, or if word wrap should be on. These preferences are "user-level" which means that they apply to any file in any folder that you open.
+
+Brackets (as of Brackets 36) also lets you override preferences on a per-folder basis by putting a `.brackets.json` file there. These files are particularly useful for saving configuration that is specific to a project or even some files in a project. Some of the preferences available in these files do not have any user interface yet.
+
+Here is a quick list of some of the settings you can change in these files:
+
+* **defaultExtension**: extension to be automatically added to newly created (untitled) files
+* **jslint.options**: An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options)
+* **linting.enabled**: Determines if Code Inspection is on
+* **useTabChar**: true to use tabs instead of spaces
+* **tabSize**: number of spaces to display for tabs
+* **spaceUnits**: number of spaces to use for space-based indentation
+* **wordWrap**: true if word wrap is on
+
+Here's an example:
+
+```json
+{
+    "spaceUnits": 4
+    "path": {
+        "src/thirdparty/someLibrary.js": {
+            "useTabChar": true,
+            "tabSize": 4,
+            "linting.enabled": false
+        }
+    }
+}
+```
+
+With this .brackets.json file at the top of your project, your files will all default to 4 space indentation. However, src/thirdparty/someLibrary.js will be set to use tabs with 4 spaces for the tabs and linting will be turned off.
+
+One important note: if you're editing the someLibrary.js file and you try to change the tab size via the status bar, the tab size won't visibly change. This is because the status bar is only changing your user settings and the setting in the .brackets.json file is the one that applies to the current file. In a future Brackets release, there will be more user interface elements for managing your preferences.
 
 What's Next?
 ------------
