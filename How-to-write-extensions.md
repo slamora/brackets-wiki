@@ -106,6 +106,39 @@ Thankfully, the ```require``` context that's passed in to your extension's ```ma
 
 For example, if you have ```awesome.jpg``` in your extension's top-level ```foo``` folder, you can do ```require.toUrl('./awesome.jpg')```, and it will return something like ```/extensions/dev/foo/awesome.jpg``` when you call it and ```/Users/<user>/Library/Application Settings/Brackets/extensions/user/bar/awesome.jpg``` when your user calls it. The path you give ```toUrl``` should be relative to your extension's top-level folder (yes, subdirectories work), and the URL you get back will be relative to the site root (i.e. it will begin with "/").
 
+### Working with Preferences
+
+Your extension can access Brackets' preferences and define preferences of its own. For preferences specific to your extension, you should make sure that all of the preferences have a prefix so that they don't clobber any other preferences. Here's an example:
+
+```javascript
+
+var PreferencesManager = require("preferences/PreferencesManager"),
+    prefs = PreferencesManager.getExtensionPrefs("myextensionname");
+
+// First, we define our preference so that Brackets knows about it.
+// Eventually there may be some automatic UI for this.
+// Name of preference, type and the default value are the main things to define.
+// This is actually going to create a preference called "myextensionname.enabled".
+prefs.definePreference("enabled", "boolean", true);
+
+// Set up a listener that is called whenver the preference changes
+prefs.on("change", function () {
+    doSomethingWith(prefs.get("enabled"));
+});
+
+// If you want to set the preference at the "user" level (basically the user's settings that
+// apply to any project), call set like this:
+
+prefs.set("user", "enabled", false);
+
+// Then save the change
+prefs.save();
+
+```
+
+The snippet of code above covers the main parts of the API that you will use for preferences.
+For other uses, take a look at `preferences/PreferencesManager.js` and `preferences/PreferencesBase.js`.
+
 ### Accessing Node APIs
 
 Brackets includes a built-in [Node.js](http://nodejs.org/) server that runs as a side process.  Your extension can include code that runs in Node &ndash; accessing useful Node APIs and pulling in helpful NPM libraries.  [Read more on running code in Brackets' Node instance...](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers#usage-example)
