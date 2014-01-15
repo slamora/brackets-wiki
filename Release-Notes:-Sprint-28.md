@@ -64,7 +64,7 @@ Community contributions to Brackets
 * [Enable syntax coloring for Python .wsgi files](https://github.com/adobe/brackets/pull/4431/files) by [Globex Designs](https://github.com/globexdesigns)
 * [Fix #4332: Locale-aware filename sorting in file tree](https://github.com/adobe/brackets/pull/4463) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Fix #4409: Sort order of "Untitled-NN" filenames should match OS](https://github.com/adobe/brackets/pull/4524) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Fix #4333: Paths containing "#" are mishandled](https://github.com/adobe/brackets/pull/4379) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Fix #4333: Paths containing "#" are mishandled](https://github.com/adobe/brackets/pull/4379) by [Arzhan "kai" Kinzhalin (Intel Corporation)](https://github.com/busykai)
 * [Fix #2076: Simplify events fired when working set is reordered](https://github.com/adobe/brackets/pull/4450) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Fix #4390: Change dialog box message container from \<p> to \<div>](https://github.com/adobe/brackets/pull/4416) by [Hoshi Chigurh](https://github.com/Chigurh)
 * [Fix #3985: Error messages related to New Folder say "file" instead of "folder"](https://github.com/adobe/brackets/pull/4244) by [Daniel Seymour](https://github.com/DaBungalow)
