@@ -44,11 +44,11 @@ Community contributions to Brackets
 -----------------------------------
 * [Launch Live Development in a separate Chrome profile on OSX, no restart needed](https://github.com/adobe/brackets-shell/pull/382) ([and](https://github.com/adobe/brackets/pull/6003)) ([part 2](https://github.com/adobe/brackets-shell/pull/392)) by [fungl164](https://github.com/fungl164)
 * [Add alternate Next/Previous Document shortcuts on Mac: Cmd-Shift-\] and \[](https://github.com/adobe/brackets/pull/6111) by [Võ Anh Duy](https://github.com/voanhduy1512)
-* [Fix #6142: Argument list hints fail for callbacks with no arguments](https://github.com/adobe/brackets/pull/6143) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Fix #6142: Argument list hints fail for callbacks with no arguments](https://github.com/adobe/brackets/pull/6143) by [Arzhan "kai" Kinzhalin (Intel Corporation)](https://github.com/busykai)
 * [Fix #5897: Error installing extensions whose npm setup creates symlinks](https://github.com/adobe/brackets/pull/5919) by [Miguel Castillo](https://github.com/MiguelCastillo)
 * [Add `pointer-events` to CSS code hints](https://github.com/adobe/brackets/pull/6156) ([and](https://github.com/adobe/brackets/pull/6179)) by [Calvin Webster](https://github.com/calweb)
 * [Add `filter`](https://github.com/adobe/brackets/pull/6159) [and `border-width` to CSS code hints](https://github.com/adobe/brackets/pull/6147) by [telis93](https://github.com/telis93)
-* [Upgrade RequireJS Text plugin to 2.0.10](https://github.com/adobe/brackets/pull/6103) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Upgrade RequireJS Text plugin to 2.0.10](https://github.com/adobe/brackets/pull/6103) by [Arzhan "kai" Kinzhalin (Intel Corporation)](https://github.com/busykai)
 * [Hide *.*~ files (UNIX backups)](https://github.com/adobe/brackets/pull/5992) by [emanb29](https://github.com/emanb29)
 * [Cleanup: Remove workaround for fixed CodeMirror regexp search issue](https://github.com/adobe/brackets/pull/5457) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Clearer names for files Brackets unit tests add to trash](https://github.com/adobe/brackets/pull/5998) by [Marcel Gerber](https://github.com/SAPlayer)
