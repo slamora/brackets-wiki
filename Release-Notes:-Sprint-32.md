@@ -40,8 +40,8 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 * [Add CodeInspection.inspectFile() headless API](https://github.com/adobe/brackets/pull/5125) by [Martin Zagora](https://github.com/zaggino)
-* [Fix #5310: Many items in 'Edit' menu do nothing on Linux](https://github.com/adobe/brackets/pull/5311) ([and](https://github.com/adobe/brackets/pull/5350)) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
-* [Fix #5362: Linux menu dropdowns appear below bottom panel headers](https://github.com/adobe/brackets/pull/5363) by [Arzhan "kai" Kinzhalin](https://github.com/busykai)
+* [Fix #5310: Many items in 'Edit' menu do nothing on Linux](https://github.com/adobe/brackets/pull/5311) ([and](https://github.com/adobe/brackets/pull/5350)) by [Arzhan "kai" Kinzhalin (Intel Corporation)](https://github.com/busykai)
+* [Fix #5362: Linux menu dropdowns appear below bottom panel headers](https://github.com/adobe/brackets/pull/5363) by [Arzhan "kai" Kinzhalin (Intel Corporation)](https://github.com/busykai)
 * [Add <dialog> to HTML tag hinting](https://github.com/adobe/brackets/pull/5390) by [Oskar Tjoskar](https://github.com/tjoskar)
 * [Highlight .jsm files as JavaScript](https://github.com/adobe/brackets/pull/5340) by [Neil Stansbury](https://github.com/nstansbury)
 * [Highlight ASP.NET .master files as JavaScript](https://github.com/adobe/brackets/pull/5320) by [Clay Miller](https://github.com/smockle)
