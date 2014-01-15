@@ -96,6 +96,23 @@ This is the file path that Brackets uses to launch Chrome. If this is not correc
 
 On Windows, you may run into issues starting Live Preview if you installed Chrome after installing Brackets. In that case, re-installing Brackets should fix the problem.
 
+## Brackets is Running Slow
+This section discusses some of the features that can affect performance and possible solutions.
+
+### Highlight Active Line
+This feature can negatively impact scrolling performance, so try turning it off with: View > Highlight Active Line
+
+### Extensions
+Most Brackets extensions are quite performant, but there are a few that can slow down Brackets. [Disable all extensions](https://github.com/adobe/brackets/wiki/Troubleshooting#disable-all-extensions) to help isolate the problem. Extensions that are know to be slow include:
+* Show Whitespace
+
+### File Searching
+Using "Find in Files" and "JS Code Hinting" can be slow because of the number of files that are searched. You can try installing the [experimental Exclude Folders extension](https://github.com/gruehle/exclude-folders) to limit the number of folders that are searched.
+
+### JavaScript Code Hinting
+Collecting the information required to build the JS code hint lists can slow down Brackets. Start by reading the [Configuration section of the JavaScript Code Hints guide](https://github.com/adobe/brackets/wiki/JavaScript-Code-Hints#configuration).
+
+You can disable the hints by moving the JavaScriptCodeHints folder out of www/extensions/default (installed version) or src/extensions/default (cloned version) folder and into the extensions/disabled folder, and restarting Brackets.
 
 ## Brackets Is Acting Weird
 
