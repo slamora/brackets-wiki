@@ -4,7 +4,7 @@ Brackets not working for you? Consider the following tips.
 
 * Mac OSX 10.6.8 or newer.
     * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not being digitally signed yet.  To work around this, right click the Brackets app and choose Open, then click Open on the dialog that appears.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
-* Windows Vista/7/8 (x32) and (x64).
+* Windows Vista/7/8/8.1 (x32) and (x64).
 * WinXP w/ Service Pack 2.
 * Linux Ubuntu 12.04 or newer (x32) and (x64).
 * You should have at least 2 GB of RAM to do Live Development.
