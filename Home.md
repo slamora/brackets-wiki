@@ -13,7 +13,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 ## Usage
 * **[Quick Start Video](http://www.youtube.com/watch?v=VKitqLpJtAY&feature=plcp)**
-    * [More videos...](Videos)
+    * [More videos...](https://github.com/adobe/brackets/wiki/Videos)
 * **[How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)**
 * [A Peek at Brackets from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/)
 * [Deeper In the Brackets Editor from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/deeper-in-the-brackets-editor)
