@@ -7,6 +7,7 @@ Brackets not working for you? Consider the following tips.
 * Windows Vista/7/8/8.1 (x32) and (x64).
 * WinXP w/ Service Pack 2.
 * Linux Ubuntu 12.04 or newer (x32) and (x64).
+* Debian Linux 8 or newer (Debian 7 compatibility will be restored once [#4816](https://github.com/adobe/brackets/issues/4816) is resolved).
 * You should have at least 2 GB of RAM to do Live Development.
 
 ## Can't Install Brackets
