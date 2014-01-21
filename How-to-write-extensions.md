@@ -126,10 +126,10 @@ prefs.on("change", function () {
     doSomethingWith(prefs.get("enabled"));
 });
 
-// If you want to set the preference at the "user" level (basically the user's settings that
-// apply to any project), call set like this:
+// This will set the "enabled" pref in the same spot in which the user has set it.
+// Generally, this will be in the user's brackets.json file in their app info directory.
 
-prefs.set("user", "enabled", false);
+prefs.set("enabled", false);
 
 // Then save the change
 prefs.save();
