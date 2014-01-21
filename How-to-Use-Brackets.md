@@ -194,8 +194,6 @@ Here's an example:
 
 With this .brackets.json file at the top of your project, your files will all default to 4 space indentation. However, src/thirdparty/someLibrary.js will be set to use tabs with 4 spaces for the tabs and linting will be turned off.
 
-One important note: if you're editing the someLibrary.js file and you try to change the tab size via the status bar, the tab size won't visibly change. This is because the status bar is only changing your user settings and the setting in the .brackets.json file is the one that applies to the current file. In a future Brackets release, there will be more user interface elements for managing your preferences.
-
 What's Next?
 ------------
 
