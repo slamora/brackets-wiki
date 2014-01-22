@@ -33,11 +33,11 @@ You open Quick Edit's inline editors by pressing **Ctrl/Cmd-E** when your cursor
     * To create a new CSS rule directly from the inline editor, click the **New Rule** button (or press Ctrl-Alt-N/Cmd-Opt-N).
 * In any file with a hex color or rgb/rgba/hsl/hsla color - Quick Edit opens an inline color picker for previewing and adjusting the color. The color picker also lists the top most-used colors from other parts of the file for quick access.
 * In a JavaScript file with the cursor on a function name - Quick Edit will show you the function's body (even if it's in a different file).
-* In a CSS file with the cursor on a `cubic-bezier()` or `steps()` transition timing function - Quick Edit opens a graphical transition curve editor.
+* In a CSS/LESS/SCSS file with the cursor on a `cubic-bezier()` or `steps()` transition timing function - Quick Edit opens a graphical transition curve editor.
 
 **Quick Docs** is a related feature that displays relevant documentation inline. Use **Ctrl/Cmd-K** to open Quick Docs:
 
-* In a CSS file with the cursor on a CSS property/value - Quick Docs opens documentation from the [Web Platform Docs](http://docs.webplatform.org/) project.
+* In a CSS/LESS/SCSS file with the cursor on a CSS property/value - Quick Docs opens documentation from the [Web Platform Docs](http://docs.webplatform.org/) project.
 
 You can open _multiple_ inline editors and docs viewers simultaneously. To close a single inline editor or docs viewer, click the "X" in the upper-left or press Escape while it has focus. To close _all_ inline editors & docs at once, place your cursor back in the main enclosing code editor and press Escape.
 
@@ -71,7 +71,7 @@ Live Preview currently has a few other important limitations:
 * It only works with desktop Chrome as the target browser.
 * Opening the Developer Tools in Chrome will close the live development connection.
 * Only one HTML file can be previewed at a time. If you switch to a different HTML file in Brackets, the browser preview will switch to that new page as well.
-  
+
 
 ### <a id="quickview"></a>Quick View
 Quick View makes it easy to visualize assets and colors in your code. Just hover your
@@ -97,7 +97,7 @@ Code hints generally pop up automatically while you're typing, but you can also 
 
 Code hints are provided by default in a number of places:
 * HTML - tag names, attribute names, attribute values, and `&` entities.
-* CSS - all property names, and enumerated property values (those where the value is a discrete list of keywords).
+* CSS, LESS, SCSS - all property names, and enumerated property values (those where the value is a discrete list of keywords).
     * Code hints don't yet work for shorthand properties (e.g. `background`), only for individual properties (e.g. `background-repeat`).
 * JS - variables and functions, using the [Tern](http://ternjs.net/) code intelligence engine.
     * Tern makes intelligent inferences about what properties and methods a given object contains, based on an analysis of your code. In addition to the current file, Brackets looks at other files in the same folder and any files referenced by a `require()` statement.
