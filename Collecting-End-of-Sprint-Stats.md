@@ -67,3 +67,10 @@ Scroll to the bottom of the report for these totals:
 * **Number of new extensions added**
 * **Number of existing extensions updated**
 * **Number of existing extensions deleted** (this is normally zero since there's no easy way to delete deprecated extensions)
+
+
+## Other Stats
+
+* **[GitHub traffic report](https://github.com/adobe/brackets/graphs/traffic)**
+* **[Top-starred repos](https://github.com/search?l=&q=stars%3A%3E10000&type=Repositories)** (Brackets is #17 as of Jan 2014)
+* **[Top-starred JS repos](https://github.com/search?l=JavaScript&q=stars%3A%3E10000&type=Repositories)** (Brackets is #9 as of Jan 2014)
