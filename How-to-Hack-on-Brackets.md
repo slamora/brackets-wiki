@@ -25,6 +25,7 @@ For hacking on the core Brackets HTML/CSS/JavaScript files:
 3. Update submodules: `cd brackets` and `git submodule update --init`
 4. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
 5. Run `setup_for_hacking` script:
+
 ```bat
 Mac
 ---
