@@ -89,7 +89,7 @@ See [How to write extensions](How to write extensions#wiki-featurehooks).
 
 Normally, you'll want to use Document (see above) to read the contents of a file that the user might edit. If you modify a file via Document, it will automatically be recorded as an unsaved change for the user to track.
 
-There are some cases where you may want to simply load a configuration file without treating it as a user document. For this, Brackets provides a basic [FileSystem API](File System) for direct access to local files. Here's how to simple read a file:
+There are some cases where you may want to simply load a configuration file without treating it as a user document. For this, Brackets provides a basic [FileSystem API](File System) for direct access to local files. Here's how to simply read a file:
 ```
 // On Windows, paths look like "C:/foo/bar.txt"
 // On Mac, paths look like "/foo/bar.txt"
