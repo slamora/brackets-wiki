@@ -57,3 +57,11 @@ Highlight Active Line (for multiple cursors) | Default (highlight any line that 
 * Edits on multiple selections/cursors in live HTML: Seems to work fine for basic cases. I would guess there might be performance issues for lots of changes at once, but that doesn't seem like a big deal. Also, if there's a syntax error we only show the first one, but that seems fine.
 * Edits on multiple selections/cursors in live CSS: Seems to work fine for basic cases.
 
+## Work we likely need to do
+
+* Add API functions to Editor
+* Implement any behavior above that's not implemented - lots of cases but mostly straightforward
+* Create new unit tests for multiple cursor/selection cases for all appropriate functionality
+* Fix existing unit tests that are broken with v4
+* Scenario testing
+* File bugs against popular extensions about multi-selection support
