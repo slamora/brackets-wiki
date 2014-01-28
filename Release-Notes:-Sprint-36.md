@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 36 -- approximately ~~January 16~~. Now delayed until roughly January 24 -- [see forum post](https://groups.google.com/forum/#!topic/brackets-dev/I3j_DrDXVVU)._
+_This document will not be finalized until the end of Sprint 36 -- approximately ~~January 16~~. Now delayed until roughly January 29 -- [see forum post](https://groups.google.com/forum/#!topic/brackets-dev/I3j_DrDXVVU)._
 
 What's New in Sprint 36
 -----------------------
