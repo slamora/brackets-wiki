@@ -39,7 +39,7 @@ Method | New Behavior
 `setSelection()` | No new behavior - always removes the current selection and replaces it with a new single selection.
 `setSelections()` | **New method.** Like `setSelection()`, but takes an array of selections instead of a single start/end, and allows specifying one of the selections as primary (defaulting to the last one). If `center` is specified, centers on the primary selection.
 `centerOnCursor()` | When multiple selections are active, centers on the primary selection.
-`getModeForSelection()`/`getLanguageForSelection()` | If the beginning/end of each selection has the same mode/language, returns that, otherwise null.
+`getModeForSelection()`<br>`getLanguageForSelection()` | If the beginning/end of each selection has the same mode/language, returns that, otherwise null.
 
 
 ## Specific behaviors
