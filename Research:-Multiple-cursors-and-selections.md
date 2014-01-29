@@ -89,6 +89,7 @@ Find (what should be in the query field) | Contents of the last (primary) select
 Find Next/Find Previous (where should they start from) | Start from the last (primary) selection | **Not working**. Ace's behavior matches this. Note: Sublime seems to start from the selection farthest along in the document, but it seems more consistent to start from the last selection made.
 Live Preview Highlight in HTML/CSS (do we highlight all selections?) | Default (highlight all items containing any selection) | **Not working**.
 Highlight Active Line (for multiple cursors) | Default (highlight any line that contains a cursor) |
+Code Hints | Operate on primary selection only |
 
 ## Other functionality to test
 
@@ -100,7 +101,6 @@ Highlight Active Line (for multiple cursors) | Default (highlight any line that 
 
 ## Work we likely need to do
 
-* Finish and merge https://github.com/adobe/brackets/pull/6053 which fixes a number of issues where we were modifying the cursor returned by CM.
 * Add API functions to Editor
 * Implement any behavior above that's not implemented - lots of cases but mostly straightforward
 * Create new unit tests for multiple cursor/selection cases for all appropriate functionality
