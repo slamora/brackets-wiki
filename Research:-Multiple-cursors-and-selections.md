@@ -20,10 +20,6 @@ In the table below, operations listed as "default" follow the rules above.
 
 Anything not marked "**Not working**" appears to be working as desired in the current CMv4 branch.
 
-**TODO**:
-* behavior around hard tabs seems incorrect compared to Sublime
-* there seem to be other bugs around hard tabs in the Brackets cmv4 branch (e.g. hitting delete at the end of a line with a hard tab)
-
 Operation | Desired Behavior | Notes
 ----------|------------------|-------
 **Making selections** | |
