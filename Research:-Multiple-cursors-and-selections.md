@@ -1,6 +1,8 @@
+This document describes how we intend to implement multiple selections and cursors in Brackets based on the implementation in CodeMirror v4.
+
 ## General rules
 
-In the following rules, "selection" refers to both cursors and range selections.
+This section sets out general rules for how edit operations should operate on multiple selections and/or cursors. In the following rules, "selection" refers to both cursors and range selections.
 
 The default behavior for most operations should be:
 
@@ -12,13 +14,35 @@ The default behavior for most operations should be:
     * Operate once on each line that intersects any of the selections (i.e., don't operate on a line twice even if there are two selections within the line).
     * But still track each selection through the edit as if the selections were made independently (i.e., if there are two selections within the line, the resulting selection should contain updated locations for both of them). 
     * As in (1), if some of the resulting selections overlap, merge them.
-3. For operations that really only make sense to operate on one selection, or if one selection needs to be designated as special (e.g. when opening multiple inline editors, which one gets the focus), the last selection made should be considered primary (this matches the default in CodeMirror's API).
+3. For operations that really only make sense to operate on one selection, or if one selection needs to be designated as special (e.g. when opening multiple inline editors, which one gets the focus), use the "primary" selection as returned by `getSelection()` (see table below).
 
-In the table below, operations listed as "default" follow the rules above.
+## Proposed Editor API changes
+
+This doesn't list all the APIs for actual edit operations that will change in order to implement multiple selection behavior - this is just intended to capture the core functionality in the Brackets `Editor` class that callers will need to access in order to make their own edit operations work properly with multiple selections.
+
+In general, Brackets has not exposed most of CodeMirror's own editing APIs through methods on Editor, so in many cases you'll still need to talk to `editor._codeMirror` in order to perform edits. The API changes here are really just intended to address cases where we already had an API in Editor that was specific to single selections, and that either needs to be augmented or have a parallel API created for multiple selections.
+
+CMv4 generally preserved its existing APIs for single selections, and added new API functions to deal with multiple selections. In some cases, the behavior of existing APIs was modified to handle the multiple selection case. Brackets is taking the same approach: when a single selection or cursor is active, existing APIs should continue to work as before, but might have new behavior when there are multiple selections, and new APIs will be added to handle multiple selections.
+
+In this table, unless otherwise specified, "selections" means either a selection range or a cursor (which is represented by a selection range whose start and end are equal). The "primary" selection is generally the last selection made by the user, although any selection can be set as primary by using `setSelections()`.
+
+Method | New Behavior
+-------|--------------
+`hasSelection()` | When multiple selections are active, returns true if any selection is non-empty.
+`getCursorPos()` | When multiple selections are active, returns the position of the cursor within the **primary** selection. Also now takes an argument specifying whether you want the start, end, head, or anchor of the primary selection.
+`setCursorPos()` | No new behavior - always removes the current selection and replaces it with a new single cursor.
+`getSelection()` | When multiple selections are active, returns only the **primary** selection. **Note:** this is different from CodeMirror's `getSelection()`, which is equivalent to our `getSelectedText()`.
+`getSelections()` | **New method.** Returns an array of all active selections. In general, you should use this instead of `getSelection()`.
+`getSelectedText()` | When multiple selections are active, returns the contents of all selections joined by newlines.
+`setSelection()` | No new behavior - always removes the current selection and replaces it with a new single selection.
+`setSelections()` | **New method.** Like `setSelection()`, but takes an array of selections instead of a single start/end, and allows specifying one of the selections as primary (defaulting to the last one). If `center` is specified, centers on the primary selection.
+`centerOnCursor()` | When multiple selections are active, centers on the primary selection.
+`getModeForSelection()`/`getLanguageForSelection()` | If the beginning/end of each selection has the same mode/language, returns that, otherwise null.
+
 
 ## Specific behaviors
 
-Anything not marked "**Not working**" appears to be working as desired in the current CMv4 branch.
+In the table below, operations listed as "default" follow the rules above. Anything not marked "**Not working**" appears to be working as desired in the current CMv4 branch.
 
 Operation | Desired Behavior | Notes
 ----------|------------------|-------
