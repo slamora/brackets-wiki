@@ -8,7 +8,10 @@ The default behavior for most operations should be:
     * Do a batch operation that contains the result of acting on each selection independently.
     * Track each selection through the edit (so that if the edit to one of the selections would change the selection, that new selection is substituted for the original in the resulting multiple selection).
     * If some of the resulting selections overlap, merge them.
-2. For line-oriented operations (e.g. Duplicate Line, Indent), where the exact location of the selection on the line isn't meaningful, operate once on each line that intersects any of the selections (i.e., don't operate on a line twice even if there are two selections within the line). But still track each selection through the edit as if the selections were made independently (i.e., if there are two selections within the line, the resulting selection should contain updated locations for both of them). As in (1), if some of the resulting selections overlap, merge them.
+2. For line-oriented operations (e.g. Duplicate Line, Indent), where the exact location of the selection on the line isn't meaningful:
+    * Operate once on each line that intersects any of the selections (i.e., don't operate on a line twice even if there are two selections within the line).
+    * But still track each selection through the edit as if the selections were made independently (i.e., if there are two selections within the line, the resulting selection should contain updated locations for both of them). 
+    * As in (1), if some of the resulting selections overlap, merge them.
 3. For operations that really only make sense to operate on one selection, or if one selection needs to be designated as special (e.g. when opening multiple inline editors, which one gets the focus), the last selection made should be considered primary (this matches the default in CodeMirror's API).
 
 In the table below, operations listed as "default" follow the rules above.
