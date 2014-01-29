@@ -26,7 +26,7 @@ The strategy Brackets is taking is the same as CodeMirror:
 * add new APIs to get/set multiple selections
 * in general, make existing single-selection APIs operate on the "primary" selection if there are multiple selections
 
-In this table, unless otherwise specified, "selections" means either a selection range or a cursor (which is represented by a selection range whose start and end are equal). The "primary" selection is generally the last selection made by the user, although any selection can be set as primary by using `setSelections()`.
+The following table describes changes in behavior for existing selection-related APIs as well as new methods for multiple selections. Unless otherwise specified, "selections" means either a selection range or a cursor (which is represented by a selection range whose start and end are equal). The "primary" selection is generally the last selection made by the user, although any selection can be set as primary by using `setSelections()`.
 
 Method | New Behavior
 -------|--------------
