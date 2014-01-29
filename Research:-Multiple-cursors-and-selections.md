@@ -86,6 +86,7 @@ Toggle Block Comment | Default | **Not working**
 **Other gestures** | |
 Quick Edit/Quick Docs | Open on each selection, but if there are multiple selections on a line, only open on the last one (since only one inline editor can be active on a given line). Set focus to inline editor for primary selection. | **Not working**
 Find (what should be in the query field) | Contents of the last (primary) selection | **Not working**. Ace's behavior matches this. Note: Sublime doesn't copy the selection to the query string on Cmd-F, but it does do so on Cmd-E, and it uses the contents of the last selection.
+Find All | Add a button to the Find dialog that creates a multiple selection from all matches on the current query. | **Not working**
 Find Next/Find Previous (where should they start from) | Start from the last (primary) selection | **Not working**. Ace's behavior matches this. Note: Sublime seems to start from the selection farthest along in the document, but it seems more consistent to start from the last selection made.
 Live Preview Highlight in HTML/CSS (do we highlight all selections?) | Default (highlight all items containing any selection) | **Not working**.
 Highlight Active Line (for multiple cursors) | Default (highlight any line that contains a cursor) |
