@@ -71,10 +71,10 @@ Highlight Active Line (for multiple cursors) | Default (highlight any line that 
 * Edits on multiple selections/cursors within inline editors: There appear to be bugs with deleting content or adding newlines at the beginning/end of inline editors in cmv4 even in single-selection, so that would need to be investigated first before understanding whether multiple selections are working properly.
 * Edits on multiple selections/cursors in live HTML: Seems to work fine for basic cases. I would guess there might be performance issues for lots of changes at once, but that doesn't seem like a big deal. Also, if there's a syntax error we only show the first one, but that seems fine.
 * Edits on multiple selections/cursors in live CSS: Seems to work fine for basic cases.
-* Need to finish and merge https://github.com/adobe/brackets/pull/6053 which fixes a number of issues where we were modifying the cursor returned by CM.
 
 ## Work we likely need to do
 
+* Finish and merge https://github.com/adobe/brackets/pull/6053 which fixes a number of issues where we were modifying the cursor returned by CM.
 * Add API functions to Editor
 * Implement any behavior above that's not implemented - lots of cases but mostly straightforward
 * Create new unit tests for multiple cursor/selection cases for all appropriate functionality
