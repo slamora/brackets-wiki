@@ -22,7 +22,9 @@ This doesn't list all the APIs for actual edit operations that will change in or
 
 In general, Brackets has not exposed most of CodeMirror's own editing APIs through methods on Editor, so in many cases you'll still need to talk to `editor._codeMirror` in order to perform edits. The API changes here are really just intended to address cases where we already had an API in Editor that was specific to single selections, and that either needs to be augmented or have a parallel API created for multiple selections.
 
-CMv4 generally preserved its existing APIs for single selections, and added new API functions to deal with multiple selections. In some cases, the behavior of existing APIs was modified to handle the multiple selection case. Brackets is taking the same approach: when a single selection or cursor is active, existing APIs should continue to work as before, but might have new behavior when there are multiple selections, and new APIs will be added to handle multiple selections.
+The strategy Brackets is taking is the same as CodeMirror:
+* add new APIs to get/set multiple selections
+* in general, make existing single-selection APIs operate on the "primary" selection if there are multiple selections
 
 In this table, unless otherwise specified, "selections" means either a selection range or a cursor (which is represented by a selection range whose start and end are equal). The "primary" selection is generally the last selection made by the user, although any selection can be set as primary by using `setSelections()`.
 
