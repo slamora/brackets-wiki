@@ -83,20 +83,24 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 ### `watchPath(path, callback)`
 * `@param {string} path`
 * `@param {function(?string)=} callback`
-* Start providing change notifications for the file or directory at the given path, optionally calling back asynchronously with a possibly null error when the operation is complete. Notifications are provided using the `changeCallback` function provided by the `initWatchers` method. Note that change notifications are not to be provided recursively for directories.
+* Start providing change notifications for the file or directory at the given path, optionally calling back asynchronously with a possibly null error when the operation is complete. Notifications are provided using the `changeCallback` function provided by the `initWatchers` method. If the path is a directory, the expected behavior depends on the implementation's `recursiveWatch` flag: if true, notifications are expected for the entire subtree rooted at this directory; if false, notifications are expected only for the directory's immediate children.
 
 ### `unwatchPath(path, callback)`
 * `@param {string} path`
 * `@param {function(?string)=} callback`
-* Stop providing change notifications for the file or directory at the given path, optionally calling back asynchronously with a possibly null error when the operation is complete. 
+* Stop providing change notifications for the file or directory at the given path _and all subfolders_, optionally calling back asynchronously with a possibly null error when the operation is complete. Unlike `watchPath()`, this is _always_ expected to behave recursively.
 
 ### `unwatchAll(callback)`
 * `@param {function(?string)=} callback`
 * Stop providing change notifications for all previously watched files and directories, optionally calling back asynchronously with a possibly null error when the operation is complete. 
 
+### `recursiveWatch`
+* `@type {boolean}`
+* Indicates whether calls to `watchPath()` begin watching the entire subtree, or just the immediate children of the given path. If false (`watchPath()` does not watch recursively), the FileSystem will automatically call `watchPath()` on each subfolder in turn, as needed. This flag must not change value at runtime.
+
 ### `normalizeUNCPaths`
 * `@type {boolean}`
-* Indicates whether or not the FileSystem should expect [UNC paths](http://www.uwplatt.edu/oit/terms/uncpath.html), like `//myserver/drive/folder`. If set, contiguous blocks of leading slashes as in the previous example are normalized to a pair of leading slashes instead of a single leading slash.
+* Indicates whether or not the FileSystem should expect [UNC paths](http://www.uwplatt.edu/oit/terms/uncpath.html), like `//myserver/drive/folder`. If set, contiguous blocks of leading slashes as in the previous example are normalized to a pair of leading slashes instead of a single leading slash. This flag must not change value at runtime.
 
 ## `FileSystemStats` and `FileSystemError`
 The stats objects passed to callbacks above are instances of the [`FileSystemStats` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemStats.js), and the possibly null error parameters are constants defined in the [`FileSystemError` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemError.js).
