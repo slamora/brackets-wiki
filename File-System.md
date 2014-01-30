@@ -35,10 +35,10 @@ Clients only interact with the blue boxes. The green boxes represent low-level f
 There are a few basic rules for using the new file system.
 
 * Persist full pathnames, but convert into `File` and `Directory` objects for in-memory use. Creating `File` and `Directory` objects is cheap so there is no need to worry about performance.
+* Paths use "/" separators regardless of platform. Paths begin with "/" on Mac/Linux and "c:/" (or similar) on Windows. FileSystem normalizes paths to guarantee that paths to a directory always end in a trailing "/".
 * There is a forced 1:1 relationship between `File` and `Directory` objects and their representation on disk. If two pieces of code ask the `FileSystem` for the same file path, they will both be returned the same `File` object.
-* When caching file (or directory) related data, you should use the file.id property as the key, and _not_ the file.fullPath. The path of a file is subject to change if any of its parent directories are renamed.
 * Listen for `"change"` events on `FileSystem` to be notified of file or directory changes. 
-
+* When caching file (or directory) related data, you should use the file.id property as the key, and _not_ the file.fullPath. The path of a file is subject to change if any of its parent directories are renamed.
 ##API##
 
 For a guide to converting from current Brackets file APIs to these new APIs, see [[File System API Migration]].
