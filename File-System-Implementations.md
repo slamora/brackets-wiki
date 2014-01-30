@@ -4,10 +4,6 @@ The front-end client-facing filesystem API is decoupled from the back-end filesy
 
 The client-facing filesystem API is provided by a singleton `FileSystem` object. This object has a single method, `FileSystem.init`, to initialize the filesystem with a particular filesystem implementation, which is responsible for core functionality like reading and writing files, and providing file and directory change notifications. The implementation object should satisfy a `FileSystemImpl` interface, as described below.
 
-### `init(callback)`
-* `@param {function(?string)=} callback` 
-* Initialize the implementation object, and optionally call back asynchronously when the initialization is complete. The callback takes a single, nullable error parameter, as given by the properties of `FileSystemError`, described below. 
-
 ### `showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, callback)`
 * `@param {boolean} allowMultipleSelection`
 * `@param {boolean} chooseDirectories`
@@ -102,5 +98,11 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@type {boolean}`
 * Indicates whether or not the FileSystem should expect [UNC paths](http://www.uwplatt.edu/oit/terms/uncpath.html), like `//myserver/drive/folder`. If set, contiguous blocks of leading slashes as in the previous example are normalized to a pair of leading slashes instead of a single leading slash. This flag must not change value at runtime.
 
+
 ## `FileSystemStats` and `FileSystemError`
 The stats objects passed to callbacks above are instances of the [`FileSystemStats` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemStats.js), and the possibly null error parameters are constants defined in the [`FileSystemError` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemError.js).
+
+
+## Designing the Implementation to Use
+
+FileSystem expects to be able to load its impl via `require("fileSystemImpl")`, so the RequireJS config that loads FileSystem must define a mapping from this identifier to the impl's full module path. See the [root main.js in Brackets](https://github.com/adobe/brackets/blob/master/src/main.js) for an example.
