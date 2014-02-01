@@ -59,6 +59,7 @@ Ctrl/Cmd-Shift-L | Split into Lines - takes a block of lines and splits it into 
 Alt-F3 / Cmd-Ctrl-G | Find All - selects current word, then adds selections for each match in the current document | **Not working**
 Ctrl/Cmd-U | Undo Selection - undoes the last selection change (for both single and multiple selections) | **Not working**, probably important for the workflow with Cmd-D. Note that it appears to be a superset of ordinary undo (i.e., if there was a doc edit in between selection changes, it will undo that edit).
 Esc | Switch to single selection | **Note: Sublime collapses to the first selection, not the last (primary) one. Is this okay?**
+Status Bar | Show "n selections" when there are multiple selections | **Not working**
 **Cursor navigation** | |
 Arrow key (multiple cursors only) | Default |
 Arrow key (multiple selections) | Collapse selection in direction of arrow | Note: In the case of up/down arrow, Ace and Sublime also apply the navigation (even in the single selection case), whereas CM just collapses the selection. I think keeping the CM behavior is fine.
