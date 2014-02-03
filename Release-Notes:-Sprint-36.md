@@ -61,7 +61,7 @@ Community contributions to Brackets
 TODO
 
 #### Pulling source code from Git
-* TODO: is brackets-shelll build required?
+* A new brackets-shell build is _required_ for this sprint. If you have built brackets-shell before, **delete** the `brackets-shell\deps\node` folder before re-running `grunt setup` (this one-time step is required due to a change in the node executable filename).
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 Bugs fixed in Sprint 36
