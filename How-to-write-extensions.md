@@ -108,6 +108,8 @@ For example, if you have ```awesome.jpg``` in your extension's top-level ```foo`
 
 ### Working with Preferences
 
+**IMPORTANT** This API is changing in Sprint 37. The example given below should still work, but there are cases in which you need to be more specific about the preference values you look up. The adjusted API in sprint 37 will address this.
+
 Your extension can access Brackets' preferences and define preferences of its own. For preferences specific to your extension, you should make sure that all of the preferences have a prefix so that they don't clobber any other preferences. Here's an example:
 
 ```javascript
