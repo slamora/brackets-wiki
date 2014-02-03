@@ -170,7 +170,7 @@ Brackets (as of Brackets 36) also lets you override preferences on a per-folder 
 
 Here is a quick list of some of the settings you can change in these files:
 
-* **jslint.options**: An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options)
+* **jslint.options**: An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not atomically).
 * **linting.enabled**: Determines if Code Inspection is on
 * **useTabChar**: true to use tabs instead of spaces
 * **tabSize**: number of spaces to display for tabs
