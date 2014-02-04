@@ -41,7 +41,7 @@ TODO: FileSystem API changes
 
 The result yielded by `CodeInspection.inspectFile()` has changed: instead of a single linter result, it now returns an array of objects, each containing the result of one specific linter.
 
-**StatusBar API changes** - `addIndicator()` now receives an additional parameter: insertBefore. If specified, the new statusbar indicator is inserted before the indicator with id of insertBefore. If omitted, the indicator will be inserted at the beginning.
+**StatusBar** - `addIndicator()` now receives an additional parameter: insertBefore. If specified, the new statusbar indicator is inserted before the indicator with id of insertBefore. If omitted, the indicator will be inserted at the beginning.
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -61,7 +61,8 @@ Community contributions to Brackets
 TODO
 
 #### Pulling source code from Git
-* A new brackets-shell build is _required_ for this sprint. If you have built brackets-shell before, **delete** the `brackets-shell\deps\node` folder before re-running `grunt setup` (this one-time step is required due to a change in the node executable filename).
+* A new brackets-shell build is _required_ for this sprint.
+* If you have ever built brackets-shell before, **delete** the `brackets-shell\deps\node` folder and any Node-related files in `brackets-shell\downloads`, then re-run `grunt setup` (this one-time step is required due to a change in the node executable filename).
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 Bugs fixed in Sprint 36
