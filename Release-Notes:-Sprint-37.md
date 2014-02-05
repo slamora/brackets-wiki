@@ -17,6 +17,7 @@ No major changes to existing features.
 API Changes
 -----------
 **File System** - Paths with unsupported Windows-style separators ("\" instead of "/") are now explicitly rejected immediately; previously they were accepted by FileSystem but behaved brokenly in various ways.
+
 **Editor** - The `optionChange` event now uses the Brackets names for the options, rather than the CodeMirror names (for example "wordWrap" rather than "lineWrapping"). See Editor.js for [the complete list](https://github.com/adobe/brackets/blob/master/src/editor/Editor.js#L79).
 
 New/Improved Extensibility APIs
