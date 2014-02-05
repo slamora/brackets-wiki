@@ -20,7 +20,7 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
-
+**Optional requirejs-config.json** - Allows extensions to define their own RequireJS configuration file `requirejs-config.json` before the `main.js` entry point loads. See https://github.com/adobe/brackets/pull/6671. File format must follow http://requirejs.org/docs/api.html#config.
 
 Known Issues
 ------------
