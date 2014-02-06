@@ -11,7 +11,7 @@ Setup
 2. Quit and relaunch Chrome if it's open (so it's *not* in remote debugger mode).
 3. If you've run the smokes previously, revert any changes you might have made in `brackets/test/smokes/citrus completed`.
 4. Delete your [cache folder](Cache-Folder) (Mac:  `~/Library/Application\ Support/Brackets/cef_data`, Win: `%appdata%\Brackets\cef_data`).
-5. Disable any 3rd party extensions you've installed [extension folder](Extension-Location) (Mac:  `~/Library/Application\ Support/Brackets/extensions/user`, Win: `%appdata%\Brackets\extensions\user`, Linux: ~/.Brackets/extensions/user)
+5. Disable any 3rd party extensions you've installed [extension folder](Extension-Location) (Mac:  `~/Library/Application\ Support/Brackets/extensions/user`, Win: `%appdata%\Brackets\extensions\user`, Linux: `~/.Brackets/extensions/user`)
 
 Smoke test steps
 ================
