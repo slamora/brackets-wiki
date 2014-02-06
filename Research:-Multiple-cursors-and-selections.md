@@ -79,7 +79,7 @@ Indent/Unindent | Default |
 Copy | Concatenate each selection, separated by newlines, and copy to clipboard. Cursors count as empty selections, so add an extra newline. | This is the current cmv4 behavior. **Sublime ignores cursors in this case (extra newlines are not generated).** Ace's behavior is like CM's.
 Cut | Like copy, but delete afterwards. | Note that in Sublime, if there are cursors in the selection, the lines containing those cursors are deleted, because that's the behavior in the single selection case. Brackets doesn't do that, so it makes sense to stay consistent with ourselves. Ace's behavior is like CM's.
 Paste | Default (paste the clipboard into each selection/cursor, deleting selections first, and leaving cursor after pasted content) |
-Duplicate Line | First, duplicate any range selections; then duplicate any lines that contain a cursor | **Not working**
+Duplicate Line | First, duplicate any lines containing at least one cursor, then duplicate any range selections | **Not working**. Note that this behavior is slightly different from Sublime in the case where there is a cursor and a range on the same line, but I don't think that's a common case and the correct behavior is arguable.
 Delete Line | Default | **Not working**
 Open Line Above/Below | Default | **Not working**
 Move Line Up/Down | Default (except that contiguous lines should move together) | **Not working**
