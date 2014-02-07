@@ -1,8 +1,10 @@
 ### Intro
 
-[Brackets: An Open Source Code Editor for the Web](http://tv.adobe.com/watch/max-2013/brackets-an-open-source-code-editor-for-the-web/) - Adam Lehman
-
 [Brackets Quick Start](http://www.youtube.com/watch?v=VKitqLpJtAY) - Narciso (nj) Jaramillo
+
+[Brackets Live Preview demo](https://www.youtube.com/watch?v=Nhvj1NYC3Uc) - 
+
+[Brackets: An Open Source Code Editor for the Web](http://tv.adobe.com/watch/max-2013/brackets-an-open-source-code-editor-for-the-web/) - Adam Lehman
 
 [Brackets Intro by NetTuts+](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/)
 
@@ -10,7 +12,7 @@
 
 ### Demos & experiments
 
-[space-age-miracle-tools.js](http://t.co/QOjDEl7vTy) - Narciso (nj) Jaramillo
+[space-age-miracle-tools.js (JSConf 2013)](http://t.co/QOjDEl7vTy) - Narciso (nj) Jaramillo
 
 [Space Age Miracle Tools: Experiments with Brackets](http://tv.adobe.com/watch/max-2013/space-age-miracle-tools-experiments-with-brackets/) - Jason San Jose, Adam Lehman, Ryan Stewart, Peter Flynn
 
@@ -20,7 +22,7 @@
 
 ### Under the hood
 
-[Building Live HTML and Omniscient Debuggers in Brackets](http://www.youtube.com/watch?v=Axpi1_OVSdo) - Peter Flynn and Kevin Dangoor
+[Building Live HTML and Omniscient Debuggers in Brackets (JSConfEU 2013)](http://www.youtube.com/watch?v=Axpi1_OVSdo) - Peter Flynn and Kevin Dangoor
 
 [Extending Brackets with JavaScript](http://tv.adobe.com/watch/max-2013/extending-brackets-with-javascript/) - Kevin Dangoor
 
