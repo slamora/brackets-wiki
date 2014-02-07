@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 36 -- approximately
 What's New in Sprint 36
 -----------------------
 * **Preferences**
-    * [Project- and file-specific editor settings](https://trello.com/c/kqFFDqhR/523-3-infrastructure-for-project-file-scoped-preferences): Use JSON configuration files to specify different indentation, word wrap, etc. settings for different folders or different file types. (TODO: link to detailed how-to)
+    * [Project- and file-specific editor settings](https://trello.com/c/kqFFDqhR/523-3-infrastructure-for-project-file-scoped-preferences): Use JSON configuration files to specify different indentation, word wrap, etc. settings for different folders or different file types. Initial instructions are on the [How To Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-preferences) page.
 * **File System & Performance**
     * [File/directory watchers](https://trello.com/c/zldzEXmk/292-2-file-directory-watching): Brackets will detect external modifications to files almost instantly and update the project tree, editor contents, etc. automatically (manually refreshing the tree is no longer needed).
     * [File caching](https://trello.com/c/zldzEXmk/292-2-file-directory-watching): Operations like Find in Files will be _much_ faster when used repeatedly, as the contents of files are now cached in memory.
