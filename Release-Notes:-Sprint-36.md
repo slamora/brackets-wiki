@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 36 -- approximately ~~January 16~~. Now delayed until roughly February 5 -- [see forum post](https://groups.google.com/forum/#!topic/brackets-dev/I3j_DrDXVVU)._
+_This document will not be finalized until the end of Sprint 36 -- approximately ~~January 16~~. Now delayed until roughly February 7 -- [see forum post](https://groups.google.com/forum/#!topic/brackets-dev/I3j_DrDXVVU)._
 
 What's New in Sprint 36
 -----------------------
@@ -21,7 +21,7 @@ What's New in Sprint 36
     * [Windows: many window-chrome visual glitches fixed](https://github.com/adobe/brackets-shell/pull/408): Notably, the window border no longer bleeds onto other monitors.
     * [Windows: new, flatter scrollbar appearance](https://github.com/adobe/brackets/pull/6305)
 * **Linting**
-    * [Multiple linting providers per language](https://github.com/adobe/brackets/pull/5235): If multiple providers are registered, they will all be run and the results consolidated.
+    * [Multiple linting providers per language](https://github.com/adobe/brackets/pull/5935): If multiple providers are registered for a given language, all the results will be shown together in the linting panel.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-35...sprint-36#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-35...sprint-36#commits_bucket)
 
@@ -30,22 +30,30 @@ UI Changes
 ----------
 **Scrollbars** - Scrollbars on all versions of Windows now have a flatter, Windows-8-style appearance that matches the overall Brackets UI design better.
 
+**CSS code hints** - When selecting a property name hint, a space is now automatically inserted after the ":".
+
 
 API Changes
 -----------
-TODO: Preferences API changes?
-
 TODO: FileSystem API changes
 
 **Linting** - The process for registering a linter is unchanged, but it's now possible to register more than one linter per file type. (Except that, as before, the built-in JSLint provider is automatically disabled when any other JS linter is registered).
 
 The result yielded by `CodeInspection.inspectFile()` has changed: instead of a single linter result, it now returns an array of objects, each containing the result of one specific linter.
 
+**CSS tokens** - The latest version of CodeMirror parses CSS files differently. If you rely on the raw tokens emitted by CodeMirror, your code will likely need updates; see [PR #6268](https://github.com/adobe/brackets/pull/6268) for notes. However, the Brackets `CSSUtils` API remains unchanged.
+
 **StatusBar** - `addIndicator()` now receives an additional parameter: insertBefore. If specified, the new statusbar indicator is inserted before the indicator with id of insertBefore. If omitted, the indicator will be inserted at the beginning.
+
+**Node version** - The internal copy of Node.js included in Brackets has been upgraded to 0.10.24 (from 0.10.18).
 
 New/Improved Extensibility APIs
 -------------------------------
+**Preferences** - Although new preferences APIs have been added, please _continue to use the old APIs_ for now. The old APIs remain unchanged. The new APIs are still undergoing some flux and will not be ready for wider use until Sprint 37.
 
+**Node integration** - New, simplified `NodeDomain` API makes connecting to Node from Brackets code easier and less error-prone. Full docs TBD, but [details here](https://github.com/adobe/brackets/pull/6193) in the meantime.
+
+Also, Node-side APIs can now send back binary data to Brackets by returning a `Buffer`, which will show up on the Brackets side as an `ArrayBuffer`. [Read more](https://github.com/adobe/brackets/pull/6339).
 
 Known Issues
 ------------
