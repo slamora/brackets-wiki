@@ -2,7 +2,7 @@
 
 [Brackets Quick Start](http://www.youtube.com/watch?v=VKitqLpJtAY) - Narciso (nj) Jaramillo
 
-[Brackets Live Preview demo](https://www.youtube.com/watch?v=Nhvj1NYC3Uc) - 
+[Brackets Live Preview demo](https://www.youtube.com/watch?v=Nhvj1NYC3Uc)
 
 [Brackets: An Open Source Code Editor for the Web](http://tv.adobe.com/watch/max-2013/brackets-an-open-source-code-editor-for-the-web/) - Adam Lehman
 
