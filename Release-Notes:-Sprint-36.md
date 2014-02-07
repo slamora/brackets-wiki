@@ -1,17 +1,14 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Sprint 36 -- approximately ~~January 16~~. Now delayed until roughly February 7 -- [see forum post](https://groups.google.com/forum/#!topic/brackets-dev/I3j_DrDXVVU)._
-
 What's New in Sprint 36
 -----------------------
 * **Preferences**
-    * [Project- and file-specific editor settings](https://trello.com/c/kqFFDqhR/523-3-infrastructure-for-project-file-scoped-preferences): Use JSON configuration files to specify different indentation, word wrap, etc. settings for different folders or different file types. Initial instructions are on the [How To Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-preferences) page.
+    * [Project- and file-specific editor settings](https://trello.com/c/kqFFDqhR/523-3-infrastructure-for-project-file-scoped-preferences): Use JSON configuration files to specify different indentation, word wrap, etc. settings for different projects, folders, or file types. Initial instructions are on the [How To Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-preferences) page.
 * **File System & Performance**
     * [File/directory watchers](https://trello.com/c/zldzEXmk/292-2-file-directory-watching): Brackets will detect external modifications to files almost instantly and update the project tree, editor contents, etc. automatically (manually refreshing the tree is no longer needed).
     * [File caching](https://trello.com/c/zldzEXmk/292-2-file-directory-watching): Operations like Find in Files will be _much_ faster when used repeatedly, as the contents of files are now cached in memory.
 * **Extensions**
     * [Extension download counts](https://trello.com/c/qOy9Slr1/799-2-extension-download-counts): We will begin tracking how many times each extension has been installed, and will post the download counts at periodic intervals. This will help extension authors decide where to prioritize their efforts, and will help Brackets developers understand what functionality is most important for our users.
     * ["Safe Mode"](https://github.com/adobe/brackets/issues/5078): Choose _Debug > Reload Without Extensions_ to temporarily run Brackets without any extensions loaded for troubleshooting. Extensions are re-enabled when you restart Brackets through any other means.
+    * [Automated restart after updating/removing extensions](https://github.com/adobe/brackets/pull/6487): Previously, Brackets would quit and force you to relaunch it manually; now Brackets reloads automatically.
 * **LESS Support**
     * [Code hints for CSS property names & values](https://github.com/adobe/brackets/pull/6268): The same code hints you see in CSS & SCSS files will now also appear in LESS files.
     * [Quick Docs support](https://github.com/adobe/brackets/pull/6419): Ditto – just like in CSS/SCSS files.
@@ -21,7 +18,12 @@ What's New in Sprint 36
     * [Windows: many window-chrome visual glitches fixed](https://github.com/adobe/brackets-shell/pull/408): Notably, the window border no longer bleeds onto other monitors.
     * [Windows: new, flatter scrollbar appearance](https://github.com/adobe/brackets/pull/6305)
 * **Linting**
-    * [Multiple linting providers per language](https://github.com/adobe/brackets/pull/5935): If multiple providers are registered for a given language, all the results will be shown together in the linting panel.
+    * [Multiple linting providers per language](https://github.com/adobe/brackets/pull/5935): If multiple providers are registered for a given language, all the results will be shown together in the linting panel. (The built-in JSLint is disabled if other JavaScript linters are installed, however - as in previous sprints).
+* **Quick Open**
+    * [':line,col' syntax in Quick Open and Go to Line](https://github.com/adobe/brackets/pull/5612)
+* **Localization**
+    * [Greek translation added](https://github.com/adobe/brackets/pull/5378)
+    * [Korean translation added](https://github.com/adobe/brackets/pull/6272)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-35...sprint-36#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-35...sprint-36#commits_bucket)
 
@@ -35,7 +37,9 @@ UI Changes
 
 API Changes
 -----------
-TODO: FileSystem API changes
+**FileSystem** - Nothing needs to change for most code; the public FileSystem APIs are unchanged except for the `"change"` event ([see docs for details](https://github.com/adobe/brackets/blob/master/src/filesystem/FileSystem.js#L55)). All file operations automatically receive the benefits of caching, and all Document objects are automatically updated (firing appropriate events) when file watchers detect an update.
+
+The API for developing an [alternative file system implementation](https://github.com/adobe/brackets/wiki/File-System-Implementations) has changed, however.
 
 **Linting** - The process for registering a linter is unchanged, but it's now possible to register more than one linter per file type. (Except that, as before, the built-in JSLint provider is automatically disabled when any other JS linter is registered).
 
@@ -43,9 +47,9 @@ The result yielded by `CodeInspection.inspectFile()` has changed: instead of a s
 
 **CSS tokens** - The latest version of CodeMirror parses CSS files differently. If you rely on the raw tokens emitted by CodeMirror, your code will likely need updates; see [PR #6268](https://github.com/adobe/brackets/pull/6268) for notes. However, the Brackets `CSSUtils` API remains unchanged.
 
-**StatusBar** - `addIndicator()` now receives an additional parameter: insertBefore. If specified, the new statusbar indicator is inserted before the indicator with id of insertBefore. If omitted, the indicator will be inserted at the beginning.
-
 **Node version** - The internal copy of Node.js included in Brackets has been upgraded to 0.10.24 (from 0.10.18).
+
+**Dialog boxes** - The built-in dialog box shown via `showModalDialog()` no longer has a close button: it can only be dismissed by clicking the main buttons at bottom, or by pressing a shortcut such as Escape. Custom dialogs displayed via `showModalDialogUsingTemplate()` are unaffected.
 
 New/Improved Extensibility APIs
 -------------------------------
@@ -54,6 +58,9 @@ New/Improved Extensibility APIs
 **Node integration** - New, simplified `NodeDomain` API makes connecting to Node from Brackets code easier and less error-prone. Full docs TBD, but [details here](https://github.com/adobe/brackets/pull/6193) in the meantime.
 
 Also, Node-side APIs can now send back binary data to Brackets by returning a `Buffer`, which will show up on the Brackets side as an `ArrayBuffer`. [Read more](https://github.com/adobe/brackets/pull/6339).
+
+**StatusBar** - `addIndicator()` can now actually be used to add indicators to the status bar (previously it did not do what the name implied, making it less useful). It also has a new optional parameter, `insertBefore`. If specified, the new statusbar indicator is inserted before the indicator with id of `insertBefore`. If omitted, the indicator will be inserted at the beginning. (In some previous sprints, the indicator 
+
 
 Known Issues
 ------------
