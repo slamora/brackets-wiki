@@ -192,7 +192,8 @@ Here's an example:
 }
 ```
 
-With this .brackets.json file at the top of your project, your files will all default to 4 space indentation. However, src/thirdparty/someLibrary.js will be set to use tabs with 4 spaces for the tabs and linting will be turned off.
+With this .brackets.json file at the top of your project, your files will all default to 4 space indentation. However, src/thirdparty/someLibrary.js will be set to use tabs with 4 spaces for the tabs and linting will be turned off. Note that values for paths match fileglob rules. So for example, *.js will only match JS files in the root of the project whereas **.js will match files with the JS extension anywhere in the project.
+
 
 What's Next?
 ------------
