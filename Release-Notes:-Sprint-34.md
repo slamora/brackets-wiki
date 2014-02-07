@@ -1,3 +1,6 @@
+## _Note_
+This release was superseded by [Sprint 34.1](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-34.1), which contains two important bug fixes.
+
 What's New in Sprint 34
 -----------------------
 * **Installation**
