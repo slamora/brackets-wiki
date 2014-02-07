@@ -1,1 +1,9 @@
-![](http://s3.amazonaws.com/awesome_screenshot/3892062?AWSAccessKeyId=0R7FMW7AXRVCYMAPTPR2&Expires=1391739094&Signature=lMVgstzaE5Be5Yup%2B1D4JJJMKAw%3D)
+Here are some screenshots of Brackets as of sprint 7 (click on the thumbnails to see them full size).
+
+**Overall Brackets UI**
+
+[![Brackets UI screenshot](https://github.com/adobe/brackets/wiki/screenshots/brackets-ui-thumb.jpg)](https://github.com/adobe/brackets/wiki/screenshots/brackets-ui.png)
+
+**Quick Edit UI**
+
+[![Quick Edit UI](https://github.com/adobe/brackets/wiki/screenshots/brackets-quick-edit-thumb.jpg)](https://github.com/adobe/brackets/wiki/screenshots/brackets-quick-edit.png)
