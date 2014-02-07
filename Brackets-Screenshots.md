@@ -1,1 +1,1 @@
-![](http://awesomescreenshot.com/03e2bf4ufc)
+![](http://s3.amazonaws.com/awesome_screenshot/3892062?AWSAccessKeyId=0R7FMW7AXRVCYMAPTPR2&Expires=1391739094&Signature=lMVgstzaE5Be5Yup%2B1D4JJJMKAw%3D)
