@@ -66,7 +66,41 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TODO
+* [Debug > Reload Without Extensions command](https://github.com/adobe/brackets/pull/6334) by [Lance Campbell](https://github.com/lkcampbell) ([part 2](https://github.com/adobe/brackets/pull/6411), [part 3](https://github.com/adobe/brackets/pull/6484))
+* [After extension is updated/removed, reload Brackets instead of quitting](https://github.com/adobe/brackets/pull/6487) by [Lance Campbell](https://github.com/lkcampbell)
+* [Support ':line,col' syntax in Quick Open and Go to Line](https://github.com/adobe/brackets/pull/5612) by [Chema Balsas](https://github.com/jbalsas)
+* [Add Greek translation](https://github.com/adobe/brackets/pull/5378) by [Theodore Keloglou](https://github.com/sirodoht)
+* [Add Korean translation](https://github.com/adobe/brackets/pull/6272) by [Ki-soo Kim](https://github.com/heisice)
+* [Include space after colon when inserting CSS code hints](https://github.com/adobe/brackets/pull/6317) by [Matt Stow](https://github.com/stowball)
+* [Mac: Ensure Chrome is focused when launching Live Preview](https://github.com/adobe/brackets-shell/pull/404) by [fungl164](https://github.com/fungl164)
+* [Mac: Don't force a switch from mobile to discrete graphics GPU](https://github.com/adobe/brackets-shell/pull/399) by [David Mead](https://github.com/daveygm)
+* [Improve code hint behavior when pressing Backspace](https://github.com/adobe/brackets/pull/6242) by [Yu Ao](https://github.com/YuAo) ([partially disabled](https://github.com/adobe/brackets/pull/6397) for now)
+* [Disable "Update" button for "dev" folder extensions (which can't actually be updated)](https://github.com/adobe/brackets/pull/6222) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Custom, flatter Windows scrollbar appearance](https://github.com/adobe/brackets/pull/6305) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Remove "X" close button from all dialog boxes](https://github.com/adobe/brackets/pull/6329) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fix StatusBar.addIndicator() so it's usable by extensions](https://github.com/adobe/brackets/pull/6304) by [Lance Campbell](https://github.com/lkcampbell)
+* [Fix problem with new preferences scopes implementation](https://github.com/adobe/brackets/pull/6653) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Add CSS value hints for `list-style`, `list-style-image`](https://github.com/adobe/brackets/pull/6360) by [Matt Stow](https://github.com/stowball)
+* [Add CSS value hints for `margin` and related properties (enumerated values only)](https://github.com/adobe/brackets/pull/6359) by [Matt Stow](https://github.com/stowball)
+* [Fix CSS value hints for `font-variant`](https://github.com/adobe/brackets/pull/6313) by [Matt Stow](https://github.com/stowball)
+* [Fix Find in Files UI wrap issues at narrow window sizes](https://github.com/adobe/brackets/pull/6529) by [ishanatmuz](https://github.com/ishanatmuz)
+* [Fix UI overlapping the side toolbar at narrow window sizes](https://github.com/adobe/brackets/pull/6569) by [ishanatmuz](https://github.com/ishanatmuz)
+* [Make CodeInspection API robust to linters that return bad line numbers](https://github.com/adobe/brackets/pull/6442) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Fix UrlParams utility to handle URLs without parameters](https://github.com/adobe/brackets/pull/6246) by [Lance Campbell](https://github.com/lkcampbell)
+* [Fix spacing in "Install extension" progress dialog](https://github.com/adobe/brackets/pull/6063) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Change AppShellFileSystem impl to match docs about optional args](https://github.com/adobe/brackets/pull/6194) by [Kyle Binns](https://github.com/klbinns) (subsequently switched to change docs to match impl instead)
+* [Update localization README to include new languages](https://github.com/adobe/brackets/pull/6490) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Update About box copyright year](https://github.com/adobe/brackets/pull/6349) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Czech translation update](https://github.com/adobe/brackets/pull/6299) by [kvarel](https://github.com/kvarel)
+* [Dutch translation fixes](https://github.com/adobe/brackets/pull/6394) by [Eric Smekens](https://github.com/EricSmekens)
+* [German translation update](https://github.com/adobe/brackets/pull/6353) by [Marcel Gerber](https://github.com/SAPlayer) ([part 2](https://github.com/adobe/brackets/pull/6366), [part 3](https://github.com/adobe/brackets/pull/6632), [part 4](https://github.com/adobe/brackets/pull/6754))
+* [Italian translation update](https://github.com/adobe/brackets/pull/6650) by [asbruff](https://github.com/asbruff)
+* [Italian translation fixes](https://github.com/adobe/brackets/pull/6292) by [Soleedus](https://github.com/Soleedus)
+* [Russian translation update](https://github.com/adobe/brackets/pull/6628) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Russian translation update](https://github.com/adobe/brackets/pull/6123) by [sergeizelenyi](https://github.com/sergeizelenyi)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/6627) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Swedish translation update](https://github.com/adobe/brackets/pull/6636) by [Mikael Jorhult](https://github.com/mikaeljorhult)
+
 
 #### Pulling source code from Git
 * A new brackets-shell build is _required_ for this sprint.
