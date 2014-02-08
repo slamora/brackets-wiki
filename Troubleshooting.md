@@ -120,6 +120,8 @@ You can disable the hints by moving the JavaScriptCodeHints folder out of www/ex
 ### Disable All Extensions
 Choose _Help > Show Extensions Folder_. Rename the "user" folder to "user_disabled," close Brackets entirely, then re-launch Brackets.  (If you are developing your own extensions, also do a similar rename on the src/extensions/dev folder).
 
+Starting with Sprint 36, you can use `Debug > Reload Without Extensions` to quickly see if the problem is being caused by an extension.
+
 If this fixes the problem, you can identify the problematic extension by re-enabling extensions one-by-one: recreate the "user" folder and move extensions back into it one at a time, restarting Brackets each time until the problem comes back.
 
 ### Debug w/ The Developer Tools
