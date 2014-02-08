@@ -62,7 +62,7 @@ Yes please! But first...
 
 # Extension bugs
 
-Bugs can be caused by Brackets extensions you've installed. Before you file an issue on the core product, first rule out extensions by disabling them.  This can be done by selecting _Brackets > Debug > Reload Without Extensions_ and then trying to reproduce the problem with your extensions disabled.  If you can still reproduce the problem, file an issue on Brackets.
+Bugs can be caused by Brackets extensions you've installed. Before you file an issue on the core product, first rule out extensions by disabling them.  This can be done by selecting _Brackets > Debug > Reload Without Extensions_ and then trying to reproduce the problem with your extensions disabled.  If you can still reproduce the problem, file an issue on Brackets.  Include a note that you tested Brackets with extensions disabled in your report
 
 If you can't reproduce the problem, there is a problem with one of your extensions.  You will need to
 manually search for the extension that is causing the problem.
