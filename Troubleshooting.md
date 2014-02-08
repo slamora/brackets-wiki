@@ -64,7 +64,7 @@ We plan to add as-you-type Live Development support for JavaScript content in th
 You can use `File > Open` to open any file on your computer, but Brackets' definition of a _project_ are the files in the folder opened using `File > Open Folder...`. Some (but not all) Live Development features require a node server, which means being in the current project, so make sure the files that you want to use with Live Development are in the current project.
 
 ### Disable Extensions
-Extensions can cause problems with Brackets core code. The most notable extensions that may cause problems with Live Preview are Theseus and Debugger, so start with those. After that, but try disabling all extensions. Starting with Sprint 36, you can use `Debug > Reload Without Extensions` to quickly see if the problem is being caused by an extension.
+Extensions can cause problems with Brackets core code. The most notable extensions that may cause problems with Live Preview are Theseus and Debugger, so start with those. After that, try disabling all extensions. Starting with Sprint 36, you can use `Debug > Reload Without Extensions` to quickly see if the problem is being caused by an extension.
 
 ### Using a Local Server
 To use a local server, you need to specify a Base URL in the `File > Project Settings...` dialog.
