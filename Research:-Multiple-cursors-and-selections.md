@@ -66,8 +66,7 @@ Arrow key (multiple selections) | Collapse selection in direction of arrow | Not
 Shift-arrow key | Default (extend each selection in direction of arrow; merge selections that collide) |
 Shift-Cmd-arrow key (Mac)/Shift-Alt-arrow key, Shift-Home/End (Win) | Default (extend each selection to end of its line) | Note: on Win, Sublime maps Alt-arrow to move by word, not end of line
 Shift-Alt-arrow key (Mac)/Shift-Ctrl-arrow key (Win) | Default (extend each selection by word; merge selections that collide) |
-Page up/down | Do page up/down and collapse selection to single cursor | Note: on Win, CMv4 currently collapses selection only, but this is true for single select as well. **(Check if this is a regression from CMv3; other page up/down behavior seems wonky on Windows wrt cursor placement.)**
-Select Line | Default | **Not working**
+Page up/down | Do page up/down and collapse selection to single cursor | Note: on Win, CMv4 currently collapses selection only, but this is true for single select as well. This also happens in CMv3 -- introduced in Sprint 36. [See issue #6811](https://github.com/adobe/brackets/issues/6811).
 **Edits** | |
 Typing: multiple cursors/selections | Default (delete selection if any, then insert typed char) |
 Typing: combination of cursors and selections | Default |
