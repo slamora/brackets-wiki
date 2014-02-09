@@ -56,6 +56,7 @@ Multiple selections (discontiguous) | Make first selection, then Cmd/Ctrl-click 
 ? | Add Line to Selection - adds the line above or below as another selection | **Not working** - **need to pick keyboard shortcuts for this**; Sublime's shortcuts seem to conflict with OS X Expose shortcuts - **this might be lower priority**
 Ctrl/Cmd-Shift-L | Split into Lines - takes a block of lines and splits it into individual selections, one per line | <del>**Not working** - **this might be lower priority**</del><br>Seems to be working
 ? | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection | **Not working** - seems popular. - **need to pick shortcut**; Sublime uses Cmd-D, which conflicts with our Duplicate
+? | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one | **Not working** - **need to pick shortcut**; Sublime uses Cmd-K, Cmd-D (sequence)
 Alt-F3 / Cmd-Ctrl-G | Find All - selects current word, then adds selections for each match in the current document | **Not working**
 Ctrl/Cmd-U | Undo Selection - undoes the last selection change (for both single and multiple selections) | **Not working**, probably important for the workflow with Cmd-D. Note that it appears to be a superset of ordinary undo (i.e., if there was a doc edit in between selection changes, it will undo that edit).
 Esc | Switch to single selection | **Note: Sublime collapses to the first selection, not the last (primary) one. Is this okay?**
