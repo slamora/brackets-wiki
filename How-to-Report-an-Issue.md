@@ -62,20 +62,20 @@ Yes please! But first...
 
 # Extension bugs
 
-Bugs can be caused by Brackets extensions you've installed. Before you file an issue on the core product, first rule out extensions by disabling them.  This can be done by selecting _Debug > Reload Without Extensions_ and then trying to reproduce the problem with your extensions disabled.  If you can still reproduce the problem, file an issue on Brackets.  Include a note that you tested Brackets with extensions disabled in your report
+Bugs can be caused by Brackets extensions you've installed. Before you file an issue on the core product, first rule out extensions by disabling them.  This can be done by selecting _Brackets > Debug > Reload Without Extensions_ and then trying to reproduce the problem with your extensions disabled.  If you can still reproduce the problem, file an issue on Brackets.
 
 If you can't reproduce the problem, there is a problem with one of your extensions.  You will need to
 manually search for the extension that is causing the problem.
 
 For now, testing extensions must be done manually:
 
-1. Select _Help > Show Extensions Folder_.
+1. Select _Brackets > Help > Show Extensions Folder_.
 2. Move all of the extensions from the `user` directory to the `disabled`
 directory, then restart Brackets.
 3. Move extensions back to the `user` directory one at a time (restarting Brackets each time) until you find the cause. If you find an extension bug, please file an issue in that extension's repo so it can be addressed by the extension author.
 4. When finished, move all your extensions back into the `user` directory, then restart Brackets again to re-enable them all.
 
-You can also try selecting _Help > Show Developer Tools_ so you can look at the console.  Sometimes the console has error messages that can help you locate the file that is failing, and knowing the location of the file can help you track down which extension is failing.
+You can also try selecting _Brackets > Help > Show Developer Tools_ so you can look at the console.  Sometimes the console has error messages that can help you locate the file that is failing, and knowing the location of the file can help you track down which extension is failing.
 
 # Understanding issue labels
 
