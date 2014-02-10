@@ -24,6 +24,7 @@ In this model, there's a "main" view (the one on the left or top) and a "seconda
 * **Issue:** Other questions
     * How does Ctrl-Tab work? 
     * Multiple working sets?
+    * How does resizing the window affect the sizes of the split views
 
 ### Pros
 
