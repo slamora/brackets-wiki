@@ -18,6 +18,7 @@ In this model, there's a "main" view (the one on the left or top) and a "seconda
     * **Issue:** Maybe we should only do this for the secondary view, since the main view will always have the pointer from the working set.
 * There is a status bar in each view.
 * When the view is split vertically, the modal bar and bottom panel always stretch across both views, even in cases where they would only affect the focused view.
+    * **Issue:** Do bottom panels go above or below the status bar? If status bar is split, it seems like they have to go below. Otherwise we should keep a single status bar.
 
 ### Pros
 
