@@ -14,6 +14,8 @@ In this model, there's a "main" view (the one on the left or top) and a "seconda
         * **Issue:** Does this mean that the split icons no longer show up on hover of other items int he working set while a split is already open?
     * You can also close the split view by doing File > Close while focus is in one of the views. If you do this in the main view, the secondary view becomes the main view.
 * When clicking on another file in the working set or file tree, the file is opened in whichever view is currently focused, and the selection highlight is updated accordingly.
+    * Exception: before we make it possible to view the same doc in two views, selecting a file already open just switches focus to that view.
+        * **Issue:** would we always want to do this? Might want to at least keep this behavior for non-sidebar opens. For sidebar opens, in this model (sidebar icons), it might work to keep this behavior for the working set as well.
     * Same applies to any other UI action that opens a file (e.g. click on a result from Find in Files) - goes to last active view (need to ensure that per-doc bottom panels always properly hide/switch if you switch views)
     * **Issue:** Will it be confusing that some bottom panels are global vs. per doc?
 * The non-focused view has a small box in the upper right corner showing the name of the file in that view. 
