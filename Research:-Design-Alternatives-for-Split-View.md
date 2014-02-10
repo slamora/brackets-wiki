@@ -20,9 +20,10 @@ In this model, there's a "main" view (the one on the left or top) and a "seconda
     * **Issue:** Will it be confusing that some bottom panels are global vs. per doc?
 * The non-focused view has a small box in the upper right corner showing the name of the file in that view. 
     * **Issue:** Maybe we should only do this for the secondary view, since the main view will always have the pointer from the working set.
-* There is a status bar in each view.
-* When the view is split vertically, the modal bar and bottom panel always stretch across both views, even in cases where they would only affect the focused view.
-    * **Issue:** Do bottom panels go above or below the status bar? If status bar is split, it seems like they have to go below. Otherwise we should keep a single status bar.
+* Status bar is full width (not split as in mockup above), to avoid issues with bottom panels having to go above them, and with some things in the status bar not being file-specific.
+* **Issue:** Other questions
+    * How does Ctrl-Tab work? 
+    * Multiple working sets?
 
 ### Pros
 
