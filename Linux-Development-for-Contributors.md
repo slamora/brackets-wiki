@@ -54,6 +54,7 @@ Contributors: If you are willing to test other Linux distributions please add yo
 | Ubuntu | 12.04 32-bit | None |
 | Ubuntu | 12.04 64-bit | libudev workaround https://github.com/adobe/brackets/issues/4720 (Fix arrives in Sprint 30) |
 | Mint 15 | 64-bit | libudev workaround https://github.com/adobe/brackets/issues/4720 (Fix arrives in Sprint 30) |
+| Mint 16 | 64-bit | No issues besides the close issue. Still Testing |
 |LMDE(*) | Debian Testing 32 bit |None|
 | Arch | 32/64-bit | Not tested / None - (Package: https://aur.archlinux.org/packages/brackets-git) |
 
