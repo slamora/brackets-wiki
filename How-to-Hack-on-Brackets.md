@@ -11,7 +11,7 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 
 ### Requirements ###
 
-* Latest [Brackets build](http://download.brackets.io)
+* Latest [Brackets installer build](http://download.brackets.io)
 * Git command line tools - follow the setup instructions [on GitHub](https://help.github.com/articles/set-up-git) or download [here](http://git-scm.com/downloads)
 
 **NOTE: All commands should be run in a Terminal window (on the Mac) or Git Bash shell (on Windows).**
@@ -20,11 +20,12 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 
 For hacking on the core Brackets HTML/CSS/JavaScript files:
 
-1. Fork the [brackets repo](https://github.com/adobe/brackets)
-2. Clone your fork of the repo: `git clone https://github.com/<username>/brackets.git`
-3. Update submodules: `cd brackets` and `git submodule update --init`
-4. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
-5. Run `setup_for_hacking` script:
+1. Install the latest Brackets build (this gives you the native shell binaries which you'll use in step 6)
+2. Fork the [brackets repo](https://github.com/adobe/brackets)
+3. Clone your fork of the repo: `git clone https://github.com/<username>/brackets.git`
+4. Update submodules: `cd brackets` and `git submodule update --init`
+5. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
+6. Run `setup_for_hacking` script:
 
 ```bat
 Mac
@@ -41,7 +42,9 @@ Linux
 sudo tools/setup_for_hacking.sh "/opt/brackets"
 ```
 
-_Optional: For hacking on the native code, [see "Hacking on brackets-shell" below](#nativeshell)._
+Now, when you launch the Brackets app it will load your git copy of the source code, rather than the original source code that was distributed with the installer.
+
+_Optional: For hacking on the native code or building the app binaries yourself without running an installer, [see "Hacking on brackets-shell" below](#nativeshell)._
 
 For more in-depth instructions see ["Getting a Copy of the Code" below](#wiki-getcode).
 
@@ -149,8 +152,6 @@ Your repo will now have two "remotes": `origin` refers to your fork on GitHub, w
 
 > If you want to avoid getting branches other than master, you can add the `--track master` argument after `add`. However, that will mean that if you need to pull a different branch, you'll need to explicitly fetch it. 
 
-_If_ you also forked the brackets-shell repository, repeat this command for brackets-shell.
-
 #### Getting the latest changes
 
 Getting the latest changes on the Brackets `master` branch is a two-step process. First:
@@ -176,6 +177,14 @@ Rarely, an entire _new_ submodule is added to Brackets. You'll need to run `git 
 You can see a diff before merging with `git difftool ...upstream/master`.
 
 For a higher-level overview (with API important changes called out), check the [[Release notes]] after each sprint.
+
+
+### Brackets-shell updates ###
+
+_If_ you also forked the brackets-shell repository, repeat the steps above for the brackets-shell repo, then rebuild the shell once you've pulled down updates.
+
+If you did _not_ fork the brackets-shell repo (i.e. you're using the 'setup_for_hacking' step above), you should update your installed build of Brackets each sprint and rerun the 'setup_for_hacking' script. This ensures you're using the latest app binaries.
+
 
 
 ## Contributing Code ##
