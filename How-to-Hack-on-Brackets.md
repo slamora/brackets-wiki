@@ -179,7 +179,7 @@ You can see a diff before merging with `git difftool ...upstream/master`.
 For a higher-level overview (with API important changes called out), check the [[Release notes]] after each sprint.
 
 
-### Brackets-shell updates ###
+### Brackets-shell Updates ###
 
 _If_ you also forked the brackets-shell repository, repeat the steps above for the brackets-shell repo, then rebuild the shell once you've pulled down updates.
 
