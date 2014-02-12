@@ -66,10 +66,13 @@ _However_, this mode disables the HTML-related features:
 
 > Why do these limitations exist? To enable HTML live editing, Brackets needs to inject some annotations into your HTML code before the browser loads it. Normally, the built-in Brackets server does this. When using your own server instead, Brackets can't inject those annotations. Without the annotations, Brackets can't map edits and cursor positions from your source file onto the corresponding DOM nodes in the browser.
 
+##### Other limitations
+
 Live Preview currently has a few other important limitations:
 
 * It only works with desktop Chrome as the target browser.
 * Opening the Developer Tools in Chrome will close the live development connection.
+* Files must be inside your "project" (the root folder you currently have open in Brackets).
 * Only one HTML file can be previewed at a time. If you switch to a different HTML file in Brackets, the browser preview will switch to that new page as well.
 
 
