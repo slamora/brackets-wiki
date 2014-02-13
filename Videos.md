@@ -20,6 +20,8 @@
 
 ["PSD Lens" Concept: from Design Comp to Code](http://www.youtube.com/watch?v=xAP8CSMEwZ8) - Narciso (nj) Jaramillo
 
+[QCon 2013: Exploring the Future of Web Tooling with Brackets](http://www.infoq.com/presentations/brackets) - Narciso (nj) Jaramillo
+
 ### Under the hood
 
 [Building Live HTML and Omniscient Debuggers in Brackets (JSConfEU 2013)](http://www.youtube.com/watch?v=Axpi1_OVSdo) - Peter Flynn and Kevin Dangoor
