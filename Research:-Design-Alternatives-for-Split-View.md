@@ -53,3 +53,25 @@ No mockup yet, but the idea is that we would have a separate "split view" afford
 
 * "Blank view" state might be odd.
 * Might be less immediately discoverable.
+
+# Rough task breakdown
+
+* (M) editor area management
+    * creating another editor within editor area
+    * sizing/layout
+    * allowing user to resize
+    * persist view state in prefs
+* (M) creating split view
+    * either: handle icons in working set *or* create split UI in toolbar/status bar
+    * menu commands
+* (S) managing split view documents
+    * handling working set/file tree selections while view is split
+    * handling File > Close while view is split
+* (M) slop time
+    * changing UI if there are usability issues with whichever way we go initially
+    * possible performance issues with two large CMs open at once
+* (M) handle image preview in split views
+* (M) allow same doc in two views
+    * doc-linking (enables showing same doc in two views)
+    * manage Document._masterEditor (might have to juggle this, might go away with doc linking)
+    * might have to do work to make scroll positions of both views feel independent when edits are made in one (might also go away with doc linking)
