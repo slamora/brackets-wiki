@@ -13,18 +13,18 @@ In this model, there's a "main" view (the one on the left or top) and a "seconda
         * When the split is at the bottom, the pointer could be misleading in edge cases where you increase the bottom splitter height to the point where the top of the bottom view is next to the working set so we should remove the arrow. The bottom panel icon will be blue and persistent beside the file name so hopefully it won’t be that misleading.
         * The split icons show up on hover of other items in the working set while a split is already open so you can replace the current split panel with a new one. Basically there can only be one split icon that is active (blue).
     * You can also close the split view by doing File > Close while focus is in one of the views. If you do this in the main view, the secondary view becomes the main view.
-* When clicking on another file in the working set or file tree, the file is opened in whichever view is currently focused, and the selection highlight is updated accordingly.
+* When clicking on another file in the working set or file tree, the file is opened in left or right pane depending on where the user is clicking, file name or split icon. A "file click" should always open the file in the main view (e.g. left side) and split icon click should always open the file in the secondary view (e.g. right side).
     * Exception: before we make it possible to view the same doc in two views, selecting a file already open just switches focus to that view.
         * **Issue:** would we always want to do this? Might want to at least keep this behavior for non-sidebar opens. For sidebar opens, in this model (sidebar icons), it might work to keep this behavior for the working set as well.
     * Same applies to any other UI action that opens a file (e.g. click on a result from Find in Files) - goes to last active view (need to ensure that per-doc bottom panels always properly hide/switch if you switch views)
-    * **Issue:** Will it be confusing that some bottom panels are global vs. per doc?
+    * We could use good panel titles to let people know what’s what so that it won't be confusing that some bottom panels are global vs. per doc.
 * The non-focused view has a small box in the upper right corner showing the name of the file in that view. 
-    * **Issue:** Maybe we should only do this for the secondary view, since the main view will always have the pointer from the working set.
+    * Persistent active split icon beside the file should make it clear what the right pane contains.
 * Status bar is full width (not split as in mockup above), to avoid issues with bottom panels having to go above them, and with some things in the status bar not being file-specific.
 * **Issue:** Other questions
-    * How does Ctrl-Tab work? 
+    * How does Ctrl-Tab work? This is tricky, but since people ctrl-tab in order to cycle through working files then I guess we can keep the current behavior because primary view is the lowest common denominator. 
     * Multiple working sets?
-    * How does resizing the window affect the sizes of the split views
+    * How does resizing the window affect the sizes of the split views? Ideally the panes should be resizable, with a fixed primary-view width. If not then split it 50/50.
 
 ### Pros
 
