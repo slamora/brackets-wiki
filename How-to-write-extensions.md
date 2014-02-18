@@ -108,8 +108,6 @@ For example, if you have ```awesome.jpg``` in your extension's top-level ```foo`
 
 ### Working with Preferences
 
-**IMPORTANT** This API is changing in Sprint 37. The example given below should still work, but there are cases in which you need to be more specific about the preference values you look up. The adjusted API in sprint 37 will address this.
-
 Your extension can access Brackets' preferences and define preferences of its own. For preferences specific to your extension, you should make sure that all of the preferences have a prefix so that they don't clobber any other preferences. Here's an example:
 
 ```javascript
@@ -123,8 +121,12 @@ var PreferencesManager = require("preferences/PreferencesManager"),
 // This is actually going to create a preference called "myextensionname.enabled".
 prefs.definePreference("enabled", "boolean", true);
 
-// Set up a listener that is called whenver the preference changes
+// Set up a listener that is called whenever the preference changes
+// You don't need to listen for changes if you can just look up the current value of
+// the pref when you're performing some operation.
 prefs.on("change", function () {
+    // This gets the current value of "enabled" where current means for the
+    // file being edited right now.
     doSomethingWith(prefs.get("enabled"));
 });
 
@@ -139,7 +141,8 @@ prefs.save();
 ```
 
 The snippet of code above covers the main parts of the API that you will use for preferences.
-For other uses, take a look at `preferences/PreferencesManager.js` and `preferences/PreferencesBase.js`.
+
+There are further details at the [[Preferences System]] page.
 
 ### Accessing Node APIs
 
