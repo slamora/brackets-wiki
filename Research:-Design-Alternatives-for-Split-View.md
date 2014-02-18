@@ -6,12 +6,12 @@ This is an early draft of a description of several alternatives for split view t
 
 In this model, there's a "main" view (the one on the left or top) and a "secondary" view (on the right or bottom) that is created by clicking on a split icon in the working set.
 * On hover of any item in the working set, two icons appear. Clicking on the icon on the left opens that item in a bottom view. Clicking on the one on the right opens the item in a right-side view.
-    * **Issue:** Does this show up in the file tree as well?
+    * This show up in the file tree as well. If the icons too annoying on hover then we should turn them into context menu items.
     * This works for the currently-selected file too, so you can have the same file open in both views.
     * The file that's open in the secondary view gets the same selection background as the main file, but without the pointer. 
         * It also shows both split icons persistently (instead of on hover), so you can unclick the selected icon to close the split view, or click on the other icon to switch the orientation of the split view.
-        * **Issue:** When the split is at the bottom, the pointer could be misleading in edge cases where you increase the bottom splitter height to the point where the top of the bottom view is next to the working set.
-        * **Issue:** Does this mean that the split icons no longer show up on hover of other items int he working set while a split is already open?
+        * When the split is at the bottom, the pointer could be misleading in edge cases where you increase the bottom splitter height to the point where the top of the bottom view is next to the working set so we should remove the arrow. The bottom panel icon will be blue and persistent beside the file name so hopefully it won’t be that misleading.
+        * The split icons show up on hover of other items in the working set while a split is already open so you can replace the current split panel with a new one. Basically there can only be one split icon that is active (blue).
     * You can also close the split view by doing File > Close while focus is in one of the views. If you do this in the main view, the secondary view becomes the main view.
 * When clicking on another file in the working set or file tree, the file is opened in whichever view is currently focused, and the selection highlight is updated accordingly.
     * Exception: before we make it possible to view the same doc in two views, selecting a file already open just switches focus to that view.
