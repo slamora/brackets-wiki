@@ -127,7 +127,7 @@ for a more complete list of shortcuts.
 <tbody>
 <tr>
 <td>Ctrl/Cmd-E</td>
-<td>Open/close the inline editor.</td>
+<td>Open/close the inline editor (Quick Edit).</td>
 </tr>
 <tr>
 <td>Alt-Up/Down Arrow</td>
@@ -146,7 +146,7 @@ for a more complete list of shortcuts.
 <td>Bring up the Quick Open prompt.</td>
 </tr>
 <tr>
-<td>Ctrl/Cmd-L</td>
+<td>Ctrl-G/Cmd-L</td>
 <td>Go to a line in the current file.</td>
 </tr>
 <tr>
