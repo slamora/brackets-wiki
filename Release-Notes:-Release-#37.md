@@ -2,7 +2,7 @@ _This is a draft!_
 --------------------
 _This document will not be finalized until the end of Sprint 37 -- approximately February 27._
 
-What's New in Sprint 37
+What's New in Release #37
 -----------------------
 * **Installation**
     * [Code-signed builds (Mac & Win)](https://trello.com/c/g5ZY1lKY/1131-code-signing-on-win-and-mac): Eliminates some warnings on launch and install. Gatekeeper no longer prevents launching Brackets by default on Mac.
