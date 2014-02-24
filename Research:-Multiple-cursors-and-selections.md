@@ -56,7 +56,7 @@ Multiple cursors (discontiguous) | Click first cursor, then Cmd/Ctrl-click to se
 Multiple selections (contiguous - rectangular) | Hold down Alt, then click and drag a rectangle | 
 Multiple selections (discontiguous) | Make first selection, then Cmd/Ctrl-click and drag to set other selections. You can also Cmd/Ctrl-Alt-drag to add rectangular selections. |
 ? | Add Line to Selection - adds the line above or below as another selection | **Not working** - **need to pick keyboard shortcuts for this**; Sublime's shortcuts seem to conflict with OS X Expose shortcuts - **this might be lower priority**
-Ctrl/Cmd-Shift-L | Split into Lines - takes a block of lines and splits it into individual selections, one per line | Seems to be working on Windows, **keyboard shortcut conflicts on Mac**
+Ctrl/Cmd-Shift-L | Split into Lines - takes a block of lines and splits it into individual selections, one per line | **Not working.** **On Mac, keyboard shortcut conflicts with "Search with Google" in Services menu.**
 ? | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection | **Not working** - seems popular. - **need to pick shortcut**; Sublime uses Cmd-D, which conflicts with our Duplicate
 ? | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one | **Not working** - **need to pick shortcut**; Sublime uses Cmd-K, Cmd-D (sequence)
 Alt-F3 / Cmd-Ctrl-G | Find All - selects current word, then adds selections for each match in the current document | **Not working**
