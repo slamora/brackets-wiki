@@ -1,4 +1,4 @@
-**Status:** Implemented in Sprint 21. Document last updated 3/1/13.
+**Status:** Implemented in Sprint 21. Document last updated February 24, 2014.
 
 Overview
 --------
@@ -29,7 +29,7 @@ On the client side, a connection to the Node server is handled by the NodeConnec
 The connection interface also supports events coming from node. (One example of this is log events.) Events are registered using the ```registerEvent``` command in the DomainManager, and emitted using the ```emitEvent```. On the client side, events can be listed for using the standard jQuery event system on instances of the NodeConenction class. So, to listen for log events, we can do:
 
 ```javascript
-$(_nodeConnection).on("base.log", function (evt, level, timestamp, message) {
+$(_nodeConnection).on("base:log", function (evt, level, timestamp, message) {
     console.log("[node] %s %s %s", level, timestamp, message);
 });
 ```
