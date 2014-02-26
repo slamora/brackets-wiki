@@ -55,10 +55,10 @@ Multiple cursors (contiguous) | Hold down Alt, then click and drag vertically | 
 Multiple cursors (discontiguous) | Click first cursor, then Cmd/Ctrl-click to set other cursors |
 Multiple selections (contiguous - rectangular) | Hold down Alt, then click and drag a rectangle | 
 Multiple selections (discontiguous) | Make first selection, then Cmd/Ctrl-click and drag to set other selections. You can also Cmd/Ctrl-Alt-drag to add rectangular selections. |
-? | Add Line to Selection - adds the line above or below as another selection | **Not working** - **need to pick keyboard shortcuts for this**; Sublime's shortcuts seem to conflict with OS X Expose shortcuts - **this might be lower priority**
-Ctrl/Cmd-Shift-L | Split into Lines - takes a block of lines and splits it into individual selections, one per line | **Not working.** **On Mac, keyboard shortcut conflicts with "Search with Google" in Services menu.**
-? | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection | **Not working** - seems popular. - **need to pick shortcut**; Sublime uses Cmd-D, which conflicts with our Duplicate
-? | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one | **Not working** - **need to pick shortcut**; Sublime uses Cmd-K, Cmd-D (sequence)
+Ctrl/Cmd-Alt-Up/Down (proposed) | Add Line to Selection - adds the line above or below as another selection | **Not working** - Sublime uses Ctrl-Shift-Up/Down on Mac, but that seems to conflict with some default OS X shortcuts
+Ctrl/Cmd-Alt-L (proposed) | Split into Lines - takes a block of lines and splits it into individual selections, one per line | **Not working.** - Sublime's docs say it uses Cmd-Shift-L, but that seems to map to something else now.
+Ctrl/Cmd-B (proposed) | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection | **Not working** - seems popular. - **need to pick shortcut**; Sublime uses Cmd-D, which conflicts with our Duplicate
+Ctrl/Cmd-Shift-B (proposed) | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one | **Not working** - **need to pick shortcut**; Sublime uses Cmd-K, Cmd-D (sequence)
 Alt-F3 / Cmd-Ctrl-G | Find All - selects current word, then adds selections for each match in the current document | **Not working**
 Ctrl/Cmd-U | Undo Selection - undoes the last selection change (for both single and multiple selections) |
 Esc | Switch to single selection | Note: Sublime collapses to the first selection, not the last (primary) one. Ace matches CM's behavior. We're going to stick with CM's behavior for now, but can revisit if we get enough user feedback.
