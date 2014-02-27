@@ -95,3 +95,40 @@ The function parameter hints will be displayed after the user chooses a function
 The main hints themselves will be unchanged from the current format. 
 
 Documentation on a function or variable will pop out to the side of the main hint window when a hint is highlighted. A small delay between highlighting a hint and displaying the documentation will prevent flash in the case where the user is quickly moving through the hints. The documentation for functions will contain the function signature, origin, description, parameters, and return type. The documentation window for variables and properties will show the type, origin, and description. The figure below shows a documentation hint for a highlighted function.
+
+# Refactoring Project (early 2014)
+
+Two significant features with an impact on JS Code Hints shipped in Brackets 36: file watchers and preferences. As a result, we've chosen this time to [refactor the JS code hints code](https://trello.com/c/BMVw25vU/75-research-js-code-hints-cleanup) in order to improve the overall performance of code hints.
+
+## Preferences
+
+This is the easiest piece to refactor, because the JS Code Hints-specific preferences system in Preferences.js should just go away. In its place, JS Code Hints will rely on a prefixed preferences system for "jscodehints". `max-file-count` and `max-file-size` are replaced by `jscodehints.maxFileCount` and `jscodehints.maxFileSize`. Ideally, we can eliminate `maxFileCount`.
+
+The excluded directories and excluded files should be project-level preferences, because of how verbose it would be to have to do this:
+
+```javascript
+{
+    "path": {
+        "foo/foobar.js": {
+            "jscodehints.exclude": true
+        },
+        "thirdparty/**.js": {
+            "jscodehints.exclude": true
+        }
+    }
+}
+```
+
+vs.
+
+```javascript
+{
+    "jscodehints.exclude": ["foo/foobar.js", "thirdparty/**.js"]
+}
+```
+
+But, this is open to discussion, if we think it likely that people will have other settings they'd want to apply to those excluded files.
+
+**Open Questions**
+
+* Replace the exclusion regular expressions with glob match? This is better for consistency and conciseness, but not compatible with conversion.
