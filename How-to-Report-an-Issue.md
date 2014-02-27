@@ -1,29 +1,41 @@
 # How to Report a Brackets Issue
 
-Found a bug you'd like to tell us about? Great!
+Found a bug you'd like to tell us about? Here's what to do...
+
+First, check our **[Troubleshooting page](https://github.com/adobe/brackets/wiki/Troubleshooting)** for solutions to common problems.
 
 ### How to file a bug
 
 Brackets bugs are tracked in [the issue list on GitHub](https://github.com/adobe/brackets/issues). Always search for existing issues before filing a new one (use the search field at the top of the page).
 
-When filing a new bug, please remember to include:
+_**When filing a new bug, please include:**_
 
-* A helpful title - use descriptive keywords in the title and body so others can find your bug (avoiding duplicates).
-* Steps to reproduce the problem, with actual vs. expected results
-* Brackets sprint number (or if you're pulling directly from the Git repo, your current commit SHA - use `git rev-parse HEAD`)
-* OS version
-* If the problem happens with specific code, link to test files ([gist.github.com](https://gist.github.com/) is a great place to upload code).
-* Screenshots are very helpful if you're seeing an error message or a UI display problem. (Just drag an image into the issue description field to include it).
+* **Descriptive title** - use keywords so others can find your bug (avoiding duplicates)
+* Specific, repeatable **steps to trigger the problem**
+* **What happens** when you follow the steps, and **what you expected to happen** instead.<br>Include the exact text of any error messages if applicable (or upload screenshots).
+* **Brackets version** (or if you're pulling directly from Git, your current commit SHA - use `git rev-parse HEAD`)
+* **OS version**
+* List of **installed extensions** (or mention if you've tested with _Debug > Reload Without Extensions_)
+* **Any errors logged** in the _Debug > Show Developer Tools_ Console view
 
 ### If you've installed extensions
 
-Bugs can be caused by Brackets extensions you've added. Before you file an issue on Brackets core, first rule out extensions by disabling them. [See "Extension bugs" below](#extension-bugs) for details.
+Bugs can be caused by Brackets extensions you've added. Before you file an issue on Brackets core, use _Debug > Reload Without Extensions_ to see if the problem still occurs without any extensions. [See "Extension bugs" below](#extension-bugs) for details.
 
 ### What about requesting a feature?
 
 Please first check our [feature backlog on Trello](http://bit.ly/BracketsBacklog) to see if it's already there. You can vote on features in the backlog to help us prioritize them.
 
-Feel free to file feature requests as an issue on GitHub, just like a bug. We tag these issues "move to backlog" and periodically migrate them onto feature backlog for you.
+Feel free to file feature requests as an issue on GitHub, just like a bug. We tag these issues "move to backlog" and periodically migrate them onto the feature backlog for you.
+
+
+# Extension bugs
+
+Bugs can be caused by Brackets extensions you've installed. Before you file an issue on Brackets core, use _Debug > Reload Without Extensions_ to see if the problem still occurs without any extensions. If you can still reproduce the problem, file an issue on Brackets.
+
+If you can't reproduce the problem, then the issue lies with one of your extensions.  See [Troubleshooting extension bugs](https://github.com/adobe/brackets/wiki/Troubleshooting#wiki-disable-all-extensions) for tips on identifying which extension is causing the problem.
+
+Once you know which extension causes the bug, please file an issue in that extension's repo so it can be addressed by the extension author.
 
 
 # What happens after a bug is filed?
@@ -59,23 +71,6 @@ Yes please! But first...
 * Check to make sure no one else is already working on it. If the bug has a sprint milestone assigned or is tagged _'fix in progress'_ then it's already under way. Otherwise, post to the [brackets-dev newsgroup](http://groups.google.com/group/brackets-dev), the [#brackets IRC channel on freenode](http://webchat.freenode.net/?channels=brackets), or the bug comment thread itself (pinging the assigned developer via "@") to check.
 * Read the [guidelines for contributing code](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#contributing-code) - especially, make sure you're following our [pull request guidelines](Pull Request Checklist) and [coding conventions](Brackets Coding Conventions).
 
-
-# Extension bugs
-
-Bugs can be caused by Brackets extensions you've installed. Before you file an issue on the core product, first rule out extensions by disabling them.  This can be done by selecting _Brackets > Debug > Reload Without Extensions_ and then trying to reproduce the problem with your extensions disabled.  If you can still reproduce the problem, file an issue on Brackets.
-
-If you can't reproduce the problem, there is a problem with one of your extensions.  You will need to
-manually search for the extension that is causing the problem.
-
-For now, testing extensions must be done manually:
-
-1. Select _Brackets > Help > Show Extensions Folder_.
-2. Move all of the extensions from the `user` directory to the `disabled`
-directory, then restart Brackets.
-3. Move extensions back to the `user` directory one at a time (restarting Brackets each time) until you find the cause. If you find an extension bug, please file an issue in that extension's repo so it can be addressed by the extension author.
-4. When finished, move all your extensions back into the `user` directory, then restart Brackets again to re-enable them all.
-
-You can also try selecting _Brackets > Help > Show Developer Tools_ so you can look at the console.  Sometimes the console has error messages that can help you locate the file that is failing, and knowing the location of the file can help you track down which extension is failing.
 
 # Understanding issue labels
 
