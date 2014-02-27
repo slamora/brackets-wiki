@@ -17,7 +17,8 @@ A simple string matches any item whose full path includes that substring:
 
 You can also use wildcards:
 
-* `*.txt` matches `/code/readme.txt`, `/code/notes.txt2`, `/code/module.txt/foo.js`, etc.
+* `node_*` matches `/code/node_modules/foo.js`, `/code/node_core/foo.js`, `/code/node_foo.txt`, etc.
+* `*.txt` matches `/code/readme.txt`, `/code/notes.txt2`, etc.<br>but does _not_ match `/code/module.txt/foo.js` (filter strings containing "." are treated as filenames, so they won't match folder names - see below)
 * `/jquery*.js` matches `/code/jquery-2.1.0.js`, `/code/foo/jquery-1.7.min.js`, etc.
 * `jquery-1.?.js` matches `/code/jquery-1.6.js` but _not_ `/code/jquery-1.6.1.js`
 
