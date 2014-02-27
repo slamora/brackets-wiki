@@ -129,6 +129,8 @@ If this fixes the problem, you can identify the problematic extension by re-enab
 2. Move one extension back into the "user" folder, then quit and re-launch Brackets.
 3. Check if the problem has come back. If not, repeat step 2.
 
+Alternative: Select _Debug > Show Developer Tools_ and look at the console.  If an error message is present, it may have a link to the code that is failing, which in turn may point out a specific extension.
+
 ### Debug with Developer Tools
 Choose `Debug > Show Developer Tools` to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Check the Console tab for errors.
 
@@ -137,11 +139,6 @@ There's a [known issue](https://github.com/adobe/brackets/issues/2531) with the 
 
 
 ## Still Having a Problem?
-[File an issue](http://github.com/adobe/brackets/issues) or contact us via one of the channels mentioned in the [README](https://github.com/adobe/brackets/blob/master/README.md#i-want-to-keep-track-of-how-brackets-is-doing).  Please include the following information:
 
-1.    Specific, repeatable steps to trigger the problem
-2.    What happens when you follow the steps, and what you _expected_ to happen instead
-3.    Brackets version
-4.    OS & version
-5.    List of installed extensions (or mention if you've tested with `Debug > Reload Without Extensions`)
-6.    Any errors listed in the `Debug > Show Developer Tools` Console view
+* **[File an issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)** - be sure to include as many details as possible (see link for specific guidelines)
+* **Contact us** via one of the channels mentioned in the [README](https://github.com/adobe/brackets/blob/master/README.md#i-want-to-keep-track-of-how-brackets-is-doing)
