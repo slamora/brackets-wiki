@@ -1,0 +1,35 @@
+By default, **Find in Files** searches all files in your project - the whole tree beneath the root folder that's open in Brackets. You can exclude files, file types, whole folders, or other patterns:
+
+1. Click the "No filter" dropdown
+2. Choose "Edit filter..."
+3. Enter one or more patterns to exclude
+
+The more files you exclude from your search, the faster Find in Files will run.
+
+## About filter patterns
+
+A simple string matches any item whose full path includes that substring:
+
+* `README` matches `/code/README.md`, `/code/modules/README/main.js`, `/code/myREADME.txt`, etc.
+* `/node_modules/` matches `/code/node_modules/foo.js`, `/code/node_modules/sub/bar.js`, etc.<br>but does _not_ match `/code/node_modules_two/foo.js`, etc.
+
+> Note: Always use **forward slashes** in filter paths, _even on Windows_. Brackets standardizes paths on all platforms to use "/" separators.
+
+You can also use wildcards:
+
+* `*.txt` matches `/code/readme.txt`, `/code/notes.txt2`, `/code/module.txt/foo.js`, etc.
+* `/jquery*.js` matches `/code/jquery-2.1.0.js`, `/code/foo/jquery-1.7.min.js`, etc.
+* `jquery-1.?.js` matches `/code/jquery-1.6.js` but _not_ `/code/jquery-1.6.1.js`
+
+A `*` matches _within_ a path segment (that is, it doesn't match "/" characters). To match "/" as well, use `**`:
+
+* `thirdparty/**/jquery*.js` matches `/code/thirdparty/jquery-1.7.js`, `/code/thirdparty/foo/jquery-2.1.0.min.js`, etc.<br>but does _not_ match `/code/jquery-1.7.js`
+
+(note that the "/"s surrounding a "**" can collapse, as in the first example above)
+
+## Advanced glob matching
+
+Brackets uses the [minimatch library](https://github.com/isaacs/minimatch#usage), which supports additional syntax such as "{}" groups and "+()" groups. See its docs for details. The filter strings you enter are converted to minimatch expressions using the following rules:
+
+* A `**` prefix is always added - unless the filter string already starts with `**`
+* A `**` suffix is added unless the filter string's last path segment contains a "." (suggesting it's a filename) - or unless the filter string already ends with `**`
