@@ -30,7 +30,14 @@ A `*` matches _within_ a path segment (that is, it doesn't match "/" characters)
 
 ## Advanced glob matching
 
-Brackets uses the [minimatch library](https://github.com/isaacs/minimatch#usage), which supports additional syntax such as "{}" groups and "+()" groups. See its docs for details. The filter strings you enter are converted to minimatch expressions using the following rules:
+Brackets uses the [minimatch library](https://github.com/isaacs/minimatch#usage), which supports additional advanced syntax. The filter strings you enter are converted to minimatch expressions using the following rules:
 
 * A `**` prefix is always added - unless the filter string already starts with `**`
 * A `**` suffix is added unless the filter string's last path segment contains a "." (suggesting it's a filename) - or unless the filter string already ends with `**`
+
+The following advanced syntax is supported:
+
+* `{foo,bar,baz}` matches any of the strings listed
+* `{1..10}` matches any number in the given range
+* `[xyz]` matches any of the single characters listed
+* Use backslash to escape '{' and '[' chars that you want to match normally
