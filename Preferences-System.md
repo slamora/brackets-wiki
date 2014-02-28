@@ -49,7 +49,7 @@ Once you have your prefixed PreferencesSystem, you can then define a preference.
     });
 ```
 
-Define a preference with the ID of the pref (these would be prefixed to be `myext.greeting` and `myext.showGreeting`), the type of the pref and the default value. You can also pass in an options object with `name` and `description` properties that could be used to generate a mythical, friendly-looking UI.
+Define a preference with the ID of the pref (these would be prefixed to be `myext.greeting` and `myext.showGreeting`), the type of the pref and the default value. You can also pass in an options object with `name` and `description` properties as a fourth parameter that could be used to generate a mythical, friendly-looking UI.
 
 `definePreference` returns a Preference object which allows you to listen for change events.
 
