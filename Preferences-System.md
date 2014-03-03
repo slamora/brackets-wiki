@@ -29,7 +29,7 @@ The PreferencesManager module has convenience functions for working with the mai
 If you are working with preferences and view state that are specific to your extension, you should prefix all of your preferences. There's an easy way to do that:
 
 ```javascript
-    var PreferencesManager = require("preferences/PreferencesManager"),
+    var PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
         prefs = PreferencesManager.getExtensionPrefs("myext"),
         stateManager = PreferencesManager.stateManager.getPrefixedSystem("myext");
 ```
@@ -76,7 +76,7 @@ The simplest form returns the current value at the highest precedence:
 You can optionally pass a context object in as a second parameter to be more specific about what you care about. If, for example, you have a preference that only makes sense at the project level (like Live Preview preferences), you can do this:
 
 ```javascript
-    prefs.get("staticserver.port", preferencesManager.CURRENT_PROJECT);
+    prefs.get("staticserver.port", PreferencesManager.CURRENT_PROJECT);
 ```
 
 and the value will be looked up not for the current file (which could have come from outside of the project), but from the current project.
