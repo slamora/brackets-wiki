@@ -180,6 +180,9 @@ Here is a quick list of some of the settings you can change in these files:
 * **tabSize**: number of spaces to display for tabs
 * **spaceUnits**: number of spaces to use for space-based indentation
 * **wordWrap**: true if word wrap is on
+* (new in 37) **proxy**: (default `undefined`) The URL of the proxy server used for extension installation
+* (new in 37) **smartIndent**: (default `true`) Automatically indent when creating a new block
+* (new in 37) **closeTags**: (default `{ whenOpening: true, whenClosing: true, indentTags: [] }`) Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js)
 * (new in 37) **staticserver.port**: Port number that the built-in server should use for Live Preview
 
 Here's an example:
