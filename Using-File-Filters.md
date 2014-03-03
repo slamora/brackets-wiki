@@ -18,7 +18,7 @@ A simple string matches any item whose full path includes that substring:
 You can also use wildcards:
 
 * `node_*` matches `/code/node_modules/foo.js`, `/code/node_core/foo.js`, `/code/node_foo.txt`, etc.
-* `*.txt` matches `/code/readme.txt`, `/code/notes.txt2`, etc.<br>but does _not_ match `/code/module.txt/foo.js` (filter strings containing "." are treated as filenames, so they won't match folder names - see below)
+* `*.txt` matches `/code/readme.txt`, `/code/readme.js.txt`, etc.<br>but does _not_ match `/code/module.txt/foo.js` or `/code/notes.txt2` (filter strings containing "." are treated as filenames, so they won't match folder names or anything else with chars trailing the string you've entered - see below)
 * `/jquery*.js` matches `/code/jquery-2.1.0.js`, `/code/foo/jquery-1.7.min.js`, etc.
 * `jquery-1.?.js` matches `/code/jquery-1.6.js` but _not_ `/code/jquery-1.6.1.js`
 
@@ -28,16 +28,11 @@ A `*` matches _within_ a path segment (that is, it doesn't match "/" characters)
 
 (note that the "/"s surrounding a "**" can collapse, as in the first example above)
 
-## Advanced glob matching
+## Details
 
-Brackets uses the [minimatch library](https://github.com/isaacs/minimatch#usage), which supports additional advanced syntax. The filter strings you enter are converted to minimatch expressions using the following rules:
+To enable you to write simple filters that don't always include `**`s, Brackets automatically adds `**` using the following rules:
 
 * A `**` prefix is always added - unless the filter string already starts with `**`
 * A `**` suffix is added unless the filter string's last path segment contains a "." (suggesting it's a filename) - or unless the filter string already ends with `**`
 
-The following advanced syntax is supported:
-
-* `{foo,bar,baz}` matches any of the strings listed
-* `{1..10}` matches any number in the given range
-* `[xyz]` matches any of the single characters listed
-* Use backslash to escape '{' and '[' chars that you want to match normally
+After this conversion, the filter string must match the entire absolute path of a file for it to be filtered out.
