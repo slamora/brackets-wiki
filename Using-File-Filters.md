@@ -1,8 +1,7 @@
 By default, **Find in Files** searches all files in your project - the whole tree beneath the root folder that's open in Brackets. You can exclude files, file types, whole folders, or other patterns:
 
-1. Click the "No filter" dropdown
-2. Choose "Edit filter..."
-3. Enter one or more patterns to exclude
+1. Click the "Exclude files..." button
+2. Enter one or more patterns to exclude
 
 The more files you exclude from your search, the faster Find in Files will run.
 
