@@ -10,6 +10,7 @@ If you are trying to find out if something is a known issue, start by reading:
 List of issues reviewed so far in numerical order to make it easy to find issues. This list is probably no longer necessary after all open Live Preview issues have been reviewed because they will either be closed, consolidated, or added to Open Issues list below.
 - [5687](https://github.com/adobe/brackets/issues/5687)
 - [5975](https://github.com/adobe/brackets/issues/5975)
+- [6218](https://github.com/adobe/brackets/issues/6218)
 - [6363](https://github.com/adobe/brackets/issues/6363)
 - [6593](https://github.com/adobe/brackets/issues/6593)
 - [6689](https://github.com/adobe/brackets/issues/6689)
@@ -69,6 +70,7 @@ After all issues have been reviewed, then these will be assigned to existing or 
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35376748
 
 ####Need/waiting for more info:
+- https://github.com/adobe/brackets/issues/6218
 - https://github.com/adobe/brackets/issues/6593
 - https://github.com/adobe/brackets/issues/6689
 - https://github.com/adobe/brackets/issues/6830#issuecomment-34988684
