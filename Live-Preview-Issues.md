@@ -8,6 +8,7 @@ If you are trying to find out if something is a known issue, start by reading:
 
 ##Reviewed Issues
 List of issues reviewed so far in numerical order to make it easy to find issues. This list is probably no longer necessary after all open Live Preview issues have been reviewed because they will either be closed, consolidated, or added to Open Issues list below.
+- https://github.com/adobe/brackets/issues/4228
 - https://github.com/adobe/brackets/issues/4913
 - https://github.com/adobe/brackets/issues/5192
 - https://github.com/adobe/brackets/issues/5336
@@ -101,6 +102,9 @@ After all issues have been reviewed, then these will be assigned to existing or 
 ####Live Preview highlighting doesn't redraw after manual refresh
 (Fixed in master?)
 - https://github.com/adobe/brackets/issues/4913
+
+####Server denies connection
+- https://github.com/adobe/brackets/issues/4228#issuecomment-20099113
 
 ####Need/waiting for more info:
 - https://github.com/adobe/brackets/issues/6218
