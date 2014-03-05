@@ -11,6 +11,7 @@ List of issues reviewed so far in numerical order to make it easy to find issues
 - [5687](https://github.com/adobe/brackets/issues/5687)
 - [5975](https://github.com/adobe/brackets/issues/5975)
 - [6363](https://github.com/adobe/brackets/issues/6363)
+- [6593](https://github.com/adobe/brackets/issues/6593)
 - [6689](https://github.com/adobe/brackets/issues/6689)
 - [6785](https://github.com/adobe/brackets/issues/6785)
 - [6830](https://github.com/adobe/brackets/issues/6830)
@@ -68,12 +69,14 @@ After all issues have been reviewed, then these will be assigned to existing or 
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35376748
 
 ####Need/waiting for more info:
+- https://github.com/adobe/brackets/issues/6593
+- https://github.com/adobe/brackets/issues/6689
 - https://github.com/adobe/brackets/issues/6830#issuecomment-34988684
 - https://github.com/adobe/brackets/issues/6863
 - https://github.com/adobe/brackets/issues/6903
 - https://github.com/adobe/brackets/issues/6906
 - https://github.com/adobe/brackets/issues/6985
-- https://github.com/adobe/brackets/issues/6689
+
 
 ##Open Issues
 _TBD_
