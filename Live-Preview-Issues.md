@@ -92,36 +92,14 @@ After all issues have been reviewed, then these will be assigned to existing or 
 
 ##Open Issues
 
-####Live Preview status indicator never shows complete
-- https://github.com/adobe/brackets/issues/2154
-
-####Live Preview highlighting doesn't redraw after manual refresh
-- https://github.com/adobe/brackets/issues/4913 (Fixed in master?)
-
-####Live HTML highlighting is often in the wrong place with Reveal.js
-- https://github.com/adobe/brackets/issues/5192
-
-####Live Preview never updates after syncing external changes
-- https://github.com/adobe/brackets/issues/5336
-
-####Live Preview can never update when launched with syntax error
-- https://github.com/adobe/brackets/issues/5338
-
-####Live Preview not refreshed with embedded JS
-- https://github.com/adobe/brackets/issues/5656
-
-####Dirty dot appears when Live Preview starts with dirty file
-- https://github.com/adobe/brackets/issues/5663
-
-####Cancel button in Live Preview Connecting dialog doesn't work
-- https://github.com/adobe/brackets/issues/6043
-
-####Live HTML doesn't work when file outside project (Known Limitation)
-- https://github.com/adobe/brackets/issues/5975
-
-####Live Preview Closes when page is edited
-- https://github.com/adobe/brackets/issues/6912
-
-####"Unable to load Live Development page" after a few minutes of editing
-- https://github.com/adobe/brackets/issues/5687
-
+* **Live Preview status indicator never shows complete** [#2154](https://github.com/adobe/brackets/issues/2154)
+* **Live Preview highlighting doesn't redraw after manual refresh** [#4913](https://github.com/adobe/brackets/issues/4913) (Fixed in master?)
+* **Live HTML highlighting is often in the wrong place with Reveal.js** [#5192](https://github.com/adobe/brackets/issues/5192)
+* **Live Preview never updates after syncing external changes** [#5336](https://github.com/adobe/brackets/issues/5336)
+* **Live Preview can never update when launched with syntax error** [#5338](https://github.com/adobe/brackets/issues/5338)
+* **Live Preview not refreshed with embedded JS** [#5656](https://github.com/adobe/brackets/issues/5656)
+* **Dirty dot appears when Live Preview starts with dirty file** [#5663](https://github.com/adobe/brackets/issues/5663)
+* **Cancel button in Live Preview Connecting dialog doesn't work** [#6043](https://github.com/adobe/brackets/issues/6043)
+* **Live HTML doesn't work when file outside project** (Known Limitation) [#5975](https://github.com/adobe/brackets/issues/5975)
+* **Live Preview Closes when page is edited** [#6912](https://github.com/adobe/brackets/issues/6912)
+* **"Unable to load Live Development page" after a few minutes of editing** [#5687](https://github.com/adobe/brackets/issues/5687)
