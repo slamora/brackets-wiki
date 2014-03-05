@@ -55,7 +55,7 @@ Multiple cursors (contiguous) | Hold down Alt, then click and drag vertically | 
 Multiple cursors (discontiguous) | Click first cursor, then Cmd/Ctrl-click to set other cursors |
 Multiple selections (contiguous - rectangular) | Hold down Alt, then click and drag a rectangle | 
 Multiple selections (discontiguous) | Make first selection, then Cmd/Ctrl-click and drag to set other selections. You can also Cmd/Ctrl-Alt-drag to add rectangular selections. |
-Ctrl/Cmd-Alt-Up/Down (proposed) | Add Line to Selection - adds the line above or below as another selection | **Not working** - Sublime uses Ctrl-Shift-Up/Down on Mac, but that seems to conflict with some default OS X shortcuts
+Shift-Alt-Up/Down (proposed) | Add Line to Selection - adds the line above or below as another selection | **Not working** - Sublime uses Ctrl-Shift-Up/Down on Mac, but that seems to conflict with some default OS X shortcuts
 Ctrl/Cmd-Alt-L (proposed) | Split into Lines - takes a block of lines and splits it into individual selections, one per line | **Not working.** - Sublime's docs say it uses Cmd-Shift-L, but that seems to map to something else now.
 Ctrl/Cmd-B (proposed) | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection | **Not working** - seems popular. - **need to pick shortcut**; Sublime uses Cmd-D, which conflicts with our Duplicate
 Ctrl/Cmd-Shift-B (proposed) | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one | **Not working** - **need to pick shortcut**; Sublime uses Cmd-K, Cmd-D (sequence)
@@ -67,8 +67,8 @@ Status Bar | Show "n selections" when there are multiple selections |
 Arrow key (multiple cursors only) | Default |
 Arrow key (multiple selections) | Collapse selection in direction of arrow | Note: In the case of up/down arrow, Ace and Sublime also apply the navigation (even in the single selection case), whereas CM just collapses the selection. I think keeping the CM behavior is fine.
 Shift-arrow key | Default (extend each selection in direction of arrow; merge selections that collide) |
-Shift-Cmd-arrow key (Mac)/Shift-Alt-arrow key, Shift-Home/End (Win) | Default (extend each selection to end of its line) | Note: on Win, Sublime maps Alt-arrow to move by word, not end of line
-Shift-Alt-arrow key (Mac)/Shift-Ctrl-arrow key (Win) | Default (extend each selection by word; merge selections that collide) |
+Shift-Cmd-Right/Left (Mac)/Shift-Alt-Right/Left key, Shift-Home/End (Win) | Default (extend each selection to end of its line) | Note: on Win, Sublime maps Alt-arrow to move by word, not end of line
+Shift-Alt-Right/Left (Mac)/Shift-Ctrl-Right/Left (Win) | Default (extend each selection by word; merge selections that collide) |
 Page up/down | Do page up/down and collapse selection to single cursor | Note: on Win, CMv4 currently collapses selection only, but this is true for single select as well. This also happens in CMv3 -- introduced in Sprint 36. [See issue #6811](https://github.com/adobe/brackets/issues/6811).
 **Edits** | |
 Typing: multiple cursors/selections | Default (delete selection if any, then insert typed char) |
