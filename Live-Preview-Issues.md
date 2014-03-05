@@ -8,6 +8,7 @@ If you are trying to find out if something is a known issue, start by reading:
 
 ##Reviewed Issues
 List of issues reviewed so far in numerical order to make it easy to find issues. This list is probably no longer necessary after all open Live Preview issues have been reviewed because they will either be closed, consolidated, or added to Open Issues list below.
+- https://github.com/adobe/brackets/issues/5192
 - https://github.com/adobe/brackets/issues/5336
 - https://github.com/adobe/brackets/issues/5338
 - https://github.com/adobe/brackets/issues/5656
@@ -103,6 +104,8 @@ After all issues have been reviewed, then these will be assigned to existing or 
 - https://github.com/adobe/brackets/issues/6906
 - https://github.com/adobe/brackets/issues/6985
 
+####Live HTML highlighting is often in the wrong place with Reveal.js
+- https://github.com/adobe/brackets/issues/5192
 
 ##Open Issues
 _TBD_
