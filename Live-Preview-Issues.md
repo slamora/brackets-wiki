@@ -17,12 +17,13 @@ List of issues reviewed so far in numerical order to make it easy to find issues
 - [7061](https://github.com/adobe/brackets/issues/7061)
 
 ##General Categories of Issues
+
 After all issues have been reviewed, then these will be assigned to existing or new issue and added to Open Issues list
 
-"Unable to load Live Development page" after a few minutes of editing
+#"Unable to load Live Development page" after a few minutes of editing
 - https://github.com/adobe/brackets/issues/5687
 
-"Unable to load Live Development page" error shortly after starting Live Preview
+#"Unable to load Live Development page" error shortly after starting Live Preview
 (Fixed by #6889?)
 - https://github.com/adobe/brackets/issues/5687#issuecomment-27129056
 - https://github.com/adobe/brackets/issues/5687#issuecomment-36458179
