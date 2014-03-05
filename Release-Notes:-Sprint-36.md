@@ -64,6 +64,7 @@ Also, Node-side APIs can now send back binary data to Brackets by returning a `B
 
 Known Issues
 ------------
+* **Windows XP issues:** Unable to install extensions, run Live Preview, or detect external file changes instantly. [Bug 6951](https://github.com/adobe/brackets/issues/6951).
 * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not digitally signed yet. To work around this, right click the Brackets app and choose Open. You only need to do that once -- afterward, launching Brackets the normal way will work also.
 * [#2272](https://github.com/adobe/brackets/issues/2272): Windows Vista may not allow the Brackets installer to run (you may not see _any_ error message). To work around this, right-click the installer file, choose Properties, and click the Unblock button.
 * [#3207](https://github.com/adobe/brackets/issues/3207): If you use a Sprint 21 or earlier build after using this build at least once, a few preferences such as Recent Projects may get reset. (You can back up your [[cache folder]] if you're concerned about this).
