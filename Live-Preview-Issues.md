@@ -31,6 +31,7 @@ List of issues reviewed so far in numerical order to make it easy to find issues
 - https://github.com/adobe/brackets/issues/6912
 - https://github.com/adobe/brackets/issues/6985
 - https://github.com/adobe/brackets/issues/7061
+- https://github.com/adobe/brackets/issues/7062
 
 ##General Categories of Issues
 
@@ -77,6 +78,7 @@ After all issues have been reviewed, then these will be assigned to existing or 
 
 ####Installing Canary overwrites Windows Registry key used by Brackets
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35376748
+- https://github.com/adobe/brackets/issues/7062
 
 ####Cancel button in Live Preview Connecting dialog doesn't work
 - https://github.com/adobe/brackets/issues/6043
