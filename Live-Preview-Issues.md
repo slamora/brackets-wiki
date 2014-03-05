@@ -28,40 +28,40 @@ After all issues have been reviewed, then these will be assigned to existing or 
 - https://github.com/adobe/brackets/issues/5687#issuecomment-27129056
 - https://github.com/adobe/brackets/issues/5687#issuecomment-36458179
 
-"Unable to load Live Development page" when file outside project
+####"Unable to load Live Development page" when file outside project
 - https://github.com/adobe/brackets/issues/5687#issuecomment-30045238
 
-Live HTML doesn't work after Relaunch dialog
+####Live HTML doesn't work after Relaunch dialog
 (Fixed by #6889?)
 - https://github.com/adobe/brackets/issues/5687#issuecomment-34609738
 
-Google Analytics cause Live Preview to close
+####Google Analytics cause Live Preview to close
 - https://github.com/adobe/brackets/issues/5687#issuecomment-35354189
 
-Live Preview never connects
+####Live Preview never connects
 - https://github.com/adobe/brackets/issues/5687#issuecomment-35538437
 - https://github.com/adobe/brackets/issues/7061
 
-Live Preview doesn't work with Chrome version >= 34
+####Live Preview doesn't work with Chrome version >= 34
 - https://github.com/adobe/brackets/issues/5687#issuecomment-36522159
 - https://github.com/adobe/brackets/issues/6830
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35617618
 
-"No style sheet with given id found, code: -32000" error message
+####Live Preview Stops when page is edited
 - https://github.com/adobe/brackets/issues/6912
 
-Live HTML doesn't work when file outside project (Known Limitation)
+####Live HTML doesn't work when file outside project (Known Limitation)
 - https://github.com/adobe/brackets/issues/5975
 
-CSS doesn't udpate while typing
+####CSS doesn't update while typing
 - https://github.com/adobe/brackets/issues/6363
 - https://github.com/adobe/brackets/issues/6785
 - https://github.com/adobe/brackets/issues/6906
 
-Installing Canary overwrites Windows Regisrty key used by Brackets
+####Installing Canary overwrites Windows Regisrty key used by Brackets
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35376748
 
-Need/waiting for more info:
+####Need/waiting for more info:
 - https://github.com/adobe/brackets/issues/6830#issuecomment-34988684
 - https://github.com/adobe/brackets/issues/6863
 - https://github.com/adobe/brackets/issues/6903
@@ -70,3 +70,4 @@ Need/waiting for more info:
 
 
 ##Open Issues
+_TBD_
