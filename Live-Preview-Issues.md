@@ -8,32 +8,8 @@ If you are trying to find out if something is a known issue, start by reading:
 
 ##Reviewed Issues
 List of issues reviewed so far in numerical order to make it easy to find issues. This list is probably no longer necessary after all open Live Preview issues have been reviewed because they will either be closed, consolidated, or added to Open Issues list below.
-- https://github.com/adobe/brackets/issues/2154
-- https://github.com/adobe/brackets/issues/4228
-- https://github.com/adobe/brackets/issues/4913
-- https://github.com/adobe/brackets/issues/5110
-- https://github.com/adobe/brackets/issues/5192
-- https://github.com/adobe/brackets/issues/5336
-- https://github.com/adobe/brackets/issues/5338
-- https://github.com/adobe/brackets/issues/5656
-- https://github.com/adobe/brackets/issues/5663
-- https://github.com/adobe/brackets/issues/5687
-- https://github.com/adobe/brackets/issues/5756
-- https://github.com/adobe/brackets/issues/5975
-- https://github.com/adobe/brackets/issues/6043
-- https://github.com/adobe/brackets/issues/6218
-- https://github.com/adobe/brackets/issues/6363
-- https://github.com/adobe/brackets/issues/6593
-- https://github.com/adobe/brackets/issues/6689
-- https://github.com/adobe/brackets/issues/6785
-- https://github.com/adobe/brackets/issues/6830
-- https://github.com/adobe/brackets/issues/6863
-- https://github.com/adobe/brackets/issues/6903
-- https://github.com/adobe/brackets/issues/6906
-- https://github.com/adobe/brackets/issues/6912
-- https://github.com/adobe/brackets/issues/6985
-- https://github.com/adobe/brackets/issues/7061
-- https://github.com/adobe/brackets/issues/7062
+
+[2154](https://github.com/adobe/brackets/issues/2154), [4228](https://github.com/adobe/brackets/issues/4228), [4913](https://github.com/adobe/brackets/issues/4913), [5110](https://github.com/adobe/brackets/issues/5110), [5192](https://github.com/adobe/brackets/issues/5192), [5336](https://github.com/adobe/brackets/issues/5336), [5338](https://github.com/adobe/brackets/issues/5338), [5656](https://github.com/adobe/brackets/issues/5656), [5663](https://github.com/adobe/brackets/issues/5663), [5687](https://github.com/adobe/brackets/issues/5687), [5756](https://github.com/adobe/brackets/issues/5756), [5975](https://github.com/adobe/brackets/issues/5975), [6043](https://github.com/adobe/brackets/issues/6043), [6218](https://github.com/adobe/brackets/issues/6218), [6363](https://github.com/adobe/brackets/issues/6363), [6593](https://github.com/adobe/brackets/issues/6593), [6689](https://github.com/adobe/brackets/issues/6689), [6785](https://github.com/adobe/brackets/issues/6785), [6830](https://github.com/adobe/brackets/issues/6830), [6863](https://github.com/adobe/brackets/issues/6863), [6903](https://github.com/adobe/brackets/issues/6903), [6906](https://github.com/adobe/brackets/issues/6906), [6912](https://github.com/adobe/brackets/issues/6912), [6985](https://github.com/adobe/brackets/issues/6985), [7061](https://github.com/adobe/brackets/issues/7061), [7062](https://github.com/adobe/brackets/issues/7062)
 
 ##General Categories of Issues
 
