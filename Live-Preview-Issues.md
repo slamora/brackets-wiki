@@ -1,4 +1,4 @@
-We have quite a few Live Preview issues opened and it's not always easy to determine which ones are duplicates. To make matters more complicated, others jump in and say "Me too, I'm getting error [whatever]" which is often a different problem.
+We have quite a few Live Preview issues opened and it's not always easy to determine which ones are duplicates. To make matters more complicated, others jump in and say "Me too, I'm seeing [whatever]" which is often a totally different problem.
 
 This wiki page was started to help us manage the issues. When I say "us", I mean both the Brackets Team trying to prioritize and fix bugs, and anyone using Brackets trying to figure out if what they are seeing is a known or new issue (and where to find more info).
 
@@ -58,7 +58,7 @@ After all issues have been reviewed, then these will be assigned to existing or 
 - https://github.com/adobe/brackets/issues/6785
 - https://github.com/adobe/brackets/issues/6906
 
-####Installing Canary overwrites Windows Regisrty key used by Brackets
+####Installing Canary overwrites Windows Registry key used by Brackets
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35376748
 
 ####Need/waiting for more info:
