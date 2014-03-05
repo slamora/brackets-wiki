@@ -8,6 +8,7 @@ If you are trying to find out if something is a known issue, start by reading:
 
 ##Reviewed Issues
 List of issues reviewed so far in numerical order to make it easy to find issues. This list is probably no longer necessary after all open Live Preview issues have been reviewed because they will either be closed, consolidated, or added to Open Issues list below.
+- https://github.com/adobe/brackets/issues/5656
 - https://github.com/adobe/brackets/issues/5663
 - https://github.com/adobe/brackets/issues/5687
 - https://github.com/adobe/brackets/issues/5756
@@ -80,6 +81,9 @@ After all issues have been reviewed, then these will be assigned to existing or 
 
 ####Dirty dot appears when Live Preview starts with dirty file
 - https://github.com/adobe/brackets/issues/5663
+
+####Live Preview not refreshed with embedded JS
+- https://github.com/adobe/brackets/issues/5656
 
 ####Need/waiting for more info:
 - https://github.com/adobe/brackets/issues/6218
