@@ -43,6 +43,7 @@ After all issues have been reviewed, then these will be assigned to existing or 
 - https://github.com/adobe/brackets/issues/7061
 
 ####Live Preview doesn't work with Chrome version >= 34
+(Fixed in master?)
 - https://github.com/adobe/brackets/issues/5687#issuecomment-36522159
 - https://github.com/adobe/brackets/issues/6830
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35617618
