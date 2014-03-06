@@ -55,11 +55,11 @@ Multiple cursors (contiguous) | Hold down Alt, then click and drag vertically | 
 Multiple cursors (discontiguous) | Click first cursor, then Cmd/Ctrl-click to set other cursors |
 Multiple selections (contiguous - rectangular) | Hold down Alt, then click and drag a rectangle | 
 Multiple selections (discontiguous) | Make first selection, then Cmd/Ctrl-click and drag to set other selections. You can also Cmd/Ctrl-Alt-drag to add rectangular selections. |
-Shift-Alt-Up/Down (proposed) | Add Line to Selection - adds the line above or below as another selection | **Not working** - Sublime uses Ctrl-Shift-Up/Down on Mac, but that seems to conflict with some default OS X shortcuts
-Ctrl/Cmd-Alt-L (proposed) | Split into Lines - takes a block of lines and splits it into individual selections, one per line | **Not working.** - Sublime's docs say it uses Cmd-Shift-L, but that seems to map to something else now.
-Ctrl/Cmd-B (proposed) | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection | **Not working** - seems popular. - **need to pick shortcut**; Sublime uses Cmd-D, which conflicts with our Duplicate
-Ctrl/Cmd-Shift-B (proposed) | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one | **Not working** - **need to pick shortcut**; Sublime uses Cmd-K, Cmd-D (sequence)
-Alt-F3 / Cmd-Ctrl-G | Find All - selects current word, then adds selections for each match in the current document | **Not working**
+Shift-Alt-Up/Down (proposed) | Add Line to Selection - adds the line above or below as another selection | 
+Ctrl/Cmd-Alt-L (proposed) | Split into Lines - takes a block of lines and splits it into individual selections, one per line | 
+Ctrl/Cmd-B (proposed) | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection |
+Ctrl/Cmd-Shift-B (proposed) | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one |
+Alt-F3 / Cmd-Ctrl-G | Find All - selects current word, then adds selections for each match in the current document | 
 Ctrl/Cmd-U | Undo Selection - undoes the last selection change (for both single and multiple selections) |
 Esc | Switch to single selection | Note: Sublime collapses to the first selection, not the last (primary) one. Ace matches CM's behavior. We're going to stick with CM's behavior for now, but can revisit if we get enough user feedback.
 Status Bar | Show "n selections" when there are multiple selections |
@@ -90,7 +90,7 @@ Toggle Block Comment | Default |
 **Other gestures** | |
 Quick Edit/Quick Docs | Open on the primary selection. | Note that we were originally planning to open one inline editor on each selection, but it turned out to require API changes to Quick Edit and we didn't think it was worth doing right now.
 Find (what should be in the query field) | Contents of the last (primary) selection | Ace's behavior matches this. Note: Sublime doesn't copy the selection to the query string on Cmd-F, but it does do so on Cmd-E, and it uses the contents of the last selection.
-Find All | Add a button to the Find dialog that creates a multiple selection from all matches on the current query. | **Not working**
+Find All | Add a button to the Find dialog that creates a multiple selection from all matches on the current query. | **Not implemented for the initial story** - tracked on a [separate backlog item](https://trello.com/c/eZTEudAp)
 Find Next/Find Previous (where should they start from) | Start from the last (primary) selection | Ace's behavior matches this. Note: Sublime seems to start from the selection farthest along in the document, but it seems more consistent to start from the last selection made.
 Live Preview Highlight in HTML/CSS (do we highlight all selections?) | Default (highlight all items containing any selection) | 
 Highlight Active Line (for multiple cursors) | Default (highlight any line that contains a cursor) |
