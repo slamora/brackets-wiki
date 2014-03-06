@@ -1,57 +1,8 @@
-We have quite a few Live Preview issues opened and it's not always easy to determine which ones are duplicates. To make matters more complicated, others jump into existing conversations and say "Me too, I'm seeing [whatever]" which is often a totally different problem.
-
-This wiki page was started to help us manage the issues. When I say "us", I mean both the Brackets Team trying to prioritize and fix bugs, and anyone using Brackets trying to figure out if what they are seeing is a known or new issue (and where to find more info).
+We have quite a few Live Preview issues opened and it's not always easy find a known issue. This wiki page was started to help us manage the issues. When I say "us", I mean both the Brackets Team trying to prioritize and fix bugs, and anyone using Brackets trying to figure out if what they are seeing is a known or new issue (and where to find more info).
 
 If you are trying to find out if something is a known issue, start by reading:
 * [How to Use Brackets: Live Preview](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview)
 * [Troubleshooting: Live Preview](https://github.com/adobe/brackets/wiki/Troubleshooting#wiki--live-preview-isnt-working)
-
-##Reviewed Issues
-List of issues reviewed so far in numerical order to make it easy to find issues. This list is probably no longer necessary after all open Live Preview issues have been reviewed because they will either be closed, consolidated, or added to Open Issues list below.
-
-[2154](https://github.com/adobe/brackets/issues/2154),
-[4228](https://github.com/adobe/brackets/issues/4228),
-[4913](https://github.com/adobe/brackets/issues/4913),
-[5110](https://github.com/adobe/brackets/issues/5110),
-[5192](https://github.com/adobe/brackets/issues/5192),
-[5336](https://github.com/adobe/brackets/issues/5336),
-[5338](https://github.com/adobe/brackets/issues/5338),
-[5656](https://github.com/adobe/brackets/issues/5656),
-[5663](https://github.com/adobe/brackets/issues/5663),
-[5687](https://github.com/adobe/brackets/issues/5687),
-[5756](https://github.com/adobe/brackets/issues/5756),
-[5975](https://github.com/adobe/brackets/issues/5975),
-[6043](https://github.com/adobe/brackets/issues/6043),
-[6218](https://github.com/adobe/brackets/issues/6218),
-[6363](https://github.com/adobe/brackets/issues/6363),
-[6593](https://github.com/adobe/brackets/issues/6593),
-[6689](https://github.com/adobe/brackets/issues/6689),
-[6785](https://github.com/adobe/brackets/issues/6785),
-[6830](https://github.com/adobe/brackets/issues/6830),
-[6863](https://github.com/adobe/brackets/issues/6863),
-[6903](https://github.com/adobe/brackets/issues/6903),
-[6906](https://github.com/adobe/brackets/issues/6906),
-[6912](https://github.com/adobe/brackets/issues/6912),
-[6985](https://github.com/adobe/brackets/issues/6985),
-[7061](https://github.com/adobe/brackets/issues/7061),
-[7062](https://github.com/adobe/brackets/issues/7062)
-
-##General Categories of Issues
-
-After all issues have been reviewed, then these will be assigned to existing or new issue and added to Open Issues list
-
-####Server denies connection
-- https://github.com/adobe/brackets/issues/4228#issuecomment-20099113
-
-####Need/waiting for more info:
-- https://github.com/adobe/brackets/issues/6218
-- https://github.com/adobe/brackets/issues/6593
-- https://github.com/adobe/brackets/issues/6689
-- https://github.com/adobe/brackets/issues/6830#issuecomment-34988684
-- https://github.com/adobe/brackets/issues/6863
-- https://github.com/adobe/brackets/issues/6903
-- https://github.com/adobe/brackets/issues/6906
-- https://github.com/adobe/brackets/issues/6985
 
 ##Open Issues
 
@@ -75,4 +26,18 @@ After all issues have been reviewed, then these will be assigned to existing or 
 * **"Unable to load Live Development page" error shortly after starting Live Preview** [#7097](https://github.com/adobe/brackets/issues/7097)
 * **[Live Preview] LiveDevelopment._onInterstitalPageLoad(): No server active** (Fixed by #6889) [#7098](https://github.com/adobe/brackets/issues/7098)
 * **Google Analytics causes Live Preview to close** [#7099](https://github.com/adobe/brackets/issues/7099)
+* **[Live Preview] Server denies connection [#7101](https://github.com/adobe/brackets/issues/7101)
+
+##Need more info:
+
+We have asked bug filer for more info on these and are waiting to hear back.
+
+- https://github.com/adobe/brackets/issues/4228
+- https://github.com/adobe/brackets/issues/6218
+- https://github.com/adobe/brackets/issues/6593
+- https://github.com/adobe/brackets/issues/6689
+- https://github.com/adobe/brackets/issues/6863
+- https://github.com/adobe/brackets/issues/6903
+- https://github.com/adobe/brackets/issues/6906
+- https://github.com/adobe/brackets/issues/6985
 
