@@ -26,7 +26,7 @@ If you are trying to find out if something is a known issue, start by reading:
 * **"Unable to load Live Development page" error shortly after starting Live Preview** [#7097](https://github.com/adobe/brackets/issues/7097)
 * **[Live Preview] LiveDevelopment._onInterstitalPageLoad(): No server active** (Fixed by #6889) [#7098](https://github.com/adobe/brackets/issues/7098)
 * **Google Analytics causes Live Preview to close** [#7099](https://github.com/adobe/brackets/issues/7099)
-* **[Live Preview] Server denies connection [#7101](https://github.com/adobe/brackets/issues/7101)
+* **[Live Preview] Server denies connection** [#7101](https://github.com/adobe/brackets/issues/7101)
 
 ##Need more info:
 
