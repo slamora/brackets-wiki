@@ -40,11 +40,6 @@ List of issues reviewed so far in numerical order to make it easy to find issues
 
 After all issues have been reviewed, then these will be assigned to existing or new issue and added to Open Issues list
 
-####"Unable to load Live Development page" error shortly after starting Live Preview
-(Fixed by #6889?)
-- https://github.com/adobe/brackets/issues/5687#issuecomment-27129056
-- https://github.com/adobe/brackets/issues/5687#issuecomment-36458179
-
 ####"Unable to load Live Development page" when file outside project
 - https://github.com/adobe/brackets/issues/5687#issuecomment-30045238
 
@@ -90,4 +85,5 @@ After all issues have been reviewed, then these will be assigned to existing or 
 * **Live Preview doesn't work with Chrome version >= 34** (Fixed in master) [#6830](https://github.com/adobe/brackets/issues/6830)
 * **Live Preview Closes when page is edited** [#6912](https://github.com/adobe/brackets/issues/6912)
 * **Live Preview never opens** [#7061](https://github.com/adobe/brackets/issues/7061)
+* **"Unable to load Live Development page" error shortly after starting Live Preview** [#7097](https://github.com/adobe/brackets/issues/7097)
 
