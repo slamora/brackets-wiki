@@ -65,11 +65,6 @@ After all issues have been reviewed, then these will be assigned to existing or 
 - https://github.com/adobe/brackets/issues/6830
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35617618
 
-####CSS doesn't update while typing
-- https://github.com/adobe/brackets/issues/6363
-- https://github.com/adobe/brackets/issues/6785
-- https://github.com/adobe/brackets/issues/6906
-
 ####Installing Canary overwrites Windows Registry key used by Brackets
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35376748
 - https://github.com/adobe/brackets/issues/7062
@@ -100,4 +95,7 @@ After all issues have been reviewed, then these will be assigned to existing or 
 * **"Unable to load Live Development page" after a few minutes of editing** [#5687](https://github.com/adobe/brackets/issues/5687)
 * **Live HTML doesn't work when file outside project** (Known Limitation) [#5975](https://github.com/adobe/brackets/issues/5975)
 * **Cancel button in Live Preview Connecting dialog doesn't work** [#6043](https://github.com/adobe/brackets/issues/6043)
+* **CSS doesn't update while typing** [#6363](https://github.com/adobe/brackets/issues/6363)
+* **CSS doesn't update while using Quick Edit** [#6785](https://github.com/adobe/brackets/issues/6785)
 * **Live Preview Closes when page is edited** [#6912](https://github.com/adobe/brackets/issues/6912)
+
