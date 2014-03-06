@@ -49,10 +49,6 @@ After all issues have been reviewed, then these will be assigned to existing or 
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35376748
 - https://github.com/adobe/brackets/issues/7062
 
-####Quickly changing selected file in Brackets breaks Live Preview
-- https://github.com/adobe/brackets/issues/5110
-- https://github.com/adobe/brackets/issues/5756
-
 ####Server denies connection
 - https://github.com/adobe/brackets/issues/4228#issuecomment-20099113
 
@@ -70,6 +66,7 @@ After all issues have been reviewed, then these will be assigned to existing or 
 
 * **Live Preview status indicator never shows complete** [#2154](https://github.com/adobe/brackets/issues/2154)
 * **Live Preview highlighting doesn't redraw after manual refresh** [#4913](https://github.com/adobe/brackets/issues/4913) (Fixed in master?)
+* **Quickly changing selected file in Brackets breaks Live Preview** [#5110](https://github.com/adobe/brackets/issues/5110)
 * **Live HTML highlighting is often in the wrong place with Reveal.js** [#5192](https://github.com/adobe/brackets/issues/5192)
 * **Live Preview never updates after syncing external changes** [#5336](https://github.com/adobe/brackets/issues/5336)
 * **Live Preview can never update when launched with syntax error** [#5338](https://github.com/adobe/brackets/issues/5338)
