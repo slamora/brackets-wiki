@@ -88,7 +88,6 @@ After all issues have been reviewed, then these will be assigned to existing or 
 * **CSS doesn't update while typing** [#6363](https://github.com/adobe/brackets/issues/6363)
 * **CSS doesn't update while using Quick Edit** [#6785](https://github.com/adobe/brackets/issues/6785)
 * **Live Preview doesn't work with Chrome version >= 34** (Fixed in master) [#6830](https://github.com/adobe/brackets/issues/6830)
-
 * **Live Preview Closes when page is edited** [#6912](https://github.com/adobe/brackets/issues/6912)
 * **Live Preview never opens** [#7061](https://github.com/adobe/brackets/issues/7061)
 
