@@ -6,8 +6,6 @@ If you are trying to find out if something is a known issue, start by reading:
 
 ##Open Issues
 
-A **live preview** label was added to github, so you can now see all issues listed [here](https://github.com/adobe/brackets/issues?labels=live+preview&page=1&state=open).
-
 * **Live Preview status indicator never shows complete** [#2154](https://github.com/adobe/brackets/issues/2154)
 * **Live Preview highlighting doesn't redraw after manual refresh** [#4913](https://github.com/adobe/brackets/issues/4913) (Fixed in master?)
 * **Quickly changing selected file in Brackets breaks Live Preview** [#5110](https://github.com/adobe/brackets/issues/5110)
