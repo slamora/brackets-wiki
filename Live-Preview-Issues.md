@@ -24,7 +24,7 @@ If you are trying to find out if something is a known issue, start by reading:
 * **Live Preview never opens** [#7061](https://github.com/adobe/brackets/issues/7061)
 * **Installing Canary overwrites Windows Registry key used by Brackets** [#7062](https://github.com/adobe/brackets/issues/7062)
 * **"Unable to load Live Development page" error shortly after starting Live Preview** [#7097](https://github.com/adobe/brackets/issues/7097) (Fixed by [#6889](https://github.com/adobe/brackets/issues/6889))
-* **[Live Preview] LiveDevelopment._onInterstitalPageLoad(): No server active** [#7098](https://github.com/adobe/brackets/issues/7098) (Fixed by [#6889](https://github.com/adobe/brackets/issues/6889))
+* **LiveDevelopment._onInterstitalPageLoad(): No server active** [#7098](https://github.com/adobe/brackets/issues/7098) (Fixed by [#6889](https://github.com/adobe/brackets/issues/6889))
 * **Google Analytics causes Live Preview to close** [#7099](https://github.com/adobe/brackets/issues/7099)
 * **[Live Preview] Server denies connection** [#7101](https://github.com/adobe/brackets/issues/7101)
 
