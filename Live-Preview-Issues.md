@@ -40,10 +40,6 @@ List of issues reviewed so far in numerical order to make it easy to find issues
 
 After all issues have been reviewed, then these will be assigned to existing or new issue and added to Open Issues list
 
-####Live HTML doesn't work after Relaunch dialog
-(Fixed by #6889?)
-- https://github.com/adobe/brackets/issues/5687#issuecomment-34609738
-
 ####Google Analytics cause Live Preview to close
 - https://github.com/adobe/brackets/issues/5687#issuecomment-35354189
 
@@ -83,4 +79,6 @@ After all issues have been reviewed, then these will be assigned to existing or 
 * **Live Preview Closes when page is edited** [#6912](https://github.com/adobe/brackets/issues/6912)
 * **Live Preview never opens** [#7061](https://github.com/adobe/brackets/issues/7061)
 * **"Unable to load Live Development page" error shortly after starting Live Preview** [#7097](https://github.com/adobe/brackets/issues/7097)
+* **[Live Preview] LiveDevelopment._onInterstitalPageLoad(): No server active** (Fixed by #6889) [#7098](https://github.com/adobe/brackets/issues/7098)
+
 
