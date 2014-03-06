@@ -40,9 +40,6 @@ List of issues reviewed so far in numerical order to make it easy to find issues
 
 After all issues have been reviewed, then these will be assigned to existing or new issue and added to Open Issues list
 
-####Google Analytics cause Live Preview to close
-- https://github.com/adobe/brackets/issues/5687#issuecomment-35354189
-
 ####Installing Canary overwrites Windows Registry key used by Brackets
 - https://github.com/adobe/brackets/issues/6830#issuecomment-35376748
 - https://github.com/adobe/brackets/issues/7062
@@ -80,5 +77,5 @@ After all issues have been reviewed, then these will be assigned to existing or 
 * **Live Preview never opens** [#7061](https://github.com/adobe/brackets/issues/7061)
 * **"Unable to load Live Development page" error shortly after starting Live Preview** [#7097](https://github.com/adobe/brackets/issues/7097)
 * **[Live Preview] LiveDevelopment._onInterstitalPageLoad(): No server active** (Fixed by #6889) [#7098](https://github.com/adobe/brackets/issues/7098)
-
+* **Google Analytics causes Live Preview to close** [#7099](https://github.com/adobe/brackets/issues/7099)
 
