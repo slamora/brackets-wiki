@@ -40,9 +40,6 @@ List of issues reviewed so far in numerical order to make it easy to find issues
 
 After all issues have been reviewed, then these will be assigned to existing or new issue and added to Open Issues list
 
-####"Unable to load Live Development page" when file outside project
-- https://github.com/adobe/brackets/issues/5687#issuecomment-30045238
-
 ####Live HTML doesn't work after Relaunch dialog
 (Fixed by #6889?)
 - https://github.com/adobe/brackets/issues/5687#issuecomment-34609738
