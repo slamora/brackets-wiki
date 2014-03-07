@@ -35,7 +35,7 @@ Method | New Behavior
 `setCursorPos()` | No new behavior - always removes the current selection and replaces it with a new single cursor.
 `getSelection()` | When multiple selections are active, returns only the **primary** selection. **Note:** this is different from CodeMirror's `getSelection()`, which is equivalent to our `getSelectedText()`.
 `getSelections()` | **New method.** Returns an array of all active selections. In general, you should use this instead of `getSelection()`.
-`getSelectedText()` | When multiple selections are active, returns the contents of all selections joined by newlines.
+`getSelectedText()` | By default, returns only the contents of the primary selection. Has a new parameter, `allSelections`, which if true will return the concatenated contents of all selections.
 `setSelection()` | No new behavior - always removes the current selection and replaces it with a new single selection.
 `setSelections()` | **New method.** Like `setSelection()`, but takes an array of selections instead of a single start/end, and allows specifying one of the selections as primary (defaulting to the last one). If `center` is specified, centers on the primary selection.
 `centerOnCursor()` | When multiple selections are active, centers on the primary selection.
