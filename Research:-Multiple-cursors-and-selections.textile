@@ -76,7 +76,8 @@ Typing: combination of cursors and selections | Default |
 Delete: multiple cursors | Default (delete char before each cursor) | Edge cases occur when deletions can cause cursors to collide. Should test to make sure there's no bad behavior.
 Delete: multiple selections | Default (delete content and collapse each selection to cursor) | Edge cases occur when deletions can cause cursors to collide. Should test to make sure there's no bad behavior.
 Delete: combination of cursors and selections | Only delete selections - no operation on cursors. |
-Tab/Shift-Tab | Default | Note that Sublime doesn't do "smart indent" as we do.
+Tab | See description in [#7022](https://github.com/adobe/brackets/issues/7022) | 
+Shift-Tab | Default (unindent all lines) |
 Indent/Unindent | Default |
 Copy | Concatenate each selection, separated by newlines, and copy to clipboard. Cursors count as empty selections, so add an extra newline. | This is the current cmv4 behavior. Sublime ignores cursors in this case (extra newlines are not generated). Ace's behavior is like CM's.
 Cut | Like copy, but delete afterwards. | Note that in Sublime, if there are cursors in the selection, the lines containing those cursors are deleted, because that's the behavior in the single selection case. Brackets doesn't do that, so it makes sense to stay consistent with ourselves. Ace's behavior is like CM's.
