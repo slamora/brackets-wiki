@@ -54,7 +54,7 @@ For more in-depth instructions see ["Getting a Copy of the Code" below](#wiki-ge
 2. Make sure submodules are up to date: `git submodule sync` and `git submodule update --init`
 3. Create a feature/bugfix branch: `git checkout -b <branchname>`
 4. Hack!
-5. Commit your changes: `git commit -am"Your commit message here"`
+5. Commit your changes: `git commit -am "Your commit message here"`
 6. Run unit tests
 
 ### Submit pull request ###
