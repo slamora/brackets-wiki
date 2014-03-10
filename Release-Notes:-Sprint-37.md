@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 37 -- approximately February 27._
+_This document will not be finalized until the end of Sprint 37 -- approximately March 13._
 
 What's New in Release #37
 -----------------------
