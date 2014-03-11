@@ -55,10 +55,10 @@ Multiple cursors (contiguous) | Hold down Alt, then click and drag vertically | 
 Multiple cursors (discontiguous) | Click first cursor, then Cmd/Ctrl-click to set other cursors |
 Multiple selections (contiguous - rectangular) | Hold down Alt, then click and drag a rectangle | 
 Multiple selections (discontiguous) | Make first selection, then Cmd/Ctrl-click and drag to set other selections. You can also Cmd/Ctrl-Alt-drag to add rectangular selections. |
-Shift-Alt-Up/Down (proposed) | Add Line to Selection - adds the line above or below as another selection | 
-Ctrl/Cmd-Alt-L (proposed) | Split into Lines - takes a block of lines and splits it into individual selections, one per line | 
-Ctrl/Cmd-B (proposed) | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection |
-Ctrl/Cmd-Shift-B (proposed) | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one |
+Shift-Alt-Up/Down | Add Line to Selection - adds the line above or below as another selection | 
+Ctrl/Cmd-Alt-L | Split into Lines - takes a block of lines and splits it into individual selections, one per line | 
+Ctrl/Cmd-B | Quick Add Next - if word not selected, expands selection to word; if word selected, adds next occurrence of word as another selection |
+Ctrl/Cmd-Shift-B | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one |
 Alt-F3 / Cmd-Ctrl-G | Find All - selects current word, then adds selections for each match in the current document | 
 Ctrl/Cmd-U | Undo Selection - undoes the last selection change (for both single and multiple selections) |
 Ctrl/Cmd-Shift-U | Redo Selection |
