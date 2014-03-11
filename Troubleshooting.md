@@ -110,14 +110,17 @@ On Windows, you may run into issues starting Live Preview if you installed Chrom
 ## Brackets is Running Slow
 This section discusses some of the features that can affect performance and possible solutions.
 
-### Highlight Active Line
-This feature can negatively impact scrolling performance, so try turning it off with: View > Highlight Active Line
+### Activity Monitor
+On Mac OS 10.9 (Mavericks), Activity Monitor will say the Brackets Helper process is "Not Responding" even when it is working normally ([bug #5794](https://github.com/adobe/brackets/issues/5794)). You can safely ignore this unless Brackets is actually failing to respond when you click or type text.
 
 ### Extensions
 Most Brackets extensions don't impact performance, but some may slow down Brackets (for example Show Whitespace can cause slow typing performance). Try [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly check if the problem is being caused by an extension.
 
 ### File Searching
 Using "Find in Files" and "JS Code Hinting" can be slow because of the number of files that are searched. You can try installing the [experimental Exclude Folders extension](https://github.com/gruehle/exclude-folders) to limit the number of folders that are searched.
+
+### Highlight Active Line
+This feature can negatively impact scrolling performance, so try turning it off with: View > Highlight Active Line
 
 ### JavaScript Code Hinting
 Collecting the information required to build the JS code hint lists can slow down Brackets. Start by reading the [Configuration section of the JavaScript Code Hints guide](https://github.com/adobe/brackets/wiki/JavaScript-Code-Hints#configuration).
