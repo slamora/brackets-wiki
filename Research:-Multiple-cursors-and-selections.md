@@ -61,6 +61,7 @@ Ctrl/Cmd-B (proposed) | Quick Add Next - if word not selected, expands selection
 Ctrl/Cmd-Shift-B (proposed) | Skip Next Match - removes the last "Quick Add Next" match from the selection and adds the next one |
 Alt-F3 / Cmd-Ctrl-G | Find All - selects current word, then adds selections for each match in the current document | 
 Ctrl/Cmd-U | Undo Selection - undoes the last selection change (for both single and multiple selections) |
+Ctrl/Cmd-Shift-U | Redo Selection |
 Esc | Switch to single selection | Note: Sublime collapses to the first selection, not the last (primary) one. Ace matches CM's behavior. We're going to stick with CM's behavior for now, but can revisit if we get enough user feedback.
 Status Bar | Show "n selections" when there are multiple selections |
 **Cursor navigation** | |
