@@ -72,8 +72,12 @@ You can use `File > Open` to open any file on your computer, but Brackets' defin
 ### Disable Extensions
 The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
 
-### HTML Page is not Updating as you Type
-Brackets pauses updating when it detects an HTML Syntax Error. It should color the line number in red (but this can be scrolled out of view) so scroll through entire page to verify that no line numbers are colored red. Also, the Live Preview lightning bolt icon should be colored red, but there's a known bug being tracked as [issue #7126](https://github.com/adobe/brackets/issues/7126) where this sometimes doesn't happen. See [issue #7126](https://github.com/adobe/brackets/issues/7126) for an illustrated description.
+### HTML Page is not Updating in Browser as you Type
+Brackets pauses sending updates to browser when it detects an HTML Syntax Error. In this case, it should color the line number in red (but this can be scrolled out of view) so scroll through entire page to verify that there are no highlighted line numbers.
+
+The Live Preview lightning bolt icon should be also colored red and have a tooltip of "Live Preview (not updating due to syntax error)" in this case, but there's a known bug being tracked as [issue #7126](https://github.com/adobe/brackets/issues/7126) where this sometimes doesn't happen. See [issue #7126](https://github.com/adobe/brackets/issues/7126) for an illustrated description including the line number and icon coloring.
+
+There is [an issue](https://github.com/adobe/brackets/issues/5338) regarding "Live Preview can never update if initially launched with syntax error", so after fixing a syntax error, try stopping and restarting Live Preview.
 
 ### Using a Local Server
 To use a local server, you need to specify a Base URL in the `File > Project Settings...` dialog (see [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview) for details).
