@@ -39,18 +39,18 @@ There are four options considered here, summarized in the table below. Detailed 
 
 | Option | Effort | User setup required | Robust? | CSS Quick Edit | Quick Find Definition | Live Preview | Live Preview Highlight | Extends to Sass/SCSS? | Notes |
 | ------ | ------ | ------------------- | ------- | -------------- | --------------------- | ------------ | ---------------------- | --------------------- | ----- |
-| 1 - Simple nested selector parsing | Low | No | Medium | Yes | Yes | **No** | Yes | Yes (SCSS); Sass would be nontrivial work | |
-| 2 - Run LESS compiler (no source maps) | Medium | **Some?** | High | **No** | **No** | Yes | **No** | Would require libsass/ruby for SCSS | Would likely combine this with (1) |
-| 3 - Run LESS compiler with source maps | Medium-High | **Some?** | High | Yes | Yes | Yes | Yes | Would require libsass/ruby for SCSS | Likely slower than option (2), but would be guaranteed to give correct results. |
-| 4 - Use user's own autocompile process | Low-Medium | No | High | **No** | **No** | Yes | **No** | Yes | Would likely combine this with (1). |
+| (1) Simple nested selector parsing | Low | No | Medium | Yes | Yes | **No** | Yes | Yes (SCSS); Sass would be nontrivial work | |
+| (2) Run LESS compiler (no source maps) | Medium | **Some?** | High | **No** | **No** | Yes | **No** | Would require libsass/ruby for SCSS | Would likely combine this with (1) |
+| (3) Run LESS compiler with source maps | Medium-High | **Some?** | High | Yes | Yes | Yes | Yes | Would require libsass/ruby for SCSS | Likely slower than option (2), but would be guaranteed to give correct results. |
+| (4) Use user's own autocompile process | Low-Medium | No | High | **No** | **No** | Yes | **No** | Yes | Would likely combine this with (1). |
 
-### 1 - Simple nested selector parsing
+### (1) Simple nested selector parsing
 
 This would be a simple extension of the existing CSSUtils parsing code to find nested selectors and determine how to combine them with parent selectors. The effort should be fairly small, and should generalize easily to SCSS (but not Sass, which would require us to parse using CodeMirror's Sass mode). However, it wouldn't necessarily be robust, because we wouldn't be relying on the real LESS parser.
 
 This might be a good first thing to implement, since it gives us everything but Live Preview.
 
-### 2 - Run LESS compiler (no source maps)
+### (2) Run LESS compiler (no source maps)
 
 In this option, we would run the LESS compiler (either within Brackets or in Node) to generate the compiled CSS stylesheet (either in memory or in a temporary location on disk), then load the recompiled stylesheet in the browser in place of the previous version. This would require us to match up source LESS files with their generated stylesheets so that we can find the appropriate style tag in the browser and replace it. If the user is directly including the LESS file in HTML, we might be able to do this automatically, but if not, we might need to guess the mapping based on filename, or let the user configure it somehow.
 
@@ -60,7 +60,7 @@ We would need to do some work to determine the performance hit of regenerating t
 
 Extending this to Sass/SCSS would require us to ship Ruby/Sass or libsass (which would only give us SCSS).
 
-### 3 - Run LESS compiler with source maps
+### (3) Run LESS compiler with source maps
 
 This is like option (2), but by adding source maps to the mix, we could scan the resulting CSS stylesheet for final-form selectors, and then map them back to their locations in the original LESS file in order to support Quick Edit, etc.
 
@@ -70,7 +70,7 @@ The performance implications for Live Preview are similar to (2). Also, similar 
 
 Implementation cost is a bit more than (2) since we have to deal with the source maps, but Jason has already done some prototyping around this.
 
-### 4 - Use user's own autocompile process
+### (4) Use user's own autocompile process
 
 This is similar to (2), but rather than us running the compilation ourselves, we could rely on the user's own existing compilation setup, assuming that the user has an automatic compilation workflow (e.g. via a watch process). In this world, we would basically just watch for changes to the compiled version of the file, and then reload it in the browser when we detect the change.
 
