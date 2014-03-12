@@ -41,7 +41,7 @@ Method | New Behavior
 `centerOnCursor()` | When multiple selections are active, centers on the primary selection.
 `getModeForSelection()`<br>`getLanguageForSelection()` | If the beginning/end of each selection has the same mode/language, returns that, otherwise null.
 `convertToLineSelections()` | **New method.** Helper function for line-oriented operations that expands all selections within a multiple selection to encompass whole line ranges. If several of the selections would contribute to overlapping line selections, they will be merged into a single range, but the original selections are mapped to the resulting line range so they can be properly tracked through edits.
-`doMultipleEdits()` | **New method.** Helper function that makes it easier to implement edits that iterate over multiple selections, by making it so you can treat each edit in isolation rather than having to worry about position changes due to other edits.
+`Document.doMultipleEdits()` | **New method.** Helper function that makes it easier to implement edits that iterate over multiple selections, by making it so you can treat each edit in isolation rather than having to worry about position changes due to other edits.
 
 
 ## Specific behaviors
