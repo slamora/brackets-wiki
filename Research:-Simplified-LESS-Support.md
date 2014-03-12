@@ -24,7 +24,7 @@ Note that the following features already work with LESS (as well as SCSS - **TOD
 * LESS code coloring
 * Color Quick Edit in LESS files
 * Quick View for colors/images in LESS files
-* Timing Curve Quick Edit - **TODO** this might already work, or if not, should be easy to make it work
+* Timing Curve Quick Edit
 
 ### Summary of options
 
