@@ -33,7 +33,7 @@ Roughly speaking, there are two groups of functionality:
 * CSS Quick Edit, Quick Find Definition, Live Preview Highlight
     * These rely on the ability to determine where selectors are in the source file and what their final form will be in the generated CSS. In the case of LESS and Sass/SCSS, this means finding nested selectors and determining how they combine to form a final CSS selector.
 * Live Preview
-    * This relies on the ability to recompile the source LESS/Sass/SCSS file into its final CSS form and have the new version of the file be reloaded in the browser in place of the previous compiled version.
+    * This relies on the ability to recompile the source LESS/Sass/SCSS file into its final CSS stylesheet form and have the new compiled version of the stylesheet be hot-reloaded in the browser in place of the previous compiled stylesheet.
 
 There are four options considered here, summarized in the table below. Detailed descriptions of each option follow the table. Note that these are not necessarily mutually exclusive - for example, we could combine option 1 with options 2 or 4 in order to provide a complete solution.
 
