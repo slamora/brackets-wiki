@@ -30,8 +30,8 @@ Note that the following features already work with LESS (as well as SCSS - **TOD
 
 There are four options considered here, summarized in the table below. Detailed descriptions of each option follow the table. Note that these options are not all mutually exclusive - we could choose to do more than one eventually.
 
-| Option | Implementation cost | User setup required | Robustness | CSS Quick Edit | Quick Find Definition | Live Preview | Live Preview Highlight | Extends to Sass/SCSS? | Notes |
-| ------ | ------------------- | ------------------- | ---------- | -------------- | --------------------- | ------------ | ---------------------- | ---------- | ----------------- | ----- |
+| Option | Effort | User setup required | Robust? | CSS Quick Edit | Quick Find Definition | Live Preview | Live Preview Highlight | Extends to Sass/SCSS? | Notes |
+| ------ | ------ | ------------------- | ------- | -------------- | --------------------- | ------------ | ---------------------- | --------------------- | ----- |
 | 1 - Simple nested selector parsing | Low | No | Medium | Yes | Yes | **No** | Yes | Yes (SCSS); Sass would be nontrivial work | |
 | 2 - Nested selector parsing + Run LESS compiler (no source maps) | Medium | No | Medium-High | Yes | Yes | Yes | Yes | Would require libsass/ruby for live preview | Note that this is basically an extension of (1). |
 | 3 - Run LESS compiler with source maps | Medium-High | No | High | Yes | Yes | Yes | Yes | Would require libsass/ruby for live preview | Might be less performant than option (2), but would be guaranteed to give correct results. |
