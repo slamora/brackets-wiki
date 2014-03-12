@@ -28,20 +28,27 @@ Note that the following features already work with LESS (as well as SCSS - **TOD
 
 ### Summary of options
 
-There are four options considered here, summarized in the table below. Detailed descriptions of each option follow the table. Note that these options are not all mutually exclusive - we could choose to do more than one eventually.
+Roughly speaking, there are two groups of functionality:
+
+* CSS Quick Edit, Quick Find Definition, Live Preview Highlight
+    * These rely on the ability to determine where selectors are in the source file and what their final form will be in the generated CSS. In the case of LESS and Sass/SCSS, this means finding nested selectors and determining how they combine to form a final CSS selector.
+* Live Preview
+    * This relies on the ability to recompile the source LESS/Sass/SCSS file into its final CSS form and have the new version of the file be reloaded in the browser in place of the previous compiled version.
+
+There are four options considered here, summarized in the table below. Detailed descriptions of each option follow the table. Note that these are not necessarily mutually exclusive - for example, we could combine option 1 with options 2 or 4 in order to provide a complete solution.
 
 | Option | Effort | User setup required | Robust? | CSS Quick Edit | Quick Find Definition | Live Preview | Live Preview Highlight | Extends to Sass/SCSS? | Notes |
 | ------ | ------ | ------------------- | ------- | -------------- | --------------------- | ------------ | ---------------------- | --------------------- | ----- |
 | 1 - Simple nested selector parsing | Low | No | Medium | Yes | Yes | **No** | Yes | Yes (SCSS); Sass would be nontrivial work | |
-| 2 - Nested selector parsing + Run LESS compiler (no source maps) | Medium | No | Medium-High | Yes | Yes | Yes | Yes | Would require libsass/ruby for live preview | Note that this is basically an extension of (1). |
-| 3 - Run LESS compiler with source maps | Medium-High | No | High | Yes | Yes | Yes | Yes | Would require libsass/ruby for live preview | Might be less performant than option (2), but would be guaranteed to give correct results. |
-| 4 - Use user's own autocompile process | Low-Medium | **Yes** | High | **No** | **No** | Yes | **No** | Yes | This would need to be combined with one of the other options to get features other than live preview. However, we might want to provide it anyway even if we do (2) or (3). |
+| 2 - Run LESS compiler (no source maps) | Medium | No | Medium-High | **No** | **No** | Yes | **No** | Would require libsass/ruby for SCSS | Would likely combine this with (1) |
+| 3 - Run LESS compiler with source maps | Medium-High | No | High | Yes | Yes | Yes | Yes | Would require libsass/ruby for SCSS | Likely slower than option (2), but would be guaranteed to give correct results. |
+| 4 - Use user's own autocompile process | Low-Medium | **Yes** | High | **No** | **No** | Yes | **No** | Yes | Would likely combine this with (1). Could provide it as an alternative to (2)/(3). |
 
 ### 1 - Simple nested selector parsing
 
 TODO
 
-### 2 - Simple nested selector parsing + Run LESS compiler (no source maps)
+### 2 - Run LESS compiler (no source maps)
 
 TODO
 
