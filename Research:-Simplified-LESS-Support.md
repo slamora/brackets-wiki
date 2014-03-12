@@ -42,7 +42,7 @@ There are four options considered here, summarized in the table below. Detailed 
 | 1 - Simple nested selector parsing | Low | No | Medium | Yes | Yes | **No** | Yes | Yes (SCSS); Sass would be nontrivial work | |
 | 2 - Run LESS compiler (no source maps) | Medium | **Some?** | High | **No** | **No** | Yes | **No** | Would require libsass/ruby for SCSS | Would likely combine this with (1) |
 | 3 - Run LESS compiler with source maps | Medium-High | **Some?** | High | Yes | Yes | Yes | Yes | Would require libsass/ruby for SCSS | Likely slower than option (2), but would be guaranteed to give correct results. |
-| 4 - Use user's own autocompile process | Low-Medium | No | High | **No** | **No** | Yes | **No** | Yes | Would likely combine this with (1). Could provide it as an alternative to (2)/(3). |
+| 4 - Use user's own autocompile process | Low-Medium | No | High | **No** | **No** | Yes | **No** | Yes | Would likely combine this with (1). |
 
 ### 1 - Simple nested selector parsing
 
