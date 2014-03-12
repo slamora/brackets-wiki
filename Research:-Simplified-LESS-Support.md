@@ -84,7 +84,7 @@ Like (2), this only gives us live preview. Most likely we would want to combine 
 
 My initial thought is that we should implement (1) and (4) before 1.0. 
 
-(1) is easy and gives us all the features except Live Preview in a performant and reasonably robust way. 
+(1) is easy and gives us all the features except Live Preview in a performant and reasonably robust way. It also gives us both LESS and SCSS.
 
-(4) gives us Live Preview, and has the advantages that it's reliable and works with any preprocessor technology. Its disadvantages are that it only updates the browser on save, and that it relies on the user already having an automated compilation setup. But presumably any user who is using a preprocessor has *some* compilation setup already, whether via command line tools or via something like CodeKit. And it's not that bad to hit Cmd-S every so often to see your changes - it's still better than reloading the whole page in the browser, because it would only reload the affected stylesheet.
+(4) gives us Live Preview, and has the advantages that it's reliable and works with any preprocessor technology (including Sass and SCSS). Its disadvantages are that it only updates the browser on save, and that it relies on the user already having an automated compilation setup. But presumably any user who is using a preprocessor has *some* compilation setup already, whether via command line tools or via something like CodeKit. And it's not that bad to hit Cmd-S every so often to see your changes - it's still better than reloading the whole page in the browser, because it would only reload the affected stylesheet.
 
