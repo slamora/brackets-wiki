@@ -186,6 +186,7 @@ Here is a quick list of some of the settings you can change in these files:
 * (new in 37) **insertHintOnTab**: (default `false`) True to insert the currently selected code hint on tab
 * (new in 37) **sortDirectoriesFirst**: (default `false` for Mac, `true` otherwise) True to sort the directories first in the project tree
 * (new in 37) **staticserver.port**: Port number that the built-in server should use for Live Preview
+* (new in 38) **scrollPastEnd**: (default `false`) True to be able to scroll beyond the end of the document
 
 Here's an example:
 
