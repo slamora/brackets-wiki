@@ -1,6 +1,6 @@
 <a id="howtoget"></a> Getting Brackets
 -----------
-**[Downloads Brackets here](http://download.brackets.io)** for Mac, Windows and Linux (Debian/Ubuntu). Brackets is built with HTML, CSS and JS, but currently runs as a desktop application in a thin native shell that can access your local files.
+**[Downloads Brackets here](http://brackets.io)** for Mac, Windows and Linux (Debian/Ubuntu). Brackets is built with HTML, CSS and JS, but currently runs as a desktop application in a thin native shell that can access your local files.
 
 Brackets hasn't hit 1.0 yet, but it's getting close - so feel free to give it a spin and let us know what's missing!
 
