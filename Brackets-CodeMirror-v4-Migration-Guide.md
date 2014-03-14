@@ -63,21 +63,22 @@ editor.document.batchOperation(function () {
 });
 ```
 
-If you additionally need to adjust the selections that should result from the edit, you can build up a list of ranges to select at the end:
+If you additionally need to adjust the selections that should result from the edit, you can build up a list of ranges to select at the end. You should try to preserve the `primary` and `reversed` attributes from each original selection range.
 
 ```javascript
 editor.document.batchOperation(function () {
     var sels = editor.getSelections(),
-        ranges = [],
-        i, sel, range;
+        newSels = [],
+        i, sel;
     for (i = 0; i < sels.length; i++) {
         sel = sels[i];
         // ... do various edits with editor.document.replaceRange() ...
-        // ... set range to the selection range that should be set after this edit ...
-        ranges.push(range);
+        // ... set start/end of sel to the selection range that should be set after this edit
+        //     (reusing sel makes it so you can easily preserve primary/reversed flags) ...
+        newSels.push(sel); // have to put this in a new array since we're re-getting selections
         sels = editor.getSelections();
     }
-    editor.setSelections(ranges);
+    editor.setSelections(newSels);
 });
 ```
 
