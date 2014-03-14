@@ -85,27 +85,27 @@ editor.document.batchOperation(function () {
 Here's a complete example of a function that adds numbers before each selected range and selects the added numbers:
 
 ```javascript
-    function addNumbers() {
-        var editor = EditorManager.getActiveEditor();
-        if (!editor) {
-            return;
-        }
-        
-        editor.document.batchOperation(function () {
-            var sels = editor.getSelections(),
-                newSels = [],
-                i, sel, prefix;
-            for (i = 0; i < sels.length; i++) {
-                sel = sels[i];
-                prefix = String(i + 1) + ".";
-                editor.document.replaceRange(prefix + " ", sel.start);
-                sel.end = {line: sel.start.line, ch: sel.start.ch + prefix.length};
-                newSels.push(sel);
-                sels = editor.getSelections();
-            }
-            editor.setSelections(newSels);
-        });
+function addNumbers() {
+    var editor = EditorManager.getActiveEditor();
+    if (!editor) {
+        return;
     }
+
+    editor.document.batchOperation(function () {
+        var sels = editor.getSelections(),
+            newSels = [],
+            i, sel, prefix;
+        for (i = 0; i < sels.length; i++) {
+            sel = sels[i];
+            prefix = String(i + 1) + ".";
+            editor.document.replaceRange(prefix + " ", sel.start);
+            sel.end = {line: sel.start.line, ch: sel.start.ch + prefix.length};
+            newSels.push(sel);
+            sels = editor.getSelections();
+        }
+        editor.setSelections(newSels);
+    });
+}
 ```
 
 Note that it works properly even if multiple selections are on the same line because we re-get the selections each time.
