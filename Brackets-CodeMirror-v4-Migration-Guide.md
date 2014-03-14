@@ -82,7 +82,7 @@ editor.document.batchOperation(function () {
 });
 ```
 
-Here's a complete example of a function that adds numbers before each selected range and selects the added numbers:
+Here's a complete example of a function that adds numbers before each selected range and selects the added numbers (but not the spaces inserted afterwards):
 
 ```javascript
 function addNumbers() {
