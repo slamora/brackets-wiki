@@ -21,7 +21,7 @@ Here are the main changes to be aware of:
 | Alt-F3 / Cmd-Ctrl-G | Find All and Select - adds all matches for the current range or word to the selection |
 | Ctrl/Cmd-U | Undo Selection - undoes the last selection change or edit |
 | Ctrl/Cmd-Shift-U | Redo Selection - redoes the last selection change or edit |
-| Esc | Switch to Single Selection |
+| Esc | Switch to Single Selection - changes the selection to the primary selection |
 
 If you make any changes that require Sprint 38 or CodeMirror v4 (e.g. using the new selection APIs in Editor or using require to load CodeMirror), make sure to set Sprint 38 as the minimum Brackets version for your updated extension by setting `"engines": { "brackets" : ">=0.38.0" }` to your extension's `package.json`. Users of older Brackets versions will still be able to install older versions of your extension.
 
