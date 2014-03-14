@@ -174,12 +174,12 @@ Brackets (as of Brackets 36) also lets you override preferences on a per-folder 
 
 Here is a quick list of some of the settings you can change in these files:
 
-* **jslint.options**: An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not atomically).
-* **linting.enabled**: Determines if Code Inspection is on
-* **useTabChar**: True to use tabs instead of spaces
-* **tabSize**: Number of spaces to display for tabs
-* **spaceUnits**: Number of spaces to use for space-based indentation
-* **wordWrap**: True if word wrap is on
+* **jslint.options**: (default `undefined`) An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automically).
+* **linting.enabled**: (default `true`) Determines if Code Inspection is on
+* **useTabChar**: (default `false`) True to use tabs instead of spaces
+* **tabSize**: (default `4`) Number of spaces to display for tabs
+* **spaceUnits**: (default `4`) Number of spaces to use for space-based indentation
+* **wordWrap**: (default `true`) True if word wrap is on
 * (new in 37) **proxy**: (default `undefined`) The URL of the proxy server used for extension installation
 * (new in 37) **smartIndent**: (default `true`) Automatically indent when creating a new block
 * (new in 37) **closeTags**: (default `{ whenOpening: true, whenClosing: true, indentTags: [] }`) Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js)
@@ -192,12 +192,21 @@ Here's an example:
 
 ```json
 {
-    "spaceUnits": 4
+    "spaceUnits": 4,
+    "closeTags": {
+        "whenOpening": false,
+        "whenClosing": true
+    },
+    "proxy": "http://username:password@proxy.com:8080",
     "path": {
         "src/thirdparty/someLibrary.js": {
             "useTabChar": true,
             "tabSize": 4,
             "linting.enabled": false
+        },
+        "**.js": {
+            "insertHintOnTab": true,
+            "scrollPastEnd": true
         }
     }
 }
