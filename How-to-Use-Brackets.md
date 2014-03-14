@@ -180,7 +180,7 @@ Here is a quick list of some of the settings you can change in these files:
 * **tabSize**: (default `4`) Number of spaces to display for tabs
 * **spaceUnits**: (default `4`) Number of spaces to use for space-based indentation
 * **wordWrap**: (default `true`) True if word wrap is on
-* (new in 37) **proxy**: (default `undefined`) The URL of the proxy server used for extension installation
+* (new in 37) **proxy**: (default `undefined`) The URL of the proxy server used for extension installation (general syntax: `username:password@server:port`)
 * (new in 37) **smartIndent**: (default `true`) Automatically indent when creating a new block
 * (new in 37) **closeTags**: (default `{ whenOpening: true, whenClosing: true, indentTags: [] }`) Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js)
 * (new in 37) **insertHintOnTab**: (default `false`) True to insert the currently selected code hint on tab
