@@ -117,4 +117,6 @@ In more complicated cases, you might need to do some more complex processing tha
 
 For examples of how to use these APIs, you can look at the line-oriented edits in EditorCommandHandlers, such as `moveLine()` or `openLine()`.
 
+One other technical note: if you depend on `Editor.getFirstVisibleLine()` or `Editor.getLastVisibleLine()` (because your edit has special requirements when performed at the boundaries of an inline editor), then you'll need to either use `Document.doMultipleEdits()`, or keep track of your edits and figure out how they will affect the number of visible lines. This is because the visible line information isn't updated till the end of a batch operation. In the future, we're planning to get rid of these entirely.
+
 For a more detailed spec on the new multiple selection functionality, see [Research: Multiple cursors and selections](https://github.com/adobe/brackets/wiki/Research:-Multiple-cursors-and-selections).
