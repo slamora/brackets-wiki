@@ -47,10 +47,57 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TODO
+* [Allow inline cubic-bezier/steps editor on empty timing functions](https://github.com/adobe/brackets/pull/6922) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Keep Find in Files results in predictably sorted order](https://github.com/adobe/brackets/pull/6585) ([and](https://github.com/adobe/brackets/pull/7067)) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Move working set sort options from context menu to new settings dropdown](https://github.com/adobe/brackets/pull/6107) by [Alessandro Artoni](https://github.com/artoale) ([followup fixes](https://github.com/adobe/brackets/pull/7085) by [Tomás Malbrán](https://github.com/TomMalbran))
+* [New preference: Insert code hints with Tab](https://github.com/adobe/brackets/pull/6984) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [New preferences: Disable 'smart indent'; disable auto-inserting HTML close tags](https://github.com/adobe/brackets/pull/6888) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [If preferences JSON is invalid, show a warning and then run without the setting changes from that file](https://github.com/adobe/brackets/pull/6719) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Replace can use `$&` to insert whole regexp match](https://github.com/adobe/brackets/pull/5929) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Allow specifying a port number in Live Preview custom server URL](https://github.com/adobe/brackets/pull/6815) by [andoband](https://github.com/andoband)
+* [Add Indonesian translation](https://github.com/adobe/brackets/pull/6812) ([and](https://github.com/adobe/brackets/pull/7116)) by [Nasaruddin](https://github.com/pace-noge) and [Resi Respati](https://github.com/resir014)
+* [Disable Close Others context menu items when irrelevant](https://github.com/adobe/brackets/pull/6020) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Strip leading/trailing whitespace from extension URL](https://github.com/adobe/brackets/pull/7052) by [Marcel Gerber](https://github.com/SAPlayer)
+* [OS-specific labels for "Show in OS" context menu item](https://github.com/adobe/brackets/pull/6982) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Make Overwrite cursor mode visually distinct from Insert mode](https://github.com/adobe/brackets/pull/6777) ([and](https://github.com/adobe/brackets/pull/6883)) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Don't hide user-editable source control files like .gitignore](https://github.com/adobe/brackets/pull/6833) by [Tom Van Schoor](https://github.com/TVScoundrel)
+* [Find in Files: Expand/collapse all sections via Ctrl/Cmd-click](https://github.com/adobe/brackets/pull/6640) by [Sathyamoorthi](https://github.com/sathyamoorthi)
+* [Bezier inline editor: tab between points to move them with keyboard](https://github.com/adobe/brackets/pull/6576) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Add CSS value code hints for `flex`, `flex-basis` properties](https://github.com/adobe/brackets/pull/6584) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Highlight .ascx files (ASP.NET User Controls) as plain HTML](https://github.com/adobe/brackets/pull/6914) by [Clay Miller](https://github.com/smockle)
+* [Highlight .plist (Property List) files as XML](https://github.com/adobe/brackets/pull/6915) by [Clay Miller](https://github.com/smockle)
+* [Fix some native memory leaks on Mac](https://github.com/adobe/brackets-shell/pull/414) by [Brandon Jones](https://github.com/btjones)
+* [Fix font zoom viewport for new CodeMirror](https://github.com/adobe/brackets/pull/7118) ([and](https://github.com/adobe/brackets/pull/7120)) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #6828: Return Brackets-style paths from extension-installation code](https://github.com/adobe/brackets/pull/6848) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Fix Toggle Line Comment in JSON files](https://github.com/adobe/brackets/pull/6897) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Prep work for supporting native menubar on Linux](https://github.com/adobe/brackets-shell/pull/348) (not enabled yet) by [MattSturgeon](https://github.com/MattSturgeon)
+* [Fix #6612: Reset scroll position in Find in Files results more reliably](https://github.com/adobe/brackets/pull/6629) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #5923: Don't scroll hidden list tab in Extension Manager](https://github.com/adobe/brackets/pull/6637) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Update jQuery to 2.1.0 (from 2.0.1)](https://github.com/adobe/brackets/pull/6724) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Fix failing ProjectManager unit test](https://github.com/adobe/brackets/pull/6857) by [Lance Campbell](https://github.com/lkcampbell)
+* [Fix CodeInspection unit tests on non-English locales](https://github.com/adobe/brackets/pull/6731) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Code cleanup: Close Others context menu](https://github.com/adobe/brackets/pull/7038) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Code cleanup: Remove unneeeded .livehtml flag](https://github.com/adobe/brackets/pull/6994) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Code cleanup: Remove duplicate CSS code hint value](https://github.com/adobe/brackets/pull/6766) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Code cleanup: Avoid `.not.toBe(null)` in unit tests](https://github.com/adobe/brackets/pull/6577) by [Michael Hernandez (Intel Corp)](https://github.com/mjherna1)
+* [setup_for_hacking script: Support git repo locations with spaces in path on Windows](https://github.com/adobe/brackets/pull/6841) by [Andrew Dal Cin](https://github.com/adalcin)
+* [Fix brackets-shell build script on Mac case-sensitive file systems](https://github.com/adobe/brackets-shell/pull/410) by [Martin Prins](https://github.com/magarcia)
+* [Fix #6452: Prevent Debug > Reload Brackets from being run re-entrantly](https://github.com/adobe/brackets/pull/6846) by [Lance Campbell](https://github.com/lkcampbell)
+* [Use names from each language's own locale in the Debug > Switch Language UI](https://github.com/adobe/brackets/pull/6725) by [Michael Hernandez (Intel Corp)](https://github.com/mjherna1)
+* [Czech translation update](https://github.com/adobe/brackets/pull/7001) by [kvarel](https://github.com/kvarel)
+* [German translation update](https://github.com/adobe/brackets/pull/7177) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Persian-Farsi translation update](https://github.com/adobe/brackets/pull/6921) by [Mohammad Yaghobi](https://github.com/mohammadyaghobi)
+* [Polish translation update](https://github.com/adobe/brackets/pull/6596) by [Olgierd Grzyb](https://github.com/winek)
+* [Romanian translation update](https://github.com/adobe/brackets/pull/6820) by [Micleusanu Nicu](https://github.com/micnic)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/7187) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Russian translation fix](https://github.com/adobe/brackets/pull/6924) by [wpt](https://github.com/wpt)
+* [Russian translation fix](https://github.com/adobe/brackets/pull/7192) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Update localization instructions](https://github.com/adobe/brackets/pull/7009) by [Michael Hernandez (Intel Corp)](https://github.com/mjherna1)
+
 
 #### Pulling source code from Git
-TODO
+* Recommended: rebuild or reinstall an updated brackets-shell (no critical updates, but there are bugfixes).
+* Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
 Bugs fixed in Sprint 37
