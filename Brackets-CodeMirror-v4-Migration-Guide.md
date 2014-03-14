@@ -31,9 +31,9 @@ For a more detailed spec on the new multiple selection functionality, see [Resea
 
 The existing single-selection APIs in Editor (`getSelection()`, `getCursorPos()`, `setSelection()`, and so on) are still available, but if a multiple selection is active, they only return information about the **primary** selection - that is, the last selection the user added to the current multiple selection. To access the current multiple selection, use `getSelections()`, which returns an array of selection objects, each of which contains these fields:
 
-* `start`: a {line, ch} object for the beginning of the selected range
-* `end`: a {line, ch} object for the end of the selected range - will be equal to `start` if it's a cursor
-* `reversed`: a boolean; true if the head of the range is `start`, false if the head is `end`. (The "head" is the end of the range that would move if the user extends the range via the keyboard or mouse.)
+* `start`: a `{line, ch}` object for the beginning of the selected range
+* `end`: a `{line, ch}` object for the end of the selected range - will be equal to `start` if it's a cursor
+* `reversed`: true if the head of the range is `start`, false if the head is `end`. (The "head" is the end of the range that would move if the user extends the range via the keyboard or mouse. Most edit operations probably won't care too much about this.)
 * `primary`: whether this is the primary selection; exactly one selection will have this set to `true`.
 
 The selections are guaranteed to be sorted in document order and to be non-overlapping.
