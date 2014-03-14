@@ -82,6 +82,34 @@ editor.document.batchOperation(function () {
 });
 ```
 
+Here's a complete example of a function that adds numbers before each selected range and selects the added numbers:
+
+```javascript
+    function addNumbers() {
+        var editor = EditorManager.getActiveEditor();
+        if (!editor) {
+            return;
+        }
+        
+        editor.document.batchOperation(function () {
+            var sels = editor.getSelections(),
+                newSels = [],
+                i, sel, prefix;
+            for (i = 0; i < sels.length; i++) {
+                sel = sels[i];
+                prefix = String(i + 1) + ".";
+                editor.document.replaceRange(prefix + " ", sel.start);
+                sel.end = {line: sel.start.line, ch: sel.start.ch + prefix.length};
+                newSels.push(sel);
+                sels = editor.getSelections();
+            }
+            editor.setSelections(newSels);
+        });
+    }
+```
+
+Note that it works properly even if multiple selections are on the same line because we re-get the selections each time.
+
 In more complicated cases, you might need to do some more complex processing that isn't strictly one-edit-per-selection. A typical case of this is in line-oriented edits, such as Move Line Up/Down, where there might be multiple selections within a given line, but you only want to process each line once, while still tracking the positions of the various selections that intersect that line. In cases like these, you can use two helper functions:
 
 * `Editor.convertToLineSelections()` takes a multiple selection and converts it to a set of whole-line selections, each of which is paired with the original selection(s) that overlap the range of the whole-line selection.
