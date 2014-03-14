@@ -25,8 +25,6 @@ Here are the main changes to be aware of:
 
 If you make any changes that require Sprint 38 or CodeMirror v4 (e.g. using the new selection APIs in Editor or using require to load CodeMirror), make sure to set Sprint 38 as the minimum Brackets version for your updated extension by setting `"engines": { "brackets" : ">=0.38.0" }` to your extension's `package.json`. Users of older Brackets versions will still be able to install older versions of your extension.
 
-For a more detailed spec on the new multiple selection functionality, see [Research: Multiple cursors and selections](https://github.com/adobe/brackets/wiki/Research:-Multiple-cursors-and-selections).
-
 ### Changes to Editor selection APIs
 
 The existing single-selection APIs in Editor (`getSelection()`, `getCursorPos()`, `setSelection()`, and so on) are still available, but if a multiple selection is active, they only return information about the **primary** selection - that is, the last selection the user added to the current multiple selection. To access the current multiple selection, use `getSelections()`, which returns an array of selection objects, each of which contains these fields:
@@ -89,3 +87,5 @@ In more complicated cases, you might need to do some more complex processing tha
 * `Document.doMultipleEdits()` takes an array of edit descriptors, each of which describes a particular `replaceRange()`-style edit (or set of edits) to do at once, and a set of selections that should be tracked through those edits. The advantage of using this over just directly using `replaceRange()` and fixing up selections yourself is that it allows you to act as if each edit is separate from all the others (so you don't have to worry about fixing up selections for any edit other than the current one), and it handles tracking selections that are related to each edit automatically.
 
 For examples of how to use these APIs, you can look at the line-oriented edits in EditorCommandHandlers, such as `moveLine()` or `openLine()`.
+
+For a more detailed spec on the new multiple selection functionality, see [Research: Multiple cursors and selections](https://github.com/adobe/brackets/wiki/Research:-Multiple-cursors-and-selections).
