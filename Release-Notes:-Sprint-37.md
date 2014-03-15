@@ -2,37 +2,55 @@ _This is a draft!_
 --------------------
 _This document will not be finalized until the end of Sprint 37 -- approximately March 13._
 
-What's New in Release #37
+What's New in Sprint 37
 -----------------------
 * **Installation**
     * [Code-signed builds (Mac & Win)](https://trello.com/c/g5ZY1lKY/1131-code-signing-on-win-and-mac): Eliminates some warnings on launch and install. Gatekeeper no longer prevents launching Brackets by default on Mac.
 * **Find**
-    * [Configurable exclusions from Find in Files](https://trello.com/c/7Svh6B4Z/1085-exclude-files-folders-from-an-individual-find-in-files-operation): Choose file names, paths, or wildcards to exclude from Find in Files search.
+    * [Exclude files/folders from find in files](https://trello.com/c/7Svh6B4Z/1085-exclude-files-folders-from-an-individual-find-in-files-operation): Choose file names, paths, or wildcards to exclude from Find in Files searches.
 * **Preferences**
-    * [Revamped preferences APIs ready for use](https://github.com/adobe/brackets/pull/6715): TODO
-    * [Migrate view state to new preference storage format](https://trello.com/c/IuFGyICH/1155-preferences-view-state-migration): TODO
+    * [New preferences: proxy server, insert code hints on tab, project tree folder sorting, more](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences): Notably, this means it's now possible to install extensions via Extension Manager if your Internet access is behind a proxy server. See link for full list of preferences.
+    * [Revamped preferences APIs ready for extensions to use](https://github.com/adobe/brackets/pull/6715): See [documentation](https://github.com/adobe/brackets/wiki/How-to-write-extensions#wiki-working-with-preferences) for details.
+    * [Migrate view state to new preference storage format](https://trello.com/c/IuFGyICH/1155-preferences-view-state-migration): A new `state.json` file stores preferences that are less likely to be shared across machines.
 * **Ongoing Research** (not enabled yet)
     * [Multiple cursor/selection support](https://trello.com/c/urTCdTZj/1156-multiple-cursors-initial-implementation-on-branch): Initial implementation on a branch, not exposed in this release of Brackets yet.
     * [Research JS Code Hints Cleanup](https://trello.com/c/heHZlATB/1158-research-js-code-hints-cleanup): Investigate how to simplify the code, improve performance & maintainability, and unify with new preferences system.
+* **CSS Editing**
+    * [Open inline CSS easing editor on empty timing functions](https://github.com/adobe/brackets/pull/6922): Graphically create CSS transition easing curves/steps without having to remember or write out the full syntax first.
+* **Stability Improvements**
+    * Live Preview launches and connects to Chrome more reliably
+    * Fixed slow performance when Find in Files results panel left open for long periods of time
+    * Fixed issue with noticing external file changes during some 'bulk' operations like git checkout
+    * Improved accuracy of JavaScript code hints when using `require()` modules
+    * Fixed [#6951](https://github.com/adobe/brackets/issues/6951): Unable to install extensions or run Live Preview on Windows XP
+    * Ensure Live Preview works on upcoming Chrome 34 release
+* **Localization**
+    * [Indonesian translation added](https://github.com/adobe/brackets/pull/6812)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-36...sprint-37#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-36...sprint-37#commits_bucket)
 
 
 UI Changes
 ----------
-No major changes to existing features.
-
+**Working Files list** - Options to change sort order have been moved from the context menu into a new settings menu, accessed via the gear icon in the Working Files header.
 
 API Changes
 -----------
-**Preferences** - TODO
+**Preferences** - Brackets offers new APIs for storing preferences in a user-accessible JSON format, and the old preferences APIs are now _deprecated_. Preferences are now divided into settings and "view state," each stored separately. Setting-type preferences provide change events that you should listen to for updates. See [full Preferences API documentation] for details, including how to migrate existing user preferences from the old system.
 
-**File System** - Paths with unsupported Windows-style separators ("\" instead of "/") are now explicitly rejected immediately; previously they were accepted by FileSystem but behaved brokenly in various ways.
+**File System** - Paths with unsupported Windows-style separators ("\" instead of "/") are now explicitly rejected immediately; previously they were accepted by FileSystem but behaved brokenly in various ways. Brackets APIs generally all returned "/"-based paths already, though one that previously did not - `FileSystem.showOpenDialog()` in single-select mode - has been changed to match this format.
 
-**Editor** - The `optionChange` event now uses the Brackets names for the options, rather than the CodeMirror names (for example "wordWrap" rather than "lineWrapping"). See Editor.js for [the complete list](https://github.com/adobe/brackets/blob/master/src/editor/Editor.js#L79).
+**jQuery** - Upgraded from 2.0.1 to 2.1.0
+
+**Editor** - The `"optionChange"` event now uses the Brackets names for the options, rather than the CodeMirror names (for example "wordWrap" rather than "lineWrapping"). See Editor.js for [the complete list](https://github.com/adobe/brackets/blob/master/src/editor/Editor.js#L79).
+
+**Code Hints** - `CodeHintManager.setInsertHintOnTab()` has been **removed**. It is replaced with the `insertHintOnTab` user preference.
+
 
 New/Improved Extensibility APIs
 -------------------------------
+**Preferences** - See information above on the new APIs and their capabilities.
+
 **Optional requirejs-config.json** - Allows extensions to define their own RequireJS configuration file `requirejs-config.json` before the `main.js` entry point loads. File format must follow http://requirejs.org/docs/api.html#config. [Read more...](https://github.com/adobe/brackets/pull/6671)
 
 
@@ -49,8 +67,9 @@ Community contributions to Brackets
 -----------------------------------
 * [Allow inline cubic-bezier/steps editor on empty timing functions](https://github.com/adobe/brackets/pull/6922) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Keep Find in Files results in predictably sorted order](https://github.com/adobe/brackets/pull/6585) ([and](https://github.com/adobe/brackets/pull/7067)) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Move working set sort options from context menu to new settings dropdown](https://github.com/adobe/brackets/pull/6107) by [Alessandro Artoni](https://github.com/artoale) ([followup fixes](https://github.com/adobe/brackets/pull/7085) by [Tomás Malbrán](https://github.com/TomMalbran))
+* [Move Working Files sort options from context menu to new settings dropdown](https://github.com/adobe/brackets/pull/6107) by [Alessandro Artoni](https://github.com/artoale) ([followup fixes](https://github.com/adobe/brackets/pull/7085) by [Tomás Malbrán](https://github.com/TomMalbran))
 * [New preference: Insert code hints with Tab](https://github.com/adobe/brackets/pull/6984) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [New preference: Sort directories to top in file tree (vs. intermingled with files)](https://github.com/adobe/brackets/pull/7138) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [New preferences: Disable 'smart indent'; disable auto-inserting HTML close tags](https://github.com/adobe/brackets/pull/6888) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [If preferences JSON is invalid, show a warning and then run without the setting changes from that file](https://github.com/adobe/brackets/pull/6719) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
 * [Replace can use `$&` to insert whole regexp match](https://github.com/adobe/brackets/pull/5929) by [Marcel Gerber](https://github.com/SAPlayer)
