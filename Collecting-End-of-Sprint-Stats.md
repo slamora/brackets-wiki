@@ -72,5 +72,5 @@ Scroll to the bottom of the report for these totals:
 ## Other Stats
 
 * **[GitHub traffic report](https://github.com/adobe/brackets/graphs/traffic)**
-* **[Top-starred repos](https://github.com/search?l=&q=stars%3A%3E10000&type=Repositories)** (Brackets is #17 as of Jan 2014)
-* **[Top-starred JS repos](https://github.com/search?l=JavaScript&q=stars%3A%3E10000&type=Repositories)** (Brackets is #9 as of Jan 2014)
+* **[Top-starred repos](https://github.com/search?l=&q=stars%3A%3E10000&type=Repositories)** (Brackets is #16 as of March 2014)
+* **[Top-starred JS repos](https://github.com/search?l=JavaScript&q=stars%3A%3E10000&type=Repositories)** (Brackets is #8 as of March 2014)
