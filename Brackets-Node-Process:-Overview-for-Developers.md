@@ -16,7 +16,7 @@ The entire example is available as a Brackets extension at https://github.com/nj
 
 ### Step 0: Setting up the extension.
 
-A brackets extension lives in a single folder, and its entry point is main.js. By convention (but not by necessity), we put all Node code in a directory called 'node' inside the extension folder, including third-party Node modules.
+Any Brackets extension can call Node code, so you can set up your extension as usual: create a folder for it and put in a "main.js" file that's the entry point to the Brackets-side code. By convention (but not by necessity), we put all Node code for the extension in a subfolder called 'node' inside the extension folder, including third-party Node modules.
 
 **Note on third-party modules:** Convention recommends putting any third-party modules inside a "node_modules" directory that lives inside the "node" directory. For development, node modules can be installed through npm by putting a "package.json" file in the "node" directory and running `npm install` from inside that directory. By doing this (and adding "node/node_modules" to your .gitignore) you can avoid checking third party code into your repo. For _distribution_, the actual bits of any third-party modules should be bundled in to the zip - Brackets doesn't run `npm install` when installing an extension. (This is recommended practice in the node community to ensure that all end users get the same bits. See http://www.futurealoof.com/posts/nodemodules-in-git.html)
 
