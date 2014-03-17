@@ -1,5 +1,7 @@
 This document describes how to use the multiple cursor/multiple selection functionality being added to Brackets Sprint 38. Once it's released, this will move to [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-To-Use-Brackets).
 
+If you're an extension developer looking for tips on how to make your extension with multiple selections, see the [Brackets CodeMirror v4 Migration Guide](https://github.com/adobe/brackets/wiki/Brackets-CodeMirror-v4-Migration-Guide).
+
 ## Basic usage
 
 Multiple selections are useful when you want to apply the same edit to different parts of your document. For example, you might want to add the same text to multiple nearby lines, or you might want a quick way to replace all the instances of a variable without having to use the Find bar.
@@ -13,8 +15,6 @@ There are two basic ways to create multiple selections:
 You can also combine these techniques - hold down Ctrl-Alt or Cmd-Alt and then drag to add a column/rectangular selection to the existing multiple selection.
 
 Once you have a multiple selection, most navigation commands and edits will apply to each cursor or range selection. For example, if you type, the characters you type will appear at each cursor (or replace each selection). The arrow keys will move each selection in the direction of the arrow.
-
-Copy/paste works specially as well: if you cut/copy a multiple selection and then paste into another selection that has the same number of cursors/ranges, it will paste each of the original selections into the new selections. If the number of selections differs, then it will paste all of the copied selections into each new selection. (Note also that the matching only works if each selection is smaller than a line.)
 
 Some commands, such as code hints and Quick Edit, only operate on one selection. These commands will always operate on the last selection you added (known as the "primary selection").
 
