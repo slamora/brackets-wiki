@@ -14,6 +14,8 @@ You can also combine these techniques - hold down Ctrl-Alt or Cmd-Alt and then d
 
 Once you have a multiple selection, most navigation commands and edits will apply to each cursor or range selection. For example, if you type, the characters you type will appear at each cursor (or replace each selection). The arrow keys will move each selection in the direction of the arrow.
 
+Copy/paste works specially as well: if you cut/copy a multiple selection and then paste into another selection that has the same number of cursors/ranges, it will paste each of the original selections into the new selections. If the number of selections differs, then it will paste all of the copied selections into each new selection. (Note also that the matching only works if each selection is smaller than a line.)
+
 Some commands, such as code hints and Quick Edit, only operate on one selection. These commands will always operate on the last selection you added (known as the "primary selection").
 
 If you make a mistake while adding to the multiple selection, you can use Ctrl-U/Cmd-U to undo the last selection change. This is useful outside of multiple selections, too - you can use it to quickly jump back to the last selection you made, for example. The selection undo stack includes the edit undo stack, so if you undo selections back to your last edit point, then undo selection again, it will undo the edit. You can also use Ctrl-Shift-U/Cmd-Shift-U to redo selections.
