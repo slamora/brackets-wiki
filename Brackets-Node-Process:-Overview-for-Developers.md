@@ -53,13 +53,13 @@ When we register a command, we can optionally pass in documentation. This docume
 ```javascript
 /**
  * Initializes the test domain with several test commands.
- * @param {DomainManager} DomainManager The DomainManager for the server
+ * @param {DomainManager} domainManager The DomainManager for the server
  */
-function init(DomainManager) {
-    if (!DomainManager.hasDomain("simple")) {
-        DomainManager.registerDomain("simple", {major: 0, minor: 1});
+function init(domainManager) {
+    if (!domainManager.hasDomain("simple")) {
+        domainManager.registerDomain("simple", {major: 0, minor: 1});
     }
-    DomainManager.registerCommand(
+    domainManager.registerCommand(
         "simple",       // domain name
         "getMemory",    // command name
         cmdGetMemory,   // command handler function
@@ -95,7 +95,7 @@ var simpleDomain = new NodeDomain("simple", ExtensionUtils.getModulePath(module,
 // Helper function that runs the simple.getMemory command and
 // logs the result to the console
 function logMemory() {
-    simpleDomain.exec("getMemory", true)
+    simpleDomain.exec("getMemory", false)
         .done(function (memory) {
             console.log(
                 "[brackets-simple-node] Memory: %d bytes free",
