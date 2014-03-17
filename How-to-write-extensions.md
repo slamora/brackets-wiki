@@ -4,14 +4,14 @@ There are three stages to developing an extension:
 2. **[Develop](How-to-write-extensions#common-how-tos)** your extension and **[debug](How-to-write-extensions#testingdebugging-workflow)** it.
 3. **[Package and publish](How-to-write-extensions#publishing-extensions)** your extension for others to use.
 
-Read the sections linked above for details!
+Follow these links to the sections below for details!
 
 
 ## Creating an Extension
 
 * Open your extensions folder by selecting "Help > Show Extensions Folder" in Brackets
 * Inside the `user` folder(*), create a new "yourExtensionName" folder, and inside that create a `main.js` file.
-* For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](Brackets-Extensions) that is similar to what you want to do.
+* For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](https://brackets-registry.aboutweb.com/) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
 
 \* Note: Because it's easy to delete extensions from this location via Extension Manager, in the long run it's _**safer** to develop inside the `src/extensions/dev`_ folder. You can do this by modifying the permissions of a regular installed build to make that folder writable, or by [cloning the Brackets source](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) and using that copy.
