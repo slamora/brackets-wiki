@@ -119,9 +119,11 @@ More Tips for Creating Brackets Node Modules
 
 ### Asynchronous methods
 
-This example showed a command that was registered as "synchronous" (`isAsync` was set to false in `registerCommand`). This terminology is a bit confusing, because all communication between Brackets and Node is actually asynchronous. What this means is that the function is synchronous on the Node side, so when DomainManager calls it, it expects to get a return value from the command function directly, which it then sends (asynchronously) back to Brackets.
+This example showed a command that was registered as "synchronous" (`isAsync` was set to false in `registerCommand`). This terminology is a bit confusing, because all communication between Brackets and Node is actually asynchronous. When `isAsync` is set to false, it means that the command function is synchronous on the Node side, so when DomainManager calls it, it expects to get a return value from the command function directly, which it then sends (asynchronously) back to Brackets.
 
-If your command is asynchronous on the Node side, you can pass `true` for the fourth parameter (`isAsync`) to `registerCommand`. If you do this, then the first parameter to your command will be a Node-style "errback" function. When your processing is done, call the errback with two arguments, `err` and `result`. If you encountered an error, then you should pass an error string back in `err`. If you succeeded, pass `null` for `err` and pass your result as the second argument to the errback. Your result or error will be sent back to your Brackets code via a resolved or rejected promise.
+If your command is asynchronous on the Node side, you can pass `true` for the fourth parameter (`isAsync`) to `registerCommand`. If you do this, then the first parameter to your command will be a Node-style "errback" function. When your processing is done, call the errback with two arguments, `err` and `result`. If you encountered an error, then you should pass an error string back in `err`. If you succeeded, pass `null` for `err` and pass your result as the second argument to the errback.
+
+In either case ("synchronous" or asynchronous), your result or error will be sent back to your Brackets code via a resolved or rejected promise, as mentioned above.
 
 ### Events
 
