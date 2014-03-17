@@ -86,6 +86,8 @@ That's it! The domain is now implemented. Note that in the full version in the g
 
 Our client code is simple, too: we can simply use the NodeDomain utility class to load the domain and access its commands. The `exec()` method calls the command, and any arguments passed to `exec` after the command name are passed as parameters to the command on the Node side.
 
+Because all communication with Node is asynchronous, you don't get a direct return value from `exec()` - instead, you get a Promise that's resolved with the return value (or rejected if there was an error).
+
 ```javascript
 var NodeDomain = brackets.getModule("utils/NodeDomain"),
     ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
@@ -119,7 +121,7 @@ More Tips for Creating Brackets Node Modules
 
 This example showed a command that was registered as "synchronous" (`isAsync` was set to false in `registerCommand`). This terminology is a bit confusing, because all communication between Brackets and Node is actually asynchronous. What this means is that the function is synchronous on the Node side, so when DomainManager calls it, it expects to get a return value from the command function directly, which it then sends (asynchronously) back to Brackets.
 
-If your command is asynchronous on the Node side, you can pass `true` for `isAsync` when you call `registerCommand`. If you do this, then the first parameter to your command will be a Node-style "errback" function. When your processing is done, call the errback with two arguments, `err` and `result`. If you encountered an error, then you should pass an error string back in `err`. If you succeeded, pass `null` for `err` and pass your result as the second argument to the errback. Your result or error will be sent back to your Brackets code via a resolved or rejected promise.
+If your command is asynchronous on the Node side, you can pass `true` for the fourth parameter (`isAsync`) to `registerCommand`. If you do this, then the first parameter to your command will be a Node-style "errback" function. When your processing is done, call the errback with two arguments, `err` and `result`. If you encountered an error, then you should pass an error string back in `err`. If you succeeded, pass `null` for `err` and pass your result as the second argument to the errback. Your result or error will be sent back to your Brackets code via a resolved or rejected promise.
 
 ### Events
 
