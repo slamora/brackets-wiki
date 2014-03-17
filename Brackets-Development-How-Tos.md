@@ -103,3 +103,7 @@ promise.done(function (text) {
     console.log("Error #" + errorCode);  // one of the FileSystemError constants
 });
 ```
+
+## Accessing Node Modules from Brackets
+
+See [Brackets Node Process: Overview for Developers](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers).
