@@ -136,6 +136,6 @@ Default Preferences and Format
         "wordWrap": false,  
         "linting.enabled": true,  
         "linting.collapsed": false,    
-        "quickview.enabled": true,  
+        "quickview.enabled": true
     }  
 ```
