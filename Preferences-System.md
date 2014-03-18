@@ -124,7 +124,7 @@ This will convert the old "enabled" preference for the CodeInspection module to 
 
 Some parts of Brackets stored information for specific files or projects in the old preferences system using keys that have a prefix. For example, DocumentManager stored working set files this way. The new preferences system stores the data in JSON objects, making it easier to have nested structures, but the conversion is more complex. Take a look at DocumentManager to see this more complex form of `convertPreferences` in action.
 
-Default Preferences and Format  
+Default Preferences (JSON)
 ```javascript
     {  
         "useTabChar": false,  
