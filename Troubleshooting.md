@@ -16,6 +16,12 @@ The pages on the GitHub wiki are generally related to development of Brackets.
 
 ## [Other: Brackets Is Acting Weird](http://help.brackets.io/knowledgebase/articles/335164-brackets-running-oddly-but-not-covered-in-other-a)
 
+## Disable All Extensions
+When troubleshooting, it's useful to know if the problem is caused by an extension you've installed. Use `Debug > Reload Without Extensions` to quickly check whether the same problem still happens with all your extensions disabled. To re-enable your extensions, just quit and relaunch Brackets, or choose Debug > Reload _With_ Extensions.
+
+If that fixes the issue, you can narrow down which extension was the problem by following [the instructions here](http://help.brackets.io/knowledgebase/articles/335164-brackets-running-oddly-but-not-covered-in-other-a).
+
+
 ## Still Having a Problem?
 
 * Go to our [help page](http://help.brackets.io) and click on "Contact Support"
