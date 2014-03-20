@@ -1,6 +1,6 @@
-Brackets stores some data in a cache folder managed by CEF -- roughly equivalent to a browser cache, except specific to Brackets. At the moment, this folder stores both throwaway data **_and user preferences_**.
+Brackets stores some data in a cache folder managed by CEF -- roughly equivalent to a browser cache, except specific to Brackets. At the moment, this folder stores both throwaway data **_and some user preferences_**.
 
-If you're having trouble starting Brackets after upgrading from a previous build, try deleting this folder (see below). You'll lose any stored preferences and state like the recent folder list.
+If you're having trouble starting Brackets after upgrading from a previous build, try deleting this folder (see below). You may lose some stored preferences (especially any custom extension-specific preferences).
 
 ## Cache location
 
