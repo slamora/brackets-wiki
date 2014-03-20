@@ -127,7 +127,7 @@ In either case ("synchronous" or asynchronous), your result or error will be sen
 
 ### Events
 
-Your Node module can also asynchronously trigger events that can be listened to on the Brackets side. Events are registered using the ```registerEvent``` command in the DomainManager, and emitted using the ```emitEvent```. On the client side, events can be listed for using the standard jQuery event system on instances of the NodeConenction class. The jQuery event type will are in the following format `domainName:eventName`. For example, for the `log` event in the `base` domain, listen for the `base:log` event type.
+Your Node module can also asynchronously trigger events that can be listened to on the Brackets side. Events are registered using the ```registerEvent``` command in the DomainManager, and emitted using the ```emitEvent```. On the client side, events can be listened for using the standard jQuery event system on instances of the NodeConnection class. The jQuery event type will are in the following format `domainName:eventName`. For example, for the `log` event in the `base` domain, listen for the `base:log` event type.
 
 So, to listen for log events, we can do:
 
