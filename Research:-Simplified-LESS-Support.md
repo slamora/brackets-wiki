@@ -80,6 +80,8 @@ The disadvantage of this is that it would only update the stylesheet on save, ra
 
 Like (2), this only gives us live preview. Most likely we would want to combine it with (1). However, even if we do (2) or (3), we might want to consider implementing this anyway, since it seems like an easy win for users that already have a compilation workflow. Also, it would work for Sass/SCSS (or any other preprocessor) as well as LESS.
 
+_\[PF: This \*should\* already work, using file watchers. So effort might actually be near-zero...\]_
+
 ### Proposal
 
 My initial thought is that we should implement (1) and (4) before 1.0. 
