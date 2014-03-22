@@ -28,6 +28,7 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
+**Inline Editors** - When a provider has nothing to show for the current cursor position, it can return an explanation string instead of just `null`. If no providers respond, the explanation is shown in a popup. This can help make inline editing functionality more discoverable to users.
 
 
 Known Issues
