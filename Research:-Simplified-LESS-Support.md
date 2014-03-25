@@ -48,6 +48,13 @@ There are four options considered here, summarized in the table below. Detailed 
 
 This would be a simple extension of the existing CSSUtils parsing code to find nested selectors and determine how to combine them with parent selectors. The effort should be fairly small, and should generalize easily to SCSS (but not Sass, which would require us to parse using CodeMirror's Sass mode). However, it wouldn't necessarily be robust, because we wouldn't be relying on the real LESS parser.
 
+To be more specific, we would support:
+* nested rules
+* "&" references to parent selectors
+
+For the initial implementation, we likely would *not* support:
+* "extend" functionality (:extend() in LESS, @extend in SCSS)
+
 This might be a good first thing to implement, since it gives us everything but Live Preview.
 
 ### (2) Run LESS compiler (no source maps)
