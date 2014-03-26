@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Sprint 38 -- approximately
 What's New in Sprint 38
 -----------------------
 * **Multiple Cursors**
-    * [Multiple cursor / multiple selection support](https://trello.com/c/g58aNzCz/1187-finish-multiple-selection-multiple-cursor-support)
+    * [Multiple cursor / multiple selection support](https://trello.com/c/g58aNzCz/1187-finish-multiple-selection-multiple-cursor-support): Ctrl+click or drag to create multiple cursors/selections, Ctrl+B to select next occurrence of a word, and more. [Read the full documentation for details](https://github.com/adobe/brackets/wiki/Working-with-Multiple-Selections).
 * **Live Preview**
     * [CSS Shapes visual editor](https://trello.com/c/iUHklzZB/1145-shapes-editor-extension-integrate-into-brackets): When using experimental Chrome features, you can edit CSS Shapes visually in the browser preview. The editor automatically appears in Chrome when you put your cursor on Brackets on a Shape definition.
 * **Linting**
