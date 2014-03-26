@@ -1,4 +1,4 @@
-Choose _Help > Show Extensions Folder_, save this file as ```extensions/user/HelloWorld/main.js```, then restart Brackets to see it in effect.
+Choose _Help > Show Extensions Folder_, save this file as ```extensions/user/HelloWorld/main.js```, then restart Brackets to see it in effect. Choose _File > Hello World_. An alert dialog should appear.
 
 main.js
 ----
