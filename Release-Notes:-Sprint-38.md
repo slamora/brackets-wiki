@@ -25,6 +25,9 @@ No major changes to existing features.
 
 API Changes
 -----------
+**CodeMirror v4 & multiple cursors/selections** - See the **[[Brackets CodeMirror v4 Migration Guide]]**.
+
+**PHP files** - `Editor.getLanguageForSelection()` will now return the correct `"php"` language (instead of the generic `"clike"`).
 
 New/Improved Extensibility APIs
 -------------------------------
