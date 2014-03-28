@@ -48,7 +48,9 @@ For more detailed information on the changes to the selection APIs on Editor, se
 
 (Once the multiple selection functionality is released in Brackets, this will move to the [Brackets Development How-Tos](https://github.com/adobe/brackets/wiki/Brackets-Development-How-Tos) page.)
 
-In most cases, your edits will be based on the user's current selection. As of Sprint 38, Brackets supports multiple selections, so in most cases you will want to switch to use the new `getSelections()` and `setSelections()` APIs, and determine how your edits will operate on multiple selections.
+In many cases, edits you make to the document will be based on the user's current selection. As of Sprint 38, Brackets supports multiple selections, so in most cases you will want to switch to use the new `getSelections()` and `setSelections()` APIs, and determine how your edits will operate on multiple selections.
+
+The major exceptions are code hinting, Quick Edit, and Quick Docs. Currently in Brackets, these functions all only work on the primary selection. (For Quick Edit, this applies to *opening* a Quick Edit inline editor; if the inline editor contains a document editor, multiple selections should work within that editor.) However, if you implement other kinds of editing commands, you should consider making them work with multiple selections.
 
 In the simplest case, where your edits operate on the range of each selection and they're performed in such a way that the selection is properly fixed up automatically by CodeMirror, you can just iterate over all selections and edit each one. However, you must be careful to **re-get the list of selections** after each individual edit, because later selections may shift as a result of your edit. So, your code should look like this:
 
