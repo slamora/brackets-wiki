@@ -33,6 +33,10 @@ New/Improved Extensibility APIs
 -------------------------------
 **Inline Editors** - When a provider has nothing to show for the current cursor position, it can return an explanation string instead of just `null`. If no providers respond, the explanation is shown in a popup. This can help make inline editing functionality more discoverable to users.
 
+**LanguageManager** - If a file extension already has a default Language mapping in Brackets, an extension can unregister the mapping in order to use it with a new Language. (For example, changing ".twig" from generic HTML highlighting to a new Twig-specific highlighting mode). Use `Language.removeFileExtension()` and `removeFileName()`.
+
+In addition, all the add/remove file name/extension APIs can now optionally be passed an array of items instead of a single item.
+
 
 Known Issues
 ------------
