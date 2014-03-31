@@ -1,4 +1,4 @@
-## Opening Extension Manager
+``## Opening Extension Manager
 
 To the right of the work area, click on the icon that looks like a LEGO(r) brick.  This will open the Extension Manager.
 
