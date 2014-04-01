@@ -103,6 +103,20 @@ This will force the greeting preference to be set to "Namaste" at the user level
 
 If you set the value to `undefined`, the setting will be deleted at the appropriate level.
 
+### Saving Preferences
+
+By default, preference changes set using the PreferencesManager module are automatically saved.  So, in the example in the section above, the value of "Namaste" will be immediately saved to `greeting` by the `set()` call.
+
+However, please note that if you are editing extension preferences, as prefixed using `getExtensionPrefs()`, then you'll need to explicitly save changes yourself using the `save()`.  For example,
+
+```javascript
+    var PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
+        prefs = PreferencesManager.getExtensionPrefs("myext");
+    prefs.set("greeting", "Namaste");
+    prefs.save();
+```
+
+
 ## Preferences UI?
 
 Currently, there is no standard user interface for preferences. There is a [backlog item for one](https://trello.com/c/5GwJgKfi/480-8-preferences-dialog).
