@@ -11,6 +11,7 @@ First, make sure you have your extension in the [extension package format](https
 1. Go to the [Registry site](https://brackets-registry.aboutweb.com/)
 2. Log in with your GitHub credentials. We never see your GitHub password and your extension itself doesn't need to be on GitHub (see below).
 3. Drag and drop your zip file onto the big upload square, or click the square to browse to your zip file
+    * Note: we've had difficulty with ZIP files created from Finder on the Mac. If you get an error when uploading your ZIP file, try creating it from the command line instead.
 
 ## Updating your extension ##
 
