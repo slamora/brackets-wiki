@@ -23,7 +23,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-**Find in Files** - If you have a [file/folder exclusion filter](https://github.com/adobe/brackets/wiki/Using-File-Filters) set, and you use 'Find In...' on a single file, filtering is disable to ensure the file is always searched.
+**Find in Files** - If you've set a [file/folder exclusion filter](https://github.com/adobe/brackets/wiki/Using-File-Filters) and then you use 'Find In...' on a single file, filtering is temporarily disabled to ensure the file is always searched.
 
 
 API Changes
