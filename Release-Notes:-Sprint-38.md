@@ -10,6 +10,9 @@ What's New in Sprint 38
     * [CSS Shapes visual editor](https://trello.com/c/iUHklzZB/1145-shapes-editor-extension-integrate-into-brackets): When using experimental Chrome features, you can edit CSS Shapes visually in the browser preview. The editor automatically appears in Chrome when you put your cursor on Brackets on a Shape definition.
 * **Linting**
     * [Support asynchronous linting](https://github.com/adobe/brackets/pull/6530): Linters that require reading extra files from disk or talking to network services can now integrate with the standard Brackets linting UI.
+* **Search**
+    * [Improved usability of file/folder exclusions](https://github.com/adobe/brackets/pull/7400): Filter editor displays how many files are left after filtering. Search shows warning if filter excludes all files in subtree. Filters disabled when searching only a single file.
+    * [Improved performance on Windows](https://github.com/adobe/brackets/pull/7290) if large binary files exist in the project folders
 * **Ongoing Research** (not implemented yet)
     * [Research: JS Code Hints Cleanup](https://trello.com/c/heHZlATB/1158-research-js-code-hints-cleanup): Investigate how to simplify the code, improve performance & maintainability, and unify with new preferences system.
     * [Research: Improved LESS support](https://trello.com/c/qv5gTqXp/1163-s-research-early-less-support): Investigate support for Live Preview, Quick Edit, and Quick Find Definition with LESS code.
@@ -20,7 +23,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-No major changes to existing features.
+**Find in Files** - If you have a [file/folder exclusion filter](https://github.com/adobe/brackets/wiki/Using-File-Filters) set, and you use 'Find In...' on a single file, filtering is disable to ensure the file is always searched.
 
 
 API Changes
