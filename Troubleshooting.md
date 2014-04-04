@@ -2,13 +2,24 @@ Brackets not working for you? Maybe the following will help:
 
 * [Having trouble with Live Preview?](#livedev)
 * [Having trouble installing Brackets?](#installation)
+* [Brackets not launching?](#launching)
+* [Having trouble installing extensions?](#extensions)
+* [Is Brackets running slowly?](#slow)
+* [Error reading preferences file message](#prefs37)
 
-## System Requirements
+Other information that may help you:
+
+* [What are Brackets' system requirements?](#requirements)
+* [How do I associate an extension with a type of file?](#fileassoc)
+
+[Question not yet answered?](#notsolved)
+
+## <a name="requirements"> </a>System Requirements
 
 * Mac OSX 10.6.8 or newer.
     * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not being digitally signed yet.  To work around this, right click the Brackets app and choose Open, then click Open on the dialog that appears.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
-* Windows Vista/7/8/8.1 (x32) and (x64).
-* WinXP w/ Service Pack 2.
+* Windows Vista/7/8/8.1 (x32) and (x64) (with administrator access)
+* WinXP w/ Service Pack 2 (with administrator access)
 * Linux Ubuntu 12.04 or newer (x32) and (x64).
 * Debian Linux 8 or newer (Debian 7 compatibility will be restored once [#4816](https://github.com/adobe/brackets/issues/4816) is resolved).
 * You should have at least 2 GB of RAM to do Live Development.
@@ -32,7 +43,7 @@ This can happen on some Windows machines. To work around this, try executing the
 3. Run the installer using msiexec, e.g.: `msiexec /i "brackets-sprint-xx-WIN.msi"` (where "xx" is the sprint number)
 
 
-## Can't Launch Brackets
+## <a name="launching"> </a>Can't Launch Brackets
 
 ### 1. Mac error: "Brackets can't be opened because it is from an unidentified developer"
 
@@ -110,7 +121,7 @@ This is the file path that Brackets uses to launch Chrome. If this is not correc
 On Windows, you may run into issues starting Live Preview if you installed Chrome after installing Brackets. In that case, re-installing Brackets should fix the problem.
 
 
-## Brackets is Running Slow
+## <a name="slow"> </a>Brackets is Running Slow
 This section discusses some of the features that can affect performance and possible solutions.
 
 ### Activity Monitor
@@ -129,6 +140,12 @@ This feature can negatively impact scrolling performance, so try turning it off 
 Collecting the information required to build the JS code hint lists can slow down Brackets. Start by reading the [Configuration section of the JavaScript Code Hints guide](https://github.com/adobe/brackets/wiki/JavaScript-Code-Hints#configuration).
 
 You can disable the hints by moving the JavaScriptCodeHints folder out of www/extensions/default (installed version) or src/extensions/default (Git source) folder and into the extensions/disabled folder, and restarting Brackets.
+
+## <a name="extensions"> </a>Having trouble installing extensions?
+
+If your computer needs to use a proxy to get to the web, you'll need to configure the "proxy" setting. Use Open Preferences File from the Debug menu and then add a proxy variable to the JSON file. The value should be the URL of your proxy server.
+
+(Note: this is new in Brackets 37.)
 
 
 ## Other: Brackets Is Acting Weird
@@ -150,8 +167,28 @@ Choose `Debug > Show Developer Tools` to open an instance of the Developer Tools
 ### Can't Paste Text Into Brackets
 There's a [known issue](https://github.com/adobe/brackets/issues/2531) with the Webroot Identity Shield software blocking Paste in Brackets. If you're running Webroot, try the [workarounds on their support page](https://community.webroot.com/t5/Webroot-SecureAnywhere-Antivirus/Cut-Copy-or-Paste-Problems-Character-Entry-Issues-Scripting/ta-p/18396#.UhKfpmR4b9F). (Fully up-to-date Webroot should no longer treat Brackets as "unknown"; try [reinstalling](https://github.com/adobe/brackets/issues/2531#issuecomment-23747772) to update your copy).
 
+## <a name="fileassoc"> </a>How do I associate an extension with a type of file?
 
-## Still Having a Problem?
+Let's say you want ".inc" files to be treated like ".php" files. The easiest option today is to install the "Brackets Language Switcher" extension via the Extension Manager. You can also write [a really tiny extension](https://groups.google.com/forum/#!msg/brackets-dev/FDb_zq5isF0/rczgi9wccY8J) to Brackets.
+
+There will likely be a preference for this soon (follow [this GitHub issue](https://github.com/adobe/brackets/issues/6831), if you're interested in that) and possibly a [language switching feature in Brackets core soon](https://github.com/adobe/brackets/pull/6409) as well.
+
+## <a name="prefs37"> </a>Error reading preferences file (release 37)
+
+In Brackets release 37, there's a known issue in which [an empty preferences file could cause Brackets to display an error message on startup](https://github.com/adobe/brackets/issues/7220). If you see this error, Brackets will still start and will open the (empty) preferences file into the editor. Follow these steps, and you'll be all set:
+
+1. Type this into the editor:
+    ```javascript
+    {}
+    ```
+2. Save
+3. Quit and restart Brackets
+
+Starting with Brackets 36, we've added a bunch of preferences that let you tailor how Brackets works for you. Read more on the [How To Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) page.
+
+The bug described here is fixed in Brackets 38.
+
+## <a name="notsolved"> </a>Still Having a Problem?
 
 * **[File an issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)** - be sure to include as many details as possible (see link for specific guidelines)
 * **Contact us** via one of the channels mentioned in the [README](https://github.com/adobe/brackets/blob/master/README.md#i-want-to-keep-track-of-how-brackets-is-doing)
