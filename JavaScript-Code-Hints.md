@@ -104,7 +104,7 @@ Two significant features with an impact on JS Code Hints shipped in Brackets 36:
 
 This is the easiest piece to refactor, because the JS Code Hints-specific preferences system in Preferences.js should just go away. In its place, JS Code Hints will rely on a prefixed preferences system for "jscodehints". `max-file-count` and `max-file-size` are replaced by `jscodehints.maxFileCount` and `jscodehints.maxFileSize`. Ideally, we can eliminate `maxFileCount`.
 
-The excluded directories and excluded files should be project-level preferences, because of how verbose it would be to have to do this:
+The excluded directories and excluded files should be path-based preferences. It is a llittle more verbose:
 
 ```javascript
 {
@@ -127,8 +127,9 @@ vs.
 }
 ```
 
-But, this is open to discussion, if we think it likely that people will have other settings they'd want to apply to those excluded files.
+But it provides consistent handling of file matching and using the current APIs JS Code Hints can simply request the value of `jscodehints.exclude` with a context of each file it needs to check.
 
-**Open Questions**
 
-* Replace the exclusion regular expressions with glob match? This is better for consistency and conciseness, but not compatible with conversion.
+## Code Hints "Light"
+
+If there are too many files, can we do something small and lightweight to gather up symbols from the other files? Or is this too difficult to integrate with Tern results?
