@@ -7,7 +7,7 @@ This is an early draft of a description of several alternatives for split view t
 This is a more intuitive model:
 
 * The split view icon next to the Working Files label can be toggled to split the editor into two columns
-* When the editor is split into two columns the columns will have column headers that contain filenames, or an instruction if there's no file in the column. Focused column has black header text whereas the unfocused column has gray header text. Also, an extra section will appear below Working Files called Split View for now (name TBD), this section is for the working files designated for the second column.
+* When the editor is split into two columns the columns will have column headers that contain filenames, or an instruction if there's no file in the column. Focused column has black header text whereas the unfocused column has gray header text. Also, an extra section will appear below Working Files called Split Pane for now (name TBD), this section is for the working files designated for the second column.
 * Blue filenames under Working Files are the files being show in the columns. There can't be more than two blue filenames. The file that's currently in focus will have the dark selection background; we should consider removing the triangle that sticks out to avoid confusion.
 
 
