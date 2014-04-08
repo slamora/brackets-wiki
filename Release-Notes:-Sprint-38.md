@@ -5,18 +5,31 @@ _This document will not be finalized until the end of Sprint 38 -- approximately
 What's New in Sprint 38
 -----------------------
 * **Multiple Cursors**
-    * [Multiple cursor / multiple selection support](https://trello.com/c/g58aNzCz/1187-finish-multiple-selection-multiple-cursor-support): Ctrl+click or drag to create multiple cursors/selections, Ctrl+B to select next occurrence of a word, and more. [Read the full documentation for details](https://github.com/adobe/brackets/wiki/Working-with-Multiple-Selections).
+    * [Multiple cursor / multiple selection support](https://trello.com/c/g58aNzCz/1187-finish-multiple-selection-multiple-cursor-support), including...
+    * Ctrl/Cmd-click or drag to create multiple cursors/selections
+    * Alt-drag to create a rectangular selection (add Ctrl/Cmd to select multiple rectangles)
+    * Ctrl/Cmd-U to undo selection/cursor changes (add Shift to navigate forward in cursor history)
+    * Ctrl/Cmd-B to add a new selection at the next occurrence of a word or selected text. Shift-Ctrl/Cmd-B to skip an occurrence and add a selection on the next one. Alt-F3 or Cmd-Ctrl-G to add _all_ occurrences as selections at once.
+    * [Read the full documentation for details](https://github.com/adobe/brackets/wiki/Working-with-Multiple-Selections).
 * **Live Preview**
-    * [CSS Shapes visual editor](https://trello.com/c/iUHklzZB/1145-shapes-editor-extension-integrate-into-brackets): When using experimental Chrome features, you can edit CSS Shapes visually in the browser preview. The editor automatically appears in Chrome when you put your cursor on Brackets on a Shape definition.
+    * [CSS Shapes visual editor](https://trello.com/c/iUHklzZB/1145-shapes-editor-extension-integrate-into-brackets): After enabling experimental Chrome features, you can edit CSS Shapes visually in the browser preview. The editor automatically appears in Chrome when you put your cursor on Brackets on a Shape definition. _(TODO: see blog post for setup instructions)_
 * **Linting**
     * [Support asynchronous linting](https://github.com/adobe/brackets/pull/6530): Linters that require reading extra files from disk or talking to network services can now integrate with the standard Brackets linting UI.
 * **Search**
     * [Improved usability of file/folder exclusions](https://github.com/adobe/brackets/pull/7400): Filter editor displays how many files are left after filtering. Search shows warning if filter excludes all files in subtree. Filters disabled when searching only a single file.
-    * [Improved performance on Windows](https://github.com/adobe/brackets/pull/7290) if large binary files exist in the project folders
+    * [Improved performance on Windows](https://github.com/adobe/brackets/pull/7290) if large binary files exist in the project
+* **Files and Folders**
+    * [File tree expand/collapse shortcuts](https://github.com/adobe/brackets/pull/7026/files): Ctrl/Cmd-click to expand/collapse all siblings; Ctrl/Cmd-Alt-click to collapse subtree.
+* **Image Preview**
+    * [View .ico files](https://github.com/adobe/brackets/pull/7201), e.g. often used as website "favicon"
+* **Overeall UI**
+    * [Visual polish, subtle animations added](https://github.com/adobe/brackets/pull/5921)
+* **Localization**
+    * [UK English locale added](https://github.com/adobe/brackets/pull/7333)
+    * Process change: translation pull requests should include which SHA (commit) the update is based on.  [See localization README for details](https://github.com/adobe/brackets/blob/master/src/nls/README.md).
 * **Ongoing Research** (not implemented yet)
     * [Research: JS Code Hints Cleanup](https://trello.com/c/heHZlATB/1158-research-js-code-hints-cleanup): Investigate how to simplify the code, improve performance & maintainability, and unify with new preferences system.
     * [Research: Improved LESS support](https://trello.com/c/qv5gTqXp/1163-s-research-early-less-support): Investigate support for Live Preview, Quick Edit, and Quick Find Definition with LESS code.
-
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-37...sprint-38#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-37...sprint-38#commits_bucket)
 
@@ -28,7 +41,7 @@ UI Changes
 
 API Changes
 -----------
-**CodeMirror v4 & multiple cursors/selections** - See the **[[Brackets CodeMirror v4 Migration Guide]]**.
+**CodeMirror v4 & multiple cursors/selections** - See the **[[Brackets CodeMirror v4 Migration Guide]]**. Notably, referencing `CodeMirror` as a global identifier is now deprecated; use Require instead, as with other modules.
 
 **PHP files** - `Editor.getLanguageForSelection()` will now return the correct `"php"` language (instead of the generic `"clike"`).
 
@@ -41,6 +54,8 @@ New/Improved Extensibility APIs
 **Editor** - All `get*` and `set*` methods for Editor settings now take an optional path parameter to get setting for a particular file. If omitted, then the current document is used. The `set*` methods also now return a boolean value which indicates whether value is valid.
 
 In addition, all the add/remove file name/extension APIs can now optionally be passed an array of items instead of a single item.
+
+**Jump to Definition** - use `EditorManager.registerJumpToDefProvider()` to register a provider for the _Navigate > Jump to Definition_ command.
 
 
 Known Issues
