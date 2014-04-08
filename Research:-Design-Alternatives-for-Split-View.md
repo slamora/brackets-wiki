@@ -1,5 +1,18 @@
 This is an early draft of a description of several alternatives for split view that are being considered.
 
+## New Alternative Split View
+
+![New Alternative Split View mockup](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/4f99afca0c8915c46e1bd5b1/1540x3044/449a434ce6e0734d24003e4675531a55/SplitView_Global_001.png)
+
+This is a more intuitive model:
+
+* The split view icon next to the Working Files label can be toggled to split the editor into two columns
+* When the editor is split into two columns the columns will have column headers that contain filenames, or an instruction if there's no file in the column. Focused column has black header text whereas the unfocused column has gray header text. Also, an extra section will appear below Working Files called Split View for now (name TBD), this section is for the working files designated for the second column.
+* Blue filenames under Working Files are the files being show in the columns. There can't be more than two blue filenames. The file that's currently in focus will have the dark selection background; we should consider removing the triangle that sticks out to avoid confusion.
+
+
+
+
 ## Split Icons in Working Set
 
 ![Split View mockup with icons in working set](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/4fb6c9c75b54696e60026473/f5ab882a6ee322d3bf664c7de98c00d5/SplitView_001.png)
