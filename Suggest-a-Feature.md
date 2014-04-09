@@ -17,6 +17,7 @@ We keep our backlog of feature ideas on our [Trello board](https://trello.com/b/
 * [User specified keyboard shortcuts](https://trello.com/c/3mZwu1DE/352-2-user-specified-keyboard-shortcuts-for-commands-in-json)
 * [Extension enable/disable](https://trello.com/c/DtVjozXu/865-2-extension-enable-disable)
 * [Theme support](https://trello.com/c/y5ed9WKY/460-3-theme-support)
+* [Live Preview with browsers other than Chrome](https://trello.com/c/wdES3HqH/1008-5-research-live-development-w-open-protocol)
 
 Don't see the feature that's on your mind? Take a look below for tips on finding the feature you're interested in.
 
