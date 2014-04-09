@@ -168,9 +168,12 @@ for a more complete list of shortcuts.
 Preferences
 -----------
 
-From the Brackets user interface, you can change preferences such as whether you want "code inspection" (automatic detection of errors) turned on, or if word wrap should be on. These preferences are "user-level" which means that they apply to any file in any folder that you open.
+From the Brackets user interface, you can change preferences such as whether you want "code inspection" (automatic detection of errors) turned on, or if word wrap should be on. These preferences are "user-level" which means that they apply to any file in any folder that you open. Brackets (as of Brackets 36) also lets you override preferences on a per-folder basis. These files are particularly useful for saving configuration that is specific to a project or even some files in a project. 
 
-Brackets (as of Brackets 36) also lets you override preferences on a per-folder basis by putting a `.brackets.json` file there. These files are particularly useful for saving configuration that is specific to a project or even some files in a project. Some of the preferences available in these files do not have any user interface yet.
+Some of the preferences available in these files do not have any user interface yet. To modify these preferences:
+
+* for user-level preferences, choose Debug > Open Preferences File
+* for project-level preferences, create a ".brackets.json" file in the root of your project
 
 Here is a quick list of some of the settings you can change in these files:
 
