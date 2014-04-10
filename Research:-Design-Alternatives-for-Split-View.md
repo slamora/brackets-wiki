@@ -10,8 +10,16 @@ This is a more intuitive model:
 * When the editor is split into two columns the columns will have column headers that contain filenames, or an instruction if there's no file in the column. Focused column has black header text whereas the unfocused column has gray header text. Also, there will be two Working Files sections called "Left" and "Right" which are self-explanatory.
 * Blue filenames under Working Files are the files being show in the columns. There can only be one blue filename per working files section. The file that's currently in focus will have the dark selection background; we should consider removing the triangle that sticks out to avoid confusion.
 
-
-
+[Comments from nj]
+* I think this is more or less the same as the "Split Icons Separate from Working Set" idea at the bottom, but with the icon in the working set area instead of in the toolbar. In particular, opening a file opens it in the currently focused pane.
+* I think we were planning on doing both horizontal and vertical splitting in the initial implementation, so the icon will probably need to be a dropdown that lets you pick which way you want to split the window (and also gives you the option to unsplit). If the window is already split one way and you choose to split it the other way, the panes should just move around and the labels of the working set sections should change to match.
+* I think it would be good to consider adding some other subtle header decoration to emphasize which is the focused pane in addition to just the black/gray text.
+* We should note that we have discussed adding tabs for documents, but are not planning to do that right now - we might add them later.
+* One question is what happens if the user single-clicks in the file tree. Currently, that doesn't add the file to the working set, but presumably the user would expect it to open in the focused pane. I'm assuming that the visual treatment will be the same as in the working set - i.e., if the focused pane contains a file from the file tree that's not in the working set, then it will get the black selection highlight in the file tree; if the unfocused pane contains a file from the file tree, then it will get the blue text highlight.
+* We also need to be clear about what Ctrl-Tab does, since it cycles in MRU order. I'm assuming it would do the same in the new world, and that MRU is simply tracked across both working sets.
+* I also wonder if we should add another shortcut for just cycling focus between the panes.
+* Also need to figure out how the working set gear menu and context menu commands work with multiple working sets. "Sort" probably just sorts within each set; the "Close Others" commands are less clear (do they mean just in the working set containing the file you opened the context menu on?)
+* Also need to figure out how drag and drop will work with multiple working sets (I think the intention is that you could drag and drop between the working sets in addition to reordering within the same set).
 
 ## Split Icons in Working Set
 
