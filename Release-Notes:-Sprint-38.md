@@ -11,8 +11,6 @@ What's New in Sprint 38
     * Ctrl/Cmd-U to undo selection/cursor changes (add Shift to navigate forward in cursor history)
     * Ctrl/Cmd-B to add a new selection at the next occurrence of a word or selected text. Shift-Ctrl/Cmd-B to skip an occurrence and add a selection on the next one. Alt-F3 or Cmd-Ctrl-G to add _all_ occurrences as selections at once.
     * [Read the full documentation for details](https://github.com/adobe/brackets/wiki/Working-with-Multiple-Selections).
-* **Live Preview**
-    * [CSS Shapes visual editor](https://trello.com/c/iUHklzZB/1145-shapes-editor-extension-integrate-into-brackets): After enabling experimental Chrome features, you can edit CSS Shapes visually in the browser preview. The editor automatically appears in Chrome when you put your cursor on Brackets on a Shape definition. _(TODO: see blog post for setup instructions)_
 * **Linting**
     * [Support asynchronous linting](https://github.com/adobe/brackets/pull/6530): Linters that require reading extra files from disk or talking to network services can now integrate with the standard Brackets linting UI.
 * **Search**
@@ -22,7 +20,7 @@ What's New in Sprint 38
     * [File tree expand/collapse shortcuts](https://github.com/adobe/brackets/pull/7026/files): Ctrl/Cmd-click to expand/collapse all siblings; Ctrl/Cmd-Alt-click to collapse subtree.
 * **Image Preview**
     * [View .ico files](https://github.com/adobe/brackets/pull/7201), e.g. often used as website "favicon"
-* **Overeall UI**
+* **Overall UI**
     * [Visual polish, subtle animations added](https://github.com/adobe/brackets/pull/5921)
 * **Localization**
     * [UK English locale added](https://github.com/adobe/brackets/pull/7333)
