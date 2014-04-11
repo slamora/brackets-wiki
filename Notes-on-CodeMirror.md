@@ -3,9 +3,8 @@ team has submitted or contributed to a number of features and bug fixes in CodeM
 given input into the design of features like line widgets, document/view separation and multiple selections.
 
 Currently, Brackets uses a [fork of CodeMirror](http://github.com/adobe/CodeMirror2) as a submodule. 
-Originally, this was because of a number of experimental features that Brackets implemented (including 
-a prototype implementation of inline widgets) that we hadn't yet contributed upstream. Now that the
-upstream CodeMirror repo has versions of these features, we've ported Brackets to use the upstream 
+Originally, we created our own fork to hold a number of experimental features that Brackets implemented (including a prototype implementation of inline widgets) that we hadn't yet contributed upstream. Now that the
+upstream CodeMirror repo has versions of these features, we generally keep Brackets in sync with the upstream 
 version.
 
 In general, the `master` branch in our fork ([adobe/CodeMirror2](http://github.com/adobe/CodeMirror2)) is updated to match upstream/master at the beginning of each release, and we don't do any work in master ourselves. Usually we keep the Brackets submodule pointed at master, but in cases where there are
