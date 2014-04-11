@@ -28,11 +28,11 @@ You can hit Esc in order to get rid of a multiple selection, leaving only the pr
 
 When coding, it's often useful to be able to quickly change multiple instances of the same string, like a variable name. You can use the Find bar to do this, but there's a quicker way to do it using multiple selections that can be more convenient in some cases.
 
-Ctrl-B/Cmd-B (Add Next Match to Selection) will add the next instance of the currently selected range to the selection - it's kind of like Find Next, but uses the current selection and adds to the multiple selection. (If the current selection is a cursor, it will just expand to the surrounding word - hitting it again will then add the next instance of that word.) You can use this to quickly find the instances of the string you want to replace. Once you have all the instances selected, you can just type the replacement, and it will replace all the instances.
+Ctrl-B/Cmd-B (Edit > Add Next Match to Selection) will add the next instance of the currently selected range to the selection - it's kind of like Find Next, but uses the current selection and adds to the multiple selection. (If the current selection is a cursor, it will just expand to the surrounding word - hitting it again will then add the next instance of that word.) You can use this to quickly find the instances of the string you want to replace. Once you have all the instances selected, you can just type the replacement, and it will replace all the instances.
 
-If you want to skip an instance, you can use Ctrl-Shift-B/Cmd-Shift-B (Skip and Add Next Match). That will remove the last-added instance from the selection and add the next instance. If you make a mistake or go too far, you can use Ctrl-U/Cmd-U to undo the last selection change.
+If you want to skip an instance, you can use Ctrl-Shift-B/Cmd-Shift-B (Edit > Skip and Add Next Match). That will remove the last-added instance from the selection and add the next instance. If you make a mistake or go too far, you can use Ctrl-U/Cmd-U to undo the last selection change.
 
-If you know you want to replace all the instances in the document, you can use Alt-F3 (Windows) or Cmd-Ctrl-G (Mac) (Find All and Select) to select all matches for the current selection in the document.
+If you know you want to replace all the instances in the document, you can use Alt-F3 (Windows) or Cmd-Ctrl-G (Mac) (Edit > Find All and Select) to select all matches for the current selection in the document.
 
 ## Shortcut reference
 
