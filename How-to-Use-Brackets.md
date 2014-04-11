@@ -90,6 +90,8 @@ Other Features
 * **Indentation and tabs** - To change the default indentation for the editor, use the controls on the right end of the status bar at the bottom of the window. Click the word "Spaces" or "Tab Size" to switch whether you're using spaces or tabs, and change the indentation size by clicking on the number to the right. Note that Brackets uses "soft tabs", so even if spaces are inserted, the cursor moves as if tabs are present.
 * **Editor font and colors** - There are no official preferences for these yet. However, there are unofficial ways to [[Customize your code font]], and several extensions add the ability to choose different themes.
 
+See also the [Preferences](#preferences) section below.
+
 ### Quick Open
 To quickly jump to a file, press **Ctrl/Cmd-Shift-O** and type part of the filename. You can type abbreviations or other non-contiguous parts of the name, and Quick Open will intelligently find the best matching file.
 
