@@ -133,3 +133,14 @@ But it provides consistent handling of file matching and using the current APIs 
 ## Code Hints "Light"
 
 If there are too many files, can we do something small and lightweight to gather up symbols from the other files? Or is this too difficult to integrate with Tern results?
+
+## Analysis of Code Hints issues
+
+### Crashes
+
+* #7308
+
+
+### Preferences Handling
+
+* [JS code hint exclusions ignored sometimes](https://github.com/adobe/brackets/issues/7342)
