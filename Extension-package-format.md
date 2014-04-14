@@ -92,6 +92,10 @@ Keywords can be anything that will help users find the right extension. Extensio
 
 Recommended: if your extension adds support for a specific language, include all its file extensions (with leading ".") in your keywords. (For example, an extension adding TypeScript support should include ".ts" in its keywords).
 
+Keywords must be an array of keywords, not a simple list. For example:
+
+    "keywords":["lint,linting,linter"]
+
 ## Extension Modules and main.js ##
 
 <font color="green">Status: Implemented</font>
