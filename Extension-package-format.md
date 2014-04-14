@@ -94,7 +94,7 @@ Recommended: if your extension adds support for a specific language, include all
 
 Keywords must be an array of keywords, not a simple list. For example:
 
-    "keywords":["lint,linting,linter"]
+    "keywords":["lint","linting","linter"]
 
 ## Extension Modules and main.js ##
 
