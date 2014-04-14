@@ -2,7 +2,7 @@ This is an early draft of a description of several alternatives for split view t
 
 ## New Alternative Split View
 
-![New Alternative Split View mockup](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/4fb6c9c75b54696e60026473/1540x3044/980d341b509e0a20f1346254933d4f1e/SplitView_Global_001.png)
+![New Alternative Split View mockup](https://trello-attachments.s3.amazonaws.com/4f90a6d98f77505d7940ce88/4fb6c9c75b54696e60026473/1540x3044/6154733e2ad7c52b84bd7d23c493be84/SplitView_Global_002.png)
 This is a more intuitive model:
 
 * The split view icon next to the Working Files label can be toggled to split the editor into two columns
