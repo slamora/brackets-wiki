@@ -1,8 +1,8 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 38 -- approximately April 14._
+_This document will not be finalized until the end of Sprint 39 -- approximately May 5._
 
-What's New in Sprint 38
+What's New in Sprint 39
 -----------------------
 * **Multiple Cursors**
     * [Multiple cursor / multiple selection support](https://trello.com/c/g58aNzCz/1187-finish-multiple-selection-multiple-cursor-support), including...
@@ -29,7 +29,7 @@ What's New in Sprint 38
     * [Research: JS Code Hints Cleanup](https://trello.com/c/heHZlATB/1158-research-js-code-hints-cleanup): Investigate how to simplify the code, improve performance & maintainability, and unify with new preferences system.
     * [Research: Improved LESS support](https://trello.com/c/qv5gTqXp/1163-s-research-early-less-support): Investigate support for Live Preview, Quick Edit, and Quick Find Definition with LESS code.
 
-_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-37...sprint-38#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-37...sprint-38#commits_bucket)
+_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-38...sprint-39#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-38...sprint-39#commits_bucket)
 
 
 UI Changes
@@ -108,6 +108,6 @@ Community contributions to Brackets
 * A new brackets-shell build is _not_ needed for this sprint.
 * Git submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
-Bugs fixed in Sprint 38
+Bugs fixed in Sprint 39
 -----------------------
-For details on the bugs addressed, please refer to [closed sprint 38 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=25&state=closed). Not all fixed bugs will be caught by this search query, however.
+For details on the bugs addressed, please refer to [closed sprint 39 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=39&state=closed). Not all fixed bugs will be caught by this search query, however.
