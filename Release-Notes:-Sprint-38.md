@@ -49,9 +49,9 @@ New/Improved Extensibility APIs
 
 **LanguageManager** - If a file extension already has a default Language mapping in Brackets, an extension can unregister the mapping in order to use it with a new Language. (For example, changing ".twig" from generic HTML highlighting to a new Twig-specific highlighting mode). Use `Language.removeFileExtension()` and `removeFileName()`.
 
-**Editor** - All `get*` and `set*` methods for Editor settings now take an optional path parameter to get setting for a particular file. If omitted, then the current document is used. The `set*` methods also now return a boolean value which indicates whether value is valid.
-
 In addition, all the add/remove file name/extension APIs can now optionally be passed an array of items instead of a single item.
+
+**Editor** - All `get*` and `set*` methods for Editor settings now take an optional path parameter to get setting for a particular file. If omitted, then the current document is used. The `set*` methods also now return a boolean value which indicates whether value is valid.
 
 **Jump to Definition** - use `EditorManager.registerJumpToDefProvider()` to register a provider for the _Navigate > Jump to Definition_ command.
 
