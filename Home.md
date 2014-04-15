@@ -24,6 +24,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * **[How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets)**
 * **[How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)**
+* **[[Brackets Development How-Tos]]**
 * [Creating Brackets Extensions from Nettuts+](http://code.tutsplus.com/tutorials/creating-brackets-extensions--net-36781)
 * [Brackets Contributor License Agreement](http://dev.brackets.io/brackets-contributor-license-agreement.html) - you must agree to and submit this before you can contribute to Brackets.
 * [License](https://github.com/adobe/brackets/blob/master/LICENSE)
