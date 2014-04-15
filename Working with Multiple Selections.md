@@ -4,7 +4,7 @@ If you're an extension developer looking for tips on how to make your extension 
 
 ## Basic usage
 
-If you like using video to learn new features, here's a [video tutorial for multiple selections](https://www.youtube.com/watch?v=QMoWNCdM6Yk). Otherwise, read on...
+If you like watching video to learn new features, here's a [video tutorial for multiple selections](https://www.youtube.com/watch?v=QMoWNCdM6Yk). Otherwise, read on...
 
 Multiple selections are useful when you want to apply the same edit to different parts of your document. For example, you might want to add the same text to multiple nearby lines, or you might want a quick way to replace all the instances of a variable without having to use the Find bar.
 
