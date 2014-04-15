@@ -106,4 +106,4 @@ Community contributions to Brackets
 
 Bugs fixed in Sprint 38
 -----------------------
-For details on the bugs addressed, please refer to [closed sprint 38 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=25&state=closed). Not all fixed bugs will be caught by this search query, however.
+For details on the bugs addressed, please refer to [closed sprint 38 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=38&state=closed). Not all fixed bugs will be caught by this search query, however.
