@@ -109,7 +109,9 @@ For example, if you have ```awesome.jpg``` in your extension's top-level ```foo`
 
 ### Working with Preferences
 
-Your extension can access Brackets' preferences and define preferences of its own. For preferences specific to your extension, you should make sure that all of the preferences have a prefix so that they don't clobber any other preferences. Here's an example:
+Your extension can access Brackets' preferences and define preferences of its own. For preferences specific to your extension, you should make sure that all of the preferences have a prefix so that they don't clobber any other preferences.
+
+For details, see the full **[Preferences System documentation](Preferences System)**. But here's an example that covers the main parts of the API you'll need to know:
 
 ```javascript
 
@@ -140,10 +142,6 @@ prefs.set("enabled", false);
 prefs.save();
 
 ```
-
-The snippet of code above covers the main parts of the API that you will use for preferences.
-
-There are further details at the [[Preferences System]] page.
 
 ### Accessing Node APIs
 
