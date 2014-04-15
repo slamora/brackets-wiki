@@ -110,4 +110,4 @@ Community contributions to Brackets
 
 Bugs fixed in Sprint 39
 -----------------------
-For details on the bugs addressed, please refer to [closed sprint 39 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=39&state=closed). Not all fixed bugs will be caught by this search query, however.
+For details on the bugs addressed, please refer to [closed sprint 39 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=27&state=closed). Not all fixed bugs will be caught by this search query, however.
