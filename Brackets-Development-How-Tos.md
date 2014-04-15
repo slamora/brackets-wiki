@@ -2,9 +2,9 @@ _Warning: because Brackets is still undergoing a lot of change, many of the APIs
 
 ## Application Init
 
-There are 2 primary events a module should listen to before querying or modifying the DOM. These events are defined in ``utils/AppInit``:
-* ``htmlReady`` signals when the initial DOM content of Brackets is loaded (a template that is rendered by Mustache to include translated strings). Once this event fires, it is safe to query for static DOM elements. _Note:_ Extensions do not need to wait for this event; they are always loaded after it. Core modules must wait for this event before querying the DOM.
-* ``appReady`` signals when the core Brackets modules have initialized and when all extensions have finished loading. The initially open project and the active editor/document are loaded by this point.
+There are 2 primary milestones you can wait for during startup, defined in ``utils/AppInit``:
+* ``htmlReady`` signals when the initial DOM content of Brackets is loaded (a template that is rendered by Mustache to include translated strings). Once this event fires, it is safe to query for static DOM elements. _Extensions do not need to wait for this event_ - they are always loaded after it. But core modules must wait for this event before querying the DOM.
+* ``appReady`` signals when extensions have finished loading, the initially open project is loaded, and the last-open editor/document is loaded. _Waiting for this event is [not usually needed](https://groups.google.com/d/msg/brackets-dev/8sFGe6bhqaM/kx6B5yrmggoJ)_ for extensions or core.
 
 Do not rely on other events such as ``$(document).ready`` or ``window.onload``.
 
