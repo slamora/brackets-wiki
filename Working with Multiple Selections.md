@@ -1,4 +1,4 @@
-This document describes how to use the multiple cursor/multiple selection functionality being added to Brackets Sprint 38. Once it's released, this will move to [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-To-Use-Brackets).
+This document describes how to use the multiple cursor/multiple selection functionality in Brackets.
 
 If you're an extension developer looking for tips on how to make your extension with multiple selections, see the [Brackets CodeMirror v4 Migration Guide](https://github.com/adobe/brackets/wiki/Brackets-CodeMirror-v4-Migration-Guide).
 
