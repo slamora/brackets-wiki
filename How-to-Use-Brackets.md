@@ -197,6 +197,7 @@ Here is a quick list of some of the settings you can change in these files:
 * (new in 37) **staticserver.port**: Port number that the built-in server should use for Live Preview
 * (new in 38) **scrollPastEnd**: (default `false`) True to be able to scroll beyond the end of the document
 * (new in 38) **softTabs**: (default `true`) False to turn off soft tabs behavior
+* (new in 38) **closeOthers.others**, **closeOthers.above**, **closeOthers.below**: (default all `true`) False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu
 
 Here's an example:
 
