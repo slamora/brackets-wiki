@@ -74,6 +74,7 @@ The Document and its full text content will be kept in memory until you call `re
 
 To modify a Document's text content, use `Document.replaceRange()`. If you're going to call it multiple times as the result of a single user action, wrap all your calls in `Document.batchOperation()` to ensure they're all batched into a single Undo/Redo entry.
 
+In many cases, if you're implementing a new kind of edit, you'll want to handle multiple selections. See [Changes to Editor selection APIs](https://github.com/adobe/brackets/wiki/Brackets-CodeMirror-v4-Migration-Guide#changes-to-editor-selection-apis) and [Performing edits on multiple selections](https://github.com/adobe/brackets/wiki/Brackets-CodeMirror-v4-Migration-Guide#performing-edits-on-multiple-selections) for more information.
 
 ## <a name="commands"></a>Menus and Keyboard Shortcuts ##
 
