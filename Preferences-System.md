@@ -1,5 +1,7 @@
 ## Preferences System Basics
 
+See also: [**Quick example** with sample code](https://github.com/adobe/brackets/wiki/How-to-write-extensions#working-with-preferences)
+
 The preferences system has a collection of "scopes" that are searched in order for a given preferences key. There are a handful of ways to customize the behavior as needed, but a typical preference lookup will search scopes in this order:
 
 * session: in-memory overrides that go away when Brackets is restarted. There wouldn't be anything in here by default.
