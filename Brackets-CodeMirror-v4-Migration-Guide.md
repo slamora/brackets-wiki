@@ -49,8 +49,6 @@ For more detailed information on the changes to the selection APIs on Editor, se
 
 ### Performing edits on multiple selections
 
-(Once the multiple selection functionality is released in Brackets, this will move to the [Brackets Development How-Tos](https://github.com/adobe/brackets/wiki/Brackets-Development-How-Tos) page.)
-
 In many cases, edits you make to the document will be based on the user's current selection. As of Sprint 38, Brackets supports multiple selections, so in most cases you will want to switch to use the new `getSelections()` and `setSelections()` APIs, and determine how your edits will operate on multiple selections.
 
 The major exceptions are code hinting, Quick Edit, and Quick Docs. Currently in Brackets, these functions all only work on the primary selection. (For Quick Edit, this applies to *opening* a Quick Edit inline editor; if the inline editor contains a document editor, multiple selections should work within that editor.) However, if you implement other kinds of editing commands, you should consider making them work with multiple selections.
