@@ -1,3 +1,8 @@
+Status: implemented - _this page no longer maintained_
+
+**See [Preferences System documentation](https://github.com/adobe/brackets/wiki/Preferences-System) for current information.**
+
+<br><br>
 ## Implementation Notes
 
 ### P1 vs. P2
