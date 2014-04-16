@@ -32,11 +32,11 @@ ExtensionLoader will be modified to handle theme extensions. Theme Extensions wi
 
 ```json
 {
-    "name": “super-cool-theme”,
+    "name": "super-cool-theme",
     "title": "Super Cool Theme",
-    "version": “1.0”,
-    "theme": “superCoolStyles.css”,
-    "screenshot": “http://foobar.baz/bop.gif"
+    "version": "1.0",
+    "theme": "superCoolStyles.css",
+    "screenshot": "http://foobar.baz/bop.gif"
 }
 ```
 
