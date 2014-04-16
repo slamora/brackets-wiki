@@ -74,7 +74,7 @@ Community contributions to Brackets
 * [Fix: JSLint didn't respect tab size setting when Tab char enabled](https://github.com/adobe/brackets/pull/7243) by [Martin Zagora](https://github.com/zaggino)
 * [Fix: Inline bezier editor error didn't reappear after editing during fadeout](https://github.com/adobe/brackets/pull/7235) ([and](https://github.com/adobe/brackets/pull/7248)) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Accept string id in `PreferencesManager.convertPreferences()`, not just module object](https://github.com/adobe/brackets/pull/7415) by [Marcel Gerber](https://github.com/SAPlayer)
-* [Allow extensions to load LESS files that use `@import`](https://github.com/adobe/brackets/pull/7230) by [Martin Zagora](https://github.com/zaggino)
+* [Allow extensions to load LESS files that use `@import` (Mac & Win only for now)](https://github.com/adobe/brackets/pull/7230) by [Martin Zagora](https://github.com/zaggino)
 * [Fix shift in document scroll position when reloading Brackets with non-default font size](https://github.com/adobe/brackets/pull/7185) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Fix: No `"fontSizeChange"` event from Restore Font Size command](https://github.com/adobe/brackets/pull/7443) by [Lance Campbell](https://github.com/lkcampbell)
 * [Fix: Async.PromiseQueue halts if any promise rejects](https://github.com/adobe/brackets/pull/7407) by [jayther](https://github.com/jayther)
