@@ -32,17 +32,20 @@ ExtensionLoader will be modified to handle theme extensions. Theme Extensions wi
 
 ```json
 {
-    “name”: “super-cool-theme”,
+    "name": “super-cool-theme”,
     "title": "Super Cool Theme",
-    “version”: “1.0”,
-    “theme”: “superCoolStyles.css”,
-    “screenshot”: “http://foobar.baz/bop.gif"
+    "version": “1.0”,
+    "theme": “superCoolStyles.css”,
+    "screenshot": “http://foobar.baz/bop.gif"
 }
 ```
 
 The `theme` property of the package.json file points to the CSS (or LESS) file that will be loaded. `screenshot` is new and could possibly be used in the extension manager to display a screenshot.
 
+If there is a theme property in package.json, no JavaScript is loaded.
+
 ## UI
 
 The View menu will have a new "Theme..." menu item. It will open up a dialog that has the settings from the Brackets-Themes "General" dialog as well as a selector for the theme itself.
 
+Ideally, the Extension Manager will have a new tab for themes which would not be displayed in the main extension listing. The new screenshot property should be displayed for any extension.
