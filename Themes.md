@@ -6,11 +6,13 @@ Here's a quick rundown of features that we'd want:
 * Themes are registered with a theme manager
 * Perhaps themes would be allowed to be JS-less extensions? (Some mechanism other than calling an addTheme call?)
 * We ship with a couple of themes out of the box (default extensions)
+* Themes should style inline editors nicely (and the default themes should serve as great examples for theme creators)
 * Should use the new prefs system
 * Custom settings screen is okay at this point
-* Settings should use whatever technology we’re using for views (either current plain jQuery or React if we move in that direction)
+* Settings should use whatever technology we’re using for views (plain jQuery)
 * (optional) it would be beautiful to have custom extension manager UI for themes to show off screenshots and to separate themes from other extensions
 * (optional) layered settings for stuff like font (theme can provide default user override)
+* (optional) ability to change shell color
 
 And here are changes required to Brackets-Themes in order for it to meet our needs:
 
@@ -34,7 +36,7 @@ ExtensionLoader will be modified to handle theme extensions. Theme Extensions wi
 {
     "name": "super-cool-theme",
     "title": "Super Cool Theme",
-    "version": "1.0",
+    "version": "1.0.0",
     "theme": "superCoolStyles.css",
     "screenshot": "http://foobar.baz/bop.gif"
 }
@@ -48,4 +50,19 @@ If there is a theme property in package.json, no JavaScript is loaded.
 
 The View menu will have a new "Theme..." menu item. It will open up a dialog that has the settings from the Brackets-Themes "General" dialog as well as a selector for the theme itself.
 
+It would be cool if there was a place for the screenshot near the theme selector to act as a preview for the change.
+
 Ideally, the Extension Manager will have a new tab for themes which would not be displayed in the main extension listing. The new screenshot property should be displayed for any extension.
+
+## Default Themes
+
+* Need to handle inline editors well
+
+Feedback from Jacob Lauritzen:
+
+> Look over the default css. There are multiple places where rules are declared explicitly when they could just be inherited.
+> On the top of my head, I remember some background rules that were the same as the parent element. It would be easier for themes to override these if they were inherited or simply not declared instead.
+
+## Shell
+
+It would be nice if the shell color could change in some fashion to suit the theme.
