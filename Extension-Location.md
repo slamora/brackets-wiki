@@ -1,62 +1,32 @@
 ## Introduction
 
-Brackets extensions currently reside in a directory that is next to the main brackets `index.html` file. This is problematic for several reasons:
+Brackets looks in several different locations to find extensions to load:
 
-* On the mac, the extensions are inside the `Brackets.app` package. On Windows, the extensions are in the `Program Files` directory (assuming you installed in the default location). Adding or removing extensions modifies these directories, which requires elevated user permissions.
-* If the app is signed, adding or removing extensions invalidates the signature.
-* Extensions are not retained when upgrading to a newer build of Brackets (this is partially due to the location of the extension, and partially due to the fact that we don't have an in-place update mechanism).
+### User Extensions Folder
 
-This is a proposal for moving the extensions directory to the users home directory. Here is the [backlog entry] (https://trello.com/c/xI1B3nok).
+You can view this location using _Help > Show Extensions Folder_. Normally, this folder's contents are managed by Extension Manger.
 
-## Extension Directory
+* Mac: `~/Library/Application Support/Brackets/extensions/user`
+* Win: `C:\Users\<user>\AppData\Roaming\Brackets\extensions\user`
+* Linux: 
 
-At launch, Brackets will look for extensions in the following locations:
+Note: the `disabled` folder that sits next to `user` has no special meaning for the moment. It's just a convenient location to manually move extensions you wish to disable.
 
-### Mac
+### Extension Dev Folder
 
-* `/Users/<user>/Library/Application Support/Brackets/extensions/user` - This is where the user will install extensions
+* `<brackets>/src/extensions/dev`
 
-### Win
+Normally only used when [pulling source from Git](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets). This location has advantages over the user folder, for extension developers:
 
-* `<user folder>\AppData\Roaming\Brackets\extensions\user` (in a standard windows installation, this maps to `C:\Users\<user>\AppData\Roaming\Brackets\extensions\user`) - This is where the user will install extensions.
+* Extension Manager will not let you delete any of the extensions in this location (though they still show up in the Installed list)
+* You can conveniently open the entire Brackets source tree along with your extensions, since this folder lies within the source tree. This makes it easier to refer to core Brackets APIs while developing, and gives you improved code hints etc.
 
-### Both
+More on [[How to Write Extensions]].
 
-* `<brackets src>/extensions/default` - Extensions that are packaged with Brackets 
-* `<brackets src>/extensions/dev` - For convenience when developing extensions (see below for details)
+### Core Extensions
 
-## Disabled Extensions
+* `<brackets src>/extensions/default`
 
-Next to the `extensions/user` directory is an `extensions/disabled` directory. By default, both of these directories are empty. Extensions from the `user` directory will be loaded when Brackets is launched. Extensions in the `disabled` directory are _not_ loaded. Having these two directories side-by-side enables a tool like [Extension Manager] (https://github.com/jdiehl/brackets-extension-manager) to easily enable/disable extensions.
+Some parts of Brackets core are implemented as extensions internally, and they are located here. Treat this as you could any other part of the Brackets core code: Brackets may not work properly if you remove or change any of these extensions.
 
-Extensions checked in to the `src/extensions/disabled` directory will _not_ be copied to the user's `extensions/disabled` directory. We should consider eliminating this directory. 
-
-## "Show Extensions Folder"
-
-The _Help > Show Extensions Folder_ menu item opens up the `extensions` folder in the user directory. 
-
-## Extension Development
-
-Many (most?) extension developers work with a local copy of the Brackets source code. For convenience, Brackets will load extensions from a `src/extensions/dev` directory inside the Brackets repo. This way developers don't need to dig through the user directories to put their extension code (or a symlink).
-
-## API Changes
-
-One new function is added to brackets-shell:
-
-```javascript
- 
-    /**
-     * Returns the full path of the application support directory.
-     * On the Mac, it's /Users/<user>/Library/Application Support/GROUP_NAME/APP_NAME
-     * On Windows, it's C:\Users\\<user>\AppData\Roaming\GROUP_NAME\APP_NAME
-     *
-     * Note: this function will *not* create the directory if it doesn't exist. 
-     *
-     * @return {string} Full path of the application support directory
-     */
-     native function GetApplicationSupportDirectory();
-     appshell.app.getApplicationSupportDirectory = function () {
-         return GetApplicationSupportDirectory();
-     }
-
-```
+> Note: Extensions in this location are not listed in Extension Manager, and Debug > Reload Without Extensions will still load these extensions.
