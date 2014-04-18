@@ -80,7 +80,6 @@ Community contributions to Brackets
 * [Fix: Async.PromiseQueue halts if any promise rejects](https://github.com/adobe/brackets/pull/7407) by [jayther](https://github.com/jayther)
 * [Fix: Restore the correct selections after Toggle Line Comment](https://github.com/adobe/brackets/pull/7301) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Fix issues with Close Others context menu preferences](https://github.com/adobe/brackets/pull/7088) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Don't calculate editor size with hidden elements when resizing](https://github.com/adobe/brackets/pull/7417) ([later removed](https://github.com/adobe/brackets/pull/7526)) by [Martin Zagora](https://github.com/zaggino)
 * [Green Update buttons in Extension Manager - easier to spot](https://github.com/adobe/brackets/pull/6315) by [Matt Stow](https://github.com/stowball)
 * [Fix: Clicking update icon in Extension Manager tab doesn't select tab](https://github.com/adobe/brackets/pull/7287) by [Olgierd Grzyb](https://github.com/winek)
 * [Fix console warning spam for external changes inside .git folder](https://github.com/adobe/brackets/pull/7332) by [Martin Zagora](https://github.com/zaggino)
