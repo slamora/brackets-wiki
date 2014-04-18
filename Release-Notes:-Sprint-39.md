@@ -6,6 +6,7 @@ What's New in Sprint 39
 -----------------------
 * **Code Editing**
     * [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409): Use the language indicator in the status bar as a dropdown to override the language Brackets chose to treat a file as. (These changes are _not_ yet saved when you close the file, or generalized to all files with a certain extension).
+    * Cut/Copy whole line when nothing is selected
 * **Search**
     * [File exclusion filters for Quick Open, Quick Edit, and JS Code Hints](https://trello.com/c/zd77LxFS/1229-file-exclusion-filtering-beyond-find-in-files): Similar to the filtering already available for Find in Files. **TODO: details**
 * **Extensions**
