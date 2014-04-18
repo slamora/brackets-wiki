@@ -9,7 +9,7 @@ What's New in Sprint 39
 * **Search**
     * [File exclusion filters for Quick Open, Quick Edit, and JS Code Hints](https://trello.com/c/zd77LxFS/1229-file-exclusion-filtering-beyond-find-in-files): Similar to the filtering already available for Find in Files. **TODO: details**
 * **Extensions**
-    * [Admin features for Extension Registry](https://trello.com/c/NAtggRqE/1224-simple-admin-for-registry): An extension's author can delete the extension from the registry, mark the extension as incompatible with newer versions of Brackets, or transfer ownership to a different author.
+    * [Admin features for Extension Registry](https://trello.com/c/NAtggRqE/1224-simple-admin-for-registry): (available since 4/17) An extension's author can delete the extension from the registry, mark the extension as incompatible with newer versions of Brackets, or transfer ownership to a different author.
 * **Ongoing Research** (not implemented yet)
     * [Research: Split-view architecture](https://trello.com/c/8YAFyAZD/500-split-view-multiple-documents): See [architecture proposal](https://github.com/adobe/brackets/wiki/SplitView-Architecture-Notes).
 
