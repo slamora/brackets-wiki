@@ -16,13 +16,11 @@ Other information that may help you:
 
 ## <a name="requirements"> </a>System Requirements
 
-* Mac OSX 10.6.8 or newer.
-    * Mountain Lion (OS X 10.8) by default will not allow Brackets to run since it's not being digitally signed yet.  To work around this, right click the Brackets app and choose Open, then click Open on the dialog that appears.  You only need to do that once -- afterward, launching Brackets the normal way will work also.
-* Windows Vista/7/8/8.1 (x32) and (x64) (with administrator access)
-* WinXP w/ Service Pack 2 (with administrator access)
-* Linux Ubuntu 12.04 or newer (x32) and (x64).
-* Debian Linux 8 or newer (Debian 7 compatibility will be restored once [#4816](https://github.com/adobe/brackets/issues/4816) is resolved).
-* You should have at least 2 GB of RAM to do Live Development.
+* Mac OSX 10.6.8 or newer
+* Windows Vista, 7, or 8/8.1 (x32 and x64) (installer requires administrator access)
+* Linux Ubuntu 12.04 or newer (x32 and x64)
+* Debian Linux 8 or newer (for Debian 7 compatibility see [issue #4816](https://github.com/adobe/brackets/issues/4816))
+* At least 2 GB of RAM for Live Development
 
 
 ## <a name="installation"> </a>Can't Install Brackets
