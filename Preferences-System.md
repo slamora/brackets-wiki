@@ -1,3 +1,5 @@
+This is a reference for _writing code_ that uses the preferences APIs (for extension authors, etc.). For how to use preferences _as a Brackets end user_, see [How to Use Brackets - Preferences](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences).
+
 ## Preferences System Basics
 
 See also: [**Quick example** with sample code](https://github.com/adobe/brackets/wiki/How-to-write-extensions#working-with-preferences)
