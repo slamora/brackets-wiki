@@ -1,6 +1,6 @@
 # How to Report a Brackets Issue
 
-Found a bug you'd like to tell us about? Here's what to do....
+Found a bug you'd like to tell us about? Here's what to do...
 
 First, check our **[Troubleshooting page](https://github.com/adobe/brackets/wiki/Troubleshooting)** for solutions to common problems.
 
