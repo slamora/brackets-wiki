@@ -2,7 +2,7 @@ Brackets includes a simple test-runner for internal use. You can leverage this s
 
 1. Learn about the [Jasmine unit-test framework](http://pivotal.github.io/jasmine/).
 2. Add a `unittests.js` module in the root of your extension folder.
-3. Write Jasmine test cases inside the module, using `describe() {}` blocks. [Here's an example](Simple "Hello World" extension#unittestjs).
+3. Write Jasmine test cases inside the module, using `describe() {}` blocks. [Here's an example](#unittest).
 4. Choose _Debug > Run Tests_
 5. Click the _Extensions_ tab
 6. Click the name of your Jasmine block to run it
@@ -13,7 +13,7 @@ Brackets includes a simple test-runner for internal use. You can leverage this s
 
 Start with the code from [[Simple "Hello World" extension]]. Then add `exports.handleHelloWorld = handleHelloWorld;` to the bottom of the module, inside the curly braces (this exposes the method as an API that `unittests.js` can invoke).
 
-**unittests.js**
+**unittests.js** <a name="unittest"></a>
 
 ```javascript
 define(function (require, exports, module) {
