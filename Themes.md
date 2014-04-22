@@ -1,3 +1,5 @@
+See the [Trello card for the implementation of editor themes](https://trello.com/c/LHhAcbcU/1260-editor-themes)
+
 Miguel Castillo's [Brackets-Themes](https://github.com/MiguelCastillo/Brackets-Themes) extension is built in a way that would allow its code to be refactored and slimmed down and moved into core. Themes needs to be a core feature so that they can be packaged and shipped as independent extensions.
 
 Here's a quick rundown of features that we'd want:
