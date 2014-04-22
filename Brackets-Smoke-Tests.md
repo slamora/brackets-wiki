@@ -18,7 +18,7 @@ Smoke test steps
 
 1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel and its index.html file is opened automatically.
 1. File > Open Folder and browse to the Brackets source folder.
-1. Click on the double-triangle next to the project name. The dropdown should show the "Open Folder..." option, then the "Getting Started" folder.
+1. Click on the triangle next to the project name. The dropdown should show the "Open Folder..." option, then the "Getting Started" folder.
 1. From the Finder/Explorer, create a new folder called "watch". Observe that the new folder appears in the file tree in a closed state.
 1. From the Finder/Explorer, rename the "watch" folder to "watcher". Observe that the folder is renamed in the file tree and remains in a closed state.
 1. From the Finder/Explorer window, copy the README.md file from the project from into the watcher folder. Confirm that NO CHANGES take place in the file tree.
