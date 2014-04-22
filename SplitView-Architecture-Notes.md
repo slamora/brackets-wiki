@@ -13,7 +13,7 @@ Here's a 50,000ft view of how it's glued together:
    +-> Problems (jsLint) Panel (subview of of mustache-rendered dom node `#problems-panel`)
 Managed by CodeInspection.js  
 
-Various services create, show and manipulate these panels by rendering some HTML using Mustache and adding to the dom by calling `PanelManager.createBottomPanel()` which wraps the DOM element and inserts it into the DOM. 
+Various services create, show and manipulate these panels by rendering some HTML using Mustache and adding to the dom by calling `PanelManager.createBottomPanel()` which wraps the HTML snippet and inserts it into the DOM. 
 
 `EditorManager` Manages the creation and destruction of an editor for a document.   
     +-> `Editor` Wraps the code mirror instance, code mirror options and provides a high level api this is basically the view attached to `#editor-holder`  
@@ -41,7 +41,7 @@ This API will change the layout to match _rows_ and _columns_.
 
 RULES:
 * Only 1 row and 2 columns are initially supported
-* Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding `EditorLayoutManager` for that pane has been loaded with a document or image.
+* Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding `EditorManager` for that pane has been loaded with a document or image.
 * When a Pane is  destroyed, all documents in the corresponding working set for that pane are moved to another pane's working set.  Since there is only 2 panes in the initial implementation this is just a matter of collapsing them down to the remaining Pane's working set.
 
 Creating a new editor instance is  rendered at runtime using Mustache to generate the HTML and insert it into the DOM.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and `EditorLayoutManager` will insert it into the DOM in the appropriate place to ensure proper keyboard navigation.  
@@ -67,7 +67,7 @@ EditorLayoutManager also manages the Working Set for each pane.
 ## EditorLayoutManager.getAllWorkingSets()   
 
 # Deprecate `DocumentManager.getWorkingSet()  ` 
-A deprecation warning will be added and the function will return `EditorLayoutManager.getAllWorkingSets()`
+A deprecation warning will be added and the function will return a unique list of all documents (not files) from all working sets.
 
 All core extensions and functions that use `DocumentManager.getWorkingSet()` will call one of the 2 `get*` functions above.
 
@@ -109,7 +109,7 @@ brackets-wdminmap-master   | Hides a widget when the working set is  | OK using 
                            | EMPTY                                   |
 ---------------------------+-----------------------------------------+-----------------------------------  
 zaggino.brackets.git       | Iterates over the working set and closes| OK using deprecated API   
-                           | any document that has been removed      | Doesn't file watchers do this?  
+                           | any document that has been removed      | **Doesn't file watchers do this?**  
 ---------------------------+-----------------------------------------+-----------------------------------  
 zaggino.brackets.git       | Adds a command to close unmodified files| OK using deprecated API   
                            | Iterates over the working set and closes|   
@@ -117,7 +117,7 @@ zaggino.brackets.git       | Adds a command to close unmodified files| OK using 
 ---------------------------+-----------------------------------------+-----------------------------------  
 
 ```
-Zaggino's git extension is probably worthy of being pulled in as a core extension. That would also give us the flexibility to deprecate the existing extension on the registry and rework it to remove the deprecated APIs. 
+
 
 # Supporting Images
 
@@ -127,17 +127,19 @@ The working set will basically just be a list of files that may or may not have 
 
 NOTE: Since images are now in the working set it is opportunistic for us to fix the images don't refresh issue since image instances in the working set can become stale.  
 
-# Additional Deprecations
-`DocumentManager.getCurrentDocument()` this would basically be mapped to `EditorLayoutManager.getFocusedPane().getEditor().getDocument()`  in the interim. 
+# Implementing the Layout Manager
 
-There are many many instances of this and the many instances in brackets that would be fixed but 3rd party extensions make use of this API quite extensively.
+The initial implementation will be 2 columns x 1 row or 2 rows x 1 column.  However, implementing an arbitrary number of rows and columns could be trivial to do using this code:
+https://github.com/FriendCode/codebox/blob/master/client/views/grid.js which is Apache-licensed.
+However, this is a fairly integral piece to codebox and depends on other codebox libraries in order to work.
 
-<< todo enumerate the extensions and what we should do >>
+# Additional Changes
+
+`DocumentManager.getCurrentDocument()` will be mapped to `EditorLayoutManager.getFocusedPane().getEditor().getDocument()`  since `DocumentManager` will no longer maintain the "current document".
 
 # Performance Testing
 
 Do early research on typing and scrolling performance.
-
 
 
 
