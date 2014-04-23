@@ -36,7 +36,7 @@
   </tr>
   <tr>
     <td>Live Development</td>
-    <td>Glenn, Raymond, Kevin</td>
+    <td>Glenn, Raymond, Kevin, NJ</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -61,7 +61,7 @@
   </tr>
   <tr>
     <td>Text Editing Commands (EditorCommandHandlers)</td>
-    <td>Peter</td>
+    <td>Peter, NJ</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -106,7 +106,7 @@
   </tr>
   <tr>
     <td>Preferences</td>
-    <td>Jason (Storage), Randy (UI)</td>
+    <td>Jason (Storage), Randy (UI), Kevin</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
