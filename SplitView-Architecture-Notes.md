@@ -1,22 +1,22 @@
 Refactoring Brackets to Support Split View with Multiple Documents requires quite a bit of hacking on the plumbing but there are only a few places that need to be heavily refactored to do so.
 
 # Current Implementation
-This is kind of an object view of the system involved. There are ancillary object involved which will be discussed at another time.
+This is an object view of the system. There are ancillary objects involved which will be discussed at another time.
 
 The `.content` area of the application contains many widgets (in addition to the editor) that add to Bracket's user experience. These all start with the `PanelManager` which, for all intents and purposes, only manages the placement of these widgets. It does other things but doesn't really manage panels.
 
 Here's a 50,000ft view of how it's glued together:
  
 `PanelManager` View which manages the placement of all panels (subviews) in the dom node `.content` it does not manage the status-bar.  
-   +-> Replace all Results Panel (subview of mustache-rendered dom node `#search-results`) managed by FindInFiles.js   
-   +-> Find In Files Results Panel (subview of mustache-rendered dom node `#replace-all-results`) managed by FindReplace.js  
-   +-> Problems (jsLint) Panel (subview of of mustache-rendered dom node `#problems-panel`)
+`   +->` Replace all Results Panel (subview of mustache-rendered dom node `#search-results`) managed by FindInFiles.js   
+`   +->` Find In Files Results Panel (subview of mustache-rendered dom node `#replace-all-results`) managed by FindReplace.js  
+`   +->` Problems (jsLint) Panel (subview of of mustache-rendered dom node `#problems-panel`)
 Managed by CodeInspection.js  
 
 Various services create, show and manipulate these panels by rendering some HTML using Mustache and adding to the dom by calling `PanelManager.createBottomPanel()` which wraps the HTML snippet and inserts it into the DOM. 
 
 `EditorManager` Manages the creation and destruction of an editor for a document.   
-    +-> `Editor` Wraps the code mirror instance, code mirror options and provides a high level api this is basically the view attached to `#editor-holder`  
+`    +-> Editor` Wraps a code mirror instance, code mirror options and provides a high level api this is basically the view attached to `#editor-holder`  
 
 Currently there is only 1 instance of the visible editor so its dom element is part of the base HTML and it's referenced whenever needed as `$(#editor-holder)` 
 
@@ -24,14 +24,14 @@ The layout of the editor is fluid for the most part, but the height is computed 
 
 # Proposed Implementation 
 
-The first part is Basically a simple refactoring pattern to push down `EditorManager` and put a new object to manage the construction and handle the layout of `EditorManagers`. .  
+The first part is Basically a simple refactoring pattern to push down `EditorManager` and put a new object to manage the construction and layout of `EditorManagers`.
 
 `EditorLayoutManager` is a global singleton which manages all full sized editors (inline editors are not managed by this object) and has various APIs for creating, accessing and destroying instances of an `Editor` through a corresponding`EditManager`.  It manages all `EditorManagers` instances and negotiates the space needed for the editor when handling resize events.  It's attached to the DOM node `#editor-layout-holder` which is `#editor-holder` renamed.
 
-Renaming `#editor-holder` may break some things -- which is good because those looking to traverse the DOM starting at `#editor-holder` looking for an editor are going to need to fail.  Most of the instances are simple search and replace.  They things like knowing where to put the `menu-bar` or where to put the Find/Replace dialog.
+You may have noticed that last paragraph is saying that `#editor-holder` is renamed as `#editor-layout-holder`.  Renaming `#editor-holder` may break some things -- which is good because those looking to traverse the DOM starting at `#editor-holder` looking for an editor needs to fail because that logic won't work in the new layout.  Most of the instances can be fixed with just a simple search and replace.  These are things like knowing where to put the `menu-bar` or where to put the Find/Replace dialog.  Others may require a bit more thought.  Those needing to know where the editor actually lives in the DOM can use a the API `EditorManager.getEditorHolderElement()` which will use `$.closest(".editor-holder")` to find the closes `.editor-holder` node to its HTML snippet.  This serves as the the DOM element that the cm instance will attach to.
 
 `EditorLayoutManager` View of `#editor-layout-holder`    
-    +-> Array[1][1] of `EditorManager` instances  
+    +-> Array[1][1] of `EditorManager` instances  (`.editor-holder`)
 
 There cannot be `0,0` (rows, columns) elements so there needs to be logic to enforce that.  Initially it is 1 row 1 column so there will always be at least 1 instance of `EditorManager` to work on.
 
@@ -44,7 +44,7 @@ RULES:
 * Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding `EditorManager` for that pane has been loaded with a document or image.
 * When a Pane is  destroyed, all documents in the corresponding working set for that pane are moved to another pane's working set.  Since there is only 2 panes in the initial implementation this is just a matter of collapsing them down to the remaining Pane's working set.
 
-Creating a new editor instance is  rendered at runtime using Mustache to generate the HTML and insert it into the DOM.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and `EditorLayoutManager` will insert it into the DOM in the appropriate place to ensure proper keyboard navigation.  
+Creating a new editor instance is rendered at runtime using Mustache to generate the HTML and insert it into the DOM.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and `EditorLayoutManager` will insert it into the DOM in the appropriate place to ensure proper keyboard navigation.  
 
 NOTE: We could take a shortcut and just generate 2 editor DOM nodes and set the one that isn't used to `display: none` but that might make the rendering engine do more work when it doesn't need to and it means that `EditorLayoutManager` would need to keep track of or interrogate the node to see if it's visible or not when it handles requests to relayout the editors in response to resize events.  We will evaluate performance and see which way is better.
 
@@ -59,7 +59,7 @@ These are proposed APIs that may not be implemented initially.  We definitely wo
 
 Generally this should be done with percentages.  _width_ can be passed in in pixels and converted to a percentage when affixing the CSS to the columns `width: 40%`.  Doing it in a percentage and only applying to any except the rightmost column will yield a fluid layout.  The API will reject setting the width on the rightmost column.
 
-EditorLayoutManager also manages the Working Set for each pane.
+`EditorManager` will manage a Working Set object its "view".  Management will move from the `DocumentManager` into `EditorManager` the and the working set will no longer be a collection of `Document` objects.  It will be a collection of open files.  Theoretically we could register a view factory to create a view object for each file type (images, html, css, etc...) which would provide an easy way for custom viwers.  This could be extensible in some way but that work is outside the scope of this document.  For the time being, we only manifest CODE and Image viewers.
 
 ## EditorLayoutManager.getWorkingSet(_row_, _column_)  
 ## EditorLayoutManager.addToWorkingSet(_row_, _column_, _file_, _open_)  
@@ -118,6 +118,10 @@ zaggino.brackets.git       | Adds a command to close unmodified files| OK using 
 
 ```
 
+# Working Set Context Menus
+This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on a `.open_files_container` and the `EditorManager` who manages the `.open_files_container` will be passed with the `EventData` so that callers (Plugins) will be able to determine which `EditorManager` is in focus.  
+
+This will also trigger a focus action on the DOM node causing the `EditorManager` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the working set for the currently focused `EditorManager` instance.
 
 # Supporting Images
 
