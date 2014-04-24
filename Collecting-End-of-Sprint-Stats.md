@@ -2,7 +2,7 @@
 
 #### Commits & files
 
-* **Number of commits** - use a link of the form https://github.com/adobe/brackets/compare/sprint-XX...master (and do the same for brackets-shell, summing the number of commits)
+* **Number of commits** - use a link of the form https://github.com/adobe/brackets/compare/sprint-XX...sprint-YY (use `release` as the endpoint if we haven't tagged the build yet). Then do the same for brackets-shell and sum together the number of commits.
 * **Number of files touched** - same as above
 
 #### Pull requests
@@ -18,6 +18,8 @@
 
 After a few seconds, you'll get a dialog with a big report, which includes the following info:
 
+**_WARNING:_ These numbers require manual adjustment** - Due to the branching process Brackets now uses, timestamps alone are not a reliable way to know which sprint a PR landed in. For any PRs that occurred after the branch point, you must manually check if the PR landed on the release branch, and deduct the ones that did not (i.e. those that landed on master instead).
+
 * **Number of pull requests merged (total)** (note that this does _not_ count PRs that were closed without being merged)
 * **Number of external pull requests merged**
 * **Number that came from external committers**
@@ -31,7 +33,7 @@ To see if there were any **new locales**, compare the set of folders under `src/
 
 We normally don't report the number of issues fixed, because (a) it's hard to distinguish legacy bugs vs. bugs that were both opened _and_ closed within the one sprint's lifecycle, and (b) we often forget to tag every bug with a sprint milestone, leading to varying degrees of undercount.
 
-But you can get a _rough_ number via a "closed issues" milestone guery on GitHub -- something of the form https://github.com/adobe/brackets/issues?labels=&milestone=10&state=closed. (Note that the milestone number is _not_ equal to the sprint number - it's typically `(sprint number - 13)`).
+But you can get a _rough_ number via a "closed issues" milestone query on GitHub -- something of the form https://github.com/adobe/brackets/issues?labels=&milestone=10&state=closed. (Note that the milestone number is _not_ equal to the sprint number - it's typically `(sprint number - 12)`).
 
 
 ## Stats for the sprint about to be EOL'ed
@@ -56,7 +58,7 @@ This gives you:
 
 #### Extensions - changes over time
 
-To compare with previous sprints, you'll need a similar JSON file saved from an earlier sprint (Peter has an archive of these if needed).
+To compare with previous sprints, you'll need a similar JSON file saved from an earlier sprint _(Peter has an archive of these if needed)_.
 
 1. _View > Brackets Reports > Extension Registry Diff_
 2. Choose the older JSON file first (e.g. if we're about to ship Sprint 35, choose Sprint _33_'s file)
