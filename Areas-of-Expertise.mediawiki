@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td>Code Hints</td>
-    <td>Raymond, Kevin</td>
+    <td>Raymond, Kevin, Randy (URL Hints)</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -36,7 +36,7 @@
   </tr>
   <tr>
     <td>Live Development</td>
-    <td>Glenn, Raymond, Kevin, NJ</td>
+    <td>Glenn, Raymond, Kevin, NJ, Randy</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -86,7 +86,7 @@
   </tr>
   <tr>
     <td>CSSUtils</td>
-    <td>Glenn</td>
+    <td>Glenn, Raymond, Randy</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -101,7 +101,7 @@
   </tr>
   <tr>
     <td>Localization</td>
-    <td>Jason</td>
+    <td>Jason, Randy, Raymond</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -141,12 +141,12 @@
   </tr>
   <tr>
     <td>Build</td>
-    <td>Jason/Ingo</td>
+    <td>Jason, Ingo</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>Multiple cursor, selection</td>
+    <td>NJ</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
