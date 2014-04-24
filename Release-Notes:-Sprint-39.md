@@ -6,30 +6,32 @@ What's New in Sprint 39
 -----------------------
 * **Code Editing**
     * [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409): Use the language indicator in the status bar as a dropdown to override the language Brackets chose to treat a file as. (These changes are _not_ yet saved when you close the file, or generalized to all files with a certain extension).
-    * Cut/Copy whole line when nothing is selected
-* **Search**
-    * [File exclusion filters for Quick Open, Quick Edit, and JS Code Hints](https://trello.com/c/zd77LxFS/1229-file-exclusion-filtering-beyond-find-in-files): Similar to the filtering already available for Find in Files. **TODO: details**
+    * [Cut/Copy whole line when nothing is selected](https://github.com/marijnh/CodeMirror/issues/2382)
 * **Extensions**
+    * [Extension update notifications](https://github.com/adobe/brackets/pull/7330): The Extension Manager toolbar icon turns green when one or more of your installed extensions have a new version available.
     * [Admin features for Extension Registry](https://trello.com/c/NAtggRqE/1224-simple-admin-for-registry): (available since 4/17) An extension's author can delete the extension from the registry, mark the extension as incompatible with newer versions of Brackets, or transfer ownership to a different author.
 * **OS Support**
     * **Windows XP** is no longer officially supported by Brackets. It is still possible to download and install Brackets on Windows XP, but we will no longer test it - so future versions may become incompatible due to native code changes.
 * **Ongoing Research** (not implemented yet)
     * [Research: Split-view architecture](https://trello.com/c/8YAFyAZD/500-split-view-multiple-documents): See [architecture proposal](https://github.com/adobe/brackets/wiki/SplitView-Architecture-Notes).
+    * [Research: Theming support](https://groups.google.com/forum/#!topic/brackets-dev/Rj-LhMSseKE)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-38...sprint-39#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-38...sprint-39#commits_bucket)
 
 
 UI Changes
 ----------
-TODO - Edit/Search menu change
+**Find menu added** - All Find/Replace-related menu items have been moved from the Edit menu to a new Find top-level menu.
 
 API Changes
 -----------
-TODO
+**Find commands** - Find/Replace-related command ID constants (`Commands.EDIT_FIND*` and a few others) have been deprecated: use `Commands.CMD_FIND*` (and similar) instead. _The raw ID string values have changed_, so if you're using them instead of referencing the constants, your code will be broken immediately.
+
+The menu item group constants `Menus.MenuSection.EDIT_FIND_COMMANDS`/`EDIT_REPLACE_COMMANDS` are deprecated: use `Menus.MenuSection.FIND_FIND_COMMANDS`/`FIND_REPLACE_COMMANDS` instead. Using the old constants will add your menu items to the end of the Edit menu.
 
 New/Improved Extensibility APIs
 -------------------------------
-TODO
+**Find menu** - Use `Menus.AppMenuBar.FIND_MENU` to add menu items to the new Find top-level menu.
 
 Known Issues
 ------------
