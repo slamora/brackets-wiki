@@ -8,8 +8,8 @@ The `.content` area of the application contains many widgets (in addition to the
 Here's a 50,000ft view of how it's glued together:
  
 `PanelManager` View which manages the placement of all panels (subviews) in the dom node `.content` it does not manage the status-bar.  
-`   +->` Replace all Results Panel (subview of mustache-rendered dom node `#search-results`) managed by FindInFiles.js   
-`   +->` Find In Files Results Panel (subview of mustache-rendered dom node `#replace-all-results`) managed by FindReplace.js  
+`   +->` Replace all Results Panel (subview of mustache-rendered dom node `#search-results`) managed by FindReplace.js   
+`   +->` Find In Files Results Panel (subview of mustache-rendered dom node `#replace-all-results`) managed by FindInFiles.js  
 `   +->` Problems (jsLint) Panel (subview of of mustache-rendered dom node `#problems-panel`)
 Managed by CodeInspection.js  
 
