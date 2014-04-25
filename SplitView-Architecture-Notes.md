@@ -149,6 +149,7 @@ brackets-reopener          | Keeps track of recently opened files    | Problemat
 ---------------------------+-----------------------------------------+-----------------------------------  
 
 In addition to those two extensions, several other extensions make use of FileViewController.addToWorkingSetAndSelect.  
+
 ```
 
 ## EditorManager.addListToWorkingSet
@@ -187,7 +188,7 @@ Close-Others               | Adds Close commands the Working Set Menu| No change
 
 # Supporting Images
 
-Working set so far has be devoid of any image files.  To support images in split view, we will need to change the working set rules to allow for images to be in the working set. This means that callers of the new working set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or checking the extension. 
+Working set so far has be devoid of image files.  To support images in split view, we will need to change the working set rules to allow for images to be in the working set. This means that callers of the new working set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or checking the extension. 
 
 The working set will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated `DocumentManager.getWorkingSet()` will filter out any image files without a Document object.
 
@@ -233,16 +234,43 @@ workingSetRemove             | Item removed from working set           | (same a
                              |  wdminimap - hides the minimap on event | 
 -----------------------------+-----------------------------------------+-----------------------------------  
 workingSetRemoveList         | List removed from working set           | (same as above)
+                             | ** NOT USED BY EXTENSIONS **            | 
 -----------------------------+-----------------------------------------+-----------------------------------  
 workingSetSort               | List sorted                             | (same as above)
+                             | ** NOT USED BY EXTENSIONS **            | 
 -----------------------------+-----------------------------------------+-----------------------------------  
 workingSetDisableAutoSorting | Sorting disabled due to swapping item   | (same as above)
                              | indices (manual reorder during drag)    |
------------------------------+-----------------------------------------+-----------------------------------  
-workingSetDisableAutoSorting | List removed from working set           | (same as above)
+                             | ** NOT USED BY EXTENSIONS **            | 
 -----------------------------+-----------------------------------------+-----------------------------------  
 ```
 
+# New Events
+
+## EditorManager.editorPaneCreated
+
+Sent when an editor pane is created. Event data about the pane is sent with the event.
+
+## EditorManager.editorPaneDestroyed
+
+Sent when an editor pane is destroyed. Event data about the pane is sent with the event.
+
+
+# Commands
+
+
+```text
+-----------------------------+-----------------------------------------+-----------------------------------  
+ Name                        | Usage                                   | Proposed Change                    
+-----------------------------+-----------------------------------------+-----------------------------------  
+file.addToWorkingSet         | Used to open a document in the editor   | Moves from DocumentManager to 
+                             |                                         | EditorManager.  Data about which                  
+                             |                                         | pane to open the document is added
+                             |                                         | to the command data. 
+                             |                                         | Currently focused pane is used by 
+                             |                                         | default 
+-----------------------------+-----------------------------------------+-----------------------------------  
+```
 
 # Additional Changes
 
