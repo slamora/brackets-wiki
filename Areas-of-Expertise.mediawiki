@@ -95,8 +95,13 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>UI layout/panels</td>
+    <td>CEF Integration</td>
+    <td>Jeff, Ingo</td>
     <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>UI layout/panels</td>
+    <td>Jeff</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
