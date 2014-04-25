@@ -200,15 +200,37 @@ The working set will basically just be a list of files that may or may not have 
 -----------------------------+-----------------------------------------+-----------------------------------  
 workingSetSort               | Fires when the order of the working set | Moves from DocumentManager to 
                              | changes                                 | EditorManager.  Data about which                  
-                             |                                         | working set is added to event data
+                             | ** NOT USED BY EXTENSIONS **            | working set is added to event data
 -----------------------------+-----------------------------------------+-----------------------------------  
 workingSetAdd                | Fires when an item was added to the     | Moves from DocumentManager to 
-                             | working  st                             | EditorManager Data about which                  
-                             |                                         | working set is added to event data
+                             | working set                             | EditorManager Data about which                  
+                             | * TypeScript Extension to maintain      | working set is added to event data
+                             |   integrity between its working set list|
+                             |   and Brackets working set list         | The related files extension may
+                             | * Reopener Extension (see above)        | be a problem but it appears to be
+                             | * Related Files Extension (josh hatwich)| broken. There is at least 1 
+                             |   appears he's using this event to know | deprecation warning and it looks 
+                             |   when a file is opened in the editor   | like some callback data has 
+                             |                                         | changed in the 8 months since it 
+                             |                                         | was last touched. issue added.
+                             |                                         | Related files works quite hevily
+                             |                                         | with the working set apis, views
+                             |                                         | and events which may stop working
+                             |                                         | after changes are made to handle
+                             |                                         | multiple working sets and views
+                             |                                         | 
+                             |                                         | The other two should be ok with
+                             |                                         | changes to the event object
 -----------------------------+-----------------------------------------+-----------------------------------  
 workingSetAddList            | List added to working set               | (same as above)
+                             | Oddly, the reopener extension does not  | 
+                             | subscribe to this event.                | 
+                             | Related Files and Typescript extensions | 
+                             | subscribe to this event                 | 
 -----------------------------+-----------------------------------------+-----------------------------------  
 workingSetRemove             | Item removed from working set           | (same as above)
+                             | Repopener, Typescript subscribe         | 
+                             |  wdminimap - hides the minimap on event | 
 -----------------------------+-----------------------------------------+-----------------------------------  
 workingSetRemoveList         | List removed from working set           | (same as above)
 -----------------------------+-----------------------------------------+-----------------------------------  
