@@ -71,4 +71,4 @@ It would be nice if the shell color could change in some fashion to suit the the
 
 ## Implementation
 
-Miguel has started some implementation in [a branch of Brackets-Themes](https://github.com/MiguelCastillo/Brackets-Themes/tree/bCore).
+Themes in Brackets core [PR](https://github.com/adobe/brackets/pull/7616)
