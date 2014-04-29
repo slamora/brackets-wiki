@@ -60,11 +60,11 @@ _height_ and _width_ are passed in in pixels and converted to a percentage when 
 
 Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
  
-This allows for: 
-1) Panes to be found in the DOM by ID
-2) Easier to move panes around when changing layouts in the future and not break API
-3) less data that callers need to understand about the implementation details
-
+This allows for:   
+1) Panes to be found in the DOM by ID  
+2) Easier to move panes around when changing layouts in the future and not break API  
+3) less data that callers need to understand about the implementation details  
+  
 ## EditorManager.getWorkingSet(paneId)  
 ## EditorManager.addToWorkingSet(paneId, _file_, _open_)  
 ## EditorManager.removeFromWorkingSet(paneId, _file_)  
