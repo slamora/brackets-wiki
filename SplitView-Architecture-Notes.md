@@ -30,7 +30,7 @@ First we create a helper to manage the layout of editors.
 
 `EditorManager` View of `#editor-holder`    
 `   +-> EditorPaneManager`
-`            +-> Array[1][1]` of `Editor` instances  (`.editor-pane`)
+`            +-> Array[1][1]` of `Editor` instances  (`.editor-pane`, id=paneId)
 
 There cannot be `0,0` (rows, columns) elements so there needs to be logic to enforce that.  Initially it is 1 row 1 column so there will always be at least 1 instance of `EditorManager` to work on.
 
@@ -56,11 +56,17 @@ These are proposed APIs that may not be implemented initially.
 
 _height_ and _width_ are passed in in pixels and converted to a percentage when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
 
-`EditorManager` will manage a Working Set for each of its Editor Panes.  Management of the Working Set will move from the `DocumentManager` into `EditorManager` the and the working set will no longer be a collection of `Document` objects.  It will be an array of file names.  Theoretically we could register a view factory to create a view object for each file type (images, html, css, etc...) which would provide an easy way for custom viwers.  This could be extensible in some way but that work is outside the scope of this document.  For the time being, we only manifest CODE and Image viewers.
+`EditorManager` will manage a Working Set for each of its Editor Panes.  Management of the Working Set will move from the `DocumentManager` into `EditorManager` the and the working set will no longer be a collection of `Document` objects.  It will be an array of file names.  Theoretically we could register a view factory to create a view object for each file type (images, html, css, etc...) which would provide an easy way for custom viewers.  This could be extensible in some way but that work is outside the scope of this document.  For the time being, we only manifest CODE and Image viewers.
 
-## EditorManager.getWorkingSet(_row_, _column_)  
-## EditorManager.addToWorkingSet(_row_, _column_, _file_, _open_)  
-## EditorManager.removeFromWorkingSet(_row_, _column_, _file_)  
+Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  
+This allows for: 
+1) Panes to be found in the DOM by ID
+2) Easier to move panes around when changing layouts in the future and not break API
+3) less data that callers need to understand about the implementation details
+
+## EditorManager.getWorkingSet(paneId)  
+## EditorManager.addToWorkingSet(paneId, _file_, _open_)  
+## EditorManager.removeFromWorkingSet(paneId, _file_)  
 ## EditorManager.getAllWorkingSets()   
 
 ### WORKING SET CHANGES 
@@ -68,11 +74,10 @@ _height_ and _width_ are passed in in pixels and converted to a percentage when 
 # Deprecate `DocumentManager.getWorkingSet()  ` 
 A deprecation warning will be added and the function will return a unique list of all documents (not files) from all working sets by calling the various functions above, flattening and filtering the list as necessary to maintain backwards compatibility.
 
-All core extensions and functions that use `DocumentManager.getWorkingSet()` will call one of the 2 `get*` functions above.
-
-3rd Party extensions:
+All core extensions and functions that use `DocumentManager.getWorkingSet()` will call `getAllWorkingSets` and return a list of working set entries who have open document objects.  This will exclude things like images which is the behavior that is currently implemented.
 
 ```text
+3rd Party Extensions
 ---------------------------+-----------------------------------------+-----------------------------------  
  Name                      | Usage                                   | Proposed Change                    
 ---------------------------+-----------------------------------------+-----------------------------------  
@@ -115,6 +120,40 @@ zaggino.brackets.git       | Adds a command to close unmodified files| OK using 
                            | any document that hasn't been modified  |   
 ---------------------------+-----------------------------------------+-----------------------------------  
 
+
+Core Usage
+---------------------------+-----------------------------------------+-----------------------------------  
+ Name                      | Usage                                   | Proposed Change                    
+---------------------------+-----------------------------------------+-----------------------------------  
+Close-Others               | Adds Close commands the Working Set Menu| Uses New API for working set
+                           |                                         | Working set info is passed in 
+                           |                                         | Event data
+---------------------------+-----------------------------------------+-----------------------------------  
+DocumentCommnadHandlers    | Save and Close All Command Handlers     | Replace with 
+                           |                                         |`DocumentManager
+                           |                                         |      .getAllOpenDocuments()`
+---------------------------+-----------------------------------------+-----------------------------------  
+LiveDevelopment            | Initial Document                        | Replace with 
+                           |                                         | `getAllOpenDocuments()`
+---------------------------+-----------------------------------------+-----------------------------------  
+FileSyncManager            | Scans documents in workingset that have | Replace with`EditorManager
+                           | yet to be oepened                       |      .getAllWorkingSets()`
+                           |                                         | and iterate over all working sets
+---------------------------+-----------------------------------------+-----------------------------------  
+ProjectManager             | `getAllFiles` not sure what this does   | Replace with`EditorManager
+                           |                                         |      .getAllWorkingSets()`
+                           |                                         | and iterate over all working sets
+---------------------------+-----------------------------------------+-----------------------------------  
+WorkingSetView             | View of the working set. Constructed    | Replace with`EditorManager
+                           | with the event:                         |      .getWorkingSet()`
+                           |  `EditorManager.editorPaneCreated`      | 
+                           | and destroyed with the event:           | 
+                           |  `EditorManager.editorPaneDestroyed`    | 
+---------------------------+-----------------------------------------+-----------------------------------  
+FindInFiles                | Search includes files opened that are   | Replace with`DocumentManager
+                           | open in the working set but are not     |      .getAllOpenDocuments()`
+                           | part of the currently opened project    | 
+---------------------------+-----------------------------------------+-----------------------------------  
 ```
 
 # Working Set Context Menus
@@ -127,13 +166,17 @@ The Implementation of these functions will move from `DocumentManager` to `Edito
 
 ## EditorManager.findInWorkingSet
 Used by (pflynn.brackets.editor.nav) which has a few other working set api calls 
+Deprecation warning, pflynn updates his extension.
 
 ## EditorManager.findInWorkingSetAddedOrder
-** NOT USED BY EXTENSIONS **
+** DocumentManager.findInWorkingSetAddedOrder is NOT USED BY EXTENSIONS **
+No Deprecation warning. API goes away internal use is changed to `EditorManager.findInWOrkingSetAddedOrder`
 
 ## EditorManager.addToWorkingSet
+** DocumentManger.addToWorkingSet will be Deprecated.  A deprecation warning is written to the console and the old API will call `EditorManager.addToWorkingSet(getFocusedPane, path, ...)`
 
 ```text
+3rd Party Extensions
 ---------------------------+-----------------------------------------+-----------------------------------  
  Name                      | Usage                                   | Proposed Change                    
 ---------------------------+-----------------------------------------+-----------------------------------  
@@ -148,13 +191,15 @@ brackets-reopener          | Keeps track of recently opened files    | Problemat
                            |                                         | Probably OK to use deprecated APIs
 ---------------------------+-----------------------------------------+-----------------------------------  
 
-In addition to those two extensions, several other extensions make use of FileViewController.addToWorkingSetAndSelect.  
+
+In addition to those two extensions, several other extensions make use of `FileViewController.addToWorkingSetAndSelect()`.  
 
 ```
 
 ## EditorManager.addListToWorkingSet
 
 ```text
+3rd Party Extensions
 ---------------------------+-----------------------------------------+-----------------------------------  
  Name                      | Usage                                   | Proposed Change                    
 ---------------------------+-----------------------------------------+-----------------------------------  
@@ -168,6 +213,7 @@ brackets-reopener          | Keeps track of recently opened files    | Problemat
 ## EditorManager.removeFromWorkingSet
 
 ```text
+3rd Party Extensions
 ---------------------------+-----------------------------------------+-----------------------------------  
  Name                      | Usage                                   | Proposed Change                    
 ---------------------------+-----------------------------------------+-----------------------------------  
@@ -175,16 +221,77 @@ Close-Others               | Adds Close commands the Working Set Menu| No change
                            |                                         | packaged to run only on brackets  
                            |                                         | <= 0.32.0   
 ---------------------------+-----------------------------------------+----------------------------------- 
+
+Core Usage
+---------------------------+-----------------------------------------+-----------------------------------  
+ Name                      | Usage                                   | Proposed Change                    
+---------------------------+-----------------------------------------+-----------------------------------  
+Close-Others               | Adds Close commands the Working Set Menu| No change Needed. The extension is  
+                           |                                         | packaged to run only on brackets  
+                           |                                         | <= 0.32.0   
+---------------------------+-----------------------------------------+----------------------------------- 
+
 ```
 
 ## EditorManager.removeListFromWorkingSet
 ** NOT USED BY EXTENSIONS **
 
+```text
+Core Usage
+---------------------------+-----------------------------------------+
+ Name                      | Usage                                   | 
+---------------------------+-----------------------------------------+
+WorkingSetView             | Commands.FILE_CLOSE_ALL,                | 
+                           | Commands.FILE_CLOSE_LIST                | 
+---------------------------+-----------------------------------------+
+Proposed Change: 
+
+_.each(EditorManager.getAllWorkingSets(), function(workingSet){ 
+    workingset.removeListFromWorkingSet(list)
+});
+
+```
+
+
 ## EditorManager.swapWorkingSetIndexes
 ** NOT USED BY EXTENSIONS **
 
+```text
+Core Usage
+---------------------------+-----------------------------------------+-----------------------------------  
+ Name                      | Usage                                   | Proposed Change                    
+---------------------------+-----------------------------------------+-----------------------------------  
+WorkingSetView             | Swap indices of items during drag and   | No Deprecation warning. 
+                           |    drop                                 |  calls its `EditorManager
+                           |                                         |      .swapWorkingSetIndexes()`
+                           |                                         | 
+                           |                                         | 
+---------------------------+-----------------------------------------+----------------------------------- 
+_.bind can be used to bind the paneId to the context of the call for command handlers since this is a context menu.
+```
+
 ## EditorManager.sortWorkingSet
 ** NOT USED BY EXTENSIONS **
+
+```text
+Core Usage
+---------------------------+-----------------------------------------+-----------------------------------  
+ Name                      | Usage                                   | Proposed Change                    
+---------------------------+-----------------------------------------+-----------------------------------  
+WorkingSetView             | Sort is one of the commands on the      | No Deprecation warning. 
+                           |    Working Set Menu                     | calls its `EditorManager
+                           |                                         |      .sortWorkingSet()`
+                           |                                         | 
+                           |                                         | 
+---------------------------+-----------------------------------------+----------------------------------- 
+_.bind can be used to bind the paneId to the context of the call for command handlers since this is a context menu.
+
+```
+
+
+
+
+
 
 # Supporting Images
 
@@ -287,7 +394,6 @@ However, this is a fairly integral piece to codebox and depends on other codebox
 # Performance Testing
 
 Do early research on typing and scrolling performance.
-
 
 
 
