@@ -187,15 +187,15 @@ Core Usage (covers both findInWorkingSet and findInWOrkingSetAddedOrder)
 SaveAs Command             | Removes the document from the working   | findInWorkingSet Semantecs Change
                            | set and re-adds the saved as document   | so that the paneId is returned
                            | with the new name.                      | instead of true/false then 
-			   |                                         | removeFromW...Set / addToW...Set
-			   |                                         | can be called with paneId 
+                           |                                         | removeFromW...Set / addToW...Set
+                           |                                         | can be called with paneId 
 ---------------------------+-----------------------------------------+-----------------------------------
 Close Others Extension     | uses the current document to figure     | will need to be re-worked to 
                            | out which document in the working set   | allow for images and other files
                            | the file was clicked on to dispatch     | by finding the item clicked on
                            | the close command selected              | and issuing the command on that 
-			   |                                         | file's pane's working set can't 
-			   |                                         | trust getCurrentDocument() 
+                           |                                         | file's pane's working set can't 
+                           |                                         | trust getCurrentDocument() 
 ---------------------------+-----------------------------------------+-----------------------------------
 FileViewController         | Determines if the file is open in the   | changed to use EditorManager.
                            | working set or not.                     | findInWorkingSet() !== undefined
@@ -209,7 +209,7 @@ DragAndDrop                | used to determine if a file is open in  | changed t
 ---------------------------+-----------------------------------------+-----------------------------------
 WorkingSetSort             | "Sort by added" uses                    | changed to use EditorManager.
                            | findInWorkingSetAddedOrder to determine | findInWorkingSetAddedOrder().index
-			   | sort order                              |
+                           | sort order                              |
 ---------------------------+-----------------------------------------+-----------------------------------
 ```
 ## EditorManager.addToWorkingSet
@@ -238,8 +238,8 @@ Core Usage
 Live Development           | Opens Initial Document                  | findInWorkingSet Semantecs Change
                            |                                         | so that the paneId is returned
                            |                                         | instead of true/false then 
-			   |                                         | removeFromW...Set / addToW...Set
-			   |                                         | can be called with paneId 
+                           |                                         | removeFromW...Set / addToW...Set
+                           |                                         | can be called with paneId 
 ---------------------------+-----------------------------------------+-----------------------------------
 
 
