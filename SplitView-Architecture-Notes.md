@@ -58,7 +58,8 @@ _height_ and _width_ are passed in in pixels and converted to a percentage when 
 
 `EditorManager` will manage a Working Set for each of its Editor Panes.  Management of the Working Set will move from the `DocumentManager` into `EditorManager` the and the working set will no longer be a collection of `Document` objects.  It will be an array of file names.  Theoretically we could register a view factory to create a view object for each file type (images, html, css, etc...) which would provide an easy way for custom viewers.  This could be extensible in some way but that work is outside the scope of this document.  For the time being, we only manifest CODE and Image viewers.
 
-Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  
+Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
+ 
 This allows for: 
 1) Panes to be found in the DOM by ID
 2) Easier to move panes around when changing layouts in the future and not break API
@@ -69,9 +70,13 @@ This allows for:
 ## EditorManager.removeFromWorkingSet(paneId, _file_)  
 ## EditorManager.getAllWorkingSets()   
 
-### WORKING SET CHANGES 
+### Working Sets
 
-# Deprecate `DocumentManager.getWorkingSet()  ` 
+Working sets will move from being a property of the `DocumentManager` and become a property of the `EditorManager`
+
+The plan for migrating the working set:
+
+# Deprecate `DocumentManager.getWorkingSet()` 
 A deprecation warning will be added and the function will return a unique list of all documents (not files) from all working sets by calling the various functions above, flattening and filtering the list as necessary to maintain backwards compatibility.
 
 All core extensions and functions that use `DocumentManager.getWorkingSet()` will call `getAllWorkingSets` and return a list of working set entries who have open document objects.  This will exclude things like images which is the behavior that is currently implemented.
@@ -157,7 +162,7 @@ FindInFiles                | Search includes files opened that are   | Replace w
 ```
 
 # Working Set Context Menus
-This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on a `.open_files_container` and the `EditorManager` who manages the `.open_files_container` will be passed with the `EventData` so that callers (Extensions) will be able to determine which `EditorManager` is in focus.  
+This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `EditorManager` who manages the `.open_files_container` will be passed with the `EventData` so that callers (Extensions) will be able to determine which `EditorManager` has focus.  
 
 This will also trigger a focus action on the DOM node causing the `Editor` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the working set for the currently focused `EditorManager` instance.
 
@@ -168,12 +173,46 @@ The Implementation of these functions will move from `DocumentManager` to `Edito
 Used by (pflynn.brackets.editor.nav) which has a few other working set api calls 
 Deprecation warning, pflynn updates his extension.
 
+** Changed to return {paneId: _paneId_, index: _index_) or undefined if not found **
+
 ## EditorManager.findInWorkingSetAddedOrder
 ** DocumentManager.findInWorkingSetAddedOrder is NOT USED BY EXTENSIONS **
 No Deprecation warning. API goes away internal use is changed to `EditorManager.findInWOrkingSetAddedOrder`
 
+Core Usage (covers both findInWorkingSet and findInWOrkingSetAddedOrder)
+---------------------------+-----------------------------------------+-----------------------------------
+ Name                      | Usage                                   | Proposed Change                   
+---------------------------+-----------------------------------------+-----------------------------------
+SaveAs Command             | Removes the document from the working   | findInWorkingSet Semantecs Change
+                           | set and re-adds the saved as document   | so that the paneId is returned
+                           | with the new name.                      | instead of true/false then 
+			   |                                         | removeFromW...Set / addToW...Set
+			   |                                         | can be called with paneId 
+---------------------------+-----------------------------------------+-----------------------------------
+Close Others Extension     | uses the current document to figure     | will need to be re-worked to 
+                           | out which document in the working set   | allow for images and other files
+                           | the file was clicked on to dispatch     | by finding the item clicked on
+                           | the close command selected              | and issuing the command on that 
+			   |                                         | file's pane's working set can't 
+			   |                                         | trust getCurrentDocument() 
+---------------------------+-----------------------------------------+-----------------------------------
+FileViewController         | Determines if the file is open in the   | changed to use EditorManager.
+                           | working set or not.                     | findInWorkingSet() !== undefined
+---------------------------+-----------------------------------------+-----------------------------------
+WorkingSetView             | drag and drop to reorder items in the   | changed to use EditorManager.
+                           | working set.                            | findInWorkingSet().index
+---------------------------+-----------------------------------------+-----------------------------------
+DragAndDrop                | used to determine if a file is open in  | changed to use EditorManager.
+                           | the working set when dropping one or    | findInWorkingSet() !== undefined
+                           | more files on Brackets                  | 
+---------------------------+-----------------------------------------+-----------------------------------
+WorkingSetSort             | "Sort by added" uses                    | changed to use EditorManager.
+                           | findInWorkingSetAddedOrder to determine | findInWorkingSetAddedOrder().index
+			   | sort order                              |
+---------------------------+-----------------------------------------+-----------------------------------
+
 ## EditorManager.addToWorkingSet
-** DocumentManger.addToWorkingSet will be Deprecated.  A deprecation warning is written to the console and the old API will call `EditorManager.addToWorkingSet(getFocusedPane, path, ...)`
+** DocumentManger.addToWorkingSet will be Deprecated.  A deprecation warning is written to the console and the old API will call `EditorManager.addToWorkingSet(getFocusedPane(), path, ...)`
 
 ```text
 3rd Party Extensions
@@ -191,8 +230,44 @@ brackets-reopener          | Keeps track of recently opened files    | Problemat
                            |                                         | Probably OK to use deprecated APIs
 ---------------------------+-----------------------------------------+-----------------------------------  
 
+Core Usage
+---------------------------+-----------------------------------------+-----------------------------------
+ Name                      | Usage                                   | Proposed Change                   
+---------------------------+-----------------------------------------+-----------------------------------
+Live Development           | Opens Initial Document                  | findInWorkingSet Semantecs Change
+                           |                                         | so that the paneId is returned
+                           |                                         | instead of true/false then 
+			   |                                         | removeFromW...Set / addToW...Set
+			   |                                         | can be called with paneId 
+---------------------------+-----------------------------------------+-----------------------------------
+
 
 In addition to those two extensions, several other extensions make use of `FileViewController.addToWorkingSetAndSelect()`.  
+
+3rd Party Extension usage of FileViewController.addToWorkingSetAndSelect()
+---------------------------+-----------------------------------------+-----------------------------------
+ Name                      | Usage                                   | Proposed Change                   
+---------------------------+-----------------------------------------+-----------------------------------
+brackets-Reopener          | Opens Document and Selects it           | No Changes
+---------------------------+-----------------------------------------+-----------------------------------
+brackets.swatcher          | Same 
+---------------------------+-----------------------------------------+-----------------------------------
+Zaggino.brackets-git       | Same
+---------------------------+-----------------------------------------+-----------------------------------
+jhatwich.                  |
+    brackets-related-files | ** Extension doesn't work**
+---------------------------+-----------------------------------------+-----------------------------------
+
+
+Core usage of FileViewController.addToWorkingSetAndSelect()
+---------------------------+-----------------------------------------+-----------------------------------
+ Name                      | Usage                                   | Proposed Change                   
+---------------------------+-----------------------------------------+-----------------------------------
+ProjectManager             | Opens Document and Selectes it          | No Changes
+---------------------------+-----------------------------------------+-----------------------------------
+FindInFiles                | Same as above
+---------------------------+-----------------------------------------+-----------------------------------
+
 
 ```
 
@@ -208,6 +283,16 @@ brackets-reopener          | Keeps track of recently opened files    | Problemat
                            | (many working set apis and events used) | would reopen in the current pane
                            |                                         | Probably OK to use deprecated APIs
 ---------------------------+-----------------------------------------+-----------------------------------  
+
+Core usage
+---------------------------+-----------------------------------------+-----------------------------------
+ Name                      | Usage                                   | Proposed Change                   
+---------------------------+-----------------------------------------+-----------------------------------
+DocumentManager.           | Called to present the file open dialog  | `EditorManager 
+  _doOpenWithOPtionalPath  | when the user opens more than 1 file    |   .addToWorkingSet
+                           |                                         |       (getFocusedPane(), filelist)
+---------------------------+-----------------------------------------+-----------------------------------
+
 ```
 
 ## EditorManager.removeFromWorkingSet
@@ -373,11 +458,11 @@ Sent when the open document list has been modified.  Listeners should call `Docu
  Name                        | Usage                                   | Proposed Change                    
 -----------------------------+-----------------------------------------+-----------------------------------  
 file.addToWorkingSet         | Used to open a document in the editor   | Moves from DocumentManager to 
-                             |                                         | EditorManager.  Data about which                  
-                             |                                         | pane to open the document is added
-                             |                                         | to the command data. 
-                             |                                         | Currently focused pane is used by 
-                             |                                         | default 
+                             |    FileViewControl.                     | EditorManager.  Data about which                  
+                             |       addToWorkingSetAndSelect          | pane to open the document is added
+                             |    (initial Sample Project Open)        | to the command data. 
+                             |    QuickOpen                            | Currently focused pane is used by 
+                             |    DragAndDrop                          | default if no 
 -----------------------------+-----------------------------------------+-----------------------------------  
 ```
 
@@ -396,6 +481,5 @@ However, this is a fairly integral piece to codebox and depends on other codebox
 # Performance Testing
 
 Do early research on typing and scrolling performance.
-
 
 
