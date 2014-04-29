@@ -175,10 +175,11 @@ Deprecation warning, pflynn updates his extension.
 
 ** Changed to return {paneId: _paneId_, index: _index_) or undefined if not found **
 
-## EditorManager.findInWorkingSetAddedOrder
-** DocumentManager.findInWorkingSetAddedOrder is NOT USED BY EXTENSIONS **
+## EditorManager.findInWorkingSetAddedOrder  
+** DocumentManager.findInWorkingSetAddedOrder is NOT USED BY EXTENSIONS **  
 No Deprecation warning. API goes away internal use is changed to `EditorManager.findInWOrkingSetAddedOrder`
 
+```text
 Core Usage (covers both findInWorkingSet and findInWOrkingSetAddedOrder)
 ---------------------------+-----------------------------------------+-----------------------------------
  Name                      | Usage                                   | Proposed Change                   
@@ -210,7 +211,7 @@ WorkingSetSort             | "Sort by added" uses                    | changed t
                            | findInWorkingSetAddedOrder to determine | findInWorkingSetAddedOrder().index
 			   | sort order                              |
 ---------------------------+-----------------------------------------+-----------------------------------
-
+```
 ## EditorManager.addToWorkingSet
 ** DocumentManger.addToWorkingSet will be Deprecated.  A deprecation warning is written to the console and the old API will call `EditorManager.addToWorkingSet(getFocusedPane(), path, ...)`
 
