@@ -1,4 +1,4 @@
-High quality code and a top-notch user experience are very important in Brackets, and we carefully review pull requests keep it that way. Here's what we expect of a good quality pull request - be sure to follow all these items for a smooth landing!
+High quality code and a top-notch user experience are very important in Brackets, and we carefully review pull requests to keep it that way. Here's what we expect of a good quality pull request - be sure to follow all these items for a smooth landing!
 
 Note: you must sign the **[Brackets Contributor License Agreement](http://dev.brackets.io/brackets-contributor-license-agreement.html)** before we can merge your first pull request.
 
