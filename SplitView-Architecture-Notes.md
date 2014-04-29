@@ -362,9 +362,11 @@ Sent when an editor pane is created. Event data about the pane is sent with the 
 
 Sent when an editor pane is destroyed. Event data about the pane is sent with the event.
 
+## DocumentManager.openDocumentListChanged
+
+Sent when the open document list has been modified.  Listeners should call `DocumentManager.getAllOpenDocuments()` and resync to the list of open documents.  
 
 # Commands
-
 
 ```text
 -----------------------------+-----------------------------------------+-----------------------------------  
