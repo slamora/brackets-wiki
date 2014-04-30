@@ -131,7 +131,7 @@ Your Node module can also asynchronously trigger events that can be listened to 
 
 Note that Brackets client code automatically registers as a listener for "log" events and forwards them to the client console, prefixed with "[node-(level) (timestamp)]".
 
-(**TODO**: Should add this to the example repo.)
+(**TODO**: Should add an example of this to the brackets-simple-node sample.)
 
 ### Reloading the Node module
 
