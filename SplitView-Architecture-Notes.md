@@ -56,6 +56,14 @@ _height_ and _width_ are passed in in pixels and converted to a percentage when 
 
 Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
 
+ 
+This allows for:   
+1) Panes to be found in the DOM by ID  
+2) Easier to move panes around when changing layouts in the future and not break API  
+3) less data that callers need to understand about the implementation details  
+
+Shortcuts for APIs whenever dealing with PaneIds can be used rather than have 2 different APIs for All or Focused panes.
+
 Constant Pane IDs: 
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
@@ -68,17 +76,13 @@ FOCUSED_PANE            | Perform the operation on the currently focused pane (c
 
 # EditorManager.getFocusedEditor()
 Returns the editor object with the current focus
-
- 
-This allows for:   
-1) Panes to be found in the DOM by ID  
-2) Easier to move panes around when changing layouts in the future and not break API  
-3) less data that callers need to understand about the implementation details  
   
 ## EditorManager.getWorkingSet(paneId)  
 ## EditorManager.addToWorkingSet(paneId, _file_, _open_)  
 ## EditorManager.removeFromWorkingSet(paneId, _file_)  
+
 ## EditorManager.getAllWorkingSets()   
+Returns an array of working set arrays.
 
 ### Working Sets
 
@@ -754,4 +758,3 @@ When Working Set Views are constructed, information about the Pane they are asso
 # Performance Testing
 
 Do early research on typing and scrolling performance.
-
