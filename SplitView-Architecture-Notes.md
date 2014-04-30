@@ -769,3 +769,48 @@ When Working Set Views are constructed, information about the Pane they are asso
 # Performance Testing
 
 Do early research on typing and scrolling performance.
+
+# Tasking
+Here's a proposed guide to breakup the story into smaller arch pieces:
+
+1. Migrate `File.commands` from DocumentManager into `EditorManager` and create `Document.commands` where specified in this document.
+
+2. Opportunistic Cleanup
+   * Probably easiest to do this up front before major refactoring since this is fairly simple to do
+
+3. Migrate WorkingSet Management to `EditorManager`
+   * add deprecation warnings to old APIs
+   * add bridge to new API from old APIs
+   * Write issues for extensions still using old APIs
+   * Migrate core and default extension code to new WorkingSet API
+   * Notify extension authors
+   * Add deprecation warnings
+   * Unit tests
+
+4. Deprecate getWorkingSet
+   * Migrate all core instaces (7)
+   * Migrate all core extension instances
+   * Notify extension authors
+   * Add deprecation warning
+   * Unit tests
+
+5. Migrate DocumentManager.getCurrentDocument
+   * Notify all extension authors 
+
+6. Implement EditorManager code for 1x2 editors
+   * tease apart editor calls directly and move to editor
+   * implement basic layout
+   * implement working set view create
+   * implement editor create
+   * working set context and gear menus
+   * close others extension
+   * test git extension (notfy zaggino)
+   * Unit tests
+
+6. Add support for images in working set
+   * create custom viewer
+   * implement all file based commands to work on images
+   * Implement all working set commands for images 
+   * Unit tests
+
+7. Final cleanup, deprecations, et. al.
