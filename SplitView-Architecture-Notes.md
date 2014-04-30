@@ -259,6 +259,15 @@ Live Development           | Opens Initial Document                  | findInWor
                            |                                         | removeFromW...Set / addToW...Set
                            |                                         | can be called with paneId 
 ---------------------------+-----------------------------------------+-----------------------------------
+DocumentManager            | sets the current document               | Replace with EditorManager
+.setCurrentDocument        |                                         |  .addToWorkingSet({
+                           |                                         |     paneId: FOCUSED_PANE, ...
+                           |                                         |   }, doc.file)
+---------------------------+-----------------------------------------+-----------------------------------
+DocumentManager            | Adds the document to the working set    | same as above
+ .on("_dirtyFlagChange",...|  if it was opened but not added to the  |                                                      
+                           |   working set                           | 
+---------------------------+-----------------------------------------+-----------------------------------
 
 
 In addition to those two extensions, several other extensions make use of `FileViewController.addToWorkingSetAndSelect()`.  
