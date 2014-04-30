@@ -3,7 +3,7 @@ Refactoring Brackets to Support Split View with Multiple Documents requires quit
 # Current Implementation
 This is an objective view of the system. 
 
-The `.content` area of the application contains many widgets (in addition to the editor) that add to Bracket's user experience. These all start with the `PanelManager` which, for all intents and purposes, only manages the placement of these widgets. It does other things but doesn't really manage panels.
+The `.content` area of the application contains many widgets (in addition to the editor) that add to Bracket's user experience. These all start with the `PanelManager` which, for all intents and purposes, only manages the placement of these widgets. 
 
 Here's a 50,000ft view of how it's glued together:
  
