@@ -23,14 +23,10 @@ Currently there is only 1 instance of the visible editor so its dom element is p
 The layout of the editor is fluid for the most part, but the height is computed by `PanelManager` and the editor is resized by triggering an Event and passing data with the event to tell the editor how tall it should be. The `EditorManager` then handles this event and sets the `$(#editor-holder)` to the explicit height negotiated by the panel manager.  The event is passed to the `Editor` object which then tells codemirror to recompute its scroll state and other size related data.
 
 # Proposed Implementation 
-
-First we create a helper to manage the layout of editors.
-
-`EditorPaneManager` is a helper for `EditorManager` to compute the placement and layout of all full sized editors (inline editors are not managed here) and has various APIs for changing the layout of the editor area and placement `Editor` objects.  
+`EditorLayoutManager` is a helper for `EditorManager` to compute the placement and layout of all full sized editors (inline editors are not managed here) and has various APIs for changing the layout of the editor area and placement `Editor` objects.  The editor objects themselves are managed by the `EditorManager` and the `EditoryLayoutManager` is created whenever the layout needs to change to adjust all editor sizes and placement.
 
 `EditorManager` View of `#editor-holder`    
-`....+-> EditorPaneManager`  
-`............+-> Array[1][1]` of `Editor` instances  (`.editor-pane`, id=paneId)  
+`....+-> Array[1][1]` of `Editor` instances  (`.editor-pane`, id=paneId)  
 
 There cannot be `0,0` (rows, columns) elements so there needs to be logic to enforce that.  Initially it is 1 row 1 column so there will always be at least 1 instance of `EditorManager` to work on.
 
