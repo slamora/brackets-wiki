@@ -178,15 +178,15 @@ FindInFiles                | Search includes files opened that are   | Replace w
 ```
 
 # Working Set Context Menus
-This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `EditorManager` who manages the `.open_files_container` will be passed with the `EventData` so that callers (Extensions) will be able to determine which `EditorManager` has focus.  
+This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `WorkingSetView` who attached to the `.open_files_container` will be maintain the paneId from the `EventData` it was passed during the create event so that callers (Extensions) will be able to determine which `EditorPane` has focus when the menu is invoked.
 
-This will also trigger a focus action on the DOM node causing the `Editor` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the working set for the currently focused `EditorManager` instance.
+This will also trigger a focus action on the DOM node causing the `Editor` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the working set for the editor pane associated with the `WorkingSetView` that manages it and ask that `EditorManager` instance for the working set.
 
 # Working Set Management
 The Implementation of these functions will move from `DocumentManager` to `EditorManager` and a deprecation warning will be displayed.
 
 ## EditorManager.findInWorkingSet
-Used by (pflynn.brackets.editor.nav) which has a few other working set api calls 
+Used by (pflynn.brackets.editor.nav) which has a few other working set API calls 
 Deprecation warning, pflynn updates his extension.
 
 ** Changed to return {paneId: _paneId_, index: _index_) or undefined if not found **
