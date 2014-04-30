@@ -127,11 +127,11 @@ In either case ("synchronous" or asynchronous), your result or error will be sen
 
 ### Events
 
-
-
 Your Node module can also asynchronously trigger events that can be listened to on the Brackets side. Events are registered using the ```registerEvent``` command in the DomainManager, and emitted using the ```emitEvent```. On the client side, events can be listened for using the standard jQuery event system on instances of the NodeDomain class, by simply doing `$(myDomain).on("someEvent", someHandler)`.
 
 Note that Brackets client code automatically registers as a listener for "log" events and forwards them to the client console, prefixed with "[node-(level) (timestamp)]".
+
+(**TODO**: Should add this to the example repo.)
 
 ### Reloading the Node module
 
