@@ -23,7 +23,7 @@ Currently there is only 1 instance of the visible editor so its dom element is p
 The layout of the editor is fluid for the most part, but the height is computed by `PanelManager` and the editor is resized by triggering an Event and passing data with the event to tell the editor how tall it should be. The `EditorManager` then handles this event and sets the `$(#editor-holder)` to the explicit height negotiated by the panel manager.  The event is passed to the `Editor` object which then tells codemirror to recompute its scroll state and other size related data.
 
 # Proposed Implementation 
-`EditorLayoutManager` is a helper for `EditorManager` to compute the placement and layout of all full sized editors (inline editors are not managed here) and has various APIs for changing the layout of the editor area and placement `Editor` objects.  The editor objects themselves are managed by the `EditorManager` and the `EditoryLayoutManager` is created whenever the layout needs to change to adjust all editor sizes and placement.
+`EditorLayoutManager` is a helper for `EditorManager` to compute the placement and layout of all full sized editors (inline editors are not managed here) and has various APIs for changing the layout of the editor area and placement `Editor` objects.  The editor objects themselves are managed by the `EditorManager` and the `EditorLayoutManager` is created whenever the layout needs to change to adjust all editor sizes and placement.
 
 `EditorManager` View of `#editor-holder`    
 `....+-> Array[1][1]` of `Editor` instances  (`.editor-pane`, id=paneId)  
@@ -694,10 +694,11 @@ getFocusedInlineWidget             |                                         | D
 
 # Implementing the Layout Manager
 
-The initial implementation will be 2 columns x 1 row or 2 rows x 1 column.  However, implementing an arbitrary number of rows and columns could be trivial to do using this code:
+The initial implementation will be 2 columns x 1 row or 2 rows x 1 column.  However, implementing an arbitrary number of rows and columns could be trivial using this code:
 https://github.com/FriendCode/codebox/blob/master/client/views/grid.js which is Apache-licensed.
 However, this is a fairly integral piece to codebox and depends on other codebox libraries in order to work.
-The initial implementation will be mostly handled by `EditorManager` but a `LayoutManager` may be created just to help handle the layout.
+
+The initial implementation will be mostly handled by `EditorManager` but `EditorLayoutManager` will be created just to help handle the layout.  Since it's 1x1, 1x2 or 2x1 initially, it should be fairly easy to implement without the need for advanced layout mechanics.
 
 # WorkingSetViews
  
