@@ -186,8 +186,9 @@ This will also trigger a focus action on the DOM node causing the `Editor` to ga
 The Implementation of these functions will move from `DocumentManager` to `EditorManager` and a deprecation warning will be displayed.
 
 ## EditorManager.findInWorkingSet
-Used by (pflynn.brackets.editor.nav) which has a few other working set API calls 
-Deprecation warning, pflynn updates his extension.
+Used by (pflynn.brackets.editor.nav) which has a few other working set API calls.   
+* Deprecation warning is displayed
+* pflynn updates his extension.
 
 ** Changed to return {paneId: _paneId_, index: _index_) or undefined if not found **
 
