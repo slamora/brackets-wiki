@@ -62,9 +62,9 @@ This allows for:
 2) Easier to move panes around when changing layouts in the future and not break API  
 3) less data that callers need to understand about the implementation details  
 
-Shortcuts for APIs whenever dealing with PaneIds can be used rather than have 2 different APIs for All or Focused panes.
+## Constant Pane IDs
+These are shortcuts paneIds for APIs to avoid having to maintain a reference to the pane in which a file belongs.  This also allows us to 1 API rather than 2 different APIs. One for `All` and one for `Focused` panes.
 
-Constant Pane IDs: 
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
 Constant                | Usage
