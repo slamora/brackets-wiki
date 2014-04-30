@@ -1,7 +1,7 @@
 Refactoring Brackets to Support Split View with Multiple Documents requires quite a bit of hacking on the plumbing but there are only a few places that need to be heavily refactored to do so.
 
 # Current Implementation
-This is an object view of the system. There are ancillary objects involved which will be discussed at another time.
+This is an objective view of the system. 
 
 The `.content` area of the application contains many widgets (in addition to the editor) that add to Bracket's user experience. These all start with the `PanelManager` which, for all intents and purposes, only manages the placement of these widgets. It does other things but doesn't really manage panels.
 
