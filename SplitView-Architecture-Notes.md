@@ -759,11 +759,11 @@ DefaultMenus:
 
 Becomes:
         $(".working-set-container").on("contextmenu", function (e) {
+            e.workingSetPaneId = this._paneId;
             working_set_cmenu.open(e);
         });
 
 ```
-
 When Working Set Views are constructed, information about the Pane they are associated with are passed to the constructor via event data.
 
 # Performance Testing
