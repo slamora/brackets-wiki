@@ -8,15 +8,15 @@ The `.content` area of the application contains many widgets (in addition to the
 Here's a 50,000ft view of how it's glued together:
  
 `PanelManager` View which manages the placement of all panels (subviews) in the dom node `.content` it does not manage the status-bar.  
-`   +->` Replace all Results Panel (subview of mustache-rendered dom node `#search-results`) managed by FindReplace.js   
-`   +->` Find In Files Results Panel (subview of mustache-rendered dom node `#replace-all-results`) managed by FindInFiles.js  
-`   +->` Problems (jsLint) Panel (subview of of mustache-rendered dom node `#problems-panel`)
+`....+->` Replace all Results Panel (subview of mustache-rendered dom node `#search-results`) managed by FindReplace.js   
+`....+->` Find In Files Results Panel (subview of mustache-rendered dom node `#replace-all-results`) managed by FindInFiles.js  
+`....+->` Problems (jsLint) Panel (subview of of mustache-rendered dom node `#problems-panel`)
 Managed by CodeInspection.js  
 
 Various services create, show and manipulate these panels by rendering some HTML using Mustache and adding to the dom by calling `PanelManager.createBottomPanel()` which wraps the HTML snippet and inserts it into the DOM. 
 
 `EditorManager` Manages the creation and destruction of an editor for a document.   
-`    +-> Editor` Wraps a code mirror instance, code mirror options and provides a high level api this is basically the view attached to `#editor-holder`  
+`....+-> Editor` Wraps a code mirror instance, code mirror options and provides a high level api this is basically the view attached to `#editor-holder`  
 
 Currently there is only 1 instance of the visible editor so its dom element is part of the base HTML and it's referenced whenever needed as `$(#editor-holder)` 
 
@@ -29,8 +29,8 @@ First we create a helper to manage the layout of editors.
 `EditorPaneManager` is a helper for `EditorManager` to compute the placement and layout of all full sized editors (inline editors are not managed here) and has various APIs for changing the layout of the editor area and placement `Editor` objects.  
 
 `EditorManager` View of `#editor-holder`    
-`   +-> EditorPaneManager`
-`            +-> Array[1][1]` of `Editor` instances  (`.editor-pane`, id=paneId)
+`....+-> EditorPaneManager`  
+`............+-> Array[1][1]` of `Editor` instances  (`.editor-pane`, id=paneId)  
 
 There cannot be `0,0` (rows, columns) elements so there needs to be logic to enforce that.  Initially it is 1 row 1 column so there will always be at least 1 instance of `EditorManager` to work on.
 
@@ -59,6 +59,20 @@ _height_ and _width_ are passed in in pixels and converted to a percentage when 
 `EditorManager` will manage a Working Set for each of its Editor Panes.  Management of the Working Set will move from the `DocumentManager` into `EditorManager` the and the working set will no longer be a collection of `Document` objects.  It will be an array of file names.  Theoretically we could register a view factory to create a view object for each file type (images, html, css, etc...) which would provide an easy way for custom viewers.  This could be extensible in some way but that work is outside the scope of this document.  For the time being, we only manifest CODE and Image viewers.
 
 Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
+
+Constant Pane IDs: 
+```text
+------------------------+-----------------------------------------------------------------------------------------------------
+Constant                | Usage
+------------------------+-----------------------------------------------------------------------------------------------------
+ALL_PANES               | Perform the operation on all panes (e.g. search for fullpath in all working sets)
+FOCUSED_PANE            | Perform the operation on the currently focused pane (can also use EditorManager.getFocusedPane())
+------------------------+-----------------------------------------------------------------------------------------------------
+```
+
+# EditorManager.getFocusedEditor()
+Returns the editor object with the current focus
+
  
 This allows for:   
 1) Panes to be found in the DOM by ID  
@@ -134,30 +148,32 @@ Close-Others               | Adds Close commands the Working Set Menu| Uses New 
                            |                                         | Working set info is passed in 
                            |                                         | Event data
 ---------------------------+-----------------------------------------+-----------------------------------  
-DocumentCommnadHandlers    | Save and Close All Command Handlers     | Replace with 
-                           |                                         |`DocumentManager
-                           |                                         |      .getAllOpenDocuments()`
+DocumentCommnadHandlers    | Save and Close All Command Handlers     | Move to EditorCommandHandlers
+                           |                                         |   HandleSave is passed on as
+                           |                                         | DoCommand("Document.Save")
 ---------------------------+-----------------------------------------+-----------------------------------  
 LiveDevelopment            | Initial Document                        | Replace with 
-                           |                                         | `getAllOpenDocuments()`
+                           |                                         | DocumentManager
+						   |                                         |   .getAllOpenDocuments()
 ---------------------------+-----------------------------------------+-----------------------------------  
-FileSyncManager            | Scans documents in workingset that have | Replace with`EditorManager
-                           | yet to be oepened                       |      .getAllWorkingSets()`
+FileSyncManager            | Scans documents in workingset that have | Replace with 
+						   | yet to be opened                        |   EditorManager
+                           |                                         |      .getAllWorkingSets()
                            |                                         | and iterate over all working sets
 ---------------------------+-----------------------------------------+-----------------------------------  
-ProjectManager             | `getAllFiles` not sure what this does   | Replace with`EditorManager
-                           |                                         |      .getAllWorkingSets()`
+ProjectManager             | `getAllFiles` not sure what this does   | Replace with EditorManager
+                           |                                         |      .getAllWorkingSets()
                            |                                         | and iterate over all working sets
 ---------------------------+-----------------------------------------+-----------------------------------  
-WorkingSetView             | View of the working set. Constructed    | Replace with`EditorManager
-                           | with the event:                         |      .getWorkingSet()`
-                           |  `EditorManager.editorPaneCreated`      | 
+WorkingSetView             | View of the working set. Constructed    | Replace with 
+                           | with the event:                         |    EditorManager
+                           |  `EditorManager.editorPaneCreated`      |      .getWorkingSet(paneId)
                            | and destroyed with the event:           | 
-                           |  `EditorManager.editorPaneDestroyed`    | 
+                           |  `EditorManager.editorPaneDestroyed`    | paneId is passed with Event Data
 ---------------------------+-----------------------------------------+-----------------------------------  
-FindInFiles                | Search includes files opened that are   | Replace with`DocumentManager
-                           | open in the working set but are not     |      .getAllOpenDocuments()`
-                           | part of the currently opened project    | 
+FindInFiles                | Search includes files opened that are   | Replace with 
+                           | open in the working set but are not     |   DocumentManager
+                           | part of the currently opened project    |       .getAllOpenDocuments()
 ---------------------------+-----------------------------------------+-----------------------------------  
 ```
 
@@ -184,9 +200,10 @@ Core Usage (covers both findInWorkingSet and findInWOrkingSetAddedOrder)
 ---------------------------+-----------------------------------------+-----------------------------------
  Name                      | Usage                                   | Proposed Change                   
 ---------------------------+-----------------------------------------+-----------------------------------
-SaveAs Command             | Removes the document from the working   | findInWorkingSet Semantecs Change
-                           | set and re-adds the saved as document   | so that the paneId is returned
-                           | with the new name.                      | instead of true/false then 
+SaveAs Command Handler     | Removes the document from the working   | Move to EditorCommandHandlers
+                           | set and re-adds the saved as document   | findInWorkingSet Semantecs Change
+                           | with the new name.                      | so that the paneId is returned
+                           |                                         | instead of true/false then 
                            |                                         | removeFromW...Set / addToW...Set
                            |                                         | can be called with paneId 
 ---------------------------+-----------------------------------------+-----------------------------------
@@ -289,7 +306,7 @@ Core usage
 ---------------------------+-----------------------------------------+-----------------------------------
  Name                      | Usage                                   | Proposed Change                   
 ---------------------------+-----------------------------------------+-----------------------------------
-DocumentManager.           | Called to present the file open dialog  | `EditorManager 
+DocumentManager.           | Called to present the file open dialog  | EditorManager 
   _doOpenWithOPtionalPath  | when the user opens more than 1 file    |   .addToWorkingSet
                            |                                         |       (getFocusedPane(), filelist)
 ---------------------------+-----------------------------------------+-----------------------------------
@@ -312,9 +329,16 @@ Core Usage
 ---------------------------+-----------------------------------------+-----------------------------------  
  Name                      | Usage                                   | Proposed Change                    
 ---------------------------+-----------------------------------------+-----------------------------------  
-Close-Others               | Adds Close commands the Working Set Menu| No change Needed. The extension is  
-                           |                                         | packaged to run only on brackets  
-                           |                                         | <= 0.32.0   
+DocumentCommandHandler     | Removes the document from the working   | Will need to call EditorManager
+    ._doSaveAs()           | set and readds it with the new name     |   .findDocumentInWorkingSet() 
+						   | to determine which pane to reopen       | the new document in, etc...
+---------------------------+-----------------------------------------+-----------------------------------  
+DocumentCommandHandler     | Closes document on error during open    | EditorManager.removeFromWorkingSet
+    .doOpen                |                                         | can be used with the paneId const
+                           |                                         | ALL_PANES 
+						   |                                         |   EditorManager
+						   |                                         |     .removeFromWorkingSet(
+						   |                                         |               ALL_PANES, _path_);
 ---------------------------+-----------------------------------------+----------------------------------- 
 
 ```
@@ -324,17 +348,15 @@ Close-Others               | Adds Close commands the Working Set Menu| No change
 
 ```text
 Core Usage
----------------------------+-----------------------------------------+
- Name                      | Usage                                   | 
----------------------------+-----------------------------------------+
-WorkingSetView             | Commands.FILE_CLOSE_ALL,                | 
-                           | Commands.FILE_CLOSE_LIST                | 
----------------------------+-----------------------------------------+
-Proposed Change: 
-
-_.each(EditorManager.getAllWorkingSets(), function(workingSet){ 
-    workingset.removeListFromWorkingSet(list)
-});
+---------------------------+-----------------------------------------+-----------------------------------  
+ Name                      | Usage                                   | Proposed Change                     
+---------------------------+-----------------------------------------+-----------------------------------  
+DocumentCommandHandlers.   | Implements:                             | EditorManager
+   handleFileClose         | Commands.FILE_CLOSE_ALL,                |  .removeListFromWorkingSet(
+						   | Commands.FILE_CLOSE_LIST                |     commandData.panedId || FOCUSED_PANE, 
+						   |                                         |     fileList
+						   |                                         | );
+---------------------------+-----------------------------------------+----------------------------------- 
 
 ```
 
@@ -376,12 +398,9 @@ _.bind can be used to bind the paneId to the context of the call for command han
 
 
 
-
-
-
 # Supporting Images
 
-Working set so far has be devoid of image files.  To support images in split view, we will need to change the working set rules to allow for images to be in the working set. This means that callers of the new working set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or checking the extension. 
+Working set so far has be devoid of image files.  To support images in split view, we will need to change the working set rules to allow for images to be in the working set. This means that callers of the new working set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or checking the extension.  Also, File Command handlers implemented in `DocumentManager` will move to another layer to allow for files or documents to be targeted.  Mirrored commands (e.g. `Document.open` mirrors `File.open`) for just documents will be created to make the transition easier.
 
 The working set will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated `DocumentManager.getWorkingSet()` will filter out any image files without a Document object.
 
@@ -448,11 +467,29 @@ Sent when an editor pane is created. Event data about the pane is sent with the 
 
 Sent when an editor pane is destroyed. Event data about the pane is sent with the event.
 
+## EditorManager.activePaneChanged
+
+Sent when the focused pane changes
+
+## EditorManager.activeEditorChanged
+## EditorManager.fullEditorChanged
+
+## EditorManager.currentlyViewedFileChange 
+will not be deprecated but will now provide details about the the file, pane, document, etc... in the event data
+
+Sent when the editor focus switches
+
 ## DocumentManager.openDocumentListChanged
 
 Sent when the open document list has been modified.  Listeners should call `DocumentManager.getAllOpenDocuments()` and resync to the list of open documents.  
 
+## DocumentManager.currentDocumentChange
+
+Deprecated. Use EditorManager.fullEditorChanged instead. TODO: Find usage
+
+
 # Commands
+Most "file.*" commands are handled by DocumentManager.  These will move to the EditorManager so that a more generic way of dealing with Images and Images in the Working Set can be operated on without the need for specialized testing.
 
 ```text
 -----------------------------+-----------------------------------------+-----------------------------------  
@@ -465,11 +502,194 @@ file.addToWorkingSet         | Used to open a document in the editor   | Moves f
                              |    QuickOpen                            | Currently focused pane is used by 
                              |    DragAndDrop                          | default if no 
 -----------------------------+-----------------------------------------+-----------------------------------  
+file.open					 | Opens a file                            | Moves from DocumentManager to 
+							 |                                         | EditorManager.  A corresponding 
+							 |                                         | Document.Open command is created
+							 |                                         | to handle opening a document and
+							 |                                         | all of the innerworkings of 
+							 |                                         | DocumentManager.handleFileOpen.
+							 |                                         | All image handling code in 
+							 |                                         | DocumentManager.handleFileOpen 
+							 |                                         | is handled by 
+							 |                                         | EditorManager.handleFileOpen
+-----------------------------+-----------------------------------------+-----------------------------------  
+file.rename					 | Checks that the thing you are renaming  | Moves from DocumentManager to 
+file.delete               	 | or deleteing is in an customViewer      | EditorManager. 
+-----------------------------+-----------------------------------------+-----------------------------------  
+file.close        			 | discreet file closing                   | Moves from DocumentManager to
+file.closeAll                |                                         | EditorManager.
+file.closeList  			 |                                         | 
+-----------------------------+-----------------------------------------+-----------------------------------  
+NextDoc         			 |                                         | Move from DocumentManager to 
+PrevDoc						 |                                         | EditorManager
+-----------------------------+-----------------------------------------+-----------------------------------  
+ShowInTree  				 |                                         | Opportunistic refactor -- move 
+                             |                                         | to EditorCommands 
+							 |                                         | and rename to File.showInTree
+-----------------------------+-----------------------------------------+-----------------------------------  
+
 ```
 
 # Additional Changes
 
-`DocumentManager.getCurrentDocument()` is deprecated but maps to `EditorManager.getFocusedPane().getEditor().getDocument()`  since `DocumentManager` will no longer maintain the "current document".
+## DocumentManager.getCurrentDocument()
+Deprecated.  
+* Callers will get the deprecation warning and the function will map to `EditorManager.getFocusedPane().getEditor().getDocument()`  
+* Probably implemented more cleanly as `EditorManager.getFocusedEditor().getDocument()`
+* Extensions will get the deprecation warning but they will continue to function.  
+
+
+
+```text
+Core Usage  
+---------------------------+-----------------------------------------+-----------------------------------
+ Name                      | Usage                                   | Proposed Change                   
+---------------------------+-----------------------------------------+-----------------------------------
+DocumentCommandHandlers    | Called when the document is dirtied     | DocumentManager will provide 
+ .updateTitle              | or the name of the file has changed     | details about the document that
+ .updateDocumentTitle      |                                         | changed in the event data for 
+ .handleDirtyChange        |                                         |   "dirtyFlagChange"
+                           |                                         |   "filenameChange"
+						   |                                         | Handlers will use this data but 
+						   |                                         | fallback to:
+						   |                                         |  EditorManager
+						   |                                         |   .getFocusedEditor()
+						   |                                         |   .getDocument()
+						   |                                         | Setting the title on the title bar
+						   |                                         |  moves to EditorManager
+---------------------------+-----------------------------------------+-----------------------------------
+DocumentCommandHandlers    | handles opening & uses currentDocument  | Uses 
+  .doOpen                  | to determine if the file actually       | EditorManager
+                           | changed and aborts the open with a      |  .getFocusedEditor()
+                           | successful promise resolve if the file  |  .getDocument()
+                           | is the same as the currently viewed     |  
+                           | file                                    |  
+---------------------------+-----------------------------------------+-----------------------------------
+DocumentCommandHandlers    | Uses current document if no data is     | Uses 
+  .handleFileClose         | passed to the command                   | EditorManager
+                           |                                         |  .getFocusedEditor()
+                           |                                         |  .getDocument()
+---------------------------+-----------------------------------------+- ----------------------------------
+DocumentCommandHandlers    | Uses current document to determine if   | FILE commands really need to move
+  .handleFileClose         | an image is open and calls              |  to EditorCommandHandler
+DocumentCommandHandlers    | EditorManager._closeCustomViewer        | So it can determine how to proceed
+  .handleFileCloseAll      |                                         |  and close imageViewers, etc...
+DocumentCommandHandlers    |                                         | 
+  .handleFileCloseAll      |                                         | 
+---------------------------+-----------------------------------------+-----------------------------------
+DocumentCommandHandlers    | uses current document if nothing is     | Same as above to allow handling 
+  .handleFileRename        | selected in the file tree.              | of image files in the working set
+                           |                                         | 
+---------------------------+-----------------------------------------+-----------------------------------
+ProjectManager             | finds the current document in the       | changed to use EditorManager
+  .handleShowInTree        | project tree and selects it             |     .getFocusedEditor()
+                           |                                         |     .getFilename()
+---------------------------+-----------------------------------------+-----------------------------------
+QuickOpenCSS extension     | builds the list of selectors from the   | changed to use EditorManager
+                           | currently opened document               |     .getFocusedEditor()
+                           |                                         |     .getDocument()
+---------------------------+-----------------------------------------+-----------------------------------
+QuickOpenHTML extension    | builds the list of ids from the         | changed to use EditorManager
+                           | currently opened document               |     .getFocusedEditor()
+                           |                                         |     .getDocument()
+---------------------------+-----------------------------------------+-----------------------------------
+QuickOpenJavaScript        | builds the list of functions from the   | changed to use EditorManager
+ Extension                 | currently opened document               |     .getFocusedEditor()
+                           |                                         |     .getDocument()
+---------------------------+-----------------------------------------+-----------------------------------
+CodeInspection             | builds a list of lint providers for     | changed to use EditorManager
+ Extension                 | the currently opened file               |     .getFocusedEditor()
+                           |                                         |     .getFilename()
+---------------------------+-----------------------------------------+-----------------------------------
+LiveDevelopment            | Implements its own _getCurrentDocument  | changed to use EditorManager
+                           | which calls                             |     .getFocusedEditor()
+                           |  DocumentManager.getCurrentDocument     |     .getDocument()
+---------------------------+-----------------------------------------+-----------------------------------
+FileViewController         | Tracks changes to the current document  | changed to use EditorManager
+.on(                       |   to track where the file is            |     .getFocusedEditor()   
+"currentlyViewedFileChange"|      WORKING_SET_view                   |     .getFilename()   
+)                          |      PROJECT_MANAGER                    |     
+---------------------------+-----------------------------------------+-----------------------------------
+FileViewController         | opens the file if it's already          | changed to use EditorManager
+ .openAndSelectDocument    |   the current document then it does     |     .getFocusedEditor()   
+                           |      nothing. otherwise dispatches      |     .getFilename()   
+                           |    "file.open"                          | Probably further optimization by 
+						   |                                         |  checking if it's in a working set
+						   |                                         |  and just opening the file    
+---------------------------+-----------------------------------------+-----------------------------------
+ProjectManager             | if there is nothing selected then uses  | changed to use EditorManager
+ .getSelectedItem          | the current document and returns the    |    .getFocusedEditor()
+                           | filename of the selected item.          |    .getFilename()   
+---------------------------+-----------------------------------------+-----------------------------------
+WorkingSetView             |                                         | changed to use this
+._scrollSelectedDocIntoView| impementation details which may change  |    ._editor
+._updateListSelection      | (see section below on WorkingSetView)   |    .getFilename()   
+._createNewListItem        |                                         | Each workingSetView caches its 
+						   |                                         | editor instance
+---------------------------+-----------------------------------------+-----------------------------------
+QuickOpen                  | Gets the language Id from the current   | changed to use EditorManager
+ ._filterCallback          |  document so that it can favor plugins  |    .getFocusedEditor()
+                           |  for that language                      |    .getDocument()   
+---------------------------+-----------------------------------------+-----------------------------------
+QuickOpen                  | Uses the current document's selection   | changed to use EditorManager
+ .doDefinitionSearch       |  as search data.                        |    .getFocusedEditor()
+                           |                                         |    .getDocument()
+---------------------------+-----------------------------------------+-----------------------------------
+ViewCommandHandlers        | Enables/Disables comamnds if a document | changed to use EditorManager
+ ._updateUI                | is open or not.                         |    .getFocusedEditor()
+                           |                                         |    .getDocument()
+---------------------------+-----------------------------------------+-----------------------------------
+
+```
+
+## EditorManager.getCurrentlyViewedPath
+Deprecated.  Callers will get the deprecation warning and the function maps to `EditorManager.getFocusedPane().getCurrentlyViewedPath()`
+
+## EditorManager.createViewerForFile
+Replaces EditorManager._showCustomViewer to create a Read Only viewer for a file.
+
+# Opportunistic Cleanup
+
+The following `EditorManager` functions will move to `Editor`
+
+```text
+-----------------------------------+-----------------------------------------+-----------------------------------
+ Name                              | Usage                                   | Disposition                  
+-----------------------------------+-----------------------------------------+-----------------------------------
+_openInlineWidget                  | Internal Inline Widget Management       | Moves to Editor without inpunity
+_openInlineWidget                  |                                         | 
+-----------------------------------+-----------------------------------------+-----------------------------------
+_toggleInlineWidget                | Command Handler                         | Current Implementation moves to 
+                                   |                                         | Editor.
+                                   |                                         | Command handler will  call
+					        	   |                                         |   _focusedEditor
+								   |                                         |    .toggleInlineWidget()
+-----------------------------------+-----------------------------------------+-----------------------------------
+_showCustomViewer                  | API                                     | Illegal usage from 
+                                   |                                         |   DocumentCommandHandlers
+								   |                                         | Command handler moves to 
+								   |                                         |  EditorCommandHandlers
+								   |                                         | Function is renamed to 
+								   |                                         |  EditorManager
+								   |                                         |    createViewerForFile
+-----------------------------------+-----------------------------------------+-----------------------------------
+closeInlineWidget                  |                                         | Moves to Editor
+                                   |                                         | InlineWidget.close will call
+								   |                                         | this.hostEditor.closeInlineWidget()
+-----------------------------------+-----------------------------------------+-----------------------------------
+getInlineEditors             	   |                                         | Moves to Editor
+                             	   |                                         | InlineWidget
+								   |                                         |    ._syncGutterWidths(
+								   |                                         |                hostEditor
+								   |                                         | ) 
+								   |                                         | calls hostEditor.getInlineEditors()
+-----------------------------------+-----------------------------------------+-----------------------------------
+getFocusedInlineWidget             |                                         | Doesn't move but passes through to
+                                   |                                         |    getFocusedEditor()
+								   |                                         |      .getFocusedInlineWidget();
+-----------------------------------+-----------------------------------------+-----------------------------------
+```
+
 
 
 # Implementing the Layout Manager
@@ -477,10 +697,65 @@ file.addToWorkingSet         | Used to open a document in the editor   | Moves f
 The initial implementation will be 2 columns x 1 row or 2 rows x 1 column.  However, implementing an arbitrary number of rows and columns could be trivial to do using this code:
 https://github.com/FriendCode/codebox/blob/master/client/views/grid.js which is Apache-licensed.
 However, this is a fairly integral piece to codebox and depends on other codebox libraries in order to work.
+The initial implementation will be mostly handled by `EditorManager` but a `LayoutManager` may be created just to help handle the layout.
 
+# WorkingSetViews
+ 
+WorkingSetView objects are created when the event `EditorPaneCreated` is handled.  `SideBarView` will handle this event and create a `WorkingSetView` object which is bound to the working set created for the pane and passed in as event data.
+
+`#open-files-container` Is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The Extensions which Style The elements will continue to work. The following extensions may no longer work:
+
+```text
+3rd Party Extension usage
+---------------------------+-----------------------------------------+---------------------------------------------
+ Name                      | Usage                                   | Disposition
+---------------------------+-----------------------------------------+---------------------------------------------
+brackets-legibility        | Style Changes                           | Continues to work without issue
+---------------------------+-----------------------------------------+---------------------------------------------
+jhatwich.                  |
+    brackets-related-files | ** Extension doesn't work**
+---------------------------+-----------------------------------------+---------------------------------------------
+brackets-tabs              | Converts the working set view into tabs | Extension will no longer work. 
+                           |                                         | Contact Sean Davies directly:
+						   |                                         |    seandavies@live.com
+						   |                                         | A git repo is not provided in package.json 
+---------------------------+-----------------------------------------+---------------------------------------------
+Brackets-Themes            | Style Changes                           | Continues to work without issue
+---------------------------+-----------------------------------------+---------------------------------------------
+themesforbrackets          | Style Changes                           | Continues to work without issue
+---------------------------+-----------------------------------------+---------------------------------------------
+zaggino.brackets-git       | listens to open-files-container events  | Events on child divs should continue to 
+                           |                                         | propogate down to parent node unless some
+						   |                                         | event handler stops propogation so this
+						   |                                         | extension *should* continue to work but
+						   |                                         | file an issue in git repo to change this 
+						   |                                         | to $(".working-set-container").on("...")
+---------------------------+-----------------------------------------+---------------------------------------------
+zaggino.brackets-git       | iterates over child li elements         | continues to work because he's using 
+                           |                                         | $("#open-files-container").find("li")
+						   |                                         | contact zaggino anyway, changes to working-
+						   |                                         | set may not work correctly.
+---------------------------+-----------------------------------------+---------------------------------------------
+```
+
+## Menus 
+
+```javascript
+DefaultMenus:
+        $("#open-files-container").on("contextmenu", function (e) {
+            working_set_cmenu.open(e);
+        });
+
+Becomes:
+        $(".working-set-container").on("contextmenu", function (e) {
+            working_set_cmenu.open(e);
+        });
+
+```
+
+When Working Set Views are constructed, information about the Pane they are associated with are passed to the constructor via event data.
 
 # Performance Testing
 
 Do early research on typing and scrolling performance.
-
 
