@@ -238,5 +238,5 @@ getFocusedInlineWidget             |                                         | D
 								   |                                         |      .getFocusedInlineWidget();
 -----------------------------------+-----------------------------------------+-----------------------------------
                              
-
+```
 [splitview architecture notes](splitview-architecture-notes)
