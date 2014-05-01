@@ -48,7 +48,7 @@ Extension Authors should also be aware that moving `DocumentManager.findInWorkin
 
 ## Changes to WorkingSet Events
 
-Working Set Events are currently fired by `DocumentManager`.  `DocumentManager` will continue to fire the following events but they are being deprecated and will stop working in a future version of Brackets.  A deprecation warning will display once when these events are fired:
+Working Set Events are currently fired by `DocumentManager`.  `DocumentManager` will continue to fire the following events but they are being deprecated and will stop working in a future version of Brackets. 
 
 ```text
 -------------------------------------------+-----------------------------------------------------------------------------------
