@@ -758,7 +758,6 @@ The following `EditorManager` functions will move to `Editor`
  Name                              | Usage                                   | Disposition                  
 -----------------------------------+-----------------------------------------+-----------------------------------
 _openInlineWidget                  | Internal Inline Widget Management       | Moves to Editor without inpunity
-_openInlineWidget                  |                                         | 
 -----------------------------------+-----------------------------------------+-----------------------------------
 _toggleInlineWidget                | Command Handler                         | Current Implementation moves to 
                                    |                                         | Editor.
