@@ -4,7 +4,7 @@ Here are the high-level changes that Extension Authors need to keep in mind:
 
 * Brackets will no longer be a single document model so Extension Authors must be aware that the API, `DocumentManager.getCurrentDocument()`, may not give you the expected document.  Extension authors can use `EditorManager.getFocusedEditor().getDocument()`  
 
-* There will no longer have a single working set.  This is probably the most disruptive change becase a lot of extension authors make use of the working set.  Extension authors can use `EditorManager.getWorkingSet(FOCUSED_PANE)` to get the current editor pane's working set or use `editorManager.getAllWorkingSets()` to get all working sets.  The former returns and array of arrays.
+* Brackets will no longer have a single working set.  This is probably the most disruptive change becase a lot of extension authors make use of the working set.  Extension authors can use `EditorManager.getWorkingSet(FOCUSED_PANE)` to get the current editor pane's working set or use `editorManager.getAllWorkingSets()` to get all working sets.  The former returns and array of arrays.
 
 * Working sets will no longer contain only filenames that have `Document` objects so extension authors will need to be able to handle the case where `DocumentManager.getDocumentForPath(EditorManager.getFocusedEditor().getFilename())` may return NULL.
 
