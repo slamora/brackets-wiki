@@ -119,11 +119,7 @@ _height_ and _width_ are expressed in percentages when affixing the CSS to the c
 `EditorManager` will manage a Working Set for each of its editor panes. This may be abstracted and delegated into a `EditorPane` object if implementation starts to get to messy but the API to get the working set will be on `EditorManager` to make the interface easier to use. Management of the Working Set will move from the `DocumentManager` into `EditorManager` the and the Working Set will no longer be a collection of `Document` objects.  It will be a collection of file names.  
 
 Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
- This allows for:   
 
-1) Panes to be found in the DOM by ID  
-2) Easier to move panes around when changing layouts in the future and not break API  
-3) Less data that callers need to understand about the implementation details  
 The shortcut paneIds for Working Set APIs avoid having to maintain a reference to the pane in which a file belongs.  It also allows us to create 1 API rather than 2 for `All` and `Focused` derivatives.
 
 # Implementing WorkingSetViews
