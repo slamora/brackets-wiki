@@ -10,6 +10,7 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
 
 2. Migrate WorkingSet Management to `EditorManager`
    * Code new WorkingSet APIs in EditorManager
+   * Move serialization code from DocumentManager
    * add deprecation warnings to old APIs
    * add bridge to new API from old APIs
    * Write issues for extensions still using old APIs
