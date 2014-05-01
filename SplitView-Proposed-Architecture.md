@@ -1,4 +1,4 @@
-Refactoring Brackets to Support Split View with Multiple Documents requires quite a bit of hacking on the plumbing but there are only a few places that need to be heavily refactored to do so.
+Refactoring Brackets to Support Split View with Multiple Documents requires quite a bit of hacking on the plumbing but there are only a few places that need to be heavily refactored to do so.  To break this work up in to smaller pieces, an accompanying document [SplitView Architecture Tasking](SplitView-Architecture-Tasking).
 
 # Proposed Implementation 
 This proposal uses `EditorManager` to manage the data for all Files. This includes Editor Placement, Working Set Lists and Editor Instances.  `DocumentManager` is refactored somewhat to remove Working Set management -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility.  
