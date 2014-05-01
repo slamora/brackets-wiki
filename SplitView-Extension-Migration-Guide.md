@@ -10,7 +10,7 @@ Here are the high-level changes that Extension Authors need to keep in mind:
 
 * `EditorManager` may manage several visible editors so the legacy APIs on `EditorManager` will work only for the `FOCUSED_PANE`'s editor.
 
-All `DocumentManager` Workingset APIs will continue to work for some time but these are deprecated and will eventually be removed. Below is a chart of used APIs and the reccommended upgrade path.
+All `DocumentManager` Workingset APIs will continue to work for some time but these are deprecated and will eventually be removed. Below is a chart of used APIs and the recommended upgrade path.
 
 ## Changes to Working Set APIs
 
@@ -44,7 +44,7 @@ FOCUSED_PANE            | Perform the operation on the currently focused pane (c
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
 
-Extension Authors should also be aware that moving `DocumentManager.findInWorkingSet()` to `EditorManager` will change to return an object `{pane: paneId, index: index}` or `undefined` if the file was not found.  `DocumentManager.findInWorkingSet` will continue to work as it does today but a deprecation warning will be written to the console and it will only search using the `FOCUSED_PANE` derivative.
+Extension Authors should also be aware that moving `DocumentManager.findInWorkingSet()` to `EditorManager` will change to return an object `{pane: paneId, index: index}` or `undefined` if the file was not found.  `DocumentManager.findInWorkingSet()` will continue to work as it does today but a deprecation warning will be written to the console and it will only search using the `FOCUSED_PANE` derivative.
 
 ## Changes to WorkingSet Events
 
@@ -68,6 +68,6 @@ DocumentManager.workingSetRemove           |  EditorManager.workingSetRemove
 -------------------------------------------+-----------------------------------------------------------------------------------
 API                                        |  Recommended Substitution
 -------------------------------------------+-----------------------------------------------------------------------------------
-EditorManager.getCurrentlyViewedPath       |  EditorManager.getFocusedPane().getCurrentlyViewedPath()
+EditorManager.getCurrentlyViewedPath()     |  EditorManager.getFocusedPane().getCurrentlyViewedPath()
 -------------------------------------------+-----------------------------------------------------------------------------------
 ```
