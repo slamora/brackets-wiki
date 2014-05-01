@@ -38,9 +38,9 @@ The Implementation of these functions will move from `DocumentManager` to `Edito
 
 ## Working Set APIs
 
-Working Set APIs have been migrated from DocumentManager. Some of these will APIs will continue to exist in DocumentManager to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a paneId to identify which pane's working set to work on.
+Working Set APIs we be migrated from `DocumentManager`. Some of these will APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a paneId to identify which pane's working set to work on.
 
-Most of the Working Set APIs will take one of these special constants for paneId:
+Most of the Working Set APIs will take one of these special constants for paneId in addition to valid paneIds:
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
 Constant                | Usage
