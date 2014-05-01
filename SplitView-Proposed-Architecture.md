@@ -38,9 +38,9 @@ The Implementation of these functions will move from `DocumentManager` to `Edito
 
 ## Working Set APIs
 
-Working Set APIs we be migrated from `DocumentManager`. Some of these will APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a paneId to identify which pane's working set to work on.
+Working Set APIs we be migrated from `DocumentManager`. Some of these will APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a `paneId` to identify which pane's working set to work on.
 
-Most of the Working Set APIs will take one of these special constants for paneId in addition to valid paneIds:
+Most of the Working Set APIs will take one of these special constants for `paneId` in addition to valid paneIds:
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
 Constant                | Usage
@@ -49,20 +49,20 @@ ALL_PANES               | Perform the operation on all panes (e.g. search for fu
 FOCUSED_PANE            | Perform the operation on the currently focused pane (can also use EditorManager.getFocusedPane())
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
-### EditorManager.getWorkingSet(paneId)  
-### EditorManager.addToWorkingSet(paneId, _file_, _open_)  
-### EditorManager.addListToWorkingSet(paneId, _files_)
-### EditorManager.removeFromWorkingSet(paneId, _file_) 
-### EditorManager.removeListFromWorkingSet(paneId, _files_)
-### EditorManager.swapWorkingSetIndexes(paneId, _files_)
-### EditorManager.sortWorkingSet(paneId, _files_)
+### EditorManager.getWorkingSet(_paneId_)  
+### EditorManager.addToWorkingSet(_paneId_, _file_, _open_)  
+### EditorManager.addListToWorkingSet(_paneId_, _files_)
+### EditorManager.removeFromWorkingSet(_paneId_, _file_) 
+### EditorManager.removeListFromWorkingSet(_paneId_, _files_)
+### EditorManager.swapWorkingSetIndexes(_paneId_, _files_)
+### EditorManager.sortWorkingSet(_paneId_, _files_)
 
-### EditorManager.findInWorkingSet(paneId, _file_)  
-### EditorManager.findInWorkingSetAddedOrder(paneId, _file_)    
+### EditorManager.findInWorkingSet(_paneId_, _file_)  
+### EditorManager.findInWorkingSetAddedOrder(_paneId_, _file_)    
 Returns {paneId: _paneId_, index: _index_) or undefined if not found
 
 ## Working Set Events  
-_EditorManager Events will add paneId to the event data_
+_EditorManager Events will add `paneId` to event data_
 
 ### EditorManager.workingSetSort
 ### EditorManager.workingSetAdd
