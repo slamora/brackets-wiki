@@ -28,10 +28,10 @@ This API will change the layout to match _rows_ and _columns_.
 ### EditorManager.setRowHeight(_row_, _height_)  
 Update pane height/width. Not initially implemented.
 
-## Working Sets
-The Implementation of these functions will move from `DocumentManager` to `EditorManager` and a deprecation warning will be displayed.
+# Working Sets
+The Implementation of these functions will move from `DocumentManager` to `EditorManager` and a deprecation warning will be displayed.  
 
-** API **
+## API
 
 Working Set APIs have been migrated from DocumentManager. Some of these will APIs will continue to exist in DocumentManager to maintain backwards compatibility.
 Most of the Working Set APIs will take these special constants for paneId:
@@ -55,8 +55,9 @@ FOCUSED_PANE            | Perform the operation on the currently focused pane (c
 ### EditorManager.findInWorkingSetAddedOrder(paneId, _file_)    
 Returns {paneId: _paneId_, index: _index_) or undefined if not found
 
-** Working Set Events ** 
-EditorManager Events will add paneId to the event data 
+## Working Set Events  
+_EditorManager Events will add paneId to the event data_
+
 ### EditorManager.workingSetSort
 ### EditorManager.workingSetAdd
 ### EditorManager.workingSetAddList
@@ -73,9 +74,9 @@ EditorManager Events will add paneId to the event data
 
 ### EditorManager.currentlyViewedFileChange 
 
-** Commands **
+## Commands
 
-The following list of commands move from DocumentCommandHandlers is moved to and their corresponding implementation is moved into FileCommandHandlers.  It may be easier to leave some of the `Document` object specific code handling in DocumentCommandHandlers and wire it up to FileCommandHandlers when working with Files that have Document object.  
+The following list of commands move from `DocumentCommandHandlers` is moved to and their corresponding implementation is moved into `FileCommandHandlers`.  It may be easier to leave some of the `Document` object specific code handling in `DocumentCommandHandlers` and wire it up to `FileCommandHandlers` when working with Files that have Document object.  A cursory review indicated that this wasn't necessary.
 
 ### file.addToWorkingSet
 ### file.open	
@@ -182,9 +183,10 @@ DocumentManager.removeFromWorkingSet                                 | return Ed
 # Deprecating Legacy Events
 The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just be a repub of the EditorManager events. 
 __Is there a way to know if there are any listeners so that a deprecation warning can be written to the console only if there are listeners?__
-workingSetAdd                
-workingSetAddList            
-workingSetRemove             
+
+## workingSetAdd                
+## workingSetAddList            
+## workingSetRemove             
 
 # Opportunistic Cleanup
 
