@@ -97,12 +97,13 @@ The following list of commands will move from `DocumentCommandHandlers` along wi
 
 # Implementing the Layout Manager
 
-The initial implementation will be 2 columns x 1 row or 2 rows x 1 column.  However, implementing an arbitrary number of rows and columns could be trivial using this code:
+The initial implementation will be 1 or 2 panes (1x1, 1x2, 2x1).  However, implementing an arbitrary number of rows and columns could be trivial using this code:
 https://github.com/FriendCode/codebox/blob/master/client/views/grid.js which is Apache-licensed.
 However, this is a fairly integral piece to codebox and depends on other codebox libraries in order to work.
-The initial implementation will be mostly handled by `EditorManager` but an `EditorLayoutManager` object will be created just to help handle the layout.  Since it's 1x1, 1x2 or 2x1 initially, it should be fairly easy to implement without the need for advanced layout mechanics.  
+The initial implementation will be mostly handled by `EditorManager` but an `EditorLayoutManager` object may be created just to help handle the layout.  The initial implementation shouldn't need advanced layout mechanics since it will handle, at most, 2 panes.  This is an implementation detail that will be decided at the time of implementation.
+
 **Layout Rules:**
-* Only 1 row and 2 columns or 2 rows and 1 column are initially supported
+* Only 1 pane or 1 row and 2 columns or 2 rows and 1 column are initially supported
 * Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding `EditorManager` for that pane has been loaded with a document or image.
 * When an editor pane is destroyed, all documents in the corresponding working set for that pane are moved to another pane's working set.  Since there is only 2 panes in the initial implementation this is just a matter of collapsing them down to the remaining Pane's working set.
 
