@@ -4,15 +4,15 @@ Here are the high-level changes that Extension Authors need to keep in mind:
 
 * Brackets may have more than one full sized editor visible at any given time so Extension Authors must be aware that the API, `DocumentManager.getCurrentDocument()`, only provides access to the document of the currently focused editor.  `DocumentManager.getCurrentDocument()` is a deprecated API so extension authors are encouraged to migrate to `EditorManager.getFocusedEditor().getDocument()`  
 
-* Brackets will no longer have a single Working Set.  Each "Editor Pane", as we're calling it, will have its own Working Set.  This is probably the most disruptive change because the working set is used quite extensively to monitor various events and provide useful feedback to the user about open documents.  Extension authors can use `EditorManager.getWorkingSet(FOCUSED_PANE)` to get the focused editor's working set or use `editorManager.getAllWorkingSets()` to get all working sets.  The latter of which returns an array of arrays.
+* Brackets will no longer have a single Workingset.  Each "Editor Pane", as we're calling it, will have its own Workingset.  This is probably the most disruptive change because the Workingset is used quite extensively to monitor various events and provide useful feedback to the user about open documents.  Extension authors can use `EditorManager.getWorkingSet(FOCUSED_PANE)` to get the focused editor's Workingset or use `editorManager.getAllWorkingSets()` to get all Workingsets.  The latter of which returns an array of arrays.
 
-* Working sets will no longer contain only filenames that have `Document` objects so extension authors will need to be able to handle the case where `DocumentManager.getDocumentForPath(workingSet[0])` may return `null`.
+* Workingsets will no longer contain only filenames that have `Document` objects so extension authors will need to be able to handle the case where `DocumentManager.getDocumentForPath(workingSet[0])` may return `null`.
 
 * `EditorManager` may manage several visible editors so the legacy APIs on `EditorManager` will work only for the `FOCUSED_PANE`'s editor.
 
 All `DocumentManager` Workingset APIs will continue to work for some time but these are deprecated and will eventually be removed. Below is a chart of used APIs and the recommended upgrade path.
 
-## Changes to Working Set APIs
+## Changes to Workingset APIs
 
 ```text
 -------------------------------------------+----------------------------------------------------------------------------------
@@ -33,13 +33,13 @@ DocumentManager.removeFromWorkingSet()     |  EditorManager.removeFromWorkingSet
 ```
 The existing single-workingset APIs (`DocumentManager.getWorkingSet`, `DocumentManager.addToWorkingSet`, etc...) are still available but deprecated. They are convenience functions that delegate the work to  `EditorManager` and operate on the currently focused editor only.
 
-The new Working Set APIs take an identifier of the pane containing the working set to work on .  These APIs will have a `paneId` as the first argument which is gotten from `EditorManager.createPane()` or from the event `EditorManager.editorPaneCreated`. There are, however, 2 shortcut constants you can use to make life simpler:
+The new Workingset APIs take an identifier of the pane containing the Workingset to work on .  These APIs will have a `paneId` as the first argument which is gotten from `EditorManager.createPane()` or from the event `EditorManager.editorPaneCreated`. There are, however, 2 shortcut constants you can use to make life simpler:
 
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
 Constant                | Usage
 ------------------------+-----------------------------------------------------------------------------------------------------
-ALL_PANES               | Perform the operation on all panes (e.g. search for fullpath in all working sets)
+ALL_PANES               | Perform the operation on all panes (e.g. search for fullpath in all Workingsets)
 FOCUSED_PANE            | Perform the operation on the currently focused pane (can also use EditorManager.getFocusedPane())
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
@@ -48,7 +48,7 @@ Extension Authors should also be aware that moving `DocumentManager.findInWorkin
 
 ## Changes to WorkingSet Events
 
-Working Set Events are currently fired by `DocumentManager`.  `DocumentManager` will continue to fire the following events but they are being deprecated and will stop working in a future version of Brackets. 
+Workingset Events are currently fired by `DocumentManager`.  `DocumentManager` will continue to fire the following events but they are being deprecated and will stop working in a future version of Brackets. 
 
 ```text
 -------------------------------------------+-----------------------------------------------------------------------------------
