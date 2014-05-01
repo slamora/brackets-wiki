@@ -34,7 +34,7 @@ Update pane height/width. Not initially implemented.
 # Working Sets
 The Implementation of these functions will move from `DocumentManager` to `EditorManager` and a deprecation warning will be displayed.  
 
-## API
+## Working Set APIs
 
 Working Set APIs have been migrated from DocumentManager. Some of these will APIs will continue to exist in DocumentManager to maintain backwards compatibility.
 Most of the Working Set APIs will take these special constants for paneId:
