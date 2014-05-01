@@ -2,7 +2,9 @@ Refactoring Brackets to Support Split View with Multiple Documents requires quit
 
 # Proposed Implementation 
 This proposal calls on `EditorManager` to manage all viewable files and their supporting data. This includes Editor or Read Only Viewer Placement, Working Sets and Editor or Read Only Viewer Instances.  `DocumentManager` is refactored somewhat to remove Working Set management -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility.  
-Those have been identified and documented in the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide).
+
+Those items that are needed to maintain backwards compatibility have been identified and documented in the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide).
+
 Here is an overview of the EditorManager APIs and a brief note about their functionality or how they will change.
 
 ## Editor Management
