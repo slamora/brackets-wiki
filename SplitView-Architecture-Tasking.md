@@ -40,6 +40,7 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
    * implement basic layout
    * implement working set view create
    * implement editor create
+   * update serialization code
    * working set context and gear menus
    * close others extension
    * test git extension (notfy zaggino)
