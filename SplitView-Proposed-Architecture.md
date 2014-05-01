@@ -32,7 +32,7 @@ This API will change the layout to match _rows_ and _columns_.
 Update pane height/width. Not initially implemented.
 
 # Working Sets
-The Implementation of these functions will move from `DocumentManager` to `EditorManager` and a deprecation warning will be displayed.  
+The Implementation of these functions will move from `DocumentManager` to `EditorManager`. See the section at the bottom of this document for a list of deprecated Working Set APIs that need to be kept for backwards compatibility.
 
 ## Working Set APIs
 
