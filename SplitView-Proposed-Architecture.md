@@ -205,7 +205,6 @@ The following `EditorManager` functions will move to `Editor` and are opportunis
  Name                   | Usage                             | Disposition                  
 ------------------------+-----------------------------------+-------------------------------------
 _openInlineWidget       | Internal Inline Widget Management | Moves to Editor without impunity
-_openInlineWidget       |                                   | 
 ------------------------+-----------------------------------+-------------------------------------
 _toggleInlineWidget     | Command Handler                   | Current Implementation moves to 
                         |                                   | Editor.
