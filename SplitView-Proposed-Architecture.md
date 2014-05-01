@@ -1,7 +1,7 @@
 Refactoring Brackets to Support Split View with Multiple Documents requires quite a bit of hacking on the plumbing but there are only a few places that need to be heavily refactored to do so.  To break this work up in to smaller pieces, an accompanying document [SplitView Architecture Tasking](SplitView-Architecture-Tasking) has been created.
 
 # Proposed Implementation 
-This proposal calls on `EditorManager` to manage all viewable files and their supporting data. This includes Editor or Read Only Viewer Placement, Working Sets and Editor or Read Only Viewer Instances.  `DocumentManager` is refactored somewhat to remove Working Set management -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility.  
+This proposal calls on `EditorManager` to manage all viewable files and their supporting data. This includes Editor or Read Only Viewer Placement, Workingsets and Editor or Read Only Viewer Instances.  `DocumentManager` is refactored somewhat to remove Workingset management -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility.  
 
 Those items that are needed to maintain backwards compatibility have been identified and documented in the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and are detailed in the section below on [Deprecating Legacy APIs](#deprecating-legacy-apis)
 
@@ -33,19 +33,19 @@ This API will change the layout to match _rows_ and _columns_.
 ### EditorManager.setRowHeight(_row_, _height_)  
 Update pane height/width. Not initially implemented.
 
-# Working Sets
-The Implementation of these functions will move from `DocumentManager` to `EditorManager`. See the section at the bottom of this document for a list of deprecated Working Set APIs that need to be kept for backwards compatibility.
+# Workingsets
+The Implementation of these functions will move from `DocumentManager` to `EditorManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility.
 
-## Working Set APIs
+## Workingset APIs
 
-Working Set APIs we be migrated from `DocumentManager`. Some of these will APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a `paneId` to identify which pane's working set to work on.
+Workingset APIs we be migrated from `DocumentManager`. Some of these will APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a `paneId` to identify which pane's Workingset to work on.
 
-Most of the Working Set APIs will take one of these special constants for `paneId` in addition to valid paneIds:
+Most of the Workingset APIs will take one of these special constants for `paneId` in addition to valid paneIds:
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
 Constant                | Usage
 ------------------------+-----------------------------------------------------------------------------------------------------
-ALL_PANES               | Perform the operation on all panes (e.g. search for fullpath in all working sets)
+ALL_PANES               | Perform the operation on all panes (e.g. search for fullpath in all Workingsets)
 FOCUSED_PANE            | Perform the operation on the currently focused pane (can also use EditorManager.getFocusedPane())
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
@@ -61,7 +61,7 @@ FOCUSED_PANE            | Perform the operation on the currently focused pane (c
 ### EditorManager.findInWorkingSetAddedOrder(_paneId_, _file_)    
 Returns {paneId: _paneId_, index: _index_) or undefined if not found
 
-## Working Set Events  
+## Workingset Events  
 _EditorManager Events will add `paneId` to event data_
 
 ### EditorManager.workingSetSort
@@ -104,7 +104,7 @@ Whether or not the initial implementation uses an `EditorLayoutManger` is an imp
 **Layout Rules:**
 * Only 1 pane or 1 row and 2 columns or 2 rows and 1 column are initially supported
 * Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding `EditorManager` for that pane has been loaded with a document or image.
-* When an editor pane is destroyed, all documents in the corresponding working set for that pane are moved to another pane's working set.  Since there is only 2 panes in the initial implementation this is just a matter of collapsing them down to the remaining Pane's working set.
+* When an editor pane is destroyed, all documents in the corresponding Workingset for that pane are moved to another pane's Workingset.  Since there is only 2 panes in the initial implementation this is just a matter of collapsing them down to the remaining Pane's Workingset.
 
 Creating a pane is rendered at runtime and inserted it into the DOM.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and insert it into the DOM in the appropriate place to ensure proper keyboard navigation.  The generated HTML can either come from a template rendered with Mustache or simple jQuery insertion.
 
@@ -116,27 +116,27 @@ Creating a pane is rendered at runtime and inserted it into the DOM.  The `Edito
 _height_ and _width_ are expressed in percentages when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
 
 #Implementing Pane Management
-`EditorManager` will manage a Working Set for each of its editor panes. This may be abstracted and delegated into a `EditorPane` object if implementation starts to get to messy but the API to get the working set will be on `EditorManager` to make the interface easier to use. Management of the Working Set will move from the `DocumentManager` into `EditorManager` the and the Working Set will no longer be a collection of `Document` objects.  It will be a collection of file names.  
+`EditorManager` will manage a Workingset for each of its editor panes. This may be abstracted and delegated into a `EditorPane` object if implementation starts to get to messy but the API to get the Workingset will be on `EditorManager` to make the interface easier to use. Management of the Workingset will move from the `DocumentManager` into `EditorManager` the and the Workingset will no longer be a collection of `Document` objects.  It will be a collection of file names.  
 
-Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
+Note: To abstract the Workingset's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
 
-The shortcut paneIds for Working Set APIs avoid having to maintain a reference to the pane in which a file belongs.  It also allows us to create 1 API rather than 2 for `All` and `Focused` derivatives.
+The shortcut paneIds for Workingset APIs avoid having to maintain a reference to the pane in which a file belongs.  It also allows us to create 1 API rather than 2 for `All` and `Focused` derivatives.
 
 # Implementing WorkingSetViews
- WorkingSetView objects are created when the event `editorPaneCreated` is handled.  `SideBarView` will handle this event and create a `WorkingSetView` object which is bound to the working set created for the pane and passed in as event data.
+ WorkingSetView objects are created when the event `editorPaneCreated` is handled.  `SideBarView` will handle this event and create a `WorkingSetView` object which is bound to the Workingset created for the pane and passed in as event data.
 `#open-files-container` is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The extensions which style the elements will continue to work. The following extensions may no longer work:
 
-# Supporting Images in Working Sets
+# Supporting Images in Workingsets
 
-To support images in split view, we will need to change the Working Set rules to allow for images in Working Sets. This means that callers of the new Working Set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or by checking its extension. 
+To support images in split view, we will need to change the Workingset rules to allow for images in Workingsets. This means that callers of the new Workingset APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or by checking its extension. 
 
-The working set will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated API, `DocumentManager.getWorkingSet()`, will filter out any files that don't have an associated `Document` object.
+The Workingset will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated API, `DocumentManager.getWorkingSet()`, will filter out any files that don't have an associated `Document` object.
 
 
 # Implementing WorkingSet Context Menus
 This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `WorkingSetView` who attached to the `.open_files_container` will be maintain the paneId from the `EventData` it was passed during the create event so that callers (Extensions) will be able to determine which editor has focus when the menu is invoked.
 
-This will also trigger a focus action on the DOM node causing the `Editor` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the working set for the editor pane associated with the `WorkingSetView` that manages it and ask that `EditorManager` instance for the working set.
+This will also trigger a focus action on the DOM node causing the `Editor` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the Workingset for the editor pane associated with the `WorkingSetView` that manages it and ask that `EditorManager` instance for the Workingset.
 
 ```javascript
 
