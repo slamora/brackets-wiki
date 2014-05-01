@@ -156,33 +156,32 @@ Becomes:
 
 # Deprecating Legacy APIs
 ```text
----------------------------------------+--------------------------------------------------------
-API                                    | Calls...
----------------------------------------+--------------------------------------------------------
-DocumentManager.getCurrentDocument()   | EditorManager
-                                       |    .getFocusedEditor()
-                                       |    .getDocument();
----------------------------------------+--------------------------------------------------------
-DocumentManager.getWorkingSet()        | $.map(EditorManager.getWorkingSet(ALL_PANES, …),
-                                       |        function(fullPath) {
-                                       |           if (DocumentManager.isDocument(fullPath)) {
-                                       |               return fullPath; 
-                                       |        }
-                                       | });
----------------------------------------+--------------------------------------------------------
-DocumentManager.findInWorkingSet()     | return EditorManager
-*only used by pflynn                   |    .findInWorkingSet(ALL_PANES, ...).index || -1;
----------------------------------------+--------------------------------------------------------
-DocumentManager.addToWorkingSet()      | return EditorManager
-                                       |    .addToWorkingSet(FOCUSED_PANE, ...);
----------------------------------------+--------------------------------------------------------
-DocumentManager.addListToWorkingSet    | return EditorManager
-                                       |    .addListToWorkingSet(FOCUSED_PANE, ...);
----------------------------------------+--------------------------------------------------------
-DocumentManager.removeFromWorkingSet   | return EditorManager
-                                       |    .removeFromWorkingSet(ALL_PANES, ...);
----------------------------------------+--------------------------------------------------------
-
+-------------------------------------+--------------------------------------------------------
+API                                  | Calls...
+-------------------------------------+--------------------------------------------------------
+DocumentManager.getCurrentDocument() | EditorManager
+                                     |    .getFocusedEditor()
+                                     |    .getDocument();
+-------------------------------------+--------------------------------------------------------
+DocumentManager.getWorkingSet()      | $.map(EditorManager.getWorkingSet(ALL_PANES, …),
+                                     |        function(fullPath) {
+                                     |           if (DocumentManager.isDocument(fullPath)) {
+                                     |               return fullPath; 
+                                     |        }
+                                     | });
+-------------------------------------+--------------------------------------------------------
+DocumentManager.findInWorkingSet()   | return EditorManager
+*only used by pflynn                 |    .findInWorkingSet(ALL_PANES, ...).index || -1;
+-------------------------------------+--------------------------------------------------------
+DocumentManager.addToWorkingSet()    | return EditorManager
+                                     |    .addToWorkingSet(FOCUSED_PANE, ...);
+-------------------------------------+--------------------------------------------------------
+DocumentManager.addListToWorkingSet  | return EditorManager
+                                     |    .addListToWorkingSet(FOCUSED_PANE, ...);
+-------------------------------------+--------------------------------------------------------
+DocumentManager.removeFromWorkingSet | return EditorManager
+                                     |    .removeFromWorkingSet(ALL_PANES, ...);
+-------------------------------------+--------------------------------------------------------
 ```
 
 # Deprecating Legacy Events
@@ -202,41 +201,41 @@ _Fired when handling `EditorManager.fullEditorChanged`_
 The following `EditorManager` functions will move to `Editor` and are opportunistic refactorings since we're working in that code.  These refactorings aid in the overall implementation but aren't necessary.
 
 ```text
------------------------------------+-----------------------------------------+-----------------------------------
- Name                              | Usage                                   | Disposition                  
------------------------------------+-----------------------------------------+-----------------------------------
-_openInlineWidget                  | Internal Inline Widget Management       | Moves to Editor without impunity
-_openInlineWidget                  |                                         | 
------------------------------------+-----------------------------------------+-----------------------------------
-_toggleInlineWidget                | Command Handler                         | Current Implementation moves to 
-                                   |                                         | Editor.
-                                   |                                         | Command handler will  call
-					        	   |                                         |   getFocusedEditor()
-								   |                                         |    .toggleInlineWidget()
------------------------------------+-----------------------------------------+-----------------------------------
-_showCustomViewer                  | API                                     | Illegal usage from 
-                                   |                                         |   DocumentCommandHandlers
-								   |                                         | Command handler moves to 
-								   |                                         |  FileCommandHandlers
-								   |                                         | Function is renamed to 
-								   |                                         |  EditorManager
-								   |                                         |    createViewerForFile
------------------------------------+-----------------------------------------+-----------------------------------
-closeInlineWidget                  |                                         | Moves to Editor
-                                   |                                         | InlineWidget.close will call
-								   |                                         | this.hostEditor.closeInlineWidget()
------------------------------------+-----------------------------------------+-----------------------------------
-getInlineEditors             	   |                                         | Moves to Editor
-                             	   |                                         | InlineWidget
-								   |                                         |    ._syncGutterWidths(
-								   |                                         |                hostEditor
-								   |                                         | ) 
-								   |                                         | calls hostEditor.getInlineEditors()
------------------------------------+-----------------------------------------+-----------------------------------
-getFocusedInlineWidget             |                                         | Doesn't move but passes through to
-                                   |                                         |    getFocusedEditor()
-								   |                                         |      .getFocusedInlineWidget();
------------------------------------+-----------------------------------------+-----------------------------------
+------------------------+-----------------------------------+-------------------------------------
+ Name                   | Usage                             | Disposition                  
+------------------------+-----------------------------------+-------------------------------------
+_openInlineWidget       | Internal Inline Widget Management | Moves to Editor without impunity
+_openInlineWidget       |                                   | 
+------------------------+-----------------------------------+-------------------------------------
+_toggleInlineWidget     | Command Handler                   | Current Implementation moves to 
+                        |                                   | Editor.
+                        |                                   | Command handler will  call
+					    |                                   |   getFocusedEditor()
+						|                                   |    .toggleInlineWidget()
+------------------------+-----------------------------------+-------------------------------------
+_showCustomViewer       | API                               | Illegal usage from 
+                        |                                   |   DocumentCommandHandlers
+						|                                   | Command handler moves to 
+						|                                   |  FileCommandHandlers
+						|                                   | Function is renamed to 
+						|                                   |  EditorManager
+						|                                   |    createViewerForFile
+------------------------+-----------------------------------+-------------------------------------
+closeInlineWidget       |                                   | Moves to Editor
+                        |                                   | InlineWidget.close will call
+						|                                   | this.hostEditor.closeInlineWidget()
+------------------------+-----------------------------------+-------------------------------------
+getInlineEditors        |                                   | Moves to Editor
+                        |                                   | InlineWidget
+						|                                   |    ._syncGutterWidths(
+						|                                   |                hostEditor
+						|                                   | ) 
+						|                                   | calls hostEditor.getInlineEditors()
+------------------------+-----------------------------------+-------------------------------------
+getFocusedInlineWidget  |                                   | Doesn't move but passes through to
+                        |                                   |    getFocusedEditor()
+						|                                   |      .getFocusedInlineWidget();
+------------------------+-----------------------------------+-------------------------------------
                              
 ```
 Raw data can be found here:
