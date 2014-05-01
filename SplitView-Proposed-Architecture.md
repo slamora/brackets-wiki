@@ -192,7 +192,8 @@ __Is there a way to know if there are any listeners so that a deprecation warnin
 ## DocumentManager.workingSetAdd                
 ## DocumentManager.workingSetAddList            
 ## DocumentManager.workingSetRemove             
-## DocumentManager.currentDocumentChange (fired when handling EditorManager.fullEditorChanged)
+## DocumentManager.currentDocumentChange 
+_Fired when handling `EditorManager.fullEditorChanged`_
 
 # Opportunistic Cleanup
 
