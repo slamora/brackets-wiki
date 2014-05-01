@@ -8,7 +8,7 @@ Here are the high-level changes that Extension Authors need to keep in mind:
 
 * Working sets will no longer contain only filenames that have `Document` objects so extension authors will need to be able to handle the case where `DocumentManager.getDocumentForPath(workingSet[0])` may return `null`.
 
-* EditorManager may manage several visible editors
+* `EditorManager` may manage several visible editors so the legacy APIs on `EditorManager` will work only for the `FOCUSED_PANE`'s editor.
 
 All DocumentManager Workingset APIs will continue to work for some time but these are deprecated and will eventually be removed. Below is a chart of used APIs and the reccommended upgrade path.
 
