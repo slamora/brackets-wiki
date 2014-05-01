@@ -18,7 +18,8 @@ Reimplemented by moving current impl into `Editor` and invoking `Editor.getCurre
 ### EditorManager.createCustomViewerForFile
 Creates a Read Only viewer for any [image] file.  
 Replaces `EditorManager._showCustomViewer`, current implementation of ._showCustomViewer is moved to `Editor` as `createCustomViewerForFile` and invoked from `EditorManager`.  
-_this function may not be necessary as the command handler reimplementation for opening a file may change to support images in a different way.  This is an implementation detail that will be decided on when the feature is implemented_
+
+_This function may not be necessary as the command handler reimplementation for opening a file may change to support images in a different way.  This is an implementation detail that will be decided on when the feature is implemented_
 
 ### EditorManager.getCurrentFullEditor
 Reimplemented as `EditorManager.getFocusedEditor().getCurrentFullEditor()`
