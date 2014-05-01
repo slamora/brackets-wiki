@@ -1,4 +1,4 @@
-Most of Brackets' inner workings will need some sort of change to make SplitView work.  For the most-part, Brackets will operate as it does today and the chages will be transparent to extension authors.  This is a guide of what extension authors should do to maintain compatibility with future versios of Brackets.
+Most of Brackets' inner workings will need some sort of change to make SplitView work.  For the most-part, Brackets will operate as it does today and the changes will be transparent to extension authors.  This is a guide of what extension authors should do to maintain compatibility with future versios of Brackets.
 
 Here are the high-level changes that Extension Authors need to keep in mind:
 
@@ -31,7 +31,7 @@ DocumentManager.addListToWorkingSet()      |  EditorManager.addListToWorkingSet(
 DocumentManager.removeFromWorkingSet()     |  EditorManager.removeFromWorkingSet(EditorManager.ALL_PANES)         
 -------------------------------------------+----------------------------------------------------------------------------------
 ```
-The existing single-workingset APIs (`DocumentManager.getWorkingSet`, `DocumentManager.addToWorkingSet`, etc...) are still available but deprecated. They are convenence functions that delegate the work to the EditorManager and operate on the currently focused editor only.
+The existing single-workingset APIs (`DocumentManager.getWorkingSet`, `DocumentManager.addToWorkingSet`, etc...) are still available but deprecated. They are convenience functions that delegate the work to  `EditorManager` and operate on the currently focused editor only.
 
 The new Working Set APIs take an identifier of the pane containing the working set to work on .  These APIs will have a `paneId` as the first argument which is gotten from `EditorManager.createPane()` or from the event `EditorManager.editorPaneCreated`. There are, however, 2 shortcut constants you can use to make life simpler:
 
