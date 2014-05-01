@@ -44,9 +44,9 @@ FOCUSED_PANE            | Perform the operation on the currently focused pane (c
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
 
-`findInWorkingSet` will change to return an object {pane: paneId, index: index} or undefined if the file was not found.
+Extension Authors should also be aware that moving `DocumentManager.findInWorkingSet()` to `EditorManager` will change to return an object {pane: paneId, index: index} or undefined if the file was not found.  `DocumentManager.findInWorking` will continue to work as it does today but a deprecation warning will be written to the console and it will only search using the `FOCUSED_PANE` derivative.
 
-## Changes to Working Set Events
+## Changes to WorkingSet Events
 
 Working Set Events are currently fired by `DocumentManager`.  `DocumentManager` will continue to fire the following events but they are being deprecated and will stop working in a future version of Brackets.  A deprecation warning will display once when these events are fired:
 
