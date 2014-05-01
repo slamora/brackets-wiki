@@ -10,6 +10,8 @@ What's New in Sprint 39
     * [Windows: Filter out binary files and unsupported encodings](https://trello.com/c/Sji5hLvW/1219-1s-automatically-ignore-exclude-binary-files): Speeds up Find in Files for certain projects, and reduces clutter in the Quick Open file list. Attempting to open a non-UTF-8 file now results in an error instead of showing garbled text. (This was already implemented on other platforms).
 * **Code Editing**
     * [Cut/Copy whole line when nothing is selected](https://github.com/marijnh/CodeMirror/issues/2382)
+* **CSS Editing**
+    * [Fuzzy/camelCase code hints](https://github.com/adobe/brackets/pull/7441): Code hints now use smart string matching, similar to Quick Open and JS code hints -- for example, you can type "btr" to see an autocompletion hint for `border-top-right-radius`.
 * **Extensions**
     * [Extension update notifications](https://github.com/adobe/brackets/pull/7330): The Extension Manager toolbar icon turns green when one or more of your installed extensions have a new version available.
     * [Admin features for Extension Registry](https://trello.com/c/NAtggRqE/1224-simple-admin-for-registry): (available since 4/17) An extension's author can delete the extension from the registry, mark the extension as incompatible with newer versions of Brackets, or transfer ownership to a different author.
