@@ -129,6 +129,13 @@ The shortcut paneIds for Working Set APIs avoid having to maintain a reference t
  WorkingSetView objects are created when the event `editorPaneCreated` is handled.  `SideBarView` will handle this event and create a `WorkingSetView` object which is bound to the working set created for the pane and passed in as event data.
 `#open-files-container` is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The extensions which style the elements will continue to work. The following extensions may no longer work:
 
+# Supporting Images in Working Sets
+
+To support images in split view, we will need to change the Working Set rules to allow for images in Working Sets. This means that callers of the new Working Set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or by checking its extension. 
+
+The working set will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated API, `DocumentManager.getWorkingSet()`, will filter out any files that don't have an associated `Document` object.
+
+
 # Implementing WorkingSet Context Menus
 This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `WorkingSetView` who attached to the `.open_files_container` will be maintain the paneId from the `EventData` it was passed during the create event so that callers (Extensions) will be able to determine which editor has focus when the menu is invoked.
 
@@ -149,11 +156,6 @@ Becomes:
 
 ```
 
-# Supporting Images
-
-Working set so far has be devoid of image files.  To support images in split view, we will need to change the working set rules to allow for images to be in the working set. This means that callers of the new working set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or checking the extension. 
-
-The working set will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated `DocumentManager.getWorkingSet()` will filter out any image files without a Document object.
 
 # Deprecating Legacy APIs
 ```text
