@@ -239,4 +239,4 @@ getFocusedInlineWidget             |                                         | D
 -----------------------------------+-----------------------------------------+-----------------------------------
                              
 
-
+[splitview architecture notes](splitview-architecture-notes)
