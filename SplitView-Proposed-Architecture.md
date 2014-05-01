@@ -5,7 +5,7 @@ This proposal calls on `EditorManager` to manage all viewable files and their su
 
 Those items that are needed to maintain backwards compatibility have been identified and documented in the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide).
 
-Here is an overview of the EditorManager APIs and a brief note about their functionality or how they will change.
+This proposal is an overview of the system along with functional details and implementation changes needed to build the SplitView feature.
 
 ## Editor Management
 
