@@ -7,7 +7,7 @@ Those items that are needed to maintain backwards compatibility have been identi
 
 This proposal is an overview of the system along with functional details and implementation changes needed to build the SplitView feature.
 
-## Editor Management
+## Editor APIs
 
 ### EditorManager.getFocusedEditor
 Reimplemented by moving current Implementation into `Editor` and invoking `Editor.getFocusedEditor()` for the `Editor` object of the focused pane.
@@ -22,7 +22,8 @@ Replaces `EditorManager._showCustomViewer`, current implementation of ._showCust
 ### EditorManager.getCurrentFullEditor
 Reimplemented as `EditorManager.getFocusedEditor().getCurrentFullEditor()`
 
-## View Layout 
+## View Layout APIs
+
 ### EditorManager.setLayoutScheme(_rows_,_columns_)  
 This API will change the layout to match _rows_ and _columns_.
 
