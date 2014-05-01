@@ -156,32 +156,32 @@ Becomes:
 
 # Deprecating Legacy APIs
 ```text
----------------------------------------------------------------------+-------------------------------------------------------------------
-API                                                                  | Calls...
----------------------------------------------------------------------+-------------------------------------------------------------------
-DocumentManager.getCurrentDocument()                                 | EditorManager
-                                                                     |    .getFocusedEditor()
-                                                                     |    .getDocument();
----------------------------------------------------------------------+-------------------------------------------------------------------
-DocumentManager.getWorkingSet()                                      | $.map(EditorManager.getWorkingSet(ALL_PANES, …),
-                                                                     |        function(fullPath) {
-                                                                     |           if (DocumentManager.isDocument(fullPath)) {
-                                                                     |               return fullPath; 
-                                                                     |        }
-                                                                     | });
----------------------------------------------------------------------+-------------------------------------------------------------------
-DocumentManager.findInWorkingSet()                                   | return EditorManager
-*only used by pflynn                                                 |    .findInWorkingSet(ALL_PANES, ...).index || -1;
----------------------------------------------------------------------+-------------------------------------------------------------------
-DocumentManager.addToWorkingSet()                                    | return EditorManager
-                                                                     |    .addToWorkingSet(FOCUSED_PANE, ...);
----------------------------------------------------------------------+-------------------------------------------------------------------
-DocumentManager.addListToWorkingSet                                  | return EditorManager
-                                                                     |    .addListToWorkingSet(FOCUSED_PANE, ...);
----------------------------------------------------------------------+-------------------------------------------------------------------
-DocumentManager.removeFromWorkingSet                                 | return EditorManager
-                                                                     |    .removeFromWorkingSet(ALL_PANES, ...);
----------------------------------------------------------------------+-------------------------------------------------------------------
+-----------------------------------------------+--------------------------------------------------------
+API                                            | Calls...
+-----------------------------------------------+--------------------------------------------------------
+DocumentManager.getCurrentDocument()           | EditorManager
+                                               |    .getFocusedEditor()
+                                               |    .getDocument();
+-----------------------------------------------+--------------------------------------------------------
+DocumentManager.getWorkingSet()                | $.map(EditorManager.getWorkingSet(ALL_PANES, …),
+                                               |        function(fullPath) {
+                                               |           if (DocumentManager.isDocument(fullPath)) {
+                                               |               return fullPath; 
+                                               |        }
+                                               | });
+-----------------------------------------------+--------------------------------------------------------
+DocumentManager.findInWorkingSet()             | return EditorManager
+*only used by pflynn                           |    .findInWorkingSet(ALL_PANES, ...).index || -1;
+-----------------------------------------------+--------------------------------------------------------
+DocumentManager.addToWorkingSet()              | return EditorManager
+                                               |    .addToWorkingSet(FOCUSED_PANE, ...);
+-----------------------------------------------+--------------------------------------------------------
+DocumentManager.addListToWorkingSet            | return EditorManager
+                                               |    .addListToWorkingSet(FOCUSED_PANE, ...);
+-----------------------------------------------+--------------------------------------------------------
+DocumentManager.removeFromWorkingSet           | return EditorManager
+                                               |    .removeFromWorkingSet(ALL_PANES, ...);
+-----------------------------------------------+--------------------------------------------------------
 
 ```
 
