@@ -495,8 +495,95 @@ Sent when the open document list has been modified.  Listeners should call `Docu
 
 ## DocumentManager.currentDocumentChange
 
-Deprecated. Use EditorManager.fullEditorChanged instead. TODO: Find usage
+Deprecated. Use EditorManager.fullEditorChanged instead. 
 
+DocumentManager will listen for fullEditorChanged and dispatch a currentDocumentChange event to maintain backwards compatibility.  A deprecation warning will be written to the console when the event is fired.
+
+```text
+3rd Party Extension usage
+-----------------------------+-----------------------------------------+---------------------------------------------
+ Name                        | Usage                                   | Disposition
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-auto-pairs          | registers/reregisters key handlers      | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-code-overview       | Reloads the code overview editor        | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-flake8-0.0.1        | Hides flake8 if there is no dcocument   | Should work with deprecated event 
+                             | or language manager support for the doc |
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-fontsize-sync       | Shows/Hides indent guide overlay if     | Should work with deprecated event 
+                             |  enabled                                |
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-latex               | Shows/Hides latex toolbar based on if   | Should work with deprecated event 
+                             | a text file is open in the editor       |
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-oncopy              | listens to copy and cut to dome events  | Should work with deprecated event 
+                             | to show the number of chars copied in   |
+                             | the statusbar                           |
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-pep8                | Same as flake8 except req.python files  | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-quick-markup        | Resets internal state                   | Extension handles codemirror events directly
+                             |                                         | to format markup as you type. 
+                             |                                         | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-robotframework      | Installs robot cm extension when doc is | Should work with deprecated event 
+                             | a robot filetype                        |                                   
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-ruler               | Shows/Hides ruler if there is a document| Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-smooth-scroll       | Installs scroll event listeners when    | Should work with deprecated event 
+                             | document changes                        | 
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-various-improvements| Adds info to project header when        | Should work with deprecated event 
+                             | document changes                        | 
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-xunit               | runs xunit tests on document            | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+busykai.indent-right         | builds indentation information about    | Should work with deprecated event 
+                             | current document                        |  
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-htmlescaper         | Escapes document                        | Should work with deprecated event 
+                             |                                         |  
+-----------------------------+-----------------------------------------+---------------------------------------------
+cezarywojcik.charlimit       | Not sure                                | Should work with deprecated event 
+                             |                                         |  
+-----------------------------+-----------------------------------------+---------------------------------------------
+edge-code-web-fonts          | enableds ewf toolbar when supported     | Redeploy?
+                             | document is opened                      |  
+-----------------------------+-----------------------------------------+---------------------------------------------
+edge-inspect                 | resets skylab obj to open new document  | Redeploy?
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-FileTreeSync        | Syncs to the file in the file tree      | This will work as-is but only for documents
+                             |                                         | Notify extension author to update extension
+-----------------------------+-----------------------------------------+---------------------------------------------
+MarkdownPreview              | shows md preview div on doc change      | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+jhatwich.brackets-related-   | **extension no longer works **          | 
+files                        |                                         |   
+-----------------------------+-----------------------------------------+---------------------------------------------
+mikaeljorhult.brackets-todo  | syncs todo panel with current doc       | This will work as-is but only for documents
+                             | by filename                             | Notify extension author to update extension
+-----------------------------+-----------------------------------------+---------------------------------------------
+pflynn.svg.preview           | toggles svg preview pane when an svg    | Should work with deprecated event 
+                             | document is opened                      |
+-----------------------------+-----------------------------------------+---------------------------------------------
+pockata.striptrailingspaces  | removes trailing spaces from documents  | Should work with deprecated event 
+                             | if they were changed                    |
+-----------------------------+-----------------------------------------+---------------------------------------------
+soimon.                      | outlines document if it is HTML         | Should work with deprecated event  
+brackets-document-outliner   |                                         |
+-----------------------------+-----------------------------------------+---------------------------------------------
+Brackets-Select-Lines        |                                         | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+brackets-bookmarks           | Sync's bookmarks to current doc         | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+websiteduck.wdminimap        | Show/Hide wdMinimap                     | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+zaggino.brackets-git         | Show/Hide wdMinimap                     | Should work with deprecated event 
+-----------------------------+-----------------------------------------+---------------------------------------------
+
+```
 
 # Commands
 Most "file.*" commands are handled by DocumentManager.  These will move to the EditorManager so that a more generic way of dealing with Images and Images in the Working Set can be operated on without the need for specialized testing.
@@ -530,7 +617,7 @@ file.close        			 | discreet file closing                   | Moves from Doc
 file.closeAll                |                                         | EditorManager.
 file.closeList  			 |                                         | 
 -----------------------------+-----------------------------------------+-----------------------------------  
-NextDoc         			 |                                         | Move from DocumentManager to 
+NextDoc         			 |                                         | Moves from DocumentManager to 
 PrevDoc						 |                                         | EditorManager
 -----------------------------+-----------------------------------------+-----------------------------------  
 ShowInTree  				 |                                         | Opportunistic refactor -- move 
@@ -655,8 +742,12 @@ ViewCommandHandlers        | Enables/Disables comamnds if a document | changed t
 ## EditorManager.getCurrentlyViewedPath
 Deprecated.  Callers will get the deprecation warning and the function maps to `EditorManager.getFocusedPane().getCurrentlyViewedPath()`
 
-## EditorManager.createViewerForFile
+## EditorManager.createCustomViewerForFile
 Replaces EditorManager._showCustomViewer to create a Read Only viewer for a file.
+
+## EditorManager.getCurrentFullEditor
+Reimplemented as EditorManager.getFocusedEditor().getCurrentFullEditor()
+
 
 # Opportunistic Cleanup
 
@@ -771,46 +862,4 @@ When Working Set Views are constructed, information about the Pane they are asso
 Do early research on typing and scrolling performance.
 
 # Tasking
-Here's a proposed guide to breakup the story into smaller arch pieces:
-
-1. Migrate `File.commands` from DocumentManager into `EditorManager` and create `Document.commands` where specified in this document.
-
-2. Opportunistic Cleanup
-   * Probably easiest to do this up front before major refactoring since this is fairly simple to do
-
-3. Migrate WorkingSet Management to `EditorManager`
-   * add deprecation warnings to old APIs
-   * add bridge to new API from old APIs
-   * Write issues for extensions still using old APIs
-   * Migrate core and default extension code to new WorkingSet API
-   * Notify extension authors
-   * Add deprecation warnings
-   * Unit tests
-
-4. Deprecate getWorkingSet
-   * Migrate all core instaces (7)
-   * Migrate all core extension instances
-   * Notify extension authors
-   * Add deprecation warning
-   * Unit tests
-
-5. Migrate DocumentManager.getCurrentDocument
-   * Notify all extension authors 
-
-6. Implement EditorManager code for 1x2 editors
-   * tease apart editor calls directly and move to editor
-   * implement basic layout
-   * implement working set view create
-   * implement editor create
-   * working set context and gear menus
-   * close others extension
-   * test git extension (notfy zaggino)
-   * Unit tests
-
-6. Add support for images in working set
-   * create custom viewer
-   * implement all file based commands to work on images
-   * Implement all working set commands for images 
-   * Unit tests
-
-7. Final cleanup, deprecations, et. al.
+Moved to [SplitView-Architecture-Tasking](SplitView-Architecture-Tasking)
