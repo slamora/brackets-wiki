@@ -1,4 +1,4 @@
-Most of Brackets' inner workings will need some sort of change to make SplitView work.  For the most-part, Brackets will operate as it does today and the changes will be transparent to extension authors.  This is a guide of what extension authors should do to maintain compatibility with future versios of Brackets.
+Most of Brackets' inner workings will need some sort of change to make SplitView work.  For the most-part, Brackets will operate as it does today and the changes will be transparent to extension authors.  This is a guide of what extension authors should do to maintain compatibility with future versions of Brackets.
 
 Here are the high-level changes that Extension Authors need to keep in mind:
 
