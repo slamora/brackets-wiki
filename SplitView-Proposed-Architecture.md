@@ -76,7 +76,7 @@ _EditorManager Events will add paneId to the event data_
 
 ## Commands
 
-The following list of commands move from `DocumentCommandHandlers` is moved to and their corresponding implementation is moved into `FileCommandHandlers`.  It may be easier to leave some of the `Document` object specific code handling in `DocumentCommandHandlers` and wire it up to `FileCommandHandlers` when working with Files that have Document object.  A cursory review indicated that this wasn't necessary.
+The following list of commands will move from `DocumentCommandHandlers` along with their corresponding implementation into a new module -- `FileCommandHandlers`.  It may be easier to leave some of the `Document` object specific code handling in `DocumentCommandHandlers` and wire it up to `FileCommandHandlers` when working with Files that have Document object but a cursory review indicated that this wasn't necessary.  This is an implementation detail that will be decided when the work is actually done.
 
 ### file.addToWorkingSet
 ### file.open	
