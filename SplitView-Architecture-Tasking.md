@@ -1,7 +1,12 @@
 Here's a proposed guide to breakup the story into smaller arch pieces:
 
 1. Opportunistic Cleanup
-   * Probably easiest to do this up front before major refactoring since this is fairly simple to do
+   * _openInlineWidget
+   * _toggleInlineWidget
+   * _showCustomViewer
+   * closeInlineWidget
+   * getInlineEditors
+   * getFocusedInlineWidget
 
 2. Migrate WorkingSet Management to `EditorManager`
    * Code new WorkingSet APIs in EditorManager
