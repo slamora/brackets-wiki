@@ -97,10 +97,9 @@ The following list of commands will move from `DocumentCommandHandlers` along wi
 
 # Implementing the Layout Manager
 
-The initial implementation will be 1 or 2 panes (1x1, 1x2, 2x1).  However, implementing an arbitrary number of rows and columns could be trivial using this code:
-https://github.com/FriendCode/codebox/blob/master/client/views/grid.js which is Apache-licensed.
-However, this is a fairly integral piece to codebox and depends on other codebox libraries in order to work.
-The initial implementation will be mostly handled by `EditorManager` but an `EditorLayoutManager` object may be created just to help handle the layout.  The initial implementation shouldn't need advanced layout mechanics since it will handle, at most, 2 panes.  This is an implementation detail that will be decided at the time of implementation.
+The initial implementation will be mostly handled by `EditorManager` but an `EditorLayoutManager` object may be created just to help handle the layout.  We shouldn't need to build for advanced layout mechanics since we only need, at most, 2 panes.  Support for arbitrary rows and columns can be built into the `EditorLayoutManager` flyweight at a later date.
+
+Whether or not the initial implementation uses an `EditorLayoutManger` is an implementation detail that will be decided when the feature is implemented.
 
 **Layout Rules:**
 * Only 1 pane or 1 row and 2 columns or 2 rows and 1 column are initially supported
