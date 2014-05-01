@@ -72,7 +72,7 @@ _EditorManager Events will add paneId to the event data_
 ### EditorManager.activeEditorChanged
 ### EditorManager.fullEditorChanged
 
-### EditorManager.currentlyViewedFileChange 
+### EditorManager.currentlyViewedFileChanged 
 
 ## Commands
 
