@@ -94,7 +94,7 @@ The following list of commands move from `DocumentCommandHandlers` is moved to a
 The initial implementation will be 2 columns x 1 row or 2 rows x 1 column.  However, implementing an arbitrary number of rows and columns could be trivial using this code:
 https://github.com/FriendCode/codebox/blob/master/client/views/grid.js which is Apache-licensed.
 However, this is a fairly integral piece to codebox and depends on other codebox libraries in order to work.
-The initial implementation will be mostly handled by `EditorManager` but `EditorLayoutManager` will be created just to help handle the layout.  Since it's 1x1, 1x2 or 2x1 initially, it should be fairly easy to implement without the need for advanced layout mechanics.
+The initial implementation will be mostly handled by `EditorManager` but an `EditorLayoutManager` object will be created just to help handle the layout.  Since it's 1x1, 1x2 or 2x1 initially, it should be fairly easy to implement without the need for advanced layout mechanics.
 Layout Rules:
 * Only 1 row and 2 columns or 2 rows and 1 column are initially supported
 * Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding `EditorManager` for that pane has been loaded with a document or image.
