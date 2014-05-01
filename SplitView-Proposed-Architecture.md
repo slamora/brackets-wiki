@@ -110,10 +110,11 @@ The `PanelManager` computes the new size of `#editory-layout-holder` in its `win
 _height_ and _width_ are expressed in percentages when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
 
 #Implementing Pane Management
-`EditorManager` will manage a Working Set for each of its Editor Panes. This may be abstracted and delegated into a pane object if implementation warrants but the API to get the working set will be on EditorManager to make the interface easier to use. Management of the Working Set will move from the `DocumentManager` into `EditorManager` the and the working set will no longer be a collection of `Document` objects.  It will be an array of file names.  Theoretically we could register a view factory to create a view object for each file type (images, html, css, etc...) which would provide an easy way for custom viewers.  This could be extensible in some way but that work is outside the scope of this document.  For the time being, we only manifest CODE and Image viewers.
+`EditorManager` will manage a Working Set for each of its editor panes. This may be abstracted and delegated into a `EditorPane` object if implementation starts to get to messy but the API to get the working set will be on `EditorManager` to make the interface easier to use. Management of the Working Set will move from the `DocumentManager` into `EditorManager` the and the Working Set will no longer be a collection of `Document` objects.  It will be a collection of file names.  
 
 Note: To abstract the working set's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
  This allows for:   
+
 1) Panes to be found in the DOM by ID  
 2) Easier to move panes around when changing layouts in the future and not break API  
 3) Less data that callers need to understand about the implementation details  
@@ -148,7 +149,6 @@ Becomes:
 Working set so far has be devoid of image files.  To support images in split view, we will need to change the working set rules to allow for images to be in the working set. This means that callers of the new working set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or checking the extension.  Also, File Command handlers implemented in `DocumentManager` will move to another layer to allow for files or documents to be targeted.  Mirrored commands (e.g. `Document.open` mirrors `File.open`) for just documents will be created to make the transition easier.
 
 The working set will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated `DocumentManager.getWorkingSet()` will filter out any image files without a Document object.
-
 
 # Deprecating Legacy APIs
 ```text
