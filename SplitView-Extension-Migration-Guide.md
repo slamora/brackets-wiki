@@ -63,7 +63,7 @@ DocumentManager.workingSetRemove           |  EditorManager.workingSetRemove
   
 ```
 
-
+```text
 ## Changes to EditorManager APIs
 -------------------------------------------+-----------------------------------------------------------------------------------
 API                                        |  Recommended Substitution
