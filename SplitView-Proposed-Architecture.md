@@ -146,7 +146,7 @@ Becomes:
 
 # Supporting Images
 
-Working set so far has be devoid of image files.  To support images in split view, we will need to change the working set rules to allow for images to be in the working set. This means that callers of the new working set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or checking the extension.  Also, File Command handlers implemented in `DocumentManager` will move to another layer to allow for files or documents to be targeted.  Mirrored commands (e.g. `Document.open` mirrors `File.open`) for just documents will be created to make the transition easier.
+Working set so far has be devoid of image files.  To support images in split view, we will need to change the working set rules to allow for images to be in the working set. This means that callers of the new working set APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or checking the extension. 
 
 The working set will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated `DocumentManager.getWorkingSet()` will filter out any image files without a Document object.
 
