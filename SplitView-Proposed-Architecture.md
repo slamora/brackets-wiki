@@ -189,9 +189,10 @@ DocumentManager.removeFromWorkingSet                                 | return Ed
 The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just be a repub of the EditorManager events. 
 __Is there a way to know if there are any listeners so that a deprecation warning can be written to the console only if there are listeners?__
 
-## workingSetAdd                
-## workingSetAddList            
-## workingSetRemove             
+## DocumentManager.workingSetAdd                
+## DocumentManager.workingSetAddList            
+## DocumentManager.workingSetRemove             
+## DocumentManager.currentDocumentChange
 
 # Opportunistic Cleanup
 
