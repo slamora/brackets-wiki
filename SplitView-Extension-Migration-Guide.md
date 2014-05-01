@@ -44,7 +44,7 @@ FOCUSED_PANE            | Perform the operation on the currently focused pane (c
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
 
-Extension Authors should also be aware that moving `DocumentManager.findInWorkingSet()` to `EditorManager` will change to return an object {pane: paneId, index: index} or undefined if the file was not found.  `DocumentManager.findInWorking` will continue to work as it does today but a deprecation warning will be written to the console and it will only search using the `FOCUSED_PANE` derivative.
+Extension Authors should also be aware that moving `DocumentManager.findInWorkingSet()` to `EditorManager` will change to return an object `{pane: paneId, index: index}` or `undefined` if the file was not found.  `DocumentManager.findInWorking` will continue to work as it does today but a deprecation warning will be written to the console and it will only search using the `FOCUSED_PANE` derivative.
 
 ## Changes to WorkingSet Events
 
