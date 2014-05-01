@@ -211,7 +211,7 @@ _openInlineWidget                  |                                         |
 _toggleInlineWidget                | Command Handler                         | Current Implementation moves to 
                                    |                                         | Editor.
                                    |                                         | Command handler will  call
-					        	   |                                         |   _focusedEditor
+					        	   |                                         |   getFocusedEditor()
 								   |                                         |    .toggleInlineWidget()
 -----------------------------------+-----------------------------------------+-----------------------------------
 _showCustomViewer                  | API                                     | Illegal usage from 
