@@ -6,7 +6,7 @@ Here are the high-level changes that Extension Authors need to keep in mind:
 
 * Brackets will no longer have a single working set.  Each "Editor Pane" as we're calling it, will have its own working set.  This is probably the most disruptive change because the working set is used quite extensively to monitor various events and provide useful feedback to the user about open documents.  Extension authors can use `EditorManager.getWorkingSet(FOCUSED_PANE)` to get the focused editor's working set or use `editorManager.getAllWorkingSets()` to get all working sets.  The latter of which returns an array of arrays.
 
-* Working sets will no longer contain only filenames that have `Document` objects so extension authors will need to be able to handle the case where `DocumentManager.getDocumentForPath(workingSet[0])` may return NULL.
+* Working sets will no longer contain only filenames that have `Document` objects so extension authors will need to be able to handle the case where `DocumentManager.getDocumentForPath(workingSet[0])` may return `null`.
 
 * EditorManager may manage several visible editors
 
