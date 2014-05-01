@@ -10,7 +10,7 @@ Here are the high-level changes that Extension Authors need to keep in mind:
 
 * `EditorManager` may manage several visible editors so the legacy APIs on `EditorManager` will work only for the `FOCUSED_PANE`'s editor.
 
-All DocumentManager Workingset APIs will continue to work for some time but these are deprecated and will eventually be removed. Below is a chart of used APIs and the reccommended upgrade path.
+All `DocumentManager` Workingset APIs will continue to work for some time but these are deprecated and will eventually be removed. Below is a chart of used APIs and the reccommended upgrade path.
 
 ## Changes to Working Set APIs
 
