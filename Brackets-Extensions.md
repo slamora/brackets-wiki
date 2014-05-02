@@ -1,6 +1,6 @@
 ## Opening Extension Manager
 
-Click on the icon that looks like this ![Extension Manager icon](images/extension-manager-icon.png) near the upper-right corner of the window.
+Click on the icon that looks like this ![Extension Manager icon](images/extension-manager-icon.png) near the upper-right corner of the window, or choose _File > Extension Manager..._
 
 ## Installing and Removing Extensions
 
