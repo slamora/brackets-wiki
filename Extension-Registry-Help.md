@@ -6,18 +6,20 @@ See [How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Writ
 
 ## Publishing your extension in the Registry ##
 
-First, make sure you have your extension in the [extension package format](https://github.com/adobe/brackets/wiki/Extension-package-format) which is basically a .zip file with a package.json file in it. If your extension is on GitHub, you'll find a link to a zip file in the navigation elements on the right-hand side of your repository.
-
-1. Go to the [Registry site](https://brackets-registry.aboutweb.com/)
-2. Log in with your GitHub credentials. We never see your GitHub password and your extension itself doesn't need to be on GitHub (see below).
-3. Drag and drop your zip file onto the big upload square, or click the square to browse to your zip file
+1. Add a [package.json file](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format) next to your main.js
+2. ZIP up your entire extension folder (the GitHub "Download ZIP" button is handy for this -- or use the command `git archive --format zip -o yourextension.zip master` to generate a zip file).
     * Note: we've had difficulty with ZIP files created from Finder on the Mac. If you get an error when uploading your ZIP file, try creating it from the command line instead.
+3. Go to the [Brackets Extension Registry website](https://brackets-registry.aboutweb.com/)
+4. Click "Sign in via GitHub." We never see your GitHub password and your extension itself doesn't need to be on GitHub (see below).
+5. Drag and drop your zip file onto the big upload square, or click the square to browse to your zip file
 
 ## Updating your extension ##
 
-Increase the version number in your package.json and then follow the exact same steps above to upload it again. The Registry will detect that you're updating an existing extension. (If you forget to increase the version number, the Registry will refuse the upload).
+Increase the version number in your package.json and then follow the exact same steps above to upload it again. The Registry will detect that you're updating an existing extension since the id (`"name"` in package.json) is the same. If you forget to increase the version number, the Registry will refuse the upload.
 
-_Note:_ If the latest version of your extension isn't compatible with a user's current Brackets version, the Extension Manager in Brackets will allow the user to download an older version of your extension. The user will see a message warning that they need to upgrade Brackets in order to install the latest version of the extension.
+You must be signed in as the same GitHub user who originally uploaded the extension.
+
+_Note:_ If the latest version of your extension isn't compatible with a user's current Brackets version, the Extension Manager in Brackets will still allow the user to download an older version of your extension. The user will see a message warning that they need to upgrade Brackets in order to install the latest version of the extension.
 
 ## Do I have to have my code on GitHub? ##
 
@@ -29,9 +31,7 @@ Yes! It has [its own repository](https://github.com/adobe/brackets-registry) on 
 
 ## Removing an extension from the Registry ##
 
-At present, there is no (automated) way to remove an extension from the registry. Contact the Brackets core team if you need to remove something completely from the listing.
-
-As a quick workaround, you could upload an update to your extension that contains an empty main.js so that your extension basically does nothing (and change the package description to indicate it's obsolete).
+Visit the [Brackets Extension Registry](https://brackets-registry.aboutweb.com/) and sign in as the same GitHub user who originally uploaded the extension. Find the extension in the listing and click the Delete button.
 
 ## I need some other help! ##
 
