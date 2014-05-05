@@ -16,7 +16,6 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
    * Write issues for extensions still using old APIs
    * Migrate core and default extension code to new WorkingSet API
    * Notify extension authors
-   * Add deprecation warnings
    * Update Unit tests
 
 3. Refactor`File.commands` from `DocumentCommandHandlers` into `FileCommandHandlers` 
