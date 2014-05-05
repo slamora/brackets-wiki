@@ -54,7 +54,7 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
    * create custom viewer for images
    * implement all file based commands to work on non-document based objects
    * Implement all working set commands for non-document based objects
-   * implement editor.getDisplayName() to get the name to show in the working set 
+   * getDisplayName() to show in the working set 
    * Unit tests
 
 8. Implement UI for split view
