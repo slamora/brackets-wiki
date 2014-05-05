@@ -49,7 +49,7 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
    * Unit tests
 
 7. Add support for images in working set
-   * implement EditorManager.createCustomViewerForFile
+   * implement EditorManager.createCustomViewerForURI
    * implement view factory 
    * create custom viewer for images
    * implement all file based commands to work on non-document based objects
