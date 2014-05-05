@@ -37,7 +37,7 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
 6. Implement EditorManager code for 1x2 editors
    * tease apart editor calls directly and move to editor
    * implement basic layout
-   * implement working set view create
+   * implement WorkingSetView create
    * implement editor create
    * update serialization code
    * working set context and gear menus
