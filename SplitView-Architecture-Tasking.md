@@ -49,7 +49,9 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
    * Unit tests
 
 7. Add support for images in working set
-   * create custom viewer
+   * implement EditorManager.createCustomViewerForFile
+   * implement view factory 
+   * create custom viewer for images
    * implement all file based commands to work on non-document based objects
    * Implement all working set commands for non-document based objects
    * implement editor.getDisplayName() to get the name to show in the working set 
