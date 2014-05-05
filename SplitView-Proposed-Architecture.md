@@ -15,11 +15,13 @@ Reimplemented by moving current Implementation into `Editor` and invoking `Edito
 ### EditorManager.getCurrentlyViewedPath
 Reimplemented by moving current impl into `Editor` and invoking `Editor.getCurrentlyViewedPath` for the `Editor` object of the focused pane.
 
-### EditorManager.createCustomViewerForFile
-Creates a Read Only viewer for any [image] file.  
+### EditorManager.createCustomViewerForURI
+Creates a Read Only viewer for any [image] file/URI.  
 Replaces `EditorManager._showCustomViewer`, current implementation of ._showCustomViewer is moved to `Editor` as `createCustomViewerForFile` and invoked from `EditorManager`.  
 
-_This function may not be necessary as the command handler reimplementation for opening a file may change to support images in a different way.  This is an implementation detail that will be decided on when the feature is implemented_
+The URI passed into this function will determine what kind of viewer to create.  Initially only image files are supported but this can grow to include, preferences, extension managers and the like just by creating a plugin for the view factory that is needed to support this API.
+
+Supporting this function is a object view factory to support creating views for a URI. If there is no viewer for the URI then the brackets interstitial page will be shown.
 
 ### EditorManager.getCurrentFullEditor
 Reimplemented as `EditorManager.getFocusedEditor().getCurrentFullEditor()`
