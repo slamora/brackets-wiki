@@ -35,12 +35,15 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
    * Notify all extension authors 
 
 6. Implement EditorManager code for 1x2 editors
-   * tease apart editor calls directly and move to editor
-   * implement basic layout
+   * implement new Editor and Editor Manager APIs
+   * Erect any temporary scaffolding UI to build feature
+   * implement EditorLayoutManager
+   * implement PaneManagement
    * implement WorkingSetView create
-   * implement editor create
-   * update serialization code
+   * implement dynamic editor create
+   * implement dynamic WorkingSetView create
    * working set context and gear menus
+   * update serialization code
    * close others extension
    * test git extension (notfy zaggino)
    * Unit tests
