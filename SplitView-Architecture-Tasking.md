@@ -55,4 +55,3 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
    (depends on 6)
    * implement core changes to direct splits, etc...
 
-9. Final cleanup and Polish.
