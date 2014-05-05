@@ -50,8 +50,9 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
 
 7. Add support for images in working set
    * create custom viewer
-   * implement all file based commands to work on images
-   * Implement all working set commands for images 
+   * implement all file based commands to work on non-document based objects
+   * Implement all working set commands for non-document based objects
+   * implement editor.getDisplayName() to get the name to show in the working set 
    * Unit tests
 
 8. Implement UI for split view
