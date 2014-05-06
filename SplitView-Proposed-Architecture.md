@@ -87,7 +87,7 @@ _EditorManager Events will add `paneId` to event data_
 
 ## Commands
 
-The following list of commands will move from `DocumentCommandHandlers` along with their corresponding implementation into a new module -- `FileCommandHandlers`.  It may be easier to leave some of the `Document` object specific code handling in `DocumentCommandHandlers` and wire it up to `FileCommandHandlers` when working with Files that have Document object but a cursory review indicated that this wasn't necessary.  This is an implementation detail that will be decided when the work is actually done.  We will also remove "file." from the command name and rename the commands to "cmd."
+The following list of commands will move from `DocumentCommandHandlers` along with their corresponding implementation into a new module -- `FileCommandHandlers`.  It may be easier to leave some of the `Document` object specific code handling in `DocumentCommandHandlers` and wire it up to `FileCommandHandlers` when working with Files that have Document object but a cursory review indicated that this wasn't necessary.  This is an implementation detail that will be decided when the work is actually done.  We will also remove "file." from the command name and rename the commands to "cmd.", deprecating the old command ids in the same fashion the find commands were deprecated using getters.
 
 ### file.addToWorkingSet
 ### file.open	
@@ -109,7 +109,7 @@ Whether or not the initial implementation uses an `EditorLayoutManger` is an imp
 **Layout Rules:**
 * Only 1 pane or 1 row and 2 columns or 2 rows and 1 column are initially supported
 * Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding `EditorManager` for that pane has been loaded with a document or image.
-* When an editor pane is destroyed, all documents in the corresponding Workingset for that pane are moved to another pane's Workingset.  Since there is only 2 panes in the initial implementation this is just a matter of collapsing them down to the remaining Pane's Workingset.
+* When an editor pane is destroyed, all documents in the corresponding Workingset for that pane are moved to another pane's Workingset.  Since there is only 2 panes in the initial implementation this is just a matter of collapsing them down to the remaining Pane's Workingset.  This will generate a workingSetAddList event with the working set passed as event data.
 
 Creating a pane is rendered at runtime and inserted it into the DOM.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and insert it into the DOM in the appropriate place to ensure proper keyboard navigation.  The generated HTML can either come from a template rendered with Mustache or simple jQuery insertion.
 
