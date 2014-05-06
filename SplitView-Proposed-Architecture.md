@@ -3,7 +3,7 @@ Refactoring Brackets to Support Split View with Multiple Documents requires quit
 # Proposed Implementation 
 This proposal calls for anything that wants to show a view in the "Editor Workspace Area" must be a registered View Provider.  There are other ways to get views into this area but deserialization requires a method for views to be reconstructed at startup and this is done through a Registered View Provider. Registered View Providers expose methods to create a view for a given URI.  A ViewFactory will be responsible for maintaining the View Provider registry and invoke its `createView` method when a View Provider indicates that it can create a viewer for a URI.
 
-Initially there will be 2 view providers: an Image provider and a Document Editor provider.  `EditorManager` will be the registered view provider for creating all editable document views.
+Initially there will be 2 Registered View Providers: an Image View Provider and a Document Editor provider.  `EditorManager` will be the registered the view provider for creating all document views.
 
 Workingset management moves from `DocumentManager` to `MainViewManager` -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility.  
 
