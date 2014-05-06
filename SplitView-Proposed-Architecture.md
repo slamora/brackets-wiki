@@ -133,7 +133,7 @@ Whether or not the initial implementation uses a `ViewLayoutManager` object is a
 
 Creating a pane is rendered at runtime and inserted it into the DOM.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and insert it into the DOM in the appropriate place to ensure proper keyboard navigation.  The generated HTML can either come from a template rendered with Mustache or simple jQuery insertion.
 
-PanelManager is being renamed to to WorkspaceManager. This will impact quite a few extensions. _Q: can require map "PanelManager" to "WorkspaceManager"? so the following code will continue to work from extensions:_
+PanelManager is being renamed to to WorkspaceManager. This will impact quite a few extensions. **Q: can require map "PanelManager" to "WorkspaceManager" so the following code will continue to work from extensions?**
 
 ```javascript
 
