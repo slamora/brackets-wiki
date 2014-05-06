@@ -292,9 +292,9 @@ The following list of commands will move from `DocumentCommandHandlers` along wi
 ### cmd.close
 ### cmd.closeAll
 ### cmd.closeList
-### navigate.nextDoc
-### navigate.prevDoc
-### navigate.showInFileTree
+### cmd.navigate.nextDoc
+### cmd.navigate.prevDoc
+### cmd.navigate.showInFileTree
 
 
 Raw data can be found here:
