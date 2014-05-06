@@ -71,3 +71,11 @@ API                                        |  Recommended Substitution
 EditorManager.getCurrentlyViewedPath()     |  EditorManager.getFocusedPane().getCurrentlyViewedPath()
 -------------------------------------------+-----------------------------------------------------------------------------------
 ```
+
+Extension authors are encouraged to use these new APIs in lieu of using the Workingset APIs whenever possible.  
+
+## ProjectManager.getAllOpenFiles()
+Returns a list of all open files
+
+## DocumentManager.getAllOpenDocuments()
+Returns a list of all open documents -- including documents which are in a workingset but not yet opened, documents which have been opened in inline editors but not part of a workingset and opened but not modified or added to any workingset.
