@@ -114,7 +114,8 @@ _MainViewManager Events will add `paneId` to event data_
 ### MainViewManager.activePaneChanged
 ### MainViewManager.currentlyViewedFileChanged 
 
-## EditorManager Events (provided for backwards compatibility but adds PaneId as Event Data)
+## EditorManager Events 
+_provided for backwards compatibility but adds PaneId as Event Data_
 ### EditorManager.activeEditorChanged
 ### EditorManager.fullEditorChanged
 
