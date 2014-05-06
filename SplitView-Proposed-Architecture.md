@@ -66,7 +66,9 @@ function createViweFor(uri)
 ```
 
 # Workingsets
-The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. This is done primarily because there will be multiple working sets (1 per pane)  and `EditorManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense the Working Set is a property of the pane because it's really the structure of the UI -- **not the document**.
+The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. 
+
+Moving these functions to `MainViewManager` is being done primarily because there will be multiple working sets (1 per pane) and `MainViewManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense the Working Set is a property of the pane because it's really the structure of the UI -- **not the document**.
 
 Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) for more information.
 
