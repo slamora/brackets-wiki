@@ -70,7 +70,7 @@ The Implementation of these functions will move from `DocumentManager` to `MainV
 
 Moving these functions to `MainViewManager` is being done primarily because there will be multiple workingsets (1 per pane) and `MainViewManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense that the Workingset is a property of the pane because it's really the structure of the UI -- **not the document**.
 
-Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and the section below on *Workingset Alternatives* for more information.
+Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and the section below on *[Workingset Alternatives](#workingset-alternatives)* for more information.
 
 ## Workingset APIs
 Workingset APIs we be migrated from `DocumentManager`. Some of these will APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a `paneId` to identify which pane's Workingset to work on.
