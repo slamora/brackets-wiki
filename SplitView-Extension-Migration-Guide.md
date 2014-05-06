@@ -72,6 +72,9 @@ EditorManager.getCurrentlyViewedPath()     |  EditorManager.getFocusedPane().get
 -------------------------------------------+-----------------------------------------------------------------------------------
 ```
 
+
+# Workingset Alternatives
+
 Extension authors are encouraged to use these new APIs in lieu of using the Workingset APIs whenever possible.  
 
 ## ProjectManager.getAllOpenFiles()
