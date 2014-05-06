@@ -36,7 +36,9 @@ This API will change the layout to match _rows_ and _columns_.
 Update pane height/width. Not initially implemented.
 
 # Workingsets
-The Implementation of these functions will move from `DocumentManager` to `EditorManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility.
+The Implementation of these functions will move from `DocumentManager` to `EditorManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. 
+
+Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) for more information.
 
 ## Workingset APIs
 
@@ -81,6 +83,7 @@ _EditorManager Events will add `paneId` to event data_
 ### EditorManager.fullEditorChanged
 
 ### EditorManager.currentlyViewedFileChanged 
+### EditorManager.openFileListChanged
 
 ## Commands
 
@@ -112,7 +115,7 @@ Creating a pane is rendered at runtime and inserted it into the DOM.  The `Edito
 
 `EditorManager` will handle the `PanelManager`'s resize event and create an `EditorLayoutManager` object to assist with the layout. 
 
-`PanelManager` computes the new size of `#editory-holder` in its the `window.resize` event handler and triggers an event to resize that `EditorManager` subscribes to.  Currently `PanelManager` only computes the Height and passes that as data but it needs to also compute Width and pass that as well so that the `EditorLayoutManager` object can verify that the editor holder doesn't get too narrow to handle 2 editor instances.  At the point that it is too narrow then it will need to start resizing other columns to get a decent layout.  This algorithm becomes more complex with more columns and rows.  For now it can be a matter of going to something like 50%.  We may want to bump up the shell's minimum width as well to avoid getting too small.
+`PanelManager` computes the new size of `#editor-holder` in its the `window.resize` event handler and triggers an event to resize that `EditorManager` subscribes to.  Currently `PanelManager` only computes the Height and passes that as data but it needs to also compute Width and pass that as well so that the `EditorLayoutManager` object can verify that the editor holder doesn't get too narrow to handle 2 editor instances.  At the point that it is too narrow then it will need to start resizing other columns to get a decent layout.  This algorithm becomes more complex with more columns and rows.  For now it can be a matter of going to something like 50%.  We may want to bump up the shell's minimum width as well to avoid getting too small.
 
 ## Column Width/Row Height Rules
 _height_ and _width_ are expressed in percentages when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
@@ -126,7 +129,8 @@ The shortcut paneIds for Workingset APIs avoid having to maintain a reference to
 
 # Implementing WorkingSetViews
  WorkingSetView objects are created when the event `editorPaneCreated` is handled.  `SideBarView` will handle this event and create a `WorkingSetView` object which is bound to the Workingset created for the pane and passed in as event data.
-`#open-files-container` is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The extensions which style the elements will continue to work. The following extensions may no longer work:
+
+`#open-files-container` is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The extensions which style the elements will continue to work. 
 
 # Supporting Images in Workingsets
 
