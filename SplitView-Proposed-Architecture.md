@@ -16,10 +16,10 @@ This proposal is an overview of the system along with functional details and imp
 
 ## EditorManager APIs
 ### EditorManager.getFocusedEditor
-Reimplemented by moving current Implementation into `Editor` and invoking `Editor.getFocusedEditor()` for the `Editor` object of the focused pane.  The API will continue to work as it does today.
+Reimplemented by moving the current implementation into `Editor` and invoking `Editor.getFocusedEditor()` for the `Editor` object of the focused pane.  The API will continue to work as it does today.
 
 ### EditorManager.getCurrentlyViewedPath
-Reimplemented by moving current impl into `Editor` and invoking `Editor.getCurrentlyViewedPath` for the `Editor` object of the focused pane. The API will continue to work as it does today.
+Reimplemented by moving the current implementation into `Editor` and invoking `Editor.getCurrentlyViewedPath` for the `Editor` object of the focused pane. The API will continue to work as it does today.
 
 ### EditorManager.getCurrentFullEditor
 Reimplemented as `EditorManager.getFocusedEditor().getCurrentFullEditor()`
