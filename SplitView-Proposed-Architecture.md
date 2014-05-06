@@ -7,13 +7,13 @@ Those items that are needed to maintain backwards compatibility have been identi
 
 This proposal is an overview of the system along with functional details and implementation changes needed to build the SplitView feature.
 
-## Editor APIs
+## EditorManager APIs
 
 ### EditorManager.getFocusedEditor
-Reimplemented by moving current Implementation into `Editor` and invoking `Editor.getFocusedEditor()` for the `Editor` object of the focused pane.
+Reimplemented by moving current Implementation into `Editor` and invoking `Editor.getFocusedEditor()` for the `Editor` object of the focused pane.  The API will continue to work as it does today.
 
 ### EditorManager.getCurrentlyViewedPath
-Reimplemented by moving current impl into `Editor` and invoking `Editor.getCurrentlyViewedPath` for the `Editor` object of the focused pane.
+Reimplemented by moving current impl into `Editor` and invoking `Editor.getCurrentlyViewedPath` for the `Editor` object of the focused pane. The API will continue to work as it does today.
 
 ### EditorManager.createCustomViewerForURI
 Creates a Read Only viewer for any [image] file/URI.  
@@ -36,7 +36,7 @@ This API will change the layout to match _rows_ and _columns_.
 Update pane height/width. Not initially implemented.
 
 # Workingsets
-The Implementation of these functions will move from `DocumentManager` to `EditorManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. 
+The Implementation of these functions will move from `DocumentManager` to `EditorManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. This is done primarily because there will be multiple working sets (1 per pane)  and `EditorManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense the Working Set is a property of the pane because it's really the structure of the UI -- **not the document**.
 
 Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) for more information.
 
