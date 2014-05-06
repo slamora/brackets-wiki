@@ -30,7 +30,7 @@ This API will change the layout to match _rows_ and _columns_.
 
 ### MainViewManager.setColumnWidth(_column_, _width_)  
 ### MainViewManager.setRowHeight(_row_, _height_)  
-Update pane height/width. Not initially implemented.
+Update pane height/width. 
 
 ## View APIs
 ## MainViewManager.addView(_paneID_, _view_, _context_) 
@@ -144,7 +144,7 @@ Otherwise we would need to stub an exports to rewire `PanelManager` to `Workspac
 
 `EditorManager` will handle the `WorkspaceManager`'s resize event and create an `EditorLayoutManager` object to assist with the layout. 
 
-`WorkspaceManager` computes the new size of `#editor-holder` in its the `window.resize` event handler and triggers an event to resize that `EditorManager` subscribes to.  Currently `WorkspaceManager` only computes the Height and passes that as data but it needs to also compute Width and pass that as well so that the `EditorLayoutManager` object can verify that the editor holder doesn't get too narrow to handle 2 editor instances.  At the point that it is too narrow then it will need to start resizing other columns to get a decent layout.  This algorithm becomes more complex with more columns and rows.  For now it can be a matter of going to something like 50%.  We may want to bump up the shell's minimum width as well to avoid getting too small.
+`WorkspaceManager` computes the new size of `#editor-holder` in its the `window.resize` event handler and triggers an event to resize that `MainViewManager` subscribes to.  Currently `WorkspaceManager` only computes the Height and passes that as data but it needs to also compute Width and pass that as well so that the `ViewLayoutManager` object can verify that the editor holder doesn't get too narrow to handle 2 editor instances.  At the point that it is too narrow then it will need to start resizing other columns to get a decent layout.  This algorithm becomes more complex with more columns and rows.  For now it can be a matter of going to something like 50%.  We may want to bump up the shell's minimum width as well to avoid getting too small.
 
 ## Column Width/Row Height Rules
 _height_ and _width_ are expressed in percentages when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
