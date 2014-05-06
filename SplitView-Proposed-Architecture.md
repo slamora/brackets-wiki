@@ -122,9 +122,9 @@ _MainViewManager Events will add `paneId` to event data_
 ### ProjectManager.openFileListChanged
 
 # Implementing the Layout Manager
-The initial implementation will be mostly handled by `MainViewManager` but an `ViewLayoutManager` object may be created just to help handle the layout.  We shouldn't need to build for advanced layout mechanics since we only need, at most, 2 panes.  Support for arbitrary rows and columns can be built into the `ViewLayoutManager` flyweight at a later date.
+The initial implementation will be mostly handled by `MainViewManager` but a `ViewLayoutManager` object will be created just to help handle the layout.  We shouldn't need to build for advanced layout mechanics since we only need, at most, 2 panes.  Support for arbitrary rows and columns can be built into the `ViewLayoutManager` flyweight at a later date.
 
-Whether or not the initial implementation uses an `ViewLayoutManager` is an implementation detail that will be decided when the feature is implemented.
+Whether or not the initial implementation uses a `ViewLayoutManager` object is an implementation detail that will be decided when the feature is implemented.
 
 **Layout Rules:**
 * Only 1 pane or 1 row and 2 columns or 2 rows and 1 column are initially supported
