@@ -2,7 +2,9 @@ Most of Brackets' inner workings will need some sort of change to make SplitView
 
 Here are the high-level changes that Extension Authors need to keep in mind:
 
-* Brackets may have more than one full sized editor visible at any given time so Extension Authors must be aware that the API, `DocumentManager.getCurrentDocument()`, only provides access to the document of the currently focused editor.  `DocumentManager.getCurrentDocument()` is a deprecated API so extension authors are encouraged to migrate to `EditorManager.getFocusedEditor().getDocument()`  
+* DocumentManager.getCurrentDocument() is being deprecated. Brackets may have more than one full sized editor visible at any given time so Extension Authors must be aware that the API only provides access to the document of the currently focused editor.  Extension authors are encouraged to migrate to `EditorManager.getFocusedEditor().getDocument()`.  
+
+* `EditorManager.getFocusedEditor().getDocument()` may return `null`. There are many cases when this may happen so extension authors need to be prepared for this. 
 
 * Brackets will no longer have a single Workingset.  Each "Editor Pane", as we're calling it, will have its own Workingset.  This is probably the most disruptive change because the Workingset is used quite extensively to monitor various events and provide useful feedback to the user about open documents.  Extension authors can use `EditorManager.getWorkingSet(FOCUSED_PANE)` to get the focused editor's Workingset or use `editorManager.getAllWorkingSets()` to get all Workingsets.  The latter of which returns an array of arrays.
 
