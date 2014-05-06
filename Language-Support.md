@@ -1,4 +1,4 @@
-Starting with release 0.39, file extensions and file names can be mapped to languages via preferences. See [Preferences](#Preferences) below.
+Starting with release 0.39, file extensions and file names can be mapped to languages via preferences. See [Preferences](#preferences) below.
 
 Extensions can add basic language support &ndash; like syntax highlighting and comment toggling &ndash; via the [LanguageManager](https://github.com/adobe/brackets/blob/master/src/language/LanguageManager.js) API. This page explains how to use LanguageManager, and documents how language support in Brackets is currently implemented.
 
