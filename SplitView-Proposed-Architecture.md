@@ -22,7 +22,7 @@ Reimplemented by moving the current implementation into `Editor` and invoking `E
 Reimplemented by moving the current implementation into `Editor` and invoking `Editor.getCurrentlyViewedPath` for the `Editor` object of the focused pane. The API will continue to work as it does today.
 
 ### EditorManager.getCurrentFullEditor
-Reimplemented as `EditorManager.getFocusedEditor().getCurrentFullEditor()`
+Reimplemented by moving the current implementation into `Editor` and invoking `EditorManager.getFocusedEditor().getCurrentFullEditor()`  The API will continue to work as it does today.
 
 ## View Layout APIs
 ### MainViewManager.setLayoutScheme(_rows_,_columns_)  
