@@ -137,7 +137,7 @@ Creating a pane is rendered at runtime and inserted it into the DOM.  The `Edito
 
 ```javascript
 
-   var panelManager = brackets.getModule("PanelManager");
+   var panelManager = brackets.getModule("view/PanelManager");
 ```
 
 Otherwise we would need to stub an exports to rewire `PanelManager` to `WorkspaceManager`.
