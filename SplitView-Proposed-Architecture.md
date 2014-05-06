@@ -1,47 +1,75 @@
 Refactoring Brackets to Support Split View with Multiple Documents requires quite a bit of hacking on the plumbing but there are only a few places that need to be heavily refactored to do so.  To break this work up in to smaller pieces, an accompanying document [SplitView Architecture Tasking](SplitView-Architecture-Tasking) has been created.
 
 # Proposed Implementation 
-This proposal calls on `EditorManager` to manage all viewable files and their supporting data. This includes Editor or Read Only Viewer Placement, Workingsets and Editor or Read Only Viewer Instances.  `DocumentManager` is refactored somewhat to remove Workingset management -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility.  
+This proposal calls for anything that wants to show a view in the "Editor Workspace Area" must be a registered View Provider.  There are other ways to get views into this area but deserialization requires a method for views to be reconstructed at startup and this is done through a Registered View Provider. Registered View Providers expose methods to create a view for a given URI.  A ViewFactory will be responsible for maintaining the View Provider registry and invoke its `createView` when a View Provider indicates that it can create a viewer for a URI.
+
+Initially there will be 2 view providers: an Image provider and a Document Editor provider.  `EditorManager` will be the registered view provider for creating all editable document views.
+
+Workingset management moves from `DocumentManager` to `MainViewManager` -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility.  
 
 Those items that are needed to maintain backwards compatibility have been identified and documented in the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and are detailed in the section below on [Deprecating Legacy APIs](#deprecating-legacy-apis)
 
 This proposal is an overview of the system along with functional details and implementation changes needed to build the SplitView feature.
 
-## EditorManager APIs
+## High Level Block Diagram
+![SplitView Architecture ](images/splitviewarch.jpg)
 
+## EditorManager APIs
 ### EditorManager.getFocusedEditor
 Reimplemented by moving current Implementation into `Editor` and invoking `Editor.getFocusedEditor()` for the `Editor` object of the focused pane.  The API will continue to work as it does today.
 
 ### EditorManager.getCurrentlyViewedPath
 Reimplemented by moving current impl into `Editor` and invoking `Editor.getCurrentlyViewedPath` for the `Editor` object of the focused pane. The API will continue to work as it does today.
 
-### EditorManager.createCustomViewerForURI
-Creates a Read Only viewer for any [image] file/URI.  
-Replaces `EditorManager._showCustomViewer`, current implementation of ._showCustomViewer is moved to `Editor` as `createCustomViewerForFile` and invoked from `EditorManager`.  
-
-The URI passed into this function will determine what kind of viewer to create.  Initially only image files are supported but this can grow to include, preferences, extension managers and the like just by creating a plugin for the view factory that is needed to support this API.
-
-Supporting this function is a object view factory to support creating views for a URI. If there is no viewer for the URI then the brackets interstitial page will be shown.
-
 ### EditorManager.getCurrentFullEditor
 Reimplemented as `EditorManager.getFocusedEditor().getCurrentFullEditor()`
 
 ## View Layout APIs
-
-### EditorManager.setLayoutScheme(_rows_,_columns_)  
+### MainViewManager.setLayoutScheme(_rows_,_columns_)  
 This API will change the layout to match _rows_ and _columns_.
 
-### EditorManager.setColumnWidth(_column_, _width_)  
-### EditorManager.setRowHeight(_row_, _height_)  
+### MainViewManager.setColumnWidth(_column_, _width_)  
+### MainViewManager.setRowHeight(_row_, _height_)  
 Update pane height/width. Not initially implemented.
 
+## View APIs
+## MainViewManager.addView(_paneID_, _view_, _context_) 
+This is how the viewFactory will add things but components can add views as necessary.
+
+_view_ required interface
+
+```javascript
+/** @type {string} **/
+var title;
+
+/** @type {boolean} **/
+var modified;
+
+function getHTML();
+@returns {string}
+```
+
+## MainViewManager.registerViewProvider(_provider_)
+
+_provder_ is an object with the following interface:
+
+```javascript
+/** @type {string} **/
+var displayname;
+
+function canDecode(_uri_)
+@returns {boolean}
+
+function createViweFor(_uri_)
+@return {$(object)}
+
+```
 # Workingsets
-The Implementation of these functions will move from `DocumentManager` to `EditorManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. This is done primarily because there will be multiple working sets (1 per pane)  and `EditorManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense the Working Set is a property of the pane because it's really the structure of the UI -- **not the document**.
+The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. This is done primarily because there will be multiple working sets (1 per pane)  and `EditorManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense the Working Set is a property of the pane because it's really the structure of the UI -- **not the document**.
 
 Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) for more information.
 
 ## Workingset APIs
-
 Workingset APIs we be migrated from `DocumentManager`. Some of these will APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a `paneId` to identify which pane's Workingset to work on.
 
 Most of the Workingset APIs will take one of these special constants for `paneId` in addition to valid paneIds:
@@ -50,61 +78,49 @@ Most of the Workingset APIs will take one of these special constants for `paneId
 Constant                | Usage
 ------------------------+-----------------------------------------------------------------------------------------------------
 ALL_PANES               | Perform the operation on all panes (e.g. search for fullpath in all Workingsets)
-FOCUSED_PANE            | Perform the operation on the currently focused pane (can also use EditorManager.getFocusedPane())
+FOCUSED_PANE            | Perform the operation on the currently focused pane (can also use MainViewManager.getFocusedPane())
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
-### EditorManager.getWorkingSet(_paneId_)  
-### EditorManager.addToWorkingSet(_paneId_, _file_, _open_)  
-### EditorManager.addListToWorkingSet(_paneId_, _files_)
-### EditorManager.removeFromWorkingSet(_paneId_, _file_) 
-### EditorManager.removeListFromWorkingSet(_paneId_, _files_)
-### EditorManager.swapWorkingSetIndexes(_paneId_, _files_)
-### EditorManager.sortWorkingSet(_paneId_, _files_)
+### MainViewManager.getWorkingSet(_paneId_)  
+### MainViewManager.addToWorkingSet(_paneId_, _file_, _open_)  
+### MainViewManager.addListToWorkingSet(_paneId_, _files_)
+### MainViewManager.removeFromWorkingSet(_paneId_, _file_) 
+### MainViewManager.removeListFromWorkingSet(_paneId_, _files_)
+### MainViewManager.swapWorkingSetIndexes(_paneId_, _files_)
+### MainViewManager.sortWorkingSet(_paneId_, _files_)
 
-### EditorManager.findInWorkingSet(_paneId_, _file_)  
-### EditorManager.findInWorkingSetAddedOrder(_paneId_, _file_)    
+### MainViewManager.findInWorkingSet(_paneId_, _file_)  
+### MainViewManager.findInWorkingSetAddedOrder(_paneId_, _file_)    
 Returns {paneId: _paneId_, index: _index_) or undefined if not found
 
 ## Workingset Events  
-_EditorManager Events will add `paneId` to event data_
+_MainViewManager Events will add `paneId` to event data_
 
-### EditorManager.workingSetSort
-### EditorManager.workingSetAdd
-### EditorManager.workingSetAddList
-### EditorManager.workingSetRemove
-### EditorManager.workingSetRemoveList
-### EditorManager.workingSetDisableAutoSorting
+### MainViewManager.workingSetSort
+### MainViewManager.workingSetAdd
+### MainViewManager.workingSetAddList
+### MainViewManager.workingSetRemove
+### MainViewManager.workingSetRemoveList
+### MainViewManager.workingSetDisableAutoSorting
 
-### EditorManager.editorPaneCreated
-### EditorManager.editorPaneDestroyed
-### EditorManager.activePaneChanged
+## Pane Events
+### MainViewManager.paneCreated
+### MainViewManager.paneDestroyed
+### MainViewManager.activePaneChanged
+
+## Miscelaneous Events
+### MainViewManager.currentlyViewedFileChanged 
+### MainViewManager.openFileListChanged
+
+## EditorManager Events (provided for backwards compatibility but adds PaneId as Event Data)
 
 ### EditorManager.activeEditorChanged
 ### EditorManager.fullEditorChanged
 
-### EditorManager.currentlyViewedFileChanged 
-### EditorManager.openFileListChanged
-
-## Commands
-
-The following list of commands will move from `DocumentCommandHandlers` along with their corresponding implementation into a new module -- `FileCommandHandlers`.  It may be easier to leave some of the `Document` object specific code handling in `DocumentCommandHandlers` and wire it up to `FileCommandHandlers` when working with Files that have Document object but a cursory review indicated that this wasn't necessary.  This is an implementation detail that will be decided when the work is actually done.  We will also remove "file." from the command name and rename the commands to "cmd.", deprecating the old command ids in the same fashion the find commands were deprecated using getters.
-
-### file.addToWorkingSet
-### file.open	
-### file.rename	
-### file.delete
-### file.close
-### file.closeAll
-### file.closeList
-### navigate.nextDoc
-### navigate.prevDoc
-### navigate.showInFileTree
-
 # Implementing the Layout Manager
+The initial implementation will be mostly handled by `MainViewManager` but an `ViewLayoutManager` object may be created just to help handle the layout.  We shouldn't need to build for advanced layout mechanics since we only need, at most, 2 panes.  Support for arbitrary rows and columns can be built into the `ViewLayoutManager` flyweight at a later date.
 
-The initial implementation will be mostly handled by `EditorManager` but an `EditorLayoutManager` object may be created just to help handle the layout.  We shouldn't need to build for advanced layout mechanics since we only need, at most, 2 panes.  Support for arbitrary rows and columns can be built into the `EditorLayoutManager` flyweight at a later date.
-
-Whether or not the initial implementation uses an `EditorLayoutManger` is an implementation detail that will be decided when the feature is implemented.
+Whether or not the initial implementation uses an `ViewLayoutManager` is an implementation detail that will be decided when the feature is implemented.
 
 **Layout Rules:**
 * Only 1 pane or 1 row and 2 columns or 2 rows and 1 column are initially supported
@@ -113,7 +129,14 @@ Whether or not the initial implementation uses an `EditorLayoutManger` is an imp
 
 Creating a pane is rendered at runtime and inserted it into the DOM.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and insert it into the DOM in the appropriate place to ensure proper keyboard navigation.  The generated HTML can either come from a template rendered with Mustache or simple jQuery insertion.
 
-PanelManager is being renamed to to WorkspaceManager. It has no exposed API so this will have little or no impact but the name change fits in with the architecture change.
+PanelManager is being renamed to to WorkspaceManager. This will impact quite a few extensions. _Q: can require map "PanelManager" to "WorkspaceManager"? so the following code will continue to work from extensions:_
+
+```javascript
+
+   var panelManager = brackets.getModule("PanelManager");
+```
+
+Otherwise we would need to stub an exports to rewire `PanelManager` to `WorkspaceManager`.
 
 `EditorManager` will handle the `WorkspaceManager`'s resize event and create an `EditorLayoutManager` object to assist with the layout. 
 
@@ -123,11 +146,11 @@ PanelManager is being renamed to to WorkspaceManager. It has no exposed API so t
 _height_ and _width_ are expressed in percentages when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
 
 #Implementing Pane Management
-`EditorManager` will manage a Workingset for each of its editor panes. This may be abstracted and delegated into a `EditorPane` object if implementation starts to get to messy but the API to get the Workingset will be on `EditorManager` to make the interface easier to use. Management of the Workingset will move from the `DocumentManager` into `EditorManager` the and the Workingset will no longer be a collection of `Document` objects.  It will be a collection of file names.  
+`ViewManager` will manage a Workingset for each of its editor panes. This may be abstracted and delegated into a `ViewPane` object if implementation starts to get to messy but the API to get the Workingset will be on `ViewManager` to make the interface easier to use. Management of the Workingset will move from the `DocumentManager` into `ViewManager` the and the Workingset will no longer be a collection of `Document` objects.  It will be a collection of file names.  
 
-Note: To abstract the Workingset's pane location, each editor pane is addressed by paneId rather than row,col.  This is a change from the previous draft which had row, col addressable panes.  Valid paneId values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
+*NOTE:* To abstract the Workingset's pane location, each editor pane is addressed by _paneId_ rather than row,col.  Valid _paneId_ values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
 
-The shortcut paneIds for Workingset APIs avoid having to maintain a reference to the pane in which a file belongs.  It also allows us to create 1 API rather than 2 for `All` and `Focused` derivatives.
+The shortcut _paneIds_ for Workingset APIs avoid having to maintain a reference to the pane in which a file belongs.  It also allows us to create 1 API rather than 2 for `All` and `Focused` derivatives.
 
 # Implementing WorkingSetViews
  WorkingSetView objects are created when the event `editorPaneCreated` is handled.  `SideBarView` will handle this event and create a `WorkingSetView` object which is bound to the Workingset created for the pane and passed in as event data.
@@ -245,5 +268,22 @@ getFocusedInlineWidget  |                                   | Doesn't move but p
 ------------------------+-----------------------------------+-------------------------------------
                              
 ```
+
+## Commands (opportunistic cleanup)
+
+The following list of commands will move from `DocumentCommandHandlers` along with their corresponding implementation into a new module -- `ViewCommandHandlers`.  We will also remove "file." from the command name and rename the commands to "cmd.", deprecating the old command ids in the same fashion the find commands were deprecated using getters.
+
+### cmd.addToWorkingSet
+### cmd.open	
+### cmd.rename	
+### cmd.delete
+### cmd.close
+### cmd.closeAll
+### cmd.closeList
+### navigate.nextDoc
+### navigate.prevDoc
+### navigate.showInFileTree
+
+
 Raw data can be found here:
 [splitview architecture notes](splitview-architecture-notes)
