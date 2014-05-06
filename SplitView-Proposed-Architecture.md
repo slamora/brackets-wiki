@@ -64,6 +64,7 @@ function createViweFor(_uri_)
 @return {$(object)}
 
 ```
+
 # Workingsets
 The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. This is done primarily because there will be multiple working sets (1 per pane)  and `EditorManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense the Working Set is a property of the pane because it's really the structure of the UI -- **not the document**.
 
@@ -96,6 +97,8 @@ Returns {paneId: _paneId_, index: _index_) or undefined if not found
 ## Workingset Events  
 _MainViewManager Events will add `paneId` to event data_
 
+### MainViewManager.workingSetCreated
+### MainViewManager.workingSetDestroyed
 ### MainViewManager.workingSetSort
 ### MainViewManager.workingSetAdd
 ### MainViewManager.workingSetAddList
@@ -107,15 +110,14 @@ _MainViewManager Events will add `paneId` to event data_
 ### MainViewManager.paneCreated
 ### MainViewManager.paneDestroyed
 ### MainViewManager.activePaneChanged
-
-## Miscelaneous Events
 ### MainViewManager.currentlyViewedFileChanged 
-### MainViewManager.openFileListChanged
 
 ## EditorManager Events (provided for backwards compatibility but adds PaneId as Event Data)
-
 ### EditorManager.activeEditorChanged
 ### EditorManager.fullEditorChanged
+
+## ProjectManager Events
+### ProjectManager.openFileListChanged
 
 # Implementing the Layout Manager
 The initial implementation will be mostly handled by `MainViewManager` but an `ViewLayoutManager` object may be created just to help handle the layout.  We shouldn't need to build for advanced layout mechanics since we only need, at most, 2 panes.  Support for arbitrary rows and columns can be built into the `ViewLayoutManager` flyweight at a later date.
@@ -184,6 +186,13 @@ Becomes:
 
 ```
 
+# Workingset Alternatives
+
+## ProjectManager.getAllOpenFiles()
+Returns a list of all open files
+
+## DocumentManager.getAllOpenDocuments()
+Returns a list of all open documents -- including documents which are in a workingset but not yet opened, documents which have been opened in inline editors but not part of a workingset and opened but not modified or added to any workingset.
 
 # Deprecating Legacy APIs
 ```text
