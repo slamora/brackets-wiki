@@ -33,7 +33,7 @@ This API will change the layout to match _rows_ and _columns_.
 Update pane height/width. 
 
 ## View APIs
-## MainViewManager.addView(_paneID_, _view_, _context_) 
+### MainViewManager.addView(_paneID_, _view_, _context_) 
 This is how the viewFactory will add views to the layout but components can add views as necessary by calling `addView` and passing it the relevant data.  This gives the framework the flexibility to be able to create arbitrary views on the fly without a URI.  Calling this method directly, however, means that deserialization will not be able to reconstruct the view since there is no factory method for doing so.  See `MainViewManager.registerViewProvider()` to register a view provider so that views can be reconstructed during the deserialization process.
 
 _view_ required interface
@@ -49,7 +49,7 @@ function getUI();
 /** @returns {$(object)} **/
 ```
 
-## MainViewManager.registerViewProvider(_provider_)
+### MainViewManager.registerViewProvider(_provider_)
 
 _provder_ is an object with the following interface:
 
