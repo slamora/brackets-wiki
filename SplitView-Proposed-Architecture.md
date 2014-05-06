@@ -57,10 +57,10 @@ _provder_ is an object with the following interface:
 /** @type {string} **/
 var displayname;
 
-function canDecode(_uri_)
+function canDecode(uri)
 /** @returns {boolean} **/
 
-function createViweFor(_uri_)
+function createViweFor(uri)
 /** @return {$(object)} **/
 
 ```
