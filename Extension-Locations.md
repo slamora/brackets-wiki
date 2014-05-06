@@ -8,7 +8,7 @@ You can view this location using _Help > Show Extensions Folder_. Normally, this
 
 * Mac: `~/Library/Application Support/Brackets/extensions/user`
 * Win: `C:\Users\<user>\AppData\Roaming\Brackets\extensions\user`
-* Linux: 
+* Linux: `~/.config/brackets/extensions/user`
 
 Note: the `disabled` folder that sits next to `user` has no special meaning for the moment. It's just a convenient location to manually move extensions you wish to disable.
 
