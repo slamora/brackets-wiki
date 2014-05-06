@@ -46,7 +46,7 @@ var title;
 var modified;
 
 function getHTML();
-@returns {string}
+/** @returns {string} **/
 ```
 
 ## MainViewManager.registerViewProvider(_provider_)
@@ -58,10 +58,10 @@ _provder_ is an object with the following interface:
 var displayname;
 
 function canDecode(_uri_)
-@returns {boolean}
+/** @returns {boolean} **/
 
 function createViweFor(_uri_)
-@return {$(object)}
+/** @return {$(object)} **/
 
 ```
 
