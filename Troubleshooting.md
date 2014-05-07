@@ -149,6 +149,8 @@ Use `Debug > Reload Without Extensions` to quickly check whether the problem is 
 
 If this fixes the problem, you can identify the problematic extension by re-enabling extensions one-by-one:
 
+##### Disabling extensions individually
+
 1. Start with all extensions disabled: Choose _Help > Show Extensions Folder_ and move all extensions from the "user" folder into the "disabled" folder (this is similar to what Debug > Reload Without Extensions does).
 2. Move one extension back into the "user" folder, then quit and re-launch Brackets.
 3. Check if the problem has come back. If not, repeat step 2.
