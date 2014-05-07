@@ -66,7 +66,7 @@ function createViweFor(uri)
 ```
 
 # Workingsets
-The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of deprecated Workingset APIs that need to be kept for backwards compatibility. 
+The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of [deprecated Workingset APIs](#deprecating-legacy-apis) that need to be kept for backwards compatibility. 
 
 Moving these functions to `MainViewManager` is being done primarily because there will be multiple workingsets (1 per pane) and `MainViewManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense that the Workingset is a property of the pane because it's really the structure of the UI -- **not the document**.
 
