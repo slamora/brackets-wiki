@@ -6,7 +6,6 @@ What's New in Sprint 39
 -----------------------
 * **File Types**
     * [Customize file extension -> language/syntax mode mapping](https://github.com/adobe/brackets/pull/7588): Set `language.fileExtensions` or `language.fileNames` to a map object whose keys are file extensions/names and whose values are [language IDs](https://github.com/adobe/brackets/blob/master/src/language/languages.json). See [how to edit your preferences file](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences).
-    * [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409): Use the language indicator in the status bar as a dropdown to override the language Brackets chose to treat a file as. (These changes are _not_ saved when you close the file; use the preferences above to permanently treat all files with a certain extension as a different language).
     * [Windows: Filter out binary files and unsupported encodings](https://trello.com/c/Sji5hLvW/1219-1s-automatically-ignore-exclude-binary-files): Speeds up Find in Files for certain projects, and reduces clutter in the Quick Open file list. Attempting to open a non-UTF-8 file now results in an error instead of showing garbled text. (This was already implemented on other platforms).
 * **Code Editing**
     * [Cut/Copy whole line when nothing is selected](https://github.com/marijnh/CodeMirror/issues/2382)
@@ -15,6 +14,8 @@ What's New in Sprint 39
 * **Extensions**
     * [Extension update notifications](https://github.com/adobe/brackets/pull/7330): The Extension Manager toolbar icon turns green when one or more of your installed extensions have a new version available.
     * [Admin features for Extension Registry](https://trello.com/c/NAtggRqE/1224-simple-admin-for-registry): (available since 4/17) An extension's author can delete the extension from the registry, mark the extension as incompatible with newer versions of Brackets, or transfer ownership to a different author.
+* **Stability**
+    * Fixed freezes/crashes some users encountered in projects using the Ionic framework
 * **OS Support**
     * **Windows XP** is no longer officially supported by Brackets. It is still possible to download and install Brackets on Windows XP, but we will no longer test it - so future versions may become completely incompatible without warning.
 * **Ongoing Research** (not implemented yet)
