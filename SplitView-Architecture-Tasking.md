@@ -61,3 +61,4 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
    (depends on 6)
    * implement core changes to direct splits, etc...
 
+NOTE: This is now obsolete.  See the trello board for story breakdown and tasking
