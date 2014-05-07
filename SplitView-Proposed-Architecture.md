@@ -42,11 +42,8 @@ _view_ required interface
 /** @type {string} **/
 var title;
 
-/** @type {boolean} **/
-var modified;
-
 function getUI();
-/** @returns {$(object)} **/
+/** @returns {{!jQueryObject}} **/
 ```
 
 ### MainViewManager.registerViewProvider(_provider_)
@@ -61,7 +58,7 @@ function canDecode(uri)
 /** @returns {boolean} **/
 
 function createViweFor(uri)
-/** @return {$(object)} **/
+/** @return {!jQueryObject} **/
 
 ```
 
