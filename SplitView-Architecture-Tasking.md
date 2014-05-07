@@ -1,3 +1,6 @@
+
+*NOTE:* This is now obsolete.  See the trello board for story breakdown and tasking
+
 Here's a proposed guide to breakup the story into smaller arch pieces:
 
 1. Opportunistic Cleanup
@@ -60,5 +63,3 @@ Here's a proposed guide to breakup the story into smaller arch pieces:
 8. Implement UI for split view
    (depends on 6)
    * implement core changes to direct splits, etc...
-
-NOTE: This is now obsolete.  See the trello board for story breakdown and tasking
