@@ -2,17 +2,17 @@
 |:--------------------------|:---------------------|:--------:| 
 |App Startup| Peter || 
 |Code Hints| Raymond, Kevin, Randy (URL Hints) ||	 
-|Documents| Peter, NJ || 
-|EditorManager|	Peter||	 
+|Documents| Peter, NJ, Jeff || 
+|EditorManager|	Peter, Jeff||	 
 |Extension architecture| Kevin|| 
 |NativeFileSystem| Jeff|| 
 |Live Development| Raymond, Kevin, NJ, Randy|| 
-|Menus, Keyboard Shortcuts, Commands|	Jeff, Raymond, Ingo|| 
+|Menus, Keyboard Shortcuts, Commands|	Raymond, Ingo|| 
 |Performance| Ingo (automated tests), Peter (camera tests) ||	 
 |Quick Edit (Inline Editors & TextRange) | NJ || 
 |CodeMirror Integration| NJ ||	 
 |Text Editing Commands (EditorCommandHandlers) | Peter, NJ || 
-|Project Tree |Randy || 
+|Project Tree |Randy, Jeff || 
 |Quick Open| Peter, Kevin || 
 |Find / Find in Files| Peter, NJ || 
 |HTMLUtils |Raymond ||	 
