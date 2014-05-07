@@ -1,5 +1,4 @@
-
-*NOTE:* This is now obsolete.  See the trello board for story breakdown and tasking
+# *NOTE:* This is now obsolete.  See the trello board for story breakdown and tasking
 
 Here's a proposed guide to breakup the story into smaller arch pieces:
 
