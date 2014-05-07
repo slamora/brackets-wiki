@@ -55,6 +55,7 @@ In addition, all the add/remove file name/extension APIs can now optionally be p
 Known Issues
 ------------
 * "Brackets Code Folding" extension causes extremely slow typing in HTML files with this release. [Track this extension bug for updates](https://github.com/thehogfather/brackets-code-folding/issues/55).
+* Brackets may crash or freeze on projects using the **Ionic** framework. [Exclude](https://github.com/adobe/brackets/wiki/JavaScript-Code-Hints#configuration) the framework JS files to avoid this (they will be automatically excluded in Sprint 39).
 * Activity Monitor in Mavericks (OS X 10.9) says the Brackets Helper process is "Not Responding" even when it's working normally ([#5794](https://github.com/adobe/brackets/issues/5794)). You can safely ignore this unless Brackets is actually failing to respond when you click or type text.
 * On Windows XP, Brackets will not detect external file changes instantly. It behaves similarly to Sprint 35 and earlier releases - changes are detected upon window activation, and the folder tree must be manually refreshed.
 * [#2272](https://github.com/adobe/brackets/issues/2272): Windows Vista may not allow the Brackets installer to run (you may not see _any_ error message). To work around this, right-click the installer file, choose Properties, and click the Unblock button.
