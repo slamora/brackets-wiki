@@ -61,11 +61,16 @@ Very large and complicated JavaScript files can cause performance issues. A JS C
 
 The following properties are supported:
 
-* **excluded-directories**   
-An array of strings or regular expressions that match directories relative to the project root. Matching directories will be excluded from analysis. Directories may be excluded if they contain automated tests that aren’t relevant for code hinting. There are two kinds of strings that are supported. The first is a simple string that may contain the wildcards “*” and “?”. The second is a regular expression literal embedded in a string. The default value is an empty array.
+* **excluded-directories**
+An array of strings or regular expressions that match directories relative to the project root. Matching directories will be excluded from analysis. Directories may be excluded if they contain automated tests that aren’t relevant for code hinting. The default value is an empty array. Filter values are matched against the _project-relative_ path of the directory, excluding trailing slash. Two types of filter values are supported:
+    * A simple string, which may contain the wildcards `*` and `?`. (Note: unlike [search file exclusions](Using File Filters), `*` here matches all characters _including_ path separators). This string must match the _entire_ project-relative path in order to exclude the directory, so you may need to add leading/trailing `*`s.
+    * A regular expression literal embedded in a string (wrapped in `/`s), e.g. `"/thirdparty/mylibrary-1\\.\\d/"` (note the double-escaping due to the regexp being inside a JSON string literal). This need not match the entire project-relative path, unless you manually add `^` and `$` to it.
 
 * **excluded-files**  
-An array of strings or regular expressions that match files that will be excluded from analysis. Files are typically excluded because their API is in a JSON file or they are known to cause problems with either stability or performance. There are two kinds of strings that are supported. The first is a simple string that may contain the wildcards “*” and “?”.  The second is a regular expression literal embedded in a string. The default value is ["require.js", "jquery*.js", "less*.min.js", "ember*.js"].
+An array of strings or regular expressions that match files that will be excluded from analysis. Files are typically excluded because their API is in a JSON file or they are known to cause problems with either stability or performance. Brackets always excludes ["require.js", "jquery*.js", "less*.min.js", "ember*.js", ".*"]. Any settings you apply will be _in addition to_ these defaults.
+    * A simple string, which may contain the wildcards `*` and `?`. This string must match the _entire_ filename including extension.
+    * A regular expression literal embedded in a string (wrapped in `/`s), e.g. `"/mylibrary-1\\.\\d\\.js/"` (note the double-escaping due to the regexp being inside a JSON string literal). This need not match the entire filename, unless you manually add `^` and `$` to it.
+
 * **max-file-count**   
 Limits the total number of files that can be processed for hints. This limit only applies when an opened file does not use "require" and files under the project root are being added to the hinting context. The default value is 100.
 
