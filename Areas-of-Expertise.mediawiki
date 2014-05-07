@@ -1,172 +1,32 @@
-<table width="90%" border="1">
-  <tr>
-    <th scope="col">Area</th>
-    <th scope="col">Developer</th>
-    <th scope="col">Notes</th>
-  </tr>
-  <tr>
-    <td>App Startup</td>
-    <td>Jason, Peter</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Code Hints</td>
-    <td>Raymond, Kevin, Randy (URL Hints)</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Documents</td>
-    <td>Peter, NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>EditorManager</td>
-    <td>Peter</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Extension architecture</td>
-    <td>Kevin</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>NativeFileSystem</td>
-    <td>Jeff, Jason</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Live Development</td>
-    <td>Glenn, Raymond, Kevin, NJ, Randy</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Menus, Keyboard Shortcuts, Commands</td>
-    <td>Jeff, Jason, Raymond, Ingo</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Performance</td>
-    <td>Jason (automated tests), Peter (camera tests)</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Quick Edit (Inline Editors & TextRange)</td>
-    <td>NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>CodeMirror Integration</td>
-    <td>NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Text Editing Commands (EditorCommandHandlers)</td>
-    <td>Peter, NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Project Tree</td>
-    <td>Glenn</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Quick Open</td>
-    <td>Peter, Kevin</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Find / Find in Files</td>
-    <td>Glenn, Peter, NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>HTMLUtils</td>
-    <td>Raymond</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>CSSUtils</td>
-    <td>Glenn, Raymond, Randy</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Native Shell</td>
-    <td>Jeff, Glenn, Randy, Raymond, Ingo</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>CEF Integration</td>
-    <td>Jeff, Ingo</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>UI layout/panels</td>
-    <td>Jeff</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Localization</td>
-    <td>Jason, Randy, Raymond</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Preferences</td>
-    <td>Jason (Storage), Randy (UI), Kevin</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Unit Tests</td>
-    <td>Jason, NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>User experience - interaction design</td>
-    <td>NJ, Larz, Peter</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>User experience - visual design</td>
-    <td>Larz, NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Designer workflow</td>
-    <td>Larz, NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Installer / Builds</td>
-    <td>Peter (Win), Glenn (Mac DMG; native build), Ingo (Win/Mac)</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>CSS</td>
-    <td>Randy</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Build</td>
-    <td>Jason, Ingo</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Multiple cursor, selection</td>
-    <td>NJ</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+| Area  of expertiese     | Individuals           | Notes  |
+|:--------------------------|:---------------------|:--------:|
+|App Startup| Peter ||
+|Code Hints| Raymond, Kevin, Randy (URL Hints) ||	 
+|Documents| Peter, NJ || 
+|EditorManager|	Peter||	 
+|Extension architecture| Kevin||
+|NativeFileSystem| Jeff||
+|Live Development| Raymond, Kevin, NJ, Randy|| 
+|Menus, Keyboard Shortcuts, Commands|	Jeff, Raymond, Ingo||
+|Performance| Ingo (automated tests), Peter (camera tests) ||	 
+|Quick Edit (Inline Editors & TextRange) | NJ || 
+|CodeMirror Integration| NJ ||	 
+|Text Editing Commands (EditorCommandHandlers) | Peter, NJ || 
+|Project Tree |Randy || 
+|Quick Open| Peter, Kevin || 
+|Find / Find in Files| Peter, NJ ||
+|HTMLUtils |Raymond ||	 
+|CSSUtils| Raymond, Randy || 
+|Native Shell| Jeff, Randy, Raymond, Ingo ||
+|CEF Integration| Jeff, Ingo ||	 
+|UI layout/panels| Jeff	|| 
+|Localization| Randy, Raymond ||	 
+|Preferences| Bryan (Storage), Randy (UI), Kevin ||
+|Unit Tests| Ingo, NJ || 
+|User experience - interaction design| NJ, Larz, Peter	|| 
+|User experience - visual design| Larz, NJ||	 
+|Designer workflow| Larz, NJ||	 
+|Installer / Builds| Ingo, Peter (Win) ||
+|CSS	|Randy	|| 
+|Build| Ingo ||
+|Multiple cursor, selection| NJ || 
