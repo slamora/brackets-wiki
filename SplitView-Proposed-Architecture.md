@@ -36,11 +36,16 @@ Update pane height/width.
 ### MainViewManager.addView(_paneID_, _view_, _context_) 
 This is how the viewFactory will add views to the layout but components can add views as necessary by calling `addView` and passing it the relevant data.  This gives the framework the flexibility to be able to create arbitrary views on the fly without a URI.  Calling this method directly, however, means that deserialization will not be able to reconstruct the view since there is no factory method for doing so.  See [`MainViewManager.registerViewProvider()`](#mainviewmanagerregisterviewproviderprovider) to register a view provider so that views can be reconstructed during the deserialization process.
 
+This method will return a _viewID_ that is used to address the view.
+
 _view_ required interface
 
 ```javascript
 /** @type {string} **/
 var title;
+
+/** @type {boolean} **/
+var modified;
 
 function getUI();
 /** @returns {{!jQueryObject}} **/
@@ -61,6 +66,14 @@ function createViweFor(uri)
 /** @return {!jQueryObject} **/
 
 ```
+## MainViewManager.updateTitle(viewID)
+Call this when the view's title has changed and you need to update it in the workingset and titlebar of the application.
+
+## MainViewManager.revokeView(viewID)
+Removes a view from the pane and workingset.
+
+## MainViewManager.getViewContext(viewID)
+This will return any context data associated with the view when it was created
 
 # Workingsets
 The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of [deprecated Workingset APIs](#deprecating-legacy-apis) that need to be kept for backwards compatibility. 
