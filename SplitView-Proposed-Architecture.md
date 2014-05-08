@@ -15,6 +15,8 @@ This proposal is an overview of the system along with functional details and imp
 ![SplitView Architecture ](images/splitviewarch.jpg)
 
 ## EditorManager APIs
+These `EditorManager` APIs that exist will remain for backwards compatibility and convenience but their implementation will move as described.
+
 ### EditorManager.getFocusedEditor
 Reimplemented by moving the current implementation into `Editor` and invoking `Editor.getFocusedEditor()` for the `Editor` object of the focused pane.  The API will continue to work as it does today.
 
