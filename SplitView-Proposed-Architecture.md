@@ -5,7 +5,7 @@ This proposal calls for anything that wants to show a view in the "Editor Worksp
 
 Initially there will be 2 Registered View Providers: an Image View Provider and a Document Editor provider.  `EditorManager` will be the registered the view provider for creating all document views.
 
-Workingset management moves from `DocumentManager` to `MainViewManager` -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility. The concept of Workingset is going away and all Workingset APIs are going to be renamed `ViewPaneList` and `WorkingSetView` becomes `ViewPaneListView`.  
+Workingset management moves from `DocumentManager` to `MainViewManager` -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility. The concept of Workingset is going away and all Workingset APIs are going to be renamed `PaneViewList` and `WorkingSetView` becomes `PaneViewListView`.  
 
 Those items that are needed to maintain backwards compatibility have been identified and documented in the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and are detailed in the section below on [Deprecating Legacy APIs](#deprecating-legacy-apis)
 
@@ -70,22 +70,22 @@ function createViweFor(uri)
 Call this when the view's title has changed and you need to update it in the workingset and titlebar of the application.
 
 ## MainViewManager.revokeView(viewID)
-Removes a view from the pane and `ViewPaneList`.
+Removes a view from the pane and `PaneViewList`.
 
 ## MainViewManager.getViewContext(viewID)
 This will return any context data associated with the view when it was created
 
-# ViewPaneList API
+# PaneViewList API
 The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of [deprecated Workingset APIs](#deprecating-legacy-apis) that need to be kept for backwards compatibility. 
 
-Moving these functions to `MainViewManager` is being done primarily because there will be each view pane will have its own `ViewPaneLists` and `MainViewManager` manages the panes so it makes sense to move it there. But, architecturally, it makes sense that the this list is a property of the pane because it's really the structure of the UI -- **not the document**.
+Moving these functions to `MainViewManager` is being done primarily because each view pane will have its own `PaneViewList` and `MainViewManager` manages the view panes so it makes sense to move it there. But, architecturally, it makes sense that the this list is a property of the view because it's really the structure of the UI -- **not the document**.
 
 Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and the section below on *[Workingset Alternatives](#workingset-alternatives)* for more information.
 
-## ViewPaneList APIs
-ViewPaneList APIs we be migrated from `DocumentManager`. Some of these will APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  These have the same functionality as in previous versions of Brackets except they will take a `paneId` to identify which pane's ViewPaneList to work on.
+## PaneViewList APIs
+PaneViewList APIs we be migrated from `DocumentManager`. Some of these APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  The new APIs have the same functionality as the Workingset APIs in previous versions of Brackets except they will take a `paneId` to identify which pane's PaneViewList to work on.
 
-Most of the ViewPaneList APIs will take one of these special constants for `paneId` in addition to valid paneIds:
+Most of the PaneViewList APIs will take one of these special constants for `paneId` in addition to valid paneIds:
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
 Constant                | Usage
@@ -95,28 +95,28 @@ FOCUSED_PANE            | Perform the operation on the currently focused pane (c
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
 ### MainViewManager.getWorkingSet(_paneId_)  
-### MainViewManager.addToViewPaneList(_paneId_, _file_, _open_)  
-### MainViewManager.addListToViewPaneList(_paneId_, _files_)
-### MainViewManager.removeFromViewPaneList(_paneId_, _file_) 
-### MainViewManager.removeListFromViewPaneList(_paneId_, _files_)
-### MainViewManager.swapViewPaneListIndexes(_paneId_, _files_)
-### MainViewManager.sortViewPaneList(_paneId_, _files_)
+### MainViewManager.addToPaneViewList(_paneId_, _file_, _open_)  
+### MainViewManager.addListToPaneViewList(_paneId_, _files_)
+### MainViewManager.removeFromPaneViewList(_paneId_, _file_) 
+### MainViewManager.removeListFromPaneViewList(_paneId_, _files_)
+### MainViewManager.swapPaneViewListIndexes(_paneId_, _files_)
+### MainViewManager.sortPaneViewList(_paneId_, _files_)
 
-### MainViewManager.findInViewPaneList(_paneId_, _file_)  
-### MainViewManager.findInViewPaneListAddedOrder(_paneId_, _file_)    
+### MainViewManager.findInPaneViewList(_paneId_, _file_)  
+### MainViewManager.findInPaneViewListAddedOrder(_paneId_, _file_)    
 Returns {paneId: _paneId_, index: _index_) or undefined if not found
 
-## ViewPaneList Events  
+## PaneViewList Events  
 _MainViewManager Events will add `paneId` to event data_
 
-### MainViewManager.viewPaneListCreated
-### MainViewManager.viewPaneListDestroyed
-### MainViewManager.viewPaneListSort
-### MainViewManager.viewPaneListAdd
-### MainViewManager.viewPaneListAddList
-### MainViewManager.viewPaneListRemove
-### MainViewManager.viewPaneListRemoveList
-### MainViewManager.viewPaneListDisableAutoSorting
+### MainViewManager.paneViewListCreated
+### MainViewManager.paneViewListDestroyed
+### MainViewManager.paneViewListSort
+### MainViewManager.paneViewListAdd
+### MainViewManager.paneViewListAddList
+### MainViewManager.paneViewListRemove
+### MainViewManager.paneViewListRemoveList
+### MainViewManager.paneViewListDisableAutoSorting
 
 ## Pane Events
 ### MainViewManager.paneCreated
@@ -133,20 +133,20 @@ _provided for backwards compatibility but adds PaneId as Event Data_
 ### ProjectManager.openFileListChanged
 
 # Implementing the Layout Manager
-The initial implementation will be mostly handled by `MainViewManager` but a `ViewLayoutManager` object will be created just to help handle the layout.  We shouldn't need to build for advanced layout mechanics since we only need, at most, 2 panes.  Support for arbitrary rows and columns can be built into the `ViewLayoutManager` flyweight at a later date.
+The initial implementation will be mostly handled by `MainViewManager` but a `MainViewLayoutManager` object will be created just to help handle the layout.  We shouldn't need to build for advanced layout mechanics since we only need, at most, 2 panes.  Support for arbitrary rows and columns can be built into the `MainViewLayoutManager` builder at a later date.
 
-Whether or not the initial implementation uses a `ViewLayoutManager` object is an implementation detail that will be decided when the feature is implemented.
+Whether or not the initial implementation uses a `MainViewLayoutManager` object is an implementation detail that will be decided when the feature is implemented.
 
 **Layout Rules:**
 * Only 1 pane or 1 row and 2 columns or 2 rows and 1 column are initially supported
-* Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding `EditorManager` for that pane has been loaded with a document or image.
-* When an editor pane is destroyed, all documents in the corresponding Workingset for that pane are moved to another pane's Workingset.  Since there is only 2 panes in the initial implementation this is just a matter of collapsing them down to the remaining Pane's Workingset.  This will generate a workingSetAddList event with the workingset passed as event data.
+* Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding view for that pane has loaded its content.
+* When a pane is destroyed, all views in the corresponding `PaneViewList` for that pane are moved to another pane and that pane's `PaneViewList` is updated.  Since there is only 2 panes at most in the initial implementation this is just a matter of collapsing them down to the remaining Pane's `ViewPaneList`.  This will generate a `viewPaneListRemoveList` event is generated for the pane losing views and a corresponding  `viewPaneListAddList` event is generated for the pane who is receiving the the views.
 
-Creating a pane is rendered at runtime and inserted it into the DOM.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and insert it into the DOM in the appropriate place to ensure proper keyboard navigation.  The generated HTML can either come from a template rendered with Mustache or simple jQuery insertion.
+View HTML rendered at runtime and inserted it into the DOM by the `PaneViewManager`.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and insert it into the DOM in the appropriate place to ensure proper z-order.  The generated HTML can either come from a template rendered with Mustache or simple jQuery insertion.  This is the same process for any RegisteredViewProvider.
 
-`EditorManager` will handle the `WorkspaceManager`'s resize event and create an `EditorLayoutManager` object to assist with the layout. 
+`MainViewManager` will handle the `WorkspaceManager`'s resize event and create a `MainViewLayoutManager` object to assist with the layout. 
 
-`WorkspaceManager` computes the new size of `#editor-holder` in its the `window.resize` event handler and triggers an event to resize that `MainViewManager` subscribes to.  Currently `WorkspaceManager` only computes the Height and passes that as data but it needs to also compute Width and pass that as well so that the `ViewLayoutManager` object can verify that the editor holder doesn't get too narrow to handle 2 editor instances.  At the point that it is too narrow then it will need to start resizing other columns to get a decent layout.  This algorithm becomes more complex with more columns and rows.  For now it can be a matter of going to something like 50%.  We may want to bump up the shell's minimum width as well to avoid getting too small.
+`WorkspaceManager` computes the new size of `#editor-holder` in its the `window.resize` event handler and triggers an event to resize that the `MainViewManager` object subscribes to.  Currently `WorkspaceManager` only computes the Height and passes that as data but it needs to also compute Width and pass that as well so that the `MainViewLayoutManager` object can verify that the editor holder doesn't get too narrow to handle 2 editor instances.  At the point that it is too narrow then it will need to start resizing other columns to get a decent layout.  This algorithm becomes more complex with more columns and rows.  For now it can be a matter of going to something like 50%.  We may want to bump up the shell's minimum width as well to avoid getting too small.
 
 ## Column Width/Row Height Rules
 _height_ and _width_ are expressed in percentages when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
@@ -156,24 +156,24 @@ _height_ and _width_ are expressed in percentages when affixing the CSS to the c
 
 *NOTE:* To abstract the Workingset's pane location, each editor pane is addressed by _paneId_ rather than row,col.  Valid _paneId_ values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
 
-The shortcut _paneIds_ for ViewPaneList APIs avoid having to maintain a reference to the pane in which a file belongs.  It also allows us to create 1 API rather than 2 for `All` and `Focused` derivatives.
+Clients can use the shortcut _paneIds_ for `PaneViewList` APIs to avoid having to maintain a reference to the pane in which a view belongs.  It also allows us to create 1 API rather than 2 for `All` and `Focused` derivatives.
 
-# Implementing ViewPaneListViews
-ViewPaneListView objects are created when the event `editorPaneCreated` is handled.  `SideBarView` will handle this event and create a `ViewPaneListView` object (which is bound to the ViewPaneList) created for the pane and passed in as event data.
+# Implementing PaneViewListViews
+PaneViewListView objects are created when the event `editorPaneCreated` is handled.  `SideBarView` will handle this event and create a `PaneViewListView` object (which is bound to the PaneViewList) created for the pane and passed in as event data.
 
 `#open-files-container` is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The extensions which style the elements will continue to work. 
 
-# Supporting Images in ViewPaneLists
+# Supporting Images in PaneViewLists
 
-To support images in split view, we will need to change the rules to allow for images in ViewPaneLists. This means that callers of the new ViewPaneList APIs will need to check to make sure they can operate on a file by getting its file type from the language manager or by checking its extension. 
+To support images in split view, we will need to change the rules to allow for images in `PaneViewLists`. This means that callers of the new `PaneViewList` APIs will need to check to ensure they can operate on a file by getting its file type from the language manager or by checking its extension. 
 
-ViewPaneLists will basically just be a list of files that may or may not have a Document object owned by the Document Manager.  The deprecated API, `DocumentManager.getWorkingSet()`, will filter out any files that don't have an associated `Document` object.
+`PaneViewLists` will basically just be a list of files that may or may not have a `Document` object owned by the `DocumentManager`.  The deprecated API, `DocumentManager.getWorkingSet()`, will filter out any files that don't have an associated `Document` object.
 
 
-# Implementing ViewPaneListView Context Menus
-This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `ViewPaneListView` who attached to the `.open_files_container` will be maintain the paneId from the `EventData` it was passed during the create event so that callers (Extensions) will be able to determine which editor has focus when the menu is invoked.
+# Implementing PaneViewListView Context Menus
+This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `PaneViewListView` who attached to the `.open_files_container` will be maintain the paneId from the `EventData` it was passed during the create event so that callers (Extensions) will be able to determine which editor has focus when the menu is invoked.
 
-This will also trigger a focus action on the DOM node causing the `Editor` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the ViewPaneList for the editor pane associated with the `ViewPaneListView` that manages it and ask that `EditorManager` instance for the ViewPaneList.
+This will also trigger a focus action on the DOM node causing the `Editor` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the PaneViewList for the editor pane associated with the `PaneViewListView` that manages it and ask that `EditorManager` instance for the PaneViewList.
 
 ```javascript
 
@@ -191,13 +191,13 @@ Becomes:
 ```
 
 # Workingset Alternatives
-Although they aren't Workingsets anymore, extensions making use of the WorkingSet apis today are encouraged to migrate to these new APIs rather than just accessing ViewList directly if possible.  
+Although they aren't called Workingsets anymore, extensions making use of the `WorkingSet` APIs today are encouraged to migrate to these new convenience methods rather than just accessing `ViewList` directly if possible.  
 
 ## ProjectManager.getAllOpenFiles()
 Returns a list of all open files
 
 ## DocumentManager.getAllOpenDocuments()
-Returns a list of all open documents -- including documents which are in a ViewPaneList but not yet opened, documents which have been opened in inline editors but not part of a ViewPaneList and opened but not modified or added to any ViewPaneList.
+Returns a list of all open documents -- including documents which are in a PaneViewList but not yet opened, documents which have been opened in inline editors but not part of a PaneViewList and opened but not modified or added to any PaneViewList.
 
 # Deprecating Legacy APIs
 ```text
@@ -208,7 +208,7 @@ DocumentManager.getCurrentDocument() | EditorManager
                                      |    .getFocusedEditor()
                                      |    .getDocument();
 -------------------------------------+--------------------------------------------------------
-DocumentManager.getWorkingSet()      | $.map(ViewManager.getViewPaneList(ALL_PANES, …),
+DocumentManager.getWorkingSet()      | $.map(ViewManager.getPaneViewList(ALL_PANES, …),
                                      |        function(fullPath) {
                                      |           if (DocumentManager.isDocument(fullPath)) {
                                      |               return fullPath; 
@@ -216,24 +216,22 @@ DocumentManager.getWorkingSet()      | $.map(ViewManager.getViewPaneList(ALL_PAN
                                      | });
 -------------------------------------+--------------------------------------------------------
 DocumentManager.findInWorkingSet()   | return ViewManager
-*only used by pflynn                 |    .findInViewPaneList(ALL_PANES, ...).index || -1;
+*only used by pflynn                 |    .findInPaneViewList(ALL_PANES, ...).index || -1;
 -------------------------------------+--------------------------------------------------------
 DocumentManager.addToWorkingSet()    | return ViewManager
-                                     |    .addToViewPaneList(FOCUSED_PANE, ...);
+                                     |    .addToPaneViewList(FOCUSED_PANE, ...);
 -------------------------------------+--------------------------------------------------------
 DocumentManager.addListToWorkingSet  | return ViewManager
-                                     |    .addListToViewPaneList(FOCUSED_PANE, ...);
+                                     |    .addListToPaneViewList(FOCUSED_PANE, ...);
 -------------------------------------+--------------------------------------------------------
 DocumentManager.removeFromWorkingSet | return ViewManager
-                                     |    .removeFromViewPaneList(ALL_PANES, ...);
+                                     |    .removeFromPaneViewList(ALL_PANES, ...);
 -------------------------------------+--------------------------------------------------------
 ```
 
 # Deprecating Legacy Events
 The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just be a repub of the EditorManager events. 
 
-
-_Q: Is there a way to know if there are any listeners so that a deprecation warning can be written to the console only if there are listeners?_
 
 ### DocumentManager.workingSetAdd                
 ### DocumentManager.workingSetAddList            
@@ -256,28 +254,16 @@ The following `EditorManager` functions will move to `Editor` and are opportunis
 _openInlineWidget       | Internal Inline Widget Management | Moves to Editor without impunity
 ------------------------+-----------------------------------+-------------------------------------
 _toggleInlineWidget     | Command Handler                   | Current Implementation moves to 
-                        |                                   | Editor.
-                        |                                   | Command handler will  call
-					    |                                   |   getFocusedEditor()
+                        |                                   | Editor
+                        |                                   | Command handler will call
+                        |                                   | Editor
+					    |                                   |   .getFocusedEditor()
 						|                                   |    .toggleInlineWidget()
 ------------------------+-----------------------------------+-------------------------------------
-_showCustomViewer       | API                               | Illegal usage from 
-                        |                                   |   DocumentCommandHandlers
-						|                                   | Command handler moves to 
-						|                                   |  FileCommandHandlers
-						|                                   | Function is renamed to 
-						|                                   |  EditorManager
-						|                                   |    createViewerForFile
-------------------------+-----------------------------------+-------------------------------------
 closeInlineWidget       |                                   | Moves to Editor
-                        |                                   | InlineWidget.close will call
-						|                                   | this.hostEditor.closeInlineWidget()
+						|                                   | calls hostEditor.closeInlineWidget()
 ------------------------+-----------------------------------+-------------------------------------
 getInlineEditors        |                                   | Moves to Editor
-                        |                                   | InlineWidget
-						|                                   |    ._syncGutterWidths(
-						|                                   |                hostEditor
-						|                                   | ) 
 						|                                   | calls hostEditor.getInlineEditors()
 ------------------------+-----------------------------------+-------------------------------------
 getFocusedInlineWidget  |                                   | Doesn't move but passes through to
@@ -291,7 +277,7 @@ getFocusedInlineWidget  |                                   | Doesn't move but p
 
 The following list of commands will move from `DocumentCommandHandlers` along with their corresponding implementation into a new module -- `ViewCommandHandlers`.  We will also remove "file." from the command name and rename the commands to "cmd.", deprecating the old command ids in the same fashion the find commands were deprecated using getters.
 
-### cmd.addToViewPaneList
+### cmd.addToPaneViewList
 ### cmd.open	
 ### cmd.rename	
 ### cmd.delete
