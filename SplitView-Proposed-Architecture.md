@@ -40,7 +40,7 @@ This is how the viewFactory will add views to the layout but components can add 
 
 This method will return a _viewID_ that is used to address the view.
 
-_view_ required interface
+_view_ is an object with the following interface:
 
 ```javascript
 /** @type {string} **/
