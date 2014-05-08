@@ -150,7 +150,7 @@ Whether or not the initial implementation uses a `MainViewLayoutManager` object 
 _height_ and _width_ are expressed in percentages when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
 
 #Implementing Pane Management
-`ViewManager` will manage a PaneViewList for each of its editor panes. This may be abstracted and delegated into a `Pane` object if implementation starts to get to messy but the API to get the `PaneViewList` will be on `MainViewManager` to make the interface easier to use. Management of the Workingset will move from the `DocumentManager` into `ViewManager` the and renamed as `PaneViewList`. The list will no longer be a collection of `Document` objects.  It will be a collection of file names.  
+`ViewManager` will manage a `PaneViewList` for each of its View Panes. This may be abstracted and delegated into a `Pane` object if implementation starts to get to messy but the API to get the `PaneViewList` will be through the `MainViewManager` object.  Because the `ViewPaneList` is being decoupled from `DocumentManager`, the list will no longer be a collection of `Document` objects.  It will be a collection of file names.  
 
 *NOTE:* To abstract the `PaneViewList's` location, each view pane is addressed by _paneId_ rather than row,col.  Valid _paneId_ values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
 
