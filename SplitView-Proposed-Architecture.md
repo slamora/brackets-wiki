@@ -5,7 +5,7 @@ This proposal calls for anything that wants to show a view in the "Editor Worksp
 
 Initially there will be 2 Registered View Providers: an Image View Provider and a Document Editor provider.  `EditorManager` will be the Registered View Provider for creating all document editors.
 
-Workingset management moves from `DocumentManager` to `MainViewManager` -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility. The concept of Workingset is going away and all Workingset APIs are going to be renamed to `PaneViewList` and `WorkingSetView` is renamed `PaneViewListView`.  
+Workingset management moves from `DocumentManager` to `MainViewManager` -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility. The concept of Workingset is going away and all Workingset APIs are going to be renamed  `PaneViewList` and `WorkingSetView` is renamed `PaneViewListView`.  
 
 Those items that are needed to maintain backwards compatibility have been identified and documented in the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and are detailed in the section below on [Deprecating Legacy APIs](#deprecating-legacy-apis)
 
