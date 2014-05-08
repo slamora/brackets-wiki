@@ -162,14 +162,12 @@ Clients can use the Special Pane IDs _paneIds_ for `PaneViewList` APIs to avoid 
 `#open-files-container` is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The extensions which style the elements will continue to work. 
 
 # Supporting Images in PaneViewLists
-
 To support images in split view, we will need to change the rules to allow for images in `PaneViewLists`. This means that callers of the new `PaneViewList` APIs will need to check to ensure they can operate on a file by getting its file type from the language manager or by checking its extension. 
 
-`PaneViewLists` will basically just be a list of files that may or may not have a `Document` object owned by the `DocumentManager`.  The deprecated API, `DocumentManager.getWorkingSet()`, will filter out any files that don't have an associated `Document` object.
-
+`PaneViewLists` will basically just be a list of files that may or may not have a `Document` object owned by the `DocumentManager`.  The deprecated API, `DocumentManager.getWorkingSet()`, will use the `PaneViewList` APIs to filter out any files that do not have an associated `Document` object.
 
 # Implementing PaneViewListView Context Menus
-This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `PaneViewListView` who attached to the `.open_files_container` will be maintain the paneId from the `EventData` it was passed during the create event so that callers (Extensions) will be able to determine which editor has focus when the menu is invoked.
+This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `PaneViewListView` will be maintain the paneId from the `EventData` it was passed during creation so the menu can operate on the correct pane's `ViewPaneList`.
 
 This will also trigger a focus action on the DOM node causing the `Editor` to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the PaneViewList for the editor pane associated with the `PaneViewListView` that manages it and ask that `EditorManager` instance for the PaneViewList.
 
