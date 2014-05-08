@@ -169,7 +169,9 @@ To support images in split view, we will need to change the rules to allow for i
 # Implementing PaneViewListView Context Menus
 This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `PaneViewListView` will be maintain the paneId from the `EventData` it was passed during creation so the menu can operate on the correct pane's `ViewPaneList`.
 
-Right clicking on a `ViewPaneList` item will also trigger a focus action on view for that `ViewPaneList` item causing the view to gain focus.  The Default extension, `CloseOthers`, will be retooled to work on the `PaneViewList` for the pane associated with the `PaneViewListView` that it manages.
+Right clicking on a `ViewPaneList` item will also trigger a focus action on view for that `ViewPaneList` item causing the view to gain focus.  
+
+The core extension, `CloseOthers`, will be retooled to work on the `PaneViewList` for the pane associated with the `PaneViewListView` that it manages.
 
 ```javascript
 
