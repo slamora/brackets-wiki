@@ -103,41 +103,9 @@ Documentation on a function or variable will pop out to the side of the main hin
 
 # Refactoring Project (spring 2014)
 
+Contact: dangoor
+
 Two significant features with an impact on JS Code Hints shipped in Brackets 36: file watchers and preferences. As a result, we've chosen this time to [refactor the JS code hints code](https://trello.com/c/BMVw25vU/75-research-js-code-hints-cleanup) in order to improve the overall performance of code hints.
-
-## Preferences
-
-This is the easiest piece to refactor, because the JS Code Hints-specific preferences system in Preferences.js should just go away. In its place, JS Code Hints will rely on a prefixed preferences system for "jscodehints". `max-file-count` and `max-file-size` are replaced by `jscodehints.maxFileCount` and `jscodehints.maxFileSize`. Ideally, we can eliminate `maxFileCount`.
-
-The excluded directories and excluded files should be path-based preferences. It is a llittle more verbose:
-
-```javascript
-{
-    "path": {
-        "foo/foobar.js": {
-            "jscodehints.exclude": true
-        },
-        "thirdparty/**.js": {
-            "jscodehints.exclude": true
-        }
-    }
-}
-```
-
-vs.
-
-```javascript
-{
-    "jscodehints.exclude": ["foo/foobar.js", "thirdparty/**.js"]
-}
-```
-
-But it provides consistent handling of file matching and using the current APIs JS Code Hints can simply request the value of `jscodehints.exclude` with a context of each file it needs to check.
-
-
-## Code Hints "Light"
-
-If there are too many files, can we do something small and lightweight to gather up symbols from the other files? Or is this too difficult to integrate with Tern results?
 
 ## Breakdown of Code Hints issues
 
@@ -216,7 +184,7 @@ If there are too many files, can we do something small and lightweight to gather
 
 # The Rework
 
-These are the goals for the rework:
+These were the goals I had going in to the rework investigation, with most important on top:
 
 1. Better stability
 2. Better performance
@@ -225,70 +193,13 @@ These are the goals for the rework:
 5. Start integrating into a reusable, extensible project model
 6. Less code
 
-## General code notes
+The results are on the [JavaScript Code Hints Cleanup](https://trello.com/c/cNVSkHPV/1235-javascript-code-hints-cleanup) card.
 
-The line between the ScopeManager and the Session is confusing. Ahh, maybe it's the case that ScopeManager is like the model and Session connects the ScopeManager to the requests from the editor (the view model?). main.js is the one that glues it all together.
+The lowest priority two considerations have mostly fallen out of scope. After reviewing the code that is in the extension now, I don't think it's carrying much in the way of "excess baggage", beyond the preferences system. So, "less code" ends up largely being about removing its preferences system. The reusable, extensible project model requires some new infrastructure and this does not strike me as the project during which we should start that infrastructure. Some of the other needs are just too urgent and are not directly helped by the new model.
 
-## Better Stability
+* Better stability will come from automatic detection of files that make Tern spin out of control.
+* Better performance will come from trying to avoid killing the worker every 30 hints (partly enabled by file watchers) and trying to avoid reading/parsing/inferring the same JS file more than once
+* Better testability will come from refactoring ScopeManager to clarify the line between it and Session. This should make tests much faster. Making it possible to run Tern on the main thread can make certain problems easier to track down.
+* Improved results will come from attempting to remove limits (the arbitrary 2,000 line limit for files) that may have just been there because of the edge cases that were problematic for Tern
 
-The biggest stability issue is that Tern sometimes runs out of control. There's no one cause to these cases, just certain scripts that cause issues. If we can make a reproducible test case, we can pass that along to Marijn and likely get a fix. The goal should be to reduce the chances that users will have Brackets crash while continuing to give them code hints as much as possible.
-
-* track that an operation started and didn't end – remember the file that was being used, automatic blacklist, notify user and ask them to report bug
-* distribute a blacklist until issues are resolved (may not be necessary if we do the previous one). The blacklist should point to the Brackets issue
-* Update Tern. Haven't done this in a while
-* Question: is it possible for the main thread to detect that it hasn't received a response in a reasonable time and kill off the worker?
-
-These blacklists would be separate from the user's own exclusions. Users may have other reasons to exclude files from hinting.
-
-## Better Performance
-
-The main performance issues that the JS code hints implementation has is: 
-
-* redoing work that has already been done
-* doing too much work (reading files that it doesn't need to read)
-
-The second one is hard because it's hard to know for certain which files should be read when RequireJS is not used. The current heuristics may not be unreasonable. (**Enumerate below so that people can judge.**) From `ScopeManager.doEditorChange`:
-
-* canSkipTernInitialization checks that the file is among the resolvedFiles
-* If JSCH hasn't looked at the file before, it's going to restart Tern from scratch
-* Attempts to read all files under the project root
-* Read sibling files
-* If not using modules, read subdirectories of new file's directory
-
-Thanks for file watchers, we can make JS code hints smarter about redoing work. This should also allow us to improve some of the results because we won't be doing that extra work.
-
-When starting up for a project, we send the files with full paths. Then Tern requests some of the same files again (probably because it notices the `require` calls). For example, if you have ScopeManager open, we send ScopeManager to Tern as part of the pump priming... but we send it with the full path. Tern then requests ScopeManager, without the rest of the path, so we send the same file again. I don't know if we can avoid that.
-
-Switching out of Brackets and switching back did not cause a re-read of all of the files. Switching between files did not cause re-reading either. The re-reading that we're seeing must be the `MAX_HINTS` limit.
-
-Todo list:
-
-* Exclude files requested by Tern if they are in the exclusions list (confirmed that ScopeManager.handleTernGetFile doesn't do this)
-* Watch for file changes and update Tern when they happen
-
-## Easier, faster, more predictable tests
-
-It should be possible to generate code hints without an editor or proper document for many tests. It may be cleaner if there was a way to instantiate a Session that fully encapsulates code hinting state so that it's easy to set up and tear down for tests (and would likely be more understandable as a unit than the current Session/ScopeManager split).
-
-A Session would maintain state for a project.
-
-On my machine, the test suite takes 60-90 seconds to run. The largest portion of that is CodeMirror-related. While it's good to have *some* cases that test the interaction between the hints and the editor, it seems to me that most of the cases should be focused on the results we expect to see from the hinting engine. Imagine the information about the JavaScript code as the model and the editor as the view. We could build a bunch of tests for the model and some that are more integration-style tests that exercise the whole stack.
-
-Ability to switch code hints to run in the main thread would make troubleshooting considerably easier.
-
-## Improved Results
-
-node support? Custom configuration of Tern? Include custom def files?
-
-* Can we eliminate the "large line count"?
-* Can we eliminate MAX_HINTS?
-
-## Tern Configuration
-
-Should we take better advantage of [Tern's configuration](http://ternjs.net/doc/manual.html#configuration)? (Well, yes...)
-
-For example, Tern can be told to `loadEagerly`. Perhaps that's an option instead of us just shoving files at Tern. It can also be told to `dontLoad`, which means that maybe exclusions can be implemented on the Tern side.
-
-We should absolutely allow configuration of the RequireJS and Node plugins for Tern. We should also allow custom "libs" values.
-
-Is there a way for us to allow a mix of extensions and preferences? For example, can an extension provide a .defs file? Is that important?
+Finally, once all of the main work is done, we should do a bug squash in which we go back through the list of bugs do a final round of fixes that will likely be aided by the improved testability.
