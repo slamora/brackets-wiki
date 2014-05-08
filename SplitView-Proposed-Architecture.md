@@ -85,9 +85,9 @@ Moving this functionality to `MainViewManager` is being done primarily because e
 Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and the section below on *[Workingset Alternatives](#workingset-alternatives)* for more information.
 
 ## PaneViewList APIs
-`PaneViewList` APIs will replace the `WorkingSet` APIs and their implementation will be migrated from `DocumentManager`. Some of the `WorkingSet` APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  The `PaneViewList` APIs have the same functionality as the `Workingset` APIs from previous versions of Brackets except they will take a `paneId` to identify which pane's PaneViewList to work on.
+`PaneViewList` APIs will replace the `WorkingSet` APIs and their implementation will be migrated from `DocumentManager`. Some of the `WorkingSet` APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  The `PaneViewList` APIs have the same functionality as the `Workingset` APIs from previous versions of Brackets except they will take a `paneId` to identify which `PaneViewList` to work on.
 
-Most of the PaneViewList APIs will take one of these special constants for `paneId` in addition to valid paneIds:
+Most of the `PaneViewList` APIs will take one of these Special Pane IDs for `paneId` in addition to valid paneIds:
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
 Constant                | Usage
@@ -158,7 +158,7 @@ _height_ and _width_ are expressed in percentages when affixing the CSS to the c
 
 *NOTE:* To abstract the `PaneViewList's` location, each view pane is addressed by _paneId_ rather than row,col.  Valid _paneId_ values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
 
-Clients can use the shortcut _paneIds_ for `PaneViewList` APIs to avoid having to maintain a reference to the pane in which a view belongs.
+Clients can use the Special Pane IDs _paneIds_ for `PaneViewList` APIs to avoid having to maintain a reference to the pane in which a view belongs.
 
 # Implementing PaneViewListViews
 `PaneViewListView` objects are created when the event `viewPaneCreated` is handled.  `SideBarView` will handle this event and create a `PaneViewListView` object (which is bound to the pane's `PaneViewList` object) for the pane which passed as event data.
