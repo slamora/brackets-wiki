@@ -1,9 +1,9 @@
 Refactoring Brackets to Support Split View with Multiple Documents requires quite a bit of hacking on the plumbing but there are only a few places that need to be heavily refactored to do so.  To break this work up in to smaller pieces, an accompanying document [SplitView Architecture Tasking](SplitView-Architecture-Tasking) has been created.
 
 # Proposed Implementation 
-This proposal calls for anything that wants to show a view in the "Editor Workspace Area" must be a registered View Provider.  There are other ways to get views into this area but deserialization requires a method for views to be reconstructed at startup and this is done through a Registered View Provider. Registered View Providers expose methods to create a view for a given URI.  A ViewFactory will be responsible for maintaining the View Provider registry and invoke its `createView` method when a View Provider indicates that it can create a viewer for a URI.
+This proposal calls for anything that wants to show a view in the "Editor Workspace Area" must be a registered View Provider.  There are other ways to get views into this area but deserialization requires a method for views to be reconstructed at startup and this is done through a Registered View Provider. Registered View Providers expose methods to create a view for a given URI.  A ViewFactory will be responsible for maintaining the View Provider registry and invoke the Registered View Provider's `createView` method when a Registered View Provider indicates that it can create a viewer for a given URI.
 
-Initially there will be 2 Registered View Providers: an Image View Provider and a Document Editor provider.  `EditorManager` will be the registered the view provider for creating all document views.
+Initially there will be 2 Registered View Providers: an Image View Provider and a Document Editor provider.  `EditorManager` will be the registered  view provider for creating all document editors.
 
 Workingset management moves from `DocumentManager` to `MainViewManager` -- although some legacy APIs, Events, Functions, Commands, etc..., will remain for some time to maintain backwards compatibility. The concept of Workingset is going away and all Workingset APIs are going to be renamed `PaneViewList` and `WorkingSetView` becomes `PaneViewListView`.  
 
@@ -78,7 +78,7 @@ This will return any context data associated with the view when it was created
 # PaneViewList API
 The Implementation of these functions will move from `DocumentManager` to `MainViewManager`. See the section at the bottom of this document for a list of [deprecated Workingset APIs](#deprecating-legacy-apis) that need to be kept for backwards compatibility. 
 
-Moving these functions to `MainViewManager` is being done primarily because each view pane will have its own `PaneViewList` and `MainViewManager` manages the view panes so it makes sense to move it there. But, architecturally, it makes sense that the this list is a property of the view because it's really the structure of the UI -- **not the document**.
+Moving this functionality to `MainViewManager` is being done primarily because each view pane will have its own `PaneViewList` and `MainViewManager` manages the view panes so it makes sense to move it there. But, architecturally, it makes sense that this list is a property of the view because it's really a UI structure.
 
 Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and the section below on *[Workingset Alternatives](#workingset-alternatives)* for more information.
 
@@ -90,11 +90,11 @@ Most of the PaneViewList APIs will take one of these special constants for `pane
 ------------------------+-----------------------------------------------------------------------------------------------------
 Constant                | Usage
 ------------------------+-----------------------------------------------------------------------------------------------------
-ALL_PANES               | Perform the operation on all panes (e.g. search for fullpath in all Workingsets)
+ALL_PANES               | Perform the operation on all panes (e.g. search for fullpath in all Pane View Lists)
 FOCUSED_PANE            | Perform the operation on the currently focused pane (can also use MainViewManager.getFocusedPane())
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
-### MainViewManager.getWorkingSet(_paneId_)  
+### MainViewManager.getPaneViewList(_paneId_)  
 ### MainViewManager.addToPaneViewList(_paneId_, _file_, _open_)  
 ### MainViewManager.addListToPaneViewList(_paneId_, _files_)
 ### MainViewManager.removeFromPaneViewList(_paneId_, _file_) 
@@ -152,14 +152,14 @@ View HTML rendered at runtime and inserted it into the DOM by the `PaneViewManag
 _height_ and _width_ are expressed in percentages when affixing the CSS to the columns (e.g. `width: 40%`).  Doing it in a percentage and only applying to all except the rightmost column and bottom most row will yield a fluid layout.  The API will reject setting the width on the rightmost column.  For the initial implementation we may just go with 50% splits all around without the ability to resize. 
 
 #Implementing Pane Management
-`ViewManager` will manage a Workingset for each of its editor panes. This may be abstracted and delegated into a `Pane` object if implementation starts to get to messy but the API to get the Workingset will be on `ViewManager` to make the interface easier to use. Management of the Workingset will move from the `DocumentManager` into `ViewManager` the and the Workingset will no longer be a collection of `Document` objects.  It will be a collection of file names.  
+`ViewManager` will manage a PaneViewList for each of its editor panes. This may be abstracted and delegated into a `Pane` object if implementation starts to get to messy but the API to get the PaneViewList will be on `MainViewManager` to make the interface easier to use. Management of the Workingset will move from the `DocumentManager` into `ViewManager` the and renamed as `PaneViewList`. The list will no longer be a collection of `Document` objects.  It will be a collection of file names.  
 
-*NOTE:* To abstract the Workingset's pane location, each editor pane is addressed by _paneId_ rather than row,col.  Valid _paneId_ values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
+*NOTE:* To abstract the `PaneViewList's` location, each view pane is addressed by _paneId_ rather than row,col.  Valid _paneId_ values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
 
-Clients can use the shortcut _paneIds_ for `PaneViewList` APIs to avoid having to maintain a reference to the pane in which a view belongs.  It also allows us to create 1 API rather than 2 for `All` and `Focused` derivatives.
+Clients can use the shortcut _paneIds_ for `PaneViewList` APIs to avoid having to maintain a reference to the pane in which a view belongs.
 
 # Implementing PaneViewListViews
-PaneViewListView objects are created when the event `editorPaneCreated` is handled.  `SideBarView` will handle this event and create a `PaneViewListView` object (which is bound to the PaneViewList) created for the pane and passed in as event data.
+`PaneViewListView` objects are created when the event `viewPaneCreated` is handled.  `SideBarView` will handle this event and create a `PaneViewListView` object (which is bound to the pane's `PaneViewList` object) for the pane which passed as event data.
 
 `#open-files-container` is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The extensions which style the elements will continue to work. 
 
