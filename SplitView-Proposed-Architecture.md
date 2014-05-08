@@ -154,7 +154,7 @@ _height_ and _width_ are expressed in percentages when affixing the CSS to the c
 
 *NOTE:* To abstract the `PaneViewList's` location, each view pane is addressed by _paneId_ rather than row,col.  Valid _paneId_ values cannot be `false, 0, null, undefined or ""` so that they can be used in `truthy` tests.
 
-Clients can use the Special Pane IDs _paneIds_ for `PaneViewList` APIs to avoid having to maintain a reference to the pane in which a view belongs.
+Clients can use the [Special Pane IDs](#paneviewlist-apis) for `PaneViewList` APIs to avoid having to maintain a reference to the pane in which a view belongs.
 
 # Implementing PaneViewListViews
 `PaneViewListView` objects are created when the event `viewPaneCreated` is handled.  `SideBarView` will handle this event and create a `PaneViewListView` object (which is bound to the pane's `PaneViewList` object) for the pane which passed as event data.
