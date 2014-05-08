@@ -85,7 +85,7 @@ Moving this functionality to `MainViewManager` is being done primarily because e
 Extension Authors and 3rd party developers are encouraged to use other methods whenever possible to work with the set of open documents.  See the [SplitView Extension Migration Guide](SplitView-Extension-Migration-Guide) and the section below on *[Workingset Alternatives](#workingset-alternatives)* for more information.
 
 ## PaneViewList APIs
-`PaneViewList` APIs will replace the `WorkingSet` APIs and their implementation will be migrated from `DocumentManager`. Some of these APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  The new APIs have the same functionality as the Workingset APIs in previous versions of Brackets except they will take a `paneId` to identify which pane's PaneViewList to work on.
+`PaneViewList` APIs will replace the `WorkingSet` APIs and their implementation will be migrated from `DocumentManager`. Some of the `WorkingSet` APIs will continue to exist in `DocumentManager` to maintain backwards compatibility.  The `PaneViewList` APIs have the same functionality as the `Workingset` APIs from previous versions of Brackets except they will take a `paneId` to identify which pane's PaneViewList to work on.
 
 Most of the PaneViewList APIs will take one of these special constants for `paneId` in addition to valid paneIds:
 ```text
