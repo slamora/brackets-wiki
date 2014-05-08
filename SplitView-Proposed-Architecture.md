@@ -141,7 +141,7 @@ Whether or not the initial implementation uses a `MainViewLayoutManager` object 
 
 **Layout Rules:**
 * Only 1 pane or 1 row and 2 columns or 2 rows and 1 column are initially supported
-* Any Pane created by this API initially will show the Brackets logo interstitial screen until the corresponding view for that pane has loaded its content.
+* Panes, when created, will initially show the Brackets logo interstitial screen until the corresponding view for that pane has loaded its content.
 * When a pane is destroyed, all views in the corresponding `PaneViewList` for that pane are moved to another pane and that pane's `PaneViewList` is updated.  Since there is only 2 panes at most in the initial implementation this is just a matter of collapsing them down to the remaining Pane's `ViewPaneList`.  This will generate a `viewPaneListRemoveList` event is generated for the pane losing views and a corresponding  `viewPaneListAddList` event is generated for the pane who is receiving the the views.
 
 View HTML rendered at runtime and inserted it into the DOM by the `PaneViewManager`.  The `Editor` Instance will generate the HTML when the `EditorManager` asks for it and insert it into the DOM in the appropriate place to ensure proper z-order.  The generated HTML can either come from a template rendered with Mustache or simple jQuery insertion.  This is the same process for any RegisteredViewProvider.
