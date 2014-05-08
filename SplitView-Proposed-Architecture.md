@@ -167,7 +167,7 @@ To support images in split view, we will need to change the rules to allow for i
 `PaneViewLists` will basically just be a list of files that may or may not have a `Document` object owned by the `DocumentManager`.  The deprecated API, `DocumentManager.getWorkingSet()`, will use the `PaneViewList` APIs to filter out any files that do not have an associated `Document` object.
 
 # Implementing PaneViewListView Context Menus
-This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `PaneViewListView` will be maintain the paneId from the `EventData` it was passed during creation so the menu can operate on the correct pane's `ViewPaneList`.
+This currently works by listening to `contextmenu` events on the `#open_files_container`.  This will change to listen to `contextmenu` events on an `.open_files_container` and the `PaneViewListView` will maintain the _paneId_ from the `EventData` it was passed during creation so the menu can operate on the correct pane's `ViewPaneList`.
 
 Right clicking on a `ViewPaneList` item will also trigger a focus action on view for that `ViewPaneList` item causing the view to gain focus.  
 
@@ -228,7 +228,7 @@ DocumentManager.removeFromWorkingSet | return ViewManager
 ```
 
 # Deprecating Legacy Events
-The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just be a repub of the EditorManager events. 
+The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just be a repub of the `EditorManager` events. 
 
 
 ### DocumentManager.workingSetAdd                
