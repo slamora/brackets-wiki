@@ -157,7 +157,7 @@ _height_ and _width_ are expressed in percentages when affixing the CSS to the c
 Clients can use the [Special Pane IDs](#paneviewlist-apis) for `PaneViewList` APIs to avoid having to maintain a reference to the pane in which a view belongs.
 
 # Implementing PaneViewListViews
-`PaneViewListView` objects are created when the event `viewPaneCreated` is handled.  `SideBarView` will handle this event and create a `PaneViewListView` object (which is bound to the pane's `PaneViewList` object) for the pane which is passed as event data.
+`PaneViewListView` objects are created when the event `viewPaneCreated` is handled.  `SideBarView` will handle this event and create a `PaneViewListView` object (which is bound to the pane's `PaneViewList` object) for the pane (passed as event data).
 
 `#open-files-container` is a container which contains one or more `.working-set-container` divs in the DOM. Several 3rd Party Extensions rely or use the `#open-files-container` div. The extensions which style the elements will continue to work. 
 
