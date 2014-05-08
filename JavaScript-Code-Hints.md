@@ -101,7 +101,7 @@ The main hints themselves will be unchanged from the current format.
 
 Documentation on a function or variable will pop out to the side of the main hint window when a hint is highlighted. A small delay between highlighting a hint and displaying the documentation will prevent flash in the case where the user is quickly moving through the hints. The documentation for functions will contain the function signature, origin, description, parameters, and return type. The documentation window for variables and properties will show the type, origin, and description. The figure below shows a documentation hint for a highlighted function.
 
-# Refactoring Project (early 2014)
+# Refactoring Project (spring 2014)
 
 Two significant features with an impact on JS Code Hints shipped in Brackets 36: file watchers and preferences. As a result, we've chosen this time to [refactor the JS code hints code](https://trello.com/c/BMVw25vU/75-research-js-code-hints-cleanup) in order to improve the overall performance of code hints.
 
@@ -147,6 +147,7 @@ If there are too many files, can we do something small and lightweight to gather
 * [Mac OSX - Freeze - Grey Screen](https://github.com/adobe/brackets/issues/7308)
 * [Entire window goes blank](https://github.com/adobe/brackets/issues/7262)
 * [Brackets crashes](https://github.com/adobe/brackets/issues/7025)
+* [CPU stays at 100% with specific project](https://github.com/adobe/brackets/issues/7245)
 
 ### Hints not behaving as expected
 
@@ -162,6 +163,10 @@ If there are too many files, can we do something small and lightweight to gather
 * [Support require() calls not in an AMD wrapper](https://github.com/adobe/brackets/issues/3801)
 * [Incorrect jQuery hints when switching to a $. from $(something)](https://github.com/adobe/brackets/issues/3685)
 * [Should not show hints after typing a dot with no function call before it](https://github.com/adobe/brackets/issues/3682)
+* [include JSLint-defined globals story](https://trello.com/c/AOEjxuDl/1011-js-code-hints-should-include-jslint-defined-globals)
+* [Code hints for require() path strings story](https://trello.com/c/0HWEDXGE/997-code-hints-for-require-path-strings)
+* [Improved code hints for extension authors story](https://trello.com/c/xBlcCYju/990-improved-code-hints-for-extension-authors)
+* [Better formatting for optional arguments story](https://trello.com/c/jm6sMvdz/955-js-code-hints-better-formatting-for-optional-arguments)
 
 **Problems in Tern**
 
@@ -177,6 +182,7 @@ If there are too many files, can we do something small and lightweight to gather
 
 * [make jump to definition response faster (on large JS framework file)](https://github.com/adobe/brackets/issues/4066)
 * [Apparent performance test regression in JS Quick Edit when Tern doesn't find results](https://github.com/adobe/brackets/issues/3961)
+* [JS Code Hints File Handling Revamp story](https://trello.com/c/VjAiuH31/1070-js-code-hints-file-handling-revamp)
 
 ### StringMatch
 
@@ -191,6 +197,8 @@ If there are too many files, can we do something small and lightweight to gather
 
 * [Unit tests for 6931, referencing members of a class](https://github.com/adobe/brackets/issues/7152)
 * [Console errors when running unit tests](https://github.com/adobe/brackets/issues/6937)
+* [Intermittent test failure](https://github.com/adobe/brackets/issues/7646)
+* [Automated testing for JS code hinting with various frameworks/projects](https://trello.com/c/gqdpxfM2/937-automated-testing-for-js-code-hinting-with-various-frameworks-projects)
 
 ### Preferences Handling
 
@@ -199,7 +207,88 @@ If there are too many files, can we do something small and lightweight to gather
 * [max-file-count takes less files to be processed for hints](https://github.com/adobe/brackets/issues/4195)
 * [excluded-files preference does not support directory names in file path](https://github.com/adobe/brackets/issues/4191)
 * [when open an excluded file is opened methods and properties not excluded](https://github.com/adobe/brackets/issues/4190)
+* [Understand require configuration story](https://trello.com/c/mq7dZnlv/1049-js-code-hints-understand-require-configuration)
+* [JS Code Hint preferences story](https://trello.com/c/BOgGIzWW/1046-js-code-hint-preferences)
 
 ### Other
 
 * [JavaScript Jump To Definition Ctrl+J/Cmd+J not mentioned in Right-Click Menu](https://github.com/adobe/brackets/issues/3860)
+
+# The Rework
+
+These are the goals for the rework:
+
+1. Better stability
+2. Better performance
+3. Easier testability with more predictability
+4. Improved results
+5. Start integrating into a reusable, extensible project model
+6. Less code
+
+## General code notes
+
+The line between the ScopeManager and the Session is confusing. Ahh, maybe it's the case that ScopeManager is like the model and Session connects the ScopeManager to the requests from the editor (the view model?). main.js is the one that glues it all together.
+
+## Better Stability
+
+The biggest stability issue is that Tern sometimes runs out of control. There's no one cause to these cases, just certain scripts that cause issues. If we can make a reproducible test case, we can pass that along to Marijn and likely get a fix. The goal should be to reduce the chances that users will have Brackets crash while continuing to give them code hints as much as possible.
+
+* track that an operation started and didn't end – remember the file that was being used, automatic blacklist, notify user and ask them to report bug
+* distribute a blacklist until issues are resolved (may not be necessary if we do the previous one). The blacklist should point to the Brackets issue
+* Update Tern. Haven't done this in a while
+* Question: is it possible for the main thread to detect that it hasn't received a response in a reasonable time and kill off the worker?
+
+These blacklists would be separate from the user's own exclusions. Users may have other reasons to exclude files from hinting.
+
+## Better Performance
+
+The main performance issues that the JS code hints implementation has is: 
+
+* redoing work that has already been done
+* doing too much work (reading files that it doesn't need to read)
+
+The second one is hard because it's hard to know for certain which files should be read when RequireJS is not used. The current heuristics may not be unreasonable. (**Enumerate below so that people can judge.**) From `ScopeManager.doEditorChange`:
+
+* canSkipTernInitialization checks that the file is among the resolvedFiles
+* If JSCH hasn't looked at the file before, it's going to restart Tern from scratch
+* Attempts to read all files under the project root
+* Read sibling files
+* If not using modules, read subdirectories of new file's directory
+
+Thanks for file watchers, we can make JS code hints smarter about redoing work. This should also allow us to improve some of the results because we won't be doing that extra work.
+
+When starting up for a project, we send the files with full paths. Then Tern requests some of the same files again (probably because it notices the `require` calls). For example, if you have ScopeManager open, we send ScopeManager to Tern as part of the pump priming... but we send it with the full path. Tern then requests ScopeManager, without the rest of the path, so we send the same file again. I don't know if we can avoid that.
+
+Switching out of Brackets and switching back did not cause a re-read of all of the files. Switching between files did not cause re-reading either. The re-reading that we're seeing must be the `MAX_HINTS` limit.
+
+Todo list:
+
+* Exclude files requested by Tern if they are in the exclusions list (confirmed that ScopeManager.handleTernGetFile doesn't do this)
+* Watch for file changes and update Tern when they happen
+
+## Easier, faster, more predictable tests
+
+It should be possible to generate code hints without an editor or proper document for many tests. It may be cleaner if there was a way to instantiate a Session that fully encapsulates code hinting state so that it's easy to set up and tear down for tests (and would likely be more understandable as a unit than the current Session/ScopeManager split).
+
+A Session would maintain state for a project.
+
+On my machine, the test suite takes 60-90 seconds to run. The largest portion of that is CodeMirror-related. While it's good to have *some* cases that test the interaction between the hints and the editor, it seems to me that most of the cases should be focused on the results we expect to see from the hinting engine. Imagine the information about the JavaScript code as the model and the editor as the view. We could build a bunch of tests for the model and some that are more integration-style tests that exercise the whole stack.
+
+Ability to switch code hints to run in the main thread would make troubleshooting considerably easier.
+
+## Improved Results
+
+node support? Custom configuration of Tern? Include custom def files?
+
+* Can we eliminate the "large line count"?
+* Can we eliminate MAX_HINTS?
+
+## Tern Configuration
+
+Should we take better advantage of [Tern's configuration](http://ternjs.net/doc/manual.html#configuration)? (Well, yes...)
+
+For example, Tern can be told to `loadEagerly`. Perhaps that's an option instead of us just shoving files at Tern. It can also be told to `dontLoad`, which means that maybe exclusions can be implemented on the Tern side.
+
+We should absolutely allow configuration of the RequireJS and Node plugins for Tern. We should also allow custom "libs" values.
+
+Is there a way for us to allow a mix of extensions and preferences? For example, can an extension provide a .defs file? Is that important?
