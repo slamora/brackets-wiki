@@ -18,18 +18,21 @@ You will need an HTTP and PHP server for these tests. Options are:
 
 Server Setup (Linux)
 ==============
-### Install the LAMP stack if you haven't already 
+### Make sure you have the latest updates to Linux
 ```text
 sudo apt-get update
+```
+### Install the LAMP stack if you haven't already 
+```text
 sudo apt-get install lamp-server^
 (Mind the caret [^] that the end)
 ```
-### Next copy the server tests and launch Brackets 
+### Copy the server tests and launch Brackets 
 ```text
 sudu cp -r ~/brackets/test/smokes/server-tests /var/www
 gksudo "/opt/brackets/brackets" 
 ```
-### Now proceed to "Server smoke test steps" below.
+### Proceed to "Server smoke test steps" below.
 
 Setup
 =====
