@@ -76,6 +76,9 @@ Live Preview currently has a few other important limitations:
 * Only one HTML file can be previewed at a time. If you switch to a different HTML file in Brackets, the browser preview will switch to that new page as well.
 * Updating pauses when the HTML is syntactically invalid (e.g. after you type '<' for a new tag but before you type the closing '>'). The line number and Live Preview icon turn red in this case. Brackets will resume pushing changes to the browser when syntax becomes valid again.
 
+See **[Live Preview troubleshooting](https://github.com/adobe/brackets/wiki/Troubleshooting#livedev
+)** for additional help.
+
 
 ### <a id="quickview"></a>Quick View
 Quick View makes it easy to visualize assets and colors in your code. Just hover your
