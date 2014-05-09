@@ -3,7 +3,7 @@ This set of Smoke Tests exercise Brackets code that requires a server. As with t
 If you have trouble running through it or something is unclear, please post to the [brackets-dev mailing list](http://groups.google.com/group/brackets-dev).
 
 
-Server Setup
+Server Setup (Mac/Windows)
 ============
 You will need an HTTP and PHP server for these tests. Options are:
 * Setup a local server (e.g. wamp/mamp).
