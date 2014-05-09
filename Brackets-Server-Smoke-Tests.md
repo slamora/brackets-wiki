@@ -19,6 +19,7 @@ You will need an HTTP and PHP server for these tests. Options are:
 Server Setup (Linux)
 ==============
 ### Make sure you have the latest updates to Linux
+_NOTE: You only need to do this if you haven't already installed LAMP_
 ```text
 sudo apt-get update
 ```
