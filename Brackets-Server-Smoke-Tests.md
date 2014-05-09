@@ -25,7 +25,7 @@ sudo apt-get install lamp-server^
 (Mind the caret [^] that the end)
 ```
 
-2. Now copy the server tests and launch Brackets
+2. Next copy the server tests and launch Brackets with super user privileges so you can files in the www folder.
 ```text
 sudu cp -r ~/brackets/test/smokes/server-tests /var/www
 gksudo "/opt/brackets/brackets" 
