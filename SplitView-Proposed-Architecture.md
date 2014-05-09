@@ -228,7 +228,7 @@ DocumentManager.removeFromWorkingSet | return ViewManager
 ```
 
 # Deprecating Legacy Events
-The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just republish of the `MainViewManager` events. 
+The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just republish `MainViewManager` events. 
 
 
 ### DocumentManager.workingSetAdd                
