@@ -6,11 +6,11 @@ Here are the high-level changes that Extension Authors need to keep in mind:
 
 * `EditorManager.getFocusedEditor().getDocument()` may return `null`. There are many cases when this may happen so extension authors need to be prepared for this. 
 
-* Brackets will no longer have a single Workingset.  Each "Editor Pane", as we're calling it, will have its own Workingset.  This is probably the most disruptive change because the Workingset is used quite extensively to monitor various events and provide useful feedback to the user about open documents.  Extension authors can use `EditorManager.getWorkingSet(FOCUSED_PANE)` to get the focused editor's Workingset or use `editorManager.getAllWorkingSets()` to get all Workingsets.  The latter of which returns an array of arrays.
+* Brackets will no longer have a single Workingset.  Each "View Pane", as we're calling it, will have its own list of open files.  This is probably the most disruptive change because the Workingset is used quite extensively to monitor various events and provide useful feedback to the user about open documents.  Extension authors can use `DocumentManager.getAllOpenDocuments()` to get the list of all open documents or `ProjectManager.getAllOpenFiles()` to get the list of all open files.  
 
-* Workingsets will no longer contain only filenames that have `Document` objects so extension authors will need to be able to handle the case where `DocumentManager.getDocumentForPath(workingSet[0])` may return `null`.  To that effect, extension authors are strongly discouraged from directly using the workingset APIs as these may change over time.  This may not be entirely possible as extensions that work integrate with the WorkingSetView will need to use the working set.  There are several alternatives to getting the list of open files, documents, and the like, however, and those APIs are preferred. Extension Authors using the new workingset APIs should also be prepared to handle the case where a file may show up in more than one working set.
+* Pane View Lists will contain filenames that may not map to `Document` objects so extension authors will need to be able to handle the case where `DocumentManager.getDocumentForPath()` will return `null`.  To that effect, extension authors are strongly discouraged from directly using the Pane View APIs wherever possible as these may change over time.  This may not be entirely possible as extensions that integrate with the WorkingSetView  will need to use the `PaneViewList` APIs.  There are several alternatives to getting the list of open files, documents, and the like, however, and those APIs are preferred. Extension Authors using the new workingset APIs should also be prepared to handle the case where a file may show up in more than one working set.
 
-All `DocumentManager` Workingset APIs will continue to work for some time but these are deprecated and will eventually be removed. Below is a chart of used APIs and the recommended upgrade path.
+Some `DocumentManager` Workingset APIs will continue to work for some time but these are deprecated and will eventually be removed. Below is a chart of currently used APIs and the recommended upgrade path.
 
 ## Changes to Workingset APIs
 
@@ -18,22 +18,22 @@ All `DocumentManager` Workingset APIs will continue to work for some time but th
 -------------------------------------------+----------------------------------------------------------------------------------
 API                                        |  Recommended Substitution
 -------------------------------------------+----------------------------------------------------------------------------------
-DocumentManager.findInWorkingSet           |  EditorManager.findInWorkingSet(EditorManager.ALL_PANES) 
+DocumentManager.findInWorkingSet           |  MainViewManager.findInPaneViewList(MainViewManager.ALL_PANES) 
 -------------------------------------------+----------------------------------------------------------------------------------
 DocumentManager.getCurrentDocument()       |  EditorManager.getFocusedEditor().getDocument()              
 -------------------------------------------+----------------------------------------------------------------------------------
-DocumentManager.getWorkingSet()            |  EditorManager.getWorkingSet(EditorManager.FOCUSED_PANE)         
+DocumentManager.getWorkingSet()            |  MainViewManager.getPaneViewList(MainViewManager.FOCUSED_PANE)         
 -------------------------------------------+----------------------------------------------------------------------------------
-DocumentManager.addToWorkingSet()          |  EditorManager.addToWorkingSet(EditorManager.FOCUSED_PANE)         
+DocumentManager.addToWorkingSet()          |  MainViewManager.addToPaneViewList(MainViewManager.FOCUSED_PANE)         
 -------------------------------------------+----------------------------------------------------------------------------------
-DocumentManager.addListToWorkingSet()      |  EditorManager.addListToWorkingSet(EditorManager.FOCUSED_PANE)         
+DocumentManager.addListToWorkingSet()      |  MainViewManager.addListToPaneViewList(MainViewManager.FOCUSED_PANE)         
 -------------------------------------------+----------------------------------------------------------------------------------
-DocumentManager.removeFromWorkingSet()     |  EditorManager.removeFromWorkingSet(EditorManager.ALL_PANES)         
+DocumentManager.removeFromWorkingSet()     |  MainViewManager.removeFromPaneViewList(MainViewManager.ALL_PANES)         
 -------------------------------------------+----------------------------------------------------------------------------------
 ```
 The existing single-workingset APIs (`DocumentManager.getWorkingSet`, `DocumentManager.addToWorkingSet`, etc...) are still available but deprecated. They are convenience functions that delegate the work to  `EditorManager` and operate on the currently focused editor only.
 
-The new Workingset APIs take an identifier of the pane containing the Workingset to work on .  These APIs will have a `paneId` as the first argument which is gotten from `EditorManager.createPane()` or from the event `EditorManager.editorPaneCreated`. There are, however, 2 shortcut constants you can use to make life simpler:
+Most of the PaneViewList APIs will take one of these Special Pane IDs for paneId in addition to valid paneIds:
 
 ```text
 ------------------------+-----------------------------------------------------------------------------------------------------
@@ -44,21 +44,21 @@ FOCUSED_PANE            | Perform the operation on the currently focused pane (c
 ------------------------+-----------------------------------------------------------------------------------------------------
 ```
 
-Extension Authors should also be aware that moving `DocumentManager.findInWorkingSet()` to `EditorManager` will change to return an object `{pane: paneId, index: index}` or `undefined` if the file was not found.  `DocumentManager.findInWorkingSet()` will continue to work as it does today but a deprecation warning will be written to the console and it will only search using the `FOCUSED_PANE` derivative.
+Extension Authors should also be aware that moving `findInPaneViewList()` will return an object `{pane: paneId, index: index}` or `undefined` if the file was not found.  `DocumentManager.findInWorkingSet()` will continue to work as it does today but a deprecation warning will be written to the console and it will only search using the `FOCUSED_PANE` derivative.
 
 ## Changes to WorkingSet Events
 
-Workingset Events are currently fired by `DocumentManager`.  `DocumentManager` will continue to fire the following events but they are being deprecated and will stop working in a future version of Brackets. 
+`DocumentManager` will continue to fire the following events but they are being deprecated and will stop working in a future version of Brackets. 
 
 ```text
 -------------------------------------------+-----------------------------------------------------------------------------------
 Event Name                                 |  Recommended Substitution
 -------------------------------------------+-----------------------------------------------------------------------------------
-DocumentManager.workingSetAdd              |  EditorManager.workingSetAdd
+DocumentManager.workingSetAdd              |  MainViewManager.paneViewListAdd
 -------------------------------------------+-----------------------------------------------------------------------------------
-DocumentManager.workingSetAddList          |  EditorManager.workingSetAddList         
+DocumentManager.workingSetAddList          |  MainViewManager.paneViewListAddList         
 -------------------------------------------+-----------------------------------------------------------------------------------
-DocumentManager.workingSetRemove           |  EditorManager.workingSetRemove   
+DocumentManager.workingSetRemove           |  MainViewManager.paneViewListRemove   
 -------------------------------------------+-----------------------------------------------------------------------------------
   
 ```
@@ -68,7 +68,7 @@ DocumentManager.workingSetRemove           |  EditorManager.workingSetRemove
 -------------------------------------------+-----------------------------------------------------------------------------------
 API                                        |  Recommended Substitution
 -------------------------------------------+-----------------------------------------------------------------------------------
-EditorManager.getCurrentlyViewedPath()     |  EditorManager.getFocusedPane().getCurrentlyViewedPath()
+EditorManager.getCurrentlyViewedPath()     |  MainViewManager.getFocusedPane().getCurrentlyViewedPath()
 -------------------------------------------+-----------------------------------------------------------------------------------
 ```
 
