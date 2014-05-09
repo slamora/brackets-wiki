@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Sprint 39 -- approximately May 5._
+_This document will not be finalized until the end of Sprint 39 -- approximately May 12._
 
 What's New in Sprint 39
 -----------------------
