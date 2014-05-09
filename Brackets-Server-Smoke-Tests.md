@@ -2,10 +2,11 @@ This set of Smoke Tests exercise Brackets code that requires a server. As with t
 
 If you have trouble running through it or something is unclear, please post to the [brackets-dev mailing list](http://groups.google.com/group/brackets-dev).
 
+
 Server Setup
 ============
 You will need an HTTP and PHP server for these tests. Options are:
-* Setup a local server (e.g. wamp/mamp/lamp).
+* Setup a local server (e.g. wamp/mamp).
 * Use built-in server on Mac:  
     a. (OSX 10.7 and earlier) Turn on web server: System Preferences > Sharing > Web Sharing: On  
     b. Turn on PHP server: Edit /etc/apache2/httpd.conf, uncomment following line:  
@@ -14,6 +15,16 @@ You will need an HTTP and PHP server for these tests. Options are:
     d. (OSX 10.8 and later) Start (or restart) apache:  run `sudo apachectl start` in a terminal window (use `restart` if already running)
 * Use a remote server with drive mapped to local machine.
 * Sprint 21: Brackets has node js built-in with an HTTP server plugin. Any project folder can be the server root. Note that this server does not support PHP, so the .php cannot be viewed, but all of the tests in that section can be run using one of the .html pages.
+
+Server Setup (Linux)
+==============
+Install the LAMP stack if you haven't already 
+* sudo apt-get update
+* sudo apt-get install lamp-server^
+(Mind the caret [^] that the end)
+* sudu cp -r ~/brackets/test/smoke/server-tests /var/www
+* gksudo "/opt/brackets/brackets" 
+> proceed to the "Server smoke test steps" section below.
 
 Setup
 =====
