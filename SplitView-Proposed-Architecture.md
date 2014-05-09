@@ -228,7 +228,7 @@ DocumentManager.removeFromWorkingSet | return ViewManager
 ```
 
 # Deprecating Legacy Events
-The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just be a repub of the `EditorManager` events. 
+The following Events will be kept on the `DocumentManager` object to maintain backwards compatibility but will just republish of the `MainViewManager` events. 
 
 
 ### DocumentManager.workingSetAdd                
@@ -237,7 +237,7 @@ The following Events will be kept on the `DocumentManager` object to maintain ba
 ### DocumentManager.currentDocumentChange 
 _Fired when handling `EditorManager.fullEditorChanged`_
 
-# Subbing Modules
+# Stubbing Modules
 
 Both `WorkingSetView` and `PanelManager` will need to be stubbed and deprecation warnings will be added to them when used.
 
