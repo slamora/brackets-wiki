@@ -12,15 +12,17 @@
 
 ### Demos & experiments
 
-[space-age-miracle-tools.js (JSConf 2013)](http://t.co/QOjDEl7vTy) - Narciso (nj) Jaramillo
+[space-age-miracle-tools.js (JSConf 2013)](http://t.co/QOjDEl7vTy) - Narciso (nj) Jaramillo, Peter Flynn (various experiments)
 
-[Space Age Miracle Tools: Experiments with Brackets](http://tv.adobe.com/watch/max-2013/space-age-miracle-tools-experiments-with-brackets/) - Jason San Jose, Adam Lehman, Ryan Stewart, Peter Flynn
+[QCon 2013: Exploring the Future of Web Tooling with Brackets](http://www.infoq.com/presentations/brackets) - Narciso (nj) Jaramillo (various experiments)
 
-[Theseus JavaScript Debugger for Brackets](http://www.youtube.com/watch?v=T6d5C3rLeFY) - Tom Lieber
+[Theseus JavaScript Debugger for Brackets](http://www.youtube.com/watch?v=T6d5C3rLeFY) - Tom Lieber (available today!)
 
-["PSD Lens" Concept: from Design Comp to Code](http://www.youtube.com/watch?v=xAP8CSMEwZ8) - Narciso (nj) Jaramillo
+["PSD Lens" Concept: from Design Comp to Code](http://www.youtube.com/watch?v=xAP8CSMEwZ8) - Narciso (nj) Jaramillo (work in progress)
 
-[QCon 2013: Exploring the Future of Web Tooling with Brackets](http://www.infoq.com/presentations/brackets) - Narciso (nj) Jaramillo
+[Responsive design tool for Brackets](http://youtu.be/kXTP8XqrSwE) - Lee Brimelow (experiment/demo only)
+
+[Space Age Miracle Tools: Experiments with Brackets](http://tv.adobe.com/watch/max-2013/space-age-miracle-tools-experiments-with-brackets/) - Jason San Jose, Adam Lehman, Ryan Stewart, Peter Flynn (various experiments)
 
 ### Under the hood
 
