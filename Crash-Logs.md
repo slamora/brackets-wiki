@@ -10,13 +10,11 @@ Native crash logs are useful for diagnosing cases where the Brackets window disa
 
 ## Windows
 
-If you want steps 1-5 done for you automatically, you can [go to this GitHub help page](https://help.github.com/articles/getting-a-crash-dump) and download and run the file from the link that says "this file."
-
 1. On the Start menu, search for and run the "regedit" app
 2. Navigate down the tree and select: "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Windows Error Reporting"
-3. If there is no "LocalDumps" folder, choose Edit > New > Key to create it
-4. Inside this folder, choose Edit > New > DWORD.  Enter `DumpType` for the name, then double-click it and enter `1` for the value
-5. Similarly, choose Edit > New > DWORD with the name `DumpCount` and the value `10`
+3. If there is no "LocalDumps" folder, choose _Edit > New > Key_ to create it
+4. Inside the "LocalDumps" folder, choose _Edit > New > Key_ and create a subfolder called `Brackets.exe`
+5. Inside this "Brackets.exe" subfolder, choose _Edit > New > DWORD_.  Enter `DumpType` for the name, then double-click it and enter `2` for the value
 6. Close regedit and restart your computer (or at least fully log off and log back on, which is almost as much work)
 7. Run Brackets until you see the problem again
 8. In a Windows folder view, enter ` %LOCALAPPDATA%\CrashDumps` as the path
