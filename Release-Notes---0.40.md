@@ -7,6 +7,7 @@ What's New in Release 0.40
 * **Search**
     * [Replace across multiple files](https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files): You can see all search matches first and uncheck any you don't wish to replace. Supports the same exclusion filtering as Find in Files.
     * [Save multiple file exclusion filters](https://trello.com/c/4EQI1XwC/1137-2s-save-edit-multiple-different-file-exclusion-sets): Instead of a single file/folder search filter, you can name and save multiple different filters for quick use.
+    * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
 * **File Types**
     * [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409): Use the language indicator in the status bar as a dropdown to override the language Brackets chose to treat a file as. (These changes are _not_ saved when you close the file; use the preferences above to permanently treat all files with a certain extension as a different language).
 * **Ongoing Research** (not implemented yet)
@@ -21,7 +22,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-
 
 UI Changes
 ----------
-No major changes to existing features.
+**Quick Open** - The first item is automatically highlighted, making it more clear that you can press Enter immediately to jump to the top item (Down arrow not required). Highlighting the 2nd item in the result list now only requires pressing the Down arrow once (previously required two presses). Quick Find Definition no longer changes the scroll position until you start typing.
 
 
 API Changes
