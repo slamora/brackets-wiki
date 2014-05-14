@@ -1,7 +1,7 @@
 What's New in Sprint 38
 -----------------------
 * **Multiple Cursors**
-    * [Multiple cursor / multiple selection support](https://trello.com/c/g58aNzCz/1187-finish-multiple-selection-multiple-cursor-support), including...
+    * **[Multiple cursor / multiple selection support](https://trello.com/c/g58aNzCz/1187-finish-multiple-selection-multiple-cursor-support)**, including...
     * Ctrl/Cmd-click or drag to create multiple cursors/selections
     * Alt-drag to create a rectangular selection (add Ctrl/Cmd to select multiple rectangles)
     * Ctrl/Cmd-U to undo selection/cursor changes (add Shift to navigate forward in cursor history)
