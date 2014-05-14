@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Release 0.40 -- approximat
 What's New in Release 0.40
 --------------------------
 * **Search**
-    * [Replace across multiple files](https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files): You can see all search matches first and uncheck any you don't wish to replace. Supports the same exclusion filtering as Find in Files.
+    * **[Replace across multiple files](https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files)**: You can see all search matches first and uncheck any you don't wish to replace. Supports the same exclusion filtering as Find in Files.
     * [Save multiple file exclusion filters](https://trello.com/c/4EQI1XwC/1137-2s-save-edit-multiple-different-file-exclusion-sets): Instead of a single file/folder search filter, you can name and save multiple different filters for quick use.
     * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
 * **File Types**
