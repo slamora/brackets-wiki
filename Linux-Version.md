@@ -2,7 +2,7 @@ Download Brackets
 ====
 
 * Contributors - See [Linux Development For Contributors](https://github.com/adobe/brackets/wiki/Linux-Development-for-Contributors). This is your guide to setting up a development environment, navigating your way around the code base, finding Linux specific user stories to contribute to, and updates on our progress overall.
-* Users - Visit [download.brackets.io](http://download.brackets.io) for 64-bit and 32-bit debian package downloads.
+* Users - Visit [brackets.io](http://brackets.io) for 64-bit and 32-bit debian package downloads.
 
 Feature Status
 ====
