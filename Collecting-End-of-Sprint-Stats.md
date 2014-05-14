@@ -40,7 +40,11 @@ But you can get a _rough_ number via a "closed issues" milestone query on GitHub
 
 #### Downloads
 
-* **Total downloads** - sum [sprint download stats](http://download.brackets.io/report.cfm) across all 3 platforms
+1. Go to the brackets.io analytics page
+2. Drill down to Behavior > Events > Top Events and select the desired sprint number
+3. In the "Secondary dimension" dropdown, choose Users > Operating System
+
+* **Total downloads** - sum Mac + Linux + Windows (ignore the tiny number of downloads on misc other OSes)
 * **Platform breakdown (%)** - divide each platform by the total
     * Note: this may understate Linux users, since we know there are some alternative distribution channels that don't hit our download site
 
