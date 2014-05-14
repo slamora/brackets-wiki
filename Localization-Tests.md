@@ -37,13 +37,14 @@ $ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 1. Top Level
 2. File
 3. Edit
-4. View
-5. Navigate
-6. Help
+4. Find
+5. View
+6. Navigate
+7. Help
 
 ### Toolbar
-1. Experimental Build
-2. Lightning bolt icon tooltip ``<tooltip_live_preview>``
+1. Lightning bolt icon tooltip ``<tooltip_live_preview>``
+2. Extension Manager
 
 ### About
 1. On mac, ``Brackets > About Brackets``. On win, ``Help > About``
@@ -55,6 +56,7 @@ $ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 2. Open the ``View`` menu again
 3. Confirm the label has changed to ``View > Show Sidebar`` ``<menu_view_show_sidebar>``
 4. Click ``View > Show Sidebar``
+5. In the Sidebar, click the gear icon in the Working Files header.  Confirm the sort methods.
 
 # File Operations
 
@@ -192,14 +194,20 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 ### Find/Replace
 1. Open ``index.html``
-2. Click ``Edit > Find`` menu
+2. Click ``Find > Find`` menu
 3. Confirm find UI appears at the top of the editor ``<dialog_find>``
 4. Press escape
-5. Click ``Edit > Replace`` menu
+5. Click ``Find > Replace`` menu
 6. Confirm replace UI appears at the top of the editor ``<dialog_replace_1>``
 7. Type any character(s) into the text box, press Enter
 8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
-9. Press escape
+9. Type a search string that actually exists in the open document.  Click ``All..``
+10. Confirm Replace matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
+11. Click ``Find > Find in Files``
+12. Confirm find UI appears at the top of the editor.
+13. Click ``Edit...``  Confirm the ``Edit Filter`` modal dialog appears and allows you to enter filter paths.
+14. Click ``Cancel``
+
 
 ### JSLint
 
