@@ -271,6 +271,19 @@ getFocusedInlineWidget  |                                   | Doesn't move but p
                              
 ```
 
+## Break up `Editor` up into `Editor` and `EditorModule`
+
+The community has suggested splitting `Editor` into 2 parts. One with only the `Editor class` and all `prototype methods` (`EditorModule`). Another for the `non-prototype methods` including the ones added in as part of the refactorings described above. These would remain as `Editor`. This is how `Document` is split and make sense to do the same for the `Editor`.
+
+## Refactor `Editor` into logical groupings
+
+* Move all the tab/indent code into a new utility module.  (If we eventually do auto-indent-size sniffing, we could put that code there too).
+* Hoist out some of the selection-related APIs into a new SelectionRanges object or a SelectionUtils module (stuff like convertToLineSelections() and selectWordAt().
+* Move most of the displayErrorMessageAtCursor() into a more UI-oriented popover module.
+* Make an OuterEditor/FullEditor subclass and move all the inline widget management APIs into that.
+* Move the getMode/LanguageFor*() APIs into TokenUtils, perhaps.
+* Deprecate & eventually move all the per-preference static APIs?  Or move them into a separate EditorPreferences module?
+
 ## Commands (opportunistic cleanup)
 
 The following list of commands will move from `DocumentCommandHandlers` along with their corresponding implementation into a new module -- `ViewCommandHandlers`.  We will also remove "file." from the command name and rename the commands to "cmd.", deprecating the old command ids in the same fashion the find commands were deprecated using getters.
