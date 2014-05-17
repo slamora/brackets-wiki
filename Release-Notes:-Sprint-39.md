@@ -2,7 +2,7 @@ What's New in Sprint 39
 -----------------------
 * **File Types**
     * [Customize file extension -> language/syntax mode mapping](https://github.com/adobe/brackets/pull/7588): Set `language.fileExtensions` or `language.fileNames` to a map object whose keys are file extensions/names and whose values are [language IDs](https://github.com/adobe/brackets/blob/master/src/language/languages.json). See [how to edit your preferences file](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences).
-    * [Windows: Filter out binary files and unsupported encodings](https://trello.com/c/Sji5hLvW/1219-1s-automatically-ignore-exclude-binary-files): Speeds up Find in Files for certain projects, and reduces clutter in the Quick Open file list. Attempting to open a non-UTF-8 file now results in an error instead of showing garbled text. (This was already implemented on other platforms).
+    * [Windows/Linux: Filter out binary files and unsupported encodings](https://trello.com/c/Sji5hLvW/1219-1s-automatically-ignore-exclude-binary-files): Speeds up Find in Files for certain projects, and reduces clutter in the Quick Open file list. Attempting to open a non-UTF-8 file now results in an error instead of showing garbled text. (This was already implemented on other platforms).
 * **CSS Editing**
     * [Fuzzy/camelCase code hints](https://github.com/adobe/brackets/pull/7441): Code hints now use smart string matching, similar to Quick Open and JS code hints -- for example, you can type "btr" to see an autocompletion hint for `border-top-right-radius`.
 * **Code Editing**
@@ -31,7 +31,7 @@ UI Changes
 ----------
 **Find menu added** - All Find/Replace-related menu items have been moved from the Edit menu to a new Find top-level menu.
 
-**Non UTF-8 encodings** - On Windows, earlier Brackets versions would open files with other encodings even though the file could not be displayed or saved correctly. Brackets now shows an error message and refuses to open the file, matching Mac versions of Brackets. (And the error message now specifically mentions the encoding).
+**Non UTF-8 encodings** - On Windows and Linux, earlier Brackets versions would open files with other encodings even though the file could not be displayed or saved correctly. Brackets now shows an error message and refuses to open the file, matching Mac versions of Brackets. (And the error message now specifically mentions the encoding).
 
 **URL code hints** - When replacing path segments in an existing URL, the segments to the right of the cursor are preserved when you insert path code hints. When you insert a filename code hint, anything to the right is still overwritten as before, however.
 
