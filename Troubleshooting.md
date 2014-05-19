@@ -40,6 +40,10 @@ This can happen on some Windows machines. To work around this, try executing the
 2. `cd` to the folder containing the installer.
 3. Run the installer using msiexec, e.g.: `msiexec /i "brackets-sprint-xx-WIN.msi"` (where "xx" is the sprint number)
 
+### 4. On Windows, the Brackets installer hangs at 0% installed
+
+Brackets probably isn't hanging, it just takes a while. Be patient and wait for about 10 minutes or so. See if it's done anything then.
+
 
 ## <a name="launching"> </a>Can't Launch Brackets
 
