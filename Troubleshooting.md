@@ -40,9 +40,13 @@ This can happen on some Windows machines. To work around this, try executing the
 2. `cd` to the folder containing the installer.
 3. Run the installer using msiexec, e.g.: `msiexec /i "brackets-sprint-xx-WIN.msi"` (where "xx" is the sprint number)
 
-### 4. On Windows, the Brackets installer hangs at 0% installed
+### 4. 0% Progress while installing Brackets on Windows
 
-Brackets probably isn't hanging, it just takes a while. Be patient and wait for about 10 minutes or so. See if it's done anything then.
+When installing Brackets on Windows, there may be a sometimes lengthy delay at the start of the installation process as Windows checks, prepares, and displays the UAC prompt.  During this delay, you will see the "Installing Brackets" - "Please wait while Brackets is installed" page of the installer but with 0% progress.
+
+The length of this delay may vary, depending on your individual system, and is an important part of the Windows security process.  Any installer or application that makes changes to your system must be approved by Windows UAC, depending on your user settings, which can be configured under the Control Panel > User Accounts settings.
+
+Consequently, during this delay, please be patient -- as soon as you (or an administrator) approves the UAC prompt, then Windows will allow the Brackets installer will resume.
 
 
 ## <a name="launching"> </a>Can't Launch Brackets
