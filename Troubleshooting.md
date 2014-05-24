@@ -46,7 +46,7 @@ When installing Brackets on Windows, there may be a sometimes lengthy delay at t
 
 The length of this delay may vary, depending on your individual system, and is an important part of the Windows security process.  Any installer or application that makes changes to your system must be approved by Windows UAC, depending on your user settings, which can be configured under the Control Panel > User Accounts settings.
 
-Consequently, during this delay, please be patient -- as soon as you (or an administrator) approves the UAC prompt, then Windows will allow the Brackets installer will resume.
+Consequently, during this delay, please be patient -- as soon as you (or an administrator) approves the UAC prompt, then Windows will allow the Brackets installer to resume.
 
 
 ## <a name="launching"> </a>Can't Launch Brackets
