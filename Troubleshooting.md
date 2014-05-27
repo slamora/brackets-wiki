@@ -26,7 +26,7 @@ Other information that may help you:
 ## <a name="installation"> </a>Can't Install Brackets
 ### 1. Download the Right Package
 
-Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Downloads page](http://download.brackets.io). 
+Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Homepage](http://brackets.io). 
 
 ### 2. Windows Vista: Nothing happens when launching installer
 
