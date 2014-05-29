@@ -1,4 +1,4 @@
-# *NOTE:* This is now obsolete.  See the trello board for story breakdown and tasking
+# *NOTE:* This is now obsolete.  See the [trello board for story breakdown and tasking](https://trello.com/c/2DWV5tEX/1277-splitview-migrate-workingset-management-to-mainviewmanager)
 
 Here's a proposed guide to breakup the story into smaller arch pieces:
 
