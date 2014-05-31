@@ -1,6 +1,6 @@
-| Area of expertiese | Individuals | Notes | 
+| Area of expertise | Individuals | Notes | 
 |:--------------------------|:---------------------|:--------:| 
-|API Documentation| Randy | Also Chema | 
+|API Documentation| Randy, Chema || 
 |App Startup| Peter || 
 |Build| Ingo || 
 |CEF Integration| Jeff, Ingo ||	 
