@@ -27,7 +27,7 @@ UI Changes
 
 API Changes
 -----------
-**LESS** - Updated to 1.7.0 (from 1.4.2). No known compatibility issues - see [changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md).
+**LESS** - Updated to 1.7.0 (from 1.4.2). No known compatibility issues in Brackets - see [changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md). There is a conflict with Phantom JS which is used by Travis (#7951) and is fixed with a polyfill for `Function.prototype.bind()` method (#7956).
 
 New/Improved Extensibility APIs
 -------------------------------
