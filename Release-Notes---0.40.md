@@ -27,7 +27,7 @@ UI Changes
 
 API Changes
 -----------
-**LESS** - Updated to 1.7.0 (from 1.4.2). No known compatibility issues in Brackets - see [changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md). There is a conflict with Phantom JS which is used by Travis ([issue 7951](https://github.com/adobe/brackets/issues/7951)) and is fixed with a polyfill for `Function.prototype.bind()` method ([PR 7956](https://github.com/adobe/brackets/pull/7956)).
+**LESS** - Updated to 1.7.0 (from 1.4.2). No known compatibility issues in Brackets - see [changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md). There is a conflict with Phantom JS 1.9.0 which is used by Travis ([issue 7951](https://github.com/adobe/brackets/issues/7951)) and is fixed with a polyfill for `Function.prototype.bind()` method ([PR 7956](https://github.com/adobe/brackets/pull/7956)).
 
 New/Improved Extensibility APIs
 -------------------------------
