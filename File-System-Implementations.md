@@ -71,10 +71,11 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 * `@param {function(?string)=} callback`
 * Move the file or directory at the given path to the "trash" directory, optionally calling back asynchronously with a possibly null error.
 
-### `initWatchers(changeCallback, callback)`
+### `initWatchers(changeCallback, offlineCallback)`
 * `@param {function(?string, FileSystemStats=)} changeCallback`
-* `@param {function(?string)=} callback`
-* Initialize file watching for this filesystem, optionally calling back asynchronously with a possibly null error. The implementation must use the supplied `changeCallback` to provide change notifications. The first parameter of `changeCallback` specifies the changed path (either a file or a directory); if this parameter is null, it indicates that the implementation cannot specify a particular changed path, and so the callers should consider all paths to have changed and to update their state accordingly. The second parameter to `changeCallback`is an optional `FileSystemStats` object that may be provided in case the changed path already exists and stats are readily available.
+* `@param {function(?string)=} offlineCallback`
+* Initialize file watching for this filesystem. The implementation must use the supplied `changeCallback` to provide change notifications. The first parameter of `changeCallback` specifies the changed path (either a file or a directory); if this parameter is null, it indicates that the implementation cannot specify a particular changed path, and so the callers should consider all paths to have changed and to update their state accordingly. The second parameter to `changeCallback` is an optional `FileSystemStats` object that may be provided in case the changed path already exists and stats are readily available.
+* If file watching becomes unavailable or is unsupported, the implementation must call `offlineCallback` if it was provided, optionally passing an error code. In addition, the implementation _must_ ensure that all future calls to `watchPath()` fail with an error (until such time as file watching becomes available again).
 
 ### `watchPath(path, callback)`
 * `@param {string} path`
@@ -103,6 +104,6 @@ The client-facing filesystem API is provided by a singleton `FileSystem` object.
 The stats objects passed to callbacks above are instances of the [`FileSystemStats` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemStats.js), and the possibly null error parameters are constants defined in the [`FileSystemError` class](https://github.com/adobe/brackets/blob/glenn/file-system/src/filesystem/FileSystemError.js).
 
 
-## Designing the Implementation to Use
+## Designating the Implementation to Use
 
 FileSystem expects to be able to load its impl via `require("fileSystemImpl")`, so the RequireJS config that loads FileSystem must define a mapping from this identifier to the impl's full module path. See the [root main.js in Brackets](https://github.com/adobe/brackets/blob/master/src/main.js) for an example.
