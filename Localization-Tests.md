@@ -301,6 +301,9 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 
 # Extension Installation
 
-1. File > Install Extension...
-2. Paste this URL https://github.com/adobe/brackets/raw/master/test/spec/extension-test-files/incompatible-version.zip and press Install
-3. Confirm error message appears in dialog ``<install_extension_incompatible_version>``
+1. File > Extension Manager...  Confirm Extension Manager dialog appears.
+2. From the Available tab, click ``Install from URL...``.  Confirm Install Extension dialog appears.
+3. Paste this URL https://github.com/adobe/brackets/raw/master/test/spec/extension-test-files/incompatible-version.zip and press Install
+3. Confirm error message appears in dialog ``<install_extension_incompatible_version>``.  Click ``Close``.
+4. Click Installed tab.  Confirm either ``No extensions installed yet.`` message appears in the dialog, or, if you've previously installed one or more extensions, that they are listed.
+5. Click ``Close``
