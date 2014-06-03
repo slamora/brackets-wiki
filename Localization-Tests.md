@@ -239,9 +239,10 @@ _On Windows, we have a backlog item to address the lack of an error message http
 1. Exit Chrome if it is running.
 2. Open ``index.html``
 3. Click ``File > Live Preview`` menu
-3. In Brackets, hover over the lightning bold icon
-4. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
-5. Quit Chrome
+4. [First launch only] Confirm ``Welcome to Live Preview!`` dialog appears.  Click OK.
+5. In Brackets, hover over the lightning bold icon
+6. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
+7. Quit Chrome
 
 ### Connection Error (mac only)
 1. Start Chrome
