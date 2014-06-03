@@ -56,7 +56,7 @@ $ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 2. Open the ``View`` menu again
 3. Confirm the label has changed to ``View > Show Sidebar`` ``<menu_view_show_sidebar>``
 4. Click ``View > Show Sidebar``
-5. In the Sidebar, click the gear icon in the Working Files header.  Confirm the sort methods.
+5. Open ``index.html``.  In the Sidebar, click the gear icon in the Working Files header.  Confirm the sort methods.
 
 # File Operations
 
@@ -205,8 +205,9 @@ _On Windows, we have a backlog item to address the lack of an error message http
 10. Confirm Replace matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
 11. Click ``Find > Find in Files``
 12. Confirm find UI appears at the top of the editor.
-13. Click ``Edit...``  Confirm the ``Edit Filter`` modal dialog appears and allows you to enter filter paths.
-14. Click ``Cancel``
+13. Click ``No Files Excluded`` button.  Confirm exclusion set menu dropdown.
+14. From that menu, click ``New Exclusion Set...``.  Confirm Edit Exclusion Set dialog appears.
+15. Click ``Cancel``
 
 
 ### JSLint
