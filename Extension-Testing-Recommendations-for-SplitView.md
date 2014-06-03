@@ -17,7 +17,7 @@ The following make use of working sets so these should be tested with the workin
 * jekyll (alexsalas.brackets-jekyll)
 * vim (brackets-vim)
 
-TODO: Which extensions should be tested when set current document has been deprecated
-TODO: Which extensions should be tested when Editor Manager is refactored
-TODO: Which extensions should be tested when we have multiple panes / working set views 
-TODO: Which extensions should be tested when working sets have things that are not documents
+TODO: Which extensions should be tested when set current document has been deprecated   
+TODO: Which extensions should be tested when Editor Manager is refactored  
+TODO: Which extensions should be tested when we have multiple panes / working set views   
+TODO: Which extensions should be tested when working sets have things that are not documents  
