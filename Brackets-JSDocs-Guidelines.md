@@ -2,7 +2,30 @@ Brackets uses [Google Closure Compiler Annotation format](https://developers.goo
 
 The API Docs for the current master branch can be found at [http://brackets.io/docs/current](http://brackets.io/docs/current).
 
-## Tips and Tricks
+## Guidelines
+
+### Header Comments
+
+Header comments can _not_ have an empty line between end of comment and module definition:
+
+```
+/**
+ * Header comment
+ */
+define(function (require, exports, module) {
+```
+
+Explicitly add an empty line for comments that should _not_ appear in API Doc:
+
+```
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50, regexp: true */
+/*global define, $, brackets, window */
+
+define(function (require, exports, module) {
+```
+
+### Markdown Formatting
+
 
 ## Generating Documents
 
