@@ -354,7 +354,7 @@ DocumentCommandHandler     | Closes document on error during open    | EditorMan
 ```
 
 ## EditorManager.removeListFromWorkingSet
-** NOT USED BY EXTENSIONS **
+Used by brackets-vim
 
 ```text
 Core Usage
