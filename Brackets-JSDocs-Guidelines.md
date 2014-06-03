@@ -28,6 +28,12 @@ define(function (require, exports, module) {
 
 Markdown formatting is supported, so it will be reflected in the API Docs.
 
+### Exceptions
+
+Only code with JSDoc annotations will show up in the API Docs, with the following exceptions:
+
+* Dependencies
+
 ## Generating Documents
 
 The [apify nodejs app](http://github.com/jbalsas/apify) is used to generate the Brackets API Docs.
