@@ -34,3 +34,5 @@ The [apify nodejs app](http://github.com/jbalsas/apify) is used to generate the 
 
 If you have the apify app installed, then you can use the [Brackets Apify extension](http://github.com/jbalsas/brackets-apify) to generate API Documentation on-the-fly for your local branch.
 
+The [Grunt Apify app](https://github.com/jbalsas/grunt-apify) is for automating the generation of API Docs.
+
