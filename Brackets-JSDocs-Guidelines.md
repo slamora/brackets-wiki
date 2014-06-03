@@ -26,6 +26,7 @@ define(function (require, exports, module) {
 
 ### Markdown Formatting
 
+Markdown formatting is supported, so it will be reflected in the API Docs.
 
 ## Generating Documents
 
