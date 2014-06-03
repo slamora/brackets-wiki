@@ -230,6 +230,14 @@ _On Windows, we have a backlog item to address the lack of an error message http
 1. At the end of ``desktop.css``, add the following line: ``#div2 {-webkit-transition-timing-function: ease-out;}``.
 2. Place the cursor on the word `timing` in the new line.  Press ``CMD+E`` or ``Ctrl+E``.  Confirm editor labels.
 
+# New Rule Editor
+
+1. Within the first <body> tag of ``index.html``, start a new line and type ``<h10``.
+2. Press ``CMD+E`` or ``Ctrl+E``.  Confirm New Rule inline editor appears.
+3. Click ``New Rule``.  Confirm inline editor changes to show the new rule definition.
+4. Click ``New Rule`` button again.  Confirm a list of references to the new rule appears on the right-side of the inline editor.
+5. Press escape to close the inline editor.
+
 # Live Preview
 
 **Requires Google Chrome to be installed http://www.google.com/chrome**
