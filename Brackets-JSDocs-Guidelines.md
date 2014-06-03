@@ -18,7 +18,7 @@ define(function (require, exports, module) {
 Explicitly add an empty line for comments that should _not_ appear in API Doc:
 
 ```
-/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50, regexp: true */
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4 */
 /*global define, $, brackets, window */
 
 define(function (require, exports, module) {
