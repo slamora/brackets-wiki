@@ -385,7 +385,7 @@ WorkingSetView             | Swap indices of items during drag and   | No Deprec
                            |                                         | 
                            |                                         | 
 ---------------------------+-----------------------------------------+----------------------------------- 
-_.bind can be used to bind the paneId to the context of the call for command handlers since this is a context menu.
+_.partial can be used to bind the paneId to the context of the call for command handlers since this is a context menu.
 ```
 
 ## EditorManager.sortWorkingSet
@@ -402,7 +402,7 @@ WorkingSetView             | Sort is one of the commands on the      | No Deprec
                            |                                         | 
                            |                                         | 
 ---------------------------+-----------------------------------------+----------------------------------- 
-_.bind can be used to bind the paneId to the context of the call for command handlers since this is a context menu.
+_.partial can be used to bind the paneId to the context of the call for command handlers since this is a context menu.
 
 ```
 
