@@ -16,6 +16,7 @@ The following make use of working sets so these should be tested with the workin
 * reopener (brackets-reopener)
 * jekyll (alexsalas.brackets-jekyll) -- unable to get this extension to work correctly.
 * vim (brackets-vim)
+=== all extensions work with the 2 exceptions noted above that could not be tested ===
 
 TODO: Which extensions should be tested when set current document has been deprecated   
 TODO: Which extensions should be tested when Editor Manager is refactored  
