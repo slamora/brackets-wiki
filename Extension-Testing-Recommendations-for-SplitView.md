@@ -1,7 +1,7 @@
 The following make use of working sets so these should be tested with the working set refactoring code
 
 * git integration (ziggino.brackets-git)
-* WE Minimap (websiteduck.wdminimap)
+* WD Minimap (websiteduck.wdminimap)
 * Copy File Info to clipboard (vmalone.fileinfo-toclipboard)
 * Extension Highlighter (tjeffree.extensionhighlighter)
 * recognizer
