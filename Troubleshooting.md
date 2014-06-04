@@ -3,7 +3,7 @@ Brackets not working for you? Maybe the following will help:
 * [Having trouble with Live Preview?](#livedev)
 * [Having trouble installing Brackets?](#installation)
 * [Brackets not launching?](#launching)
-* [Having trouble installing extensions?](#extensions)
+* [Having trouble installing extensions?](#extension-install)
 * [Is Brackets running slowly?](#slow)
 * [Error reading preferences file message](#prefs37)
 
@@ -143,11 +143,18 @@ Collecting the information required to build the JS code hint lists can slow dow
 
 You can disable the hints by moving the JavaScriptCodeHints folder out of www/extensions/default (installed version) or src/extensions/default (Git source) folder and into the extensions/disabled folder, and restarting Brackets.
 
-## <a name="extensions"> </a>Having trouble installing extensions?
+## <a name="extension-install"> </a>Having trouble installing extensions?
 
-If your computer needs to use a proxy to get to the web, you'll need to configure the "proxy" setting. Use Open Preferences File from the Debug menu and then add a proxy variable to the JSON file. The value should be the URL of your proxy server.
+If your computer needs to use a proxy to get to the web, you'll need to configure Brackets to use it. Use Debug > Open Preferences File and then add a `"proxy"` property to the JSON file. The value should be the URL of your proxy server. [Read more about configuring Preferences](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences).
 
-(Note: this is new in Brackets 37.)
+You can also install extensions manually:
+
+1. Find the extension in the [online Extension Registry](https://brackets-registry.aboutweb.com/)
+2. Click the name of the extension to download it as a zip file
+3. In Brackets, choose Help > Show Extensions Folder, then drill down into the `user` folder
+4. Make a new folder whose name is the extension id (the part of the zip file before the "-a.b.c.zip" version suffix).
+5. Unzip the extension and move the contents into your new extension folder such that the `main.js` file is _directly_ inside the extension folder (if the zip file had extra folder nesting, just take the contents of the inner folder that has `main.js`).
+6. Quit and relaunch Brackets
 
 
 ## Other: Brackets Is Acting Weird
