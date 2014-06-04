@@ -15,7 +15,7 @@ The following make use of working sets so these should be tested with the workin
 * typescript Quick Edit (brackets-typescript-code-intel) -- this extension does not work with recent codemirror update (https://github.com/tomsdev/brackets-typescript-code-intel/issues/11) 
 * reopener (brackets-reopener)
 * jekyll (alexsalas.brackets-jekyll) -- unable to get this extension to work correctly.
-* vim (brackets-vim)
+* vim (brackets-vim)  
 === all extensions work with the 2 exceptions noted above that could not be tested ===
 
 TODO: Which extensions should be tested when set current document has been deprecated   
