@@ -3,7 +3,7 @@ The following make use of working sets so these should be tested with the workin
 * git integration (ziggino.brackets-git)
 * WD Minimap (websiteduck.wdminimap)
 * Copy File Info to clipboard (vmalone.fileinfo-toclipboard)
-* Extension Highlighter (tjeffree.extensionhighlighter) --> Fails.  The event repub mechanism subscribes to the 'paneViewList` events and repubs them as 'workingSet' events but the event listener is added before extensions are loaded. This used to work because extensions are loaded later and their event listeners are added *after* brackets' internal event listeners are added. The workingsetview listened to changes to the workingset and updated the view accordingly.  The extension highlighter extension listens for this view and reconfigures the view.  Unfortunately the pub/sub arch doesn't guarantee load order.
+* Extension Highlighter (tjeffree.extensionhighlighter) --> Fails.  The event repub mechanism subscribes to the 'paneViewList` events and repubs them as 'workingSet' events but the event listener is added before extensions are loaded. This used to work because extensions are loaded later and their event listeners are added *after* brackets' internal event listeners are added. The workingsetview listened to changes to the workingset and updated the view accordingly.  The extension highlighter extension listens for this view and reconfigures the view.  Unfortunately the pub/sub arch doesn't guarantee load order. The solution was register deprecated events in appInit.ready rather than at DocumentManager module load.
 * recognizer
 * Editor Nav (pflynn.brackets.editor.nav)
 * ivogabe.icons
