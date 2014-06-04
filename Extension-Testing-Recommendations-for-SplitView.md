@@ -12,9 +12,9 @@ The following make use of working sets so these should be tested with the workin
 * outliner (crabcode.outline)
 * swatcher (brackets.swatcher)
 * xunit (brackets.xunit)
-* typescript Quick Edit (brackets-typescript-code-intel)
+* typescript Quick Edit (brackets-typescript-code-intel) -- this extension does not work with recent codemirror update (https://github.com/tomsdev/brackets-typescript-code-intel/issues/11) 
 * reopener (brackets-reopener)
-* jekyll (alexsalas.brackets-jekyll)
+* jekyll (alexsalas.brackets-jekyll) -- unable to get this extension to work correctly.
 * vim (brackets-vim)
 
 TODO: Which extensions should be tested when set current document has been deprecated   
