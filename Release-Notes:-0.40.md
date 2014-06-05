@@ -1,36 +1,34 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Release 0.40 -- approximately ???._
+_This document will not be finalized until the end of Release 0.40 -- approximately June 9._
 
 What's New in Release 0.40
 --------------------------
 * **Search**
-    * **[Replace across multiple files](https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files)**: You can see all search matches first and uncheck any you don't wish to replace. Supports the same exclusion filtering as Find in Files.
     * [Save multiple file exclusion filters](https://trello.com/c/4EQI1XwC/1137-2s-save-edit-multiple-different-file-exclusion-sets): Instead of a single file/folder search filter, you can name and save multiple different filters for quick use.
-    * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
-* **File Types**
-    * [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409): Use the language indicator in the status bar as a dropdown to override the language Brackets chose to treat a file as. (These changes are _not_ saved when you close the file; use the preferences above to permanently treat all files with a certain extension as a different language).
+* **Extension Development**
+    * [Online API documentation](http://brackets.io/docs/current/) is now available - mirroring the JSDocs in the Brackets source code
+* **Code Editing**
+    * [Toggle line/block comment for CoffeeScript & Lua](https://github.com/adobe/brackets/pull/7135/files#diff-1) (and other languages where the line-comment syntax is a prefix of the block-comment syntax)
 * **Ongoing Research** (not implemented yet)
     * [Split view](https://trello.com/c/2DWV5tEX/1277-splitview-migrate-workingset-management-to-mainviewmanager) (early implementation on branch)
     * [Research: Theming Support](https://trello.com/c/LHhAcbcU/1260-c-editor-themes) (pull request in progress)
-
-common categories: Live Preview, Code Editing, Visual Editing, Search, Files and Folders, Overall UI, Localization, Extensions, Developer Workflow
-less common: Code Hinting, General Code Editing, HTML Code Editing, Performance
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-39...sprint-40#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-39...sprint-40#commits_bucket)
 
 
 UI Changes
 ----------
-**Quick Open** - The first item is automatically highlighted, making it more clear that you can press Enter immediately to jump to the top item (Down arrow not required). Highlighting the 2nd item in the result list now only requires pressing the Down arrow once (previously required two presses). Quick Find Definition no longer changes the scroll position until you start typing.
+No major changes to existing features.
 
 
 API Changes
 -----------
-**LESS** - Updated to 1.7.0 (from 1.4.2). No known compatibility issues in Brackets - see [changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md). There is a conflict with Phantom JS 1.9.0 which is used by Travis ([issue 7951](https://github.com/adobe/brackets/issues/7951)) and is fixed with a polyfill for `Function.prototype.bind()` method ([PR 7956](https://github.com/adobe/brackets/pull/7956)).
+**LESS** - Updated to 1.7.0 (from 1.4.2). No known compatibility issues in Brackets - see [changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md).
 
 New/Improved Extensibility APIs
 -------------------------------
+None added this sprint.
 
 
 Known Issues
@@ -45,8 +43,8 @@ Community contributions to Brackets
 TODO
 
 #### Pulling source code from Git
-* TODO: new brackets-shell build required?
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
+* A new brackets-shell build is not required, but is recommended for Windows bug fixes.
 
 
 Bugs fixed in Release 0.40
