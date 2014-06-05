@@ -9,7 +9,7 @@ What's New in Release 0.40
 * **Extension Development**
     * [Online API documentation](http://brackets.io/docs/current/) is now available - mirroring the JSDocs in the Brackets source code
 * **Code Editing**
-    * [Toggle line/block comment for CoffeeScript & Lua](https://github.com/adobe/brackets/pull/7135/files#diff-1) (and other languages where the line-comment syntax is a prefix of the block-comment syntax)
+    * [Toggle line/block comment for CoffeeScript & Lua](https://github.com/adobe/brackets/pull/7135/files#diff-1) (and other languages where the line-comment syntax is a prefix of the block-comment syntax, or the block-comment open & close tokens are identical)
 * **Ongoing Research** (not implemented yet)
     * [Split view](https://trello.com/c/2DWV5tEX/1277-splitview-migrate-workingset-management-to-mainviewmanager) (early implementation on branch)
     * [Research: Theming Support](https://trello.com/c/LHhAcbcU/1260-c-editor-themes) (pull request in progress)
