@@ -40,7 +40,7 @@ For more, see [[Extension Registry Help]].
 
 ## Common How-Tos
 
-**API docs** are available [online](http://brackets.io/docs/current or refer) or as JSDoc comments inline in the [Brackets source code](https://github.com/adobe/brackets/tree/master/src).
+**API docs** are available [online](http://brackets.io/docs/current) or as JSDoc comments inline in the [Brackets source code](https://github.com/adobe/brackets/tree/master/src).
 
 ### Using modules
 
