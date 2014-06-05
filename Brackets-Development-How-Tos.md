@@ -1,5 +1,10 @@
 _Warning: because Brackets is still undergoing a lot of change, many of the APIs and techniques below **will change** in the future. Breaking API changes will be listed in the [release notes](Release Notes)._
 
+## API Docs
+
+* Formatted docs at: **http://brackets.io/docs/current**
+* All documentation is also inline in the [Brackets source code](https://github.com/adobe/brackets/tree/master/src), as JSDoc comments
+
 ## Application Init
 
 There are 2 primary milestones you can wait for during startup, defined in ``utils/AppInit``:
