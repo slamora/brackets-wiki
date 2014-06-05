@@ -30,7 +30,7 @@ sudo apt-get install lamp-server^
 ```
 ### Copy the server tests and launch Brackets 
 ```text
-sudu cp -r ~/brackets/test/smokes/server-tests /var/www
+sudo cp -r ~/brackets/test/smokes/server-tests /var/www
 gksudo "/opt/brackets/brackets" 
 ```
 ### Proceed to "Server smoke test steps" below.
