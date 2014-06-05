@@ -40,7 +40,30 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TODO
+* [Support line-comment syntax that is prefix of block-comment syntax, & identical block-comment open & close tokens. Enable Toggle Line/Block Comment for CoffeeScript & Lua.](https://github.com/adobe/brackets/pull/7135) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Extension Manager: decrease green update count when an extension is marked for update](https://github.com/adobe/brackets/pull/7863) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Fix #5226/#7458: Scroll view if needed after Edit > Move Line Up/Down](https://github.com/adobe/brackets/pull/7829) by [Lance Campbell](https://github.com/lkcampbell)
+* [Fix #7598: Ensure opening a dialog always blurs code editor](https://github.com/adobe/brackets/pull/7677) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix #7905: Project tree shouldn't gray out dotfiles](https://github.com/adobe/brackets/pull/8013) by [Steffen Bruchmann](https://github.com/sbruchmann)
+* [Don't allow creating empty file filters in New/Edit Exclusion Set dialog](https://github.com/adobe/brackets/pull/7965) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Treat .cljs and .cljx files as Clojure](https://github.com/adobe/brackets/pull/7854) by [Julien Eluard](https://github.com/jeluard)
+* [Extension Manager: show dates in locale-appropriate format](https://github.com/adobe/brackets/pull/7745) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Update Less to 1.7.0](https://github.com/adobe/brackets/pull/6730) ([and](https://github.com/adobe/brackets/pull/7956)) by [Bernhard Sirlinger](https://github.com/WebsiteDeveloper)
+* [Add 'Help > Brackets Homepage' menu item](https://github.com/adobe/brackets/pull/7746) ([and](https://github.com/adobe/brackets/pull/7870)) by [Bernd Schwarzenbacher](https://github.com/BerndSchwarzenbacher)
+* [Improve wording of file encoding error message](https://github.com/adobe/brackets/pull/7932) by [HighwayChile](https://github.com/HighwayChile)
+* [Fix UpdateNotification unit test](https://github.com/adobe/brackets/pull/7819) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Fix CSS so striped tables in Brackets UI can contain non-striped nested tables](https://github.com/adobe/brackets/pull/7779) by [Fez Vrasta](https://github.com/FezVrasta)
+* [Cleanup: Remove unneeded brackets-shell API existence check](https://github.com/adobe/brackets/pull/7885) by [Triangle717](https://github.com/le717)
+* [German translation update](https://github.com/adobe/brackets/pull/8000) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Czech translation update](https://github.com/adobe/brackets/pull/7565) by [kvarel](https://github.com/kvarel)
+* [Polish translation update](https://github.com/adobe/brackets/pull/7574) by [Olgierd Grzyb](https://github.com/winek)
+* [Brazilian Portuguese translation update](https://github.com/adobe/brackets/pull/7847) by [Rodrigo Tavares](https://github.com/rodrigost23)
+* [Norwegian translation update](https://github.com/adobe/brackets/pull/7924) by [steinmortenhugubakken](https://github.com/steinmortenhugubakken)
+* [Croatian translation update](https://github.com/adobe/brackets/pull/7940) ([and](https://github.com/adobe/brackets/pull/7871)) by [Kruno H](https://github.com/diomed)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/8041) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Russian translation update](https://github.com/adobe/brackets/pull/7837) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Russian translation typo fix](https://github.com/adobe/brackets/pull/8027) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Fix capitalization typo in README](https://github.com/adobe/brackets/pull/7876) by [Zach Ziccardi](https://github.com/zziccardi)
 
 #### Pulling source code from Git
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
