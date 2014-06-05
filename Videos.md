@@ -10,6 +10,9 @@
 
 ["Classic" intro video (2012)](http://www.youtube.com/watch?v=rvo3Mv1Z4qU) - Narciso (nj) Jaramillo
 
+#### How to use specific features
+* [Multiple selections / multiple cursors](https://www.youtube.com/watch?v=QMoWNCdM6Yk)
+
 ### Demos & experiments
 
 [space-age-miracle-tools.js (JSConf 2013)](http://t.co/QOjDEl7vTy) - Narciso (nj) Jaramillo, Peter Flynn (various experiments)
