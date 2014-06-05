@@ -7,61 +7,54 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 3. Sign the [Brackets Contributor License Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html) - we can't merge your code otherwise. You only need to do this once.
 
 
-## Overview ##
+## Quick Start ##
 
 ### Requirements ###
 
 * Latest [Brackets installer build](http://download.brackets.io)
 * Git command line tools - follow the setup instructions [on GitHub](https://help.github.com/articles/set-up-git) or download [here](http://git-scm.com/downloads)
 
-**NOTE: All commands should be run in a Terminal window (on the Mac) or Git Bash shell (on Windows).**
-
 ### Setting up your dev environment ###
-
-For hacking on the core Brackets HTML/CSS/JavaScript files:
 
 1. Install the latest Brackets build (this gives you the native shell binaries which you'll use in step 6)
 2. Fork the [brackets repo](https://github.com/adobe/brackets)
 3. Clone your fork of the repo: `git clone https://github.com/<username>/brackets.git`
-4. Update submodules: `cd brackets` and `git submodule update --init`
+4. Fetch submodules: `cd brackets` and `git submodule update --init`
 5. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
 6. Run `setup_for_hacking` script:
-
-```bat
-Mac
----
-tools/setup_for_hacking.sh "/Applications/Brackets.app"
-
-Windows
--------
-IMPORTANT! This command MUST be run in a Command Prompt started with "Run as Administrator"
-tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"
-
-Linux
------
-sudo tools/setup_for_hacking.sh "/opt/brackets"
-```
+    * Mac: `tools/setup_for_hacking.sh "/Applications/Brackets.app"`
+    * Windows: `tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"` <br>_(MUST be run in a Command Prompt started with "Run as Administrator")_
+    * Linux: `sudo tools/setup_for_hacking.sh "/opt/brackets"`
 
 Now, when you launch the Brackets app it will load your git copy of the source code, rather than the original source code that was distributed with the installer.
 
-_Optional: For hacking on the native code or building the app binaries yourself without running an installer, [see "Hacking on brackets-shell" below](#nativeshell)._
+**Making changes** is simple:
 
-For more in-depth instructions see ["Getting a Copy of the Code" below](#wiki-getcode).
+1. Edit the source code and save your changes (you can even do this _with_ Brackets)
+2. Choose _Debug > Reload With Extensions_ to reload Brackets and pick up the changes. _No build step is needed._
 
-### Hacking ###
+> For more in-depth instructions see ["Getting a Copy of the Code" below](#wiki-getcode).
+
+> For hacking on the native code or building the app binaries yourself without running an installer, [see "Hacking on brackets-shell" below](#nativeshell).
+
+### Learning the Brackets code ###
+
+* **API docs:** http://brackets.io/docs/current (also inline in the code as JSDoc comments)
+* [Use **Dev Tools** to debug Brackets](https://github.com/adobe/brackets/wiki/Debugging-Brackets)
+* [Core APIs & architecture overview](https://github.com/adobe/brackets/wiki/Brackets-Development-How-Tos)
+* [How to use common APIs](https://github.com/adobe/brackets/wiki/How-to-write-extensions#common-how-tos)
+
+### Submitting a pull request ###
 
 1. Make sure your local copy of source is up to date: `git fetch upstream && git merge upstream/master`
 2. Make sure submodules are up to date: `git submodule sync` and `git submodule update --init`
 3. Create a feature/bugfix branch: `git checkout -b <branchname>`
-4. Hack!
+4. Hack on Brackets!
 5. Commit your changes: `git commit -am "Your commit message here"`
 6. Run unit tests
-
-### Submit pull request ###
-
-1. Push changes to your fork of the repo: `git push origin <branchname>`
-2. Make sure you've reviewed the [Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist) and signed the [Contributor Licence Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html).
-3. Submit pull request from GitHub. If this is a bugfix, include a reference with # followed by issue number (e.g. #1234) in the description (not title) of the issue. Note: do *not* use the phrase "fixes #1234" (or any form of word "fix"?) because it will cause the bug to auto-close when pull request is merged. This tags the pull request in the bug comments.
+7. Push changes to your fork of the repo: `git push origin <branchname>`
+8. Make sure you've reviewed the [Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist) and signed the [Contributor Licence Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html). (See also overall [guidelines for contributing code](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#contributing-code)).
+9. Submit pull request on GitHub, including a descriptive title and links to any relevant bugs you're fixing.
 
 
 ## Getting Started ##
@@ -125,16 +118,16 @@ If you're only hacking on HTML/JS/CSS files, you can have the installed Brackets
   1. Open a Terminal window
   2. `cd` to the root of your brackets repo
   3. run `tools/setup_for_hacking.sh`, passing the full pathname to your installed Brackets.app. For example:
-```bash
-tools/setup_for_hacking.sh "/Applications/Brackets.app"
-```
+  ```bash
+  tools/setup_for_hacking.sh "/Applications/Brackets.app"
+  ```
 4. On Windows:
   1. Open a Command Prompt _using "Run as Administrator"_
   2. `cd` to the root of your brackets repo
   3. run `tools\setup_for_hacking.bat`, passing the full path of the directory where Brackets.exe is installed. For example:
-```bat
-tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"
-```
+  ```bat
+  tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"
+  ```
 5. Launch the installed copy of Brackets, select _Help > About_, and verify that the version number says "sprint xx _development_ build" instead of "sprint xx _experimental_ build". This indicates that you're running Brackets from your git repo instead of the installed build.
 
 You can revert back to running the installed version of the Brackets source at any time by running `tools/restore_installed_build.sh` (Mac) or `tools\restore_installed_build.bat` (Windows) from your Brackets repo.
@@ -227,7 +220,7 @@ Now you're ready to submit a pull request. Go to the GitHub page for your fork o
 
 Click the Pull Request button in the top right and you'll be brought to a page that describes the pull request. Make sure you're submitting _to_ the `adobe/brackets` repository, _from_ the branch you've been working on. 
 
-Review the "Commits" and "Files Changed" tabs to make sure you're submitting only the changes you intend. Write a detailed description of what your pull request does (including any associated bug numbers, e.g. "issue #1234", to ensure the pull request is linked to the bug). Then click "Send pull request."
+Review the "Commits" and "Files Changed" tabs to make sure you're submitting only the changes you intend. Write a detailed description of what your pull request does, and include links to any relevant bugs ("#1234" is automatically turned into a link - though avoid writing "fixes #1234", since GitHub will auto-close the bug too soon if it sees a string like that). Then click "Send pull request."
 
 Congratulations on submitting your pull request - you've helping make Brackets even better! Read about [the pull request review process](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#the-code-review-process) for what happens next.
 
