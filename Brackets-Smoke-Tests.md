@@ -11,7 +11,8 @@ Setup
 2. Quit and relaunch Chrome if it's open (so it's *not* in remote debugger mode).
 3. If you've run the smokes previously, revert any changes you might have made in `brackets/test/smokes/citrus completed`.
 4. Delete your [cache folder](Cache-Folder) (Mac:  `~/Library/Application\ Support/Brackets/cef_data`, Win: `%appdata%\Brackets\cef_data`, Linux: `~/.config/Brackets/cef_data`).
-5. Disable any 3rd party extensions you've installed (see [[Extension Locations]])
+5. Move your state.json file aside (rename it to state.json.bak or something if you want to get it back). (Mac:  `~/Library/Application\ Support/Brackets/state.json`, Win: `%appdata%\Brackets\cef_data`, Linux: `~/.config/Brackets/state.json`)
+6. Disable any 3rd party extensions you've installed (see [[Extension Locations]])
 
 Smoke test steps
 ================
