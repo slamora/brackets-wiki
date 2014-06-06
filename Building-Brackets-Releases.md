@@ -9,8 +9,9 @@ This page documents build steps for Brackets that are typically _only run on the
 * Git command line tools - follow the setup instructions [on GitHub](https://help.github.com/articles/set-up-git) or download [here](http://git-scm.com/downloads)
 * Local copy of Brackets repo - see [[How to Hack on Brackets]]
 * [Build brackets-shell locally](https://github.com/adobe/brackets-shell/wiki/Building-Brackets-Shell) - the hacking instructions above outline how to point an existing shell, usually from the most recent stable release - but when building a new release, no such download exists yet.
-* [Node.js](http://nodejs.org/)
+* [Node.js](http://nodejs.org/) 0.8.x or newer
 * [Grunt](http://gruntjs.com/getting-started/)
+    * Run [Grunt set-up steps](https://github.com/adobe/brackets/wiki/Grunt-Setup)
 * Run `npm install` at the root of the Brackets repository
 
 # Build
