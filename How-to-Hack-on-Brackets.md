@@ -22,9 +22,12 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 4. Fetch submodules: `cd brackets` and `git submodule update --init`
 5. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
 6. Run `setup_for_hacking` script:
-    * Mac: `tools/setup_for_hacking.sh "/Applications/Brackets.app"`
-    * Windows: `tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"` <br>_(MUST be run in a Command Prompt started with "Run as Administrator")_
-    * Linux: `sudo tools/setup_for_hacking.sh "/opt/brackets"`
+
+    |  |  |
+    |---|---|
+    | Mac | `tools/setup_for_hacking.sh "/Applications/Brackets.app"` |
+    | Windows | `tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"` <br>_(MUST be run in a Command Prompt started with "Run as Administrator")_ |
+    | Linux | `sudo tools/setup_for_hacking.sh "/opt/brackets"` |
 
 Now, when you launch the Brackets app it will load your git copy of the source code, rather than the original source code that was distributed with the installer.
 
