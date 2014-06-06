@@ -36,7 +36,12 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TODO
+...TODO...
+
+* [Include `<main>` tag in HTML code hints](https://github.com/adobe/brackets/pull/8020) by [coliff](https://github.com/coliff)
+* [Change Project Settings dismiss button from OK to Done](https://github.com/adobe/brackets/pull/7508) by [Lucas K Allmon](https://github.com/LucasKA)
+* [Russian translation fixes](https://github.com/adobe/brackets/pull/7998) by [JustAndrei](https://github.com/JustAndrei)
+
 
 #### Pulling source code from Git
 * TODO: new brackets-shell build required?
