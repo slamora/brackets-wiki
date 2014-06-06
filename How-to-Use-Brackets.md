@@ -194,7 +194,7 @@ Here is a quick list of some of the settings you can change in these files:
 * **wordWrap**: (default `true`) True if word wrap is on
 * (new in 37) **proxy**: (default `undefined`) The URL of the proxy server used for extension installation (general syntax: `http://username:password@server:port/`)
 * (new in 37) **smartIndent**: (default `true`) Automatically indent when creating a new block
-* (new in 37) **closeTags**: (default `{ whenOpening: true, whenClosing: true, indentTags: [] }`) Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js)
+* (new in 37) **closeTags**: (default `{whenOpening: true, whenClosing: true, indentTags: []}`) Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js)
 * (new in 37) **insertHintOnTab**: (default `false`) True to insert the currently selected code hint on tab
 * (new in 37) **sortDirectoriesFirst**: (default `false` for Mac, `true` otherwise) True to sort the directories first in the project tree
 * (new in 37) **staticserver.port**: Port number that the built-in server should use for Live Preview
