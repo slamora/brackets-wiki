@@ -135,6 +135,8 @@ If you're only hacking on HTML/JS/CSS files, you can have the installed Brackets
 
 You can revert back to running the installed version of the Brackets source at any time by running `tools/restore_installed_build.sh` (Mac) or `tools\restore_installed_build.bat` (Windows) from your Brackets repo.
 
+Once you are set up, Brackets will pick up the latest changes to the code every time it starts - _no build step is needed._ (The Grunt scripts are used only to [generate a final release build](https://github.com/adobe/brackets/wiki/Building-Brackets-Releases)).
+
 
 ### Getting Updates from the Main Repository ###
 It's important to keep up to date with the main Brackets repository to make sure your pull requests match the latest Brackets builds. First you'll first need to link your local clone of Brackets to track the main Brackets repository on GitHub. Run this command from the _brackets_ directory:
