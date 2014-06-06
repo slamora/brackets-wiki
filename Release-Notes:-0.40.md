@@ -6,6 +6,7 @@ What's New in Release 0.40
 --------------------------
 * **Search**
     * [Save multiple file exclusion filters](https://trello.com/c/4EQI1XwC/1137-2s-save-edit-multiple-different-file-exclusion-sets): Instead of a single file/folder search filter, you can name and save multiple different filters for quick use.
+    * [Highlight all occurrences of word under cursor](https://github.com/adobe/brackets/pull/7748): Set the `highlightSelectionMatches` [preference](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) to enable this
 * **Extension Development**
     * [Online API documentation](http://brackets.io/docs/current/) is now available - mirroring the JSDocs in the Brackets source code
 * **Code Editing**
@@ -40,6 +41,7 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* [Preference to highlight all occurrences of word under cursor](https://github.com/adobe/brackets/pull/7748) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Support line-comment syntax that is prefix of block-comment syntax, & identical block-comment open & close tokens. Enable Toggle Line/Block Comment for CoffeeScript & Lua.](https://github.com/adobe/brackets/pull/7135) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Extension Manager: decrease green update count when an extension is marked for update](https://github.com/adobe/brackets/pull/7863) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Fix #5226/#7458: Scroll view if needed after Edit > Move Line Up/Down](https://github.com/adobe/brackets/pull/7829) by [Lance Campbell](https://github.com/lkcampbell)
