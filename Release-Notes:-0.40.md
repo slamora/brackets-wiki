@@ -2,7 +2,7 @@ What's New in Release 0.40
 --------------------------
 * **Search**
     * [Save multiple file exclusion filters](https://trello.com/c/4EQI1XwC/1137-2s-save-edit-multiple-different-file-exclusion-sets): Instead of a single file/folder search filter, you can name and save multiple different filters for quick use.
-    * [Highlight all occurrences of word under cursor](https://github.com/adobe/brackets/pull/7748): Set the `highlightSelectionMatches` [preference](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) to enable this
+    * [Highlight all occurrences of word under cursor](https://github.com/adobe/brackets/pull/7748): Set the `highlightMatches` [preference](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) to enable this
 * **Extension Development**
     * [Online API documentation](http://brackets.io/docs/current/) is now available - mirroring the JSDocs in the Brackets source code
 * **Code Editing**
