@@ -24,6 +24,10 @@ Explicitly add an empty line for comments that should _not_ appear in API Doc:
 define(function (require, exports, module) {
 ```
 
+**Note:** previous example is a bug in apify dox parser -- only comments starting with "/**" should be recognized.
+
+Description should be __first__, followed by any `@tag` annotations. Descriptions following a `@tag` are associated with that `@tag`.
+
 ### Markdown Formatting
 
 Markdown formatting is supported, so it will be reflected in the API Docs.
