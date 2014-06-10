@@ -48,6 +48,8 @@ But you can get a _rough_ number via a "closed issues" milestone query on GitHub
 * **Platform breakdown (%)** - divide each platform by the total
     * Note: this may understate Linux users, since we know there are some alternative distribution channels that don't hit our download site
 
+> **Warning** - If a sprint lasts longer than 30 days, you'll need to change the date range filter in the upper right to ensure _all_ the download events are included in the total (GA by default excludes anything older than 30 days ago).
+
 #### Extensions - current
 
 1. _View > Brackets Reports > Save Extension Registry Snapshot_
