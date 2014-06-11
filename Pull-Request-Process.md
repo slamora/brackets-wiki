@@ -4,6 +4,8 @@ If you're submitting a pull request or are reviewing one, hopefully this page wi
 
 A pull request can be reviewed by any Brackets committer. With this process, we seek to respond to pull requests quickly and to resolve them as quickly as is reasonable. There are two phases to the review: Triage and Review.
 
+**_[redmunds]: (in an offline meeting) I heard that we think the triage process is something that any contributor can do. Then shouldn't "A Brackets committer assigns it to themselves for a quick triage" be removed?_**
+
 The basic process:
 
 1. A contributor submits a new pull request
