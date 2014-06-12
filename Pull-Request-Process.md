@@ -6,6 +6,8 @@ A pull request can be reviewed by any Brackets committer. With this process, we 
 
 **_[redmunds]: (in an offline meeting) I heard that we think the triage process is something that any contributor can do. Then shouldn't "A Brackets committer assigns it to themselves for a quick triage" be removed?_**
 
+*dangoor: I think triage should be done by someone who is very familiar with the Brackets project, code structure and requirements. We might need to expand our "committers" a bit, but I don't think it should be just anyone that does triage.*
+
 The basic process:
 
 1. A contributor submits a new pull request
@@ -17,7 +19,7 @@ The basic process:
 7. The reviewer starts the review immediately after assigning it to themselves.
 8. There’s an expectation from both ends that communication won’t stall for more than a few days (see the Daily Pull Request Report section below)
 
-In general, our goal is that no one should have to wait more than a week (barring someone being unavailable for a time and stating so in the pull request comments.)
+In general, our goal is that no one should have to wait more than a week or so (barring someone being unavailable for a time and stating so in the pull request comments.)
 
 A pull request can have a "Discussion" label to designate that it is not really intended for landing and not subject to the normal timing constraints.
 
@@ -31,13 +33,17 @@ The goal with triage is to quickly skim the code and make sure that it meets som
 
 "Is this something we want in Brackets?" can be a tough question and very much depends on the specific pull request. We have generally preferred for new features to start life as extensions, but that's not always possible and some things definitely do belong in core. If we see patterns of things we don't want to see in Brackets core, we'll add them here.
 
+## Translations
+
+Generally speaking, translations should be quick to triage. Our review process for translations is generally simple: find another person in the Brackets community that speaks the language and can verify that the translation is a good one.
+
 ## Daily Pull Request Report
 
 To glue this process together, we'll have a daily report emailed to the Brackets committers that highlights overdue pull requests:
 
-1. PRs that have not started triage in a week
-2. PRs that have not started review within a week of Triage Complete
-3. PRs that have been waiting for a response from the assignee for a week
-4. PRs that have been waiting for a response from the contributor for a week
+1. PRs that have not started triage in 8 days
+2. PRs that have not started review within 8 days of Triage Complete
+3. PRs that have been waiting for a response from the assignee for 8 days
+4. PRs that have been waiting for a response from the contributor for 8 days
 
 In addition to overdue PRs, the report will also list "available PRs" which are requests are not assigned.
