@@ -15,15 +15,15 @@ The following make use of working sets so these should be tested with the workin
 * typescript Quick Edit (brackets-typescript-code-intel) -- this extension does not work with recent codemirror update (https://github.com/tomsdev/brackets-typescript-code-intel/issues/11) 
 * reopener (brackets-reopener)
 * jekyll (alexsalas.brackets-jekyll) -- unable to get this extension to work correctly.
-* vim (brackets-vim)  
+* vim (brackets-vim)   
 === all extensions work with the 2 exceptions noted above that could not be tested ===
 
 The following extensions listen for "editorAreaResize" which has moved and will be deprecated.
 
-* BFxOS for Brackets (buildingfirefoxos.bfxos-brackets)
-* DevDocs Viewer  (gruehle.dev-docs-viewer)
-* Markdown Preview (gruehle.markdown-preview)
-* AsciiDoc Preview (nerk.asciidoc-preview)
+* BFxOS for Brackets (buildingfirefoxos.bfxos-brackets)  
+* DevDocs Viewer  (gruehle.dev-docs-viewer)  
+* Markdown Preview (gruehle.markdown-preview)  
+* AsciiDoc Preview (nerk.asciidoc-preview)  
 === These extensions were not tested and the "editorAreaReize" event was not forwarded ===
 
 TODO: Which extensions should be tested when set current document has been deprecated   
