@@ -24,7 +24,7 @@ The following extensions listen for "editorAreaResize" which has moved and will 
 * DevDocs Viewer  (gruehle.dev-docs-viewer)  
 * Markdown Preview (gruehle.markdown-preview)  
 * AsciiDoc Preview (nerk.asciidoc-preview)  
-=== These extensions were not tested and the "editorAreaReize" event was not forwarded ===
+=== the extensions were not tested and the event was not forwarded so they will fail in the SplitView-Rebased branch ===
 
 TODO: Which extensions should be tested when set current document has been deprecated   
 TODO: Which extensions should be tested when Editor Manager is refactored  
