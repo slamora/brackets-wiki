@@ -37,6 +37,7 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+* ["Apify" documentation generator tool, designed specifically with Brackets API docs in mind](https://github.com/jbalsas/apify) by [Chema Balsas](https://github.com/jbalsas)
 * [Preference to highlight all occurrences of word under cursor](https://github.com/adobe/brackets/pull/7748) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Support line-comment syntax that is prefix of block-comment syntax, & identical block-comment open & close tokens. Enable Toggle Line/Block Comment for CoffeeScript & Lua.](https://github.com/adobe/brackets/pull/7135) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Extension Manager: decrease green update count when an extension is marked for update](https://github.com/adobe/brackets/pull/7863) by [Marcel Gerber](https://github.com/SAPlayer)
