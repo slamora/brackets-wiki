@@ -46,6 +46,7 @@ Community contributions to Brackets
 
 #### Pulling source code from Git
 * TODO: new brackets-shell build required?
+* brackets-shell's Node dependencies have changed. Run `npm install` before rebuilding brackets-shell.
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
