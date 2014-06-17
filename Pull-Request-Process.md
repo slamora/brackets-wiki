@@ -4,10 +4,6 @@ If you're submitting a pull request or are reviewing one, hopefully this page wi
 
 A pull request can be reviewed by any Brackets committer. With this process, we seek to respond to pull requests quickly and to resolve them as quickly as is reasonable. There are two phases to the review: Triage and Review.
 
-**_[redmunds]: (in an offline meeting) I heard that we think the triage process is something that any contributor can do. Then shouldn't "A Brackets committer assigns it to themselves for a quick triage" be removed?_**
-
-*dangoor: I think triage should be done by someone who is very familiar with the Brackets project, code structure and requirements. We might need to expand our "committers" a bit, but I don't think it should be just anyone that does triage.*
-
 The basic process:
 
 1. A contributor submits a new pull request
@@ -30,6 +26,7 @@ The goal with triage is to quickly skim the code and make sure that it meets som
 * Is this something we want in Brackets? (If not, say so and close it or mark “needs review” with a comment)
 * Does the code look like core code? (If not, say so and point to coding conventions or comment on the overall layout)
 * Does the code have tests? (If not, comment on what you’d like to see in terms of tests)
+* Has the contributor signed the CLA?
 
 "Is this something we want in Brackets?" can be a tough question and very much depends on the specific pull request. We have generally preferred for new features to start life as extensions, but that's not always possible and some things definitely do belong in core. If we see patterns of things we don't want to see in Brackets core, we'll add them here.
 
