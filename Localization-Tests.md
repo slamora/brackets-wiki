@@ -201,13 +201,18 @@ _On Windows, we have a backlog item to address the lack of an error message http
 6. Confirm replace UI appears at the top of the editor ``<dialog_replace_1>``
 7. Type any character(s) into the text box, press Enter
 8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
-9. Type a search string that actually exists in the open document.  Click ``All..``
+9. Type a search string that actually exists in the open document.  Click ``Batch..``
 10. Confirm Replace matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
 11. Click ``Find > Find in Files``
 12. Confirm find UI appears at the top of the editor.
 13. Click ``No Files Excluded`` button.  Confirm exclusion set menu dropdown.
 14. From that menu, click ``New Exclusion Set...``.  Confirm Edit Exclusion Set dialog appears.
-15. Click ``Cancel``
+15. Click ``Cancel`` to close the dialog.
+16. Click ``Find > Replace in Files`` menu.
+17. Confirm replace in files UI appears at the top of the editor.
+18. Type a search string that actually exists in the open document.  Click ``Replace...``
+19. Confirm Replace in files matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
+20. Press escape to close the Replace in Files bar.
 
 
 ### JSLint
