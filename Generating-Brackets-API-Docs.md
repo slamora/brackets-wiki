@@ -2,7 +2,7 @@ This set of commands creates the Brackets API Docs to be published at http://bra
 
 ## Use Mac
 
-__Note:__ There is a [known bug](https://github.com/jbalsas/apify/issues/3) the incorrect folder structure and links are generated on Windows, so use Mac to generate documents until that bug is fixed.
+__Note:__ There is a [known bug](https://github.com/jbalsas/apify/issues/3) that the incorrect folder structure and links are generated on Windows, so use Mac to generate documents until that bug is fixed.
 
 ## Install node apify package
 
@@ -28,7 +28,9 @@ git checkout -b yourname/new-branch-name
 Checkout the Brackets branch that you want to generate API Docs for. Currently, we only generate docs for the current master, but once we reach version 1.0, we'll want to generate docs for each major and minor release.
 
 ```
+git checkout master
 git pull
+git status
 ```
 
 ## Generate Docs
