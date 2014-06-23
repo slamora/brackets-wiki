@@ -203,17 +203,28 @@ _On Windows, we have a backlog item to address the lack of an error message http
 8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
 9. Type a search string that actually exists in the open document.  Click ``Batch..``
 10. Confirm Replace matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
-11. Click ``Find > Find in Files``
-12. Confirm find UI appears at the top of the editor.
-13. Click ``No Files Excluded`` button.  Confirm exclusion set menu dropdown.
-14. From that menu, click ``New Exclusion Set...``.  Confirm Edit Exclusion Set dialog appears.
-15. Click ``Cancel`` to close the dialog.
-16. Click ``Find > Replace in Files`` menu.
-17. Confirm replace in files UI appears at the top of the editor.
-18. Type a search string that actually exists in the open document.  Click ``Replace...``
-19. Confirm Replace in files matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
-20. Press escape to close the Replace in Files bar.
 
+### Find/Replace in Files
+
+1. Click ``Find > Find in Files``
+2. Confirm find UI appears at the top of the editor.
+3. Click ``No Files Excluded`` button.  Confirm exclusion set menu dropdown.
+4. From that menu, click ``New Exclusion Set...``.  Confirm Edit Exclusion Set dialog appears.
+5. Click ``Cancel`` to close the dialog.
+6. Click ``Find > Replace in Files`` menu.
+7. Confirm replace in files UI appears at the top of the editor.
+8. Type a search string that actually exists in the open document.  Click ``Replace...``
+9. Confirm Replace in files matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
+10. Press escape to close the Replace in Files bar.
+
+### Find/Replace in Selected File/Folder
+
+1. Click ``Find > Find in Select File/Folder``
+2. Confirm Find in selected location UI appears at the top of the editor.
+3. Press escape to close the Find bar.
+4. Click ``Find > Replace in Select File/Folder``
+5. Confirm Replace in selected location UI appears at the top of the editor.
+6. Press escape to close the Replace bar.
 
 ### JSLint
 
