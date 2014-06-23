@@ -6,7 +6,7 @@ __Note:__ There is a [known bug](https://github.com/jbalsas/apify/issues/3) that
 
 ### Install node apify package
 
-This command installs the node apify package globally so you can run it from any folder. Note that apify is still being developed, so it's a good idea to re-run this command each time to get the latest package.
+This command installs the node **apify** package globally so you can run it from any folder. Note that **apify** is still being developed, so it's a good idea to re-run this command each time to get the latest package.
 
 ```
 cd ~
