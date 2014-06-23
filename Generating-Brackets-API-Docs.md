@@ -35,7 +35,7 @@ git status
 
 ### Generate Docs
 
-The source folder for API Docs is the `brackets/src` folder. The following commands assumes that you are in the root of the **brackets** repo.
+The source folder for API Docs is the `brackets/src` folder. The following command assumes that you are in the root of the **brackets** repo.
 
 The output folder is `brackets.io/docs/current`. The following command assumes that the **brackets** and **brackets.io** root folders are side-by-side.
 
