@@ -47,7 +47,7 @@ Server smoke test steps
 1. Launch Brackets. Use File > Open Folder... and browse to the server root folder (or smoke tests folder [brackets/test/smokes] if you don't have a local server).
 1. Open the server-tests folder in the project tree and verify that you see pathRel.html, pathRoot.html, server.php files, and css &amp; images folders.
 1. Select File > Project Settings... to invoke Project Settings dialog. If a Base URL is specified, delete it.
-1. Verify informational text is displayed in empty input field. Click OK.
+1. Verify informational text is displayed in empty input field. Click Done.
 1. Open pathRel.html, start Live Preview using File > Live Preview.
 1. If you trashed prefs, you'll get an info dialog explaining how Live Preview works. Click OK.
 1. Verify that the base URL is 127.0.0.1: _nnnnn_ (where _nnnnn_ is an auto-generated port number) and page renders correctly in browser.
