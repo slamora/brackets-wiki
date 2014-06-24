@@ -124,7 +124,7 @@ Code hints are provided by default in a number of places:
 
 By default, Brackets runs [JSLint](http://www.jslint.com/lint.html) on JS files when you initially open them and whenever you save changes. If JSLint finds problems, the results are shown in a panel at the bottom. If your file is clean, you'll see a green checkmark in the status bar instead.
 
-JSLint is very picky about formatting. JSLint is very picky about a lot of things. You can hide the JSLint results panel by clicking the close box at the top (the status bar icon will still indicate if JSLint has found problems or not), or you can turn off JSLint completely by unchecking **View > Enable JSLint**.
+JSLint is very picky about formatting. JSLint is very picky about a lot of things. You can hide the JSLint results panel by clicking the close box at the top (the status bar icon will still indicate if JSLint has found problems with either a green checkmark or yellow warning symbol), or you can turn off JSLint completely by unchecking **View > Enable JSLint**.
 
 Various extensions are available that replace JSLint with a different linting tool.
 
