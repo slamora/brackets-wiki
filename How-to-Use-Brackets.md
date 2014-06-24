@@ -60,7 +60,7 @@ All the CSS features above also work when you're in an inline Quick Edit CSS edi
 
 **Using your own backend**<a name="lp-custom-server"></a> - Make sure your server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open a file that needs to be processed by a web server (HTML, PHP, ASP, etc...) and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
 
-Live Preview has the following limitations with files processed by a server backend:
+Live Preview has the following limitations with files processed by a backend server:
 
 * Changes to server processed files are not updated in the browser as you type. Changes to CSS files are, however, reflected in real time as you type.  Brackets will refresh the page on save so that changes to server based files are rendered in the browser.
 
