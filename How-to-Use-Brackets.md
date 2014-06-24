@@ -179,7 +179,7 @@ for a more complete list of shortcuts.
 Preferences
 -----------
 
-There is not yet a global user interface for all preferences (so the required "Preferences" menu item on Mac is disabled). From the Brackets user interface, you can change preferences such as whether you want "code inspection" (automatic detection of errors) turned on, or if word wrap should be on. These preferences are "user-level" which means that they apply to any file in any folder that you open. Brackets also lets you override preferences on a per-project (use the File &gt; Open Folder command) basis. These files are particularly useful for saving configuration that is specific to a project or even some files in a project. 
+There is not yet a global user interface for all preferences (so the required "Preferences" menu item on Mac is disabled). From the Brackets user interface, you can change preferences such as whether you want "code inspection" (automatic detection of errors) turned on, or if word wrap should be on. These preferences are "user-level" which means that they apply to any file in any folder that you open. Brackets also lets you override preferences on a per-project (use the File &gt; Open Folder command) basis. These files are particularly useful for saving a configuration that is specific to a project or even some files in a project. 
 
 Some of the preferences available in these files do not have any user interface yet. To modify these preferences:
 
