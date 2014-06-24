@@ -58,7 +58,7 @@ This mode offers the full range of Live Preview functionality:
 
 All the CSS features above also work when you're in an inline Quick Edit CSS editor.
 
-**Using your own backend**<a name="lp-custom-server"></a> - Make sure your server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open an HTML, PHP, ASP etc. file and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
+**Using your own backend**<a name="lp-custom-server"></a> - Make sure your server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open a file that needs to be processed by a web server (HTML, PHP, ASP, etc...) and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
 
 _However_, this mode disables the HTML-related features:
 * The browser won't update in real time as you type in HTML/PHP/etc. files (only CSS edits will be reflected in real time). Instead, the page is auto-reloaded when you save a HTML/PHP/etc. file.
