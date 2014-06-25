@@ -8,7 +8,7 @@ What's New in Release 0.41
     * **[Replace across multiple files](https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files)**: You can see all search matches first and uncheck any you don't wish to replace. Supports the same exclusion filtering as Find in Files.
 * **Code Hints**
     * **[JavaScript Code Hinting Crash Prevention](https://github.com/adobe/brackets/pull/8155)**: Brackets automatically stops processing problematic JavaScript files that previously could cause a crash.
-* **Brackets API Documentation**
+* **Documentation**
     * **[Brackets API Documentation](http://brackets.io/docs)**: Docs for the current master branch is now posted at http://brackets.io/docs and updated for every release.
 * **Ongoing Research** (not implemented yet)
     * [Split view](https://trello.com/c/2DWV5tEX/1277-splitview-migrate-workingset-management-to-mainviewmanager) (early implementation on branch)
