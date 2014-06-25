@@ -39,7 +39,7 @@ The source folder (-s) for API Docs is the `brackets/src` folder. The following 
 
 The output folder (-o) is `brackets.io/docs/current`. The following command assumes that the **brackets** and **brackets.io** root folders are side-by-side.
 
-The title (-t) is Brackets.
+The title (-t) is `Brackets`.
 
 ```
 apify -s src/ -o ../brackets.io/docs/current -t Brackets
