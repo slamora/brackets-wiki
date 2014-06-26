@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Release 0.41 -- approximately June 26._
-
 What's New in Release 0.41
 --------------------------
 * **Search**
