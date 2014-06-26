@@ -7,7 +7,7 @@ What's New in Release 0.41
 * **Search**
     * **[Replace across multiple files](https://trello.com/c/NbNEOs4S/264-replace-across-multiple-files)**: You can see all search matches first and uncheck any you don't wish to replace. Supports the same exclusion filtering as Find in Files.
 * **Stability**
-    * **[JavaScript code hinting crash prevention](https://github.com/adobe/brackets/pull/8155)**: Brackets automatically stops processing problematic JavaScript files that previously could cause a crash during code-hint analysis.
+    * [JavaScript code hinting crash prevention](https://github.com/adobe/brackets/pull/8155): Brackets automatically stops processing problematic JavaScript files that previously could cause a crash during code-hint analysis.
 * **Files & Folders**
     * [Rename on second click](https://github.com/adobe/brackets/issues/1976): Click the currently selected file in the tree view a second time to rename it, similar to the gesture available in Windows Explorer and OS X Finder.
 * **Localization**
