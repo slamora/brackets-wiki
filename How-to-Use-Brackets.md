@@ -203,8 +203,8 @@ Here is a quick list of some of the settings you can change in these files:
 * (new in 38) **scrollPastEnd**: (default `false`) True to be able to scroll beyond the end of the document
 * (new in 38) **softTabs**: (default `true`) False to turn off soft tabs behavior
 * (new in 38) **closeOthers.others**, **closeOthers.above**, **closeOthers.below**: (default all `true`) False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu
-* (new in 39) **language.fileExtension**: (default `undefined`) Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
-* (new in 39) **language.fileName**: (default `undefined`) Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
+* (new in 39) **language.fileExtensions**: (default `undefined`) Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
+* (new in 39) **language.fileNames**: (default `undefined`) Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
 * (new in 40) **highlightMatches**: (default `false`) If true, the strings that match the selection will be underlined. 
 
 Here's an example:
