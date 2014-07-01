@@ -57,6 +57,7 @@ Contributors: If you are willing to test other Linux distributions please add yo
 | Mint 16 | 64-bit | No issues besides the close issue. Still Testing |
 |LMDE(*) | Debian Testing 32 bit |None|
 | Arch | 32/64-bit | Not tested / None - (Package: https://aur.archlinux.org/packages/brackets-git) |
+| Slackware | 32 & 64 | None (http://slackbuilds.org/repository/14.1/development/brackets/) |
 
 (*) Linux Mint Debian Edition
 
