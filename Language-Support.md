@@ -48,7 +48,7 @@ If your language is not already supported by CodeMirror (see list above), you'll
 
 An extension can also modify/enhance an existing registered language. Retrieve a Language object by its ID, then use setter methods to change it:
 
-```
+```javascript
 var LanguageManager = brackets.getModule("language/LanguageManager");
 
 var language = LanguageManager.getLanguage("coffeescript");
