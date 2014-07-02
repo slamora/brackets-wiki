@@ -27,7 +27,7 @@ For these preferences, you map from the file name or extension to a language nam
 
 In an extension, if a language has an [existing CodeMirror mode](http://codemirror.net/doc/modes.html), you can declare the new language in a simple JSON object:
 
-```
+```javascript
 var LanguageManager = brackets.getModule("language/LanguageManager");
 
 LanguageManager.defineLanguage("haskell", {
