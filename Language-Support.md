@@ -6,7 +6,7 @@ Some languages are built into core Brackets by default (for a list, see [languag
 
 ## Preferences
 
-If you have a file that is in a language that Brackets already has support for, either in core or in an extension, you can map additional file extensions and file names to that language. For example, imagine that you have a file called `pavement` that is a Python file and any file with a `foo` extension is a JavaScript file in your project. You can create a .brackets.json file in the root of your project that looks like this:
+If you have a file that is in a language that Brackets already has support for, either in core or in an extension, you can map additional file extensions and file names to that language. For example, imagine that you have a file called `pavement` that is a Python file and any file with a `foo` extension is a JavaScript file in your project. You can create a **.brackets.json** file in the root of your project that looks like this:
 
 ```json
 {
