@@ -19,11 +19,11 @@
 
 [QCon 2013: Exploring the Future of Web Tooling with Brackets](http://www.infoq.com/presentations/brackets) - Narciso (nj) Jaramillo (various experiments)
 
-[Theseus JavaScript Debugger for Brackets](http://www.youtube.com/watch?v=T6d5C3rLeFY) - Tom Lieber (available today!)
+[Theseus JavaScript Debugger for Brackets](http://www.youtube.com/watch?v=T6d5C3rLeFY) - Tom Lieber (can be used today!)
 
-["PSD Lens" Concept: from Design Comp to Code](http://www.youtube.com/watch?v=xAP8CSMEwZ8) - Narciso (nj) Jaramillo (work in progress)
+["PSD Lens" Concept: from Design Comp to Code](http://www.youtube.com/watch?v=xAP8CSMEwZ8) - Narciso (nj) Jaramillo (in development - not available yet)
 
-[Responsive design tool for Brackets](http://youtu.be/kXTP8XqrSwE) - Lee Brimelow (experiment/demo only)
+[Responsive design tool for Brackets](http://youtu.be/kXTP8XqrSwE) - Lee Brimelow (source available, but needs work before it's generally usable)
 
 [Space Age Miracle Tools: Experiments with Brackets](http://tv.adobe.com/watch/max-2013/space-age-miracle-tools-experiments-with-brackets/) - Jason San Jose, Adam Lehman, Ryan Stewart, Peter Flynn (various experiments)
 
