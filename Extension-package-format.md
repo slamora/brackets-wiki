@@ -35,7 +35,7 @@ Brackets uses a format _similar_ to [npm's package.json format](https://npmjs.or
 
 **Required fields:** `name`, `version`
 
-**Highly recommended:** `title`, `description` (your extension will look ugly in the Extension Manager dialog in Brackets otherwise)
+**Highly recommended:** `title`, `description`, `homepage`
 
 Here's how these fields are exposed in the Extension Manager UI:
 ![](images/extension-listing-example.png)
