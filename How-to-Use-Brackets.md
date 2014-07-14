@@ -28,7 +28,7 @@ Instead of cluttering up your coding environment with lots of panels and icons, 
 
 You open Quick Edit's inline editors by pressing **Ctrl/Cmd-E** when your cursor is on certain pieces of code. For example:
 
-* In an HTML file with the cursor inside a `class` or `id` attribute or on the tag name - Quick Edit will show you all the CSS rules in your project that match. You can edit these rules directly inline, without ever leaving the context of the HTML file.
+* In an HTML file with the cursor inside a `class` or `id` attribute (name or value) or on the tag name - Quick Edit will show you all the CSS rules in your project that match. You can edit these rules directly inline, without ever leaving the context of the HTML file.
     * When multiple rules match, navigate among them using the list on the right side (or use Alt-Up/Down).
     * To create a new CSS rule directly from the inline editor, click the **New Rule** button (or press Ctrl-Alt-N/Cmd-Opt-N).
 * In any file with a hex color or rgb/rgba/hsl/hsla color - Quick Edit opens an inline color picker for previewing and adjusting the color. The color picker also lists the top most-used colors from other parts of the file for quick access.
