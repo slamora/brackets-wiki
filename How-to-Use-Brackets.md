@@ -33,7 +33,7 @@ You open Quick Edit's inline editors by pressing **Ctrl/Cmd-E** when your cursor
     * To create a new CSS rule directly from the inline editor, click the **New Rule** button (or press Ctrl-Alt-N/Cmd-Opt-N).
 * In any file with a hex color or rgb/rgba/hsl/hsla color - Quick Edit opens an inline color picker for previewing and adjusting the color. The color picker also lists the top most-used colors from other parts of the file for quick access.
 * In a JavaScript file with the cursor on a function name - Quick Edit will show you the function's body (even if it's in a different file).
-* In a CSS/LESS/SCSS file with the cursor on a `cubic-bezier()` or `steps()` transition timing function - Quick Edit opens a graphical transition curve editor.
+* In a CSS/LESS/SCSS file with the cursor on a `cubic-bezier()` or `steps()` transition timing function - Quick Edit opens a graphical transition curve editor. Pre-defined timing functions `ease`, `ease-in`, `ease-out`, `ease-in-out`, `step-start`, and `step-end` are also valid starting points.
 
 **Quick Docs** is a related feature that displays relevant documentation inline. Use **Ctrl/Cmd-K** to open Quick Docs:
 
