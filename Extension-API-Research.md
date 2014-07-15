@@ -373,10 +373,10 @@ exports.determineFileType = determineFileType;
 ### Benefits
 
 * Access to core Brackets that is consistent with the rest of the world
-* Potential for more easily testing modules in Node and using modules formatted for Node
 * First step in enabling extensions to share services
 * Robust and easier to debug error handling for promises and events
-* Looser coupling between subsystems which can make testing easier, reduce circular dependencies
+* Event bus provides looser coupling between subsystems which can make testing easier, reduce circular dependencies
+* Event bus is also a mechanism through which extensions could communicate some events today
 
 ## Proposed API changes
 
