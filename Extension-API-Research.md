@@ -1,8 +1,379 @@
-(See ["Extension API Evolution"](Extensions2) for the _predecessor_ to this proposal, including more detail on the longer-term ideas such as restartless extensions & sandboxing)
-
 ## Status
-* Created as part of the [Extension API research story](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design)
-* Implementation begins with [module loader research story](https://trello.com/c/Qk7uqIw8/991-research-extension-loader-implementation) followed by [module loader implementation (and package format migration) story](https://trello.com/c/Wtv5a74b/992-new-module-loader-module-format).
+
+* This is a revision based on previous extension research and some [Extension Robustness](Extension-Robustness) thoughts
+* Originally, created as part of the [Extension API research story](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design). See the "Proposed API changes" section for the start of this research.
+* (See ["Extension API Evolution"](Extensions2) for earlier thoughts than this proposal, including more detail on the longer-term ideas such as restartless extensions & sandboxing)
+
+## The Patterns of Brackets 1.0 Extensions
+
+### Introduction
+
+Brackets has grown tremendously since its initial release and the overall architecture has held up well with that growth. That said, there are some things that we've learned over time that could change some of the patterns used in extensions. This isn't about the [entire surface area of the Brackets API](http://brackets.io/docs/current/modules/brackets.html), which is something we improve incrementally. This is about improving patterns that appear in *every single extension*.
+
+* `brackets.getModule` was always considered to be something of a hack to allow extensions to get at Brackets core code
+* Node and CommonJS modules have gotten more popular over time (with tools like [Browserify](http://browserify.org/) helping to push this farther).
+* [Promises/A+](http://promisesaplus.com/) has caught on and those basic semantics are already shipping as a standard Promise object in Chrome and Firefox
+* jQuery promises [don't quite follow this spec](https://github.com/kriskowal/q/wiki/Coming-from-jQuery)
+* Brackets has error handling needs that are different from many client side projects because extension code is not maintained by the same people maintaining Brackets itself. Errors in extensions can significantly impact Brackets' operation.
+
+The goal of this project is to make changes to patterns that spread throughout Brackets and extensions to improve our foundation for 1.0 and beyond:
+
+* Module loading
+* Promises
+* Events
+
+This document serves as a presentation of the basic idea with some strawman proposals. The final implementation will vary based on research and feedback.
+
+### Module Loading
+
+We are at a crossroads in JavaScript modules right now. ECMAScript 6 (ES6, the next version of the JavaScript standard) will soon have a [native module system](http://jsmodules.io/) that draws heavily from the CommonJS module system. The module specs and transpilers have matured to a point at which we could reasonably switch to ES6 modules. There are even [module](https://github.com/systemjs/systemjs) [loaders](http://webpack.github.io/) that can handle AMD, CommonJS and ES6 modules. Looking purely to the future, ES6 modules would be the way to go. However, it would be reasonable to choose CommonJS modules today, because that is what Node supports natively and what the tens of thousands of packages in npm are designed to support. A small bit of research could likely show us whether ES6 module interop is good enough now to make the leap. AngularJS 2.0 [makes the leap to ES6 modules](https://github.com/angular/watchtower.js/blob/master/src/watch.js) so it may not be an unreasonable choice.
+
+All of that said, the most straightforward path at this stage would be to use [Cajon](https://github.com/requirejs/cajon) which *is* RequireJS but supports CommonJS formatted modules.
+
+Regardless of the module format, the changes we'd make to module loading are:
+
+1. The same mechanism is used to load modules from Brackets as is used for loading extension modules
+2. Brackets core modules will be under a "core" namespace ("core/ProjectManager", for example).
+3. The door will be opened for extensions to use services provided by other extensions. This wouldn't be enabled at first, but this is the reason Brackets core features would be in the "core" namespace.
+4. A mechanism for testing that would allow shimming/mocking of modules
+5. Browser-compatible modules in NPM can be installed and used directly
+
+There is some more detail on the [module loader and module format card](https://trello.com/c/Wtv5a74b/992-new-module-loader-module-format) in Trello.
+
+### Promises
+
+With the Promise object already appearing in [48% of browsers](http://caniuse.com/#search=promise) (with Safari coming soon), the standard is clear and does not behave as jQuery promises do. With a standard in hand, it is likely that more libraries will start using promises and that alone is a good benefit for switching. Beyond that, error handling is better in other promises implementations. Troubleshooting asynchronous behavior is difficult enough without errors getting transparently swallowed.
+
+[Bluebird](https://github.com/petkaantonov/bluebird) and [Q](https://github.com/kriskowal/q) are both well regarded promises libraries that we could choose from. Both libraries can wrap a jQuery promise with their own to ensure consistent behavior. Both can provide [additional debugging information](https://github.com/kriskowal/q#long-stack-traces) during development that show where the promise was created.
+
+Changing promises implementations is potentially the most difficult change, as far as backwards compatibility is concerned and there is a [research card to study the impact](https://trello.com/c/qJ0TgoVu/1361-s-research-promises-upgrade).
+
+### Events
+
+A misbehaved event handler can prevent other handlers from receiving events, which has the potential to make many parts of Brackets fail in ways that are hard to trace. This is not a problem that typical web applications have and capturing exceptions in handlers can potentially slow down notifications because v8 does not optimize functions with try/catch. For Brackets, including the try/catch in most event notifications will ensure that even if one handler fails, the rest get the message.
+
+Additionally, we can reduce coupling by using a global event bus between subsystems and the standard EventEmitter pattern within subsystems or when dealing with specific, non-singleton objects. This will make testing easier and provide an easy place to hook in logging for debugging.
+
+Also, we can potentially reduce the chances of typos in event names by warning about unregistered event names. (Check for undefined events after all extensions have loaded.)
+
+AppInit could be replaced by a type of channel that fires once per subscriber and remembers that it has fired.
+
+Following the example of Postal (and easing backwards compatibility), the first argument to event handlers will be an "envelope" that provides metadata.
+
+### Backward compatibility
+
+The good news is that we should be able to provide deprecation warnings and give a backwards-compatible transition to the new style. The only question mark around compatibility is with the promises upgrade.
+
+### Strawman Examples
+
+I used the main.js file from brackets-git-info as a sample. I stripped out most of the file to focus on the important bits.
+
+#### Current version
+
+```javascript
+// Adapted from brackets-git-info's main.js
+
+/*global brackets, define, $, window, Mustache */
+define(function (require, exports, module) {
+    'use strict';
+    
+    var AppInit             = brackets.getModule("utils/AppInit"),
+        CommandManager      = brackets.getModule("command/CommandManager"),
+        Dialogs             = brackets.getModule("widgets/Dialogs"),
+        ExtensionUtils      = brackets.getModule("utils/ExtensionUtils"),
+        FileUtils           = brackets.getModule("file/FileUtils"),
+        Menus               = brackets.getModule("command/Menus"),
+        FileSystem          = brackets.getModule("filesystem/FileSystem"),
+        LanguageManager     = brackets.getModule("language/LanguageManager"),
+
+        NodeConnection      = brackets.getModule("utils/NodeConnection"),
+        DocumentManager     = brackets.getModule("document/DocumentManager"),
+        ProjectManager      = brackets.getModule("project/ProjectManager"),
+        qunitRunner         = require("main_qunit"),
+        jasmineRunner       = require("main_jasmine"),
+        jasmineNodeRunner   = require("main_jasmine_node"),
+        nodeRunner          = require("main_node"),
+        yuiRunner           = require("main_yui"),
+        MyStatusBar         = require("MyStatusBar");
+
+    var moduledir           = FileUtils.getNativeModuleDirectoryPath(module),
+        commands            = [],
+        YUITEST_CMD         = "yuitest_cmd",
+        JASMINETEST_CMD     = "jasminetest_cmd",
+        QUNITTEST_CMD       = "qunit_cmd",
+        SCRIPT_CMD          = "script_cmd",
+        NODETEST_CMD        = "nodetest_cmd",
+        GENERATE_JASMINE_CMD = "generate_jasmine_cmd",
+        GENERATE_QUNIT_CMD  = "generate_qunit_cmd",
+        GENERATE_YUI_CMD    = "generate_yui_cmd",
+        VIEWHTML_CMD        = "viewhtml_cmd",
+        projectMenu         = Menus.getContextMenu(Menus.ContextMenuIds.PROJECT_MENU),
+        workingsetMenu      = Menus.getContextMenu(Menus.ContextMenuIds.WORKING_SET_MENU),
+        nodeConnection      = new NodeConnection(),
+        _windows            = {},
+        enableHtml          = false;
+
+
+    // opens an html file in a new window
+    function viewHtml() {
+        var entry = ProjectManager.getSelectedItem();
+        if (entry === undefined) {
+            entry = DocumentManager.getCurrentDocument().file;
+        }
+        var path = entry.fullPath;
+        var w = window.open(path);
+        w.focus();
+    }
+
+
+    // reads config.js to determine if brackets-xunit should be disabled for the current project
+    function readConfig() {
+        var result = new $.Deferred();
+        var root = ProjectManager.getProjectRoot(),
+            configFile = FileSystem.getFileForPath(root.fullPath + "config.js");
+        FileUtils.readAsText(configFile).done(function (text) {
+            try {
+                var config = JSON.parse(text);
+                if (config.hasOwnProperty('brackets-xunit') && config['brackets-xunit'] === 'disable') {
+                    result.reject('disabled');
+                }
+            } catch (e) {
+                console.log("[brackets-xunit] reading " + root.fullPath + "config.js Error " + e);
+            } finally {
+                return result.resolve('ok');
+            }
+        }).fail(function () {
+            return result.resolve('ok');
+        });
+        return result.promise();
+    }
+
+    /*
+     * cleanMenu - removes all brackets-xunit menu items from a menu
+     * parameters: menu - the WorkingSetMenu or the ProjectMenu
+     */
+    function cleanMenu(menu) {
+        var i;
+        for (i = 0; i < commands.length; i++) {
+            menu.removeMenuItem(commands[i]);
+        }
+    }
+    // setup, connects to the node server loads node/JasmineDomain and node/ProcessDomain
+    AppInit.appReady(function () {
+        $(DocumentManager)
+        .on("documentSaved.xunit", function (e, d) {
+            runTestsOnSaveOrChange(d);
+        });
+
+
+        $(DocumentManager)
+        .on("currentDocumentChange", function () {
+            runTestsOnSaveOrChange(DocumentManager.getCurrentDocument());
+        });
+
+        MyStatusBar.initializePanel();
+
+    });
+
+
+
+
+    // Register commands as right click menu items
+    commands = [ YUITEST_CMD, JASMINETEST_CMD, QUNITTEST_CMD, SCRIPT_CMD, NODETEST_CMD, GENERATE_JASMINE_CMD,
+                GENERATE_QUNIT_CMD, GENERATE_YUI_CMD, VIEWHTML_CMD];
+    CommandManager.register("Run YUI Unit Test", YUITEST_CMD, runYUI);
+    CommandManager.register("Run Jasmine xUnit Test", JASMINETEST_CMD, runJasmine);
+    CommandManager.register("Run QUnit xUnit Test", QUNITTEST_CMD, runQUnit);
+    CommandManager.register("Run Script", SCRIPT_CMD, runScript);
+    CommandManager.register("Run Jasmine-Node xUnit Test", NODETEST_CMD, runJasmineNode);
+    CommandManager.register("Generate Jasmine xUnit Test", GENERATE_JASMINE_CMD, generateJasmineTest);
+    CommandManager.register("Generate Qunit xUnit Test", GENERATE_QUNIT_CMD, generateQunitTest);
+    CommandManager.register("Generate YUI xUnit Test", GENERATE_YUI_CMD, generateYuiTest);
+    CommandManager.register("xUnit View html", VIEWHTML_CMD, viewHtml);
+
+    // check if the extension should add a menu item to the project menu (under the project name, left panel)
+    $(projectMenu).on("beforeContextMenuOpen", function () {
+        var selectedEntry = ProjectManager.getSelectedItem(),
+            text = '';
+        if (selectedEntry && selectedEntry.fullPath && DocumentManager.getCurrentDocument() !== null && selectedEntry.fullPath === DocumentManager.getCurrentDocument().file.fullPath) {
+            text = DocumentManager.getCurrentDocument().getText();
+        }
+        cleanMenu(projectMenu);
+        readConfig().done(function () {
+            checkFileTypes(projectMenu, selectedEntry, text);
+        });
+    });
+
+    // check if the extension should add a menu item to the workingset menu (under Working Files, left panel)
+    $(workingsetMenu).on("beforeContextMenuOpen", function () {
+        var selectedEntry = DocumentManager.getCurrentDocument().file,
+            text = DocumentManager.getCurrentDocument().getText();
+        cleanMenu(workingsetMenu);
+        readConfig().done(function () {
+            checkFileTypes(workingsetMenu, selectedEntry, text);
+        });
+    });
+    exports.formatTime = formatTime;
+    exports.checkFileTypes = checkFileTypes;
+    exports.determineFileType = determineFileType;
+});
+```
+
+#### Deprecation Warnings
+
+* `define()` is unnecessary
+* Replace `brackets.getModule` with `require("core/*")`
+* Deprecation warning for `FileUtils.readAsText().done()` and `.fail()`. These should be `.then` and `.catch`.
+* `AppInit.appReady` should be replaced with `EventBus.on("AppInit.appReady")`
+* `$(DocumentManager).on` should be replaced with `EventBus.on("DocumentManager.")`
+* `$(contextMenu).on("beforeContextMenuOpen")` should be replaced with `EventBus.on("Menus.contextMenu.beforeOpen")`
+
+#### Updated Version
+
+```javascript
+// Adapted from brackets-git-info's main.js
+
+/*global brackets,$, window, Mustache */
+'use strict';
+
+var EventBus            = require("core/EventBus"),
+    CommandManager      = require("core/command/CommandManager"),
+    Dialogs             = require("core/widgets/Dialogs"),
+    ExtensionUtils      = require("core/utils/ExtensionUtils"),
+    FileUtils           = require("core/file/FileUtils"),
+    Menus               = require("core/command/Menus"),
+    FileSystem          = require("core/filesystem/FileSystem"),
+    LanguageManager     = require("core/language/LanguageManager"),
+    NodeConnection      = require("core/utils/NodeConnection"),
+    DocumentManager     = require("core/document/DocumentManager"),
+    ProjectManager      = require("core/project/ProjectManager"),
+    qunitRunner         = require("main_qunit"),
+    jasmineRunner       = require("main_jasmine"),
+    jasmineNodeRunner   = require("main_jasmine_node"),
+    nodeRunner          = require("main_node"),
+    yuiRunner           = require("main_yui"),
+    MyStatusBar         = require("MyStatusBar");
+
+var moduledir           = FileUtils.getNativeModuleDirectoryPath(module),
+    commands            = [],
+    YUITEST_CMD         = "yuitest_cmd",
+    JASMINETEST_CMD     = "jasminetest_cmd",
+    QUNITTEST_CMD       = "qunit_cmd",
+    SCRIPT_CMD          = "script_cmd",
+    NODETEST_CMD        = "nodetest_cmd",
+    GENERATE_JASMINE_CMD = "generate_jasmine_cmd",
+    GENERATE_QUNIT_CMD  = "generate_qunit_cmd",
+    GENERATE_YUI_CMD    = "generate_yui_cmd",
+    VIEWHTML_CMD        = "viewhtml_cmd",
+    projectMenu         = Menus.getContextMenu(Menus.ContextMenuIds.PROJECT_MENU),
+    workingsetMenu      = Menus.getContextMenu(Menus.ContextMenuIds.WORKING_SET_MENU),
+    nodeConnection      = new NodeConnection(),
+    _windows            = {},
+    enableHtml          = false;
+
+
+// opens an html file in a new window
+function viewHtml() {
+    
+    // MIGRATION NOTE: Some direct uses of ProjectManager and DocumentManager would not be required because
+    // events will convey the information necessary. Unless CommandManager changes to pass in the current document
+    // and currently selected file, these uses will still be required.
+    var entry = ProjectManager.getSelectedItem();
+    if (entry === undefined) {
+        entry = DocumentManager.getCurrentDocument().file;
+    }
+    var path = entry.fullPath;
+    var w = window.open(path);
+    w.focus();
+}
+
+
+// reads config.js to determine if brackets-xunit should be disabled for the current project
+function readConfig() {
+    // Extensions can still use jQuery promises if they want, though they'd be encouraged to switch to real promises.
+    var result = new $.Deferred();
+    var root = ProjectManager.getProjectRoot(),
+        configFile = FileSystem.getFileForPath(root.fullPath + "config.js");
+    FileUtils.readAsText(configFile).then(function (text) {
+        try {
+            var config = JSON.parse(text);
+            if (config.hasOwnProperty('brackets-xunit') && config['brackets-xunit'] === 'disable') {
+                result.reject('disabled');
+            }
+        } catch (e) {
+            console.log("[brackets-xunit] reading " + root.fullPath + "config.js Error " + e);
+        } finally {
+            return result.resolve('ok');
+        }
+    }).catch(function () {
+        return result.resolve('ok');
+    });
+    return result.promise();
+}
+
+EventBus.on("xunit:AppInit.appReady", function () {
+    EventBus.on("xunit:DocumentManager.documentSaved.*", function (e, d) {
+        runTestsOnSaveOrChange(d);
+    });
+
+
+    EventBus.on("xunit:DocumentManager.currentDocumentChange.*", function (e, d) {
+        runTestsOnSaveOrChange(d);
+    });
+
+    MyStatusBar.initializePanel();
+
+});
+
+
+
+
+// Register commands as right click menu items
+commands = [ YUITEST_CMD, JASMINETEST_CMD, QUNITTEST_CMD, SCRIPT_CMD, NODETEST_CMD, GENERATE_JASMINE_CMD,
+            GENERATE_QUNIT_CMD, GENERATE_YUI_CMD, VIEWHTML_CMD];
+CommandManager.register("Run YUI Unit Test", YUITEST_CMD, runYUI);
+CommandManager.register("Run Jasmine xUnit Test", JASMINETEST_CMD, runJasmine);
+CommandManager.register("Run QUnit xUnit Test", QUNITTEST_CMD, runQUnit);
+CommandManager.register("Run Script", SCRIPT_CMD, runScript);
+CommandManager.register("Run Jasmine-Node xUnit Test", NODETEST_CMD, runJasmineNode);
+CommandManager.register("Generate Jasmine xUnit Test", GENERATE_JASMINE_CMD, generateJasmineTest);
+CommandManager.register("Generate Qunit xUnit Test", GENERATE_QUNIT_CMD, generateQunitTest);
+CommandManager.register("Generate YUI xUnit Test", GENERATE_YUI_CMD, generateYuiTest);
+CommandManager.register("xUnit View html", VIEWHTML_CMD, viewHtml);
+
+// check if the extension should add a menu item to the project menu (under the project name, left panel)
+EventBus.on("xunit:Menus.projectMenu.beforeOpen", function (e, projectMenu, selectedEntry) {
+    var text = '';
+    if (selectedEntry && selectedEntry.fullPath && DocumentManager.getCurrentDocument() !== null && selectedEntry.fullPath === DocumentManager.getCurrentDocument().file.fullPath) {
+        text = DocumentManager.getCurrentDocument().getText();
+    }
+    cleanMenu(projectMenu);
+    readConfig().done(function () {
+        checkFileTypes(projectMenu, selectedEntry, text);
+    });
+});
+
+// check if the extension should add a menu item to the workingset menu (under Working Files, left panel)
+EventBus.on("xunit:Menus.workingSetMenu.beforeOpen", function (e, workingSetMenu) {
+    var selectedEntry = DocumentManager.getCurrentDocument().file,
+        text = DocumentManager.getCurrentDocument().getText();
+    cleanMenu(workingSetMenu);
+    readConfig().done(function () {
+        checkFileTypes(workingsetMenu, selectedEntry, text);
+    });
+});
+exports.formatTime = formatTime;
+exports.checkFileTypes = checkFileTypes;
+exports.determineFileType = determineFileType;
+```
+
+### Benefits
+
+* Access to core Brackets that is consistent with the rest of the world
+* Potential for more easily testing modules in Node and using modules formatted for Node
+* First step in enabling extensions to share services
+* Robust and easier to debug error handling for promises and events
+* Looser coupling between subsystems which can make testing easier, reduce circular dependencies
 
 ## Proposed API changes
 
