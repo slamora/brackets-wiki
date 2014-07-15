@@ -35,6 +35,12 @@ Regardless of the module format, the changes we'd make to module loading are:
 1. The same mechanism is used to load modules from Brackets as is used for loading extension modules
 2. Brackets core modules will be under a "core" namespace ("core/ProjectManager", for example).
 3. The door will be opened for extensions to use services provided by other extensions. This wouldn't be enabled at first, but this is the reason Brackets core features would be in the "core" namespace.
+4. core modules would not have had to have been loaded previously as they do with brackets.getModule
+
+Secondary features:
+
+1. Easy stubbing/mocking of modules for unit testing
+2. Ability to drop in modules installed via npm
 
 There is some more detail on the [module loader and module format card](https://trello.com/c/Wtv5a74b/992-new-module-loader-module-format) in Trello.
 
@@ -315,12 +321,12 @@ function readConfig() {
 }
 
 EventBus.on("xunit:AppInit.appReady", function () {
-    EventBus.on("xunit:DocumentManager.documentSaved.*", function (e, d) {
+    EventBus.on("xunit:DocumentManager.document.saved", function (e, d) {
         runTestsOnSaveOrChange(d);
     });
 
 
-    EventBus.on("xunit:DocumentManager.currentDocumentChange.*", function (e, d) {
+    EventBus.on("xunit:DocumentManager.currentDocument.changed", function (e, d) {
         runTestsOnSaveOrChange(d);
     });
 
@@ -373,6 +379,7 @@ exports.determineFileType = determineFileType;
 ### Benefits
 
 * Access to core Brackets that is consistent with the rest of the world
+* Modules provided by core do not need to be loaded before an extension can request them
 * First step in enabling extensions to share services
 * Robust and easier to debug error handling for promises and events
 * Event bus provides looser coupling between subsystems which can make testing easier, reduce circular dependencies
