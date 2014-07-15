@@ -11,7 +11,7 @@
 Brackets has grown tremendously since its initial release and the overall architecture has held up well with that growth. That said, there are some things that we've learned over time that could change some of the patterns used in extensions. This isn't about the [entire surface area of the Brackets API](http://brackets.io/docs/current/modules/brackets.html), which is something we improve incrementally. This is about improving patterns that appear in *every single extension*.
 
 * `brackets.getModule` was always considered to be something of a hack to allow extensions to get at Brackets core code
-* Node and CommonJS modules have gotten more popular over time (with tools like [Browserify](http://browserify.org/) helping to push this farther).
+* Extensions have no way of sharing services
 * [Promises/A+](http://promisesaplus.com/) has caught on and those basic semantics are already shipping as a standard Promise object in Chrome and Firefox
 * jQuery promises [don't quite follow this spec](https://github.com/kriskowal/q/wiki/Coming-from-jQuery)
 * Brackets has error handling needs that are different from many client side projects because extension code is not maintained by the same people maintaining Brackets itself. Errors in extensions can significantly impact Brackets' operation.
@@ -26,7 +26,7 @@ This document serves as a presentation of the basic idea with some strawman prop
 
 ### Module Loading
 
-We are at a crossroads in JavaScript modules right now. ECMAScript 6 (ES6, the next version of the JavaScript standard) will soon have a [native module system](http://jsmodules.io/) that draws heavily from the CommonJS module system. The module specs and transpilers have matured to a point at which we could reasonably switch to ES6 modules. There are even [module](https://github.com/systemjs/systemjs) [loaders](http://webpack.github.io/) that can handle AMD, CommonJS and ES6 modules. Looking purely to the future, ES6 modules would be the way to go. However, it would be reasonable to choose CommonJS modules today, because that is what Node supports natively and what the tens of thousands of packages in npm are designed to support. A small bit of research could likely show us whether ES6 module interop is good enough now to make the leap. AngularJS 2.0 [makes the leap to ES6 modules](https://github.com/angular/watchtower.js/blob/master/src/watch.js) so it may not be an unreasonable choice.
+We are at a crossroads in JavaScript modules right now. ECMAScript 6 (ES6, the next version of the JavaScript standard) will soon have a [native module system](http://jsmodules.io/) that draws heavily from the CommonJS module system. The module specs and transpilers have matured to a point at which we could reasonably switch to ES6 modules. There are even [module](https://github.com/systemjs/systemjs) [loaders](http://webpack.github.io/) that can handle AMD, CommonJS and ES6 modules. Looking purely to the future, ES6 modules would be the way to go. However, it would be reasonable to choose CommonJS modules today, because that is what Node supports natively and what the tens of thousands of packages in npm are designed to support. A small bit of research could likely show us whether ES6 module interop is good enough now to make the leap. AngularJS 2.0 [makes the leap to ES6 modules](https://github.com/angular/watchtower.js/blob/master/src/watch.js) as does [Ember 1.6](https://github.com/emberjs/ember.js/blob/92a844e65059a402c2435fc983033be01da9f83b/packages_es6/ember-views/lib/main.js) so it may not be an unreasonable choice.
 
 All of that said, the most straightforward path at this stage would be to use [Cajon](https://github.com/requirejs/cajon) which *is* RequireJS but supports CommonJS formatted modules.
 
@@ -35,8 +35,6 @@ Regardless of the module format, the changes we'd make to module loading are:
 1. The same mechanism is used to load modules from Brackets as is used for loading extension modules
 2. Brackets core modules will be under a "core" namespace ("core/ProjectManager", for example).
 3. The door will be opened for extensions to use services provided by other extensions. This wouldn't be enabled at first, but this is the reason Brackets core features would be in the "core" namespace.
-4. A mechanism for testing that would allow shimming/mocking of modules
-5. Browser-compatible modules in NPM can be installed and used directly
 
 There is some more detail on the [module loader and module format card](https://trello.com/c/Wtv5a74b/992-new-module-loader-module-format) in Trello.
 
@@ -44,25 +42,30 @@ There is some more detail on the [module loader and module format card](https://
 
 With the Promise object already appearing in [48% of browsers](http://caniuse.com/#search=promise) (with Safari coming soon), the standard is clear and does not behave as jQuery promises do. With a standard in hand, it is likely that more libraries will start using promises and that alone is a good benefit for switching. Beyond that, error handling is better in other promises implementations. Troubleshooting asynchronous behavior is difficult enough without errors getting transparently swallowed.
 
-[Bluebird](https://github.com/petkaantonov/bluebird) and [Q](https://github.com/kriskowal/q) are both well regarded promises libraries that we could choose from. Both libraries can wrap a jQuery promise with their own to ensure consistent behavior. Both can provide [additional debugging information](https://github.com/kriskowal/q#long-stack-traces) during development that show where the promise was created.
+In addition to the non-standard error handling, jQuery also has an API that is different from the standard (different names, different chaining) and jQuery will synchronously call a handler whereas the standard ensures that all handlers are called asynchronously.
 
-Changing promises implementations is potentially the most difficult change, as far as backwards compatibility is concerned and there is a [research card to study the impact](https://trello.com/c/qJ0TgoVu/1361-s-research-promises-upgrade).
+[Bluebird](https://github.com/petkaantonov/bluebird) and [Q](https://github.com/kriskowal/q) are both well regarded promises libraries that we could choose from. Both libraries can wrap a jQuery promise with their own to ensure consistent behavior. Both can provide [additional debugging information](https://github.com/kriskowal/q#long-stack-traces) during development that show where the promise was created. The most important aspects for us today are:
+
+1. following the standard
+2. providing a clear deprecation/upgrade path
+
+Changing promises implementations is potentially the most difficult change, as far as backwards compatibility is concerned and there is a [research card to study the impact](https://trello.com/c/qJ0TgoVu/1361-s-research-promises-upgrade). An initial quick look at a few extensions made it appear promising that we can provide a nice upgrade path without breaking many, if any, extensions.
 
 ### Events
 
 A misbehaved event handler can prevent other handlers from receiving events, which has the potential to make many parts of Brackets fail in ways that are hard to trace. This is not a problem that typical web applications have and capturing exceptions in handlers can potentially slow down notifications because v8 does not optimize functions with try/catch. For Brackets, including the try/catch in most event notifications will ensure that even if one handler fails, the rest get the message.
 
-Additionally, we can reduce coupling by using a global event bus between subsystems and the standard EventEmitter pattern within subsystems or when dealing with specific, non-singleton objects. This will make testing easier and provide an easy place to hook in logging for debugging.
+Additionally, we can reduce coupling by using a global event bus between subsystems and an EventEmitter pattern within subsystems or when dealing with specific, non-singleton objects. This will make testing easier and provide an easy place to hook in logging for debugging.
 
 Also, we can potentially reduce the chances of typos in event names by warning about unregistered event names. (Check for undefined events after all extensions have loaded.)
 
 AppInit could be replaced by a type of channel that fires once per subscriber and remembers that it has fired.
 
-Following the example of Postal (and easing backwards compatibility), the first argument to event handlers will be an "envelope" that provides metadata.
+Following the example of Postal (and easing backwards compatibility), the first argument to event handlers can be an "envelope" that provides metadata.
 
 ### Backward compatibility
 
-The good news is that we should be able to provide deprecation warnings and give a backwards-compatible transition to the new style. The only question mark around compatibility is with the promises upgrade.
+The good news is that we should be able to provide deprecation warnings and give a backwards-compatible transition to the new style. The biggest question mark around compatibility is with the promises upgrade.
 
 ### Strawman Examples
 
@@ -225,10 +228,10 @@ define(function (require, exports, module) {
 * Replace `brackets.getModule` with `require("core/*")`
 * Deprecation warning for `FileUtils.readAsText().done()` and `.fail()`. These should be `.then` and `.catch`.
 * `AppInit.appReady` should be replaced with `EventBus.on("AppInit.appReady")`
-* `$(DocumentManager).on` should be replaced with `EventBus.on("DocumentManager.")`
+* `$(DocumentManager).on` should be replaced with `EventBus.on("DocumentManager.")` See [DropletJS.PubSub's message syntax](https://www.npmjs.org/package/dropletjs.pubsub) for a way to think about event bus channels.
 * `$(contextMenu).on("beforeContextMenuOpen")` should be replaced with `EventBus.on("Menus.contextMenu.beforeOpen")`
 
-#### Updated Version
+#### Updated Version (CommonJS style)
 
 ```javascript
 // Adapted from brackets-git-info's main.js
