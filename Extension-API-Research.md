@@ -382,7 +382,7 @@ exports.determineFileType = determineFileType;
 
 ## Benefits
 
-* Access to core Brackets that is consistent with the rest of the world
+* Shrinks the difference between core code and extension code by putting core and extension code into a consistent namespace
 * Modules provided by core do not need to be loaded before an extension can request them
 * First step in enabling extensions to share services
 * Robust and easier to debug error handling for promises and events
