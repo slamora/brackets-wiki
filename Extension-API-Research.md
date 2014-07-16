@@ -4,9 +4,11 @@
 * Originally, created as part of the [Extension API research story](https://trello.com/c/rnN0XwK0/876-3-research-extension-api-design). See the "Proposed API changes" section for the start of this research.
 * (See ["Extension API Evolution"](Extensions2) for earlier thoughts than this proposal, including more detail on the longer-term ideas such as restartless extensions & sandboxing)
 
-## The Patterns of Brackets 1.0 Extensions
+# The Patterns of Brackets 1.0 Extensions
 
-### Introduction
+This section is by Kevin Dangoor from July 2014.
+
+## Introduction
 
 Brackets has grown tremendously since its initial release and the overall architecture has held up well with that growth. That said, there are some things that we've learned over time that could change some of the patterns used in extensions. This isn't about the [entire surface area of the Brackets API](http://brackets.io/docs/current/modules/brackets.html), which is something we improve incrementally. This is about improving patterns that appear in *every single extension*.
 
@@ -24,27 +26,27 @@ The goal of this project is to make changes to patterns that spread throughout B
 
 This document serves as a presentation of the basic idea with some strawman proposals. The final implementation will vary based on research and feedback.
 
-### Module Loading
+## Module Loading
 
-We are at a crossroads in JavaScript modules right now. ECMAScript 6 (ES6, the next version of the JavaScript standard) will soon have a [native module system](http://jsmodules.io/) that draws heavily from the CommonJS module system. The module specs and transpilers have matured to a point at which we could reasonably switch to ES6 modules. There are even [module](https://github.com/systemjs/systemjs) [loaders](http://webpack.github.io/) that can handle AMD, CommonJS and ES6 modules. Looking purely to the future, ES6 modules would be the way to go. However, it would be reasonable to choose CommonJS modules today, because that is what Node supports natively and what the tens of thousands of packages in npm are designed to support. A small bit of research could likely show us whether ES6 module interop is good enough now to make the leap. AngularJS 2.0 [makes the leap to ES6 modules](https://github.com/angular/watchtower.js/blob/master/src/watch.js) as does [Ember 1.6](https://github.com/emberjs/ember.js/blob/92a844e65059a402c2435fc983033be01da9f83b/packages_es6/ember-views/lib/main.js) so it may not be an unreasonable choice.
-
-All of that said, the most straightforward path at this stage would be to use [Cajon](https://github.com/requirejs/cajon) which *is* RequireJS but supports CommonJS formatted modules.
-
-Regardless of the module format, the changes we'd make to module loading are:
+The changes we'd make to module loading are:
 
 1. The same mechanism is used to load modules from Brackets as is used for loading extension modules
 2. Brackets core modules will be under a "core" namespace ("core/ProjectManager", for example).
 3. The door will be opened for extensions to use services provided by other extensions. This wouldn't be enabled at first, but this is the reason Brackets core features would be in the "core" namespace.
-4. core modules would not have had to have been loaded previously as they do with brackets.getModule
+4. core modules would not have had to have been loaded prior to use in extensions as they do with brackets.getModule
 
 Secondary features:
 
 1. Easy stubbing/mocking of modules for unit testing
 2. Ability to drop in modules installed via npm
 
+We are at a crossroads in JavaScript modules right now. ECMAScript 6 (ES6, the next version of the JavaScript standard) will soon have a [native module system](http://jsmodules.io/) that draws heavily from the CommonJS module system. The module specs and transpilers have matured to a point at which we could reasonably switch to ES6 modules. There are even [module](https://github.com/systemjs/systemjs) [loaders](http://webpack.github.io/) that can handle AMD, CommonJS and ES6 modules. Looking purely to the future, ES6 modules would be the way to go. However, it would be reasonable to choose CommonJS modules today, because that is what Node supports natively and what the tens of thousands of packages in npm are designed to support. A small bit of research could likely show us whether ES6 module interop is good enough now to make the leap. AngularJS 2.0 [makes the leap to ES6 modules](https://github.com/angular/watchtower.js/blob/master/src/watch.js) as does [Ember 1.6](https://github.com/emberjs/ember.js/blob/92a844e65059a402c2435fc983033be01da9f83b/packages_es6/ember-views/lib/main.js) so it may not be an unreasonable choice.
+
+The module format is less important than how extensions refer to other modules that they need to load.
+
 There is some more detail on the [module loader and module format card](https://trello.com/c/Wtv5a74b/992-new-module-loader-module-format) in Trello.
 
-### Promises
+## Promises
 
 With the Promise object already appearing in [48% of browsers](http://caniuse.com/#search=promise) (with Safari coming soon), the standard is clear and does not behave as jQuery promises do. With a standard in hand, it is likely that more libraries will start using promises and that alone is a good benefit for switching. Beyond that, error handling is better in other promises implementations. Troubleshooting asynchronous behavior is difficult enough without errors getting transparently swallowed.
 
@@ -57,7 +59,7 @@ In addition to the non-standard error handling, jQuery also has an API that is d
 
 Changing promises implementations is potentially the most difficult change, as far as backwards compatibility is concerned and there is a [research card to study the impact](https://trello.com/c/qJ0TgoVu/1361-s-research-promises-upgrade). An initial quick look at a few extensions made it appear promising that we can provide a nice upgrade path without breaking many, if any, extensions.
 
-### Events
+## Events
 
 A misbehaved event handler can prevent other handlers from receiving events, which has the potential to make many parts of Brackets fail in ways that are hard to trace. This is not a problem that typical web applications have and capturing exceptions in handlers can potentially slow down notifications because v8 does not optimize functions with try/catch. For Brackets, including the try/catch in most event notifications will ensure that even if one handler fails, the rest get the message.
 
@@ -67,17 +69,19 @@ Also, we can potentially reduce the chances of typos in event names by warning a
 
 AppInit could be replaced by a type of channel that fires once per subscriber and remembers that it has fired.
 
-Following the example of Postal (and easing backwards compatibility), the first argument to event handlers can be an "envelope" that provides metadata.
+The first argument to event handlers can be an "envelope" that provides metadata about the event. This will ease backwards compatibility for handlers as jQuery passes an event object as the first argument to its handlers.
 
-### Backward compatibility
+I have looked a number of EventEmitter and event bus implementations. None have the combination of features we need, particularly around error handling. The reason there are so many is that they're not hard to write, so we should just make our own.
+
+## Backward compatibility
 
 The good news is that we should be able to provide deprecation warnings and give a backwards-compatible transition to the new style. The biggest question mark around compatibility is with the promises upgrade.
 
-### Strawman Examples
+## Strawman Examples
 
 I used the main.js file from brackets-git-info as a sample. I stripped out most of the file to focus on the important bits.
 
-#### Current version
+### Current version
 
 ```javascript
 // Adapted from brackets-git-info's main.js
@@ -228,7 +232,7 @@ define(function (require, exports, module) {
 });
 ```
 
-#### Deprecation Warnings
+### Deprecation Warnings
 
 * `define()` is unnecessary
 * Replace `brackets.getModule` with `require("core/*")`
@@ -237,7 +241,7 @@ define(function (require, exports, module) {
 * `$(DocumentManager).on` should be replaced with `EventBus.on("DocumentManager.")` See [DropletJS.PubSub's message syntax](https://www.npmjs.org/package/dropletjs.pubsub) for a way to think about event bus channels.
 * `$(contextMenu).on("beforeContextMenuOpen")` should be replaced with `EventBus.on("Menus.contextMenu.beforeOpen")`
 
-#### Updated Version (CommonJS style)
+### Updated Version (CommonJS style)
 
 ```javascript
 // Adapted from brackets-git-info's main.js
@@ -376,7 +380,7 @@ exports.checkFileTypes = checkFileTypes;
 exports.determineFileType = determineFileType;
 ```
 
-### Benefits
+## Benefits
 
 * Access to core Brackets that is consistent with the rest of the world
 * Modules provided by core do not need to be loaded before an extension can request them
@@ -385,7 +389,14 @@ exports.determineFileType = determineFileType;
 * Event bus provides looser coupling between subsystems which can make testing easier, reduce circular dependencies
 * Event bus is also a mechanism through which extensions could communicate some events today
 
-## Proposed API changes
+## Open Questions
+
+* Do we jump to ES6 modules? (And if so, which loader will do what we need the easiest?)
+* Which promises library do we use?
+
+# Previously Proposed API changes
+
+This section is the broader research done by Peter Flynn in the previous phase of which the pieces above are a part.
 
 In priority / implementation order:
 
