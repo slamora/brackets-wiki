@@ -380,6 +380,40 @@ exports.checkFileTypes = checkFileTypes;
 exports.determineFileType = determineFileType;
 ```
 
+### Event Emitter example
+
+In the section on Events, I talk about using an event bus between subsystems and event emitter within a subsystem. Most extensions would likely use the event bus rather than the event emitters, because extensions are across subsystem boundaries. An example of where we'd use an event emitter can be found in EditorManager:
+
+Current:
+
+```javascript
+function _createEditorForDocument(doc, makeMasterEditor, container, range) {
+    var editor = new Editor(doc, makeMasterEditor, container, range);
+
+    $(editor).on("focus", function () {
+        _notifyActiveEditorChanged(this);
+    });
+
+    return editor;
+}
+```
+
+New: 
+
+```javascript
+function _createEditorForDocument(doc, makeMasterEditor, container, range) {
+    var editor = new Editor(doc, makeMasterEditor, container, range);
+
+    editor.on("focus", function () {
+        _notifyActiveEditorChanged(this);
+    });
+
+    return editor;
+}
+```
+
+The pattern changes only slightly from the current system (gets rid of jQuery use here, has the error handling that we want).
+
 ## Benefits
 
 * Shrinks the difference between core code and extension code by putting core and extension code into a consistent namespace
