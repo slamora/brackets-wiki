@@ -11,7 +11,7 @@ What's New in Release 0.42
     * [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409): Use the language indicator in the status bar as a dropdown to override the language Brackets chose to treat a file as. (These changes are _not_ saved when you close the file; use [preferences](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) to permanently treat all files with a certain extension as a different language).
 
 
-_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.41...release-0.42#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-41...sprint-42#commits_bucket)
+_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.41...release-0.42#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-41...release-0.42#commits_bucket)
 
 
 UI Changes
