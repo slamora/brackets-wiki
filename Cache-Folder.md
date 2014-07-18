@@ -13,7 +13,8 @@ Note: for **Adobe Edge Code**, replace `Brackets` in the path with `Adobe/Edge C
 
 ## Resetting cache & preferences
 
-1. Delete the `cef_data` folder located above
-2. In the parent of this folder, delete `brackets.json` and `state.json` if present
+1. Quit Brackets entirely
+2. Delete the `cef_data` folder located above
+3. In the parent of this folder, delete `brackets.json` and `state.json` if present
 
 This will _reset all of your preferences_ and clear all cached data.  (It's not yet possible to do clear one of those separately from the other).  To ensure a full 'factory reset,' also uninstall Brackets and reinstall from a freshly downloaded installer.
