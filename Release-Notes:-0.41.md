@@ -12,7 +12,7 @@ What's New in Release 0.41
     * [Split view](https://trello.com/c/2DWV5tEX/1277-splitview-migrate-workingset-management-to-mainviewmanager) (early implementation on branch)
     * [Research: Theming Support](https://trello.com/c/LHhAcbcU/1260-c-editor-themes) (pull request in progress)
 
-_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-40...sprint-41#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-40...sprint-41#commits_bucket)
+_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/sprint-40...release-0.41#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-40...sprint-41#commits_bucket)
 
 
 UI Changes
