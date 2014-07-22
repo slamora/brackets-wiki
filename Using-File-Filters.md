@@ -30,6 +30,10 @@ A `*` matches _within_ a path segment (that is, it doesn't match "/" characters)
 
 (note that the "/"s surrounding a "**" can collapse, as in the first example above)
 
+## Binary Files
+
+Brackets automatically ignores binary files defined in `language/languages.json` (or elsewhere) with `"isBinary": true`.
+
 ## Details
 
 To enable you to write simple filters that don't always include `**`s, Brackets automatically adds `**` using the following rules:
