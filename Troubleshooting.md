@@ -102,6 +102,10 @@ If you're using a local server and are seeing these messages such as "Oops! Goog
 
 As noted above, live HTML updating is disabled when using your own custom local server.
 
+### Live CSS is not working
+
+Updating CSS in Live Preview does not seem to work if &lt;link&gt; has __type="text/css"__, so try removing it.
+
 ### Install Chrome For Multiple User Accounts (Windows Only)
 If you get the error ``An error occurred when launching the browser. (error 2)`` when doing Live Development, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
  
