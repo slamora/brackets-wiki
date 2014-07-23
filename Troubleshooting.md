@@ -88,12 +88,22 @@ You can use `File > Open` to open any file on your computer, but Brackets' defin
 ### Disable Extensions
 The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
 
+### Page not loading
+
+* If you specified a "base URL," make sure your local server is already running - Brackets will not start it for you.
+* Make sure you are not running firewall, network security, or antivirus software that is blocking the connection (try disabling it temporarily to check)
+* Make sure you haven't modified your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)) to remap localhost or 127.0.0.1
+
 ### HTML Page is not Updating in Browser as you Type
+If you are using your own local server, HTML will not update live ([see documentation](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview)).
+
 Brackets pauses sending updates to browser when it detects an HTML Syntax Error. In this case, it should color the line number in red (but this can be scrolled out of view) so scroll through entire page to verify that there are no highlighted line numbers.
 
 The Live Preview lightning bolt icon should be also colored red and have a tooltip of "Live Preview (not updating due to syntax error)" in this case, but there's a known bug being tracked as [issue #7126](https://github.com/adobe/brackets/issues/7126) where this sometimes doesn't happen. See [issue #7126](https://github.com/adobe/brackets/issues/7126) for an illustrated description including the line number and icon coloring.
 
-There is [an issue](https://github.com/adobe/brackets/issues/5338) regarding "Live Preview can never update if initially launched with syntax error", so after fixing a syntax error, try stopping and restarting Live Preview.
+Other known issues:
+
+* [Bug #5338](https://github.com/adobe/brackets/issues/5338): Live Preview can never update if initially launched with syntax error - after fixing a syntax error, try stopping and restarting Live Preview.
 
 ### Using a Local Server
 To use a local server, you need to specify a Base URL in the `File > Project Settings...` dialog (see [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview) for details).
@@ -105,6 +115,10 @@ As noted above, live HTML updating is disabled when using your own custom local 
 ### Live CSS is not working
 
 Updating CSS in Live Preview does not seem to work if &lt;link&gt; has __type="text/css"__, so try removing it.
+
+Known issues:
+
+* [Bug #7935](https://github.com/adobe/brackets/issues/7935): Live CSS does not update if page contains an iframe (including injected iframes such as ads or social media buttons).
 
 ### Install Chrome For Multiple User Accounts (Windows Only)
 If you get the error ``An error occurred when launching the browser. (error 2)`` when doing Live Development, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
