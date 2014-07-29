@@ -449,7 +449,7 @@ For the purposes of testing, "popular extensions" refers to:
 
 Though we'll ultimately want to use a more full-featured promises implementation, both Q and Bluebird use a `done` method with a different meaning than the one offered by jQuery. To make the transition easier, we can stick with ES6 promises and choose a library with more features once we're ready to remove the deprecated wrapping.
 
-Note that extensions can still use jQuery promises is they wish because extensions don't send promises into core code (as far as I know).
+Note that extensions can still use jQuery promises if they wish because extensions don't send promises into core code (as far as I know).
 
 * [Use the es6-promise](https://github.com/jakearchibald/es6-promise) shim until we've updated to a Chromium version that includes the native Promise object
 * Augment or wrap promises so that they include `done` and `fail` that issue deprecation warnings but otherwise behave like jQuery promises (returning the same promise).
