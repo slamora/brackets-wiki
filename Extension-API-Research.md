@@ -428,6 +428,49 @@ The pattern changes only slightly from the current system (gets rid of jQuery us
 * Do we jump to ES6 modules? (And if so, which loader will do what we need the easiest?)
 * Which promises library do we use?
 
+## Implementation Plan
+
+### Phase 1: Research and Infrastructure
+
+The goal of this phase is to quickly answer any questions, identify potential problems and lay the groundwork for rapid implementation of the real changes. We can do these parts in parallel.
+
+For the purposes of testing, "popular extensions" refers to:
+
+* Brackets Git
+* Code Folding
+* Emmet
+* PHP Syntax Hint
+* Beautify
+* Extensions Rating
+* Brackets File Icons
+* WordHint
+
+#### Promises
+
+Though we'll ultimately want to use a more full-featured promises implementation, both Q and Bluebird use a `done` method with a different meaning than the one offered by jQuery. To make the transition easier, we can stick with ES6 promises and choose a library with more features once we're ready to remove the deprecated wrapping.
+
+Note that extensions can still use jQuery promises is they wish because extensions don't send promises into core code (as far as I know).
+
+* [Use the es6-promise](https://github.com/jakearchibald/es6-promise) shim until we've updated to a Chromium version that includes the native Promise object
+* Augment or wrap promises so that they include `done` and `fail` that issue deprecation warnings but otherwise behave like jQuery promises (returning the same promise).
+* Update our `utils/Async` to use new promises
+* Replace all instances of `new $.Deferred` with a use of standard promises
+* Test popular extensions to make sure they still work and display expected deprecation warnings
+
+#### Modules
+
+We should be able to provide 100% backwards compatibility with new module loading while also setting the stage for cross-extension dependencies.
+
+* Update to latest cajon
+* Configure `core` package to load Brackets core modules (see [James Burke's comments](https://github.com/adobe/brackets/issues/4986) for hints)
+* Make deprecated version of `brackets.getModule` that uses global `require` context but adds "core/" to the module.
+* Change extension loading to no longer create a new require context
+* Verify that JavaScript Code Hints still works (it loads require into a Web Worker)
+* Make sure minified builds work
+* Test popular extensions
+
+
+
 # Previously Proposed API changes
 
 This section is the broader research done by Peter Flynn in the previous phase of which the pieces above are a part.
