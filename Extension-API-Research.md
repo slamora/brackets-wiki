@@ -469,7 +469,40 @@ We should be able to provide 100% backwards compatibility with new module loadin
 * Make sure minified builds work
 * Test popular extensions
 
+#### Events
 
+See [the Events section](https://github.com/adobe/brackets/wiki/Extension-API-Research#events) of the extension API research. I have been unable to find a library that does precisely what we want. We want an EventEmitter and global Event Bus (which is basically a singleton EventEmitter) with these features:
+
+* Channel/Event names follow a "dotted.name.format"
+* Events should be registered. An options object can be used for future expansion (should a channel's messages not be wrapped in try/catch for performance reasons, for example). A description of the purpose of the event and information about the data sent to the handler should be included.
+* A method will return information about the registered events (imagine an eventual UI that tells extension developers all of the events available in the system)
+* A method is available to verify that the events listeners are listening for have been registered
+* Listeners can specify a name for easy unregistration in the format: "listenername:dotted.event.name"
+* Wildcards can be used to match a segment of the channel name. `dotted.*.name` will match "dotted.event.name" and "dotted.foo.name". A `*` only matches a whole segment.
+* If the published message goes to a channel with more segments in the name than a listener specified, that is still considered a match. For example, if a listener subscribes to "dotted", that will match any channel that starts with dotted, including "dotted.event.name".
+* Handlers are called in a try/catch block
+* The first argument to a handler is an envelope with metadata. The only required metadata in the first version is the full channel name that the event is sent to.
+* `on` is used to listen
+* `off` is used to stop listening
+* `trigger` is used to publish a message
+* Consider having the EventEmitters roll up to the global bus in some fashion to assist in debugging
+
+To make the initial implementation easier, we could eliminate the "wildcards" bullet point while retaining the next point about shorter matches. This would still allow listening to all DocumentManager messages, for example, by setting up a subscriber for simply `DocumentManager`. All messages could be subscribed to by listening to "".
+
+Here are the tasks to prepare for rollout:
+
+* Implement EventEmitter
+* Implement EventBus
+* Create a wrapper for `$(object).on()` and `$(object).off()` to issue deprecation warnings for events that have been changed over. Specifically check that `object` is a Brackets object to avoid false matches.
+
+### Phase 2: Fast rollout
+
+With potential problems resolved and infastructure set up, I think that the least disruptive way to roll this out is all at once with a guide for extension developers that explains how to transition.
+
+* Change Promises throughout the core code
+* Integrate module loading change
+* Merge in new event system and start changing commonly used events
+* Write migration guide for extension developers (note that all changes should be accompanied by deprecation warnings)
 
 # Previously Proposed API changes
 
