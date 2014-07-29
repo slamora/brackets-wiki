@@ -457,6 +457,8 @@ Note that extensions can still use jQuery promises is they wish because extensio
 * Replace all instances of `new $.Deferred` with a use of standard promises
 * Test popular extensions to make sure they still work and display expected deprecation warnings
 
+See [the card in Trello](https://trello.com/c/qJ0TgoVu/1361-s-research-promises-upgrade).
+
 #### Modules
 
 We should be able to provide 100% backwards compatibility with new module loading while also setting the stage for cross-extension dependencies.
@@ -468,6 +470,8 @@ We should be able to provide 100% backwards compatibility with new module loadin
 * Verify that JavaScript Code Hints still works (it loads require into a Web Worker)
 * Make sure minified builds work
 * Test popular extensions
+
+See [the card in Trello](https://trello.com/c/Qk7uqIw8/991-research-extension-loader-implementation)
 
 #### Events
 
@@ -496,6 +500,8 @@ Here are the tasks to prepare for rollout:
 * Create a wrapper for `$(object).on()` and `$(object).off()` to issue deprecation warnings for events that have been changed over. Specifically check that `object` is a Brackets object to avoid false matches.
 * Migrate DocumentManager to the new style
 * Test popular extensions
+
+See [the card in Trello](https://trello.com/c/ogaZoRHJ/1377-events-infrastructure-implementation)
 
 ### Phase 2: Fast rollout
 
