@@ -494,6 +494,8 @@ Here are the tasks to prepare for rollout:
 * Implement EventEmitter
 * Implement EventBus
 * Create a wrapper for `$(object).on()` and `$(object).off()` to issue deprecation warnings for events that have been changed over. Specifically check that `object` is a Brackets object to avoid false matches.
+* Migrate DocumentManager to the new style
+* Test popular extensions
 
 ### Phase 2: Fast rollout
 
