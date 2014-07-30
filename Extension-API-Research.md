@@ -234,150 +234,151 @@ define(function (require, exports, module) {
 
 ### Deprecation Warnings
 
-* `define()` is unnecessary
 * Replace `brackets.getModule` with `require("core/*")`
 * Deprecation warning for `FileUtils.readAsText().done()` and `.fail()`. These should be `.then` and `.catch`.
 * `AppInit.appReady` should be replaced with `EventBus.on("AppInit.appReady")`
 * `$(DocumentManager).on` should be replaced with `EventBus.on("DocumentManager.")` See [DropletJS.PubSub's message syntax](https://www.npmjs.org/package/dropletjs.pubsub) for a way to think about event bus channels.
 * `$(contextMenu).on("beforeContextMenuOpen")` should be replaced with `EventBus.on("Menus.contextMenu.beforeOpen")`
 
-### Updated Version (CommonJS style)
+### Updated Version (Sticking with RequireJS)
 
 ```javascript
 // Adapted from brackets-git-info's main.js
 
 /*global brackets,$, window, Mustache */
-'use strict';
+define(function (require, exports, module) {
+    'use strict';
 
-var EventBus            = require("core/EventBus"),
-    CommandManager      = require("core/command/CommandManager"),
-    Dialogs             = require("core/widgets/Dialogs"),
-    ExtensionUtils      = require("core/utils/ExtensionUtils"),
-    FileUtils           = require("core/file/FileUtils"),
-    Menus               = require("core/command/Menus"),
-    FileSystem          = require("core/filesystem/FileSystem"),
-    LanguageManager     = require("core/language/LanguageManager"),
-    NodeConnection      = require("core/utils/NodeConnection"),
-    DocumentManager     = require("core/document/DocumentManager"),
-    ProjectManager      = require("core/project/ProjectManager"),
-    qunitRunner         = require("main_qunit"),
-    jasmineRunner       = require("main_jasmine"),
-    jasmineNodeRunner   = require("main_jasmine_node"),
-    nodeRunner          = require("main_node"),
-    yuiRunner           = require("main_yui"),
-    MyStatusBar         = require("MyStatusBar");
+    var EventBus            = require("core/EventBus"),
+        CommandManager      = require("core/command/CommandManager"),
+        Dialogs             = require("core/widgets/Dialogs"),
+        ExtensionUtils      = require("core/utils/ExtensionUtils"),
+        FileUtils           = require("core/file/FileUtils"),
+        Menus               = require("core/command/Menus"),
+        FileSystem          = require("core/filesystem/FileSystem"),
+        LanguageManager     = require("core/language/LanguageManager"),
+        NodeConnection      = require("core/utils/NodeConnection"),
+        DocumentManager     = require("core/document/DocumentManager"),
+        ProjectManager      = require("core/project/ProjectManager"),
+        qunitRunner         = require("main_qunit"),
+        jasmineRunner       = require("main_jasmine"),
+        jasmineNodeRunner   = require("main_jasmine_node"),
+        nodeRunner          = require("main_node"),
+        yuiRunner           = require("main_yui"),
+        MyStatusBar         = require("MyStatusBar");
 
-var moduledir           = FileUtils.getNativeModuleDirectoryPath(module),
-    commands            = [],
-    YUITEST_CMD         = "yuitest_cmd",
-    JASMINETEST_CMD     = "jasminetest_cmd",
-    QUNITTEST_CMD       = "qunit_cmd",
-    SCRIPT_CMD          = "script_cmd",
-    NODETEST_CMD        = "nodetest_cmd",
-    GENERATE_JASMINE_CMD = "generate_jasmine_cmd",
-    GENERATE_QUNIT_CMD  = "generate_qunit_cmd",
-    GENERATE_YUI_CMD    = "generate_yui_cmd",
-    VIEWHTML_CMD        = "viewhtml_cmd",
-    projectMenu         = Menus.getContextMenu(Menus.ContextMenuIds.PROJECT_MENU),
-    workingsetMenu      = Menus.getContextMenu(Menus.ContextMenuIds.WORKING_SET_MENU),
-    nodeConnection      = new NodeConnection(),
-    _windows            = {},
-    enableHtml          = false;
-
-
-// opens an html file in a new window
-function viewHtml() {
-    
-    // MIGRATION NOTE: Some direct uses of ProjectManager and DocumentManager would not be required because
-    // events will convey the information necessary. Unless CommandManager changes to pass in the current document
-    // and currently selected file, these uses will still be required.
-    var entry = ProjectManager.getSelectedItem();
-    if (entry === undefined) {
-        entry = DocumentManager.getCurrentDocument().file;
-    }
-    var path = entry.fullPath;
-    var w = window.open(path);
-    w.focus();
-}
+    var moduledir           = FileUtils.getNativeModuleDirectoryPath(module),
+        commands            = [],
+        YUITEST_CMD         = "yuitest_cmd",
+        JASMINETEST_CMD     = "jasminetest_cmd",
+        QUNITTEST_CMD       = "qunit_cmd",
+        SCRIPT_CMD          = "script_cmd",
+        NODETEST_CMD        = "nodetest_cmd",
+        GENERATE_JASMINE_CMD = "generate_jasmine_cmd",
+        GENERATE_QUNIT_CMD  = "generate_qunit_cmd",
+        GENERATE_YUI_CMD    = "generate_yui_cmd",
+        VIEWHTML_CMD        = "viewhtml_cmd",
+        projectMenu         = Menus.getContextMenu(Menus.ContextMenuIds.PROJECT_MENU),
+        workingsetMenu      = Menus.getContextMenu(Menus.ContextMenuIds.WORKING_SET_MENU),
+        nodeConnection      = new NodeConnection(),
+        _windows            = {},
+        enableHtml          = false;
 
 
-// reads config.js to determine if brackets-xunit should be disabled for the current project
-function readConfig() {
-    // Extensions can still use jQuery promises if they want, though they'd be encouraged to switch to real promises.
-    var result = new $.Deferred();
-    var root = ProjectManager.getProjectRoot(),
-        configFile = FileSystem.getFileForPath(root.fullPath + "config.js");
-    FileUtils.readAsText(configFile).then(function (text) {
-        try {
-            var config = JSON.parse(text);
-            if (config.hasOwnProperty('brackets-xunit') && config['brackets-xunit'] === 'disable') {
-                result.reject('disabled');
-            }
-        } catch (e) {
-            console.log("[brackets-xunit] reading " + root.fullPath + "config.js Error " + e);
-        } finally {
-            return result.resolve('ok');
+    // opens an html file in a new window
+    function viewHtml() {
+
+        // MIGRATION NOTE: Some direct uses of ProjectManager and DocumentManager would not be required because
+        // events will convey the information necessary. Unless CommandManager changes to pass in the current document
+        // and currently selected file, these uses will still be required.
+        var entry = ProjectManager.getSelectedItem();
+        if (entry === undefined) {
+            entry = DocumentManager.getCurrentDocument().file;
         }
-    }).catch(function () {
-        return result.resolve('ok');
-    });
-    return result.promise();
-}
-
-EventBus.on("xunit:AppInit.appReady", function () {
-    EventBus.on("xunit:DocumentManager.document.saved", function (e, d) {
-        runTestsOnSaveOrChange(d);
-    });
-
-
-    EventBus.on("xunit:DocumentManager.currentDocument.changed", function (e, d) {
-        runTestsOnSaveOrChange(d);
-    });
-
-    MyStatusBar.initializePanel();
-
-});
-
-
-
-
-// Register commands as right click menu items
-commands = [ YUITEST_CMD, JASMINETEST_CMD, QUNITTEST_CMD, SCRIPT_CMD, NODETEST_CMD, GENERATE_JASMINE_CMD,
-            GENERATE_QUNIT_CMD, GENERATE_YUI_CMD, VIEWHTML_CMD];
-CommandManager.register("Run YUI Unit Test", YUITEST_CMD, runYUI);
-CommandManager.register("Run Jasmine xUnit Test", JASMINETEST_CMD, runJasmine);
-CommandManager.register("Run QUnit xUnit Test", QUNITTEST_CMD, runQUnit);
-CommandManager.register("Run Script", SCRIPT_CMD, runScript);
-CommandManager.register("Run Jasmine-Node xUnit Test", NODETEST_CMD, runJasmineNode);
-CommandManager.register("Generate Jasmine xUnit Test", GENERATE_JASMINE_CMD, generateJasmineTest);
-CommandManager.register("Generate Qunit xUnit Test", GENERATE_QUNIT_CMD, generateQunitTest);
-CommandManager.register("Generate YUI xUnit Test", GENERATE_YUI_CMD, generateYuiTest);
-CommandManager.register("xUnit View html", VIEWHTML_CMD, viewHtml);
-
-// check if the extension should add a menu item to the project menu (under the project name, left panel)
-EventBus.on("xunit:Menus.projectMenu.beforeOpen", function (e, projectMenu, selectedEntry) {
-    var text = '';
-    if (selectedEntry && selectedEntry.fullPath && DocumentManager.getCurrentDocument() !== null && selectedEntry.fullPath === DocumentManager.getCurrentDocument().file.fullPath) {
-        text = DocumentManager.getCurrentDocument().getText();
+        var path = entry.fullPath;
+        var w = window.open(path);
+        w.focus();
     }
-    cleanMenu(projectMenu);
-    readConfig().done(function () {
-        checkFileTypes(projectMenu, selectedEntry, text);
-    });
-});
 
-// check if the extension should add a menu item to the workingset menu (under Working Files, left panel)
-EventBus.on("xunit:Menus.workingSetMenu.beforeOpen", function (e, workingSetMenu) {
-    var selectedEntry = DocumentManager.getCurrentDocument().file,
-        text = DocumentManager.getCurrentDocument().getText();
-    cleanMenu(workingSetMenu);
-    readConfig().done(function () {
-        checkFileTypes(workingsetMenu, selectedEntry, text);
+
+    // reads config.js to determine if brackets-xunit should be disabled for the current project
+    function readConfig() {
+        // Extensions can still use jQuery promises if they want, though they'd be encouraged to switch to real promises.
+        var result = new $.Deferred();
+        var root = ProjectManager.getProjectRoot(),
+            configFile = FileSystem.getFileForPath(root.fullPath + "config.js");
+        FileUtils.readAsText(configFile).then(function (text) {
+            try {
+                var config = JSON.parse(text);
+                if (config.hasOwnProperty('brackets-xunit') && config['brackets-xunit'] === 'disable') {
+                    result.reject('disabled');
+                }
+            } catch (e) {
+                console.log("[brackets-xunit] reading " + root.fullPath + "config.js Error " + e);
+            } finally {
+                return result.resolve('ok');
+            }
+        }).catch(function () {
+            return result.resolve('ok');
+        });
+        return result.promise();
+    }
+
+    EventBus.on("xunit:AppInit.appReady", function () {
+        EventBus.on("xunit:DocumentManager.document.saved", function (e, d) {
+            runTestsOnSaveOrChange(d);
+        });
+
+
+        EventBus.on("xunit:DocumentManager.currentDocument.changed", function (e, d) {
+            runTestsOnSaveOrChange(d);
+        });
+
+        MyStatusBar.initializePanel();
+
     });
+
+
+
+
+    // Register commands as right click menu items
+    commands = [ YUITEST_CMD, JASMINETEST_CMD, QUNITTEST_CMD, SCRIPT_CMD, NODETEST_CMD, GENERATE_JASMINE_CMD,
+                GENERATE_QUNIT_CMD, GENERATE_YUI_CMD, VIEWHTML_CMD];
+    CommandManager.register("Run YUI Unit Test", YUITEST_CMD, runYUI);
+    CommandManager.register("Run Jasmine xUnit Test", JASMINETEST_CMD, runJasmine);
+    CommandManager.register("Run QUnit xUnit Test", QUNITTEST_CMD, runQUnit);
+    CommandManager.register("Run Script", SCRIPT_CMD, runScript);
+    CommandManager.register("Run Jasmine-Node xUnit Test", NODETEST_CMD, runJasmineNode);
+    CommandManager.register("Generate Jasmine xUnit Test", GENERATE_JASMINE_CMD, generateJasmineTest);
+    CommandManager.register("Generate Qunit xUnit Test", GENERATE_QUNIT_CMD, generateQunitTest);
+    CommandManager.register("Generate YUI xUnit Test", GENERATE_YUI_CMD, generateYuiTest);
+    CommandManager.register("xUnit View html", VIEWHTML_CMD, viewHtml);
+
+    // check if the extension should add a menu item to the project menu (under the project name, left panel)
+    EventBus.on("xunit:Menus.projectMenu.beforeOpen", function (e, projectMenu, selectedEntry) {
+        var text = '';
+        if (selectedEntry && selectedEntry.fullPath && DocumentManager.getCurrentDocument() !== null && selectedEntry.fullPath === DocumentManager.getCurrentDocument().file.fullPath) {
+            text = DocumentManager.getCurrentDocument().getText();
+        }
+        cleanMenu(projectMenu);
+        readConfig().done(function () {
+            checkFileTypes(projectMenu, selectedEntry, text);
+        });
+    });
+
+    // check if the extension should add a menu item to the workingset menu (under Working Files, left panel)
+    EventBus.on("xunit:Menus.workingSetMenu.beforeOpen", function (e, workingSetMenu) {
+        var selectedEntry = DocumentManager.getCurrentDocument().file,
+            text = DocumentManager.getCurrentDocument().getText();
+        cleanMenu(workingSetMenu);
+        readConfig().done(function () {
+            checkFileTypes(workingsetMenu, selectedEntry, text);
+        });
+    });
+    exports.formatTime = formatTime;
+    exports.checkFileTypes = checkFileTypes;
+    exports.determineFileType = determineFileType;
 });
-exports.formatTime = formatTime;
-exports.checkFileTypes = checkFileTypes;
-exports.determineFileType = determineFileType;
 ```
 
 ### Event Emitter example
