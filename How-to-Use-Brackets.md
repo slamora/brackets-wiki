@@ -20,6 +20,10 @@ In addition to the core features built into Brackets, there is a large and growi
 
 You can also [browse the available extensions online](https://brackets-registry.aboutweb.com) without installing Brackets first.
 
+### Themes
+
+You can change the color scheme of the editor by downloading a theme from via the Extension Manager (search for "theme" in the Extension Manager to find them). You can even [create your own custom theme](https://github.com/adobe/brackets/wiki/Creating+Themes) to get editor colors that suit your personal taste.
+
 
 Brackets Highlights
 -------------------
