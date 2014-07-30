@@ -231,7 +231,9 @@ _On Windows, we have a backlog item to address the lack of an error message http
 1. Enable ``View > Enable JSLint`` (a checkmark will appear when enabled)
 2. Confirm JSLint panel title ``<panel_jslint>``
 
-# Inline Color Editor
+# Inline Editors
+
+## Inline Color Editor
 
 1. Open ``desktop.css``
 2. Place the cursor on any hex color, e.g. #000. Press ``CMD+E`` or ``Ctrl+E``
@@ -240,8 +242,6 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Hover over the original color swatch (the original color). Confirm tooltip ``<original_color>``.
 6. Hover over each button in the button bar that contains (RGBa, HEX, HSLa). Confirm tooltips ``<rgba_format>``, ``<hex_format>`` and ``<hsla_format>``.
 7. Hover over one of the colors listed on the right. Confirm tooltop ``<color_used_n_times>``.
-
-# Inline Timing Function Editors
 
 ## Inline Cubic Bezier Editor
 
@@ -253,13 +253,20 @@ _On Windows, we have a backlog item to address the lack of an error message http
 1. At the end of ``desktop.css``, add the following line: ``#div3 {transition-timing-function: steps();}``.
 2. Place the cursor on the word `timing` in the new line.  Press ``CMD+E`` or ``Ctrl+E``.  Confirm labels on grid, and information text on the right.
 
-# New Rule Editor
+## New Rule Editor
 
 1. Within the first <body> tag of ``index.html``, start a new line and type ``<h10``.
 2. Press ``CMD+E`` or ``Ctrl+E``.  Confirm New Rule inline editor appears.
 3. Click ``New Rule``.  Confirm inline editor changes to show the new rule definition.
 4. Click ``New Rule`` button again.  Confirm a list of references to the new rule appears on the right-side of the inline editor.
 5. Press escape to close the inline editor.
+
+## Inline Editor Errors
+
+1. Open ``index.html``, place cursor at end of any line.
+2. Press ``CMD+E`` or ``Ctrl+E``.  Confirm popover message appears with "No Quick Edit available for current cursor position", and messages fades away after 5 seconds.
+3. Place cursor in ``href`` attribute of any ``<a>`` tag.
+4. Press ``CMD+E`` or ``Ctrl+E``.  Confirm popover message appears with "CSS Quick Edit: place cursor in tag, class, or id".
 
 # Live Preview
 
