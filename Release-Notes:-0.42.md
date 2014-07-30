@@ -15,6 +15,9 @@ What's New in Release 0.42
 * **Extension Management**
     * [Show supported translations in Extension Manager](https://github.com/adobe/brackets/pull/7995): Extension listings indicate which languages each extension has been translated for (at bottom).
     * [Install extension from local .zip file](https://github.com/adobe/brackets/pull/8166): Drag a .zip file onto the drop zone in Extension Manager's lower-left corner to install.
+* **JavaScript Code Hints**
+    * [#8561](https://github.com/adobe/brackets/pull/8561), [#8460](https://github.com/adobe/brackets/pull/8460): Fixed 0.41 bugs where some files showed no JS hints.
+    * [Notification when hints ignore a certain file due to problems](https://github.com/adobe/brackets/pull/8269): Afterward, the file will automatically be added to the `"jscodehints.detectedExclusions"` preference; it will continue to be ignored until you remove it from that list.
 * **Localization**
     * [Traditional Chinese translation added](https://github.com/adobe/brackets/pull/8332)
     * [Galician translation added](https://github.com/adobe/brackets/pull/8226)
