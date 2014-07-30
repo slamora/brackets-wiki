@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Release 0.42 -- approximat
 What's New in Release 0.42
 --------------------------
 * **Themes**
-    * **[Editor color schemes](https://trello.com/c/LHhAcbcU/1260-c-editor-themes):** Find themes in Extension Manager, and instantly switch between them using View > Themes.
+    * **[Editor color schemes](https://trello.com/c/LHhAcbcU/1260-c-editor-themes):** Find themes in Extension Manager, and instantly switch between them using View > Themes. [Learn how to create a theme.](https://github.com/adobe/brackets/wiki/Creating-Themes)
     * [Built-in dark mode](https://github.com/adobe/brackets/pull/8462): Choose the built-in "Brackets Dark" theme for easy access to a nighttime color palette. Third-party themes can also trigger "dark mode," dimming many parts of the Brackets automatically without needing to style everything manually.
     * Configure font settings: Use View > Themes to set a custom font and font size (the font must be installed in your OS).
 * **File Types**
@@ -28,14 +28,18 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release
 
 UI Changes
 ----------
+Brackets's default appearance should be unchanged, but you can now use themes to customize your color scheme & editor font (see above).
 
 
 API Changes
 -----------
+**Extension descriptions** - Extension descriptions beyond 200 characters are now hidden with "..." by default. Users can click to expand and see the full description. The extension's `keywords` metadata is no longer shown in Extension Manager (but still used when searching/filtering the listing).
 
 New/Improved Extensibility APIs
 -------------------------------
+**Themes** - Themes are a special type of extension that contains a LESS file instead of any JavaScript code. [Learn how to create a theme.](https://github.com/adobe/brackets/wiki/Creating-Themes)
 
+**Extension localization** - Extensions can now indicate which languages they are localized for by including an [`i18n` field in package.json](https://github.com/adobe/brackets/wiki/Extension-package-format#details). The supported languages are indicated in Extension Manager below the extension's description.
 
 Known Issues
 ------------
@@ -49,10 +53,10 @@ Community contributions to Brackets
 TBD
 
 #### Pulling source code from Git
-* TODO: new brackets-shell build required?
+* Rebuilding brackets-shell is _not_ required for this sprint.
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
 Bugs fixed in Release 0.42
 --------------------------
-For details on the bugs addressed, please refer to [closed sprint 42 bugs](https://github.com/adobe/brackets/issues?labels=&milestone=30&state=closed). Not all fixed bugs will be caught by this search query, however.
+For details on the bugs addressed, please refer to [closed Release 0.42 bugs](https://github.com/adobe/brackets/issues?q=is%3Aclosed+milestone%3A%22Release+0.42%22). Not all fixed bugs will be caught by this search query, however.
