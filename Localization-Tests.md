@@ -241,10 +241,17 @@ _On Windows, we have a backlog item to address the lack of an error message http
 6. Hover over each button in the button bar that contains (RGBa, HEX, HSLa). Confirm tooltips ``<rgba_format>``, ``<hex_format>`` and ``<hsla_format>``.
 7. Hover over one of the colors listed on the right. Confirm tooltop ``<color_used_n_times>``.
 
-# Inline Step Editor (aka Cubic Bezier Editor)
+# Inline Timing Function Editors
 
-1. At the end of ``desktop.css``, add the following line: ``#div2 {-webkit-transition-timing-function: ease-out;}``.
-2. Place the cursor on the word `timing` in the new line.  Press ``CMD+E`` or ``Ctrl+E``.  Confirm editor labels.
+## Inline Cubic Bezier Editor
+
+1. At the end of ``desktop.css``, add the following line: ``#div2 {transition-timing-function: cubic-bezier();}``.
+2. Place the cursor on the word `timing` in the new line.  Press ``CMD+E`` or ``Ctrl+E``.  Confirm labels on grid, and information text on right.
+
+## Inline Step Editor
+
+1. At the end of ``desktop.css``, add the following line: ``#div3 {transition-timing-function: steps();}``.
+2. Place the cursor on the word `timing` in the new line.  Press ``CMD+E`` or ``Ctrl+E``.  Confirm labels on grid, and information text on the right.
 
 # New Rule Editor
 
