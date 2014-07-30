@@ -86,6 +86,7 @@ Community contributions to Brackets
 * [Persian translation update](https://github.com/adobe/brackets/pull/8421) by [Mohammad Yaghobi](https://github.com/mohammadyaghobi)
 * [Romanian translation update](https://github.com/adobe/brackets/pull/8307) by [Micleusanu Nicu](https://github.com/micnic)
 * [Russian translation update](https://github.com/adobe/brackets/pull/8371) by [Maxim Khlobystov](https://github.com/gthacoder)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/8585) by [Chema Balsas](https://github.com/jbalsas)
 * [Swedish translation update](https://github.com/adobe/brackets/pull/8567) by [Mikael Jorhult](https://github.com/mikaeljorhult)
 
 #### Pulling source code from Git
