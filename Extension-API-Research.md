@@ -424,11 +424,6 @@ The pattern changes only slightly from the current system (gets rid of jQuery us
 * Event bus provides looser coupling between subsystems which can make testing easier, reduce circular dependencies
 * Event bus is also a mechanism through which extensions could communicate some events today
 
-## Open Questions
-
-* Do we jump to ES6 modules? (And if so, which loader will do what we need the easiest?)
-* Which promises library do we use?
-
 ## Implementation Plan
 
 ### Phase 1: Research and Infrastructure
