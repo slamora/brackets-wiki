@@ -338,3 +338,9 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 3. Confirm error message appears in dialog ``<install_extension_incompatible_version>``.  Click ``Close``.
 4. Click Installed tab.  Confirm either ``No extensions installed yet.`` message appears in the dialog, or, if you've previously installed one or more extensions, that they are listed.
 5. Click ``Close``
+
+# Themes
+
+1. View > Themes...  Confirm Themes dialog appears
+2. Change Current Theme, confirm colors in Editor change
+3. Click Cancel, confirm editor colors revert to original colors
