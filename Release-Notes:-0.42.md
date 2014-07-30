@@ -50,7 +50,40 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TBD
+* _**Special thanks to [Miguel Castillo](https://github.com/MiguelCastillo)** for his major effort contributing the Themes functionality_
+    * Pull requests: [1](https://github.com/adobe/brackets/pull/8302) [2](https://github.com/adobe/brackets/pull/8382) [3](https://github.com/adobe/brackets/pull/8400) [4](https://github.com/adobe/brackets/pull/8405) [5](https://github.com/adobe/brackets/pull/8418) [6](https://github.com/adobe/brackets/pull/8419) [7](https://github.com/adobe/brackets/pull/8447) [8](https://github.com/adobe/brackets/pull/8459) [9](https://github.com/adobe/brackets/pull/8475) [10](https://github.com/adobe/brackets/pull/8492) [11](https://github.com/adobe/brackets/pull/8505) [12](https://github.com/adobe/brackets/pull/8512)
+* [Create Traditional Chinese translation](https://github.com/adobe/brackets/pull/8332) by [Pei-Tang Huang](https://github.com/tan9)
+* [Create Galician translation](https://github.com/adobe/brackets/pull/8226) by [Iván Barcia](https://github.com/ivarcia)
+* [Show supported translations of each extension in Extension Manager](https://github.com/adobe/brackets/pull/7995) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Collapse long extension descriptions](https://github.com/adobe/brackets/pull/8282) by [Triangle717](https://github.com/le717)
+* [Fix Live Preview Highlight when Live Preview started on a CSS file](https://github.com/adobe/brackets/pull/8157) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Don't leave trailing whitespace after auto-indenting a close brace](https://github.com/adobe/brackets/pull/8439) by [Andrew MacKenzie](https://github.com/mackenza)
+* [Fix `"sortDirectoriesFirst": true` setting with numbered folder names](https://github.com/adobe/brackets/pull/8341) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Add `background-blend-mode` to CSS code hints](https://github.com/adobe/brackets/pull/8146) by [coliff](https://github.com/coliff)
+* [Add `text-rendering` to CSS code hints](https://github.com/adobe/brackets/pull/8414) by [Steffen Bruchmann](https://github.com/sbruchmann)
+* [Add more values to `cursor` CSS code hints](https://github.com/adobe/brackets/pull/8370) by [Amin Ullah Khan](https://github.com/sprintr)
+* [Hide .sass-cache folder from view](https://github.com/adobe/brackets/pull/8458) by [Andrew MacKenzie](https://github.com/mackenza)
+* [Highlight .bash files as Bash, and .ino files as C++](https://github.com/adobe/brackets/pull/8340) by [Ty-Lucas Kelley](https://github.com/tylucaskelley)
+* [Highlight .xaml files as XML](https://github.com/adobe/brackets/pull/8333) by [Triangle717](https://github.com/le717)
+* [Correct error message when renaming/deleting folder fails](https://github.com/adobe/brackets/pull/8008) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Themes: Fix tab order in Themes dialog](https://github.com/adobe/brackets/pull/8387) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Themes: Dark theme fixes](https://github.com/adobe/brackets/pull/8521) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Add info to Getting Started docs: What is a project, how to switch projects)](https://github.com/adobe/brackets/pull/7708) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Cleanup: Remove unused strings](https://github.com/adobe/brackets/pull/8563) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Themes: Fix menu label string](https://github.com/adobe/brackets/pull/8388) by [Triangle717](https://github.com/le717)
+* [Fix missing space in string](https://github.com/adobe/brackets/pull/8309) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Simplified Chinese translation update](https://github.com/adobe/brackets/pull/8070) by [fengdi](https://github.com/fengdi)
+* [Croatian translation update](https://github.com/adobe/brackets/pull/8469) by [Kruno H](https://github.com/diomed)
+* [Czech translation update](https://github.com/adobe/brackets/pull/8060) ([and](https://github.com/adobe/brackets/pull/8279)) by [kvarel](https://github.com/kvarel)
+* [Dutch translation update](https://github.com/adobe/brackets/pull/8281) by [githrdw](https://github.com/githrdw)
+* [Finnish translation update](https://github.com/adobe/brackets/pull/8373) ([and](https://github.com/adobe/brackets/pull/8520)) by [valtlait](https://github.com/valtlait)
+* [German translation update](https://github.com/adobe/brackets/pull/8568) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Italian translation update](https://github.com/adobe/brackets/pull/8264) ([and](https://github.com/adobe/brackets/pull/8569)) by [Denisov21](https://github.com/Denisov21)
+* [Korean translation update](https://github.com/adobe/brackets/pull/8262) by [Yongmin Hong](https://github.com/revi)
+* [Persian translation update](https://github.com/adobe/brackets/pull/8421) by [Mohammad Yaghobi](https://github.com/mohammadyaghobi)
+* [Romanian translation update](https://github.com/adobe/brackets/pull/8307) by [Micleusanu Nicu](https://github.com/micnic)
+* [Russian translation update](https://github.com/adobe/brackets/pull/8371) by [Maxim Khlobystov](https://github.com/gthacoder)
+* [Swedish translation update](https://github.com/adobe/brackets/pull/8567) by [Mikael Jorhult](https://github.com/mikaeljorhult)
 
 #### Pulling source code from Git
 * Rebuilding brackets-shell is _not_ required for this sprint.
