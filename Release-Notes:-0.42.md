@@ -6,7 +6,7 @@ What's New in Release 0.42
 --------------------------
 * **Themes**
     * **[Editor color schemes](https://trello.com/c/LHhAcbcU/1260-c-editor-themes):** Find themes in Extension Manager, and instantly switch between them using View > Themes.
-    * [Built-in dark mode](https://github.com/adobe/brackets/pull/8462): Choose the built-in "Brackets Dark" theme for easy access to a nighttime color palette. Third-party themes can also trigger "dark mode," darkening many parts of the Brackets automatically without needing to style everything manually.
+    * [Built-in dark mode](https://github.com/adobe/brackets/pull/8462): Choose the built-in "Brackets Dark" theme for easy access to a nighttime color palette. Third-party themes can also trigger "dark mode," dimming many parts of the Brackets automatically without needing to style everything manually.
     * Configure font settings: Use View > Themes to set a custom font and font size (the font must be installed in your OS).
 * **File Types**
     * [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409): Use the language indicator in the status bar as a dropdown to override the language Brackets chose to treat a file as. (These changes are _not_ saved when you close the file; use [preferences](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) to permanently treat all files with a certain extension as a different language).
