@@ -77,9 +77,11 @@ Tips for creating your theme's CSS:
 * Watch out for the colors that aren't displayed all the time:
     * matching brackets
     * matching tags in HTML
-    * matches for the "Find" command
+    * matches for the "Find" command (_tricky: see below_)
     * the highlight for the active line (`View > Highlight Active Line`)
 * [Known issue](https://github.com/adobe/brackets/issues/8490): Make sure your LESS file doesn't end with a comment (if it does, add a blank line afterward).
+
+**Search result highlighting** - All Find results are indicated by the same highlight style; the "current" result also has its text selected. Since it's hard to style `.CodeMirror-searching` with a transparent background that looks good atop both the regular editor background and the text selection color (and makes those two cases visually distinct), you can use a trick for more flexibility: change text selection to a different color while searches are in progress (a text selection will _never_ be visible without `.CodeMirror-searching` overlaid on top of it, while a search is in progress). [See the base theme for an example of this in action](https://github.com/adobe/brackets/blob/master/src/styles/brackets.less#L1326-L1352).
 
 ## What about other UI elements?
 
