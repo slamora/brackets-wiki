@@ -71,7 +71,7 @@ To apply your color scheme to the editor area, LESS will convert this to:
 
 Tips for creating your theme's CSS:
 
-* Starting with an [existing theme]((https://github.com/adobe/brackets/blob/master/src/extensions/default/DarkTheme/main.less)) is always easier
+* Starting with an [existing theme](https://github.com/adobe/brackets/blob/master/src/extensions/default/DarkTheme/main.less) is always easier
 * Use the Dev Tools element inspector (`Debug > Show Developer Tools`) to view the elements in the editor
 * You can customize the styles within an inline code editor by adding `.inline-widget .CodeMirror` to your CSS selector
 * Watch out for the colors that aren't displayed all the time:
