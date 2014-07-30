@@ -58,6 +58,7 @@ Smoke test steps
 1. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
 1. Hit Esc key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
 1. Hit Cmd/Ctrl-E. Verify that it shows a single body rule and that everything is laid out properly.
+1. With `View > Themes...`, change the theme from Brackets Light to Brackets Dark (or vice-versa, depending on what your standard theme is). Make sure that both the host editor and the inline editor look correct, then switch back to your normal theme.
 1. In the native shell menu, choose View > Increase Font Size. Verify both the host and inline editors font size increases. The inline editor should not show a vertical scrollbar.
 1. Click the lightning bolt in the upper right. If you moved your state.json file, you'll get an info dialog explaining how live preview works. Hit OK.
 1. You should see the page load in Chrome.
