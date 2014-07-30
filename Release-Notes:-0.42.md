@@ -68,7 +68,7 @@ Community contributions to Brackets
 * [Correct error message when renaming/deleting folder fails](https://github.com/adobe/brackets/pull/8008) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Themes: Fix tab order in Themes dialog](https://github.com/adobe/brackets/pull/8387) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Themes: Dark theme fixes](https://github.com/adobe/brackets/pull/8521) by [Tomás Malbrán](https://github.com/TomMalbran)
-* [Add info to Getting Started docs: What is a project, how to switch projects)](https://github.com/adobe/brackets/pull/7708) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Add info to Getting Started docs: What is a project, how to switch projects](https://github.com/adobe/brackets/pull/7708) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Cleanup: Remove unused strings](https://github.com/adobe/brackets/pull/8563) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Themes: Fix menu label string](https://github.com/adobe/brackets/pull/8388) by [Triangle717](https://github.com/le717)
 * [Fix missing space in string](https://github.com/adobe/brackets/pull/8309) by [Marcel Gerber](https://github.com/SAPlayer)
