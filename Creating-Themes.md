@@ -40,14 +40,14 @@ Read more about package.json on the [extension package format page](https://gith
 Brackets has a workflow that will help you iteratively create your theme. If you set up your theme files as suggested in the "Creating the Extension" section above, your new theme should be available for use right away.
 
 * Start up Brackets
-* Select your theme in the theme settings (`View > Themes...`)
-* Drag your theme.less file into Brackets
+* Select your theme in the theme settings (`View > Themes...`) and choose Done
+* Drag your theme.less file onto Brackets to open it
 
 Now, when you save changes to your theme.less file, your changed theme is automatically applied to Brackets.
 
 ## Theme Styles
 
-The base theme is the "Brackets Light" theme and all of the styles that you add will be added to the page after the base theme.
+The base theme is the "Brackets Light" theme and all the styles you add will be added to the page after the base theme.
 
 For an up-to-date example of a complete theme, take a look [at the Brackets Dark theme](https://github.com/adobe/brackets/blob/master/src/extensions/default/DarkTheme/main.less).
 
@@ -73,12 +73,13 @@ Tips for creating your theme's CSS:
 
 * Starting with an [existing theme](https://github.com/adobe/brackets/blob/master/src/extensions/default/DarkTheme/main.less) is always easier
 * Use the Dev Tools element inspector (`Debug > Show Developer Tools`) to view the elements in the editor
-* You can customize the styles within an inline code editor by adding `.inline-widget .CodeMirror` to your CSS selector
+* You can customize the styles within an inline code editor by adding `.inline-widget .CodeMirror` to your CSS selector. The inline code editor's background color should typically be slightly darker or lighter than your main editor background color, for contrast.
 * Watch out for the colors that aren't displayed all the time:
     * matching brackets
     * matching tags in HTML
     * matches for the "Find" command
-    * the highlight for the active line (`View > Hightlight Active Line`)
+    * the highlight for the active line (`View > Highlight Active Line`)
+* [Known issue](https://github.com/adobe/brackets/issues/8490): Make sure your LESS file doesn't end with a comment (if it does, add a blank line afterward).
 
 ## What about other UI elements?
 
