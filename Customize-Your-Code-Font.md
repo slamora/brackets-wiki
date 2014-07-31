@@ -1,6 +1,18 @@
-Brackets doesn't officially support a preference for changing the code editor font. But here's a quick hack you can use to work around issues like [lack of Russian/Cyrillic support](https://github.com/adobe/brackets/issues/3465):
+# Brackets 0.42 and newer
 
-## Approach A: Write an extension
+To change the code editor font, choose _**View > Themes...**_, then change the "Font Family" setting.
+
+* Use the same syntax as you would `font-family` in CSS
+* The font must be installed on your OS (there's no way to load a web font)
+* One exception: `'SourceCodePro-Medium'`, the default code editor font, is a web font that's loaded automatically by Brackets (installing Brackets doesn't install any fonts globally on your system)
+
+Changing your font can be useful as a workaround for certain international text-display issues, such as [lack of Russian/Cyrillic support](https://github.com/adobe/brackets/issues/3465).
+
+# Older Brackets & Adobe Edge Code
+
+Here's a quick hack you can use to change your font in earlier releases:
+
+### Approach A: Write an extension
 
 [Write a Brackets extension](https://github.com/adobe/brackets/wiki/How-to-write-extensions) using this code as the basis for your _main.js_:
 
@@ -23,7 +35,7 @@ If you store this extension in the location given by Help > Show Extensions Fold
 _Caveat: This approach only works for fonts installed on your OS._ If you want to use a web font (loaded via `@font-face`), you need to edit the Brackets core source code.
 
 
-## Approach B: Edit Brackets source
+### Approach B: Edit Brackets source
 
 1. [Set up a Brackets dev environment](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#setting-up-your-dev-environment) (you can omit the fork step and clone the official repo directly, however)
 2. In the cloned source, edit the file <i>src/styles/brackets_theme_default.less</i>
