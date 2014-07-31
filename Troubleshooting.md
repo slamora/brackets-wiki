@@ -24,15 +24,12 @@ Other information that may help you:
 
 
 ## <a name="installation"> </a>Can't Install Brackets
-### 1. Download the Right Package
 
-Make sure you download one of the "brackets-sprint-XX.dmg" (Mac) or "brackets-sprint-XX.msi" (Windows) installers from the [Homepage](http://brackets.io). 
-
-### 2. Windows Vista: Nothing happens when launching installer
+### Windows Vista: Nothing happens when launching installer
 
 Some Windows Vista computers will block installers downloaded from the Internet, so nothing at all happens when you try to run the installer. To work around this: right-click the installer file, choose Properties, and click the Unblock button.
 
-### 3. Windows error: "Installation directory must be on a local drive"
+### Windows error: "Installation directory must be on a local drive"
 
 This can happen on some Windows machines. To work around this, try executing the installer from an elevated command prompt:
 
@@ -40,14 +37,17 @@ This can happen on some Windows machines. To work around this, try executing the
 2. `cd` to the folder containing the installer.
 3. Run the installer using msiexec, e.g.: `msiexec /i "brackets-sprint-xx-WIN.msi"` (where "xx" is the sprint number)
 
-### 4. Windows: installer stuck on 0% progress
+### Windows: Installer stuck on 0% progress
 
 There may be a long delay at the start of the installation process as Windows checks, prepares, and displays the UAC prompt.  During this delay, you will see the "Installing Brackets" - "Please wait while Brackets is installed" page of the installer but with 0% progress.  The length of this delay may vary, depending on your individual system.
 
 
 ## <a name="launching"> </a>Can't Launch Brackets
 
-### 1. Check the File Permissions
+### Clear The Cache
+If you had previously used Brackets, your cache may have information that is conflicting with the most recent version. [Find your cache folder](https://github.com/adobe/brackets/wiki/Cache-Folder) and delete the cache. _Warning: this will reset all of your Brackets preferences._
+
+### Check the File Permissions
 
 If Brackets won't launch, check the permissions of the main executable files (e.g. using `ls -l`). On Mac:
 
@@ -56,13 +56,14 @@ If Brackets won't launch, check the permissions of the main executable files (e.
 
 To fix permissions, use a command like `chmod +x bin/mac/Brackets.app/Contents/MacOS/Brackets`.
 
-Some archiving programs, such as [Keka](http://www.kekaosx.com/en/) don't appear to preserve file permissions when unarchiving zip files. (More info [here](https://github.com/adobe/brackets/issues/1158)). If you run into this issue on Mac, try to unarchive the zip file by using Finder.
-
-### 2. Clear The Cache
-If you had previously used Brackets, your cache may have information that is conflicting with the most recent version. [Find your cache folder](https://github.com/adobe/brackets/wiki/Cache-Folder) and delete the cache. _Warning: this will reset all of your Brackets preferences._
-
-### 3. Run Brackets From The Command Line
+### Run Brackets From The Command Line
 Next, try running Brackets from the command line. Open up a Terminal (or Command Prompt in Windows), navigate to the executable, and run Brackets. (On Mac, type `open bin/mac/Brackets.app`.). Did an error appear? If so, file an issue or find us on IRC or the mailing list and we'll try to figure it out.
+
+### Linux: libudev.so.0 Error
+This may happen when trying to run 32-bit Brackets on 64-bit Linux. Please verify that you've downloaded the correct build.
+
+### Linux: GLIBC_2.14 Error
+This occurs when trying to run Brackets on Debian 7 (Wheezy). Brackets currently requires Debian 8 (Jessie). (But for some _potential_ workarounds, [see issue #4816](https://github.com/adobe/brackets/issues/4816)).
 
 
 ## <a name="livedev"> </a>Live Preview Isn't Working
