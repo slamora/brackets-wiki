@@ -1,3 +1,5 @@
+If you'd like to develop a theme, [take a look at Creating Themes](https://github.com/adobe/brackets/wiki/Creating+Themes)
+
 There are three stages to developing an extension:
 
 1. **[Set up](How-to-write-extensions#creating-an-extension)** the basic scaffolding.
@@ -5,7 +7,6 @@ There are three stages to developing an extension:
 3. **[Package and publish](How-to-write-extensions#publishing-extensions)** your extension for others to use.
 
 Follow these links to the sections below for details!
-
 
 ## Creating an Extension
 
