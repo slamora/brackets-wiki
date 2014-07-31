@@ -1,8 +1,11 @@
-_This page is no longer up to date._
+_**This page is no longer up to date.** The Preferences feature shipped in Brackets 0.36._
 
 **See [Preferences System documentation](https://github.com/adobe/brackets/wiki/Preferences-System) for current information.**
 
 <br><br>
+
+----
+
 ## Preferences Model ##
 
 Preferences are often considered as a failure to do good design and that making the right choices for users is a better way to go. There are circumstances in which prefs can [even be harmful](http://limi.net/checkboxes-that-kill/). For a programmer's editor, however, a good preferences system is important.
