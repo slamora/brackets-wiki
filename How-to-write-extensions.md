@@ -1,4 +1,4 @@
-If you'd like to develop a theme, [take a look at Creating Themes](https://github.com/adobe/brackets/wiki/Creating+Themes)
+If you'd like to develop a theme, take a look at [Creating Themes](https://github.com/adobe/brackets/wiki/Creating+Themes)
 
 There are three stages to developing an extension:
 
