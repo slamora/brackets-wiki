@@ -20,6 +20,7 @@ What's New in Release 0.42
 * **Preferences**
     * [New Preference: Hide hints from each provider](https://github.com/adobe/brackets/pull/8272): For example, setting `"codehint.UrlCodeHints": false` will hide the hints that appear when you're typing `<img src="...`. [Read more...](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences)
 * **Ongoing Research** (not implemented yet)
+    * [Split view](https://trello.com/c/atD9BEDl/1281-m-splitview-implement-mainviewmanager-code-for-1x2-editors) (early implementation on branch)
     * [Research: CSS Live Preview new implementation](https://trello.com/c/JWRhHzI6/1356-c-livedev-initial-css-implementation)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.41...release-0.42#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/sprint-41...release-0.42#commits_bucket)
