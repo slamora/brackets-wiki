@@ -1,3 +1,11 @@
+_**This page is no longer up to date.**_
+
+_The Themes feature shipped in Brackets 0.42 (accessed via View > Themes menu). See [[Creating Themes]] for how to create your own theme._
+
+<br><br>
+
+----
+
 See the [Trello card for the implementation of editor themes](https://trello.com/c/LHhAcbcU/1260-editor-themes)
 
 Miguel Castillo's [Brackets-Themes](https://github.com/MiguelCastillo/Brackets-Themes) extension is built in a way that would allow its code to be refactored and slimmed down and moved into core. Themes needs to be a core feature so that they can be packaged and shipped as independent extensions.
