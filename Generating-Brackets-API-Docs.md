@@ -1,5 +1,7 @@
 This set of commands creates the Brackets API Docs to be published at http://brackets.io/docs/current.
 
+The following commands assume that the **brackets** and **brackets.io** root folders are side-by-side.
+
 ### Use Mac
 
 __Note:__ There is a [known bug](https://github.com/jbalsas/apify/issues/3) that the incorrect folder structure and links are generated on Windows, so use Mac to generate documents until that bug is fixed.
@@ -36,6 +38,7 @@ git checkout -b yourname/new-branch-name
 Checkout the Brackets branch that you want to generate API Docs for which is usually `release` branch. Currently, we only generate docs for the current master, but once we reach version 1.0, we'll want to generate docs for each major and minor release.
 
 ```
+cd ../brackets
 git checkout release
 git pull
 git status
@@ -45,7 +48,7 @@ git status
 
 The source folder (-s) for API Docs is the `brackets/src` folder. The following command assumes that you are in the root of the **brackets** repo.
 
-The output folder (-o) is `brackets.io/docs/current`. The following command assumes that the **brackets** and **brackets.io** root folders are side-by-side.
+The output folder (-o) is `brackets.io/docs/current`. 
 
 The title (-t) is `Brackets`.
 
