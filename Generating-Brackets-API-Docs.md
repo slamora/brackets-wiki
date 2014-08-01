@@ -15,20 +15,28 @@ sudo npm install -g apify
 
 ### Create branch in brackets.io repo
 
-Brackets API documents are posted to the https://github.com/adobe/brackets.io repo, so clone that repo and create a new branch.
+Brackets API documents are posted to the https://github.com/adobe/brackets.io repo, so clone that repo (first time only):
 
 ```
 git clone https://github.com/adobe/brackets.io.git
 cd brackets.io
+```
+
+Create a new branch off of latest `gh-pages` branch (default branch in brackets.io).
+
+```
+git checkout gh-pages
+git pull
+git status
 git checkout -b yourname/new-branch-name
 ```
 
 ### Checkout Brackets branch
 
-Checkout the Brackets branch that you want to generate API Docs for. Currently, we only generate docs for the current master, but once we reach version 1.0, we'll want to generate docs for each major and minor release.
+Checkout the Brackets branch that you want to generate API Docs for which is usually `release` branch. Currently, we only generate docs for the current master, but once we reach version 1.0, we'll want to generate docs for each major and minor release.
 
 ```
-git checkout master
+git checkout release
 git pull
 git status
 ```
