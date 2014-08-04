@@ -33,6 +33,8 @@ This seems like a lot, but giving all of this information will give potential us
 
 The "theme" part is unique to themes and is the trigger that tells Brackets that this extension is a theme. The `file` property tells Brackets which file in your extension is the stylesheet for your theme. If your theme has a dark appearance, use the `dark` flag to tell Brackets that it should make other elements beyond the editor dark as well.
 
+Especially important for themes: **include the homepage field** in package.json to point to your GitHub repository. Ideally, the README for your theme will display a screenshot to show what your theme looks like.
+
 Read more about package.json on the [extension package format page](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format).
 
 ## Developing Your Theme
