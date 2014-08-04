@@ -82,12 +82,16 @@ See **[How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Br
 ### Files should be in Current Project
 You can use `File > Open` to open any file on your computer, but Brackets' definition of a _project_ are the files in the folder opened using `File > Open Folder...`. Some (but not all) Live Development features require a node server, which means being in the current project, so make sure the files that you want to use with Live Development are in the current project.
 
+### HTML File should be in Working Set
+
+There is a [known issue](https://github.com/adobe/brackets/issues/7886) that if HTML file is in project tree (i.e. not in Working Set), then element highlighting stops working after switching to a CSS (or other?) file and then back to the HTML file. The workaround is to double-click HTML file so it's added to the Working Set.
+
 ### Disable Extensions
 The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
 
 ### Page not loading
 
-* If you specified a "base URL," make sure your local server is already running - Brackets will not start it for you.
+* If you specified a "Base URL," make sure your local server is already running - Brackets will not start it for you.
 * Make sure you are not running firewall, network security, or antivirus software that is blocking the connection (try disabling it temporarily to check)
 * Make sure you haven't modified your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)) to remap localhost or 127.0.0.1
 
