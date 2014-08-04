@@ -62,13 +62,12 @@ This mode offers the full range of Live Preview functionality:
 
 All the CSS features above also work when you're in an inline Quick Edit CSS editor.
 
-**Using your own backend**<a name="lp-custom-server"></a> - Make sure your server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open a file that needs to be processed by a web server (HTML, PHP, ASP, etc...) and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
+**Using your own backend**<a name="lp-custom-server"></a> - Make sure your local server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open a file for one of your webpages (e.g. an HTML, PHP, or ASP file) and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
 
-Live Preview has the following limitations with files processed by a backend server:
+_However_, Live Preview has the following limitations when using your own backend:
 
-* Changes to server processed files are not updated in the browser as you type. Changes to CSS files are, however, reflected in real time as you type.  Brackets will refresh the page on save so that changes to server based files are rendered in the browser.
-
-* Browser Highlighting is disabled for server processed files. CSS highlighting is not affected since it does not require special processing by a backend server.
+* The browser won't update immediately as you type in server-processed files (such as HTML or PHP) - only changes to CSS files will be reflected in real time. For server-processed files, Brackets will automatically reload the page on save to update the browser preview.
+* "Live Highlighting" is disabled for server-processed files. It will still work when your cursor is in a CSS file, however.
 
 > Why do these limitations exist? To enable HTML live editing, Brackets needs to inject some annotations into your HTML code before the browser loads it. Normally, the built-in Brackets server does this. When using your own server instead, Brackets can't inject those annotations. Without the annotations, Brackets can't map edits and cursor positions from your source file onto the corresponding DOM nodes in the browser.
 
