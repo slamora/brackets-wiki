@@ -170,10 +170,8 @@ You can also install extensions manually:
 
 1. Find the extension in the [online Extension Registry](https://brackets-registry.aboutweb.com/)
 2. Click the name of the extension to download it as a zip file
-3. In Brackets, choose Help > Show Extensions Folder, then drill down into the `user` folder
-4. Make a new folder whose name is the extension id (the part of the zip file before the "-a.b.c.zip" version suffix).
-5. Unzip the extension and move the contents into your new extension folder such that the `main.js` file is _directly_ inside the extension folder (if the zip file had extra folder nesting, just take the contents of the inner folder that has `main.js`).
-6. Quit and relaunch Brackets
+3. In Brackets, open Extension Manager
+4. Drag the zip file onto the "Drag .zip here" zone in the lower left of the window
 
 
 ## Other: Brackets Is Acting Weird
