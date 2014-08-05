@@ -1,5 +1,3 @@
-# Extension Registry Architecture #
-
 Status: In Development
 
 The extension registry needs to implement the [server API](https://github.com/adobe/brackets/wiki/Extension-Repository-Server-API). We want the registry to be:
