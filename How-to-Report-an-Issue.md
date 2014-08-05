@@ -1,5 +1,3 @@
-# How to Report a Brackets Issue
-
 Whether you've found an issue with Brackets, the Brackets Registry or the Brackets Shell, you should file your issues according to these instructions.
 
 Found a bug you'd like to tell us about? Here's what to do...
