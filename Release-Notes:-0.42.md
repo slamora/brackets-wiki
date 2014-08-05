@@ -6,6 +6,8 @@ What's New in Release 0.42
     * Configure font settings: Use View > Themes to set a custom font and font size (the font must be installed in your OS).
 * **File Types**
     * [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409): Use the language indicator in the status bar as a dropdown to override the language Brackets chose to treat a file as. (These changes are _not_ saved when you close the file; use [preferences](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) to permanently treat all files with a certain extension as a different language).
+* **Live Preview**
+    * [Shortcut to force-reload page](https://github.com/adobe/brackets/pull/8080): Ctrl-Shift-R (Win) or Cmd-Shift-R (Mac) will reload the entire page but preserve the Live Preview connection. (Not shown in menu).
 * **Replace in Files**
     * [Check/uncheck all matches for a file](https://github.com/adobe/brackets/pull/8260): The headings for each file include a checkbox for quickly including or excluding _all_ matches in the file.
 * **Extension Management**
@@ -18,7 +20,7 @@ What's New in Release 0.42
     * [Traditional Chinese translation added](https://github.com/adobe/brackets/pull/8332)
     * [Galician translation added](https://github.com/adobe/brackets/pull/8226)
 * **Preferences**
-    * [New Preference: Hide hints from each provider](https://github.com/adobe/brackets/pull/8272): For example, setting `"codehint.UrlCodeHints": false` will hide the hints that appear when you're typing `<img src="...`. [Read more...](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences)
+    * [New Preference: Disable code hint providers](https://github.com/adobe/brackets/pull/8272): For example, setting `"codehint.UrlCodeHints": false` will disable the hints that appear when you're typing `<img src="...`. [Read more...](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences)
 * **Ongoing Research** (not implemented yet)
     * [Split view](https://trello.com/c/atD9BEDl/1281-m-splitview-implement-mainviewmanager-code-for-1x2-editors) (early implementation on branch)
     * [Research: CSS Live Preview new implementation](https://trello.com/c/JWRhHzI6/1356-c-livedev-initial-css-implementation)
@@ -41,6 +43,8 @@ New/Improved Extensibility APIs
 
 **Extension localization** - Extensions can now indicate which languages they are localized for by including an [`i18n` field in package.json](https://github.com/adobe/brackets/wiki/Extension-package-format#details). The supported languages are indicated in Extension Manager below the extension's description.
 
+**Code hints** - Code hint providers that are disabled via preferences will automatically not be called by CodeHintManager. However, if your provider does any additional work on its own, you should listen for changes to the `"codehint.<your provider id>"` and `"showCodeHints"` preferences in order to disable/enable that additional behavior as well. [See JavaScript code hints](https://github.com/adobe/brackets/pull/8272/files#diff-b70d0e44873ab629e0f42bb5f8e093eeR67) for an example where this was needed.
+
 Known Issues
 ------------
 * Activity Monitor in Mavericks (OS X 10.9) says the Brackets Helper process is "Not Responding" even when it's working normally ([#5794](https://github.com/adobe/brackets/issues/5794)). You can safely ignore this unless Brackets is actually failing to respond when you click or type text.
@@ -56,6 +60,7 @@ Community contributions to Brackets
 * [Create Galician translation](https://github.com/adobe/brackets/pull/8226) by [Iván Barcia](https://github.com/ivarcia)
 * [Show supported translations of each extension in Extension Manager](https://github.com/adobe/brackets/pull/7995) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Collapse long extension descriptions](https://github.com/adobe/brackets/pull/8282) by [Triangle717](https://github.com/le717)
+* [Shortcut to reload page during Live Preview](https://github.com/adobe/brackets/pull/8080) by [Malte Muth](https://github.com/maltemuth)
 * [Fix Live Preview Highlight when Live Preview started on a CSS file](https://github.com/adobe/brackets/pull/8157) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Don't leave trailing whitespace after auto-indenting a close brace](https://github.com/adobe/brackets/pull/8439) by [Andrew MacKenzie](https://github.com/mackenza)
 * [Fix `"sortDirectoriesFirst": true` setting with numbered folder names](https://github.com/adobe/brackets/pull/8341) by [Tomás Malbrán](https://github.com/TomMalbran)
@@ -66,6 +71,7 @@ Community contributions to Brackets
 * [Highlight .bash files as Bash, and .ino files as C++](https://github.com/adobe/brackets/pull/8340) by [Ty-Lucas Kelley](https://github.com/tylucaskelley)
 * [Highlight .xaml files as XML](https://github.com/adobe/brackets/pull/8333) by [Triangle717](https://github.com/le717)
 * [Correct error message when renaming/deleting folder fails](https://github.com/adobe/brackets/pull/8008) by [Marcel Gerber](https://github.com/SAPlayer)
+* [Cleanup: Simplify "$" replacement code in FindUtils](https://github.com/adobe/brackets/pull/7582) by [Marcel Gerber](https://github.com/MarcelGerber)
 * [Themes: Fix tab order in Themes dialog](https://github.com/adobe/brackets/pull/8387) by [Marcel Gerber](https://github.com/SAPlayer)
 * [Themes: Dark theme fixes](https://github.com/adobe/brackets/pull/8521) by [Tomás Malbrán](https://github.com/TomMalbran)
 * [Add info to Getting Started docs: What is a project, how to switch projects](https://github.com/adobe/brackets/pull/7708) by [Marcel Gerber](https://github.com/SAPlayer)
