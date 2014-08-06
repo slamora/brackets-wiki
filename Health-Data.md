@@ -22,7 +22,7 @@ The data will be anonymized and turning off data collection will be easy and the
 
 ## Initial Data Proposal
 
-These are the pieces of information we look to collect in the first iteration of the feature.
+These are the pieces of information we look to collect in the first iteration of the feature. This is high-value and easy to collect.
 
 * UUID
 * Snapshot time (UTC)
@@ -31,10 +31,20 @@ These are the pieces of information we look to collect in the first iteration of
 * OS version
 * List of installed extensions *that are available in the registry* and their versions
 
+**Benefit** With this data, we can answer questions like:
+
+* How many people are using Brackets on a daily basis?
+* Are people sticking with Brackets?
+* Which extensions are popular with regular Brackets users? This is can be helpful for both extension authors and for an idea of where we should expand the Brackets core.
+* Are we paying the right amount of attention to each of the platforms we support?
+
 ## Next Up Data Proposal
 
-We wish to collect this information soon. "Active time" increases as the user is typing/running commands in Brackets and stops increasing after an idle period.
+We wish to collect this additional information soon. "Active time" increases as the user is typing/running commands in Brackets and stops increasing after an idle period.
 
+* Deprecation warning counts (ideally with unique IDs for each deprecation warning so that we can tell when it's safe to remove an API)
+* Logged exception count (need to worry about anonymous data in order to actually log exceptions...)
+* Specific exceptions that we'd like to track (file watchers went offline?)
 * "Active time" using Brackets
 * "Active time" per file type (file extension)
 * Command counts for a specific list of commands
@@ -42,10 +52,27 @@ We wish to collect this information soon. "Active time" increases as the user is
     * navigate.toggleQuickDocs
     * file.liveFilePreview
 
+**Benefits** Coupled with the data above, we can answer further questions like:
+
+* Is it safe to remove some of our deprecated APIs?
+* Do we need to raise the priority of certain problems?
+* Does the presence of certain extensions correlate with more exceptions?
+* How much do people use Brackets?
+* Are people spending a lot of time working with sass or scss files? Should we put more effort in there?
+* How are Brackets' unique features doing?
+
 ## More Data
 
-* Deprecation warning counts (ideally with unique IDs for each deprecation warning so that we can tell when it's safe to remove an API)
-* Logged exception count (need to worry about anonymous data in order to actually log exceptions...)
+* Average/max startup time
+* Average/max time opening a file
+* Average/max size of projects being edited (in numbers of files)
+* Quick Open performance
+* Find in Files performance
+
+**Benefits** We want to make Brackets perform better.
+
+* How quickly does Brackets perform common operations? Where do we most need to put in additional effort there?
+* Brackets handles projects up to ~10,000 files just fine. How many people are working with projects that Brackets doesn't handle as well today?
 
 ## How the Data is Stored and Sent
 
