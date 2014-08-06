@@ -5,6 +5,9 @@ _This document will not be finalized until the end of Release 0.43 -- approximat
 What's New in Release 0.43
 --------------------------
 * **TBD...**
+* **SCSS/LESS Editing**
+    * [Quick Edit, Quick Find Definition, & Live Preview Highlight support](https://trello.com/c/KoK6kPtp/1190-m-simple-support-for-less-scss-in-key-brackets-features): All these features now work the same for SCSS & LESS as they do for plain CSS.
+    * Live Preview supports SCSS & LESS editing if you use a third-party "file watcher" to automatically recompile your CSS on save. Brackets notices the changed CSS file and updates the page (without reloading). You can also use a Brackets extension such as [Brackets SASS](https://github.com/jasonsanjose/brackets-sass) or [LESS AutoComplile](https://github.com/jdiehl/brackets-less-autocompile) for this.
 * **Search**
     * [Find/Replace: indicate current match index](https://trello.com/c/0GXqt5GF/1089-s-find-next-indicate-current-match-index)
     * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
@@ -26,6 +29,8 @@ UI Changes
 API Changes
 -----------
 **Theme authoring** - Simplified how Find/Replace highlight colors are set. ...TODO...
+
+**window.open()** - Only permits 'file://' URLs and 'about:blank', since brackets-shell is not a secure general-purpose web browser. Use `NativeApp.openURLInDefaultBrowser()` to open webpages in the user's regular browser.
 
 New/Improved Extensibility APIs
 -------------------------------
