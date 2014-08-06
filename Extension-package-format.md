@@ -50,7 +50,7 @@ Here's how these fields are exposed in the Extension Manager UI:
 * `homepage` (encouraged) - URL linking to more information (Extension Manager shows this as a "More Info" link)
 * `author` (encouraged) - name of the developer, in the format "Name <email> (URL)" (email and URL are both optional)
 * `license` (optional) - license of the extension's source code (not shown in the UI yet)
-* `keywords` (optional) - additional keywords searched when the user filters the list view in Extension Manager
+* `keywords` (optional) - array of additional keyword strings; searched when the user filters the list view in Extension Manager
 * `i18n` (optional) - array of language codes the extension has been translated into
 
 ##### Future fields (<font color="red">not yet implemented</font>) #####
