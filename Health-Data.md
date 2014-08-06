@@ -42,6 +42,11 @@ We wish to collect this information soon. "Active time" increases as the user is
     * navigate.toggleQuickDocs
     * file.liveFilePreview
 
+## More Data
+
+* Deprecation warning counts (ideally with unique IDs for each deprecation warning so that we can tell when it's safe to remove an API)
+* Logged exception count (need to worry about anonymous data in order to actually log exceptions...)
+
 ## How the Data is Stored and Sent
 
 The initial data proposal consists of "snapshot" data which is collected when the data will be sent.
