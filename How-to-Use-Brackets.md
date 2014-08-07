@@ -211,12 +211,13 @@ Here is a quick list of some of the settings you can change in these files:
 * (new in 40) **highlightMatches**: (default `false`) If true, the strings that match the selection will be underlined. 
 * (new in 42) **showCodeHints**: (default `true`) If false, all code hints are disabled.
 * (new in 42) **codehint.{HINT_PROVIDER_CONSTRUCTOR_NAME}**: (default `true`) If false, the specific code hint provider is disabled. Below is a list of preferences for all the default code hints providers.
-   - (new in 42) **codehint.TagHints**: (default `true`) If false, HTML tag hints are disabled. 
-   - (new in 42) **codehint.AttrHints**: (default `true`) If false, HTML attribute hints are disabled. 
-   - (new in 42) **codehint.CssPropHints**: (default `true`) If false, CSS property hints are disabled. 
-   - (new in 42) **codehint.UrlCodeHints**: (default `true`) If false, URL hints are disabled. 
-   - (new in 42) **codehint.JSHints**: (default `true`) If false, JavaScript hints are disabled. 
-   - (new in 42) **codehint.SpecialCharHints**: (default `true`) If false, special character hints are disabled. 
+   - **codehint.TagHints**: (default `true`) If false, HTML tag hints are disabled. 
+   - **codehint.AttrHints**: (default `true`) If false, HTML attribute hints are disabled. 
+   - **codehint.CssPropHints**: (default `true`) If false, CSS property hints are disabled. 
+   - **codehint.UrlCodeHints**: (default `true`) If false, URL hints are disabled. 
+   - **codehint.JSHints**: (default `true`) If false, JavaScript hints are disabled. 
+   - **codehint.SpecialCharHints**: (default `true`) If false, special character hints are disabled. 
+* (new in 43) **jscodehints.noHintsOnDot**: (default `false`) If true, do not automatically show JS code hints when `.` is typed.
 
 Here's an example:
 
