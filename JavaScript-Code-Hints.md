@@ -101,6 +101,22 @@ The main hints themselves will be unchanged from the current format.
 
 Documentation on a function or variable will pop out to the side of the main hint window when a hint is highlighted. A small delay between highlighting a hint and displaying the documentation will prevent flash in the case where the user is quickly moving through the hints. The documentation for functions will contain the function signature, origin, description, parameters, and return type. The documentation window for variables and properties will show the type, origin, and description. The figure below shows a documentation hint for a highlighted function.
 
+## JavaScript File Inference Problem
+
+In Release 0.41, Brackets upgraded to Tern 0.62 and turned on the timeout feature.
+This allows Brackets to stop runaway file processing that would cause Brackets to hang or crash.
+After files hit the timeout, they are stopped and not tried again for current
+project session.
+
+In Release 0.42, Brackets now displays a modal dialog warning when this is detected
+and adds the file to the `jscodehints.detectedExclusions` array in `.brackets.json`
+project preferences file in the project root folder. If the current project does
+not already have a project preferences file, then one is created. Files are no longer
+processed for hint information until they are removed from this array.
+
+The number of milliseconds of the timeout can be set using the `jscodehints.inferenceTimeout`
+preference. The default timeout is 10 seconds (10000).
+
 # Refactoring Project (spring 2014)
 
 Contact: dangoor
