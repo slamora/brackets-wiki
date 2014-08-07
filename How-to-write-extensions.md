@@ -8,6 +8,8 @@ There are three stages to developing an extension:
 
 Follow these links to the sections below for details!
 
+Looking for inspiration? Check out the **[Extension Ideas list](https://github.com/adobe/brackets/issues?q=label%3A%22Extension+Idea%22)**.
+
 ## Creating an Extension
 
 * Open your extensions folder by selecting "Help > Show Extensions Folder" in Brackets
@@ -15,7 +17,7 @@ Follow these links to the sections below for details!
 * For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](https://brackets-registry.aboutweb.com/) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
 
-\* Note: Because it's easy to delete extensions from this location via Extension Manager, in the long run it's _**safer** to develop inside the `src/extensions/dev`_ folder. You can do this by modifying the permissions of a regular installed build to make that folder writable, or by [cloning the Brackets source](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) and using that copy.
+> \* Note: Because Extension Manager lets you delete extensions from this location, in the long run it's _**safer** to develop inside the `src/extensions/dev`_ folder. The best way to do that is to [clone the Brackets source](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) and run from that copy. This also makes it easy to test your extensions with upcoming Brackets changes before they're released.
 
 ## Testing/Debugging Workflow
 
