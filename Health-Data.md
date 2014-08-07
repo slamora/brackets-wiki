@@ -29,6 +29,8 @@ These are the pieces of information we look to collect in the first iteration of
 * Brackets Version
 * OS
 * OS version
+* OS language
+* Brackets language
 * List of installed extensions *that are available in the registry* and their versions
 
 **Benefit** With this data, we can answer questions like:
@@ -37,6 +39,7 @@ These are the pieces of information we look to collect in the first iteration of
 * Are people sticking with Brackets?
 * Which extensions are popular with regular Brackets users? This is can be helpful for both extension authors and for an idea of where we should expand the Brackets core.
 * Are we paying the right amount of attention to each of the platforms we support?
+* Which languages should we pay the most attention to for translations?
 
 ## Next Up Data Proposal
 
