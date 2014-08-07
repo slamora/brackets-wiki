@@ -28,8 +28,7 @@ with specific testing instructions, as necessary.
 Any other testing is also welcome. Be sure to test new features
 in conjunction with your usual workflow.
 
-For testing with a cloned version, please run all unit tests.
-TODO: hints for running unit tests...
+For testing with a cloned version, please [run all unit tests](https://github.com/adobe/brackets/wiki/Running-Brackets-Unit-Tests).
 
 
 ## Issues
