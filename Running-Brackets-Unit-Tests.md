@@ -9,7 +9,7 @@ The Jasmine SpecRunner Dialog looks something like this:
 ![Jasmine SpecRunner dialog](http://i.imgur.com/ZzozdSA.png)
 
 You can try to run "All" test from the "All" tab, but due to memory constraints,
-the tests usually don't pass. Here's a more reliable recipe:
+usually all of the tests don't pass. Here's a more reliable recipe:
 
 1. Switch to "Unit" tab and click "All" to run all test
 2. Switch to "Integration" tab and run "All"
