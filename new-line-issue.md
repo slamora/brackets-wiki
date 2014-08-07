@@ -1,0 +1,1 @@
+every time i press return/enter to select a suggestion i get a new line meaning i then have to delete/backspace to the previous line to continue writing the code.
