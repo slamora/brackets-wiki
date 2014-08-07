@@ -2,9 +2,7 @@
 
 Unit Tests can only be run from a cloned version of Brackets -- not from an installer build.
 
-Use: `Debug > Run Tests`
-
-The Jasmine SpecRunner Dialog looks something like this:
+Use `Debug > Run Tests` to invoke the Jasmine SpecRunner dialog which looks something like this:
 
 ![Jasmine SpecRunner dialog](http://i.imgur.com/ZzozdSA.png)
 
