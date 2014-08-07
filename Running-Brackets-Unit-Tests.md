@@ -11,7 +11,7 @@ The Jasmine SpecRunner Dialog looks something like this:
 You can try to run "All" test from the "All" tab, but due to memory constraints,
 usually all of the tests don't pass. Here's a more reliable recipe:
 
-1. Switch to "Unit" tab and click "All" to run all test
+1. Switch to "Unit" tab and click "All" to run all tests
 2. Switch to "Integration" tab and run "All"
 3. Close SpecRunner dialog, shutdown/restart Brackets, `Debug > Runs Tests`
 4. Switch to "Live Preview" tab and run "All"
