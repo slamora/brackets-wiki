@@ -16,7 +16,7 @@ Testing using cloned version of Brackets on latest release branch is also welcom
 
 ## Testing Instructions
 
-Community will have a week for testing.
+Community will have a week for testing. Brackets Team will post to Brackets-Dev Forum with links to builds, testing dates, and other details.
 
 Basic testing instructions are:
 - [Client Smoke Tests](https://github.com/adobe/brackets/wiki/Brackets-Smoke-Tests)
