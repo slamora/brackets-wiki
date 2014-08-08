@@ -248,5 +248,5 @@ However, you may want to set up a dev environment for brackets-shell if:
 * You want to hack on the native code.
 * You want to pull the latest from the brackets repo `master` and it requires a new brackets-shell build that hasn't been released as a binary yet. (This is uncommon, but it can happen).
 
-1. Similar to the steps above, fork the [bracket-shell repo](https://github.com/adobe/brackets-shell) and `git clone` it.
+1. Similar to the steps above, fork the [brackets-shell repo](https://github.com/adobe/brackets-shell) and `git clone` it.
 2. Follow the [build instructions on the brackets-shell wiki](https://github.com/adobe/brackets-shell/wiki/Building-Brackets-Shell).
