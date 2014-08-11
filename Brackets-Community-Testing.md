@@ -37,9 +37,9 @@ For testing with a cloned version, please [run all unit tests](https://github.co
 
 ## Issues
 
-Issues should be created in [github](https://github.com/adobe/brackets/issues)
-same as any other bug. Be sure to use **Debug > Reload Without Extensions**
-to verify issue is not caused by an extension.
+Issues should be created in [github](https://github.com/adobe/brackets/issues) same as any other bug.
+See [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
+for more details.
 
 Extensions should also be tested. Issues with extensions should be opened
 in the repo of the extension. If the cause of the Issue is in core Brackets,
