@@ -1,4 +1,6 @@
-The front-end client-facing filesystem API is decoupled from the back-end filesystem implementation in order to accommodate completely different kinds of filesystems. For example, with this API, clients can uniformly access filesystems for accessing local files based on Brackets shell or Node.JS, or for accessing remove files stored on Dropbox or SkyDrive. This page describes the requirements for implementing a filesystem back-end implementation.
+The front-end client-facing `FileSystem` API is decoupled from the back-end filesystem _implementation_ in order to accommodate different kinds of filesystems without changing Brackets core code. For example, accessing remote files stored on Dropbox or SkyDrive. When [running Brackets in-browser](https://github.com/adobe/brackets/wiki/Brackets-in-Browser), the implementation acts as the bridge between Brackets and your server backend -- Brackets calls the impl (running client-side in the user's browser), and in turn the impl talks to the server on Bracket's behalf.
+
+This page describes the requirements for implementing a filesystem back-end implementation.
 
 ## `FileSystemImpl`
 
