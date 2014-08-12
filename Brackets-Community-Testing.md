@@ -1,9 +1,5 @@
 None of the Brackets core team currently runs Linux day-to-day, so we need
 Linux community testing to ensure that Brackets releases are high quality on Linux.
-Linux is not the main focus for Adobe, but if we had some Linux people from the community
-step up and become committers at some point and take more ownership of the project,
-the future of Linux support would be ensured. I think this community testing work
-you’re doing could lay the foundation for that!
 
 All help from community is welcome, so we provide builds on all platforms.
 
