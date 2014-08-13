@@ -208,7 +208,9 @@ Here is a quick list of some of the settings you can change in these files:
 * (new in 38) **closeOthers.others**, **closeOthers.above**, **closeOthers.below**: (default all `true`) False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu
 * (new in 39) **language.fileExtensions**: (default `undefined`) Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
 * (new in 39) **language.fileNames**: (default `undefined`) Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
-* (new in 40) **highlightMatches**: (default `false`) If true, the strings that match the selection will be underlined. 
+* (new in 40) **highlightMatches**: (default `false`) Enables automatic highlighting of matching strings throughout the document:
+    * `true` - highlight all strings that match the current selection (nothing is highlighted when no selection)
+    * `{showToken: true}` - highlight all strings that match the token the cursor is currently in (no selection needed)
 * (new in 42) **showCodeHints**: (default `true`) If false, all code hints are disabled.
 * (new in 42) **codehint.{HINT_PROVIDER_CONSTRUCTOR_NAME}**: (default `true`) If false, the specific code hint provider is disabled. Below is a list of preferences for all the default code hints providers.
    - **codehint.TagHints**: Preference for HTML tag hints 
