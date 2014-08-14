@@ -56,6 +56,7 @@ Community contributions to Brackets
 -----------------------------------
 * _**Special thanks to [Miguel Castillo](https://github.com/MiguelCastillo)** for his major effort contributing the Themes functionality_
     * Pull requests: [1](https://github.com/adobe/brackets/pull/8302) [2](https://github.com/adobe/brackets/pull/8382) [3](https://github.com/adobe/brackets/pull/8400) [4](https://github.com/adobe/brackets/pull/8405) [5](https://github.com/adobe/brackets/pull/8418) [6](https://github.com/adobe/brackets/pull/8419) [7](https://github.com/adobe/brackets/pull/8447) [8](https://github.com/adobe/brackets/pull/8459) [9](https://github.com/adobe/brackets/pull/8475) [10](https://github.com/adobe/brackets/pull/8492) [11](https://github.com/adobe/brackets/pull/8505) [12](https://github.com/adobe/brackets/pull/8512)
+* [Switch language/syntax mode of a single file](https://github.com/adobe/brackets/pull/6409) in part by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai) and [Jake Stoeffler](https://github.com/JakeStoeffler)
 * [Create Traditional Chinese translation](https://github.com/adobe/brackets/pull/8332) by [Pei-Tang Huang](https://github.com/tan9)
 * [Create Galician translation](https://github.com/adobe/brackets/pull/8226) by [Iván Barcia](https://github.com/ivarcia)
 * [Show supported translations of each extension in Extension Manager](https://github.com/adobe/brackets/pull/7995) by [Marcel Gerber](https://github.com/SAPlayer)
