@@ -1,3 +1,5 @@
+Status: **Proposal**. We have not started on any implementation of the features described here.
+
 ## Introduction
 
 Right now, we have little information about the experience people have with Brackets. How long does it take to start up? How quickly can they switch files? How about switching projects? Have they experienced crashes or hangs recently? Are there unnoticed error messages appearing on the dev tools console? This kind of information is generally good for us to know so that we can make sure that Brackets is improving from release-to-release.
