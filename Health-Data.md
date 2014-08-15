@@ -51,7 +51,18 @@ We wish to collect this additional information soon. "Active time" increases as 
 * Logged exception count (need to worry about anonymous data in order to actually log exceptions...)
 * Specific exceptions that we'd like to track (file watchers went offline?)
 * "Active time" using Brackets
-* "Active time" per file type (file extension)
+* "Active time" per file type from this set:
+    * html, htm
+    * css
+    * js
+    * sass, scss
+    * less
+    * php
+    * coffee
+    * ts
+    * py
+    * rb
+    * other
 * Command counts for a specific list of commands
     * navigate.toggleQuickEdit
     * navigate.toggleQuickDocs
