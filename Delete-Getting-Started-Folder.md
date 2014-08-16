@@ -1,0 +1,1 @@
+IF i delete getting started folder, I cannot run Bruckets. I get an error message, folder not found.
