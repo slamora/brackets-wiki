@@ -197,18 +197,16 @@ There's a [known issue](https://github.com/adobe/brackets/issues/2531) with the 
 
 ## <a name="fileassoc"> </a>How do I associate an extension with a type of file?
 
-Let's say you want ".inc" files to be treated like ".php" files. The easiest option today is to install the "Brackets Language Switcher" extension via the Extension Manager. You can also write [a really tiny extension](https://groups.google.com/forum/#!msg/brackets-dev/FDb_zq5isF0/rczgi9wccY8J) to Brackets.
+Let's say you want ".inc" files to be treated like ".php" files. To do this, open an ".inc" file and click the dropdown in the lower-right (for unrecognized files it will say "Text"). Choose the desired file type (e.g. "PHP"), then open the dropdown again and choose "Set as Default for .inc Files."
 
-There will likely be a preference for this soon (follow [this GitHub issue](https://github.com/adobe/brackets/issues/6831), if you're interested in that) and possibly a [language switching feature in Brackets core soon](https://github.com/adobe/brackets/pull/6409) as well.
+You can also [edit the `language.fileExtensions` preference directly](https://github.com/adobe/brackets/wiki/Language-Support#preferences).
 
 ## <a name="prefs37"> </a>Error reading preferences file (release 37)
 
 In Brackets release 37, there's a known issue in which [an empty preferences file could cause Brackets to display an error message on startup](https://github.com/adobe/brackets/issues/7220). If you see this error, Brackets will still start and will open the (empty) preferences file into the editor. Follow these steps, and you'll be all set:
 
 1. Type this into the editor:
-    ```javascript
-    {}
-    ```
+    ```{}```
 2. Save
 3. Quit and restart Brackets
 
