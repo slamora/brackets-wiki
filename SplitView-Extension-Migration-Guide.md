@@ -286,11 +286,9 @@ Returns a list of all open documents -- including documents which are in a worki
 
 # Custom Views
 
-`EditorManager.registerCustomViewer()` has been deprecated and dead-ended which means calling it will no longer register a custom viewer.  
+`EditorManager.registerCustomViewer()` made assumptions about the lifespan of a view and would only allow 1 view to be created which didn't scale to the new model so it was deprecated and no longer does anything.
 
-Custom Viewers must be implemented with a Factory Object that can be registered and respond to callbacks to create custom Views.  `registerCustomViewer` made assumptions about the lifespan of a view and would only allow 1 view to be created which didn't scale to the new model so it was deprecated.
-
-Extension writers must now create a View Factory with this interface:
+Extension writers must now create a Factory object with this interface to construct custom views:
 ```
 {
     canOpenFile:function(path:string):boolean
