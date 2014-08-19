@@ -381,7 +381,7 @@ For the most part, we expect that most extensions will continue to work as they 
     <td>Register a View Provider Factory for font files</td>
   </tr>  
   <tr>
-    <td><a href="https://github.com/crabcode/brackets-outline">Code Outline</a></td>
+    <td><a href="https://github.com/zaggino/brackets-git">Brackets GIT</a></td>
     <td><ol>
             <li>Adds DOM nodes to `#working-set-header`</li>
             <li>Uses `EditorManager._closeCustomViewer()`</li>
