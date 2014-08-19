@@ -383,7 +383,7 @@ For the most part, we expect that most extensions will continue to work as they 
 </table>
 
 # Unit Tests that will Break
-The following Extension's Unit Tests will no longer work. Fixing these isn't critical, however, but extension authors should maintain their reliance on running unit tests regularly to ensure their extension continues to work normally.  This list identifies those which will break.
+The following Extension's Unit Tests will no longer work. Fixing these isn't critical but extension authors should maintain their reliance on running unit tests regularly to ensure their extension continues to work normally.  This list identifies those which will break.
 <table>
 <thead>
 <tr><td><b>Extension</b></td><td><b>Why it breaks</b></td><td><b>Suggested remediation</b></td><td><b>URL</b></td></tr>
