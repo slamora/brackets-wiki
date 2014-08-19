@@ -10,7 +10,7 @@ Here is a summary of the changes:
 
 * Working Sets will contain `File` objects, as they did in previous versions, but the `File` objects may not map to `Document` objects as they did in the past. Extension authors will need to be able to handle non-document objects in Working Sets.
 
-* `MainViewManager` manages all `Pane` objects and is the interface to accessing Views, Working Sets, etc... Most `MainViewManager` APIs require a `PaneId` to identify which `Pane` to operate on. There are 2 PaneIds that have special meaning: `ALL_PANES` and `ACTIVE_PANE`.  `ACTIVE_PANE` can be used on any API where a `PaneId` is required.  Some APIs, howerver, such as close, remove, find, etc... will take the `ALL_PANES` identifier to make traversal much easier.
+* `MainViewManager` manages all `Pane` objects and is the interface to accessing Views, Working Sets, etc... Most `MainViewManager` APIs require a `PaneId` to identify which `Pane` to operate on. There are 2 PaneIds that have special meaning: `ALL_PANES` and `ACTIVE_PANE`.  `ACTIVE_PANE` can be used on any API where a `PaneId` is required.  Some APIs, however, such as close, remove, find, etc... will take the `ALL_PANES` identifier to make traversal much easier.
 
 * Custom View APIs are being deprecated in lieu of a View Factory Registry.  Custom View providers need to construct a factory object that can create views for files.
 
@@ -24,7 +24,7 @@ These Events are Deprecated.  Extension authors should migrate to the recommende
 <table>
 <thead>
 <tr>
-  <td><b>Event</b></td><td><b>Reccomended event</b></td><td><b>Notes</b></td></tr>
+  <td><b>Event</b></td><td><b>Recommended event</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
     <td><code>DocumentManager.workingSetAdd</code></td>
@@ -144,7 +144,7 @@ These Public APIs are no longer in use and were identified as not being used by 
 
 
 
-<H3>Changes to EditorManager</H3>
+<h3>Changes to EditorManager</h3>
 
 These APIs have been Deprecated and Extension Authors should migrate to the recommended API.
 
@@ -165,12 +165,12 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   <tr>
     <td><code>EditorManager.setEditorHolder()</code></td>
     <td>&nbsp;</td>
-    <td>Used by 1 or 2 extensions for unit tests but now does nothing. Unit tests can construct a create a MainViewManager and initialize it to a DOM element. See <code>MainViewManager._init()</code></td>
+    <td>Used by 1 or 2 extensions for unit tests but now does nothing. Unit tests can construct a create a <code></code>MainViewManager</code> and initialize it to a DOM element. See <code>MainViewManager._init()</code></td>
   </tr>  
   <tr>
     <td><code>EditorManager.registerCustomViewer()</code></td>
     <td>&nbsp;</td>
-    <td>Used by 1 or 2 extensions but does nothing. The preverred method is to create a View Factory that can create views of a file.</td>
+    <td>Used by 1 or 2 extensions but does nothing. The preferred method is to create a View Factory that can create views of a file.</td>
   </tr> 
   <tr>
     <td><code>EditorManager.focusEditor()</code></td>
@@ -187,7 +187,7 @@ These Public APIs are no longer in use and were identified as not being used by 
 </thead>
   <tr>
     <td><code>EditorManager.notifyPathDeleted()</code></td>
-    <td>Was makred for internal use only but not private. Not used by extensions.</td>
+    <td>Was marked for internal use only but not private. Not used by extensions.</td>
   </tr>
    <tr>
     <td><code>EditorManager.showingCustomViewerForPath()</code></td>
@@ -309,7 +309,7 @@ View Factories will be able to crack a file URL to determine if they support cre
     }
 ```
 
-URL cracking provides a fairly robust way to provide custom views for just about every file type, path or filename.  View Factories are asked to crack URLs in a first-registered basis so there is no garaunteed order at this time.
+URL cracking provides a fairly robust way to provide custom views for just about every file type, path or filename.  View Factories are asked to crack URLs in a first-registered basis so there is no guaranteed order at this time.
 
 
 ```
@@ -365,7 +365,7 @@ For the most part, we expect that most extensions will continue to work as they 
   <tr>
     <td><a href="https://github.com/freestrings/shreder-brackets">Shreder</a></td>
     <td>Sets the width of <code>#editor-holder</code> to zero</td>
-    <td>Unable to test with Release 0.42 or Splitview</td>
+    <td>Unable to test with Release 0.42 or SplitView</td>
   </tr>  
   <tr>
     <td><a href="https://github.com/Sean-Davies">Brackets Tabs</a></td>
@@ -427,4 +427,4 @@ The following Extension's Unit Tests will no longer work. Fixing these isn't cri
 
 # Courtesy Notices
 
-* [Brackets Vim](https://github.com/megalord/brackets-vim) - The VIM splitview but referenced the ongoing SplitView work in core.  Please let us know how it works for you.  We tried your extension but the command `:vsp` throws an RTE in both master without SplitView and this branch. Otherwise it appeared that VIM commands worked normally in the SplitView branch.
+* [Brackets Vim](https://github.com/megalord/brackets-vim) - VIM `readme.md` references the ongoing SplitView work in core.  Please let us know how it works for you.  We tried your extension but the command `:vsp` throws an RTE in both master without SplitView and this branch. Otherwise it appeared that VIM commands worked normally in the SplitView branch.
