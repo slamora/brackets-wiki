@@ -49,16 +49,13 @@ These Events are Deprecated.  Extension authors should migrate to the recommende
   <tr>
     <td><code>DocumentManager.workingSetSort </code></td>
     <td><code>MainViewManager.paneViewSort</code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
 </table>
 (1) Event will now be fired with File Object(s) that may not map to a Document  
 
-_   
-   
 
 These APIs have been Deprecated and Extension Authors should migrate to the recommended API.
-
 <table>
 <thead>
 <tr><td><b>API</b></td><td><b>Recommended API</b></td><td><b>Notes</b></td></tr>
@@ -66,62 +63,62 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   <tr>
     <td><code>DocumentManager.findInWorkingSet()</code></td>
     <td><code>MainViewManager.findView(MainViewManager.ALL_PANES) </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.getWorkingSet() </code></td>
     <td><code>MainViewManager.getViews(MainViewManager.ALL_PANES) or MainViewManager.getAllOpenFiles()</code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.addToWorkingSet() </code></td>
     <td><code>MainViewManager.addView(MainViewManager.FOCUSED_PANE) </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.addListToWorkingSet() </code></td>
     <td><code>MainViewManager.addViews(MainViewManager.FOCUSED_PANE) </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.removeFromWorkingSet() </code></td>
     <td><code>MainViewManager.removeView(MainViewManager.ALL_PANES) </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.removeListFromWorkingSet() </code></td>
     <td><code>MainViewManager.removeViews(MainViewManager.ALL_PANES) </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>  
   <tr>
     <td><code>DocumentManager.setCurrentDocument(doc) </code></td>
     <td><code>MainViewManager.open(MainViewManager.ACTIVE_PANE, doc.file) </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.closeAll() </code></td>
     <td><code>MainViewManager.closeAll(MainViewManager.ALL_PANES) </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.closeFullEditor() </code></td>
     <td><code>MainViewManager.close(MainViewManager.ALL_PANES) </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.beginDocumentNavigation() </code></td>
     <td><code>MainViewManager.beginTraversal() </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.finalizeDocumentNavigation() </code></td>
     <td><code>MainViewManager.endTraversal() </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><code>DocumentManager.getNextPrevFile() </code></td>
     <td><code>MainViewManager.traverseViewsByMRU() </code></td>
-    <td><code>&nbsp;</code></td>
+    <td>&nbsp;</td>
   </tr>      
 </table>
 
