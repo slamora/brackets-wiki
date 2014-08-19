@@ -346,55 +346,55 @@ For the most part, we expect that most extensions will continue to work as they 
     <td>Code Overview</td>
     <td>Appnds nodes directly to `#editor-holder`</td>
     <td>Could listen for `EditorManager.activeEditorChange` and append nodes to the `$(Editor.getRootElement())` but would need to keep track of previous instances and remove them.</td>
-    <td>[CodeOverview](https://github.com/thomasvalera/Brackets-CodeOverview)</td>
+    <td><a href="https://github.com/thomasvalera/Brackets-CodeOverview">CodeOverview</a></td>
   </tr>
   <tr>
     <td>MainWindow</td>
     <td>Resizes nodes inside of `#editor-holder`</td>
     <td>Just needs to resize `#editor-holder` and it should just work.</td>
-    <td>[MainWindow](https://github.com/thomasvalera/Brackets-MainWindow)</td>
+    <td><a href="https://github.com/thomasvalera/Brackets-MainWindow">MainWindow</a></td>
   </tr>
   <tr>
     <td>Workspaces</td>
     <td>Resizes nodes inside of `#editor-holder`</td>
     <td>Just needs to resize `#editor-holder` and it should just work.</td>
-    <td>[Workdspaces](https://github.com/thomasvalera/Brackets-Workspaces)</td>
+    <td><a href="https://github.com/thomasvalera/Brackets-Workspaces">Workdspaces</a></td>
   </tr>
   <tr>
     <td>CharLimit</td>
     <td>Appnds DOM nodes directly to `#editor-holder`</td>
     <td>Could listen for `EditorManager.activeEditorChange` and append nodes to the `$(Editor.getRootElement())` but would need to keep track of previous instances and remove them.</td>
-    <td>[CharLImit](https://github.com/cezarywojcik/cezarywojcik.charlimit)</td>
+    <td><a href="https://github.com/cezarywojcik/cezarywojcik.charlimit">CharLImit</a></td>
   </tr>  
   <tr>
     <td>Epic Linter</td>
     <td>Assumes `#editor-holder` is the width of the editor</td>
     <td>Should use `$(Editor.getRootElement()).width()` instead.</td>
-    <td>[EpicLinter](https://github.com/fdecampredon/brackets-epic-linter)</td>
+    <td><a href="https://github.com/fdecampredon/brackets-epic-linter">EpicLinter</a></td>
   </tr>
   <tr>
     <td>Shreder</td>
     <td>Sets the width of `#editor-holder` to zero</td>
     <td>Unable to test with Release 0.42 or Splitview</td>
-    <td>[Shreder](https://github.com/freestrings/shreder-brackets)</td>
+    <td><a href="https://github.com/freestrings/shreder-brackets">Shreder</a></td>
   </tr>  
   <tr>
     <td>Brackets Tabs</td>
     <td>Removes the working set and replaces it with tabs</td>
     <td>The DOM node `#working-set-header` no longer exists so this extension fails. There are numerous other issues that would need to be fixed for this extension to work.</td>
-    <td>[Repo not found|Sean Davies](https://github.com/Sean-Davies)</td>
+    <td><a href="https://github.com/Sean-Davies">Repo not found|Sean Davies</a></td>
   </tr>  
   <tr>
     <td>Code Outline</td>
     <td>Bases size based on `#working-set-header` which no longer exists</td>
     <td>Probably can just use `$(#sidebar).width()`</td>
-    <td>[Code Outline](https://github.com/crabcode/brackets-outline)</td>
+    <td><a href="https://github.com/crabcode/brackets-outline">Code Outline</a></td>
   </tr>
 <tr>
     <td>Brackets Font Viewer</td>
     <td>Registers a Custom View for Font Files</td>
     <td>Register a View Provider Factory for font files</td>
-    <td>[Font Viewer](https://github.com/TomMalbran/brackets-fonts-viewer)</td>
+    <td><a href="https://github.com/TomMalbran/brackets-fonts-viewer">Font Viewer</a></td>
   </tr>  
   <tr>
     <td>Brackets GIT</td>
@@ -409,7 +409,7 @@ For the most part, we expect that most extensions will continue to work as they 
             <li>Shouldn't use a private method.  Will need to Register a View Provider Factory to create views or use a dialog.  NOTE: This extension implements a 1-off history viewer for each file when the `history` button is pressed.  This could use the `MainViewManager.showView()` 1-off viewer that was demonstrated late last week but pulled from the build. @dangoor, @pflynn should we consider bringing it back for this type of 1-off view?</li>
         </ol>
     </td>
-    <td>[Code Outline](https://github.com/crabcode/brackets-outline)</td>
+    <td><a href="https://github.com/crabcode/brackets-outline">Code Outline</a></td>
   </tr>  
   
 </table>
@@ -424,19 +424,19 @@ The following Extension's Unit Tests will no longer work. Fixing these isn't cri
     <td>QuickRequire</td>
     <td>Appends nodes directly to `#editor-holder`</td>
     <td>Could listen for `EditorManager.activeEditorChange` and append nodes to the `$(Editor.getRootElement())` but would need to keep track of previous instances and remove them.</td>
-    <td>[CodeOverview](https://github.com/thomasvalera/Brackets-CodeOverview)</td>
+    <td><a href="https://github.com/thomasvalera/Brackets-CodeOverview">CodeOverview</a></td>
   </tr>
   <tr>
     <td>Simple JS Code Hints</td>
     <td>Uses `EditorManager.setEditorHolder()`</td>
     <td>Just use `MainViewManager._init()`.</td>
-    <td>[Simple JS Code Hints](https://github.com/iwehrman/brackets-simple-js-code-hints)</td>
+    <td><a href="https://github.com/iwehrman/brackets-simple-js-code-hints">Simple JS Code Hints</a></td>
   </tr>
   <tr>
     <td>Brackets Type Script Code Intel</td>
     <td>Uses `EditorManager.setEditorHolder()`</td>
     <td>Just use `MainViewManager._init()`.</td>
-    <td>[Type Script Code Intel](https://github.com/tomsdev/brackets-typescript-code-intel)</td>
+    <td><a href="https://github.com/tomsdev/brackets-typescript-code-intel">Type Script Code Intel</a></td>
   </tr>
 </table>
 
