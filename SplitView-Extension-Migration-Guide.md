@@ -1,4 +1,4 @@
-As @dangoor pointed out in this Week's ["Brackets Weekly"](http://blog.brackets.io/2014/08/18/brackets-weekly-episode-10/), SplitView is a pretty big change under the hood. So this guide is here to help extension authors migrate their extensions to the new paradigm and what extension authors should do to maintain compatibility with Brackets.
+As Kevin Dangoor pointed out in this Week's ["Brackets Weekly"](http://blog.brackets.io/2014/08/18/brackets-weekly-episode-10/), SplitView is a pretty big change under the hood. So this guide is here to help extension authors migrate their extensions to the new paradigm and what extension authors should do to maintain compatibility with Brackets.
 
 For the most-part, Brackets will operate as it does today with a "current" view -- even though there is more than 1 view visible. Most of the changes will be transparent to extension authors.  There are, however, a few things which extension authors should be aware of and a few things that extension authors should no longer do.
 
@@ -165,7 +165,7 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   <tr>
     <td><code>EditorManager.setEditorHolder()</code></td>
     <td>&nbsp;</td>
-    <td>Used by 1 or 2 extensions for unit tests but now does nothing. Unit tests can construct a create a MainViewManager and initialize it to a DOM element. See MainViewManager._init()</td>
+    <td>Used by 1 or 2 extensions for unit tests but now does nothing. Unit tests can construct a create a MainViewManager and initialize it to a DOM element. See <code>MainViewManager._init()</code></td>
   </tr>  
   <tr>
     <td><code>EditorManager.registerCustomViewer()</code></td>
@@ -183,7 +183,7 @@ These Public APIs are no longer in use and were identified as not being used by 
 
 <table>
 <thead>
-<tr><td><b>API</b></td>td><b>Notes</b></td></tr>
+<tr><td><b>API</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
     <td><code>EditorManager.notifyPathDeleted()</code></td>
