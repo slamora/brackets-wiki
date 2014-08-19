@@ -409,5 +409,17 @@ The following Extension's Unit Tests will no longer work. Fixing these isn't cri
 </table>
 
 # Courtesy Notices
+The following extensions were tested and didn't have major issues but some part of their functionality was broken due to the architecture change.  
 
 * [Brackets Vim](https://github.com/megalord/brackets-vim) - VIM `readme.md` references the ongoing SplitView work in core.  Please let us know how it works for you.  We tried your extension but the command `:vsp` throws an RTE in both master without SplitView and this branch. Otherwise it appeared that VIM commands worked normally in the SplitView branch.
+
+* [Brackets Icons](https://github.com/ivogabe/Brackets-Icons) - Extension still works but icons are no longer displayed in the working set.
+
+* [Brackets Files Icons](https://github.com/drewbkoch/Brackets-File-Icons) - Extension still works but icons are no longer displayed in the working set.
+
+* [Markdown Preview](https://github.com/gruehle/MarkdownPreview) - Extension still works but no longer synchronizes the scroll position.
+
+# Final Notes
+We encourage all extension authors to test their extensions even if they were not listed above.  Extensions are one of the easiest ways to customize and contribute to Brackets so we'd like to thank you for your contributions and help make the transition as seamless and easy as possible.  If there is anything missing from this migration guide or an API then please let the brackets team know. 
+
+Again, thank you for your contributions!
