@@ -6,7 +6,7 @@ Here is a summary of the changes:
 
 * Editors are not the only thing that live in the Main Viewing Area so `DocumentManger.getCurrentDocument()` and `EditorManager.getCurrentFullEditor()` may return `null`. This is not new but there may be more cases when this will happen so extension authors need to be prepared for this. 
 
-* Brackets will no longer have a single Working Set.  Each `Pane` will manage a list of open files so extensions will need to identify which Working Set they wish to address when access the Working Set APIs.  For alternatives to using Working Sets, see the section below on #working set alternatives.
+* Brackets will no longer have a single Working Set.  Each `Pane` will manage a list of open files so extensions will need to identify which Working Set they wish to address when access the Working Set APIs.  For alternatives to using Working Sets, see the section below on [Working Set Alternatives](#workingset-alternatives).
 
 * Working Sets will contain `File` objects, as they did in previous versions, but the `File` objects may not map to `Document` objects as they did in the past. Extension authors will need to be able to handle non-document objects in Working Sets.
 
