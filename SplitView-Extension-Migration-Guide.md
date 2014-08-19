@@ -1,4 +1,4 @@
-As Kevin pointed out in this Week's ["Brackets Weekly"](http://blog.brackets.io/2014/08/18/brackets-weekly-episode-10/) SplitView is a pretty big change under the hood. So this guide is here to help extension authors migrate their extensions to the new paradigm and what extension authors should do to maintain compatibility with Brackets.
+As @dangoor pointed out in this Week's ["Brackets Weekly"](http://blog.brackets.io/2014/08/18/brackets-weekly-episode-10/) SplitView is a pretty big change under the hood. So this guide is here to help extension authors migrate their extensions to the new paradigm and what extension authors should do to maintain compatibility with Brackets.
 
 For the most-part, Brackets will operate as it does today with a "current" view -- even though there is more than 1 view visible. Most of the changes will be transparent to extension authors.  There are, however, a few things which extension authors should be aware of and a few things that extension authors should no longer do.
 
@@ -186,16 +186,14 @@ These Public APIs are no longer in use and were identified as not being used by 
 
 <table>
 <thead>
-<tr><td><b>API</b></td><td><b>Recommended API</b></td><td><b>Notes</b></td></tr>
+<tr><td><b>API</b></td>td><b>Notes</b></td></tr>
 </thead>
   <tr>
     <td>EditorManager.notifyPathDeleted()</td>
-    <td>&nbsp;</td>
     <td>Was makred for internal use only but not private. Not used by extensions.</td>
   </tr>
    <tr>
     <td>EditorManager.showingCustomViewerForPath()</td>
-    <td>&nbsp;</td>
     <td>Not used by extensions. There is no equivelent.</td>
   </tr>
 </table>
@@ -432,4 +430,4 @@ The following Extension's Unit Tests will no longer work. Fixing these isn't cri
 
 # Courtesy Notices
 
-* [Brackets Vim](https://github.com/megalord/brackets-vim) - The VIM splitview doesn't work and you referenced the work in progress.  Please let us know how it works for you.  We tried your extension but the command `:vsp` throws an rte in both master without SplitView and this branch. Otherwise it appeared that VIM worked normally.
+* [Brackets Vim](https://github.com/megalord/brackets-vim) - The VIM splitview but referenced the ongoing SplitView work in core.  Please let us know how it works for you.  We tried your extension but the command `:vsp` throws an RTE in both master without SplitView and this branch. Otherwise it appeared that VIM commands worked normally in the SplitView branch.
