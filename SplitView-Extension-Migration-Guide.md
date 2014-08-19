@@ -296,7 +296,7 @@ URL cracking provides a fairly robust way to provide custom views for just about
 
 ```
 {
-     getFile: function () @return {?File} File object that belongs to the view (may return null)
+     getFile: function () @return {!File} File object that belongs to the view (may return null)
      setVisible: function(visible:boolean) - shows or hides the view 
      updateLayout: function(forceRefresh:boolean) - tells the view to do ignore any cached layout data and do a complete layout of its cont
      destroy: function() - called when the view is no longer needed. 
