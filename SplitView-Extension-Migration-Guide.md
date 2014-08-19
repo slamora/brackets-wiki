@@ -4,6 +4,8 @@ For the most-part, Brackets will operate as it does today with a "current" view 
 
 Here is a summary of the changes:
 
+* `Editor` objects and ImageViewers are not immediate descendants of the `#editor-holder` DOM node anymore.  Extensions which manipulate the DOM at or under this node are probably going to stop working or cause stability and or usability issues for Brackets.
+
 * Editors are not the only thing that live in the Main Viewing Area so `DocumentManger.getCurrentDocument()` and `EditorManager.getCurrentFullEditor()` may return `null`. This is not new but there may be more cases when this will happen so extension authors need to be prepared for this. 
 
 * Brackets will no longer have a single Working Set.  Each `Pane` will manage a list of open files so extensions will need to identify which Working Set they wish to address when access the Working Set APIs.  For alternatives to using Working Sets, see the section below on [Working Set Alternatives](#workingset-alternatives).
@@ -13,9 +15,6 @@ Here is a summary of the changes:
 * `MainViewManager` manages all `Pane` objects and is the interface to accessing Views, Working Sets, etc... Most `MainViewManager` APIs require a `PaneId` to identify which `Pane` to operate on. There are 2 PaneIds that have special meaning: `ALL_PANES` and `ACTIVE_PANE`.  `ACTIVE_PANE` can be used on any API where a `PaneId` is required.  Some APIs, however, such as close, remove, find, etc... will take the `ALL_PANES` identifier to make traversal much easier.
 
 * Custom View APIs are being deprecated in lieu of a View Factory Registry.  Custom View providers need to construct a factory object that can create views for files.
-
-* `Editor` objects and ImageViewers are not direct descendants of the `#editor-holder` DOM node anymore.  Extensions which manipulate the DOM at or under this node are probably going to stop working or cause stability and or usability issues for Brackets.
-
 
 <h2>Changes to DocumentManager</h2>
 
