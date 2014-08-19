@@ -340,64 +340,55 @@ Here is a [sample extension](https://github.com/adobe/brackets/tree/jeff/splitvi
 For the most part, we expect that most extensions will continue to work as they do today. We have, however, identified a handful of extensions which do not work wit Bracket's new architecture:
 <table>
 <thead>
-<tr><td><b>Extension</b></td><td><b>Why it breaks</b></td><td><b>Suggested remediation</b></td><td><b>URL</b></td></tr>
+<tr><td><b>Extension</b></td><td><b>Why it breaks</b></td><td><b>Suggested remediation</b></td></tr>
 </thead>
   <tr>
-    <td>Code Overview</td>
+    <td><a href="https://github.com/thomasvalera/Brackets-CodeOverview">CodeOverview</a></td>
     <td>Appnds nodes directly to `#editor-holder`</td>
     <td>Could listen for `EditorManager.activeEditorChange` and append nodes to the `$(Editor.getRootElement())` but would need to keep track of previous instances and remove them.</td>
-    <td><a href="https://github.com/thomasvalera/Brackets-CodeOverview">CodeOverview</a></td>
   </tr>
   <tr>
-    <td>MainWindow</td>
-    <td>Resizes nodes inside of `#editor-holder`</td>
-    <td>Just needs to resize `#editor-holder` and it should just work.</td>
     <td><a href="https://github.com/thomasvalera/Brackets-MainWindow">MainWindow</a></td>
-  </tr>
-  <tr>
-    <td>Workspaces</td>
     <td>Resizes nodes inside of `#editor-holder`</td>
     <td>Just needs to resize `#editor-holder` and it should just work.</td>
-    <td><a href="https://github.com/thomasvalera/Brackets-Workspaces">Workdspaces</a></td>
   </tr>
   <tr>
-    <td>CharLimit</td>
+    <td><a href="https://github.com/thomasvalera/Brackets-Workspaces">Workdspaces</a></td>
+    <td>Resizes nodes inside of `#editor-holder`</td>
+    <td>Just needs to resize `#editor-holder` and it should just work.</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/cezarywojcik/cezarywojcik.charlimit">CharLImit</a></td>
     <td>Appnds DOM nodes directly to `#editor-holder`</td>
     <td>Could listen for `EditorManager.activeEditorChange` and append nodes to the `$(Editor.getRootElement())` but would need to keep track of previous instances and remove them.</td>
-    <td><a href="https://github.com/cezarywojcik/cezarywojcik.charlimit">CharLImit</a></td>
   </tr>  
   <tr>
-    <td>Epic Linter</td>
+    <td><a href="https://github.com/fdecampredon/brackets-epic-linter">EpicLinter</a></td>
     <td>Assumes `#editor-holder` is the width of the editor</td>
     <td>Should use `$(Editor.getRootElement()).width()` instead.</td>
-    <td><a href="https://github.com/fdecampredon/brackets-epic-linter">EpicLinter</a></td>
   </tr>
   <tr>
-    <td>Shreder</td>
+    <td><a href="https://github.com/freestrings/shreder-brackets">Shreder</a></td>
     <td>Sets the width of `#editor-holder` to zero</td>
     <td>Unable to test with Release 0.42 or Splitview</td>
-    <td><a href="https://github.com/freestrings/shreder-brackets">Shreder</a></td>
   </tr>  
   <tr>
-    <td>Brackets Tabs</td>
+    <td><a href="https://github.com/Sean-Davies">Brackets Tabs</a></td>
     <td>Removes the working set and replaces it with tabs</td>
     <td>The DOM node `#working-set-header` no longer exists so this extension fails. There are numerous other issues that would need to be fixed for this extension to work.</td>
-    <td><a href="https://github.com/Sean-Davies">Repo not found|Sean Davies</a></td>
   </tr>  
   <tr>
-    <td>Code Outline</td>
+    <td><a href="https://github.com/crabcode/brackets-outline">Code Outline</a></td>
     <td>Bases size based on `#working-set-header` which no longer exists</td>
     <td>Probably can just use `$(#sidebar).width()`</td>
-    <td><a href="https://github.com/crabcode/brackets-outline">Code Outline</a></td>
   </tr>
 <tr>
-    <td>Brackets Font Viewer</td>
+    <td><a href="https://github.com/TomMalbran/brackets-fonts-viewer">Font Viewer</a></td>
     <td>Registers a Custom View for Font Files</td>
     <td>Register a View Provider Factory for font files</td>
-    <td><a href="https://github.com/TomMalbran/brackets-fonts-viewer">Font Viewer</a></td>
   </tr>  
   <tr>
-    <td>Brackets GIT</td>
+    <td><a href="https://github.com/crabcode/brackets-outline">Code Outline</a></td>
     <td><ol>
             <li>Adds DOM nodes to `#working-set-header`</li>
             <li>Uses `EditorManager._closeCustomViewer()`</li>
@@ -409,7 +400,6 @@ For the most part, we expect that most extensions will continue to work as they 
             <li>Shouldn't use a private method.  Will need to Register a View Provider Factory to create views or use a dialog.  NOTE: This extension implements a 1-off history viewer for each file when the `history` button is pressed.  This could use the `MainViewManager.showView()` 1-off viewer that was demonstrated late last week but pulled from the build. @dangoor, @pflynn should we consider bringing it back for this type of 1-off view?</li>
         </ol>
     </td>
-    <td><a href="https://github.com/crabcode/brackets-outline">Code Outline</a></td>
   </tr>  
   
 </table>
