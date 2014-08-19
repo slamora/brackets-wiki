@@ -14,7 +14,7 @@ Here is a summary of the changes:
 
 * Custom View APIs are being deprecated in lieu of a View Factory Registry.  Custom View providers need to construct a factory object that can create views for files.
 
-* `Editor` objects and ImageViewers are not direct descendants of the `#editor-holder` DOM node any more.  Extensions which manipulate the DOM at or under this node are probably going to stop working or cause stability and or usability issues for Brackets.
+* `Editor` objects and ImageViewers are not direct descendants of the `#editor-holder` DOM node anymore.  Extensions which manipulate the DOM at or under this node are probably going to stop working or cause stability and or usability issues for Brackets.
 
 
 <h2>Changes to DocumentManager</h2>
