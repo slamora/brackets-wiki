@@ -1,6 +1,6 @@
 As Kevin Dangoor pointed out in this Week's ["Brackets Weekly"](http://blog.brackets.io/2014/08/18/brackets-weekly-episode-10/), SplitView is a pretty big change under the hood. So this guide is here to help extension authors migrate their extensions to the new paradigm and what extension authors should do to maintain compatibility with Brackets.
 
-For the most-part, Brackets will operate as it does today with a "current" view -- even though there is more than 1 view visible. Most of the changes will be transparent to extension authors.  There are, however, a few things which extension authors should be aware of and a few things that extension authors should no longer do.
+For the most-part, Brackets will operate as it does today with a "current" view -- even though there is more than 1 view visible. Most of the changes will be transparent to extension authors but there are, however, a few things which extension authors should be aware of and a few things that extension authors should no longer do.
 
 Here is a summary of the changes:
 
