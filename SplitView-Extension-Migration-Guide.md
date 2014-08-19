@@ -344,43 +344,43 @@ For the most part, we expect that most extensions will continue to work as they 
 </thead>
   <tr>
     <td><a href="https://github.com/thomasvalera/Brackets-CodeOverview">CodeOverview</a></td>
-    <td>Appnds nodes directly to `#editor-holder`</td>
-    <td>Could listen for `EditorManager.activeEditorChange` and append nodes to the `$(Editor.getRootElement())` but would need to keep track of previous instances and remove them.</td>
+    <td>Appnds nodes directly to <code>#editor-holder</code></td>
+    <td>Could listen for <code>EditorManager.activeEditorChange</code> and append nodes to the <code>$(Editor.getRootElement())</code> but would need to keep track of previous instances and remove them.</td>
   </tr>
   <tr>
     <td><a href="https://github.com/thomasvalera/Brackets-MainWindow">MainWindow</a></td>
-    <td>Resizes nodes inside of `#editor-holder`</td>
-    <td>Just needs to resize `#editor-holder` and it should just work.</td>
+    <td>Resizes nodes inside of <code>#editor-holder</code></td>
+    <td>Just needs to resize <code>#editor-holder</code> and it should just work.</td>
   </tr>
   <tr>
     <td><a href="https://github.com/thomasvalera/Brackets-Workspaces">Workdspaces</a></td>
-    <td>Resizes nodes inside of `#editor-holder`</td>
-    <td>Just needs to resize `#editor-holder` and it should just work.</td>
+    <td>Resizes nodes inside of <code>#editor-holder</code></td>
+    <td>Just needs to resize <code>#editor-holder</code> and it should just work.</td>
   </tr>
   <tr>
     <td><a href="https://github.com/cezarywojcik/cezarywojcik.charlimit">CharLImit</a></td>
-    <td>Appnds DOM nodes directly to `#editor-holder`</td>
-    <td>Could listen for `EditorManager.activeEditorChange` and append nodes to the `$(Editor.getRootElement())` but would need to keep track of previous instances and remove them.</td>
+    <td>Appnds DOM nodes directly to <code>#editor-holder</code></td>
+    <td>Could listen for <code>EditorManager.activeEditorChange</code> and append nodes to the <code>$(Editor.getRootElement())</code> but would need to keep track of previous instances and remove them.</td>
   </tr>  
   <tr>
     <td><a href="https://github.com/fdecampredon/brackets-epic-linter">EpicLinter</a></td>
-    <td>Assumes `#editor-holder` is the width of the editor</td>
-    <td>Should use `$(Editor.getRootElement()).width()` instead.</td>
+    <td>Assumes <code>#editor-holder</code> is the width of the editor</td>
+    <td>Should use <code>$(Editor.getRootElement()).width()</code> instead.</td>
   </tr>
   <tr>
     <td><a href="https://github.com/freestrings/shreder-brackets">Shreder</a></td>
-    <td>Sets the width of `#editor-holder` to zero</td>
+    <td>Sets the width of <code>#editor-holder</code> to zero</td>
     <td>Unable to test with Release 0.42 or Splitview</td>
   </tr>  
   <tr>
     <td><a href="https://github.com/Sean-Davies">Brackets Tabs</a></td>
     <td>Removes the working set and replaces it with tabs</td>
-    <td>The DOM node `#working-set-header` no longer exists so this extension fails. There are numerous other issues that would need to be fixed for this extension to work.</td>
+    <td>The DOM node <code>#working-set-header</code> no longer exists so this extension fails. There are numerous other issues that would need to be fixed for this extension to work.</td>
   </tr>  
   <tr>
     <td><a href="https://github.com/crabcode/brackets-outline">Code Outline</a></td>
-    <td>Bases size based on `#working-set-header` which no longer exists</td>
-    <td>Probably can just use `$(#sidebar).width()`</td>
+    <td>Bases size based on <code>#working-set-header</code> which no longer exists</td>
+    <td>Probably can just use <code>$(#sidebar).width()</code></td>
   </tr>
 <tr>
     <td><a href="https://github.com/TomMalbran/brackets-fonts-viewer">Font Viewer</a></td>
@@ -412,20 +412,20 @@ The following Extension's Unit Tests will no longer work. Fixing these isn't cri
 </thead>
   <tr>
     <td>QuickRequire</td>
-    <td>Appends nodes directly to `#editor-holder`</td>
-    <td>Could listen for `EditorManager.activeEditorChange` and append nodes to the `$(Editor.getRootElement())` but would need to keep track of previous instances and remove them.</td>
+    <td>Appends nodes directly to <code>#editor-holder</code></td>
+    <td>Could listen for <code>EditorManager.activeEditorChange</code> and append nodes to the <code>$(Editor.getRootElement())</code> but would need to keep track of previous instances and remove them.</td>
     <td><a href="https://github.com/thomasvalera/Brackets-CodeOverview">CodeOverview</a></td>
   </tr>
   <tr>
     <td>Simple JS Code Hints</td>
-    <td>Uses `EditorManager.setEditorHolder()`</td>
-    <td>Just use `MainViewManager._init()`.</td>
+    <td>Uses <code>EditorManager.setEditorHolder()</code></td>
+    <td>Just use <code>MainViewManager._init()</code>.</td>
     <td><a href="https://github.com/iwehrman/brackets-simple-js-code-hints">Simple JS Code Hints</a></td>
   </tr>
   <tr>
     <td>Brackets Type Script Code Intel</td>
-    <td>Uses `EditorManager.setEditorHolder()`</td>
-    <td>Just use `MainViewManager._init()`.</td>
+    <td>Uses <code>EditorManager.setEditorHolder()</code></td>
+    <td>Just use <code>MainViewManager._init()</code>.</td>
     <td><a href="https://github.com/tomsdev/brackets-typescript-code-intel">Type Script Code Intel</a></td>
   </tr>
 </table>
