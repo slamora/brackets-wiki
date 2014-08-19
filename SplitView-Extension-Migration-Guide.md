@@ -32,22 +32,22 @@ These Events are Deprecated.  Extension authors should migrate to the recommende
     <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.workingSetAddList </code></td>
+    <td><code>DocumentManager.workingSetAddList</code></td>
     <td><code>MainViewManager.paneViewAddList</code></td>
     <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.workingSetRemove </code></td>
-    <td><code>MainViewManager.paneViewRemove </code></td>
+    <td><code>DocumentManager.workingSetRemove</code></td>
+    <td><code>MainViewManager.paneViewRemove</code></td>
     <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.workingSetRemoveList </code></td>
-    <td><code>MainViewManager.paneViewRemoveList </code></td>
+    <td><code>DocumentManager.workingSetRemoveList</code></td>
+    <td><code>MainViewManager.paneViewRemoveList</code></td>
     <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.workingSetSort </code></td>
+    <td><code>DocumentManager.workingSetSort</code></td>
     <td><code>MainViewManager.paneViewSort</code></td>
     <td>&nbsp;</td>
   </tr>
@@ -62,62 +62,62 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
 </thead>
   <tr>
     <td><code>DocumentManager.findInWorkingSet()</code></td>
-    <td><code>MainViewManager.findView(MainViewManager.ALL_PANES) </code></td>
+    <td><code>MainViewManager.findView(MainViewManager.ALL_PANES)</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.getWorkingSet() </code></td>
+    <td><code>DocumentManager.getWorkingSet()</code></td>
     <td><code>MainViewManager.getViews(MainViewManager.ALL_PANES) or MainViewManager.getAllOpenFiles()</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.addToWorkingSet() </code></td>
-    <td><code>MainViewManager.addView(MainViewManager.FOCUSED_PANE) </code></td>
+    <td><code>DocumentManager.addToWorkingSet()</code></td>
+    <td><code>MainViewManager.addView(MainViewManager.FOCUSED_PANE)</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.addListToWorkingSet() </code></td>
-    <td><code>MainViewManager.addViews(MainViewManager.FOCUSED_PANE) </code></td>
+    <td><code>DocumentManager.addListToWorkingSet()</code></td>
+    <td><code>MainViewManager.addViews(MainViewManager.FOCUSED_PANE)</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.removeFromWorkingSet() </code></td>
-    <td><code>MainViewManager.removeView(MainViewManager.ALL_PANES) </code></td>
+    <td><code>DocumentManager.removeFromWorkingSet()</code></td>
+    <td><code>MainViewManager.removeView(MainViewManager.ALL_PANES)</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.removeListFromWorkingSet() </code></td>
-    <td><code>MainViewManager.removeViews(MainViewManager.ALL_PANES) </code></td>
+    <td><code>DocumentManager.removeListFromWorkingSet()</code></td>
+    <td><code>MainViewManager.removeViews(MainViewManager.ALL_PANES)</code></td>
     <td>&nbsp;</td>
   </tr>  
   <tr>
-    <td><code>DocumentManager.setCurrentDocument(doc) </code></td>
-    <td><code>MainViewManager.open(MainViewManager.ACTIVE_PANE, doc.file) </code></td>
+    <td><code>DocumentManager.setCurrentDocument(doc)</code></td>
+    <td><code>MainViewManager.open(MainViewManager.ACTIVE_PANE, doc.file)</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.closeAll() </code></td>
-    <td><code>MainViewManager.closeAll(MainViewManager.ALL_PANES) </code></td>
+    <td><code>DocumentManager.closeAll()</code></td>
+    <td><code>MainViewManager.closeAll(MainViewManager.ALL_PANES)</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.closeFullEditor() </code></td>
-    <td><code>MainViewManager.close(MainViewManager.ALL_PANES) </code></td>
+    <td><code>DocumentManager.closeFullEditor()</code></td>
+    <td><code>MainViewManager.close(MainViewManager.ALL_PANES)</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.beginDocumentNavigation() </code></td>
-    <td><code>MainViewManager.beginTraversal() </code></td>
+    <td><code>DocumentManager.beginDocumentNavigation()</code></td>
+    <td><code>MainViewManager.beginTraversal()</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.finalizeDocumentNavigation() </code></td>
-    <td><code>MainViewManager.endTraversal() </code></td>
+    <td><code>DocumentManager.finalizeDocumentNavigation()</code></td>
+    <td><code>MainViewManager.endTraversal()</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><code>DocumentManager.getNextPrevFile() </code></td>
-    <td><code>MainViewManager.traverseViewsByMRU() </code></td>
+    <td><code>DocumentManager.getNextPrevFile()</code></td>
+    <td><code>MainViewManager.traverseViewsByMRU()</code></td>
     <td>&nbsp;</td>
   </tr>      
 </table>
