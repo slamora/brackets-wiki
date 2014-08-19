@@ -1,4 +1,4 @@
-As @dangoor pointed out in this Week's ["Brackets Weekly"](http://blog.brackets.io/2014/08/18/brackets-weekly-episode-10/) SplitView is a pretty big change under the hood. So this guide is here to help extension authors migrate their extensions to the new paradigm and what extension authors should do to maintain compatibility with Brackets.
+As @dangoor pointed out in this Week's ["Brackets Weekly"](http://blog.brackets.io/2014/08/18/brackets-weekly-episode-10/), SplitView is a pretty big change under the hood. So this guide is here to help extension authors migrate their extensions to the new paradigm and what extension authors should do to maintain compatibility with Brackets.
 
 For the most-part, Brackets will operate as it does today with a "current" view -- even though there is more than 1 view visible. Most of the changes will be transparent to extension authors.  There are, however, a few things which extension authors should be aware of and a few things that extension authors should no longer do.
 
@@ -27,29 +27,29 @@ These Events are Deprecated.  Extension authors should migrate to the recommende
   <td><b>Event</b></td><td><b>Reccomended event</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>DocumentManager.workingSetAdd</td>
-    <td>MainViewManager.paneViewAdd</td>
-    <td>(1)</td>
+    <td><code>DocumentManager.workingSetAdd</code></td>
+    <td><code>MainViewManager.paneViewAdd</code></td>
+    <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.workingSetAddList </td>
-    <td>MainViewManager.paneViewAddList</td>
-    <td>(1)</td>
+    <td><code>DocumentManager.workingSetAddList </code></td>
+    <td><code>MainViewManager.paneViewAddList</code></td>
+    <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.workingSetRemove </td>
-    <td>MainViewManager.paneViewRemove </td>
-    <td>(1)</td>
+    <td><code>DocumentManager.workingSetRemove </code></td>
+    <td><code>MainViewManager.paneViewRemove </code></td>
+    <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.workingSetRemoveList </td>
-    <td>MainViewManager.paneViewRemoveList </td>
-    <td>(1)</td>
+    <td><code>DocumentManager.workingSetRemoveList </code></td>
+    <td><code>MainViewManager.paneViewRemoveList </code></td>
+    <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.workingSetSort </td>
-    <td>MainViewManager.paneViewSort</td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.workingSetSort </code></td>
+    <td><code>MainViewManager.paneViewSort</code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
 </table>
 (1) Event will now be fired with File Object(s) that may not map to a Document  
@@ -64,64 +64,64 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
 <tr><td><b>API</b></td><td><b>Recommended API</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>DocumentManager.findInWorkingSet()</td>
-    <td>MainViewManager.findView(MainViewManager.ALL_PANES) </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.findInWorkingSet()</code></td>
+    <td><code>MainViewManager.findView(MainViewManager.ALL_PANES) </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.getWorkingSet() </td>
-    <td>MainViewManager.getViews(MainViewManager.ALL_PANES) or MainViewManager.getAllOpenFiles()</td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.getWorkingSet() </code></td>
+    <td><code>MainViewManager.getViews(MainViewManager.ALL_PANES) or MainViewManager.getAllOpenFiles()</code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.addToWorkingSet() </td>
-    <td>MainViewManager.addView(MainViewManager.FOCUSED_PANE) </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.addToWorkingSet() </code></td>
+    <td><code>MainViewManager.addView(MainViewManager.FOCUSED_PANE) </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.addListToWorkingSet() </td>
-    <td>MainViewManager.addViews(MainViewManager.FOCUSED_PANE) </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.addListToWorkingSet() </code></td>
+    <td><code>MainViewManager.addViews(MainViewManager.FOCUSED_PANE) </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.removeFromWorkingSet() </td>
-    <td>MainViewManager.removeView(MainViewManager.ALL_PANES) </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.removeFromWorkingSet() </code></td>
+    <td><code>MainViewManager.removeView(MainViewManager.ALL_PANES) </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.removeListFromWorkingSet() </td>
-    <td>MainViewManager.removeViews(MainViewManager.ALL_PANES) </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.removeListFromWorkingSet() </code></td>
+    <td><code>MainViewManager.removeViews(MainViewManager.ALL_PANES) </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>  
   <tr>
-    <td>DocumentManager.setCurrentDocument(doc) </td>
-    <td>MainViewManager.open(MainViewManager.ACTIVE_PANE, doc.file) </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.setCurrentDocument(doc) </code></td>
+    <td><code>MainViewManager.open(MainViewManager.ACTIVE_PANE, doc.file) </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.closeAll() </td>
-    <td>MainViewManager.closeAll(MainViewManager.ALL_PANES) </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.closeAll() </code></td>
+    <td><code>MainViewManager.closeAll(MainViewManager.ALL_PANES) </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.closeFullEditor() </td>
-    <td>MainViewManager.close(MainViewManager.ALL_PANES) </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.closeFullEditor() </code></td>
+    <td><code>MainViewManager.close(MainViewManager.ALL_PANES) </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.beginDocumentNavigation() </td>
-    <td>MainViewManager.beginTraversal() </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.beginDocumentNavigation() </code></td>
+    <td><code>MainViewManager.beginTraversal() </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.finalizeDocumentNavigation() </td>
-    <td>MainViewManager.endTraversal() </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.finalizeDocumentNavigation() </code></td>
+    <td><code>MainViewManager.endTraversal() </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>
   <tr>
-    <td>DocumentManager.getNextPrevFile() </td>
-    <td>MainViewManager.traverseViewsByMRU() </td>
-    <td>&nbsp;</td>
+    <td><code>DocumentManager.getNextPrevFile() </code></td>
+    <td><code>MainViewManager.traverseViewsByMRU() </code></td>
+    <td><code>&nbsp;</code></td>
   </tr>      
 </table>
 
@@ -132,16 +132,16 @@ These Public APIs are no longer in use and were identified as not being used by 
 <tr><td><b>API</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>sortWorkingSet()</td>
-    <td>Not used by registered extensions</td>
+    <td><code>sortWorkingSet()</code></td>
+    <td><code>Not used by registered extensions</code></td>
   </tr>
   <tr>
-    <td>swapWorkingSetIndexes()</td>
-    <td>Not used by registered extensions</td>
+    <td><code>swapWorkingSetIndexes()</code></td>
+    <td><code>Not used by registered extensions</code></td>
   </tr>
   <tr>
-    <td>findInWorkingSetAddedOrder()</td>
-    <td>Not used by registered extensions</td>
+    <td><code>findInWorkingSetAddedOrder()</code></td>
+    <td><code>Not used by registered extensions</code></td>
   </tr>
 </table>
 
@@ -156,28 +156,28 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
 <tr><td><b>API</b></td><td><b>Recommended API</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>DocumentManager.resizeEditor()</td>
-    <td>WorkspaceManager.recomputeLayout()</td>
+    <td><code>DocumentManager.resizeEditor()</code></td>
+    <td><code>WorkspaceManager.recomputeLayout()</code></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>EditorManager.getCurrentlyViewedPath()</td>
-    <td>MainViewManager.getCurrentlyViewedPath()</td>
-    <td>EditorManager.getCurrentlyViewedPath() will return NULL if the current file is an image or otherwise not a document.</td>
+    <td><code>EditorManager.getCurrentlyViewedPath()</code></td>
+    <td><code>MainViewManager.getCurrentlyViewedPath()</code></td>
+    <td><code>EditorManager.getCurrentlyViewedPath()</code> will return NULL if the current file is an image or otherwise not a document.</td>
   </tr>
   <tr>
-    <td>EditorManager.setEditorHolder()</td>
+    <td><code>EditorManager.setEditorHolder()</code></td>
     <td>&nbsp;</td>
     <td>Used by 1 or 2 extensions for unit tests but now does nothing. Unit tests can construct a create a MainViewManager and initialize it to a DOM element. See MainViewManager._init()</td>
   </tr>  
   <tr>
-    <td>EditorManager.registerCustomViewer()</td>
+    <td><code>EditorManager.registerCustomViewer()</code></td>
     <td>&nbsp;</td>
     <td>Used by 1 or 2 extensions but does nothing. The preverred method is to create a View Factory that can create views of a file.</td>
   </tr> 
   <tr>
-    <td>EditorManager.focusEditor()</td>
-    <td>MainViewManager.focusActivePane()</td>
+    <td><code>EditorManager.focusEditor()</code></td>
+    <td><code>MainViewManager.focusActivePane()</code></td>
     <td>Extensions should be prepared that ImageViews or other Views are focusable in the new model.</td>
   </tr>   
 </table>
@@ -189,11 +189,11 @@ These Public APIs are no longer in use and were identified as not being used by 
 <tr><td><b>API</b></td>td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>EditorManager.notifyPathDeleted()</td>
+    <td><code>EditorManager.notifyPathDeleted()</code></td>
     <td>Was makred for internal use only but not private. Not used by extensions.</td>
   </tr>
    <tr>
-    <td>EditorManager.showingCustomViewerForPath()</td>
+    <td><code>EditorManager.showingCustomViewerForPath()</code></td>
     <td>Not used by extensions. There is no equivelent.</td>
   </tr>
 </table>
@@ -206,8 +206,8 @@ These Events have been removed.
   <td><b>Event</b></td><td><b>Reccomended event</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>EditorManager.getCurrentlyViewedFileChange</td>
-    <td>MainViewManager.currentFileChange</td>
+    <td><code>EditorManager.currentFileChange</td></code></td>
+    <td><code>MainViewManager.currentFileChange</td></td>
     <td>Not used by any registered extension</td>
   </tr>
 </table>
@@ -220,11 +220,11 @@ These Private APIs have been removed but are being used by extensions.  Extensio
 <tr><td><b>API</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>EditorManager._showCustomViewer()</td>
+    <td><code>EditorManager._showCustomViewer()</code></td>
     <td>Register a View Factory then open the file that is to be used with the custom viewer.</td>
   </tr>
   <tr>
-    <td>EditorManager._closeCustomViewer()</td>
+    <td><code>EditorManager._closeCustomViewer()</code></td>
     <td>No substition available. Extensions should register View Factories to create custom views and open a file assocatied with the factory object.  Closing that view would be a close command on the current view.</td>
   </tr>
 </table>
@@ -238,13 +238,13 @@ The following commands have been added to support `File` objects.
 <tr><td><b>Legacy Command</b></td><td><b>New Command</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>FILE_ADD_TO_WORKING_SET</td>
-    <td>CMD_ADD_TO_PANE_AND_OPEN</td>
+    <td><code>FILE_ADD_TO_WORKING_SET</code></td>
+    <td><code>CMD_ADD_TO_PANE_AND_OPEN</code></td>
     <td>The new command will resolve to a File object while the legacy command resolves to a Document object.</td>
   </tr>
   <tr>
-    <td>FILE_OPEN</td>
-    <td>CMD_OPEN</td>
+    <td><code>FILE_OPEN</code></td>
+    <td><code>CMD_OPEN</code></td>
     <td>The new command will resolve to a File object while the legacy command resolves to a Document object.</td>
   </tr>
 </table>
@@ -258,12 +258,12 @@ Most of the `MainViewManager` APIs require a Pane ID to denote which pane the op
   <td><b>Functionality</b></td><td><b>Notes</b></td></tr>
 </thead>
   <tr>
-    <td>MainViewManager.ALL_PANES</td>
+    <td><code>MainViewManager.ALL_PANES</code></td>
     <td>The operation traverses all panes </td>
     <td>Not all APIs will take this constant. See the API for details</td>
   </tr>
   <tr>
-    <td>MainViewManager.ACTIVE_PANE</td>
+    <td><code>MainViewManager.ACTIVE_PANE</code></td>
     <td>The operation is performed only on the active pane</td>
     <td>&nbsp;</td>
   </tr>
