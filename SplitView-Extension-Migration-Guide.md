@@ -419,6 +419,8 @@ The following extensions were tested and didn't have major issues but some part 
 
 * [Markdown Preview](https://github.com/gruehle/MarkdownPreview) - Extension still works but no longer synchronizes the scroll position.
 
+* [Column Ruler)(https://github.com/lkcampbell/brackets-ruler) - Extension still works but doesn't show ruler correctly when the main view is split.
+
 # Final Notes
 We encourage all extension authors to test their extensions even if they were not listed above.  Extensions are one of the easiest ways to customize and contribute to Brackets so we'd like to thank you for your contributions and help make the transition as seamless and easy as possible.  If there is anything missing from this migration guide or an API then please let the brackets team know. 
 
