@@ -315,7 +315,7 @@ URL cracking provides a fairly robust way to provide custom views for just about
 
 Here is a [sample extension](https://github.com/adobe/brackets/tree/jeff/splitview-factory/src/extensions/samples/BracketsConfigCentral)
 # Extensions that will Break
-For the most part, we expect that most extensions will continue to work as they do today. We have, however, identified a handful of extensions which do not work wit Bracket's new architecture:
+For the most part, we expect that most extensions will continue to work as they do today. We have, however, identified a handful of extensions which do not work with Bracket's new architecture:
 <table>
 <thead>
 <tr><td><b>Extension</b></td><td><b>Why it breaks</b></td><td><b>Suggested remediation</b></td></tr>
