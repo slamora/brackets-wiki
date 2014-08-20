@@ -375,7 +375,7 @@ For the most part, we expect that most extensions will continue to work as they 
     <td>
         <ol>
             <li>Could append to <code>.pane-view-header</code> and use <code>ACTIVE_PANE` or <code>ALL_PANES</code> when closing unchanged documents.</li>
-            <li>Shouldn't use a private method.  Will need to Register a View Provider Factory to create views or use a dialog.  NOTE: This extension implements a 1-off history viewer for each file when the <code>history</code> button is pressed.  This could use the <code>MainViewManager.showView()</code> 1-off viewer that was demonstrated late last week but pulled from the build. @dangoor, @pflynn should we consider bringing it back for this type of 1-off view?</li><li>See Previous Bullet</li>
+            <li>Private methods are subject to change or removal at any time</li>
         </ol>
     </td>
   </tr>  
