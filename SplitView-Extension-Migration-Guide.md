@@ -76,12 +76,8 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
     <td><code>MainViewManager.addViews(MainViewManager.FOCUSED_PANE)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.removeFromWorkingSet()</code></td>
-    <td><code>MainViewManager.removeView(MainViewManager.ALL_PANES)</code></td>
-  </tr>
-  <tr>
     <td><code>DocumentManager.removeListFromWorkingSet()</code></td>
-    <td><code>MainViewManager.removeViews(MainViewManager.ALL_PANES)</code></td>
+    <td><code>MainViewManager.close(MainViewManager.ALL_PANES)</code></td>
   </tr>  
   <tr>
     <td><code>DocumentManager.setCurrentDocument(doc)</code></td>
