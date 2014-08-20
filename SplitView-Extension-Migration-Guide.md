@@ -60,24 +60,24 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
 <tr><td><b>API</b></td><td><b>Recommended API</b></td></tr>
 </thead>
   <tr>
-    <td><code>DocumentManager.findInWorkingSet()</code></td>
-    <td><code>MainViewManager.findView(MainViewManager.ALL_PANES)</code></td>
+    <td><code>DocumentManager.findInWorkingSet(file)</code></td>
+    <td><code>MainViewManager.findView(MainViewManager.ALL_PANES, file)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.getWorkingSet()</code></td>
     <td><code>MainViewManager.getViews(MainViewManager.ALL_PANES) or MainViewManager.getAllOpenFiles()</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.addToWorkingSet()</code></td>
-    <td><code>MainViewManager.addView(MainViewManager.FOCUSED_PANE)</code></td>
+    <td><code>DocumentManager.addToWorkingSet(file)</code></td>
+    <td><code>MainViewManager.addView(MainViewManager.FOCUSED_PANE, file)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.addListToWorkingSet()</code></td>
-    <td><code>MainViewManager.addViews(MainViewManager.FOCUSED_PANE)</code></td>
+    <td><code>DocumentManager.addListToWorkingSet(list)</code></td>
+    <td><code>MainViewManager.addViews(MainViewManager.FOCUSED_PANE, list)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.removeListFromWorkingSet()</code></td>
-    <td><code>MainViewManager.close(MainViewManager.ALL_PANES)</code></td>
+    <td><code>DocumentManager.removeListFromWorkingSet(list)</code></td>
+    <td><code>MainViewManager.closeList(MainViewManager.ALL_PANES, list)</code></td>
   </tr>  
   <tr>
     <td><code>DocumentManager.setCurrentDocument(doc)</code></td>
@@ -88,8 +88,8 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
     <td><code>MainViewManager.closeAll(MainViewManager.ALL_PANES)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.closeFullEditor()</code></td>
-    <td><code>MainViewManager.close(MainViewManager.ALL_PANES)</code></td>
+    <td><code>DocumentManager.closeFullEditor(file)</code></td>
+    <td><code>MainViewManager.close(MainViewManager.ALL_PANES, file)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.beginDocumentNavigation()</code></td>
