@@ -385,7 +385,7 @@ The following Extension's Unit Tests will no longer work. Fixing these isn't cri
 <tr><td><b>Extension</b></td><td><b>Why it breaks</b></td><td><b>Suggested remediation</b></td><td><b>URL</b></td></tr>
 </thead>
   <tr>
-    <td>QuickRequire</td>
+    <td><a href="https://github.com/mwaylabs/brackets-quick-require">QuickRequire</a></td>
     <td>Appends nodes directly to <code>#editor-holder</code></td>
     <td>Could listen for <code>EditorManager.activeEditorChange</code> and append nodes to the <code>$(Editor.getRootElement())</code> but would need to keep track of previous instances and remove them.</td>
     <td><a href="https://github.com/thomasvalera/Brackets-CodeOverview">CodeOverview</a></td>
