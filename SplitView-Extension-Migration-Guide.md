@@ -256,8 +256,8 @@ Returns a list of all open files. This list will include all temporary views of 
 @type `Array.<File>`
 
 ## [ProjectManager.getAllFiles()](http://brackets.io/docs/current/modules/project/ProjectManager.html#-getAllFiles)
-Returns a list of all files in the project.  Supports Filtering and inclusion of files opened in the working set which are not part of the projec.
-@type `Array.<File>`
+Returns a list of all files in the project.  Supports Filtering and inclusion of files opened in the working set which are not part of the project.
+@type JQuery.promise(`Array.<File>`)
 
 ## [DocumentManager.getAllOpenDocuments()](http://brackets.io/docs/current/modules/document/DocumentManager.html#-getAllOpenDocuments)
 Returns a list of all open documents -- including documents which are in a workingset but not yet opened, documents which have been opened in inline editors but not part of a workingset and opened but not modified or added to any workingset.
