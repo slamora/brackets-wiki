@@ -388,19 +388,16 @@ The following Extension's Unit Tests will no longer work. Fixing these isn't cri
     <td><a href="https://github.com/mwaylabs/brackets-quick-require">QuickRequire</a></td>
     <td>Appends nodes directly to <code>#editor-holder</code></td>
     <td>Could listen for <code>EditorManager.activeEditorChange</code> and append nodes to the <code>$(Editor.getRootElement())</code> but would need to keep track of previous instances and remove them.</td>
-    <td><a href="https://github.com/thomasvalera/Brackets-CodeOverview">CodeOverview</a></td>
   </tr>
   <tr>
-    <td>Simple JS Code Hints</td>
-    <td>Uses <code>EditorManager.setEditorHolder()</code></td>
-    <td>Just use <code>MainViewManager._init()</code>.</td>
     <td><a href="https://github.com/iwehrman/brackets-simple-js-code-hints">Simple JS Code Hints</a></td>
-  </tr>
-  <tr>
-    <td>Brackets Type Script Code Intel</td>
     <td>Uses <code>EditorManager.setEditorHolder()</code></td>
     <td>Just use <code>MainViewManager._init()</code>.</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/tomsdev/brackets-typescript-code-intel">Type Script Code Intel</a></td>
+    <td>Uses <code>EditorManager.setEditorHolder()</code></td>
+    <td>Just use <code>MainViewManager._init()</code>.</td>
   </tr>
 </table>
 
