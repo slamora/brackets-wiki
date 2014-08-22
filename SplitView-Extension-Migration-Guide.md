@@ -104,9 +104,9 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
     <td><code>MainViewManager.traverseViewsByMRU()</code></td>
   </tr>      
 </table>
-(1) Extensions using `DocumentManger.removeListFromWorkingSet` should be using `CommandManager.DoCommand(FILE_CLOSE_LIST)`
-(2) Extensions using `DocumentManger.closeAll()` should be using `CommandManager.DoCommand(FILE_CLOSE_ALL)`
-(3) Extensions using `DocumentManger.closeFullEditor()` should be using `CommandManager.DoCommand(FILE_CLOSE)`
+(1) Extensions using `DocumentManger.removeListFromWorkingSet` should be using `CommandManager.DoCommand(FILE_CLOSE_LIST)`  
+(2) Extensions using `DocumentManger.closeAll()` should be using `CommandManager.DoCommand(FILE_CLOSE_ALL)`  
+(3) Extensions using `DocumentManger.closeFullEditor()` should be using `CommandManager.DoCommand(FILE_CLOSE)`  
 
 These Public APIs are no longer in use and were identified as not being used by extensions. They have been removed from Brackets.
 
