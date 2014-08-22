@@ -27,27 +27,27 @@ These Events are Deprecated.  Extension authors should migrate to the recommende
 </thead>
   <tr>
     <td><code>DocumentManager.workingSetAdd</code></td>
-    <td><code>MainViewManager.paneViewAdd</code></td>
+    <td><code>MainViewManager.workingSetAdd</code></td>
     <td><code>(1)</code></td>
   </tr>
   <tr>
-    <td><code>DocumentManager.workingSetAddList</code></td>
-    <td><code>MainViewManager.paneViewAddList</code></td>
+    <td><code>DocumentManager.workingSetAdd</code></td>
+    <td><code>MainViewManager.workingSetAdd</code></td>
     <td><code>(1)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.workingSetRemove</code></td>
-    <td><code>MainViewManager.paneViewRemove</code></td>
+    <td><code>MainViewManager.workingSetRemove</code></td>
     <td><code>(1)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.workingSetRemoveList</code></td>
-    <td><code>MainViewManager.paneViewRemoveList</code></td>
+    <td><code>MainViewManager.workingSetRemoveList</code></td>
     <td><code>(1)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.workingSetSort</code></td>
-    <td><code>MainViewManager.paneViewSort</code></td>
+    <td><code>MainViewManager.workingSetSort</code></td>
     <td>&nbsp;</td>
   </tr>
 </table>
@@ -65,19 +65,19 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   </tr>
   <tr>
     <td><code>DocumentManager.getWorkingSet()</code></td>
-    <td><code>MainViewManager.getViews(MainViewManager.ALL_PANES) or MainViewManager.getAllOpenFiles()</code></td>
+    <td><code>MainViewManager.getWorkingSet(MainViewManager.ALL_PANES) or MainViewManager.getAllOpenFiles()</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.addToWorkingSet(file)</code></td>
-    <td><code>MainViewManager.addView(MainViewManager.FOCUSED_PANE, file)</code></td>
+    <td><code>MainViewManager.addToWorkingSet(MainViewManager.FOCUSED_PANE, file)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.addListToWorkingSet(list)</code></td>
-    <td><code>MainViewManager.addViews(MainViewManager.FOCUSED_PANE, list)</code></td>
+    <td><code>MainViewManager.addListToWorkingSet(MainViewManager.FOCUSED_PANE, list)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.removeListFromWorkingSet(list)</code></td>
-    <td><code>MainViewManager.closeList(MainViewManager.ALL_PANES, list)</code></td>
+    <td><code>(1)</code></td>
   </tr>  
   <tr>
     <td><code>DocumentManager.setCurrentDocument(doc)</code></td>
@@ -85,11 +85,11 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   </tr>
   <tr>
     <td><code>DocumentManager.closeAll()</code></td>
-    <td><code>MainViewManager.closeAll(MainViewManager.ALL_PANES)</code></td>
+    <td><code>(2)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.closeFullEditor(file)</code></td>
-    <td><code>MainViewManager.close(MainViewManager.ALL_PANES, file)</code></td>
+    <td><code>(3)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.beginDocumentNavigation()</code></td>
@@ -104,6 +104,9 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
     <td><code>MainViewManager.traverseViewsByMRU()</code></td>
   </tr>      
 </table>
+(1) Extensions using `DocumentManger.removeListFromWorkingSet` should be using `CommandManager.DoCommand(FILE_CLOSE_LIST)`
+(2) Extensions using `DocumentManger.closeAll()` should be using `CommandManager.DoCommand(FILE_CLOSE_ALL)`
+(3) Extensions using `DocumentManger.closeFullEditor()` should be using `CommandManager.DoCommand(FILE_CLOSE)`
 
 These Public APIs are no longer in use and were identified as not being used by extensions. They have been removed from Brackets.
 
