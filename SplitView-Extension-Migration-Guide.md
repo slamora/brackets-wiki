@@ -77,7 +77,7 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   </tr>
   <tr>
     <td><code>DocumentManager.removeListFromWorkingSet(list)</code></td>
-    <td><code>(1)</code></td>
+    <td><code>MainViewManger.closeList(list)(1)</code></td>
   </tr>  
   <tr>
     <td><code>DocumentManager.setCurrentDocument(doc)</code></td>
@@ -85,11 +85,11 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   </tr>
   <tr>
     <td><code>DocumentManager.closeAll()</code></td>
-    <td><code>(2)</code></td>
+    <td><code>MainViewManger.closeAll()(2)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.closeFullEditor(file)</code></td>
-    <td><code>(3)</code></td>
+    <td><code>MainViewManger.close(file)(3)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.beginDocumentNavigation()</code></td>
