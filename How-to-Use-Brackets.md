@@ -9,7 +9,7 @@ Updates are released about twice a month.
 
 The Basics
 ----------
-Initially, Brackets opens a default "Getting Started" project. Follow the instructions in the HTML code for a quick walkthrough of Brackets feaures.
+Initially, Brackets opens a default "Getting Started" project. Follow the instructions in the HTML code for a quick walkthrough of Brackets features.
 
 You can open a different folder in the file tree on the left using **File > Open Folder**. Brackets considers this folder your "project": it acts as the scope for various search operations, and some settings are tied to the folder you have open. You can easily switch back to previous projects by clicking on root folder name in the file tree. You can also drag a folder from the OS onto the Brackets window to open it in the file tree, and drag files onto the Brackets window to open them.
 
@@ -191,7 +191,7 @@ Some of the preferences available in these files do not have any user interface 
 
 Here is a quick list of some of the settings you can change in these files:
 
-* **jslint.options**: (default `undefined`) An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automically).
+* **jslint.options**: (default `undefined`) An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automatically).
 * **linting.enabled**: (default `true`) Determines if Code Inspection is on
 * **useTabChar**: (default `false`) True to use tabs instead of spaces
 * **tabSize**: (default `4`) Number of spaces to display for tabs
@@ -199,18 +199,18 @@ Here is a quick list of some of the settings you can change in these files:
 * **wordWrap**: (default `true`) True if word wrap is on
 * (new in 37) **proxy**: (default `undefined`) The URL of the proxy server used for extension installation (general syntax: `http://username:password@server:port/`)
 * (new in 37) **smartIndent**: (default `true`) Automatically indent when creating a new block
-* (new in 37) **closeTags**: (default `{whenOpening: true, whenClosing: true, indentTags: []}`) Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js)
+* (new in 37) **closeTags**: (default `{"whenOpening": true, "whenClosing": true, "indentTags": []}`) Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js)
 * (new in 37) **insertHintOnTab**: (default `false`) True to insert the currently selected code hint on tab
 * (new in 37) **sortDirectoriesFirst**: (default `false` for Mac, `true` otherwise) True to sort the directories first in the project tree
 * (new in 37) **staticserver.port**: Port number that the built-in server should use for Live Preview
 * (new in 38) **scrollPastEnd**: (default `false`) True to be able to scroll beyond the end of the document
-* (new in 38) **softTabs**: (default `true`) False to turn off soft tabs behavior
+* (new in 38) **softTabs**: (default `true`) False to turn off soft tabs behaviour
 * (new in 38) **closeOthers.others**, **closeOthers.above**, **closeOthers.below**: (default all `true`) False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu
 * (new in 39) **language.fileExtensions**: (default `undefined`) Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
 * (new in 39) **language.fileNames**: (default `undefined`) Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
 * (new in 40) **highlightMatches**: (default `false`) Enables automatic highlighting of matching strings throughout the document:
     * `true` - highlight all strings that match the current selection (nothing is highlighted when no selection)
-    * `{showToken: true}` - highlight all strings that match the token the cursor is currently in (no selection needed)
+    * `{"showToken": true}` - highlight all strings that match the token the cursor is currently in (no selection needed)
 * (new in 42) **showCodeHints**: (default `true`) If false, all code hints are disabled.
 * (new in 42) **codehint.{HINT_PROVIDER_CONSTRUCTOR_NAME}**: (default `true`) If false, the specific code hint provider is disabled. Below is a list of preferences for all the default code hints providers.
    - **codehint.TagHints**: Preference for HTML tag hints 
