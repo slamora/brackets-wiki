@@ -11,7 +11,7 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 
 ### Requirements ###
 
-* Latest [Brackets installer build](http://download.brackets.io)
+* Latest [Brackets installer build](http://download.brackets.io) (or if you'd rather build the native bits yourself instead, [see below](#nativeshell)).
 * Git command line tools - follow the setup instructions [on GitHub](https://help.github.com/articles/set-up-git) or download [here](http://git-scm.com/downloads)
 
 ### Setting up your dev environment ###
