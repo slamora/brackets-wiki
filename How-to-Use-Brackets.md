@@ -153,8 +153,7 @@ for a more complete list of shortcuts.
 <td>Open/close the inline editor (Quick Edit).</td>
 </tr>
 <tr>
-<td>Alt-Up/Down Arrow</td>
-<td>Alt-Up/Down Arrow</td>
+<td colspan="2">Alt-Up/Down Arrow</td>
 <td>Switch between rules in the inline editor.</td>
 </tr>
 <tr>
