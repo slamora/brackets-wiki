@@ -139,41 +139,57 @@ Here are some keyboard shortcuts that are worth knowing. Also see the
 for a more complete list of shortcuts.
 
 <table>
+<thead>
+<tr>
+<th>Windows</th>
+<th>Mac</th>
+<th>Description</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>Ctrl/Cmd-E</td>
+<td>Ctrl-E</td>
+<td>Cmd-E</td>
 <td>Open/close the inline editor (Quick Edit).</td>
 </tr>
 <tr>
 <td>Alt-Up/Down Arrow</td>
+<td>Alt-Up/Down Arrow</td>
 <td>Switch between rules in the inline editor.</td>
 </tr>
 <tr>
-<td>Ctrl/Cmd-K</td>
+<td>Ctrl-K</td>
+<td>Cmd-K</td>
 <td>Open Quick Docs.</td>
 </tr>
 <tr>
 <td>Ctrl-Space</td>
+<td>Cmd-Space</td>
 <td>Bring up code hints, if applicable.</td>
 </tr>
 <tr>
-<td>Ctrl/Cmd-Shift-O</td>
+<td>Ctrl-Shift-O</td>
+<td>Cmd-Shift-O</td>
 <td>Bring up the Quick Open prompt.</td>
 </tr>
 <tr>
-<td>Ctrl-G/Cmd-L</td>
+<td>Ctrl-G</td>
+<td>Cmd-L</td>
 <td>Go to a line in the current file.</td>
 </tr>
 <tr>
-<td>Ctrl/Cmd-T</td>
-<td>Go to a method in the current file.</td>
+<td>Ctrl-T</td>
+<td>Cmd-T</td>
+<td>Go to a method/selector in the current file (Quick Find).</td>
 </tr>
 <tr>
-<td>Ctrl/Cmd-Shift-H</td>
+<td>Ctrl-Shift-H</td>
+<td>Cmd-Shift-H</td>
 <td>Show/hide the sidebar.</td>
 </tr>
 <tr>
-<td>Ctrl/Cmd-Alt-P</td>
+<td>Ctrl-Alt-P</td>
+<td>Cmd-Alt-P</td>
 <td>Live preview.</td>
 </tr>
 </tbody>
