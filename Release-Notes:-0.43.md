@@ -4,16 +4,20 @@ _This document will not be finalized until the end of Release 0.43 -- approximat
 
 What's New in Release 0.43
 --------------------------
-* **TBD...**
 * **SCSS/LESS Editing**
-    * [Quick Edit, Quick Find Definition, & Live Preview Highlight support](https://trello.com/c/KoK6kPtp/1190-m-simple-support-for-less-scss-in-key-brackets-features): All these features now work the same for SCSS & LESS as they do for plain CSS.
+    * **[Quick Edit, Quick Find Definition, & Live Preview Highlight support](https://trello.com/c/KoK6kPtp/1190-m-simple-support-for-less-scss-in-key-brackets-features)**: All these features now work the same for SCSS & LESS as they do for plain CSS.
     * Live Preview supports SCSS & LESS editing if you use a third-party "file watcher" to automatically recompile your CSS on save. Brackets notices the changed CSS file and updates the page (without reloading). You can also use a Brackets extension such as [Brackets SASS](https://github.com/jasonsanjose/brackets-sass) or [LESS AutoComplile](https://github.com/jdiehl/brackets-less-autocompile) for this.
+* **Themes**
+    * [Improved 'dark mode'](https://github.com/adobe/brackets/pull/8731): Dark themes now cause the overall Brackets UI to become darker, not just the editor area.
+    * [Separate Extension Manager tab](https://github.com/adobe/brackets/pull/8759): Themes are listed separately in Extension Manager so they're easier to find, and the list of extensions stays cleaner.
 * **Search**
-    * [Find/Replace: indicate current match index](https://trello.com/c/0GXqt5GF/1089-s-find-next-indicate-current-match-index)
-    * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
+    * [Find/Replace: indicate current match index](https://trello.com/c/0GXqt5GF/1089-s-find-next-indicate-current-match-index): The Find/Replace bar now shows "3 of 28" instead of just "28."
 * **File Types**
-    * [Change language/syntax mode for entire file extension](https://github.com/adobe/brackets/pull/8444): After changing a file's language using the status bar switcher, you can save the change for _all_ files with that extension by choosing "Set as Default" from the same dropdown. (This was previously accessible by manually editing preferences).
-* **Ongoing Research** (not implemented yet)
+    * [Change file extension -> language/syntax mode mapping](https://github.com/adobe/brackets/pull/8444): After changing a file's language using the status bar switcher, you can save the change for _all_ files with that extension by choosing "Set as Default" from the same dropdown. (This was previously accessible only by manually editing preferences).
+* **Live Preview**
+    * Support for .xhtml files.
+    * Improved reliability when using [iframes](https://github.com/adobe/brackets/pull/8144) or [files not listed in "Working Files"](https://github.com/adobe/brackets/pull/8605).
+* **Ongoing Research** (not available yet)
     * [Split view](https://trello.com/c/atD9BEDl/1281-m-splitview-implement-mainviewmanager-code-for-1x2-editors) (early implementation on branch)
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.42...release-0.43#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-0.42...release-0.43#commits_bucket)
@@ -21,19 +25,19 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release
 
 UI Changes
 ----------
-**Quick Open** - The first item is automatically highlighted, making it more clear that you can press Enter immediately to jump to the top item (Down arrow not required). Highlighting the 2nd item in the result list now only requires pressing the Down arrow once (previously required two presses). Quick Find Definition no longer changes the scroll position until you start typing.
+**Keyboard shortcut changes**
 
-**Linux: Edit menu** - The _Edit > Cut/Copy/Paste_ menu items are removed on Linux, because they did not work. These menu items will be restored once [a native menu bar](https://trello.com/c/WMB6vtwO/893-linux-native-menus) is implemented.
+* _Replace in Files_ changed to Ctrl-Shift-H (Win) or Cmd-Alt-Shift-F (Mac), to parallel the single-file Replace shortcut better.
+* _Show/Hide Sidebar_ changed to Ctrl-Alt-H (Win) or Cmd-Shift-H (Mac).
+
+**Linux: Edit menu** - The _Edit > Cut/Copy/Paste_ menu items are removed on Linux, because they did not work. These menu items will be restored once [a native menu bar](https://trello.com/c/WMB6vtwO/893-linux-native-menus) is implemented. Keyboard shortcuts for cut/copy/paste still work.
 
 
 API Changes
 -----------
-**Theme authoring** - Simplified how Find/Replace highlight colors are set. ...TODO...
+**Theme authoring** - Simplified how Find/Replace highlight colors are set. [Read more...](https://github.com/adobe/brackets/wiki/Creating-Themes#theme-styles)
 
 **window.open()** - Only permits 'file://' URLs and 'about:blank', since brackets-shell is not a secure general-purpose web browser. Use `NativeApp.openURLInDefaultBrowser()` to open webpages in the user's regular browser.
-
-New/Improved Extensibility APIs
--------------------------------
 
 
 Known Issues
