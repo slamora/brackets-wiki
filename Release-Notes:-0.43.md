@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Release 0.43 -- approximately August 20._
+_This document will not be finalized until the end of Release 0.43 -- approximately September 3rd._
 
 What's New in Release 0.43
 --------------------------
