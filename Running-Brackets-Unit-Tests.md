@@ -16,6 +16,6 @@ usually all of the tests don't pass. Here's a more reliable recipe:
 5. Switch to "Performance" tab and run "All".
 6. Switch to Extensions" tab and run "All".
 
-If any tests fail, then try running only that suite of tests.
+If any tests fail, then try running only that suite of tests (e.g. "CSS Parsing").
 If all tests for that suite pass, then that's OK -- this is most likely a timing problem.
 If any tests consistently fail, open an Issue with High Priority.
