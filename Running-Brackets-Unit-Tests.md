@@ -6,7 +6,7 @@ Use `Debug > Run Tests` to invoke the Jasmine SpecRunner dialog which looks some
 
 ![Jasmine SpecRunner dialog](http://i.imgur.com/ZzozdSA.png)
 
-You can try to run "All" test from the "All" tab, but due to memory constraints,
+You can try to run "All" tests from the "All" tab, but due to memory constraints,
 usually all of the tests don't pass. Here's a more reliable recipe:
 
 1. Switch to "Unit" tab and click "All" to run all tests
