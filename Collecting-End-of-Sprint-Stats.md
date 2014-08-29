@@ -7,20 +7,20 @@
 
 #### Pull requests
 
-1. Install Peter's "Brackets Reports" extension / make sure you have the latest
-2. Find the last PR in the _previous_ sprint - `git show sprint-XX` should give you its merge commit, which says the PR #. (Don't forget to check -shell too in case it's newer -- you want the more recent of the two).
-3. Go to that PR on GitHub
-4. Find the "merged ... 20 days ago" (or whatever) label at bottom and inspect it in the Dev Tools
-5. Copy the value of the `datetime` attribute
-6. In the extension, edit _GitHubReports.js_ and change the value of `END_LAST_SPRINT` - paste in the 'datetime' value from step 5
-7. Reload Brackets
-8. Run _View > Brackets Reports > Pull Requests in Sprint_
+1. Install Peter's "Brackets Reports" extension / make sure you have the latest (>= 1.3.0)
+2. Find the day the _previous_ sprint branched to `release` (usually close to the time the _current_ sprint's "set-sprint number" PR landed).
+3. In the extension, edit _GitHubReports.js_ and change the value of `END_LAST_SPRINT` to the start of that day (following the date format shown in the code)
+4. Reload Brackets
+5. Run _View > Brackets Reports > Pull Requests in Sprint_
+    * This make take a few seconds before showing the results
+6. Remove all "R" entries near the top of the list (PRs that actually went into the _previous_ release, merged into its release branch late in the game)
+7. Remove all "M" entries near the bottom of the list (PRs that are actually in a _future_ release, merged into master after the current release branched)
+8. Generally speaking, remove any "?" entries as well (branch-to-branch merges)
+8. _Update the totals at the bottom_ to reflect these deletions
 
-After a few seconds, you'll get a dialog with a big report, which includes the following info:
+We usually look at the following stats:
 
-**_WARNING:_ These numbers require manual adjustment** - Due to the branching process Brackets now uses, timestamps alone are not a reliable way to know which sprint a PR landed in. For any PRs that occurred after the branch point, you must manually check if the PR landed on the release branch, and deduct the ones that did not (i.e. those that landed on master instead).
-
-* **Number of pull requests merged (total)** (note that this does _not_ count PRs that were closed without being merged)
+* **Number of pull requests merged (total)** (_doesn't_ count PRs that were closed without being merged)
 * **Number of external pull requests merged**
 * **Number that came from external committers**
 * **Total number of external contributors this sprint**
