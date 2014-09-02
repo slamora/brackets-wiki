@@ -71,6 +71,10 @@ _However_, Live Preview has the following limitations when using your own backen
 
 > Why do these limitations exist? To enable HTML live editing, Brackets needs to inject some annotations into your HTML code before the browser loads it. Normally, the built-in Brackets server does this. When using your own server instead, Brackets can't inject those annotations. Without the annotations, Brackets can't map edits and cursor positions from your source file onto the corresponding DOM nodes in the browser.
 
+##### Live Preview with SCSS/LESS
+
+Live Preview does not update _in real time_ as you type in LESS/SCSS files. However, if you use a third-party "file watcher" to automatically recompile your CSS on save, Live Preview will automatically update to reflect the changed CSS file (without reloading). You can also use a Brackets extension such as [Brackets SASS](https://github.com/jasonsanjose/brackets-sass) or [LESS AutoCompile](https://github.com/jdiehl/brackets-less-autocompile) for this.
+
 ##### Other limitations
 
 Live Preview currently has a few other important limitations:
