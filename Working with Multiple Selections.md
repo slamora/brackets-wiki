@@ -26,10 +26,10 @@ You can hit Esc in order to get rid of a multiple selection, leaving only the pr
 
 ## Pasting with Multiple Selections
 
-When you Pasting text copied from multiple selections, the text inserted will be all the selections separated by a newline. For example, start with a multiple selection where there are 2 selections: “<span class=’foo’>” and “</span>” and then Copy it to clipboard. Wherever you Paste, the following text will be inserted:
+When you Pasting text copied from multiple selections, the text inserted will be all the selections separated by a newline. For example, start with a multiple selection where there are 2 selections: `<span class=’foo’>` and `</span>` and then Copy it to clipboard. Wherever you Paste, the following text will be inserted:
 
-“<span class=’foo’>
-</span>”
+    <span class=’foo’>
+    </span>
  
 The exception to this is if the number of selections when pasting *exactly* match the number of selections when copied (i.e. 2 in previous example). So, if you have the following text in your page (where the vertical bars are cursors):
  
@@ -39,7 +39,7 @@ The result after pasting will be:
  
     <p>The <span class='foo'>quick</span> brown fox jumped over the lazy dog</p>
  
-Starting in Release 0.43, this exception has been extended is the number of selections when pasting is a *multiple* of the number of selections that were copied. So, if you have this:
+Starting in Release 0.43, this exception has been extended so that if the number of selections when pasting is a *multiple* of the number of selections that were copied. So, if you have this:
  
     <p>The |quick| brown fox jumped over the |lazy| dog</p>
  
