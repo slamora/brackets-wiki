@@ -6,7 +6,7 @@ What's New in Release 0.43
 --------------------------
 * **SCSS/LESS Editing**
     * **[Quick Edit, Quick Find Definition, & Live Preview Highlight support](https://trello.com/c/KoK6kPtp/1190-m-simple-support-for-less-scss-in-key-brackets-features)**: All these features now work the same for SCSS & LESS as they do for plain CSS.
-    * Live Preview supports SCSS & LESS editing if you use a third-party "file watcher" to automatically recompile your CSS on save. Brackets notices the changed CSS file and updates the page (without reloading). You can also use a Brackets extension such as [Brackets SASS](https://github.com/jasonsanjose/brackets-sass) or [LESS AutoComplile](https://github.com/jdiehl/brackets-less-autocompile) for this.
+    * Live Preview supports SCSS & LESS editing if you use a third-party "file watcher" to automatically recompile your CSS on save. Brackets notices the changed CSS file and updates the page (without reloading). You can also use a Brackets extension such as [Brackets SASS](https://github.com/jasonsanjose/brackets-sass) or [LESS AutoCompile](https://github.com/jdiehl/brackets-less-autocompile) for this.
 * **Themes**
     * [Improved 'dark mode'](https://github.com/adobe/brackets/pull/8731): Dark themes now cause the overall Brackets UI to become darker, not just the editor area.
     * [Separate Extension Manager tab](https://github.com/adobe/brackets/pull/8759): Themes are listed separately in Extension Manager so they're easier to find, and the list of extensions stays cleaner.
