@@ -32,7 +32,7 @@ Instead of cluttering up your coding environment with lots of panels and icons, 
 
 You open Quick Edit's inline editors by pressing **Ctrl/Cmd-E** when your cursor is on certain pieces of code. For example:
 
-* In an HTML file with the cursor inside a `class` or `id` attribute (name or value) or on the tag name - Quick Edit will show you all the CSS rules in your project that match. You can edit these rules directly inline, without ever leaving the context of the HTML file.
+* In an HTML file with the cursor inside a `class` or `id` attribute (name or value) or on the tag name - Quick Edit will show you all the CSS, SCSS and LESS rules in your project that match. You can edit these rules directly inline, without ever leaving the context of the HTML file.
     * When multiple rules match, navigate among them using the list on the right side (or use Alt-Up/Down).
     * To create a new CSS rule directly from the inline editor, click the **New Rule** button (or press Ctrl-Alt-N/Cmd-Opt-N).
 * In any file with a hex color or rgb/rgba/hsl/hsla color - Quick Edit opens an inline color picker for previewing and adjusting the color. The color picker also lists the top most-used colors from other parts of the file for quick access.
@@ -57,7 +57,7 @@ This mode offers the full range of Live Preview functionality:
 * Browser preview updates in real time as you type in HTML _and_ CSS files (without reloading)
 * If you edit any other type of file, the page is auto-reloaded when you save
 * When you move the cursor around an HTML file, the corresponding element is highlighted in the browser
-* When you move the cursor around a CSS file, all elements matching the CSS rule are highlighted in the browser
+* When you move the cursor around a CSS/LESS/SCSS file, all elements matching the current rule are highlighted in the browser
 * (All cursor-driven highlighting can be disabled by unchecking **View > Live Preview Highlight**)
 
 All the CSS features above also work when you're in an inline Quick Edit CSS editor.
@@ -108,7 +108,7 @@ See also the [Preferences](#preferences) section below.
 To quickly jump to a file, press **Ctrl/Cmd-Shift-O** and type part of the filename. You can type abbreviations or other non-contiguous parts of the name, and Quick Open will intelligently find the best matching file.
 
 ### Quick Find Definition
-To quickly jump around _within_ a file, press **Ctrl/Cmd-T** to see an outline view - functions in a JS file, selectors in a CSS file, etc. Similar to Quick Open, you can type parts of a name to filter the list.
+To quickly jump around _within_ a file, press **Ctrl/Cmd-T** to see an outline view - functions in a JS file, selectors in a CSS/LESS/SCSS file, etc. Similar to Quick Open, you can type parts of a name to filter the list.
 
 ### <a id="codehints"></a>Code Hints
 Code hints generally pop up automatically while you're typing, but you can also manually display them with **Ctrl-Space** (note that this shortcut uses Ctrl even on Mac).
@@ -230,7 +230,7 @@ Here is a quick list of some of the settings you can change in these files:
 * (new in 42) **codehint.{HINT_PROVIDER_CONSTRUCTOR_NAME}**: (default `true`) If false, the specific code hint provider is disabled. Below is a list of preferences for all the default code hints providers.
    - **codehint.TagHints**: Preference for HTML tag hints 
    - **codehint.AttrHints**: Preference for HTML attribute hints
-   - **codehint.CssPropHints**: Preference for CSS property hints
+   - **codehint.CssPropHints**: Preference for CSS/LESS/SCSS property hints
    - **codehint.UrlCodeHints**: Preference for URL hints
    - **codehint.JSHints**: Preference for JavaScript hints
    - **codehint.SpecialCharHints**: Preference for special character hints (i.e. HTML Entities)
