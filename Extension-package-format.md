@@ -123,7 +123,21 @@ There are open questions surrounding the lifecycle of the Node code and the modu
 
 <font color="red">Status: Not yet implemented</font>
 
-If there is a CHANGELOG.md file at the package root, the h2 headers (delimited by ##) are assumed to contain version numbers and the sections of the file will be pulled apart to display update information to users.
+Changelogs will be formatted based on the proposed standard at [Keep a Changelog](http://keepachangelog.com/).  If there is a CHANGELOG.md file at the package root then the following sections will be identified by package manager and pulled apart to display to users:
+
+* h2 sections (denoted by ##) are in the format: `## x.y.z - yyyy-mm-dd` and represent a released update using the semantic version number and the release date.
+* h3 sections (denoted by ###) within an h2 release section will be labelled with 1-5 sub-section headers each with an un-ordered list of items for that sub-section.  The sub-section headings will be one of the following:
+    - `Added` for new features.
+    - `Deprecated` for once-stable features removed in upcoming releases.
+    - `Removed` for deprecated features removed in this release.
+    - `Fixed` for any bug fixes.
+    - `Security` to invite users to upgrade in case of vulnerabilities.
+* **Note** It is not necessary to include sub-section headers that are empty.
+
+Examples of CHANGELOG.md files that follow this standard can be found at:
+
+* [thephpleague/csvCHANGELOG.md](https://github.com/thephpleague/csv/blob/master/CHANGELOG.md)
+* [olivierlacan/keep-a-changelog/CHANGELOG.md](https://github.com/olivierlacan/keep-a-changelog/blob/gh-pages/CHANGELOG.md)
 
 ## Unit Tests ##
 
