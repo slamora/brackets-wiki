@@ -137,6 +137,15 @@ If Brackets cannot launch the Chrome browser on your Windows system, check the R
 
 This is the file path that Brackets uses to launch Chrome. If this is not correct, then try reinstalling the Chrome browser at this location.
 
+### Uninstall/Reinstall Chrome
+
+When uninstalling Google Chrome on Windows, some users have reported problems with Registry settings that are not removed. If uninstalling and reinstalling Chrome still does not fix problem, try deleting Registry settings in the following locations before re-installling:
+
+* HKEY_CURRENT_USER\SOFTWARE\Google\Chrome\
+* HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\
+
+**Warning:** Editing the Windows Registry can easily cause problems with your system, so edit it manually at your own risk. Another option is to use a tool such as Revo Uninstaller to uninstall Chrome.
+
 ### Re-install Brackets
 
 On Windows, you may run into issues starting Live Preview if you installed Chrome after installing Brackets. In that case, re-installing Brackets should fix the problem.
