@@ -1,5 +1,5 @@
-Issue Cluster 1.0 Milestone
-===========================
+Issue Clusters 1.0 Milestone
+============================
 42 open issues Tue Sep 02 2014 00:55:25 GMT-0700 (PDT)
 
 
