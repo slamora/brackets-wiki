@@ -95,8 +95,8 @@ See [How to write extensions](How to write extensions#wiki-featurehooks).
 
 Normally, you'll want to use Document (see above) to read the contents of a file that the user might edit. If you modify a file via Document, it will automatically be recorded as an unsaved change for the user to track.
 
-There are some cases where you may want to simply load a configuration file without treating it as a user document. For this, Brackets provides a basic [FileSystem API](File System) for direct access to local files. Here's how to simply read a file:
-```
+There are some cases where you may want to simply load a configuration file without treating it as a user document. For this, Brackets provides a [FileSystem API](http://brackets.io/docs/current/modules/filesystem/FileSystem.html) for direct access to local files. Here's how to simply read a file:
+```javascript
 // On Windows, paths look like "C:/foo/bar.txt"
 // On Mac, paths look like "/foo/bar.txt"
 var file = FileSystem.getFileForPath(localPath);
@@ -106,9 +106,11 @@ promise.done(function (text) {
     console.log("The contents of the file are:\n" + text);
 })
 .fail(function (errorCode) {
-    console.log("Error #" + errorCode);  // one of the FileSystemError constants
+    console.log("Error: " + errorCode);  // one of the FileSystemError constants
 });
 ```
+
+Note that paths in Brackets _always_ use "/" separators, regardless of OS. [Read more on path format](https://github.com/adobe/brackets/blob/master/src/filesystem/FileSystem.js#L43-L52).
 
 ## Accessing Node Modules from Brackets
 
