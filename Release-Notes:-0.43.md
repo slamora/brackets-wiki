@@ -49,10 +49,39 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TBA
+* [Add Themes tab to Extension Manager](https://github.com/adobe/brackets/pull/8759) (+ [part 2](https://github.com/adobe/brackets/pull/8857)) by [Miguel Castillo](https://github.com/MiguelCastillo)
+* [Fix Live Preview bugs when page contains iframe](https://github.com/adobe/brackets/pull/8144) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Create Ukrainian translation](https://github.com/adobe/brackets/pull/8881) by [Maks Lyashuk](https://github.com/probil)
+* [Polyfill String.trimRight() to support IE10+ in-browser](https://github.com/adobe/brackets/pull/7231) in part by [David Humphrey](https://github.com/humphd)
+* [Improve undo batching for inline CSS Bezier/timing editor's changes](https://github.com/adobe/brackets/pull/8589) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix 8572: Dragging in color picker square causes hue to change](https://github.com/adobe/brackets/pull/8588) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix 4920 & 5999: Don't terminate Working Files drag prematurely](https://github.com/adobe/brackets/pull/7820) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Suport generic CodeMirror themes when using `ThemeManager.loadFile()`](https://github.com/adobe/brackets/pull/8673) (+ [part 2](https://github.com/adobe/brackets/pull/8677)) by [Miguel Castillo](https://github.com/MiguelCastillo)
+* [Fix 8712: Make title of Themes dialog localizable](https://github.com/adobe/brackets/pull/8715) by [Denisov21](https://github.com/Denisov21)
+* [Fix code hint capitalization of meta tag's `name="keywords"`](https://github.com/adobe/brackets/pull/8533) by [Triangle717](https://github.com/le717)
+* [Fix spurious focus ring shown on inline editors](https://github.com/adobe/brackets/pull/8663) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [When prepopulating Find in Files query from editor selection, only use first line of text (as in Find)](https://github.com/adobe/brackets/pull/8470) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Immediately hide Quick View popover when mouse leaves editor area](https://github.com/adobe/brackets/pull/8740) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Add keywords for Ubuntu desktop search](https://github.com/adobe/brackets-shell/pull/461) by [Mark-Simulacrum](https://github.com/Mark-Simulacrum)
+* [Add unit tests for `FileUtils.convertToNativePath()`](https://github.com/adobe/brackets/pull/7957) by [chirayu11](https://github.com/chirayu11)
+* [Cleanup: better way to strip whitespace in JSLint extension](https://github.com/adobe/brackets/pull/8674) by [Martin Mädler](https://github.com/MartinMa)
+* [Cleanup: Optimize 'Getting Started' sample project PNGs](https://github.com/adobe/brackets/pull/8299) by [Jamie Stevens](https://github.com/jamiestevens)
+* [Dutch translation for Getting Started](https://github.com/adobe/brackets/pull/8436) by [githrdw](https://github.com/githrdw)
+* [Italian translation update](https://github.com/adobe/brackets/pull/8701) (+ [part 2](https://github.com/adobe/brackets/pull/8756)) by [Denisov21](https://github.com/Denisov21)
+* [Finnish translation update](https://github.com/adobe/brackets/pull/8819) (+ [part 2](https://github.com/adobe/brackets/pull/8820)) by [valtlait](https://github.com/valtlait)
+* [Chinese (Simplified) translation update](https://github.com/adobe/brackets/pull/8687) by [airycanon](https://github.com/airycanon)
+* [Brazilian Portuguese translation update](https://github.com/adobe/brackets/pull/8841) by [Brunno Pleffken](https://github.com/brunnopleffken)
+* [German translation update](https://github.com/adobe/brackets/pull/8879) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/8893) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Improve localization README.md](https://github.com/adobe/brackets/pull/8438) by [Pei-Tang Huang](https://github.com/tan9)
+* [Fix typos in localization README.md](https://github.com/adobe/brackets/pull/8722) by [Denisov21](https://github.com/Denisov21)
+* [Fix typo in LocalizationExample README.md](https://github.com/adobe/brackets/pull/8774) by [Denisov21](https://github.com/Denisov21)
+* [Documentation cleanup in `StringUtils.truncate()`](https://github.com/adobe/brackets/pull/8707) by [Triangle717](https://github.com/le717)
+* [Cleanup: Update documentation/community URLs to canonical version](https://github.com/adobe/brackets/pull/8532) (+ [part 2](https://github.com/adobe/brackets/pull/8606)) by [Eric J](https://github.com/wormeyman)
+
 
 #### Pulling source code from Git
-* **TODO** - brackets-shell required?
+* Rebuilding/updating brackets-shell is _optional_ for this release (only change is [one](https://github.com/adobe/brackets-shell/pull/450) Mac-only bug fix).
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
