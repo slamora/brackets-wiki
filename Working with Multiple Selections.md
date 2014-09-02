@@ -24,6 +24,29 @@ If you make a mistake while adding to the multiple selection, you can use Ctrl-U
 
 You can hit Esc in order to get rid of a multiple selection, leaving only the primary selection selected.
 
+## Pasting with Multiple Selections
+
+When you Pasting text copied from multiple selections, the text inserted will be all the selections separated by a newline. For example, start with a multiple selection where there are 2 selections: “<span class=’foo’>” and “</span>” and then Copy it to clipboard. Wherever you Paste, the following text will be inserted:
+
+“<span class=’foo’>
+</span>”
+ 
+The exception to this is if the number of selections when pasting *exactly* match the number of selections when copied (i.e. 2 in previous example). So, if you have the following text in your page (where the vertical bars are cursors):
+ 
+    <p>The |quick| brown fox jumped over the lazy dog</p>
+ 
+The result after pasting will be:
+ 
+    <p>The <span class='foo'>quick</span> brown fox jumped over the lazy dog</p>
+ 
+Starting in Release 0.43, this exception has been extended is the number of selections when pasting is a *multiple* of the number of selections that were copied. So, if you have this:
+ 
+    <p>The |quick| brown fox jumped over the |lazy| dog</p>
+ 
+The result after pasting will be:
+ 
+    <p>The <span class='foo'>quick</span> brown fox jumped over the <span class='foo'>lazy</span> dog</p>
+ 
 ## Searching with multiple selections
 
 When coding, it's often useful to be able to quickly change multiple instances of the same string, like a variable name. You can use the Find bar to do this, but there's a quicker way to do it using multiple selections that can be more convenient in some cases.
