@@ -23,6 +23,16 @@ var Strings = require("strings"),
 var html = Mustache.render(templateContent, Strings); // use Mustache to insert translated strings
 ```
 
+### String concatenation
+Because word order varies between languages, don't assume you can append separate strings together in a fixed order (e.g. using `+` in JavaScript). Instead, make a single _parameterized_ string:
+
+1. Let's say you need to make a message that looks like "Current position: item I out of N."
+2. Figure out which parts vary dynamically: "I" and "N" in this case.
+3. Add parameterized string in strings.js: `CURRENT_POSITION: "Current position: item {0} out of {1}",`
+4. Dynamically substitute values in JavaScript: `StringUtils.format(Strings.CURRENT_POSITION, currentIndex, items.length)`
+
+TODO: explain how to do this in HTML/Mustache strings...
+
 ## Implementation Details
 
 Brackets uses the [i18n plugin for RequireJS](https://github.com/requirejs/i18n) to load translations. The locale is determined by ``brackets.app.language`` (``navigator.language`` isn't used due to a CEF3 bug). Our main ``strings`` module re-exports the root bundle (i.e. ``require("i18n!nls/strings.js")``). Client code should only use the main strings module (i.e. ``require("strings")``).
