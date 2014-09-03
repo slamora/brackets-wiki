@@ -39,9 +39,8 @@ Brackets uses the [i18n plugin for RequireJS](https://github.com/requirejs/i18n)
 
 As of Sprint 13, brackets-shell hardcodes strings for both English and French, primarily for the limited set of native menus. Once [native menus](https://trello.com/c/Zc2LP82u) are implemented, there will be no translated strings in brackets-shell.
 
-### Creating New Translations
-[Creating new translations](https://github.com/adobe/brackets/blob/master/src/nls/README.md)
+### Creating or Updating/Improving Translations
+[Creating new translations - README](https://github.com/adobe/brackets/blob/master/src/nls/README.md)
 
 ### Localizing Extensions
-[Example: Localized Extension](https://github.com/adobe/brackets/tree/master/src/extensions/samples/LocalizationExample)
-[README.MD](https://github.com/adobe/brackets/tree/master/src/extensions/samples/LocalizationExample/README.MD)
+[How to Localize Your Extension - README](https://github.com/adobe/brackets/tree/master/src/extensions/samples/LocalizationExample/README.MD) (part of the [sample localized extension](https://github.com/adobe/brackets/tree/master/src/extensions/samples/LocalizationExample) included in the Brackets source)
