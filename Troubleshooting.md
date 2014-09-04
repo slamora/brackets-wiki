@@ -121,7 +121,8 @@ Known issues:
 
 * [Bug #7935](https://github.com/adobe/brackets/issues/7935): Live CSS does not update if page contains an iframe (including injected iframes such as ads or social media buttons).
 
-### Install Chrome For Multiple User Accounts (Windows Only)
+### Install Chrome For Multiple User Accounts
+#### Windows Only
 If you get the error ``An error occurred when launching the browser. (error 2)`` when doing Live Development, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
  
 ### Check Windows Registry
