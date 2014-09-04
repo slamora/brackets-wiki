@@ -124,12 +124,6 @@ Known issues:
 ### Install Chrome For Multiple User Accounts (Windows Only)
 If you get the error ``An error occurred when launching the browser. (error 2)`` when doing Live Development, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
  
-### Restart Your Computer
-If you keep getting errors when trying to launch Chrome, or if you keep getting prompted to restart Chrome, try rebooting your machine. Rebooting has resolved many odd issues with Live Development.
-
-### Keep Chrome Open
-Try leaving an extra blank tab open in the instance of Chrome that is launched by Live Preview. This prevents Chrome from shutting down and restarting between each file, so Live Preview will launch faster; this may reduce some intermittent errors.
-
 ### Check Windows Registry
 If Brackets cannot launch the Chrome browser on your Windows system, check the Registry setting here:
 
@@ -145,6 +139,12 @@ When uninstalling Google Chrome on Windows, some users have reported problems wi
 * HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\
 
 **Warning:** Editing the Windows Registry can easily cause problems with your system, so edit it manually at your own risk. Another option is to use a tool such as Revo Uninstaller to uninstall Chrome.
+
+### Keep Chrome Open
+Try leaving an extra blank tab open in the instance of Chrome that is launched by Live Preview. This prevents Chrome from shutting down and restarting between each file, so Live Preview will launch faster; this may reduce some intermittent errors.
+
+### Restart Your Computer
+If you keep getting errors when trying to launch Chrome, or if you keep getting prompted to restart Chrome, try rebooting your machine. Rebooting has resolved many odd issues with Live Development.
 
 ### Re-install Brackets
 
