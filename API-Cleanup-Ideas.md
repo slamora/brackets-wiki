@@ -17,7 +17,6 @@ Notes for **[Extensibility API simplification](https://trello.com/c/iSG75qG4/995
 ## UI: toolbars, icons, panels, etc.
 
 * Generic UI injection-point API -- more robust than current approach of using CSS selectors & jQuery, which easily breaks if we refactor our DOM hierarchy.
-* Display themes and other extensions is a separate tab. Or, make a separate entry Theme Manager, just as Extensions Manager in the sidebar.
 
 ## Inline editors
 
