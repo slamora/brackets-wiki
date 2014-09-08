@@ -71,4 +71,4 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [Building Brackets Releases](https://github.com/adobe/brackets/wiki/Building-Brackets)
 * [Building brackets-shell Binaries](https://github.com/adobe/brackets-shell/wiki/Building-Brackets-Shell)
-* [[Collecting End of Sprint Stats]].
+* [[Collecting End of Sprint Stats]]
