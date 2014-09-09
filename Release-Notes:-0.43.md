@@ -38,7 +38,7 @@ API Changes
 
 Known Issues
 ------------
-* **[#9002](https://github.com/adobe/brackets/issues/9002): Brackets freezes** during Live Preview if you place the cursor on a line within a LESS/SCSS block comment that contains nothing but "}" with no indent. (Will be fixed in next release).
+* **[#9002](https://github.com/adobe/brackets/issues/9002): Brackets freezes** during Live Preview if you place the cursor on a line within a CSS/SCSS/LESS block comment that contains nothing but "}" with no indent. (Will be fixed in next release).
 * **[#8966](https://github.com/adobe/brackets/issues/8966): Inline editor is blank** if your CSS rule contains a vendor-prefixed property that uses an rgb()/rgba()/hsl()/hsla() color value. (Will be fixed in next release).
 * Activity Monitor in Mavericks (OS X 10.9) says the Brackets Helper process is "Not Responding" even when it's working normally ([#5794](https://github.com/adobe/brackets/issues/5794)). You can safely ignore this unless Brackets is actually failing to respond when you click or type text.
 * [#2272](https://github.com/adobe/brackets/issues/2272): Windows Vista may not allow the Brackets installer to run (you may not see _any_ error message). To work around this, right-click the installer file, choose Properties, and click the Unblock button.
