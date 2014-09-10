@@ -1,0 +1,3 @@
+It would be handy for extensions that are essentially windows (usually they open a new pane at the bottom of the application window) to be dragged out into their own window. This would be handy for linters as with two monitors you could have your linter be out of the way while you work, or you could work through reported problems, etc...
+
+Going even further it would be really nice if you could snap them to different parts of the page and perhaps even combine them (think of the pane views in the excellent Visual Studio 2013 and how they can be rearranged). Then of course a natural extension of this would be to let you open multiple files at once, again with side-by-side, stacked, or separate windows.
