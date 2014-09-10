@@ -191,13 +191,24 @@ Use `Debug > Reload Without Extensions` to quickly check whether the problem is 
 
 If this fixes the problem, you can identify the problematic extension by re-enabling extensions one-by-one:
 
-##### Disabling extensions individually
+#### Disabling extensions individually
 
 1. Start with all extensions disabled: Choose _Help > Show Extensions Folder_ and move all extensions from the "user" folder into the "disabled" folder (this is similar to what Debug > Reload Without Extensions does).
 2. Move one extension back into the "user" folder, then quit and re-launch Brackets.
 3. Check if the problem has come back. If not, repeat step 2.
 
-Alternative: Select _Debug > Show Developer Tools_ and look at the console.  If an error message is present, it may have a link to the code that is failing, which in turn may point out a specific extension.
+**Binary Reduction**: The previous method tests one extension at a time. This works for a small number of extensions but is slow if you have a lot of extensions. Instead, you can test _half_ of your remaining extensions at a time. You're done when you only have 1 extension being tested. As above, you have to quit and re-launch Brackets between each test.
+
+Note: to make it easier to manage which extensions you have tested, create a third folder named "disabled-verified" for extensions which have been verified to not cause the problem.
+
+1. (same as above)
+2. Move half (doesn't need to be exact) of your extensions from the "disabled" folder to the "user" folder.
+3. If you do not see the problem, move all of the extensions in the "user" folder to the "disabled-verified" folder. Repeat step 2.
+4. Otherwise you do see problem, so move all extensions from "disabled" folder to "disabled-verified" folder. Then move half of your extensions from "user" folder back to "disabled" folder. Repeat step 3.
+
+Once you have identified the problematic extension, move all extensions from "disabled-verified" folder back to "user" folder.
+
+**Alternative**: Select _Debug > Show Developer Tools_ and look at the console.  If an error message is present, it may have a link to the code that is failing, which in turn may point out a specific extension.
 
 ### Debug with Developer Tools
 Choose `Debug > Show Developer Tools` to open an instance of the Developer Tools for Brackets. If you've used the Developer Tools in Chrome this will look familiar. Check the Console tab for errors.
