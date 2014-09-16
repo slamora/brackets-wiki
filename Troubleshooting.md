@@ -75,7 +75,7 @@ Currently, Live Development works differently for different types of files:
     * CSS preprocessors are not currently supported - they are treated as "other file types" below
 * For HTML, _most_ changes are applied in the browser immediately as you type. Updating pauses when the page is syntactically invalid (e.g. after you type '<' for a new tag but before you type the closing '>'), and the line number and Live Preview icon turn red. Brackets will resume pushing changes to the browser when syntax becomes valid again.
    * HTML live updating is disabled if you've specified a custom server URL in Project Settings.
-* For JavaScript and other file types, when you save your changes, the page is reloaded to reflect your changes.
+* For JavaScript and other _external_ file types, when you save your changes, the page is reloaded to reflect your changes. For _embedded_ JS, you will need to reload browser.
 
 See **[How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview)** for more details.
 
