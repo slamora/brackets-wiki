@@ -64,7 +64,7 @@ Here's how these fields are exposed in the Extension Manager UI:
 
 ## Categories ##
 
-<font color="red">Status: Not yet implemented</font>
+<font color="red">Status: **Not yet implemented - may change**</font>
 
 Our package.json files include a `categories` field which is not present in npm's format. Categories, unlike keywords, are primarily a "browsing" feature rather than a searching one.
 
@@ -107,7 +107,7 @@ Modules that an extension imports via `require()` are located relative to the ro
 
 ## Node Modules ##
 
-<font color="red">Status: Not yet implemented</font>
+<font color="red">Status: **Not yet implemented - may change**</font>
 
 Brackets extensions will be able to provide modules that run in a Node process. The exact location of these modules will depend on the answers to the open questions at the end of this section.
 
@@ -121,7 +121,7 @@ There are open questions surrounding the lifecycle of the Node code and the modu
 
 ## Changelog ##
 
-<font color="red">Status: Not yet implemented</font>
+<font color="red">Status: **Not yet implemented - may change**</font>
 
 Changelogs will be formatted based on the proposed standard at [Keep a Changelog](http://keepachangelog.com/).  If there is a CHANGELOG.md file at the package root then the following sections will be identified by package manager and pulled apart to display to users:
 
