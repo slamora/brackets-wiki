@@ -1,6 +1,6 @@
 Although Brackets is packaged as a desktop application, it's built almost entirely in HTML/CSS/JS - and most of that code will run in a browser with no modifications.  The functionality provided by Brackets's native desktop shell (brackets-shell) needs to be replaced or disabled, however.
 
-Some basic parts of this work have been done by the core team in the **[pflynn/in-browser-file-system branch](https://github.com/adobe/brackets/tree/pflynn/in-browser-file-system)** ([diff](https://github.com/adobe/brackets/compare/master...pflynn/in-browser-file-system)). However, the core Brackets project does not provide a complete turnkey solution for running in browser.
+Some basic parts of this work have been done by the core team in the **[pflynn/in-browser-file-system branch](https://github.com/adobe/brackets/tree/pflynn/in-browser-file-system)** ([diff](https://github.com/adobe/brackets/compare/master...pflynn/in-browser-file-system)). However, **the core Brackets project does not provide a complete turnkey solution for running in browser.**
 
 
 ## Pieces You Must Provide
