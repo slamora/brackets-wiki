@@ -29,6 +29,12 @@ Brackets uses a format _similar_ to [npm's package.json format](https://npmjs.or
     "license": "MIT",
     "engines": {
         "brackets": ">=0.24.0"
+    },
+    "i18n": [ "en", "fr"],
+    "package-i18n": {
+        "fr": {
+            "description": "Plus de détails utiles pour laisser quelqu'un savoir ce que votre poste est tout au sujet."
+        }
     }
 }
 ```
@@ -52,6 +58,7 @@ Here's how these fields are exposed in the Extension Manager UI:
 * `license` (optional) - license of the extension's source code (not shown in the UI yet)
 * `keywords` (optional) - array of additional keyword strings; searched when the user filters the list view in Extension Manager
 * `i18n` (optional) - array of language codes the extension has been translated into
+* `package-i18n` (optional) - set of language translations to display in the Extension Manager dialog.  Each language can optionally provide a translation for the `title`, `description`, `homepage`, and/or `keywords`.
 
 ##### Future fields (<font color="red">not yet implemented</font>) #####
 
