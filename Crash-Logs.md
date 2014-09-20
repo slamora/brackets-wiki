@@ -1,14 +1,16 @@
 Native crash logs are useful for diagnosing cases where the Brackets window disappears or goes blank suddenly.
 (If Brackets is misbehaving in other ways, please see [[Troubleshooting]] for other help).
 
-## Mac
+## Gathering a Crash Log
+
+### Mac
 
 1. In Finder, choose _Go > Go to Folder..._ in the menu
 2. Enter `~/Library/Logs/DiagnosticReports`
 3. Look for a file that says "Brackets" in the name, with a timestamp matching the time of the crash
 4. Post the file's contents in a [Gist](https://gist.github.com) and include the link in your bug report (or zip up the files and share them privately)
 
-## Windows
+### Windows
 
 1. On the Start menu, search for and run the "regedit" app
 2. Navigate down the tree and select: "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Windows Error Reporting"
@@ -20,3 +22,22 @@ Native crash logs are useful for diagnosing cases where the Brackets window disa
 8. In a Windows folder view, enter ` %LOCALAPPDATA%\CrashDumps` as the path
 9. Look for a .dmp file whose timestamp matches when you saw the problem.
 10. Upload this file somewhere and include the link in your bug report (or zip up the file and share it privately)
+
+
+## Gathering a Freeze Log
+
+If Brackets is still running, but has become unresponsive, follow these steps instead:
+
+### Mac
+
+TBD
+
+### Windows
+
+1. Download the [procdump utility](http://technet.microsoft.com/en-us/sysinternals/dd996900.aspx)
+2. Open Windows Task Manager and switch to the Processes tab
+3. Locate the _two_ Brackets.exe processes and write down the PID (process id) for each
+    * You may have to use View > Select Columns to show the PID column
+4. Run `procdump <PID>` once for each of the two PIDs
+5. Locate the two .dmp files - in the same folder as procdump.exe
+6. Upload these file somewhere and include the link in your bug report (or zip up the files and share the zip privately)
