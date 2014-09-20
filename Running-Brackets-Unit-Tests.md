@@ -13,8 +13,9 @@ usually all of the tests don't pass. Here's a more reliable recipe:
 2. Switch to "Integration" tab and run "All".
 3. Close SpecRunner dialog, shutdown/restart Brackets, `Debug > Runs Tests`.
 4. Switch to "Live Preview" tab and run "All".
-5. Switch to "Performance" tab and run "All".
-6. Switch to Extensions" tab and run "All".
+5. Switch to "Main View" tab and run "All". (added since screenshot was taken)
+6. Switch to "Performance" tab and run "All".
+7. Switch to "Extensions" tab and run "All".
 
 If any tests fail, then try running only that suite of tests (e.g. "CSS Parsing").
 If all tests for that suite pass, then that's OK -- this is most likely a timing problem.
