@@ -86,6 +86,8 @@ You can optionally pass a context object in as a second parameter to be more spe
 
 and the value will be looked up not for the current file (which could have come from outside of the project), but from the current project.
 
+If the value of a preference is an object or an array, you will get back a clone of the original object, so you are free to modify it if you need to. A common case of this is modifying the value based on a user action and then saving the new value (see "Setting Prefs" below).
+
 ### Setting Prefs
 
 The simplest form of setting a pref:
@@ -110,17 +112,7 @@ If you set the value to `undefined`, the setting will be deleted at the appropri
 
 ### Saving Preferences
 
-By default, preference changes set using the PreferencesManager module are automatically saved.  So, in the example in the section above, the value of "Namaste" will be immediately saved to `greeting` by the `set()` call.
-
-However, please note that if you are editing extension preferences, as prefixed using `getExtensionPrefs()`, then you'll need to explicitly save changes yourself using the `save()`.  For example,
-
-```javascript
-    var PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
-        prefs = PreferencesManager.getExtensionPrefs("myext");
-    prefs.set("greeting", "Namaste");
-    prefs.save();
-```
-
+By default, preference changes set using the PreferencesManager module are automatically saved.  So, in the example in the section above, the value of "Namaste" will be immediately saved to `greeting` by the `set()` call. If you're making a number of changes in a row, you may want to pass in the `doNotSave` flag (set the 4th argument to `set()` to `true`) and then explicitly call `save`. This can be faster because it won't write to the file repeatedly, but it's an optimization you usually won't need to worry about.
 
 ## Preferences UI?
 
