@@ -188,9 +188,9 @@ If you did _not_ fork the brackets-shell repo (i.e. you're using the 'setup_for_
 ## Contributing Code ##
 
 ### Useful Tools for Development ###
-If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. [More on debugging Brackets...](Debugging Brackets)
+If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. You can also [debug Brackets using dev tools](Debugging Brackets) - but to keep Reload working properly while dev tools are open, be sure to **disable caching** as instructed in that link.
 
-You can use *Debug > Run Tests* to run our unit test suite. Use *Debug > Show Perf Data* to show some rudimentary performance info (see the `PerfUtils` API for adding more).
+You can use *Debug > Run Tests* to [run our unit test suite](Running Brackets Unit Tests).
 
 ### Saving Your Code Changes ###
 If you've found an issue you want to fix or a feature you want to implement, eventually you'll want to submit a _pull request_ back to Brackets upstream. Here's how to organize your changes so they're ready to turn into a pull request.
