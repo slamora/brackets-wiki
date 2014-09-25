@@ -294,20 +294,21 @@ _On Windows, we have a backlog item to address the lack of an error message http
 ### Connection Error (mac only)
 1. Start Chrome
 2. Click ``File > Live Preview`` menu
-3. Confirm live development error dialog ``<dialog_live_development_connection_error>``
+3. Confirm live preview error dialog ``<dialog_live_development_connection_error>``
 4. Click ``Cancel``
 
 ### Wrong File Type
 1. Open ``css\desktop.css``
 2. Click ``File > Live Preview`` menu
-3. Confirm live development error dialog ``<dialog_live_development_file_type_error>``
+3. If there is a file named ``index.html`` (or ``index.htm``), in same folder or parent folder within project, it will be opened.
+4. Otherwise, confirm live preview error dialog ``<dialog_live_development_file_type_error>``
 
 ### Chrome Not Found
 1. Close Chrome if running
 2. Rename the Chrome executable
 3. Open ``index.html``
 4. Click ``File > Live Preview`` menu
-5. Confirm live development error dialog ``<dialog_live_development_chrome_not_found>``
+5. Confirm live preview error dialog ``<dialog_live_development_chrome_not_found>``
 6. Restore the Chrome executable name
 
 ### Base URL
