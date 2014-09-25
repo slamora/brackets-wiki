@@ -256,7 +256,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 ### New Rule Editor
 
-1. Within the first <body> tag of ``index.html``, start a new line and type ``<h10``.
+1. Within the first ``<body>`` tag of ``index.html``, start a new line and type ``<h10``.
 2. Press ``CMD+E`` or ``Ctrl+E``.  Confirm New Rule inline editor appears.
 3. Click ``New Rule``.  Confirm inline editor changes to show the new rule definition.
 4. Click ``New Rule`` button again.  Confirm a list of references to the new rule appears on the right-side of the inline editor.
@@ -313,10 +313,10 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 ### Base URL
 1. Open the ``server-smokes`` project
-2. File > Project Settings...
-3. Confirm project settings dialog ``<project_settings_dialog>>``
+2. ``File > Project Settings...``
+3. Confirm project settings dialog ``<project_settings_dialog>``
 4. Open ``server.php``
-5. File > Live Preview
+5. ``File > Live Preview``
 6. Confirm project settings dialog appears with warning message ``<project_settings_specify_base_url>``
 7. Enter ``ftp://path/to/foo`` (does not have to be a functioning path)
 8. Confirm error message ``<project_settings_error_invalid_protocol>``
@@ -349,7 +349,7 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 
 # Extension Installation
 
-1. File > Extension Manager...  Confirm Extension Manager dialog appears.
+1. ``File > Extension Manager...``  Confirm Extension Manager dialog appears.
 2. From the Available tab, click ``Install from URL...``.  Confirm Install Extension dialog appears.
 3. Paste this URL https://github.com/adobe/brackets/raw/master/test/spec/extension-test-files/incompatible-version.zip and press Install
 3. Confirm error message appears in dialog ``<install_extension_incompatible_version>``.  Click ``Close``.
@@ -358,16 +358,16 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 
 # Themes
 
-1. View > Themes...  Confirm Themes dialog appears
+1. ``View > Themes...``  Confirm Themes dialog appears
 2. Change Current Theme, confirm colors in Editor change
 3. Click Cancel, confirm editor colors revert to original colors
 
 # Split View
 
-1. View > Split Vertically
+1. ``View > Split Vertically``
 2. Edit 2 files in side by side panes. There are now 2 working sets: Left and Right
-3. View > Split Horizontally
+3. ``View > Split Horizontally``
 4. Edit 2 files one above the other. The working sets are named Top and Bottom
 5. Drag separator to change pane sizes.
 6. In Sidebar, drag a file from one working set to the other.
-7. View > No Split - to edit a single file
+7. ``View > No Split`` - to edit a single file
