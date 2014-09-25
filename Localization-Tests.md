@@ -365,9 +365,9 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 # Split View
 
 1. ``View > Split Vertically``
-2. Edit 2 files in side by side panes. There are now 2 working sets: Left and Right
+2. Edit 2 files in side by side panes. There are now 2 working sets named **Left** and **Right**
 3. ``View > Split Horizontally``
-4. Edit 2 files one above the other. The working sets are named Top and Bottom
+4. Edit 2 files one above the other. The working sets are named **Top** and **Bottom**
 5. Drag separator to change pane sizes.
-6. In Sidebar, drag a file from one working set to the other.
-7. ``View > No Split`` - to edit a single file
+6. In Sidebar, drag a file from one working set to the other to switch panes.
+7. ``View > No Split`` - to return to editing a single file
