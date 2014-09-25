@@ -57,6 +57,7 @@ $ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 3. Confirm the label has changed to ``View > Show Sidebar`` ``<menu_view_show_sidebar>``
 4. Click ``View > Show Sidebar``
 5. Open ``index.html``.  In the Sidebar, click the gear icon in the Working Files header.  Confirm the sort methods.
+6. In the Sidebar, click the Split icon at the top. Confirm the Split View options.
 
 # File Operations
 
@@ -299,7 +300,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 ### Wrong File Type
 1. Open ``css\desktop.css``
 2. Click ``File > Live Preview`` menu
-3. Confirm live development error dialog ``<dialog_live_developement_file_type_error>``
+3. Confirm live development error dialog ``<dialog_live_development_file_type_error>``
 
 ### Chrome Not Found
 1. Close Chrome if running
@@ -359,3 +360,13 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 1. View > Themes...  Confirm Themes dialog appears
 2. Change Current Theme, confirm colors in Editor change
 3. Click Cancel, confirm editor colors revert to original colors
+
+# Split View
+
+1. View > Split Vertically
+2. Edit 2 files in side by side panes. There are now 2 working sets: Left and Right
+3. View > Split Horizontally
+4. Edit 2 files one above the other. The working sets are named Top and Bottom
+5. Drag separator to change pane sizes.
+6. In Sidebar, drag a file from one working set to the other.
+7. View > No Split - to edit a single file
