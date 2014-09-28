@@ -17,7 +17,7 @@ Setup
 Smoke test steps
 ================
 
-1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel and its index.html file is opened automatically.
+1. Launch Brackets. Verify that the Brackets "Getting Started" folder is visible in the project panel and its index.html file is opened automatically and there is a single pane showing in the main view.
 1. File > Open Folder and browse to the Brackets source folder.
 1. Click on the triangle next to the project name. The dropdown should show the "Open Folder..." option, then the "Getting Started" folder.
 1. From the Finder/Explorer, create a new folder called "watch". Observe that the new folder appears in the file tree in a closed state.
@@ -78,3 +78,14 @@ Smoke test steps
 1. Verify the Emmet menu was added
 1. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
 1. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
+1. Close All Files (File > Close All) and verify that all files are closed
+1. Click on index.html in the file tree and verify that index.html is open but not added to the working set
+1. View > Split Vertically and verify a second pane is created and focused. index.html should still be open in the pane on the left
+1. Expand the css folder in the file tree and click on desktop.css to open it and verify that it opens in the right pane but is not added to the working set
+1. drag the splitter between the two views to the left and verify there are no visual glitches and the editor resizes appropriately
+1. switch back to the brackets project and back to citrus and verify the splitter is where it was before 
+1. drag the splitter to the right and verify there are no visual glitches and the panes resize appropriately
+1. view > split horizontal and verify that the splitter jumps to the middle horizontally and there are 2 panes on top of each other
+1. expand the images folder and double click on events.jpg to open it to the working set
+1. click in the opposite pane and double click on specials.jpg
+1. drag the splitter up and down and make sure there are no visual glitches and panes resize appropriately
