@@ -83,7 +83,8 @@ Tips for creating your theme's CSS:
         * Release 0.42 - _Tricky: see below_
         * Release 0.43 - `.CodeMirror-searching` (all matches), `.CodeMirror-searching.searching-current-match` (current match)
     * the highlight for the active line (`View > Highlight Active Line`) - `.CodeMirror-focused .CodeMirror-activeline-background` and `.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt`
-    * the Quick View text highlight - `.quick-view-highlight`
+    * the Quick View hover highlight - `.quick-view-highlight`
+    * matches for the ["highlightMatches"](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) auto word highlighting - `.cm-matchhighlight`
 * [Known issue](https://github.com/adobe/brackets/issues/8490): Make sure your LESS file doesn't end with a comment (if it does, add a blank line afterward).
 
 **Search result highlighting** _(0.42 only)_ - All Find results are indicated by the same highlight style; the "current" result also has its text selected. Since it's hard to style `.CodeMirror-searching` with a transparent background that looks good atop both the regular editor background and the text selection color (and makes those two cases visually distinct), you can use a trick for more flexibility: change text selection to a different color while searches are in progress (a text selection will _never_ be visible without `.CodeMirror-searching` overlaid on top of it, while a search is in progress). [See the base theme for an example of this in action](https://github.com/adobe/brackets/blob/master/src/styles/brackets.less#L1326-L1352).
