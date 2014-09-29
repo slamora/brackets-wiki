@@ -19,7 +19,7 @@ Native crash logs are useful for diagnosing cases where the Brackets window disa
 5. Inside this "Brackets.exe" subfolder, choose _Edit > New > DWORD_.  Enter `DumpType` for the name, then double-click it and enter `1` for the value
 6. Close regedit and restart your computer (or at least fully log off and log back on, which is almost as much work)
 7. Run Brackets until you see the problem again
-8. In a Windows folder view, enter ` %LOCALAPPDATA%\CrashDumps` as the path
+8. In a Windows folder view, enter `%LOCALAPPDATA%\CrashDumps` as the path
 9. Look for a .dmp file whose timestamp matches when you saw the problem.
 10. Upload this file somewhere and include the link in your bug report (or zip up the file and share it privately)
 
@@ -41,3 +41,22 @@ TBD
 4. Run `procdump <PID>` once for each of the two PIDs
 5. Locate the two .dmp files - in the same folder as procdump.exe
 6. Upload these file somewhere and include the link in your bug report (or zip up the files and share the zip privately)
+
+
+## Analyzing a Log
+
+### Mac
+
+TBD
+
+### Windows
+
+1. Get the .pdb file (symbol table) for the build of Brackets that the crash log came from
+2. Launch windbg (x86 version)
+3. File > Symbol File Path:
+   ```
+   SRV*<path to store cache in>*http://msdl.microsoft.com/download/symbols;<path to folder with .pdb file>
+   ```
+4. File > Open Crash Dump (usually found in `%LOCALAPPDATA%\CrashDumps`)
+5. Run `!analyze -v` to get exception type, stack trace, etc.
+6. If the stack ends in our code (not CEF or OS), run `dv` to get local variables' values
