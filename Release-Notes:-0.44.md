@@ -4,15 +4,17 @@ _This document will not be finalized until the end of Release 0.44 -- approximat
 
 What's New in Release 0.44
 --------------------------
-* TODO: draft!
 * **Split View**
     * **[Vertical & Horizontal Split View](https://trello.com/c/WLeAC84F/1290-splitview-landing-in-master)**: View two files side by side or stacked vertically. (Note: it is not yet possible to view the same file in both panes).
 * **Stylesheet Editing**
-    * [Collapse unwanted Quick Edit results](https://trello.com/c/nxQ6eGGU/1031-3-css-quick-edit-grouping): Quickly collapse results from a particular CSS, SCSS, or LESS file. For example, when using a preprocessor you can hide results from the compiled CSS file to focus on results in your original SCSS/LESS code.
     * Fix bug [#9002](https://github.com/adobe/brackets/issues/9002) - Brackets freezes during Live Preview on a line within a CSS/SCSS/LESS block comment that contains nothing but "}" with no indent.
     * Fix bug [#8966](https://github.com/adobe/brackets/issues/8966) - Inline editor is blank if your CSS rule contains a vendor-prefixed property that uses a rgb()-like color value.
 * **Files and Folders**
     * [Project tree improvements](https://trello.com/c/R5VQiTnS/1353-project-manager-revamp): Many small bug fixes in the sidebar file tree. Notably, it's now possible to right-click files that Brackets cannot open (such as binary files and non-UTF8 text files).
+* **Preferences**
+    * [New preference: show cursor after selecting text](https://github.com/adobe/brackets/pull/8972): By default, Brackets hides the blinking cursor when you have a text selection; this behavior can now be disabled.
+* **Localization**
+    * [Extension name/description localization](https://github.com/adobe/brackets/pull/8987): The info displayed in Extension Manager, such as extension name & description, can now be localized via the [`package-i18n` property](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format).
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.43...release-0.44#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-0.43...release-0.44#commits_bucket)
@@ -29,7 +31,7 @@ TODO
 
 New/Improved Extensibility APIs
 -------------------------------
-TODO
+TODO - [Working Set View Extensibility](https://github.com/adobe/brackets/pull/9054)
 
 
 Known Issues
