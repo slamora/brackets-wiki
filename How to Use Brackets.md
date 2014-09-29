@@ -142,61 +142,18 @@ Here are some keyboard shortcuts that are worth knowing. Also see the
 [Brackets Shortcut wiki page](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts)
 for a more complete list of shortcuts.
 
-<table>
-<thead>
-<tr>
-<th>Windows</th>
-<th>Mac</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ctrl-E</td>
-<td>Cmd-E</td>
-<td>Open/close the inline editor (Quick Edit).</td>
-</tr>
-<tr>
-<td colspan="2">Alt-Up/Down Arrow</td>
-<td>Switch between rules in the inline editor.</td>
-</tr>
-<tr>
-<td>Ctrl-K</td>
-<td>Cmd-K</td>
-<td>Open Quick Docs.</td>
-</tr>
-<tr>
-<td>Ctrl-Space</td>
-<td>Cmd-Space</td>
-<td>Bring up code hints, if applicable.</td>
-</tr>
-<tr>
-<td>Ctrl-Shift-O</td>
-<td>Cmd-Shift-O</td>
-<td>Bring up the Quick Open prompt.</td>
-</tr>
-<tr>
-<td>Ctrl-G</td>
-<td>Cmd-L</td>
-<td>Go to a line in the current file.</td>
-</tr>
-<tr>
-<td>Ctrl-T</td>
-<td>Cmd-T</td>
-<td>Go to a method/selector in the current file (Quick Find).</td>
-</tr>
-<tr>
-<td>Ctrl-Shift-H</td>
-<td>Cmd-Shift-H</td>
-<td>Show/hide the sidebar.</td>
-</tr>
-<tr>
-<td>Ctrl-Alt-P</td>
-<td>Cmd-Alt-P</td>
-<td>Live preview.</td>
-</tr>
-</tbody>
-</table>
+| Windows | Mac | Description |
+|---------|-----|-------------|
+| Ctrl-E | Cmd-E | Open/close the inline editor (Quick Edit) |
+| Alt-Up/Down | Alt-Up/Down | Switch between rules in the inline editor |
+| Ctrl-K | Cmd-K | Open Quick Docs |
+| Ctrl-Space | Cmd-Space | Bring up code hints, if applicable |
+| Ctrl-Shift-O | Cmd-Shift-O | Bring up the Quick Open prompt |
+| Ctrl-G | Cmd-L | Go to a line in the current file |
+| Ctrl-T | Cmd-T | Go to a method/selector in the current file (Quick Find) |
+| Ctrl-Shift-H | Cmd-Shift-H | Show/hide the sidebar |
+| Ctrl-Alt-P | Cmd-Alt-P | Live preview |
+
 
 <a id="preferences"></a>Preferences
 -----------
@@ -208,37 +165,32 @@ Some of the preferences available in these files do not have any user interface 
 * for user-level preferences, choose Debug > Open Preferences File
 * for project-level preferences, create a ".brackets.json" file in the root of your project
 
-Here is a quick list of some of the settings you can change in these files:
+These are all the settings that are currently supported:
 
-* **jslint.options**: (default `undefined`) An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automatically).
-* **linting.enabled**: (default `true`) Determines if Code Inspection is on
-* **useTabChar**: (default `false`) True to use tabs instead of spaces
-* **tabSize**: (default `4`) Number of spaces to display for tabs
-* **spaceUnits**: (default `4`) Number of spaces to use for space-based indentation
-* **wordWrap**: (default `true`) True if word wrap is on
-* (new in 37) **proxy**: (default `undefined`) The URL of the proxy server used for extension installation (general syntax: `http://username:password@server:port/`)
-* (new in 37) **smartIndent**: (default `true`) Automatically indent when creating a new block
-* (new in 37) **closeTags**: (default `{"whenOpening": true, "whenClosing": true, "indentTags": []}`) Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js)
-* (new in 37) **insertHintOnTab**: (default `false`) True to insert the currently selected code hint on tab
-* (new in 37) **sortDirectoriesFirst**: (default `false` for Mac, `true` otherwise) True to sort the directories first in the project tree
-* (new in 37) **staticserver.port**: Port number that the built-in server should use for Live Preview
-* (new in 38) **scrollPastEnd**: (default `false`) True to be able to scroll beyond the end of the document
-* (new in 38) **softTabs**: (default `true`) False to turn off soft tabs behaviour
-* (new in 38) **closeOthers.others**, **closeOthers.above**, **closeOthers.below**: (default all `true`) False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu
-* (new in 39) **language.fileExtensions**: (default `undefined`) Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
-* (new in 39) **language.fileNames**: (default `undefined`) Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences))
-* (new in 40) **highlightMatches**: (default `false`) Enables automatic highlighting of matching strings throughout the document:
-    * `true` - highlight all strings that match the current selection (nothing is highlighted when no selection)
-    * `{"showToken": true}` - highlight all strings that match the token the cursor is currently in (no selection needed)
-* (new in 42) **showCodeHints**: (default `true`) If false, all code hints are disabled.
-* (new in 42) **codehint.{HINT_PROVIDER_CONSTRUCTOR_NAME}**: (default `true`) If false, the specific code hint provider is disabled. Below is a list of preferences for all the default code hints providers.
-   - **codehint.TagHints**: Preference for HTML tag hints 
-   - **codehint.AttrHints**: Preference for HTML attribute hints
-   - **codehint.CssPropHints**: Preference for CSS/LESS/SCSS property hints
-   - **codehint.UrlCodeHints**: Preference for URL hints
-   - **codehint.JSHints**: Preference for JavaScript hints
-   - **codehint.SpecialCharHints**: Preference for special character hints (i.e. HTML Entities)
-* (new in 43) **jscodehints.noHintsOnDot**: (default `false`) If true, do not automatically show JS code hints when `.` is typed.
+| Setting | Since | Default | Description |
+|---------|------:|---------|-------------|
+| **jslint.options** | | `undefined` | An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automatically). |
+| **linting.enabled** | | `true` | Determines if Code Inspection is on |
+| **useTabChar** | | `false` | True to use tabs instead of spaces |
+| **tabSize** | | `4` | Number of spaces to display for tabs |
+| **spaceUnits** | | `4` | Number of spaces to use for space-based indentation |
+| **wordWrap** | | `true` | True if word wrap is on |
+| **proxy** | 0.37 | `undefined` | The URL of the proxy server used for extension installation (general syntax: `http://username:password@server:port/`) |
+| **smartIndent** | 0.37 | `true` | Automatically indent when creating a new block |
+| **closeTags** | 0.37 | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
+| **insertHintOnTab** | 0.37 | `false` | True to insert the currently selected code hint on tab |
+| **sortDirectoriesFirst** | 0.37 | `false` for Mac, `true` otherwise | True to sort the directories first in the project tree |
+| **staticserver.port** | 0.37 | | Port number that the built-in server should use for Live Preview |
+| **scrollPastEnd** | 0.38 | `false` | True to be able to scroll beyond the end of the document |
+| **softTabs** | 0.38 | `true` | False to turn off soft tabs behaviour |
+| **closeOthers.others**, **closeOthers.above**, **closeOthers.below** | 0.38 | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
+| **language.fileExtensions** | 0.39 | `undefined` | Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
+| **language.fileNames** | 0.39 | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
+| **highlightMatches** | 0.40 | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` - highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` - highlight all strings that match the token the cursor is currently in (no selection needed)</li></ul> |
+| **showCodeHints** | 0.42 | `true` | If false, all code hints are disabled |
+| **codehint.{HINT_PROVIDER_CONSTRUCTOR_NAME}** | 0.42 | `true` | If false, the specific code hint provider is disabled:<ul><li>**codehint.TagHints**: Preference for HTML tag hints</li><li>**codehint.AttrHints**: Preference for HTML attribute hints</li><li>**codehint.CssPropHints**: Preference for CSS/LESS/SCSS property hints</li><li>**codehint.UrlCodeHints**: Preference for URL hints</li><li>**codehint.JSHints**: Preference for JavaScript hints</li><li>**codehint.SpecialCharHints**: Preference for special character hints (i.e. HTML Entities)</li></ul> |
+| **jscodehints.noHintsOnDot** | 0.43 | `false` | If true, do not automatically show JS code hints when `.` is typed. |
+| **showCursorWhenSelecting** | 0.44 | `false` | Keeps the blinking cursor visible when you have a text selection |
 
 Here's an example:
 
