@@ -183,12 +183,12 @@ These are all the settings that are currently supported:
 | **staticserver.port** | 0.37 | | Port number that the built-in server should use for Live Preview |
 | **scrollPastEnd** | 0.38 | `false` | True to be able to scroll beyond the end of the document |
 | **softTabs** | 0.38 | `true` | False to turn off soft tabs behaviour |
-| **closeOthers.others**, **closeOthers.above**, **closeOthers.below** | 0.38 | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
+| **closeOthers.others**,<br>**closeOthers.above**,<br>**closeOthers.below** | 0.38 | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
 | **language.fileExtensions** | 0.39 | `undefined` | Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | **language.fileNames** | 0.39 | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | **highlightMatches** | 0.40 | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` - highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` - highlight all strings that match the token the cursor is currently in (no selection needed)</li></ul> |
 | **showCodeHints** | 0.42 | `true` | If false, all code hints are disabled |
-| **codehint.{HINT_PROVIDER_CONSTRUCTOR_NAME}** | 0.42 | `true` | If false, the specific code hint provider is disabled:<ul><li>**codehint.TagHints**: Preference for HTML tag hints</li><li>**codehint.AttrHints**: Preference for HTML attribute hints</li><li>**codehint.CssPropHints**: Preference for CSS/LESS/SCSS property hints</li><li>**codehint.UrlCodeHints**: Preference for URL hints</li><li>**codehint.JSHints**: Preference for JavaScript hints</li><li>**codehint.SpecialCharHints**: Preference for special character hints (i.e. HTML Entities)</li></ul> |
+| **codehint.<...>** | 0.42 | `true` | If false, the specific code hint provider is disabled:<ul><li>**codehint.TagHints**: Preference for HTML tag hints</li><li>**codehint.AttrHints**: Preference for HTML attribute hints</li><li>**codehint.CssPropHints**: Preference for CSS/LESS/SCSS property hints</li><li>**codehint.UrlCodeHints**: Preference for URL hints</li><li>**codehint.JSHints**: Preference for JavaScript hints</li><li>**codehint.SpecialCharHints**: Preference for special character hints (i.e. HTML Entities)</li></ul> |
 | **jscodehints.noHintsOnDot** | 0.43 | `false` | If true, do not automatically show JS code hints when `.` is typed. |
 | **showCursorWhenSelecting** | 0.44 | `false` | Keeps the blinking cursor visible when you have a text selection |
 
