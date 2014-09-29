@@ -77,19 +77,19 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   </tr>
   <tr>
     <td><code>DocumentManager.removeListFromWorkingSet(list)</code></td>
-    <td><code>MainViewManger.closeList(list)(1)</code></td>
+    <td>No Direct API Replacement(1)</code></td>
   </tr>  
   <tr>
     <td><code>DocumentManager.setCurrentDocument(doc)</code></td>
-    <td><code>MainViewManager.open(MainViewManager.ACTIVE_PANE, doc.file)</code></td>
+    <td>No Direct API Replacement(4)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.closeAll()</code></td>
-    <td><code>MainViewManger.closeAll()(2)</code></td>
+    <td>No Direct API Replacement(2)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.closeFullEditor(file)</code></td>
-    <td><code>MainViewManger.close(file)(3)</code></td>
+    <td>No Direct API Replacement(3)</code></td>
   </tr>
   <tr>
     <td><code>DocumentManager.beginDocumentNavigation()</code></td>
@@ -101,12 +101,13 @@ These APIs have been Deprecated and Extension Authors should migrate to the reco
   </tr>
   <tr>
     <td><code>DocumentManager.getNextPrevFile()</code></td>
-    <td><code>MainViewManager.traverseViewsByMRU()</code></td>
+    <td><code>MainViewManager.traverseToNextViewByMRU()</code></td>
   </tr>      
 </table>
 (1) Extensions using `DocumentManger.removeListFromWorkingSet()` should be using `CommandManager.DoCommand(FILE_CLOSE_LIST)`  
 (2) Extensions using `DocumentManger.closeAll()` should be using `CommandManager.DoCommand(FILE_CLOSE_ALL)`  
 (3) Extensions using `DocumentManger.closeFullEditor()` should be using `CommandManager.DoCommand(FILE_CLOSE)`  
+(4) Extensions using `DocumentManager.setCurrentDocument()` should be using `CommandManager.DoCommand(CMD_OPEN)`, or `CommandManager.DoCommand(CMD_ADD_TO_WORKINGSET_AND_OPEN)`
 
 These Public APIs are no longer in use and were identified as not being used by extensions. They have been removed from Brackets.
 
