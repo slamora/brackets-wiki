@@ -1,75 +1,81 @@
-Whether you've found an issue with Brackets, the Brackets Registry or the Brackets Shell, you should file your issues according to these instructions.
-
-Found a bug you'd like to tell us about? Here's what to do...
+Whether you've found an issue with Brackets, the Brackets Registry or the Brackets Shell, here's how to report the problem...
 
 First, check our **[Troubleshooting page](https://github.com/adobe/brackets/wiki/Troubleshooting)** for solutions to common problems.
 
 ### How to file a bug
 
-Brackets bugs are tracked in [the issue list on GitHub](https://github.com/adobe/brackets/issues). Always search for existing issues before filing a new one (use the search field at the top of the page).
+1. **[Search for existing issues](https://github.com/adobe/brackets/issues)** before filing a new one (use the search field at the top of the page)
+2. **File a new issue** with all the info listed below
+3. Thanks a ton for helping make Brackets higher quality!
 
 _**When filing a new bug, please include:**_
 
 * **Descriptive title** - use keywords so others can find your bug (avoiding duplicates)
-* Specific, repeatable **steps to trigger the problem**
+* **Steps** to trigger the problem that are specific, and repeatable
 * **What happens** when you follow the steps, and **what you expected to happen** instead.<br>Include the exact text of any error messages if applicable (or upload screenshots).
 * **Brackets version** (or if you're pulling directly from Git, your current commit SHA - use `git rev-parse HEAD`)
 * **OS version**
-* List of **installed extensions** (or mention if you've tested with _Debug > Reload Without Extensions_)
-* **Any errors logged** in the _Debug > Show Developer Tools_ Console view
+* **Extensions?** Confirm that you've tested with _Debug > Reload Without Extensions_ first (see below).
+* **Any errors logged** in _Debug > Show Developer Tools_ - Console view
 
 ### If you've installed extensions
 
-Bugs can be caused by Brackets extensions you've added. Before you file an issue on Brackets core, use _Debug > Reload Without Extensions_ to see if the problem still occurs without any extensions. [See "Extension bugs" below](#extension-bugs) for details.
+Bugs can be caused by Brackets extensions you've added. Before you file an issue, use _Debug > Reload Without Extensions_ to see if the problem still occurs without any extensions.
 
-### What about requesting a feature?
+If that fixes the problem, then please file an issue in that extension's repo instead, so it can be addressed by the extension author.  See [Troubleshooting extension bugs](https://github.com/adobe/brackets/wiki/Troubleshooting#wiki-disable-all-extensions) for tips on identifying which extension is causing the problem.
+
+### Requesting a feature
 
 Please first check our [feature backlog on Trello](http://bit.ly/BracketsBacklog) to see if it's already there. You can vote on features in the backlog to help us prioritize them.
 
-Feel free to file feature requests as an issue on GitHub, just like a bug. We tag these issues "move to backlog" and periodically migrate them onto the feature backlog for you.
-
-
-# Extension bugs
-
-Bugs can be caused by Brackets extensions you've installed. Before you file an issue on Brackets core, use _Debug > Reload Without Extensions_ to see if the problem still occurs without any extensions. If you can still reproduce the problem, file an issue on Brackets.
-
-If you can't reproduce the problem, then the issue lies with one of your extensions.  See [Troubleshooting extension bugs](https://github.com/adobe/brackets/wiki/Troubleshooting#wiki-disable-all-extensions) for tips on identifying which extension is causing the problem.
-
-Once you know which extension causes the bug, please file an issue in that extension's repo so it can be addressed by the extension author.
+Feel free to file new feature requests as an issue on GitHub, just like a bug. We tag these issues "move to backlog" and periodically migrate them onto the feature backlog for you.
 
 
 # What happens after a bug is filed?
 
+### Bug lifecycle
+
+1. New bug is filed; awaiting review
+2. Triaged in bug review -- see below (_'last reviewed'_ tag
+3. Developer begins working on it -- bug is tagged _'fix in progress'_
+4. Developer opens pull request with a fix, which must be reviewed -- a link to the pull request appears in the bug's activity stream
+5. Pull request is merged, and the bug's filer is pinged to verify that it's fixed -- bug is tagged _'fixed but not closed'_ ("FBNC")
+6. Filer agrees that it's fixed -- bug is closed, and its milestone is set to the release the fix landed in
+
 ### Bug review
 
-We review _all_ new issues on a regular basis (the issue tagged _'last reviewed'_ is the most recent one reviewed). Several things typically happen as part of review:
+We review _all_ new issues on a regular basis. Several things typically happen as part of review:
 
-* Is the issue clearly understandable? If not, we'll ask for clarification (tagging the filer with "@").
-* Is the issue more of a feature request? If so, we'll tag it [_'move to backlog'_](https://github.com/adobe/brackets/issues?labels=move+to+backlog&state=open); these items are periodically migrated to our [feature backlog](http://bit.ly/BracketsBacklog).
-* Labels are added to indicate priority - high, medium, low, or none ([read more below](#wiki-bug-priority)). Bugs may also be assigned a sprint milestone - if they are urgent or related to features under development in the current sprint.
-* Labels may be added to categorize the bug. See ["Understanding issue labels" below](#understanding-issue-labels).
-* Would the fix be a good intro to the Brackets source code? If so we'll tag it [_'starter bug'_](https://github.com/adobe/brackets/issues?labels=starter+bug&state=open) to encourage Brackets newcomers to work on it.
-* Most bugs are assigned to a Brackets core committer right away. Depending on priority, milestone, and other workload, the developer may or may not begin working on the bug soon.
+* Ping the filer for clarification if needed.
+* If the issue is a feature request, we'll tag it [_'move to backlog'_](https://github.com/adobe/brackets/issues?labels=move+to+backlog&state=open); the issue will be migrated to our [feature backlog](http://bit.ly/BracketsBacklog) at a later date.
+* Add priority labels (high, medium, low, or none - [read more below](#wiki-bug-priority)).
+* Add release milestone - typically only if a bug is a "release blocker" or related to features still in progress.
+* Add feature area label, and possibly other category labels like _'starter bug'_ or _'Mac only.'_ See ["Understanding issue labels" below](#understanding-issue-labels).
+
+Depending on priority, milestone, and other workload, a developer may or may not begin working on the bug soon.
 
 Some bugs may be closed without fixing - see ["Hey! My bug wasn't fixed!" below](#hey-my-bug-wasnt-fixed).
 
-### Bug lifecycle
+### Hey! My bug wasn't fixed!
 
-The process above covers the first two steps. Here are the rest:
+Yeah, what's up with that? There are a number of reasons an issue might get closed without being fixed:
 
-1. New bug is filed; awaiting review -- bug is newer than _'last reviewed'_ tag
-2. Triaged in bug review -- bug is assigned to a developer
-3. Developer begins working on it -- bug is tagged _'fix in progress'_
-4. Developer opens a pull request with a fix, which must be reviewed -- a link to the pull request appears in the bug's activity stream
-5. Pull request is merged, and original filer is requested to verify that it's fixed -- bug is tagged _'fixed but not closed'_ (FBNC)
-6. Filer agrees that it's fixed -- bug is closed, and its milestone is set to the sprint the fix landed
+* Tagged 'move to backlog' - It's not forgotten! Look for a link in the comment thread to our [feature backlog](http://bit.ly/BracketsBacklog). Please vote on the story to help us prioritize it!
+* Tagged 'fixed but not closed' - _We_ think it's fixed. Make sure you have a Brackets build containing the fix (check the milestone assigned to the bug). If you're still seeing it, let us know.
+* Duplicate - There's already a bug for this.
+* Unable to reproduce - We're unable to reproduce the result described in the bug report. If you're still seeing it, please reply with more detailed steps to trigger the bug.
+* Out of scope / extension idea - This change probably doesn't belong in Brackets core... but it could still make for a great extension!
+* Not a bug / fact of life - This is the intended behavior. If it feels wrong, we should discuss how to improve the usability of the feature.
 
-### Can I help fix a bug?
+If you disagree with a bug being closed, feel free to post a comment asking for clarification or re-evaluation. The more new/updated info you can provide, the better.
+
+
+# Can I help fix a bug?
 
 Yes please! But first...
 
-* Check to make sure no one else is already working on it. If the bug has a sprint milestone assigned or is tagged _'fix in progress'_ then it's already under way. Otherwise, post to the [brackets-dev newsgroup](http://groups.google.com/group/brackets-dev), the [#brackets IRC channel on freenode](http://webchat.freenode.net/?channels=brackets), or the bug comment thread itself (pinging the assigned developer via "@") to check.
-* Read the [guidelines for contributing code](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#contributing-code) - especially, make sure you're following our [pull request guidelines](Pull Request Checklist) and [coding conventions](Brackets Coding Conventions).
+* Make sure no one else is already working on it -- if the bug has a milestone assigned or is tagged _'fix in progress'_, then it's already under way. Otherwise, post a comment on the bug to let others know you're starting to work on it.
+* Read the [guidelines for contributing code](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#contributing-code), [pull request guidelines](Pull Request Checklist), and [coding conventions](Brackets Coding Conventions).
 
 
 # Understanding issue labels
@@ -169,24 +175,7 @@ We use labels/tags for a number of purposes:
 
 Acronyms we use frequently in bug comments:
 
-* _FBNC_ = "fixed but not closed": See the bug-process label above.
+* _FBNC_ = "fixed but not closed": See bug lifecycle
 * _UTR_ = "unable to reproduce": Someone tried to follow the steps in the bug, but everything seemed to work fine.
 * _NAB_ = "not a bug": The behavior described in the bug is actually how it's supposed to work. This may indicate a usability or documentation problem.
-* _FOL_ = "fact of life": The bug is virtually impossible to fix due to constraints of the OS, browser runtime, etc. Suggests the bug should be closed or tagged "no priority."
-
-# Hey! My bug wasn't fixed!
-
-Yeah, what's up with that? There are a number of reasons an issue might get closed without being fixed:
-
-* Tagged "move to backlog" - the issue is a larger feature/enhancement request. It's not forgotten! Look for a link in the comment thread to a user story on our [feature backlog](http://bit.ly/BracketsBacklog). Please vote on the story to help us prioritize it!
-* Tagged "fixed but not closed" - _we_ think it's fixed. Make sure you have a Brackets build containing the fix (check the sprint milestone assigned to the bug). If you're still seeing it, let us know.
-* Duplicate - there's already a bug for this (may be part of a larger issue).
-* Unable to reproduce - we're unable to reproduce the result described in the bug report. If you're still seeing it, please reply with more detailed steps to trigger the bug.
-* Out of scope - this change probably doesn't belong in Brackets core... but it could still make for a great extension!
-* Not a bug / fact of life - this is the intended behavior. If it feels wrong, we should discuss how to improve the usability of the feature.
-* Tagged "no priority" (usually left open) - impact is so low that we don't plan to spend time fixing the bug. But we would accept a fix if someone else is willing to work on it.
-
-If you disagree with a bug being closed, feel free to post a comment asking for clarification or re-evaluation. The more new/updated info you can provide, the better.
-
-<br>
-Thanks a ton for your support and contributions to Brackets!
+* _FOL_ = "fact of life": The bug is virtually impossible to fix due to constraints of the OS, runtime, etc.
