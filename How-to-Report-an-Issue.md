@@ -131,11 +131,11 @@ We use labels/tags for a number of purposes:
   <tr>
     <td rowspan="2">Suggestions </td>
     <td>starter bug</td>
-    <td>Recommended for [new contributors](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md) as a good intro to the Brackets source code.</td>
+    <td>Recommended for <a href="https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md">new contributors</a> as a good intro to the Brackets source code.</td>
   </tr>
   <tr>
     <td>Extension Idea</td>
-    <td>_May_ be out of scope for Brackets core, but is a great idea for a Brackets extension.</td>
+    <td><em>May</em> be out of scope for Brackets core, but is a great idea for a Brackets extension.</td>
   </tr>
   <tr>
     <td rowspan="3">External tracking </td>
