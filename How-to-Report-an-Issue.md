@@ -21,7 +21,7 @@ _**When filing a new bug, please include:**_
 
 ### If you've installed extensions
 
-Bugs can be caused by Brackets extensions you've added. Before you file an issue, use _Debug > Reload Without Extensions_ to see if the problem still occurs without any extensions.
+Bugs can be caused by Brackets extensions you've added. Before you file an issue, use **Debug > Reload Without Extensions** to see if the problem still occurs without any extensions.
 
 If that fixes the problem, then please file an issue in the extension's repo instead, so it can be addressed by the extension author.  See [Troubleshooting extension bugs](https://github.com/adobe/brackets/wiki/Troubleshooting#wiki-disable-all-extensions) for tips on identifying which extension is causing the problem.
 
