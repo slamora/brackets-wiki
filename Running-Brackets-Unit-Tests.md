@@ -1,4 +1,4 @@
-# Running Brackets Unit Tests
+## Tips and Tricks for Running Brackets Unit Tests
 
 Unit Tests can only be run from a cloned version of Brackets -- not from an installer build.
 
