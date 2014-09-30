@@ -94,6 +94,7 @@ Smoke test steps
 1. drag the current file (specials.jpg) to the to the top working set and verify that you can drag up into an empty working set and it's still the current file 
 1. drag events.jpg to the top working set, drop it then drag it back down and verify that you can drag down into an empty bottom working set.
 1. drag events.jpg down into the file tree and verify that you cannot drop it
+1. expand the css folder in the file tree and double click phone.css, desktop.css and tablet.css to open them to the working set.
 1. switch back to brackets, split it and open enough files in each working set so that scroll bars are necessary
 1. make sure that you can scroll each view from top to bottom without any issues
 1. drag a file from the bottom working set up into the top working set and verify that scrollbars appear on both views while dragging
@@ -104,6 +105,6 @@ Smoke test steps
 1. grab any file in the bottom working set and verify you can drop it anywhere in the top working set
 1. grab any file in the bottom working set and gesture drag it down to the last position of the top working set (you'll need to drag up into the top working set then drag down to scroll the list)
 1. grab any file in the top working set and gesture drag it to the first position of the top working set (you'll need to drag down into the bottom working set then drag up to scroll the list)
-1. close are reopen brackets project
+1. switch back to citrus
 1. drag the file after the current file in the working set in the working set to the opposite working set 
 1. Ctrl+Tab to verify that the file you just dragged is still next MRU list
