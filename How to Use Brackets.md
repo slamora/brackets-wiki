@@ -188,7 +188,12 @@ These are all the settings that are currently supported:
 | `language.fileNames` | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` - highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` - highlight all strings that match the token the cursor is currently in (no selection needed)</li></ul> |
 | `showCodeHints` | `true` | If false, all code hints are disabled |
-| `codehint.<...>` | `true` | If false, the specific code hint provider is disabled:<ul><li>`codehint.TagHints`: Preference for HTML tag hints</li><li>`codehint.AttrHints`: Preference for HTML attribute hints</li><li>`codehint.CssPropHints`: Preference for CSS/LESS/SCSS property hints</li><li>`codehint.UrlCodeHints`: Preference for URL hints</li><li>`codehint.JSHints`: Preference for JavaScript hints</li><li>`codehint.SpecialCharHints`: Preference for special character hints (i.e. HTML Entities)</li></ul> |
+| `codehint.TagHints` | `true` | Enable/disable HTML tag hints |
+| `codehint.AttrHints` | `true` | Enable/disable HTML attribute hints |
+| `codehint.SpecialCharHints` | `true` | Enable/disable HTML entity hints |
+| `codehint.CssPropHints` | `true` | Enable/disable CSS/LESS/SCSS property hints |
+| `codehint.UrlCodeHints` | `true` | Enable/disable URL hints in HTML & CSS/LESS/SCSS |
+| `codehint.JSHints` | `true` | Enable/disable JavaScript code hints |
 | `jscodehints.noHintsOnDot` | `false` | If true, do not automatically show JS code hints when `.` is typed. |
 | `showCursorWhenSelecting` | `false` | Keeps the blinking cursor visible when you have a text selection |
 
