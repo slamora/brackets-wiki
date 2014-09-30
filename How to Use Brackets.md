@@ -175,7 +175,7 @@ These are all the settings that are currently supported:
 | `tabSize` | | `4` | Number of spaces to display for tabs |
 | `spaceUnits` | | `4` | Number of spaces to use for space-based indentation |
 | `wordWrap` | | `true` | True if word wrap is on |
-| `proxy` | 0.37 | `undefined` | The URL of the proxy server used for extension installation (general syntax: "http://username:password@server:port/") |
+| `proxy` | 0.37 | `undefined` | The URL of the proxy server used for extension installation (general syntax: "http://username:password&#8203;@server:port/") |
 | `smartIndent` | 0.37 | `true` | Automatically indent when creating a new block |
 | `closeTags` | 0.37 | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
 | `insertHintOnTab` | 0.37 | `false` | True to insert the currently selected code hint on tab |
