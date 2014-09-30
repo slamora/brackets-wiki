@@ -105,5 +105,5 @@ Smoke test steps
 1. grab any file in the bottom working set and gesture drag it down to the last position of the top working set (you'll need to drag up into the top working set then drag down to scroll the list)
 1. grab any file in the top working set and gesture drag it to the first position of the top working set (you'll need to drag down into the bottom working set then drag up to scroll the list)
 1. close are reopen brackets project
-1. drag the second file in the top list to the bottom working set.
-1. ctrl+tab to verify that the file is still the second item in the mru list
+1. drag the file after the current file in the working set in the working set to the opposite working set 
+1. Ctrl+Tab to verify that the file you just dragged is still next MRU list
