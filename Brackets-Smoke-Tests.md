@@ -86,6 +86,24 @@ Smoke test steps
 1. switch back to the brackets project and back to citrus and verify the splitter is where it was before 
 1. drag the splitter to the right and verify there are no visual glitches and the panes resize appropriately
 1. view > split horizontal and verify that the splitter jumps to the middle horizontally and there are 2 panes on top of each other
-1. expand the images folder and double click on events.jpg to open it to the working set
-1. click in the opposite pane and double click on specials.jpg
+1. click in the top pane to activate it and verify the visual styles on the pane are correct 
+1  Expand the images folder and double click events.jpg to open it to the top working set
+1. click in the opposite pane and double click specials.jpg open it to the bottom working set
 1. drag the splitter up and down and make sure there are no visual glitches and panes resize appropriately
+1. drag events.jpg to the bottom working set and verify that dragging between working sets works and there are no visual glitches and that specials.jpg is still the current file
+1. drag the current file (specials.jpg) to the to the top working set and verify that you can drag up into an empty working set and it's still the current file 
+1. drag events.jpg to the top working set, drop it then drag it back down and verify that you can drag down into an empty bottom working set.
+1. drag events.jpg down into the file tree and verify that you cannot drop it
+1. switch back to brackets, split it and open enough files in each working set so that scroll bars are necessary
+1. make sure that you can scroll each view from top to bottom without any issues
+1. drag a file from the bottom working set up into the top working set and verify that scrollbars appear on both views while dragging
+1. grab the first file in the working set and verify you can drag it to the last position in the working set (scrolling will be necessary)
+1. grab the last file in the working set and verify you can drag it to the first position of the working set (scrolling will be necessary)
+1. grab any file in the top working set and verify you can drag it to the last position in the bottom working set (scrolling will be necessary)
+1. grab any file in the bottom working set and verify you can drag it to the first position in the top working set (scrolling will be necessary)
+1. grab any file in the bottom working set and verify you can drop it anywhere in the top working set
+1. grab any file in the bottom working set and gesture drag it down to the last position of the top working set (you'll need to drag up into the top working set then drag down to scroll the list)
+1. grab any file in the top working set and gesture drag it to the first position of the top working set (you'll need to drag down into the bottom working set then drag up to scroll the list)
+1. close are reopen brackets project
+1. drag the second file in the top list to the bottom working set.
+1. ctrl+tab to verify that the file is still the second item in the mru list
