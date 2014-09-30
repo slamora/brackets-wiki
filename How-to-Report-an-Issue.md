@@ -4,9 +4,10 @@ First, check our **[Troubleshooting page](https://github.com/adobe/brackets/wiki
 
 ### How to file a bug
 
-1. **[Search for existing issues](https://github.com/adobe/brackets/issues)** before filing a new one (use the search field at the top of the page)
-2. **File a new issue** with all the info listed below
-3. Thanks a ton for helping make Brackets higher quality!
+1. Go to our **[issue tracker on GitHub](https://github.com/adobe/brackets/issues)**
+2. Search for existing issues using the search field at the top of the page
+3. File a new issue _including the info listed below_
+4. Thanks a ton for helping make Brackets higher quality!
 
 _**When filing a new bug, please include:**_
 
@@ -22,7 +23,7 @@ _**When filing a new bug, please include:**_
 
 Bugs can be caused by Brackets extensions you've added. Before you file an issue, use _Debug > Reload Without Extensions_ to see if the problem still occurs without any extensions.
 
-If that fixes the problem, then please file an issue in that extension's repo instead, so it can be addressed by the extension author.  See [Troubleshooting extension bugs](https://github.com/adobe/brackets/wiki/Troubleshooting#wiki-disable-all-extensions) for tips on identifying which extension is causing the problem.
+If that fixes the problem, then please file an issue in the extension's repo instead, so it can be addressed by the extension author.  See [Troubleshooting extension bugs](https://github.com/adobe/brackets/wiki/Troubleshooting#wiki-disable-all-extensions) for tips on identifying which extension is causing the problem.
 
 ### Requesting a feature
 
@@ -108,32 +109,33 @@ We use labels/tags for a number of purposes:
   <tr>
     <td rowspan="4">Priority <a name="bug-priority"></a></td>
     <td>high priority</td>
-    <td>High impact bug many users will hit (e.g. crash/data loss). We try to have zero high-priority bugs before shipping each sprint.</td>
+    <td>High impact bug many users will hit (e.g. crash/data loss). We aim for zero high-priority bugs before each release.</td>
   </tr>
   <tr>
     <td>medium priority</td>
-    <td>Bug that's at least somewhat severe and a significant number of users will hit. We closely track the number of medium-priority bugs.</td>
+    <td>At least somewhat severe and a significant number of users will hit.</td>
   </tr>
   <tr>
     <td>low priority</td>
-    <td>Low severity (e.g. small cosmetic issue) and/or few users will hit. May not be fixed for a while.</td>
+    <td>Low severity (e.g. small cosmetic issue) and/or few users will hit.</td>
   </tr>
   <tr>
     <td>no priority</td>
-    <td>Impact is so low that we don't plan to ever spend time fixing the bug - but we would accept a fix if someone offers a pull request. May be an issue we anticipate will become obsolete due to upcoming UI or feature changes.</td>
+    <td>We don't plan to  spend time fixing the bug - but we would accept a fix if someone offers a pull request.</td>
   </tr>
   <tr>
-    <td rowspan="3">Suggestions </td>
+    <td>Feature area </td>
+    <td>F ...</td>
+    <td>Labels starting with "F" categorize bugs by feature area.</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Suggestions </td>
     <td>starter bug</td>
-    <td>Fixing this bug would be a good intro to the Brackets source code. Recommended for new contributors.</td>
+    <td>Recommended for [new contributors](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md) as a good intro to the Brackets source code.</td>
   </tr>
   <tr>
     <td>Extension Idea</td>
-    <td>Feature/enhancement request that's a great idea for a Brackets extension. May be out of scope for Brackets core.</td>
-  </tr>
-  <tr>
-    <td>documentation</td>
-    <td>Fix involves improving documentation rather than writing code.</td>
+    <td>_May_ be out of scope for Brackets core, but is a great idea for a Brackets extension.</td>
   </tr>
   <tr>
     <td rowspan="3">External tracking </td>
@@ -142,7 +144,7 @@ We use labels/tags for a number of purposes:
   </tr>
   <tr>
     <td>cef<br>webkit</td>
-    <td>Needs code changes in <a href="https://code.google.com/p/chromiumembedded/">Chromium Embedded Framework</a> (which brackets-shell is built on) or in WebKit/Chromium itself.</td>
+    <td>Needs <a href="https://code.google.com/p/chromiumembedded/">Chromium Embedded Framework</a> or WebKit/Chromium changes.</td>
   </tr>
   <tr>
     <td>tracking</td>
@@ -151,7 +153,7 @@ We use labels/tags for a number of purposes:
   <tr>
     <td rowspan="5">Architecturally-focused</td>
     <td>architecture</td>
-    <td>Requires significant architectural changes - to be discussed in meeting or newsgroup.</td>
+    <td>Requires significant architectural changes - needs longer discussion.</td>
   </tr>
   <tr>
     <td>performance</td>
@@ -159,7 +161,7 @@ We use labels/tags for a number of purposes:
   </tr>
   <tr>
     <td>code cleanup</td>
-    <td>Fix involves cleaning up code, improving maintainability without making major architectural changes. (May be the main benefit of fixing the bug).</td>
+    <td>The fix improves code maintainability without changing Brackets's functionality.</td>
   </tr>
   <tr>
     <td>async</td>
