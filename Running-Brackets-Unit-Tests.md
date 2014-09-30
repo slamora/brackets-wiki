@@ -19,4 +19,7 @@ usually all of the tests don't pass. Here's a more reliable recipe:
 
 If any tests fail, then try running only that suite of tests (e.g. "CSS Parsing").
 If all tests for that suite pass, then that's OK -- this is most likely a timing problem.
+
+Sometimes tests fail and cleanup code does not get executed and temporary files are left behind which causes subsequent test to fail. Run `git status` to verify that there are no unexpected files in the test folder. If so, manually delete the files and re-run the tests that failed.
+
 If any tests consistently fail, open an Issue with High Priority.
