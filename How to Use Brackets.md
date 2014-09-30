@@ -167,30 +167,30 @@ Some of the preferences available in these files do not have any user interface 
 
 These are all the settings that are currently supported:
 
-| Setting | Since | Default | Description |
-|---------|------:|---------|-------------|
-| `jslint.options` | | `undefined` | An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automatically). |
-| `linting.enabled` | | `true` | Determines if Code Inspection is on |
-| `useTabChar` | | `false` | True to use tabs instead of spaces |
-| `tabSize` | | `4` | Number of spaces to display for tabs |
-| `spaceUnits` | | `4` | Number of spaces to use for space-based indentation |
-| `wordWrap` | | `true` | True if word wrap is on |
-| `proxy` | 0.37 | `undefined` | The URL of the proxy server used for extension installation (general syntax: "http://username:password&#8203;@server:port/") |
-| `smartIndent` | 0.37 | `true` | Automatically indent when creating a new block |
-| `closeTags` | 0.37 | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
-| `insertHintOnTab` | 0.37 | `false` | True to insert the currently selected code hint on tab |
-| `sortDirectoriesFirst` | 0.37 | `false` for Mac, `true` otherwise | True to sort the directories first in the project tree |
-| `staticserver.port` | 0.37 | | Port number that the built-in server should use for Live Preview |
-| `scrollPastEnd` | 0.38 | `false` | True to be able to scroll beyond the end of the document |
-| `softTabs` | 0.38 | `true` | False to turn off soft tabs behaviour |
-| `closeOthers.others`,<br>`closeOthers.above`,<br>`closeOthers.below` | 0.38 | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
-| `language.fileExtensions` | 0.39 | `undefined` | Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
-| `language.fileNames` | 0.39 | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
-| `highlightMatches` | 0.40 | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` - highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` - highlight all strings that match the token the cursor is currently in (no selection needed)</li></ul> |
-| `showCodeHints` | 0.42 | `true` | If false, all code hints are disabled |
-| `codehint.<...>` | 0.42 | `true` | If false, the specific code hint provider is disabled:<ul><li>`codehint.TagHints`: Preference for HTML tag hints</li><li>`codehint.AttrHints`: Preference for HTML attribute hints</li><li>`codehint.CssPropHints`: Preference for CSS/LESS/SCSS property hints</li><li>`codehint.UrlCodeHints`: Preference for URL hints</li><li>`codehint.JSHints`: Preference for JavaScript hints</li><li>`codehint.SpecialCharHints`: Preference for special character hints (i.e. HTML Entities)</li></ul> |
-| `jscodehints.noHintsOnDot` | 0.43 | `false` | If true, do not automatically show JS code hints when `.` is typed. |
-| `showCursorWhenSelecting` | 0.44 | `false` | Keeps the blinking cursor visible when you have a text selection |
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `jslint.options` | `undefined` | An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automatically). |
+| `linting.enabled` | `true` | Determines if Code Inspection is on |
+| `useTabChar` | `false` | True to use tabs instead of spaces |
+| `tabSize` | `4` | Number of spaces to display for tabs |
+| `spaceUnits` | `4` | Number of spaces to use for space-based indentation |
+| `wordWrap` | `true` | True if word wrap is on |
+| `proxy` | `undefined` | The URL of the proxy server used for extension installation (general syntax: "http://username:password&#8203;@server:port/") |
+| `smartIndent` | `true` | Automatically indent when creating a new block |
+| `closeTags` | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
+| `insertHintOnTab` | `false` | True to insert the currently selected code hint on tab |
+| `sortDirectoriesFirst` | `false` for Mac, `true` otherwise | True to sort the directories first in the project tree |
+| `staticserver.port` | | Port number that the built-in server should use for Live Preview |
+| `scrollPastEnd` | `false` | True to be able to scroll beyond the end of the document |
+| `softTabs` | `true` | False to turn off soft tabs behaviour |
+| `closeOthers.others`,<br>`closeOthers.above`,<br>`closeOthers.below` | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
+| `language.fileExtensions` | `undefined` | Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
+| `language.fileNames` | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
+| `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` - highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` - highlight all strings that match the token the cursor is currently in (no selection needed)</li></ul> |
+| `showCodeHints` | `true` | If false, all code hints are disabled |
+| `codehint.<...>` | `true` | If false, the specific code hint provider is disabled:<ul><li>`codehint.TagHints`: Preference for HTML tag hints</li><li>`codehint.AttrHints`: Preference for HTML attribute hints</li><li>`codehint.CssPropHints`: Preference for CSS/LESS/SCSS property hints</li><li>`codehint.UrlCodeHints`: Preference for URL hints</li><li>`codehint.JSHints`: Preference for JavaScript hints</li><li>`codehint.SpecialCharHints`: Preference for special character hints (i.e. HTML Entities)</li></ul> |
+| `jscodehints.noHintsOnDot` | `false` | If true, do not automatically show JS code hints when `.` is typed. |
+| `showCursorWhenSelecting` | `false` | Keeps the blinking cursor visible when you have a text selection |
 
 
 Here's an example:
