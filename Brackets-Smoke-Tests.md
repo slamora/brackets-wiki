@@ -87,7 +87,7 @@ Smoke test steps
 1. drag the splitter to the right and verify there are no visual glitches and the panes resize appropriately
 1. view > split horizontal and verify that the splitter jumps to the middle horizontally and there are 2 panes on top of each other
 1. click in the top pane to activate it and verify the visual styles on the pane are correct 
-1  Expand the images folder and double click events.jpg to open it to the top working set
+1. Expand the images folder and double click events.jpg to open it to the top working set
 1. click in the opposite pane and double click specials.jpg open it to the bottom working set
 1. drag the splitter up and down and make sure there are no visual glitches and panes resize appropriately
 1. drag events.jpg to the bottom working set and verify that dragging between working sets works and there are no visual glitches and that specials.jpg is still the current file
