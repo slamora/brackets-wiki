@@ -178,6 +178,7 @@ These are all the settings that are currently supported:
 | `proxy` | `undefined` | The URL of the proxy server used for extension installation (general syntax: "http://username:password&#8203;@server:port/") |
 | `smartIndent` | `true` | Automatically indent when creating a new block |
 | `closeTags` | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
+| `closeBrackets` | `false` | Automatically close braces, brackets and parentheses |
 | `insertHintOnTab` | `false` | True to insert the currently selected code hint on tab |
 | `sortDirectoriesFirst` | `false` for Mac, `true` otherwise | True to sort the directories first in the project tree |
 | `staticserver.port` | | Port number that the built-in server should use for Live Preview |
