@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Release 0.44 -- approximat
 What's New in Release 0.44
 --------------------------
 * **Split View**
-    * **[Vertical & Horizontal Split View](https://trello.com/c/WLeAC84F/1290-splitview-landing-in-master)**: View two files side by side or stacked vertically. (Note: it is not yet possible to view the same file in both panes).
+    * **[Vertical & Horizontal Split View](https://trello.com/c/WLeAC84F/1290-splitview-landing-in-master)**: View two files side by side or one above the other. (Note: it is not yet possible to view the same file in both panes).
 * **Stylesheet Editing**
     * Fix bug [#9002](https://github.com/adobe/brackets/issues/9002) - Brackets freezes during Live Preview on a line within a CSS/SCSS/LESS block comment that contains nothing but "}" with no indent.
     * Fix bug [#8966](https://github.com/adobe/brackets/issues/8966) - Inline editor is blank if your CSS rule contains a vendor-prefixed property that uses a rgb()-like color value.
