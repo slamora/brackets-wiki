@@ -103,6 +103,7 @@ _**Unofficial techniques**_ - adding UI elements directly through the DOM works,
 
 **Linting:** Use `CodeInspection.register()` to provide linting/inspection for a given Language. Just like the built-in JSLint functionality, the provider is invoked whenever a file is opened or saved, and its results are displayed in a panel below the editor (providers may be run more frequently in the future, however). Currently, only one provider is accepted per language, although extensions _can_ replace the default JSLint provider for JavaScript.
 
+**File Tree:** Take a look at the documentation for the [project/ProjectManager](http://brackets.io/docs/current/modules/project/ProjectManager.html) module. Starting with Brackets 0.44, there are functions you can call (`addIconProvider` and `addClassesProvider`) to decorate the tree.
 
 ### <a name="tourl"></a>Accessing resources (e.g. images) in your extension
 
