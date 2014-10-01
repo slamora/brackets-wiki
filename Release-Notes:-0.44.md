@@ -12,7 +12,7 @@ What's New in Release 0.44
 * **Files and Folders**
     * [Project tree improvements](https://trello.com/c/R5VQiTnS/1353-project-manager-revamp): Many small bug fixes in the sidebar file tree. Notably, it's now possible to right-click files that Brackets cannot open (such as binary files and non-UTF8 text files).
 * **Preferences**
-    * [New preference: show cursor after selecting text](https://github.com/adobe/brackets/pull/8972): By default, Brackets hides the blinking cursor when you have a text selection; this behavior can now be disabled.
+    * [New preference: show cursor in selected text](https://github.com/adobe/brackets/pull/8972): By default, Brackets hides the blinking cursor when you have a text selection; this behavior can now be disabled.
 * **Localization**
     * [Extension name/description localization](https://github.com/adobe/brackets/pull/8987): The info displayed in Extension Manager, such as extension name & description, can now be localized via the [`package-i18n` property](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format).
 
