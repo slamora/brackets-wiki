@@ -16,7 +16,11 @@ You can open a different folder in the file tree on the left using **File > Open
 Unlike other editors that show open files in tabs, Brackets has a **"Working Files"** list, which is displayed above the file tree. Clicking a file in the file tree just views it, but doesn't add it to the Working Files list - so you can quickly browse through different files without cluttering the list. If you make an edit, the file is automatically added to Working Files. To add a file without editing it, double-click it in the file tree.
 
 ### Split View
-Initially Brackets will show just one editor in the main view but you can split the main view so that 2 editors can be shown in whichever orientation you prefer (vertical or horizontal).  You can do this by selecting **View > Horizontal Split** or **View > Vertical Split** and the main view will be split into 2 panes so that 2 files can be shown at the same time.  Splitting the main view also creates a second **"Working Files"** list, which shows which files are open in which pane.  Brackets does not yet support opening the same file in both panes but you can move a file between the **"Working Files"** which will move its view to the other pane by dragging the file name between the two **"Working Files"** lists.  
+Initially Brackets will show just one editor in the main view but you can split the main view so that 2 editors can be shown in whichever orientation you prefer (vertical or horizontal).  
+
+You can do this by selecting **View > Horizontal Split** or **View > Vertical Split**. This splits the main view into 2 panes so that 2 files can be shown at the same time.  Splitting the main view also creates a second **"Working Files"** list, which shows which files are open in which pane.  
+
+Brackets does not yet support opening the same file in both panes but you can move a file between the **"Working Files"** which will move its view to the other pane by dragging the file name between the two **"Working Files"** lists.  
 
 Brackets will remember the view layout for each project so switching to another project will show the layout you had chosen when the project was closed. And, if you'd prefer to go back to just a single view, you can select **View > No Split** to go back to a single view. Doing so does not close the files currently opened. Brackets will just merge the two **"Working Files"** lists and keep your changes in memory until you're ready to save them.
 
