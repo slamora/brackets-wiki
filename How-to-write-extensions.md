@@ -36,6 +36,7 @@ You can also [write unit tests for your extension](Extension Unit Tests).
 1. Add a **[package.json file](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format)** next to your main.js
 2. ZIP up your entire extension folder (the GitHub "Download ZIP" button is handy for this) or use the command `git archive --format zip -o yourextension.zip master` to generate a zip file.
     * Note: we've had difficulty with ZIP files created from Finder on the Mac. If you get an error when uploading your ZIP file, try creating it from the command line instead.
+    * If your extension utilizes git submodules, they must be wrapped in the ZIP. For a solution, refer to [this blog](http://www.topbug.net/blog/2012/03/31/archive-a-git-superproject-and-its-submodules) and use [git-archive-all](https://github.com/Kentzo/git-archive-all).
 3. Publish your extension by uploading the ZIP to the **[Brackets Extension Registry](https://brackets-registry.aboutweb.com/)**
 
 For more, see [[Extension Registry Help]].
