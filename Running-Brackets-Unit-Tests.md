@@ -11,7 +11,7 @@ usually all of the tests don't pass. Here's a more reliable recipe:
 
 1. Switch to "Unit" tab and click "All" to run all tests in this category.
 2. Switch to "Integration" tab and run "All".
-3. Close SpecRunner dialog, shutdown/restart Brackets, `Debug > Runs Tests`.
+3. Close SpecRunner dialog, shutdown/restart Brackets, `Debug > Run Tests`.
 4. Switch to "Live Preview" tab and run "All".
 5. Switch to "Main View" tab and run "All". (added since screenshot was taken)
 6. Switch to "Performance" tab and run "All".
