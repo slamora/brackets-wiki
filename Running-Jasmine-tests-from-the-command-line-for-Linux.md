@@ -1,9 +1,11 @@
 You'll need to install the build you want to test (e.g. Release 0.44 beta)
 
+for the full instructions see [Running tests on Linux](https://github.com/adobe/brackets-shell/wiki/Running-tests-on-Linux)
 ```text
 cd ~/brackets
 git checkout fetch
 git checkout release
+grunt setup
 grunt test-integration --suite=integration --shell=/opt/brackets/brackets
 mv results.xml integration-results.xml
 grunt test-integration --suite=unit --shell=/opt/brackets/brackets
