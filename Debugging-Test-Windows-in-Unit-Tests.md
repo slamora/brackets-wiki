@@ -1,3 +1,5 @@
+> See [[Running Brackets Unit Tests]] for how to _run_ unit tests.
+
 When creating Unit Tests, it's often helpful to create a new Brackets window. The `createTestWindowAndRun()` and `closeTestWindow()` functions in SpecRunnerUtils make this easy to do.
 
 One problem with testing in this way is that you can't step into the code in the debugger because it's in a separate window which is created and closed too quickly to be able to manually open the Dev Tools. Luckily, there are several ways to do this:
