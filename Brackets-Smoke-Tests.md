@@ -22,7 +22,7 @@ Smoke test steps
 1. Click on the triangle next to the project name. The dropdown should show the "Open Folder..." option, then the "Getting Started" folder.
 1. From the Finder/Explorer, create a new folder called "watch". Observe that the new folder appears in the file tree in a closed state.
 1. From the Finder/Explorer, rename the "watch" folder to "watcher". Observe that the folder is renamed in the file tree and remains in a closed state.
-1. From the Finder/Explorer window, copy the README.md file from the project from into the watcher folder. Confirm that NO CHANGES take place in the file tree.
+1. From the Finder/Explorer window, copy the README.md file from the project into the watcher folder. Confirm that NO CHANGES take place in the file tree.
 1. Expand the "watcher" folder in the project tree and observe the copied README.md file. From the Finder/Explorer, delete the copied README.md file. Observe that the copied file is removed from the project tree and that the watcher folder remains expanded.
 1. From the Finder/Explorer, delete the watcher folder and observe that it is removed from the file tree. 
 1. Switch back to the "Getting Started" folder using the project dropdown, verifying that it switches back to the previous project and shows its index.html.
