@@ -83,7 +83,7 @@ Smoke test steps
 1. `View > Vertical Split` and verify a second pane is created and has the focused visual styles. `index.html` should still be open in the left pane.
 1. Expand the CSS folder in the file tree and click on `desktop.css` to open it and verify that it opens in the right pane but is not added to the working set
 1. Drag the splitter between the two views to the left and verify there are no visual glitches and the editor resizes appropriately 
-1. Switch back to the Brackets project and then back to citrus and verify the splitter is where you left it
+1. Switch back to the Brackets project and then back to citrus and verify the splitter is where you left it (the panes will be empty because the files hadn't been opened in the working set)
 1. Drag the splitter to the right and verify there are no visual glitches and the panes resize appropriately
 1. `View > Horizontal Split` and verify that the splitter jumps to the middle horizontally and there are 2 panes on top of each other
 1. Click in the top pane to activate it and verify the pane has the active pane visual styling
@@ -97,7 +97,7 @@ Smoke test steps
 1. Drag `events.jpg` back to the top working set
 1. Expand the css folder in the file tree and double click `phone.css`, `desktop.css` and `tablet.css` to open them to the working set.
 1. drag `specials.jpg` to the top of the working set, drop it then click on it again to open it and make it the current file.
-1. Switch back to brackets, split it and open enough files in each working set so that scroll bars are necessary
+1. Switch back to the brackets project, split it and open enough files in each working set so that scroll bars are necessary
 1. Make sure that you can scroll each view from top to bottom without any issues
 1. Drag a file from the bottom working set up into the top working set and verify that scrollbars appear on both views while dragging
 1. Grab the first file in the working set and verify you can drag it to the last position in the working set (scrolling will be necessary)
