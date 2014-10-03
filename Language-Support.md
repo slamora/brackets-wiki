@@ -1,13 +1,33 @@
-Starting with [Sprint 21](https://github.com/adobe/brackets/pull/2844), extensions can add basic language support &ndash; like syntax highlighting and comment toggling &ndash; via the [LanguageManager](https://github.com/adobe/brackets/blob/master/src/language/LanguageManager.js) API. This page explains how to use LanguageManager, and documents how language support in Brackets is currently implemented.
+Starting with release 0.39, file extensions and file names can be mapped to languages via preferences. See [Preferences](#preferences) below.
 
-Some languages are built into core Brackets by default (for a list, see [languages.json](https://github.com/adobe/brackets/blob/master/src/language/languages.json)). The companion page [Language Support Changes](Language Support Changes) documents what _would be_ needed to enable extensions to add new languages with rich support on par with the built-in HTML, JavaScript and CSS languages.
+Extensions can add basic language support &ndash; like syntax highlighting and comment toggling &ndash; via the [LanguageManager](https://github.com/adobe/brackets/blob/master/src/language/LanguageManager.js) API. This page explains how to use LanguageManager, and documents how language support in Brackets is currently implemented.
 
+Some languages are built into core Brackets by default (for a list, see [languages.json](https://github.com/adobe/brackets/blob/master/src/language/languages.json)). A small set of these (HTML, JS, CSS) support richer editing features such as Quick Edit, Quick Find Definition, code hints, and Live Preview. _Some_ of those capabilities are extensible for new languages already (see [Extending specific Brackets features](https://github.com/adobe/brackets/wiki/How%20to%20write%20extensions#extending-specific-brackets-features)); others are not ready to support additional languages yet ([Language Support Changes](Language Support Changes) lists proposals for making the remaining rich functionality extensible).
+
+## Preferences
+
+If you have a file that is in a language that Brackets already has support for, either in core or in an extension, you can map additional file extensions and file names to that language. For example, imagine that you have a file called `pavement` that is a Python file and any file with a `foo` extension is a JavaScript file in your project. You can create a **.brackets.json** file in the root of your project that looks like this:
+
+```json
+{
+    "language.fileExtensions": {
+        "foo": "javascript"
+    },
+    "language.fileNames": {
+        "pavement": "python"
+    }
+}
+```
+
+With that file in your project, or those preferences in your user-level brackets.json file, any time you open `something.foo`, Brackets will treat the file as JavaScript. If you open `pavement`, Brackets will treat the file as Python.
+
+For these preferences, you map from the file name or extension to a language name as defined in [languages.json](https://github.com/adobe/brackets/blob/master/src/language/languages.json) or in an extension that provides support for the language you're interested in.
 
 ## Defining a new language
 
 In an extension, if a language has an [existing CodeMirror mode](http://codemirror.net/doc/modes.html), you can declare the new language in a simple JSON object:
 
-```
+```javascript
 var LanguageManager = brackets.getModule("language/LanguageManager");
 
 LanguageManager.defineLanguage("haskell", {
@@ -19,14 +39,16 @@ LanguageManager.defineLanguage("haskell", {
 });
 ```
 
-If you need to provide a custom CodeMirror mode, it must be [registered to CodeMirror](http://codemirror.net/doc/manual.html#modeapi) using ``CodeMirror.defineMode()`` first before calling ``LanguageManager.defineLanguage()``.
+#### Custom CodeMirror modes
+
+If your language is not already supported by CodeMirror (see list above), you'll need to [write a new CodeMirror mode](http://codemirror.net/doc/manual.html#modeapi). To use your custom CodeMirror mode, load it using `require()`, register it with CodeMirror using [``CodeMirror.defineMode()``](http://codemirror.net/doc/manual.html#modeapi), then call ``LanguageManager.defineLanguage()`` as above.
 
 
 ## Refining an existing language
 
 An extension can also modify/enhance an existing registered language. Retrieve a Language object by its ID, then use setter methods to change it:
 
-```
+```javascript
 var LanguageManager = brackets.getModule("language/LanguageManager");
 
 var language = LanguageManager.getLanguage("coffeescript");

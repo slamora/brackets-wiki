@@ -1,6 +1,12 @@
-## Preferences Model ##
+_**This page is no longer up to date.** The Preferences feature shipped in Brackets 0.36._
 
-Status: proposal
+**See [Preferences System documentation](https://github.com/adobe/brackets/wiki/Preferences-System) for current information.**
+
+<br><br>
+
+----
+
+## Preferences Model ##
 
 Preferences are often considered as a failure to do good design and that making the right choices for users is a better way to go. There are circumstances in which prefs can [even be harmful](http://limi.net/checkboxes-that-kill/). For a programmer's editor, however, a good preferences system is important.
 
@@ -80,4 +86,4 @@ An important difference between view state and preferences is that you wouldn't 
 
 ## Conclusion ##
 
-Not all prefs *need* the ability to be overridden at every level. Some, in fact, only make sense at the glboal level. But, we need to have a model in mind that can handle the cases that users do need to be able to customize and, in the case of some project preferences, share with others via version control.
+Not all prefs *need* the ability to be overridden at every level. Some, in fact, only make sense at the global level. But, we need to have a model in mind that can handle the cases that users do need to be able to customize and, in the case of some project preferences, share with others via version control.

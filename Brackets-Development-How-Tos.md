@@ -1,10 +1,15 @@
 _Warning: because Brackets is still undergoing a lot of change, many of the APIs and techniques below **will change** in the future. Breaking API changes will be listed in the [release notes](Release Notes)._
 
+## API Docs
+
+* Formatted docs at: **http://brackets.io/docs/current**
+* All documentation is also inline in the [Brackets source code](https://github.com/adobe/brackets/tree/master/src), as JSDoc comments
+
 ## Application Init
 
-There are 2 primary events a module should listen to before querying or modifying the DOM. These events are defined in ``utils/AppInit``:
-* ``htmlReady`` signals when the initial DOM content of Brackets is loaded (a template that is rendered by Mustache to include translated strings). Once this event fires, it is safe to query for static DOM elements. _Note:_ Extensions do not need to wait for this event; they are always loaded after it. Core modules must wait for this event before querying the DOM.
-* ``appReady`` signals when the core Brackets modules have initialized and when all extensions have finished loading. The initially open project and the active editor/document are loaded by this point.
+There are 2 primary milestones you can wait for during startup, defined in ``utils/AppInit``:
+* ``htmlReady`` signals when the initial DOM content of Brackets is loaded (a template that is rendered by Mustache to include translated strings). Once this event fires, it is safe to query for static DOM elements. _Extensions do not need to wait for this event_ - they are always loaded after it. But core modules must wait for this event before querying the DOM.
+* ``appReady`` signals when extensions have finished loading, the initially open project is loaded, and the last-open editor/document is loaded. _Waiting for this event is [not usually needed](https://groups.google.com/d/msg/brackets-dev/8sFGe6bhqaM/kx6B5yrmggoJ)_ for extensions or core.
 
 Do not rely on other events such as ``$(document).ready`` or ``window.onload``.
 
@@ -31,13 +36,13 @@ For working with a sequence of asynchronous operations (in parallel or in serial
 
 When dealing with files the user is editing, there are three important classes to understand:
 
-* `Editor` represents the view (it wraps a CodeMirror widget) -- either a full-size editor _or_ an inline editor. An Editor can have focus. Use an Editor object to get/set the cursor position, selection, or scroll position. Every Editor is attached to a Document.
-* `Document` represents the model (the text content of the file). Use the Document object to get or modify the text, or to listen for changes to the text. There may be multiple Editors attached to a single Document (for example, a full-size editor plus an inline editor). Every Document is associated with a file on disk.
-* `FileEntry` represents a file on disk. It's very lightweight, like a URI -- it doesn't actually store the file's contents. FileEntry is based on the W3C ["Directories and System" draft spec](http://www.w3.org/TR/file-system-api/#the-fileentry-interface) (not to be confused with the much more limited ["HTML5 file API" spec](http://www.w3.org/TR/FileAPI/)).
+* `Editor` represents the view (it wraps a CodeMirror widget) -- either a full-size editor _or_ an inline editor. An Editor can have focus. Use an Editor object to get/set the cursor position, selection, or scroll position. Every Editor is attached to a Document (accessible via `editor.document`).
+* `Document` represents the model (the text content of the file). Use the Document object to get or modify the text, or to listen for changes to the text. There may be multiple Editors attached to a single Document (for example, a full-size editor plus an inline editor). Every Document is associated with a file on disk (accessible via `document.file`).
+* `File` represents a file on disk. It's almost as lightweight as a plain string path: you can get a `File` object synchronously via `FileSystem.getFileForPath()`, without having to actually read or locate the file on disk yet.
 
 ## <a name="doc"></a>Working with Documents ##
 
-`Document` is an object that represents a file on disk. Documents perform several important functions: they are the backing model for Editors; they provide APIs for reading and modifying the text content; and they emit events whenever the text is edited.
+`Document` is an object that represents an editable file on disk. Documents perform several important functions: they are the backing model for Editors; they provide APIs for reading and modifying the text content; and they emit events whenever the text is edited.
 
 ### How to get a Document ###
 
@@ -74,6 +79,7 @@ The Document and its full text content will be kept in memory until you call `re
 
 To modify a Document's text content, use `Document.replaceRange()`. If you're going to call it multiple times as the result of a single user action, wrap all your calls in `Document.batchOperation()` to ensure they're all batched into a single Undo/Redo entry.
 
+In many cases, if you're implementing a new kind of edit, you'll want to handle multiple selections. See [Changes to Editor selection APIs](https://github.com/adobe/brackets/wiki/Brackets-CodeMirror-v4-Migration-Guide#changes-to-editor-selection-apis) and [Performing edits on multiple selections](https://github.com/adobe/brackets/wiki/Brackets-CodeMirror-v4-Migration-Guide#performing-edits-on-multiple-selections) for more information.
 
 ## <a name="commands"></a>Menus and Keyboard Shortcuts ##
 
@@ -89,17 +95,23 @@ See [How to write extensions](How to write extensions#wiki-featurehooks).
 
 Normally, you'll want to use Document (see above) to read the contents of a file that the user might edit. If you modify a file via Document, it will automatically be recorded as an unsaved change for the user to track.
 
-There are some cases where you may want to simply load a configuration file without treating it as a user document. For this, Brackets provides a basic file I/O API loosely based on the HTML 5 [file system API](http://www.w3.org/TR/file-system-api/), except with access to the full local file system. _These APIs are very likely to change in the future._ But for now, here's an example:
-```
+There are some cases where you may want to simply load a configuration file without treating it as a user document. For this, Brackets provides a [FileSystem API](http://brackets.io/docs/current/modules/filesystem/FileSystem.html) for direct access to local files. Here's how to simply read a file:
+```javascript
 // On Windows, paths look like "C:/foo/bar.txt"
 // On Mac, paths look like "/foo/bar.txt"
-var fileEntry = new NativeFileSystem.FileEntry(localPath);
+var file = FileSystem.getFileForPath(localPath);
 
-var promise = FileUtils.readAsText(fileEntry);  // completes asynchronously
+var promise = FileUtils.readAsText(file);  // completes asynchronously
 promise.done(function (text) {
     console.log("The contents of the file are:\n" + text);
 })
 .fail(function (errorCode) {
-    console.log("Error #" + errorCode);  // one of the FileError constants
+    console.log("Error: " + errorCode);  // one of the FileSystemError constants
 });
 ```
+
+Note that paths in Brackets _always_ use "/" separators, regardless of OS. [Read more on path format](https://github.com/adobe/brackets/blob/master/src/filesystem/FileSystem.js#L43-L52).
+
+## Accessing Node Modules from Brackets
+
+See [Brackets Node Process: Overview for Developers](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers).

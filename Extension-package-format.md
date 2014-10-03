@@ -29,13 +29,19 @@ Brackets uses a format _similar_ to [npm's package.json format](https://npmjs.or
     "license": "MIT",
     "engines": {
         "brackets": ">=0.24.0"
+    },
+    "i18n": [ "en", "fr"],
+    "package-i18n": {
+        "fr": {
+            "description": "Plus de détails utiles pour laisser quelqu'un savoir ce que votre poste est tout au sujet."
+        }
     }
 }
 ```
 
 **Required fields:** `name`, `version`
 
-**Highly recommended:** `title`, `description` (your extension will look ugly in the Extension Manager dialog in Brackets otherwise)
+**Highly recommended:** `title`, `description`, `homepage`
 
 Here's how these fields are exposed in the Extension Manager UI:
 ![](images/extension-listing-example.png)
@@ -50,7 +56,9 @@ Here's how these fields are exposed in the Extension Manager UI:
 * `homepage` (encouraged) - URL linking to more information (Extension Manager shows this as a "More Info" link)
 * `author` (encouraged) - name of the developer, in the format "Name <email> (URL)" (email and URL are both optional)
 * `license` (optional) - license of the extension's source code (not shown in the UI yet)
-* `keywords` (optional) - additional keywords searched when the user filters the list view in Extension Manager
+* `keywords` (optional) - array of additional keyword strings; searched when the user filters the list view in Extension Manager
+* `i18n` (optional) - array of language codes the extension has been translated into
+* `package-i18n` (optional) - set of language translations to display in the Extension Manager dialog.  Each language can optionally provide a translation for the `title`, `description`, `homepage`, and/or `keywords`.
 
 ##### Future fields (<font color="red">not yet implemented</font>) #####
 
@@ -63,7 +71,7 @@ Here's how these fields are exposed in the Extension Manager UI:
 
 ## Categories ##
 
-<font color="red">Status: Not yet implemented</font>
+<font color="red">Status: **Not yet implemented - may change**</font>
 
 Our package.json files include a `categories` field which is not present in npm's format. Categories, unlike keywords, are primarily a "browsing" feature rather than a searching one.
 
@@ -92,6 +100,10 @@ Keywords can be anything that will help users find the right extension. Extensio
 
 Recommended: if your extension adds support for a specific language, include all its file extensions (with leading ".") in your keywords. (For example, an extension adding TypeScript support should include ".ts" in its keywords).
 
+Keywords must be an array of keywords, not a simple list. For example:
+
+    "keywords":["lint","linting","linter"]
+
 ## Extension Modules and main.js ##
 
 <font color="green">Status: Implemented</font>
@@ -102,7 +114,7 @@ Modules that an extension imports via `require()` are located relative to the ro
 
 ## Node Modules ##
 
-<font color="red">Status: Not yet implemented</font>
+<font color="red">Status: **Not yet implemented - may change**</font>
 
 Brackets extensions will be able to provide modules that run in a Node process. The exact location of these modules will depend on the answers to the open questions at the end of this section.
 
@@ -116,9 +128,23 @@ There are open questions surrounding the lifecycle of the Node code and the modu
 
 ## Changelog ##
 
-<font color="red">Status: Not yet implemented</font>
+<font color="red">Status: **Not yet implemented - may change**</font>
 
-If there is a CHANGELOG.md file at the package root, the h2 headers (delimited by ##) are assumed to contain version numbers and the sections of the file will be pulled apart to display update information to users.
+Changelogs will be formatted based on the proposed standard at [Keep a Changelog](http://keepachangelog.com/).  If there is a CHANGELOG.md file at the package root then the following sections will be identified by package manager and pulled apart to display to users:
+
+* h2 sections (denoted by ##) are in the format: `## x.y.z - yyyy-mm-dd` and represent a released update using the semantic version number and the release date.
+* h3 sections (denoted by ###) within an h2 release section will be labelled with 1-5 sub-section headers each with an un-ordered list of items for that sub-section.  The sub-section headings will be one of the following:
+    - `Added` for new features.
+    - `Deprecated` for once-stable features removed in upcoming releases.
+    - `Removed` for deprecated features removed in this release.
+    - `Fixed` for any bug fixes.
+    - `Security` to invite users to upgrade in case of vulnerabilities.
+* **Note** It is not necessary to include sub-section headers that are empty.
+
+Examples of CHANGELOG.md files that follow this standard can be found at:
+
+* [thephpleague/csvCHANGELOG.md](https://github.com/thephpleague/csv/blob/master/CHANGELOG.md)
+* [olivierlacan/keep-a-changelog/CHANGELOG.md](https://github.com/olivierlacan/keep-a-changelog/blob/gh-pages/CHANGELOG.md)
 
 ## Unit Tests ##
 

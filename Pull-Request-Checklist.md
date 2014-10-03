@@ -1,4 +1,4 @@
-High quality code and a top-notch user experience are very important in Brackets, and we carefully review pull requests keep it that way. Here's what we expect of a good quality pull request - be sure to follow all these items for a smooth landing!
+High quality code and a top-notch user experience are very important in Brackets, and we carefully review pull requests to keep it that way. Here's what we expect of a good quality pull request - be sure to follow all these items for a smooth landing!
 
 Note: you must sign the **[Brackets Contributor License Agreement](http://dev.brackets.io/brackets-contributor-license-agreement.html)** before we can merge your first pull request.
 
@@ -13,7 +13,7 @@ Note: you must sign the **[Brackets Contributor License Agreement](http://dev.br
 6. Testing
     * Code has been tested - in your pull request, describe the cases you tested
     * No known bugs
-    * All unit tests pass (<i>Debug > Run Tests</i>)
+    * All [unit tests pass](https://github.com/adobe/brackets/wiki/Running-Brackets-Unit-Tests) ... (<i>Debug > Run Tests</i>)
     * [Smoke tests](Brackets Smoke Tests) pass (for larger, cross-cutting changes)
 7. Include unit tests for new functionality
 8. Avoid breaking API changes - existing public APIs are not strictly frozen, but you'll need a good reason for breaking backwards compatibility. The more commonly-used the API, the stronger the reason needed
@@ -32,4 +32,4 @@ To avoid problems, consider whether any of these apply to your pull request:
 * Inline editors: does this collide with any other Quick Edit providers?
 * Code hinting: does this collide with any other hint providers?
 * Live Preview: ensure [Server smoke tests](Brackets Server Smoke Tests) pass
-* Native code (brackets-shell): must include both Mac _and_ Win implementations
+* Native code (brackets-shell): must include implementations for Mac, Windows _and_ Linux

@@ -37,13 +37,14 @@ $ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 1. Top Level
 2. File
 3. Edit
-4. View
-5. Navigate
-6. Help
+4. Find
+5. View
+6. Navigate
+7. Help
 
 ### Toolbar
-1. Experimental Build
-2. Lightning bolt icon tooltip ``<tooltip_live_preview>``
+1. Lightning bolt icon tooltip ``<tooltip_live_preview>``
+2. Extension Manager
 
 ### About
 1. On mac, ``Brackets > About Brackets``. On win, ``Help > About``
@@ -55,6 +56,8 @@ $ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 2. Open the ``View`` menu again
 3. Confirm the label has changed to ``View > Show Sidebar`` ``<menu_view_show_sidebar>``
 4. Click ``View > Show Sidebar``
+5. Open ``index.html``.  In the Sidebar, click the gear icon in the Working Files header.  Confirm the sort methods.
+6. In the Sidebar, click the Split icon at the top. Confirm the Split View options.
 
 # File Operations
 
@@ -192,21 +195,46 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 ### Find/Replace
 1. Open ``index.html``
-2. Click ``Edit > Find`` menu
+2. Click ``Find > Find`` menu
 3. Confirm find UI appears at the top of the editor ``<dialog_find>``
 4. Press escape
-5. Click ``Edit > Replace`` menu
+5. Click ``Find > Replace`` menu
 6. Confirm replace UI appears at the top of the editor ``<dialog_replace_1>``
 7. Type any character(s) into the text box, press Enter
 8. Confirm replace UI appears at the top of the editor ``<dialog_replace_2>``
-9. Press escape
+9. Type a search string that actually exists in the open document.  Click ``Batch..``
+10. Confirm Replace matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
+
+### Find/Replace in Files
+
+1. Click ``Find > Find in Files``
+2. Confirm find UI appears at the top of the editor.
+3. Click ``No Files Excluded`` button.  Confirm exclusion set menu dropdown.
+4. From that menu, click ``New Exclusion Set...``.  Confirm Edit Exclusion Set dialog appears.
+5. Click ``Cancel`` to close the dialog.
+6. Click ``Find > Replace in Files`` menu.
+7. Confirm replace in files UI appears at the top of the editor.
+8. Type a search string that actually exists in the open document.  Click ``Replace...``
+9. Confirm Replace in files matches UI appears at the bottom of the editor.  Click the 'X' to close the UI.
+10. Press escape to close the Replace in Files bar.
+
+### Find/Replace in Selected File/Folder
+
+1. Click ``Find > Find in Select File/Folder``
+2. Confirm Find in selected location UI appears at the top of the editor.
+3. Press escape to close the Find bar.
+4. Click ``Find > Replace in Select File/Folder``
+5. Confirm Replace in selected location UI appears at the top of the editor.
+6. Press escape to close the Replace bar.
 
 ### JSLint
 
 1. Enable ``View > Enable JSLint`` (a checkmark will appear when enabled)
 2. Confirm JSLint panel title ``<panel_jslint>``
 
-# Inline Color Editor
+# Inline Editors
+
+## Inline Color Editor
 
 1. Open ``desktop.css``
 2. Place the cursor on any hex color, e.g. #000. Press ``CMD+E`` or ``Ctrl+E``
@@ -215,6 +243,39 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Hover over the original color swatch (the original color). Confirm tooltip ``<original_color>``.
 6. Hover over each button in the button bar that contains (RGBa, HEX, HSLa). Confirm tooltips ``<rgba_format>``, ``<hex_format>`` and ``<hsla_format>``.
 7. Hover over one of the colors listed on the right. Confirm tooltop ``<color_used_n_times>``.
+
+### Inline Cubic Bezier Editor
+
+1. At the end of ``desktop.css``, add the following line: ``#div2 {transition-timing-function: cubic-bezier();}``.
+2. Place the cursor on the word `timing` in the new line.  Press ``CMD+E`` or ``Ctrl+E``.  Confirm labels on grid, and information text on right.
+
+### Inline Step Editor
+
+1. At the end of ``desktop.css``, add the following line: ``#div3 {transition-timing-function: steps();}``.
+2. Place the cursor on the word `timing` in the new line.  Press ``CMD+E`` or ``Ctrl+E``.  Confirm labels on grid, and information text on the right.
+
+### New Rule Editor
+
+1. Within the first ``<body>`` tag of ``index.html``, start a new line and type ``<h10``.
+2. Press ``CMD+E`` or ``Ctrl+E``.  Confirm New Rule inline editor appears.
+3. Click ``New Rule``.  Confirm inline editor changes to show the new rule definition.
+4. Click ``New Rule`` button again.  Confirm a list of references to the new rule appears on the right-side of the inline editor.
+5. Press escape to close the inline editor.
+
+### Inline Editor Errors
+
+1. Open ``index.html``, place cursor at end of any line.
+2. Press ``CMD+E`` or ``Ctrl+E``.  Confirm popover message appears with "No Quick Edit available for current cursor position", and messages fades away after 5 seconds.
+3. Place cursor in ``href`` attribute of any ``<a>`` tag.
+4. Press ``CMD+E`` or ``Ctrl+E``.  Confirm popover message appears with "CSS Quick Edit: place cursor in tag, class, or id".
+
+# Quick Docs
+
+1. Open ``desktop.css``, place cursor in any CSS Property (e.g. "font-family").
+2. Press ``CMD+K`` or ``Ctrl+K``.  Confirm Quick Docs Viewer is opened with information for the chosen CSS Property.
+3. Press ``Esc`` to close.
+4. Place cursor at end of any line.
+5. Press ``CMD+K`` or ``Ctrl+K``.  Confirm popover message appears with "No Quick Docs available for current cursor position", and messages fades away after 5 seconds.
 
 # Live Preview
 
@@ -225,35 +286,37 @@ _On Windows, we have a backlog item to address the lack of an error message http
 1. Exit Chrome if it is running.
 2. Open ``index.html``
 3. Click ``File > Live Preview`` menu
-3. In Brackets, hover over the lightning bold icon
-4. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
-5. Quit Chrome
+4. [First launch only] Confirm ``Welcome to Live Preview!`` dialog appears.  Click OK.
+5. In Brackets, hover over the lightning bold icon
+6. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
+7. Quit Chrome
 
 ### Connection Error (mac only)
 1. Start Chrome
 2. Click ``File > Live Preview`` menu
-3. Confirm live development error dialog ``<dialog_live_development_connection_error>``
+3. Confirm live preview error dialog ``<dialog_live_development_connection_error>``
 4. Click ``Cancel``
 
 ### Wrong File Type
 1. Open ``css\desktop.css``
 2. Click ``File > Live Preview`` menu
-3. Confirm live development error dialog ``<dialog_live_developement_file_type_error>``
+3. If there is a file named ``index.html`` (or ``index.htm``), in same folder or parent folder within project, it will be opened.
+4. Otherwise, confirm live preview error dialog ``<dialog_live_development_file_type_error>``
 
 ### Chrome Not Found
 1. Close Chrome if running
 2. Rename the Chrome executable
 3. Open ``index.html``
 4. Click ``File > Live Preview`` menu
-5. Confirm live development error dialog ``<dialog_live_development_chrome_not_found>``
+5. Confirm live preview error dialog ``<dialog_live_development_chrome_not_found>``
 6. Restore the Chrome executable name
 
 ### Base URL
 1. Open the ``server-smokes`` project
-2. File > Project Settings...
-3. Confirm project settings dialog ``<project_settings_dialog>>``
+2. ``File > Project Settings...``
+3. Confirm project settings dialog ``<project_settings_dialog>``
 4. Open ``server.php``
-5. File > Live Preview
+5. ``File > Live Preview``
 6. Confirm project settings dialog appears with warning message ``<project_settings_specify_base_url>``
 7. Enter ``ftp://path/to/foo`` (does not have to be a functioning path)
 8. Confirm error message ``<project_settings_error_invalid_protocol>``
@@ -286,6 +349,25 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 
 # Extension Installation
 
-1. File > Install Extension...
-2. Paste this URL https://github.com/adobe/brackets/raw/master/test/spec/extension-test-files/incompatible-version.zip and press Install
-3. Confirm error message appears in dialog ``<install_extension_incompatible_version>``
+1. ``File > Extension Manager...``  Confirm Extension Manager dialog appears.
+2. From the Available tab, click ``Install from URL...``.  Confirm Install Extension dialog appears.
+3. Paste this URL https://github.com/adobe/brackets/raw/master/test/spec/extension-test-files/incompatible-version.zip and press Install
+3. Confirm error message appears in dialog ``<install_extension_incompatible_version>``.  Click ``Close``.
+4. Click Installed tab.  Confirm either ``No extensions installed yet.`` message appears in the dialog, or, if you've previously installed one or more extensions, that they are listed.
+5. Click ``Close``
+
+# Themes
+
+1. ``View > Themes...``  Confirm Themes dialog appears
+2. Change Current Theme, confirm colors in Editor change
+3. Click Cancel, confirm editor colors revert to original colors
+
+# Split View
+
+1. ``View > Split Vertically``
+2. Edit 2 files in side by side panes. There are now 2 working sets named **Left** and **Right**
+3. ``View > Split Horizontally``
+4. Edit 2 files one above the other. The working sets are named **Top** and **Bottom**
+5. Drag separator to change pane sizes.
+6. In Sidebar, drag a file from one working set to the other to switch panes.
+7. ``View > No Split`` - to return to editing a single file

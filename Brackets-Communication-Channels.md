@@ -42,3 +42,4 @@ This page lists ways in which the Brackets Team is communicating with our Commun
 * [YouTube](http://youtube.com/codebrackets)
 * [Google+ Brackets Community](https://plus.google.com/communities/115701498366924622043)  
 * [Facebook](http://www.facebook.com/codebrackets)
+* [VKontakte (Russian Community)](http://vk.com/bracketsio)

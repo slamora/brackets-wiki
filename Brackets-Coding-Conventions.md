@@ -191,25 +191,25 @@ On Arrays, use Array.forEach() or Array.some() rather than $.each() or for loops
 > ```
 
 <br/>
-To iterate object keys, use CollectionUtils.forEach() or CollectionUtils.some() rather than $.each() or for-in loops. (This avoids various pitfalls when the keys could have arbitrary values, and matches Array.forEach()'s callback API better).
+To iterate object keys, use _.forEach() or _.some() rather than $.each() or for-in loops. (This avoids various pitfalls when the keys could have arbitrary values, and matches Array.forEach()'s callback API better).
 > Do this:
 > ```
 > var anObject = { foo: "a", bar: "b", baz: "c" };
-> CollectionUtils.forEach(anObject, function (value, key) {
+> _.forEach(anObject, function (value, key) {
 >     // ...
 > });
 > ```
 >
 > Not this:
 > ```
-> for (var key in anObject) {  // Use CollectionUtils.forEach()
+> for (var key in anObject) {  // Use _.forEach()
 >     if (anObject.hasOwnProperty(key)) { /* ... */ }
 > }
 > ```
 >
 > Or this:
 > ```
-> $.each(anObject, function (key, value) {  // Use CollectionUtils.forEach()
+> $.each(anObject, function (key, value) {  // Use _.forEach()
 >     // ...
 > })
 > ```
@@ -227,9 +227,8 @@ Use ViewUtils.toggleClass() instead of jQuery.toggleClass(). (This avoids proble
 * All comments should be C++ single line style //comment.
 * Even multiline comments should use // at the start of each line
 * Use C style /* comments */ for notices at the top and bottom of the file
-* Use JSDoc tags for annotations with Google's Closure Compiler Type Expressions, see https://developers.google.com/closure/compiler/docs/js-for-compiler
-* Annotations should use the /** annotation */
-* Annotate all functions
+* Use JSDoc tags for annotations with [Google's Closure Compiler Type Expressions](https://developers.google.com/closure/compiler/docs/js-for-compiler), see [Brackets JSDocs wiki page](https://github.com/adobe/brackets/wiki/Brackets-JSDocs-Guidelines) for more info.
+* Annotate all modules, data members, functions, classes, and methods.
 
 ## <a name="error_handling"></a>Exceptions/Asserts/Logging ##
 

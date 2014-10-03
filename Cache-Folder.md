@@ -1,25 +1,20 @@
-Brackets stores some data in a cache folder managed by CEF -- roughly equivalent to a browser cache, except specific to Brackets. At the moment, this folder stores both throwaway data **_and user preferences_**.
+Brackets stores some data in a cache folder managed by CEF -- roughly equivalent to a browser cache, except specific to Brackets. At the moment, this folder stores both throwaway data **_and some user preferences_**.
 
-If you're having trouble starting Brackets after upgrading from a previous build, try deleting this folder. You'll lose any stored preferences and saved information like the recent folder list.
+If you're having trouble starting Brackets after upgrading from a previous build, try deleting this folder (see below). You may lose some stored preferences (especially any custom extension-specific preferences).
 
-## Cache location:
+## Cache location
 
 * Mac: ```~/Library/Application Support/Brackets/cef_data```
 * Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets\cef_data``` -- (aka ```%appdata%\Brackets\cef_data```)
-* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets\cef_data``` -- (aka ```%appdata%\Brackets\cef_data```)
+* Win Vista/7/8: ```C:\Users\<username>\AppData\Roaming\Brackets\cef_data``` -- (aka ```%appdata%\Brackets\cef_data```)
+* Linux: ``~/.config/brackets/cef_data`` -- (aka ```$XDG_CONFIG_HOME/brackets/cef_data```)
 
-Note: for **Edge Code**, replace `Brackets` in the path with `Adobe/Edge Code`.
+Note: for **Adobe Edge Code**, replace `Brackets` in the path with `Adobe/Edge Code`.
 
-## Cache location: (older brackets-app builds prior to sprint 13)
+## Resetting cache & preferences
 
-* Mac: ```~/Library/Application Support/com.adobe.Brackets.cefCache```
-* Win XP: ```C:\Documents and Settings\<username>\Application Data\Brackets\cefCache``` -- (aka ```%appdata%\Brackets\cefCache```)
-* Win Vista/7: ```C:\Users\<username>\AppData\Roaming\Brackets\cefCache``` -- (aka ```%appdata%\Brackets\cefCache```)
+1. Quit Brackets entirely
+2. Delete the `cef_data` folder located above
+3. In the parent of this folder, delete `brackets.json` and `state.json` if present
 
-## Less thorough alternative
-
-To clear out preferences _only_ (not the lower-level CEF cache), open the Developer Tools console and run
-
-```
-localStorage.clear()
-```
+This will _reset all of your preferences_ and clear all cached data.  (It's not yet possible to do clear one of those separately from the other).  To ensure a full 'factory reset,' also uninstall Brackets and reinstall from a freshly downloaded installer.

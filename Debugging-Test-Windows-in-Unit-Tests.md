@@ -1,14 +1,16 @@
+> See [[Running Brackets Unit Tests]] for how to _run_ unit tests.
+
 When creating Unit Tests, it's often helpful to create a new Brackets window. The `createTestWindowAndRun()` and `closeTestWindow()` functions in SpecRunnerUtils make this easy to do.
 
 One problem with testing in this way is that you can't step into the code in the debugger because it's in a separate window which is created and closed too quickly to be able to manually open the Dev Tools. Luckily, there are several ways to do this:
 
 ## Option A: Quick One-Off
 
-1. Add a `waits(10000)` directive near the start of the test (after the window would be opened)
+1. Set a breakpoint at the start of the unit test code (after the window would be opened)
 2. Run the test
-3. While the test is waiting 10 seconds, go to the popped-up window and open Dev Tools (or use localhost:9234 to open it)
-4. Set breakpoints as desired
-5. When the 10 sec are up, the test will continue & hit your breakpoint(s)
+3. While the test is paused on the breakpoint, open a new browser tab and go to http://localhost:9234. Click the link corresponding to the popup test window -- this opens a _second_ instance of dev tools just for the test window.
+4. Set breakpoints in the popup window's code as desired
+5. Resume execution in the test-runner window -- the test will continue & hit your breakpoint(s) (in the popup window's dev tools).
 
 ## Option B: Repeatable Setup
 

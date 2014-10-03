@@ -1,4 +1,7 @@
-1. Install Node 0.8.x http://nodejs.org/download/
+**This is a _subset_** of the steps needed to [generate a Brackets release build](https://github.com/adobe/brackets/wiki/Building-Brackets-Releases).
+
+
+1. Install Node 0.8.x or newer http://nodejs.org/download/
 2. Run ``npm install -g grunt-cli`` to install the GruntJS command line interface
 3. Run ``npm install -g jasmine-node`` to install the jasmine-node test runner
 4. Run ``npm install`` from the root of the brackets git repo

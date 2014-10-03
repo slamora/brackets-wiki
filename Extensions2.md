@@ -4,6 +4,8 @@ Status: Proposal
 
 Email comments to: dangoor@adobe.com
 
+_This is **early research**. See [[Extension API Research]] for an updated proposal._
+
 ## Introduction ##
 
 The Brackets extension API has been very successful as measured by the number and power of the extensions we have. We presently have two requirements that are not met by our current extension API:
@@ -342,7 +344,7 @@ Many of the items above are actually things that would be ironed out as we desig
 
 That probably looks like a lot of work. However, both iterations of the current prototype were built in probably a week's worth of work. Further, everything above does not need to be built in one go. This is a project that can be built out iteratively, though we will want to be careful about crafting pleasing and consistent APIs for the extension developers.
 
-In conclusion, I think this API design offeres real benefits for Brackets users (restartlessness) and extension developers.
+In conclusion, I think this API design offers real benefits for Brackets users (restartlessness) and extension developers.
 
 
 # Extension API Specifics #
@@ -353,3 +355,49 @@ The first part of this document described features of a new extension API and a 
 
 Services provided by the Brackets core can be made available via a separate namespace so that it's clear to extension developers which services they're using that require a different extension to be installed in order to work. Namespacing core features will also help avoid collisions between features that all Brackets extension developers rely on and services provided by specific extensions.
 
+## Return Values ##
+
+API design [can be tricky](http://queue.acm.org/detail.cfm?id=1255422) because you need to balance ease of use, conciseness and power. This API opens up the possibility of seamless sharing of code between Brackets client side and Node (and, by extension, Web Workers and sandboxes). But, there's an asynchronous border between those different environments. We *could* make it so that all APIs that return values are asynchronous. But, this will make writing many extensions less convenient than it was before:
+
+```javascript
+services.editor.getDocument().then(function (doc) {
+    services.editor.getCursorPosition.then(function (pos) {
+        // do stuff with doc and pos
+    });
+});
+```
+
+And, in the case above, we're actually making it less convenient *for no benefit other than consistency*, because a `Document` object (as it exists today) won't be able to cross the JSON boundary between Node and the client side.
+
+A better approach is to make APIs synchronous where possible, allowing extensions that work with `Document`s, for example, to continue being as easy to write as they are today. To improve on the situation we have today, `ServiceRegistry.addFunction` can allow for optional documentation that feeds straight into the code hinting, possibly in [Tern's format](http://ternjs.net/doc/manual.html#typedef). If the return type is a `Promise`, then the function is assumed to be async, otherwise it's assumed to be synchronous.
+
+But, what about this case:
+
+```javascript
+var text = services.editor.getSelectedText();
+```
+
+That's a call that would be nice to have synchronous on the client side, but could also work on the Node side because text is JSONifiable. Here are two options for dealing with this:
+
+1. We could certainly have `services.editor.getSelectedText()` return a `Promise` when called in Node. If you want code to work on both client side and server side, you could do something like this:
+
+```javascript
+Q.when(services.editor.getSelectedText(), function (text) {
+    // do something with the text
+});
+```
+
+This is using the idiom provided by [Q](https://github.com/kriskowal/q), which appears to be different from jQuery's `$.when`... but the idea is simple, if the first argument to `when` is a promise, wait for it to be resolved and then call the function. If it's a value, just call the function with the value.
+
+2. We could provide a convenience on `ServiceRegistry` that ensured that the return is always handled asynchronously. For example,
+
+```javascript
+var services = services.async;
+services.editor.getSelectedText().then(function (text) {
+    // do something with the text
+});
+```
+
+In this example, the user has explicitly said that they want all of the functions to be async and are guaranteed to get a promise back from any call with a return value.
+
+These two approaches are basically equivalent (the second way just tucks the `Q.when` call into the `ServiceRegistry` machinery) and I have no strong feelings about it. My inclination is more toward the second approach as it gives the API a consistent feel for those who are writing a module for use both on the client side and Node.

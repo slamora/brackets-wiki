@@ -1,41 +1,60 @@
-* [Download Brackets](How to Use Brackets#wiki-howtoget)
+If you'd like to develop a theme, take a look at [Creating Themes](https://github.com/adobe/brackets/wiki/Creating+Themes)
+
+There are three stages to developing an extension:
+
+1. **[Set up](How-to-write-extensions#creating-an-extension)** the basic scaffolding.
+2. **[Develop](How-to-write-extensions#common-how-tos)** your extension and **[debug](How-to-write-extensions#testingdebugging-workflow)** it.
+3. **[Package and publish](How-to-write-extensions#publishing-extensions)** your extension for others to use.
+
+Follow these links to the sections below for details!
+
+Looking for inspiration? Check out the **[Extension Ideas list](https://github.com/adobe/brackets/issues?q=label%3A%22Extension+Idea%22)**.
+
+## Creating an Extension
+
 * Open your extensions folder by selecting "Help > Show Extensions Folder" in Brackets
-* Inside the `user` folder, create a new "yourExtensionName" folder, and inside that create a `main.js` file.
-* For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](Brackets-Extensions) that is similar to what you want to do.
+* Inside the `user` folder(*), create a new "yourExtensionName" folder, and inside that create a `main.js` file.
+* For a quick start, you can paste in the [[Simple "Hello World" extension]] or the code from an [existing extension](https://brackets-registry.aboutweb.com/) that is similar to what you want to do.
 * If you're working on anything big we recommend you post to the [brackets-dev Google group](http://groups.google.com/group/brackets-dev) or the [#brackets IRC channel on freenode](http://freenode.net) early on so you can get feedback (there may be others working on similar ideas!).
-* Add a `unittests.js` to your extension folder. See example code in [[Simple "Hello World" extension]]
 
-## Simple Development Workflow
+> \* Note: Because Extension Manager lets you delete extensions from this location, in the long run it's _**safer** to develop inside the `src/extensions/dev`_ folder. The best way to do that is to [clone the Brackets source](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) and run from that copy. This also makes it easy to test your extensions with upcoming Brackets changes before they're released.
 
-* Launch Brackets and use "File > Open Folder" to open your extension's folder.
+## Testing/Debugging Workflow
+
 * Edit your main.js file.
 * Save the file and restart Brackets via "Debug > Reload Brackets" to see your changes.
-* To debug problems, use "Debug > Show Developer Tools" to open developer tools in a tab in Chrome. You can use console.log() from your extension code, set breakpoints, etc.
+* To debug problems, use "Debug > Show Developer Tools" (opens as a tab in Chrome). You can use console.log(), set breakpoints, etc.
     * _The first time you open Developer Tools, you must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_ - otherwise using Reload while dev tools are open will not reflect changes to your extension.
 
 See **[[Debugging Brackets]]** for a more robust two-window workflow.
 
-## Extension Structure
+You can also [write unit tests for your extension](Extension Unit Tests).
 
-A basic extension consists of just two files:
-* main.js -- your main module, in RequireJS format
-* package.json (optional) -- [metadata about the extension](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format)
 
-Although it's optional, you should _always_ include package.json for extensions you publish for others to use. Your extension will look pretty ugly in the Brackets Extension Manager UI without metadata such as a display name! Luckily the [package.json format](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format) is very simple.
+## Publishing Extensions
 
-An extension can include other files in its subtree as well, including other JS modules.
+1. Add a **[package.json file](https://github.com/adobe/brackets/wiki/Extension-package-format#packagejson-format)** next to your main.js
+2. ZIP up your entire extension folder (the GitHub "Download ZIP" button is handy for this) or use the command `git archive --format zip -o yourextension.zip master` to generate a zip file.
+    * Note: we've had difficulty with ZIP files created from Finder on the Mac. If you get an error when uploading your ZIP file, try creating it from the command line instead.
+    * If your extension utilizes git submodules, they must be wrapped in the ZIP. For a solution, refer to [this blog](http://www.topbug.net/blog/2012/03/31/archive-a-git-superproject-and-its-submodules) and use [git-archive-all](https://github.com/Kentzo/git-archive-all).
+3. Publish your extension by uploading the ZIP to the **[Brackets Extension Registry](https://brackets-registry.aboutweb.com/)**
 
-### Referencing Modules ###
+For more, see [[Extension Registry Help]].
 
-* To load modules from your extension's folder tree, use `require()` with a path relative to your extension's root folder.
-* To load modules from Brackets core, use ```brackets.getModule()``` with a path relative to the Brackets src root.
-* You cannot load modules from _other_ extensions.
-
-You can also use other files packaged inside your extension - for example, see "Load a CSS file" below.
 
 ## Common How-Tos
 
-### <a name="uihooks"></a>Adding menu items and keyboard shortcuts
+**API docs** are available [online](http://brackets.io/docs/current) or as JSDoc comments inline in the [Brackets source code](https://github.com/adobe/brackets/tree/master/src).
+
+### Using modules
+
+* To load modules from your extension's folder tree, use `require()` with a path relative to your extension's root folder.
+* To load modules from Brackets core, use `brackets.getModule()` with a path relative to the Brackets src root.
+* You cannot load modules from _other_ extensions (yet).
+
+You can also use other files packaged inside your extension - for example, see "Load a CSS file" below.
+
+### <a name="uihooks"></a>Adding menu items & keyboard shortcuts
 
 _See [[Simple "Hello World" extension]] for a code sample._
 
@@ -56,15 +75,13 @@ To decline a keyboard event and allow other parts of Brackets to handle it, make
 
 ### <a name="newui"></a>Adding new UI elements
 
-_**This is unofficial API**_ - adding UI elements directly through the DOM works, but puts you on shaky ground. Code that does this _will_ break as Brackets updates evolve the UI. _The only official way to extend the Brackets UI is through JavaScript APIs_, such as the Menu interface above or the Quick Edit interface below.
-
-However, following these best practices will ensure your code behaves as nicely as it possibly can under the circumstances:
-
 **<a name="addpanel"></a>Add a panel below the editor:** Use the CSS class `.bottom-panel`; see the JSLint bottom-panel.html for an example. Add your panel _above_ the status bar using `PanelManager.createBottomPanel("yourExtension.name", $(panelHtml))`. You may see `Resizer.makeResizable()` and manual DOM insertion of panels in some extensions but this practice is being phased out since the introduction of PanelManager.
 
-**Add a toolbar icon:** Use `$myIcon.appendTo($("#main-toolbar .buttons"))`.
+_**Unofficial techniques**_ - adding UI elements directly through the DOM works, but puts you on shaky ground. Code that does this _will_ break as Brackets updates evolve the UI. Use these code snippets as best practices that behave as nicely as possible given the risks:
 
-**Add a top panel/toolbar:** Use `$myPanel.insertBefore("#editor-holder")`.
+> **Add a toolbar icon:** _(unofficial)_ Use `$myIcon.appendTo($("#main-toolbar .buttons"))`.
+
+> **Add a top panel/toolbar:** _(unofficial)_ Use `$myPanel.insertBefore("#editor-holder")`.
 
 **UI design:** Be sure to follow the [[Extension UI Guidelines]].
 
@@ -77,11 +94,17 @@ However, following these best practices will ensure your code behaves as nicely 
 
 **Quick Docs:** Similar to Quick Edit, but register your provider with `EditorManager.registerInlineDocsProvider()` instead.
 
-**Quick Open:** To interface with the quick open (file open/jump to) feature, use ```QuickOpen.addQuickOpenPlugin()```.
+**Quick Find Definition:** To provide quick symbol navigation for a new language, use `QuickOpen.addQuickOpenPlugin()`. Register for a specific language id and only return true from `match()` when an "@" prefix is present (see [CSS support](https://github.com/adobe/brackets/blob/master/src/extensions/default/QuickOpenCSS/main.js) for a simple example).
+
+**Quick Open:** To add a new _global_ search feature (like Quick Open), use `QuickOpen.addQuickOpenPlugin()` with an empty `languageIds` array. Pick a new, unique prefix for `match()` to respond to, and register a new command that invokes `QuickOpen.beginSearch()` with your custom prefix. (See the [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav/blob/master/main.js#L128) extension for a simple example).
 
 **Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Unlike Quick Edit, these "providers" can have varying priority to resolve conflicts; more specific providers take precedence.
 
 **Syntax Coloring:** Extensions can add new code-coloring "modes" via `LanguageManager.defineLanguage()`. See [[Language Support]] for details.
+
+**Linting:** Use `CodeInspection.register()` to provide linting/inspection for a given Language. Just like the built-in JSLint functionality, the provider is invoked whenever a file is opened or saved, and its results are displayed in a panel below the editor (providers may be run more frequently in the future, however). Currently, only one provider is accepted per language, although extensions _can_ replace the default JSLint provider for JavaScript.
+
+**File Tree:** Take a look at the documentation for the [project/ProjectManager](http://brackets.io/docs/current/modules/project/ProjectManager.html) module. Starting with Brackets 0.44, there are functions you can call (`addIconProvider` and `addClassesProvider`) to decorate the tree.
 
 ### <a name="tourl"></a>Accessing resources (e.g. images) in your extension
 
@@ -91,14 +114,48 @@ Thankfully, the ```require``` context that's passed in to your extension's ```ma
 
 For example, if you have ```awesome.jpg``` in your extension's top-level ```foo``` folder, you can do ```require.toUrl('./awesome.jpg')```, and it will return something like ```/extensions/dev/foo/awesome.jpg``` when you call it and ```/Users/<user>/Library/Application Settings/Brackets/extensions/user/bar/awesome.jpg``` when your user calls it. The path you give ```toUrl``` should be relative to your extension's top-level folder (yes, subdirectories work), and the URL you get back will be relative to the site root (i.e. it will begin with "/").
 
+### Working with Preferences
+
+Your extension can access Brackets' preferences and define preferences of its own. For preferences specific to your extension, you should make sure that all of the preferences have a prefix so that they don't clobber any other preferences.
+
+For details, see the full **[Preferences System documentation](Preferences System)**. But here's an example that covers the main parts of the API you'll need to know:
+
+```javascript
+
+var PreferencesManager = require("preferences/PreferencesManager"),
+    prefs = PreferencesManager.getExtensionPrefs("myextensionname");
+
+// First, we define our preference so that Brackets knows about it.
+// Eventually there may be some automatic UI for this.
+// Name of preference, type and the default value are the main things to define.
+// This is actually going to create a preference called "myextensionname.enabled".
+prefs.definePreference("enabled", "boolean", true);
+
+// Set up a listener that is called whenever the preference changes
+// You don't need to listen for changes if you can just look up the current value of
+// the pref when you're performing some operation.
+prefs.on("change", function () {
+    // This gets the current value of "enabled" where current means for the
+    // file being edited right now.
+    doSomethingWith(prefs.get("enabled"));
+});
+
+// This will set the "enabled" pref in the same spot in which the user has set it.
+// Generally, this will be in the user's brackets.json file in their app info directory.
+
+prefs.set("enabled", false);
+
+// Then save the change
+prefs.save();
+
+```
+
+### Accessing Node APIs
+
+Brackets includes a built-in [Node.js](http://nodejs.org/) server that runs as a side process.  Your extension can include code that runs in Node &ndash; accessing useful Node APIs and pulling in helpful NPM libraries.  [Read more on running code in Brackets' Node instance...](https://github.com/adobe/brackets/wiki/Brackets-Node-Process:-Overview-for-Developers#usage-example)
+
 ### Further reading
 
-For more detail on Brackets internals, see [[Brackets Development How Tos]].
+For more on Brackets APIs and architecture, see [[Brackets Development How Tos]].
 
-If you're interested in contributing to the core Brackets codebase, see [[How to Hack on Brackets]].
-
-## Publishing Extensions
-
-See the [Extension Package Format](https://github.com/adobe/brackets/wiki/Extension-package-format) for information on preparing your extension for sharing with others.
-
-For the time being, publish your extension by linking to its zip file or GitHub repository here from the [extensions list](https://github.com/adobe/brackets/wiki/Brackets-Extensions).
+If you're interested in contributing to the _core_ Brackets codebase, see [[How to Hack on Brackets]].
