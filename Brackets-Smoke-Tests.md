@@ -78,35 +78,12 @@ Smoke test steps
 1. Verify the `Emmet` menu was added
 1. Quit the app. Verify that you get a "save changes" dialog for any CSS files you edited through the inline editor, and choose to discard the changes.
 1. Restart the app. Verify that the "citrus completed" project shows in the sidebar, and that the working set and current editor are showing the same files as when you quit. Also verify that the changes you had previously made were reverted (`git status` in the smokes folder should show clean).
-1. `File > Close All` and verify that all files are closed
-1. Click on `index.html` in the file tree and verify that is is open but not added to the working set
-1. `View > Vertical Split` and verify a second pane is created and has the focused visual styles. `index.html` should still be open in the left pane.
-1. Expand the CSS folder in the file tree and click on `desktop.css` to open it and verify that it opens in the right pane but is not added to the working set
-1. Drag the splitter between the two views to the left and verify there are no visual glitches and the editor resizes appropriately 
-1. Switch back to the Brackets project and then back to citrus and verify the splitter is where you left it (the panes will be empty because the files hadn't been opened in the working set)
-1. Drag the splitter to the right and verify there are no visual glitches and the panes resize appropriately
-1. `View > Horizontal Split` and verify that the splitter jumps to the middle horizontally and there are 2 panes on top of each other
-1. Click in the top pane to activate it and verify the pane has the active pane visual styling
-1. Expand the images folder and double click `events.jpg` to open it to the top working set
-1. Click in the opposite pane and double click `specials.jpg` open it to the bottom working set
-1. Drag the splitter up and down and make sure there are no visual glitches and panes resize appropriately
-1. Drag `events.jpg` to the bottom working set and verify that dragging between working sets works and there are no visual glitches and that `specials.jpg` is still the current file
-1. Drag the current file (`specials.jpg`) to the to the top working set and verify that you can drag up into an empty working set, that it still is the current file and has the current file drag style.
-1. Drag `events.jpg` to the top working set, drop it then drag it back down and verify that you can drag down into an empty bottom working set.
-1. Drag `events.jpg` down into the file tree and verify that you cannot drop it
-1. Drag `events.jpg` back to the top working set
-1. Expand the css folder in the file tree and double click `phone.css`, `desktop.css` and `tablet.css` to open them to the working set.
-1. drag `specials.jpg` to the top of the working set, drop it then click on it again to open it and make it the current file.
-1. Switch back to the brackets project, split it and open enough files in each working set so that scroll bars are necessary
-1. Make sure that you can scroll each view from top to bottom without any issues
-1. Drag a file from the bottom working set up into the top working set and verify that scrollbars appear on both views while dragging
-1. Grab the first file in the working set and verify you can drag it to the last position in the working set (scrolling will be necessary)
-1. Grab the last file in the working set and verify you can drag it to the first position of the working set (scrolling will be necessary)
-1. Grab any file in the top working set and verify you can drag it to the last position in the bottom working set (scrolling will be necessary)
-1. Grab any file in the bottom working set and verify you can drag it to the first position in the top working set (scrolling will be necessary)
-1. Grab any file in the bottom working set and verify you can drop it anywhere in the top working set
-1. Grab any file in the bottom working set and gesture drag it down to the last position of the top working set (you'll need to drag up into the top working set then drag down to scroll the list)
-1. Grab any file in the top working set and gesture drag it to the first position of the top working set (you'll need to drag down into the bottom working set then drag up to scroll the list)
-1. Switch back to Citrus and verify `specials.jpg` is the current file
-1. Drag the file after `specials.jpg` in the working set to the bottom working set 
-1. `Ctrl+Tab` to verify that the file you just dragged is the next file in the MRU list.
+1. `File > Close All` and verify that all files are closed.
+1. Double-click on `index.html` in the file tree and verify that it is open and added to the working set.
+1. `View > Vertical Split` and verify a second pane is created and is given focus. `index.html` should still be open in the left pane and is listed in the "Left" working set.
+1. Expand the CSS folder in the file tree and double-click on `desktop.css` to open it in the right pane and verify it is added to the "Right" working set.
+1. Drag the splitter between the two views back and forth and verify there are no visual glitches and the 2 editors resize appropriately.
+1. Switch back to another project and then back to citrus and verify the view is still split, splitter is where you left it, and the same files are open.
+1. In the sidebar, drag the `index.html` file from the "Left" working set and verify that you can drop it into the "Right" working set, and that it is no longer displayed int he left pane.
+1. Drag it back to the empty "Left" working set and verify that it is once again displayed in left pane.
+1. Click Split View icon at top of sidebar, choose `No Split`, and verify therre is now only a single pane displayed and all open files are listed in the Working Files list.
