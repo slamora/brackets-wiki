@@ -43,10 +43,32 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TODO
+* [Quick Docs: Support vendor-prefixed CSS properties](https://github.com/adobe/brackets/pull/8739) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Sort Working Files locale-aware](https://github.com/adobe/brackets/pull/8971) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Quick View: Only respond to color _names_ in CSS/SCSS/LESS files](https://github.com/adobe/brackets/pull/8156) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [New preference: "showCursorWhenSelecting"](https://github.com/adobe/brackets/pull/8972) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [More consistently use "Release" (not "Sprint") to describe version number](https://github.com/adobe/brackets-shell/pull/462) ([part 2](https://github.com/adobe/brackets/pull/8680), [part 3](https://github.com/adobe/brackets-shell/pull/466)) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Switch Extension Manager tabs using Ctrl-(Shift)-Tab](https://github.com/adobe/brackets/pull/8856) (+ [part 2](https://github.com/adobe/brackets/pull/9226)) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Easing editor: Tolerate errant trailing comma in `cubic-bezier()`](https://github.com/adobe/brackets/pull/8910) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Add _Debug > Open Brackets Source_ command](https://github.com/adobe/brackets/pull/8859) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Themes: Allow styling cursor without needing `!important`](https://github.com/adobe/brackets/pull/9061) by [Miguel Castillo](https://github.com/MiguelCastillo)
+* [Fix Quick View positioning with Split View](https://github.com/adobe/brackets/pull/8976) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix Preferences bug in experimental ES6 Promises branch](https://github.com/adobe/brackets/pull/9047) (not part of Brackets yet) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Cleanup: Remove many unused vars](https://github.com/adobe/brackets/pull/8954) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Cleanup: Fix capitalization in function name](https://github.com/adobe/brackets/pull/9081) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Cleanup: Update comment links to CodeMirror repo](https://github.com/adobe/brackets/pull/9407) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Czech translation update](https://github.com/adobe/brackets/pull/8926) (+ [part 2](https://github.com/adobe/brackets/pull/9100)) by [kvarel](https://github.com/kvarel)
+* [Finnish translation update](https://github.com/adobe/brackets/pull/8939) (+ [part 2](https://github.com/adobe/brackets/pull/9156), [part 3](https://github.com/adobe/brackets/pull/9391)) by [valtlait](https://github.com/valtlait)
+* [Galician translation update](https://github.com/adobe/brackets/pull/9297) by [Iván Barcia](https://github.com/ivarcia)
+* [Italian translation update](https://github.com/adobe/brackets/pull/8964) (+ [part 2](https://github.com/adobe/brackets/pull/9422)) by [Denisov21](https://github.com/Denisov21)
+* [Persian translation update](https://github.com/adobe/brackets/pull/9105) (+ [part 2](https://github.com/adobe/brackets/pull/9390)) by [Mohammad Yaghobi](https://github.com/mohammadyaghobi)
+* [Romanian translation update](https://github.com/adobe/brackets/pull/9116) by [Micleusanu Nicu](https://github.com/micnic)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/9078) by [Jaime Olmo](https://github.com/jamesxv7)
+* [Example of using package.json `i18n` field](https://github.com/adobe/brackets/pull/8828) by [Denisov21](https://github.com/Denisov21)
+
 
 #### Pulling source code from Git
-* TODO: any brackets-shell updates?
+* Rebuilding/updating brackets-shell is _optional_ for this release.
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
