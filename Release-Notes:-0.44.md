@@ -5,8 +5,9 @@ _This document will not be finalized until the end of Release 0.44 -- approximat
 What's New in Release 0.44
 --------------------------
 * **Split View**
-    * **[Vertical & Horizontal Split View](https://trello.com/c/WLeAC84F/1290-splitview-landing-in-master)**: View two files side by side or one above the other. (Note: it is not yet possible to view the same file in both panes).
+    * **[Vertical & Horizontal Split View](https://trello.com/c/WLeAC84F/1290-splitview-landing-in-master)**: View two files side by side or one above the other. Use the View menu or the ![Split View icon](images/splitview-icon.png) icon next to Working Files to arrange. (Note: it is not yet possible to view the same file in both panes).
 * **Stylesheet Editing**
+    * [Quick Docs support for vendor-prefixed CSS properties](https://github.com/adobe/brackets/pull/8739)
     * Fix bug [#9002](https://github.com/adobe/brackets/issues/9002) - Brackets freezes during Live Preview on a line within a CSS/SCSS/LESS block comment that contains nothing but "}" with no indent.
     * Fix bug [#8966](https://github.com/adobe/brackets/issues/8966) - Inline editor is blank if your CSS rule contains a vendor-prefixed property that uses a rgb()-like color value.
 * **Files and Folders**
@@ -22,12 +23,16 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release
 
 UI Changes
 ----------
-TODO
+**Working Files** - Image files can now appear in the "Working Files" list at top.
+
+**Project Tree** - Folders can no longer appear selected in the tree - the project folder selection always reflects what's viewed in the editor. Right-clicking a file in the project tree no longer opens it. This means it's now possible to right-click files that can't be opened, such as binary files or non-UTF8 text files.
 
 
 API Changes
 -----------
-TODO
+**Split View** - Many APIs in DocumentManager, EditorManager and PanelManager are deprecated (though they continue to work for now). The newer replacement APIs may not behave exactly the same. Read [[SplitView Extension Migration Guide]] for more detail.
+
+**Coding Style** - Brackets core code should no longer contain any unused variables. The Travis build will automatically fail for pull requests that don't adhere to this.
 
 New/Improved Extensibility APIs
 -------------------------------
