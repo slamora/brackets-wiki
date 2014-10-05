@@ -1,7 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Release 0.44 -- approximately October 5._
-
 What's New in Release 0.44
 --------------------------
 * **Split View**
@@ -36,7 +32,11 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
-TODO - [Working Set View Extensibility](https://github.com/adobe/brackets/pull/9054)
+**File list decorators** - To modify the appearance of the Working Files list or the project tree below it, extensions can register decoration providers to add icons or arbitrary CSS. Use `WorkingSetView.addIconProvider()`, `WorkingSetView.addClassProvider()`, `ProjectManager.addIconProvider(), or `ProjectManager.addClassesProvider()`.
+
+**ProjectManager** - Several API fixes/improvements, including:
+* `ProjectManager.renameItemInline()` now returns a Promise to track completion
+* `ProjectManager.createNewItem()` no longer ignores the `baseDir` argument
 
 
 Known Issues
