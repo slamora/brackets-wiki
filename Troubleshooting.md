@@ -84,7 +84,7 @@ You can use `File > Open` to open any file on your computer, but Brackets' defin
 
 ### HTML File should be in Working Set
 
-There is a [known issue](https://github.com/adobe/brackets/issues/7886) that if HTML file is in project tree (i.e. not in Working Set), then element highlighting stops working after switching to a CSS (or other?) file and then back to the HTML file. The workaround is to double-click HTML file so it's added to the Working Set.
+There is a [known issue](https://github.com/adobe/brackets/issues/7886) (which is fixed in release 0.43) that if HTML file is in project tree (i.e. not in Working Set), then element highlighting stops working after switching to a CSS (or other?) file and then back to the HTML file. The workaround is to double-click HTML file so it's added to the Working Set.
 
 ### Disable Extensions
 The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
