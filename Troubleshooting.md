@@ -94,6 +94,7 @@ The Theseus extension is known to cause problems with Live Preview, and other ex
 * If you specified a "Base URL," make sure your local server is already running - Brackets will not start it for you.
 * Make sure you are not running firewall, network security, or antivirus software that is blocking the connection (try disabling it temporarily to check)
 * Make sure you haven't modified your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)) to remap localhost or 127.0.0.1
+* Try shutting down background apps in Chrome. In Chrome, go to Settings > Advanced Settings and then uncheck the "Continue running background apps when Google Chrome is closed" setting.
 
 ### HTML Page is not Updating in Browser as you Type
 If you are using your own local server, HTML will not update live ([see documentation](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview)).
