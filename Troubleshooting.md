@@ -122,18 +122,24 @@ Known issues:
 
 * [Bug #7935](https://github.com/adobe/brackets/issues/7935): Live CSS does not update if page contains an iframe (including injected iframes such as ads or social media buttons).
 
-### Install Chrome For Multiple User Accounts
-#### Windows Only
+### Chrome Issues
+
+#### Stable Chrome
+
+Brackets is verified with the current stable Chrome. It usually works with current beta, dev, or canary versions of Chrome, but if you are having a problem switch back to stable Chrome before opening an issue.
+
+#### Install Chrome For Multiple User Accounts
+##### Windows Only
 If you get the error ``An error occurred when launching the browser. (error 2)`` when doing Live Development, installing [Chrome for multiple user accounts](http://support.google.com/chrome/bin/answer.py?hl=en&answer=118663) may solve the issue.
  
-### Check Windows Registry
+#### Check Windows Registry
 If Brackets cannot launch the Chrome browser on your Windows system, check the Registry setting here:
 
 * HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe
 
 This is the file path that Brackets uses to launch Chrome. If this is not correct, then try reinstalling the Chrome browser at this location.
 
-### Uninstall/Reinstall Chrome
+#### Uninstall/Reinstall Chrome
 
 When uninstalling Google Chrome on Windows, some users have reported problems with Registry settings that are not removed. If uninstalling and reinstalling Chrome still does not fix problem, try deleting Registry settings in the following locations before re-installling:
 
@@ -142,13 +148,13 @@ When uninstalling Google Chrome on Windows, some users have reported problems wi
 
 **Warning:** Editing the Windows Registry can easily cause problems with your system, so edit it manually at your own risk. Another option is to use a tool such as Revo Uninstaller to uninstall Chrome.
 
-### Keep Chrome Open
+#### Keep Chrome Open
 Try leaving an extra blank tab open in the instance of Chrome that is launched by Live Preview. This prevents Chrome from shutting down and restarting between each file, so Live Preview will launch faster; this may reduce some intermittent errors.
 
-### Restart Your Computer
+#### Restart Your Computer
 If you keep getting errors when trying to launch Chrome, or if you keep getting prompted to restart Chrome, try rebooting your machine. Rebooting has resolved many odd issues with Live Development.
 
-### Re-install Brackets
+#### Re-install Brackets
 
 On Windows, you may run into issues starting Live Preview if you installed Chrome after installing Brackets. In that case, re-installing Brackets should fix the problem.
 
