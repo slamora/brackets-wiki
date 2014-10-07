@@ -21,7 +21,7 @@ UI Changes
 ----------
 **Working Files** - Image files can now appear in the "Working Files" list at top.
 
-**Project Tree** - Folders can no longer appear selected in the tree - the project folder selection always reflects what's viewed in the editor. Right-clicking a file in the project tree no longer opens it. This means it's now possible to right-click files that can't be opened, such as binary files or non-UTF8 text files.
+**Project Tree** - Folders can no longer appear selected in the tree - the file tree selection always reflects what's viewed in the editor. Right-clicking a file in the project tree no longer opens it. This means it's now possible to right-click files that can't be opened, such as binary files or non-UTF8 text files.
 
 
 API Changes
@@ -32,7 +32,7 @@ API Changes
 
 New/Improved Extensibility APIs
 -------------------------------
-**File list decorators** - To modify the appearance of the Working Files list or the project tree below it, extensions can register decoration providers to add icons or arbitrary CSS. Use `WorkingSetView.addIconProvider()`, `WorkingSetView.addClassProvider()`, `ProjectManager.addIconProvider(), or `ProjectManager.addClassesProvider()`.
+**File list decorators** - To modify the appearance of the Working Files list or the project tree below it, extensions can register decoration providers to add icons or arbitrary CSS. Use `WorkingSetView.addIconProvider()`, `WorkingSetView.addClassProvider()`, `ProjectManager.addIconProvider()`, or `ProjectManager.addClassesProvider()`.
 
 **ProjectManager** - Several API fixes/improvements, including:
 * `ProjectManager.renameItemInline()` now returns a Promise to track completion
