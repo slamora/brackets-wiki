@@ -2,13 +2,13 @@
 
 #### Commits & files
 
-* **Number of commits** - use a link of the form https://github.com/adobe/brackets/compare/sprint-XX...sprint-YY (use `release` as the endpoint if we haven't tagged the build yet). Then do the same for brackets-shell and sum together the number of commits.
+* **Number of commits** - use a link of the form https://github.com/adobe/brackets/compare/release-0.XX...release-0.YY (use just `release` as the endpoint if we haven't tagged the build yet). Then do the same for brackets-shell and sum together the number of commits.
 * **Number of files touched** - same as above
 
 #### Pull requests
 
 1. Install Peter's "Brackets Reports" extension / make sure you have the latest (>= 1.3.0)
-2. Find the day the _previous_ sprint branched to `release` (usually close to the time the _current_ sprint's "set-sprint number" PR landed).
+2. Find the day the _previous_ sprint branched to `release` (usually just before the time the _current_ sprint's "set-sprint number" PR landed).
 3. In the extension, edit _GitHubReports.js_ and change the value of `END_LAST_SPRINT` to the start of that day (following the date format shown in the code)
 4. Reload Brackets
 5. Run _View > Brackets Reports > Pull Requests in Sprint_
@@ -33,7 +33,7 @@ To see if there were any **new locales**, compare the set of folders under `src/
 
 We normally don't report the number of issues fixed, because (a) it's hard to distinguish legacy bugs vs. bugs that were both opened _and_ closed within the one sprint's lifecycle, and (b) we often forget to tag every bug with a sprint milestone, leading to varying degrees of undercount.
 
-But you can get a _rough_ number via a "closed issues" milestone query on GitHub -- something of the form https://github.com/adobe/brackets/issues?labels=&milestone=10&state=closed. (Note that the milestone number is _not_ equal to the sprint number - it's typically `(sprint number - 12)`).
+But you can get a _rough_ number via a "closed issues" milestone query on GitHub -- something of the form https://github.com/adobe/brackets/issues?q=is%3Aclosed+milestone%3A%22Release+0.44%22.
 
 
 ## Stats for the sprint about to be EOL'ed
