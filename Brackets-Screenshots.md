@@ -1,4 +1,4 @@
-Here are some screenshots of Brackets as of sprint 7 (click on the thumbnails to see them full size).
+Here are some screenshots of Brackets as of Release 44 (click on the thumbnails to see them full size).
 
 **Overall Brackets UI**
 
