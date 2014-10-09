@@ -54,6 +54,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [Downloads](http://download.brackets.io)
 * Release Notes:
+ * [Release 0.44](https://github.com/adobe/brackets/wiki/Release-Notes:-0.44)
  * [Release 0.43](https://github.com/adobe/brackets/wiki/Release-Notes:-0.43)
  * [Release 0.42](https://github.com/adobe/brackets/wiki/Release-Notes:-0.42)
  * [Release 0.41](https://github.com/adobe/brackets/wiki/Release-Notes:-0.41)
@@ -64,7 +65,6 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
  * [Sprint 36](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-36)
  * [Sprint 35](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-35)
  * [Sprint 34](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-34)
- * [Sprint 33](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-33)
  * [more...](https://github.com/adobe/brackets/wiki/Release-Notes)
 
 ## Build & Release Process
