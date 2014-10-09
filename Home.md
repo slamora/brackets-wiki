@@ -69,6 +69,6 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 ## Build & Release Process
 
-* [Building Brackets Releases](https://github.com/adobe/brackets/wiki/Building-Brackets)
+* [Building Brackets Releases](https://github.com/adobe/brackets/wiki/Building-Brackets-Releases)
 * [Building brackets-shell Binaries](https://github.com/adobe/brackets-shell/wiki/Building-Brackets-Shell)
 * [[Collecting End of Sprint Stats]]
