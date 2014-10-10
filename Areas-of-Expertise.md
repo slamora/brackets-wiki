@@ -32,5 +32,5 @@
 |Text Editing Commands (EditorCommandHandlers) | NJ, Peter || 
 |UI layout/panels| Peter, Jeff	|| 
 |Unit Tests| Ingo, NJ || 
-|User experience - interaction design| NJ, Larz, Peter	|| 
-|User experience - visual design| Larz, NJ||
+|User experience — interaction design| NJ, Larz, Peter	|| 
+|User experience — visual design| Larz, NJ||
