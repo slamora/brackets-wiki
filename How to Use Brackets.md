@@ -2,7 +2,7 @@
 -----------
 **[Downloads Brackets here](http://brackets.io)** for Mac, Windows and Linux (Debian/Ubuntu). Brackets is built with HTML, CSS and JS, but currently runs as a desktop application in a thin native shell that can access your local files.
 
-Brackets hasn't hit 1.0 yet, but it's getting close - so feel free to give it a spin and let us know what's missing!
+Brackets hasn't hit 1.0 yet, but it's getting close — so feel free to give it a spin and let us know what's missing!
 
 Updates are released about once a month.
 
@@ -40,26 +40,26 @@ Instead of cluttering up your coding environment with lots of panels and icons, 
 
 You open Quick Edit's inline editors by pressing **Ctrl/Cmd-E** when your cursor is on certain pieces of code. For example:
 
-* In an HTML file with the cursor inside a `class` or `id` attribute (name or value) or on the tag name - Quick Edit will show you all the CSS, SCSS and LESS rules in your project that match. You can edit these rules directly inline, without ever leaving the context of the HTML file.
+* In an HTML file with the cursor inside a `class` or `id` attribute (name or value) or on the tag name — Quick Edit will show you all the CSS, SCSS and LESS rules in your project that match. You can edit these rules directly inline, without ever leaving the context of the HTML file.
     * When multiple rules match, navigate among them using the list on the right side (or use Alt-Up/Down).
     * To create a new CSS rule directly from the inline editor, click the **New Rule** button (or press Ctrl-Alt-N/Cmd-Opt-N).
-* In any file with a hex color or rgb/rgba/hsl/hsla color - Quick Edit opens an inline color picker for previewing and adjusting the color. The color picker also lists the top most-used colors from other parts of the file for quick access.
-* In a JavaScript file with the cursor on a function name - Quick Edit will show you the function's body (even if it's in a different file).
-* In a CSS/LESS/SCSS file with the cursor on a `cubic-bezier()` or `steps()` transition timing function - Quick Edit opens a graphical transition curve editor. Pre-defined timing functions `ease`, `ease-in`, `ease-out`, `ease-in-out`, `step-start`, and `step-end` are also valid starting points.
+* In any file with a hex color or rgb/rgba/hsl/hsla color — Quick Edit opens an inline color picker for previewing and adjusting the color. The color picker also lists the top most-used colors from other parts of the file for quick access.
+* In a JavaScript file with the cursor on a function name — Quick Edit will show you the function's body (even if it's in a different file).
+* In a CSS/LESS/SCSS file with the cursor on a `cubic-bezier()` or `steps()` transition timing function — Quick Edit opens a graphical transition curve editor. Pre-defined timing functions `ease`, `ease-in`, `ease-out`, `ease-in-out`, `step-start`, and `step-end` are also valid starting points.
 
 **Quick Docs** is a related feature that displays relevant documentation inline. Use **Ctrl/Cmd-K** to open Quick Docs:
 
-* In a CSS/LESS/SCSS file with the cursor on a CSS property/value - Quick Docs opens documentation from the [Web Platform Docs](http://docs.webplatform.org/) project.
+* In a CSS/LESS/SCSS file with the cursor on a CSS property/value — Quick Docs opens documentation from the [Web Platform Docs](http://docs.webplatform.org/) project.
 
 You can open _multiple_ inline editors and docs viewers simultaneously. To close a single inline editor or docs viewer, click the "X" in the upper-left or press Escape while it has focus. To close _all_ inline editors & docs at once, place your cursor back in the main enclosing code editor and press Escape.
 
 
 ### <a id="livedev"></a>Live Preview
-Brackets works directly with your browser to push code edits instantly, so your browser preview is always up to date while you're coding - no page reloads needed.
+Brackets works directly with your browser to push code edits instantly, so your browser preview is always up to date while you're coding — no page reloads needed.
 
 There are two different ways to use Live Preview:
 
-**With no backend (i.e. server-side) logic** - Open an HTML file and select **File > Live Preview** (or click the "lightning bolt" icon). Brackets will launch Chrome and open your file in a new tab. The content is served statically from a built-in server that Brackets run - it doesn't contain any of your app's backend logic.
+**With no backend (i.e. server-side) logic** — Open an HTML file and select **File > Live Preview** (or click the "lightning bolt" icon). Brackets will launch Chrome and open your file in a new tab. The content is served statically from a built-in server that Brackets run — it doesn't contain any of your app's backend logic.
 
 This mode offers the full range of Live Preview functionality:
 * Browser preview updates in real time as you type in HTML _and_ CSS files (without reloading)
@@ -70,18 +70,18 @@ This mode offers the full range of Live Preview functionality:
 
 All the CSS features above also work when you're in an inline Quick Edit CSS editor.
 
-**Using your own backend**<a name="lp-custom-server"></a> - Make sure your local server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open a file for one of your webpages (e.g. an HTML, PHP, or ASP file) and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
+**Using your own backend**<a name="lp-custom-server"></a> — Make sure your local server is already running, serving files from the same folder Brackets is editing. Choose **File > Project Settings** and enter whatever URL corresponds to the _root_ folder that's open in Brackets (typically a localhost URL). Then open a file for one of your webpages (e.g. an HTML, PHP, or ASP file) and launch Live Preview. Brackets will launch Chrome with the correct URL to load that page from your local server.
 
 _However_, Live Preview has the following limitations when using your own backend:
 
-* The browser won't update immediately as you type in server-processed files (such as HTML or PHP) - only changes to CSS files will be reflected in real time. For server-processed files, Brackets will automatically reload the page on save to update the browser preview.
+* The browser won't update immediately as you type in server-processed files (such as HTML or PHP) — only changes to CSS files will be reflected in real time. For server-processed files, Brackets will automatically reload the page on save to update the browser preview.
 * "Live Highlighting" is disabled for server-processed files. It will still work when your cursor is in a CSS file, however.
 
 > Why do these limitations exist? To enable HTML live editing, Brackets needs to inject some annotations into your HTML code before the browser loads it. Normally, the built-in Brackets server does this. When using your own server instead, Brackets can't inject those annotations. Without the annotations, Brackets can't map edits and cursor positions from your source file onto the corresponding DOM nodes in the browser.
 
 ##### Live Preview with SCSS/LESS
 
-Live Preview won't update in real time as you type in LESS/SCSS files. However, if you use a third-party "file watcher" to automatically recompile your CSS on save, Live Preview will automatically update on save to reflect the changed CSS file (without reloading). You can also use a Brackets extension such as [Brackets SASS](https://github.com/jasonsanjose/brackets-sass) or [LESS AutoCompile](https://github.com/jdiehl/brackets-less-autocompile) for this. However - if you're using less.js to dynamically compile your LESS at runtime, Live Preview won't be able to update the page; you'll need to reload to see changes.
+Live Preview won't update in real time as you type in LESS/SCSS files. However, if you use a third-party "file watcher" to automatically recompile your CSS on save, Live Preview will automatically update on save to reflect the changed CSS file (without reloading). You can also use a Brackets extension such as [Brackets SASS](https://github.com/jasonsanjose/brackets-sass) or [LESS AutoCompile](https://github.com/jdiehl/brackets-less-autocompile) for this. However — if you're using less.js to dynamically compile your LESS at runtime, Live Preview won't be able to update the page; you'll need to reload to see changes.
 
 ##### Other limitations
 
@@ -111,8 +111,8 @@ Other Features
 Brackets supports multiple cursors, multiple selections, and rectangular selections, as well as Undo Selection and useful commands like Add Next Match to Selection. See [[Working with Multiple Selections]] for more information.
 
 ### Settings
-* **Indentation and tabs** - To change the default indentation for the editor, use the controls on the right end of the status bar at the bottom of the window. Click the word "Spaces" or "Tab Size" to switch whether you're using spaces or tabs, and change the indentation size by clicking on the number to the right. Note that Brackets uses "soft tabs", so even if spaces are inserted, the cursor moves as if tabs are present.
-* **Editor font and colors** - There are no official preferences for these yet. However, there are unofficial ways to [[Customize your code font]], and several extensions add the ability to choose different themes.
+* **Indentation and tabs** — To change the default indentation for the editor, use the controls on the right end of the status bar at the bottom of the window. Click the word "Spaces" or "Tab Size" to switch whether you're using spaces or tabs, and change the indentation size by clicking on the number to the right. Note that Brackets uses "soft tabs", so even if spaces are inserted, the cursor moves as if tabs are present.
+* **Editor font and colors** — There are no official preferences for these yet. However, there are unofficial ways to [[Customize your code font]], and several extensions add the ability to choose different themes.
 
 See also the [Preferences](#preferences) section below.
 
@@ -120,20 +120,20 @@ See also the [Preferences](#preferences) section below.
 To quickly jump to a file, press **Ctrl/Cmd-Shift-O** and type part of the filename. You can type abbreviations or other non-contiguous parts of the name, and Quick Open will intelligently find the best matching file.
 
 ### Quick Find Definition
-To quickly jump around _within_ a file, press **Ctrl/Cmd-T** to see an outline view - functions in a JS file, selectors in a CSS/LESS/SCSS file, etc. Similar to Quick Open, you can type parts of a name to filter the list.
+To quickly jump around _within_ a file, press **Ctrl/Cmd-T** to see an outline view — functions in a JS file, selectors in a CSS/LESS/SCSS file, etc. Similar to Quick Open, you can type parts of a name to filter the list.
 
 ### <a id="codehints"></a>Code Hints
 Code hints generally pop up automatically while you're typing, but you can also manually display them with **Ctrl-Space** (note that this shortcut uses Ctrl even on Mac).
 
 Code hints are provided by default in a number of places:
-* HTML - tag names, attribute names, attribute values, and `&` entities.
-* CSS, LESS, SCSS - all property names, and enumerated property values (those where the value is a discrete list of keywords).
+* HTML — tag names, attribute names, attribute values, and `&` entities.
+* CSS, LESS, SCSS — all property names, and enumerated property values (those where the value is a discrete list of keywords).
     * Code hints don't yet work for shorthand properties (e.g. `background`), only for individual properties (e.g. `background-repeat`).
-* JS - variables and functions, using the [Tern](http://ternjs.net/) code intelligence engine.
+* JS — variables and functions, using the [Tern](http://ternjs.net/) code intelligence engine.
     * Tern makes intelligent inferences about what properties and methods a given object contains, based on an analysis of your code. In addition to the current file, Brackets looks at other files in the same folder and any files referenced by a `require()` statement.
     * In cases where Brackets can't determine exactly what hints should be available, it will fall back to a list of heuristic guesses. These guesses are shown in italics.
-    * JS code hints use smart matching - so you can type camel-case initials and other shorthand to filter the hint list more quickly (e.g. type "gsp" for `getScrollPos`).
-    * You also get _argument hints_ - while you're typing arguments to a function, an indicator above the cursor lists the expected types of the arguments. Normally this appears automatically, but you can also display it manually by pressing **Ctrl-Shift-Space**. (Nothing is shown if Tern is unsure where the function is defined, however).
+    * JS code hints use smart matching — so you can type camel-case initials and other shorthand to filter the hint list more quickly (e.g. type "gsp" for `getScrollPos`).
+    * You also get _argument hints_ — while you're typing arguments to a function, an indicator above the cursor lists the expected types of the arguments. Normally this appears automatically, but you can also display it manually by pressing **Ctrl-Shift-Space**. (Nothing is shown if Tern is unsure where the function is defined, however).
 
 ### JSLint
 
@@ -195,7 +195,7 @@ These are all the settings that are currently supported:
 | `closeOthers.others`,<br>`closeOthers.above`,<br>`closeOthers.below` | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
 | `language.fileExtensions` | `undefined` | Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | `language.fileNames` | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
-| `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` - highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` - highlight all strings that match the token the cursor is currently in (no selection needed)</li></ul> |
+| `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` — highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` — highlight all strings that match the token the cursor is currently in (no selection needed)</li></ul> |
 | `showCodeHints` | `true` | If false, all code hints are disabled |
 | `codehint.TagHints` | `true` | Enable/disable HTML tag hints |
 | `codehint.AttrHints` | `true` | Enable/disable HTML attribute hints |
