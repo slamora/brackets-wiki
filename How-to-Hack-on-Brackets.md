@@ -108,7 +108,7 @@ git submodule update --init
 
 _Don't skip the last line!_ Brackets uses submodules for third-party dependencies (like [CodeMirror](http://codemirror.net/)), so it won't work until you run this command to set them up.
 
-> You may also need to run `git submodule update` when you switch branches or pull from upstream, since submodule changes aren't update automatically. If you see third-party code showing up as modified in `git status` (something like `M	src/thirdparty/CodeMirror2`), then you need to run this command.
+> You may also need to run `git submodule update` when you switch branches or pull from upstream, since submodule changes aren't updated automatically. If you see third-party code showing up as modified in `git status` (something like `M	src/thirdparty/CodeMirror2`), then you need to run this command.
 
 
 ### <a name="setup_for_hacking"></a> Running Your Copy of the Code ###
