@@ -4,7 +4,7 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 
 1. Discuss any major changes or questions beforehand in the [brackets-dev newsgroup](http://groups.google.com/group/brackets-dev).
 2. Follow the [Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist) to ensure a good-quality pull request.
-3. Sign the [Brackets Contributor License Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html) - we can't merge your code otherwise. You only need to do this once.
+3. Sign the [Brackets Contributor License Agreement (CLA)](http://dev.brackets.io/brackets-contributor-license-agreement.html) — we can't merge your code otherwise. You only need to do this once.
 
 
 ## Quick Start ##
@@ -12,7 +12,7 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 ### Requirements ###
 
 * Latest [Brackets installer build](http://download.brackets.io) (or if you'd rather build the native bits yourself instead, [see below](#nativeshell)).
-* Git command line tools - follow the setup instructions [on GitHub](https://help.github.com/articles/set-up-git) or download [here](http://git-scm.com/downloads)
+* Git command line tools — follow the setup instructions [on GitHub](https://help.github.com/articles/set-up-git) or download [here](http://git-scm.com/downloads)
 
 ### Setting up your dev environment ###
 
@@ -83,7 +83,7 @@ First, [sign the Brackets Contributor License Agreement (CLA)](http://dev.bracke
 Then, just submit changes as pull requests from your own fork of brackets or
 brackets-shell. The core dev team works in 2.5-week sprints (weird length,
 but it works for us). We'll try to review small pull requests quickly
-in the current sprint. Larger submissions may take longer - but discussing them
+in the current sprint. Larger submissions may take longer — but discussing them
 in advance will smooth the process!
 
 Before you submit your pull request, please make sure it's merged with master and fully tested as described in the [Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist).
@@ -135,7 +135,7 @@ If you're only hacking on HTML/JS/CSS files, you can have the installed Brackets
 
 You can revert back to running the installed version of the Brackets source at any time by running `tools/restore_installed_build.sh` (Mac) or `tools\restore_installed_build.bat` (Windows) from your Brackets repo.
 
-Once you are set up, Brackets will pick up the latest changes to the code every time it starts - _no build step is needed._ (The Grunt scripts are used only to [generate a final release build](https://github.com/adobe/brackets/wiki/Building-Brackets-Releases)).
+Once you are set up, Brackets will pick up the latest changes to the code every time it starts — _no build step is needed._ (The Grunt scripts are used only to [generate a final release build](https://github.com/adobe/brackets/wiki/Building-Brackets-Releases)).
 
 
 ### Getting Updates from the Main Repository ###
@@ -166,7 +166,7 @@ git merge upstream/master
 
 This merges any changes from the main Brackets repository into whichever branch you currently have checked out locally. (To update multiple local branches, you'll need to `git checkout` each one in turn and repeat the merge command).
 
-You may also need to run `git submodule update` at this point - if the output of `git fetch` said "Fetching submodule" or if `git status` shows an unexpected diff in a third-party library.
+You may also need to run `git submodule update` at this point — if the output of `git fetch` said "Fetching submodule" or if `git status` shows an unexpected diff in a third-party library.
 
 Rarely, an entire _new_ submodule is added to Brackets. You'll need to run `git submodule update --init` when that happens.
 
@@ -188,14 +188,14 @@ If you did _not_ fork the brackets-shell repo (i.e. you're using the 'setup_for_
 ## Contributing Code ##
 
 ### Useful Tools for Development ###
-If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. You can also [debug Brackets using dev tools](Debugging Brackets) - but to keep Reload working properly while dev tools are open, be sure to **disable caching** as instructed in that link.
+If you use Brackets to edit Brackets, you can quickly reload the app itself by choosing *Debug > Reload Brackets* from the in-app menu. You can also [debug Brackets using dev tools](Debugging Brackets) — but to keep Reload working properly while dev tools are open, be sure to **disable caching** as instructed in that link.
 
 You can use *Debug > Run Tests* to [run our unit test suite](Running Brackets Unit Tests).
 
 ### Saving Your Code Changes ###
 If you've found an issue you want to fix or a feature you want to implement, eventually you'll want to submit a _pull request_ back to Brackets upstream. Here's how to organize your changes so they're ready to turn into a pull request.
 
-First, create a new branch off of `master` for the change you want to work on. This allows your `master` branch to stay in sync with the main Brackets repository - and if your change doesn't work or breaks something, you can always start fresh from your local `master` again.
+First, create a new branch off of `master` for the change you want to work on. This allows your `master` branch to stay in sync with the main Brackets repository — and if your change doesn't work or breaks something, you can always start fresh from your local `master` again.
 
 ```
 git checkout master
@@ -209,7 +209,7 @@ Now go ahead and modify some code, make your fix, and be sure that it works in y
 
 Next it's time to _commit_ your changes to your local git repo. Use `git add <filename>` to stage any modified files for committing, then use `git commit -m "COMMIT MESSAGE"` to commit those files. (Or just use use `git commit -am "COMMIT MESSAGE"` to commit all modified files). Be sure to write a thorough commit message that describes the changes you're making and why. 
 
-The last step before submitting a pull request is to _push_ those changes to your GitHub account - so far the changes are only stored in your local copy of the Brackets repository. Remember that your GitHub fork of the Brackets repo is called "origin"... so to push your changes use:
+The last step before submitting a pull request is to _push_ those changes to your GitHub account — so far the changes are only stored in your local copy of the Brackets repository. Remember that your GitHub fork of the Brackets repo is called "origin"... so to push your changes use:
 
 ```
 git push origin mynewfeature
@@ -217,7 +217,7 @@ git push origin mynewfeature
 
 That command creates a matching branch on your GitHub-hosted repo and copies your branch's commits into it. Now your commits are stored on the GitHub server and not just locally.
 
-This is a good time to review the **[[Pull Request Checklist]]** - make sure your code passes JSLint, doesn't break any unit tests, etc.
+This is a good time to review the **[[Pull Request Checklist]]** — make sure your code passes JSLint, doesn't break any unit tests, etc.
  
 
 ### Submitting a Pull Request ###
@@ -225,9 +225,9 @@ Now you're ready to submit a pull request. Go to the GitHub page for your fork o
 
 Click the Pull Request button in the top right and you'll be brought to a page that describes the pull request. Make sure you're submitting _to_ the `adobe/brackets` repository, _from_ the branch you've been working on. 
 
-Review the "Commits" and "Files Changed" tabs to make sure you're submitting only the changes you intend. Write a detailed description of what your pull request does, and include links to any relevant bugs ("#1234" is automatically turned into a link - though avoid writing "fixes #1234", since GitHub will auto-close the bug too soon if it sees a string like that). Then click "Send pull request."
+Review the "Commits" and "Files Changed" tabs to make sure you're submitting only the changes you intend. Write a detailed description of what your pull request does, and include links to any relevant bugs ("#1234" is automatically turned into a link — though avoid writing "fixes #1234", since GitHub will auto-close the bug too soon if it sees a string like that). Then click "Send pull request."
 
-Congratulations on submitting your pull request - you've helping make Brackets even better! Read about [the pull request review process](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#the-code-review-process) for what happens next.
+Congratulations on submitting your pull request — you've helping make Brackets even better! Read about [the pull request review process](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#the-code-review-process) for what happens next.
 
 #### Updating an Existing Pull Request
 During code review, you will probably be asked to make some changes to your code. First, make sure you're working on the correct branch:
@@ -238,7 +238,7 @@ git checkout mynewfeature
 
 Then make the necessary code changes. When done, repeat the `git commit` and `git push` steps from above.
 
-_Ta daa!_ As soon as you've pushed those changes to "origin" (your fork on GitHub), your pull request is automatically updated with the new code. Finally, add a comment to the pull request describing the new changes - this ensures the code reviewer is notified of your update.
+_Ta daa!_ As soon as you've pushed those changes to "origin" (your fork on GitHub), your pull request is automatically updated with the new code. Finally, add a comment to the pull request describing the new changes — this ensures the code reviewer is notified of your update.
 
 
 ## <a name="nativeshell"></a> Hacking on brackets-shell ##
