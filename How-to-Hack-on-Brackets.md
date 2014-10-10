@@ -227,7 +227,7 @@ Click the Pull Request button in the top right and you'll be brought to a page t
 
 Review the "Commits" and "Files Changed" tabs to make sure you're submitting only the changes you intend. Write a detailed description of what your pull request does, and include links to any relevant bugs ("#1234" is automatically turned into a link — though avoid writing "fixes #1234", since GitHub will auto-close the bug too soon if it sees a string like that). Then click "Send pull request."
 
-Congratulations on submitting your pull request — you've helping make Brackets even better! Read about [the pull request review process](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#the-code-review-process) for what happens next.
+Congratulations on submitting your pull request — you're helping make Brackets even better! Read about [the pull request review process](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md#the-code-review-process) for what happens next.
 
 #### Updating an Existing Pull Request
 During code review, you will probably be asked to make some changes to your code. First, make sure you're working on the correct branch:
