@@ -5,7 +5,7 @@ The best way to open a document in Brackets is to execute the command `CMD_ADD_T
 
 Here's an example:
 ```javascript
-CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./view/WorkingSetView.js", paneId: "first-pane"})
+CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./view/WorkingSetView.js", paneId: "first-pane"});
 ```
 
 
@@ -16,7 +16,7 @@ CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./vi
 | FILE_ADD_TO_WORKING_SET | Opens a Document to the Working Files List | Resolves to a Document Object. Deprecated. |
 | CMD_ADD_TO_WORKINGSET_AND_OPEN | Opens a File to the Working Files List | Resolves to a File Object |
 | FILE_OPEN | Opens a Document (not to the Working Files List) | Resolves to a Document Object. Deprecated. |
-| CMD_OPEN) | Opens a File (not to the Working Files List) | Resolves to a File Object  |
+| CMD_OPEN | Opens a File (not to the Working Files List) | Resolves to a File Object  |
 
 
 | API     | Function | Notes | 
@@ -29,3 +29,26 @@ CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./vi
 
 
 
+# File Open Command Data
+
+When opening a file, you generally construct a call to `CommandManager.execute` along with its `commandData`. It's the `commandData` which provides various options when opening the file:
+
+| Member | Meaning | Notes |
+| ------ | ------- | ------- |
+| fullPath | Path to the file to open | Required. Must be canonical. |
+| index | Index in the working set to put the file | Optional. For internal use. |
+| silent | Suppress error messages | Optional |
+| forceRedraw | Forces the working set view to redraw | Optional. |
+| paneId | Pane in which to open the file | Optional or undefined. May MainViewManger.ACTIVE_PANE or a valid pane id. |
+| options | Options to use when creating the view of the file | Optional. |
+
+Options
+Options to use when creating the view of the file
+
+| Member | Meaning | Notes |
+| ------ | ------- | ------- |
+| noPaneActivate | open the file in the specified pane but don't activate it | |
+| noPaneRedundancyCheck | don't check to see if the document is open in another pane | For internal use. |
+
+```javascript
+CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./view/WorkingSetView.js", paneId: "first-pane"})
