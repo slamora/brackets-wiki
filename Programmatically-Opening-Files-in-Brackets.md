@@ -55,7 +55,7 @@ CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./vi
 ```  
 
 ## Pane IDs
-There are currently only 2 panes. There IDs are:
+PaneId strings which can be passed to any function requiring a `paneId`. These are not undocumented but, because the number of panes may change over time, it is not a finite list so it wasn't documented.  You can still get the list of paneIds by calling `MainViewManager.getPaneIdList()`  
 
 | PaneId | Placement |
 | ------ | ------- |
