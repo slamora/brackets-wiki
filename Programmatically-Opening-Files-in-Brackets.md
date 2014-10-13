@@ -6,7 +6,7 @@ The best way to open a document in Brackets is to execute the command `CMD_ADD_T
 Here's an example:
 ```javascript
 CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./view/WorkingSetView.js", paneId: "first-pane"});
-```
+```  
 
 
 ## API Details
@@ -52,7 +52,7 @@ Options to use when creating the view of the file
 
 ```javascript
 CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./view/WorkingSetView.js", paneId: "first-pane", options: {noPaneActivate: true}})
-
+```  
 
 ## Pane IDs
 There are currently only 2 panes. There IDs are:
