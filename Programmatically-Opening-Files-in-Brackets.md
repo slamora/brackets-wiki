@@ -20,9 +20,8 @@ CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./vi
 | MainViewManager .addToWorkingSet | Adds a file to the working files list | number | For Internal Use only |
 | MainViewManager .addListToWorkingSet | Adds a list of files to the working files list | number | For Internal Use only |
 | DocumentManager .setCurrentDocument | Sets the currently view document to the document specified  | void | Deprecated use CommandManager .execute(Commands .CMD_ADD_TO_WORKINGSET_AND_OPEN) |
-| FileViewController .openAndSelectDocument | opens the document and selects it | Promise(*) | For Internal Use only. May resolve to a Document, File or void depending on the current state |
-
-
+| FileViewController .openAndSelectDocument | opens the specified file and selects it | Promise(*) | For Internal Use only. May resolve to a Document, File or void depending on the current state |
+| FileViewController .openFileAndAddToWorkingSet | opens the specified document and selects it | Promise(Document|void) | Deprecated. For Internal Use only. Usage should migrate to CommandManager .Execute(Commands. CMD_ADD_TO_WORKINGSET_AND_OPEN)
 
 
 
