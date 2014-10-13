@@ -1,6 +1,6 @@
 Brackets has a few different APIs for opening and managing files.  This document describes best practices for opening files and examines the differences between the APIs used for opening and managing files in Brackets.
 
-# Best Practices
+## Best Practices
 The best way to open a document in Brackets is to execute the command `CMD_ADD_TO_WORKINGSET_AND_OPEN`.  This command will open the file in the specified pane, add it to the working files list and select it in the working file list.  This is the preferred way to open a file.
 
 Here's an example:
@@ -9,7 +9,7 @@ CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./vi
 ```
 
 
-# API Details
+## API Details
 
 | COMMAND | Function | Notes | 
 | ------- | -------- | ----- |
@@ -29,7 +29,7 @@ CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./vi
 
 
 
-# File Open Command Data
+## File Open Command Data
 
 When opening a file, you generally construct a call to `CommandManager.execute` along with its `commandData`. It's the `commandData` which provides various options when opening the file:
 
@@ -42,7 +42,7 @@ When opening a file, you generally construct a call to `CommandManager.execute` 
 | paneId | Pane in which to open the file | Optional or undefined. May MainViewManger.ACTIVE_PANE or a valid pane id. |
 | options | Options to use when creating the view of the file | Optional. |
 
-Options
+## Options
 Options to use when creating the view of the file
 
 | Member | Meaning | Notes |
