@@ -47,8 +47,17 @@ Options to use when creating the view of the file
 
 | Member | Meaning | Notes |
 | ------ | ------- | ------- |
-| noPaneActivate | open the file in the specified pane but don't activate it | |
-| noPaneRedundancyCheck | don't check to see if the document is open in another pane | For internal use. |
+| noPaneActivate | Open the file in the specified pane but don't activate it | |
+| noPaneRedundancyCheck | Improves performance by not checking to see if the document is open in another pane | For internal use. Used when the file has already been checked for redundancy. Will be deprecated. |
 
 ```javascript
-CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./view/WorkingSetView.js", paneId: "first-pane"})
+CommandManager.execute(Commands.CMD_ADD_TO_WORKINGSET_AND_OPEN, {fullPath: "./view/WorkingSetView.js", paneId: "first-pane", options: {noPaneActivate: true}})
+
+
+## Pane IDs
+There are currently only 2 panes. There IDs are:
+
+| PaneId | Placement |
+| ------ | ------- |
+| "first-pane" | top/left |
+| "second-pane" | bottom/right |
