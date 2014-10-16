@@ -83,7 +83,7 @@ Tips for creating your theme's CSS:
         * Release 0.42 - _Tricky: see below_
         * Release 0.43 - `.CodeMirror-searching` (all matches), `.CodeMirror-searching.searching-current-match` (current match)
     * matches for the ["highlightMatches"](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) auto word highlighting - `.cm-matchhighlight`
-    * the highlight for the active line (`View > Highlight Active Line`) - `.CodeMirror-focused .CodeMirror-activeline-background` and `.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt`
+    * the highlight for the active line (`View > Highlight Active Line`) - `.CodeMirror-focused .CodeMirror-activeline-background` and `.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt` (line numbers shown) or `.show-line-padding .CodeMirror-focused .CodeMirror-activeline-background` (line numbers hidden).
     * the Quick View hover highlight - `.quick-view-highlight`
     * cursor in overwrite mode - `.CodeMirror-overwrite .CodeMirror-cursor`
 * [Known issue](https://github.com/adobe/brackets/issues/8490): Make sure your LESS file doesn't end with a comment (if it does, add a blank line afterward).
