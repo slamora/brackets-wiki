@@ -5,7 +5,7 @@ Brackets not working for you? Maybe the following will help:
 * [Brackets not launching?](#launching)
 * [Having trouble installing extensions?](#extension-install)
 * [Is Brackets running slowly?](#slow)
-* [Error reading preferences file message](#prefs37)
+* [Other: Brackets Is Acting Weird](#other)
 
 Other information that may help you:
 
@@ -191,7 +191,7 @@ You can also install extensions manually:
 4. Drag the zip file onto the "Drag .zip here" zone in the lower left of the window
 
 
-## Other: Brackets Is Acting Weird
+## <a name="other"> </a>Other: Brackets Is Acting Weird
 
 ### Preferences are Not Saved
 
