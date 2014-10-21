@@ -28,5 +28,13 @@ Where `<key>` is ...
 
 ## Exceptions
 
+### Special Commands
+Currently, the shortcuts to these commands cannot be updated or re-assigned:
+* Commands.EDIT_UNDO 
+* Commands.EDIT_REDO 
+* Commands.EDIT_SELECT_ALL
+* Commands.EDIT_CUT 
+* Commands.EDIT_COPY 
+* Commands.EDIT_PASTE
 
 
