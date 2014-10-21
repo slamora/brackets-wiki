@@ -30,18 +30,18 @@ Where `<key>` is ...
 
 ### Special Commands
 Currently, the shortcuts to these commands cannot be updated or re-assigned:
-* Commands.EDIT_UNDO 
-* Commands.EDIT_REDO 
-* Commands.EDIT_SELECT_ALL
-* Commands.EDIT_CUT 
-* Commands.EDIT_COPY 
-* Commands.EDIT_PASTE
+* `"edit.undo"`
+* `"edit.redo"`
+* `"edit.selectAll"`
+* `"edit.cut"`
+* `"edit.copy"`
+* `"edit.paste"`
 
 ### Mac Reserved Shortcuts
 These shortcuts cannot be overridden on Mac:
-* Cmd-,
-* Cmd-H
-* Cmd-Alt-H
-* Cmd-M
-* Cmd-Q
+* `"Cmd-,"`
+* `"Cmd-H"`
+* `"Cmd-Alt-H"`
+* `"Cmd-M"`
+* `"Cmd-Q"`
 
