@@ -37,4 +37,11 @@ Currently, the shortcuts to these commands cannot be updated or re-assigned:
 * Commands.EDIT_COPY 
 * Commands.EDIT_PASTE
 
+### Mac Reserved Shortcuts
+These shortcuts cannot be overridden on Mac:
+* Cmd-,
+* Cmd-H
+* Cmd-Alt-H
+* Cmd-M
+* Cmd-Q
 
