@@ -1,7 +1,9 @@
-This page describes how user can override key bindings.
+This page describes how user can override key bindings in Brackets.
 
 ## Quick Start
-Use `Debug > Open User Key Map` to open the `keymap.json` in Brackets. If the file does not already exist, then it will be created.
+Use `Debug > Open User Key Map` to open the `keymap.json` in Brackets so it can be edited. If the file does not already exist, then it will be created.
+
+Edits to file are applied immediately on File Save.
 
 ## Location
 The `keymap.json` file is located in the the user data folder. The user data folder is located at:
@@ -13,7 +15,7 @@ The `keymap.json` file is located in the the user data folder. The user data fol
 
 ## JSON Data Format
 
-The JSON  dta format is:
+The JSON  data format is:
 
     {
         "overrides": {
