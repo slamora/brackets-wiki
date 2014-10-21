@@ -28,9 +28,12 @@ The JSON  data format is:
         }
     }
 
-Where `<key>` is ...
+Where:
 
+`<key>` is a unique key.
 `<command-id>` is the command id string to assign, or "null" to remove a key binding.
+
+Modifier keys are operating system specific, so on Mac use `Cmd` versus `Ctrl` on Windows. 
 
 ### Exceptions
 
