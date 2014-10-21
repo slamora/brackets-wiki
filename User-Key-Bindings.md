@@ -30,7 +30,7 @@ The JSON  data format is:
 
 Where `<key>` is ...
 
-<command-id> can be "null" to remove a key binding.
+`<command-id>` is the command id string to assign, or "null" to remove a key binding.
 
 ### Exceptions
 
