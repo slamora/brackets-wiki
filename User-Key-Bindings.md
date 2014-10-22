@@ -44,7 +44,7 @@ Currently, the shortcuts to these commands cannot be updated or re-assigned:
 * key: `Ctrl/Cmd-V`, command: `"edit.paste"`
 * key: `Ctrl/Cmd-X`, command: `"edit.cut"`
 * key: `Ctrl/Cmd-Z`, command: `"edit.undo"`
-* key: `Ctrl/Cmd-Y`, command: `"edit.redo"` (also `Cmd-Shift-Z`)
+* key: `Ctrl/Cmd-Y, Cmd-Shift-Z`, command: `"edit.redo"`
 
 #### Mac Reserved Shortcuts
 These shortcuts cannot be overridden on Mac:
