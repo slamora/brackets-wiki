@@ -39,12 +39,12 @@ Modifier keys are operating system specific, so on Mac use `Cmd` versus `Ctrl` o
 
 #### Special Commands
 Currently, the shortcuts to these commands cannot be updated or re-assigned:
-* `"edit.undo"`
-* `"edit.redo"`
-* `"edit.selectAll"`
-* `"edit.cut"`
-* `"edit.copy"`
-* `"edit.paste"`
+* key: `Ctrl/Cmd-A`, command: `"edit.selectAll"`
+* key: `Ctrl/Cmd-C`, command: `"edit.copy"`
+* key: `Ctrl/Cmd-V`, command: `"edit.paste"`
+* key: `Ctrl/Cmd-X`, command: `"edit.cut"`
+* key: `Ctrl/Cmd-Z`, command: `"edit.undo"`
+* key: `Ctrl/Cmd-Y`, command: `"edit.redo"` (also `Cmd-Shift-Z`)
 
 #### Mac Reserved Shortcuts
 These shortcuts cannot be overridden on Mac:
