@@ -26,7 +26,7 @@
 |NodeJS integration | (Ian, Jason) ||
 |Performance| Ingo (automated tests), Peter (camera tests) ||	 
 |Preferences| Kevin, Bryan (Storage), Randy (UI) || 
-|Project Tree |Randy, Jeff || 
+|Project Tree |Randy, Jeff, Kevin, Ingo || 
 |Quick Edit (Inline Editors & TextRange) | NJ || 
 |Quick Open| Peter (UI, extensibility), Kevin (StringMatch) || 
 |Text Editing Commands (EditorCommandHandlers) | NJ, Peter || 
