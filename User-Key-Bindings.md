@@ -7,7 +7,7 @@ Currently, only key bindings for commands can be updated -- not editor bindings 
 ### Quick Start
 Use `Debug > Open User Key Map` to open the `keymap.json` in Brackets so it can be edited. If the file does not already exist, then it will be automatically created.
 
-Edits to file are applied immediately on File Save.
+Changes to key bindings are applied immediately on File Save.
 
 ### Location
 The `keymap.json` file is located in the the user data folder. The user data folder is located at:
