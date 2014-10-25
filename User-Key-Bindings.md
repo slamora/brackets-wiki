@@ -53,4 +53,5 @@ These shortcuts cannot be overridden on Mac:
 * `"Cmd-Alt-H"`
 * `"Cmd-M"`
 * `"Cmd-Q"`
+* `"Cmd-W"`
 
