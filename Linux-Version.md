@@ -16,9 +16,8 @@ Known Issues
 
 | Issue/Feature | Description | Workaround |
 | ------------ | ------- | ----- |
-| App Doesn't Quit on First Attempt | Brackets doesn't close when first clicking the window close button | Click on close again |
-| Native Menus | Native OS menus | N/A. Brackets already fallback to HTML menus on Linux |
-| Show in OS | Right click on a file or folder and choose Show in OS to open the location in Mac Finder or Windows Explorer | None |
+| App Doesn't Quit on First Attempt | Brackets doesn't close the first time you click the window close button | Click on close again |
+| Native Menus | Native OS menus | N/A. Brackets falls back to HTML menus on Linux |
 
 FAQ
 ====
