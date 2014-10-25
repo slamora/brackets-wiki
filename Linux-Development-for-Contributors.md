@@ -93,11 +93,8 @@ There are several user stories (feature work) to complete in brackets-shell befo
 
 | User Story | Status | Affected Features | Contact |
 | ---------- | ------ | ----------------- | ------- |
-| [Node Integration](https://trello.com/c/9nX06hWa) | In Progress | Live Preview HTML Highlighting, Extension Manager Install/Update/Remove | [Joel Brandt](http://github.com/joelrbrandt), [Tim Burgess](http://github.com/timburgess), https://github.com/adobe/brackets-shell/pull/278 |
 | [Ubuntu Installer/Packaging](https://trello.com/c/ZoCPy6mD) | In Progress | Install experience | [Jason San Jose](http://github.com/jasonsanjose) |
 | [Native Menus](https://trello.com/c/WMB6vtwO) | Not Started | Menus (HTML menus are an interim, but completely functional substitute) | [Ingo Richter](http://github.com/ingorichter)|
-| [Show in OS](https://trello.com/c/RF1ddQGK) | Not Started | Project tree command to show the selected file in the native OS file viewer | |
-| [Automated Builds](https://trello.com/c/P35As8lf) | In Progress | | [Jason San Jose](http://github.com/jasonsanjose), [Ingo Richter](http://github.com/ingorichter) |
 
 Open Issues
 ====
