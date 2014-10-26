@@ -7,7 +7,7 @@ Download Brackets
 Feature Status
 ====
 
-The latest Linux builds (as of Sprint 30), are **practically** at feature parity with the the Mac and Windows builds. However, there are notable features (e.g. Native Menus and Show in OS) that are in various stages of planning and development. To be clear though, Brackets features going forward that only rely on features in the browser can be developed in lock-step on all 3 platforms.
+The latest Linux builds (as of Release 1.0), are **practically** at feature parity with the the Mac and Windows builds. However, there are notable features (e.g. Native Menus) that are in various stages of planning and development. To be clear though, Brackets features going forward that only rely on features in the browser can be developed in lock-step on all 3 platforms.
 
 This table lists features that appear in the Linux build but do not function as expected. Please see the [Linux Development For Contributors](https://github.com/adobe/brackets/wiki/Linux-Development-for-Contributors) for progress on these features.
 
