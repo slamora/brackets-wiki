@@ -46,7 +46,4 @@ TODO
 
 Bugs fixed in Release 0.45
 --------------------------
-For details on the bugs addressed, please refer to [closed Release 0.45 bugs]
-
-
-(https://github.com/adobe/brackets/issues?q=milestone%3A%22Brackets+1.0+%28Release+0.45%29%22+is%3Aclosed) . Not all fixed bugs will be caught by this search query, however.
+For details on the bugs addressed, please refer to [closed Release 0.45 bugs](https://github.com/adobe/brackets/issues?q=milestone%3A%22Brackets+1.0+%28Release+0.45%29%22+is%3Aclosed) . Not all fixed bugs will be caught by this search query, however.
