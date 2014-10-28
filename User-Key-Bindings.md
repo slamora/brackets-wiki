@@ -102,12 +102,10 @@ These shortcuts cannot be overridden on Mac:
         "Ctrl-Alt-Down": "edit.addCursorToNextLine",
         "Ctrl-Shift-D":  "edit.duplicate",
         "Ctrl-Shift-K":  "edit.deletelines",
-        "Ctrl-L":        "edit.selectLine",
         "Ctrl-D":        "cmd.addNextMatch",
         "Alt-Shift-1":   "cmd.splitViewNone",
         "Alt-Shift-2":   "cmd.splitViewVertical",
         "Alt-Shift-8":   "cmd.splitViewHorizontal",
-        "Ctrl-G":        "navigate.gotoLine",
         "Ctrl-R":        "navigate.gotoDefinition",
         "Ctrl-P":        "navigate.quickOpen"
     }
