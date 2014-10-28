@@ -41,10 +41,10 @@ Modifier keys are operating system specific, so on Mac use `Cmd` versus `Ctrl` o
 |Alt|Opt|| 
 |Shift|Shift|| 
 ||Ctrl|Control key only available on Mac| 
-|Up|Up|displayed as \u2191 on mac|
-|Down|Down|displayed as \u2193 on mac|
-|Left|Left|displayed as \u2190 on mac|
-|Right|Right|displayed as \u2192 on mac|
+|Up|Up|displayed as ↑ on mac|
+|Down|Down|displayed as ↓ on mac|
+|Left|Left|displayed as ← on mac|
+|Right|Right|displayed as → on mac|
 |Backspace|Backspace||
 |Enter|Enter||
 |Tab|Tab||
