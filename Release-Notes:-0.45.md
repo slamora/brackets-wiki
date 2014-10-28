@@ -15,7 +15,7 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release
 
 UI Changes
 ----------
-Brackets running on Yosemite (OSX 10.10) now has a Yosemite look with flat traffic light buttons with the full-screen button moving to the green button.
+Brackets running on Yosemite (OSX 10.10) now has a Yosemite look with flat traffic light buttons. The full-screen button moves to the green traffic light button on Yosemite as well.
 
 
 API Changes
