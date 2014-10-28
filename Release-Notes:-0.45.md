@@ -5,7 +5,7 @@ _This document will not be finalized until the end of Release 0.45 -- approximat
 What's New in Release 0.45
 --------------------------
 * **Preferences**
-    * [Configure keyboard shortcuts](https://trello.com/c/3mZwu1DE/352-user-specified-keyboard-shortcuts-for-commands-in-json): ...
+    * [Configure keyboard shortcuts](https://trello.com/c/3mZwu1DE/352-user-specified-keyboard-shortcuts-for-commands-in-json): Users can now customize keyboard shortcuts for internal Brackets commands.  See https://github.com/adobe/brackets/wiki/User-Key-Bindings for more information.
 * **Stylesheet Editing**
     * [Collapse unwanted Quick Edit results](https://trello.com/c/nxQ6eGGU/1031-3-css-quick-edit-grouping): Quickly collapse results from a particular CSS, SCSS, or LESS file. For example, when using a preprocessor you can hide results from the compiled CSS file to focus on results in your original SCSS/LESS code.
 * **Hint List Searching**
