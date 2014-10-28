@@ -50,6 +50,7 @@ Modifier keys are operating system specific, so on Mac use `Cmd` versus `Ctrl` o
 |Tab|Tab||
 |Space| Space|||
 
+Command ID can be found in [this file](https://github.com/adobe/brackets/blob/master/src/command/Commands.js), but it does not have any command ID from the extensions. So it is better to install "Display Shortcuts" extension from Extension Manager. See https://github.com/redmunds/brackets-display-shortcuts for how to use the extension to show the key bindings.
 
 ### Exceptions
 
