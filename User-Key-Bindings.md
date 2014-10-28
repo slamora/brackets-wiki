@@ -33,7 +33,23 @@ Where:
 `<key>` is a unique key.
 `<command-id>` is the command id string to assign, or `null` to remove a key binding.
 
-Modifier keys are operating system specific, so on Mac use `Cmd` versus `Ctrl` on Windows. 
+Modifier keys are operating system specific, so on Mac use `Cmd` versus `Ctrl` on Windows. The following table lists all the valid modifier keys and other supported key names.
+
+| Windows/Linux | Mac | Notes | 
+|:--------------:|:---------------:|:--------:| 
+|Ctrl|Cmd|| 
+|Alt|Opt|| 
+|Shift|Shift|| 
+||Ctrl|Control key only available on Mac| 
+|Up|Up|displayed as \u2191 on mac|
+|Down|Down|displayed as \u2193 on mac|
+|Left|Left|displayed as \u2190 on mac|
+|Right|Right|displayed as \u2192 on mac|
+|Backspace|Backspace||
+|Enter|Enter||
+|Tab|Tab||
+|Space| Space|||
+
 
 ### Exceptions
 
@@ -54,4 +70,44 @@ These shortcuts cannot be overridden on Mac:
 * `"Cmd-M"`
 * `"Cmd-Q"`
 
+### Import Mac key bindings from Sublime Text
 
+```
+    "overrides": {
+        "Cmd-Shift-L":     "edit.splitSelIntoLines",
+        "Ctrl-Shift-Up":   "edit.addCursorToPrevLine",
+        "Ctrl-Shift-Down": "edit.addCursorToNextLine",
+        "Cmd-Shift-D":     "edit.duplicate",
+        "Ctrl-Shift-K":    "edit.deletelines",
+        "Cmd-L":           "edit.selectLine",
+        "Cmd-D":           "cmd.addNextMatch",
+        "Cmd-Opt-1":       "cmd.splitViewNone",
+        "Cmd-Opt-2":       "cmd.splitViewVertical",
+        "Cmd-Opt-Shift-2": "cmd.splitViewHorizontal",
+        "Ctrl-G":          "navigate.gotoLine",
+        "Cmd-Opt-Right":   "navigate.nextDoc",
+        "Cmd-Opt-Left":    "navigate.prevDoc",
+        "Cmd-R":           "navigate.gotoDefinition",
+        "Cmd-P":           "navigate.quickOpen"
+    }
+```
+
+### Import Windows key bindings from Sublime Text
+
+```
+    "overrides": {
+        "Ctrl-Shift-L":  "edit.splitSelIntoLines",
+        "Ctrl-Alt-Up":   "edit.addCursorToPrevLine",
+        "Ctrl-Alt-Down": "edit.addCursorToNextLine",
+        "Ctrl-Shift-D":  "edit.duplicate",
+        "Ctrl-Shift-K":  "edit.deletelines",
+        "Ctrl-L":        "edit.selectLine",
+        "Ctrl-D":        "cmd.addNextMatch",
+        "Alt-Shift-1":   "cmd.splitViewNone",
+        "Alt-Shift-2":   "cmd.splitViewVertical",
+        "Alt-Shift-8":   "cmd.splitViewHorizontal",
+        "Ctrl-G":        "navigate.gotoLine",
+        "Ctrl-R":        "navigate.gotoDefinition",
+        "Ctrl-P":        "navigate.quickOpen"
+    }
+```
