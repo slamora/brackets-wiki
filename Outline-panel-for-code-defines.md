@@ -1,0 +1,1 @@
+We need a panel show code defines, it's become easier using by hotkey ctrl+t
