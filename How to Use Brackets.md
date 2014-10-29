@@ -2,8 +2,6 @@
 -----------
 **[Downloads Brackets here](http://brackets.io)** for Mac, Windows and Linux (Debian/Ubuntu). Brackets is built with HTML, CSS and JS, but currently runs as a desktop application in a thin native shell that can access your local files.
 
-Brackets hasn't hit 1.0 yet, but it's getting close — so feel free to give it a spin and let us know what's missing!
-
 Updates are released about once a month.
 
 
@@ -148,7 +146,7 @@ Keyboard Shortcut Cheat Sheet
 -----------------------------
 Here are some keyboard shortcuts that are worth knowing. Also see the
 [Brackets Shortcut wiki page](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts)
-for a more complete list of shortcuts.
+for a more complete list of shortcuts and the [User Key Bindings Wiki](https://github.com/adobe/brackets/wiki/User-Key-Bindings) to learn how to setup Brackets to use your preferred keyboard shortcuts.
 
 | Windows | Mac | Description |
 |---------|-----|-------------|
