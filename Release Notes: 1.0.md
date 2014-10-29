@@ -2,7 +2,7 @@ _This is a draft!_
 --------------------
 _This document will not be finalized until the end of Release 0.45 -- approximately November 3._
 
-What's New in Release 0.45
+What's New in Release 1.0
 --------------------------
 * **Preferences**
     * [Configure keyboard shortcuts](https://trello.com/c/3mZwu1DE/352-user-specified-keyboard-shortcuts-for-commands-in-json): Users can now customize keyboard shortcuts for internal Brackets commands.  See https://github.com/adobe/brackets/wiki/User-Key-Bindings for more information.
@@ -44,6 +44,6 @@ TODO
 * Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
 
 
-Bugs fixed in Release 0.45
+Bugs fixed in Release 1.0
 --------------------------
-For details on the bugs addressed, please refer to [closed Release 0.45 bugs](https://github.com/adobe/brackets/issues?q=milestone%3A%22Brackets+1.0+%28Release+0.45%29%22+is%3Aclosed) . Not all fixed bugs will be caught by this search query, however.
+For details on the bugs addressed, please refer to [closed Release 1.0 bugs](https://github.com/adobe/brackets/issues?q=milestone%3A%22Brackets+1.0+%28Release+0.45%29%22+is%3Aclosed) . Not all fixed bugs will be caught by this search query, however.
