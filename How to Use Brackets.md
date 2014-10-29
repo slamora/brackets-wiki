@@ -193,7 +193,7 @@ These are all the settings that are currently supported:
 | `closeOthers.others`,<br>`closeOthers.above`,<br>`closeOthers.below` | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
 | `language.fileExtensions` | `undefined` | Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | `language.fileNames` | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
-| `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` — highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` — highlight all strings that match the token the cursor is currently in (no selection needed)</li></ul> |
+| `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` — highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` — highlight all strings that match the token the cursor is currently in (no selection needed)</li><li>`{"wordsOnly": true}` — highlight only when selection is a complete token</li></ul> |
 | `showCodeHints` | `true` | If false, all code hints are disabled |
 | `codehint.TagHints` | `true` | Enable/disable HTML tag hints |
 | `codehint.AttrHints` | `true` | Enable/disable HTML attribute hints |
