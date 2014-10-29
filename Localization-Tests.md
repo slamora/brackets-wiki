@@ -371,3 +371,68 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 5. Drag separator to change pane sizes.
 6. In Sidebar, drag a file from one working set to the other to switch panes.
 7. ``View > No Split`` - to return to editing a single file
+
+# User Key Map
+
+### Corrupted Key Map File Error
+1. `Debug > Open User Key Map`.
+2. Delete `}` on the last line and save the file.
+3. Confirm the title and the error message in the dialog.
+
+### Error on Loading Key Map File
+1. `Debug > Open User Key Map`.
+2. Right click on keymap.json in the working set and select Show in Finder/Explorer from context menu.
+3. Copy an image file in Finder/Explorer and replace keymap.json. i.e rename your image file to keymap.json after copying.
+4. Back in Brackets keymap.json may no longer be showing in the workint set. So `Debug > Open User Key Map` again.
+5. Verify the title and the error message in the dialog.
+6. Delete the fake keymap.json in Finder/Explorer.
+
+### Restricted Commands Error
+1. `Debug > Open User Key Map`.
+2. Paste `"cmd-w": "edit.copy"` or `"Ctrl-w": "edit.copy"` to the empty line inside the `"overrides"` block.
+3. Save the file and verify that you get the correct error message.
+
+### Restricted Shortcuts Error
+1. `Debug > Open User Key Map`.
+2. Paste `"cmd-c": "edit.selectLine"` or `"Ctrl-C": "edit.selectLine"` to the empty line inside the `"overrides"` block.
+3. Save the file and verify that you get the correct error message.
+4. On Mac, you can also test with `"Cmd-Q"`, `"Cmd-H" or "Cmd-M" in step 2.
+
+### Multiple Shortcuts to the Same Command Error
+```
+    "ctrl-W": "edit.selectLine",
+    "Ctrl-o": "edit.selectLine"
+```    
+1. `Debug > Open User Key Map`.
+2. Paste the above key bindings and replace the content inside the `"overrides"` block.
+3. Save the file and verify that you get the correct error message.
+
+### Duplicate Shortcuts Error
+```
+    "ctrl-W": "edit.selectLine",
+    "Ctrl-w": "edit.lineComment",
+    "ctrl-w": "edit.selectLine"
+```    
+1. `Debug > Open User Key Map`.
+2. Paste the above key bindings and replace the content inside the `"overrides"` block.
+3. Save the file and verify that you get the correct error message.
+
+### Invalid Shortcuts Error
+```
+    "Command-W": "edit.selectLine",
+    "Control-w": "edit.lineComment",
+    "ctrl-pageup": "edit.blockComment"
+```    
+1. `Debug > Open User Key Map`.
+2. Paste the above key bindings and replace the content inside the `"overrides"` block.
+3. Save the file and verify that you get the correct error message.
+
+### Non-existent Commands Error
+```
+    "ctrl-o": "edit.NotACommand",
+    "Ctrl-w": "edit.noComment",
+    "ctrl-i": "test.blockComment"
+```    
+1. `Debug > Open User Key Map`.
+2. Paste the above key bindings and replace the content inside the `"overrides"` block.
+3. Save the file and verify that you get the correct error message.
