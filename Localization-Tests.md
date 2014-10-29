@@ -396,7 +396,7 @@ require("utils/UpdateNotification").checkForUpdate(true, {_buildNumber: 0, _last
 1. `Debug > Open User Key Map`.
 2. Paste `"cmd-c": "edit.selectLine"` or `"Ctrl-C": "edit.selectLine"` to the empty line inside the `"overrides"` block.
 3. Save the file and verify that you get the correct error message.
-4. On Mac, you can also test with `"Cmd-Q"`, `"Cmd-H" or "Cmd-M" in step 2.
+4. On Mac, you can also test with `"Cmd-Q"`, `"Cmd-H"` or `"Cmd-M"` in step 2.
 
 ### Multiple Shortcuts to the Same Command Error
 ```
