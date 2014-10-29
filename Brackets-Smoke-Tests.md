@@ -83,7 +83,7 @@ Smoke test steps
 1. `View > Vertical Split` and verify a second pane is created and is given focus. `index.html` should still be open in the left pane and is listed in the "Left" working set.
 1. Expand the CSS folder in the file tree and double-click on `desktop.css` to open it in the right pane and verify it is added to the "Right" working set.
 1. Drag the splitter between the two views back and forth and verify there are no visual glitches and the 2 editors resize appropriately.
-1. Switch back to another project and then back to citrus and verify the view is still split, splitter is where you left it, and the same files are open.
+1. Switch to another project and then back to citrus and verify the view is still split, splitter is where you left it, and the same files are open.
 1. In the sidebar, drag the `index.html` file from the "Left" working set and verify that you can drop it into the "Right" working set, and that it is no longer displayed int he left pane.
 1. Drag it back to the empty "Left" working set and verify that it is once again displayed in left pane.
 1. Click Split View icon at top of sidebar, choose `No Split`, and verify therre is now only a single pane displayed and all open files are listed in the Working Files list.
