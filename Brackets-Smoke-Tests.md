@@ -55,8 +55,8 @@ Smoke test steps
 1. Open the OS Trash/Recycle Bin and confirm ``temp.txt`` was deleted
 1. Verify that index.html is now current file. Move mouse over the name of the source of an `<img>` tag (e.g. "images/events.jpg" on line 33). Verify that Hover Preview of the image is displayed properly with the width and height.
 1. Set the cursor in the `<body>` tag immediately before the `>`.
-1. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow key.
-1. Hit `Esc` key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
+1. Enter a space. Verify that a list of attribute hints pops up and you can navigate the list with up/down arrow keys. Hit `Enter`, verify that item was inserted in page properly, then `undo`.
+1. Hit `Cmd/Ctrl-space` and verify hint list is invoked. Hit `Esc` key to dismiss the code hints list, then delete the space so the cursor is after the "y" of "body".
 1. Hit `Cmd/Ctrl-E`. Verify that it shows a single body rule and that everything is laid out properly.
 1. With `View > Themes...`, change the theme from Brackets Light to Brackets Dark (or vice-versa, depending on what your standard theme is). Make sure that both the host editor and the inline editor look correct, then switch back to your normal theme.
 1. In the native shell menu, choose `View > Increase Font Size`. Verify both the host and inline editors font size increases. The inline editor should not show a vertical scrollbar.
