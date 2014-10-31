@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Release 0.45 -- approximately November 3._
+_This document will not be finalized until the end of Release 1.0 -- approximately November 3._
 
 What's New in Release 1.0
 --------------------------
@@ -11,7 +11,7 @@ What's New in Release 1.0
 * **Hint List Searching**
     * [javascript hinting is more accurate](https://github.com/adobe/brackets/issues/3263): Hint-List searching now gives greater weight to Matching by Case so "function" is weighted higher than "Function".
 
-_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.44...release-0.45#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-0.44...release-0.45#commits_bucket)
+_Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.44...release-1.0#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-0.44...release-1.0#commits_bucket)
 
 
 UI Changes
