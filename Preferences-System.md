@@ -49,7 +49,7 @@ Once you have your prefixed PreferencesSystem, you can then define a preference.
 
 ```javascript
     prefs.definePreference("greeting", "string", "Hello");
-    prefs.definePreference("showGreeting", "boolean", "true").on("change", function () {
+    prefs.definePreference("showGreeting", "boolean", true).on("change", function () {
         console.log("The value of showGreeting is now", prefs.get("showGreeting"));
     });
 ```
