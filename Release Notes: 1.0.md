@@ -18,7 +18,7 @@ UI Changes
 ----------
 * Brackets running on Yosemite (OSX 10.10) now has a Yosemite look with flat traffic light buttons. The full-screen button moves to the green traffic light button on Yosemite as well.
 
-* Brackets now works with auto-hide Task Bars on Windows.
+* Brackets now works with auto-hide Task Bars on Windows with Maximized windows.
 
 API Changes
 -----------
