@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Release 1.0 -- approximately November 3._
+_This document will not be finalized until the end of Release 1.0 -- approximately November 4._
 
 What's New in Release 1.0
 --------------------------
