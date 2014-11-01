@@ -10,6 +10,7 @@ What's New in Release 1.0
     * [Collapse unwanted Quick Edit results](https://trello.com/c/nxQ6eGGU/1031-3-css-quick-edit-grouping): Quickly collapse results from a particular CSS, SCSS, or LESS file. For example, when using a preprocessor you can hide results from the compiled CSS file to focus on results in your original SCSS/LESS code.
 * **Hint List Searching**
     * [javascript hinting is more accurate](https://github.com/adobe/brackets/issues/3263): Hint-List searching now gives greater weight to Matching by Case so "function" is weighted higher than "Function".
+    * [Auto-install bundled extensions](https://github.com/adobe/brackets/issues/9233): Add mechanism to automatically install extensions in `auto-install-extensions` to allow installation "bundles".
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.44...release-1.0#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-0.44...release-1.0#commits_bucket)
 
