@@ -54,7 +54,7 @@ Here's how these fields are exposed in the Extension Manager UI:
 * `description` (<i>highly recommended</i>) - longer user-visible description of extension (a couple sentences)
 * `engines.brackets` (encouraged) - which Brackets versions the extension is compatible with, specified as a string in [semver range format](https://github.com/isaacs/node-semver#ranges). Typically `>= 0.xx`, where "xx" is a Brackets sprint number (this says the extension won't run on older builds before sprint "xx", but it's assumed to be compatible with all future builds of Brackets)
 * `homepage` (encouraged) - URL linking to more information (Extension Manager shows this as a "More Info" link)
-* `author` (encouraged) - name of the developer, in the format "Name <email> (URL)" (email and URL are both optional)
+* `author` (encouraged) - name of the developer, in the format "Name \<email> (URL)" (email and URL are both optional)
 * `license` (optional) - license of the extension's source code (not shown in the UI yet)
 * `keywords` (optional) - array of additional keyword strings; searched when the user filters the list view in Extension Manager
 * `i18n` (optional) - array of language codes the extension has been translated into
