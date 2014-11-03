@@ -12,6 +12,7 @@ What's New in Release 1.0
     * [Improved performance when switching files](https://github.com/adobe/brackets/pull/9507)
 * **UI Appearance**
     * [Correct window sizing with auto-hide TaskBar on Windows](https://github.com/adobe/brackets-shell/pull/474)
+    * [On OS X Yosemite (10.10), window 'traffic lights' use a flatter style](https://github.com/adobe/brackets-shell/pull/478)
     * [Dark theme refinements](https://github.com/adobe/brackets/pull/9560)
 * **Linux**
     * ["Show in OS" reveals files in shell file browser](https://github.com/adobe/brackets-shell/pull/477) (previously, in some cases the file would open in its default instead)
@@ -21,19 +22,29 @@ What's New in Release 1.0
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.44...release-1.0#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-0.44...release-1.0#commits_bucket)
 
 
-UI Changes
-----------
-* Brackets running on Yosemite (OSX 10.10) now has a Yosemite look with flat traffic light buttons. The full-screen button moves to the green traffic light button on Yosemite as well.
-
-* Brackets now works with auto-hide Task Bars on Windows with Maximized windows.
+UI/Behavior Changes
+-------------------
+**Max file size** - For performance and stability, files larger than 16 MB will not be opened by Brackets.
 
 API Changes
 -----------
-There were no API changes in this release. A wiki on best practices for programmatically opening files in Brackets was published: https://github.com/adobe/brackets/wiki/Programmatically-Opening-Files-in-Brackets 
+**Deprecated APIs removed** - The following APIs, which had been deprecated for some time already, have been removed:
+
+* `CollectionUtils` module
+* `StringUtils.htmlEscape()`
+* `FileUtils.canonicalizeFolderPath()`
+* `ProjectManager.isBinaryFile()`
+* `CSSAgent.getStylesheetURLs()` & `CSSDocument.getStyleSheetFromBrowser()` 
+* Command ids `EDIT_FIND*`, `EDIT_ADD_NEXT_MATCH`, `EDIT_SKIP_CURRENT_MATCH`, `EDIT_REPLACE`
+* Menu section ids `EDIT_FIND_COMMANDS`, `EDIT_REPLACE_COMMANDS`
+
+Bugs have already been filed with all extensions that are believed to be using these APIs.
 
 New/Improved Extensibility APIs
 -------------------------------
 **Themes** - Themes no longer need to include a dummy 'main.js' file. Theme authors may wish to continue including this file in the short term for compatibility with Brackets 0.44, however.
+
+**Prepackaged extensions** - Distributions of Brackets can now include extensions that will be auto-installed in the user extensions folder on first launch. Place extension .zip packages in a folder named `auto-install-extensions` next to the `www` folder. Users can update & uninstall these extensions individually just like regular user-installed extensions.
 
 
 Known Issues
