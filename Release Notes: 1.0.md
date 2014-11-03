@@ -1,17 +1,22 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Release 1.0 -- approximately November 4._
-
 What's New in Release 1.0
 --------------------------
 * **Preferences**
-    * [Configure keyboard shortcuts](https://trello.com/c/3mZwu1DE/352-user-specified-keyboard-shortcuts-for-commands-in-json): Users can now customize keyboard shortcuts for internal Brackets commands.  See https://github.com/adobe/brackets/wiki/User-Key-Bindings for more information.
-* **Stylesheet Editing**
+    * **[Configure keyboard shortcuts](https://trello.com/c/3mZwu1DE/352-user-specified-keyboard-shortcuts-for-commands-in-json)**: Customize your Brackets keyboard shortcuts via a JSON config file. [See documentation for details](https://github.com/adobe/brackets/wiki/User-Key-Bindings).
+* **Quick Edit**
     * [Collapse unwanted Quick Edit results](https://trello.com/c/nxQ6eGGU/1031-3-css-quick-edit-grouping): Quickly collapse results from a particular CSS, SCSS, or LESS file. For example, when using a preprocessor you can hide results from the compiled CSS file to focus on results in your original SCSS/LESS code.
-* **Hint List Searching**
-    * [javascript hinting is more accurate](https://github.com/adobe/brackets/issues/3263): Hint-List searching now gives greater weight to Matching by Case so "function" is weighted higher than "Function".
-* **Installer**
-    * [Auto-install bundled extensions](https://github.com/adobe/brackets/issues/9233): Add mechanism to automatically install extensions in `auto-install-extensions` to allow installation "bundles".
+* **Code Hints & Search**
+    * [url() code hints for SCSS/LESS](https://github.com/adobe/brackets/pull/9097): Code hints for files/folders within your project, as seen in CSS files.
+    * [Improved case-sensitivity in code hints and Quick Open](https://github.com/adobe/brackets/issues/3263): Code Hints and Quick Open prefer results where the capitalization matches what you typed. For example, in JavaScript code hints "function" is now ranked above "Function" when you type in all lowercase.
+    * [New "wordsOnly" setting for automatic word highlighting](https://github.com/codemirror/CodeMirror/pull/2791): See [preferences documentation](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) for how to use this setting.
+* **Performance**
+    * [Improved performance when switching files](https://github.com/adobe/brackets/pull/9507)
+* **UI Appearance**
+    * [Correct window sizing with auto-hide TaskBar on Windows](https://github.com/adobe/brackets-shell/pull/474)
+    * [Dark theme refinements](https://github.com/adobe/brackets/pull/9560)
+* **Linux**
+    * ["Show in OS" reveals files in shell file browser](https://github.com/adobe/brackets-shell/pull/477) (previously, in some cases the file would open in its default instead)
+* **Localization**
+    * Translation updates for: Brazilian Portuguese, Croatian, Czech, Danish, Finnish, French, Galician, German, Italian, Japanese, Spanish, Swedish
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-0.44...release-1.0#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-0.44...release-1.0#commits_bucket)
 
