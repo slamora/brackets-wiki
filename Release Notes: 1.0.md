@@ -28,6 +28,8 @@ UI/Behavior Changes
 
 API Changes
 -----------
+**Version numbering** - While previous releases of Brackets used version numbers like "0.XX", this release is numbered "1.0" and the next release (due out within a month) will be "1.1".
+
 **Deprecated APIs removed** - The following APIs, which had been deprecated for some time already, have been removed:
 
 * `CollectionUtils` module
@@ -55,7 +57,40 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-TODO
+* [Enable url() code hints for SCSS/LESS](https://github.com/adobe/brackets/pull/9097) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Remove main.js requirement for themes](https://github.com/adobe/brackets/pull/9434) by [Triangle717](https://github.com/le717)
+* [Linux: Fix "Show in OS" for files](https://github.com/adobe/brackets-shell/pull/477) by [Rado Rodopski](https://github.com/radorodopski)
+* [Fix gap that sometimes appears below sidebar](https://github.com/adobe/brackets/pull/9376) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Recognize Vagrantfile as Ruby](https://github.com/adobe/brackets/pull/9536) by [al8anp](https://github.com/al8anp)
+* [Fix: Make Quick Docs content selectable again](https://github.com/adobe/brackets/pull/9595) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Keep query/replace values when switching between Replace, Replace in Files](https://github.com/adobe/brackets/pull/9601) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix #9363: Code hints keep closing when Find in Files has collapsed results](https://github.com/adobe/brackets/pull/9548) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix bug with Live Preview Highlight positioning](https://github.com/adobe/brackets/pull/8922) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Don't pollute prefs with "Show Errors in Status Bar" when unchanged](https://github.com/adobe/brackets/pull/9030) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Shift-click status bar error indicator to clear it](https://github.com/adobe/brackets/pull/8997) by [cheesypoof](https://github.com/cheesypoof)
+* [Change 'Reload Without Extensions' to Cmd-Ctrl-R on Mac](https://github.com/adobe/brackets/pull/9663) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Fix unit tests for non-English locales](https://github.com/adobe/brackets/pull/8995) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix failing QuickOpen tests on Linux](https://github.com/adobe/brackets/pull/9453) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix: Search says "Over 100000 matches" when there are exactly 100000 matches)](https://github.com/adobe/brackets/pull/9385) by [jacksonweekes](https://github.com/jacksonweekes)
+* [Finish updating Brackets version to 0.45](https://github.com/adobe/brackets/pull/9477) (note: version number later changed to 1.0) by [Triangle717](https://github.com/le717)
+* [Cleanup: Streamline dependencies.js](https://github.com/adobe/brackets/pull/9488) by [TuurDutoit](https://github.com/TuurDutoit)
+* [Cleanup: Remove some deprecated APIs (see list above)](https://github.com/adobe/brackets/pull/8960) (+ [part 2](https://github.com/adobe/brackets/pull/8992), [part 3](https://github.com/adobe/brackets/pull/9640), [part 4](https://github.com/adobe/brackets/pull/9674)) by [Triangle717](https://github.com/le717)
+* [Brazilian Portuguese translation update](https://github.com/adobe/brackets/pull/9726) by [eliezerb](https://github.com/eliezerb)
+* [Croatian translation update](https://github.com/adobe/brackets/pull/9564) by [Kruno H](https://github.com/diomed)
+* [Czech translation update](https://github.com/adobe/brackets/pull/9497) by [kvarel](https://github.com/kvarel)
+* [Danish translation image update](https://github.com/adobe/brackets/pull/9617) by [cyberomin](https://github.com/cyberomin)
+* [Finnish translation update](https://github.com/adobe/brackets/pull/9655) (+ [part 2](https://github.com/adobe/brackets/pull/9683)) by [valtlait](https://github.com/valtlait)
+* [French & Japanese translation updates)](https://github.com/adobe/brackets/pull/9733) by [pantkowiak](https://github.com/pantkowiak)
+* [Galician translation update](https://github.com/adobe/brackets/pull/9498) by [Oscar Otero](https://github.com/oscarotero)
+* [German translation update](https://github.com/adobe/brackets/pull/9728) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Italian translation update](https://github.com/adobe/brackets/pull/9527) by [Denisov21](https://github.com/Denisov21)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/9470) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Swedish translation update](https://github.com/adobe/brackets/pull/9685) (+ [part 2](https://github.com/adobe/brackets/pull/9738)) by [Mikael Jorhult](https://github.com/mikaeljorhult)
+* [Use real dash instead of HTML entity in Getting Started](https://github.com/adobe/brackets/pull/9533) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix outdated docs links to CodeMirror GitHub](https://github.com/adobe/brackets/pull/9407) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix README typo](https://github.com/adobe/brackets/pull/9449) by [Denisov21](https://github.com/Denisov21)
+* [Correct API docs typo](https://github.com/adobe/brackets/pull/9521) by [rsperberg](https://github.com/rsperberg)
+
 
 #### Pulling source code from Git
 * Recommended: rebuild or reinstall an updated brackets-shell (new functionality was added).
