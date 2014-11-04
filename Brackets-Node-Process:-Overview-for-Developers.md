@@ -46,7 +46,7 @@ function cmdGetMemory(total) {
 }
 ```
 
-Brackets-node contains a "DomainManager" module that handles loading and initializing domains. When a domain is loaded from Brackets (as shown in the next section), the `init()` method of the domain's Node module will be called with the DomainManager as an argument. That method should use the `registerCommand()` function to tell Brackets which functions should be exposed to the client side.
+Brackets-node contains a "[DomainManager](https://github.com/adobe/brackets-shell/blob/9e5d9f22664f3af1013a213381e2b4307bd7ae78/appshell/node-core/DomainManager.js)" module that handles loading and initializing domains. When a domain is loaded from Brackets (as shown in the next section), the `init()` method of the domain's Node module will be called with the DomainManager as an argument. That method should use the `registerCommand()` function to tell Brackets which functions should be exposed to the client side.
 
 When we register a command, we can optionally pass in documentation. This documentation isn't actually used by Node in any way. But, it is output through the "/api" call and could be used to actually build human-readable documentation that is (hopefully) in sync with the code. The last three parameters to ```registerCommand``` are documentation parameters.
 
