@@ -195,7 +195,7 @@ You can also install extensions manually:
 
 ### Preferences are Not Saved
 
-One of your cache files may have become corrupted. [Find your cache folder](https://github.com/adobe/brackets/wiki/Cache-Folder) and delete the cache. _Warning: this will reset all of your Brackets preferences._
+Your preferences may have become corrupt. Follow these instructions to delete your preferences and cache folder: https://github.com/adobe/brackets/wiki/Cache-Folder#resetting-cache--preferences.
 
 ### Disable All Extensions
 Use `Debug > Reload Without Extensions` to quickly check whether the problem is being caused by an extension. To re-enable your extensions, just quit and relaunch Brackets, or choose Debug > Reload _With_ Extensions.
