@@ -1,10 +1,10 @@
 Brackets not working for you? Maybe the following will help:
 
-* [Having trouble with Live Preview?](#livedev)
 * [Having trouble installing Brackets?](#installation)
 * [Brackets not launching?](#launching)
-* [Having trouble installing extensions?](#extension-install)
+* [Having trouble with Live Preview?](#livedev)
 * [Is Brackets running slowly?](#slow)
+* [Having trouble installing extensions?](#extension-install)
 * [Other: Brackets Is Acting Weird](#other)
 
 Other information that may help you:
