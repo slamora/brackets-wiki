@@ -106,6 +106,13 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Extension</td>
     </tr>
     <tr>
+        <td class="shortcut-base">B</td>
+        <td class="shortcut-binding">Ctrl-Alt-B</td>
+        <td class="shortcut-cmd-id">com.adobe.brackets.commands.bower.installFromBower</td>
+        <td class="shortcut-cmd-name">Install from Bower</td>
+        <td class="shortcut-orig">Extension</td>
+    </tr>
+    <tr>
         <td class="shortcut-base">C</td>
         <td class="shortcut-binding">Ctrl-C</td>
         <td class="shortcut-cmd-id">edit.copy</td>
