@@ -126,7 +126,7 @@ Known issues:
 
 #### Stable Chrome
 
-Brackets is verified with the current stable Chrome. It usually works with current beta, dev, or canary versions of Chrome, but if you are having a problem switch back to stable Chrome before opening an issue.
+Brackets is verified with the current stable Chrome. If chrome is not configured to automatically update to the latest version, then be sure to check for updates. It usually works with current beta, dev, or canary versions of Chrome, but if you are having a problem switch back to stable Chrome before opening an issue.
 
 #### Install Chrome For Multiple User Accounts
 ##### Windows Only
