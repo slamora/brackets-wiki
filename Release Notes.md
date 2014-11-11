@@ -1,4 +1,4 @@
-* _[Release Notes: 1.0](https://github.com/adobe/brackets/wiki/Release-Notes:-1.0) (in progress)_
+* [Release Notes: 1.0](https://github.com/adobe/brackets/wiki/Release-Notes:-1.0)
 * [Release Notes: 0.44](https://github.com/adobe/brackets/wiki/Release-Notes:-0.44)
 * [Release Notes: 0.43](https://github.com/adobe/brackets/wiki/Release-Notes:-0.43)
 * [Release Notes: 0.42](https://github.com/adobe/brackets/wiki/Release-Notes:-0.42)
