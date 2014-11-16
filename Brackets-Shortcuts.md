@@ -66,7 +66,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">&#x2F;</td>
         <td class="shortcut-binding">Ctrl-Alt-&#x2F;</td>
-        <td class="shortcut-cmd-id">pflynn.searchCommands</td>
+        <td class="shortcut-cmd-id">pflynn&#8203;.searchCommands</td>
         <td class="shortcut-cmd-name">Search Commands</td>
         <td class="shortcut-orig">Extension</td>
     </tr>
@@ -150,7 +150,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">E</td>
         <td class="shortcut-binding">Ctrl-Shift-E</td>
-        <td class="shortcut-cmd-id">pflynn.searchWorkingSetFiles</td>
+        <td class="shortcut-cmd-id">pflynn&#8203;.searchWorkingSetFiles</td>
         <td class="shortcut-cmd-name">Go to Open File</td>
         <td class="shortcut-orig">Extension</td>
     </tr>
@@ -479,14 +479,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">[</td>
         <td class="shortcut-binding">Ctrl-[</td>
-        <td class="shortcut-cmd-id">pflynn.goWorkingSetPrev</td>
+        <td class="shortcut-cmd-id">pflynn&#8203;.goWorkingSetPrev</td>
         <td class="shortcut-cmd-name">Previous Document in List.</td>
         <td class="shortcut-orig">Extension</td>
     </tr>
     <tr>
         <td class="shortcut-base">]</td>
         <td class="shortcut-binding">Ctrl-]</td>
-        <td class="shortcut-cmd-id">pflynn.goWorkingSetNext</td>
+        <td class="shortcut-cmd-id">pflynn&#8203;.goWorkingSetNext</td>
         <td class="shortcut-cmd-name">Next Document in List.</td>
         <td class="shortcut-orig">Extension</td>
     </tr>
@@ -542,7 +542,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Down</td>
         <td class="shortcut-binding">Alt-Shift-Down</td>
-        <td class="shortcut-cmd-id">pflynn.everyscrub.nudge_down</td>
+        <td class="shortcut-cmd-id">pflynn&#8203;.everyscrub.nudge_down</td>
         <td class="shortcut-cmd-name">Decrement Number</td>
         <td class="shortcut-orig">Extension (Everyscrub)</td>
     </tr>
@@ -766,7 +766,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Up</td>
         <td class="shortcut-binding">Alt-Shift-Up</td>
-        <td class="shortcut-cmd-id">pflynn.everyscrub.nudge_up</td>
+        <td class="shortcut-cmd-id">pflynn&#8203;.everyscrub&#8203;.nudge_up</td>
         <td class="shortcut-cmd-name">Increment Number</td>
         <td class="shortcut-orig">Extension (Everyscrub)</td>
     </tr>
