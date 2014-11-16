@@ -605,14 +605,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">F4</td>
         <td class="shortcut-binding">Cmd-F4</td>
-        <td class="shortcut-cmd-id">toshsharma.bookmarks.toggleBookmark</td>
+        <td class="shortcut-cmd-id">toshsharma&#8203;.bookmarks&#8203;.toggleBookmark</td>
         <td class="shortcut-cmd-name">Toggle Bookmark</td>
         <td class="shortcut-orig">Extension (Bookmarks)</td>
     </tr>
     <tr>
         <td class="shortcut-base">F4</td>
         <td class="shortcut-binding">F4</td>
-        <td class="shortcut-cmd-id">toshsharma.bookmarks.nextBookmark</td>
+        <td class="shortcut-cmd-id">toshsharma&#8203;.bookmarks&#8203;.nextBookmark</td>
         <td class="shortcut-cmd-name">Next Bookmark</td>
         <td class="shortcut-orig">Extension (Bookmarks)</td>
     </tr>
