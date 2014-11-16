@@ -73,7 +73,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">&#x2F;</td>
         <td class="shortcut-binding">Ctrl-Alt-&#x2F;</td>
-        <td class="shortcut-cmd-id">redmunds.show-shortcuts.view.shortcuts</td>
+        <td class="shortcut-cmd-id">redmunds&#8203;.show-shortcuts&#8203;.view&#8203;.shortcuts</td>
         <td class="shortcut-cmd-name">Show Shortcuts</td>
         <td class="shortcut-orig">Extension (Show-shortcuts)</td>
     </tr>
@@ -255,14 +255,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">M</td>
         <td class="shortcut-binding">Ctrl-M</td>
-        <td class="shortcut-cmd-id">redmunds.brackets-quick-markup.view.toggle-quick-markup</td>
+        <td class="shortcut-cmd-id">redmunds&#8203;.brackets-quick-markup&#8203;.view&#8203;.toggle-quick-markup</td>
         <td class="shortcut-cmd-name">Quick Markup Mode</td>
         <td class="shortcut-orig">Extension (Brackets-quick-markup)</td>
     </tr>
     <tr>
         <td class="shortcut-base">M</td>
         <td class="shortcut-binding">Ctrl-Shift-M</td>
-        <td class="shortcut-cmd-id">redmunds.brackets-quick-markup.view.toggle-quick-markup-help</td>
+        <td class="shortcut-cmd-id">redmunds&#8203;.brackets-quick-markup&#8203;.view&#8203;.toggle-quick-markup-help</td>
         <td class="shortcut-cmd-name">Quick Markup Help</td>
         <td class="shortcut-orig">Extension (Brackets-quick-markup)</td>
     </tr>
@@ -409,7 +409,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">W</td>
         <td class="shortcut-binding">Ctrl-Shift-W</td>
-        <td class="shortcut-cmd-id">denniskehrig.ShowIndentation.toggle</td>
+        <td class="shortcut-cmd-id">denniskehrig&#8203;.ShowIndentation&#8203;.toggle</td>
         <td class="shortcut-cmd-name">Show Indentations</td>
         <td class="shortcut-orig">Extension (Show Indentation)</td>
     </tr>
@@ -619,14 +619,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">F4</td>
         <td class="shortcut-binding">Shift-Cmd-F4</td>
-        <td class="shortcut-cmd-id">toshsharma.bookmarks.clearBookmarks</td>
+        <td class="shortcut-cmd-id">toshsharma&#8203;.bookmarks&#8203;.clearBookmarks</td>
         <td class="shortcut-cmd-name">Clear Bookmarks</td>
         <td class="shortcut-orig">Extension (Bookmarks)</td>
     </tr>
     <tr>
         <td class="shortcut-base">F4</td>
         <td class="shortcut-binding">Shift-F4</td>
-        <td class="shortcut-cmd-id">toshsharma.bookmarks.previousBookmark</td>
+        <td class="shortcut-cmd-id">toshsharma&#8203;.bookmarks&#8203;.previousBookmark</td>
         <td class="shortcut-cmd-name">Previous Bookmark</td>
         <td class="shortcut-orig">Extension (Bookmarks)</td>
     </tr>
@@ -647,35 +647,35 @@ So, if you create a new extension for Brackets, follow the same process and add 
 <tr>
         <td class="shortcut-base">F7</td>
         <td class="shortcut-binding">F7</td>
-        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.sortLines</td>
+        <td class="shortcut-cmd-id">de.richter.brackets&#8203;.extension&#8203;.brackets-sort-text&#8203;.sortLines</td>
         <td class="shortcut-cmd-name">Sort Lines</td>
         <td class="shortcut-orig">Extension (Richter)</td>
     </tr>
     <tr>
         <td class="shortcut-base">F7</td>
         <td class="shortcut-binding">⇧F7</td>
-        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.reverseLines</td>
+        <td class="shortcut-cmd-id">de.richter.brackets&#8203;.extension&#8203;.brackets-sort-text&#8203;.reverseLines</td>
         <td class="shortcut-cmd-name">Reverse Lines</td>
         <td class="shortcut-orig">Extension (Richter)</td>
     </tr>
     <tr>
         <td class="shortcut-base">F7</td>
         <td class="shortcut-binding">⌘F7</td>
-        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.sortLinesByLength</td>
+        <td class="shortcut-cmd-id">de.richter.brackets&#8203;.extension&#8203;.brackets-sort-text&#8203;.sortLinesByLength</td>
         <td class="shortcut-cmd-name">Sort Lines by length</td>
         <td class="shortcut-orig">Extension (Richter)</td>
     </tr>
     <tr>
         <td class="shortcut-base">F7</td>
         <td class="shortcut-binding">⌥F7</td>
-        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.shuffleLines</td>
+        <td class="shortcut-cmd-id">de.richter.brackets&#8203;.extension&#8203;.brackets-sort-text&#8203;.shuffleLines</td>
         <td class="shortcut-cmd-name">Shuffle Lines</td>
         <td class="shortcut-orig">Extension (Richter)</td>
     </tr>
     <tr>
         <td class="shortcut-base">F7</td>
         <td class="shortcut-binding">⌥⌘F7</td>
-        <td class="shortcut-cmd-id">de.richter.brackets.extension.brackets-sort-text.uniqueLines</td>
+        <td class="shortcut-cmd-id">de.richter.brackets&#8203;.extension&#8203;.brackets-sort-text&#8203;.uniqueLines</td>
         <td class="shortcut-cmd-name">Remove Duplicate Lines</td>
         <td class="shortcut-orig">Extension (Richter)</td>
     </tr>
