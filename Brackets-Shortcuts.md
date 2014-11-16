@@ -13,7 +13,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
 
 ***
 
-<table width="75%">
+<table style="overflow:auto">
     <tr class="shortcut-header">
         <td class="shortcut-base"><strong>Base Key</strong></td>
         <td class="shortcut-binding"><strong>Key Binding</strong></td>
