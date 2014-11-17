@@ -3,6 +3,11 @@ Brackets not working for you? Maybe the following will help:
 * [Having trouble installing Brackets?](#installation)
 * [Brackets not launching?](#launching)
 * [Having trouble with Live Preview?](#livedev)
+    * [Live Editing](#live-edit)
+    * [Page Not Loading](#livedev-not-loading)
+    * [Using a Local Server](#local-server)
+    * [Chrome Issues](#livedev-chrome)
+    * [Other Live Preview Issues](#livedev-other)
 * [Is Brackets running slowly?](#slow)
 * [Having trouble installing extensions?](#extension-install)
 * [Other: Brackets Is Acting Weird](#other)
@@ -68,7 +73,7 @@ This occurs when trying to run Brackets on Debian 7 (Wheezy). Brackets currently
 
 ## <a name="livedev"> </a>Live Preview Isn't Working
 
-### Live Editing
+### <a name="live-editing"> </a>Live Editing
 
 #### CSS, HTML, and JavaScript
 Currently, Live Development works differently for different types of files:
@@ -81,24 +86,22 @@ Currently, Live Development works differently for different types of files:
 
 See **[How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview)** for more details.
 
-### Files should be in Current Project
+#### Files should be in Current Project
 You can use `File > Open` to open any file on your computer, but Brackets' definition of a _project_ are the files in the folder opened using `File > Open Folder...`. Some (but not all) Live Development features require a node server, which means being in the current project, so make sure the files that you want to use with Live Development are in the current project.
 
-### HTML File should be in Working Set
+#### HTML File should be in Working Set
 
 There is a [known issue](https://github.com/adobe/brackets/issues/7886) (which is fixed in release 0.43) that if HTML file is in project tree (i.e. not in Working Set), then element highlighting stops working after switching to a CSS (or other?) file and then back to the HTML file. The workaround is to double-click HTML file so it's added to the Working Set.
 
-### Disable Extensions
-The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
+#### Live CSS is not working
 
-### Page not loading
+Updating CSS in Live Preview does not seem to work if &lt;link&gt; has __type="text/css"__, so try removing it.
 
-* If you specified a "Base URL," make sure your local server is already running - Brackets will not start it for you.
-* Make sure you are not running firewall, network security, or antivirus software that is blocking the connection (try disabling it temporarily to check)
-* Make sure you haven't modified your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)) to remap localhost or 127.0.0.1
-* Try shutting down background apps in Chrome. In Chrome, go to Settings > Advanced Settings and then uncheck the "Continue running background apps when Google Chrome is closed" setting.
+Known issues:
 
-### HTML Page is not Updating in Browser as you Type
+* [Bug #7935](https://github.com/adobe/brackets/issues/7935): Live CSS does not update if page contains an iframe (including injected iframes such as ads or social media buttons).
+
+#### HTML Page is not Updating in Browser as you Type
 If you are using your own local server, HTML will not update live ([see documentation](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview)).
 
 Brackets pauses sending updates to browser when it detects an HTML Syntax Error. In this case, it should color the line number in red (but this can be scrolled out of view) so scroll through entire page to verify that there are no highlighted line numbers.
@@ -109,22 +112,21 @@ Other known issues:
 
 * [Bug #5338](https://github.com/adobe/brackets/issues/5338): Live Preview can never update if initially launched with syntax error - after fixing a syntax error, try stopping and restarting Live Preview.
 
-### Using a Local Server
+### <a name="livedev-not-loading"> </a>Page not loading
+
+* If you specified a "Base URL," make sure your local server is already running - Brackets will not start it for you.
+* Make sure you are not running firewall, network security, or antivirus software that is blocking the connection (try disabling it temporarily to check)
+* Make sure you haven't modified your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)) to remap localhost or 127.0.0.1
+* Try shutting down background apps in Chrome. In Chrome, go to Settings > Advanced Settings and then uncheck the "Continue running background apps when Google Chrome is closed" setting.
+
+### <a name="local-server"> </a>Using a Local Server
 To use a local server, you need to specify a Base URL in the `File > Project Settings...` dialog (see [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview) for details).
 
 If you're using a local server and are seeing these messages such as "Oops! Google Chrome could not connect to localhost:[port]" (in Chrome) or "Unable to load Live Development page" (in Brackets), verify that your local server has been started.
 
 As noted above, live HTML updating is disabled when using your own custom local server.
 
-### Live CSS is not working
-
-Updating CSS in Live Preview does not seem to work if &lt;link&gt; has __type="text/css"__, so try removing it.
-
-Known issues:
-
-* [Bug #7935](https://github.com/adobe/brackets/issues/7935): Live CSS does not update if page contains an iframe (including injected iframes such as ads or social media buttons).
-
-### Chrome Issues
+### <a name="livedev-chrome"> </a>Chrome Issues
 
 #### Stable Chrome
 
@@ -160,6 +162,10 @@ If you keep getting errors when trying to launch Chrome, or if you keep getting 
 
 On Windows, you may run into issues starting Live Preview if you installed Chrome after installing Brackets. In that case, re-installing Brackets should fix the problem.
 
+### <a name="livedev-other"> </a>Other Live Preview issues
+
+#### Disable Extensions
+The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
 
 ## <a name="slow"> </a>Brackets is Running Slow
 This section discusses some of the features that can affect performance and possible solutions.
