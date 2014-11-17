@@ -73,7 +73,7 @@ This occurs when trying to run Brackets on Debian 7 (Wheezy). Brackets currently
 
 ## <a name="livedev"> </a>Live Preview Isn't Working
 
-### <a name="live-editing"> </a>Live Editing
+### <a name="live-edit"> </a>Live Editing
 
 #### CSS, HTML, and JavaScript
 Currently, Live Development works differently for different types of files:
