@@ -69,6 +69,8 @@ This occurs when trying to run Brackets on Debian 7 (Wheezy). Brackets currently
 ## <a name="livedev"> </a>Live Preview Isn't Working
 
 ### Live Editing
+
+#### CSS, HTML, and JavaScript
 Currently, Live Development works differently for different types of files:
 
 * For CSS, all changes are applied in the browser immediately as you type, without reloading the page.
