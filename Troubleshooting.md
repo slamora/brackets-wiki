@@ -49,7 +49,7 @@ There may be a long delay at the start of the installation process as Windows ch
 
 ## <a name="launching"> </a>Can't Launch Brackets
 
-### Clear The Cache
+### <a name="clear-cache"> </a>Clear The Cache
 If you had previously used Brackets, your cache may have information that is conflicting with the most recent version. [Find your cache folder](https://github.com/adobe/brackets/wiki/Cache-Folder) and delete the cache. _Warning: this will reset all of your Brackets preferences._
 
 ### Check the File Permissions
@@ -112,21 +112,21 @@ Other known issues:
 
 * [Bug #5338](https://github.com/adobe/brackets/issues/5338): Live Preview can never update if initially launched with syntax error - after fixing a syntax error, try stopping and restarting Live Preview.
 
-### <a name="livedev-not-loading"> </a>Page not loading
+### <a name="livedev-not-loading"> </a>Live Preview Page not loading
 
 * If you specified a "Base URL," make sure your local server is already running - Brackets will not start it for you.
 * Make sure you are not running firewall, network security, or antivirus software that is blocking the connection (try disabling it temporarily to check)
 * Make sure you haven't modified your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)) to remap localhost or 127.0.0.1
 * Try shutting down background apps in Chrome. In Chrome, go to Settings > Advanced Settings and then uncheck the "Continue running background apps when Google Chrome is closed" setting.
 
-### <a name="local-server"> </a>Using a Local Server
+### <a name="local-server"> </a>Using a Local Server with Live Preview
 To use a local server, you need to specify a Base URL in the `File > Project Settings...` dialog (see [How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#wiki-live-preview) for details).
 
 If you're using a local server and are seeing these messages such as "Oops! Google Chrome could not connect to localhost:[port]" (in Chrome) or "Unable to load Live Development page" (in Brackets), verify that your local server has been started.
 
 As noted above, live HTML updating is disabled when using your own custom local server.
 
-### <a name="livedev-chrome"> </a>Chrome Issues
+### <a name="livedev-chrome"> </a>Live Preview Chrome Issues
 
 #### Stable Chrome
 
@@ -166,6 +166,9 @@ On Windows, you may run into issues starting Live Preview if you installed Chrom
 
 #### Disable Extensions
 The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
+
+#### Clear Cache
+[Clearing cache](#clear-cache) will clear Brackets live-dev-profile cache.
 
 ## <a name="slow"> </a>Brackets is Running Slow
 This section discusses some of the features that can affect performance and possible solutions.
