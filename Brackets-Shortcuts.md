@@ -325,7 +325,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">R</td>
         <td class="shortcut-binding">Ctrl-Shift-R</td>
-        <td class="shortcut-cmd-id">kehrig.ReloadInBrowser.reload</td>
+        <td class="shortcut-cmd-id">kehrig&#8203;.ReloadInBrowser&#8203;.reload</td>
         <td class="shortcut-cmd-name">Reload in browser</td>
         <td class="shortcut-orig">Extension (Reload In Browser)</td>
     </tr>
