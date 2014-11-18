@@ -143,7 +143,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">E</td>
         <td class="shortcut-binding">Ctrl-E</td>
-        <td class="shortcut-cmd-id">navigate.toggleQuickEdit</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.toggleQuickEdit</td>
         <td class="shortcut-cmd-name">Quick Edit</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -171,7 +171,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">G</td>
         <td class="shortcut-binding">Ctrl-G</td>
-        <td class="shortcut-cmd-id">navigate.gotoLine</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.gotoLine</td>
         <td class="shortcut-cmd-name">Go to Line</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -213,7 +213,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">J</td>
         <td class="shortcut-binding">Ctrl-J</td>
-        <td class="shortcut-cmd-id">navigate.jumptoDefinition</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.jumptoDefinition</td>
         <td class="shortcut-cmd-name">Jump to Definition</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -227,7 +227,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">K</td>
         <td class="shortcut-binding">Ctrl-K</td>
-        <td class="shortcut-cmd-id">navigate.toggleQuickDocs</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.toggleQuickDocs</td>
         <td class="shortcut-cmd-name">Quick Docs</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -276,7 +276,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">N</td>
         <td class="shortcut-binding">Ctrl-Alt-N</td>
-        <td class="shortcut-cmd-id">navigate.newRule</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.newRule</td>
         <td class="shortcut-cmd-name">New Rule</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -304,7 +304,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     </tr>
         <td class="shortcut-base">O</td>
         <td class="shortcut-binding">Ctrl-Shift-O</td>
-        <td class="shortcut-cmd-id">navigate.quickOpen</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.quickOpen</td>
         <td class="shortcut-cmd-name">Quick Open</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -367,7 +367,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">T</td>
         <td class="shortcut-binding">Ctrl-T</td>
-        <td class="shortcut-cmd-id">navigate.gotoDefinition</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.gotoDefinition</td>
         <td class="shortcut-cmd-name">Go to Definition</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -535,7 +535,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Down</td>
         <td class="shortcut-binding">Alt-Down</td>
-        <td class="shortcut-cmd-id">navigate.nextMatch</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.nextMatch</td>
         <td class="shortcut-cmd-name">Next Match</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -633,7 +633,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">F5</td>
         <td class="shortcut-binding">F5</td>
-        <td class="shortcut-cmd-id">debug.refreshWindow</td>
+        <td class="shortcut-cmd-id">debug&#8203;.refreshWindow</td>
         <td class="shortcut-cmd-name">Reload Brackets</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -682,7 +682,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">F8</td>
         <td class="shortcut-binding">F8</td>
-        <td class="shortcut-cmd-id">navigate.gotoFirstProblem</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.gotoFirstProblem</td>
         <td class="shortcut-cmd-name">Go to First Error&#x2F;Warning</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -745,14 +745,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Tab</td>
         <td class="shortcut-binding">Ctrl-Shift-Tab</td>
-        <td class="shortcut-cmd-id">navigate.prevDoc</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.prevDoc</td>
         <td class="shortcut-cmd-name">Previous Document</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
         <td class="shortcut-base">Tab</td>
         <td class="shortcut-binding">Ctrl-Tab</td>
-        <td class="shortcut-cmd-id">navigate.nextDoc</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.nextDoc</td>
         <td class="shortcut-cmd-name">Next Document</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -773,7 +773,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Up</td>
         <td class="shortcut-binding">Alt-Up</td>
-        <td class="shortcut-cmd-id">navigate.previousMatch</td>
+        <td class="shortcut-cmd-id">navigate&#8203;.previousMatch</td>
         <td class="shortcut-cmd-name">Previous Match</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
