@@ -689,7 +689,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">F12</td>
         <td class="shortcut-binding">F12</td>
-        <td class="shortcut-cmd-id">debug.showDeveloperTools</td>
+        <td class="shortcut-cmd-id">debug&#8203;.showDeveloperTools</td>
         <td class="shortcut-cmd-name">Show Developer Tools</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
