@@ -24,7 +24,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">+</td>
         <td class="shortcut-binding">Ctrl-+</td>
-        <td class="shortcut-cmd-id">view.increaseFontSize</td>
+        <td class="shortcut-cmd-id">view&#8203;.increaseFontSize</td>
         <td class="shortcut-cmd-name">Increase Font Size</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -38,7 +38,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">-</td>
         <td class="shortcut-binding">Ctrl--</td>
-        <td class="shortcut-cmd-id">view.decreaseFontSize</td>
+        <td class="shortcut-cmd-id">view&#8203;.decreaseFontSize</td>
         <td class="shortcut-cmd-name">Decrease Font Size</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -80,14 +80,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">0</td>
         <td class="shortcut-binding">Ctrl-0</td>
-        <td class="shortcut-cmd-id">view.restoreFontSize</td>
+        <td class="shortcut-cmd-id">view&#8203;.restoreFontSize</td>
         <td class="shortcut-cmd-name">Restore Font Size</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
     <tr>
         <td class="shortcut-base">=</td>
         <td class="shortcut-binding">Ctrl-=</td>
-        <td class="shortcut-cmd-id">view.increaseFontSize</td>
+        <td class="shortcut-cmd-id">view&#8203;.increaseFontSize</td>
         <td class="shortcut-cmd-name">Increase Font Size</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -206,7 +206,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">H</td>
         <td class="shortcut-binding">Ctrl-Shift-H</td>
-        <td class="shortcut-cmd-id">view.hideSidebar</td>
+        <td class="shortcut-cmd-id">view&#8203;.hideSidebar</td>
         <td class="shortcut-cmd-name">Hide Sidebar</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -549,7 +549,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Down</td>
         <td class="shortcut-binding">Ctrl-Down</td>
-        <td class="shortcut-cmd-id">view.scrollLineDown</td>
+        <td class="shortcut-cmd-id">view&#8203;.scrollLineDown</td>
         <td class="shortcut-cmd-name">Scroll Line Down</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
@@ -759,7 +759,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Up</td>
         <td class="shortcut-binding">Ctrl-Up</td>
-        <td class="shortcut-cmd-id">view.scrollLineUp</td>
+        <td class="shortcut-cmd-id">view&#8203;.scrollLineUp</td>
         <td class="shortcut-cmd-name">Scroll Line Up</td>
         <td class="shortcut-orig">Brackets</td>
     </tr>
