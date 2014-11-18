@@ -13,7 +13,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
 
 ***
 
-<table>
+<table width="75%">
     <tr class="shortcut-header">
         <td class="shortcut-base"><strong>Base Key</strong></td>
         <td class="shortcut-binding"><strong>Key Binding</strong></td>
@@ -257,14 +257,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-binding">Ctrl-M</td>
         <td class="shortcut-cmd-id">redmunds&#8203;.brackets-quick-markup&#8203;.view&#8203;.toggle-quick-markup</td>
         <td class="shortcut-cmd-name">Quick Markup Mode</td>
-        <td class="shortcut-orig">Extension (Brackets-quick-markup)</td>
+        <td class="shortcut-orig">Extension (Brackets-&#8203;quick-&#8203;markup)</td>
     </tr>
     <tr>
         <td class="shortcut-base">M</td>
         <td class="shortcut-binding">Ctrl-Shift-M</td>
         <td class="shortcut-cmd-id">redmunds&#8203;.brackets-quick-markup&#8203;.view&#8203;.toggle-quick-markup-help</td>
         <td class="shortcut-cmd-name">Quick Markup Help</td>
-        <td class="shortcut-orig">Extension (Brackets-quick-markup)</td>
+        <td class="shortcut-orig">Extension (Brackets-&#8203;quick-&#8203;markup)</td>
     </tr>
     <tr>
         <td class="shortcut-base">N</td>
