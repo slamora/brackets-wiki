@@ -491,21 +491,21 @@ So, if you create a new extension for Brackets, follow the same process and add 
         <td class="shortcut-orig">Extension</td>
     </tr>
     <tr>
-        <td class="shortcut-base">Backspace</td>
+        <td class="shortcut-base">Back&#8203;space</td>
         <td class="shortcut-binding">Ctrl-Backspace</td>
         <td class="shortcut-cmd-id">delGroupBefore</td>
         <td class="shortcut-cmd-name">delGroupBefore</td>
         <td class="shortcut-orig">CodeMirror</td>
     </tr>
     <tr>
-        <td class="shortcut-base">Backspace</td>
+        <td class="shortcut-base">Back&#8203;space</td>
         <td class="shortcut-binding">Cmd-Backspace (Mac only)</td>
         <td class="shortcut-cmd-id">probertson.deleteToLineStart</td>
         <td class="shortcut-cmd-name">Delete To Line Start</td>
         <td class="shortcut-orig">Extension (<a href="https://github.com/probertson/brackets-delete-line-start-end">Delete to line start/end</a>)</td>
     </tr>
     <tr>
-        <td class="shortcut-base">Backspace</td>
+        <td class="shortcut-base">Back&#8203;space</td>
         <td class="shortcut-binding">Alt-Backspace (Win only)</td>
         <td class="shortcut-cmd-id">probertson.deleteToLineStart</td>
         <td class="shortcut-cmd-name">Delete To Line Start</td>
