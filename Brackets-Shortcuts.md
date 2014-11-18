@@ -31,7 +31,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">,</td>
         <td class="shortcut-binding">Ctrl-Shift-,</td>
-        <td class="shortcut-cmd-id">com.notwebsafe.select-parent</td>
+        <td class="shortcut-cmd-id">com&#8203;.notwebsafe&#8203;.select-parent</td>
         <td class="shortcut-cmd-name">Select Parent</td>
         <td class="shortcut-orig">Extension (Notwebsafe)</td>
     </tr>
@@ -45,7 +45,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">.</td>
         <td class="shortcut-binding">Ctrl-Shift-.</td>
-        <td class="shortcut-cmd-id">com.notwebsafe.select-child</td>
+        <td class="shortcut-cmd-id">com&#8203;.notwebsafe&#8203;.select-child</td>
         <td class="shortcut-cmd-name">Select Child</td>
         <td class="shortcut-orig">Extension (Notwebsafe)</td>
     </tr>
