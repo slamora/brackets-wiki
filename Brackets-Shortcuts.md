@@ -500,14 +500,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Back&#8203;space</td>
         <td class="shortcut-binding">Cmd-Backspace (Mac only)</td>
-        <td class="shortcut-cmd-id">probertson.deleteToLineStart</td>
+        <td class="shortcut-cmd-id">probertson&#8203;.deleteToLineStart</td>
         <td class="shortcut-cmd-name">Delete To Line Start</td>
         <td class="shortcut-orig">Extension (<a href="https://github.com/probertson/brackets-delete-line-start-end">Delete to line start/end</a>)</td>
     </tr>
     <tr>
         <td class="shortcut-base">Back&#8203;space</td>
         <td class="shortcut-binding">Alt-Backspace (Win only)</td>
-        <td class="shortcut-cmd-id">probertson.deleteToLineStart</td>
+        <td class="shortcut-cmd-id">probertson&#8203;.deleteToLineStart</td>
         <td class="shortcut-cmd-name">Delete To Line Start</td>
         <td class="shortcut-orig">Extension (<a href="https://github.com/probertson/brackets-delete-line-start-end">Delete to line start/end</a>)</td>
     </tr>
@@ -521,14 +521,14 @@ So, if you create a new extension for Brackets, follow the same process and add 
     <tr>
         <td class="shortcut-base">Delete</td>
         <td class="shortcut-binding">Cmd-Delete (Mac only)</td>
-        <td class="shortcut-cmd-id">probertson.deleteToLineEnd</td>
+        <td class="shortcut-cmd-id">probertson&#8203;.deleteToLineEnd</td>
         <td class="shortcut-cmd-name">Delete To Line End</td>
         <td class="shortcut-orig">Extension (<a href="https://github.com/probertson/brackets-delete-line-start-end">Delete to line start/end</a>)</td>
     </tr>
     <tr>
         <td class="shortcut-base">Delete</td>
         <td class="shortcut-binding">Alt-Delete (Win only)</td>
-        <td class="shortcut-cmd-id">probertson.deleteToLineEnd</td>
+        <td class="shortcut-cmd-id">probertson&#8203;.deleteToLineEnd</td>
         <td class="shortcut-cmd-name">Delete To Line End</td>
         <td class="shortcut-orig">Extension (<a href="https://github.com/probertson/brackets-delete-line-start-end">Delete to line start/end</a>)</td>
     </tr>
