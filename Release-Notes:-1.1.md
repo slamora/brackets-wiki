@@ -30,7 +30,10 @@ API Changes
 
 **Event listeners** - Instead of using jQuery events, Brackets core modules and model objects now provide their own simpler on()/off() event listener API. (For DOM objects, continue to use jQuery events). When the legacy `$().on()/off()` APIs are used on objects that support the new API, they automatically call the new API instead. The new API is more robust to listeners that throw exceptions, uses less memory, and is easier to debug.
 
-NodeConnection events now only use `:` separators - the deprecated `.` separators (which conflict with the more standard use of `.` as an event-listener namespace) are no longer supported.
+Related changes:
+
+* Editor's `"keyEvent"` event is deprecated. Use the more specific events `"keyup"`, `"keypress"`, or `"keydown"` instead. (However, in most cases you should use Document's `"change"` event instead of _any_ of the Editor events).
+* NodeConnection events now only use `:` separators - the deprecated `.` separators (which conflict with the more standard use of `.` as an event-listener namespace) are no longer supported.
 
 New/Improved Extensibility APIs
 -------------------------------
