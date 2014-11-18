@@ -1,5 +1,3 @@
-**DRAFT** This is up for review by the committers.
-
 If you're submitting a pull request or are reviewing one, hopefully this page will help set expectations for how we see pull requests moving along and landing.
 
 A pull request can be reviewed by any Brackets committer. With this process, we seek to respond to pull requests quickly and to resolve them as quickly as is reasonable. There are two phases to the review: Triage and Review.
