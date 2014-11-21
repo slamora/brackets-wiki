@@ -40,8 +40,8 @@ Everything else not listed here _does_ work: Find/Replace in Files, Quick Edit, 
 
 ## Cross-Browser Compatibility
 
-* Chrome: should work in Chrome 24+
-* Internet Explorer: 10+, pending [PR #7231](https://github.com/adobe/brackets/pull/7231)
+* Chrome: should work in Chrome 29+
+* Internet Explorer: 10+
 * Firefox: ?
 
 
