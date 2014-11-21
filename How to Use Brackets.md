@@ -186,6 +186,7 @@ These are all the settings that are currently supported:
 | `closeTags` | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
 | `closeBrackets` | `false` | Automatically close braces, brackets and parentheses |
 | `insertHintOnTab` | `false` | True to insert the currently selected code hint on tab |
+| `maxCodeHints` | `50` | Maximum code hints displayed at once |
 | `sortDirectoriesFirst` | `false` for Mac, `true` otherwise | True to sort the directories first in the project tree |
 | `staticserver.port` | | Port number that the built-in server should use for Live Preview |
 | `scrollPastEnd` | `false` | True to be able to scroll beyond the end of the document |
