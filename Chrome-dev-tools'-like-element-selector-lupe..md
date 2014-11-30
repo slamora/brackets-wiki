@@ -1,0 +1,3 @@
+Chrome's got this awesome tool:  ![A Lupe](http://i.gyazo.com/1c4276dbf044b8ed9346d430728293fc.png). When you click on it, you can move your cursor over the page and click on a div or something; then, the code jumps to the part of the element inspector where it is. 
+
+I constantly used this tool but, since you can't open the dev tools 'cause live preview's gonna stop, I can't anymore, and it'd be cool if you added this feature to brackets itself.
