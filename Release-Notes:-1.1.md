@@ -51,8 +51,9 @@ Community contributions to Brackets
 _TODO_
 
 #### Pulling source code from Git
-* TODO: any brackets-shell updates?
-* Some submodules were updated this sprint. Run `git submodule update` to ensure your source tree is fully up to date.
+* A new brackets-shell build is _required_ for this sprint.
+    * If you build brackets-shell yourself, you _must_ re-run `grunt setup` before building (due to the CEF update).
+* A submodule _URL_ was changed this sprint. Run `git submodule sync` and _then_ `git submodule update --init --recursive` to ensure your local source tree reflects the update.
 
 
 Bugs fixed in Release 1.1
