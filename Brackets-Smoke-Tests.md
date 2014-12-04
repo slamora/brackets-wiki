@@ -1,4 +1,4 @@
-Brackets has a pretty good automated test suite that you can run from Debug > Run Tests, but that doesn't always cover issues with the overall UI and intetegrated functionality, or visual/layout issues that are only obvious if you're actually looking at the product. This is a set of manual tests intended to make sure we haven't broken the basic overall workflows of the product. The intention is to keep it quick--if it takes more than 5 minutes on a given platform it's too long.
+Brackets has a pretty good automated test suite that you can run from **Debug > Run Tests**, but that doesn't always cover issues with the overall UI and integrated functionality, or visual/layout issues that are only obvious if you're actually looking at the product. This is a set of manual tests intended to make sure we haven't broken the basic overall workflows of the product. The intention is to keep it quick--if it takes more than 5 minutes on a given platform it's too long.
 
 There are also [Brackets server smoke tests](Brackets-Server-Smoke-Tests).
 
@@ -86,4 +86,4 @@ Smoke test steps
 1. Switch to another project and then back to citrus and verify the view is still split, splitter is where you left it, and the same files are open.
 1. In the sidebar, drag the `index.html` file from the "Left" working set and verify that you can drop it into the "Right" working set, and that it is no longer displayed int he left pane.
 1. Drag it back to the empty "Left" working set and verify that it is once again displayed in left pane.
-1. Click Split View icon at top of sidebar, choose `No Split`, and verify therre is now only a single pane displayed and all open files are listed in the Working Files list.
+1. Click Split View icon at top of sidebar, choose `No Split`, and verify there is now only a single pane displayed and all open files are listed in the Working Files list.
