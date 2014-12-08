@@ -22,7 +22,7 @@ define(function (require, exports, module) {
 
 * Must pass JSLint. The default settings for JSLint are:
 
-```
+```javascript
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
 /*global define */
 ```
@@ -38,14 +38,14 @@ Globals should be limited to those defined by thirdparty libraries (e.g. jquery 
 Variable and function names use camelCase (not under_scores):
 > Do this:
 >
-> ```
+> ```javascript
 > var editorHolder; 
 > function getText();
 > ```
 >
 > Not this:
 >
-> ```
+> ```javascript
 > var editor_holder; // Don't use underscore!
 > function get_text(); // Don't use underscore!
 > ```
@@ -54,13 +54,13 @@ Variable and function names use camelCase (not under_scores):
 Use $ prefixes on variables referring to jQuery objects:
 > Do this:
 >
-> ```
+> ```javascript
 > var $sidebar = $("#sidebar");
 > ```
 >
 > Not this:
 >
-> ```
+> ```javascript
 > var sidebar = $("#sidebar"); // Use '$' to prefix variables referring to jQuery objects
 > ```
 
@@ -68,14 +68,14 @@ Use $ prefixes on variables referring to jQuery objects:
 Use _ prefixes on private variables/methods:
 > Do this:
 >
-> ```
+> ```javascript
 > var _privateVar = 42;
 > function _privateFunction() 
 > ```
 >
 > Not this:
 >
-> ```
+> ```javascript
 > var privateVar = 42; // Private vars should start with _
 > function privateFunction() // Private functions should start with _
 > ```
@@ -84,14 +84,14 @@ Use _ prefixes on private variables/methods:
 Classes and id's in HTML use all lower-case with dashes (-), not camelCase or under_scores:
 > Do this:
 >
-> ```
+> ```html
 > <div id="search-results">
 > <span class="title-wrapper">
 > ```
 >
 > Not this:
 >
-> ```
+> ```html
 > <div id="searchResults">  // Don't use camel-case for ids
 > <span class="title_wrapper"> // Don't use underscore
 > ```
@@ -100,14 +100,14 @@ Classes and id's in HTML use all lower-case with dashes (-), not camelCase or un
 Use semicolons:
 > Do this:
 >
-> ```
+> ```javascript
 > var someVar;
 > someVar = 2 + 2;
 > ```
 >
 > Not this:
 >
-> ```
+> ```javascript
 > var someVar   // Missing semicolon!
 > someVar = 2 + 2   // Missing semicolon!
 > ```
@@ -116,7 +116,7 @@ Use semicolons:
 Use double quotes in JavaScript. If a JavaScript string literal _contains_ code within it, use single quotes within the string to avoid escaping.
 > Do this:
 >
-> ```
+> ```javascript
 > var aString = "Hello";
 > someFunction("This is awesome!");
 >
@@ -125,7 +125,7 @@ Use double quotes in JavaScript. If a JavaScript string literal _contains_ code 
 >
 > Not this:
 >
-> ```
+> ```javascript
 > var aString = 'Hello'; // Use double quotes!
 > someFunction('This is awesome!'); // Use double quotes!
 >
@@ -136,7 +136,7 @@ Use double quotes in JavaScript. If a JavaScript string literal _contains_ code 
 
 ## Code Structure ##
 Prototypal inheritance pattern:
-> ```
+> ```javascript
 > function MyClass() { // constructor
 >     Parent.call(this); // if this is a subclass
 >     // ...
@@ -169,7 +169,7 @@ Prototypal inheritance pattern:
 ## APIs to Use or Avoid ##
 On Arrays, use Array.forEach() or Array.some() rather than $.each() or for loops:
 > Do this:
-> ```
+> ```javascript
 > var anArray = [1, 2, 3, 4];
 > anArray.forEach(function (value, index) {
 >     // ...
@@ -177,14 +177,14 @@ On Arrays, use Array.forEach() or Array.some() rather than $.each() or for loops
 > ```
 >
 > Not this:
-> ```
+> ```javascript
 > for (var i = 0; i < anArray.length; i++) {  // Use Array.forEach()
 >     // ...
 > }
 > ```
 >
 > Or this:
-> ```
+> ```javascript
 > $.each(anArray, function (index, value) {  // Use Array.forEach()
 >     // ...
 > })
@@ -193,7 +193,7 @@ On Arrays, use Array.forEach() or Array.some() rather than $.each() or for loops
 <br/>
 To iterate object keys, use _.forEach() or _.some() rather than $.each() or for-in loops. (This avoids various pitfalls when the keys could have arbitrary values, and matches Array.forEach()'s callback API better).
 > Do this:
-> ```
+> ```javascript
 > var anObject = { foo: "a", bar: "b", baz: "c" };
 > _.forEach(anObject, function (value, key) {
 >     // ...
@@ -201,14 +201,14 @@ To iterate object keys, use _.forEach() or _.some() rather than $.each() or for-
 > ```
 >
 > Not this:
-> ```
+> ```javascript
 > for (var key in anObject) {  // Use _.forEach()
 >     if (anObject.hasOwnProperty(key)) { /* ... */ }
 > }
 > ```
 >
 > Or this:
-> ```
+> ```javascript
 > $.each(anObject, function (key, value) {  // Use _.forEach()
 >     // ...
 > })
@@ -242,7 +242,7 @@ Use ViewUtils.toggleClass() instead of jQuery.toggleClass(). (This avoids proble
 
 The Document constructor throws an error if a document already exists for the current file. Creating a new document that points to the same file could lead to file corruption if both documents are edited.
 
-```
+```javascript
 function Document(file, initialTimestamp, rawText) {
     ...
     if (_openDocuments[file.fullPath]) {
@@ -256,7 +256,7 @@ function Document(file, initialTimestamp, rawText) {
 
 In `DocumentManager.closeFullEditor()`, after opening the next file, we check that the `currentDocument` property is updated correctly. This is an error if not true, and may lead to unexpected behavior, but it is not catastrophic.
 
-```
+```javascript
 CommandManager.execute(Commands.FILE_OPEN, { fullPath: nextFile.fullPath })
     .done(function () {
         // (Now we're guaranteed that the current document is not the one we're closing)
@@ -268,7 +268,7 @@ CommandManager.execute(Commands.FILE_OPEN, { fullPath: nextFile.fullPath })
 
 The `CommandManager.register()` function uses `console.log()` to note an unexpected (but not dangerous) condition -- the specified command id has already been registered. The code can continue safely from here.
 
-```JS
+```javascript
 function register(name, id, commandFn) {
     if (_commands[id]) {
         console.log("Attempting to register an already-registered command: " + id);
