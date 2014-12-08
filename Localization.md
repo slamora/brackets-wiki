@@ -5,17 +5,18 @@
 The snippets below show how to use localized strings in core Brackets code.
 
 In JavaScript
-```
+```javascript
 var Strings = require("strings"); // load the Strings module
 ...
 $("<span/>").text(Strings.CMD_ABOUT); // insert a localized string
 ```
 
 In an HTML template
-```
+```html
 <!-- templateContent.html -->
 <span>{{CMD_ABOUT}}</span>
-
+```
+```javascript
 /* JavaScript */
 var Strings = require("strings"),
     templateContent = require("text!templateContent.html"); // load text content of template file
