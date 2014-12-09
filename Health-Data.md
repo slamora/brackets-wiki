@@ -67,6 +67,7 @@ We wish to collect this additional information soon. "Active time" increases as 
     * navigate.toggleQuickEdit
     * navigate.toggleQuickDocs
     * file.liveFilePreview
+        * Count of invocations that use a custom server URL vs. the built-in server
 
 **Benefits** Coupled with the data above, we can answer further questions like:
 
