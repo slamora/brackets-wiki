@@ -20,7 +20,7 @@ This tells you all the modules that _immediately_ depend on your target module:
 
 ```
 npm install -g madge
-madge --format cjs --exclude "/node_modules/|/extensions/|/nls/|/node/|/jquery-ui/|/unittest-files/|/tests/|/test/|/spec/" --depends <<src-relative module path>> .
+madge --format cjs --exclude "/node_modules/|/extensions/|/nls/|/node/|/jquery-ui/|/unittest-files/|/tests/|/test/|/spec/" --depends <<src-relative module path sans .js>> .
 ```
 
 But that's not very useful since you could just search for `require(<<src-relative module path>>)` in the code...
