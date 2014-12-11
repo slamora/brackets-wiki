@@ -18,6 +18,8 @@ This page documents build steps for Brackets that are typically _only run on the
 
 Run `grunt build` to compile the Brackets `src` tree to the `dist` folder.
 
+To test this build, just open a copy of brackets-shell that hasn't been "setup for hacking" or hold down the shift key as you open Brackets so that it prompts you for the location of the index.html file. Select dist/index.html and you will use the minified copy.
+
 # Usage
 
 After a successful build, ...
