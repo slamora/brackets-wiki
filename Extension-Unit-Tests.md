@@ -1,6 +1,6 @@
 Brackets includes a simple test-runner for internal use. You can leverage this same tool for any Brackets extensions you write (though not for other projects you're editing in Brackets... [yet](https://trello.com/c/CUoZMZM2/740-unit-test-runner-for-user-code)).
 
-1. Learn about the [Jasmine unit-test framework](http://pivotal.github.io/jasmine/).
+1. Learn about the [Jasmine unit-test framework](http://jasmine.github.io/).
 2. Add a `unittests.js` module in the root of your extension folder.
 3. Write Jasmine test cases inside the module, using `describe() {}` blocks. [Here's an example](#unittest).
 4. Choose _Debug > Run Tests_
