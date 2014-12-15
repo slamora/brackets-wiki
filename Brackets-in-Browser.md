@@ -24,8 +24,9 @@ Major Brackets features that do not work in-browser yet:
     - Install mechanics - Brackets relies on Node-side code (part of brackets-shell) to unzip & validate extension packages. Your server would need to run this code or implement the same functionality in your preferred server-side language.
     - Desktop-only extensions - Some extensions depend on Node (or other APIs only available in brackets-shell), and thus wouldn't work in browser.
 * **Loading feedback** - Loading Brackets, or opening a large file, can take much longer than usual over a slow network connection. Brackets doesn't give any feedback and may contain race condition bugs during such unanticipated delays.
-* **Preferences** - In 0.36, preferences storage moved from browser `localStorage` to local-disk JSON files. This is not easily pluggable yet, but your File System implementation can redirect reads/writes on this path to your preferred backend preferences storage mechanism
-* **JavaScript code hints** - Disabled for performance reasons, since it aggressively reads many files.
+* **Preferences** - In 0.36, preferences storage moved from browser `localStorage` to local-disk JSON files. This is not easily pluggable yet, but your File System implementation can redirect reads/writes on this path to your preferred backend preferences storage mechanism.
+* **Quick View, Image preview** - These features expect image files to exist at a URL that can be read directly by the browser via an `<img src>` link. Currently, the URL is assumed to be identical to the FileSystem path; these features probably need to support adding a base URL prefix so the images can be properly addressed on the server (and your server will need to expose the images at such a URL for download).
+* **JavaScript code hints** - Enabled, but it may cause performance issues since it aggressively reads many files.
 
 
 Features that are unlikely to _ever_ work in-browser:
