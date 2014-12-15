@@ -20,6 +20,7 @@
 ### Smoke Tests
 * [Client Smoke Tests](https://github.com/adobe/brackets/wiki/Brackets-Smoke-Tests)
 * [Server Smoke Tests](https://github.com/adobe/brackets/wiki/Brackets-Server-Smoke-Tests)
+
 ### Localization Tests
 * [Localization Tests](https://github.com/adobe/brackets/wiki/Localization-Tests)
 
