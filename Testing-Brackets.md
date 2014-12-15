@@ -6,6 +6,7 @@
 ## Frameworks, Tools and Services
 
 ### Jasmine
+* [Running Jasmine Tests](https://github.com/adobe/brackets/wiki/Running-Brackets-Unit-Tests)
 
 ### Travis CI
 
@@ -16,7 +17,11 @@
 ### Unit Tests
 ### Integration Tests
 ### Extension Tests
+### Smoke Tests
+* [Client Smoke Tests](https://github.com/adobe/brackets/wiki/Brackets-Smoke-Tests)
+* [Server Smoke Tests(https://github.com/adobe/brackets/wiki/Brackets-Server-Smoke-Tests)
 ### Localization Tests
+* [Localization Tests](https://github.com/adobe/brackets/wiki/Localization-Tests)
 
 ## Resources
 
