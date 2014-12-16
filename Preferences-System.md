@@ -14,7 +14,7 @@ The preferences system has a collection of "scopes" that are searched in order f
 
 If you set a value for a preference, the default behavior is to set that preference in the location from whence the preference's current value came. If the current value came from the default scope, then a call to `set` will set the value in the user scope.
 
-Preference lookup is further customized by "layers". There is a PathLayer applied to the project scope that allows customization for specific files or sets of files in the project. The important thing to know about the PathLayer is that a preference lookup could change every time the user changes files in the editor.
+Preference lookup is further customized by "layers". There are two types of layers: `PathLayer` and `LanguageLayer`. `PathLayer` is applied to the project scope that allows customization for specific files or sets of files in the project. `LanguageLayer` is applied to both project scope and user scope: it allows specifying preferences based on the language of the file currently being edited, e.g. "css" or "javascript". The important thing to know about layers is that a preference lookup is done every time the user changes files in the editor. `PathLayer` takes precedence over `LanguageLayer`, meaning that if a preference value has been found in `PathLayer`, then `LanguageLayer` will not be consulted.
 
 The `stateManager` only has user and default scopes. It does have a `ProjectLayer` attached to its user scope which puts values into `project` object that is keyed on a project's top-level directory.
 
