@@ -1,12 +1,16 @@
 This set of commands creates the Brackets API Docs to be published at http://brackets.io/docs. So far, the only set of docs are for the [current version](http://brackets.io/docs/current) of Brackets, but it would probably be useful to provide snapshots of docs for major releases (e.g. Brackets 1.0).
 
-The following commands assume that the **brackets** and **brackets.io** root folders are side-by-side.
+### apify
+
+Brackets API Documents are generated using [apify](https://github.com/jbalsas/apify/) which is an open source project was written by Brackets committer [Chema Balsas](https://github.com/jbalsas). The content is based on [JSDoc Annotations](https://code.google.com/p/jsdoc-toolkit/wiki/TagReference) in Brackets source code which follow [Google Closure Compiler](https://developers.google.com/closure/compiler/docs/js-for-compiler).
 
 ### Use Mac
 
 __Note:__ There is a [known bug](https://github.com/jbalsas/apify/issues/3) that the incorrect folder structure and links are generated on Windows, so use Mac to generate documents until that bug is fixed.
 
 ### Install node apify package
+
+The following commands assume that the **brackets** and **brackets.io** root folders are side-by-side.
 
 This command installs the node **apify** package globally so you can run it from any folder. Note that **apify** is still being developed, so it's a good idea to re-run this command each time to get the latest package.
 
