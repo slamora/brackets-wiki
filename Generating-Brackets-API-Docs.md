@@ -1,4 +1,4 @@
-This set of commands creates the Brackets API Docs to be published at http://brackets.io/docs/current.
+This set of commands creates the Brackets API Docs to be published at http://brackets.io/docs. So far, the only set of docs are for the [current version](http://brackets.io/docs/current) of Brackets, but it would probably be useful to provide snapshots of docs for major releases (e.g. Brackets 1.0).
 
 The following commands assume that the **brackets** and **brackets.io** root folders are side-by-side.
 
