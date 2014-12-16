@@ -204,7 +204,8 @@ These are all the settings that are currently supported:
 | `codehint.JSHints` | `true` | Enable/disable JavaScript code hints |
 | `jscodehints.noHintsOnDot` | `false` | If true, do not automatically show JS code hints when `.` is typed. |
 | `showCursorWhenSelecting` | `false` | Keeps the blinking cursor visible when you have a text selection |
-
+| `linting.prefer` | `undefined` | *Since v.1.1.* Array of linters (`CodeInspection` providers) to run first. For example: `["JSLint", "JSHint"]`. If provider on the list is not installed, it will be silently ignored. By default, all the linters will be run. |
+| `linting.usePreferredOnly` | `false` | *Since v.1.1.* If set to `true`, then only providers specified in `linting.prefer` will be run (if installed). |
 
 Here's an example:
 
@@ -225,6 +226,12 @@ Here's an example:
         "**.js": {
             "insertHintOnTab": true,
             "scrollPastEnd": true
+        }
+    },
+    "language": {
+        "javascript": {
+            "linting.prefer": ["JSLint", "JSHint"],
+            "linting.usePreferredOnly": true
         }
     },
     "language.fileExtensions": {
