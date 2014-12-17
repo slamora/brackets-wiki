@@ -1,18 +1,25 @@
 _This is a draft!_
 --------------------
-_This document will not be finalized until the end of Release 1.1 -- approximately December 9._
+_This document will not be finalized until the end of Release 1.1 -- approximately December 17._
+
 
 What's New in Release 1.1
 -------------------------
-* _TODO: draft_
-* **Display**
-    * [Windows High DPI support](https://trello.com/c/CySUsuf4/1188-m-integrate-cef-2171-branch-chrome-39): Like the existing support for Retina Macs, Brackets will automatically rescale on Windows high-DPI displays.
+* **Early Access**
+    * [Cross-browser Live Preview with Dev Tools](https://trello.com/c/Vw9YuUss/833-live-development-use-chrome-dev-tools-at-same-time): Although disabled by default, you can try out this brand-new version of Live Preview by enabling the `livedev.multibrowser` preference. [Read more on how it works](https://github.com/adobe/brackets/wiki/Live-Development:-lifecycle-research-and-future-directions#live-development-managed-with-unprivileged-scripts).
+    * [Windows High DPI support](https://trello.com/c/CySUsuf4/1188-m-integrate-cef-2171-branch-chrome-39): To enable, right-click the app icon and select "Disable display scaling on high DPI settings" in the Compatibility tab. (The window controls in the upper right do not rescale yet, however).
 * **Localization**
     * [Allow typing accent characters with AltGr](https://github.com/adobe/brackets/issues/8666): Brackets shortcuts that use Ctrl+Alt no longer supercede typing letter keys via AltGr.
-    * Translation updates for: _...TODO..._
-* **Stability**
+    * Translation updates for: Chinese (Simplified), Dutch, Finnish, German, Italian, Korean, Persian-Farsi, Spanish, Ukrainian
+* **Preferences**
+    * [Select enabled code linters via preferences](https://github.com/adobe/brackets/pull/7362): For example, different projects can use a different set of linters.
+    * [Programming language-specific preferences](https://github.com/adobe/brackets/pull/7889): Use the new `"language"` layer to set preferences based on file type, in addition to the path-specific or global preferences possible previously. [Read more](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#scope-of-preferences).
+* **Quick Docs**
+    * [Update to latest Web Platform Docs content](https://github.com/adobe/brackets/pull/9686)
+* **Stability & Performance**
     * [New event dispatching system](https://trello.com/c/ogaZoRHJ/1377-events-infrastructure-improvements): Brackets core objects use a new event-listener API that protects against misbehaved extensions. See below for details.
-
+    * [Improved typing performance while code hints open](https://github.com/adobe/brackets/pull/9791): Brackets limits the displayed list of code hints to 50 entries to improve performance. To override this limit, set the `"maxCodeHints"` preference.
+    * [Improved performance when lots of files are changing in the background](https://github.com/adobe/brackets/pull/10120), such as large source-control checkouts or complex Grunt build scripts.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.0...release-1.1#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.0...release-1.1#commits_bucket)
 
@@ -20,6 +27,8 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release
 UI Changes
 ----------
 Brackets now shows the project name in the title bar after the current filename (inside parentheses).
+
+The menu item _Navigate > Go to First Error/Warning_ has been renamed to _Go to First Problem_.
 
 
 API Changes
