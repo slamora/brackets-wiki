@@ -20,7 +20,8 @@ What's New in Release 1.1
     * [New event dispatching system](https://trello.com/c/ogaZoRHJ/1377-events-infrastructure-improvements): Brackets core objects use a new event-listener API that protects against misbehaved extensions. See below for details.
     * [Improved typing performance while code hints open](https://github.com/adobe/brackets/pull/9791): Brackets limits the displayed list of code hints to 50 entries to improve performance. To override this limit, set the `"maxCodeHints"` preference.
     * [Improved performance when lots of files are changing in the background](https://github.com/adobe/brackets/pull/10120), such as large source-control checkouts or complex Grunt build scripts.
-
+    * Fixed [issue](https://github.com/adobe/brackets/issues/9813) that caused changes inside `<style>` blocks in PHP files to be lost in some cases.
+    * Fixed [two](https://github.com/adobe/brackets/issues/10013) [issues](https://github.com/adobe/brackets/issues/9840) that caused Quick Edit to miss some CSS rules.
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.0...release-1.1#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.0...release-1.1#commits_bucket)
 
 
@@ -44,9 +45,20 @@ Related changes:
 
 **Developer tools** - _Debug > Show Developer Tools_ now opens a Brackets window instead of a tab in your browser. If Brackets gets badly hosed, you can still open dev tools in the browser by manually visiting http://localhost:9234/.
 
+**jQuery** - Upgraded from 2.1.0 to 2.1.1 <br>
+**Lodash** - Upgraded from 2.2.0 to 2.4.1 <br>
+**LESS** - Upgraded from 1.7.0 to 1.7.5 <br>
+**RequireJS** - Upgraded from 2.1.5 to 2.1.15
+
+**SVG language** - SVG files are now reported by LanguageManager as `"svg"` instead of `"xml"` as before.
+
+**Markdown language** - Markdown files may now be reported by LanguageManager as "`gfm`" in addition to the `"markdown"` language reported before. This lets users distinguish GitHub-flavored Markdown files from "classic" Markdown.
+
+**File tree icon providers** - Providers can now return falsy to add no icon to an item, consistent with working set icon providers. Clarified documentation for all provider hooks. Also, the large negative margin + large positive padding hack used in tree items' CSS [has been removed](https://github.com/adobe/brackets/pull/10011).
+
 New/Improved Extensibility APIs
 -------------------------------
-_TODO_
+**Themes** - specify `"addModeClass": true` in the theme info JSON to enable using language-specific CSS selectors (e.g. use different colors for the same token name, depending on file type). This causes a slight performance hit, so please only enable if you're using it.
 
 
 Known Issues
