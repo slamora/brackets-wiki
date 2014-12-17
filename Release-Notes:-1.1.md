@@ -1,8 +1,3 @@
-_This is a draft!_
---------------------
-_This document will not be finalized until the end of Release 1.1 -- approximately December 17._
-
-
 What's New in Release 1.1
 -------------------------
 * **Early Access**
