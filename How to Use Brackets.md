@@ -164,12 +164,24 @@ for a more complete list of shortcuts and the [User Key Bindings Wiki](https://g
 <a id="preferences"></a>Preferences
 -----------
 
-There is not yet a global user interface for all preferences (so the required "Preferences" menu item on Mac is disabled). From the Brackets user interface, you can change preferences such as whether you want "code inspection" (automatic detection of errors) turned on, or if word wrap should be on. These preferences are "user-level" which means that they apply to any file in any folder that you open. Brackets also lets you override preferences on a per-project (use the File &gt; Open Folder command) basis. These files are particularly useful for saving a configuration that is specific to a project or even some files in a project. 
+There is not yet a global user interface for all preferences (so the required "Preferences" menu item on Mac is disabled). You can change a few preferences from the Brackets user interface - such as word wrap or the current color theme. But many more preferences are available via JSON configuration files. To modify these preferences, first choose how globally you want to set the preference:
 
-Some of the preferences available in these files do not have any user interface yet. To modify these preferences:
+#### Scope of preferences
 
-* for user-level preferences, choose Debug > Open Preferences File
-* for project-level preferences, create a ".brackets.json" file in the root of your project
+* **User-global preferences** - your default settings. To edit, choose _Debug > Open Preferences File_.
+* **Project-level preferences** - override any number of preferences on a project-specific basis. Create a `.brackets.json` file in the root of your project.
+
+Changing a preference using the Brackets UI modifies the project's `.brackets.json` file _if_ the preference is already set there; otherwise it modifies the user-global setting.
+
+Within either file, there are three levels of specificity at which you can set a preference:
+
+* default - global (user-level file) or project-global (project-level file)
+* `"path"` layer - overrides in effect for files that match the given path/filename wildcard
+* `"language"` layer - overrides in effect for files that Brackets detects as the given programming language (this is also filename/extension based, but it's easier to work with since Brackets already understands many file extensions out of the box, and additional languages supported by Brackets extensions can automatically be used here too).
+
+See the sample .json file below for examples of how to use the path/language-specific preferences.
+
+#### List of supported preferences
 
 These are all the settings that are currently supported:
 
@@ -207,7 +219,7 @@ These are all the settings that are currently supported:
 | `linting.prefer` | `undefined` | *Since v.1.1.* Array of linters (`CodeInspection` providers) to run first. For example: `["JSLint", "JSHint"]`. If provider on the list is not installed, it will be silently ignored. By default, all the linters will be run. |
 | `linting.usePreferredOnly` | `false` | *Since v.1.1.* If set to `true`, then only providers specified in `linting.prefer` will be run (if installed). |
 
-Here's an example:
+#### Example preferences .json file
 
 ```json
 {
