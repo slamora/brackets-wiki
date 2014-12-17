@@ -22,6 +22,8 @@ What's New in Release 1.1
     * [Improved performance when lots of files are changing in the background](https://github.com/adobe/brackets/pull/10120), such as large source-control checkouts or complex Grunt build scripts.
     * Fixed [issue](https://github.com/adobe/brackets/issues/9813) that caused changes inside `<style>` blocks in PHP files to be lost in some cases.
     * Fixed [two](https://github.com/adobe/brackets/issues/10013) [issues](https://github.com/adobe/brackets/issues/9840) that caused Quick Edit to miss some CSS rules.
+
+
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.0...release-1.1#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.0...release-1.1#commits_bucket)
 
 
@@ -69,7 +71,41 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-_TODO_
+* [New Live Preview implementation](https://github.com/adobe/brackets/pull/10010) (+ [part 2](https://github.com/adobe/brackets/pull/10101), [part 3](https://github.com/adobe/brackets/pull/10129)) _(disabled by default for now)_ by [Sebastian Salvucci (Intel Corp)](https://github.com/sebaslv) & [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Show current project name in titlebar](https://github.com/adobe/brackets/pull/7789) by [Triangle717](https://github.com/le717)
+* [Select enabled code linters via preferences](https://github.com/adobe/brackets/pull/7362) (+ [part 2](https://github.com/adobe/brackets/pull/10164)) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Update Web Platform Docs content; new script for easier updating](https://github.com/adobe/brackets/pull/9686) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Programming language-specific preferences via `"language"` layer](https://github.com/adobe/brackets/pull/7889) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Limit code hint list length to improve typing performance](https://github.com/adobe/brackets/pull/9791) (+ [part 2](https://github.com/adobe/brackets/pull/10093)) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Separate GitHub Flavored Markdown from regular Markdown mode; recognize .mdown/.mkdn as Markdown](https://github.com/adobe/brackets/pull/9780) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Add theme option "addModeClass" (for language-aware themes)](https://github.com/adobe/brackets/pull/10039) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Update to latest dot releases of jQuery, LESS, Lodash, RequireJS](https://github.com/adobe/brackets/pull/9968) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Expose internal linting API to get list of providers](https://github.com/adobe/brackets/pull/9189) (+ [part 2](https://github.com/adobe/brackets/pull/10068))  by [Mark Simulacrum](https://github.com/Mark-Simulacrum)
+* [Fix: No image preview if filename contains "%" or "#"](https://github.com/adobe/brackets/pull/9190) by [Mark Simulacrum](https://github.com/Mark-Simulacrum)
+* [Fix Quick Docs links that point to currently viewed page](https://github.com/adobe/brackets/pull/8724) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix: Find In Files result disappear after saving file with prefix of other filename](https://github.com/adobe/brackets/pull/9940) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix: Warnings logged with async linters when launching Brackets](https://github.com/adobe/brackets/pull/9392) (+ [part 2](https://github.com/adobe/brackets/pull/10023)) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Fix freeze in new Live Preview implementation](https://github.com/adobe/brackets/pull/10207) by [Scott Wadden](https://github.com/dsrw)
+* [Fix new event API .off() chaining](https://github.com/adobe/brackets/pull/10024) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Allow focusing all types of `<input>` fields in dialogs](https://github.com/adobe/brackets/pull/9915) by [Eliezer Bernart](https://github.com/eliezerb)
+* [Rename "Go to First Error/Warning" -> "Go to First Problem" for consistency](https://github.com/adobe/brackets/pull/9835) by [Jacob Lauritzen](https://github.com/Jacse)
+* [Ensure preferences error dialog gets focus](https://github.com/adobe/brackets/pull/10022) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Fix error message wording when unable to read directory](https://github.com/adobe/brackets/pull/9948) by [Kevin Mo](https://github.com/encadyma)
+* [In About Dialog, don't show "{0}" when running from git source with detached head](https://github.com/adobe/brackets/pull/9777) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Add performance measurement for indexing project files](https://github.com/adobe/brackets/pull/9905) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Chinese (Simplified) translation update](https://github.com/adobe/brackets/pull/9874) by [Michael J.](https://github.com/michaeljayt)
+* [Dutch translation fix](https://github.com/adobe/brackets/pull/9804) by [Pieter Willekens](https://github.com/ispieter)
+* [Finnish translation update](https://github.com/adobe/brackets/pull/9998) by [valtlait](https://github.com/valtlait)
+* [German translation update](https://github.com/adobe/brackets/pull/10176) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Italian translation update](https://github.com/adobe/brackets/pull/9962) by [Christopher Pecoraro](https://github.com/chrispecoraro)
+* [Italian translation fixes](https://github.com/adobe/brackets/pull/9885) by [Elia Cereda](https://github.com/EliaCereda)
+* [Korean translation update](https://github.com/adobe/brackets/pull/10053) by [Taegon Kim](https://github.com/taggon)
+* [Persian-Farsi translation update](https://github.com/adobe/brackets/pull/10062) by [Pooya Parsa Dadashi](https://github.com/datamweb)
+* [Spanish translation update](https://github.com/adobe/brackets/pull/10181) by [Tomás Malbrán](https://github.com/TomMalbran)
+* [Ukrainian translation update](https://github.com/adobe/brackets/pull/9967) by [Maks Lyashuk](https://github.com/probil)
+* [Cleanup: Fix some @link / @see tags in docs](https://github.com/adobe/brackets/pull/9782) by [Chema Balsas](https://github.com/jbalsas)
+* [Cleanup: Remove some whitespace](https://github.com/adobe/brackets/pull/9869) by [Pavel Dvořák](https://github.com/dvorapa)
+
 
 #### Pulling source code from Git
 * A new brackets-shell build is _required_ for this sprint.
