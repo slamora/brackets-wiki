@@ -15,6 +15,7 @@ _**When filing a new bug, please include:**_
 * **Steps** to trigger the problem that are specific, and repeatable
 * **What happens** when you follow the steps, and **what you expected to happen** instead.<br>Include the exact text of any error messages if applicable (or upload screenshots).
 * **Brackets version** (or if you're pulling directly from Git, your current commit SHA - use `git rev-parse HEAD`)
+* **Did this work in a previous version?** If so, also provide the version that it worked in.
 * **OS version**
 * **Extensions?** Confirm that you've tested with _Debug > Reload Without Extensions_ first (see below).
 * **Any errors logged** in _Debug > Show Developer Tools_ - Console view
