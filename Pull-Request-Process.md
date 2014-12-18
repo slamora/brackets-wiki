@@ -4,13 +4,13 @@ A pull request can be reviewed by any Brackets committer. With this process, we 
 
 The basic process:
 
-1. A contributor submits a new pull request
+1. A contributor submits a new pull request using [Contributor Pull Request Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Checklist) as a guide.
 2. A Brackets committer assigns it to themselves for a quick triage (see Triage below)
 3. They do that triage immediately after assigning it to themselves.
 4. The person doing triage continues with the back and forth until either the PR is closed or the PR has the right characteristics for a more detailed review.
 5. Assuming the PR is continuing, the committer gives the PR a “Triage Complete” label and unassigns it.
 6. The same or a different Brackets committer picks up the PR for review and assigns it to themselves.
-7. The reviewer starts the review immediately after assigning it to themselves.
+7. The reviewer starts the review immediately after assigning it to themselves and uses the [Pull Request Review Checklist](https://github.com/adobe/brackets/wiki/Pull-Request-Review-Checklist) as a guide.
 8. There’s an expectation from both ends that communication won’t stall for more than a few days (see the Daily Pull Request Report section below)
 
 In general, our goal is that no one should have to wait more than a week or so (barring someone being unavailable for a time and stating so in the pull request comments.)
