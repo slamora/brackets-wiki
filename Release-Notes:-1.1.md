@@ -40,7 +40,7 @@ Related changes:
 
 **Chromium version** - Updated from Chromium 29 to 39.
 
-**Developer tools** - _Debug > Show Developer Tools_ now opens a Brackets window instead of a tab in your browser. If Brackets gets badly hosed, you can still open dev tools in the browser by manually visiting http://localhost:9234/.
+**Developer tools** - _Debug > Show Developer Tools_ now opens a Brackets window instead of a tab in your browser. If Brackets gets badly hosed, you can still open dev tools in Chrome browser by manually visiting [http://localhost:9234/](http://localhost:9234/).
 
 **jQuery** - Upgraded from 2.1.0 to 2.1.1 <br>
 **Lodash** - Upgraded from 2.2.0 to 2.4.1 <br>
