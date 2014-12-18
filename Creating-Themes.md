@@ -23,7 +23,8 @@ The `package.json` file tells Brackets and, ultimately, the Extension Registry a
     "license": "MIT",
     "theme": {
         "file": "theme.less",
-        "dark": true
+        "dark": true,
+        "addModeClass": true
     },
     "keywords": ["theme"]
 }
@@ -31,7 +32,7 @@ The `package.json` file tells Brackets and, ultimately, the Extension Registry a
 
 This seems like a lot, but giving all of this information will give potential users of your theme the most information in the Extension Manager.
 
-The "theme" part is unique to themes and is the trigger that tells Brackets that this extension is a theme. The `file` property tells Brackets which file in your extension is the stylesheet for your theme. If your theme has a dark appearance, use the `dark` flag to tell Brackets that it should make other elements beyond the editor dark as well.
+The "theme" part is unique to themes and is the trigger that tells Brackets that this extension is a theme. The `file` property tells Brackets which file in your extension is the stylesheet for your theme. If your theme has a dark appearance, use the `dark` flag to tell Brackets that it should make other elements beyond the editor dark as well. You can use the `addModeClass` flag if you want to have mode-specific classes added to your DOM (more about that below).
 
 Especially important for themes: **include the homepage field** in package.json to point to your GitHub repository. Ideally, the README for your theme will display a screenshot to show what your theme looks like.
 
@@ -70,6 +71,20 @@ To apply your color scheme to the editor area, LESS will convert this to:
     color: @foreground;
 }
 ```
+
+Beginning with Release 1.1, if you've the `addModeClass` flag set (see [package.json](#packagejson)), you can specify mode-aware styles like:
+
+```css
+.cm-m-css.cm-tag {
+    color: #6c9ef8;
+}
+```
+
+Common modes:
+* `.cm-m-clike`: PHP
+* `.cm-m-css`: CSS, LESS
+* `.cm-m-javascript`: JavaScript
+* `.cm-m-xml`: HTML, XML
 
 Tips for creating your theme's CSS:
 
