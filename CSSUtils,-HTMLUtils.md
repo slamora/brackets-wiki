@@ -22,12 +22,12 @@ The block of text being parsed can be large, so this code needs to be performant
 
 #### Examples in Brackets code base
 
-* `CSSUtils`
+* CSSUtils
     - `findMatchingRules()`
     - `extractAllSelectors()`
-* `JSUtils`
+* JSUtils
     - `findAllMatchingFunctionsInText()`
-* `HTMLUtils`
+* HTMLUtils
     - `findBlocks()`
     - `findStyleBlocks()`
 
@@ -66,12 +66,12 @@ Written using [CodeMirror mode, state, and token API](http://codemirror.net/doc/
 
 #### Examples
 
-* EditorCommandHandlers: 
+* EditorCommandHandlers
     - `blockComment()`
     - `lineComment()`
 * CSSCodeHints
     - `insertHint
-* CSSUtils()`
+* CSSUtils
     - `getInfoAtPos()`
     - `findSelectorAtDocumentPos()`
 * HTMLUtils
@@ -88,7 +88,8 @@ Uses [CodeMirror Mode API](http://codemirror.net/doc/manual.html#modeapi).
 #### Examples
 
 * CSSUtils
-    - `findMatchingRules/extractAllSelectors()`
+    - `findMatchingRules()`
+    - `extractAllSelectors()`
 * JSUtils
     - `findAllMatchingFunctionsInText()`
 
@@ -96,3 +97,5 @@ Uses [CodeMirror Mode API](http://codemirror.net/doc/manual.html#modeapi).
 
 CodeMirror modes, states, and tokens change over time due to more granular states being added.
 These change can break parsing code, so beware when upgrading CodeMirror.
+
+The SVG Code Hints extension may be merged into core soon, so a new `XMLUtils` utility may be introduced.
