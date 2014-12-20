@@ -38,7 +38,7 @@ Related changes:
 * Editor's `"keyEvent"` event is deprecated. Use the more specific events `"keyup"`, `"keypress"`, or `"keydown"` instead. (However, in most cases you should use Document's `"change"` event instead of _any_ of the Editor events).
 * NodeConnection events now only use `:` separators - the deprecated `.` separators (which conflict with the more standard use of `.` as an event-listener namespace) are no longer supported.
 
-**Chromium version** - Updated from Chromium 29 to 39.
+**Chromium version** - Updated from Chromium 29 to 39 on Windows and Mac. Chromium 29 is still used on Linux.
 
 **Developer tools** - _Debug > Show Developer Tools_ now opens a Brackets window instead of a tab in your browser. If Brackets gets badly hosed, you can still open dev tools in Chrome browser by manually visiting [http://localhost:9234/](http://localhost:9234/).
 
