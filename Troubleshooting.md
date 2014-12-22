@@ -209,7 +209,7 @@ You can also install extensions manually:
 Your preferences may have become corrupt. Follow these instructions to delete your preferences and cache folder: https://github.com/adobe/brackets/wiki/Cache-Folder#resetting-cache--preferences.
 
 ### Disable All Extensions
-Use `Debug > Reload Without Extensions` to quickly check whether the problem is being caused by an extension. To re-enable your extensions, just quit and relaunch Brackets, or choose Debug > Reload _With_ Extensions.
+Use `Debug > Reload Without Extensions` to quickly check whether the problem is being caused by an extension. To re-enable your extensions, just quit and relaunch Brackets, or choose `Debug > Reload With Extensions`.
 
 If this fixes the problem, you can identify the problematic extension by re-enabling extensions one-by-one:
 
