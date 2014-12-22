@@ -7,8 +7,8 @@ Brackets not working for you? Maybe the following will help:
     * [Page Not Loading](#livedev-not-loading)
     * [Using a Local Server](#local-server)
     * [Chrome Issues](#livedev-chrome)
-    * [Other Live Preview Issues](#livedev-other)
     * [Experimental MultiBrowser implementation](#livedev-multibrowser)
+    * [Other Live Preview Issues](#livedev-other)
 * [Is Brackets running slowly?](#slow)
 * [Having trouble installing extensions?](#extension-install)
 * [Other: Brackets Is Acting Weird](#other)
@@ -163,6 +163,12 @@ If you keep getting errors when trying to launch Chrome, or if you keep getting 
 
 On Windows, you may run into issues starting Live Preview if you installed Chrome after installing Brackets. In that case, re-installing Brackets should fix the problem.
 
+### <a name="livedev-multibrowser"> </a>Issues with multi-browser experimental implementation
+This section describes known issues and work-arounds specific to [Multi-Browser Live Preview](https://github.com/adobe/brackets/wiki/Live-Preview-Multibrowser).
+
+#### Multi-browser Live Preview does not work with Internet Explorer 11
+In order to make it work with Internet Explorer 11, disable all the options that IE uses to include sites in the local intranet (unchecked all the items at `Internet Options > Security > Local Intranet > Sites`). This will allow Live Preview to establish connection to the editor.
+
 ### <a name="livedev-other"> </a>Other Live Preview issues
 
 #### Disable Extensions
@@ -170,12 +176,6 @@ The Theseus extension is known to cause problems with Live Preview, and other ex
 
 #### Clear Cache
 [Clearing cache](#clear-cache) will clear Brackets live-dev-profile cache.
-
-### <a name="livedev-multibrowser"> </a>Issues with multi-browser experimental implementation
-This section describes known issues and work-arounds specific to [Multi-Browser Live Preview](https://github.com/adobe/brackets/wiki/Live-Preview-Multibrowser).
-
-#### Multi-browser Live Preview does not work with Internet Explorer 11
-In order to make it work with Internet Explorer 11, disable all the options that IE uses to include sites in the local intranet (unchecked all the items at `Internet Options > Security > Local Intranet > Sites`). This will allow Live Preview to establish connection to the editor.
 
 ## <a name="slow"> </a>Brackets is Running Slow
 This section discusses some of the features that can affect performance and possible solutions.
