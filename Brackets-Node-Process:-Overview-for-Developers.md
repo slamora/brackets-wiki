@@ -131,7 +131,42 @@ Your Node module can also asynchronously trigger events that can be listened to 
 
 Note that Brackets client code automatically registers as a listener for "log" events and forwards them to the client console, prefixed with "[node-(level) (timestamp)]".
 
-(**TODO**: Should add an example of this to the brackets-simple-node sample.)
+Initialization:
+
+```javascript
+/**
+ * Initializes the test domain with several test commands.
+ * @param {DomainManager} domainManager The DomainManager for the server
+ */
+function init(domainManager) {
+    if (!domainManager.hasDomain("simple")) {
+        domainManager.registerDomain("simple", {major: 0, minor: 1});
+    }
+    domainManager.registerEvent(
+	"simple",     // domain name
+	"log",         // event name
+	[{
+		name: "scope",
+		type: "string",
+		description: "message scope"
+	}, {
+		name: "message",
+		type: "string",
+		description: "message body"
+	}, {
+		name: "payload",
+		type: "object",
+		description: "log message payload"
+	}]);
+}
+```
+
+Then emit event. You can pass scalar or array as third argument. Scalar will be recognized as event's first argument.
+
+```javascript
+_domainManager.emitEvent ("simple", "log", scope);
+_domainManager.emitEvent ("simple", "log", [scope, message, payload]);
+```
 
 ### Reloading the Node module
 
