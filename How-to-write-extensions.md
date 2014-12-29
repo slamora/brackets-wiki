@@ -23,7 +23,7 @@ Looking for inspiration? Check out the **[Extension Ideas list](https://github.c
 
 * Edit your main.js file.
 * Save the file and restart Brackets via "Debug > Reload With Extensions" to see your changes.
-* To debug problems, use "Debug > Show Developer Tools" (opens as a tab in Chrome). You can use console.log(), set breakpoints, etc.
+* To debug problems, use "Debug > Show Developer Tools". You can use console.log(), set breakpoints, etc.
     * _The first time you open Developer Tools, you must [disable caching](https://groups.google.com/forum/?fromgroups=#!topic/brackets-dev/E5iqcD8VqD4)_ - otherwise using Reload while dev tools are open will not reflect changes to your extension.
 
 See **[[Debugging Brackets]]** for a more robust two-window workflow.
