@@ -1,75 +1,30 @@
-Welcome to the Brackets wiki! Here are some resources to help you get started.
+jual SOLAHART
 
-* **[Main README](https://github.com/adobe/brackets/blob/master/README.md)** -- please read this first.
-* **[CONTRIBUTING](https://github.com/adobe/brackets/blob/master/CONTRIBUTING.md)** -- in case you'd like to hack on Brackets.
-* **[Troubleshooting](https://github.com/adobe/brackets/wiki/Troubleshooting)** -- read this if you're having trouble running Brackets.
-* Online resources
-    * [Homepage](http://brackets.io/) and [blog](http://blog.brackets.io/)
-    * [IRC - #brackets on Freenode](http://webchat.freenode.net/?channels=brackets)
-    * [Twitter - @brackets](http://twitter.com/brackets)
-    * [Forum - brackets-dev](http://groups.google.com/group/brackets-dev)
-    * [Feature backlog](https://trello.com/board/brackets/4f90a6d98f77505d7940ce88) and [bug listing](https://github.com/adobe/brackets/issues)
-    * [More Brackets community online...](Brackets Communication Channels)
+Ada beberapa hal yang harus diperhatikan sebelum kita memutuskan untuk memasang unit SOLAHART PEMANAS AIR TENAGA MATAHARI, biasanya hal ini akan di cek pada saat teknisi SOLAHART survey ke lokasi proyek. Namun sebagai konsumen tidak ada salahnya mempersiapkan hal - hal ini terlebih jika bangunan yang akan di pasang masih dalam tahap pembangunan. Sehingga ketika unit akan di pasang tidak timbul kesulitan yang berarti.CP. 081284559855
 
-## Usage
-* **[Quick Start Video](http://www.youtube.com/watch?v=VKitqLpJtAY&feature=plcp)**
-    * [More videos...](https://github.com/adobe/brackets/wiki/Videos)
-* **[How to Use Brackets](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets)**
-* [A Peek at Brackets from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/a-peek-at-brackets/)
-* [Deeper In the Brackets Editor from Nettuts+](http://net.tutsplus.com/tutorials/tools-and-tips/deeper-in-the-brackets-editor)
-* [How to Report an Issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)
-* [Keyboard Shortcuts](https://github.com/adobe/brackets/wiki/Brackets-Shortcuts)
+Hal Pertama adalah Lokasi Pemasangan SOLAHART PEMANAS AIR
 
-## Development
+Cara Pemilihan lokasi pemasangan agar SOLAHART bisa bekerja secara maksimal sebaiknya mengikuti tips-tips sebagai berikut:
+Panel Collector harus diletakan pada suatu tempat yang mana sinar matahari bisa menyinari tanpa terhalang oleh obyek apapun sepanjang tahun. Hindari dari obyek-obyek yang bisa menghalangi seperti bangunan tinggi, pohon, tiang listrik dan sebagainya.
+Carilah titik lokasi pemasangan yang optimal dimana pipa instalasi air panasnya sependek mungkin dan bisa mengalir secara rata keseluruh titik keluaran.
+Pastikan konstruksi atap bangunan yang dipilih mampu menahan berat SOLAHART dalam keadaan terisi air untuk jangka waktu yang lama.
 
-* **[How to Hack on Brackets](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets)**
-* **[How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)**
-* **[[Brackets Development How-Tos]]**
-* [Creating Brackets Extensions from Nettuts+](http://code.tutsplus.com/tutorials/creating-brackets-extensions--net-36781)
-* [Brackets Contributor License Agreement](http://dev.brackets.io/brackets-contributor-license-agreement.html) - you must agree to and submit this before you can contribute to Brackets.
-* [License](https://github.com/adobe/brackets/blob/master/LICENSE)
-* [Brackets Committer Policy](https://github.com/adobe/brackets/wiki/Brackets-Committer-Policy)
-* [Resources / Tutorials / Videos](https://github.com/adobe/brackets/wiki/Resources)
-* [Coding Conventions](https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions)
-* [Notes on CodeMirror](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
-* [Localization](https://github.com/adobe/brackets/wiki/Localization)
+Yang kedua Arah Pemasangan SOLAHART Pemanas Air Matahari
+( CONTACT 087770337444)
 
-### Extensions
-* **[How to Find & Install Extensions](https://github.com/adobe/brackets/wiki/Brackets-Extensions)**
-* **[How to Write Extensions](https://github.com/adobe/brackets/wiki/How-to-Write-Extensions)**
-    * [Simple "Hello World" extension](https://github.com/adobe/brackets/wiki/Simple-%22Hello-World%22-extension)
-* [[Preferences System]]
-* [Language Support](https://github.com/adobe/brackets/wiki/Language-Support)
-* [How the Node process in Brackets-Shell Works](wiki/Brackets-Node-Process:-Overview-for-Developers)
-* [Extension UI Guidelines](https://github.com/adobe/brackets/wiki/Extension-UI-Guidelines)
-* [Extension Icon Guidelines](https://github.com/adobe/brackets/wiki/Extension-Icon-Guidelines)
-* [The Future Extension Manager](https://github.com/adobe/brackets/wiki/Research:-Extension-Management)
+Arah serta kemiringan pemasangan bisa mempengaruhi kinerja SOLAHART. Untuk memperoleh hasil maksimal harap diperhatikan ketentuan-ketentuan sebagai berikut:
+Untuk daerah-daerah pemasangan yang berada di atas garis khatulistiwa, maka sebaiknya SOLAHART dihadapkan ke arah selatan. Sebaliknya untuk daerah-daerah di bawah garis khatulistiwa, maka SOLAHART sebaiknya dihadapkan ke arah utara. Gunakan kompas untuk menentukan arah mata angin.
+Jika pemasangan tidak bisa tepat ke arah utara atau selatan maka pergeseran yang disarankan maksimal 45 derajat ke arah timur atau barat, namun pergeseran ini akan mempengaruhi kinerja alat.
+Untuk lokasi pemasangan di Indonesia , paling baik jika SOLAHART PEMANAS AIR dipasang pada kemiringan 10 derajat sampai 20 derajat terhadap bidang datar.
 
-## Test
+Jika pada lokasi yang dipilih, arah maupun kemiringan atap diluar ketentuan yang dianjurkan di atas, maka gunakan suatu rangka besi sebagai dudukan agar posisi yang dianjurkan bisa dicapai seoptimal mungkin.
 
-* [Testing Brackets](https://github.com/adobe/brackets/wiki/Testing-Brackets)
-* [Performance Tests Results](https://docs.google.com/spreadsheet/ccc?key=0Aras0diokeHxdEc5RGtOeVI0V0xGU3FPUXBuX3ZYTlE) | [Sprint DoD Performance Tests Procedure](https://github.com/adobe/brackets/wiki/Performance-Tests-Procedure)
+Jika arah utara atau selatan tetap tidak bisa dipilih, maka pilihlah arah timur bila pemakaian air panas lebih banyak sebelum jam 14.00 Tetapi, jika pemakain air panas setelah jam 14.00, maka pilihlah arah pemasangan ke barat.
 
-## Releases
-
-* [Downloads](http://download.brackets.io)
-* Release Notes:
- * [Release 1.1](https://github.com/adobe/brackets/wiki/Release-Notes:-1.1)
- * [Release 1.0](https://github.com/adobe/brackets/wiki/Release-Notes:-1.0)
- * [Release 0.44](https://github.com/adobe/brackets/wiki/Release-Notes:-0.44)
- * [Release 0.43](https://github.com/adobe/brackets/wiki/Release-Notes:-0.43)
- * [Release 0.42](https://github.com/adobe/brackets/wiki/Release-Notes:-0.42)
- * [Release 0.41](https://github.com/adobe/brackets/wiki/Release-Notes:-0.41)
- * [Release 0.40](https://github.com/adobe/brackets/wiki/Release-Notes:-0.40)
- * [Sprint 39](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-39)
- * [Sprint 38](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-38)
- * [Sprint 37](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-37)
- * [Sprint 36](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-36)
- * [Sprint 35](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-35)
- * [more...](https://github.com/adobe/brackets/wiki/Release-Notes)
-
-## Build & Release Process
-
-* [Building Brackets Releases](https://github.com/adobe/brackets/wiki/Building-Brackets-Releases)
-* [Building brackets-shell Binaries](https://github.com/adobe/brackets-shell/wiki/Building-Brackets-Shell)
-* [[Collecting End of Sprint Stats]]
+JUAL SOLAHART: CV HARDA UTAMA
+CV HARDA UTAMA/ABS
+"DEALER RESMINYA SOLAHART"
+Jl. Inspeksi saluran komp. PU blok D no. 16 kalimalang 13620.
+Tlp: 021-68938855
+Fax: 021-8621914
+HP: 081284559855, , 087770337444
