@@ -76,7 +76,7 @@ Written using [CodeMirror mode, state, and token API](http://codemirror.net/doc/
     - `findSelectorAtDocumentPos()`
 * HTMLUtils
     - `getTagAttributes()`
-    - `getTagInfo
+    - `getTagInfo()`
     - `findBlocks()`
     - `findStyleBlocks()`
 
