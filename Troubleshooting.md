@@ -199,16 +199,6 @@ You can disable the hints by moving the JavaScriptCodeHints folder out of www/ex
 
 ## <a name="extension-install"> </a>Having trouble installing extensions?
 
-### Check `localhost` IP
-
-Make sure your `localhost` address resolves correctly, normally it should resolve to `127.0.0.1`. You can do it by executing `ping localhost` from the command line. If it fails, make sure you have the following entry in your `hosts` file:
-
-```
-127.0.0.1	localhost
-```
-
-`hosts` file is `/etc/hosts` on Mac and Linux. On Windows it's located in `%windir%\system32\drivers\etc\hosts`
-
 ### Working behind proxy
 
 If your computer needs to use a proxy to get to the web, you'll need to configure Brackets to use it. Use Debug > Open Preferences File and then add a `"proxy"` property to the JSON file. The value should be the URL of your proxy server. [Read more about configuring Preferences](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences).
@@ -220,6 +210,15 @@ You can also install extensions manually:
 3. In Brackets, open Extension Manager
 4. Drag the zip file onto the "Drag .zip here" zone in the lower left of the window
 
+### Check `localhost` IP
+
+Make sure your `localhost` address resolves correctly, normally it should resolve to `127.0.0.1`. You can do it by executing `ping localhost` from the command line. If it fails, add the following entry to your `hosts` file:
+
+```
+127.0.0.1	localhost
+```
+
+`hosts` file is `/etc/hosts` on Mac and Linux. On Windows it's located in `%windir%\system32\drivers\etc\hosts`
 
 ## <a name="other"> </a>Other: Brackets Is Acting Weird
 
