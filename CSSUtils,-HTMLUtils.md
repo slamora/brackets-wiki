@@ -70,7 +70,7 @@ Written using [CodeMirror mode, state, and token API](http://codemirror.net/doc/
     - `blockComment()`
     - `lineComment()`
 * CSSCodeHints
-    - `insertHint
+    - `insertHint()`
 * CSSUtils
     - `getInfoAtPos()`
     - `findSelectorAtDocumentPos()`
