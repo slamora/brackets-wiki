@@ -95,6 +95,8 @@ Uses [CodeMirror Mode API](http://codemirror.net/doc/manual.html#modeapi).
 
 ## Misc.
 
+Implementation details in [CSS Context API implementation spec](https://github.com/adobe/brackets/wiki/CSS-Context-API-implementation-spec).
+
 CodeMirror modes, states, and tokens change over time due to more granular states being added.
 These change can break parsing code, so beware when upgrading CodeMirror.
 
