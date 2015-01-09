@@ -1,4 +1,3 @@
-<br>
 _This API was implemented in Sprint 18._ For background on the direction our code hinting APIs are going, see [Code Hinting Functional Specifications](https://github.com/adobe/brackets/wiki/Code-Hinting-Functional-Specifications). **_TODO: Is this document fully up to date with what was implemented?_**
 
 In Brackets we have an HTML utility API ``getTagInfo(editor, cursorPosition)`` to provide the context of an HTML tag and is already used by tag hinting and attribute hinting. However, we do not have a similar CSS utility API to provide CSS rule information. So this document specifies the new CSS utility API in order to achieve the following goals.
@@ -218,3 +217,6 @@ When the cursor is in the property value context and there is a white space imme
         }
     }
 ```
+
+### Usage
+See [CSSUtils, HTMLUtils](https://github.com/adobe/brackets/wiki/CSSUtils,-HTMLUtils) for general usage of this API.
