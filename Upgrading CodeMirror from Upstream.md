@@ -11,11 +11,12 @@
 
 ### Update local CodeMirror and run unit tests
 1. In GitBash/Terminal window switch to CodeMirror folder with `cd src/thirdparty/CodeMirror2`.
-2. Grab the latest from upstream CodeMirror with the following git commands.
+2. If this is the first time you are updating CodeMirror in your local repo, then you also need to define the upstream repo with `git remote add upstream https://github.com/codemirror/CodeMirror.git`.
+3. Grab the latest from upstream CodeMirror with the following git commands.
     * `git checkout master`
     * `git fetch upstream`
     * `git merge upstream/master`
-3. Launch Brackets and run all suites of tests. CodeMirror changes tend to break some features and our test suites can capture most of them in the past. However, even if you do not get any test failures, you can also run the smoke test or some scenario testing based on the upstream CodeMirror commit history.
+4. Launch Brackets and run all suites of tests. CodeMirror changes tend to break some features and our test suites can capture most of them in the past. However, even if you do not get any test failures, you can also run the smoke test or some scenario testing based on the upstream CodeMirror commit history.
 
 ### Merge to remote CodeMirror
 If no issue or test failure in the above testing, then merge your local to remote with `git push origin master`. After this, our CodeMirror repo has the latest changes, but you still need to update the submodue SHA in Brackets repo.
