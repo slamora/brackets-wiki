@@ -8,7 +8,7 @@ It can be enabled by setting ```livedev.multibrowser``` preference to true. If e
 Main assets are placed under ```LiveDevelopment/MultiBrowserImpl``` while the main module ```LiveDevMultiBrowser``` (equivalent to ```LiveDevelopment```) will land under ```LiveDevelopment``` folder. This is probably not the more elegant choice but the decision mainly relies on these two needs:
 
 * Keep current modules from ```LiveDevelopment``` without moving them from the original place since many extensions require them as dependencies
-* Keep multi-browser implementation under this folder since it is an (still experimental) implementation of ``LiveDevelopment```.
+* Keep multi-browser implementation under this folder since it is an (still experimental) implementation of ```LiveDevelopment```.
 
 Changes included in ```LiveDevelopment/main.js``` allows managing both implementations. Both modules are loaded and initialized. A listener for preference changes is in charge of setting the active implementation based on pref value. Current implementation will be active and work as today by default.
 
