@@ -3,14 +3,16 @@ State of Live Preview (formerly known as "Live Development") as of January, 2015
 ### Connecting
 
 1. Chromium Dev Tools web socket
-- [Remote Debugging Protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
-- [LiveDevelopment/Inspector/Inspector.js](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.js#L30)
+
+    - [Remote Debugging Protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
+    - [LiveDevelopment/Inspector/Inspector.js](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.js#L30)
 
 2. Injected scripts
-- Connects to default browser
-- URL can be pasted into any other browser
-- Currently disabled with a feature flag
-- See [Live Preview MultiBrowser](https://github.com/adobe/brackets/wiki/Live-Preview-Multibrowser) for details.
+
+    - Connects to default browser
+    - URL can be pasted into any other browser
+    - Currently disabled with a feature flag
+    - See [Live Preview MultiBrowser](https://github.com/adobe/brackets/wiki/Live-Preview-Multibrowser) for details.
 
 
 #### Live Preview Server
