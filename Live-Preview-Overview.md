@@ -95,6 +95,7 @@ Other Use Cases:
 - When starting Live Preview...
     - if .css or .js file is selected, Brackets searches for nearest index.html
     - if .php is selected and Base URL is not specified, prompt for Base URL
+
 - If Live Preview is running...
     - and another HTML file is selected, it switches to that file
     - and switch to a different project, Live Preview is disconnected
@@ -102,9 +103,7 @@ Other Use Cases:
 
 ### Misc.
 
-- [Live Development: lifecycle research and future directions](https://github.com/adobe/brackets/wiki/Live-Development:-lifecycle-
-
-research-and-future-directions)
+- [Live Development: lifecycle research and future directions](https://github.com/adobe/brackets/wiki/Live-Development:-lifecycle-research-and-future-directions)
 - `experimental` flag: *very* old, so most likely no longer works
 
 
