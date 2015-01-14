@@ -17,7 +17,7 @@ State of Live Preview (formerly known as "Live Development") as of January, 2015
 
 #### Live Preview Server
 
-3 ways to connect:
+3 types of server connections:
 
 1. Built-in nodejs server - this is the default connection type.
 2. Use local server - this is done by specifying Base URL in Project Settings... dialog.
