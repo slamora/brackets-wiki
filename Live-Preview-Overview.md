@@ -7,7 +7,7 @@ Live Preview has been implemented 2 ways:
 1. Chromium Dev Tools web socket (original)
 
     - [Remote Debugging Protocol documentation](https://developer.chrome.com/devtools/docs/debugger-protocol)
-    - [Documentation](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.js#L30) in **Inspector.js** for loading and usage of [Inspector.json](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.json). [Inspector.html](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/inspector.html) is a browser viewable version of **Inspector.json** generated using [jsdoc.rb](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/jsdoc.rb).
+    - [Documentation](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.js#L30) in **Inspector.js** for loading and usage of [**Inspector.json**](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.json). [Inspector.html](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/inspector.html) is a browser viewable version of **Inspector.json** generated using [jsdoc.rb](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/jsdoc.rb).
 
 2. New Multibrowser Implementation using Injected scripts
 
@@ -16,7 +16,7 @@ Live Preview has been implemented 2 ways:
     - URL can be pasted into any other browser
     - See [Live Preview MultiBrowser](https://github.com/adobe/brackets/wiki/Live-Preview-Multibrowser) for details about this implementation.
 
-Implementation is set in [LiveDevelopment/main.js `_setImplementation()' method](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/main.js#L222).
+Implementation used in Brackets is set in [LiveDevelopment/main.js `_setImplementation()' method](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/main.js#L222).
 
 #### Live Preview Server
 
