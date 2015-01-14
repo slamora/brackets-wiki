@@ -4,12 +4,12 @@ State of Live Preview (formerly known as "Live Development") as of January, 2015
 
 Live Preview has been implemented 2 ways:
 
-1. Chromium Dev Tools web socket (original)
+1. Original implementation uses Chromium Dev Tools web socket to connect to browser
 
     - [Remote Debugging Protocol documentation](https://developer.chrome.com/devtools/docs/debugger-protocol)
     - [Documentation](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.js#L30) in **Inspector.js** for loading and usage of [**Inspector.json**](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.json). [Inspector.html](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/inspector.html) is a browser viewable version of **Inspector.json** generated using [jsdoc.rb](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/jsdoc.rb).
 
-2. New Multibrowser Implementation using Injected scripts
+2. New Multibrowser Implementation uses Injected scripts to connect to browser
 
     - Currently disabled and can be switch to with a feature flag
     - Connects to default browser
