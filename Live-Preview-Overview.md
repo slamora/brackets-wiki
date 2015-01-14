@@ -74,15 +74,11 @@ Currently only supported with nodejs server
 - [Kevin's talk at JSConfEU](http://youtu.be/Axpi1_OVSdo) - first ~17 minutes
 - [Research: HTML DOM Data Structure](https://github.com/adobe/brackets/wiki/Research:-HTML-DOM-Data-Structure)
 
-### Live JS Research
+### All Other File Types
 
-- Not yet implemented.
-- [Research: Live JavaScript](https://github.com/adobe/brackets/wiki/Live-Development:-Research-for-live-JavaScript)
+Reload File on Save
 
-
-### Reload File on Save
-
-- All other file types...
+[Live JavaScript Research](https://github.com/adobe/brackets/wiki/Live-Development:-Research-for-live-JavaScript) - not yet implemented.
 
 
 ### User Docs
