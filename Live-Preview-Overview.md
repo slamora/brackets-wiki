@@ -86,9 +86,9 @@ Currently only supported with nodejs server
 
 ### All Other File Types
 
-Reload File on Save
+Live Preview is reloaded on File Save in LiveDevelopment.js function [`_onDocumentSaved()`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/LiveDevelopment.js#L1415).
 
-[Live JavaScript Research](https://github.com/adobe/brackets/wiki/Live-Development:-Research-for-live-JavaScript) - not yet implemented.
+[Live JavaScript has been researched](https://github.com/adobe/brackets/wiki/Live-Development:-Research-for-live-JavaScript), but has not yet been implemented.
 
 
 ### User Docs
