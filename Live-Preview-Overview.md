@@ -6,8 +6,8 @@ Live Preview has been implemented 2 ways:
 
 1. Chromium Dev Tools web socket (original)
 
-    - [Remote Debugging Protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
-    - [LiveDevelopment/Inspector/Inspector.js](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.js#L30)
+    - [Remote Debugging Protocol documentation](https://developer.chrome.com/devtools/docs/debugger-protocol)
+    - [Documentation] in LiveDevelopment/Inspector/Inspector.js(https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.js#L30) for loading [Inspector.json](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.json)
 
 2. New Multibrowser Implementation using Injected scripts
 
