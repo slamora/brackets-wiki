@@ -54,6 +54,7 @@ Agents/RemoteAgent.js injects Agents/RemoteFunctions.js into Live Preview page f
 
 - Highlighting
 - Live HTML
+- Live Preview MultiBrowser Connection
 
 
 ### Live CSS
@@ -95,7 +96,7 @@ Reload File on Save
 - [How to Use Brackets: Live Preview](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#live-preview)
 - [Troubleshooting Brackets: Live Preview](https://github.com/adobe/brackets/wiki/Troubleshooting#livedev)
 
-Other Use Cases:
+**Other Use Cases:**
 
 - When starting Live Preview...
     - if .css or .js file is selected, Brackets searches for nearest index.html
@@ -109,6 +110,6 @@ Other Use Cases:
 ### Misc.
 
 - [Live Development: lifecycle research and future directions](https://github.com/adobe/brackets/wiki/Live-Development:-lifecycle-research-and-future-directions)
-- `experimental` flag: *very* old, so most likely no longer works
+- `experimental` flag: *very* old, so this code probably no longer works. Watch [this video](http://blog.brackets.io/2013/02/08/live-development-with-brackets-experimental/) to see a few of the original experimental features.
 
 
