@@ -58,12 +58,19 @@ Agents/RemoteAgent.js injects Agents/RemoteFunctions.js into Live Preview page f
 
 ### Live CSS
 
-- Editing CSS
-    a. LiveDevelopment.js `_styleSheetAdded()` creates a `CSSDocument` for each stylesheet
-    b. Updates trigger `CSSDocument.onChange()` which sends entire updated stylesheet to browser
-- Highlighting all elements that apply to current rule
-    - Can be enable/disabled with **View > Live Preview Highlight** menu item.
-    - Implemented using remote function injection & calling
+#### Editing
+
+CSS in browser is updated immediately, so no need to save to disk:
+
+a. LiveDevelopment.js `_styleSheetAdded()` creates a `CSSDocument` for each stylesheet
+b. Updates trigger `CSSDocument.onChange()` which sends entire updated stylesheet to browser
+
+#### Highlighting
+
+*All* elements that apply to rule being edited are highlighted:
+
+- Can enable/disable with **View > Live Preview Highlight** menu item
+- Implemented using remote function injection & calling
 
 
 ### Live HTML
