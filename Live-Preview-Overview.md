@@ -98,6 +98,11 @@ Live Preview is reloaded on File Save in LiveDevelopment.js function [`_onDocume
 
 **Other Use Cases:**
 
+- Live Preview works for files:
+    - When using built-in server: file extensions defined in `FileUtils.isStaticHtmlFileExt()`
+    - When a Base URL is provided for a local server: file extensions defined in `FileUtils.isServerHtmlFileExt()` will also work.
+    - Note: These lists should really be preferences
+
 - When starting Live Preview...
     - if .css or .js file is selected, Brackets searches for nearest index.html
     - if .php is selected and Base URL is not specified, prompt for Base URL
