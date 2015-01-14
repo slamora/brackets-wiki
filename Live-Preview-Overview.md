@@ -58,14 +58,14 @@ Agents/RemoteAgent.js injects Agents/RemoteFunctions.js into Live Preview page f
 
 ### Live CSS
 
-#### Editing
+**Editing**
 
-CSS in browser is updated immediately, so no need to save to disk:
+CSS in browser is updated immediately as it is edited, so no need to save to disk:
 
 a. LiveDevelopment.js `_styleSheetAdded()` creates a `CSSDocument` for each stylesheet
 b. Updates trigger `CSSDocument.onChange()` which sends entire updated stylesheet to browser
 
-#### Highlighting
+**Highlighting**
 
 *All* elements that apply to rule being edited are highlighted:
 
