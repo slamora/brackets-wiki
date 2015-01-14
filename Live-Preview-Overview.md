@@ -28,7 +28,7 @@ For more info see [Server API](https://github.com/adobe/brackets/wiki/Live-Previ
 
 #### Interstitial page
 
-Loaded to ensure a connection before starting agents and loading document url.
+Loaded to ensure a connection before starting agents and then navigating to document url.
 
 
 #### **brackets-shell** Native Implementation
