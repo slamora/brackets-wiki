@@ -2,18 +2,21 @@ State of Live Preview (formerly known as "Live Development") as of January, 2015
 
 ### Connecting
 
-1. Chromium Dev Tools web socket
+Live Preview has been implemented 2 ways:
+
+1. Chromium Dev Tools web socket (original)
 
     - [Remote Debugging Protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
     - [LiveDevelopment/Inspector/Inspector.js](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.js#L30)
 
-2. Injected scripts
+2. New Multibrowser Implementation using Injected scripts
 
+    - Currently disabled and can be switch to with a feature flag
     - Connects to default browser
     - URL can be pasted into any other browser
-    - Currently disabled with a feature flag
-    - See [Live Preview MultiBrowser](https://github.com/adobe/brackets/wiki/Live-Preview-Multibrowser) for details.
+    - See [Live Preview MultiBrowser](https://github.com/adobe/brackets/wiki/Live-Preview-Multibrowser) for details about this implementation.
 
+Implementation is set in [LiveDevelopment/main.js `_setImplementation()' method](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/main.js#L222).
 
 #### Live Preview Server
 
@@ -39,11 +42,11 @@ Loaded to ensure a connection before starting agents and then navigating to docu
     - [appshell/appshell_extensions_gtk.cpp on Linux](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions_gtk.cpp)
 
 
-#### toolbar icon
+#### Toolbar Icon
 
-- states: disconnected, connecting, connected
-- tooltips
+Used to toggle Live Preview on/off. Can also use **File > Live Preview** menu item.
 
+Icon shows 3 different states: disconnected, connecting, and connected. Tooltips display more detailed state information. Twipsy is displayed at icon when browser is disconnected for external reasons.
 
 ### Remote Functions
 
