@@ -21,11 +21,11 @@ Implementation used in Brackets is set in [LiveDevelopment/main.js `_setImplemen
 
 #### Live Preview Server
 
-3 types of server connections:
+Servers defined in LiveDevelopment/Servers:
 
-1. Built-in nodejs server - this is the default connection type.
-2. Use local server - this is done by specifying Base URL in Project Settings... dialog.
-3. Fallback is `file://` protocol.
+1. `BaseServer`: Built-in nodejs server - this is the default connection type.
+2. `UserServer`: Use local server - this is done by specifying Base URL in Project Settings... dialog.
+3. `FileServer`: Fallback is `file://` protocol.
 
 For more info see [Server API](https://github.com/adobe/brackets/wiki/Live-Preview-API) and [URL Mapping](https://github.com/adobe/brackets/wiki/Live-Preview-URL-Mapping) docs.
 
