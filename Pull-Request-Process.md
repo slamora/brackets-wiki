@@ -34,7 +34,7 @@ Generally speaking, translations should be quick to triage. Our review process f
 
 ## Daily Pull Request Report
 
-To glue this process together, we'll have a [daily report](http://dangoor.github.io/pr-tracking/) emailed to the Brackets committers that highlights overdue pull requests:
+To glue this process together, we'll have a [daily report](http://prksingh.github.io/pr-tracking/) emailed to the Brackets committers that highlights overdue pull requests:
 
 1. PRs that have not started triage in 8 days
 2. PRs that have not started review within 8 days of Triage Complete
