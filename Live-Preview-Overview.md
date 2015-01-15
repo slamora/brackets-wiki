@@ -7,7 +7,8 @@ Live Preview has been implemented 2 ways:
 1. Original implementation uses **Chromium Dev Tools Web Socket** to connect to browser
 
     - [Remote Debugging Protocol documentation](https://developer.chrome.com/devtools/docs/debugger-protocol)
-    - [Documentation for `Inspector.js`](http://brackets.io/docs/current/modules/LiveDevelopment/Inspector/Inspector.html) for loading and usage of [`Inspector.json`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.json). [`Inspector.html`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/inspector.html) is a browser viewable version of `Inspector.json` generated using [`jsdoc.rb`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/jsdoc.rb).
+    - Inspector manages the connection to Chrome/Chromium's remote debugger. [Documentation for `Inspector.js`](http://brackets.io/docs/current/modules/LiveDevelopment/Inspector/Inspector.html).
+    - [`Inspector.html`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/inspector.html) is a browser viewable version of [`Inspector.json`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.json) generated using [`jsdoc.rb`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/jsdoc.rb).
 
 2. New Multibrowser implementation uses **Injected Scripts** to connect to browser
 
