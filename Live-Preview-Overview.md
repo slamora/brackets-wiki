@@ -8,7 +8,7 @@ Live Preview has been implemented 2 ways:
 
     - [Remote Debugging Protocol documentation](https://developer.chrome.com/devtools/docs/debugger-protocol)
     - LiveDevelopment/Inspector manages the connection to Chrome/Chromium's remote debugger. See [API Docs for `Inspector.js`](http://brackets.io/docs/current/modules/LiveDevelopment/Inspector/Inspector.html).
-    - [`Inspector.html`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/inspector.html) is a browser viewable version of [`Inspector.json`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.json) generated using [`jsdoc.rb`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/jsdoc.rb).
+    - [`Inspector.html`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/inspector.html) is a browser viewable version of [`Inspector.json`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/Inspector.json) (generated using [`jsdoc.rb`](https://github.com/adobe/brackets/blob/master/src/LiveDevelopment/Inspector/jsdoc.rb)).
 
 2. New Multibrowser implementation uses **Injected Scripts** to connect to browser
 
