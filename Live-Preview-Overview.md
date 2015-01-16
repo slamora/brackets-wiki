@@ -70,7 +70,7 @@ b. Updates trigger `CSSDocument.onChange()` which sends entire updated styleshee
 
 **Highlighting**
 
-*All* elements that apply to rule being edited are highlighted:
+*All* elements that apply to rule being edited are highlighted. LESS and SCSS are also supported:
 
 - Can enable/disable with **View > Live Preview Highlight** menu item
 - Implemented using remote function injection & calling
