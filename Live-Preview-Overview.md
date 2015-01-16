@@ -37,10 +37,11 @@ Loaded to ensure a connection before starting agents and then navigating to docu
 
 #### **brackets-shell** Native Implementation
 
-- `NativeApp.openLiveBrowser()` and `NativeApp.closeLiveBrowser()` defined in [appshell/appshell_extensions.js](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions.js) calls operating system specific native `OpenLiveBrowser()` and `CloseLiveBrowser()` methods, respectively. Defined in:
-    - [appshell/appshell_extensions_win.cpp on Windows](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions_win.cpp)
-    - [appshell/appshell_extensions_mac.mm on Mac](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions_mac.mm)
-    - [appshell/appshell_extensions_gtk.cpp on Linux](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions_gtk.cpp)
+`NativeApp.openLiveBrowser()` and `NativeApp.closeLiveBrowser()` defined in [appshell/appshell_extensions.js](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions.js) calls operating system specific native `OpenLiveBrowser()` and `CloseLiveBrowser()` methods, respectively. Defined in:
+
+- [appshell/appshell_extensions_win.cpp on Windows](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions_win.cpp)
+- [appshell/appshell_extensions_mac.mm on Mac](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions_mac.mm)
+- [appshell/appshell_extensions_gtk.cpp on Linux](https://github.com/adobe/brackets-shell/blob/master/appshell/appshell_extensions_gtk.cpp)
 
 
 #### Toolbar Icon
