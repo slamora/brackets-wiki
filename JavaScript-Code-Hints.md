@@ -115,7 +115,7 @@ not already have a project preferences file, then one is created. Files are no l
 processed for hint information until they are removed from this array.
 
 The number of milliseconds of the timeout can be set using the `jscodehints.inferenceTimeout`
-preference. The default timeout is 10 seconds (10000).
+preference. <del>The default timeout is 10 seconds (10000).</del> Starting with Release 1.0, The default timeout is 30 seconds (30000).
 
 # Refactoring Project (spring 2014)
 
