@@ -1,6 +1,6 @@
 State of Live Preview (formerly known as "Live Development") as of January, 2015.
 
-### Connecting
+### Implementations
 
 Live Preview has been implemented 2 ways:
 
