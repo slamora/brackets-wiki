@@ -36,3 +36,9 @@ To debug tests that run in a separate window -- see [[Debugging Test Windows in 
 ## Debugging Brackets with Theseus
 
 [Theseus](https://github.com/adobe-research/theseus) is an awesome research project built atop Brackets, providing omniscient, retroactive debugging for JavaScript. And you can use Theseus to debug Brackets itself! [Here's how...](http://blog.brackets.io/2013/08/28/theseus-javascript-debugger-for-chrome-and-nodejs/)
+
+
+## See Also
+
+* **[[Clearing cache & preferences|Cache Folder]]** - useful for debugging against a "clean slate" (along with _Debug > Reload Without Extensions_)
+* **[[CEF Debugging]]**
