@@ -219,7 +219,7 @@ These are all the settings that are currently supported:
 | `staticserver.port` | | Port number that the built-in server should use for Live Preview |
 | `tabSize` | `4` | Number of spaces to display for tabs |
 | `useTabChar` | `false` | True to use tabs instead of spaces |
-| `uppercaseColors` | `false` | True to use uppercase colors in Quick Edit
+| `uppercaseColors` | `false` | True to use uppercase colors in Inline Color Editor |
 | `wordWrap` | `true` | True if word wrap is on |
 
 #### Example preferences .json file
