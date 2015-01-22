@@ -12,6 +12,7 @@
 
 #### How to use specific features
 * [Multiple selections / multiple cursors](https://www.youtube.com/watch?v=QMoWNCdM6Yk)
+* [Adobe Extract for Brackets](https://www.youtube.com/watch?v=e5jB_dh-N2w) (or see [earlier intro video](https://www.youtube.com/watch?v=6IdgnbAShnI))
 
 ### Demos & experiments
 
@@ -19,11 +20,11 @@
 
 [QCon 2013: Exploring the Future of Web Tooling with Brackets](http://www.infoq.com/presentations/brackets) - Narciso (nj) Jaramillo (various experiments)
 
-[Theseus JavaScript Debugger for Brackets](http://www.youtube.com/watch?v=T6d5C3rLeFY) - Tom Lieber (can be used today!)
+[Theseus JavaScript Debugger for Brackets](http://www.youtube.com/watch?v=T6d5C3rLeFY) - Tom Lieber (now available in Extension Manager!)
 
-["PSD Lens" Concept: from Design Comp to Code](http://www.youtube.com/watch?v=xAP8CSMEwZ8) - Narciso (nj) Jaramillo (in development - not available yet)
+["PSD Lens" Concept: from Design Comp to Code](http://www.youtube.com/watch?v=xAP8CSMEwZ8) - Narciso (nj) Jaramillo (now available as "Adobe Extract for Brackets" - see never video above)
 
-[Responsive design tool for Brackets](http://youtu.be/kXTP8XqrSwE) - Lee Brimelow (source available, but needs work before it's generally usable)
+[Responsive design tool for Brackets](http://youtu.be/kXTP8XqrSwE) - Lee Brimelow (now available in Extension Manager!)
 
 [Space Age Miracle Tools: Experiments with Brackets](http://tv.adobe.com/watch/max-2013/space-age-miracle-tools-experiments-with-brackets/) - Jason San Jose, Adam Lehman, Ryan Stewart, Peter Flynn (various experiments)
 
