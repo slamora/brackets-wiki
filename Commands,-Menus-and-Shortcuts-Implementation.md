@@ -22,7 +22,7 @@ CommandManager module is responsible for creating commands. When a module or ext
 
     - setChecked(checked)   // Also trigger menu update
     - setEnabled(enabled)   // Also trigger menu update
-    - setName(name)         
+    - setName(name)         // Also trigger menu update
 
 ### Creating key bindings
 Key bindings for Brackets core commands are defined in base-config/keyboard.json which is keyed by command IDs. When a command is registered with CommandManager, it also triggers `CommandRegistered` event to add the corresponding key bindings. The triggered event is then handled by `_handleCommandRegistered(event, command)` in KeyBindingManager module.
