@@ -90,6 +90,8 @@ _**Unofficial techniques**_ - adding UI elements directly through the DOM works,
 
 ### <a name="featurehooks"></a>Extending specific Brackets features
 
+For each API listed, see [documentation](http://brackets.io/docs/current/) for more details.
+
 **Quick Edit (inline editors):** To create an extension that responds on Ctrl+E (like the inline color picker), use `EditorManager.registerInlineEditProvider()`. If multiple "providers" all want to respond in a given context, however, the first one wins - there's no notion of priority or cycling through providers yet. 
 
 **Quick Docs:** Similar to Quick Edit, but register your provider with `EditorManager.registerInlineDocsProvider()` instead.
@@ -99,6 +101,8 @@ _**Unofficial techniques**_ - adding UI elements directly through the DOM works,
 **Quick Open:** To add a new _global_ search feature (like Quick Open), use `QuickOpen.addQuickOpenPlugin()` with an empty `languageIds` array. Pick a new, unique prefix for `match()` to respond to, and register a new command that invokes `QuickOpen.beginSearch()` with your custom prefix. (See the [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav/blob/master/main.js#L128) extension for a simple example).
 
 **Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Unlike Quick Edit, these "providers" can have varying priority to resolve conflicts; more specific providers take precedence.
+
+**Jump to Definition:** To create an extension that responds on Ctrl-J (Jump to Definition), use `EditorManager.registerJumpToDefProvider()`. Similar to Quick Edit, the first provider to respond for a given cursor position wins.
 
 **Syntax Coloring:** Extensions can add new code-coloring "modes" via `LanguageManager.defineLanguage()`. See [[Language Support]] for details.
 

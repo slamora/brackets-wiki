@@ -194,6 +194,7 @@ These are all the settings that are currently supported:
 | `codehint.CssPropHints` | `true` | Enable/disable CSS/LESS/SCSS property hints |
 | `codehint.JSHints` | `true` | Enable/disable JavaScript code hints |
 | `codehint.SpecialCharHints` | `true` | Enable/disable HTML entity hints |
+| `codehint.SVGHints` | `true` | Enable/disable SVG code hints |
 | `codehint.TagHints` | `true` | Enable/disable HTML tag hints |
 | `codehint.UrlCodeHints` | `true` | Enable/disable URL hints in HTML & CSS/LESS/SCSS |
 | `dragDropText` | `true` | Enable/disable Drag & Drop functionality |
@@ -218,6 +219,7 @@ These are all the settings that are currently supported:
 | `staticserver.port` | | Port number that the built-in server should use for Live Preview |
 | `tabSize` | `4` | Number of spaces to display for tabs |
 | `useTabChar` | `false` | True to use tabs instead of spaces |
+| `uppercaseColors` | `false` | True to use uppercase colors in Inline Color Editor |
 | `wordWrap` | `true` | True if word wrap is on |
 
 #### Example preferences .json file

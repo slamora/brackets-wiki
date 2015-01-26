@@ -174,8 +174,8 @@ In order to make it work with Internet Explorer 11, disable all the options that
 #### Disable Extensions
 The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
 
-#### Clear Cache
-[Clearing cache](#clear-cache) will clear Brackets live-dev-profile cache.
+#### Clear Live Preview Profile/Cache
+Choose _Help > Show Extensions Folder_, go up one level to the parent folder, and remove the 'live-dev-profile' folder. This will not affect any Brackets settings, but may clear up Live Preview problems.
 
 ## <a name="slow"> </a>Brackets is Running Slow
 This section discusses some of the features that can affect performance and possible solutions.

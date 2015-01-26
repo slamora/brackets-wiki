@@ -127,7 +127,7 @@ In either case ("synchronous" or asynchronous), your result or error will be sen
 
 ### Events
 
-Your Node module can also asynchronously trigger events that can be listened to on the Brackets side. Events are registered using the ```registerEvent``` command in the DomainManager, and emitted using the ```emitEvent```. On the client side, events can be listened for using the standard jQuery event system on instances of the NodeDomain class, by simply doing `$(myDomain).on("someEvent", someHandler)`.
+Your Node module can also asynchronously trigger events that can be listened to on the Brackets side. Events are registered using the ```registerEvent``` command in the DomainManager, and emitted using the ```emitEvent```. On the client side, events can be listened for using the standard jQuery event system on instances of the NodeDomain class, by simply doing `myDomain.on("someEvent", someHandler)`.
 
 Note that Brackets client code automatically registers as a listener for "log" events and forwards them to the client console, prefixed with "[node-(level) (timestamp)]".
 
@@ -241,7 +241,7 @@ The second source of asynchrony is entirely on the Node side: any single command
 Events from Node domains are also dispatched through NodeConnection. Under normal circumstances you shouldn't need to deal with this, but if you want to listen to them at this level (e.g. to catch events across multiple domains), the jQuery event types will be in the format `domainName:eventName`. For example, for the `log` event in the `base` domain, listen for the `base:log` event type:
 
 ```javascript
-$(_nodeConnection).on("base:log", function (evt, level, timestamp, message) {
+_nodeConnection.on("base:log", function (evt, level, timestamp, message) {
     console.log("[node] %s %s %s", level, timestamp, message);
 });
 ```

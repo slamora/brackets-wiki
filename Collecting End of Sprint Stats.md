@@ -1,4 +1,4 @@
-## Stats for the sprint about to ship
+## Stats for the release about to ship
 
 #### Commits & files
 
@@ -7,15 +7,14 @@
 
 #### Pull requests
 
-1. Install Peter's "Brackets Reports" extension / make sure you have the latest (>= 1.3.0)
-2. Find the day the _previous_ sprint branched to `release` (usually just before the time the _current_ sprint's "set-sprint number" PR landed).
-3. In the extension, edit _GitHubReports.js_ and change the value of `END_LAST_SPRINT` to the start of that day (following the date format shown in the code)
-4. Reload Brackets
-5. Run _View > Brackets Reports > Pull Requests in Sprint_
-    * This make take a few seconds before showing the results
-6. Remove all "R" entries near the top of the list (PRs that actually went into the _previous_ release, merged into its release branch late in the game)
-7. Remove all "M" entries near the bottom of the list (PRs that are actually in a _future_ release, merged into master after the current release branched)
-8. Generally speaking, remove any "?" entries as well (branch-to-branch merges)
+1. Install Peter's "Brackets Reports" extension / make sure you have the latest version
+2. Find the day the _previous_ version branched to `release` (usually just before the time the _current_ release's "set-release number" PR landed).
+3. Run _View > Brackets Reports > Pull Requests in Release_
+4. Enter the date from step 2 as "Earliest commit date" (following the date format shown). Leave "Latest commit date" blank (unless you're generating a report for an older release). Hit Ok.
+    * It may take a few seconds before showing the results
+5. Remove all "R" entries near the top of the list (PRs that actually went into the _previous_ release, merged into its release branch late in the game)
+6. Remove all "M" entries near the bottom of the list (PRs that are actually in a _future_ release, merged into master after the current release branched)
+7. Generally speaking, remove any "?" entries as well (branch-to-branch merges)
 8. _Update the totals at the bottom_ to reflect these deletions
 
 We usually look at the following stats:
@@ -23,7 +22,7 @@ We usually look at the following stats:
 * **Number of pull requests merged (total)** (_doesn't_ count PRs that were closed without being merged)
 * **Number of external pull requests merged**
 * **Number that came from external committers**
-* **Total number of external contributors this sprint**
+* **Total number of external contributors this release**
 
 #### Locales
 
@@ -36,7 +35,7 @@ We normally don't report the number of issues fixed, because (a) it's hard to di
 But you can get a _rough_ number via a "closed issues" milestone query on GitHub -- something of the form https://github.com/adobe/brackets/issues?q=is%3Aclosed+milestone%3A%22Release+0.44%22.
 
 
-## Stats for the sprint about to be EOL'ed
+## Stats for the release about to be obsoleted
 
 #### Downloads
 
