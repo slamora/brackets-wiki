@@ -40,7 +40,7 @@ Live Preview uses a custom Chrome browser profile which caches data in *user-dir
 
 #### Extension Manager
 
-The Extension Manager currently adds files to and removes files from the *user-dir*/extensions/user folder. A **disabled** folder is also provided so users can manually move extensions from user folder for disabling, but this is not yet supported in Extension Manager.
+The Extension Manager currently adds files to and removes files from the *user-dir*/extensions/user folder. An extensions/disabled folder is also provided so users can manually move extensions from user folder for disabling, but this is not yet supported in Extension Manager.
 
 
 ### Preferences GUI
