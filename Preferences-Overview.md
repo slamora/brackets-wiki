@@ -13,10 +13,11 @@ and state information is settings implicitly set by app such as last file edited
 
 Client information is stored in JSON files:
 
-| **Type** | **Location** |
-| Global user preferences | user-dir/brackets.json |
-| Project preferences | project-dir/.brackets.json |
-| State information | user-dir/state.json |
+| **Type** | **Location**
+|----------|-------------
+| Global user preferences | *user-dir*/brackets.json
+| Project preferences | *project-dir*/.brackets.json
+| State information | *user-dir*/state.json
 
 Where:
 * *user-dir* is the operating system specific user folder. See [this article](https://github.com/adobe/brackets/wiki/Cache-Folder).
@@ -31,15 +32,15 @@ This is automatically handled by Mac OS and not yet implemented on Linux.
 
 #### CEF cache
 
-Chromium Embedded Framework caches data in **user-dir/cef_data/**. Files in this folder should never be edited manually. Folder can be deleted to clear cache.
+Chromium Embedded Framework caches data in *user-dir*/cef_data/. Files in this folder should never be edited manually. Folder can be deleted to clear cache.
 
 #### Live Preview
 
-Live Preview uses a custom Chrome browser profile which caches data in **user-dir/live-dev-profile/**. Files in this folder should never be edited manually. Folder can be deleted to clear cache.
+Live Preview uses a custom Chrome browser profile which caches data in *user-dir*/live-dev-profile/. Files in this folder should never be edited manually. Folder can be deleted to clear cache.
 
 #### Extension Manager
 
-The Extension Manager currently adds files to and removes files from the **user-dir/extensions/user** folder. A **disabled** folder is also provided so users can manually move extensions from user folder for disabling, but this is not yet supported in Extension Manager.
+The Extension Manager currently adds files to and removes files from the *user-dir*/extensions/user folder. A **disabled** folder is also provided so users can manually move extensions from user folder for disabling, but this is not yet supported in Extension Manager.
 
 
 ### Preferences GUI
