@@ -25,7 +25,7 @@ Where:
 
 #### Native
 
-Brackets Native code is in the github.com/adobe/brackets-shell repo.
+Brackets Native code is in the [brackets-shell](https://github.com/adobe/brackets-shell repo).
 On Windows, brackets-shell stores data such as app window size and position
 in the Windows Registry at `HKEY_CURRENT_USER/Software/Brackets`.
 This is automatically handled by Mac OS and not yet implemented on Linux.
