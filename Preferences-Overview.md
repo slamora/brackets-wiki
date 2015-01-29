@@ -2,7 +2,7 @@ This is an overview of all Brackets preference, state, and caching management as
 
 ### Persistence
 
-Brackets stores data in several places.
+This section describes where Brackets stores data.
 
 #### Client
 
