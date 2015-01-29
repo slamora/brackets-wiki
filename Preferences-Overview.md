@@ -46,7 +46,7 @@ The Extension Manager currently adds files to and removes files from the *user-d
 ### Preferences GUI
 
 Currently, there is no *global* GUI for where every preference can be accessed.
-On Mac, App > Preferences id menu item is disabled.
+On Mac, App > Preferences menu item is disabled.
 But there are some places in UI where prefs can be set:
 
 - Status bar
