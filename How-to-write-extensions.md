@@ -100,7 +100,7 @@ For each API listed, see [documentation](http://brackets.io/docs/current/) for m
 
 **Quick Open:** To add a new _global_ search feature (like Quick Open), use `QuickOpen.addQuickOpenPlugin()` with an empty `languageIds` array. Pick a new, unique prefix for `match()` to respond to, and register a new command that invokes `QuickOpen.beginSearch()` with your custom prefix. (See the [File Navigation Shortcuts](https://github.com/peterflynn/brackets-editor-nav/blob/master/main.js#L128) extension for a simple example).
 
-**Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Unlike Quick Edit, these "providers" can have varying priority to resolve conflicts; more specific providers take precedence.
+**Code Hints:** To create an extension that shows a code hint popup, use `CodeHintManager.registerHintProvider()`. Unlike Quick Edit, these providers can have varying priority to resolve conflicts; more specific providers take precedence - but similar to Quick Edit, only the "winning" provider is shown.
 
 **Jump to Definition:** To create an extension that responds on Ctrl-J (Jump to Definition), use `EditorManager.registerJumpToDefProvider()`. Similar to Quick Edit, the first provider to respond for a given cursor position wins.
 
