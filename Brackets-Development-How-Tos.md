@@ -1,9 +1,10 @@
-_Warning: because Brackets is still undergoing a lot of change, many of the APIs and techniques below **will change** in the future. Breaking API changes will be listed in the [release notes](Release Notes)._
+APIs and information below **may change** in the future. Breaking API changes are listed in the [release notes](Release Notes).
 
 ## API Docs
 
 * Formatted docs at: **http://brackets.io/docs/current**
 * All documentation is also inline in the [Brackets source code](https://github.com/adobe/brackets/tree/master/src), as JSDoc comments
+
 
 ## Application Init
 
@@ -13,18 +14,22 @@ There are 2 primary milestones you can wait for during startup, defined in ``uti
 
 Do not rely on other events such as ``$(document).ready`` or ``window.onload``.
 
-The overall Brackets startup sequence unfolds as follows: 
+**Under the hood:** the overall Brackets startup sequence unfolds as follows: 
 
-1. Load most third-party libraries (jQuery, LESS, CodeMirror, etc.)
-2. Load core Brackets modules
-3. Main static HTML structure created
-4. Application-wide DOM event handlers are installed
-5. ``htmlReady`` event fires
-6. Extensions are loaded
-7. Initial project is loaded (file tree is populated, working set is restored then active document is opened)
-8. After the project is fully opened, `appReady` fires
+1. Load global third-party libraries (jQuery, LESS, Mustache)
+2. RequireJS loads the main.js bootstrapper, which sets up certain global shims (e.g. Compatibility.js module)
+3. Load core Brackets modules (and CodeMirror, Lodash), culminating in the _main startup entry point: brackets.js_
+4. View-state preferences loaded (bottom of brackets.js)
+5. Main static HTML structure created (`_beforeHTMLReady()` in brackets.js)
+6. Application-wide DOM event handlers are installed
+7. ``htmlReady`` event fires (bottom of brackets.js, after `_beforeHTMLReady()` returns)
+8. CodeMirror modes loaded & global preferences loaded (`_onReady()` in brackets.js)
+9. Extensions are loaded: built-in first, then user/dev extensions (`ExtensionLoader.init()` call)
+10. Initial project is loaded: file tree is populated, working set is restored then active document is opened (`ProjectManager.openProject()` call, followed by `"projectOpen"` handler in MainViewManager)
+11. `appReady` event fires
 
-If a new version of Brackets is available, the update notification dialog may appear at any time after step 6.
+If a new version of Brackets is available, the update notification dialog may appear at any time after step 7.
+
 
 ## Asynchronous APIs ##
 
