@@ -84,7 +84,19 @@ When adding new files or changing the build configuration, you'll need to make m
 Packaging Brackets
 ----
 
+Brackets currently supports 2 options for installation: (A) a Debian .deb package and (B) a portable .tar.gz archive.
+
+### Debian Package
+
 To build a debian package for installation on Debian/Ubuntu distributions, use the `grunt installer` build task. This tasks copies over both the binaries and the www source and creates a debian pacakge, e.g. installer/linux/Brackets Sprint 30.deb.
+
+Reference: [Pull Request](https://github.com/adobe/brackets-shell/pull/297)
+
+### Archive
+
+To build a portable archive, use the `grunt build-linux-archive` task. This task generates a .tar.gz based off the current Linux build. Use `install.sh` and `uninstall.sh` from the `installer/linux/archive/` directory to install/uninstall desktop and command-line entries for Brackets.
+
+Reference: [Pull Request](https://github.com/adobe/brackets-shell/pull/433)
 
 User Stories
 ====
