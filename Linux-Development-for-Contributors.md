@@ -15,9 +15,9 @@ These instructions will download the Git repositories for [brackets-shell](https
 
 1. [Fork brackets](https://github.com/adobe/brackets/fork) and [fork brackets-shell](https://github.com/adobe/brackets-shell/fork) 
 2. Create a top level folder to contain the Brackets git repositories
-3. In a terminal window, ``cd`` to the folder from the previous step and run the following command
+3. In a terminal window, ``cd`` to the folder from the previous step and run the following command as root
 ```shell
-wget https://gist.github.com/jasonsanjose/5514813/raw/6215f3b73ff41f51e20bc94a9faa3e453402ce06/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
+wget https://gist.githubusercontent.com/jasonsanjose/5514813/raw/6a522e292f37256b42b697b6da5015e43a6fc2e6/setup.sh; chmod +x setup.sh; bash setup.sh; rm setup.sh
 ```
 4. You'll be prompted for your GitHub user name to clone your fork of the repositories
 5. Respond to ``sudo`` password prompts when requested
