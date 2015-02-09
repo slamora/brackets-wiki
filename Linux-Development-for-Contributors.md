@@ -88,9 +88,15 @@ Brackets currently supports 2 options for installation: (A) a Debian .deb packag
 
 ### Debian Package
 
-To build a debian package for installation on Debian/Ubuntu distributions, use the `grunt installer` build task. This tasks copies over both the binaries and the www source and creates a debian pacakge, e.g. installer/linux/Brackets Sprint 30.deb.
+To build a Debian package for installation on Debian/Ubuntu distributions, use the `grunt installer` build task. This tasks copies over both the binaries and the www source and creates a Debian package, e.g. installer/linux/Brackets Sprint 30.deb.
 
-Reference: [Pull Request](https://github.com/adobe/brackets-shell/pull/297)
+Note that Debian packaging is based on the Chromium browser installer build scripts (CEF 3.1547.1354, Chromium 29.0.1547.41) and shares some 3rd party code. Chromium also provides an RPM script that we could use in the future to implement installers for Fedora/CentOS.
+
+References:
+* [Pull Request](https://github.com/adobe/brackets-shell/pull/297)
+* [Chromium trunk installer scripts](http://src.chromium.org/viewvc/chrome/trunk/src/chrome/installer/linux/)
+* [Chromium 29 installer scripts](http://src.chromium.org/viewvc/chrome/trunk/src/chrome/installer/linux/?pathrev=214890)
+* [Chromium trunk RPM packaging scripts](http://src.chromium.org/viewvc/chrome/trunk/src/chrome/installer/linux/rpm/)
 
 ### Archive
 
