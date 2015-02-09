@@ -93,6 +93,7 @@ To build a Debian package for installation on Debian/Ubuntu distributions, use t
 Note that Debian packaging is based on the Chromium browser installer build scripts (CEF 3.1547.1354, Chromium 29.0.1547.41) and shares some 3rd party code. Chromium also provides an RPM script that we could use in the future to implement installers for Fedora/CentOS.
 
 References:
+* [Debian Binary Package Building HOWTO](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/)
 * [Pull Request](https://github.com/adobe/brackets-shell/pull/297)
 * [Chromium trunk installer scripts](http://src.chromium.org/viewvc/chrome/trunk/src/chrome/installer/linux/)
 * [Chromium 29 installer scripts](http://src.chromium.org/viewvc/chrome/trunk/src/chrome/installer/linux/?pathrev=214890)
