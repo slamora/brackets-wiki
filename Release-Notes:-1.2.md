@@ -5,7 +5,7 @@ _This page will not be finalized until the end of Release 1.2 -- approximately F
 What's New in Release 1.2 
 ------------------------- 
 * **Live Preview**
-    * [Experimental Live Preview:](https://github.com/adobe/brackets/pull/10285)  Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu. The Live Preview opens in your default browser, but you can paste the URL into other browsers and they'll all update at the same time. You can use the browser's dev tools without interrupting Live Preview. Does not currently support pages that use your own [custom server](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#lp-custom-server).
+    * [Experimental Live Preview:](https://github.com/adobe/brackets/pull/10285)  Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu. The Live Preview opens in your default browser, but you can paste the URL into other browsers and they'll all update at the same time. You can use the browser's dev tools without interrupting Live Preview. This does not currently support pages that use your own [custom server](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#lp-custom-server).
 * **UI Appearance**
     * [Windows High DPI support:](https://github.com/adobe/brackets-shell/pull/502) Brackets will detect the scale factor from the OS and scale the UI based on it.
 * **Code Editing & Hinting**
