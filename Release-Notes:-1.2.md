@@ -36,7 +36,7 @@ API Changes
 **jQuery**: Upgraded from 2.1.1 to 2.1.3 
 
 **InlineColorEditor**: Replacing InlineColorEditor(color, startBookmark, endBookMark) with InlineColorEditor(color, marker)
-Using TextMarker object for InlineColorEditor rather than bookmark for start and end position.
+* Using TextMarker object for InlineColorEditor rather than bookmark for start and end position.
 
 New/Improved Extensibility APIs 
 ------------------------------- 
