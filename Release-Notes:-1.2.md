@@ -13,7 +13,7 @@ What's New in Release 1.2
     * [SVG code hints: ](https://github.com/adobe/brackets/pull/10294)Brackets now supports code hints for SVG files. (Note that SVG code hints doesn’t work with SVG code mixed in HTML files).
     * Dart language mode support.
 * **Bug Fixes**
-    * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned offscreen after a monitor is unplugged or screen resolution is changed.
+    * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
 * **Localization**
     * Translation updates for: Chinese (Simplified), Czech, Finnish, French, German, Serbian, Romanian.
 
