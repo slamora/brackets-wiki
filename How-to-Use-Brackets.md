@@ -95,7 +95,7 @@ See **[Live Preview troubleshooting](https://github.com/adobe/brackets/wiki/Trou
 )** for additional help.
 
 ##### Experimental Live Preview
- Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu. Experimental Live preview addresses some of the limitations of current Live Preview. 
+ Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu. This addresses some of the limitations of current Live Preview. 
 * Target multiple browsers and preview on them simultaniously.
 * Developer Tools in chrome can be opened without interrupting the Live Preview workflow.
 
