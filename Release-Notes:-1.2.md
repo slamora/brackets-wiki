@@ -4,7 +4,8 @@ _This page will not be finalized until the end of Release 1.2 -- approximately J
 
 What's New in Release 1.2 
 ------------------------- 
-* _**TODO: draft**_
+* **Live Preview**
+    * [Experimental Live Preview:](https://github.com/adobe/brackets/pull/10285)  Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu. The Live Preview opens in your default browser, but you can paste the URL into other browsers and they'll all update at the same time. You can use the browser's dev tools without interrupting Live Preview. Does not currently support pages that use your own [custom server](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#lp-custom-server).
 * **Code Editing**
     * [Drag & drop to move selected text](https://github.com/adobe/brackets/pull/9584)
     * [SVG code hints](https://github.com/adobe/brackets/pull/10294)
