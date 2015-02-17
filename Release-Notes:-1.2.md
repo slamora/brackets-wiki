@@ -31,7 +31,9 @@ No major changes to existing features.
 
 API Changes 
 ----------- 
-**TODO** 
+CodeMirror: Upgraded CM to 4.11
+
+jQuery: Upgraded from 2.1.1 to 2.1.3 
 
 New/Improved Extensibility APIs 
 ------------------------------- 
