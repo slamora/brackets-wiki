@@ -14,6 +14,8 @@ What's New in Release 1.2
     * Dart language mode support.
 * **Bug Fixes**
     * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
+* **Linux**
+    * [Open dialog improvements](https://github.com/adobe/brackets-shell/pull/496)
 * **Localization**
     * Translation updates for: Chinese (Simplified), Czech, Finnish, French, German, Serbian, Romanian.
 
