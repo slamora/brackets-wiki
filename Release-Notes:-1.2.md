@@ -1,18 +1,21 @@
 _This is a draft!_ 
 -------------------- 
-_This page will not be finalized until the end of Release 1.2 -- approximately January 29._ 
+_This page will not be finalized until the end of Release 1.2 -- approximately February 19._ 
 
 What's New in Release 1.2 
 ------------------------- 
 * **Live Preview**
     * [Experimental Live Preview:](https://github.com/adobe/brackets/pull/10285)  Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu. The Live Preview opens in your default browser, but you can paste the URL into other browsers and they'll all update at the same time. You can use the browser's dev tools without interrupting Live Preview. Does not currently support pages that use your own [custom server](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#lp-custom-server).
-* **Code Editing**
-    * [Drag & drop to move selected text](https://github.com/adobe/brackets/pull/9584)
-    * [SVG code hints](https://github.com/adobe/brackets/pull/10294)
+* **UI Appearance**
+    * [Windows High DPI support:](https://github.com/adobe/brackets-shell/pull/502) Brackets will detect the scale factor from the OS and scale the UI based on it.
+* **Code Editing & Hinting**
+    * [Drag & drop to move selected text:](https://github.com/adobe/brackets/pull/9584) Select multiple segments of code in the editor(Ctrl+ click and drag over multiple text segments). You can start a drag gesture from any of the selected segment and drop it anywhere on the editor to move the selected test.
+    * [SVG code hints: ](https://github.com/adobe/brackets/pull/10294)Brackets now supports code hints for SVG files. (Note that SVG code hints doesn’t work with SVG code mixed in HTML files).
+    * Dart language mode support.
 * **Bug Fixes**
     * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned offscreen after a monitor is unplugged or screen resolution is changed.
-* **Linux**
-    * [Open dialog improvements](https://github.com/adobe/brackets-shell/pull/496)
+* **Localization**
+    * Translation updates for: Chinese (Simplified), Czech, Finnish, French, German, Serbian, Romanian.
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.1...release-1.2#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.1...release-1.2#commits_bucket) 
