@@ -11,7 +11,7 @@ What's New in Release 1.2
 * **Code Editing & Hinting**
     * [Drag & drop to move selected text:](https://github.com/adobe/brackets/pull/9584) Select multiple segments of code in the editor(Ctrl+ click and drag over multiple text segments). You can start a drag gesture from any of the selected segment and drop it anywhere on the editor to move the selected test.
     * [SVG code hints: ](https://github.com/adobe/brackets/pull/10294)Brackets now supports code hints for SVG files. (Note that SVG code hints doesn’t work with SVG code mixed in HTML files).
-    * Dart language mode support.
+    * [Dart language mode support:](https://github.com/adobe/brackets/pull/10308).
 * **Bug Fixes**
     * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
 * **Linux**
