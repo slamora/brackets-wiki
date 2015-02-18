@@ -13,11 +13,11 @@ What's New in Release 1.2
 * **UI Appearance**
     * [Windows High DPI support:](https://github.com/adobe/brackets-shell/pull/502) Brackets in now HiDPI ready on devices running Windows 7 or higher. Text and images would be rendered crisper in win 8.1+ devices when OS scaling is applied. (Brackets is not optimized for per monitor DPI settings in a multimonitor setup).
 * **Live Preview**
-    * [Experimental Live Preview:](https://github.com/adobe/brackets/pull/10285)  Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu (This does not currently support pages that use your own [custom server](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#lp-custom-server)).
+    * [Experimental Live Preview:](https://github.com/adobe/brackets/pull/10285)  Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu (This does not currently support pages that use your own [custom server](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#lp-custom-server)). ([Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai))
 * **Bug Fixes**
     * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
 * **Localization**
-    * Translation updates for: Chinese (Simplified), Czech, Finnish, French, German, Serbian, Romanian.
+    * Translation updates for: Chinese (Simplified), Czech, Finnish , French, German, Serbian , Romanian. ([Hanhua Hong](https://github.com/mistyhua), [Pavel Dvořák](https://github.com/dvorapa), [valtlait](https://github.com/valtlait), [Marcel Gerber](https://github.com/MarcelGerber), [Goran Vasić](https://github.com/goranvasic), [Micleușanu Nicu](https://github.com/micnic))
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.1...release-1.2#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.1...release-1.2#commits_bucket) 
