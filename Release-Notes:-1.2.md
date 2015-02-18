@@ -9,15 +9,13 @@ What's New in Release 1.2
     * [Drag & drop to move multiple selected text (Experimental):](https://github.com/adobe/brackets/pull/9584) Select multiple segments of code in the editor (Ctrl+ click and drag over multiple text segments). You can start a drag gesture from any of the selected segment and drop it anywhere on the editor to move the selected text.  You can try out this feature by setting “dragDropText” preference to true.
     * [SVG code hints: ](https://github.com/adobe/brackets/pull/10294)Brackets now supports code hints for SVG files. (Note that SVG code hints doesn’t work with SVG code mixed in HTML files).
     * [Dart language mode support:](https://github.com/adobe/brackets/pull/10308).
-    * Code hints are now provided for color keywords along with its color swatch.
+    * [Code hints are now provided for color keywords](https://github.com/adobe/brackets/pull/10410) along with its color swatch.
 * **UI Appearance**
     * [Windows High DPI support:](https://github.com/adobe/brackets-shell/pull/502) Brackets in now HiDPI ready on devices running Windows 7 or higher. Text and images would be rendered crisper in win 8.1+ devices when OS scaling is applied. (Brackets is not optimized for per monitor DPI settings in a multimonitor setup).
 * **Live Preview**
     * [Experimental Live Preview:](https://github.com/adobe/brackets/pull/10285)  Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu (This does not currently support pages that use your own [custom server](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#lp-custom-server)).
 * **Bug Fixes**
     * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
-* **Linux**
-    * [Open dialog improvements](https://github.com/adobe/brackets-shell/pull/496)
 * **Localization**
     * Translation updates for: Chinese (Simplified), Czech, Finnish, French, German, Serbian, Romanian.
 
