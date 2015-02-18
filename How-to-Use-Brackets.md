@@ -201,7 +201,7 @@ These are all the settings that are currently supported:
 | `codehint.SVGHints` | `true` | Enable/disable SVG code hints |
 | `codehint.TagHints` | `true` | Enable/disable HTML tag hints |
 | `codehint.UrlCodeHints` | `true` | Enable/disable URL hints in HTML & CSS/LESS/SCSS |
-| `dragDropText` | `true` | Enable/disable Drag & Drop functionality |
+| `dragDropText` | `false` | Enable/disable Drag & Drop functionality |
 | `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` — highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` — highlight all strings that match the token the cursor is currently in (no selection needed)</li><li>`{"wordsOnly": true}` — highlight only when selection is a complete token</li></ul> |
 | `insertHintOnTab` | `false` | True to insert the currently selected code hint on tab |
 | `jscodehints.noHintsOnDot` | `false` | If true, do not automatically show JS code hints when `.` is typed. |
