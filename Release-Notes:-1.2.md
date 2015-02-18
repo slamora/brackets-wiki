@@ -1,7 +1,3 @@
-_This is a draft!_ 
--------------------- 
-_This page will not be finalized until the end of Release 1.2 -- approximately February 19._ 
-
 What's New in Release 1.2 
 ------------------------- 
 
