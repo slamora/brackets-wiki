@@ -38,7 +38,7 @@ API Changes
 
 New/Improved Extensibility APIs 
 ------------------------------- 
-*LiveDevMultiBrowser.close() now returns a resolved promise for API compatibility.
+LiveDevMultiBrowser.close() now returns a resolved promise for API compatibility.
 
 
 Known Issues 
