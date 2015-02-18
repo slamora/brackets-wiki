@@ -6,7 +6,7 @@ What's New in Release 1.2
 ------------------------- 
 
 * **Code Editing & Hinting**
-    * [Drag & drop to move multiple selected text (Experimental):](https://github.com/adobe/brackets/pull/9584) Select multiple segments of code in the editor (Ctrl+ click and drag over multiple text segments). You can start a drag gesture from any of the selected segment and drop it anywhere on the editor to move the selected text.  You can try out this feature by setting “dragDropText” preference to true. (@MarcelGerber)
+    * [Drag & drop to move multiple selected text (Experimental):](https://github.com/adobe/brackets/pull/9584) Select multiple segments of code in the editor (Ctrl+ click and drag over multiple text segments). You can start a drag gesture from any of the selected segment and drop it anywhere on the editor to move the selected text.  You can try out this feature by setting “dragDropText” preference to true. ([Marcel Gerber](https://github.com/MarcelGerber))
     * [SVG code hints: ](https://github.com/adobe/brackets/pull/10294)Brackets now supports code hints for SVG files. (Note that SVG code hints doesn’t work with SVG code mixed in HTML files).
     * [Dart language mode support:](https://github.com/adobe/brackets/pull/10308).
     * [Code hints are now provided for color keywords](https://github.com/adobe/brackets/pull/10410) along with its color swatch.
