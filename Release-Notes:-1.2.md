@@ -25,7 +25,7 @@ _Linux builds for 1.2 will be delayed by 2 weeks._
 
 UI Changes 
 ---------- 
-In prior releases, when multiple files were opened in editor-split view, we used to dim the editor pane that was not in focus. This made it hard to read text in dark themes. We changed this to dim only the editor pane header; instead of dimming the whole content.
+In prior releases, when multiple files were opened in editor-split view, we used to dim the editor pane that was not in focus. This made it hard to read text in dark themes. We changed this- to dim only the editor pane header; instead of dimming the whole content.
 
 
 API Changes 
