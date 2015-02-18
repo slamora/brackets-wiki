@@ -17,11 +17,11 @@ What's New in Release 1.2
 * **Bug Fixes**
     * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
 * **Localization**
-    * Translation updates for: Chinese (Simplified), Czech, Finnish , French, German, Serbian , Romanian. (Thanks to [Hanhua Hong](https://github.com/mistyhua), [Pavel Dvořák](https://github.com/dvorapa), [valtlait](https://github.com/valtlait), [Marcel Gerber](https://github.com/MarcelGerber), [Goran Vasić](https://github.com/goranvasic), [Micleușanu Nicu](https://github.com/micnic))
-* **Linux builds for 1.2 will be delayed** 
+    * Translation updates for: Chinese (Simplified), Czech, Finnish , French, German, Serbian , Romanian. ([Hanhua Hong](https://github.com/mistyhua), [Pavel Dvořák](https://github.com/dvorapa), [valtlait](https://github.com/valtlait), [Marcel Gerber](https://github.com/MarcelGerber), [Goran Vasić](https://github.com/goranvasic), [Micleușanu Nicu](https://github.com/micnic))
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.1...release-1.2#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.1...release-1.2#commits_bucket) 
 
+_Linux builds for 1.2 will be delayed by 2 weeks._
 
 UI Changes 
 ---------- 
