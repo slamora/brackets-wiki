@@ -6,7 +6,7 @@ What's New in Release 1.2
 * **Code Editing**
     * [Drag & drop to move selected text](https://github.com/adobe/brackets/pull/9584): Enable the `dragDropText` preference to drag and drop any selected text. Works with [multiple selections](https://github.com/adobe/brackets/wiki/Working-with-Multiple-Selections) too! (by [Marcel Gerber](https://github.com/MarcelGerber))
     * [CSS color name code hints](https://github.com/adobe/brackets/pull/10410): Code hints for standard named colors in CSS/LESS/SCSS, with color swatch preview. (by [Marcel Gerber](https://github.com/MarcelGerber))
-    * [SVG code hints](https://github.com/adobe/brackets/pull/10294): For tags, attributes, and named colors. (by [Amin Ullah Khan](https://github.com/sprintr))
+    * [SVG code hints](https://github.com/adobe/brackets/pull/10294): For tags, attributes, and attribute values - also including named colors. (by [Amin Ullah Khan](https://github.com/sprintr))
     * [Dart syntax highlighting](https://github.com/adobe/brackets/pull/10308) (by [Marcel Gerber](https://github.com/MarcelGerber))
 * **Search**
     * [Find/Replace scrollbar tickmarks highlight current match](https://github.com/adobe/brackets/pull/10413)
