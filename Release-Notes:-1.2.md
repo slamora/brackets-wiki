@@ -1,41 +1,45 @@
-What's New in Release 1.2 
-------------------------- 
+**_Note: Linux builds of Brackets 1.2 will be delayed by 2 weeks._**
 
-* **Code Editing & Hinting**
-    * [Drag & drop to move multiple selected text (Experimental):](https://github.com/adobe/brackets/pull/9584) Select multiple segments of code in the editor (Ctrl+ click and drag over multiple text segments). You can start a drag gesture from any of the selected segment and drop it anywhere on the editor to move the selected text.  You can try out this feature by setting “dragDropText” preference to true. ([Marcel Gerber](https://github.com/MarcelGerber))
-    * [SVG code hints: ](https://github.com/adobe/brackets/pull/10294)Brackets now supports code hints for SVG files. (Note that SVG code hints don’t work with SVG code mixed in HTML files).([Amin Ullah Khan](https://github.com/sprintr))
-    * [Dart language mode support:](https://github.com/adobe/brackets/pull/10308).([Marcel Gerber](https://github.com/MarcelGerber))
-    * [Code hints are now provided for color keywords](https://github.com/adobe/brackets/pull/10410) along with its color swatch. ([Marcel Gerber](https://github.com/MarcelGerber))
+What's New in Release 1.2 
+-------------------------
+
+* **Code Editing**
+    * [Drag & drop to move selected text](https://github.com/adobe/brackets/pull/9584): After enabling the `dragDropText` preference, drag and drop any selected text to move to another location. Even works with [multiple selections](https://github.com/adobe/brackets/wiki/Working-with-Multiple-Selections)! (by [Marcel Gerber](https://github.com/MarcelGerber))
+    * [CSS code hints for named colors](https://github.com/adobe/brackets/pull/10410), with color swatch preview. (by [Marcel Gerber](https://github.com/MarcelGerber))
+    * [SVG code hints](https://github.com/adobe/brackets/pull/10294): For tags, attributes, and named colors. (by [Amin Ullah Khan](https://github.com/sprintr))
+    * [Dart syntax highlighting](https://github.com/adobe/brackets/pull/10308) (by [Marcel Gerber](https://github.com/MarcelGerber))
+* **Search**
+    * [Highlight scrollbar tickmark for the current Find match](https://github.com/adobe/brackets/pull/10413)
 * **UI Appearance**
-    * [Windows High DPI support:](https://github.com/adobe/brackets-shell/pull/502) Brackets in now HiDPI ready on devices running Windows 7 or higher. Text and images would be rendered crisper in win 8.1+ devices when OS scaling is applied. (Brackets is not optimized for per monitor DPI settings in a multimonitor setup).
-* **Live Preview**
-    * [Experimental Live Preview:](https://github.com/adobe/brackets/pull/10285)  Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu (This does not currently support pages that use your own [custom server](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#lp-custom-server)). ([Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai))
-* **Bug Fixes**
-    * [Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
+    * [Windows High DPI support](https://github.com/adobe/brackets-shell/pull/502): Brackets automatically renders text, icons, and images more crisply on high-DPI displays (similar to the appearance on Mac Retina screens).
+* **Key Bindings**
+    * [Use additional named keys in custom key bindings](https://github.com/adobe/brackets/pull/10247): PageUp, PageDown, Home, End, Insert, Delete. Can be used by extensions or in user custom key bindings.
+* **Stability**
+    * [Windows: Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
+* **Linux**
+    * [Remember last-opened file in File > Open dialog box](https://github.com/adobe/brackets-shell/pull/496): Now matches existing Mac & Windows behavior. (by [Marcel Gerber](https://github.com/MarcelGerber))
 * **Localization**
-    * Translation updates for: Chinese (Simplified), Czech, Finnish , French, German, Serbian , Romanian. ([Hanhua Hong](https://github.com/mistyhua), [Pavel Dvořák](https://github.com/dvorapa), [valtlait](https://github.com/valtlait), [Marcel Gerber](https://github.com/MarcelGerber), [Goran Vasić](https://github.com/goranvasic), [Micleușanu Nicu](https://github.com/micnic))
+    * Translation updates for: Chinese (Simplified), Czech, Finnish, French, German, Japanese, Romanian, Serbian. (by [Hanhua Hong](https://github.com/mistyhua), [Pavel Dvořák](https://github.com/dvorapa), [valtlait](https://github.com/valtlait), [Marcel Gerber](https://github.com/MarcelGerber), [Goran Vasić](https://github.com/goranvasic), [Micleușanu Nicu](https://github.com/micnic))
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.1...release-1.2#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.1...release-1.2#commits_bucket) 
 
-_Linux builds for 1.2 will be delayed by 2 weeks._
+
 
 UI Changes 
 ---------- 
-* In prior releases, when multiple files were opened in editor-split view, we used to dim the editor pane that was not in focus. This made it hard to read text in dark themes. We changed this- to dim only the editor pane header; instead of dimming the whole content.
-* “File -> Enable Experimental Live Preview” to toggle Experimental multi-browser live preview.
+**Split View** - The editor pane that is inactive is no longer dimmed. To restore the dimming behavior, install the [Zen Pane extension](https://github.com/stowball/brackets-zen-pane).
 
 
 API Changes 
 ----------- 
-**CodeMirror**: Upgraded CM to 4.11
+**jQuery** - Upgraded from 2.1.1 to 2.1.3
 
-**jQuery**: Upgraded from 2.1.1 to 2.1.3 
+**Event listeners** - Deprecation warnings occur when extensions use `$().on()/off()` on Brackets core modules and model objects. Call `.on()/off()` directly instead, as introduced in Brackets 1.1. (For DOM elements, continue to use jQuery events).
 
-**InlineColorEditor**: Replacing InlineColorEditor(color, startBookmark, endBookMark) with InlineColorEditor(color, marker)                                                                              Using TextMarker object for InlineColorEditor rather than bookmark for start and end position.
 
 New/Improved Extensibility APIs 
 ------------------------------- 
-LiveDevMultiBrowser.close() now returns a resolved promise for API compatibility.
+**Colors** - Use `ColorUtils.COLOR_NAMES` for a list of standard CSS/SVG named colors.
 
 
 Known Issues 
