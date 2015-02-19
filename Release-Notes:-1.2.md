@@ -4,18 +4,18 @@ What's New in Release 1.2
 -------------------------
 
 * **Code Editing**
-    * [Drag & drop to move selected text](https://github.com/adobe/brackets/pull/9584): After enabling the `dragDropText` preference, drag and drop any selected text to move to another location. Even works with [multiple selections](https://github.com/adobe/brackets/wiki/Working-with-Multiple-Selections)! (by [Marcel Gerber](https://github.com/MarcelGerber))
-    * [CSS code hints for named colors](https://github.com/adobe/brackets/pull/10410), with color swatch preview. (by [Marcel Gerber](https://github.com/MarcelGerber))
+    * [Drag & drop to move selected text](https://github.com/adobe/brackets/pull/9584): Enable the `dragDropText` preference to drag and drop any selected text. Works with [multiple selections](https://github.com/adobe/brackets/wiki/Working-with-Multiple-Selections) too! (by [Marcel Gerber](https://github.com/MarcelGerber))
+    * [CSS color name code hints](https://github.com/adobe/brackets/pull/10410): Code hints for standard named colors in CSS/LESS/SCSS, with color swatch preview. (by [Marcel Gerber](https://github.com/MarcelGerber))
     * [SVG code hints](https://github.com/adobe/brackets/pull/10294): For tags, attributes, and named colors. (by [Amin Ullah Khan](https://github.com/sprintr))
     * [Dart syntax highlighting](https://github.com/adobe/brackets/pull/10308) (by [Marcel Gerber](https://github.com/MarcelGerber))
 * **Search**
-    * [Highlight scrollbar tickmark for the current Find match](https://github.com/adobe/brackets/pull/10413)
+    * [Find/Replace scrollbar tickmarks highlight current match](https://github.com/adobe/brackets/pull/10413)
 * **UI Appearance**
     * [Windows High DPI support](https://github.com/adobe/brackets-shell/pull/502): Brackets automatically renders text, icons, and images more crisply on high-DPI displays (similar to the appearance on Mac Retina screens).
 * **Key Bindings**
     * [Use additional named keys in custom key bindings](https://github.com/adobe/brackets/pull/10247): PageUp, PageDown, Home, End, Insert, Delete. Can be used by extensions or in user custom key bindings.
 * **Stability**
-    * [Windows: Multi-monitor window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets no longer starts up positioned off screen after a monitor is unplugged or screen resolution is changed.
+    * [Windows: Improved window positioning](https://github.com/adobe/brackets-shell/pull/498): Brackets stays positioned onscreen after a monitor is unplugged or screen resolution is changed.
 * **Linux**
     * [Remember last-opened file in File > Open dialog box](https://github.com/adobe/brackets-shell/pull/496): Now matches existing Mac & Windows behavior. (by [Marcel Gerber](https://github.com/MarcelGerber))
 * **Localization**
