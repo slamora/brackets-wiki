@@ -48,8 +48,8 @@ Everything else not listed here _does_ work: Find/Replace in Files, Quick Edit, 
 
 ## Existing projects
 
-- [Nimble](https://wiki.mozilla.org/Webmaker/Concept-Nimble) - research idea in the [Mozilla WebMaker](https://webmaker.org/) project. [Read more...](https://blog.webmaker.org/webmaker-experiments-with-brackets)
-- [Treehouse Workspaces](http://teamtreehouse.com/workspaces) - online web development environment for Treehouse students ([screenshot](http://d.pr/i/hnDL))
+* [Mozilla Nimble](https://github.com/humphd/brackets) - actively under development within the [Mozilla WebMaker](https://webmaker.org/) project. Read more on their [blog](https://blog.webmaker.org/webmaker-experiments-with-brackets) or [wiki](https://wiki.mozilla.org/Webmaker/Concept-Nimble).
+* [Treehouse Workspaces](http://teamtreehouse.com/workspaces) - online web development environment for Treehouse students ([screenshot](http://d.pr/i/hnDL))
 
 
 ## Chrome App / Chrome OS
