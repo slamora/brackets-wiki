@@ -42,6 +42,7 @@ These are the pieces of information we look to collect in the first iteration of
 * Which extensions are popular with regular Brackets users? This is can be helpful for both extension authors and for an idea of where we should expand the Brackets core.
 * Are we paying the right amount of attention to each of the platforms we support?
 * Which languages should we pay the most attention to for translations?
+* How often do people launch Brackets?
 
 ## Next Up Data Proposal
 
