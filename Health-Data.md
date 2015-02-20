@@ -111,9 +111,9 @@ There are two timestamps saved in viewstate: time of last snapshot and time of l
 
 ## UI
 
-* A first run display will explain the collection and provide buttons to accept collection or view a sample of the data
-* The sample is an actual snapshot of the user's info. It is not sent. The user can turn off collection from that view.
+* A first run display will explain the what is being collected, how it's being sent, and a check box for opting-out along with instructions for changing the preference later. 
 * There will be a menu item to show health data.
+* There will be a menu item to turn off sending of data. 
 * The initial version will show the current snapshot and will also provide a button to stop collection (or restart it)
 * A button will be provided in that UI to open the directory that contains the snapshots
 
