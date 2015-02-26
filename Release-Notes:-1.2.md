@@ -1,4 +1,4 @@
-**_Note: Linux builds of Brackets 1.2 will be delayed by 2 weeks._**
+**_Expected release date: March 3._**
 
 What's New in Release 1.2 
 -------------------------
