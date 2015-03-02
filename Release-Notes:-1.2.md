@@ -1,4 +1,3 @@
-**_Expected release date: March 3._**
 
 What's New in Release 1.2 
 -------------------------
