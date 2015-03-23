@@ -40,8 +40,10 @@ But you can get a _rough_ number via a "closed issues" milestone query on GitHub
 #### Downloads
 
 1. Go to the brackets.io analytics page
-2. Drill down to Behavior > Events > Top Events (or Behavior > Events > Overview > Event Action) and select the desired sprint number
+2. Drill down to Behavior > Events > Overview > Event Action and select the desired release number
 3. In the "Secondary dimension" dropdown, choose Users > Operating System
+
+> Note: if you select Behavior > Events > Top Events instead, you must separately select each of the Downloads, E4BDownloads, and Other-Downloads items and sum their values to get the total number of downloads
 
 * **Total downloads** - sum Mac + Linux + Windows (ignore the tiny number of downloads on misc other OSes)
 * **Platform breakdown (%)** - divide each platform by the total
