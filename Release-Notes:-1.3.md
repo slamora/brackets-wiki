@@ -38,6 +38,30 @@ Known Issues
 Community contributions to Brackets
 -----------------------------------
 **TODO**
+* [FR typo fix](https://github.com/adobe/brackets/pull/10625) by [pantkowiak](https://github.com/pantkowiak)
+* [Fix #10229. Add executable bit to Linux launcher.](https://github.com/adobe/brackets/pull/10267) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [[#10228] Cmd+Delete now triggers Don't Save in Save Changes dialog](https://github.com/adobe/brackets/pull/10459) by [lucaslouca](https://github.com/lucaslouca)
+* [Fix Korean translation of split-view menu items](https://github.com/adobe/brackets/pull/10477) by [mixed](https://github.com/mixed)
+* [Update README.md](https://github.com/adobe/brackets/pull/10672) by [coliff](https://github.com/coliff)
+* [Update README.md](https://github.com/adobe/brackets/pull/10690) by [coliff](https://github.com/coliff)
+* [#10574  Adjust file tree click behavior, don't collapse parent folder](https://github.com/adobe/brackets/pull/10652) by [mellolikejello](https://github.com/mellolikejello)
+* [Fixed Bug #10632](https://github.com/adobe/brackets/pull/10694) by [PlanetVaster](https://github.com/PlanetVaster)
+* [Don't cut off parts of the new name when renaming](https://github.com/adobe/brackets/pull/10648) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Remove some circular dependencies](https://github.com/adobe/brackets/pull/10641) by [Triangle717](https://github.com/le717)
+* [Don't wrap file names in working set](https://github.com/adobe/brackets/pull/10709) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [[#10166] Highlight 'text/ng-template' (Angular) in script tags as HTML](https://github.com/adobe/brackets/pull/10666) by [munxtwo](https://github.com/munxtwo)
+* [Abose/win hi dpi hdc leak](https://github.com/adobe/brackets-shell/pull/508) by [abose](https://github.com/abose)
+* [Make LiveDevMultiBrowser's Launcher instance configurable via public set Launcher() method](https://github.com/adobe/brackets/pull/10558) by [David Humphrey](https://github.com/humphd)
+* [Render file tree without a delay on scroll to fix selection extension issues](https://github.com/adobe/brackets/pull/10689) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [std::auto_ptr will leak for array, using std::vector instead.](https://github.com/adobe/brackets-shell/pull/504) by [edwin0cheng](https://github.com/edwin0cheng)
+* [Update strings.js for HR(croatian)](https://github.com/adobe/brackets/pull/10736) by [Kruno H](https://github.com/diomed)
+* [Add @sourceFontFamily LESS variable and use instead of SourceCodePro font-family](https://github.com/adobe/brackets/pull/10727) by [David Humphrey](https://github.com/humphd)
+* [Exclude more unneeded files in dist builds](https://github.com/adobe/brackets/pull/10219) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Increase timeout for deleting temp directory](https://github.com/adobe/brackets/pull/10758) by [mdewangan](https://github.com/mdewangan)
+* [Add pt-br translate (update)](https://github.com/adobe/brackets/pull/10771) by [Henrique Aparecido Lavezzo](https://github.com/Rynaro)
+* [Indonesian translation updates](https://github.com/adobe/brackets/pull/10713) by [Resi Respati](https://github.com/resir014)
+* [Change 'split selection into lines' shortcut on Linux](https://github.com/adobe/brackets/pull/10742) by [Projjol](https://github.com/Projjol)
+
 
 #### Pulling source code from Git
 _TODO: any brackets-shell updates? which of the below messages are applicable?_
