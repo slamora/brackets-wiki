@@ -1,4 +1,4 @@
-Status: **Proposal**. We have not started on any implementation of the features described here.
+Status: **In Development**. We are planning to ship phase 1 in the 1.3 release.
 
 ## Introduction
 
