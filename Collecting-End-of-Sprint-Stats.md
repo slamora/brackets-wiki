@@ -1,3 +1,7 @@
+## History of Brackets stats
+
+[This public Google spreadsheet](https://docs.google.com/spreadsheets/d/1xCQh0Ii-MaVcqn-MdF-zDFy3quDBhEHZPeiOEmmITgM/edit?usp=sharing) includes stats starting from Brackets's very first public release all the way to the present. Be sure to check the tabs at bottom for graph views.
+
 ## Stats for the release about to ship
 
 #### Commits & files
@@ -27,6 +31,25 @@ We usually look at the following stats:
 #### Locales
 
 To see if there were any **new locales**, compare the set of folders under `src/nls` in this sprint vs. the previous sprint. You can also `git difftool release-0.XX...release-0.YY -- src/nls` to gather a list of **updated locales**. (Or just look at the "Community contributions to Brackets" list in the Release Notes).
+
+#### Lines of JS Code
+
+Use the [Lines of Code Counter for JavaScript](https://github.com/peterflynn/simple-sloc-counter) extension, with these exclusions:
+
+```
+/thirdparty/
+/3rdparty/
+/node_modules/
+/bootstrap-
+/test/smokes/
+/test/lib/
+-test-files/
+-test-files-
+-known-goods/
+-perf-files/
+/unittest-files/
+/testfiles/
+```
 
 #### Bugs
 
