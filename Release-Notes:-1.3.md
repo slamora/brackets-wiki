@@ -5,8 +5,12 @@ _This page will not be finalized until the end of Release 1.3 -- approximately A
 What's New in Release 1.3
 -------------------------
 * _**TODO: draft**_
-* **TODO: category heading**
-   * _TODO: feature list_
+* **Code Editing**
+   * **[Expand/collapse blocks of code (aka code folding)](https://github.com/adobe/brackets/pull/10792):** Click the indicators next to the line numbers, or use the shortcuts in the View menu.
+* **Brackets Health Report**
+    * [Anonymous data to help improve Brackets](http://blog.brackets.io/2015/03/27/introducing-brackets-health-report/): You can preview the data that will be sent, and opt-out if desired. We've gone to great lengths to protect your privacy and maintain transparency about what data is sent - please read our [blog post](http://blog.brackets.io/2015/03/27/introducing-brackets-health-report/) for details.
+* **Search**
+    * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
 * **Localization**
    * Translation updates for: _(TODO - updated locales in alphabetical order)_
 
@@ -16,8 +20,8 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release
 
 UI Changes
 ----------
-**TODO** / or
-No major changes to existing features.
+**Quick Open** - The first item is automatically highlighted, making it more clear that you can press Enter immediately to jump to the top item (Down arrow not required). Pressing the Down arrow once highlights the 2nd item in the result (previously required two presses). Quick Find Definition no longer changes the scroll position before you start typing.
+
 
 
 API Changes
@@ -31,12 +35,13 @@ New/Improved Extensibility APIs
 
 Known Issues
 ------------
-* Activity Monitor in Mavericks (OS X 10.9) says the Brackets Helper process is "Not Responding" even when it's working normally ([#5794](https://github.com/adobe/brackets/issues/5794)). You can safely ignore this unless Brackets is actually failing to respond when you click or type text.
 * _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
 
 
 Community contributions to Brackets
 -----------------------------------
+* _**Special thanks to [Patrick Oladimeji](https://github.com/thehogfather)** for his major effort contributing the [code folding feature](https://github.com/adobe/brackets/pull/10792)._
+
 **TODO**
 * [FR typo fix](https://github.com/adobe/brackets/pull/10625) by [pantkowiak](https://github.com/pantkowiak)
 * [Fix #10229. Add executable bit to Linux launcher.](https://github.com/adobe/brackets/pull/10267) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
