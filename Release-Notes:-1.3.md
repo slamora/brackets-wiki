@@ -1,6 +1,6 @@
 _This is a draft!_
 --------------------
-_This page will not be finalized until the end of Release 1.3 -- approximately April 13._
+_This page will not be finalized until the end of Release 1.3 -- approximately April 15._
 
 What's New in Release 1.3
 -------------------------
@@ -11,6 +11,9 @@ What's New in Release 1.3
     * [Anonymous data to help improve Brackets](http://blog.brackets.io/2015/03/27/introducing-brackets-health-report/): You can preview the data that will be sent, and opt-out if desired. We've gone to great lengths to protect your privacy and maintain transparency about what data is sent - please read our [blog post](http://blog.brackets.io/2015/03/27/introducing-brackets-health-report/) for details.
 * **Search**
     * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
+* **Command Line Integration**
+   * [Command Line tool integration on Windows and MAC](https://github.com/adobe/brackets/wiki.Command-Line-Arguments): You can now open a file or a folder, in Brackets just by typing `Brackets myFile.txt` or `Brackets myFolder` from command line. Also on Windows, you can launch Brackets from *Run Command* or open a file or a folder right from the explorer just by choosing "Open With Brackets" from it's context menu.
+
 * **Localization**
    * Translation updates for: _(TODO - updated locales in alphabetical order)_
 
