@@ -4,7 +4,6 @@ _This page will not be finalized until the end of Release 1.3 -- approximately A
 
 What's New in Release 1.3
 -------------------------
-* _**TODO: draft**_
 * **Code Editing**
    * **[Expand/collapse blocks of code (aka code folding)](https://github.com/adobe/brackets/pull/10792):** Click the indicators next to the line numbers, or use the shortcuts in the View menu.
 * **Brackets Health Report**
@@ -12,8 +11,7 @@ What's New in Release 1.3
 * **Search**
     * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
 * **Command Line Integration**
-   * [Command Line tool integration on Windows and Mac](https://github.com/adobe/brackets/wiki.Command-Line-Arguments): You can now open files and folders, in Brackets just by typing `Brackets myFile.txt` or `Brackets myFolder` from command line. Also on Windows, you can launch Brackets from *Run Command* or open a file or a folder right from the explorer just by choosing "Open With Brackets" from it's context menu.
-
+   * [Launch Brackets from command line](https://github.com/adobe/brackets/wiki.Command-Line-Arguments): On Windows & Mac, you can open files and folders in Brackets by typing `Brackets myFile.txt` or `Brackets myFolder` on the command line. On Windows, you can also launch Brackets from *Run Command* or open a file or a folder right from the explorer just by choosing "Open With Brackets" from it's context menu.
 * **Localization**
    * Translation updates for: _(TODO - updated locales in alphabetical order)_
 
@@ -30,6 +28,8 @@ UI Changes
 API Changes
 -----------
 **TODO**
+
+**Themes** - Themes should include appropriate color styles for the new code folding UI: `.CodeMirror-foldgutter-open:after`, `.CodeMirror-foldgutter-folded:after`, `.CodeMirror.over-gutter .CodeMirror-foldgutter-open:after`, `.CodeMirror-activeline .CodeMirror-foldgutter-open:after`, and `.CodeMirror-foldmarker`. All these elements appear overlaid on top of the theme's editor (or editor gutter) background color.
 
 New/Improved Extensibility APIs
 -------------------------------
