@@ -209,8 +209,8 @@ These are all the settings that are currently supported:
 | `language.fileExtensions` | `undefined` | Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | `language.fileNames` | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | `linting.enabled` | `true` | Determines if Code Inspection is on |
-| `linting.prefer` | `undefined` | *Since v.1.1.* Array of linters (`CodeInspection` providers) to run first. For example: `["JSLint", "JSHint"]`. If provider on the list is not installed, it will be silently ignored. By default, all the linters will be run. |
-| `linting.usePreferredOnly` | `false` | *Since v.1.1.* If set to `true`, then only providers specified in `linting.prefer` will be run (if installed). |
+| `linting.prefer` | `undefined` | *Since 1.1.* Array of linters (`CodeInspection` providers) to run first. For example: `["JSLint", "JSHint"]`. If provider on the list is not installed, it will be silently ignored. By default, all the linters will be run. |
+| `linting.usePreferredOnly` | `false` | *Since 1.1.* If set to `true`, then only providers specified in `linting.prefer` will be run (if installed). |
 | `maxCodeHints` | `50` | Maximum code hints displayed at once |
 | `proxy` | `undefined` | The URL of the proxy server used for extension installation (general syntax: "http://username:password&#8203;@server:port/") |
 | `scrollPastEnd` | `false` | True to be able to scroll beyond the end of the document |
@@ -223,8 +223,16 @@ These are all the settings that are currently supported:
 | `staticserver.port` | | Port number that the built-in server should use for Live Preview |
 | `tabSize` | `4` | Number of spaces to display for tabs |
 | `useTabChar` | `false` | True to use tabs instead of spaces |
-| `uppercaseColors` | `false` | True to use uppercase colors in Inline Color Editor |
-| `wordWrap` | `true` | True if word wrap is on |
+| `uppercaseColors` | `false` | Generate uppercase hex colors in Inline Color Editor |
+| `wordWrap` | `true` | Wrap lines that exceed the viewport width |
+| `styleActiveLine` | `false` | Highlight background color of the line the cursor is on |
+| `showLineNumbers` | `true` | Show line numbers in a "gutter" to the left of the code |
+| `code-folding.enabled` | `true` | _Since 1.3._ True to show collapsible section indicators in the gutter. Disabling code folding also hides its View menu items |
+| `code-folding.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
+| `code-folding.hideUntilMouseover` | `false` | _Since 1.3_ Section-collapsing markers are only visible when you move the mouse over the gutter. May improve performance |
+| `code-folding.minFoldSize` | `2` | _Since 1.3._ Blocks must be > _minFoldSize_ lines long (including opening and closing lines) before a collapsible section icon appears |
+| `code-folding.alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
+| `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
 
 #### Example preferences .json file
 
