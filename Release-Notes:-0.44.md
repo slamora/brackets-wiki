@@ -30,6 +30,8 @@ API Changes
 
 **Coding Style** - Brackets core code should no longer contain any unused variables. The Travis build will automatically fail for pull requests that don't adhere to this.
 
+**ProjectManager** - The `"projectRefresh"` event is no longer triggered. See "File list decorators" below for a new, more robust API for modifying project-tree rendering.
+
 New/Improved Extensibility APIs
 -------------------------------
 **File list decorators** - To modify the appearance of the Working Files list or the project tree below it, extensions can register decoration providers to add icons or arbitrary CSS. Use `WorkingSetView.addIconProvider()`, `WorkingSetView.addClassProvider()`, `ProjectManager.addIconProvider()`, or `ProjectManager.addClassesProvider()`.
