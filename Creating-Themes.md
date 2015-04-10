@@ -91,24 +91,22 @@ Tips for creating your theme's CSS:
 * Starting with an [existing theme](https://github.com/adobe/brackets/blob/master/src/extensions/default/DarkTheme/main.less) is always easier
 * Use the Dev Tools element inspector (`Debug > Show Developer Tools`) to view the elements in the editor
 * You can customize the styles within an inline code editor by adding `.inline-widget .CodeMirror` to your CSS selector. The inline code editor's background color should typically be slightly darker or lighter than your main editor background color, for contrast.
-* Watch out for the colors that aren't displayed all the time:
+* Watch out for these colors that aren't displayed all the time:
     * matching brackets - `.CodeMirror-matchingbracket`
     * matching tags in HTML - `.CodeMirror-matchingtag`
     * matches for the "Find" command
-        * Release 0.42 - _Tricky: see below_
-        * Release 0.43 - `.CodeMirror-searching` (all matches), `.CodeMirror-searching.searching-current-match` (current match)
+        * `.CodeMirror-searching` (all matches), `.CodeMirror-searching.searching-current-match` (current match)
     * matches for the ["highlightMatches"](https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#preferences) auto word highlighting - `.cm-matchhighlight`
     * the highlight for the active line (`View > Highlight Active Line`) - `.CodeMirror-focused .CodeMirror-activeline-background` and `.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt` (line numbers shown) or `.show-line-padding .CodeMirror-focused .CodeMirror-activeline-background` (line numbers hidden).
     * the Quick View hover highlight - `.quick-view-highlight`
     * cursor in overwrite mode - `.CodeMirror-overwrite .CodeMirror-cursor`
-* [Known issue](https://github.com/adobe/brackets/issues/8490): Make sure your LESS file doesn't end with a comment (if it does, add a blank line afterward).
+    * code folding gutter triangles - `.CodeMirror-foldgutter-open:after`, `.CodeMirror-foldgutter-folded:after`, `.CodeMirror.over-gutter .CodeMirror-foldgutter-open:after`, `.CodeMirror-activeline .CodeMirror-foldgutter-open:after`
+    * code folding collapsed-text placeholders - `.CodeMirror-foldmarker` (border, fill, and fg icon/text color)
 * Don't set the editor font to a web font (`@font-face`) - this will cause cursor positioning glitches. Note that users can also override the font set by your extension via the View > Themes dialog.
-
-**Search result highlighting** _(0.42 only)_ - All Find results are indicated by the same highlight style; the "current" result also has its text selected. Since it's hard to style `.CodeMirror-searching` with a transparent background that looks good atop both the regular editor background and the text selection color (and makes those two cases visually distinct), you can use a trick for more flexibility: change text selection to a different color while searches are in progress (a text selection will _never_ be visible without `.CodeMirror-searching` overlaid on top of it, while a search is in progress). [See the base theme for an example of this in action](https://github.com/adobe/brackets/blob/master/src/styles/brackets.less#L1326-L1352).
 
 ## What about other UI elements?
 
-Brackets and other editors separate the notion of "editor themes" from that of "UI themes". Editor themes provide colors for the text editor area based on the syntax highlighting engine of the editor. UI themes can style the rest of the UI.
+Brackets and other editors separate the notion of "editor themes" from that of "UI themes". Editor themes provide colors for the text editor area based on the syntax highlighting engine of the editor. UI themes can style the whole rest of the UI.
 
 Editor themes have certain advantages. They are:
 
@@ -116,7 +114,7 @@ Editor themes have certain advantages. They are:
 * easier to test because you don't need to look through the whole UI to see the impact of changes
 * less likely to break between Brackets releases, because the Brackets DOM can change at any time
 
-As of release 0.42, Brackets *only* supports editor themes.
+Brackets currently *only* supports editor themes.
 
 Inline editors other than inline code editors (for example, the inline color editor), are considered "UI" and should not be styled by editor themes.
 
