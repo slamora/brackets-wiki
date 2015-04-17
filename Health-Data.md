@@ -27,11 +27,11 @@ The data will be anonymized and turning off data collection will be easy and the
 These are the pieces of information we look to collect in the first iteration of the feature. This is high-value and easy to collect.
 
 * UUID
+* User Agent String
 * Snapshot time (UTC)
 * Brackets Version
 * OS
 * OS version
-* OS language
 * Brackets language
 * List of installed extensions *that are available in the registry* and their versions
 
