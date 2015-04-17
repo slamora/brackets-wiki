@@ -1,4 +1,4 @@
-#Brackets-App Command Line Argument Processing
+#Brackets Command Line Tools
 
 ## Introduction
 Starting with the 1.3 release, Mac and Windows users can open Brackets from the command line. Mac users can install the command line tools by going to the _File_ menu and selecting _Install Command Line Shortcut_. Windows users can install the command line tools by leaving the _Add "brackets" launcher to PATH for command line use_ checkbox checked when they install Brackets 1.3.
