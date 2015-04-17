@@ -9,14 +9,11 @@ When the command line tool has been set up correctly, the `brackets` command wil
 
 Some example usage:
 
-Open the current folder in Brackets
-`brackets .`
+Open the current folder in Brackets: `brackets .`
 
-Open `index.html` in the current folder in Brackets
-`brackets index.html`
+Open `index.html` in the current folder in Brackets: `brackets index.html`
 
-Open up a specific folder
-`brackets ~/Sites/mysite`
+Open up a specific folder: `brackets ~/Sites/mysite`
 
 ## How to Remove/Undo the Command Line Tools
 
