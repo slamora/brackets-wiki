@@ -1,9 +1,28 @@
 #Brackets-App Command Line Argument Processing
 
-<br>_**Question**: Should this be merged with [[Brackets shell command line arguments (proposal)]]?_
+## Introduction
+Starting with the 1.3 release, Mac and Windows users can open Brackets from the command line. Mac users can install the command line tools by going to the File menu and selecting "Install Command Line Shortcut". Windows users can install the command line tools by leaving the "Add 'brackets' launcher to PATH for command line use" checkbox checked when they install Brackets 1.3.
 
-## Overview
-Currently, all interaction within the Brackets application must be performed interactively by the user.  This includes the act of opening files and folder trees for editing.  While this might be acceptable for most cases, it is desirable for the brackets shell application to be configurable at launch time via arguments specified at launch.
+## How to Use the Command Line Tool
+
+When the command line tool has been set up correctly, the `brackets` command will work from the Terminal (Mac) and Command Prompt (Windows) in any folder. Following the `brackets` command with a file or folder path will open that file or folder in Brackets. If Brackets is open, it will open it in the current window. If Brackets is not open it will open Brackets and display the file/folder.
+
+Some example usage:
+
+Open the current folder in Brackets
+`brackets .`
+
+Open `index.html` in the current folder in Brackets
+`brackets index.html`
+
+Open up a specific folder
+`brackets ~/Sites/mysite`
+
+## How to Remove/Undo the Command Line Tools
+
+## Troubleshooting
+
+## Linux
 
 ## Future Ideas
 ### Arguments on Launch
@@ -19,5 +38,3 @@ Currently, all interaction within the Brackets application must be performed int
 ### Interaction with Extensions
 
 ## Implementation Notes
-
-### Boost program.options?
