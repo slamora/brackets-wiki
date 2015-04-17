@@ -11,7 +11,7 @@ What's New in Release 1.3
 * **Search**
     * [Quick Open: many small bug fixes](https://github.com/adobe/brackets/pull/7227)
 * **Command Line Integration**
-   * [Launch Brackets from command line](https://github.com/adobe/brackets/wiki.Command-Line-Arguments): On Windows & Mac, you can open files and folders in Brackets by typing `Brackets myFile.txt` or `Brackets myFolder` on the command line. On Windows, you can also launch Brackets from *Run Command* or open a file or a folder right from the explorer just by choosing "Open With Brackets" from it's context menu.
+   * [Launch Brackets from command line](https://github.com/adobe/brackets/wiki.Command-Line-Arguments): On Windows & Mac, you can open files and folders in Brackets by typing `brackets myFile.txt` or `brackets myFolder` on the command line. On Windows, you can also launch Brackets from *Run Command* or open a file or a folder right from the explorer just by choosing "Open With Brackets" from it's context menu.
 * **Localization**
    * Translation updates for: _(TODO - updated locales in alphabetical order)_
 
