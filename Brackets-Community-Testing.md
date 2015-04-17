@@ -9,9 +9,15 @@ All help from community is welcome, so we provide builds on all platforms.
 Installer builds will be provided as a [Github Release](https://github.com/adobe/brackets/releases)
 using prerelease flag. First set of builds are made from release branch.
 Additional builds will be made as necessary (i.e. may not need a new build
-if only update are string changes).
+if only update are string changes). _Always uninstall prerelease builds_ before installing the next build - otherwise the later build may not install correctly (since it will have the same version number).
 
-Testing using cloned version of Brackets on latest release branch is also welcome.
+To extract a Windows build without installing it, run:<br>
+`msiexec /a <path to .msi file> /qb TARGETDIR=<destination folder abs path>`<br>
+(if there are spaces in either path, make sure to use quotes)
+
+This will extract the files without actually running a "real" install ([see this info](http://superuser.com/questions/307678/how-to-extract-files-from-msi-package)) - ignore the smaller .msi file that it extracts and look in the 'Brackets' folder next to it.
+
+You can also [clone the Brackets source from git](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets) and checkout the `release` branch for testing.
 
 
 ## Testing Instructions
