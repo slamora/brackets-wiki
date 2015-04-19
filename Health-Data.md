@@ -4,13 +4,9 @@
 
 [Read the full blog post here](http://blog.brackets.io/2015/03/27/introducing-brackets-health-report/).
 
-Understanding how people use an app helps decide what to build, prioritize when to build it, spot usability problems, and find lurking bugs. As the Brackets project has grown, we need a better picture of how people are using Brackets so we can continue making it more awesome.
+Understanding how people use an app helps decide what to build, prioritize when to build it, spot usability problems, and find lurking bugs. As the Brackets project has grown, we need real-world data to get a better picture of how people are using Brackets so we can continue making it even more awesome.
 
-Right now, we have little information about the experience people have with Brackets. How long does it take to start up? How quickly can they switch files? How about switching projects? Have they experienced crashes or hangs recently? Are there unnoticed error messages appearing on the dev tools console? Extensions inject even more variability into Brackets's performance and stability.
-
-Rather than relying on guesswork, we think the best approach is to gather real-world usage data. For many users, Brackets is an application they use all day long. Being able to tune Brackets to run well everywhere is important both to users of Brackets and to the project as a whole.
-
-But Brackets isn't just any app – it's open-source, and for a developer tool privacy must be the absolute #1 priority. We only want to gather information in a way that is _transparent and respectful_ to our users. We've looked to other open source projects, particularly the [Firefox Health Report](https://blog.mozilla.org/metrics/2012/09/21/firefox-health-report/) (FHR), as models.
+But Brackets isn't just any app – it's open-source, and for a developer tool privacy must be the absolute #1 priority. We only want to gather information in a way that is _transparent and respectful_ to our users. We've looked to other open source projects (particularly the [Firefox Health Report](https://blog.mozilla.org/metrics/2012/09/21/firefox-health-report/)) as models.
 
 Brackets Health Report is:
 
