@@ -46,6 +46,7 @@ No new extensibility APIs added this release.
 
 Known Issues
 ------------
+* Dialog box title bars are larger than usual and the Extension Manager window appears off-center, due to an Extract for Brackets CSS bug. Will be fixed soon by an extension update.
 * _Debug > Run Tests_ is disabled in the installer/DMG distributions of Brackets, because the unit test code is not included. To run unit tests, [pull Brackets from GitHub](https://github.com/adobe/brackets/wiki/How-to-Hack-on-Brackets#wiki-getcode) instead.
 
 
