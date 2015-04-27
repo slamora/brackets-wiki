@@ -244,6 +244,7 @@ These are all the settings that are currently supported:
 | `code-folding.minFoldSize` | `2` | _Since 1.3._ Blocks must be > _minFoldSize_ lines long (including opening and closing lines) before a collapsible section icon appears |
 | `code-folding.alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
 | `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
+| `healthData.healthDataTracking` | `true` | _Since 1.3._ Enable the Health Data Tracking |
 
 #### Example preferences .json file
 
