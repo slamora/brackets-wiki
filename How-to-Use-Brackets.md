@@ -246,7 +246,7 @@ These are all the settings that are currently supported:
 | `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
 | `healthData.healthDataTracking` | `true` | _Since 1.3._ Enable the Health Data Tracking |
 
-#### Example preferences .json file
+#### A Sample preferences JSON file:-
 
 ```json
 {
