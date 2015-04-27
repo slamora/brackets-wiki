@@ -95,7 +95,7 @@ See **[Live Preview troubleshooting](https://github.com/adobe/brackets/wiki/Trou
 )** for additional help.
 
 ##### Experimental Live Preview
- Experimental multi-browser live preview can be enabled/disabled Under “File -> Enable Experimental Live Preview” menu. This addresses some of the limitations of current Live Preview. 
+ Experimental multi-browser live preview can be enabled/disabled Under **File > Enable Experimental Live Preview** menu. This addresses some of the limitations of current Live Preview. 
 * Target multiple browsers and preview on them simultaniously.
 * Developer Tools in chrome can be opened without interrupting the Live Preview workflow.
 
@@ -110,7 +110,7 @@ Other Features
 
 ### Command Line Integration
 
-Brackets can be launched from command line- `brackets <file/folder/nothing>` on Windows and Mac. On Windows, you can even right-click on a file/folder from Windows Explorer and select "Open With Brackets"/"Open as Brackets Project" respectively to launch Brackets.
+Brackets can be launched from command line- using `brackets <file/folder/nothing>` on Windows and Mac. On Windows, you can even right-click on a file/folder from Windows Explorer and select "Open With Brackets"/"Open as Brackets Project" respectively to launch Brackets.
 
 ### Code Folding
 
@@ -153,6 +153,9 @@ JSLint is very picky about formatting. JSLint is very picky about a lot of thing
 
 Various extensions are available that replace JSLint with a different linting tool.
 
+### Brackets Health Report
+
+Anonymous data to help improve Brackets. You can preview the data that will be sent, or opt-out if desired. We've gone to great lengths to protect your privacy and maintain transparency - see **Help > Health Report** for details.
 
 Keyboard Shortcut Cheat Sheet
 -----------------------------
@@ -180,7 +183,7 @@ There is not yet a global user interface for all preferences (so the required "P
 
 #### Scope of preferences
 
-* **User-global preferences** - your default settings. To edit, choose _Debug > Open Preferences File_.
+* **User-global preferences** - your default settings. To edit, choose **Debug > Open Preferences File**.
 * **Project-level preferences** - override any number of preferences on a project-specific basis. Create a `.brackets.json` file in the root of your project.
 
 Changing a preference using the Brackets UI modifies the project's `.brackets.json` file _if_ the preference is already set there; otherwise it modifies the user-global setting.
