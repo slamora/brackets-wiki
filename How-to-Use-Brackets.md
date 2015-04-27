@@ -108,6 +108,14 @@ a preview. You can disable this feature in the View menu.
 Other Features
 --------------
 
+### Command Line Integration
+
+Brackets can be launched from command line- `brackets <file/folder/nothing>` on Windows and Mac. On Windows, you can even right-click on a file/folder from Windows Explorer and select "Open With Brackets"/"Open as Brackets Project" respectively to launch Brackets.
+
+### Code Folding
+
+With Brackets, you can expand/collapse blocks of code using indicators next to the line numbers, or via keyboard shortcuts.
+
 ### Multiple Selections
 
 Brackets supports multiple cursors, multiple selections, and rectangular selections, as well as Undo Selection and useful commands like Add Next Match to Selection. See [[Working with Multiple Selections]] for more information.
