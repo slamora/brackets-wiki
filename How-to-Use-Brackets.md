@@ -53,7 +53,7 @@ You can open _multiple_ inline editors and docs viewers simultaneously. To close
 
 
 ### <a id="livedev"></a>Live Preview
-Brackets works directly with your browser to push code edits instantly, so your browser preview is always up to date while you're coding — no page reloads needed.
+Brackets works directly with your browser to push code edits instantly, so your browser preview is always up to date while you're coding — no page reloads needed. In order to keep your current web browsing unaffected, Brackets Live Preview opens an *additional copy of Chrome* using a separate Chrome profile.
 
 There are two different ways to use Live Preview:
 
