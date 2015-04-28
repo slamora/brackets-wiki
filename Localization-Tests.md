@@ -1,4 +1,4 @@
-These steps are designed to walk you through almost every piece of the Brackets UI. This especially valuable when working on localization since it lets you see every string in the context it's used in.
+These steps are designed to walk you through almost every piece of the Brackets UI. This is especially valuable when working on localization since it lets you see every string in the context it's used in.
 
 ### Tip on Mac/Unix (Optional)
 Using Symbolic links, you can test your localization directly in the APP. (Sprint version 26.)
@@ -47,7 +47,7 @@ $ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 2. Extension Manager
 
 ### About
-1. On mac, ``Brackets > About Brackets``. On win, ``Help > About``
+1. On Mac, ``Brackets > About Brackets``. On Windows, ``Help > About Brackets``
 2. Confirm about dialog text ``<dialog_about>``
 
 ### Sidebar
@@ -74,7 +74,7 @@ $ ln -s strings.js ~/path/to/forked/project/brackets/src/nls/lang/strings.js
 1. Click ``Navigate > Quick Open``
 2. Confirm the quick open UI appears at the top of the editor ``<dialog_quick_open>``
 
-### Error opening file (mac only)
+### Error opening file (Mac only)
 
 _On Windows, we have a backlog item to address the lack of an error message https://trello.com/c/lSdnZmBc_
 
@@ -117,7 +117,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 ### Directory Permissions
 
-1. In the operating system, remove **write** permissions from the ``css`` directory. On mac, use ``chmod 444 css``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
+1. In the operating system, remove **write** permissions from the ``css`` directory. On Mac, use ``chmod 444 css``. On Windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
 2. In Brackets, select the ``css`` directory in the project tree.
 3. Click ``File > New`` menu
 4. Hit Enter to accept the default name
@@ -126,7 +126,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 ### Write Permissions
 
-1. In the operating system, remove **write** permissions from ``index.html``. On mac, use ``chmod 444 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
+1. In the operating system, remove **write** permissions from ``index.html``. On Mac, use ``chmod 444 index.html``. On Windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Write" permission. Save permission changes when finished.
 2. In Brackets, open ``index.html``
 3. Make any edit to the file
 4. Click ``File > Save`` menu
@@ -135,7 +135,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 
 ### Read Permissions
 
-1. In the operating system, remove **read** permissions from ``index.html``. On mac, use ``chmod 0 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Read" permission. Save permission changes when finished.
+1. In the operating system, remove **read** permissions from ``index.html``. On Mac, use ``chmod 0 index.html``. On Windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Read" permission. Save permission changes when finished.
 2. In Brackets, open ``index.html``
 3. Confirm error opening file dialog ``<dialog_error_opening_file_not_readable>``
 4. In the operating system, restore the original file permissions to ``index.html``
@@ -148,14 +148,14 @@ _On Windows, we have a backlog item to address the lack of an error message http
 4. Dirty the file so that the last modified time metadata is updated
 5. Return to Brackets
 6. Confirm dialog ``<dialog_external_changes_reload>``
-7. In the operating system, remove **read** permissions from ``index.html``. On mac, use ``chmod 0 index.html``. On windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Read" permission. Save permission changes when finished.
+7. In the operating system, remove **read** permissions from ``index.html``. On Mac, use ``chmod 0 index.html``. On Windows, open the file properties dialog. Under "Security", click "Edit...". Choose your user account, then check the "Deny" checkbox for the "Read" permission. Save permission changes when finished.
 8. Return to Brackets
 9. Choose ``Reload from Disk``
 10. Confirm dialog ``<dialog_error_reloading_changes_from_disk>``
 11. Choose ``OK`` and confirm the file in Brackets is still dirty
 12. In the operating system, restore the original file permissions to index.html
 
-### File Encoding Error (mac only)
+### File Encoding Error (Mac only)
 
 1. Open ``index.html`` in a text editor that allows saving with a different encoding (e.g. Sublime Text 2)
 2. In the text editor save ``index.html`` with encoding: UTF-16 BE with BOM
@@ -227,6 +227,21 @@ _On Windows, we have a backlog item to address the lack of an error message http
 5. Confirm Replace in selected location UI appears at the top of the editor.
 6. Press escape to close the Replace bar.
 
+### Collapse/Expand Current Block of Code
+
+1. Place cursor randomly inside a file (like html,js,json,c,etc.).
+2. Click ``View > Collapse Current``
+3. Confirm that the innermost block (that the current location belongs to) gets collapsed.
+4. Click ``View > Expand Current``
+5. Confirm that the innermost block (that the current location belongs to) gets expanded.
+
+### Collapse/Expand All
+
+1. Click ``View > Collapse All``
+2. Confirm that all blocks of code in the file get collapsed. Inner blocks will be hidden inside outer ones.
+3. Click ``View > Expand All``
+4. Confirm that all blocks of code get expanded.
+
 ### JSLint
 
 1. Enable ``View > Enable JSLint`` (a checkmark will appear when enabled)
@@ -269,6 +284,15 @@ _On Windows, we have a backlog item to address the lack of an error message http
 3. Place cursor in ``href`` attribute of any ``<a>`` tag.
 4. Press ``CMD+E`` or ``Ctrl+E``.  Confirm popover message appears with "CSS Quick Edit: place cursor in tag, class, or id".
 
+# Brackets Health Report
+
+1. Click ``Help > Health Report``.
+2. Confirm that the Brackets Health Report dialog comes up.
+3. Confirm that it shows the option to enable/disable sharing data.
+4. Also confirm that it shows the data that would be sent if sharing is enabled.
+
+**NOTE: Health Data pop up appears for the very first launch of Brackets (v1.3 onwards).**
+
 # Quick Docs
 
 1. Open ``desktop.css``, place cursor in any CSS Property (e.g. "font-family").
@@ -291,7 +315,7 @@ _On Windows, we have a backlog item to address the lack of an error message http
 6. Confirm tooltip ``<tooltip_disconnect_live_file_preview>``
 7. Quit Chrome
 
-### Connection Error (mac only)
+### Connection Error (Mac only)
 1. Start Chrome
 2. Click ``File > Live Preview`` menu
 3. Confirm live preview error dialog ``<dialog_live_development_connection_error>``
