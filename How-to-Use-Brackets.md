@@ -205,7 +205,7 @@ These are all the settings that are currently supported:
 | `closeBrackets` | `false` | Automatically close braces, brackets and parentheses |
 | `closeOthers.above`,<br>`closeOthers.below`,<br>`closeOthers.others` | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
 | `closeTags` | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
-| `code-folding.alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
+| `code-folding .alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
 | `code-folding.enabled` | `true` | _Since 1.3._ True to show collapsible section indicators in the gutter. Disabling code folding also hides its View menu items |
 | `code-folding.hideUntilMouseover` | `false` | _Since 1.3_ Section-collapsing markers are only visible when you move the mouse over the gutter. May improve performance |
 | `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
