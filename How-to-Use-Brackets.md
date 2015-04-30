@@ -205,6 +205,12 @@ These are all the settings that are currently supported:
 | `closeBrackets` | `false` | Automatically close braces, brackets and parentheses |
 | `closeOthers.above`,<br>`closeOthers.below`,<br>`closeOthers.others` | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
 | `closeTags` | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
+| `code-folding.alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
+| `code-folding.enabled` | `true` | _Since 1.3._ True to show collapsible section indicators in the gutter. Disabling code folding also hides its View menu items |
+| `code-folding.hideUntilMouseover` | `false` | _Since 1.3_ Section-collapsing markers are only visible when you move the mouse over the gutter. May improve performance |
+| `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
+| `code-folding.minFoldSize` | `2` | _Since 1.3._ Blocks must be > _minFoldSize_ lines long (including opening and closing lines) before a collapsible section icon appears |
+| `code-folding.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
 | `codehint.AttrHints` | `true` | Enable/disable HTML attribute hints |
 | `codehint.CssPropHints` | `true` | Enable/disable CSS/LESS/SCSS property hints |
 | `codehint.JSHints` | `true` | Enable/disable JavaScript code hints |
@@ -213,6 +219,7 @@ These are all the settings that are currently supported:
 | `codehint.TagHints` | `true` | Enable/disable HTML tag hints |
 | `codehint.UrlCodeHints` | `true` | Enable/disable URL hints in HTML & CSS/LESS/SCSS |
 | `dragDropText` | `false` | Enable/disable Drag & Drop functionality |
+| `healthData.healthDataTracking` | `true` | _Since 1.3._ Enable the Health Data Tracking |
 | `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` — highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` — highlight all strings that match the token the cursor is currently in (no selection needed)</li><li>`{"wordsOnly": true}` — highlight only when selection is a complete token</li></ul> |
 | `insertHintOnTab` | `false` | True to insert the currently selected code hint on tab |
 | `jscodehints.noHintsOnDot` | `false` | If true, do not automatically show JS code hints when `.` is typed. |
@@ -227,24 +234,17 @@ These are all the settings that are currently supported:
 | `scrollPastEnd` | `false` | True to be able to scroll beyond the end of the document |
 | `showCodeHints` | `true` | If false, all code hints are disabled |
 | `showCursorWhenSelecting` | `false` | Keeps the blinking cursor visible when you have a text selection |
+| `showLineNumbers` | `true` | Show line numbers in a "gutter" to the left of the code |
 | `smartIndent` | `true` | Automatically indent when creating a new block |
 | `softTabs` | `true` | False to turn off soft tabs behaviour |
 | `sortDirectoriesFirst` | `false` for Mac, `true` otherwise | True to sort the directories first in the project tree |
 | `spaceUnits` | `4` | Number of spaces to use for space-based indentation |
 | `staticserver.port` | | Port number that the built-in server should use for Live Preview |
+| `styleActiveLine` | `false` | Highlight background color of the line the cursor is on |
 | `tabSize` | `4` | Number of spaces to display for tabs |
 | `useTabChar` | `false` | True to use tabs instead of spaces |
 | `uppercaseColors` | `false` | Generate uppercase hex colors in Inline Color Editor |
 | `wordWrap` | `true` | Wrap lines that exceed the viewport width |
-| `styleActiveLine` | `false` | Highlight background color of the line the cursor is on |
-| `showLineNumbers` | `true` | Show line numbers in a "gutter" to the left of the code |
-| `code-folding.enabled` | `true` | _Since 1.3._ True to show collapsible section indicators in the gutter. Disabling code folding also hides its View menu items |
-| `code-folding.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
-| `code-folding.hideUntilMouseover` | `false` | _Since 1.3_ Section-collapsing markers are only visible when you move the mouse over the gutter. May improve performance |
-| `code-folding.minFoldSize` | `2` | _Since 1.3._ Blocks must be > _minFoldSize_ lines long (including opening and closing lines) before a collapsible section icon appears |
-| `code-folding.alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
-| `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
-| `healthData.healthDataTracking` | `true` | _Since 1.3._ Enable the Health Data Tracking |
 
 #### A Sample preferences JSON file:-
 
