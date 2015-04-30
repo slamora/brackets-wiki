@@ -210,7 +210,7 @@ These are all the settings that are currently supported:
 | `code-folding`&#8203;`.hideUntilMouseover` | `false` | _Since 1.3_ Section-collapsing markers are only visible when you move the mouse over the gutter. May improve performance |
 | `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
 | `code-folding.minFoldSize` | `2` | _Since 1.3._ Blocks must be > _minFoldSize_ lines long (including opening and closing lines) before a collapsible section icon appears |
-| `code-folding`&#8203;`.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
+| `code-folding.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
 | `codehint.AttrHints` | `true` | Enable/disable HTML attribute hints |
 | `codehint.CssPropHints` | `true` | Enable/disable CSS/LESS/SCSS property hints |
 | `codehint.JSHints` | `true` | Enable/disable JavaScript code hints |
