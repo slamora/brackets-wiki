@@ -205,12 +205,12 @@ These are all the settings that are currently supported:
 | `closeBrackets` | `false` | Automatically close braces, brackets and parentheses |
 | `closeOthers.above`,<br>`closeOthers.below`,<br>`closeOthers.others` | all `true` | False to remove the Close Others, Close Others Above, Close Others Below items from the Working Files context menu |
 | `closeTags` | `{"whenOpening": true, "whenClosing": true, "indentTags": []}` | Sets the tag closing options. See the [CodeMirror documentation](http://codemirror.net/addon/edit/closetag.js). |
-| `code-folding&#8203;.alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
+| `code-folding`&#8203;`.alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
 | `code-folding.enabled` | `true` | _Since 1.3._ True to show collapsible section indicators in the gutter. Disabling code folding also hides its View menu items |
-| `code-folding&#8203;.hideUntilMouseover` | `false` | _Since 1.3_ Section-collapsing markers are only visible when you move the mouse over the gutter. May improve performance |
+| `code-folding`&#8203;`.hideUntilMouseover` | `false` | _Since 1.3_ Section-collapsing markers are only visible when you move the mouse over the gutter. May improve performance |
 | `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
 | `code-folding.minFoldSize` | `2` | _Since 1.3._ Blocks must be > _minFoldSize_ lines long (including opening and closing lines) before a collapsible section icon appears |
-| `code-folding&#8203;.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
+| `code-folding`&#8203;`.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
 | `codehint.AttrHints` | `true` | Enable/disable HTML attribute hints |
 | `codehint.CssPropHints` | `true` | Enable/disable CSS/LESS/SCSS property hints |
 | `codehint.JSHints` | `true` | Enable/disable JavaScript code hints |
