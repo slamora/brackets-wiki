@@ -8,6 +8,7 @@ Japanese (ja)
 See [this page](https://github.com/adobe/brackets/blob/master/src/nls/README.md#how-to-modify-existing-translations) if you want to provide translations to fr & ja.
 
 **Community-maintained translations**
+Contributors who would help with reviewing your translations.
 
 - Czech (cs)
 - Danish (da)
@@ -35,4 +36,5 @@ See [this page](https://github.com/adobe/brackets/blob/master/src/nls/README.md#
 - Turkish (tr)
 - Ukrainian (uk)
 - Simplified Chinese (zh-cn)
+  - @michaeljayt,  @mistyhua , @fengdi
 - Traditional Chinese (zh-tw)
