@@ -57,7 +57,7 @@ Brackets works directly with your browser to push code edits instantly, so your 
 
 There are two different ways to use Live Preview:
 
-**With no backend (i.e. server-side) logic** — Open an HTML file and select **File > Live Preview** (or click the "lightning bolt" icon). Brackets will launch Chrome and open your file in a new tab. The content is served statically from a built-in server that Brackets run — it doesn't contain any of your app's backend logic.
+**With no backend (i.e. server-side) logic** — Open an HTML file and select **File > Live Preview** (or click the "lightning bolt" icon). Brackets will launch Chrome and open your file in a new tab. The content is served statically from a built-in server that Brackets runs — it doesn't contain any of your app's backend logic.
 
 This mode offers the full range of Live Preview functionality:
 * Browser preview updates in real time as you type in HTML _and_ CSS files (without reloading)
