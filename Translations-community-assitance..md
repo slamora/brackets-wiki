@@ -24,7 +24,7 @@ Contributors who would help with reviewing your translations.
 - Indonesia (id)
 - Italian (it)
 - Korean (ko)
-  - @revi
+  - @revi, @ds5apn, @taggon
 - Norwegian (nb)
 - Dutch (nl)
 - Polish (pl)
