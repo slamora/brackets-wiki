@@ -14,6 +14,7 @@ Contributors who would help with reviewing your translations.
 - Czech (cs)
 - Danish (da)
 - German (de)
+  - @MarcelGerber, @ingorichter
 - Greek (el)
 - Spanish (es)
 - Persian-Farsi (fa-ir)
@@ -39,5 +40,5 @@ Contributors who would help with reviewing your translations.
 - Turkish (tr)
 - Ukrainian (uk)
 - Simplified Chinese (zh-cn)
-  - @michaeljayt,  @mistyhua , @fengdi
+  - @michaeljayt, @mistyhua, @fengdi
 - Traditional Chinese (zh-tw)
