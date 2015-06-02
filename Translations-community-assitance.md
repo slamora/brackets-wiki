@@ -1,6 +1,6 @@
 This page provides a list of community contributors who help with [Brackets translations](https://github.com/adobe/brackets/blob/master/src/nls/README.md). In case you need you translations be reviewed by the brackets community. 
 
-NB: If you do no want your GitHub handle to be listed here, please file an issue in brackets. we will remove it ASAP. 
+NB: If you do no want your GitHub handle to be listed here, please file an issue in brackets titled `I Work For Edward Snowden`. we will remove it ASAP. 
 
 NBB: Adobe provides translations for the following languages:
 French (fr)
