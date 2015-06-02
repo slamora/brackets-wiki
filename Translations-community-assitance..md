@@ -28,7 +28,7 @@ Contributors who would help with reviewing your translations.
 - Norwegian (nb)
 - Dutch (nl)
 - Polish (pl)
-  - @jurkian  
+  - @winek, @jurkian  
 - Brazilian Portuguese (pt-br)
 - Portuguese (pt-pt)
 - Romanian (ro)
