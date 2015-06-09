@@ -373,6 +373,20 @@ So, if you create a new extension for Brackets, follow the same process and add 
     </tr>
     <tr>
         <td class="shortcut-base">U</td>
+        <td class="shortcut-binding">Alt-U</td>
+        <td class="shortcut-cmd-id">redoSelection</td>
+        <td class="shortcut-cmd-name">redoSelection</td>
+        <td class="shortcut-orig">CodeMirror</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">U</td>
+        <td class="shortcut-binding">Ctrl-U</td>
+        <td class="shortcut-cmd-id">undoSelection</td>
+        <td class="shortcut-cmd-name">undoSelection</td>
+        <td class="shortcut-orig">CodeMirror</td>
+    </tr>
+    <tr>
+        <td class="shortcut-base">U</td>
         <td class="shortcut-binding">Ctrl-U</td>
         <td class="shortcut-cmd-id">convert_uppercase</td>
         <td class="shortcut-cmd-name">To Upper Case</td>
