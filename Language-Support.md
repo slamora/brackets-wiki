@@ -41,7 +41,7 @@ LanguageManager.defineLanguage("haskell", {
 
 #### Custom CodeMirror modes
 
-If your language is not already supported by CodeMirror (see list above), you'll need to [write a new CodeMirror mode](http://codemirror.net/doc/manual.html#modeapi). To use your custom CodeMirror mode, load it using `require()`, register it with CodeMirror using [``CodeMirror.defineMode()``](http://codemirror.net/doc/manual.html#modeapi), then call ``LanguageManager.defineLanguage()`` as above.
+If your language is not already supported by CodeMirror (see list above), you'll need to [write a new CodeMirror mode](http://codemirror.net/doc/manual.html#modeapi). To use your custom CodeMirror mode, load it using `require()`, register it with CodeMirror using [``CodeMirror.defineMode()``](http://codemirror.net/doc/manual.html#modeapi), then call ``LanguageManager.defineLanguage()`` as above. You can also use [``CodeMirror.defineSimpleMode()``](http://codemirror.net/demo/simplemode.html), which does not fit as many languages, but is a whole lot easier to write in the first place.
 
 
 ## Refining an existing language
