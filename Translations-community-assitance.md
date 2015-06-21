@@ -12,33 +12,47 @@ See [this page](https://github.com/adobe/brackets/blob/master/src/nls/README.md#
 Contributors who would help with reviewing your translations.
 
 - Czech (cs)
+  - @dvorapa, @martinstarman
 - Danish (da)
 - German (de)
   - @MarcelGerber, @ingorichter
 - Greek (el)
 - Spanish (es)
+  - @TomMalbran, @jbalsas
 - Persian-Farsi (fa-ir)
+  - @datamweb, @Rezaaa
 - Finnish (fi)
+  - @valtlait
 - Galician (gl)
 - Croatian (hr)
+  - @diomed
 - Hungarian (hu)
 - Indonesia (id)
+  - @yolapop, @resir014
 - Italian (it)
+  - @nicolo-ribaudo, @Denisov21
 - Korean (ko)
-  - @revi, @ds5apn, @taggon
+  - @revi, @taggon
 - Norwegian (nb)
 - Dutch (nl)
+  - @coreice, @ispieter
 - Polish (pl)
   - @winek, @jurkian  
 - Brazilian Portuguese (pt-br)
 - Portuguese (pt-pt)
 - Romanian (ro)
+  - @micnic
 - Russian (ru)
+  - @busykai
 - Slovak (sk)
 - Serbian (sr)
+  - @goranvasic
 - Swedish (sv)
+  - @mikaeljorhult
 - Turkish (tr)
+  - @valtlait
 - Ukrainian (uk)
 - Simplified Chinese (zh-cn)
   - @michaeljayt, @mistyhua, @fengdi
 - Traditional Chinese (zh-tw)
+  - @tan9
