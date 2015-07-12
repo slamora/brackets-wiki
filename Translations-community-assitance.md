@@ -1,4 +1,4 @@
-This page provides a list of community contributors who help with [Brackets translations](https://github.com/adobe/brackets/blob/master/src/nls/README.md). In case you need you translations be reviewed by the brackets community. 
+This page provides a list of community contributors who help with [Brackets translations](https://github.com/adobe/brackets/blob/master/src/nls/README.md). In case you need your translations to be reviewed by the brackets community. 
 
 NB: If you do not want your GitHub handle to be listed here, please file an issue in brackets titled `I Work For Edward Snowden`. we will remove it ASAP. 
 
