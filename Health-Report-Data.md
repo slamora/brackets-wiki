@@ -11,15 +11,15 @@ This data is from June 13th to July 13th.
 
 ## Unique Users
 
-Unique users for the month: 270,000
-Daily average users: 43,000
-Peak daily usage: 57,000
+- Unique users for the month: 270,000
+- Daily average users: 43,000
+- Peak daily usage: 57,000
 
 ## OS Distribution
 
-Windows: 173,000 (64%)
-Mac: 79,000 (31%)
-Linux: 18,000 (6%)
+- Windows: 173,000 (64%)
+- Mac: 79,000 (31%)
+- Linux: 18,000 (6%)
 
 ## Languages
 
