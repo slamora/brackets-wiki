@@ -1,6 +1,6 @@
 In Brackets 1.3 the Brackets team rolled out the [Health Report](https://github.com/adobe/brackets/wiki/Health-Data) which collects data on how people are using Brackets. Until the team is able to create a live dashboard, we are going to keep this page updated with the most recent data. 
 
-This data is from June 13th to July 13th. 
+This data is from **June 13th to July 13th**. 
 
 - [Unique Users](https://github.com/adobe/brackets/wiki/Health-Report-Data#unique-users-1)
 - [OS Distribution](https://github.com/adobe/brackets/wiki/Health-Report-Data#os-distribution)
@@ -10,6 +10,8 @@ This data is from June 13th to July 13th.
 ***
 
 ## Unique Users
+
+_This tracks the number of unique uses who launched Brackets during the time period._
 
 - Unique users for the month: 270,000
 - Daily average users: 43,000
@@ -156,6 +158,8 @@ This data is from June 13th to July 13th.
 |ur|1|
 
 ## Extension Usage
+_This tracks the number of unique users who currently have each extension installed._
+
 |Extension|Unique Users|
 |---------|------------|
 |adobe.brackets.extract|216213|
