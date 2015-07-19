@@ -23,135 +23,137 @@ This data is from June 13th to July 13th.
 
 ## Languages
 
-- en-US	85412
-- en	62095
-- es-ES	16119
-- ru-RU	11724
-- fr-FR	8089
-- de-DE	7821
-- de	6952
-- pt-BR	6482
-- es	6208
-- ja-JP	5999
-- en-GB	5857
-- fr	4373
-- ja	3666
-- zh-cn	3313
-- ko-KR	2942
-- pl-PL	2817
-- ru	2633
-- it-IT	2594
-- it	2239
-- pt	2089
-- zh-CN	1826
-- nl-NL	1807
-- pt-br	1517
-- nl	1239
-- pt-PT	1205
-- pl	990
-- zh-TW	840
-- ko	769
-- zh-Hans	760
-- tr-TR	726
-- zh-tw	692
-- en-gb	642
-- cs-CZ	538
-- sv-SE	529
-- sv	472
-- zh-Hant	447
-- da-DK	398
-- da	370
-- hu-HU	359
-- tr	330
-- es-MX	241
-- cs	236
-- he-IL	207
-- uk-UA	199
-- nb	193
-- nb-NO	193
-- zh	192
-- sk-SK	189
-- uk	174
-- fi-FI	172
-- hu	155
-- el-GR	152
-- zh-HK	142
-- c	123
-- pt-pt	121
-- fi	119
-- ar-SA	106
-- ca	104
-- sl-SI	83
-- sk	79
-- en-AU	56
-- ca-ES	47
-- bg-BG	46
-- es-419	34
-- el	31
-- id	29
-- ro	28
-- en-CA	23
-- fr-CA	23
-- sl	21
-- hr-HR	20
-- de-CH	18
-- hr	17
-- et	16
-- he	16
-- ro-RO	16
-- ar	14
-- lt	14
-- lt-LT	14
-- th-TH	14
-- gl	13
-- lv	13
-- en-IN	11
-- lv-LV	9
-- th	9
-- et-EE	8
-- fa-ir	8
-- is	7
-- bg	6
-- de-AT	6
-- id-ID	5
-- km	5
-- sr	5
-- eu	4
-- my	4
-- en-us	3
-- fa	3
-- fr-CH	3
-- sr-CS	3
-- vi	3
-- bs	2
-- bs-BA	2
-- eo	2
-- eu-ES	2
-- gl-ES	2
-- mk	2
-- nl-BE	2
-- sq	2
-- sr-Latn	2
-- vi-VN	2
-- af	1
-- am	1
-- be	1
-- bn	1
-- cy	1
-- fo	1
-- ga	1
-- ka	1
-- ka-GE	1
-- kk	1
-- km-KH	1
-- mg	1
-- nap	1
-- nn	1
-- nn-NO	1
-- se	1
-- si	1
-- sr-RS	1
-- ur	1
+| Language | Unique Users |
+|----------|--------------|
+|en-US|	85412|
+|en|	62095|
+|es-ES|	16119|
+|ru-RU|	11724|
+|fr-FR|	8089|
+|de-DE|	7821|
+|de|	6952|
+|pt-BR|	6482|
+|es|	6208|
+|ja-JP|	5999|
+|en-GB|	5857|
+|fr|	4373|
+|ja|	3666|
+|zh-cn|	3313|
+|ko-KR|	2942|
+|pl-PL|	2817|
+|ru|	2633|
+|it-IT|	2594|
+|it|	2239|
+|pt|	2089|
+|zh-CN|	1826|
+|nl-NL|	1807|
+|pt-br|	1517|
+|nl|	1239|
+|pt-PT|	1205|
+|pl|	990|
+|zh-TW|	840|
+|ko|	769|
+|zh-Hans|	760|
+|tr-TR|	726|
+|zh-tw|	692|
+|en-gb|	642|
+|cs-CZ|	538|
+|sv-SE|	529|
+|sv|	472|
+|zh-Hant|	447|
+|da-DK|	398|
+|da|	370|
+|hu-HU|	359|
+|tr|	330|
+|es-MX|	241|
+|cs|	236|
+|he-IL|	207|
+|uk-UA|	199|
+|nb|	193|
+|nb-NO|	193|
+|zh|	192|
+|sk-SK|	189|
+|uk|	174|
+|fi-FI|	172|
+|hu|	155|
+|el-GR|	152|
+|zh-HK|	142|
+|c|	123|
+|pt-pt|	121|
+|fi|	119|
+|ar-SA|	106|
+|ca|	104|
+|sl-SI|	83|
+|sk|	79|
+|en-AU|	56|
+|ca-ES|	47|
+|bg-BG|	46|
+|es-419|	34|
+|el|	31|
+|id|	29|
+|ro|	28|
+|en-CA|	23|
+|fr-CA|	23|
+|sl|	21|
+|hr-HR|	20|
+|de-CH|	18|
+|hr|	17|
+|et|	16|
+|he|	16|
+|ro-RO|	16|
+|ar|	14|
+|lt|	14|
+|lt-LT|	14|
+|th-TH|	14|
+|gl|	13|
+|lv|	13|
+|en-IN|	11|
+|lv-LV|	9|
+|th|	9|
+|et-EE|	8|
+|fa-ir|	8|
+|is|	7|
+|bg|	6|
+|de-AT|	6|
+|id-ID|	5|
+|km|	5|
+|sr|	5|
+|eu|	4|
+|my|	4|
+|en-us|	3|
+|fa|	3|
+|fr-CH|	3|
+|sr-CS|	3|
+|vi|	3|
+|bs|	2|
+|bs-BA|	2|
+|eo|	2|
+|eu-ES|	2|
+|gl-ES|	2|
+|mk|	2|
+|nl-BE|	2|
+|sq|	2|
+|sr-Latn|	2|
+|vi-VN|	2|
+|af|	1|
+|am|	1|
+|be|	1|
+|bn|	1|
+|cy|	1|
+|fo|	1|
+|ga|	1|
+|ka|	1|
+|ka-GE|	1|
+|kk|	1|
+|km-KH|	1|
+|mg|	1|
+|nap|	1|
+|nn|	1|
+|nn-NO|	1|
+|se|	1|
+|si|	1|
+|sr-RS|	1|
+|ur|	1|
 
 ## Extension Usage
 
