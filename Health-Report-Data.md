@@ -2,10 +2,12 @@ In Brackets 1.3 the Brackets team rolled out the [Health Report](https://github.
 
 This data is from June 13th to July 13th. 
 
-### [Unique Users](https://github.com/adobe/brackets/wiki/Health-Report-Data#unique-users-1)
-### [OS Distribution](https://github.com/adobe/brackets/wiki/Health-Report-Data#os-distribution)
-### [Languages](https://github.com/adobe/brackets/wiki/Health-Report-Data#languages)
-### [Extension Usage](https://github.com/adobe/brackets/wiki/Health-Report-Data#os-distribution)
+- [Unique Users](https://github.com/adobe/brackets/wiki/Health-Report-Data#unique-users-1)
+- [OS Distribution](https://github.com/adobe/brackets/wiki/Health-Report-Data#os-distribution)
+- [Languages](https://github.com/adobe/brackets/wiki/Health-Report-Data#languages)
+- [Extension Usage](https://github.com/adobe/brackets/wiki/Health-Report-Data#extension-usage-1)
+
+***
 
 ## Unique Users
 
