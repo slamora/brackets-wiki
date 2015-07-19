@@ -2,7 +2,7 @@ In Brackets 1.3 the Brackets team rolled out the [Health Report](https://github.
 
 This data is from June 13th to July 13th. 
 
-### [Unique Users](#Unique Users)
+### [Unique Users](https://github.com/adobe/brackets/wiki/Health-Report-Data#unique-users-1)
 
 ## Unique Users
 
