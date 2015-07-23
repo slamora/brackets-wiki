@@ -18,7 +18,7 @@ Contributors who would help with reviewing your translations.
   - @MarcelGerber, @ingorichter
 - Greek (el)
 - Spanish (es)
-  - @TomMalbran, @jbalsas
+  - @TomMalbran, @jbalsas, @busykai 
 - Persian-Farsi (fa-ir)
   - @datamweb, @Rezaaa
 - Finnish (fi)
