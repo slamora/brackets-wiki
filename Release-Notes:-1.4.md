@@ -1,33 +1,20 @@
-_This is a draft!_
---------------------
-_This page will not be finalized until the end of Release 1.4 -- approximately July 8._
-
 What's New in Release 1.4
 -------------------------
-* _**TODO: draft**_
-* **TODO: category heading**
-   * _TODO: feature list_
+* **Instant Search in Files**: Searching across files is faster than ever. Results are now displayed incrementally and updated as you type.
+
+* **Easier Preferences Editing**: All preferences are now available as code hints while editing the `brackets.json` preferences file. Opening a preferences file will also open the default preferences in a second pane.
+
+* **Disable Extensions Individually**: Extensions can now be individually enabled/disabled from the Extension Manager.
+
+* **Improved Text Rendering on Mac**: Crisp text rendering on Mac with subpixel antialiasing enabled by default. You can use the older text rendering by setting the `fonts.fontSmoothing` preference to `antialiased`.
+
+* **Greek and Cyrillic Character support**: Updated editor font (Source Code Pro) with improved support for Greek and Cyrillic character sets.
+
 * **Localization**
-   * Translation updates for: _(TODO - updated locales in alphabetical order)_
+   * Translation updates for: Czech, German, Finnish, French, Japanese, Italian, Swedish
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.3...release-1.4#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.3...release-1.4#commits_bucket)
-
-
-UI Changes
-----------
-**TODO** / or
-No major changes to existing features.
-
-
-API Changes
------------
-**TODO**
-
-New/Improved Extensibility APIs
--------------------------------
-**TODO**
-
 
 Known Issues
 ------------
