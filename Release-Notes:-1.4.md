@@ -10,6 +10,8 @@ What's New in Release 1.4
 
 * **Greek and Cyrillic Character support**: Updated editor font (Source Code Pro) with improved support for Greek and Cyrillic character sets.
 
+* **Traverse files in List Order**: Files opened in the working set can be traverse in the list order with CTRL+PageUp and CTRL+PageDown.
+
 * **Localization**
    * Translation updates for: Czech, German, Finnish, French, Japanese, Italian, Swedish
 
