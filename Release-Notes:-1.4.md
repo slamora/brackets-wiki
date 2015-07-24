@@ -2,9 +2,9 @@ What's New in Release 1.4
 -------------------------
 * **Instant Search in Files**: Searching across files is faster than ever. Results are now displayed incrementally and updated as you type.
 
-* **Easier Preferences Editing**: All preferences are now available as code hints while editing the `brackets.json` preferences file. Opening a preferences file will also open the default preferences in a second pane.
+* **Easier Preferences Editing**: All preferences are now available as code hints while editing the `brackets.json` preferences file. Opening a preferences file (**Debug-> Open Preferences file**) will also open the default preferences in a second pane in split mode. This default preferences file will give hand on to user about the preferences and how to use and set values.
 
-* **Disable Extensions Individually**: Extensions can now be individually enabled/disabled from the Extension Manager.
+* **Disable Extensions Individually**: Extensions can now be individually enabled/disabled from the Extension Manager. Here each extension which has been used will be provided with an option to enable, disable and remove extension from the Extension Manager. 
 
 * **Improved Text Rendering on Mac**: Crisp text rendering on Mac with subpixel antialiasing enabled by default. You can use the older text rendering by setting the `fonts.fontSmoothing` preference to `antialiased`.
 
