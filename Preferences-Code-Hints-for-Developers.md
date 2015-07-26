@@ -7,10 +7,11 @@ All the preferences defined are available as code hints in `brackets.json` and `
 
 `definePreference(id, type, initial, options)`
 
-`id` unprefixed identifier of the preference. Generally a dotted name.
-`type` Data type for the preference (generally, string, boolean, number) 
-`initial` Default value for the preference
-`options` Additional options for a preference
+- `id` unprefixed identifier of the preference. Generally a dotted name.
+- `type` Data type for the preference (generally, string, boolean, number)
+- `initial` Default value for the preference
+- `options` Additional options for a preference
+
 
 | Name | Description |
 | ---- | ----------- |
