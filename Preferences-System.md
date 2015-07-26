@@ -58,8 +58,8 @@ Define a preference with the ID of the pref (these would be prefixed to be `myex
 
 `definePreference` returns a Preference object which allows you to listen for change events.
 
-### Code Hints for Preference.
-All the preferences defined are available as code hints in `brackets.json` and `.brackets.json` unless they are excluded. You can additionally configure code hint descriptions to each of the preference entry. See. this page for more details.
+### Code Hints for Preferences
+All the preferences defined are available as code hints in `brackets.json` and `.brackets.json` unless they are excluded. You can additionally configure code hint descriptions to each of the preference entry. See. [this page](https://github.com/adobe/brackets/wiki/preferences-code-hints-for-developers) for more details.
 
 ### Change Events
 
