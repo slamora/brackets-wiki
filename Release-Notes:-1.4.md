@@ -18,6 +18,15 @@ What's New in Release 1.4
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.3...release-1.4#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.3...release-1.4#commits_bucket)
 
+## API Changes
+
+`PreferencesManager.definePreference` was modified to support code hints.
+
+## New/Improved Extensibility APIs
+
+- `PreferencesManager.getAllPreferences` returns a clone of all the preferences defined.
+- `CodeInspection.getProviderIDsForLanguage(languageId)` returns names of linters registered for `languageId`.
+
 Known Issues
 ------------
 * Activity Monitor in Mavericks (OS X 10.9) says the Brackets Helper process is "Not Responding" even when it's working normally ([#5794](https://github.com/adobe/brackets/issues/5794)). You can safely ignore this unless Brackets is actually failing to respond when you click or type text.
