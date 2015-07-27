@@ -18,6 +18,12 @@ What's New in Release 1.4
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.3...release-1.4#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.3...release-1.4#commits_bucket)
 
+## UI Changes
+
+To Traverse working set files in List order, two new options are added to _Navigate_ menu : 
+`Navigate-> Next Document in List`
+`Navigate-> Previous Document in List`
+
 ## API Changes
 
 `PreferencesManager.definePreference` was modified to support code hints.
