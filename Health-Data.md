@@ -36,6 +36,7 @@ Brackets sends one Health Report update every 24 hours, only while Brackets is r
 * `osLanguage`, `bracketsLanguage` - Brackets locale and OS locale
 * `installedExtensions` - List of installed extensions and their versions - _only_ those that are already published in the [extension registry](https://brackets-registry.aboutweb.com), so non-public or not-yet-released extensions are kept private
 * `bracketsTheme` - Current Brackets Theme
+
 **Benefits** - with this data, we can answer questions like:
 
 * How many people are using Brackets each month?
