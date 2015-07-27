@@ -21,8 +21,8 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release
 ## UI Changes
 
 To Traverse working set files in List order, two new options are added to _Navigate_ menu : 
-`Navigate-> Next Document in List`
-`Navigate-> Previous Document in List`
+- `Navigate-> Next Document in List`
+- `Navigate-> Previous Document in List`
 
 ## API Changes
 
