@@ -189,6 +189,7 @@ There is not yet a global user interface for all preferences (so the required "P
 * **User-global preferences** - your default settings. To edit, choose **Debug > Open Preferences File**.
 * **Project-level preferences** - override any number of preferences on a project-specific basis. Create a `.brackets.json` file in the root of your project.
 
+Choosing **Debug > Open Preferences File** opens the global preferences file "brackets.json" along with the default preferences in left panel in split view. You can refer to the available settings in the left panel and change the preferences in the right. Code hints is available for the settings of this file.
 Changing a preference using the Brackets UI modifies the project's `.brackets.json` file _if_ the preference is already set there; otherwise it modifies the user-global setting.
 
 Within either file, there are three levels of specificity at which you can set a preference:
