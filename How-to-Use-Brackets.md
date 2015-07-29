@@ -23,7 +23,7 @@ Brackets will remember the view layout for each project so switching to another 
 Brackets doesn't support opening a file in both panes but we are planning to ship that in a future release.
 
 ### Extensions
-In addition to the core features built into Brackets, there is a large and growing community of developers building extensions that add all sorts of useful functionality. You can search for and install extensions using **File > Extension Manager...** (or click the "plugin block" icon on the toolbar).
+In addition to the core features built into Brackets, there is a large and growing community of developers building extensions that add all sorts of useful functionality. You can search for and install/uninstall extensions using **File > Extension Manager...** (or click the "plugin block" icon on the toolbar). You can even temporarily disable extensions and re-enable them later from the Extension Manager.
 
 You can also [browse the available extensions online](https://brackets-registry.aboutweb.com) without installing Brackets first.
 
