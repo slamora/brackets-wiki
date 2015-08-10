@@ -278,4 +278,4 @@ The bug described here is fixed in Brackets 38.
 ## <a name="notsolved"> </a>Still Having a Problem?
 
 * **[File an issue](https://github.com/adobe/brackets/wiki/How-to-Report-an-Issue)** - be sure to include as many details as possible (see link for specific guidelines)
-* **Contact us** via one of the channels mentioned in the [README](https://github.com/adobe/brackets/blob/master/README.md#i-want-to-keep-track-of-how-brackets-is-doing)
+* **Contact us** on [Slack](https://brackets.slack.com) ([request an invite](https://brackets-slack.herokuapp.com) first) or via one of the other channels mentioned in the [README](https://github.com/adobe/brackets/blob/master/README.md#i-want-to-keep-track-of-how-brackets-is-doing)
