@@ -172,7 +172,9 @@ In order to make it work with Internet Explorer 11, disable all the options that
 ### <a name="livedev-other"> </a>Other Live Preview issues
 
 #### Disable Extensions
-The Theseus extension is known to cause problems with Live Preview, and other extensions could potentially interfere also. Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
+Use [`Debug > Reload Without Extensions`](#wiki-disable-all-extensions) to quickly see if the problem is being caused by an extension.
+
+The Theseus[\[1\]](https://github.com/adobe-research/theseus/issues/37)[\[2\]](https://github.com/adobe-research/theseus/issues/46) and CSS Shapes Editor[\[3\]](https://github.com/adobe-webplatform/brackets-css-shapes-editor/issues/4) extensions are known to cause problems with Live Preview, and other extensions could potentially interfere also.
 
 #### Clear Live Preview Profile/Cache
 Choose _Help > Show Extensions Folder_, go up one level to the parent folder, and remove the 'live-dev-profile' folder. This will not affect any Brackets settings, but may clear up Live Preview problems.
