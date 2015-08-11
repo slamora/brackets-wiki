@@ -31,7 +31,7 @@ define(function (require, exports, module) {
     menu.addMenuItem(MY_COMMAND_ID);
     
     // We could also add a key binding at the same time:
-    //menu.addMenuItem(MY_COMMAND_ID, "Ctrl-Alt-H");
+    //menu.addMenuItem(MY_COMMAND_ID, "Ctrl-Alt-W");
     // (Note: "Ctrl" is automatically mapped to "Cmd" on Mac)
 });
 ```
