@@ -8,6 +8,8 @@ This data is from **June 13th to July 13th**.
 - [Extension Usage](https://github.com/adobe/brackets/wiki/Health-Report-Data#extension-usage-1)
 
 ***
+## Previous reports
+ [jul 2015](https://github.com/adobe/brackets/wiki/%5Barchives%5D-Health-report-data-jul-2015)
 
 ## Unique Users
 
