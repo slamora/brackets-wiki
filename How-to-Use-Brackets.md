@@ -214,18 +214,18 @@ These are all the settings that are currently supported:
 | `code-folding`&#8203;`.alwaysUseIndentFold` | `false` | _Since 1.3._ Always generate collapsible section markers when indent level changes (for > `minFoldSize` lines), including in plain text files |
 | `code-folding.enabled` | `true` | _Since 1.3._ True to show collapsible section indicators in the gutter. Disabling code folding also hides its View menu items |
 | `code-folding`&#8203;`.hideUntilMouseover` | `false` | _Since 1.3_ Section-collapsing markers are only visible when you move the mouse over the gutter. May improve performance |
-| `code-folding.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
+| `code-folding`&#8203;`.maxFoldLevel` | `2` | _Since 1.3._ Limits how many levels deep Collapse All applies |
 | `code-folding.minFoldSize` | `2` | _Since 1.3._ Blocks must be > _minFoldSize_ lines long (including opening and closing lines) before a collapsible section icon appears |
-| `code-folding.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
+| `code-folding`&#8203;`.saveFoldStates` | `true` | _Since 1.3._ Remember collapsed sections if you close and reopen a file or project |
 | `codehint.AttrHints` | `true` | Enable/disable HTML attribute hints |
 | `codehint.CssPropHints` | `true` | Enable/disable CSS/LESS/SCSS property hints |
 | `codehint.JSHints` | `true` | Enable/disable JavaScript code hints |
-| `codehint.SpecialCharHints` | `true` | Enable/disable HTML entity hints |
+| `codehint`&#8203;`.SpecialCharHints` | `true` | Enable/disable HTML entity hints |
 | `codehint.SVGHints` | `true` | Enable/disable SVG code hints |
 | `codehint.TagHints` | `true` | Enable/disable HTML tag hints |
 | `codehint.UrlCodeHints` | `true` | Enable/disable URL hints in HTML & CSS/LESS/SCSS |
 | `dragDropText` | `false` | Enable/disable Drag & Drop functionality |
-| `healthData.healthDataTracking` | `true` | _Since 1.3._ Enable the Health Data Tracking |
+| `healthData`&#8203;`.healthDataTracking` | `true` | _Since 1.3._ Enable the Health Data Tracking |
 | `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` — highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` — highlight all strings that match the token the cursor is currently in (no selection needed)</li><li>`{"wordsOnly": true}` — highlight only when selection is a complete token</li></ul> |
 | `insertHintOnTab` | `false` | True to insert the currently selected code hint on tab |
 | `jscodehints.noHintsOnDot` | `false` | If true, do not automatically show JS code hints when `.` is typed. |
