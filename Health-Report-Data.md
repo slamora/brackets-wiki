@@ -9,8 +9,10 @@ This data is from **June 13th to July 13th**.
 
 ***
 ## Previous reports
--2015
- [jul](https://github.com/adobe/brackets/wiki/%5Barchives%5D-Health-report-data-jul-2015)
+
+| 2015     |
+|----------|
+| [jul](https://github.com/adobe/brackets/wiki/%5Barchives%5D-Health-report-data-jul-2015) |
 
 ## Unique Users
 
