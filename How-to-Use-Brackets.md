@@ -135,7 +135,7 @@ To quickly jump to a file, press **Ctrl/Cmd-Shift-O** and type part of the filen
 To quickly jump around _within_ a file, press **Ctrl/Cmd-T** to see an outline view — functions in a JS file, selectors in a CSS/LESS/SCSS file, etc. Similar to Quick Open, you can type parts of a name to filter the list.
 
 ### Instant Find in Files
-The updated Find In Files feature- Instant Search shows results as you type. To start a search, press **Ctrl/Cmd + Shift + F** and start entering your query string. You see the matches almost instantly in the results panel as you type in the search bar. You can refine the search in files using case-sensitive and regex searches. You could even make the search in a specific folder(right click a folder in the file tree and select `Find in`) or exclude files based on exclusion sets(Press `ctrl/cmd + shift + f`and click on the drop exclusion set dropdown).
+The updated Find In Files feature- Instant Search shows results as you type. To start a search, press **Ctrl/Cmd + Shift + F** and start entering your query string. You see the matches almost instantly in the results panel as you type in the search bar. You can refine the search in files using case-sensitive and regex searches. You could even make the search in a specific folder(right click a folder in the file tree and select `Find in`) or exclude files based on exclusion sets(Press `ctrl/cmd + shift + f`and click on the exclusion set dropdown).
 
 ### <a id="codehints"></a>Code Hints
 Code hints generally pop up automatically while you're typing, but you can also manually display them with **Ctrl-Space** (note that this shortcut uses Ctrl even on Mac).
