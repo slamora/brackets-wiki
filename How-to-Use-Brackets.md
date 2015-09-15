@@ -173,7 +173,7 @@ for a more complete list of shortcuts and the [User Key Bindings Wiki](https://g
 | Ctrl-E | Cmd-E | Open/close the inline editor (Quick Edit) |
 | Alt-Up/Down | Alt-Up/Down | Switch between rules in the inline editor |
 | Ctrl-K | Cmd-K | Open Quick Docs |
-| Ctrl-Space | Cmd-Space | Bring up code hints, if applicable |
+| Ctrl-Space | Ctrl-Space | Bring up code hints, if applicable |
 | Ctrl-Shift-O | Cmd-Shift-O | Bring up the Quick Open prompt |
 | Ctrl-G | Cmd-L | Go to a line in the current file |
 | Ctrl-T | Cmd-T | Go to a method/selector in the current file (Quick Find) |
