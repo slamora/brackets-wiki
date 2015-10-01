@@ -174,6 +174,7 @@ _This tracks the types of files opened in Brackets._
 
 ## Theme Usage
 _This tracks the themes installed by users._
+
 |Theme Name|Number of Installs|% of Total Installs|
 |----------|------------------|-------------------|
 |light-theme|163196|71.16%|
