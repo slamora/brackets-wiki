@@ -54,6 +54,8 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
 
 * [Downloads](http://download.brackets.io)
 * Release Notes:
+ * [Release 1.5 (in progress)](https://github.com/adobe/brackets/wiki/Release-Notes:-1.5)
+ * [Release 1.4](https://github.com/adobe/brackets/wiki/Release-Notes:-1.3)
  * [Release 1.3](https://github.com/adobe/brackets/wiki/Release-Notes:-1.3)
  * [Release 1.2](https://github.com/adobe/brackets/wiki/Release-Notes:-1.2)
  * [Release 1.1](https://github.com/adobe/brackets/wiki/Release-Notes:-1.1)
@@ -69,6 +71,10 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
  * [Sprint 36](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-36)
  * [Sprint 35](https://github.com/adobe/brackets/wiki/Release-Notes:-Sprint-35)
  * [more...](https://github.com/adobe/brackets/wiki/Release-Notes)
+
+## Health Report Data
+ * [August 8th - September 8th](https://github.com/adobe/brackets/wiki/Health-Report-Data)
+
 
 ## Build & Release Process
 
