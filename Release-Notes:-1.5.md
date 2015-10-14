@@ -38,6 +38,7 @@ Community contributions to Brackets
 -----------------------------------
 * [Allow code-folding for selected text in editor](https://github.com/adobe/brackets/pull/11538) by [Patrick Oladimeji](https://github.com/thehogfather)
 * [Resolve Brackets freezing/crashing on windows on reload.](https://github.com/adobe/brackets/pull/11505) by [hussainb](https://github.com/hussainb)
+* [Allow CSS Code Hints in PHP] (https://github.com/adobe/brackets/pull/11751) by [Amin Ullah Khan](https://github.com/sprintr)
 * [Remember linter collapsed](https://github.com/adobe/brackets/pull/11641) by [ficristo](https://github.com/ficristo)
 * [Fixed a bug when there is only a linter error and it is collapsed](https://github.com/adobe/brackets/pull/11721) by [ficristo](https://github.com/ficristo)
 * [Do not run jshint tasks twice](https://github.com/adobe/brackets/pull/11664) by [ficristo](https://github.com/ficristo)
