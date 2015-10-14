@@ -1,32 +1,21 @@
-_This is a draft!_
---------------------
-_This page will not be finalized until the end of Release 1.5 -- approximately October 6._
 
 What's New in Release 1.5
 -------------------------
-* _**TODO: draft**_
-* **TODO: category heading**
-   * _TODO: feature list_
-* **Localization**
-   * Translation updates for: _(TODO - updated locales in alphabetical order)_
+* **Fold Selected Text**: Select any text block in the editor and fold markers will appear to collapse the selected text.
 
+* **Instant Search (Improved Stability and Performance)**: Major stability and performance improvements. Find in Files can now index and search robustly in thousands of files instantly.
+
+* **CSS Code Hints in PHP**: CSS code hints are now available for style elements inside PHP files.
+
+* **Remember Collapsed Linters**: Remember collapsed state of linters on switching files.
+
+* **Improve JS Code Hints performance in minified files**: JS Code Hints now perform more efficiently with minified files
+
+* **Resolve Brackets freezing/crashing on windows on reload**: Fixed the crash when reloading Brackets through "Debug > Reload With Extensions" menu
+
+* **El Capitan Fixes**: Fixed full-screen bugs with Brackets on El Capitan.
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.4...release-1.5#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.4...release-1.5#commits_bucket)
-
-
-UI Changes
-----------
-**TODO** - list notable changes in _existing_ features ...or:
-No major changes to existing features.
-
-
-API Changes
------------
-**TODO** - list breaking API changes
-
-New/Improved Extensibility APIs
--------------------------------
-**TODO** - list API expansions
 
 
 Known Issues
@@ -36,6 +25,9 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
+
+Special thanks to [Patrick Oladimeji](https://github.com/thehogfather) for [Selection Based Code Collapse](https://github.com/adobe/brackets/pull/11538) feature and [ficristo](https://github.com/ficristo) for [Remember Collapsed Linters](https://github.com/adobe/brackets/pull/11641)
+
 * [Allow code-folding for selected text in editor](https://github.com/adobe/brackets/pull/11538) by [Patrick Oladimeji](https://github.com/thehogfather)
 * [Resolve Brackets freezing/crashing on windows on reload.](https://github.com/adobe/brackets/pull/11505) by [hussainb](https://github.com/hussainb)
 * [Allow CSS Code Hints in PHP] (https://github.com/adobe/brackets/pull/11751) by [Amin Ullah Khan](https://github.com/sprintr)
