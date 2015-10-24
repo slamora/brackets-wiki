@@ -126,7 +126,7 @@ For details, see the full **[Preferences System documentation](Preferences Syste
 
 ```javascript
 
-var PreferencesManager = require("preferences/PreferencesManager"),
+var PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
     prefs = PreferencesManager.getExtensionPrefs("myextensionname");
 
 // First, we define our preference so that Brackets knows about it.
