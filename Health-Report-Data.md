@@ -24,9 +24,9 @@ _This tracks the number of unique uses who launched Brackets during the time per
 
 ## OS Distribution
 
-- Windows: 308769	(65.5%)
-- Mac: 139134	(29.5%)
-- Linux: 23818	(5.0%)
+- Windows: 308,769	(65.5%)
+- Mac: 139,134	(29.5%)
+- Linux: 23,818	(5.0%)
 
 ## Languages
 
