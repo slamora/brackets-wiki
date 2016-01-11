@@ -4,11 +4,13 @@ _This page will not be finalized until the end of Release 1.6 -- approximately J
 
 What's New in Release 1.6
 -------------------------
-* _**TODO: draft**_
-* **TODO: category heading**
-   * _TODO: feature list_
-* **Localization**
-   * Translation updates for: _(TODO - updated locales in alphabetical order)_
+*  **[Add flip-view and close buttons to pane-headers](https://github.com/adobe/brackets/pull/11749)** by [petetnt](https://github.com/petetnt) : In split view, documents now can be closed via the new close button added at the right corners of both the panes. Also, document now can be easily moved into the other pane, using the new flip button.
+
+* **[Type Inference in hint list](https://github.com/adobe/brackets/pull/11949)** by [swmitra](https://github.com/swmitra) : Javascript code hints are now further improved to show more information like the type and documentation associated with the function/variable along with any hyperlinks.
+
+* **[Split View (Same Document)](https://github.com/adobe/brackets/pull/11820)** by [swmitra](https://github.com/swmitra) : Same document can now be opened in both the panes, when in split view.
+
+* **[Toggle panels and no-Distraction mode ](https://github.com/adobe/brackets/pull/11732)** by abose : Brackets now has a no-distraction mode which can be enabled using *Cmd-Shift-2* shortcut. Once enabled, this mode will hide the toolbar bar panel on the right as well as the project tree.
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.5...release-1.6#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.5...release-1.6#commits_bucket)
@@ -24,10 +26,6 @@ API Changes
 -----------
 **TODO** - list breaking API changes
 
-New/Improved Extensibility APIs
--------------------------------
-**TODO** - list API expansions
-
 
 Known Issues
 ------------
@@ -36,7 +34,27 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-**TODO**
+* [[New feature] Add flip-view and close buttons to pane-headers](https://github.com/adobe/brackets/pull/11749) by [petetnt](https://github.com/petetnt)
+* [Allow CSS Code Hints in PHP](https://github.com/adobe/brackets/pull/11751) by [Amin Ullah Khan](https://github.com/sprintr)
+* [Revert "Move PathUtils to Brackets core code"](https://github.com/adobe/brackets/pull/11745) by [Martin Zagora](https://github.com/zaggino)
+* [Add <template> to HtmlTags.json](https://github.com/adobe/brackets/pull/11486) by [verballyinsane](https://github.com/verballyinsane)
+* [Simplified Chinese: Fix a few translation messages and placeholders](https://github.com/adobe/brackets/pull/10331) by [Michael J.](https://github.com/michaeljayt)
+* [Remove references to deprecated FileSystem APIs in SpecRunner](https://github.com/adobe/brackets/pull/11781) by [petetnt](https://github.com/petetnt)
+* [Finnish translation, release 1.5, part 2](https://github.com/adobe/brackets/pull/11816) by [valtlait](https://github.com/valtlait)
+* [Code folding unit tests](https://github.com/adobe/brackets/pull/11584) by [Patrick Oladimeji](https://github.com/thehogfather)
+* [addresses #11356 xml start tags spanning multiple lines](https://github.com/adobe/brackets/pull/11366) by [Patrick Oladimeji](https://github.com/thehogfather)
+* [Czech translation for v1.5](https://github.com/adobe/brackets/pull/11834) by [Pavel Dvořák](https://github.com/dvorapa)
+* [Typo in nls/root/strings.js](https://github.com/adobe/brackets/pull/11835) by [Pavel Dvořák](https://github.com/dvorapa)
+* [Add UrlCodeHints for poster-attribute](https://github.com/adobe/brackets/pull/11885) by [petetnt](https://github.com/petetnt)
+* [Ensure that .cm-error gets applied last](https://github.com/adobe/brackets/pull/11894) by [petetnt](https://github.com/petetnt)
+* [turtle support added](https://github.com/adobe/brackets/pull/11895) by [bozicb](https://github.com/bozicb)
+* [remove predefined values from cubic-bezier()](https://github.com/adobe/brackets/pull/11786) by [myakura](https://github.com/myakura)
+* [Port missing piece of the indent-wrap hack from Codemirror. Fixes #11963](https://github.com/adobe/brackets/pull/11964) by [petetnt](https://github.com/petetnt)
+* [Eslint](https://github.com/adobe/brackets/pull/11693) by [ficristo](https://github.com/ficristo)
+* [Update Tern submodule URL](https://github.com/adobe/brackets/pull/11994) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [ESLint: enabled no-trailing-spaces and eol-last rules](https://github.com/adobe/brackets/pull/11998) by [ficristo](https://github.com/ficristo)
+* [Reintroduce JSLint as a prefered linter](https://github.com/adobe/brackets/pull/12002) by [ficristo](https://github.com/ficristo)
+* [Fix Flipview focus issues](https://github.com/adobe/brackets/pull/12060) by [petetnt](https://github.com/petetnt)
 
 #### Pulling source code from Git
 _TODO: any brackets-shell updates? which of the below messages are applicable?_
