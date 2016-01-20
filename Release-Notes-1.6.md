@@ -1,6 +1,3 @@
-_This is a draft!_
---------------------
-_This page will not be finalized until the end of Release 1.6 -- approximately January 14._
 
 What's New in Release 1.6
 -------------------------
@@ -18,14 +15,8 @@ _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release
 
 UI Changes
 ----------
-**TODO** - list notable changes in _existing_ features ...or:
-No major changes to existing features.
-
-
-API Changes
------------
-**TODO** - list breaking API changes
-
+* New Flip Buttons have been added to the split panes using which, documents can be moved from one pane to the other.
+* An opened document can be removed from working set using the new close Button in the split pane.
 
 Known Issues
 ------------
