@@ -7,7 +7,7 @@ What's New in Release 1.6
 
 * **[Split View (Same Document)](https://github.com/adobe/brackets/pull/11820)** by [swmitra](https://github.com/swmitra) : Same document can now be opened in both the panes, when in split view.
 
-* **[Toggle panels and no-Distraction mode ](https://github.com/adobe/brackets/pull/11732)** by abose : Brackets now has a no-distraction mode which can be enabled using *Cmd-Shift-2* shortcut. Once enabled, this mode will hide the toolbar bar panel on the right as well as the project tree.
+* **[Toggle panels and no-Distraction mode ](https://github.com/adobe/brackets/pull/11732)** by abose : Brackets now has a no-distraction mode which can be enabled using `Cmd-Shift-2` shortcut. Once enabled, this mode will hide the toolbar bar panel on the right as well as the project tree. Panels can now be toggled with the shortcut `ctrl+shift+~`.
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.5...release-1.6#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.5...release-1.6#commits_bucket)
