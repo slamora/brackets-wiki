@@ -1,5 +1,9 @@
 This page lists ways in which the Brackets Team is communicating with our Community. Let us know if there are any others that you know about or any others that you would _like_ us to use.
 
+**Slack**
+
+* [Primary channel](https://brackets.slack.com/) for all things Brackets. ([register here](https://brackets-slack.herokuapp.com/))
+
 **IRC**
     
 * [#brackets on freenode.net](http://webchat.freenode.net/?channels=brackets)
