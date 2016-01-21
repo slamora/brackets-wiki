@@ -17,6 +17,7 @@ UI Changes
 ----------
 * New Flip Buttons have been added to the split panes using which, documents can be moved from one pane to the other.
 * An opened document can be removed from working set using the new close Button in the split pane.
+* Word wrap now respects the line intents.
 
 Known Issues
 ------------
