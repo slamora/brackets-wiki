@@ -32,7 +32,7 @@ Contributors who would help with reviewing your translations.
 - Italian (it)
   - @nicolo-ribaudo, @Denisov21
 - Korean (ko)
-  - @revi, @taggon
+  - @revi, @taggon, @naradesign 
 - Norwegian (nb)
 - Dutch (nl)
   - @coreice, @ispieter
