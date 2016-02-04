@@ -3,6 +3,7 @@ This page lists ways in which the Brackets Team is communicating with our Commun
 **Slack**
 
 * [Primary channel](https://brackets.slack.com/) for all things Brackets. ([register here](https://brackets-slack.herokuapp.com/))
+  *  The slack registration link is temporarily down. Please send a mail to admin@brackets.io with the subject line `slack registration request`specifying the email addresses you would like to register.
 
 **IRC**
     
