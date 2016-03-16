@@ -58,7 +58,7 @@ So, if you create a new extension for Brackets, follow the same process and add 
     </tr>
     <tr>
         <td class="shortcut-base">&#x2F;</td>
-        <td class="shortcut-binding">Ctrl-Shift-&#x2F;</td>
+        <td class="shortcut-binding">Ctrl-Shift-&#x2F;<br>Cmd-Alt-&#x2F; (Mac)</td>
         <td class="shortcut-cmd-id">edit.blockComment</td>
         <td class="shortcut-cmd-name">Toggle Block Comment</td>
         <td class="shortcut-orig">Brackets</td>
