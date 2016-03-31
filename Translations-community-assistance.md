@@ -39,8 +39,8 @@ Contributors who would help with reviewing your translations.
 - Polish (pl)
   - @winek, @jurkian  
 - Brazilian Portuguese (pt-br)
+    @Rynaro @eliezerb @brunnopleffken @rodrigost23 @nbfontana
 - Portuguese (pt-pt)
-  @nbfontana
 - Romanian (ro)
   - @micnic
 - Russian (ru)
