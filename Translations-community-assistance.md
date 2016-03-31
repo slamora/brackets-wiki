@@ -40,6 +40,7 @@ Contributors who would help with reviewing your translations.
   - @winek, @jurkian  
 - Brazilian Portuguese (pt-br)
 - Portuguese (pt-pt)
+  @nbfontana
 - Romanian (ro)
   - @micnic
 - Russian (ru)
