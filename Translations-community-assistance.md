@@ -13,6 +13,8 @@ Contributors who would help with reviewing your translations.
 
 - Czech (cs)
   - @dvorapa, @martinstarman
+- Bulgarian
+  - @lyubomirv
 - Danish (da)
 - German (de)
   - @MarcelGerber, @ingorichter
