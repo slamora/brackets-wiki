@@ -36,8 +36,54 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-**TODO**
+As of Mon May 23 2016 14:15:08 GMT+0530 (India Standard Time).
+Sorted by date merged. Branch merged into: m = master, r = release.
 
+
+* [Update license year range to latest release](https://github.com/adobe/brackets-shell/pull/545) by [pra85](https://github.com/pra85)
+* [Update year to 2016 in LICENSE and about-dialog.html](https://github.com/adobe/brackets/pull/12092) by [pra85](https://github.com/pra85)
+* [Korean translation update](https://github.com/adobe/brackets/pull/12151) by [naradesign](https://github.com/naradesign)
+* [jasmine.sh: add some log to say which platforms are support](https://github.com/adobe/brackets/pull/12024) by [ficristo](https://github.com/ficristo)
+* [Use SVG on image preview backgrounds](https://github.com/adobe/brackets/pull/12165) by [valtlait](https://github.com/valtlait)
+* [Update finnish translation for 1.7 release](https://github.com/adobe/brackets/pull/12074) by [petetnt](https://github.com/petetnt)
+* [Czech translation for v1.6](https://github.com/adobe/brackets/pull/12046) by [Pavel Dvořák](https://github.com/dvorapa)
+* [Add period on line 741](https://github.com/adobe/brackets/pull/12085) by [jshen212](https://github.com/jshen212)
+* [Few Portuguese update, spelling and punctuation correction](https://github.com/adobe/brackets/pull/12191) by [MauricioCarmelo](https://github.com/MauricioCarmelo)
+* [Line comment bug fix](https://github.com/adobe/brackets/pull/11954) by [borax12](https://github.com/borax12)
+* [Update React to 0.14.7 and Immutable to 3.7.6.](https://github.com/adobe/brackets/pull/12035) by [petetnt](https://github.com/petetnt)
+* [Wrap indent-key to parentheses in .eslintrc](https://github.com/adobe/brackets/pull/12053) by [petetnt](https://github.com/petetnt)
+* [[HOTFIX] Only update stat and clear contents when old stat is newer than current stat.](https://github.com/adobe/brackets/pull/12175) by [petetnt](https://github.com/petetnt)
+* [Rename .eslintrc to .eslintrc.json](https://github.com/adobe/brackets/pull/12237) by [ficristo](https://github.com/ficristo)
+* [Add gyp and gypi file extensions to python language](https://github.com/adobe/brackets/pull/12238) by [ficristo](https://github.com/ficristo)
+* [[HOTFIX] Only update stat and clear contents when old stat is newer than current stat.](https://github.com/adobe/brackets/pull/12195) by [petetnt](https://github.com/petetnt)
+* [Update German translation](https://github.com/adobe/brackets/pull/12068) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Add @mfatekho to CLA exceptions.](https://github.com/adobe/brackets/pull/12321) by [Arzhan "kai" Kinzhalin (Intel Corp)](https://github.com/busykai)
+* [Add "gradle" to Groovy file extensions](https://github.com/adobe/brackets/pull/12333) by [petetnt](https://github.com/petetnt)
+* [Show an error message when trying to rename a file outside of the project](https://github.com/adobe/brackets/pull/12234) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Italian strings.js for 1.7](https://github.com/adobe/brackets/pull/12081) by [Denisov21](https://github.com/Denisov21)
+* [Optimize and clean up SVG icons](https://github.com/adobe/brackets/pull/12164) by [valtlait](https://github.com/valtlait)
+* [Updated first steps in portuguese language (pt-br)](https://github.com/adobe/brackets/pull/12334) by [nbfontana](https://github.com/nbfontana)
+* [Linted CSS](https://github.com/adobe/brackets/pull/12250) by [AllThingsSmitty](https://github.com/AllThingsSmitty)
+* [Remove dropshadow from flip-view-buttons](https://github.com/adobe/brackets/pull/12124) by [petetnt](https://github.com/petetnt)
+* [Update index.html](https://github.com/adobe/brackets/pull/12344) by [JoshLWScott](https://github.com/JoshLWScott)
+* [Update CodeMirror](https://github.com/adobe/brackets/pull/12177) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Remove a number of unnecessary file associations](https://github.com/adobe/brackets-shell/pull/547) by [Triangle717](https://github.com/le717)
+* [Update Polish translation (checked and tested)](https://github.com/adobe/brackets/pull/12372) by [jurkian](https://github.com/jurkian)
+* [Fix the misaligned selection extension when creating a folder](https://github.com/adobe/brackets/pull/10402) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Fix for #3296: add deprecation warning for global Mustache](https://github.com/adobe/brackets/pull/11616) by [ficristo](https://github.com/ficristo)
+* [Remove a warning when reloading the app](https://github.com/adobe/brackets/pull/12048) by [ficristo](https://github.com/ficristo)
+* [Require PathUtils instead of using the global one](https://github.com/adobe/brackets/pull/12203) by [ficristo](https://github.com/ficristo)
+* [Fix CSSUtils detection of @import urls](https://github.com/adobe/brackets/pull/12393) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Added Bulgarian translation.](https://github.com/adobe/brackets/pull/12357) by [lyubomirv](https://github.com/lyubomirv)
+* [Fix of not picking file modifications.](https://github.com/adobe/brackets/pull/12353) by [mfatekho](https://github.com/mfatekho)
+* [Set Bash files syntax highlighting](https://github.com/adobe/brackets/pull/11558) by [Amin Ullah Khan](https://github.com/sprintr)
+* [In CSSUtils, detect when in an @ rule correctly](https://github.com/adobe/brackets/pull/12397) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Remove .jsx from Javascript file extensions and create an jsx-mode](https://github.com/adobe/brackets/pull/12052) by [petetnt](https://github.com/petetnt)
+* [Fixed htmlmixed highlighting.](https://github.com/adobe/brackets/pull/12422) by [ficristo](https://github.com/ficristo)
+* [Added unit testing for issue #8208](https://github.com/adobe/brackets/pull/12390) by [PatrickDallarosa](https://github.com/PatrickDallarosa)
+* [Some unit test fixes](https://github.com/adobe/brackets/pull/12437) by [Marcel Gerber](https://github.com/MarcelGerber)
+* [Refactoring QuickOpenHTML, CSS, and JavaScript extensions](https://github.com/adobe/brackets/pull/12214) by [jacobsone](https://github.com/jacobsone)
+* [Update a couple of dependencies in package.json at the root](https://github.com/adobe/brackets/pull/12059) by [ficristo](https://github.com/ficristo)
 #### Pulling source code from Git
 _TODO: any brackets-shell updates? which of the below messages are applicable?_
 
