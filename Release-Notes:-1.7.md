@@ -40,6 +40,10 @@ As of Mon May 23 2016 14:15:08 GMT+0530 (India Standard Time).
 Sorted by date merged. Branch merged into: m = master, r = release.
 
 
+* [Fixed htmlmixed highlighting.](https://github.com/adobe/brackets/pull/12422) by [ficristo](https://github.com/ficristo)
+* [Added unit testing for issue #8208](https://github.com/adobe/brackets/pull/12390) by [PatrickDallarosa](https://github.com/PatrickDallarosa)
+* [Fix of not picking file modifications.](https://github.com/adobe/brackets/pull/12353) by [mfatekho](https://github.com/mfatekho)
+* [Wrap indent-key to parentheses in .eslintrc](https://github.com/adobe/brackets/pull/12053) by [petetnt](https://github.com/petetnt)
 * [Update license year range to latest release](https://github.com/adobe/brackets-shell/pull/545) by [pra85](https://github.com/pra85)
 * [Update year to 2016 in LICENSE and about-dialog.html](https://github.com/adobe/brackets/pull/12092) by [pra85](https://github.com/pra85)
 * [Korean translation update](https://github.com/adobe/brackets/pull/12151) by [naradesign](https://github.com/naradesign)
@@ -51,7 +55,6 @@ Sorted by date merged. Branch merged into: m = master, r = release.
 * [Few Portuguese update, spelling and punctuation correction](https://github.com/adobe/brackets/pull/12191) by [MauricioCarmelo](https://github.com/MauricioCarmelo)
 * [Line comment bug fix](https://github.com/adobe/brackets/pull/11954) by [borax12](https://github.com/borax12)
 * [Update React to 0.14.7 and Immutable to 3.7.6.](https://github.com/adobe/brackets/pull/12035) by [petetnt](https://github.com/petetnt)
-* [Wrap indent-key to parentheses in .eslintrc](https://github.com/adobe/brackets/pull/12053) by [petetnt](https://github.com/petetnt)
 * [[HOTFIX] Only update stat and clear contents when old stat is newer than current stat.](https://github.com/adobe/brackets/pull/12175) by [petetnt](https://github.com/petetnt)
 * [Rename .eslintrc to .eslintrc.json](https://github.com/adobe/brackets/pull/12237) by [ficristo](https://github.com/ficristo)
 * [Add gyp and gypi file extensions to python language](https://github.com/adobe/brackets/pull/12238) by [ficristo](https://github.com/ficristo)
@@ -75,15 +78,13 @@ Sorted by date merged. Branch merged into: m = master, r = release.
 * [Require PathUtils instead of using the global one](https://github.com/adobe/brackets/pull/12203) by [ficristo](https://github.com/ficristo)
 * [Fix CSSUtils detection of @import urls](https://github.com/adobe/brackets/pull/12393) by [Marcel Gerber](https://github.com/MarcelGerber)
 * [Added Bulgarian translation.](https://github.com/adobe/brackets/pull/12357) by [lyubomirv](https://github.com/lyubomirv)
-* [Fix of not picking file modifications.](https://github.com/adobe/brackets/pull/12353) by [mfatekho](https://github.com/mfatekho)
 * [Set Bash files syntax highlighting](https://github.com/adobe/brackets/pull/11558) by [Amin Ullah Khan](https://github.com/sprintr)
 * [In CSSUtils, detect when in an @ rule correctly](https://github.com/adobe/brackets/pull/12397) by [Marcel Gerber](https://github.com/MarcelGerber)
 * [Remove .jsx from Javascript file extensions and create an jsx-mode](https://github.com/adobe/brackets/pull/12052) by [petetnt](https://github.com/petetnt)
-* [Fixed htmlmixed highlighting.](https://github.com/adobe/brackets/pull/12422) by [ficristo](https://github.com/ficristo)
-* [Added unit testing for issue #8208](https://github.com/adobe/brackets/pull/12390) by [PatrickDallarosa](https://github.com/PatrickDallarosa)
 * [Some unit test fixes](https://github.com/adobe/brackets/pull/12437) by [Marcel Gerber](https://github.com/MarcelGerber)
 * [Refactoring QuickOpenHTML, CSS, and JavaScript extensions](https://github.com/adobe/brackets/pull/12214) by [jacobsone](https://github.com/jacobsone)
 * [Update a couple of dependencies in package.json at the root](https://github.com/adobe/brackets/pull/12059) by [ficristo](https://github.com/ficristo)
+
 #### Pulling source code from Git
 _TODO: any brackets-shell updates? which of the below messages are applicable?_
 
