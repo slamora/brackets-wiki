@@ -1,15 +1,10 @@
-_This is a draft!_
---------------------
-_This page will not be finalized until the end of Release 1.7 -- approximately June 5._
-
 What's New in Release 1.7
 -------------------------
-* _**TODO: draft**_
-* **TODO: category heading**
-   * _TODO: feature list_
-* **Localization**
-   * Translation updates for: _(TODO - updated locales in alphabetical order)_
+ * CEF shell upgrade to 2623: Brackets app shell is now upgraded to CEF 2623. The long standing issue with mouse scroll being too fast on Windows is now fixed with the CEF upgrade.
 
+ * Recent Files Navigation dialog: Ctrl + Tab is now going to bring up the new \"Recent Files\" navigation dialog showing a history of all opened files and allowing one to switch to a file visually. The new dialog also tracks opened files that are not in the working set.
+
+ *  64 bit on MAC: Brackets on MAC is now 64 bit!
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.6...release-1.7#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.6...release-1.7#commits_bucket)
 
@@ -36,9 +31,6 @@ Known Issues
 
 Community contributions to Brackets
 -----------------------------------
-As of Mon May 23 2016 14:15:08 GMT+0530 (India Standard Time).
-Sorted by date merged. Branch merged into: m = master, r = release.
-
 
 * [Fixed htmlmixed highlighting.](https://github.com/adobe/brackets/pull/12422) by [ficristo](https://github.com/ficristo)
 * [Added unit testing for issue #8208](https://github.com/adobe/brackets/pull/12390) by [PatrickDallarosa](https://github.com/PatrickDallarosa)
