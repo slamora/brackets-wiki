@@ -61,6 +61,7 @@ There are two different ways to use Live Preview:
 
 This mode offers the full range of Live Preview functionality:
 * Browser preview updates in real time as you type in HTML _and_ CSS files (without reloading)
+* File extensions recognized for HTML files are: htm, html, and xhtml.
 * If you edit any other type of file, the page is auto-reloaded when you save
 * When you move the cursor around an HTML file, the corresponding element is highlighted in the browser
 * When you move the cursor around a CSS/LESS/SCSS file, all elements matching the current rule are highlighted in the browser
