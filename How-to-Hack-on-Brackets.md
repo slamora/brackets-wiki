@@ -20,8 +20,9 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 2. Fork the [brackets repo](https://github.com/adobe/brackets)
 3. Clone your fork of the repo: `git clone https://github.com/<username>/brackets.git`
 4. Fetch submodules: `cd brackets` and `git submodule update --init`
-5. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
-6. Run `setup_for_hacking` script:
+5. Install npm dependencies: `npm install`
+6. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
+7. Run `setup_for_hacking` script:
 
     |  |  |
     |---|---|
