@@ -13,6 +13,7 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 
 * Latest [Brackets installer build](http://download.brackets.io) (or if you'd rather build the native bits yourself instead, [see below](#nativeshell)).
 * Git command line tools — follow the setup instructions [on GitHub](https://help.github.com/articles/set-up-git) or download [here](http://git-scm.com/downloads)
+* NodeJS installed (https://nodejs.org/en/download/current/)
 
 ### Setting up your dev environment ###
 
@@ -20,7 +21,7 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
 2. Fork the [brackets repo](https://github.com/adobe/brackets)
 3. Clone your fork of the repo: `git clone https://github.com/<username>/brackets.git`
 4. Fetch submodules: `cd brackets` and `git submodule update --init`
-5. Install npm dependencies: `npm install`
+5. Install `npm` dependencies: `npm install`
 6. Add an "upstream" remote: `git remote add upstream https://github.com/adobe/brackets.git`
 7. Run `setup_for_hacking` script:
 
