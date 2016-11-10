@@ -17,20 +17,6 @@ What's New in Release 1.8
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.7...release-1.8#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.7...release-1.8#commits_bucket)
 
 
-UI Changes
-----------
-**TODO** - list notable changes in _existing_ features ...or:
-No major changes to existing features.
-
-
-API Changes
------------
-**TODO** - list breaking API changes
-
-New/Improved Extensibility APIs
--------------------------------
-**TODO** - list API expansions
-
 
 Known Issues
 ------------
