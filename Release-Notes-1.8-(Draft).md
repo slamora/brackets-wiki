@@ -4,11 +4,14 @@ _This page will not be finalized until the end of Release 1.8 -- approximately N
 
 What's New in Release 1.8
 -------------------------
-* _**TODO: draft**_
-* **TODO: category heading**
-   * _TODO: feature list_
-* **Localization**
-   * Translation updates for: _(TODO - updated locales in alphabetical order)_
+
+*  **[Update shell node version to 6.3.1](https://github.com/adobe/brackets-shell/pull/543)** by [zaggino](https://github.com/zaggino) : Brackets 1.8 ships with Node 6.3.1. With this upgrade, extension developers can take advantage of all the latest node modules to develop extensions for Brackets.
+
+* **[Cut/Copy/Paste Context menu items ](https://github.com/adobe/brackets/pull/12674)** by [ficristo](https://github.com/ficristo) : Cut, Copy and Paste operations are now available in the context menu.
+
+* **[Code folding support for handlebar template files](https://github.com/adobe/brackets/pull/12675)** by [thehogfather](https://github.com/thehogfather) : Code-folding has now been enabled for blocks and helpers in handlebar template files.
+
+* **[ARIA code hints](https://github.com/adobe/brackets/pull/12471)** by [Coder206](https://github.com/Coder206): Brackets 1.8 now supports 'ARIA' attributes for html attribute code hints.
 
 
 _Full change logs:_ [brackets](https://github.com/adobe/brackets/compare/release-1.7...release-1.8#commits_bucket) and [brackets-shell](https://github.com/adobe/brackets-shell/compare/release-1.7...release-1.8#commits_bucket)
