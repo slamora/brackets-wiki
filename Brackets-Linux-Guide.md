@@ -1,5 +1,3 @@
-# Brackets Linux Guide
-
 > This guide is also available at https://nathanjplummer.github.io/Brackets/
 
 How to fix common Brackets issues that may occur with the Linux Operating System.
