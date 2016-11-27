@@ -6,6 +6,7 @@ How to fix common Brackets issues that may occur with the Linux Operating System
 
 Brackets depends on libcrypt11 but newer version of Ubuntu ship with libcrypt20. If you’re using Ubuntu or a derivative (Kubuntu, Linux Mint, etc) you may get an error message similar to the following:
 
+```bash
     dpkg: dependency problems prevent configuration of brackets:
      brackets depends on libgcrypt11 (>= 1.4.5); however:
       Package libgcrypt11 is not installed.
@@ -15,6 +16,7 @@ Brackets depends on libcrypt11 but newer version of Ubuntu ship with libcrypt20.
     Processing triggers for hicolor-icon-theme (0.15-0ubuntu1) ...
     Errors were encountered while processing:
      brackets
+```
 
 ### Solution 1: Manually Install libcrypt11
 
@@ -44,7 +46,7 @@ The [UI Too Small](https://github.com/1beb/ui-too-small) Extension increases the
 *   From the Brackets File Menu choose “File” -> “Extension Manager”
 *   Search for “Ui Too Small”
 *   The Extension’s author is: “Brandon Bertelsen”
-*   Click “Install” next to the extension name
+*   Click `Install` next to the extension name
 *   Save your work and restart Brackets
 
 ### Step 2: Change your Font Size
@@ -77,17 +79,17 @@ While the Brackets-Electron team currently publishes .deb packages alongside the
 To install an AppImage:
 
 1.  From the terminal, change to the directory where your AppImage is stored. Example:
-    *   **cd home/user/Downloads**
+    *   `cd home/user/Downloads`
 2.  Change permissions on the AppImage with command `chmod a+x`
     *   `chmod a+x brackets-electron-1.8.2-x86_64.AppImage`
 3.  Run image with ./imagename
-    *   **./brackets-electron-1.8.2-x86_64.AppImage**
+    *   `./brackets-electron-1.8.2-x86_64.AppImage`
 
 Once you run the AppImage you will be given the option of installing a shortcut to Brackets-Electron in your program menu.
 
 
 ![Install from AppImage](https://nathanjplummer.github.io/Brackets/images/appimage.jpg)
 
-Click “Yes” to install to your menu.
+Click "Yes" to install to your menu.
 
 NOTE: If you change the location of the AppImage your program link will cease to function. Put your AppImage in a more permanent location before you run it.
