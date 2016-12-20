@@ -1,4 +1,4 @@
-> This guide is also available at https://nathanjplummer.github.io/Brackets/
+> Parts of this guide have been contributed by @nathanjplummer and are available at https://nathanjplummer.github.io/Brackets/
 
 How to fix common Brackets issues that may occur with the Linux Operating System.
 
@@ -34,6 +34,26 @@ Ubuntu has a PPA for Brackets installs which will automatically import libcrypt1
     *   If asked to install key say “yes”
 2.  `sudo apt-get update`
 3.  `sudo apt-get install brackets`
+
+## `Save all`-keyboard shortcut issue
+
+> Cause of issue and a workaround contributed by [@haslam22](https://github.com/adobe/brackets/issues/12954#issuecomment-268253676) and [@Pk13055](https://github.com/adobe/brackets/issues/12954#issuecomment-268253676)
+
+If you notice the `Save all`-keyboard shortcut `Ctrl + Alt + S` not working on some Desktop Environments such as Gnome 3, it might be overshadowed by a system shortcut to disable/enable “roll up” / “shade” on an active window.
+
+You can enter this command (in the terminal) to disable this shortcut to get `Save all` working:
+
+``` bash
+gsettings set org.gnome.desktop.wm.keybindings toggle-shaded "['disabled']"
+```
+
+Alternatively, you can re-map said shortcut to another key group of your choice (for example `Ctrl + Super + S`) with:
+
+``` bash
+gsettings set org.gnome.desktop.wm.keybindings toggle-shaded "['<Control><Super>s']"
+```
+
+> Note: The Save All option from the drop-down menu works without any modification; you can always resort to that in case you don't want to alter the system shortcut.
 
 ## Lack of HiDPI support
 
