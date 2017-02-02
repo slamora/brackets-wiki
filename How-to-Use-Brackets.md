@@ -230,11 +230,11 @@ These are all the settings that are currently supported:
 | `highlightMatches` | `false` | Enables automatic highlighting of matching strings throughout the document:<ul><li>`true` — highlight all strings that match the current selection (nothing is highlighted when no selection)</li><li>`{"showToken": true}` — highlight all strings that match the token the cursor is currently in (no selection needed)</li><li>`{"wordsOnly": true}` — highlight only when selection is a complete token</li></ul> |
 | `insertHintOnTab` | `false` | True to insert the currently selected code hint on tab |
 | `jscodehints.noHintsOnDot` | `false` | If true, do not automatically show JS code hints when `.` is typed. |
-| `jslint.options` | `undefined` | An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/lint.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automatically). |
+| `jslint.options` | `undefined` | An object with the default options for JSLint (see [the JSLint reference](http://www.jslint.com/help.html) for a list of these options). Options specified directly within a JS file will override this preference on a per-option basis (not automatically). |
 | `language.fileExtensions` | `undefined` | Additional mappings from file extension to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | `language.fileNames` | `undefined` | Additional mappings from file name to language name (see [Language Support#Preferences](https://github.com/adobe/brackets/wiki/Language-Support#preferences)) |
 | `linting.enabled` | `true` | Determines if Code Inspection is on |
-| `linting.prefer` | `undefined` | *Since 1.1.* Array of linters (`CodeInspection` providers) to run first. For example: `["JSLint", "JSHint"]`. If provider on the list is not installed, it will be silently ignored. By default, all the linters will be run. |
+| `linting.prefer` | `undefined` | *Since 1.1.* Array of linters (`CodeInspection` providers) to run first. For example: `["ESLint", "JSLint", "JSHint"]`. If provider on the list is not installed, it will be silently ignored. By default, all the linters will be run. |
 | `linting.usePreferredOnly` | `false` | *Since 1.1.* If set to `true`, then only providers specified in `linting.prefer` will be run (if installed). |
 | `maxCodeHints` | `50` | Maximum code hints displayed at once |
 | `proxy` | `undefined` | The URL of the proxy server used for extension installation (general syntax: "http://username:password&#8203;@server:port/") |
@@ -276,7 +276,7 @@ These are all the settings that are currently supported:
     },
     "language": {
         "javascript": {
-            "linting.prefer": ["JSLint", "JSHint"],
+            "linting.prefer": ["ESLint", "JSLint", "JSHint"],
             "linting.usePreferredOnly": true
         }
     },
