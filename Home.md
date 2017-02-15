@@ -7,6 +7,7 @@ Welcome to the Brackets wiki! Here are some resources to help you get started.
     * [Homepage](http://brackets.io/) and [blog](http://blog.brackets.io/)
     * [Primary channel](https://brackets.slack.com/) for all things Brackets. ([register here](https://brackets-slack.herokuapp.com/))
          *  The slack registration link is temporarily down. Please send a mail to admin@brackets.io with the subject line `slack registration request`specifying the email addresses you would like to register.
+    * Email: admin@brackets.io
     * [IRC - #brackets on Freenode](http://webchat.freenode.net/?channels=brackets)
     * [Twitter - @brackets](http://twitter.com/brackets)
     * [Forum - brackets-dev](http://groups.google.com/group/brackets-dev)
