@@ -39,6 +39,11 @@ Brackets sends one Health Report update every 24 hours, only while Brackets is r
 * `fileStats` - Counts the number of times a file extension known to brackets or any of its extensions is opened. Custom file extensions are not registered.
 * `ProjectDetails` - Details of the number of files in a project and the size in bytes.
 * `searchDetails` - Statistics related to find/replace in files and instant search.
+* `prefNodeSearchDisabled` - Check if user has enabled/disabled Node search.
+* `prefInstantSearchDisabled` - Check if user has enabled/disabled instant search.
+* `AppStartupTime` - Time taken to start Application.
+* `projectLoadTimes` - Time taken to load the project.
+
 
 **Benefits** - with this data, we can answer questions like:
 
