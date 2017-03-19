@@ -1,22 +1,22 @@
 What's New in Release 1.9
 -------------------------
 
-*  **[Reverse inspect in Live Preview]()** by []() 
+*  **[Reverse inspect in Live Preview](https://github.com/adobe/brackets/pull/13103)** by [saurabh95](https://github.com/saurabh95) : 
     Brackets 1.9 ships with Reverse-inspect in Live Preview. Now clicking on an element in Live Preview highlights the corresponding tag in the source code.
 
-*  **[Support for “Replace All” action in Find & Replace]()** by []()
+*  **[Support for “Replace All” action in Find & Replace](https://github.com/adobe/brackets/pull/12988)** by [amrelnaggar](https://github.com/amrelnaggar) : 
     Brackets now supports “Replace All” in Find & Replace along with batch operation.
 
-*  **[Download count display and extension sorting based on download count]()** by []()
+*  **[Download count display and extension sorting based on download count](https://github.com/adobe/brackets/pull/13080)** by [saurabh95](https://github.com/saurabh95) : 
    Extension Manager now displays download count for listed extensions. Extensions can be sorted based on download count or published date in ‘Available’ and ‘Themes’ tab.
 
-*  **[Mode toggle in Untitled document]()** by []() 
-    Language mode can be toggled for Untitled documents. Linting and Code Hints for the selected mode are also supported for Untitled documents.
+*  **[Mode toggle in Untitled document](https://github.com/adobe/brackets/pull/13086)** by [saurabh95](https://github.com/saurabh95) : 
+    Language mode can be toggled for Untitled documents. Code coloring and Code Hints for the selected mode are also supported for Untitled documents.
 
-*  **[Document toggle in split view]()** by []()  
+*  **[Document toggle in split view](https://github.com/adobe/brackets/pull/12853)** by [arthur801031](https://github.com/arthur801031) : 
     Focus can be swapped between panes using keyboard shortcut.
 
-*  **[Github organization support for Brackets extensions]()** by []() 
+*  **[Github organization support for Brackets extensions](https://github.com/adobe/brackets-registry/pull/70)** by [ficristo](https://github.com/ficristo) : 
     Github organizations can now own brackets extensions. All public owners of organization can update extensions.
 
 
