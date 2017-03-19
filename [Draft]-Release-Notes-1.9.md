@@ -1,7 +1,7 @@
 What's New in Release 1.9
 -------------------------
 
-*  **[Reverse inspect in Live Preview](https://github.com/adobe/brackets/pull/13103)** by [saurabh95](https://github.com/saurabh95) : 
+*  **[Reverse inspect in Live Preview](https://github.com/adobe/brackets/pull/13044)** by [saurabh95](https://github.com/saurabh95) : 
     Brackets 1.9 ships with Reverse-inspect in Live Preview. Now clicking on an element in Live Preview highlights the corresponding tag in the source code.
 
 *  **[Support for “Replace All” action in Find & Replace](https://github.com/adobe/brackets/pull/12988)** by [amrelnaggar](https://github.com/amrelnaggar) : 
