@@ -50,6 +50,10 @@ Smoke test steps
 1. Type ``5, 10);`` and press enter
 1. Type ``add(``
 1. Verify that the parameter hint ``Number a, Number b`` appears with the ``Number a`` in boldface
+1. `File > New`
+1. Change the language mode to Javascript from bottom-right dropdown.
+1. Verify that code coloring is applied.
+1. Repeat the steps 17 to 23.
 1. In the project tree, right-click on ``temp.js`` and choose "Rename". Rename the file to ``temp.txt``. Verify that the name in the working set and title bar changes, the code coloring disappears and the mode changes to "Text".
 1. In the project tree, right click on ``temp.txt`` and choose delete (when prompted discard changes)
 1. Open the OS Trash/Recycle Bin and confirm ``temp.txt`` was deleted
