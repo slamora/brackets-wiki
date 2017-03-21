@@ -66,7 +66,8 @@ Smoke test steps
 1. In the native shell menu, choose `View > Increase Font Size`. Verify both the host and inline editors font size increases. The inline editor should not show a vertical scrollbar.
 1. Click the Lightning Bolt in the upper right. If you moved your `state.json` file, you'll get an info dialog explaining how live preview works. Hit OK.
 1. You should see the page load in Chrome.
-1. Back in Brackets, on line 26, put the cursor after "A new". Verify that the box containing that text and the image to the right is highlighted (with a blue outline around it) in the browser.
+1. In Preview click on "A new neighborhood ", the cursor in Brackets should shift to line 26 just before the `<article`. Verify that the box containing that text and the image to the right is highlighted (with a blue outline around it) in the browser.
+1. Back in Brackets, on line 26, put the cursor after "A new".
 1. Type ` and totally <em>AWESOME</em> local`; let the `<em>` tag autocomplete (you can arrow or click select after the `</em>` to type `local`). Verify while typing an incomplete tag `<em` that the gutter and the live preview lightning bolt icon show a pink error color. Verify that the changes appear in the browser as you type, and verify that AWESOME is italicized (and nothing else is).
 1. Undo the file back to a clean state. Verify that as you undo, the HTML preview continues to match the current state of the document, and ends up looking the same as when you first opened the file.
 1. Edit the background color for the `<body>` tag in the inline editor (`#D90` is a nice color). Verify that the color changes in Chrome as you type. Also verify that the CSS file is added to the working set with the dirty bit set.
