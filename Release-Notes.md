@@ -1,3 +1,5 @@
+* [Release Notes: 1.9](https://github.com/adobe/brackets/wiki/Release-Notes:-1.9)
+* [Release Notes: 1.8](https://github.com/adobe/brackets/wiki/Release-Notes:-1.8)
 * [Release Notes: 1.7](https://github.com/adobe/brackets/wiki/Release-Notes:-1.7)
 * [Release Notes: 1.6](https://github.com/adobe/brackets/wiki/Release-Notes:-1.6)
 * [Release Notes: 1.5](https://github.com/adobe/brackets/wiki/Release-Notes:-1.5)
