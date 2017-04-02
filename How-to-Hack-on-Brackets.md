@@ -28,7 +28,7 @@ If you're interested in **submitting a pull request**, review the [guidelines fo
     |  |  |
     |---|---|
     | Mac | `tools/setup_for_hacking.sh "/Applications/Brackets.app"` |
-    | Windows | `tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"` <br>_(MUST be run in a Command Prompt started with "Run as Administrator")_ |
+    | Windows | `tools\setup_for_hacking.bat "C:\Program Files (x86)\Brackets"` <br>_(MUST be run in a Command Prompt started with "Run as Administrator". If you opened a new Command Prompt you might need to navigate back to the repository folder you cloned in step 3 with eg. `cd C:/path/to/brackets`)._ |
     | Linux | `sudo tools/setup_for_hacking.sh "/opt/brackets"` |
 
 Now, when you launch the Brackets app it will load your git copy of the source code, rather than the original source code that was distributed with the installer. It will share the same preferences & set of installed extensions that a regular installed build would use.
