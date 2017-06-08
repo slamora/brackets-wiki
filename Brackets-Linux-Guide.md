@@ -2,7 +2,7 @@
 
 How to fix common Brackets issues that may occur with the Linux Operating System.
 
-## Libcrypt11 Missing Dependency in Ubuntu
+## Libcrypt11 Missing Dependency in Debian/Ubuntu
 
 Brackets depends on libcrypt11 but newer version of Ubuntu ship with libcrypt20. If you’re using Ubuntu or a derivative (Kubuntu, Linux Mint, etc) you may get an error message similar to the following:
 
@@ -18,15 +18,21 @@ Brackets depends on libcrypt11 but newer version of Ubuntu ship with libcrypt20.
      brackets
 ```
 
-### Solution 1: Manually Install libcrypt11
+### Solution 1: Manually Install libcrypt11 (Debian & Ubuntu)
 
 The links below will download a copy of libcrypt11 from an older version of Ubuntu. Note that libcrypt11 can coexist peacefully with newer versions.
 
+#### Debian
+*   [32bit x86](http://security.debian.org/debian-security/pool/updates/main/libg/libgcrypt11/libgcrypt11_1.5.0-5+deb7u5_i386.deb)
+*   [64bit x64](http://security.debian.org/debian-security/pool/updates/main/libg/libgcrypt11/libgcrypt11_1.5.0-5+deb7u5_amd64.deb)
+*   All other architectures can be found [here](http://security.debian.org/debian-security/pool/updates/main/libg/libgcrypt11/)
+
+#### Ubuntu
 *   [32bit x86](https://launchpad.net/ubuntu/+archive/primary/+files/libgcrypt11_1.5.3-2ubuntu4.2_i386.deb)
 *   [64bit x64](https://launchpad.net/ubuntu/+archive/primary/+files/libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb)
 *   All other architectures can be found [here](https://launchpad.net/ubuntu/+source/libgcrypt11)
 
-### Solution 2: Install from PPA
+### Solution 2: Install from PPA (Ubuntu only)
 
 Ubuntu has a PPA for Brackets installs which will automatically import libcrypt11 while also keeping Brackets up to date automatically. To install from PPA, open a terminal and then:
 
